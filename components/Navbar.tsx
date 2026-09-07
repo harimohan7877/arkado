@@ -31,7 +31,7 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    fetch("/api/categories")
+    fetch("/api/categories?scope=public")
       .then((r) => r.json())
       .then(setCategories)
       .catch(() => {});
@@ -53,35 +53,35 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
   }, [showMobileMenu]);
 
   const logoText = settings?.brand?.logo_text || settings?.site_name || "Arkado";
-  const tagline = settings?.brand?.tagline || "Pattern-decoded notes for All-India exams";
+  const tagline = settings?.brand?.tagline || "Pattern-decoded notes for Rajasthan exams";
 
   return (
     <>
       <header className="sticky top-0 z-40 bg-white border-b border-stone-200">
         {/* Main header - no dark promo strip */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center gap-3 sm:gap-6">
+        <div className="h-16 flex items-center gap-2 sm:gap-4 pl-2 pr-2 sm:pr-4">
           {/* Mobile menu trigger */}
           <button
             onClick={() => setShowMobileMenu(true)}
-            className="md:hidden w-9 h-9 rounded-md hover:bg-stone-100 flex items-center justify-center text-stone-700 cursor-pointer"
+            className="md:hidden w-10 h-10 rounded-lg hover:bg-stone-100 flex items-center justify-center text-stone-700 cursor-pointer shrink-0"
             aria-label="Open menu"
           >
-            <MenuIcon size={20} />
+            <MenuIcon size={22} />
           </button>
 
-          {/* Brand - Arkado Wordmark Logo (Option 5) */}
-          <Link href="/" className="flex items-center gap-3 shrink-0 group py-1">
-            <div className="relative h-8 sm:h-9 w-28 sm:w-36 flex items-center">
+          {/* Brand - Arkado Wordmark Logo */}
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink-0 group">
+            <div className="relative h-9 sm:h-11 w-40 sm:w-52 flex items-center">
               <Image
                 src="/logos/arkado_wordmark_5.jpg"
                 alt="Arkado"
-                width={160}
-                height={48}
+                width={220}
+                height={60}
                 priority
                 className="object-contain w-full h-full"
               />
             </div>
-            <p className="text-[9px] sm:text-[10px] text-stone-500 hidden xl:block font-medium border-l border-stone-200 pl-2.5 py-0.5 truncate max-w-[220px]">
+            <p className="text-[9px] sm:text-[10px] text-stone-500 hidden xl:block font-medium border-l border-stone-200 pl-2.5 py-0.5 truncate max-w-[200px]">
               {tagline}
             </p>
           </Link>
@@ -114,19 +114,20 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
             {/* Mobile search trigger */}
             <button
               onClick={() => setShowSearch(true)}
-              className="md:hidden w-9 h-9 rounded-md hover:bg-stone-100 flex items-center justify-center text-stone-700 cursor-pointer"
+              className="md:hidden w-10 h-10 rounded-lg hover:bg-stone-100 flex items-center justify-center text-stone-700 cursor-pointer"
               aria-label="Search"
             >
-              <SearchIcon size={18} />
+              <SearchIcon size={20} />
             </button>
 
+            {/* Login / Account - visible on all screens */}
             <Link
               href="/auth"
-              className="hidden sm:flex flex-col items-center px-2 py-1 rounded-md hover:bg-stone-100 text-stone-700 transition"
+              className="flex flex-col items-center justify-center w-10 h-10 sm:w-auto sm:px-2 sm:py-1 rounded-lg hover:bg-stone-100 text-stone-700 transition"
               aria-label="Account"
             >
               <UserIcon size={20} />
-              <span className="text-[10px] font-semibold mt-0.5">Account</span>
+              <span className="text-[9px] sm:text-[10px] font-semibold mt-0.5 hidden sm:block">Account</span>
             </Link>
 
             <button
@@ -277,12 +278,12 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
           <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm" onClick={() => setShowMobileMenu(false)} />
           <div className="absolute left-0 top-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl flex flex-col anim-slide-down">
             <div className="p-4 border-b border-stone-200 flex items-center justify-between">
-              <Link href="/" onClick={() => setShowMobileMenu(false)} className="relative h-9 w-36 flex items-center">
+              <Link href="/" onClick={() => setShowMobileMenu(false)} className="relative h-10 w-44 flex items-center">
                 <Image
                   src="/logos/arkado_wordmark_5.jpg"
                   alt="Arkado"
-                  width={144}
-                  height={36}
+                  width={180}
+                  height={44}
                   className="object-contain w-full h-full"
                 />
               </Link>

@@ -9,7 +9,7 @@ export default function CategoryRibbon() {
   const [categories, setCategories] = useState<Category[]>([]);
 
   useEffect(() => {
-    fetch("/api/categories")
+    fetch("/api/categories?scope=public")
       .then((r) => r.json())
       .then((data: Category[]) => {
         const sorted = [...data].sort((a, b) => a.priority - b.priority).slice(0, 8);

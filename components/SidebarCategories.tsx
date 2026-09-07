@@ -15,7 +15,7 @@ export default function SidebarCategories({ activeCategory }: SidebarCategoriesP
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/categories")
+    fetch("/api/categories?scope=public")
       .then((r) => r.json())
       .then((data: Category[]) => {
         const sorted = [...data].sort((a, b) => a.priority - b.priority);
@@ -86,7 +86,7 @@ export default function SidebarCategories({ activeCategory }: SidebarCategoriesP
           href="/exams"
           className="flex items-center justify-between px-3 py-2 text-xs font-bold text-amber-800 hover:text-amber-900 bg-amber-50/80 hover:bg-amber-100/80 rounded-lg transition"
         >
-          <span>All 500+ Categories</span>
+          <span>All {categories.length} Categories</span>
           <ChevronRightIcon size={14} />
         </Link>
       </div>

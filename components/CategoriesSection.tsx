@@ -89,9 +89,9 @@ export default function CategoriesSection({ categories, selectedCategory, onSele
         </div>
         <div className="flex items-center gap-2">
           <div className="relative w-64">
-            <input
-              type="text"
-              placeholder="Search 500+ categories..."
+              <input
+                type="text"
+                placeholder={`Search ${categories.length} categories...`}
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
               className="w-full pl-9 pr-4 py-2 bg-white rounded-full border border-stone-300 text-xs placeholder:text-stone-400 focus:outline-none focus:border-amber-600 shadow-2xs"

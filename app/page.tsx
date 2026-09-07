@@ -147,7 +147,7 @@ export default function HomePage() {
                 </h3>
                 <p className="text-sm text-stone-700 mt-2">
                   Premium pattern-decoded notes for{" "}
-                  <span className="font-extrabold text-amber-700">All-India Exams</span>
+                    <span className="font-extrabold text-amber-700">Rajasthan Exams</span>
                 </p>
                 <div className="grid grid-cols-2 gap-2 mt-5">
                   {[

@@ -105,7 +105,7 @@ export default function CategoriesSection({ categories, selectedCategory, onSele
           </div>
           <Link
             href="/exams"
-            className="px-3.5 py-2 rounded-full bg-stone-900 hover:bg-stone-800 text-white text-xs font-bold flex items-center gap-1.5 transition shadow-xs"
+            className="px-3.5 py-2 rounded-full bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold flex items-center gap-1.5 transition shadow-xs"
           >
             <GridIcon size={12} />
             All Exams ({totalExamsCount})

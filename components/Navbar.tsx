@@ -178,10 +178,10 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
               onMouseEnter={() => setShowCatDropdown(true)}
               onMouseLeave={() => setShowCatDropdown(false)}
             >
-              <button className="h-11 px-4 bg-stone-900 hover:bg-stone-800 text-white font-semibold text-sm flex items-center gap-2 cursor-pointer transition rounded-sm">
-                <GridIcon size={16} />
+              <button className="h-9 my-1 px-3.5 bg-gradient-to-r from-amber-600 via-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold text-xs sm:text-sm flex items-center gap-2 cursor-pointer transition-all rounded-xl shadow-xs hover:shadow-md">
+                <GridIcon size={15} className="text-amber-100" />
                 <span>All Categories</span>
-                <ChevronDownIcon size={14} />
+                <ChevronDownIcon size={13} className="text-amber-200" />
               </button>
 
               {showCatDropdown && categories.length > 0 && (

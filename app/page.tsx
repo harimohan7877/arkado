@@ -100,7 +100,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
               {/* Sidebar (desktop) */}
-              <div className="hidden lg:block lg:col-span-3">
+              <div className="hidden lg:block lg:col-span-3 min-w-0 overflow-hidden">
                 <SidebarCategories activeCategory={selectedCategory} />
               </div>
 

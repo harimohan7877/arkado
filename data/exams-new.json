@@ -1,7 +1,7 @@
 [
   {
     "id": "cet-grad",
-    "category_id": "rajasthan",
+    "category_id": "rsmssb",
     "name": "RSMSSB CET Graduate Level 2026",
     "short_name": "CET Grad",
     "board": "RSMSSB",
@@ -18,7 +18,7 @@
   },
   {
     "id": "cet-senior",
-    "category_id": "rajasthan",
+    "category_id": "rsmssb",
     "name": "RSMSSB CET Senior Secondary Level 2026",
     "short_name": "CET Sr Sec",
     "board": "RSMSSB",
@@ -35,7 +35,7 @@
   },
   {
     "id": "patwari",
-    "category_id": "rajasthan",
+    "category_id": "rsmssb",
     "name": "RSMSSB Patwari Recruitment 2026",
     "short_name": "Patwari",
     "board": "RSMSSB",
@@ -52,7 +52,7 @@
   },
   {
     "id": "ldc",
-    "category_id": "rajasthan",
+    "category_id": "rsmssb",
     "name": "RSMSSB LDC / Junior Assistant 2026",
     "short_name": "LDC",
     "board": "RSMSSB",
@@ -70,7 +70,7 @@
   },
   {
     "id": "computer-instructor",
-    "category_id": "rajasthan",
+    "category_id": "rsmssb",
     "name": "RSMSSB Computer Instructor 2026",
     "short_name": "Comp Instructor",
     "board": "RSMSSB",
@@ -88,7 +88,7 @@
   },
   {
     "id": "informatic-assistant",
-    "category_id": "rajasthan",
+    "category_id": "rsmssb",
     "name": "RSMSSB Informatic Assistant 2026",
     "short_name": "Info Assistant",
     "board": "RSMSSB",
@@ -105,7 +105,7 @@
   },
   {
     "id": "junior-accountant",
-    "category_id": "rajasthan",
+    "category_id": "rsmssb",
     "name": "RSMSSB Junior Accountant 2026",
     "short_name": "Jr Accountant",
     "board": "RSMSSB",
@@ -122,7 +122,7 @@
   },
   {
     "id": "police-constable",
-    "category_id": "police",
+    "category_id": "police-board",
     "name": "Rajasthan Police Constable 2026",
     "short_name": "Police Constable",
     "board": "Rajasthan Police",
@@ -139,7 +139,7 @@
   },
   {
     "id": "police-si",
-    "category_id": "police",
+    "category_id": "police-board",
     "name": "Rajasthan Police SI 2026",
     "short_name": "Police SI",
     "board": "Rajasthan Police",
@@ -156,7 +156,7 @@
   },
   {
     "id": "home-guard",
-    "category_id": "police",
+    "category_id": "rsmssb",
     "name": "Rajasthan Home Guard 2026",
     "short_name": "Home Guard",
     "board": "Rajasthan Home Guard",
@@ -173,7 +173,7 @@
   },
   {
     "id": "forest-guard",
-    "category_id": "police",
+    "category_id": "rsmssb",
     "name": "Rajasthan Forest Guard 2026",
     "short_name": "Forest Guard",
     "board": "Rajasthan Forest Dept",
@@ -190,7 +190,7 @@
   },
   {
     "id": "reet-level1",
-    "category_id": "teaching",
+    "category_id": "reet",
     "name": "REET Level 1 (Primary Teacher) 2026",
     "short_name": "REET L1",
     "board": "BSER / DEE Rajasthan",
@@ -207,7 +207,7 @@
   },
   {
     "id": "reet-level2",
-    "category_id": "teaching",
+    "category_id": "reet",
     "name": "REET Level 2 (Upper Primary) 2026",
     "short_name": "REET L2",
     "board": "BSER / DEE Rajasthan",
@@ -224,7 +224,7 @@
   },
   {
     "id": "bstc",
-    "category_id": "teaching",
+    "category_id": "ptet-bstc",
     "name": "BSTC (Pre D.El.Ed) Entrance 2026",
     "short_name": "BSTC",
     "board": "DEE Rajasthan",
@@ -241,7 +241,7 @@
   },
   {
     "id": "school-lecturer",
-    "category_id": "teaching",
+    "category_id": "rpsc",
     "name": "RPSC School Lecturer 2026",
     "short_name": "School Lecturer",
     "board": "RPSC",
@@ -258,7 +258,7 @@
   },
   {
     "id": "college-lecturer",
-    "category_id": "teaching",
+    "category_id": "rpsc",
     "name": "RPSC College Lecturer 2026",
     "short_name": "College Lecturer",
     "board": "RPSC",
@@ -275,7 +275,7 @@
   },
   {
     "id": "ssc-cgl",
-    "category_id": "ssc",
+    "category_id": "ssc-railway",
     "name": "SSC CGL 2026",
     "short_name": "SSC CGL",
     "board": "SSC",
@@ -292,7 +292,7 @@
   },
   {
     "id": "ssc-chsl",
-    "category_id": "ssc",
+    "category_id": "ssc-railway",
     "name": "SSC CHSL 2026",
     "short_name": "SSC CHSL",
     "board": "SSC",
@@ -309,7 +309,7 @@
   },
   {
     "id": "ssc-mts",
-    "category_id": "ssc",
+    "category_id": "ssc-railway",
     "name": "SSC MTS 2026",
     "short_name": "SSC MTS",
     "board": "SSC",
@@ -326,7 +326,7 @@
   },
   {
     "id": "ssc-gd",
-    "category_id": "ssc",
+    "category_id": "ssc-railway",
     "name": "SSC GD Constable 2026",
     "short_name": "SSC GD",
     "board": "SSC",
@@ -343,7 +343,7 @@
   },
   {
     "id": "railway-ntpc",
-    "category_id": "ssc",
+    "category_id": "ssc-railway",
     "name": "RRB NTPC 2026",
     "short_name": "Railway NTPC",
     "board": "RRB",
@@ -360,7 +360,7 @@
   },
   {
     "id": "railway-group-d",
-    "category_id": "ssc",
+    "category_id": "ssc-railway",
     "name": "RRB Group D 2026",
     "short_name": "Railway Group D",
     "board": "RRB",
@@ -377,7 +377,7 @@
   },
   {
     "id": "upsc-cse",
-    "category_id": "upsc",
+    "category_id": "upsc-psc",
     "name": "UPSC Civil Services 2026",
     "short_name": "UPSC CSE",
     "board": "UPSC",
@@ -394,7 +394,7 @@
   },
   {
     "id": "rpsc-ras",
-    "category_id": "upsc",
+    "category_id": "rpsc",
     "name": "RPSC RAS (Rajasthan Admin Service) 2026",
     "short_name": "RAS",
     "board": "RPSC",
@@ -411,7 +411,7 @@
   },
   {
     "id": "mppsc",
-    "category_id": "upsc",
+    "category_id": "upsc-psc",
     "name": "MPPSC State Service 2026",
     "short_name": "MPPSC",
     "board": "MPPSC",
@@ -428,7 +428,7 @@
   },
   {
     "id": "uppsc",
-    "category_id": "upsc",
+    "category_id": "upsc-psc",
     "name": "UPPSC PCS 2026",
     "short_name": "UPPSC",
     "board": "UPPSC",
@@ -445,7 +445,7 @@
   },
   {
     "id": "bpsc",
-    "category_id": "upsc",
+    "category_id": "upsc-psc",
     "name": "BPSC 2026",
     "short_name": "BPSC",
     "board": "BPSC",

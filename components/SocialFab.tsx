@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { Settings } from "@/lib/store-types";
 import {
   WhatsappIcon,
@@ -32,6 +33,7 @@ const GmailIcon = (p: { size?: number }) => (
 export default function SocialFab() {
   const [open, setOpen] = useState(false);
   const [settings, setSettings] = useState<Settings | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     fetch("/api/settings")
@@ -39,6 +41,10 @@ export default function SocialFab() {
       .then(setSettings)
       .catch(() => {});
   }, []);
+
+  const isAdminRoute = pathname?.startsWith("/admin") ?? false;
+
+  if (isAdminRoute) return null;
 
   const social = settings?.social;
   const whatsappUrl = social?.whatsapp_url || `https://wa.me/${settings?.whatsapp_support_number || "917852004401"}`;

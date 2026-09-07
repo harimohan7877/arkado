@@ -1,7 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useState, useEffect, startTransition } from "react";
+
+interface Exam {
+  id: string;
+  category_id: string;
+  name: string;
+  short_name: string;
+  board: string;
+  logo_url?: string;
+  is_active: boolean;
+}
 
 interface Category {
   id: string;
@@ -21,39 +30,61 @@ interface CategoriesTabProps {
   getAuthHeaders: () => Record<string, string>;
 }
 
+const COLOR_CHOICES = [
+  { value: "bg-indigo-600", label: "Indigo" },
+  { value: "bg-rose-600", label: "Rose" },
+  { value: "bg-amber-600", label: "Amber" },
+  { value: "bg-emerald-600", label: "Emerald" },
+  { value: "bg-sky-600", label: "Sky" },
+  { value: "bg-violet-600", label: "Violet" },
+  { value: "bg-slate-700", label: "Slate" },
+  { value: "bg-teal-700", label: "Teal" },
+];
+
+const ICON_CHOICES = ["🏛️", "🛡️", "📚", "🚂", "⚖️", "🏦", "💻", "🌾", "🏥", "✈️", "🚢", "📊", "🎓", "🏫", "📋"];
+
 export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
   const [categories, setCategories] = useState<Category[]>([]);
+  const [allExams, setAllExams] = useState<Exam[]>([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [editingCategory, setEditingCategory] = useState<Category | null>(null);
   const [formData, setFormData] = useState<Partial<Category>>({
-    name: "", name_hi: "", icon: "📁", color: "bg-blue-600", priority: 1, is_active: true, exam_ids: []
+    name: "",
+    name_hi: "",
+    icon: "🏛️",
+    color: "bg-indigo-600",
+    priority: 1,
+    is_active: true,
+    exam_ids: [],
   });
   const [logoFile, setLogoFile] = useState<File | null>(null);
   const [logoPreview, setLogoPreview] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+  const [search, setSearch] = useState("");
+  const [examSearch, setExamSearch] = useState("");
 
-  const COLORS = [
-    "bg-indigo-600", "bg-red-600", "bg-purple-600", "bg-orange-600",
-    "bg-emerald-600", "bg-blue-700", "bg-amber-600", "bg-pink-600"
-  ];
-
-  const ICONS = ["🏛️", "🛡️", "📚", "🚂", "⚖️", "🏦", "💻", "🌾", "🏥", "✈️", "🚢", "📊"];
-
-  const fetchCategories = async () => {
+  const fetchAll = async () => {
     try {
-      const res = await fetch("/api/admin/categories", { headers: getAuthHeaders() });
-      if (res.ok) {
-        const data = await res.json();
-        setCategories(data);
-      }
+      const [catRes, examRes] = await Promise.all([
+        fetch("/api/admin/categories", { headers: getAuthHeaders() }),
+        fetch("/api/admin/exams", { headers: getAuthHeaders() }),
+      ]);
+      if (catRes.ok) setCategories(await catRes.json());
+      if (examRes.ok) setAllExams(await examRes.json());
     } catch (err) {
       console.error(err);
     } finally {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    startTransition(() => {
+      fetchAll();
+    });
+  }, []);
 
   const handleLogoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -65,9 +96,18 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
 
   const openCreateModal = () => {
     setEditingCategory(null);
-    setFormData({ name: "", name_hi: "", icon: "📁", color: "bg-blue-600", priority: categories.length + 1, is_active: true, exam_ids: [] });
+    setFormData({
+      name: "",
+      name_hi: "",
+      icon: "🏛️",
+      color: "bg-indigo-600",
+      priority: categories.length + 1,
+      is_active: true,
+      exam_ids: [],
+    });
     setLogoFile(null);
     setLogoPreview(null);
+    setExamSearch("");
     setShowModal(true);
   };
 
@@ -76,6 +116,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
     setFormData({ ...cat });
     setLogoFile(null);
     setLogoPreview(cat.logo_url || null);
+    setExamSearch("");
     setShowModal(true);
   };
 
@@ -84,6 +125,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
     setEditingCategory(null);
     setLogoFile(null);
     setLogoPreview(null);
+    setExamSearch("");
   };
 
   const handleSave = async (e: React.FormEvent) => {
@@ -92,15 +134,12 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
     setMessage(null);
 
     try {
-      const formDataToSend = new FormData();
+      const fd = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
-        if (key === "exam_ids") {
-          formDataToSend.append(key, JSON.stringify(value || []));
-        } else if (value !== undefined && value !== null) {
-          formDataToSend.append(key, String(value));
-        }
+        if (key === "exam_ids") fd.append(key, JSON.stringify(value || []));
+        else if (value !== undefined && value !== null) fd.append(key, String(value));
       });
-      if (logoFile) formDataToSend.append("logo", logoFile);
+      if (logoFile) fd.append("logo", logoFile);
 
       const url = editingCategory
         ? `/api/admin/categories/${editingCategory.id}`
@@ -109,12 +148,12 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
       const res = await fetch(url, {
         method: editingCategory ? "PUT" : "POST",
         headers: { Authorization: getAuthHeaders().Authorization },
-        body: formDataToSend,
+        body: fd,
       });
 
       if (res.ok) {
         setMessage({ type: "success", text: editingCategory ? "Category updated!" : "Category created!" });
-        fetchCategories();
+        fetchAll();
         closeModal();
       } else {
         const err = await res.json();
@@ -128,17 +167,17 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Delete this category? This cannot be undone.")) return;
+    if (!confirm("Delete this category? Exams will not be deleted but will lose their category link.")) return;
     try {
       const res = await fetch(`/api/admin/categories/${id}`, {
         method: "DELETE",
         headers: getAuthHeaders(),
       });
       if (res.ok) {
-        fetchCategories();
+        fetchAll();
         setMessage({ type: "success", text: "Category deleted" });
       }
-    } catch (err) {
+    } catch {
       setMessage({ type: "error", text: "Delete failed" });
     }
   };
@@ -150,83 +189,122 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
         headers: { ...getAuthHeaders(), "Content-Type": "application/json" },
         body: JSON.stringify({ is_active: !cat.is_active }),
       });
-      fetchCategories();
+      fetchAll();
     } catch (err) {
       console.error(err);
     }
   };
 
-  if (loading) return <div className="py-12 text-center text-neutral-500">Loading categories...</div>;
+  const toggleExam = (examId: string) => {
+    const current = formData.exam_ids || [];
+    if (current.includes(examId)) {
+      setFormData({ ...formData, exam_ids: current.filter((id) => id !== examId) });
+    } else {
+      setFormData({ ...formData, exam_ids: [...current, examId] });
+    }
+  };
+
+  const filteredCategories = categories
+    .filter((c) => {
+      if (!search.trim()) return true;
+      const q = search.toLowerCase();
+      return (
+        c.name.toLowerCase().includes(q) ||
+        (c.name_hi || "").toLowerCase().includes(q) ||
+        c.id.toLowerCase().includes(q)
+      );
+    })
+    .sort((a, b) => a.priority - b.priority);
+
+  const filteredExams = allExams.filter((e) => {
+    if (!examSearch.trim()) return true;
+    const q = examSearch.toLowerCase();
+    return e.name.toLowerCase().includes(q) || e.short_name.toLowerCase().includes(q) || e.board.toLowerCase().includes(q);
+  });
+
+  if (loading) return <div className="py-12 text-center text-stone-500 bg-white rounded-2xl border border-stone-200">Loading categories...</div>;
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
+    <div className="space-y-5">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h2 className="text-2xl font-bold text-white">Categories Management</h2>
-          <p className="text-neutral-400 text-sm">Manage exam categories with icons, colors, and logos.</p>
+          <h2 className="text-xl sm:text-2xl font-bold text-stone-900">Categories</h2>
+          <p className="text-stone-500 text-sm">Manage exam-issuing bodies. Each category links to one or more exams.</p>
         </div>
-        <button onClick={openCreateModal} className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-all">
+        <button onClick={openCreateModal} className="self-start sm:self-auto px-4 py-2.5 bg-amber-600 hover:bg-amber-700 text-white text-sm font-bold rounded-xl transition-all">
           + Add Category
         </button>
       </div>
 
       {message && (
-        <div className={`p-4 rounded-xl border ${message.type === "success" ? "bg-emerald-950/30 border-emerald-500/30 text-emerald-400" : "bg-red-950/30 border-red-500/30 text-red-400"}`}>
+        <div className={`p-3 rounded-xl border text-sm ${message.type === "success" ? "bg-emerald-50 border-emerald-200 text-emerald-700" : "bg-red-50 border-red-200 text-red-700"}`}>
           {message.text}
         </div>
       )}
 
-      <div className="bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden">
+      <div className="bg-white border border-stone-200 rounded-2xl p-3">
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Search categories..."
+          className="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-stone-50 text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+        />
+      </div>
+
+      {/* Desktop table */}
+      <div className="hidden md:block bg-white border border-stone-200 rounded-2xl overflow-hidden">
         <table className="w-full">
-          <thead>
-            <tr className="bg-neutral-950 border-b border-neutral-800 text-neutral-400 text-xs uppercase tracking-wider">
-              <th className="p-4 text-left">Logo</th>
-              <th className="p-4 text-left">Name</th>
-              <th className="p-4 text-left">Icon / Color</th>
-              <th className="p-4 text-left">Priority</th>
+          <thead className="bg-stone-50 border-b border-stone-200 text-stone-500 text-xs uppercase tracking-wider">
+            <tr>
+              <th className="p-4 text-left">Category</th>
+              <th className="p-4 text-left">Body / Organization</th>
+              <th className="p-4 text-center">Exams</th>
+              <th className="p-4 text-center">Order</th>
               <th className="p-4 text-center">Status</th>
-              <th className="p-4 text-left">Exams</th>
               <th className="p-4 text-right">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-neutral-800">
-            {categories.map((cat) => (
-              <tr key={cat.id} className="hover:bg-neutral-950/50">
-                <td className="p-4">
-                  {cat.logo_url ? (
-                    <img src={cat.logo_url} alt={cat.name} className="w-12 h-12 rounded-xl object-cover border border-neutral-700" />
-                  ) : (
-                    <div className="w-12 h-12 rounded-xl bg-neutral-800 border border-neutral-700 flex items-center justify-center text-2xl">
-                      {cat.icon}
-                    </div>
-                  )}
-                </td>
-                <td className="p-4">
-                  <p className="font-semibold text-white">{cat.name}</p>
-                  {cat.name_hi && <p className="text-xs text-neutral-500">{cat.name_hi}</p>}
-                </td>
+          <tbody className="divide-y divide-stone-100">
+            {filteredCategories.map((cat) => (
+              <tr key={cat.id} className="hover:bg-stone-50">
                 <td className="p-4">
                   <div className="flex items-center gap-3">
-                    <span className="text-2xl">{cat.icon}</span>
-                    <div className={`w-6 h-6 rounded-lg ${cat.color}`}></div>
+                    {cat.logo_url ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={cat.logo_url} alt={cat.name} className="w-10 h-10 rounded-xl object-cover border border-stone-200" />
+                    ) : (
+                      <div className="w-10 h-10 rounded-xl bg-stone-100 border border-stone-200 flex items-center justify-center text-xl">
+                        {cat.icon}
+                      </div>
+                    )}
+                    <div>
+                      <p className="font-bold text-stone-900 text-sm">{cat.name}</p>
+                      <p className="text-[11px] text-stone-400 font-mono">{cat.id}</p>
+                    </div>
                   </div>
                 </td>
-                <td className="p-4 text-sm font-medium text-neutral-300">{cat.priority}</td>
+                <td className="p-4 text-sm text-stone-700">{cat.name_hi || "—"}</td>
+                <td className="p-4 text-center">
+                  <span className="inline-flex items-center justify-center min-w-[28px] h-7 px-2 rounded-full bg-amber-50 text-amber-700 text-xs font-bold border border-amber-200">
+                    {cat.exam_ids.length}
+                  </span>
+                </td>
+                <td className="p-4 text-center text-sm font-semibold text-stone-700">{cat.priority}</td>
                 <td className="p-4 text-center">
                   <button
                     onClick={() => handleToggleActive(cat)}
-                    className={`px-3 py-1 rounded-full text-xs font-bold ${cat.is_active ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" : "bg-neutral-800 text-neutral-500 border border-neutral-700"}`}
+                    className={`px-3 py-1 rounded-full text-xs font-bold ${cat.is_active ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-stone-100 text-stone-500 border border-stone-200"}`}
                   >
                     {cat.is_active ? "Active" : "Inactive"}
                   </button>
                 </td>
-                <td className="p-4 text-sm text-neutral-400">{cat.exam_ids.length} exams</td>
                 <td className="p-4 text-right">
                   <div className="flex items-center justify-end gap-2">
-                    <button onClick={() => openEditModal(cat)} className="px-3 py-1.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-300 text-xs font-medium rounded-lg transition">
+                    <button onClick={() => openEditModal(cat)} className="px-3 py-1.5 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold rounded-lg">
                       Edit
                     </button>
-                    <button onClick={() => handleDelete(cat.id)} className="px-3 py-1.5 bg-red-950/30 hover:bg-red-950/50 border border-red-500/20 text-red-400 text-xs font-medium rounded-lg transition">
+                    <button onClick={() => handleDelete(cat.id)} className="px-3 py-1.5 bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 text-xs font-semibold rounded-lg">
                       Delete
                     </button>
                   </div>
@@ -235,89 +313,243 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
             ))}
           </tbody>
         </table>
-        {categories.length === 0 && (
-          <div className="p-12 text-center text-neutral-500">
-            No categories yet. Click "Add Category" to create one.
+        {filteredCategories.length === 0 && (
+          <div className="p-12 text-center text-stone-400 text-sm">
+            No categories found.
+          </div>
+        )}
+      </div>
+
+      {/* Mobile card list */}
+      <div className="md:hidden space-y-3">
+        {filteredCategories.map((cat) => (
+          <div key={cat.id} className="bg-white border border-stone-200 rounded-2xl p-4 space-y-3">
+            <div className="flex items-start gap-3">
+              {cat.logo_url ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={cat.logo_url} alt={cat.name} className="w-12 h-12 rounded-xl object-cover border border-stone-200 shrink-0" />
+              ) : (
+                <div className="w-12 h-12 rounded-xl bg-stone-100 border border-stone-200 flex items-center justify-center text-2xl shrink-0">
+                  {cat.icon}
+                </div>
+              )}
+              <div className="flex-1 min-w-0">
+                <p className="font-bold text-stone-900 text-sm">{cat.name}</p>
+                <p className="text-xs text-stone-500 line-clamp-2">{cat.name_hi || cat.id}</p>
+              </div>
+              <button
+                onClick={() => handleToggleActive(cat)}
+                className={`shrink-0 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${cat.is_active ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-stone-100 text-stone-500 border border-stone-200"}`}
+              >
+                {cat.is_active ? "Active" : "Off"}
+              </button>
+            </div>
+            <div className="flex items-center gap-4 text-xs text-stone-600">
+              <span>
+                <strong className="text-stone-900">{cat.exam_ids.length}</strong> exams
+              </span>
+              <span>
+                Order: <strong className="text-stone-900">{cat.priority}</strong>
+              </span>
+            </div>
+            <div className="flex gap-2 pt-2 border-t border-stone-100">
+              <button onClick={() => openEditModal(cat)} className="flex-1 py-2 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold rounded-lg">
+                Edit
+              </button>
+              <button onClick={() => handleDelete(cat.id)} className="flex-1 py-2 bg-red-50 border border-red-200 text-red-700 text-xs font-semibold rounded-lg">
+                Delete
+              </button>
+            </div>
+          </div>
+        ))}
+        {filteredCategories.length === 0 && (
+          <div className="p-12 text-center text-stone-400 text-sm bg-white border border-stone-200 rounded-2xl">
+            No categories found.
           </div>
         )}
       </div>
 
       {/* Modal */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm">
-          <div className="fixed inset-0" onClick={closeModal} />
-          <div className="relative bg-neutral-900 border border-neutral-800 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto z-10 p-6">
-            <div className="flex justify-between items-center mb-6">
-              <h3 className="text-xl font-bold text-white">{editingCategory ? "Edit Category" : "New Category"}</h3>
-              <button onClick={closeModal} className="w-8 h-8 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-400 flex items-center justify-center">✕</button>
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4 bg-stone-900/60 backdrop-blur-sm">
+          <div className="absolute inset-0" onClick={closeModal} />
+          <div className="relative bg-white border border-stone-200 rounded-t-3xl sm:rounded-2xl w-full max-w-2xl max-h-[92vh] overflow-hidden z-10 flex flex-col">
+            <div className="flex justify-between items-center p-4 border-b border-stone-200">
+              <h3 className="text-lg font-bold text-stone-900">
+                {editingCategory ? "Edit Category" : "New Category"}
+              </h3>
+              <button onClick={closeModal} className="w-9 h-9 rounded-lg hover:bg-stone-100 text-stone-500 flex items-center justify-center">
+                ✕
+              </button>
             </div>
 
-            <form onSubmit={handleSave} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+            <form onSubmit={handleSave} className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-semibold text-neutral-400 mb-1">Name (English) *</label>
-                  <input type="text" value={formData.name || ""} onChange={e => setFormData({ ...formData, name: e.target.value })} required className="w-full px-4 py-2.5 rounded-xl border border-neutral-700 bg-neutral-950 text-white focus:border-emerald-500 focus:outline-none" />
+                  <label className="block text-xs font-bold text-stone-600 mb-1">Name (English) *</label>
+                  <input
+                    type="text"
+                    value={formData.name || ""}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
+                    placeholder="e.g. RSMSSB"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                  />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-neutral-400 mb-1">Name (Hindi)</label>
-                  <input type="text" value={formData.name_hi || ""} onChange={e => setFormData({ ...formData, name_hi: e.target.value })} className="w-full px-4 py-2.5 rounded-xl border border-neutral-700 bg-neutral-950 text-white focus:border-emerald-500 focus:outline-none" />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-neutral-400 mb-1">Icon</label>
-                  <div className="flex flex-wrap gap-2">
-                    {ICONS.map(ic => (
-                      <button type="button" key={ic} onClick={() => setFormData({ ...formData, icon: ic })} className={`w-10 h-10 rounded-xl text-2xl flex items-center justify-center border-2 transition ${formData.icon === ic ? "border-emerald-500 bg-emerald-500/10" : "border-neutral-700 hover:border-neutral-600"}`}>
-                        {ic}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-neutral-400 mb-1">Color Theme</label>
-                  <div className="flex flex-wrap gap-2">
-                    {COLORS.map(c => (
-                      <button type="button" key={c} onClick={() => setFormData({ ...formData, color: c })} className={`w-10 h-10 rounded-xl border-2 transition ${formData.color === c ? "border-emerald-500 scale-110" : "border-neutral-700 hover:border-neutral-600"} ${c}`}></button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-semibold text-neutral-400 mb-1">Priority (Order)</label>
-                  <input type="number" value={formData.priority || 1} onChange={e => setFormData({ ...formData, priority: Number(e.target.value) })} className="w-full px-4 py-2.5 rounded-xl border border-neutral-700 bg-neutral-950 text-white focus:border-emerald-500 focus:outline-none" min={1} />
-                </div>
-                <div className="flex items-end">
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" checked={formData.is_active} onChange={e => setFormData({ ...formData, is_active: e.target.checked })} className="w-4 h-4 rounded border-neutral-700 bg-neutral-950 text-emerald-600 focus:ring-emerald-500" />
-                    <span className="text-sm text-neutral-300">Active</span>
-                  </label>
+                  <label className="block text-xs font-bold text-stone-600 mb-1">Body / Organization (Hindi)</label>
+                  <input
+                    type="text"
+                    value={formData.name_hi || ""}
+                    onChange={(e) => setFormData({ ...formData, name_hi: e.target.value })}
+                    placeholder="राजस्थान कर्मचारी चयन बोर्ड, जयपुर"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                  />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-neutral-400 mb-1">Logo Image (Optional)</label>
-                <div className="flex items-center gap-4">
-                  <input type="file" accept="image/*" onChange={handleLogoChange} className="text-sm text-neutral-400 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:bg-emerald-600 file:text-white hover:file:bg-emerald-700" />
-                  {logoPreview && (
-                    <img src={logoPreview} alt="Preview" className="w-16 h-16 rounded-xl object-cover border border-neutral-700" />
-                  )}
-                  {formData.logo_url && !logoPreview && !logoFile && (
-                    <img src={formData.logo_url} alt="Current" className="w-16 h-16 rounded-xl object-cover border border-neutral-700 opacity-60" />
-                  )}
+                <label className="block text-xs font-bold text-stone-600 mb-2">Icon</label>
+                <div className="flex flex-wrap gap-2">
+                  {ICON_CHOICES.map((ic) => (
+                    <button
+                      type="button"
+                      key={ic}
+                      onClick={() => setFormData({ ...formData, icon: ic })}
+                      className={`w-9 h-9 rounded-xl text-lg flex items-center justify-center border-2 transition ${
+                        formData.icon === ic ? "border-amber-500 bg-amber-50" : "border-stone-200 hover:border-stone-300 bg-white"
+                      }`}
+                    >
+                      {ic}
+                    </button>
+                  ))}
                 </div>
-                <p className="text-xs text-neutral-500 mt-1">Recommended: 200x200px, PNG/JPG/WebP, max 500KB</p>
               </div>
 
-              <div className="flex justify-end gap-3 pt-4 border-t border-neutral-800">
-                <button type="button" onClick={closeModal} className="px-5 py-2.5 rounded-xl border border-neutral-700 text-neutral-300 hover:bg-neutral-800 font-medium transition">
+              <div>
+                <label className="block text-xs font-bold text-stone-600 mb-2">Color Theme</label>
+                <div className="flex flex-wrap gap-2">
+                  {COLOR_CHOICES.map((c) => (
+                    <button
+                      type="button"
+                      key={c.value}
+                      onClick={() => setFormData({ ...formData, color: c.value })}
+                      className={`px-3 h-9 rounded-xl text-xs font-bold border-2 transition ${
+                        formData.color === c.value ? "border-amber-500 bg-amber-50 text-amber-700" : "border-stone-200 text-stone-600 hover:border-stone-300 bg-white"
+                      }`}
+                    >
+                      <span className={`inline-block w-3 h-3 rounded-full ${c.value} mr-1.5 align-middle`} />
+                      {c.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-bold text-stone-600 mb-1">Priority (Order)</label>
+                  <input
+                    type="number"
+                    value={formData.priority || 1}
+                    onChange={(e) => setFormData({ ...formData, priority: Number(e.target.value) })}
+                    min={1}
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                  />
+                </div>
+                <label className="flex items-end gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={formData.is_active}
+                    onChange={(e) => setFormData({ ...formData, is_active: e.target.checked })}
+                    className="w-4 h-4 rounded border-stone-300 text-amber-600 focus:ring-amber-500"
+                  />
+                  <span className="text-sm font-medium text-stone-700">Active</span>
+                </label>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-stone-600 mb-1">Logo Image (Optional)</label>
+                <div className="flex items-center gap-3">
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleLogoChange}
+                    className="text-xs text-stone-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-amber-600 file:text-white file:font-bold file:cursor-pointer"
+                  />
+                  {logoPreview && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={logoPreview} alt="Preview" className="w-12 h-12 rounded-lg object-cover border border-stone-200" />
+                  )}
+                </div>
+                <p className="text-[11px] text-stone-400 mt-1">200×200px recommended, max 500KB</p>
+              </div>
+
+              {/* Exam linking */}
+              <div>
+                <div className="flex items-center justify-between mb-2">
+                  <label className="block text-xs font-bold text-stone-600">Linked Exams ({formData.exam_ids?.length || 0})</label>
+                  <button
+                    type="button"
+                    onClick={() => setFormData({ ...formData, exam_ids: filteredExams.map((e) => e.id) })}
+                    className="text-[11px] text-amber-700 font-bold hover:underline"
+                  >
+                    Select all visible
+                  </button>
+                </div>
+                <input
+                  type="text"
+                  value={examSearch}
+                  onChange={(e) => setExamSearch(e.target.value)}
+                  placeholder="Search exams by name, short name, board..."
+                  className="w-full px-3.5 py-2 mb-2 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                />
+                <div className="border border-stone-200 rounded-xl max-h-56 overflow-y-auto divide-y divide-stone-100">
+                  {filteredExams.length === 0 ? (
+                    <div className="p-4 text-center text-stone-400 text-xs">No exams found</div>
+                  ) : (
+                    filteredExams.map((exam) => {
+                      const checked = (formData.exam_ids || []).includes(exam.id);
+                      return (
+                        <label
+                          key={exam.id}
+                          className={`flex items-center gap-3 p-3 cursor-pointer hover:bg-stone-50 ${checked ? "bg-amber-50" : ""}`}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={checked}
+                            onChange={() => toggleExam(exam.id)}
+                            className="w-4 h-4 rounded border-stone-300 text-amber-600 focus:ring-amber-500 shrink-0"
+                          />
+                          <div className="flex-1 min-w-0">
+                            <p className="text-sm font-semibold text-stone-900 truncate">{exam.name}</p>
+                            <p className="text-[11px] text-stone-500 truncate">
+                              {exam.short_name} • {exam.board}
+                            </p>
+                          </div>
+                          {!exam.is_active && (
+                            <span className="text-[10px] text-stone-400 bg-stone-100 px-1.5 py-0.5 rounded">Inactive</span>
+                          )}
+                        </label>
+                      );
+                    })
+                  )}
+                </div>
+              </div>
+
+              <div className="flex flex-col-reverse sm:flex-row justify-end gap-2 pt-4 border-t border-stone-200">
+                <button
+                  type="button"
+                  onClick={closeModal}
+                  className="px-4 py-2.5 rounded-xl border border-stone-300 text-stone-700 hover:bg-stone-50 font-semibold text-sm"
+                >
                   Cancel
                 </button>
-                <button type="submit" disabled={saving} className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black transition disabled:opacity-50">
-                  {saving ? "Saving..." : (editingCategory ? "Update" : "Create")}
+                <button
+                  type="submit"
+                  disabled={saving}
+                  className="px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm disabled:opacity-50"
+                >
+                  {saving ? "Saving..." : editingCategory ? "Update" : "Create"}
                 </button>
               </div>
             </form>

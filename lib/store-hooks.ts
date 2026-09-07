@@ -3,31 +3,33 @@
 import { useState, useEffect } from "react";
 import { Category, Exam, Course, Settings } from "@/lib/store-types";
 
-export function useCategories() {
+export function useCategories(scope: "public" | "all" = "public") {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/categories")
+    fetch(`/api/categories?scope=${scope}`)
       .then(res => res.json())
       .then(data => { setCategories(data); setLoading(false); })
       .catch(() => setLoading(false));
-  }, []);
+  }, [scope]);
 
   return { categories, loading };
 }
 
-export function useExams(categoryId?: string) {
+export function useExams(categoryId?: string, scope: "public" | "all" = "public") {
   const [exams, setExams] = useState<Exam[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const url = categoryId ? `/api/exams?category=${categoryId}` : "/api/exams";
+    const url = categoryId
+      ? `/api/exams?category=${categoryId}&scope=${scope}`
+      : `/api/exams?scope=${scope}`;
     fetch(url)
       .then(res => res.json())
       .then(data => { setExams(data); setLoading(false); })
       .catch(() => setLoading(false));
-  }, [categoryId]);
+  }, [categoryId, scope]);
 
   return { exams, loading };
 }

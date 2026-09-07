@@ -9,14 +9,7 @@ import { Category, Exam } from "@/lib/store-types";
 import { SearchIcon, CloseIcon, GridIcon, ChevronDownIcon, ChevronRightIcon, ArrowRightIcon } from "@/components/icons";
 
 const POPULAR_FILTERS = [
-  { id: "all", label: "All Categories" },
-  { id: "rajasthan", label: "Rajasthan State" },
-  { id: "central", label: "Central & NTA" },
-  { id: "banking", label: "Banking & Finance" },
-  { id: "ssc", label: "SSC" },
-  { id: "railways", label: "Railways RRB" },
-  { id: "defence", label: "Defence & Police" },
-  { id: "teaching", label: "Teaching & TET" },
+  { id: "all", label: "All" },
 ];
 
 export default function AllExamsPage() {
@@ -30,7 +23,7 @@ export default function AllExamsPage() {
   const [visibleCount, setVisibleCount] = useState(24);
 
   useEffect(() => {
-    fetch("/api/categories")
+    fetch("/api/categories?scope=public")
       .then((res) => res.json())
       .then((data: Category[]) => {
         setCategories(data);

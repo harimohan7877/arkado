@@ -353,7 +353,7 @@ function StatCard({ label, value, accent }: { label: string; value: string | num
   return (
     <div className={`bg-white border rounded-2xl p-4 ${accents[accent]}`}>
       <p className="text-[10px] uppercase tracking-wider font-bold text-stone-500">{label}</p>
-      <p className="text-xl sm:text-2xl font-black mt-1 text-stone-900 break-all">{value}</p>
+      <p className="text-xl sm:text-2xl font-black mt-1 text-stone-900">{value}</p>
     </div>
   );
 }
@@ -416,7 +416,7 @@ function DetailItem({ label, value, copyable, onCopy }: { label: string; value: 
     <div className="p-3 bg-stone-50 rounded-xl border border-stone-200">
       <p className="text-[10px] text-stone-500 uppercase tracking-wider font-bold">{label}</p>
       <div className="flex items-center gap-2 mt-1">
-        <span className="font-mono text-xs text-stone-900 break-all">{value}</span>
+        <span className="font-mono text-xs text-stone-900">{value}</span>
         {copyable && onCopy && (
           <button onClick={onCopy} className="text-[10px] bg-stone-200 hover:bg-stone-300 px-2 py-1 rounded font-semibold">
             Copy

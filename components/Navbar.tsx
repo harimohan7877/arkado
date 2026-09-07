@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Category } from "@/lib/store-types";
 import { Settings } from "@/lib/store-types";
@@ -68,34 +69,21 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
             <MenuIcon size={20} />
           </button>
 
-          {/* Brand - Arkado logo */}
-          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 shrink-0 group">
-            <div className="relative w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-amber-500 via-amber-600 to-amber-800 flex items-center justify-center shadow-md group-hover:shadow-amber-500/30 transition-all shrink-0">
-              <span
-                className="text-white font-black italic text-lg sm:text-2xl leading-none tracking-tight"
-                style={{
-                  fontFamily: 'Georgia, "Times New Roman", serif',
-                  textShadow: '0 1px 2px rgba(0,0,0,0.25)',
-                  transform: 'skewX(-6deg)'
-                }}
-              >
-                A
-              </span>
-              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-white"></span>
+          {/* Brand - Arkado Wordmark Logo (Option 5) */}
+          <Link href="/" className="flex items-center gap-3 shrink-0 group py-1">
+            <div className="relative h-8 sm:h-9 w-28 sm:w-36 flex items-center">
+              <Image
+                src="/logos/arkado_wordmark_5.jpg"
+                alt="Arkado"
+                width={160}
+                height={48}
+                priority
+                className="object-contain w-full h-full"
+              />
             </div>
-            <div className="flex flex-col leading-none">
-              <div className="flex items-baseline">
-                <span
-                  className="font-black text-lg sm:text-xl text-stone-950 tracking-tight"
-                  style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
-                >
-                  {logoText}
-                </span>
-              </div>
-              <p className="text-[9px] sm:text-[10px] text-stone-500 hidden sm:block font-medium mt-0.5 truncate max-w-[220px]">
-                {tagline}
-              </p>
-            </div>
+            <p className="text-[9px] sm:text-[10px] text-stone-500 hidden xl:block font-medium border-l border-stone-200 pl-2.5 py-0.5 truncate max-w-[220px]">
+              {tagline}
+            </p>
           </Link>
 
           {/* Search bar (desktop) */}
@@ -289,7 +277,15 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
           <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm" onClick={() => setShowMobileMenu(false)} />
           <div className="absolute left-0 top-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl flex flex-col anim-slide-down">
             <div className="p-4 border-b border-stone-200 flex items-center justify-between">
-              <span className="font-bold text-stone-900">Menu</span>
+              <Link href="/" onClick={() => setShowMobileMenu(false)} className="relative h-7 w-28 flex items-center">
+                <Image
+                  src="/logos/arkado_wordmark_5.jpg"
+                  alt="Arkado"
+                  width={120}
+                  height={32}
+                  className="object-contain w-full h-full"
+                />
+              </Link>
               <button
                 onClick={() => setShowMobileMenu(false)}
                 className="w-9 h-9 rounded-md hover:bg-stone-100 flex items-center justify-center cursor-pointer"

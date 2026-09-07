@@ -2,6 +2,7 @@
 
 import { useState, useEffect, startTransition } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import CategoriesTab from "./components/CategoriesTab";
 import ExamsTab from "./components/ExamsTab";
 import CoursesTab from "./components/CoursesTab";
@@ -73,7 +74,7 @@ export default function AdminDashboard() {
   });
 
   useEffect(() => {
-    const isVerified = document.cookie.includes("arkado-admin-verified=true");
+    const isVerified = document.cookie.includes("arkado-admin-verified=");
     if (!isVerified) {
       router.push("/admin/login");
     }
@@ -141,18 +142,18 @@ export default function AdminDashboard() {
       <aside className="hidden lg:flex w-64 bg-white border-r border-stone-200 flex-col shrink-0 sticky top-0 h-screen">
         <div className="p-5 border-b border-stone-200">
           <div className="flex items-center gap-2.5">
-            <span
-              className="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-500 via-amber-600 to-amber-800 flex items-center justify-center text-white font-black text-xl shadow-md"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
-              A
-            </span>
-            <div className="leading-tight">
-              <h1 className="text-base font-black text-stone-900">Arkado</h1>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded-full">
-                Admin Panel
-              </span>
+            <div className="relative h-8 w-28 flex items-center">
+              <Image
+                src="/logos/arkado_wordmark_5.jpg"
+                alt="Arkado"
+                width={120}
+                height={32}
+                className="object-contain w-full h-full"
+              />
             </div>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded-full">
+              Admin
+            </span>
           </div>
         </div>
 
@@ -204,18 +205,18 @@ export default function AdminDashboard() {
       >
         <div className="p-5 border-b border-stone-200 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <span
-              className="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-500 via-amber-600 to-amber-800 flex items-center justify-center text-white font-black text-xl shadow-md"
-              style={{ fontFamily: "Georgia, serif" }}
-            >
-              A
-            </span>
-            <div className="leading-tight">
-              <h1 className="text-base font-black text-stone-900">Arkado</h1>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded-full">
-                Admin
-              </span>
+            <div className="relative h-7 w-24 flex items-center">
+              <Image
+                src="/logos/arkado_wordmark_5.jpg"
+                alt="Arkado"
+                width={120}
+                height={32}
+                className="object-contain w-full h-full"
+              />
             </div>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded-full">
+              Admin
+            </span>
           </div>
           <button
             onClick={() => setDrawerOpen(false)}
@@ -270,13 +271,15 @@ export default function AdminDashboard() {
               <MenuIcon />
             </button>
             <div className="flex items-center gap-2">
-              <span
-                className="w-7 h-7 rounded-lg bg-gradient-to-br from-amber-500 via-amber-600 to-amber-800 flex items-center justify-center text-white font-black text-sm shadow"
-                style={{ fontFamily: "Georgia, serif" }}
-              >
-                A
-              </span>
-              <span className="font-black text-stone-900">Arkado</span>
+              <div className="relative h-6 w-20 flex items-center">
+                <Image
+                  src="/logos/arkado_wordmark_5.jpg"
+                  alt="Arkado"
+                  width={100}
+                  height={28}
+                  className="object-contain w-full h-full"
+                />
+              </div>
               <span className="text-[9px] font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-1.5 py-0.5 rounded-full">
                 Admin
               </span>
@@ -473,9 +476,7 @@ function StatCard({
       <p className="text-[10px] uppercase tracking-wider font-bold text-stone-500">
         {label}
       </p>
-      <p className="text-xl sm:text-2xl font-black mt-1 text-stone-900 break-all">
-        {value}
-      </p>
+      <p className="text-xl sm:text-2xl font-black mt-1 text-stone-900">{value}</p>
     </div>
   );
 }

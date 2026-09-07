@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Settings } from "@/lib/store-types";
 import {
@@ -91,14 +92,15 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1 space-y-3">
-            <div className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center text-white font-black text-lg shadow-sm">
-                A
-              </div>
-              <span className="text-white font-extrabold text-base">
-                {logoText}
-              </span>
-            </div>
+            <Link href="/" className="inline-flex items-center bg-white px-3 py-1.5 rounded-xl shadow-xs">
+              <Image
+                src="/logos/arkado_wordmark_5.jpg"
+                alt="Arkado"
+                width={120}
+                height={34}
+                className="object-contain h-7 w-auto"
+              />
+            </Link>
             <p className="text-xs text-stone-400 leading-relaxed">
               {footerTagline}
             </p>

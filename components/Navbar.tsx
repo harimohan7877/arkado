@@ -52,7 +52,6 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
   }, [showMobileMenu]);
 
   const logoText = settings?.brand?.logo_text || settings?.site_name || "Arkado";
-  const badgeText = settings?.brand?.logo_badge_text || "STORE";
   const tagline = settings?.brand?.tagline || "Pattern-decoded notes for All-India exams";
 
   return (
@@ -69,12 +68,12 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
             <MenuIcon size={20} />
           </button>
 
-          {/* Brand - Beautiful Arkado logo with mixed fonts */}
+          {/* Brand - Arkado logo */}
           <Link href="/" className="flex items-center gap-2 sm:gap-2.5 shrink-0 group">
             <div className="relative w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-amber-500 via-amber-600 to-amber-800 flex items-center justify-center shadow-md group-hover:shadow-amber-500/30 transition-all shrink-0">
-              <span 
-                className="text-white font-black italic text-lg sm:text-2xl leading-none tracking-tight" 
-                style={{ 
+              <span
+                className="text-white font-black italic text-lg sm:text-2xl leading-none tracking-tight"
+                style={{
                   fontFamily: 'Georgia, "Times New Roman", serif',
                   textShadow: '0 1px 2px rgba(0,0,0,0.25)',
                   transform: 'skewX(-6deg)'
@@ -85,21 +84,12 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
               <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-white"></span>
             </div>
             <div className="flex flex-col leading-none">
-              <div className="flex items-baseline gap-1">
-                <span 
+              <div className="flex items-baseline">
+                <span
                   className="font-black text-lg sm:text-xl text-stone-950 tracking-tight"
                   style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
                 >
-                  {logoText.slice(0, 4)}
-                </span>
-                <span 
-                  className="font-light text-lg sm:text-xl text-amber-600 tracking-tight italic"
-                  style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
-                >
-                  {logoText.slice(4) || "do"}
-                </span>
-                <span className="text-[8px] sm:text-[9px] font-extrabold uppercase bg-amber-100 text-amber-800 px-1 py-0.5 rounded border border-amber-200/80 align-middle ml-0.5">
-                  {badgeText}
+                  {logoText}
                 </span>
               </div>
               <p className="text-[9px] sm:text-[10px] text-stone-500 hidden sm:block font-medium mt-0.5 truncate max-w-[220px]">
@@ -123,7 +113,7 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
               />
               <button
                 type="submit"
-                className="px-5 bg-amber-600 hover:bg-amber-700 text-white rounded-r-lg flex items-center justify-center transition cursor-pointer"
+                className="px-5 bg-stone-800 hover:bg-stone-900 text-white rounded-r-lg flex items-center justify-center transition cursor-pointer"
                 aria-label="Search"
               >
                 <SearchIcon size={18} />
@@ -178,10 +168,10 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
               onMouseEnter={() => setShowCatDropdown(true)}
               onMouseLeave={() => setShowCatDropdown(false)}
             >
-              <button className="h-9 my-1 px-3.5 bg-gradient-to-r from-amber-600 via-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold text-xs sm:text-sm flex items-center gap-2 cursor-pointer transition-all rounded-xl shadow-xs hover:shadow-md">
-                <GridIcon size={15} className="text-amber-100" />
+              <button className="h-9 my-1 px-3.5 bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-xs sm:text-sm flex items-center gap-2 cursor-pointer transition-all rounded-xl border border-stone-300 hover:border-stone-400">
+                <GridIcon size={15} className="text-stone-500" />
                 <span>All Categories</span>
-                <ChevronDownIcon size={13} className="text-amber-200" />
+                <ChevronDownIcon size={13} className="text-stone-400" />
               </button>
 
               {showCatDropdown && categories.length > 0 && (
@@ -262,7 +252,7 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
               />
               <button
                 type="submit"
-                className="px-4 bg-amber-600 text-white rounded-r-lg"
+                className="px-4 bg-stone-800 text-white rounded-r-lg"
               >
                 <SearchIcon size={18} />
               </button>
@@ -337,7 +327,7 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
                   Categories
                 </p>
               </div>
-              {categories.slice(0, 8).map((cat) => (
+              {categories.slice(0, 6).map((cat) => (
                 <Link
                   key={cat.id}
                   href={`/category/${cat.id}`}

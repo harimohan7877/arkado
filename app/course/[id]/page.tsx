@@ -73,10 +73,10 @@ export default function CourseDetailPage({ params }: PageProps) {
           <div className="lg:col-span-8 space-y-8">
             <div className="bg-white p-6 sm:p-8 rounded-3xl border border-neutral-200 shadow-xs space-y-4">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs font-black bg-neutral-900 text-white px-3 py-1 rounded-full uppercase">
+                <span className="text-xs font-bold text-stone-600 bg-stone-100 px-3 py-1 rounded-full uppercase">
                   {examBoard}
                 </span>
-                <span className="text-xs font-bold bg-amber-100 text-amber-900 px-3 py-1 rounded-full">
+                <span className="text-xs font-bold text-stone-500 bg-stone-50 px-3 py-1 rounded-full border border-stone-200">
                   {course.badge}
                 </span>
               </div>
@@ -85,37 +85,37 @@ export default function CourseDetailPage({ params }: PageProps) {
                 {course.title}
               </h1>
 
-              <p className="text-sm text-neutral-600 leading-relaxed">
+              <p className="text-sm text-neutral-500 leading-relaxed">
                 {course.short_description}
               </p>
 
-              <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-neutral-600 font-medium">
-                <span className="bg-neutral-100 px-3 py-1.5 rounded-xl flex items-center gap-1.5">
-                  <span>📄</span> {course.pages_count}
+              <div className="pt-2 flex flex-wrap items-center gap-2 text-xs text-neutral-500 font-medium">
+                <span className="bg-stone-100 px-3 py-1.5 rounded-xl flex items-center gap-1.5">
+                  📄 {course.pages_count}
                 </span>
-                <span className="bg-neutral-100 px-3 py-1.5 rounded-xl flex items-center gap-1.5">
-                  <span>🌐</span> Language: {course.language}
+                <span className="bg-stone-100 px-3 py-1.5 rounded-xl flex items-center gap-1.5">
+                  🌐 {course.language}
                 </span>
-                <span className="bg-emerald-50 text-emerald-800 border border-emerald-200 px-3 py-1.5 rounded-xl font-bold flex items-center gap-1.5">
-                  <span>⚡</span> {course.format}
+                <span className="bg-stone-100 px-3 py-1.5 rounded-xl flex items-center gap-1.5">
+                  ⚡ {course.format}
                 </span>
               </div>
             </div>
 
             <div className="bg-white p-6 sm:p-8 rounded-3xl border border-neutral-200 shadow-xs space-y-4">
-              <h3 className="text-lg font-black text-neutral-900 flex items-center gap-2">
+              <h3 className="text-base font-bold text-neutral-600 flex items-center gap-2">
                 <span>🎯</span> Key Highlights
               </h3>
-              <div className="grid grid-cols-1 gap-3">
+              <div className="grid grid-cols-1 gap-2.5">
                 {course.highlights.map((hl, i) => (
                   <div
                     key={i}
-                    className="p-3.5 bg-neutral-50 rounded-2xl border border-neutral-100 flex items-start gap-3"
+                    className="py-2.5 flex items-start gap-3 border-b border-neutral-100 last:border-0"
                   >
-                    <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                    <span className="w-5 h-5 rounded-full bg-stone-100 text-stone-500 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
                       ✓
                     </span>
-                    <span className="text-xs sm:text-sm font-semibold text-neutral-800">
+                    <span className="text-xs sm:text-sm text-neutral-600">
                       {hl}
                     </span>
                   </div>
@@ -140,16 +140,16 @@ export default function CourseDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-amber-500 to-amber-600 text-neutral-950 p-6 sm:p-8 rounded-3xl shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="bg-neutral-100 border border-neutral-200 p-6 sm:p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="space-y-1 text-center sm:text-left">
-                <span className="text-[11px] font-black uppercase tracking-wider bg-neutral-950 text-white px-2.5 py-0.5 rounded-full">
-                  100% Transparent
+                <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-500 bg-white px-2.5 py-0.5 rounded-full border border-neutral-300">
+                  Free Preview
                 </span>
-                <h4 className="text-xl font-black text-white">
-                  Free Sample PDF Preview
+                <h4 className="text-lg font-bold text-neutral-900">
+                  Sample PDF Notes
                 </h4>
-                <p className="text-xs text-neutral-900 font-medium">
-                  Check notes quality and handwriting before buying.
+                <p className="text-xs text-neutral-500">
+                  Check handwriting quality before buying.
                 </p>
               </div>
 
@@ -157,7 +157,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                 href={course.sample_pdf_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-full bg-neutral-950 hover:bg-neutral-900 text-white font-black text-xs sm:text-sm transition shadow-md whitespace-nowrap"
+                className="px-6 py-3 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white font-bold text-xs transition shadow-md whitespace-nowrap"
               >
                 📄 Open Sample PDF ↗
               </a>
@@ -216,18 +216,18 @@ export default function CourseDetailPage({ params }: PageProps) {
                 </a>
               </div>
 
-              <div className="pt-4 border-t border-neutral-100 space-y-2 text-xs text-neutral-600">
+              <div className="pt-4 border-t border-neutral-100 space-y-2 text-xs text-neutral-500">
                 <div className="flex items-center gap-2">
-                  <span className="text-emerald-600 font-bold">✓</span>
+                  <span className="text-neutral-400 font-bold">✓</span>
                   <span>Direct Google Drive PDF Download</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-emerald-600 font-bold">✓</span>
-                  <span>WhatsApp or Gmail Delivery Option</span>
+                  <span className="text-neutral-400 font-bold">✓</span>
+                  <span>WhatsApp or Gmail Delivery</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-emerald-600 font-bold">✓</span>
-                  <span>100% Secure UPI Payment (0% Extra Charges)</span>
+                  <span className="text-neutral-400 font-bold">✓</span>
+                  <span>100% Secure UPI (0% Extra Charges)</span>
                 </div>
               </div>
             </div>

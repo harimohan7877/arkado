@@ -344,17 +344,9 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
                 <span className="text-white font-black italic text-xl" style={{ fontFamily: "Georgia, serif", transform: "skewX(-6deg)" }}>A</span>
               </div>
               <div className="flex flex-col leading-none">
-                <div className="flex items-baseline gap-1">
-                  <span className="font-black text-xl text-stone-900" style={{ fontFamily: "Georgia, serif" }}>
-                    {(settings.brand?.logo_text || "Arkado").slice(0, 4)}
-                  </span>
-                  <span className="font-light text-xl text-amber-600 italic" style={{ fontFamily: "Georgia, serif" }}>
-                    {(settings.brand?.logo_text || "Arkado").slice(4) || "do"}
-                  </span>
-                  <span className="text-[9px] font-extrabold uppercase bg-amber-100 text-amber-800 px-1 py-0.5 rounded border border-amber-200">
-                    {settings.brand?.logo_badge_text || "STORE"}
-                  </span>
-                </div>
+                <span className="font-black text-xl text-stone-900" style={{ fontFamily: "Georgia, serif" }}>
+                  {settings.brand?.logo_text || "Arkado"}
+                </span>
                 <p className="text-[10px] text-stone-500 font-medium mt-0.5">{settings.brand?.tagline}</p>
               </div>
             </div>

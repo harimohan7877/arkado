@@ -54,7 +54,7 @@ export default function SidebarCategories({ activeCategory }: SidebarCategoriesP
               className={`cat-link w-full overflow-hidden ${isActive ? "active" : ""}`}
               title={cat.name}
             >
-              <span className="flex items-center gap-2.5 min-w-0 flex-1 overflow-hidden">
+              <span className="flex items-center gap-2.5 min-w-0 flex-1">
                 <span className="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 border border-stone-200 p-0.5">
                   {cat.logo_url ? (
                     <Image
@@ -68,7 +68,7 @@ export default function SidebarCategories({ activeCategory }: SidebarCategoriesP
                     <span className="text-sm">{cat.icon || "📚"}</span>
                   )}
                 </span>
-                <span className="truncate text-xs font-semibold text-stone-800 block min-w-0">
+                <span className="text-sm font-semibold text-stone-800 line-clamp-2 leading-snug min-w-0">
                   {cat.name}
                 </span>
               </span>

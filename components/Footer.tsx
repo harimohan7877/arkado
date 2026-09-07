@@ -36,7 +36,6 @@ export default function Footer() {
   const homepage = settings?.homepage || {};
 
   const logoText = brand.logo_text || "Arkado";
-  const badgeText = brand.logo_badge_text || "STORE";
   const footerTagline = brand.footer_tagline || "All-India exam preparation — deep-level analysis & pattern-based notes.";
 
   const whatsappUrl = social.whatsapp_url || "https://wa.me/917852004401";

@@ -7,27 +7,6 @@ const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || supabaseAnon
 // Client-side (browser) — uses anon key
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-// Client-side mock auth override for testing (so any email/OTP logs in successfully)
-if (typeof window !== 'undefined') {
-  const originalGetUser = supabase.auth.getUser.bind(supabase.auth);
-  supabase.auth.getUser = async (token?: string) => {
-    const mockUserStr = localStorage.getItem('mock_user_session');
-    if (mockUserStr) {
-      try {
-        const mockUser = JSON.parse(mockUserStr);
-        return { data: { user: mockUser }, error: null };
-      } catch {}
-    }
-    return originalGetUser(token);
-  };
-
-  const originalSignOut = supabase.auth.signOut.bind(supabase.auth);
-  supabase.auth.signOut = async () => {
-    localStorage.removeItem('mock_user_session');
-    return originalSignOut();
-  };
-}
-
 // Server-side (API routes) — uses service role key
 export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey);
 

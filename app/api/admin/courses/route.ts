@@ -1,30 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readFile, writeFile } from "fs/promises";
 import { join } from "path";
+import { verifyAdminSession } from "@/lib/admin-auth";
 
 const FILE = join(process.cwd(), "data/courses-new.json");
-
-function verifyAuth(req: NextRequest) {
-  const auth = req.headers.get("authorization");
-  return auth === "7877";
-}
+const MAX_FILE_SIZE = 1024 * 1024;
+const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 
 function readCourses() {
   return readFile(FILE, "utf-8").then(JSON.parse).catch(() => []);
 }
 
-function writeCourses(data: any[]) {
+function writeCourses(data: unknown[]) {
   return writeFile(FILE, JSON.stringify(data, null, 2));
 }
 
 export async function GET(req: NextRequest) {
-  if (!verifyAuth(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const data = await readCourses();
   return NextResponse.json(data);
 }
 
 export async function POST(req: NextRequest) {
-  if (!verifyAuth(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const formData = await req.formData();
   const courses = await readCourses();
@@ -40,7 +38,7 @@ export async function POST(req: NextRequest) {
     short_description: formData.get("short_description")?.toString() || "",
     original_price: Number(formData.get("original_price") || 999),
     price: Number(formData.get("price") || 199),
-    discount_percent: Math.round(((Number(formData.get("original_price") || 999) - Number(formData.get("price") || 199)) / Number(formData.get("original_price") || 999)) * 100),
+    discount_percent: Math.round((1 - (Number(formData.get("price") || 199) / Number(formData.get("original_price") || 999))) * 100),
     highlights: JSON.parse(formData.get("highlights")?.toString() || "[]"),
     subjects: JSON.parse(formData.get("subjects")?.toString() || "[]"),
     syllabus_preview: JSON.parse(formData.get("syllabus_preview")?.toString() || "[]"),
@@ -62,10 +60,17 @@ export async function POST(req: NextRequest) {
 
   const cover = formData.get("cover") as File | null;
   if (cover && cover.size > 0) {
+    if (cover.size > MAX_FILE_SIZE) {
+      return NextResponse.json({ error: "File too large. Max 1MB allowed." }, { status: 400 });
+    }
+    if (!ALLOWED_TYPES.includes(cover.type)) {
+      return NextResponse.json({ error: "Invalid file type. Only JPEG, PNG, WebP allowed." }, { status: 400 });
+    }
     const bytes = await cover.arrayBuffer();
     const buffer = Buffer.from(bytes);
     const ext = cover.name.split(".").pop() || "jpg";
-    const fileName = `${slug}.${ext}`;
+    const safeSlug = slug.replace(/[^a-z0-9-]/gi, "");
+    const fileName = `${safeSlug}.${ext}`;
     const publicDir = join(process.cwd(), "public/images/bundles");
     await writeFile(join(publicDir, fileName), buffer);
     newCourse.cover_image = `/images/bundles/${fileName}`;

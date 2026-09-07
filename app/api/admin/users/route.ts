@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(users || []);
   } catch (error: unknown) {
     console.error('Users query error:', error);
-    return NextResponse.json([], { status: 200 });
+    return NextResponse.json({ error: 'Failed to fetch users' }, { status: 500 });
   }
 }
 

@@ -17,13 +17,25 @@ export default function AdminLoginForm() {
     setError("");
     setLoading(true);
 
-    if (pin === "7877") {
-      document.cookie = "arkado-admin-verified=true; path=/; max-age=86400; SameSite=Lax";
-      sessionStorage.setItem("arkado-admin-verified", "7877");
-      router.push(redirect);
-      router.refresh();
-    } else {
-      setError("Invalid PIN. Access denied.");
+    try {
+      const res = await fetch("/api/admin/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pin }),
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        document.cookie = `arkado-admin-verified=${data.token}; path=/; max-age=86400; SameSite=Lax`;
+        sessionStorage.setItem("arkado-admin-verified", data.token);
+        router.push(redirect);
+        router.refresh();
+      } else {
+        setError("Invalid PIN. Access denied.");
+        setLoading(false);
+      }
+    } catch {
+      setError("Something went wrong. Try again.");
       setLoading(false);
     }
   };
@@ -72,8 +84,7 @@ export default function AdminLoginForm() {
         </form>
 
         <div className="mt-6 p-4 bg-neutral-950 border border-neutral-800 rounded-xl text-xs text-neutral-500">
-          <p className="font-semibold text-neutral-400">Default PIN: <span className="font-mono text-white">7877</span></p>
-          <p className="mt-1">Change this in production via environment variable.</p>
+          <p className="font-semibold text-neutral-400">PIN set via <code className="text-white font-mono">ADMIN_PASSCODE</code> environment variable.</p>
         </div>
       </div>
     </div>

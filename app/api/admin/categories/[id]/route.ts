@@ -1,42 +1,45 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readFile, writeFile } from "fs/promises";
 import { join } from "path";
+import { verifyAdminSession } from "@/lib/admin-auth";
 
 const FILE = join(process.cwd(), "data/categories.json");
+const MAX_FILE_SIZE = 500 * 1024;
+const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
 
-function verifyAuth(req: NextRequest) {
-  const auth = req.headers.get("authorization");
-  return auth === "7877";
+interface Category {
+  id: string;
+  [key: string]: unknown;
 }
 
-function readCategories() {
+function readCategories(): Promise<Category[]> {
   return readFile(FILE, "utf-8").then(JSON.parse).catch(() => []);
 }
 
-function writeCategories(data: any[]) {
+function writeCategories(data: unknown[]) {
   return writeFile(FILE, JSON.stringify(data, null, 2));
 }
 
 export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
-  if (!verifyAuth(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const { id } = await params;
   const categories = await readCategories();
-  const cat = categories.find((c: any) => c.id === id);
+  const cat = categories.find((c) => c.id === id);
   if (!cat) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json(cat);
 }
 
 export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
-  if (!verifyAuth(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const { id } = await params;
   const formData = await req.formData();
   const categories = await readCategories();
-  const idx = categories.findIndex((c: any) => c.id === id);
+  const idx = categories.findIndex((c) => c.id === id);
   if (idx === -1) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
   const cat = categories[idx];
-  const updates: any = { ...cat, updated_at: new Date().toISOString() };
+  const updates: Record<string, unknown> = { ...cat, updated_at: new Date().toISOString() };
 
   for (const [key, value] of formData.entries()) {
     if (key === "logo") continue;
@@ -48,25 +51,32 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
 
   const logo = formData.get("logo") as File | null;
   if (logo && logo.size > 0) {
+    if (logo.size > MAX_FILE_SIZE) {
+      return NextResponse.json({ error: "File too large. Max 500KB allowed." }, { status: 400 });
+    }
+    if (!ALLOWED_TYPES.includes(logo.type)) {
+      return NextResponse.json({ error: "Invalid file type. Only JPEG, PNG, WebP, GIF allowed." }, { status: 400 });
+    }
     const bytes = await logo.arrayBuffer();
     const buffer = Buffer.from(bytes);
     const ext = logo.name.split(".").pop() || "png";
-    const fileName = `${id}.${ext}`;
+    const safeId = id.replace(/[^a-z0-9-]/gi, "");
+    const fileName = `${safeId}.${ext}`;
     const publicDir = join(process.cwd(), "public/logos");
     await writeFile(join(publicDir, fileName), buffer);
     updates.logo_url = `/logos/${fileName}`;
   }
 
-  categories[idx] = updates;
+  categories[idx] = updates as Category;
   await writeCategories(categories);
   return NextResponse.json(updates);
 }
 
 export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
-  if (!verifyAuth(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const { id } = await params;
   const categories = await readCategories();
-  const filtered = categories.filter((c: any) => c.id !== id);
+  const filtered = categories.filter((c) => c.id !== id);
   if (filtered.length === categories.length) return NextResponse.json({ error: "Not found" }, { status: 404 });
   await writeCategories(filtered);
   return NextResponse.json({ success: true });

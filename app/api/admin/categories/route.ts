@@ -1,30 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readFile, writeFile } from "fs/promises";
 import { join } from "path";
+import { verifyAdminSession } from "@/lib/admin-auth";
 
 const FILE = join(process.cwd(), "data/categories.json");
-
-function verifyAuth(req: NextRequest) {
-  const auth = req.headers.get("authorization");
-  return auth === "7877";
-}
+const MAX_FILE_SIZE = 500 * 1024;
+const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
 
 function readCategories() {
   return readFile(FILE, "utf-8").then(JSON.parse).catch(() => []);
 }
 
-function writeCategories(data: any[]) {
+function writeCategories(data: unknown[]) {
   return writeFile(FILE, JSON.stringify(data, null, 2));
 }
 
 export async function GET(req: NextRequest) {
-  if (!verifyAuth(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const data = await readCategories();
   return NextResponse.json(data);
 }
 
 export async function POST(req: NextRequest) {
-  if (!verifyAuth(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const formData = await req.formData();
   const categories = await readCategories();
@@ -45,10 +43,17 @@ export async function POST(req: NextRequest) {
 
   const logo = formData.get("logo") as File | null;
   if (logo && logo.size > 0) {
+    if (logo.size > MAX_FILE_SIZE) {
+      return NextResponse.json({ error: "File too large. Max 500KB allowed." }, { status: 400 });
+    }
+    if (!ALLOWED_TYPES.includes(logo.type)) {
+      return NextResponse.json({ error: "Invalid file type. Only JPEG, PNG, WebP, GIF allowed." }, { status: 400 });
+    }
     const bytes = await logo.arrayBuffer();
     const buffer = Buffer.from(bytes);
     const ext = logo.name.split(".").pop() || "png";
-    const fileName = `${newCategory.id}.${ext}`;
+    const safeName = newCategory.id.replace(/[^a-z0-9-]/gi, "");
+    const fileName = `${safeName}.${ext}`;
     const publicDir = join(process.cwd(), "public/logos");
     await writeFile(join(publicDir, fileName), buffer);
     newCategory.logo_url = `/logos/${fileName}`;

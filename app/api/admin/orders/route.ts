@@ -1,30 +1,26 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readFile, writeFile } from "fs/promises";
 import { join } from "path";
+import { verifyAdminSession } from "@/lib/admin-auth";
 
 const FILE = join(process.cwd(), "data/orders.json");
-
-function verifyAuth(req: NextRequest) {
-  const auth = req.headers.get("authorization");
-  return auth === "7877";
-}
 
 function readOrders() {
   return readFile(FILE, "utf-8").then(JSON.parse).catch(() => []);
 }
 
-function writeOrders(data: any[]) {
+function writeOrders(data: unknown[]) {
   return writeFile(FILE, JSON.stringify(data, null, 2));
 }
 
 export async function GET(req: NextRequest) {
-  if (!verifyAuth(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const data = await readOrders();
   return NextResponse.json(data);
 }
 
 export async function PUT(req: NextRequest) {
-  if (!verifyAuth(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const body = await req.json();
   const { orderId, action, value } = body;
@@ -32,7 +28,7 @@ export async function PUT(req: NextRequest) {
   if (!orderId || !action) return NextResponse.json({ error: "Missing parameters" }, { status: 400 });
 
   const orders = await readOrders();
-  const idx = orders.findIndex((o: any) => o.id === orderId || o.order_id === orderId);
+  const idx = orders.findIndex((o: Record<string, unknown>) => o.id === orderId || o.order_id === orderId);
   if (idx === -1) return NextResponse.json({ error: "Order not found" }, { status: 404 });
 
   if (action === "update_delivery" && ["pending", "delivered"].includes(value)) {

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { CourseBundle } from "@/lib/courses";
@@ -38,7 +38,6 @@ export default function CartDrawer({
   const [deliveryMode, setDeliveryMode] = useState<"whatsapp" | "gmail">("whatsapp");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
-  const [utr, setUtr] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [createdOrder, setCreatedOrder] = useState<{
@@ -49,27 +48,47 @@ export default function CartDrawer({
     amount: number;
     phone: string;
     email: string;
-    utr: string;
     drive_url: string;
   } | null>(null);
 
-  const upiId = "7852004401@ybl";
-  const merchantName = "Arkado";
-  const whatsappSupportNumber = "917852004401";
+  const [upiSettings, setUpiSettings] = useState<{
+    upi_id: string;
+    merchant_name: string;
+    whatsapp_support: string;
+  }>({
+    upi_id: "7852004401@ybl",
+    merchant_name: "Arkado",
+    whatsapp_support: "917852004401",
+  });
+
+  const upiId = upiSettings.upi_id;
+  const merchantName = upiSettings.merchant_name;
+  const whatsappSupportNumber = upiSettings.whatsapp_support;
+
+  useEffect(() => {
+    if (isOpen) {
+      fetch("/api/settings")
+        .then((r) => r.json())
+        .then((data) => {
+          if (data && !data.error) {
+            setUpiSettings({
+              upi_id: data.upi_id || "7852004401@ybl",
+              merchant_name: data.merchant_name || "Arkado",
+              whatsapp_support: data.whatsapp_support_number || "917852004401",
+            });
+          }
+        })
+        .catch(() => {});
+    }
+  }, [isOpen]);
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
   const totalOriginal = cartItems.reduce((sum, item) => sum + item.original_price, 0);
   const savings = totalOriginal - subtotal;
   const primaryCourse = cartItems[0];
 
-  const upiUrl = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(
-    merchantName
-  )}&am=${subtotal}&cu=INR&tn=${encodeURIComponent(
-    primaryCourse?.title?.slice(0, 20) || "Arkado Course"
-  )}`;
-  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(
-    upiUrl
-  )}`;
+  const upiUrl = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(merchantName)}&am=${subtotal}&cu=INR&tn=${encodeURIComponent(primaryCourse?.title?.slice(0, 20) || "Arkado Course")}`;
+  const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(upiUrl)}`;
 
   const handleCheckoutClick = () => {
     if (cartItems.length === 0) return;
@@ -93,10 +112,6 @@ export default function CartDrawer({
       setErrorMsg("कृपया अपना Gmail एड्रेस दर्ज करें।");
       return;
     }
-    if (!utr.trim() || utr.trim().length < 6) {
-      setErrorMsg("कृपया 12 अंकों का वैध UTR / Transaction No. दर्ज करें।");
-      return;
-    }
 
     setIsSubmitting(true);
     try {
@@ -108,7 +123,6 @@ export default function CartDrawer({
           delivery_mode: deliveryMode,
           phone: phone.trim(),
           email: email.trim(),
-          utr: utr.trim(),
           course_id: primaryCourse?.id || "bundle",
           course_title: cartItems.map((c) => c.title).join(", "),
           amount: subtotal,
@@ -148,7 +162,7 @@ export default function CartDrawer({
                 </span>
                 <h2 className="font-extrabold text-slate-900 text-base">
                   {step === "cart" && "आपकी कार्ट"}
-                  {step === "pay" && "UPI Payment"}
+                  {step === "pay" && "भुगतान करें"}
                   {step === "success" && "ऑर्डर सफल!"}
                 </h2>
               </div>
@@ -204,7 +218,7 @@ export default function CartDrawer({
         {/* Content */}
         <div className="flex-1 overflow-y-auto p-4 space-y-3">
           {errorMsg && (
-            <div className="p-3 bg-amber-50 border border-amber-200 rounded-md text-xs text-amber-800 font-semibold flex items-start gap-2">
+            <div className="p-3 bg-red-50 border border-red-200 rounded-md text-xs text-red-800 font-semibold flex items-start gap-2">
               <AlertCircleIcon size={14} className="shrink-0 mt-0.5" />
               <span>{errorMsg}</span>
             </div>
@@ -280,9 +294,10 @@ export default function CartDrawer({
 
           {step === "pay" && (
             <div className="space-y-3">
+              {/* QR Code Section */}
               <div className="p-4 bg-slate-900 text-white rounded-lg text-center space-y-3">
                 <span className="inline-block text-[10px] font-bold bg-emerald-500 text-slate-950 px-2 py-0.5 rounded-full uppercase">
-                  0% Extra Charge • Direct Payment
+                  PhonePe / Paytm / GPay
                 </span>
 
                 <div className="relative w-44 h-44 mx-auto bg-white p-2 rounded-md border-2 border-amber-400">
@@ -296,12 +311,7 @@ export default function CartDrawer({
                 </div>
 
                 <div>
-                  <p className="text-xs text-slate-300 font-devanagari">
-                    PhonePe / Paytm / GPay से स्कैन करें
-                  </p>
-                  <p className="text-xl font-black text-amber-400 mt-0.5">
-                    ₹{subtotal}
-                  </p>
+                  <p className="text-xl font-black text-amber-400">₹{subtotal}</p>
                   <p className="text-[11px] text-slate-400 font-mono mt-1">
                     UPI: <span className="text-white font-bold">{upiId}</span>
                   </p>
@@ -309,17 +319,13 @@ export default function CartDrawer({
 
                 <div className="pt-1 flex flex-wrap justify-center gap-2">
                   <a
-                    href={`phonepe://pay?pa=${upiId}&pn=${encodeURIComponent(
-                      merchantName
-                    )}&am=${subtotal}&cu=INR`}
+                    href={`phonepe://pay?pa=${upiId}&pn=${encodeURIComponent(merchantName)}&am=${subtotal}&cu=INR`}
                     className="px-3 py-1.5 bg-purple-600 hover:bg-purple-500 text-white text-[11px] font-bold rounded transition"
                   >
                     PhonePe
                   </a>
                   <a
-                    href={`paytmmp://pay?pa=${upiId}&pn=${encodeURIComponent(
-                      merchantName
-                    )}&am=${subtotal}&cu=INR`}
+                    href={`paytmmp://pay?pa=${upiId}&pn=${encodeURIComponent(merchantName)}&am=${subtotal}&cu=INR`}
                     className="px-3 py-1.5 bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-bold rounded transition"
                   >
                     Paytm
@@ -333,6 +339,7 @@ export default function CartDrawer({
                 </div>
               </div>
 
+              {/* Order Form */}
               <form id="upi-order-form" onSubmit={handleOrderSubmit} className="space-y-3">
                 <div>
                   <label className="block text-xs font-bold text-slate-800 mb-1 font-devanagari">
@@ -367,7 +374,7 @@ export default function CartDrawer({
                         <span className="text-xs font-bold">WhatsApp</span>
                       </div>
                       <div className="text-[10px] text-slate-500 mt-0.5">
-                        Instant message link
+                        Instant link message
                       </div>
                     </button>
 
@@ -385,7 +392,7 @@ export default function CartDrawer({
                         <span className="text-xs font-bold">Email</span>
                       </div>
                       <div className="text-[10px] text-slate-500 mt-0.5">
-                        Without mobile number
+                        Google Drive link
                       </div>
                     </button>
                   </div>
@@ -408,12 +415,12 @@ export default function CartDrawer({
                 ) : (
                   <div>
                     <label className="block text-xs font-bold text-slate-800 mb-1 font-devanagari">
-                      Gmail *
+                      Gmail एड्रेस *
                     </label>
                     <input
                       type="email"
                       required
-                      placeholder="you@gmail.com"
+                      placeholder="rahul@gmail.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full px-3 py-2.5 rounded-md border border-slate-300 text-sm focus:outline-none focus:border-amber-700"
@@ -421,22 +428,25 @@ export default function CartDrawer({
                   </div>
                 )}
 
-                <div className="p-3 bg-amber-50/70 rounded-md border border-amber-200 space-y-1.5">
-                  <label className="block text-xs font-extrabold text-amber-900 font-devanagari">
-                    12 अंकों का UTR / Transaction No. *
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="423984729384"
-                    value={utr}
-                    onChange={(e) => setUtr(e.target.value)}
-                    className="w-full px-3 py-2 rounded-md border border-amber-300 text-sm bg-white font-mono uppercase tracking-wider focus:outline-none focus:border-amber-600"
-                  />
-                  <p className="text-[10px] text-amber-800 font-devanagari">
-                    💡 PhonePe/Paytm में पेमेंट सफल होने के बाद 12 अंकों का UTR मिलेगा।
-                  </p>
-                </div>
+                {/* I've Paid button */}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+                >
+                  {isSubmitting ? (
+                    "Submitting..."
+                  ) : (
+                    <>
+                      <CheckIcon size={16} />
+                      मैंने भुगतान कर दिया
+                    </>
+                  )}
+                </button>
+
+                <p className="text-[10px] text-slate-500 text-center font-devanagari">
+                  ₹{subtotal} UPI से pay करें, फिर ऊपर बटन दबाएं
+                </p>
               </form>
             </div>
           )}
@@ -455,7 +465,7 @@ export default function CartDrawer({
                   धन्यवाद {createdOrder.name}!
                 </h3>
                 <p className="text-xs text-slate-600 font-devanagari">
-                  आपका ऑर्डर सफलतापूर्वक दर्ज हो गया।
+                  आपका ऑर्डर दर्ज हो गया।
                 </p>
               </div>
 
@@ -471,12 +481,6 @@ export default function CartDrawer({
                   <span className="font-bold text-slate-900">₹{createdOrder.amount}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">UTR:</span>
-                  <span className="font-mono font-bold text-slate-700">
-                    {createdOrder.utr}
-                  </span>
-                </div>
-                <div className="flex justify-between">
                   <span className="text-slate-500">डिलीवरी:</span>
                   <span className="font-bold text-emerald-700 uppercase text-[11px]">
                     {createdOrder.delivery_mode}
@@ -484,17 +488,31 @@ export default function CartDrawer({
                 </div>
               </div>
 
+              {/* Admin verification notice */}
+              <div className="p-4 bg-amber-50 border border-amber-200 rounded-xl text-left">
+                <h4 className="font-bold text-amber-900 text-sm font-devanagari mb-1">
+                  ⏳ Admin से verify होगा
+                </h4>
+                <p className="text-xs text-amber-800 font-devanagari">
+                  आपका भुगतान manually verify किया जाएगा। 1-2 घंटे में आपको{" "}
+                  {createdOrder.delivery_mode === "whatsapp"
+                    ? `WhatsApp पर ${createdOrder.phone} नंबर पर`
+                    : `Email ${createdOrder.email} पर`}
+                  Drive link मिलेगा।
+                </p>
+              </div>
+
               {createdOrder.delivery_mode === "whatsapp" && (
                 <a
                   href={`https://wa.me/${whatsappSupportNumber}?text=${encodeURIComponent(
-                    `नमस्ते! मैंने Arkado से ${createdOrder.course_title} के लिए ₹${createdOrder.amount} पेमेंट किया है।\nOrder: ${createdOrder.order_id}\nUTR: ${createdOrder.utr}\nName: ${createdOrder.name}\nकृपया Drive नोट्स की लिंक भेजें।`
+                    `नमस्ते! मैंने Arkado से ${createdOrder.course_title} के लिए ₹${createdOrder.amount} पेमेंट किया है।\nOrder: ${createdOrder.order_id}\nनाम: ${createdOrder.name}\nकृपया Drive नोट्स की लिंक भेजें।`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-success w-full"
                 >
                   <WhatsappIcon size={14} />
-                  <span>WhatsApp पर तुरंत लिंक मंगाएं</span>
+                  <span>WhatsApp पर पूछें</span>
                 </a>
               )}
 
@@ -503,7 +521,7 @@ export default function CartDrawer({
                 className="btn-primary w-full"
               >
                 <DownloadIcon size={14} />
-                <span>Download Notes Page →</span>
+                <span>Download Page देखें →</span>
               </button>
 
               <button
@@ -529,7 +547,7 @@ export default function CartDrawer({
             {step === "cart" ? (
               <button onClick={handleCheckoutClick} className="btn-primary w-full">
                 <ShoppingBagIcon size={14} />
-                <span>PhonePe / Paytm से भुगतान करें</span>
+                <span>Checkout करें</span>
               </button>
             ) : (
               <div className="flex gap-2">
@@ -540,14 +558,6 @@ export default function CartDrawer({
                 >
                   <ChevronLeftIcon size={12} />
                   Back
-                </button>
-                <button
-                  type="submit"
-                  form="upi-order-form"
-                  disabled={isSubmitting}
-                  className="btn-pill-success flex-1 disabled:opacity-50"
-                >
-                  {isSubmitting ? "Submitting..." : "Confirm Order"}
                 </button>
               </div>
             )}

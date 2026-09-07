@@ -1,17 +1,17 @@
-import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
+import { NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 
-const ordersFilePath = path.join(process.cwd(), 'data', 'orders.json');
+const ordersFilePath = path.join(process.cwd(), "data", "orders.json");
 
 function readOrders() {
   try {
     if (!fs.existsSync(ordersFilePath)) {
-      fs.writeFileSync(ordersFilePath, '[]', 'utf8');
+      fs.writeFileSync(ordersFilePath, "[]", "utf8");
       return [];
     }
-    const data = fs.readFileSync(ordersFilePath, 'utf8');
-    return JSON.parse(data || '[]');
+    const data = fs.readFileSync(ordersFilePath, "utf8");
+    return JSON.parse(data || "[]");
   } catch {
     return [];
   }
@@ -19,17 +19,17 @@ function readOrders() {
 
 function writeOrders(orders: unknown[]) {
   try {
-    fs.writeFileSync(ordersFilePath, JSON.stringify(orders, null, 2), 'utf8');
+    fs.writeFileSync(ordersFilePath, JSON.stringify(orders, null, 2), "utf8");
   } catch (err) {
-    console.error('Error writing orders:', err);
+    console.error("Error writing orders:", err);
   }
 }
 
 export async function GET() {
   const orders = readOrders();
-  // Sort descending by date
-  orders.sort((a: { created_at: string }, b: { created_at: string }) => 
-    new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+  orders.sort(
+    (a: { created_at: string }, b: { created_at: string }) =>
+      new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
   );
   return NextResponse.json({ success: true, orders });
 }
@@ -39,19 +39,32 @@ export async function POST(req: Request) {
     const body = await req.json();
     const {
       name,
-      delivery_mode, // "whatsapp" | "gmail"
+      delivery_mode,
       phone,
       email,
-      utr,
       course_id,
       course_title,
       amount,
-      drive_url
+      drive_url,
     } = body;
 
-    if (!name || !utr || !course_id) {
+    if (!name || !course_id) {
       return NextResponse.json(
-        { success: false, error: 'आवश्यक जानकारी अधूरी है (Missing required fields)' },
+        { success: false, error: "Name and course are required." },
+        { status: 400 }
+      );
+    }
+
+    if (!email && delivery_mode === "gmail") {
+      return NextResponse.json(
+        { success: false, error: "Email is required for Gmail delivery." },
+        { status: 400 }
+      );
+    }
+
+    if (!phone && delivery_mode === "whatsapp") {
+      return NextResponse.json(
+        { success: false, error: "WhatsApp number is required." },
         { status: 400 }
       );
     }
@@ -61,16 +74,16 @@ export async function POST(req: Request) {
 
     const newOrder = {
       order_id,
-      name,
-      delivery_mode: delivery_mode || 'whatsapp',
-      phone: phone || '',
-      email: email || '',
-      utr: utr.trim(),
+      name: name.trim(),
+      delivery_mode: delivery_mode || "whatsapp",
+      phone: phone?.trim() || "",
+      email: email?.trim() || "",
       course_id,
       course_title,
       amount: Number(amount) || 199,
-      drive_url: drive_url || 'https://drive.google.com',
-      status: 'pending', // 'pending' | 'delivered'
+      drive_url: drive_url || "https://drive.google.com",
+      status: "pending",
+      payment_status: "unverified",
       created_at: new Date().toISOString(),
     };
 
@@ -78,10 +91,17 @@ export async function POST(req: Request) {
     orders.unshift(newOrder);
     writeOrders(orders);
 
+    // Notify admin via email (fire-and-forget)
+    fetch(new URL(req.url).origin + "/api/notify-admin", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newOrder),
+    }).catch((err) => console.error("Failed to notify admin:", err));
+
     return NextResponse.json({ success: true, order: newOrder });
   } catch (err: unknown) {
     return NextResponse.json(
-      { success: false, error: err instanceof Error ? err.message : 'Server error' },
+      { success: false, error: err instanceof Error ? err.message : "Server error" },
       { status: 500 }
     );
   }
@@ -94,17 +114,19 @@ export async function PATCH(req: Request) {
 
     if (!order_id || !status) {
       return NextResponse.json(
-        { success: false, error: 'Missing order_id or status' },
+        { success: false, error: "Missing order_id or status" },
         { status: 400 }
       );
     }
 
     const orders = readOrders();
-    const orderIndex = orders.findIndex((o: { order_id: string }) => o.order_id === order_id);
+    const orderIndex = orders.findIndex(
+      (o: { order_id: string }) => o.order_id === order_id
+    );
 
     if (orderIndex === -1) {
       return NextResponse.json(
-        { success: false, error: 'Order not found' },
+        { success: false, error: "Order not found" },
         { status: 404 }
       );
     }
@@ -116,7 +138,7 @@ export async function PATCH(req: Request) {
     return NextResponse.json({ success: true, order: orders[orderIndex] });
   } catch (err: unknown) {
     return NextResponse.json(
-      { success: false, error: err instanceof Error ? err.message : 'Server error' },
+      { success: false, error: err instanceof Error ? err.message : "Server error" },
       { status: 500 }
     );
   }
@@ -125,10 +147,13 @@ export async function PATCH(req: Request) {
 export async function DELETE(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
-    const order_id = searchParams.get('order_id');
+    const order_id = searchParams.get("order_id");
 
     if (!order_id) {
-      return NextResponse.json({ success: false, error: 'order_id is required' }, { status: 400 });
+      return NextResponse.json(
+        { success: false, error: "order_id is required" },
+        { status: 400 }
+      );
     }
 
     let orders = readOrders();
@@ -138,9 +163,8 @@ export async function DELETE(req: Request) {
     return NextResponse.json({ success: true });
   } catch (err: unknown) {
     return NextResponse.json(
-      { success: false, error: err instanceof Error ? err.message : 'Server error' },
+      { success: false, error: err instanceof Error ? err.message : "Server error" },
       { status: 500 }
     );
   }
 }
-

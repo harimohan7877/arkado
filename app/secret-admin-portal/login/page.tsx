@@ -51,7 +51,7 @@ export default function AdminLoginPage() {
         <div className="bg-[#1a1d27] border border-[#2a2d3a] rounded-2xl shadow-2xl p-8">
           <div className="text-center mb-8">
             <span className="text-5xl inline-block mb-3 animate-pulse">🔒</span>
-            <h1 className="text-2xl font-bold text-white">Sarkari Saathi</h1>
+            <h1 className="text-2xl font-bold text-white">Arkado</h1>
             <p className="text-gray-400 text-sm mt-1">Admin Portal Access Control</p>
           </div>
 

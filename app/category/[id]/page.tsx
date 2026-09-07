@@ -184,11 +184,6 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
 
                 <div>
                   <div className="flex items-center gap-2 flex-wrap">
-                    {category.state_or_group && (
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-amber-800 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200">
-                        {category.state_or_group}
-                      </span>
-                    )}
                     <span className="text-[10px] font-bold text-stone-600 bg-stone-100 px-2.5 py-0.5 rounded-full">
                       {exams.length} Exams Listed
                     </span>

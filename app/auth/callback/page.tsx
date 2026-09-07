@@ -5,65 +5,59 @@ import { supabase } from "@/lib/supabase";
 
 export default function AuthCallback() {
   const [status, setStatus] = useState("Completing sign in...");
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
 
     async function handleCallback() {
-      const params = new URLSearchParams(window.location.search);
-      const code = params.get("code");
-      const hash = window.location.hash;
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get("code");
 
-      if (code) {
-        const { data, error } = await supabase.auth.exchangeCodeForSession(code);
-        if (cancelled) return;
-        if (!error && data?.session?.user) {
-          localStorage.setItem("mock_user_session", JSON.stringify(data.session.user));
-          const returnTo = sessionStorage.getItem("returnTo") || "/";
-          sessionStorage.removeItem("returnTo");
-          window.location.replace(returnTo);
-          return;
-        }
-      }
+        if (code) {
+          const { data, error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
 
-      if (hash) {
-        const hashParams = new URLSearchParams(hash.substring(1));
-        const accessToken = hashParams.get("access_token");
-        if (accessToken) {
-          const { data: { session } } = await supabase.auth.getSession();
-          if (cancelled) return;
-          if (session?.user) {
-            localStorage.setItem("mock_user_session", JSON.stringify(session.user));
+          if (exchangeError) {
+            console.error("Code exchange error:", exchangeError);
+            setError(exchangeError.message);
+          }
+
+          if (!cancelled && data?.session?.user) {
+            localStorage.setItem("mock_user_session", JSON.stringify(data.session.user));
             const returnTo = sessionStorage.getItem("returnTo") || "/";
             sessionStorage.removeItem("returnTo");
             window.location.replace(returnTo);
             return;
           }
         }
+
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!cancelled && session?.user) {
+          localStorage.setItem("mock_user_session", JSON.stringify(session.user));
+          const returnTo = sessionStorage.getItem("returnTo") || "/";
+          sessionStorage.removeItem("returnTo");
+          window.location.replace(returnTo);
+          return;
+        }
+
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!cancelled && user) {
+          localStorage.setItem("mock_user_session", JSON.stringify(user));
+          const returnTo = sessionStorage.getItem("returnTo") || "/";
+          sessionStorage.removeItem("returnTo");
+          window.location.replace(returnTo);
+          return;
+        }
+      } catch (err) {
+        console.error("Auth callback exception:", err);
+        if (!cancelled) setError("Authentication failed. Please try again.");
       }
 
-      const { data: { session } } = await supabase.auth.getSession();
-      if (cancelled) return;
-      if (session?.user) {
-        localStorage.setItem("mock_user_session", JSON.stringify(session.user));
-        const returnTo = sessionStorage.getItem("returnTo") || "/";
-        sessionStorage.removeItem("returnTo");
-        window.location.replace(returnTo);
-        return;
+      if (!cancelled) {
+        setStatus("Redirecting to login...");
+        setTimeout(() => window.location.replace("/auth"), 1500);
       }
-
-      const { data: { user } } = await supabase.auth.getUser();
-      if (cancelled) return;
-      if (user) {
-        localStorage.setItem("mock_user_session", JSON.stringify(user));
-        const returnTo = sessionStorage.getItem("returnTo") || "/";
-        sessionStorage.removeItem("returnTo");
-        window.location.replace(returnTo);
-        return;
-      }
-
-      setStatus("Redirecting to login...");
-      setTimeout(() => window.location.replace("/auth"), 1500);
     }
 
     handleCallback();
@@ -85,8 +79,20 @@ export default function AuthCallback() {
   return (
     <div className="min-h-screen bg-[#fbfbf5] flex items-center justify-center p-6 font-sans">
       <div className="text-center">
-        <div className="w-8 h-8 border-2 border-black/20 border-t-black rounded-full animate-spin mx-auto mb-4" />
-        <p className="text-sm text-gray-600 font-mono">{status}</p>
+        {error ? (
+          <>
+            <div className="text-4xl mb-4">❌</div>
+            <p className="text-sm text-red-600 font-mono mb-4">{error}</p>
+            <a href="/auth" className="text-xs text-stone-600 hover:underline font-mono">
+              ← Back to login
+            </a>
+          </>
+        ) : (
+          <>
+            <div className="w-8 h-8 border-2 border-black/20 border-t-black rounded-full animate-spin mx-auto mb-4" />
+            <p className="text-sm text-gray-600 font-mono">{status}</p>
+          </>
+        )}
       </div>
     </div>
   );

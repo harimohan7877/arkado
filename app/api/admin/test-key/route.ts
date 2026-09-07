@@ -90,8 +90,8 @@ export async function POST(req: NextRequest) {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${key}`,
-          'HTTP-Referer': 'https://sarkari-saathi.vercel.app',
-          'X-Title': 'Sarkari Saathi'
+          'HTTP-Referer': 'https://arkado.in',
+          'X-Title': 'Arkado'
         },
         body: JSON.stringify({
           model: 'google/gemini-2.0-flash-001',

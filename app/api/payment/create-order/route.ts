@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
     const order = await razorpay.orders.create({
       amount: 3000,
       currency: 'INR',
-      notes: { userId, purpose: 'Sarkari Saathi Premium' }
+      notes: { userId, purpose: 'Arkado Premium' }
     });
     */
 

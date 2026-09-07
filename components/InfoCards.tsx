@@ -7,7 +7,7 @@ export default function InfoCards() {
     {
       icon: "📖",
       title: "About Us",
-      desc: "Sarkari Saathi is a premium study resource platform for Rajasthan government exam aspirants.",
+      desc: "Arkado is a premium study resource platform for Rajasthan government exam aspirants.",
       link: "#",
     },
     {

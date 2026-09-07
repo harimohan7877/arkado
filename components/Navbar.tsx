@@ -277,12 +277,12 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
           <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm" onClick={() => setShowMobileMenu(false)} />
           <div className="absolute left-0 top-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl flex flex-col anim-slide-down">
             <div className="p-4 border-b border-stone-200 flex items-center justify-between">
-              <Link href="/" onClick={() => setShowMobileMenu(false)} className="relative h-7 w-28 flex items-center">
+              <Link href="/" onClick={() => setShowMobileMenu(false)} className="relative h-9 w-36 flex items-center">
                 <Image
                   src="/logos/arkado_wordmark_5.jpg"
                   alt="Arkado"
-                  width={120}
-                  height={32}
+                  width={144}
+                  height={36}
                   className="object-contain w-full h-full"
                 />
               </Link>

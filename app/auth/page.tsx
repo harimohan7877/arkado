@@ -64,7 +64,7 @@ export default function AuthPage() {
       <div className="w-full max-w-md bg-white border border-gray-100 p-8 md:p-10 rounded-sm shadow-halo animate-slide-up">
         <div className="text-center mb-8">
           <span className="text-xs text-gray-400 font-bold uppercase tracking-[0.2em] font-mono block mb-2">
-            SARKARISATHI
+            ARKADO
           </span>
           <h1 className="text-3xl font-light text-black tracking-tight font-sans">
             Log in

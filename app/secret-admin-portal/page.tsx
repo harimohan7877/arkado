@@ -5,6 +5,22 @@ import { useRouter } from "next/navigation";
 import CategoriesTab from "./components/CategoriesTab";
 import ProductsTab from "./components/ProductsTab";
 import ExamsTab from "./components/ExamsTab";
+import {
+  BarChartIcon,
+  SettingsIcon,
+  UsersIcon,
+  MessageSquareIcon,
+  ShoppingBagIcon,
+  GridIcon,
+  FileTextIcon,
+  PackageIcon,
+  DatabaseIcon,
+  LogOutIcon,
+  TrendingUpIcon,
+  SparklesIcon,
+  UserIcon,
+  ZapIcon,
+} from "@/components/icons";
 
 interface MarketplaceOrder {
   id: string;
@@ -369,99 +385,59 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0f1117] text-[#e8e8e8] flex">
+    <div className="min-h-screen bg-slate-950 text-slate-200 flex">
       {/* Side Navigation */}
-      <aside className="w-64 bg-[#1a1d27] border-r border-[#2a2d3a] flex flex-col">
-        <div className="p-6 border-b border-[#2a2d3a]">
-          <h1 className="text-xl font-bold text-white flex items-center gap-2">
-            🏛️ Sarkari Saathi
-          </h1>
-          <span className="text-[10px] text-[#10b981] font-semibold tracking-wider uppercase bg-emerald-500/10 px-2 py-0.5 rounded-full mt-1.5 inline-block">
-            Admin Panel
-          </span>
+      <aside className="w-64 bg-slate-900 border-r border-slate-800 flex flex-col">
+        <div className="p-5 border-b border-slate-800">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-md bg-red-600 flex items-center justify-center text-white font-black text-lg">
+              A
+            </div>
+            <div>
+              <h1 className="text-base font-bold text-white leading-tight">Arkado Admin</h1>
+              <span className="text-[10px] text-emerald-400 font-semibold tracking-wider uppercase">
+                Control Center
+              </span>
+            </div>
+          </div>
         </div>
 
-        <nav className="flex-1 p-4 space-y-1.5">
-          <button
-            onClick={() => setActiveTab("dashboard")}
-            className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-              activeTab === "dashboard" ? "bg-[#10b981] text-white" : "hover:bg-[#2a2d3a] text-gray-400 hover:text-white"
-            }`}
-          >
-            📊 Analytics Dashboard
-          </button>
-          <button
-            onClick={() => setActiveTab("ai")}
-            className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-              activeTab === "ai" ? "bg-[#10b981] text-white" : "hover:bg-[#2a2d3a] text-gray-400 hover:text-white"
-            }`}
-          >
-            ⚙️ AI Configurations
-          </button>
-          <button
-            onClick={() => setActiveTab("users")}
-            className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-              activeTab === "users" ? "bg-[#10b981] text-white" : "hover:bg-[#2a2d3a] text-gray-400 hover:text-white"
-            }`}
-          >
-            👥 Registered Users
-          </button>
-          <button
-            onClick={() => setActiveTab("chats")}
-            className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-              activeTab === "chats" ? "bg-[#10b981] text-white" : "hover:bg-[#2a2d3a] text-gray-400 hover:text-white"
-            }`}
-          >
-            💬 Recent Conversations
-          </button>
-          <button
-            onClick={() => setActiveTab("orders")}
-            className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-              activeTab === "orders" ? "bg-[#10b981] text-white" : "hover:bg-[#2a2d3a] text-gray-400 hover:text-white"
-            }`}
-          >
-            🛒 Marketplace Orders
-          </button>
-          <button
-            onClick={() => setActiveTab("categories")}
-            className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-              activeTab === "categories" ? "bg-[#10b981] text-white" : "hover:bg-[#2a2d3a] text-gray-400 hover:text-white"
-            }`}
-          >
-            📂 Exam Categories
-          </button>
-          <button
-            onClick={() => setActiveTab("exams")}
-            className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-              activeTab === "exams" ? "bg-[#10b981] text-white" : "hover:bg-[#2a2d3a] text-gray-400 hover:text-white"
-            }`}
-          >
-            📋 Exams Setup
-          </button>
-          <button
-            onClick={() => setActiveTab("products")}
-            className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-              activeTab === "products" ? "bg-[#10b981] text-white" : "hover:bg-[#2a2d3a] text-gray-400 hover:text-white"
-            }`}
-          >
-            📦 Study Materials
-          </button>
-          <button
-            onClick={() => setActiveTab("schema")}
-            className={`w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-all ${
-              activeTab === "schema" ? "bg-[#10b981] text-white" : "hover:bg-[#2a2d3a] text-gray-400 hover:text-white"
-            }`}
-          >
-            🗄️ Supabase Schema Guide
-          </button>
+        <nav className="flex-1 p-3 space-y-0.5 overflow-y-auto">
+          {[
+            { id: "dashboard", label: "Dashboard", icon: <BarChartIcon size={16} /> },
+            { id: "ai", label: "AI Config", icon: <SettingsIcon size={16} /> },
+            { id: "users", label: "Users", icon: <UsersIcon size={16} /> },
+            { id: "chats", label: "Conversations", icon: <MessageSquareIcon size={16} /> },
+            { id: "orders", label: "Marketplace Orders", icon: <ShoppingBagIcon size={16} /> },
+            { id: "categories", label: "Exam Categories", icon: <GridIcon size={16} /> },
+            { id: "exams", label: "Exams Setup", icon: <FileTextIcon size={16} /> },
+            { id: "products", label: "Study Materials", icon: <PackageIcon size={16} /> },
+            { id: "schema", label: "Schema Guide", icon: <DatabaseIcon size={16} /> },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setActiveTab(item.id as typeof activeTab)}
+              className={`w-full text-left px-3 py-2.5 rounded-md text-sm font-medium transition-all flex items-center gap-2.5 ${
+                activeTab === item.id
+                  ? "bg-red-600 text-white shadow-sm"
+                  : "text-slate-400 hover:bg-slate-800 hover:text-white"
+              }`}
+            >
+              <span className={activeTab === item.id ? "text-white" : "text-slate-500"}>
+                {item.icon}
+              </span>
+              <span>{item.label}</span>
+            </button>
+          ))}
         </nav>
 
-        <div className="p-4 border-t border-[#2a2d3a]">
+        <div className="p-3 border-t border-slate-800">
           <button
             onClick={handleLogout}
-            className="w-full h-11 bg-red-950/30 hover:bg-red-950/60 border border-red-500/20 hover:border-red-500/40 text-red-400 text-sm font-semibold rounded-xl transition-all"
+            className="w-full h-10 bg-red-950/40 hover:bg-red-950/70 border border-red-500/20 hover:border-red-500/40 text-red-400 text-sm font-semibold rounded-md transition-all flex items-center justify-center gap-2"
           >
-            Logout (लॉगआउट) 🚪
+            <LogOutIcon size={14} />
+            <span>Logout</span>
           </button>
         </div>
       </aside>
@@ -471,66 +447,149 @@ export default function AdminDashboard() {
         {/* Tab 1: Dashboard */}
         {activeTab === "dashboard" && (
           <div className="space-y-6">
-            <div>
-              <h2 className="text-2xl font-bold text-white">प्रणाली विश्लेषण (System Analytics)</h2>
-              <p className="text-gray-400 text-sm">प्रोजेक्ट की कुल एक्टिविटी और यूज़र्स का सारांश।</p>
+            <div className="flex items-end justify-between">
+              <div>
+                <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                  <BarChartIcon size={22} className="text-red-500" />
+                  System Analytics
+                </h2>
+                <p className="text-slate-400 text-sm mt-1">
+                  Total activity and user summary across the platform.
+                </p>
+              </div>
+              <button
+                onClick={fetchStats}
+                className="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs px-3.5 py-2 rounded-md transition flex items-center gap-1.5"
+              >
+                <ZapIcon size={12} />
+                Refresh
+              </button>
             </div>
 
             {stats.warning && (
-              <div className="bg-amber-950/40 border border-amber-500/30 text-amber-300 p-4 rounded-xl text-sm">
-                ⚠️ <strong>चेतावनी:</strong> {stats.warning}
+              <div className="bg-amber-950/30 border border-amber-500/30 text-amber-300 p-4 rounded-md text-sm">
+                <strong>Heads up:</strong> {stats.warning}
               </div>
             )}
 
             {loadingStats ? (
-              <div className="py-12 text-center text-gray-500">विश्लेषण लोड हो रहा है...</div>
+              <div className="py-12 text-center text-slate-500">Loading analytics...</div>
             ) : (
               <>
-                <div className="grid grid-cols-4 gap-6">
-                  <div className="bg-[#1a1d27] border border-[#2a2d3a] rounded-2xl p-5 shadow-sm">
-                    <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold">Registered Users</p>
-                    <h3 className="text-3xl font-black text-white mt-1.5">{stats.totalUsers}</h3>
-                    <p className="text-[10px] text-[#10b981] mt-1 font-semibold">पंजीकृत छात्र</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="bg-slate-900 border border-slate-800 rounded-lg p-5">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <p className="text-xs text-slate-400 uppercase tracking-wider font-semibold">
+                          Registered Users
+                        </p>
+                        <h3 className="text-3xl font-black text-white mt-1.5">
+                          {stats.totalUsers}
+                        </h3>
+                      </div>
+                      <div className="w-9 h-9 rounded-md bg-blue-500/15 text-blue-400 flex items-center justify-center">
+                        <UsersIcon size={18} />
+                      </div>
+                    </div>
+                    <p className="text-[10px] text-slate-500 mt-2 font-semibold">पंजीकृत छात्र</p>
                   </div>
-                  <div className="bg-[#1a1d27] border border-[#2a2d3a] rounded-2xl p-5 shadow-sm">
-                    <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold">Premium (Paid) Users</p>
-                    <h3 className="text-3xl font-black text-emerald-400 mt-1.5">{stats.totalPaidUsers}</h3>
-                    <p className="text-[10px] text-emerald-400 mt-1 font-semibold">
-                      Conversion: {stats.totalUsers > 0 ? Math.round((stats.totalPaidUsers / stats.totalUsers) * 100) : 0}%
+
+                  <div className="bg-slate-900 border border-slate-800 rounded-lg p-5">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <p className="text-xs text-slate-400 uppercase tracking-wider font-semibold">
+                          Premium (Paid)
+                        </p>
+                        <h3 className="text-3xl font-black text-emerald-400 mt-1.5">
+                          {stats.totalPaidUsers}
+                        </h3>
+                      </div>
+                      <div className="w-9 h-9 rounded-md bg-emerald-500/15 text-emerald-400 flex items-center justify-center">
+                        <SparklesIcon size={18} />
+                      </div>
+                    </div>
+                    <p className="text-[10px] text-emerald-400 mt-2 font-semibold">
+                      Conversion:{" "}
+                      {stats.totalUsers > 0
+                        ? Math.round((stats.totalPaidUsers / stats.totalUsers) * 100)
+                        : 0}
+                      %
                     </p>
                   </div>
-                  <div className="bg-[#1a1d27] border border-[#2a2d3a] rounded-2xl p-5 shadow-sm">
-                    <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold">Guest Sessions</p>
-                    <h3 className="text-3xl font-black text-blue-400 mt-1.5">{stats.totalGuests}</h3>
-                    <p className="text-[10px] text-blue-400 mt-1 font-semibold">बिना लॉगिन के यूज़र्स</p>
+
+                  <div className="bg-slate-900 border border-slate-800 rounded-lg p-5">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <p className="text-xs text-slate-400 uppercase tracking-wider font-semibold">
+                          Guest Sessions
+                        </p>
+                        <h3 className="text-3xl font-black text-blue-400 mt-1.5">
+                          {stats.totalGuests}
+                        </h3>
+                      </div>
+                      <div className="w-9 h-9 rounded-md bg-blue-500/15 text-blue-400 flex items-center justify-center">
+                        <UserIcon size={18} />
+                      </div>
+                    </div>
+                    <p className="text-[10px] text-blue-400 mt-2 font-semibold">
+                      बिना लॉगिन के यूज़र्स
+                    </p>
                   </div>
-                  <div className="bg-[#1a1d27] border border-[#2a2d3a] rounded-2xl p-5 shadow-sm">
-                    <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold">AI Chats Conducted</p>
-                    <h3 className="text-3xl font-black text-orange-400 mt-1.5">{stats.totalChats}</h3>
-                    <p className="text-[10px] text-orange-400 mt-1 font-semibold">कुल AI वार्तालाप</p>
+
+                  <div className="bg-slate-900 border border-slate-800 rounded-lg p-5">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <p className="text-xs text-slate-400 uppercase tracking-wider font-semibold">
+                          AI Chats
+                        </p>
+                        <h3 className="text-3xl font-black text-amber-400 mt-1.5">
+                          {stats.totalChats}
+                        </h3>
+                      </div>
+                      <div className="w-9 h-9 rounded-md bg-amber-500/15 text-amber-400 flex items-center justify-center">
+                        <MessageSquareIcon size={18} />
+                      </div>
+                    </div>
+                    <p className="text-[10px] text-amber-400 mt-2 font-semibold">
+                      कुल AI वार्तालाप
+                    </p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-6">
-                  {/* Revenue Card */}
-                  <div className="bg-gradient-to-br from-[#1b2536] to-[#121620] border border-[#2d3a54] rounded-2xl p-6 shadow-md col-span-1 flex flex-col justify-between min-h-[180px]">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                  <div className="bg-gradient-to-br from-red-950/40 to-slate-900 border border-red-900/40 rounded-lg p-6 flex flex-col justify-between min-h-[180px]">
                     <div>
-                      <span className="text-sm font-semibold text-blue-300 bg-blue-500/10 px-2.5 py-0.5 rounded-full">Collected Revenue</span>
-                      <p className="text-gray-400 text-xs mt-2">Premium ₹30 अपग्रेड से कुल आय (मॉक / वास्तविक):</p>
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-300 bg-emerald-500/15 px-2.5 py-1 rounded-full">
+                        <TrendingUpIcon size={12} />
+                        Collected Revenue
+                      </span>
+                      <p className="text-slate-400 text-xs mt-2">
+                        Premium ₹30 upgrade se kulaay (mock / actual):
+                      </p>
                     </div>
                     <div className="mt-4">
                       <h4 className="text-4xl font-extrabold text-white">₹{stats.totalRevenue}</h4>
-                      <p className="text-[10px] text-gray-500 mt-1">₹30 प्रति सफल अपग्रेड</p>
+                      <p className="text-[10px] text-slate-500 mt-1">₹30 per successful upgrade</p>
                     </div>
                   </div>
 
-                  {/* Operational Notes */}
-                  <div className="bg-[#1a1d27] border border-[#2a2d3a] rounded-2xl p-6 shadow-sm col-span-2">
-                    <h3 className="text-base font-bold text-white mb-2">📌 एडमिन निर्देश (Operational Notes)</h3>
-                    <ul className="space-y-2 text-xs text-gray-400 list-disc pl-4">
-                      <li>यह पैनल <strong>Vercel / Local Host</strong> पर सुरक्षित है, मुख्य यूज़र-साइट पर इसका कोई लिंक प्रदर्शित नहीं होता।</li>
-                      <li><strong>AI Configurations</strong> टैब से आप किसी भी समय Google, OpenAI या Anthropic की API कुंजियों को डालकर उसे लाइव कर सकते हैं।</li>
-                      <li>यदि कोई छात्र पेड लिमिट बाईपास करने की शिकायत करता है, तो आप <strong>Registered Users</strong> टैब में उसका ईमेल सर्च करके उसे मैन्युअली Paid चिह्नित कर सकते हैं या उसका AI सीमा काउंटर रीसेट कर सकते हैं।</li>
+                  <div className="bg-slate-900 border border-slate-800 rounded-lg p-6 lg:col-span-2">
+                    <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2">
+                      <SparklesIcon size={16} className="text-red-500" />
+                      Operational Notes (एडमिन निर्देश)
+                    </h3>
+                    <ul className="space-y-2 text-xs text-slate-400 list-disc pl-4">
+                      <li>
+                        This panel is secured on Vercel/Localhost — no public link from user site.
+                      </li>
+                      <li>
+                        <strong>AI Configurations</strong> tab se Google, OpenAI ya Anthropic API keys
+                        daalkar live kar sakte hain.
+                      </li>
+                      <li>
+                        Agar koi student paid limit bypass complaint kare, <strong>Users</strong> tab
+                        mein email search karke manually Paid mark kar sakte hain.
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -543,11 +602,16 @@ export default function AdminDashboard() {
         {activeTab === "ai" && (
           <div className="space-y-6">
             <div>
-              <h2 className="text-2xl font-bold text-white">AI प्रदाता सेटिंग्स (AI Provider Configurations)</h2>
-              <p className="text-gray-400 text-sm">प्रोजेक्ट में उपयोग होने वाले AI मॉडल और उनकी API चाबियों को बदलें और तुरंत टेस्ट करें।</p>
+              <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                <SettingsIcon size={22} className="text-red-500" />
+                AI Provider Configurations
+              </h2>
+              <p className="text-slate-400 text-sm mt-1">
+                Change the AI model used by the platform and test API keys live.
+              </p>
             </div>
 
-            <form onSubmit={handleSaveConfig} className="bg-[#1a1d27] border border-[#2a2d3a] rounded-2xl p-6 space-y-6 max-w-3xl">
+            <form onSubmit={handleSaveConfig} className="bg-slate-900 border border-slate-800 rounded-lg p-6 space-y-6 max-w-3xl">
               <div>
                 <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">
                   Active AI Provider (सक्रिय AI प्रदाता)
@@ -555,7 +619,7 @@ export default function AdminDashboard() {
                 <select
                   value={config.active_provider}
                   onChange={(e) => setConfig({ ...config, active_provider: e.target.value })}
-                  className="w-full admin-select-field border border-[#2a2d3a] rounded-xl p-3 text-white focus:border-[#10b981] outline-none cursor-pointer"
+                  className="w-full bg-slate-950 border border-slate-700 rounded-md p-3 text-white focus:border-red-500 outline-none cursor-pointer"
                 >
                   <option value="gemini">Gemini 2.0 Flash (Recommended & Free Tier)</option>
                   <option value="openai">OpenAI GPT-4o-mini</option>
@@ -569,7 +633,7 @@ export default function AdminDashboard() {
               </div>
 
               {/* Provider Key Inputs */}
-              <div className="space-y-4 border-t border-[#2a2d3a] pt-4">
+              <div className="space-y-4 border-t border-slate-800 pt-4">
                 <h3 className="text-sm font-semibold text-white">API Keys Management</h3>
 
                 {/* Gemini */}
@@ -582,13 +646,13 @@ export default function AdminDashboard() {
                         value={config.gemini_key}
                         onChange={(e) => setConfig({ ...config, gemini_key: e.target.value })}
                         placeholder="AIzaSy..."
-                        className="w-full admin-input-field border border-[#2a2d3a] rounded-xl px-3.5 py-2.5 text-sm text-white focus:border-[#10b981] outline-none"
+                        className="w-full bg-slate-950 border border-slate-700 rounded-md px-3.5 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-red-500 outline-none"
                       />
                     </div>
                     <button
                       type="button"
                       onClick={() => handleTestKey("gemini")}
-                      className="h-10 bg-[#2a2d3a] hover:bg-[#3a3d4d] text-xs font-bold rounded-xl transition-all"
+                      className="h-10 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold rounded-md transition"
                     >
                       Test Connection
                     </button>
@@ -605,13 +669,13 @@ export default function AdminDashboard() {
                         value={config.openai_key}
                         onChange={(e) => setConfig({ ...config, openai_key: e.target.value })}
                         placeholder="sk-proj-..."
-                        className="w-full admin-input-field border border-[#2a2d3a] rounded-xl px-3.5 py-2.5 text-sm text-white focus:border-[#10b981] outline-none"
+                        className="w-full bg-slate-950 border border-slate-700 rounded-md px-3.5 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-red-500 outline-none"
                       />
                     </div>
                     <button
                       type="button"
                       onClick={() => handleTestKey("openai")}
-                      className="h-10 bg-[#2a2d3a] hover:bg-[#3a3d4d] text-xs font-bold rounded-xl transition-all"
+                      className="h-10 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold rounded-md transition"
                     >
                       Test Connection
                     </button>
@@ -628,13 +692,13 @@ export default function AdminDashboard() {
                         value={config.claude_key}
                         onChange={(e) => setConfig({ ...config, claude_key: e.target.value })}
                         placeholder="sk-ant-..."
-                        className="w-full admin-input-field border border-[#2a2d3a] rounded-xl px-3.5 py-2.5 text-sm text-white focus:border-[#10b981] outline-none"
+                        className="w-full bg-slate-950 border border-slate-700 rounded-md px-3.5 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-red-500 outline-none"
                       />
                     </div>
                     <button
                       type="button"
                       onClick={() => handleTestKey("claude")}
-                      className="h-10 bg-[#2a2d3a] hover:bg-[#3a3d4d] text-xs font-bold rounded-xl transition-all"
+                      className="h-10 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold rounded-md transition"
                     >
                       Test Connection
                     </button>
@@ -651,13 +715,13 @@ export default function AdminDashboard() {
                         value={config.openrouter_key}
                         onChange={(e) => setConfig({ ...config, openrouter_key: e.target.value })}
                         placeholder="sk-or-v1-..."
-                        className="w-full admin-input-field border border-[#2a2d3a] rounded-xl px-3.5 py-2.5 text-sm text-white focus:border-[#10b981] outline-none"
+                        className="w-full bg-slate-950 border border-slate-700 rounded-md px-3.5 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-red-500 outline-none"
                       />
                     </div>
                     <button
                       type="button"
                       onClick={() => handleTestKey("openrouter")}
-                      className="h-10 bg-[#2a2d3a] hover:bg-[#3a3d4d] text-xs font-bold rounded-xl transition-all"
+                      className="h-10 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold rounded-md transition"
                     >
                       Test Connection
                     </button>
@@ -675,13 +739,13 @@ export default function AdminDashboard() {
                           value={config.groq_key}
                           onChange={(e) => setConfig({ ...config, groq_key: e.target.value })}
                           placeholder="gsk_..."
-                          className="w-full admin-input-field border border-[#2a2d3a] rounded-xl px-3.5 py-2.5 text-sm text-white focus:border-[#10b981] outline-none"
+                          className="w-full bg-slate-950 border border-slate-700 rounded-md px-3.5 py-2.5 text-sm text-white placeholder:text-slate-500 focus:border-red-500 outline-none"
                         />
                       </div>
                       <button
                         type="button"
                         onClick={() => handleTestKey("groq")}
-                        className="h-10 bg-[#2a2d3a] hover:bg-[#3a3d4d] text-xs font-bold rounded-xl transition-all"
+                        className="h-10 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-bold rounded-md transition"
                       >
                         Test Connection
                       </button>
@@ -717,13 +781,13 @@ export default function AdminDashboard() {
                 </div>
               )}
 
-              <div className="border-t border-[#2a2d3a] pt-4 flex gap-4">
+              <div className="border-t border-slate-800 pt-4 flex gap-4">
                 <button
                   type="submit"
                   disabled={saveStatus.loading}
-                  className="px-6 py-2.5 bg-[#10b981] hover:bg-[#059669] text-white font-semibold rounded-xl text-sm transition-all disabled:opacity-50"
+                  className="px-6 py-2.5 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md text-sm transition disabled:opacity-50"
                 >
-                  {saveStatus.loading ? "सेव हो रहा है..." : "सेटिंग्स सेव करें (Save Configuration) 💾"}
+                  {saveStatus.loading ? "Saving..." : "Save Configuration"}
                 </button>
               </div>
             </form>
@@ -733,64 +797,68 @@ export default function AdminDashboard() {
         {/* Tab 3: Registered Users */}
         {activeTab === "users" && (
           <div className="space-y-6">
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3">
               <div>
-                <h2 className="text-2xl font-bold text-white">पंजीकृत छात्र (Registered Users Management)</h2>
-                <p className="text-gray-400 text-sm">यूज़र्स का प्रोफाइल डेटा, पेड स्टेटस, और AI लिमिट का मैनेजमेंट।</p>
+                <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                  <UsersIcon size={22} className="text-red-500" />
+                  Registered Users
+                </h2>
+                <p className="text-slate-400 text-sm mt-1">
+                  Profile data, paid status, and AI limits management.
+                </p>
               </div>
-              
-              {/* Search Bar */}
+
               <div className="flex gap-2">
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="नाम / शहर / श्रेणी सर्च करें..."
-                  className="admin-input-field border border-[#2a2d3a] rounded-xl px-4 py-2 text-sm text-white focus:border-[#10b981] outline-none"
+                  placeholder="Search name / city / category..."
+                  className="bg-slate-900 border border-slate-700 rounded-md px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:border-red-500 focus:outline-none"
                   onKeyDown={(e) => e.key === "Enter" && fetchUsers(searchQuery)}
                 />
                 <button
                   onClick={() => fetchUsers(searchQuery)}
-                  className="bg-[#10b981] hover:bg-[#059669] text-white text-sm font-semibold px-4 rounded-xl"
+                  className="bg-red-600 hover:bg-red-700 text-white text-sm font-semibold px-4 rounded-md transition"
                 >
-                  खोजें
+                  Search
                 </button>
               </div>
             </div>
 
             {loadingUsers ? (
-              <div className="py-12 text-center text-gray-500">यूज़र्स डेटा लोड हो रहा है...</div>
+              <div className="py-12 text-center text-slate-500">Loading users...</div>
             ) : users.length === 0 ? (
-              <div className="bg-[#1a1d27] border border-[#2a2d3a] rounded-2xl p-8 text-center text-gray-500">
-                कोई यूज़र नहीं मिला।
+              <div className="bg-slate-900 border border-slate-800 rounded-lg p-8 text-center text-slate-500">
+                No users found.
               </div>
             ) : (
-              <div className="bg-[#1a1d27] border border-[#2a2d3a] rounded-2xl overflow-hidden shadow-sm">
+              <div className="bg-slate-900 border border-slate-800 rounded-lg overflow-hidden">
                 <table className="w-full text-left text-sm border-collapse">
                   <thead>
-                    <tr className="bg-[#12151f] text-gray-400 text-xs border-b border-[#2a2d3a]">
-                      <th className="p-4">Name (नाम)</th>
-                      <th className="p-4">Profile details</th>
-                      <th className="p-4">Registration Date</th>
-                      <th className="p-4 text-center">AI Messages Used</th>
-                      <th className="p-4 text-center">Premium Status</th>
+                    <tr className="bg-slate-950 text-slate-400 text-xs border-b border-slate-800">
+                      <th className="p-4">Name</th>
+                      <th className="p-4">Profile</th>
+                      <th className="p-4">Registered</th>
+                      <th className="p-4 text-center">AI Msgs Used</th>
+                      <th className="p-4 text-center">Premium</th>
                       <th className="p-4 text-center">Actions</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#2a2d3a]">
+                  <tbody className="divide-y divide-slate-800">
                     {users.map((u) => (
-                      <tr key={u.id} className="hover:bg-[#1f2330]">
+                      <tr key={u.id} className="hover:bg-slate-800/50">
                         <td className="p-4">
-                          <p className="font-bold text-white">{u.name || "Anonymous Student"}</p>
-                          <p className="text-xs text-gray-500">{u.id.substring(0, 8)}...</p>
+                          <p className="font-bold text-white">{u.name || "Anonymous"}</p>
+                          <p className="text-xs text-slate-500">{u.id.substring(0, 8)}...</p>
                         </td>
                         <td className="p-4 space-y-0.5">
-                          <p className="text-xs text-gray-300">📍 {u.city || "Not Provided"}, {u.state}</p>
-                          <p className="text-xs text-gray-400">🎂 {u.age} वर्ष | 🎓 {u.education}</p>
-                          <p className="text-xs text-gray-500">🏷️ {u.category.toUpperCase()} | 🚻 {u.gender === "male" ? "पुरुष" : "महिला"}</p>
+                          <p className="text-xs text-slate-300">{u.city || "N/A"}, {u.state}</p>
+                          <p className="text-xs text-slate-400">{u.age} yr | {u.education}</p>
+                          <p className="text-xs text-slate-500">{u.category.toUpperCase()} | {u.gender === "male" ? "M" : "F"}</p>
                         </td>
-                        <td className="p-4 text-xs text-gray-400">
-                          {new Date(u.created_at).toLocaleDateString("hi-IN")}
+                        <td className="p-4 text-xs text-slate-400">
+                          {new Date(u.created_at).toLocaleDateString("en-IN")}
                         </td>
                         <td className="p-4 text-center font-semibold text-lg text-white">
                           {u.ai_messages_used}
@@ -798,21 +866,21 @@ export default function AdminDashboard() {
                         <td className="p-4 text-center">
                           <button
                             onClick={() => handleTogglePaid(u.id, u.is_paid)}
-                            className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
-                              u.is_paid 
-                                ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30" 
-                                : "bg-gray-800 text-gray-400 border border-gray-700"
+                            className={`px-3 py-1 rounded-full text-xs font-bold transition ${
+                              u.is_paid
+                                ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
+                                : "bg-slate-800 text-slate-400 border border-slate-700"
                             }`}
                           >
-                            {u.is_paid ? "💎 Paid (Premium)" : "🆓 Free Tier"}
+                            {u.is_paid ? "Paid" : "Free"}
                           </button>
                         </td>
                         <td className="p-4 text-center">
                           <button
                             onClick={() => handleResetMessages(u.id)}
-                            className="bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/20 text-blue-400 text-xs px-3 py-1.5 rounded-xl transition-all"
+                            className="bg-blue-500/15 hover:bg-blue-500/30 border border-blue-500/30 text-blue-300 text-xs px-3 py-1.5 rounded-md transition"
                           >
-                            🔄 Reset Counter
+                            Reset Counter
                           </button>
                         </td>
                       </tr>
@@ -828,28 +896,36 @@ export default function AdminDashboard() {
         {activeTab === "chats" && (
           <div className="space-y-6">
             <div>
-              <h2 className="text-2xl font-bold text-white">हाल के AI संवाद (Recent Conversations logs)</h2>
-              <p className="text-gray-400 text-sm">यूज़र्स द्वारा पूछे गए प्रश्न और AI के उत्तर (लाइव मॉनिटरिंग)।</p>
+              <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                <MessageSquareIcon size={22} className="text-red-500" />
+                Recent Conversations
+              </h2>
+              <p className="text-slate-400 text-sm mt-1">
+                Questions asked by users and AI answers (live monitoring).
+              </p>
             </div>
 
             {loadingChats ? (
-              <div className="py-12 text-center text-gray-500">चैट हिस्ट्री लोड हो रही है...</div>
+              <div className="py-12 text-center text-slate-500">Loading chat history...</div>
             ) : chats.length === 0 ? (
-              <div className="bg-[#1a1d27] border border-[#2a2d3a] rounded-2xl p-8 text-center text-gray-500">
-                कोई चैट हिस्ट्री नहीं मिली।
+              <div className="bg-slate-900 border border-slate-800 rounded-lg p-8 text-center text-slate-500">
+                No chat history found.
               </div>
             ) : (
-              <div className="space-y-4 max-w-4xl">
+              <div className="space-y-3 max-w-4xl">
                 {chats.map((c) => (
-                  <div key={c.id} className="bg-[#1a1d27] border border-[#2a2d3a] rounded-2xl p-5 space-y-3">
-                    <div className="flex justify-between items-center text-xs text-gray-500 border-b border-[#2a2d3a]/50 pb-2">
-                      <p>👤 User: <span className="text-gray-400">{c.user_id?.substring(0, 8)}...</span></p>
-                      <p>🏛️ Exam ID: <span className="text-blue-400 font-semibold">{c.exam_id}</span></p>
-                      <p>📅 Date: {new Date(c.created_at).toLocaleString("hi-IN")}</p>
+                  <div
+                    key={c.id}
+                    className="bg-slate-900 border border-slate-800 rounded-lg p-5 space-y-3"
+                  >
+                    <div className="flex flex-wrap justify-between items-center text-xs text-slate-500 border-b border-slate-800 pb-2 gap-2">
+                      <p>User: <span className="text-slate-300">{c.user_id?.substring(0, 8)}...</span></p>
+                      <p>Exam ID: <span className="text-blue-400 font-semibold">{c.exam_id}</span></p>
+                      <p>Date: {new Date(c.created_at).toLocaleString("en-IN")}</p>
                     </div>
                     <div className="space-y-2">
                       <div className="flex gap-2">
-                        <span className="text-xs text-gray-400 bg-gray-800 px-2 py-0.5 rounded h-fit">User Q</span>
+                        <span className="text-xs text-slate-400 bg-slate-800 px-2 py-0.5 rounded h-fit">User</span>
                         <p className="text-sm font-semibold text-white">{c.content}</p>
                       </div>
                     </div>
@@ -866,61 +942,68 @@ export default function AdminDashboard() {
           <div className="space-y-6">
             <div className="flex justify-between items-center">
               <div>
-                <h2 className="text-2xl font-bold text-white">मार्केटप्लेस ऑर्डर्स (Marketplace Orders)</h2>
-                <p className="text-gray-400 text-sm">प्रवेश नोट्स, टेस्ट सीरीज और मॉडल पेपर्स के भुगतान एवं डिलीवरी की ट्रैकिंग।</p>
+                <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                  <ShoppingBagIcon size={22} className="text-red-500" />
+                  Marketplace Orders
+                </h2>
+                <p className="text-slate-400 text-sm mt-1">
+                  Payment and delivery tracking for notes, test series, and model papers.
+                </p>
               </div>
               <button
                 onClick={fetchOrders}
-                className="bg-[#2a2d3a] hover:bg-[#3a3d4d] border border-[#2a2d3a] text-xs px-4 py-2.5 rounded-xl transition-all"
+                className="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs px-3.5 py-2 rounded-md transition flex items-center gap-1.5"
               >
-                🔄 Refresh Orders
+                <ZapIcon size={12} />
+                Refresh
               </button>
             </div>
 
             {loadingOrders ? (
-              <div className="py-12 text-center text-gray-500">ऑर्डर्स लोड हो रहे हैं...</div>
+              <div className="py-12 text-center text-slate-500">Loading orders...</div>
             ) : orders.length === 0 ? (
-              <div className="bg-[#1a1d27] border border-[#2a2d3a] rounded-2xl p-8 text-center text-gray-500">
-                कोई ऑर्डर नहीं मिला।
+              <div className="bg-slate-900 border border-slate-800 rounded-lg p-8 text-center text-slate-500">
+                No orders yet.
               </div>
             ) : (
-              <div className="bg-[#1a1d27] border border-[#2a2d3a] rounded-2xl overflow-hidden shadow-sm">
+              <div className="bg-slate-900 border border-slate-800 rounded-lg overflow-hidden">
                 <table className="w-full text-left text-sm border-collapse">
                   <thead>
-                    <tr className="bg-[#12151f] text-gray-400 text-xs border-b border-[#2a2d3a]">
-                      <th className="p-4">Customer Name & Email</th>
-                      <th className="p-4">Product Purchased</th>
+                    <tr className="bg-slate-950 text-slate-400 text-xs border-b border-slate-800">
+                      <th className="p-4">Customer</th>
+                      <th className="p-4">Product</th>
                       <th className="p-4 text-center">Amount</th>
-                      <th className="p-4 text-center">Payment Status</th>
-                      <th className="p-4 text-center">Delivery Status</th>
-                      <th className="p-4">Transaction Details</th>
-                      <th className="p-4 text-center">Actions</th>
+                      <th className="p-4 text-center">Payment</th>
+                      <th className="p-4 text-center">Delivery</th>
+                      <th className="p-4">Transaction</th>
+                      <th className="p-4 text-center">Action</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#2a2d3a]">
+                  <tbody className="divide-y divide-slate-800">
                     {orders.map((o) => (
-                      <tr key={o.id} className="hover:bg-[#1f2330]">
+                      <tr key={o.id} className="hover:bg-slate-800/50">
                         <td className="p-4">
                           <p className="font-bold text-white">{o.customer_name}</p>
-                          <div className="flex items-center gap-1.5 mt-0.5 text-xs text-gray-400">
+                          <div className="flex items-center gap-1.5 mt-0.5 text-xs text-slate-400">
                             <span className="truncate max-w-[200px]">{o.customer_email}</span>
                             <button
                               onClick={() => {
                                 navigator.clipboard.writeText(o.customer_email);
-                                alert("ईमेल क्लिपबोर्ड पर कॉपी हो गया!");
                               }}
-                              className="text-[10px] bg-[#2a2d3a] hover:bg-[#3a3d4d] px-1.5 py-0.5 rounded cursor-pointer transition-colors"
+                              className="text-[10px] bg-slate-800 hover:bg-slate-700 px-1.5 py-0.5 rounded transition-colors"
                               title="Copy Email"
                             >
-                              📋 Copy
+                              Copy
                             </button>
                           </div>
                         </td>
                         <td className="p-4">
-                          <p className="font-semibold text-gray-200">
+                          <p className="font-semibold text-slate-200">
                             {o.product?.title || "Unknown Product"}
                           </p>
-                          <p className="text-xs text-gray-500">{o.product?.exam_name || "Rajasthan Exam"}</p>
+                          <p className="text-xs text-slate-500">
+                            {o.product?.exam_name || "Rajasthan Exam"}
+                          </p>
                         </td>
                         <td className="p-4 text-center font-bold text-white">
                           ₹{Number(o.amount).toFixed(2)}
@@ -928,42 +1011,56 @@ export default function AdminDashboard() {
                         <td className="p-4 text-center">
                           <button
                             onClick={() => handleUpdatePayment(o.id, o.payment_status)}
-                            className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+                            className={`px-3 py-1 rounded-full text-xs font-bold transition ${
                               o.payment_status === "paid"
                                 ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
-                                : "bg-red-500/10 text-red-400 border border-red-500/20"
+                                : "bg-red-500/15 text-red-400 border border-red-500/30"
                             }`}
                           >
-                            {o.payment_status === "paid" ? "💳 Success (Paid)" : "⏳ Pending"}
+                            {o.payment_status === "paid" ? "Paid" : "Pending"}
                           </button>
                         </td>
                         <td className="p-4 text-center">
                           <button
                             onClick={() => handleUpdateDelivery(o.id, o.delivery_status)}
-                            className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+                            className={`px-3 py-1 rounded-full text-xs font-bold transition ${
                               o.delivery_status === "delivered"
                                 ? "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30"
-                                : "bg-amber-500/10 text-amber-400 border border-amber-500/20"
+                                : "bg-amber-500/15 text-amber-400 border border-amber-500/30"
                             }`}
                           >
-                            {o.delivery_status === "delivered" ? "✅ Sent (Delivered)" : "📬 Pending Delivery"}
+                            {o.delivery_status === "delivered" ? "Sent" : "Pending"}
                           </button>
                         </td>
-                        <td className="p-4 text-xs text-gray-400 space-y-0.5">
-                          <p><span className="text-gray-500">Order ID:</span> {o.razorpay_order_id ? o.razorpay_order_id.substring(0, 15) : "N/A"}...</p>
-                          {o.razorpay_payment_id && <p><span className="text-gray-500">Pay ID:</span> {o.razorpay_payment_id.substring(0, 15)}...</p>}
-                          <p><span className="text-gray-500">Date:</span> {new Date(o.created_at).toLocaleString("hi-IN")}</p>
+                        <td className="p-4 text-xs text-slate-400 space-y-0.5">
+                          <p>
+                            <span className="text-slate-500">Order:</span>{" "}
+                            {o.razorpay_order_id
+                              ? o.razorpay_order_id.substring(0, 14)
+                              : "N/A"}
+                            ...
+                          </p>
+                          {o.razorpay_payment_id && (
+                            <p>
+                              <span className="text-slate-500">Pay:</span>{" "}
+                              {o.razorpay_payment_id.substring(0, 14)}...
+                            </p>
+                          )}
+                          <p>
+                            <span className="text-slate-500">Date:</span>{" "}
+                            {new Date(o.created_at).toLocaleString("en-IN")}
+                          </p>
                         </td>
                         <td className="p-4 text-center">
                           {o.delivery_status !== "delivered" && o.payment_status === "paid" ? (
                             <button
                               onClick={() => handleUpdateDelivery(o.id, o.delivery_status)}
-                              className="bg-[#10b981] hover:bg-[#059669] text-white text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm transition-all"
+                              className="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3 py-1.5 rounded-md transition"
                             >
-                              🚀 Mark Sent
+                              Mark Sent
                             </button>
                           ) : (
-                            <span className="text-xs text-gray-500">—</span>
+                            <span className="text-xs text-slate-600">—</span>
                           )}
                         </td>
                       </tr>
@@ -994,19 +1091,22 @@ export default function AdminDashboard() {
         {activeTab === "schema" && (
           <div className="space-y-6 max-w-4xl">
             <div>
-              <h2 className="text-2xl font-bold text-white">डेटाबेस स्कीमा निर्देशिका (Supabase Schema Guide)</h2>
-              <p className="text-gray-400 text-sm">
-                एडमिन पैनल सेटिंग्स और AI Providers को सक्रिय करने के लिए Supabase SQL Editor में निम्नांकित कोड चलाएं।
+              <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                <DatabaseIcon size={22} className="text-red-500" />
+                Supabase Schema Guide
+              </h2>
+              <p className="text-slate-400 text-sm mt-1">
+                Run these in Supabase SQL Editor to activate admin settings and AI providers.
               </p>
             </div>
 
-            <div className="bg-[#1a1d27] border border-[#2a2d3a] rounded-2xl p-6 space-y-4">
-              <p className="text-sm text-gray-300">
-                यदि एडमिन पैनल खोलते समय <strong>&ldquo;Relation does not exist&rdquo;</strong> एरर मिलता है या AI कुंजियां डेटाबेस में सुरक्षित नहीं हो पा रही हैं, तो अपने 
-                Supabase SQL Editor में यह पूरा स्क्रिप्ट चलाएं:
+            <div className="bg-slate-900 border border-slate-800 rounded-lg p-6 space-y-4">
+              <p className="text-sm text-slate-300">
+                If you see <strong>&ldquo;Relation does not exist&rdquo;</strong> errors when opening
+                the admin panel, run this complete script in your Supabase SQL Editor:
               </p>
 
-              <pre className="bg-[#0f1117] border border-[#2a2d3a] rounded-xl p-5 overflow-x-auto text-xs text-emerald-400 font-mono leading-relaxed">
+              <pre className="bg-slate-950 border border-slate-800 rounded-md p-5 overflow-x-auto text-xs text-emerald-400 font-mono leading-relaxed">
 {`-- 1. Add is_admin column to user_profiles table if missing
 ALTER TABLE user_profiles ADD COLUMN IF NOT EXISTS is_admin BOOLEAN DEFAULT FALSE;
 
@@ -1034,8 +1134,10 @@ SELECT 'openrouter'
 WHERE NOT EXISTS (SELECT 1 FROM admin_settings);`}
               </pre>
 
-              <div className="bg-emerald-950/20 border border-emerald-500/20 text-emerald-400 text-xs p-4 rounded-xl">
-                💡 <strong>नोट:</strong> RLS (Row Level Security) इनेबल करने के बाद, हमने कोई पब्लिक पॉलिसी नहीं बनाई है। इसका अर्थ यह है कि इस टेबल में मौजूद चाबियों को ब्राउज़र में कोई भी सामान्य यूज़र लीक या देख नहीं सकता। यह सेटिंग्स केवल सुरक्षित सर्वर-साइड नेक्स्ट.जेएस एपीआई (API Router) के माध्यम से नियंत्रित की जाती हैं।
+              <div className="bg-emerald-950/30 border border-emerald-500/30 text-emerald-300 text-xs p-4 rounded-md">
+                <strong>Note:</strong> After enabling RLS, no public policy has been created — meaning
+                no normal browser user can leak the keys. Settings are controlled only via the
+                secure server-side API router.
               </div>
             </div>
           </div>

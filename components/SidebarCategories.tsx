@@ -1,130 +1,96 @@
 "use client";
 
-import { useState } from "react";
-import marketplaceData from "@/data/marketplace_data.json";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { getGroupIdByMarketplaceName, findExamByMarketplaceName, getGroupInitials, getGroupById } from "@/lib/groups";
+import Image from "next/image";
+import { Category } from "@/lib/store-types";
+import { ChevronRightIcon } from "@/components/icons";
 
-interface MarketExam {
-  sl: number;
-  id: number;
-  name_en: string;
+interface SidebarCategoriesProps {
+  activeCategory?: string;
 }
 
-interface GroupedData {
-  [groupName: string]: MarketExam[];
-}
+export default function SidebarCategories({ activeCategory }: SidebarCategoriesProps) {
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [loading, setLoading] = useState(true);
 
-export default function SidebarCategories() {
-  const data = marketplaceData as GroupedData;
-  const groups = Object.keys(data);
+  useEffect(() => {
+    fetch("/api/categories")
+      .then((r) => r.json())
+      .then((data: Category[]) => {
+        const sorted = [...data].sort((a, b) => a.priority - b.priority);
+        setCategories(sorted);
+      })
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, []);
 
-  const [expandedGroups, setExpandedGroups] = useState<Record<string, boolean>>({
-    "Rajasthan RSMSSB Exams": true,
-  });
-
-  const toggleGroup = (group: string) => {
-    setExpandedGroups((prev) => ({
-      ...prev,
-      [group]: !prev[group],
-    }));
-  };
+  if (loading) {
+    return (
+      <aside className="card-base p-3">
+        <div className="space-y-2 animate-pulse">
+          {[...Array(8)].map((_, i) => (
+            <div key={i} className="h-9 bg-slate-100 rounded" />
+          ))}
+        </div>
+      </aside>
+    );
+  }
 
   return (
-    <aside className="w-full lg:w-[280px] shrink-0 bg-white border border-gray-100 rounded-sm shadow-sm overflow-hidden h-fit">
-      <div className="bg-black text-white px-5 py-4 flex items-center gap-2.5 font-semibold text-xs uppercase tracking-[0.1em] font-mono">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-4.5 w-4.5 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h7" />
-        </svg>
-        <span>Exams Categories</span>
+    <aside className="card-base p-2 sticky top-32">
+      <div className="px-3 py-2 mb-1 border-b border-slate-100">
+        <p className="text-[11px] font-bold uppercase text-slate-500 tracking-wider">
+          Browse Categories
+        </p>
       </div>
-
-      <div className="divide-y divide-gray-100">
-        {groups.map((group) => {
-          const isExpanded = !!expandedGroups[group];
-          const marketExams = data[group];
-          const groupId = getGroupIdByMarketplaceName(group);
-          const groupData = groupId ? getGroupById(groupId) : null;
-          const cleanGroupName = group.replace("Rajasthan", "").replace("Exams", "").trim();
-
+      <nav className="space-y-0.5">
+        {categories.map((cat) => {
+          const isActive = activeCategory === cat.id;
           return (
-            <div key={group} className="flex flex-col">
-              <div className="flex items-center">
-                {groupId ? (
-                  <Link
-                    href={`/category/${groupId}`}
-                    className="flex-1 px-5 py-3.5 text-left text-xs font-semibold text-gray-800 hover:bg-gray-50 transition-colors uppercase tracking-wider font-mono"
-                    style={{ textDecoration: 'none' }}
-                  >
-                    <span className="flex items-center gap-2.5">
-                      {groupData?.logo_url ? (
-                        <span className="w-5 h-5 rounded-full overflow-hidden flex-shrink-0 bg-white border border-gray-100">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={groupData.logo_url} alt="" className="w-full h-full object-contain" />
-                        </span>
-                      ) : groupData?.color ? (
-                        <span
-                          className="w-5 h-5 rounded-lg flex items-center justify-center text-[8px] font-bold text-white flex-shrink-0"
-                          style={{ background: groupData.color }}
-                        >
-                          {getGroupInitials(groupData.name)}
-                        </span>
-                      ) : null}
-                      {cleanGroupName}
-                    </span>
-                  </Link>
-                ) : (
-                  <button
-                    onClick={() => toggleGroup(group)}
-                    className="flex-1 px-5 py-3.5 text-left text-xs font-semibold text-gray-800 hover:bg-gray-50 transition-colors uppercase tracking-wider font-mono"
-                  >
-                    <span className="flex items-center gap-2.5">
-                      {groupData?.logo_url ? (
-                        <span className="w-5 h-5 rounded-full overflow-hidden flex-shrink-0 bg-white border border-gray-100">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={groupData.logo_url} alt="" className="w-full h-full object-contain" />
-                        </span>
-                      ) : null}
-                      <span className={isExpanded ? "text-black" : "text-gray-600"}>{cleanGroupName}</span>
-                    </span>
-                  </button>
-                )}
-                <button
-                  onClick={() => toggleGroup(group)}
-                  className="px-3 py-3.5"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={`h-3 w-3 text-gray-400 transition-transform duration-200 ${isExpanded ? "transform rotate-180 text-black" : ""}`}
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                  </svg>
-                </button>
-              </div>
-
-              {isExpanded && (
-                <div className="bg-gray-50/50 pb-2 border-t border-gray-50 pl-5 pr-3 divide-y divide-gray-50/50 max-h-[220px] overflow-y-auto scrollbar-thin">
-                  {marketExams.map((exam) => {
-                    const matchedId = findExamByMarketplaceName(exam.name_en);
-                    const href = matchedId ? `/exam/${matchedId}` : (groupId ? `/category/${groupId}` : '#');
-                    return (
-                      <Link
-                        key={exam.id}
-                        href={href}
-                        className="block py-2 text-[11px] text-gray-500 hover:text-black font-medium transition-colors border-b border-gray-100/30"
-                        style={matchedId ? {} : { opacity: 0.6, cursor: matchedId ? 'pointer' : 'default' }}
-                      >
-                        • {exam.name_en}
-                      </Link>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
+            <Link
+              key={cat.id}
+              href={`/category/${cat.id}`}
+              className={`cat-link ${isActive ? "active" : ""}`}
+            >
+              <span className="flex items-center gap-2.5">
+                <span className="w-7 h-7 rounded bg-slate-100 flex items-center justify-center overflow-hidden shrink-0">
+                  {cat.logo_url ? (
+                    <Image
+                      src={cat.logo_url}
+                      alt={cat.name}
+                      width={28}
+                      height={28}
+                      className="object-cover w-full h-full"
+                    />
+                  ) : (
+                    <span className="text-sm">{cat.icon || "📚"}</span>
+                  )}
+                </span>
+                <span className="truncate">{cat.name}</span>
+              </span>
+              <ChevronRightIcon
+                size={14}
+                className={isActive ? "opacity-90" : "opacity-40"}
+              />
+            </Link>
           );
         })}
+      </nav>
+
+      <div className="mt-3 mx-2 p-3 rounded-md bg-amber-50 border border-amber-100">
+        <p className="text-xs font-bold text-amber-800">🎯 Need help?</p>
+        <p className="text-[11px] text-amber-700 mt-1 leading-relaxed">
+          WhatsApp पर expert से बात करें — तुरंत PDF लिंक पाएं।
+        </p>
+        <a
+          href="https://wa.me/917852004401"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-2 inline-flex items-center gap-1 text-[11px] font-bold text-white bg-emerald-600 hover:bg-emerald-700 px-2.5 py-1.5 rounded transition"
+        >
+          WhatsApp Now
+        </a>
       </div>
     </aside>
   );

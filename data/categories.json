@@ -1,0 +1,80 @@
+[
+  {
+    "id": "rajasthan",
+    "name": "Rajasthan Exams",
+    "name_hi": "राजस्थान परीक्षाएं",
+    "icon": "🏛️",
+    "logo_url": "/logos/categories/rajasthan-general.jpg",
+    "color": "bg-indigo-600",
+    "priority": 1,
+    "is_active": true,
+    "exam_ids": ["cet-grad", "cet-senior", "patwari", "ldc", "computer-instructor", "informatic-assistant", "junior-accountant", "reet-level1", "reet-level2", "bstc", "school-lecturer", "police-constable", "police-si", "home-guard", "forest-guard"],
+    "created_at": "2026-01-01T00:00:00Z",
+    "updated_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "id": "police",
+    "name": "Police & Defence",
+    "name_hi": "पुलिस और रक्षा",
+    "icon": "🛡️",
+    "logo_url": "/logos/categories/rajasthan-police.jpg",
+    "color": "bg-amber-700",
+    "priority": 2,
+    "is_active": true,
+    "exam_ids": ["police-constable", "police-si", "home-guard", "forest-guard"],
+    "created_at": "2026-01-01T00:00:00Z",
+    "updated_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "id": "teaching",
+    "name": "Teaching Jobs",
+    "name_hi": "शिक्षक भर्ती",
+    "icon": "📚",
+    "logo_url": "/logos/categories/rajasthan-teaching.jpg",
+    "color": "bg-stone-700",
+    "priority": 3,
+    "is_active": true,
+    "exam_ids": ["reet-level1", "reet-level2", "bstc", "school-lecturer", "college-lecturer"],
+    "created_at": "2026-01-01T00:00:00Z",
+    "updated_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "id": "rsmssb",
+    "name": "RSMSSB Specific",
+    "name_hi": "RSMSSB विशेष",
+    "icon": "📋",
+    "logo_url": "/logos/categories/rajasthan-rsmssb.jpg",
+    "color": "bg-amber-800",
+    "priority": 4,
+    "is_active": true,
+    "exam_ids": ["cet-grad", "cet-senior", "patwari", "ldc", "computer-instructor", "informatic-assistant", "junior-accountant"],
+    "created_at": "2026-01-01T00:00:00Z",
+    "updated_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "id": "cet",
+    "name": "CET Common Tests",
+    "name_hi": "CET सामान्य परीक्षा",
+    "icon": "📝",
+    "logo_url": "/logos/categories/rajasthan-cet.jpg",
+    "color": "bg-stone-800",
+    "priority": 5,
+    "is_active": true,
+    "exam_ids": ["cet-grad", "cet-senior"],
+    "created_at": "2026-01-01T00:00:00Z",
+    "updated_at": "2026-09-01T00:00:00Z"
+  },
+  {
+    "id": "reet",
+    "name": "REET & Teaching",
+    "name_hi": "REET और शिक्षक",
+    "icon": "🎓",
+    "logo_url": "/logos/categories/rajasthan-reet.jpg",
+    "color": "bg-indigo-800",
+    "priority": 6,
+    "is_active": true,
+    "exam_ids": ["reet-level1", "reet-level2", "bstc", "school-lecturer"],
+    "created_at": "2026-01-01T00:00:00Z",
+    "updated_at": "2026-09-01T00:00:00Z"
+  }
+]

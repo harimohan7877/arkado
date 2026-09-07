@@ -1,9 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { supabase } from "@/lib/supabase";
+import { useEffect, useState } from "react";
+import { Category } from "@/lib/store-types";
+import { Settings } from "@/lib/store-types";
+import {
+  SearchIcon,
+  CloseIcon,
+  MenuIcon,
+  CartIcon,
+  UserIcon,
+  ChevronDownIcon,
+  GridIcon,
+  PhoneIcon,
+  MessageCircleIcon,
+} from "@/components/icons";
 
 interface NavbarProps {
   cartCount?: number;
@@ -11,180 +22,355 @@ interface NavbarProps {
 }
 
 export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [settings, setSettings] = useState<Settings | null>(null);
+  const [showCatDropdown, setShowCatDropdown] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [user, setUser] = useState<{ name?: string; email: string } | null>(() => {
-    if (typeof window === "undefined") return null;
-    try {
-      const raw = localStorage.getItem("mock_user_session");
-      if (!raw) return null;
-      const u = JSON.parse(raw);
-      return { name: u.user_metadata?.full_name || u.name, email: u.email };
-    } catch {
-      return null;
-    }
-  });
-  const [showDropdown, setShowDropdown] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session?.user) {
-        const meta = session.user.user_metadata;
-        setUser({
-          name: meta?.full_name || meta?.name || session.user.email?.split("@")[0],
-          email: session.user.email || "",
-        });
-        localStorage.setItem("mock_user_session", JSON.stringify(session.user));
-      }
-    });
-
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (session?.user) {
-        const meta = session.user.user_metadata;
-        setUser({
-          name: meta?.full_name || meta?.name || session.user.email?.split("@")[0],
-          email: session.user.email || "",
-        });
-        localStorage.setItem("mock_user_session", JSON.stringify(session.user));
-      } else if (!localStorage.getItem("mock_user_session")) {
-        setUser(null);
-      }
-    });
-
-    return () => subscription.unsubscribe();
+    fetch("/api/categories")
+      .then((r) => r.json())
+      .then(setCategories)
+      .catch(() => {});
+    fetch("/api/settings")
+      .then((r) => r.json())
+      .then(setSettings)
+      .catch(() => {});
   }, []);
 
-  const handleLogout = async () => {
-    localStorage.removeItem("mock_user_session");
-    setUser(null);
-    setShowDropdown(false);
-    await supabase.auth.signOut();
-    router.push("/");
-  };
+  useEffect(() => {
+    if (showMobileMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showMobileMenu]);
+
+  const logoText = settings?.brand?.logo_text || settings?.site_name || "Arkado";
+  const badgeText = settings?.brand?.logo_badge_text || "STORE";
+  const tagline = settings?.brand?.tagline || "Pattern-decoded notes for All-India exams";
 
   return (
-    <header className="w-full bg-white font-sans border-b border-gray-100 sticky top-0 z-50">
-      {/* Top Banner Message */}
-      <div className="bg-black text-white text-[11px] font-medium py-2 px-4 text-center tracking-wider uppercase">
-        ⚡ Rajasthan Exams study resources immediate email delivery
-      </div>
-
-      {/* Main Header Bar */}
-      <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-3.5 flex items-center justify-between gap-6">
-        {/* Brand Logo */}
-        <Link href="/" className="shrink-0 flex items-center">
-          <span className="text-xl md:text-2xl font-bold tracking-tight text-black uppercase font-mono">
-            Sarkari<span className="font-light text-gray-500">Sathi</span>
-          </span>
-        </Link>
-
-        {/* Search Bar */}
-        <form
-          action="/"
-          method="GET"
-          className="hidden md:flex flex-1 max-w-xl"
-          onSubmit={(e) => {
-            if (!searchQuery.trim()) e.preventDefault();
-          }}
-        >
-          <div className="relative w-full">
-            <input
-              name="q"
-              type="text"
-              placeholder="Search for exam materials..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full h-10 pl-10 pr-4 bg-gray-50/50 hover:bg-gray-50 focus:bg-white text-xs text-gray-800 outline-none border border-gray-200 rounded-full transition-all focus:border-black"
-            />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 text-gray-400 absolute left-3.5 top-3"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-          </div>
-        </form>
-
-        {/* Navigation & Cart/Login */}
-        <div className="flex items-center gap-4 md:gap-6 shrink-0">
-          {/* Cart Icon */}
+    <>
+      <header className="sticky top-0 z-40 bg-white border-b border-stone-200">
+        {/* Main header - no dark promo strip */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center gap-3 sm:gap-6">
+          {/* Mobile menu trigger */}
           <button
-            onClick={onCartClick}
-            className="flex items-center gap-2 group relative p-1.5 cursor-pointer"
+            onClick={() => setShowMobileMenu(true)}
+            className="md:hidden w-9 h-9 rounded-md hover:bg-stone-100 flex items-center justify-center text-stone-700 cursor-pointer"
+            aria-label="Open menu"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5.5 w-5.5 text-gray-800 hover:text-black transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-            </svg>
-            <span className="absolute -top-0.5 -right-0.5 min-w-[16px] h-[16px] bg-black text-white text-[9px] font-bold rounded-full flex items-center justify-center border border-white">
-              {cartCount}
-            </span>
+            <MenuIcon size={20} />
           </button>
 
-          {/* User Menu / Login Button */}
-          {user ? (
-            <div className="relative">
-              <button
-                onClick={() => setShowDropdown(!showDropdown)}
-                className="flex items-center gap-2 button-primary-pill px-4 py-2 text-xs cursor-pointer"
+          {/* Brand - Beautiful Arkado logo with mixed fonts */}
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 shrink-0 group">
+            <div className="relative w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-amber-500 via-amber-600 to-amber-800 flex items-center justify-center shadow-md group-hover:shadow-amber-500/30 transition-all shrink-0">
+              <span 
+                className="text-white font-black italic text-lg sm:text-2xl leading-none tracking-tight" 
+                style={{ 
+                  fontFamily: 'Georgia, "Times New Roman", serif',
+                  textShadow: '0 1px 2px rgba(0,0,0,0.25)',
+                  transform: 'skewX(-6deg)'
+                }}
               >
-                <span className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center text-[9px] font-bold">
-                  {(user.name || user.email)[0].toUpperCase()}
+                A
+              </span>
+              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-white"></span>
+            </div>
+            <div className="flex flex-col leading-none">
+              <div className="flex items-baseline gap-1">
+                <span 
+                  className="font-black text-lg sm:text-xl text-stone-950 tracking-tight"
+                  style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+                >
+                  {logoText.slice(0, 4)}
                 </span>
-                <span className="max-w-[100px] truncate">{user.name || user.email}</span>
+                <span 
+                  className="font-light text-lg sm:text-xl text-amber-600 tracking-tight italic"
+                  style={{ fontFamily: 'Georgia, "Times New Roman", serif' }}
+                >
+                  {logoText.slice(4) || "do"}
+                </span>
+                <span className="text-[8px] sm:text-[9px] font-extrabold uppercase bg-amber-100 text-amber-800 px-1 py-0.5 rounded border border-amber-200/80 align-middle ml-0.5">
+                  {badgeText}
+                </span>
+              </div>
+              <p className="text-[9px] sm:text-[10px] text-stone-500 hidden sm:block font-medium mt-0.5 truncate max-w-[220px]">
+                {tagline}
+              </p>
+            </div>
+          </Link>
+
+          {/* Search bar (desktop) */}
+          <form
+            action="/search"
+            method="GET"
+            className="hidden md:flex flex-1 max-w-2xl mx-auto"
+          >
+            <div className="relative flex w-full">
+              <input
+                name="q"
+                type="text"
+                placeholder="Search exam (CET, Patwari, Police, SSC, UPSC, Banking)..."
+                className="flex-1 px-4 py-2.5 rounded-l-lg border border-stone-300 text-sm placeholder:text-stone-400 focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600"
+              />
+              <button
+                type="submit"
+                className="px-5 bg-amber-600 hover:bg-amber-700 text-white rounded-r-lg flex items-center justify-center transition cursor-pointer"
+                aria-label="Search"
+              >
+                <SearchIcon size={18} />
+              </button>
+            </div>
+          </form>
+
+          {/* Right actions */}
+          <div className="flex items-center gap-1 sm:gap-2 ml-auto">
+            {/* Mobile search trigger */}
+            <button
+              onClick={() => setShowSearch(true)}
+              className="md:hidden w-9 h-9 rounded-md hover:bg-stone-100 flex items-center justify-center text-stone-700 cursor-pointer"
+              aria-label="Search"
+            >
+              <SearchIcon size={18} />
+            </button>
+
+            <Link
+              href="/auth"
+              className="hidden sm:flex flex-col items-center px-2 py-1 rounded-md hover:bg-stone-100 text-stone-700 transition"
+              aria-label="Account"
+            >
+              <UserIcon size={20} />
+              <span className="text-[10px] font-semibold mt-0.5">Account</span>
+            </Link>
+
+            <button
+              onClick={onCartClick}
+              className="relative flex flex-col items-center px-2 sm:px-3 py-1 rounded-md hover:bg-stone-100 text-stone-700 transition cursor-pointer"
+              aria-label="View cart"
+            >
+              <div className="relative">
+                <CartIcon size={20} />
+                {cartCount > 0 && (
+                  <span className="absolute -top-1.5 -right-1.5 w-4 h-4 rounded-full bg-amber-600 text-white font-black text-[9px] flex items-center justify-center">
+                    {cartCount}
+                  </span>
+                )}
+              </div>
+              <span className="text-[10px] font-semibold mt-0.5">My cart</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Secondary nav (desktop) */}
+        <div className="hidden md:block border-t border-stone-100 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-11 flex items-center gap-1">
+            {/* Categories dropdown trigger */}
+            <div
+              className="relative"
+              onMouseEnter={() => setShowCatDropdown(true)}
+              onMouseLeave={() => setShowCatDropdown(false)}
+            >
+              <button className="h-11 px-4 bg-stone-900 hover:bg-stone-800 text-white font-semibold text-sm flex items-center gap-2 cursor-pointer transition rounded-sm">
+                <GridIcon size={16} />
+                <span>All Categories</span>
+                <ChevronDownIcon size={14} />
               </button>
 
-              {showDropdown && (
-                <>
-                  <div className="fixed inset-0 z-40" onClick={() => setShowDropdown(false)} />
-                  <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-sm shadow-halo z-50 py-1">
-                    <div className="px-4 py-2 border-b border-gray-100">
-                      <p className="text-[10px] text-gray-400 font-mono truncate">{user.email}</p>
-                    </div>
-                    <button
-                      onClick={handleLogout}
-                      className="w-full text-left px-4 py-2.5 text-xs text-gray-700 hover:bg-gray-50 font-mono cursor-pointer"
+              {showCatDropdown && categories.length > 0 && (
+                <div className="absolute left-0 top-full w-80 bg-white border border-stone-200 rounded-md shadow-xl z-50 anim-slide-down overflow-hidden">
+                  <Link
+                    href="/exams"
+                    className="block px-4 py-2.5 text-sm font-semibold text-stone-900 hover:bg-amber-50 border-b border-stone-200 transition bg-stone-50"
+                  >
+                    📋 View All Categories
+                  </Link>
+                  {categories.map((cat) => (
+                    <Link
+                      key={cat.id}
+                      href={`/category/${cat.id}`}
+                      className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-stone-700 hover:bg-amber-50 hover:text-amber-800 border-b border-stone-100 last:border-0 transition"
                     >
-                      Sign out
-                    </button>
-                  </div>
-                </>
+                      {cat.logo_url ? (
+                        <img src={cat.logo_url} alt={cat.name} className="w-7 h-7 rounded object-cover" />
+                      ) : (
+                        <span className="text-lg">{cat.icon}</span>
+                      )}
+                      {cat.name}
+                    </Link>
+                  ))}
+                </div>
               )}
             </div>
-          ) : (
-            <Link href="/auth">
-              <button className="button-primary-pill px-5 py-2 text-xs md:text-sm tracking-wide cursor-pointer">
-                Log in
-              </button>
-            </Link>
-          )}
-        </div>
-      </div>
 
-      {/* Mobile Search Bar */}
-      <div className="md:hidden px-4 pb-3">
-        <form action="/" method="GET">
-          <div className="relative w-full">
-            <input
-              name="q"
-              type="text"
-              placeholder="Search for exam materials..."
-              className="w-full h-9 pl-9 pr-4 bg-gray-50 text-xs text-gray-800 outline-none border border-gray-200 rounded-full focus:bg-white focus:border-black transition-all"
-            />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-3.5 w-3.5 text-gray-400 absolute left-3 top-2.5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+            <Link
+              href="/"
+              className="h-11 px-3 flex items-center text-sm font-semibold text-stone-700 hover:text-amber-700 transition"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
+              Home
+            </Link>
+            <Link
+              href="/#deals"
+              className="h-11 px-3 flex items-center text-sm font-semibold text-stone-700 hover:text-amber-700 transition"
+            >
+              {settings?.homepage?.hot_deals_title || "Today's Hot Deals"}
+            </Link>
+            <Link
+              href="/exams"
+              className="h-11 px-3 flex items-center text-sm font-semibold text-stone-700 hover:text-amber-700 transition"
+            >
+              All Exams
+            </Link>
+            <Link
+              href="/#new"
+              className="h-11 px-3 flex items-center text-sm font-semibold text-stone-700 hover:text-amber-700 transition"
+            >
+              {settings?.homepage?.new_arrivals_title || "New Arrivals"}
+            </Link>
           </div>
-        </form>
-      </div>
-    </header>
+        </div>
+      </header>
+
+      {/* Mobile search overlay */}
+      {showSearch && (
+        <div className="fixed inset-0 z-[70] bg-white anim-fade-in-up md:hidden">
+          <div className="p-4 flex items-center gap-2 border-b border-stone-200">
+            <form action="/search" method="GET" className="flex-1 flex">
+              <input
+                name="q"
+                type="text"
+                autoFocus
+                placeholder="Search exam..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="flex-1 px-4 py-2.5 rounded-l-lg border border-stone-300 text-sm focus:outline-none focus:border-amber-600"
+              />
+              <button
+                type="submit"
+                className="px-4 bg-amber-600 text-white rounded-r-lg"
+              >
+                <SearchIcon size={18} />
+              </button>
+            </form>
+            <button
+              onClick={() => setShowSearch(false)}
+              className="w-9 h-9 rounded-md hover:bg-stone-100 flex items-center justify-center cursor-pointer"
+              aria-label="Close search"
+            >
+              <CloseIcon size={20} />
+            </button>
+          </div>
+          <div className="p-4 space-y-2 text-sm text-stone-600">
+            <p className="font-semibold text-stone-500 uppercase text-xs mb-2">Trending searches</p>
+            {["CET 2026", "Patwari", "REET Level 1", "Police Constable", "SSC CGL", "Banking", "UPSC CSE"].map(
+              (q) => (
+                <Link
+                  key={q}
+                  href={`/search?q=${encodeURIComponent(q)}`}
+                  onClick={() => setShowSearch(false)}
+                  className="block py-2 border-b border-stone-100 hover:text-amber-700"
+                >
+                  {q}
+                </Link>
+              )
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* Mobile menu drawer */}
+      {showMobileMenu && (
+        <div className="fixed inset-0 z-[70] md:hidden">
+          <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm" onClick={() => setShowMobileMenu(false)} />
+          <div className="absolute left-0 top-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl flex flex-col anim-slide-down">
+            <div className="p-4 border-b border-stone-200 flex items-center justify-between">
+              <span className="font-bold text-stone-900">Menu</span>
+              <button
+                onClick={() => setShowMobileMenu(false)}
+                className="w-9 h-9 rounded-md hover:bg-stone-100 flex items-center justify-center cursor-pointer"
+                aria-label="Close menu"
+              >
+                <CloseIcon size={20} />
+              </button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto p-4 space-y-1">
+              <Link
+                href="/"
+                onClick={() => setShowMobileMenu(false)}
+                className="block px-3 py-2.5 rounded-md font-semibold text-stone-700 hover:bg-stone-100"
+              >
+                Home
+              </Link>
+              <Link
+                href="/exams"
+                onClick={() => setShowMobileMenu(false)}
+                className="block px-3 py-2.5 rounded-md font-semibold text-stone-700 hover:bg-stone-100"
+              >
+                All Categories
+              </Link>
+              <Link
+                href="/#deals"
+                onClick={() => setShowMobileMenu(false)}
+                className="block px-3 py-2.5 rounded-md font-semibold text-stone-700 hover:bg-stone-100"
+              >
+                {settings?.homepage?.hot_deals_title || "Today's Hot Deals"}
+              </Link>
+
+              <div className="pt-3 pb-1">
+                <p className="px-3 text-xs font-bold text-stone-400 uppercase tracking-wider">
+                  Categories
+                </p>
+              </div>
+              {categories.map((cat) => (
+                <Link
+                  key={cat.id}
+                  href={`/category/${cat.id}`}
+                  onClick={() => setShowMobileMenu(false)}
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-stone-600 hover:bg-amber-50 hover:text-amber-800"
+                >
+                  {cat.logo_url ? (
+                    <img src={cat.logo_url} alt={cat.name} className="w-7 h-7 rounded object-cover" />
+                  ) : (
+                    <span className="text-lg">{cat.icon}</span>
+                  )}
+                  {cat.name}
+                </Link>
+              ))}
+
+              <div className="pt-3 pb-1">
+                <p className="px-3 text-xs font-bold text-stone-400 uppercase tracking-wider">
+                  Support
+                </p>
+              </div>
+              <a
+                href="tel:+917852004401"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-md text-sm font-medium text-stone-700 hover:bg-stone-100"
+              >
+                <PhoneIcon size={16} />
+                Call: 7852004401
+              </a>
+              <a
+                href="https://wa.me/917852004401"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-md text-sm font-medium text-emerald-700 bg-emerald-50 hover:bg-emerald-100"
+              >
+                <MessageCircleIcon size={16} />
+                WhatsApp Support
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
+    </>
   );
 }

@@ -1,280 +1,338 @@
 "use client";
 
-import { useState, useEffect, useRef, Suspense, startTransition } from "react";
-import { useSearchParams } from "next/navigation";
+import { useState, useMemo } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useCategories, useSliderCourses, useCourses, useSettings } from "@/lib/store-hooks";
+import { Course } from "@/lib/store-types";
 import Navbar from "@/components/Navbar";
 import HeroSlider from "@/components/HeroSlider";
-import CategoryCircleGrid from "@/components/CategoryCircleGrid";
-import SidebarCategories from "@/components/SidebarCategories";
-import ProductCard, { Product } from "@/components/ProductCard";
-import InfoCards from "@/components/InfoCards";
-import Footer from "@/components/Footer";
-import productsMock from "@/data/products_mock.json";
+import CourseCard from "@/components/CourseCard";
+import SampleModal from "@/components/SampleModal";
 import CartDrawer from "@/components/CartDrawer";
-import Script from "next/script";
+import Footer from "@/components/Footer";
+import CategoriesSection from "@/components/CategoriesSection";
+import SidebarCategories from "@/components/SidebarCategories";
+import TrustStrip from "@/components/TrustStrip";
+import FeaturedGrid from "@/components/FeaturedGrid";
+import { SearchIcon, CloseIcon, SparklesIcon, CheckIcon } from "@/components/icons";
 
-function HomeContent() {
-  const searchParams = useSearchParams();
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [searchQuery, setSearchQuery] = useState<string>(searchParams.get("q") || "");
-  const [cart, setCart] = useState<Product[]>([]);
-  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
-  const [isCheckoutLoading, setIsCheckoutLoading] = useState<boolean>(false);
-  const cartRef = useRef<Product[]>(cart);
+export default function HomePage() {
+  const { categories, loading: categoriesLoading } = useCategories();
+  const { courses: sliderCourses, loading: sliderLoading } = useSliderCourses();
+  const { courses: allCourses, loading: coursesLoading } = useCourses();
+  const { settings } = useSettings();
 
-  useEffect(() => {
-    cartRef.current = cart;
-  }, [cart]);
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [cart, setCart] = useState<Course[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [selectedCourseForSample, setSelectedCourseForSample] = useState<Course | null>(null);
+  const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
 
-  useEffect(() => {
-    const stored = localStorage.getItem("sarkari_saathi_cart");
-    if (stored) {
-      try {
-        startTransition(() => setCart(JSON.parse(stored)));
-      } catch {}
-    }
-  }, []);
+  const filteredCourses = useMemo(() => {
+    const selectedCatObj = categories.find((c) => c.id === selectedCategory);
+    return allCourses.filter((course) => {
+      const matchesCategory =
+        selectedCategory === "all" ||
+        course.exam_id === selectedCategory ||
+        (selectedCatObj && selectedCatObj.exam_ids?.includes(course.exam_id)) ||
+        (course as any).category_id === selectedCategory;
+      const q = searchQuery.toLowerCase().trim();
+      const matchesSearch =
+        !q ||
+        course.title.toLowerCase().includes(q) ||
+        course.short_description.toLowerCase().includes(q) ||
+        course.subjects.some((s) => s.toLowerCase().includes(q));
+      return matchesCategory && matchesSearch;
+    });
+  }, [allCourses, selectedCategory, searchQuery, categories]);
 
-  useEffect(() => {
-    async function loadProducts() {
-      try {
-        const res = await fetch("/api/products");
-        if (res.ok) {
-          const data = await res.json();
-          setProducts(data.products);
-        } else {
-          setProducts(productsMock as Product[]);
-        }
-      } catch {
-        setProducts(productsMock as Product[]);
-      } finally {
-        setLoading(false);
-      }
-    }
-    loadProducts();
-  }, []);
+  const featuredDeals = useMemo(
+    () => [...allCourses].sort((a, b) => b.discount_percent - a.discount_percent).slice(0, 10),
+    [allCourses]
+  );
+  const newArrivals = useMemo(() => allCourses.slice(0, 6), [allCourses]);
+  const latestProducts = useMemo(() => allCourses.slice(0, 10), [allCourses]);
 
-  const filteredProducts = products.filter((product) => {
-    const matchesSearch =
-      product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.examName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.groupName.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesSearch;
-  });
-
-  const addToCart = (product: Product) => {
-    if (cart.some((item) => item.id === product.id)) {
-      setIsCartOpen(true);
-      return;
-    }
-    const updated = [...cart, product];
-    setCart(updated);
-    localStorage.setItem("sarkari_saathi_cart", JSON.stringify(updated));
+  const handleBuyNow = (course: Course) => {
+    setCart([course]);
     setIsCartOpen(true);
   };
 
-  const removeFromCart = (id: string) => {
-    const updated = cart.filter((item) => item.id !== id);
-    setCart(updated);
-    localStorage.setItem("sarkari_saathi_cart", JSON.stringify(updated));
+  const handleOpenSample = (course: Course) => {
+    setSelectedCourseForSample(course);
+    setIsSampleModalOpen(true);
   };
 
-  const handleBuyNow = (product: Product) => {
-    addToCart(product);
+  const handleRemoveFromCart = (id: string) => {
+    setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
-  const handleCartCheckoutSubmit = async (name: string, email: string) => {
-    setIsCheckoutLoading(true);
-    const currentCart = cartRef.current;
-    try {
-      const subtotal = currentCart.reduce((sum, item) => sum + item.salePrice, 0);
+  if (categoriesLoading || sliderLoading || coursesLoading) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Navbar cartCount={0} onCartClick={() => {}} />
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center flex-1">
+          <div className="w-12 h-12 rounded-full border-4 border-stone-200 border-t-amber-600 animate-spin mx-auto" />
+          <p className="text-stone-500 mt-4 text-sm">Loading store...</p>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
-      const res = await fetch("/api/payment/create-marketplace-order", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          customerName: name,
-          customerEmail: email,
-          products: currentCart.map((item) => ({ id: item.id, salePrice: item.salePrice })),
-          totalAmount: subtotal,
-        }),
-      });
-
-      if (!res.ok) {
-        const errData = await res.json().catch(() => ({}));
-        throw new Error(errData.error || "Order creation failed");
-      }
-      const orderData = await res.json();
-      const orderId = orderData.orderId;
-
-      const options = {
-        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || "rzp_test_T54MKK5H47huwt",
-        amount: Math.round(subtotal * 100),
-        currency: "INR",
-        name: "Sarkari Saathi",
-        description: "Exam Study Materials Payment",
-        order_id: orderId,
-        prefill: {
-          name: name,
-          email: email,
-        },
-          handler: async function (response: Record<string, string>) {
-            const verifyRes = await fetch("/api/payment/verify-marketplace", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                orderId: orderId,
-                paymentId: response.razorpay_payment_id,
-                signature: response.razorpay_signature,
-              }),
-            });
-            if (verifyRes.ok) {
-              sessionStorage.setItem("purchased_items", JSON.stringify(currentCart));
-              window.location.href = "/download";
-              setCart([]);
-              localStorage.removeItem("sarkari_saathi_cart");
-              setIsCartOpen(false);
-            } else {
-              alert("Payment verification failed. Please contact support.");
-            }
-          },
-        modal: {
-          ondismiss: function () {
-            setIsCheckoutLoading(false);
-          },
-        },
-        theme: {
-          color: "#000000",
-        },
-      };
-      interface RazorpayInstance {
-        open: () => void;
-      }
-      interface RazorpayConstructor {
-        new (options: Record<string, unknown>): RazorpayInstance;
-      }
-      const RazorpayCtor = (window as unknown as { Razorpay: RazorpayConstructor }).Razorpay;
-      const rzp = new RazorpayCtor(options);
-      rzp.open();
-    } catch (err) {
-      console.error("Checkout error:", err);
-      alert("Checkout failed. Please try again.");
-    } finally {
-      setIsCheckoutLoading(false);
-    }
-  };
+  const featuredTitle = settings?.homepage?.featured_section_title || "Featured Bundles";
+  const hotDealsTitle = settings?.homepage?.hot_deals_title || "Today's Hot Deals";
+  const newArrivalsTitle = settings?.homepage?.new_arrivals_title || "New Arrivals";
+  const categoriesTitle = settings?.homepage?.categories_section_title || "Browse Top Categories";
+  const newsletterTitle = settings?.homepage?.newsletter_title || "Get Free Exam Updates";
+  const newsletterPlaceholder = settings?.homepage?.newsletter_placeholder || "Your Email Address";
+  const newsletterBtn = settings?.homepage?.newsletter_button_text || "Subscribe";
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen flex flex-col bg-white">
       <Navbar cartCount={cart.length} onCartClick={() => setIsCartOpen(true)} />
 
-      <HeroSlider />
+      <main className="flex-1">
+        {/* HERO + SIDEBAR */}
+        <section className="bg-stone-50 border-b border-stone-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+              {/* Sidebar (desktop) */}
+              <div className="hidden lg:block lg:col-span-3">
+                <SidebarCategories activeCategory={selectedCategory} />
+              </div>
 
-      {/* Circular Categories Grid */}
-      <CategoryCircleGrid />
-
-      {/* Main Content: Sidebar + Products */}
-      <section className="max-w-[1400px] mx-auto px-4 md:px-8 pb-10 flex-1 w-full">
-        <div className="flex flex-col lg:flex-row gap-8">
-          <div className="w-full lg:w-[280px] shrink-0">
-            <SidebarCategories />
-          </div>
-
-          <div className="flex-1">
-            <div className="bg-white p-4 border border-gray-100 rounded-sm shadow-halo flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-              <h2 className="text-xs font-bold font-mono text-gray-800 uppercase tracking-wider">
-                Exam Preparation Materials
-              </h2>
-
-              <div className="relative max-w-xs w-full">
-                <input
-                  type="text"
-                  placeholder="Filter by exam or keyword..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full h-8 pl-8 pr-4 bg-gray-50 text-xs text-gray-700 outline-none border border-gray-200 rounded-full focus:bg-white focus:border-black transition-colors"
+              {/* Hero */}
+              <div className="lg:col-span-9">
+                <HeroSlider
+                  courses={sliderCourses}
+                  onBuyNow={handleBuyNow}
+                  onOpenSample={handleOpenSample}
                 />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-3.5 w-3.5 text-gray-400 absolute left-3 top-2.5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
               </div>
             </div>
 
-            {loading ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[1, 2, 3].map((n) => (
-                  <div key={n} className="bg-white border border-gray-100 rounded-sm p-4 h-[380px] animate-pulse flex flex-col justify-between">
-                    <div className="h-[240px] bg-gray-100 rounded-sm mb-4" />
-                    <div className="h-4 bg-gray-100 w-3/4 rounded-sm mb-2" />
-                    <div className="h-3 bg-gray-100 w-1/2 rounded-sm" />
-                  </div>
-                ))}
-              </div>
-            ) : filteredProducts.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {filteredProducts.map((product) => (
-                  <ProductCard
-                    key={product.id}
-                    product={product}
-                    onBuyNow={handleBuyNow}
-                  />
-                ))}
-              </div>
-            ) : (
-              <div className="bg-white border border-gray-100 text-center py-20 px-4 rounded-sm shadow-halo">
-                <span className="text-4xl block mb-4">🔍</span>
-                <h3 className="text-sm font-bold text-gray-800 mb-1">No products found</h3>
-                <p className="text-xs text-gray-500 max-w-xs mx-auto">
-                  Try adjusting your keywords or select another exam category from the sidebar.
-                </p>
-              </div>
-            )}
+            {/* Mobile sidebar chip (categories ribbon below hero on mobile) */}
+            <div className="lg:hidden mt-5">
+              <SidebarCategories activeCategory={selectedCategory} />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Info Cards Above Footer */}
-      <InfoCards />
+        {/* TRUST STRIP */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <TrustStrip />
+        </section>
 
-      <a
-        href="https://wa.me/919950252138"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="whatsapp-float shadow-lg hover:scale-105 transition-transform"
-        title="Contact Support on WhatsApp"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.739-1.453L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.859-4.42 9.863-9.864.002-2.637-1.023-5.116-2.887-6.98C16.584 1.895 14.1 1.867 12.01 1.867c-5.437 0-9.86 4.42-9.863 9.864 0 1.741.484 3.44 1.402 4.903L2.556 21.46l4.091-1.306zM17.65 14.28c-.309-.155-1.83-.903-2.115-1.006-.285-.103-.493-.155-.7.156-.207.31-.8.981-.98 1.187-.18.207-.361.233-.67.078-.309-.155-1.305-.48-2.486-1.534-.919-.819-1.54-1.83-1.72-2.139-.18-.309-.02-.477.135-.63.14-.139.31-.361.464-.542.155-.18.206-.31.309-.516.103-.207.052-.387-.026-.542-.078-.155-.7-1.688-.96-2.307-.253-.608-.51-.527-.7-.527-.18 0-.387-.008-.594-.008s-.542.078-.826.387c-.284.31-1.084 1.058-1.084 2.58 0 1.523 1.109 2.99 1.264 3.196.155.206 2.182 3.332 5.286 4.67 1.218.525 2.13.84 2.861 1.07.734.23 1.401.182 1.93.102.589-.088 1.83-.748 2.088-1.47.258-.723.258-1.343.18-1.471-.077-.129-.284-.207-.593-.362z"/>
-        </svg>
-      </a>
+        {/* FEATURED BUNDLES */}
+        <section id="courses" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <FeaturedGrid
+            title={featuredTitle}
+            courses={latestProducts}
+            onBuyNow={handleBuyNow}
+            onOpenSample={handleOpenSample}
+            viewAllHref="/exams"
+          />
+        </section>
 
-      <Footer />
+        {/* CATEGORIES BANNER - light version (no dark box) */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-amber-50 border border-amber-200 p-6 sm:p-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-black text-stone-900 leading-tight">
+                  Crack Any Exam with Deep-Level Analysis
+                </h3>
+                <p className="text-sm text-stone-700 mt-2">
+                  Premium pattern-decoded notes for{" "}
+                  <span className="font-extrabold text-amber-700">All-India Exams</span>
+                </p>
+                <div className="grid grid-cols-2 gap-2 mt-5">
+                  {[
+                    "Last 5 Years Pattern Decoded",
+                    "Topic-Weightage Analysis",
+                    "3000-5000+ Topic MCQs",
+                    "Free Sample PDF",
+                    "Printable A4 Format",
+                    "Instant Delivery"
+                  ].map((t) => (
+                    <div
+                      key={t}
+                      className="flex items-center gap-2 text-sm font-semibold text-stone-700"
+                    >
+                      <span className="w-5 h-5 rounded bg-amber-600 text-white flex items-center justify-center shrink-0">
+                        <CheckIcon size={11} />
+                      </span>
+                      {t}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="hidden lg:flex justify-center">
+                <div className="w-44 h-44 rounded-full bg-amber-600/10 flex items-center justify-center">
+                  <SparklesIcon size={56} className="text-amber-600" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CATEGORIES SECTION (with logo) */}
+        <section id="categories" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <CategoriesSection
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onSelectCategory={setSelectedCategory}
+            title={categoriesTitle}
+          />
+        </section>
+
+        {/* PRODUCT GRID */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          {filteredCourses.length === 0 ? (
+            <div className="text-center py-16 card-base">
+              <div className="w-14 h-14 rounded-full bg-stone-100 text-stone-400 mx-auto flex items-center justify-center mb-3">
+                <SearchIcon size={22} />
+              </div>
+              <h3 className="font-bold text-stone-800 text-base">No bundles found</h3>
+              <p className="text-xs text-stone-500 mt-1">Try different keywords or category.</p>
+              <button
+                onClick={() => {
+                  setSelectedCategory("all");
+                  setSearchQuery("");
+                }}
+                className="btn-primary mt-4"
+              >
+                Show All Bundles
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+              {filteredCourses.map((course) => (
+                <CourseCard
+                  key={course.id}
+                  course={course}
+                  onBuyNow={handleBuyNow}
+                  onOpenSample={handleOpenSample}
+                />
+              ))}
+            </div>
+          )}
+        </section>
+
+        {/* DEALS SECTION */}
+        <section id="deals" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <FeaturedGrid
+            title={`🔥 ${hotDealsTitle}`}
+            courses={featuredDeals}
+            onBuyNow={handleBuyNow}
+            onOpenSample={handleOpenSample}
+          />
+        </section>
+
+        {/* NEW ARRIVALS — list style */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex items-end justify-between mb-4">
+            <h2 className="section-title">{newArrivalsTitle}</h2>
+            <Link href="/exams" className="text-sm font-bold text-amber-700 hover:text-amber-800">View All →</Link>
+          </div>
+          <div className="card-base divide-y divide-stone-100">
+            {newArrivals.map((course) => (
+              <button
+                key={course.id}
+                onClick={() => handleOpenSample(course)}
+                className="w-full flex items-center gap-4 p-3.5 hover:bg-stone-50 transition text-left cursor-pointer"
+              >
+                <div className="relative w-14 h-16 rounded-md overflow-hidden bg-stone-100 shrink-0">
+                  <Image
+                    src={course.cover_image}
+                    alt={course.title}
+                    fill
+                    className="object-cover"
+                    sizes="56px"
+                  />
+                  <span className="absolute top-0 left-0 bg-amber-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-br-md">
+                    {course.discount_percent}%
+                  </span>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-sm text-stone-900 line-clamp-2">
+                    {course.title}
+                  </p>
+                  <div className="flex items-baseline gap-2 mt-1">
+                    <span className="text-sm font-black text-stone-900">₹{course.price}</span>
+                    <span className="text-xs text-stone-400 line-through">₹{course.original_price}</span>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="card-base p-6">
+            <div className="text-center max-w-xl mx-auto space-y-2 mb-5">
+              <span className="inline-block text-xs font-black uppercase text-amber-700 bg-amber-100 px-3 py-1 rounded-full">
+                FAQ
+              </span>
+              <h3 className="text-xl sm:text-2xl font-black text-stone-900">
+                Common Questions
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-4xl mx-auto">
+              {[
+                {
+                  q: "How do I get my notes after payment?",
+                  a: "After UPI payment, enter the 12-digit UTR. We'll send instant access to your WhatsApp or Gmail within 5-15 minutes.",
+                },
+                {
+                  q: "Can I print the PDFs?",
+                  a: "Yes. All notes are print-ready A4 format. Print at any cyber cafe or e-mitra.",
+                },
+                {
+                  q: "What is the difference vs. handwritten notes?",
+                  a: "These are deep-level analysis notes: pattern-decoded, weightage-tagged, toppers' approach. Not a copy of textbooks.",
+                },
+                {
+                  q: "Need help?",
+                  a: "WhatsApp 7852004401 — our team responds quickly.",
+                },
+              ].map((f) => (
+                <div
+                  key={f.q}
+                  className="p-4 rounded-lg bg-stone-50 border border-stone-200 space-y-1.5"
+                >
+                  <h4 className="font-bold text-sm text-stone-900">{f.q}</h4>
+                  <p className="text-xs text-stone-600 leading-relaxed">{f.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <SampleModal
+        course={selectedCourseForSample}
+        isOpen={isSampleModalOpen}
+        onClose={() => {
+          setIsSampleModalOpen(false);
+          setSelectedCourseForSample(null);
+        }}
+        onBuyNow={handleBuyNow}
+      />
 
       <CartDrawer
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         cartItems={cart}
-        onRemoveItem={removeFromCart}
-        onCheckoutSubmit={handleCartCheckoutSubmit}
-        isCheckoutLoading={isCheckoutLoading}
+        onRemoveItem={handleRemoveFromCart}
       />
 
-      <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="lazyOnload" />
+      <Footer />
     </div>
-  );
-}
-
-export default function Home() {
-  return (
-    <Suspense fallback={<div className="min-h-screen bg-gray-50/50 flex items-center justify-center text-gray-500 font-sans">Loading marketplace...</div>}>
-      <HomeContent />
-    </Suspense>
   );
 }

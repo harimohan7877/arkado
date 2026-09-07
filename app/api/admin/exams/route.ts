@@ -1,159 +1,66 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { verifyAdminSession } from '@/lib/admin-auth';
-import fs from 'fs';
-import path from 'path';
+import { NextRequest, NextResponse } from "next/server";
+import { readFile, writeFile } from "fs/promises";
+import { join } from "path";
 
-interface ExamData {
-  id: string;
-  group?: string;
-  name: string;
-  short_name?: string;
-  logo_url?: string;
-  board: string;
-  status: string;
-  last_date?: string | null;
-  form_start?: string | null;
-  expected_vacancies?: string;
-  official_url: string;
-  fee?: Record<string, number>;
-  eligibility?: Record<string, string | number | string[]>;
-  selection_process?: string[];
-  subjects?: string[];
-  last_verified: string;
-  disclaimer: string;
-  [key: string]: unknown;
+const FILE = join(process.cwd(), "data/exams-new.json");
+
+function verifyAuth(req: NextRequest) {
+  const auth = req.headers.get("authorization");
+  return auth === "7877";
 }
 
-interface ExamsFile {
-  last_updated: string;
-  updated_by: string;
-  disclaimer: string;
-  category_relaxations: Record<string, unknown>;
-  documents_required_always: string[];
-  computer_qualifications_accepted: string[];
-  sso_id_steps: Record<string, unknown>;
-  exams: ExamData[];
+function readExams() {
+  return readFile(FILE, "utf-8").then(JSON.parse).catch(() => []);
 }
 
-function getExamsPath() {
-  return path.join(process.cwd(), 'data', 'exams.json');
-}
-
-function readExamsFile(): ExamsFile {
-  try {
-    const raw = fs.readFileSync(getExamsPath(), 'utf-8');
-    return JSON.parse(raw);
-  } catch {
-    return {
-      last_updated: new Date().toISOString().split('T')[0],
-      updated_by: 'admin',
-      disclaimer: '',
-      category_relaxations: {},
-      documents_required_always: [],
-      computer_qualifications_accepted: [],
-      sso_id_steps: {},
-      exams: [],
-    };
-  }
-}
-
-function writeExamsFile(data: ExamsFile) {
-  fs.writeFileSync(getExamsPath(), JSON.stringify(data, null, 2), 'utf-8');
+function writeExams(data: any[]) {
+  return writeFile(FILE, JSON.stringify(data, null, 2));
 }
 
 export async function GET(req: NextRequest) {
-  if (!verifyAdminSession(req)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  }
-
-  try {
-    const data = readExamsFile();
-    const { searchParams } = new URL(req.url);
-    const group = searchParams.get('group');
-
-    let exams = data.exams;
-    if (group) {
-      exams = exams.filter(e => e.group === group);
-    }
-
-    return NextResponse.json({ exams, meta: { last_updated: data.last_updated, total: data.exams.length } });
-  } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: 'Failed to read exams: ' + message }, { status: 500 });
-  }
+  if (!verifyAuth(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const data = await readExams();
+  return NextResponse.json(data);
 }
 
 export async function POST(req: NextRequest) {
-  if (!verifyAdminSession(req)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  if (!verifyAuth(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  const formData = await req.formData();
+  const exams = await readExams();
+
+  const newExam = {
+    id: formData.get("name")?.toString().toLowerCase().replace(/\s+/g, "-") || `exam-${Date.now()}`,
+    category_id: formData.get("category_id")?.toString() || "",
+    name: formData.get("name")?.toString() || "",
+    short_name: formData.get("short_name")?.toString() || "",
+    board: formData.get("board")?.toString() || "",
+    description: formData.get("description")?.toString() || "",
+    status: formData.get("status")?.toString() || "expected",
+    form_start: formData.get("form_start")?.toString() || undefined,
+    last_date: formData.get("last_date")?.toString() || undefined,
+    expected_notification: formData.get("expected_notification")?.toString() || undefined,
+    total_posts: formData.get("total_posts") ? Number(formData.get("total_posts")) : undefined,
+    priority: Number(formData.get("priority") || exams.length + 1),
+    is_active: formData.get("is_active") === "true",
+    course_ids: JSON.parse(formData.get("course_ids")?.toString() || "[]"),
+    logo_url: "",
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  };
+
+  const logo = formData.get("logo") as File | null;
+  if (logo && logo.size > 0) {
+    const bytes = await logo.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+    const ext = logo.name.split(".").pop() || "png";
+    const fileName = `${newExam.id}.${ext}`;
+    const publicDir = join(process.cwd(), "public/logos");
+    await writeFile(join(publicDir, fileName), buffer);
+    newExam.logo_url = `/logos/${fileName}`;
   }
 
-  try {
-    const body = await req.json();
-    const { id, group, name, short_name, logo_url, board, status, last_date, form_start, expected_vacancies, official_url, fee, eligibility, selection_process, subjects, disclaimer } = body;
-
-    if (!id || !name) {
-      return NextResponse.json({ error: 'Exam ID and Name required' }, { status: 400 });
-    }
-
-    const data = readExamsFile();
-    const idx = data.exams.findIndex(e => e.id === id);
-
-    const exam: ExamData = {
-      id,
-      group: group || '',
-      name,
-      short_name: short_name || '',
-      logo_url: logo_url || undefined,
-      board: board || '',
-      status: status || 'expected',
-      last_date: last_date || null,
-      form_start: form_start || null,
-      expected_vacancies: expected_vacancies || '',
-      official_url: official_url || '',
-      fee: fee || {},
-      eligibility: eligibility || { education: '' },
-      selection_process: selection_process || [],
-      subjects: subjects || [],
-      last_verified: new Date().toISOString().split('T')[0],
-      disclaimer: disclaimer || '',
-    };
-
-    if (idx >= 0) {
-      data.exams[idx] = { ...data.exams[idx], ...exam, last_verified: new Date().toISOString().split('T')[0] };
-    } else {
-      data.exams.push(exam);
-    }
-
-    data.last_updated = new Date().toISOString().split('T')[0];
-    writeExamsFile(data);
-
-    return NextResponse.json(exam);
-  } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: 'Failed to save exam: ' + message }, { status: 500 });
-  }
-}
-
-export async function DELETE(req: NextRequest) {
-  if (!verifyAdminSession(req)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  }
-
-  try {
-    const { examId } = await req.json();
-    if (!examId) {
-      return NextResponse.json({ error: 'Exam ID required' }, { status: 400 });
-    }
-
-    const data = readExamsFile();
-    data.exams = data.exams.filter(e => e.id !== examId);
-    data.last_updated = new Date().toISOString().split('T')[0];
-    writeExamsFile(data);
-
-    return NextResponse.json({ success: true });
-  } catch (error: unknown) {
-    const message = error instanceof Error ? error.message : 'Unknown error';
-    return NextResponse.json({ error: 'Failed to delete exam: ' + message }, { status: 500 });
-  }
+  exams.push(newExam);
+  await writeExams(exams);
+  return NextResponse.json(newExam);
 }

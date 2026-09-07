@@ -1,91 +1,105 @@
 "use client";
 
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import Link from "next/link";
-import type { Product } from "@/components/ProductCard";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-function getPurchasedItems(): Product[] {
-  if (typeof window === "undefined") return [];
-  const raw = sessionStorage.getItem("purchased_items");
-  if (!raw) return [];
-  try {
-    return JSON.parse(raw);
-  } catch {
-    return [];
-  }
+function DownloadContent() {
+  const searchParams = useSearchParams();
+  const orderId = searchParams.get("orderId") || searchParams.get("order_id") || "ARK-2026-LIVE";
+  const courseTitle = searchParams.get("course") || "प्रतियोगी परीक्षा नोट्स बंडल";
+  const mode = searchParams.get("mode") || "whatsapp";
+  const phone = searchParams.get("phone") || "7852004401";
+
+  const waMessage = `नमस्ते! मैंने Arkado से नोट्स बंडल का ऑर्डर किया है।\n\nOrder ID: ${orderId}\nकृपया मुझे notes की लिंक भेजें।`;
+
+  return (
+    <div className="max-w-2xl mx-auto px-4 py-12 sm:py-16 text-center space-y-6">
+      <div className="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-3xl mx-auto flex items-center justify-center text-4xl shadow-xs">
+        ✓
+      </div>
+
+      <div className="space-y-2">
+        <span className="text-xs font-mono font-bold bg-stone-100 text-stone-700 px-3 py-1 rounded-full border border-stone-200">
+          Order ID: {orderId}
+        </span>
+        <h1 className="text-2xl sm:text-3xl font-black text-stone-900 tracking-tight">
+          धन्यवाद! आपका ऑर्डर दर्ज हो गया है
+        </h1>
+        <p className="text-xs sm:text-sm text-stone-600">
+          {courseTitle}
+        </p>
+      </div>
+
+      {/* Mode info box */}
+      <div className="p-6 bg-white rounded-3xl border border-stone-200 shadow-xs text-left space-y-4">
+        {mode === "whatsapp" ? (
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 text-emerald-700 font-bold text-sm">
+              <span>💬</span>
+              <span>WhatsApp डिलीवरी मोड:</span>
+            </div>
+            <p className="text-xs text-stone-600 leading-relaxed">
+              नीचे दिए गए बटन पर क्लिक करके सीधे हमारे WhatsApp नंबर पर अपना Order ID भेजें। आपको तुरंत notes की प्राइवेट लिंक शेयर कर दी जाएगी।
+            </p>
+            <a
+              href={`https://wa.me/917852004401?text=${encodeURIComponent(waMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-4 px-6 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm rounded-2xl transition shadow-md flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <span>💬 WhatsApp पर तुरंत Notes Link मंगाएं</span>
+              <span>→</span>
+            </a>
+          </div>
+        ) : (
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 text-amber-700 font-bold text-sm">
+              <span>✉️</span>
+              <span>Gmail प्राइवेसी डिलीवरी मोड:</span>
+            </div>
+            <p className="text-xs text-stone-600 leading-relaxed">
+              आपकी प्राइवेसी का पूरा ध्यान रखा गया है। आपके द्वारा दर्ज किए गए Gmail एड्रेस पर अगले <strong>5 से 15 मिनट</strong> में notes access लिंक आ जाएगी।
+            </p>
+            <div className="p-3 bg-stone-50 rounded-xl text-xs text-stone-500 border border-stone-100">
+              💡 अगर 15 मिनट में ईमेल न दिखे, तो अपना Spam / Updates फोल्डर भी चेक करें या हमें WhatsApp पर बताएं।
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Link
+          href="/"
+          className="w-full sm:w-auto px-6 py-3 rounded-full border border-stone-300 text-stone-700 font-bold text-xs hover:bg-stone-100 transition"
+        >
+          ← होमपेज पर जाएं
+        </Link>
+        <a
+          href="https://wa.me/917852004401"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full sm:w-auto px-6 py-3 rounded-full bg-stone-900 text-white font-bold text-xs hover:bg-stone-800 transition"
+        >
+          हेल्पलाइन सपोर्ट (7852004401)
+        </a>
+      </div>
+    </div>
+  );
 }
 
 export default function DownloadPage() {
-  const [items] = useState<Product[]>(getPurchasedItems);
-
-  if (items.length === 0) {
-    return (
-      <main className="min-h-screen bg-[#fbfbf5] flex items-center justify-center p-6">
-        <div className="bg-white border border-gray-100 rounded-sm p-10 text-center max-w-md shadow-sm">
-          <p className="text-5xl mb-4">📦</p>
-          <h1 className="text-lg font-bold text-gray-900 font-mono uppercase tracking-wide mb-2">No purchases yet</h1>
-          <p className="text-sm text-gray-500 mb-6">Complete a purchase to access your study materials here.</p>
-          <Link href="/" className="button-primary-pill text-sm px-6 py-2.5">Browse Materials</Link>
-        </div>
-      </main>
-    );
-  }
-
   return (
-    <main className="min-h-screen bg-[#fbfbf5]">
-      <div className="max-w-[800px] mx-auto px-4 py-12">
-        {/* Header */}
-        <div className="mb-8 text-center">
-          <p className="text-5xl mb-3">🎉</p>
-          <h1 className="text-xl font-bold text-gray-900 font-mono uppercase tracking-wide">Payment Successful!</h1>
-          <p className="text-sm text-gray-500 mt-1">Your study materials are ready to download</p>
-        </div>
-
-        {/* Items */}
-        <div className="space-y-4">
-          {items.map((item) => (
-            <div key={item.id} className="bg-white border border-gray-100 rounded-sm p-5 shadow-sm flex items-center gap-5">
-              {/* Mini book */}
-              <div className="w-14 h-20 bg-gradient-to-r from-gray-900 to-black rounded-r-xs flex items-center justify-center p-1.5 shrink-0 shadow-sm border-l-2 border-black/20">
-                <span className="text-[7px] text-white font-extrabold text-center leading-tight line-clamp-3 uppercase">
-                  {item.examName}
-                </span>
-              </div>
-              {/* Info */}
-              <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-bold text-gray-900 font-mono uppercase tracking-wide">{item.title}</h3>
-                <p className="text-xs text-gray-500 mt-0.5">{item.language} {item.pages ? `• ${item.pages} Pages` : ''}</p>
-              </div>
-              {/* Download button */}
-              <a
-                href={item.drive_url || '#'}
-                target={item.drive_url ? '_blank' : '_self'}
-                rel="noopener noreferrer"
-                className={`shrink-0 text-xs font-bold px-5 py-2.5 rounded-sm transition-all flex items-center gap-2 ${
-                  item.drive_url
-                    ? 'bg-black text-white hover:bg-gray-800 shadow-sm'
-                    : 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                }`}
-              >
-                {item.drive_url ? '📥 Download' : 'Coming Soon'}
-              </a>
-            </div>
-          ))}
-        </div>
-
-        {/* Footer note */}
-        <div className="mt-8 bg-amber-50 border border-amber-200 rounded-sm p-4 text-center">
-          <p className="text-xs text-amber-800 font-medium">
-            📧 Google Drive link se material download karein. Agar koi issue ho to WhatsApp pe contact karein.
-          </p>
-        </div>
-
-        <div className="text-center mt-8">
-          <Link href="/" className="text-xs text-gray-500 hover:text-black font-mono uppercase tracking-wider transition-colors">
-            ← Back to Home
-          </Link>
-        </div>
-      </div>
-    </main>
+    <div className="min-h-screen bg-stone-50 flex flex-col justify-between font-sans">
+      <Navbar />
+      <main className="flex-1">
+        <Suspense fallback={<div className="text-center py-20">लोड हो रहा है...</div>}>
+          <DownloadContent />
+        </Suspense>
+      </main>
+      <Footer />
+    </div>
   );
 }

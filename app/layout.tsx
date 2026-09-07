@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SocialFab from "@/components/SocialFab";
 
 export const metadata: Metadata = {
-  title: "Sarkari Saathi | Premium Rajasthan Study Materials",
-  description: "Rajasthan government exam preparation — notes, MCQs, and mock tests with immediate email delivery.",
+  title: "Arkado — Deep-Level Exam Analysis & Pattern-Based Notes",
+  description:
+    "All-India exam preparation: pattern-decoded notes, topic-weightage analysis, 3000+ MCQs and full mock tests. Instant digital delivery via PhonePe & Paytm.",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="hi">
-      <body className="min-h-screen flex flex-col">
+    <html lang="en">
+      <body className="min-h-screen flex flex-col bg-white text-stone-900 font-sans antialiased">
         {children}
+        <SocialFab />
       </body>
     </html>
   );

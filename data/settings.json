@@ -1,0 +1,38 @@
+{
+  "upi_id": "7852004401@ybl",
+  "merchant_name": "Arkado",
+  "whatsapp_support_number": "917852004401",
+  "gmail_support_email": "support@arkado.in",
+  "site_name": "Arkado",
+  "site_tagline": "Deep-Level Exam Analysis & Pattern-Based Premium Notes",
+  "currency": "INR",
+  "payment_methods": ["PhonePe", "Paytm"],
+  "razorpay_enabled": false,
+  "brand": {
+    "logo_text": "Arkado",
+    "logo_badge_text": "STORE",
+    "logo_accent_color": "#b45309",
+    "tagline": "Pattern-decoded notes for All-India exams",
+    "footer_tagline": "All-India exam preparation — deep-level analysis & pattern-based notes."
+  },
+  "homepage": {
+    "hero_badge": "2026 PATTERN DECODED",
+    "hero_headline": "RSMSSB CET & Rajasthan Exam Bundles",
+    "featured_section_title": "Featured Bundles",
+    "hot_deals_title": "Today's Hot Deals",
+    "new_arrivals_title": "New Arrivals",
+    "categories_section_title": "Browse Top Categories",
+    "newsletter_title": "🎯 सीधे WhatsApp व Email पर पाएं फ्री अपडेट्स व नए नोट्स!",
+    "newsletter_subtitle": "हजारों छात्रों का भरोसा — कोई स्पैम नहीं, सिर्फ परीक्षा उपयोगी अपडेट्स व स्पेशल छूट।",
+    "newsletter_placeholder": "अपना Email या WhatsApp Number दर्ज करें...",
+    "newsletter_button_text": "जुड़ें"
+  },
+  "social": {
+    "whatsapp_url": "https://wa.me/917852004401",
+    "instagram_url": "https://instagram.com/",
+    "facebook_url": "https://facebook.com/",
+    "gmail_url": "mailto:support@arkado.in",
+    "share_enabled": true
+  },
+  "updated_at": "2026-09-07T00:00:00Z"
+}

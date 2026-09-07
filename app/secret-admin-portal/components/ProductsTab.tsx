@@ -406,10 +406,10 @@ export default function ProductsTab({ getAuthHeaders }: { getAuthHeaders: () => 
                     placeholder="Ya URL daalein: /images/products/patwari-notes.jpg"
                     className="w-full bg-[#0f1117] border border-[#2a2d3a] rounded-xl px-3.5 py-2.5 text-sm text-white outline-none focus:border-[#10b981]" />
                 </div>
-                {/* Google Drive Link */}
+                {/* Notes Access Link */}
                 <div className="col-span-2">
                   <label className="block text-[10px] text-gray-400 uppercase mb-1">
-                    Google Drive Link <span className="text-gray-600">(file_url)</span>
+                    Notes Access Link <span className="text-gray-600">(file_url)</span>
                   </label>
                   <input value={form.file_url} onChange={e => setForm({ ...form, file_url: e.target.value })}
                     placeholder="https://drive.google.com/file/d/..."

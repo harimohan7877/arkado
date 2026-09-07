@@ -1,69 +1,38 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { supabaseAdmin } from '@/lib/supabase';
-import { verifyAdminSession } from '@/lib/admin-auth';
+import { NextRequest, NextResponse } from "next/server";
+import { readFile } from "fs/promises";
+import { join } from "path";
+
+function verifyAuth(req: NextRequest) {
+  const auth = req.headers.get("authorization");
+  return auth === "7877";
+}
+
+async function readJSON(file: string) {
+  try {
+    return JSON.parse(await readFile(join(process.cwd(), file), "utf-8"));
+  } catch {
+    return [];
+  }
+}
 
 export async function GET(req: NextRequest) {
-  if (!verifyAdminSession(req)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  }
+  if (!verifyAuth(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  try {
-    // 1. Total Registered Users
-    const { count: usersCount, error: usersError } = await supabaseAdmin
-      .from('user_profiles')
-      .select('*', { count: 'exact', head: true });
+  const [orders, courses, exams, categories] = await Promise.all([
+    readJSON("data/orders.json"),
+    readJSON("data/courses-new.json"),
+    readJSON("data/exams-new.json"),
+    readJSON("data/categories.json"),
+  ]);
 
-    if (usersError) throw usersError;
+  const stats = {
+    totalOrders: orders.length,
+    totalRevenue: orders.filter((o: any) => o.payment_status === "paid").reduce((sum: number, o: any) => sum + (o.amount || 0), 0),
+    pendingDelivery: orders.filter((o: any) => o.payment_status === "paid" && o.delivery_status === "pending").length,
+    activeCourses: courses.filter((c: any) => c.is_active).length,
+    activeExams: exams.filter((e: any) => e.is_active).length,
+    activeCategories: categories.filter((c: any) => c.is_active).length,
+  };
 
-    // 2. Total Paid Users
-    const { count: paidCount, error: paidError } = await supabaseAdmin
-      .from('user_profiles')
-      .select('*', { count: 'exact', head: true })
-      .eq('is_paid', true);
-
-    if (paidError) throw paidError;
-
-    // 3. Total Guest Sessions
-    const { count: guestsCount, error: guestsError } = await supabaseAdmin
-      .from('guest_sessions')
-      .select('*', { count: 'exact', head: true });
-
-    if (guestsError) throw guestsError;
-
-    // 4. Total Chats
-    const { count: chatsCount, error: chatsError } = await supabaseAdmin
-      .from('chat_messages')
-      .select('*', { count: 'exact', head: true });
-
-    if (chatsError) throw chatsError;
-
-    // 5. Total Payments
-    const { data: paymentsData, error: paymentsError } = await supabaseAdmin
-      .from('payments')
-      .select('amount')
-      .eq('status', 'success');
-
-    if (paymentsError) throw paymentsError;
-
-    const totalRevenue = (paymentsData || []).reduce((acc, p) => acc + (p.amount || 0), 0) / 100; // Razorpay is in paise
-
-    return NextResponse.json({
-      totalUsers: usersCount || 0,
-      totalPaidUsers: paidCount || 0,
-      totalGuests: guestsCount || 0,
-      totalChats: chatsCount || 0,
-      totalRevenue: totalRevenue || 0
-    });
-  } catch (error: unknown) {
-    console.error('Stats query error:', error);
-    // If tables are missing or not set up, return fallback counts
-    return NextResponse.json({
-      totalUsers: 0,
-      totalPaidUsers: 0,
-      totalGuests: 0,
-      totalChats: 0,
-      totalRevenue: 0,
-      warning: 'Some tables may be missing in Supabase. Check schema SQL.'
-    });
-  }
+  return NextResponse.json(stats);
 }

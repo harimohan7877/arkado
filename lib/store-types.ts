@@ -8,6 +8,8 @@ export interface Category {
   priority: number;
   is_active: boolean;
   exam_ids: string[];
+  exam_count?: number;
+  state_or_group?: string;
   created_at: string;
   updated_at: string;
 }

@@ -45,7 +45,7 @@ export default function SidebarCategories({ activeCategory }: SidebarCategoriesP
         </p>
       </div>
       <nav className="space-y-0.5">
-        {categories.map((cat) => {
+        {categories.slice(0, 10).map((cat) => {
           const isActive = activeCategory === cat.id;
           return (
             <Link
@@ -54,29 +54,39 @@ export default function SidebarCategories({ activeCategory }: SidebarCategoriesP
               className={`cat-link ${isActive ? "active" : ""}`}
             >
               <span className="flex items-center gap-2.5">
-                <span className="w-7 h-7 rounded bg-slate-100 flex items-center justify-center overflow-hidden shrink-0">
+                <span className="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 border border-stone-200 p-0.5">
                   {cat.logo_url ? (
                     <Image
                       src={cat.logo_url}
                       alt={cat.name}
                       width={28}
                       height={28}
-                      className="object-cover w-full h-full"
+                      className="object-contain w-full h-full rounded-full"
                     />
                   ) : (
                     <span className="text-sm">{cat.icon || "📚"}</span>
                   )}
                 </span>
-                <span className="truncate">{cat.name}</span>
+                <span className="truncate text-xs font-semibold text-stone-800">{cat.name}</span>
               </span>
               <ChevronRightIcon
                 size={14}
-                className={isActive ? "opacity-90" : "opacity-40"}
+                className={isActive ? "opacity-90 text-amber-600" : "opacity-40 text-stone-400"}
               />
             </Link>
           );
         })}
       </nav>
+
+      <div className="mt-2 pt-2 border-t border-slate-100">
+        <Link
+          href="/exams"
+          className="flex items-center justify-between px-3 py-2 text-xs font-bold text-amber-800 hover:text-amber-900 bg-amber-50/80 hover:bg-amber-100/80 rounded-lg transition"
+        >
+          <span>All 500+ Categories</span>
+          <ChevronRightIcon size={14} />
+        </Link>
+      </div>
 
       <div className="mt-3 mx-2 p-3 rounded-md bg-amber-50 border border-amber-100">
         <p className="text-xs font-bold text-amber-800">🎯 Need help?</p>

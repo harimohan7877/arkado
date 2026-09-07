@@ -188,24 +188,32 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
                 <div className="absolute left-0 top-full w-80 bg-white border border-stone-200 rounded-md shadow-xl z-50 anim-slide-down overflow-hidden">
                   <Link
                     href="/exams"
-                    className="block px-4 py-2.5 text-sm font-semibold text-stone-900 hover:bg-amber-50 border-b border-stone-200 transition bg-stone-50"
+                    className="block px-4 py-2.5 text-sm font-bold text-amber-900 hover:bg-amber-100 border-b border-stone-200 transition bg-amber-50/70"
                   >
-                    📋 View All Categories
+                    📋 View All Categories ({categories.length})
                   </Link>
-                  {categories.map((cat) => (
-                    <Link
-                      key={cat.id}
-                      href={`/category/${cat.id}`}
-                      className="flex items-center gap-3 px-4 py-2.5 text-sm font-medium text-stone-700 hover:bg-amber-50 hover:text-amber-800 border-b border-stone-100 last:border-0 transition"
-                    >
-                      {cat.logo_url ? (
-                        <img src={cat.logo_url} alt={cat.name} className="w-7 h-7 rounded object-cover" />
-                      ) : (
-                        <span className="text-lg">{cat.icon}</span>
-                      )}
-                      {cat.name}
-                    </Link>
-                  ))}
+                  <div className="max-h-96 overflow-y-auto divide-y divide-stone-100">
+                    {categories.slice(0, 10).map((cat) => (
+                      <Link
+                        key={cat.id}
+                        href={`/category/${cat.id}`}
+                        className="flex items-center gap-3 px-4 py-2.5 text-xs font-semibold text-stone-700 hover:bg-amber-50 hover:text-amber-800 transition"
+                      >
+                        {cat.logo_url ? (
+                          <img src={cat.logo_url} alt={cat.name} className="w-6 h-6 rounded-full object-contain border border-stone-200" />
+                        ) : (
+                          <span className="text-base">{cat.icon}</span>
+                        )}
+                        <span className="truncate">{cat.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                  <Link
+                    href="/exams"
+                    className="block px-4 py-2 text-center text-xs font-bold text-amber-700 hover:text-amber-800 bg-stone-50 border-t border-stone-200 transition"
+                  >
+                    Browse All {categories.length} Categories →
+                  </Link>
                 </div>
               )}
             </div>
@@ -329,21 +337,28 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
                   Categories
                 </p>
               </div>
-              {categories.map((cat) => (
+              {categories.slice(0, 8).map((cat) => (
                 <Link
                   key={cat.id}
                   href={`/category/${cat.id}`}
                   onClick={() => setShowMobileMenu(false)}
-                  className="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-stone-600 hover:bg-amber-50 hover:text-amber-800"
+                  className="flex items-center gap-3 px-3 py-2 rounded-md text-xs font-medium text-stone-600 hover:bg-amber-50 hover:text-amber-800"
                 >
                   {cat.logo_url ? (
-                    <img src={cat.logo_url} alt={cat.name} className="w-7 h-7 rounded object-cover" />
+                    <img src={cat.logo_url} alt={cat.name} className="w-6 h-6 rounded-full object-contain border border-stone-200" />
                   ) : (
-                    <span className="text-lg">{cat.icon}</span>
+                    <span className="text-base">{cat.icon}</span>
                   )}
-                  {cat.name}
+                  <span className="truncate">{cat.name}</span>
                 </Link>
               ))}
+              <Link
+                href="/exams"
+                onClick={() => setShowMobileMenu(false)}
+                className="block px-3 py-2 text-xs font-bold text-amber-700 hover:underline"
+              >
+                View all {categories.length} categories →
+              </Link>
 
               <div className="pt-3 pb-1">
                 <p className="px-3 text-xs font-bold text-stone-400 uppercase tracking-wider">

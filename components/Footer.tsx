@@ -94,10 +94,11 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1 space-y-3">
             <Link href="/" className="inline-flex items-center bg-white px-3 py-1.5 rounded-xl shadow-xs">
               <Image
-                src="/logos/arkado_wordmark_5.jpg"
+                src="/logo.svg"
                 alt="Arkado"
                 width={120}
-                height={34}
+                height={37}
+                unoptimized
                 className="object-contain h-7 w-auto"
               />
             </Link>

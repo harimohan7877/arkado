@@ -114,9 +114,59 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Mobile sidebar chip (categories ribbon below hero on mobile) */}
-            <div className="lg:hidden mt-5">
-              <SidebarCategories activeCategory={selectedCategory} />
+            {/* Mobile quick category chips ribbon (horizontal scrollable) */}
+            <div className="lg:hidden mt-4">
+              <div className="flex items-center justify-between mb-2">
+                <p className="text-[11px] font-bold uppercase tracking-wider text-stone-500">
+                  Quick Categories
+                </p>
+                <Link
+                  href="/exams"
+                  className="text-xs font-semibold text-amber-700 hover:text-amber-800"
+                >
+                  View All ({categories.length}) →
+                </Link>
+              </div>
+              <div className="flex items-center gap-2 overflow-x-auto pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-none">
+                <button
+                  onClick={() => setSelectedCategory("all")}
+                  className={`h-8 px-3 rounded-full text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 shrink-0 cursor-pointer ${
+                    selectedCategory === "all"
+                      ? "bg-stone-900 text-white shadow-xs"
+                      : "bg-white text-stone-700 border border-stone-200 hover:border-stone-300"
+                  }`}
+                >
+                  <span>🔥</span>
+                  <span>All</span>
+                </button>
+                {categories.slice(0, 10).map((cat) => {
+                  const isSelected = selectedCategory === cat.id;
+                  return (
+                    <button
+                      key={cat.id}
+                      onClick={() =>
+                        setSelectedCategory(isSelected ? "all" : cat.id)
+                      }
+                      className={`h-8 px-3 rounded-full text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 shrink-0 cursor-pointer ${
+                        isSelected
+                          ? "bg-stone-900 text-white shadow-xs"
+                          : "bg-white text-stone-700 border border-stone-200 hover:border-stone-300"
+                      }`}
+                    >
+                      {cat.logo_url ? (
+                        <img
+                          src={cat.logo_url}
+                          alt={cat.name}
+                          className="w-4 h-4 rounded-full object-contain"
+                        />
+                      ) : (
+                        <span className="text-xs">{cat.icon || "📚"}</span>
+                      )}
+                      <span>{cat.name}</span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>

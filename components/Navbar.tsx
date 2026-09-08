@@ -58,8 +58,8 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
   return (
     <>
       <header className="sticky top-0 z-40 bg-white border-b border-stone-200">
-        {/* Main header - no dark promo strip */}
-        <div className="h-16 flex items-center gap-2 sm:gap-4 pl-2 pr-2 sm:pr-4">
+        {/* Main header container matching max-w-7xl */}
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center gap-2 sm:gap-4">
           {/* Mobile menu trigger */}
           <button
             onClick={() => setShowMobileMenu(true)}
@@ -71,13 +71,14 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
 
           {/* Brand - Arkado Wordmark Logo */}
           <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink-0 group">
-            <div className="relative h-9 sm:h-11 w-40 sm:w-52 flex items-center">
+            <div className="relative h-9 sm:h-10 lg:h-11 w-32 sm:w-36 lg:w-44 flex items-center">
               <Image
-                src="/logos/arkado_wordmark_5.jpg"
+                src="/logo.svg"
                 alt="Arkado"
-                width={220}
-                height={60}
+                width={180}
+                height={56}
                 priority
+                unoptimized
                 className="object-contain w-full h-full"
               />
             </div>
@@ -90,7 +91,7 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
           <form
             action="/search"
             method="GET"
-            className="hidden md:flex flex-1 max-w-2xl mx-auto"
+            className="hidden md:flex flex-1 max-w-2xl mx-2 lg:mx-auto"
           >
             <div className="relative flex w-full">
               <input
@@ -110,7 +111,7 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
           </form>
 
           {/* Right actions */}
-          <div className="flex items-center gap-1 sm:gap-2 ml-auto">
+          <div className="flex items-center gap-1 sm:gap-2 ml-auto shrink-0">
             {/* Mobile search trigger */}
             <button
               onClick={() => setShowSearch(true)}
@@ -123,11 +124,11 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
             {/* Login / Account - visible on all screens */}
             <Link
               href="/auth"
-              className="flex flex-col items-center justify-center w-10 h-10 sm:w-auto sm:px-2 sm:py-1 rounded-lg hover:bg-stone-100 text-stone-700 transition"
+              className="flex flex-col items-center justify-center w-9 h-9 sm:w-auto sm:px-2 sm:py-1 rounded-lg hover:bg-stone-100 text-stone-700 transition"
               aria-label="Account"
             >
               <UserIcon size={20} />
-              <span className="text-[9px] sm:text-[10px] font-semibold mt-0.5 hidden sm:block">Account</span>
+              <span className="text-[9px] sm:text-[10px] font-semibold mt-0.5 hidden lg:block">Account</span>
             </Link>
 
             <button
@@ -143,7 +144,7 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
                   </span>
                 )}
               </div>
-              <span className="text-[10px] font-semibold mt-0.5">My cart</span>
+              <span className="text-[9px] sm:text-[10px] font-semibold mt-0.5 hidden lg:block">My cart</span>
             </button>
           </div>
         </div>
@@ -278,12 +279,13 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
           <div className="absolute inset-0 bg-stone-900/60 backdrop-blur-sm" onClick={() => setShowMobileMenu(false)} />
           <div className="absolute left-0 top-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl flex flex-col anim-slide-down">
             <div className="p-4 border-b border-stone-200 flex items-center justify-between">
-              <Link href="/" onClick={() => setShowMobileMenu(false)} className="relative h-10 w-44 flex items-center">
+              <Link href="/" onClick={() => setShowMobileMenu(false)} className="relative h-10 w-36 flex items-center">
                 <Image
-                  src="/logos/arkado_wordmark_5.jpg"
+                  src="/logo.svg"
                   alt="Arkado"
-                  width={180}
+                  width={140}
                   height={44}
+                  unoptimized
                   className="object-contain w-full h-full"
                 />
               </Link>

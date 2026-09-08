@@ -144,10 +144,11 @@ export default function AdminDashboard() {
           <div className="flex items-center gap-2.5">
             <div className="relative h-8 w-28 flex items-center">
               <Image
-                src="/logos/arkado_wordmark_5.jpg"
+                src="/logo.svg"
                 alt="Arkado"
                 width={120}
-                height={32}
+                height={37}
+                unoptimized
                 className="object-contain w-full h-full"
               />
             </div>
@@ -207,10 +208,11 @@ export default function AdminDashboard() {
           <div className="flex items-center gap-2.5">
             <div className="relative h-7 w-24 flex items-center">
               <Image
-                src="/logos/arkado_wordmark_5.jpg"
+                src="/logo.svg"
                 alt="Arkado"
                 width={120}
-                height={32}
+                height={37}
+                unoptimized
                 className="object-contain w-full h-full"
               />
             </div>
@@ -273,10 +275,11 @@ export default function AdminDashboard() {
             <div className="flex items-center gap-2">
               <div className="relative h-6 w-20 flex items-center">
                 <Image
-                  src="/logos/arkado_wordmark_5.jpg"
+                  src="/logo.svg"
                   alt="Arkado"
                   width={100}
-                  height={28}
+                  height={31}
+                  unoptimized
                   className="object-contain w-full h-full"
                 />
               </div>

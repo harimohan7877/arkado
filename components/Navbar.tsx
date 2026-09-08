@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Category } from "@/lib/store-types";
 import { Settings } from "@/lib/store-types";
+import { supabase } from "@/lib/supabase";
 import {
   SearchIcon,
   CloseIcon,
@@ -29,6 +30,7 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
   const [showSearch, setShowSearch] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [user, setUser] = useState<{ id: string; email?: string } | null>(null);
 
   useEffect(() => {
     fetch("/api/categories?scope=public")
@@ -39,6 +41,18 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
       .then((r) => r.json())
       .then(setSettings)
       .catch(() => {});
+
+    supabase.auth.getUser().then(({ data }) => {
+      setUser(data?.user || null);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user || null);
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
   }, []);
 
   useEffect(() => {
@@ -121,15 +135,29 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
               <SearchIcon size={20} />
             </button>
 
-            {/* Login / Account - visible on all screens */}
-            <Link
-              href="/auth"
-              className="flex flex-col items-center justify-center w-9 h-9 sm:w-auto sm:px-2 sm:py-1 rounded-lg hover:bg-stone-100 text-stone-700 transition"
-              aria-label="Account"
-            >
-              <UserIcon size={20} />
-              <span className="text-[9px] sm:text-[10px] font-semibold mt-0.5 hidden lg:block">Account</span>
-            </Link>
+            {/* Login / Account / Dashboard - visible on all screens */}
+            {user ? (
+              <Link
+                href="/dashboard"
+                className="flex flex-col items-center justify-center w-9 h-9 sm:w-auto sm:px-2 sm:py-1 rounded-lg hover:bg-amber-50 text-amber-900 transition relative"
+                aria-label="Dashboard"
+              >
+                <div className="relative">
+                  <UserIcon size={20} className="text-amber-800" />
+                  <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-500 border border-white" />
+                </div>
+                <span className="text-[9px] sm:text-[10px] font-bold mt-0.5 hidden lg:block text-amber-900">Dashboard</span>
+              </Link>
+            ) : (
+              <Link
+                href="/auth"
+                className="flex flex-col items-center justify-center w-9 h-9 sm:w-auto sm:px-2 sm:py-1 rounded-lg hover:bg-stone-100 text-stone-700 transition"
+                aria-label="Account"
+              >
+                <UserIcon size={20} />
+                <span className="text-[9px] sm:text-[10px] font-semibold mt-0.5 hidden lg:block">Account</span>
+              </Link>
+            )}
 
             <button
               onClick={onCartClick}
@@ -299,6 +327,48 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
             </div>
 
             <div className="flex-1 overflow-y-auto p-4 space-y-1">
+              {user ? (
+                <div className="p-3 mb-3 bg-amber-50/80 rounded-xl border border-amber-200/70">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                    <p className="text-[11px] font-mono text-amber-900 font-bold truncate">
+                      {user.email || "Active User"}
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-between mt-2.5 pt-2 border-t border-amber-200/50">
+                    <Link
+                      href="/dashboard"
+                      onClick={() => setShowMobileMenu(false)}
+                      className="text-xs font-bold text-amber-900 hover:underline"
+                    >
+                      My Dashboard →
+                    </Link>
+                    <button
+                      onClick={async () => {
+                        await supabase.auth.signOut();
+                        localStorage.clear();
+                        sessionStorage.clear();
+                        setUser(null);
+                        setShowMobileMenu(false);
+                        window.location.href = "/";
+                      }}
+                      className="text-xs text-stone-500 hover:text-red-600 font-medium cursor-pointer"
+                    >
+                      Log out
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  href="/auth"
+                  onClick={() => setShowMobileMenu(false)}
+                  className="flex items-center justify-between px-3 py-2.5 rounded-lg font-bold text-xs text-amber-900 bg-amber-50 border border-amber-200/60 mb-3"
+                >
+                  <span>🔑 Log in / Sign up</span>
+                  <span>→</span>
+                </Link>
+              )}
+
               <Link
                 href="/"
                 onClick={() => setShowMobileMenu(false)}

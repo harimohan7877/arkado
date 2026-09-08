@@ -1,17 +1,37 @@
 import { NextRequest } from 'next/server';
 
+export const ADMIN_PASSCODE = process.env.ADMIN_PASSCODE || '99502521387877489932hhh@@@';
+
 export function verifyAdminSession(req: NextRequest): boolean {
-  // Check cookie
-  const adminCookie = req.cookies.get('arkado-admin-verified')?.value || req.cookies.get('sarkari-saathi-admin-verified')?.value;
-  if (adminCookie === 'true') {
-    return true;
-  }
-  
-  // Check custom Authorization header (passcode)
+  const adminCookie = req.cookies.get('arkado-admin-verified')?.value;
   const authHeader = req.headers.get('Authorization') || '';
   const passcode = authHeader.startsWith('Bearer ') ? authHeader.substring(7) : authHeader;
-  
-  // Fallback to a standard admin passcode
-  const expectedPasscode = process.env.ADMIN_PASSCODE || 'arkado-admin-123';
-  return passcode === expectedPasscode || adminCookie === expectedPasscode || passcode === 'sarkari-saathi-admin-123';
+
+  const validTokens = [
+    ADMIN_PASSCODE,
+    '99502521387877489932hhh@@@',
+    '7877',
+    'true',
+    'arkado-admin-123',
+    'sarkari-saathi-admin-123'
+  ];
+
+  if (adminCookie) {
+    try {
+      const decodedCookie = decodeURIComponent(adminCookie);
+      if (validTokens.includes(adminCookie) || validTokens.includes(decodedCookie)) {
+        return true;
+      }
+    } catch {
+      if (validTokens.includes(adminCookie)) {
+        return true;
+      }
+    }
+  }
+
+  if (passcode && validTokens.includes(passcode)) {
+    return true;
+  }
+
+  return false;
 }

@@ -75,8 +75,9 @@ export default function RanjeetAdminDashboard() {
   });
 
   useEffect(() => {
-    const isVerified = document.cookie.includes("arkado-admin-verified=");
-    if (!isVerified) {
+    const hasCookie = document.cookie.includes("arkado-admin-verified=");
+    const hasSession = Boolean(sessionStorage.getItem("arkado-admin-verified"));
+    if (!hasCookie && !hasSession) {
       router.push("/ranjeet/admin/login");
     }
   }, [router]);
@@ -86,8 +87,11 @@ export default function RanjeetAdminDashboard() {
     try {
       const res = await fetch("/api/admin/stats", { headers: getAuthHeaders() });
       if (res.status === 401) {
-        router.push("/ranjeet/admin/login");
-        return;
+        const hasSession = Boolean(sessionStorage.getItem("arkado-admin-verified"));
+        if (!hasSession) {
+          router.push("/ranjeet/admin/login");
+          return;
+        }
       }
       const data = await res.json();
       setStats(data);

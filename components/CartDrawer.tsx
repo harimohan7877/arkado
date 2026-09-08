@@ -67,6 +67,7 @@ export default function CartDrawer({
 
   useEffect(() => {
     if (isOpen) {
+      document.body.style.overflow = "hidden";
       fetch("/api/settings")
         .then((r) => r.json())
         .then((data) => {
@@ -79,7 +80,12 @@ export default function CartDrawer({
           }
         })
         .catch(() => {});
+    } else {
+      document.body.style.overflow = "";
     }
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isOpen]);
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
@@ -109,7 +115,7 @@ export default function CartDrawer({
       return;
     }
     if (deliveryMode === "gmail" && !email.trim()) {
-      setErrorMsg("कृपया अपना Gmail एड्रेस दर्ज करें।");
+      setErrorMsg("कृपया अपना Gmail पता दर्ज करें।");
       return;
     }
 
@@ -123,20 +129,34 @@ export default function CartDrawer({
           delivery_mode: deliveryMode,
           phone: phone.trim(),
           email: email.trim(),
-          course_id: primaryCourse?.id || "bundle",
-          course_title: cartItems.map((c) => c.title).join(", "),
+          course_id: primaryCourse?.id,
+          course_title: primaryCourse?.title,
           amount: subtotal,
-          drive_url: primaryCourse?.drive_url || "https://drive.google.com",
+          drive_url: primaryCourse?.drive_url || "",
+          status: "pending_verification",
         }),
       });
 
       const data = await res.json();
-      if (!data.success) throw new Error(data.error || "Order submit nahi ho paya");
+      if (!res.ok || data.error) {
+        throw new Error(data.error || "ऑर्डर सबमिट नहीं हो सका");
+      }
 
-      setCreatedOrder(data.order);
+      setCreatedOrder({
+        order_id: data.order_id || `ARK-${Date.now().toString().slice(-6)}`,
+        name: name.trim(),
+        delivery_mode: deliveryMode,
+        course_title: primaryCourse?.title || "Course",
+        amount: subtotal,
+        phone: phone.trim(),
+        email: email.trim(),
+        drive_url: data.drive_url || primaryCourse?.drive_url || "",
+      });
+
       setStep("success");
-    } catch (err: unknown) {
-      setErrorMsg(err instanceof Error ? err.message : "Error submitting order");
+    } catch (err: any) {
+      console.error("Order error:", err);
+      setErrorMsg(err.message || "कुछ गलत हुआ। कृपया WhatsApp पर संपर्क करें।");
     } finally {
       setIsSubmitting(false);
     }
@@ -149,9 +169,15 @@ export default function CartDrawer({
 
   return (
     <>
-      <div className="overlay-blur anim-fade-in-up" onClick={onClose} />
+      {/* Backdrop overlay */}
+      <div
+        className="fixed inset-0 bg-stone-900/60 backdrop-blur-xs z-[70] anim-fade-in-up"
+        onClick={onClose}
+        aria-hidden="true"
+      />
 
-      <div className="fixed right-0 top-0 bottom-0 w-full sm:max-w-md bg-white z-[55] shadow-2xl flex flex-col overflow-hidden anim-slide-down">
+      {/* Cart Drawer sliding window - z-[80] ensures it is clearly above the backdrop overlay */}
+      <div className="fixed right-0 top-0 bottom-0 w-full sm:max-w-md bg-white z-[80] shadow-2xl flex flex-col overflow-hidden anim-slide-down">
         {/* Header with progress */}
         <div className="border-b border-slate-200 bg-white shrink-0">
           <div className="p-4 flex items-center justify-between">

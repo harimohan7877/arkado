@@ -69,7 +69,7 @@ export default function PaymentPage() {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
         amount,
         currency: 'INR',
-        name: 'सरकारी साथी',
+        name: 'Arkado',
         description: 'Premium Access — Unlimited AI + Study Material',
         order_id: orderId,
         handler: async (response: RazorpayResponse) => {

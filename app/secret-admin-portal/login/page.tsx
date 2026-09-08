@@ -25,8 +25,10 @@ export default function AdminLoginPage() {
 
       if (res.ok) {
         // Set verification cookie
+        document.cookie = `arkado-admin-verified=true; path=/; max-age=86400; SameSite=Strict`;
         document.cookie = `sarkari-saathi-admin-verified=true; path=/; max-age=86400; SameSite=Strict`;
         // Save to session storage for API requests
+        sessionStorage.setItem("arkado-admin-verified", passcode);
         sessionStorage.setItem("sarkari-saathi-admin-verified", passcode);
         
         router.push("/secret-admin-portal");

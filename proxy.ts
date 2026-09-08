@@ -12,7 +12,7 @@ export async function proxy(req: NextRequest) {
     }
     
     // Check for admin cookie
-    const adminCookie = req.cookies.get('sarkari-saathi-admin-verified')?.value;
+    const adminCookie = req.cookies.get('arkado-admin-verified')?.value || req.cookies.get('sarkari-saathi-admin-verified')?.value;
     if (adminCookie !== 'true') {
       const loginUrl = new URL('/secret-admin-portal/login', req.url);
       return NextResponse.redirect(loginUrl);

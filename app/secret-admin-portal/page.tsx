@@ -107,7 +107,7 @@ export default function AdminDashboard() {
   // Get passcode from sessionStorage
   const getPasscode = () => {
     if (typeof window !== "undefined") {
-      return sessionStorage.getItem("sarkari-saathi-admin-verified") || "";
+      return sessionStorage.getItem("arkado-admin-verified") || sessionStorage.getItem("sarkari-saathi-admin-verified") || "";
     }
     return "";
   };
@@ -121,7 +121,7 @@ export default function AdminDashboard() {
 
   // Check auth
   useEffect(() => {
-    const isVerified = document.cookie.includes("sarkari-saathi-admin-verified=true");
+    const isVerified = document.cookie.includes("arkado-admin-verified=true") || document.cookie.includes("sarkari-saathi-admin-verified=true");
     if (!isVerified) {
       router.push("/secret-admin-portal/login");
     }
@@ -379,7 +379,9 @@ export default function AdminDashboard() {
   };
 
   const handleLogout = () => {
+    document.cookie = "arkado-admin-verified=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
     document.cookie = "sarkari-saathi-admin-verified=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+    sessionStorage.removeItem("arkado-admin-verified");
     sessionStorage.removeItem("sarkari-saathi-admin-verified");
     router.push("/secret-admin-portal/login");
   };

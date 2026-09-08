@@ -1,32 +1,19 @@
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { getStoreData, setStoreData } from "@/lib/store-data";
 
-const ordersFilePath = path.join(process.cwd(), "data", "orders.json");
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
-function readOrders() {
-  try {
-    if (!fs.existsSync(ordersFilePath)) {
-      fs.writeFileSync(ordersFilePath, "[]", "utf8");
-      return [];
-    }
-    const data = fs.readFileSync(ordersFilePath, "utf8");
-    return JSON.parse(data || "[]");
-  } catch {
-    return [];
-  }
+async function readOrders() {
+  return getStoreData<any[]>("orders", "data/orders.json", []);
 }
 
-function writeOrders(orders: unknown[]) {
-  try {
-    fs.writeFileSync(ordersFilePath, JSON.stringify(orders, null, 2), "utf8");
-  } catch (err) {
-    console.error("Error writing orders:", err);
-  }
+async function writeOrders(orders: unknown[]) {
+  return setStoreData("orders", "data/orders.json", orders);
 }
 
 export async function GET() {
-  const orders = readOrders();
+  const orders = await readOrders();
   orders.sort(
     (a: { created_at: string }, b: { created_at: string }) =>
       new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
@@ -87,9 +74,9 @@ export async function POST(req: Request) {
       created_at: new Date().toISOString(),
     };
 
-    const orders = readOrders();
+    const orders = await readOrders();
     orders.unshift(newOrder);
-    writeOrders(orders);
+    await writeOrders(orders);
 
     // Notify admin via email (fire-and-forget)
     fetch(new URL(req.url).origin + "/api/notify-admin", {
@@ -119,7 +106,7 @@ export async function PATCH(req: Request) {
       );
     }
 
-    const orders = readOrders();
+    const orders = await readOrders();
     const orderIndex = orders.findIndex(
       (o: { order_id: string }) => o.order_id === order_id
     );
@@ -133,7 +120,7 @@ export async function PATCH(req: Request) {
 
     orders[orderIndex].status = status;
     orders[orderIndex].updated_at = new Date().toISOString();
-    writeOrders(orders);
+    await writeOrders(orders);
 
     return NextResponse.json({ success: true, order: orders[orderIndex] });
   } catch (err: unknown) {
@@ -156,9 +143,9 @@ export async function DELETE(req: Request) {
       );
     }
 
-    let orders = readOrders();
+    let orders = await readOrders();
     orders = orders.filter((o: { order_id: string }) => o.order_id !== order_id);
-    writeOrders(orders);
+    await writeOrders(orders);
 
     return NextResponse.json({ success: true });
   } catch (err: unknown) {

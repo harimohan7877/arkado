@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
-import { readFile } from "fs/promises";
-import { join } from "path";
 import { Category } from "@/lib/store-types";
+import { getStoreData } from "@/lib/store-data";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -10,8 +12,7 @@ export async function GET(req: Request) {
   const scope = searchParams.get("scope") || "public";
 
   try {
-    const data = await readFile(join(process.cwd(), "data/categories.json"), "utf-8");
-    let categories: Category[] = JSON.parse(data);
+    let categories = await getStoreData<Category[]>("categories", "data/categories.json", []);
 
     if (scope === "public") {
       categories = categories.filter((c) =>

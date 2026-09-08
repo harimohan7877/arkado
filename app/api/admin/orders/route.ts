@@ -1,16 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
-import { readFile, writeFile } from "fs/promises";
-import { join } from "path";
 import { verifyAdminSession } from "@/lib/admin-auth";
+import { getStoreData, setStoreData } from "@/lib/store-data";
 
-const FILE = join(process.cwd(), "data/orders.json");
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 function readOrders() {
-  return readFile(FILE, "utf-8").then(JSON.parse).catch(() => []);
+  return getStoreData<any[]>("orders", "data/orders.json", []);
 }
 
 function writeOrders(data: unknown[]) {
-  return writeFile(FILE, JSON.stringify(data, null, 2));
+  return setStoreData("orders", "data/orders.json", data);
 }
 
 export async function GET(req: NextRequest) {

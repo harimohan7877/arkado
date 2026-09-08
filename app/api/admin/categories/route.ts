@@ -1,18 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
-import { readFile, writeFile } from "fs/promises";
+import { writeFile } from "fs/promises";
 import { join } from "path";
 import { verifyAdminSession } from "@/lib/admin-auth";
+import { getStoreData, setStoreData, saveUploadedFile } from "@/lib/store-data";
 
-const FILE = join(process.cwd(), "data/categories.json");
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const MAX_FILE_SIZE = 500 * 1024;
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
 
 function readCategories() {
-  return readFile(FILE, "utf-8").then(JSON.parse).catch(() => []);
+  return getStoreData<any[]>("categories", "data/categories.json", []);
 }
 
 function writeCategories(data: unknown[]) {
-  return writeFile(FILE, JSON.stringify(data, null, 2));
+  return setStoreData("categories", "data/categories.json", data);
 }
 
 export async function GET(req: NextRequest) {
@@ -49,14 +52,8 @@ export async function POST(req: NextRequest) {
     if (!ALLOWED_TYPES.includes(logo.type)) {
       return NextResponse.json({ error: "Invalid file type. Only JPEG, PNG, WebP, GIF allowed." }, { status: 400 });
     }
-    const bytes = await logo.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-    const ext = logo.name.split(".").pop() || "png";
     const safeName = newCategory.id.replace(/[^a-z0-9-]/gi, "");
-    const fileName = `${safeName}.${ext}`;
-    const publicDir = join(process.cwd(), "public/logos");
-    await writeFile(join(publicDir, fileName), buffer);
-    newCategory.logo_url = `/logos/${fileName}`;
+    newCategory.logo_url = await saveUploadedFile(logo, "logos", safeName);
   }
 
   categories.push(newCategory);

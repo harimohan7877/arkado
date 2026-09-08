@@ -1,20 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
-import { readFile, writeFile } from "fs/promises";
-import { join } from "path";
 import { verifyAdminSession } from "@/lib/admin-auth";
+import { getStoreData, setStoreData } from "@/lib/store-data";
 
-const FILE = join(process.cwd(), "data/settings.json");
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
-function readSettings() {
-  return readFile(FILE, "utf-8").then(JSON.parse).catch(() => ({}));
-}
-
-function writeSettings(data: unknown) {
-  return writeFile(FILE, JSON.stringify(data, null, 2));
-}
-
-export async function GET() {
-  const data = await readSettings();
+export async function GET(req: NextRequest) {
+  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const data = await getStoreData("settings", "data/settings.json", {});
   return NextResponse.json(data);
 }
 
@@ -22,8 +15,8 @@ export async function POST(req: NextRequest) {
   if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const body = await req.json();
-  const current = await readSettings();
+  const current = await getStoreData<Record<string, unknown>>("settings", "data/settings.json", {});
   const updated = { ...current, ...body, updated_at: new Date().toISOString() };
-  await writeSettings(updated);
+  await setStoreData("settings", "data/settings.json", updated);
   return NextResponse.json(updated);
 }

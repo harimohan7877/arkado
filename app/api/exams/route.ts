@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
-import { readFile } from "fs/promises";
-import { join } from "path";
 import { Exam, Category } from "@/lib/store-types";
+import { getStoreData } from "@/lib/store-data";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -13,12 +15,10 @@ export async function GET(req: Request) {
   const limit = parseInt(searchParams.get("limit") || "100", 10);
 
   try {
-    const data = await readFile(join(process.cwd(), "data/exams-new.json"), "utf-8");
-    let exams: Exam[] = JSON.parse(data);
+    let exams = await getStoreData<Exam[]>("exams", "data/exams-new.json", []);
 
     if (scope === "public") {
-      const catsData = await readFile(join(process.cwd(), "data/categories.json"), "utf-8");
-      const cats: Category[] = JSON.parse(catsData);
+      const cats = await getStoreData<Category[]>("categories", "data/categories.json", []);
       const rajCat = cats.find((c) =>
         c.state_or_group && c.state_or_group.toLowerCase() === "rajasthan"
       );

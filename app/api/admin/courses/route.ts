@@ -1,18 +1,21 @@
 import { NextRequest, NextResponse } from "next/server";
-import { readFile, writeFile } from "fs/promises";
+import { writeFile } from "fs/promises";
 import { join } from "path";
 import { verifyAdminSession } from "@/lib/admin-auth";
+import { getStoreData, setStoreData, saveUploadedFile } from "@/lib/store-data";
 
-const FILE = join(process.cwd(), "data/courses-new.json");
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const MAX_FILE_SIZE = 1024 * 1024;
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 
 function readCourses() {
-  return readFile(FILE, "utf-8").then(JSON.parse).catch(() => []);
+  return getStoreData<any[]>("courses", "data/courses-new.json", []);
 }
 
 function writeCourses(data: unknown[]) {
-  return writeFile(FILE, JSON.stringify(data, null, 2));
+  return setStoreData("courses", "data/courses-new.json", data);
 }
 
 export async function GET(req: NextRequest) {
@@ -66,14 +69,8 @@ export async function POST(req: NextRequest) {
     if (!ALLOWED_TYPES.includes(cover.type)) {
       return NextResponse.json({ error: "Invalid file type. Only JPEG, PNG, WebP allowed." }, { status: 400 });
     }
-    const bytes = await cover.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-    const ext = cover.name.split(".").pop() || "jpg";
     const safeSlug = slug.replace(/[^a-z0-9-]/gi, "");
-    const fileName = `${safeSlug}.${ext}`;
-    const publicDir = join(process.cwd(), "public/images/bundles");
-    await writeFile(join(publicDir, fileName), buffer);
-    newCourse.cover_image = `/images/bundles/${fileName}`;
+    newCourse.cover_image = await saveUploadedFile(cover, "images/bundles", safeSlug);
   }
 
   courses.push(newCourse);

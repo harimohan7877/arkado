@@ -1,9 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { readFile, writeFile } from "fs/promises";
+import { writeFile } from "fs/promises";
 import { join } from "path";
 import { verifyAdminSession } from "@/lib/admin-auth";
+import { getStoreData, setStoreData, saveUploadedFile } from "@/lib/store-data";
 
-const FILE = join(process.cwd(), "data/exams-new.json");
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const MAX_FILE_SIZE = 500 * 1024;
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
 
@@ -13,11 +16,11 @@ interface Exam {
 }
 
 function readExams(): Promise<Exam[]> {
-  return readFile(FILE, "utf-8").then(JSON.parse).catch(() => []);
+  return getStoreData<Exam[]>("exams", "data/exams-new.json", []);
 }
 
 function writeExams(data: unknown[]) {
-  return writeFile(FILE, JSON.stringify(data, null, 2));
+  return setStoreData("exams", "data/exams-new.json", data);
 }
 
 export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -57,14 +60,8 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     if (!ALLOWED_TYPES.includes(logo.type)) {
       return NextResponse.json({ error: "Invalid file type. Only JPEG, PNG, WebP, GIF allowed." }, { status: 400 });
     }
-    const bytes = await logo.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-    const ext = logo.name.split(".").pop() || "png";
     const safeId = id.replace(/[^a-z0-9-]/gi, "");
-    const fileName = `${safeId}.${ext}`;
-    const publicDir = join(process.cwd(), "public/logos");
-    await writeFile(join(publicDir, fileName), buffer);
-    updates.logo_url = `/logos/${fileName}`;
+    updates.logo_url = await saveUploadedFile(logo, "logos", safeId);
   }
 
   exams[idx] = updates as Exam;

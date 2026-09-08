@@ -1,10 +1,5 @@
-import { Suspense } from "react";
-import AdminLoginForm from "./AdminLoginForm";
+import { notFound } from "next/navigation";
 
-export default function AdminLoginPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen bg-neutral-950 flex items-center justify-center">Loading...</div>}>
-      <AdminLoginForm />
-    </Suspense>
-  );
+export default function DeprecatedAdminLoginPage() {
+  notFound();
 }

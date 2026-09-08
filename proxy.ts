@@ -4,17 +4,19 @@ export async function proxy(req: NextRequest) {
   const res = NextResponse.next();
   const url = req.nextUrl.clone();
 
-  // Admin Portal Protection
-  if (url.pathname.startsWith('/secret-admin-portal')) {
-    // Allow access to the login page itself
-    if (url.pathname === '/secret-admin-portal/login') {
+  // Secret Admin Portal Protection
+  if (url.pathname.startsWith('/ranjeet/admin')) {
+    // Allow access to login page
+    if (url.pathname === '/ranjeet/admin/login') {
       return res;
     }
     
-    // Check for admin cookie
-    const adminCookie = req.cookies.get('arkado-admin-verified')?.value || req.cookies.get('sarkari-saathi-admin-verified')?.value;
-    if (adminCookie !== 'true') {
-      const loginUrl = new URL('/secret-admin-portal/login', req.url);
+    // Check for admin verification cookie
+    const adminCookie = req.cookies.get('arkado-admin-verified')?.value;
+    const expectedPasscode = process.env.ADMIN_PASSCODE || '7877';
+    
+    if (adminCookie !== expectedPasscode && adminCookie !== 'true') {
+      const loginUrl = new URL('/ranjeet/admin/login', req.url);
       return NextResponse.redirect(loginUrl);
     }
     return res;
@@ -24,5 +26,5 @@ export async function proxy(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/secret-admin-portal/:path*']
+  matcher: ['/ranjeet/admin/:path*']
 };

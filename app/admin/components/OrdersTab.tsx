@@ -45,20 +45,24 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders }: Ord
   };
 
   const handleSendWhatsApp = (order: Order) => {
-    const msg = `नमस्ते ${order.customer_name}!\n\nआपने Arkado से "${order.course_title}" के लिए ₹${order.amount} का पेमेंट किया है।\n\nOrder ID: ${order.order_id}\nUTR No: ${order.utr}\n\nकृपया नोट्स की डाउनलोड लिंक यहाँ भेजें।`;
-    const url = `https://wa.me/${order.customer_phone || "917852004401"}?text=${encodeURIComponent(msg)}`;
+    const utrLine = order.utr ? `\nUTR No: ${order.utr}` : "";
+    const msg = `नमस्ते ${order.customer_name}!\n\nआपने Arkado से "${order.course_title}" के लिए ₹${order.amount} का भुगतान किया है।\n\nOrder ID: ${order.order_id}${utrLine}\n\nयहाँ आपके नोट्स व अध्ययन सामग्री की डाउनलोड लिंक उपलब्ध है:\n${order.course_id ? `https://www.arkado.store/dashboard` : ""}\n\nधन्यवाद! — Team Arkado`;
+    const phone = order.customer_phone ? order.customer_phone.replace(/\D/g, "") : "";
+    const cleanPhone = phone.startsWith("91") ? phone : phone ? `91${phone}` : "";
+    const url = cleanPhone ? `https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}` : `https://wa.me/?text=${encodeURIComponent(msg)}`;
     window.open(url, "_blank", "noopener,noreferrer");
     handleUpdateDelivery(order.id, "delivered");
-    setMessage({ type: "success", text: "WhatsApp opened!" });
+    setMessage({ type: "success", text: "WhatsApp खोला गया!" });
   };
 
   const handleSendGmail = (order: Order) => {
+    const utrLine = order.utr ? `\nUTR No: ${order.utr}` : "";
     const subject = `Arkado Order ${order.order_id} - ${order.course_title}`;
-    const body = `Hello ${order.customer_name},\n\nThank you for purchasing "${order.course_title}" from Arkado for ₹${order.amount}.\n\nOrder ID: ${order.order_id}\nUTR No: ${order.utr}\n\nYour notes access link will be sent shortly.\n\n— Team Arkado`;
+    const body = `Hello ${order.customer_name},\n\nThank you for purchasing "${order.course_title}" from Arkado for ₹${order.amount}.\n\nOrder ID: ${order.order_id}${utrLine}\n\nYour notes and study material are available in your student dashboard: https://www.arkado.store/dashboard\n\nThank you!\n— Team Arkado`;
     const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(order.customer_email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(url, "_blank", "noopener,noreferrer");
     handleUpdateDelivery(order.id, "delivered");
-    setMessage({ type: "success", text: "Gmail opened!" });
+    setMessage({ type: "success", text: "Gmail खोला गया!" });
   };
 
   const handleUpdateDelivery = async (id: string, status: "pending" | "delivered") => {
@@ -236,8 +240,8 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders }: Ord
                     </select>
                   </td>
                   <td className="p-4 text-xs">
-                    <div className="font-mono text-stone-700">UTR: {order.utr}</div>
-                    <div className="font-mono text-stone-700">{order.order_id}</div>
+                    <div className="font-mono font-bold text-stone-900">{order.order_id}</div>
+                    {order.utr ? <div className="font-mono text-stone-500 text-[11px]">UTR: {order.utr}</div> : null}
                     <div className="text-stone-400 text-[10px]">{new Date(order.created_at).toLocaleString("hi-IN")}</div>
                   </td>
                   <td className="p-4 text-right">

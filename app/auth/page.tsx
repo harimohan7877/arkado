@@ -9,14 +9,12 @@ import { supabase } from "@/lib/supabase";
 export default function AuthPage() {
   const router = useRouter();
 
-  // Mode: "login" | "signup" | "otp"
-  const [mode, setMode] = useState<"login" | "signup" | "otp">("login");
+  // Mode: "login" | "signup"
+  const [mode, setMode] = useState<"login" | "signup">("login");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [otp, setOtp] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [otpSent, setOtpSent] = useState(false);
 
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
@@ -84,9 +82,9 @@ export default function AuthPage() {
 
       if (error) {
         if (error.message.includes("Invalid login credentials")) {
-          throw new Error("ईमेल या पासवर्ड गलत है। कृपया पुनः प्रयास करें या 'Sign Up' से नया अकाउंट बनाएँ।");
+          throw new Error("ईमेल या पासवर्ड गलत है। यदि आपने Google से अकाउंट बनाया है तो ऊपर Google बटन दबाएँ।");
         } else if (error.message.includes("Email not confirmed")) {
-          throw new Error("कृपया अपने ईमेल पर आए कन्फर्मेशन लिंक पर क्लिक करें या नीचे 'OTP से लॉगिन' विकल्प चुनें।");
+          throw new Error("कृपया अपने ईमेल पर आए कन्फर्मेशन लिंक पर क्लिक करें या Google से लॉगिन करें।");
         }
         throw error;
       }
@@ -138,69 +136,13 @@ export default function AuthPage() {
       if (data?.session) {
         completeAuth(data.session);
       } else {
-        setSuccessMessage("खाता सफलतापूर्वक बन गया! यदि कन्फर्मेशन ईमेल आया है तो उस पर क्लिक करें या सीधे लॉगिन करें।");
+        setSuccessMessage("खाता सफलतापूर्वक बन गया! कृपया लॉगिन करें।");
         setMode("login");
       }
     } catch (err: unknown) {
       console.error("Signup error:", err);
       const msg = err instanceof Error ? err.message : "अकाउंट बनाने में समस्या आई। पुनः प्रयास करें।";
       setErrorMessage(msg);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // 4. Send Email OTP
-  const handleSendOtp = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setLoading(true);
-    setErrorMessage(null);
-    setSuccessMessage(null);
-
-    try {
-      const { error } = await supabase.auth.signInWithOtp({
-        email: email.trim(),
-        options: {
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
-        },
-      });
-
-      if (error) throw error;
-
-      setOtpSent(true);
-      setSuccessMessage(`लॉगिन कोड ${email} पर भेज दिया गया है। अपना इनबॉक्स या स्पैम फोल्डर देखें।`);
-    } catch (err: unknown) {
-      console.error("OTP send error:", err);
-      const msg = err instanceof Error ? err.message : "कोड भेजने में विफल। कृपया पुनः प्रयास करें।";
-      setErrorMessage(msg);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // 5. Verify Email OTP
-  const handleVerifyOtp = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!otp || !email) return;
-    setLoading(true);
-    setErrorMessage(null);
-
-    try {
-      const { data, error } = await supabase.auth.verifyOtp({
-        email: email.trim(),
-        token: otp.trim(),
-        type: "email",
-      });
-
-      if (error) throw error;
-
-      if (data?.session) {
-        completeAuth(data.session);
-      }
-    } catch (err: unknown) {
-      console.error("OTP verify error:", err);
-      setErrorMessage("गलत या एक्सपायर कोड। कृपया 6 अंकों का कोड दोबारा डालें।");
     } finally {
       setLoading(false);
     }
@@ -238,9 +180,7 @@ export default function AuthPage() {
             />
           </Link>
           <h1 className="text-xl font-bold text-stone-900 tracking-tight">
-            {mode === "login" && "अपने अकाउंट में लॉगिन करें"}
-            {mode === "signup" && "नया Arkado अकाउंट बनाएँ"}
-            {mode === "otp" && "Email OTP से लॉगिन करें"}
+            {mode === "login" ? "अपने अकाउंट में लॉगिन करें" : "नया Arkado अकाउंट बनाएँ"}
           </h1>
           <p className="text-xs text-stone-500 mt-1.5 font-medium">
             अपने खरीदे गए नोट्स, सिलेबस व PDF डाउनलोड्स एक्सेस करें
@@ -248,40 +188,38 @@ export default function AuthPage() {
         </div>
 
         {/* Tab Switcher (Login vs Sign Up) */}
-        {mode !== "otp" && (
-          <div className="flex border-b border-stone-200 bg-stone-50/60 p-1.5 gap-1.5">
-            <button
-              type="button"
-              onClick={() => {
-                setMode("login");
-                setErrorMessage(null);
-                setSuccessMessage(null);
-              }}
-              className={`flex-1 py-2.5 text-xs font-bold rounded-xl transition-all cursor-pointer ${
-                mode === "login"
-                  ? "bg-white text-stone-900 shadow-sm border border-stone-200/60"
-                  : "text-stone-500 hover:text-stone-800"
-              }`}
-            >
-              लॉग इन (Log In)
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setMode("signup");
-                setErrorMessage(null);
-                setSuccessMessage(null);
-              }}
-              className={`flex-1 py-2.5 text-xs font-bold rounded-xl transition-all cursor-pointer ${
-                mode === "signup"
-                  ? "bg-white text-stone-900 shadow-sm border border-stone-200/60"
-                  : "text-stone-500 hover:text-stone-800"
-              }`}
-            >
-              नया खाता (Sign Up)
-            </button>
-          </div>
-        )}
+        <div className="flex border-b border-stone-200 bg-stone-50/60 p-1.5 gap-1.5">
+          <button
+            type="button"
+            onClick={() => {
+              setMode("login");
+              setErrorMessage(null);
+              setSuccessMessage(null);
+            }}
+            className={`flex-1 py-2.5 text-xs font-bold rounded-xl transition-all cursor-pointer ${
+              mode === "login"
+                ? "bg-white text-stone-900 shadow-sm border border-stone-200/60"
+                : "text-stone-500 hover:text-stone-800"
+            }`}
+          >
+            लॉग इन (Log In)
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setMode("signup");
+              setErrorMessage(null);
+              setSuccessMessage(null);
+            }}
+            className={`flex-1 py-2.5 text-xs font-bold rounded-xl transition-all cursor-pointer ${
+              mode === "signup"
+                ? "bg-white text-stone-900 shadow-sm border border-stone-200/60"
+                : "text-stone-500 hover:text-stone-800"
+            }`}
+          >
+            नया खाता (Sign Up)
+          </button>
+        </div>
 
         <div className="p-6 sm:p-8">
           {/* Alerts */}
@@ -318,7 +256,7 @@ export default function AuthPage() {
                   <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
                   <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                 </svg>
-                <span>Google से 1-क्लिक में जारी रखें</span>
+                <span>Google से लॉगिन करें (Continue with Google)</span>
               </>
             )}
           </button>
@@ -327,7 +265,7 @@ export default function AuthPage() {
           <div className="flex items-center gap-3 my-6">
             <div className="flex-1 h-px bg-stone-200" />
             <span className="text-[10px] text-stone-400 font-mono uppercase tracking-wider">
-              {mode === "otp" ? "या OTP कोड" : "या ईमेल व पासवर्ड"}
+              या ईमेल व पासवर्ड से
             </span>
             <div className="flex-1 h-px bg-stone-200" />
           </div>
@@ -350,22 +288,9 @@ export default function AuthPage() {
               </div>
 
               <div>
-                <div className="flex items-center justify-between mb-1.5">
-                  <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider font-mono">
-                    पासवर्ड (Password)
-                  </label>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setMode("otp");
-                      setErrorMessage(null);
-                      setSuccessMessage(null);
-                    }}
-                    className="text-[11px] text-amber-700 hover:text-amber-800 font-semibold cursor-pointer"
-                  >
-                    बिना पासवर्ड OTP लॉगिन →
-                  </button>
-                </div>
+                <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
+                  पासवर्ड (Password)
+                </label>
                 <div className="relative">
                   <input
                     type={showPassword ? "text" : "password"}
@@ -472,110 +397,6 @@ export default function AuthPage() {
                 )}
               </button>
             </form>
-          )}
-
-          {/* Mode 3: OTP Flow */}
-          {mode === "otp" && (
-            <div className="space-y-4">
-              {!otpSent ? (
-                <form onSubmit={handleSendOtp} className="space-y-4">
-                  <div>
-                    <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
-                      ईमेल एड्रेस (Email)
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="name@example.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full h-11 px-3.5 text-xs bg-stone-50 border border-stone-200 rounded-xl focus:bg-white focus:border-amber-600 outline-none transition"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full h-12 bg-stone-900 hover:bg-black text-white text-xs uppercase tracking-wider font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-                  >
-                    {loading ? (
-                      <>
-                        <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
-                        <span>OTP कोड भेज रहे हैं...</span>
-                      </>
-                    ) : (
-                      <span>6-अंकों का OTP कोड भेजें →</span>
-                    )}
-                  </button>
-                </form>
-              ) : (
-                <form onSubmit={handleVerifyOtp} className="space-y-4">
-                  <div>
-                    <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono text-center">
-                      ईमेल में आया 6-अंकों का कोड डालें
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      maxLength={6}
-                      autoFocus
-                      placeholder="123456"
-                      value={otp}
-                      onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))}
-                      className="w-full h-12 text-center tracking-[0.5em] text-lg font-mono font-bold bg-stone-50 border border-stone-200 rounded-xl focus:bg-white focus:border-amber-600 outline-none transition"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    disabled={loading || otp.length < 6}
-                    className="w-full h-12 bg-amber-600 hover:bg-amber-700 text-white text-xs uppercase tracking-wider font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
-                  >
-                    {loading ? (
-                      <>
-                        <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
-                        <span>सत्यापित हो रहा है...</span>
-                      </>
-                    ) : (
-                      <span>वेरिफाई करके लॉगिन करें →</span>
-                    )}
-                  </button>
-
-                  <div className="flex items-center justify-between text-xs text-stone-500 font-medium pt-2">
-                    <button
-                      type="button"
-                      onClick={() => setOtpSent(false)}
-                      className="hover:text-stone-800 underline cursor-pointer"
-                    >
-                      ← ईमेल बदलें
-                    </button>
-                    <button
-                      type="button"
-                      onClick={handleSendOtp}
-                      disabled={loading}
-                      className="hover:text-amber-700 underline cursor-pointer"
-                    >
-                      दोबारा कोड भेजें
-                    </button>
-                  </div>
-                </form>
-              )}
-
-              <div className="pt-2 text-center">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setMode("login");
-                    setOtpSent(false);
-                    setErrorMessage(null);
-                    setSuccessMessage(null);
-                  }}
-                  className="text-xs text-stone-500 hover:text-stone-900 font-semibold underline cursor-pointer"
-                >
-                  ← पासवर्ड से लॉगिन पर वापस जाएँ
-                </button>
-              </div>
-            </div>
           )}
         </div>
 

@@ -42,8 +42,16 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
       .then(setSettings)
       .catch(() => {});
 
+    supabase.auth.getSession().then(({ data }) => {
+      if (data?.session?.user) {
+        setUser(data.session.user);
+      }
+    });
+
     supabase.auth.getUser().then(({ data }) => {
-      setUser(data?.user || null);
+      if (data?.user) {
+        setUser(data.user);
+      }
     });
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -139,23 +147,30 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
             {user ? (
               <Link
                 href="/dashboard"
-                className="flex flex-col items-center justify-center w-9 h-9 sm:w-auto sm:px-2 sm:py-1 rounded-lg hover:bg-amber-50 text-amber-900 transition relative"
+                className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200/70 transition"
                 aria-label="Dashboard"
               >
-                <div className="relative">
-                  <UserIcon size={20} className="text-amber-800" />
+                <div className="relative shrink-0">
+                  <UserIcon size={18} className="text-amber-800" />
                   <span className="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-emerald-500 border border-white" />
                 </div>
-                <span className="text-[9px] sm:text-[10px] font-bold mt-0.5 hidden lg:block text-amber-900">Dashboard</span>
+                <div className="text-left leading-tight hidden sm:block">
+                  <span className="text-[11px] font-bold text-amber-900 block truncate max-w-[90px] md:max-w-[120px]">
+                    {user.email?.split("@")[0]}
+                  </span>
+                  <span className="text-[9px] text-emerald-700 font-bold block">
+                    डैशबोर्ड (Active)
+                  </span>
+                </div>
               </Link>
             ) : (
               <Link
                 href="/auth"
-                className="flex flex-col items-center justify-center w-9 h-9 sm:w-auto sm:px-2 sm:py-1 rounded-lg hover:bg-stone-100 text-stone-700 transition"
+                className="flex flex-col items-center justify-center w-9 h-9 sm:w-auto sm:px-2.5 sm:py-1 rounded-lg hover:bg-stone-100 text-stone-700 transition"
                 aria-label="Account"
               >
                 <UserIcon size={20} />
-                <span className="text-[9px] sm:text-[10px] font-semibold mt-0.5 hidden lg:block">Account</span>
+                <span className="text-[10px] font-bold mt-0.5 hidden sm:block">लॉगिन (Account)</span>
               </Link>
             )}
 

@@ -58,20 +58,32 @@ export async function POST(req: Request) {
 
     const randomSuffix = Math.floor(1000 + Math.random() * 9000);
     const order_id = `ARK-${new Date().getFullYear()}-${randomSuffix}`;
+    const cleanName = name.trim();
+    const cleanPhone = phone?.trim() || "";
+    const cleanEmail = email?.trim() || "";
+    const cleanUtr = typeof body.utr === "string" ? body.utr.trim() : "";
 
     const newOrder = {
+      id: order_id,
       order_id,
-      name: name.trim(),
+      name: cleanName,
+      customer_name: cleanName,
       delivery_mode: delivery_mode || "whatsapp",
-      phone: phone?.trim() || "",
-      email: email?.trim() || "",
-      course_id,
-      course_title,
+      phone: cleanPhone,
+      customer_phone: cleanPhone,
+      email: cleanEmail,
+      customer_email: cleanEmail,
+      course_id: course_id || "",
+      course_title: course_title || "",
+      exam_name: course_title || "",
       amount: Number(amount) || 199,
       drive_url: drive_url || "https://drive.google.com",
       status: "pending",
-      payment_status: "unverified",
+      delivery_status: "pending",
+      payment_status: "pending",
+      utr: cleanUtr,
       created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
     };
 
     const orders = await readOrders();

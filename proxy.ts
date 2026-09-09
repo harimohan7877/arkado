@@ -1,25 +1,25 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
 
 export async function proxy(req: NextRequest) {
-  const res = NextResponse.next();
   const url = req.nextUrl.clone();
 
-  // Secret Admin Portal Protection
-  if (url.pathname.startsWith('/ranjeet/admin')) {
+  // Admin Portal Protection
+  if (url.pathname.startsWith("/ranjeet/admin")) {
     // Allow access to login page
-    if (url.pathname === '/ranjeet/admin/login') {
-      return res;
+    if (url.pathname === "/ranjeet/admin/login") {
+      return NextResponse.next();
     }
-    
-    // Check for admin verification cookie
-    const adminCookie = req.cookies.get('arkado-admin-verified')?.value;
-    const expectedPasscode = process.env.ADMIN_PASSCODE || '99502521387877489932hhh@@@';
-    
+
+    const adminCookie =
+      req.cookies.get("arkado-admin-verified")?.value ||
+      req.cookies.get("sarkari-saathi-admin-verified")?.value;
+    const expectedPasscode = process.env.ADMIN_PASSCODE || "99502521387877489932hhh@@@";
+
     const validCookies = [
       expectedPasscode,
-      '99502521387877489932hhh@@@',
-      '7877',
-      'true'
+      "99502521387877489932hhh@@@",
+      "7877",
+      "true",
     ];
 
     let isValid = false;
@@ -31,17 +31,17 @@ export async function proxy(req: NextRequest) {
         isValid = validCookies.includes(adminCookie);
       }
     }
-    
+
     if (!isValid) {
-      const loginUrl = new URL('/ranjeet/admin/login', req.url);
+      const loginUrl = new URL("/ranjeet/admin/login", req.url);
+      loginUrl.searchParams.set("redirect", url.pathname);
       return NextResponse.redirect(loginUrl);
     }
-    return res;
   }
 
-  return res;
+  return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/ranjeet/admin/:path*']
+  matcher: ["/ranjeet/admin/:path*"],
 };

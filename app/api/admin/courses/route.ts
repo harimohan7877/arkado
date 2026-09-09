@@ -14,8 +14,9 @@ function readCourses() {
   return getStoreData<any[]>("courses", "data/courses-new.json", []);
 }
 
-function writeCourses(data: unknown[]) {
-  return setStoreData("courses", "data/courses-new.json", data);
+async function writeCourses(data: unknown[]) {
+  await setStoreData("courses", "data/courses-new.json", data);
+  await setStoreData("courses", "data/courses.json", data);
 }
 
 export async function GET(req: NextRequest) {
@@ -51,6 +52,10 @@ export async function POST(req: NextRequest) {
     cover_image: formData.get("cover_image")?.toString() || "/images/bundles/cet_bundle_3d.jpg",
     show_in_slider: formData.get("show_in_slider") === "true",
     slider_tagline: formData.get("slider_tagline")?.toString() || "",
+    is_featured: formData.get("is_featured") === "true",
+    featured_priority: Number(formData.get("featured_priority") || 1),
+    is_new_arrival: formData.get("is_new_arrival") === "true",
+    new_arrival_priority: Number(formData.get("new_arrival_priority") || 1),
     sample_pdf_url: formData.get("sample_pdf_url")?.toString() || "https://drive.google.com",
     drive_url: formData.get("drive_url")?.toString() || "https://drive.google.com",
     rating: Number(formData.get("rating") || 4.9),

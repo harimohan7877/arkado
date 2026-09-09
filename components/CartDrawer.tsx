@@ -38,6 +38,7 @@ export default function CartDrawer({
   const [deliveryMode, setDeliveryMode] = useState<"whatsapp" | "gmail">("whatsapp");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const [utr, setUtr] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [createdOrder, setCreatedOrder] = useState<{
@@ -129,6 +130,7 @@ export default function CartDrawer({
           delivery_mode: deliveryMode,
           phone: phone.trim(),
           email: email.trim(),
+          utr: utr.trim(),
           course_id: primaryCourse?.id,
           course_title: primaryCourse?.title,
           amount: subtotal,
@@ -453,6 +455,24 @@ export default function CartDrawer({
                     />
                   </div>
                 )}
+
+                <div>
+                  <div className="flex items-center justify-between mb-1">
+                    <label className="block text-xs font-bold text-slate-800 font-devanagari">
+                      UPI Ref / UTR No.
+                    </label>
+                    <span className="text-[10px] text-slate-400 font-medium font-devanagari">
+                      (वैकल्पिक / Optional)
+                    </span>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="12-अंकों का UPI UTR या Ref No."
+                    value={utr}
+                    onChange={(e) => setUtr(e.target.value)}
+                    className="w-full px-3 py-2.5 rounded-md border border-slate-300 text-sm font-mono focus:outline-none focus:border-amber-700"
+                  />
+                </div>
 
                 {/* I've Paid button */}
                 <button

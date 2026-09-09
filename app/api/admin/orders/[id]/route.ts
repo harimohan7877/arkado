@@ -22,7 +22,12 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
   const idx = orders.findIndex((o: Record<string, unknown>) => o.id === id || o.order_id === id);
   if (idx === -1) return NextResponse.json({ error: "Order not found" }, { status: 404 });
 
-  const updates = { ...orders[idx], ...body, updated_at: new Date().toISOString() };
+  const updates: Record<string, unknown> = { ...orders[idx], ...body, updated_at: new Date().toISOString() };
+  if (body.delivery_status) {
+    updates.status = body.delivery_status;
+  } else if (body.status) {
+    updates.delivery_status = body.status;
+  }
   orders[idx] = updates;
   await writeOrders(orders);
   return NextResponse.json(updates);

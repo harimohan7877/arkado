@@ -6,6 +6,8 @@ import Image from "next/image";
 import CategoriesTab from "@/app/admin/components/CategoriesTab";
 import FeaturedTab from "@/app/admin/components/FeaturedTab";
 import ExamsTab from "@/app/admin/components/ExamsTab";
+import CoursesTab from "@/app/admin/components/CoursesTab";
+import OrdersTab from "@/app/admin/components/OrdersTab";
 import SettingsTab from "@/app/admin/components/SettingsTab";
 
 interface MarketplaceOrder {
@@ -30,13 +32,14 @@ interface Stats {
   warning?: string;
 }
 
-type TabType = "dashboard" | "categories" | "featured" | "exams" | "orders" | "settings";
+type TabType = "dashboard" | "categories" | "featured" | "exams" | "courses" | "orders" | "settings";
 
 const NAV_ITEMS: { id: TabType; label: string; short: string; icon: string }[] = [
   { id: "dashboard", label: "डैशबोर्ड (Overview)", short: "Dashboard", icon: "📊" },
   { id: "categories", label: "श्रेणियाँ (Categories)", short: "Categories", icon: "📁" },
   { id: "featured", label: "🌟 फीचर्ड एवं न्यू अराइवल्स", short: "Featured", icon: "🌟" },
   { id: "exams", label: "परीक्षाएं फोल्डर (Exams)", short: "Exams", icon: "📑" },
+  { id: "courses", label: "कोर्सेज़ (Courses)", short: "Courses", icon: "📚" },
   { id: "orders", label: "ऑर्डर्स (Orders)", short: "Orders", icon: "🛍️" },
   { id: "settings", label: "सेटिंग्स (Settings)", short: "Settings", icon: "⚙️" },
 ];
@@ -54,9 +57,8 @@ export default function AdminDashboardPage() {
       if (session) return session;
       const match = document.cookie.match(/arkado-admin-verified=([^;]+)/);
       if (match) return decodeURIComponent(match[1]);
-      return "99502521387877489932hhh@@@";
     }
-    return "99502521387877489932hhh@@@";
+    return "";
   };
 
   const getAuthHeaders = () => ({
@@ -65,13 +67,21 @@ export default function AdminDashboardPage() {
   });
 
   useEffect(() => {
-    // In dev or localhost, auto set session to guarantee no auth dropouts
-    if (typeof window !== "undefined") {
-      if (!sessionStorage.getItem("arkado-admin-verified")) {
-        sessionStorage.setItem("arkado-admin-verified", "99502521387877489932hhh@@@");
-      }
+    const passcode = getPasscode();
+    if (!passcode) {
+      router.push("/ranjeet/admin/login");
     }
-  }, []);
+  }, [router]);
+
+  const handleLogout = () => {
+    if (typeof window !== "undefined") {
+      sessionStorage.removeItem("arkado-admin-verified");
+      sessionStorage.removeItem("sarkari-saathi-admin-verified");
+      document.cookie = "arkado-admin-verified=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+      document.cookie = "sarkari-saathi-admin-verified=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+      router.push("/ranjeet/admin/login");
+    }
+  };
 
   const fetchStats = async () => {
     setLoadingStats(true);
@@ -138,6 +148,13 @@ export default function AdminDashboardPage() {
               <span>🌐</span>
               <span>वेबसाइट देखें</span>
             </a>
+            <button
+              onClick={handleLogout}
+              className="text-xs font-bold text-red-700 bg-red-50 hover:bg-red-100 border border-red-200 px-3 py-1.5 rounded-xl transition-colors flex items-center gap-1 cursor-pointer"
+            >
+              <span>🔒</span>
+              <span>लॉगआउट</span>
+            </button>
           </div>
         </div>
 
@@ -165,6 +182,7 @@ export default function AdminDashboardPage() {
         {activeTab === "categories" && <CategoriesTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "featured" && <FeaturedTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "exams" && <ExamsTab getAuthHeaders={getAuthHeaders} />}
+        {activeTab === "courses" && <CoursesTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "settings" && <SettingsTab getAuthHeaders={getAuthHeaders} />}
 
         {activeTab === "dashboard" && (
@@ -195,43 +213,7 @@ export default function AdminDashboardPage() {
           </div>
         )}
 
-        {activeTab === "orders" && (
-          <div className="bg-white border border-stone-200 rounded-2xl p-6 shadow-xs">
-            <h2 className="text-sm font-extrabold text-stone-900 mb-4">हालिया ऑर्डर्स</h2>
-            {orders.length === 0 ? (
-              <p className="text-xs text-stone-500 text-center py-8">अभी तक कोई ऑर्डर प्राप्त नहीं हुआ है।</p>
-            ) : (
-              <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs">
-                  <thead>
-                    <tr className="border-b border-stone-200 text-stone-600 font-bold">
-                      <th className="py-2.5 px-3">ग्राहक</th>
-                      <th className="py-2.5 px-3">राशि</th>
-                      <th className="py-2.5 px-3">पेमेंट स्थिति</th>
-                      <th className="py-2.5 px-3">दिनांक</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-stone-100">
-                    {orders.map((o) => (
-                      <tr key={o.id}>
-                        <td className="py-2.5 px-3 font-bold text-stone-800">{o.customer_name || o.customer_email}</td>
-                        <td className="py-2.5 px-3 font-mono font-bold text-emerald-700">₹{o.amount}</td>
-                        <td className="py-2.5 px-3">
-                          <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
-                            {o.payment_status}
-                          </span>
-                        </td>
-                        <td className="py-2.5 px-3 text-stone-400 font-mono text-[11px]">
-                          {new Date(o.created_at).toLocaleDateString("hi-IN")}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
-          </div>
-        )}
+        {activeTab === "orders" && <OrdersTab getAuthHeaders={getAuthHeaders} orders={orders as any} />}
       </main>
     </div>
   );

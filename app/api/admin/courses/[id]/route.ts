@@ -19,8 +19,9 @@ function readCourses(): Promise<Course[]> {
   return getStoreData<Course[]>("courses", "data/courses-new.json", []);
 }
 
-function writeCourses(data: unknown[]) {
-  return setStoreData("courses", "data/courses-new.json", data);
+async function writeCourses(data: unknown[]) {
+  await setStoreData("courses", "data/courses-new.json", data);
+  await setStoreData("courses", "data/courses.json", data);
 }
 
 export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -47,8 +48,8 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
   for (const [key, value] of formData.entries()) {
     if (key === "cover") continue;
     if (["highlights", "subjects", "syllabus_preview"].includes(key)) updates[key] = JSON.parse(value.toString());
-    else if (key === "is_active" || key === "show_in_slider") updates[key] = value === "true";
-    else if (["original_price", "price", "discount_percent", "rating", "priority"].includes(key)) updates[key] = Number(value);
+    else if (["is_active", "show_in_slider", "is_featured", "is_new_arrival"].includes(key)) updates[key] = value === "true";
+    else if (["original_price", "price", "discount_percent", "rating", "priority", "featured_priority", "new_arrival_priority"].includes(key)) updates[key] = Number(value);
     else updates[key] = value.toString();
   }
 

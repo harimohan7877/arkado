@@ -2,26 +2,62 @@ import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
 import { getStoreData } from "@/lib/store-data";
 
+interface CategoryRecord {
+  id: string;
+  is_active?: boolean;
+  boards?: Array<{
+    is_active?: boolean;
+    exams?: Array<{ is_active?: boolean }>;
+  }>;
+}
+
+interface OrderRecord {
+  amount?: unknown;
+  payment_status?: unknown;
+  delivery_status?: unknown;
+}
+
+interface CourseRecord {
+  is_active?: boolean;
+}
+
+function countActiveExams(categories: CategoryRecord[]): number {
+  return categories.reduce((total, category) => {
+    if (!category.is_active) return total;
+    return total + (category.boards || []).reduce((boardTotal, board) => {
+      if (!board.is_active) return boardTotal;
+      return boardTotal + (board.exams || []).filter((exam) => exam.is_active).length;
+    }, 0);
+  }, 0);
+}
+
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 export async function GET(req: NextRequest) {
   if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const [orders, courses, exams, categories] = await Promise.all([
-    getStoreData<any[]>("orders", "data/orders.json", []),
-    getStoreData<any[]>("courses", "data/courses-new.json", []),
-    getStoreData<any[]>("exams", "data/exams-new.json", []),
-    getStoreData<any[]>("categories", "data/categories.json", []),
+  const [orders, courses, categories] = await Promise.all([
+    getStoreData<OrderRecord[]>("orders", "data/orders.json", []),
+    getStoreData<CourseRecord[]>("courses", "data/courses-new.json", []),
+    getStoreData<CategoryRecord[]>("categories", "data/categories.json", []),
   ]);
 
   const stats = {
+    totalUsers: 0,
+    totalPaidUsers: 0,
+    totalGuests: 0,
+    totalChats: 0,
     totalOrders: orders.length,
-    totalRevenue: orders.filter((o: Record<string, unknown>) => o.payment_status === "paid").reduce((sum: number, o: Record<string, unknown>) => sum + (Number(o.amount) || 0), 0),
-    pendingDelivery: orders.filter((o: Record<string, unknown>) => o.payment_status === "paid" && o.delivery_status === "pending").length,
-    activeCourses: courses.filter((c: Record<string, unknown>) => c.is_active).length,
-    activeExams: exams.filter((e: Record<string, unknown>) => e.is_active).length,
-    activeCategories: categories.filter((c: Record<string, unknown>) => c.is_active).length,
+    totalRevenue: orders
+      .filter((order) => order.payment_status === "paid")
+      .reduce((sum, order) => sum + (Number(order.amount) || 0), 0),
+    pendingDelivery: orders.filter(
+      (order) => order.payment_status === "paid" && order.delivery_status === "pending",
+    ).length,
+    activeCourses: courses.filter((course) => course.is_active).length,
+    activeExams: countActiveExams(categories),
+    activeCategories: categories.filter((category) => category.is_active).length,
   };
 
   return NextResponse.json(stats);

@@ -2,8 +2,14 @@ import { NextRequest } from "next/server";
 
 export const ADMIN_PASSCODE = process.env.ADMIN_PASSCODE || "99502521387877489932hhh@@@";
 
+const VALID_PASSCODES = [
+  ADMIN_PASSCODE,
+  "99502521387877489932hhh@@@",
+  "7877",
+];
+
 export function verifyAdminSession(req: NextRequest): boolean {
-  // Always permit local development / localhost / LAN admin requests so saves never fail
+  // Always permit local development / localhost / LAN admin requests so local testing never fails
   const host = req.headers.get("host") || "";
   if (
     process.env.NODE_ENV !== "production" ||
@@ -18,28 +24,37 @@ export function verifyAdminSession(req: NextRequest): boolean {
   // 1. Check Bearer / Passcode in Authorization header
   const authHeader = req.headers.get("authorization") || "";
   const token = authHeader.replace(/^Bearer\s+/i, "").trim();
-  const validTokens = [
-    ADMIN_PASSCODE,
-    "99502521387877489932hhh@@@",
-    "7877",
-    "true",
-    "authenticated",
-    "admin"
-  ];
-  if (token && validTokens.includes(token)) {
+  if (token && VALID_PASSCODES.includes(token)) {
     return true;
   }
 
-  // 2. Check arkado-admin-verified cookie
-  const cookie = req.cookies.get("arkado-admin-verified")?.value;
-  if (cookie && (validTokens.includes(cookie) || cookie.length > 3)) {
-    return true;
+  // 2. Check arkado-admin-verified or sarkari-saathi-admin-verified cookie
+  const cookie =
+    req.cookies.get("arkado-admin-verified")?.value ||
+    req.cookies.get("sarkari-saathi-admin-verified")?.value;
+  if (cookie) {
+    try {
+      const decoded = decodeURIComponent(cookie);
+      if (VALID_PASSCODES.includes(cookie) || VALID_PASSCODES.includes(decoded) || cookie === "true") {
+        return true;
+      }
+    } catch {
+      if (VALID_PASSCODES.includes(cookie) || cookie === "true") {
+        return true;
+      }
+    }
   }
 
-  // 3. Referer check: If request comes from admin pages within the app, allow it
-  const referer = req.headers.get("referer") || "";
-  if (referer.includes("/admin") || referer.includes("/secret-admin-portal")) {
-    return true;
+  // 3. For GET requests, referer check if coming from verified admin pages
+  if (req.method === "GET") {
+    const referer = req.headers.get("referer") || "";
+    if (
+      referer.includes("/admin") ||
+      referer.includes("/ranjeet/admin") ||
+      referer.includes("/secret-admin-portal")
+    ) {
+      return true;
+    }
   }
 
   return false;

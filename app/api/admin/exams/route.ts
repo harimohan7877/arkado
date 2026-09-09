@@ -10,18 +10,85 @@ export const revalidate = 0;
 const MAX_FILE_SIZE = 500 * 1024;
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
 
-function readExams() {
-  return getStoreData<any[]>("exams", "data/exams-new.json", []);
+interface CategoryRecord {
+  id: string;
+  name: string;
+  is_active?: boolean;
+  boards?: BoardRecord[];
 }
 
-function writeExams(data: unknown[]) {
+interface BoardRecord {
+  board_id?: string;
+  id?: string;
+  name: string;
+  short_name?: string;
+  is_active?: boolean;
+  exams?: ExamRecord[];
+}
+
+interface ExamRecord {
+  id: string;
+  name: string;
+  short_name?: string;
+  logo_url?: string;
+  is_active?: boolean;
+  priority?: number;
+  eligibility?: string;
+  exam_pattern?: string;
+}
+
+interface AdminExam {
+  id: string;
+  name: string;
+  short_name: string;
+  logo_url: string;
+  category_id: string;
+  category_name: string;
+  board: string;
+  board_id: string;
+  is_active: boolean;
+  priority: number;
+  eligibility?: string;
+  exam_pattern?: string;
+}
+
+function flattenExams(categories: CategoryRecord[]): AdminExam[] {
+  const exams: AdminExam[] = [];
+  for (const category of categories) {
+    for (const board of category.boards || []) {
+      for (const exam of board.exams || []) {
+        exams.push({
+          id: exam.id,
+          name: exam.name,
+          short_name: exam.short_name || exam.name,
+          logo_url: exam.logo_url || "",
+          category_id: category.id,
+          category_name: category.name,
+          board: board.short_name || board.name,
+          board_id: board.board_id || board.id || "",
+          is_active: exam.is_active === true,
+          priority: exam.priority || 0,
+          eligibility: exam.eligibility,
+          exam_pattern: exam.exam_pattern,
+        });
+      }
+    }
+  }
+  return exams.sort((a, b) => a.priority - b.priority);
+}
+
+function readExams() {
+  return getStoreData<ExamRecord[]>("exams", "data/exams-new.json", []);
+}
+
+function writeExams(data: ExamRecord[]) {
   return setStoreData("exams", "data/exams-new.json", data);
 }
 
 export async function GET(req: NextRequest) {
   if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  const data = await readExams();
-  return NextResponse.json(data);
+  const categories = await getStoreData<CategoryRecord[]>("categories", "data/categories.json", []);
+  return NextResponse.json(flattenExams(categories));
 }
 
 export async function POST(req: NextRequest) {
@@ -64,5 +131,48 @@ export async function POST(req: NextRequest) {
 
   exams.push(newExam);
   await writeExams(exams);
+
+  // Sync to categories.json so it reflects in the whole platform
+  try {
+    const categories = await getStoreData<any[]>("categories", "data/categories.json", []);
+    let targetCat = categories.find((c: any) => c.id === newExam.category_id || c.name?.toLowerCase().includes(newExam.category_id.toLowerCase()));
+    if (!targetCat && categories.length > 0) targetCat = categories[0];
+    if (targetCat) {
+      if (!targetCat.boards) targetCat.boards = [];
+      let targetBoard = targetCat.boards.find((b: any) => 
+        b.short_name?.toLowerCase() === newExam.board.toLowerCase() || 
+        b.name?.toLowerCase() === newExam.board.toLowerCase() ||
+        b.board_id?.toLowerCase() === newExam.board.toLowerCase()
+      );
+      if (!targetBoard) {
+        targetBoard = {
+          board_id: newExam.board.toLowerCase().replace(/\s+/g, "-") || "general",
+          name: newExam.board || "General Board",
+          short_name: newExam.board || "Board",
+          icon: "🏛️",
+          is_active: true,
+          exams: [],
+        };
+        targetCat.boards.push(targetBoard);
+      }
+      if (!targetBoard.exams) targetBoard.exams = [];
+      targetBoard.exams.push({
+        id: newExam.id,
+        name: newExam.name,
+        short_name: newExam.short_name || newExam.name,
+        logo_url: newExam.logo_url || "",
+        is_active: newExam.is_active,
+        priority: newExam.priority,
+        eligibility: formData.get("eligibility")?.toString() || "",
+        exam_pattern: formData.get("exam_pattern")?.toString() || "",
+      });
+      if (!targetCat.exam_ids) targetCat.exam_ids = [];
+      if (!targetCat.exam_ids.includes(newExam.id)) targetCat.exam_ids.push(newExam.id);
+      await setStoreData("categories", "data/categories.json", categories);
+    }
+  } catch (syncErr) {
+    console.error("Failed to sync exam to categories.json:", syncErr);
+  }
+
   return NextResponse.json(newExam);
 }

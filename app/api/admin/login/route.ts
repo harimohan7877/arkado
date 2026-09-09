@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Invalid PIN" }, { status: 401 });
     }
 
-    return NextResponse.json({ success: true, token: "99502521387877489932hhh@@@" });
+    return NextResponse.json({ success: true, token: ADMIN_PASSCODE });
   } catch {
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }

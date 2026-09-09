@@ -1,12 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Order {
   id: string;
   customer_name: string;
   customer_email: string;
   customer_phone?: string;
+  name?: string;
+  email?: string;
+  phone?: string;
   delivery_mode: "whatsapp" | "gmail";
   utr: string;
   amount: number;
@@ -21,16 +24,20 @@ interface Order {
 
 interface OrdersTabProps {
   getAuthHeaders: () => Record<string, string>;
-  orders: Order[];
+  orders?: Order[];
 }
 
-export default function OrdersTab({ getAuthHeaders, orders: initialOrders }: OrdersTabProps) {
+export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }: OrdersTabProps) {
   const [orders, setOrders] = useState<Order[]>(initialOrders);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const [filterStatus, setFilterStatus] = useState<"all" | "pending" | "paid" | "delivered">("all");
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const [expandedOrder, setExpandedOrder] = useState<string | null>(null);
+
+  useEffect(() => {
+    fetchOrders();
+  }, []);
 
   const fetchOrders = async () => {
     setLoading(true);

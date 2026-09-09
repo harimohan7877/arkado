@@ -26,6 +26,10 @@ interface Course {
   rating: number;
   rating_count: string;
   is_active: boolean;
+  is_featured?: boolean;
+  featured_priority?: number;
+  is_new_arrival?: boolean;
+  new_arrival_priority?: number;
   priority: number;
   created_at: string;
   updated_at: string;
@@ -64,6 +68,10 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
     cover_image: "",
     show_in_slider: false,
     slider_tagline: "",
+    is_featured: false,
+    featured_priority: 1,
+    is_new_arrival: false,
+    new_arrival_priority: 1,
     sample_pdf_url: "https://drive.google.com",
     drive_url: "https://drive.google.com",
     rating: 4.9,
@@ -359,7 +367,11 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
                     )}
                     <div className="min-w-0">
                       <p className="font-bold text-stone-900 text-sm truncate max-w-xs">{course.title}</p>
-                      <p className="text-[11px] text-stone-500">{course.badge}</p>
+                      <div className="flex items-center gap-1.5 flex-wrap mt-0.5">
+                        <span className="text-[11px] text-stone-500">{course.badge}</span>
+                        {course.is_featured && <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800">🔥 Featured</span>}
+                        {course.is_new_arrival && <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">✨ New</span>}
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -421,11 +433,23 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
                 <span className="font-bold text-stone-900">₹{course.price}</span>
                 <span className="ml-2 text-xs text-stone-400 line-through">₹{course.original_price}</span>
               </div>
-              {course.show_in_slider && (
-                <span className="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">
-                  In Slider
-                </span>
-              )}
+              <div className="flex items-center gap-1 flex-wrap">
+                {course.show_in_slider && (
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">
+                    Slider
+                  </span>
+                )}
+                {course.is_featured && (
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">
+                    🔥 Featured
+                  </span>
+                )}
+                {course.is_new_arrival && (
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                    ✨ New
+                  </span>
+                )}
+              </div>
             </div>
             <div className="flex gap-2 pt-2 border-t border-stone-100">
               <button onClick={() => openEditModal(course)} className="flex-1 py-2 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold rounded-lg">
@@ -586,6 +610,56 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
                       />
                     </div>
                   )}
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 bg-stone-50 rounded-xl border border-stone-200">
+                    <div>
+                      <label className="flex items-center gap-2 cursor-pointer mb-1.5">
+                        <input
+                          type="checkbox"
+                          checked={formData.is_featured || false}
+                          onChange={(e) => setFormData({ ...formData, is_featured: e.target.checked })}
+                          className="w-4 h-4 rounded border-stone-300 text-amber-600 focus:ring-amber-500"
+                        />
+                        <span className="text-xs font-bold text-stone-800">🔥 Featured Deals (होमपेज डील्स)</span>
+                      </label>
+                      {formData.is_featured && (
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className="text-[11px] text-stone-500">Priority:</span>
+                          <input
+                            type="number"
+                            value={formData.featured_priority || 1}
+                            onChange={(e) => setFormData({ ...formData, featured_priority: Number(e.target.value) })}
+                            min={1}
+                            className="w-20 px-2 py-1 text-xs border border-stone-300 rounded-lg bg-white"
+                          />
+                        </div>
+                      )}
+                    </div>
+
+                    <div>
+                      <label className="flex items-center gap-2 cursor-pointer mb-1.5">
+                        <input
+                          type="checkbox"
+                          checked={formData.is_new_arrival || false}
+                          onChange={(e) => setFormData({ ...formData, is_new_arrival: e.target.checked })}
+                          className="w-4 h-4 rounded border-stone-300 text-amber-600 focus:ring-amber-500"
+                        />
+                        <span className="text-xs font-bold text-stone-800">✨ New Arrivals (नए कोर्सेज)</span>
+                      </label>
+                      {formData.is_new_arrival && (
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className="text-[11px] text-stone-500">Priority:</span>
+                          <input
+                            type="number"
+                            value={formData.new_arrival_priority || 1}
+                            onChange={(e) => setFormData({ ...formData, new_arrival_priority: Number(e.target.value) })}
+                            min={1}
+                            className="w-20 px-2 py-1 text-xs border border-stone-300 rounded-lg bg-white"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  </div>
 
                   <div>
                     <label className="block text-xs font-bold text-stone-600 mb-2">Cover Image</label>

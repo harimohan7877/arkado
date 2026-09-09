@@ -1,12 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
-import { getStoreData, setStoreData, saveUploadedFile } from "@/lib/store-data";
+import { getStoreData, setStoreData, saveUploadedFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-
-const MAX_FILE_SIZE = 1024 * 1024;
-const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];
 
 interface Course {
   id: string;
@@ -69,13 +66,13 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
   }
 
   if (coverFile && coverFile.size > 0) {
-    if (coverFile.size > MAX_FILE_SIZE) {
-      return NextResponse.json({ error: "File too large. Max 1MB allowed." }, { status: 400 });
+    if (coverFile.size > MAX_IMAGE_SIZE) {
+      return NextResponse.json({ error: "File too large. Max 10MB allowed." }, { status: 400 });
     }
-    if (!ALLOWED_TYPES.includes(coverFile.type)) {
-      return NextResponse.json({ error: "Invalid file type. Only JPEG, PNG, WebP allowed." }, { status: 400 });
+    if (!isAllowedImageType(coverFile.type, coverFile.name)) {
+      return NextResponse.json({ error: "Invalid file type. Please upload an image." }, { status: 400 });
     }
-    const safeId = id.replace(/[^a-z0-9-]/gi, "");
+    const safeId = id.replace(/[^a-z0-9_-]/gi, "");
     updates.cover_image = await saveUploadedFile(coverFile, "images/bundles", safeId);
   }
 

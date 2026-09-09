@@ -1,12 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
-import { getStoreData, setStoreData, saveUploadedFile } from "@/lib/store-data";
+import { getStoreData, setStoreData, saveUploadedFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-
-const MAX_FILE_SIZE = 500 * 1024;
-const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif", "image/svg+xml"];
 
 function readCategories() {
   return getStoreData<any[]>("categories", "data/categories.json", []);
@@ -144,11 +141,11 @@ export async function POST(req: NextRequest) {
       let logoUrl = "";
       const logo = formData.get("logo") as File | null;
       if (logo && logo.size > 0) {
-        if (logo.size > MAX_FILE_SIZE) {
-          return NextResponse.json({ error: "File too large. Max 500KB allowed." }, { status: 400 });
+        if (logo.size > MAX_IMAGE_SIZE) {
+          return NextResponse.json({ error: "File too large. Max 10MB allowed." }, { status: 400 });
         }
-        if (!ALLOWED_TYPES.includes(logo.type)) {
-          return NextResponse.json({ error: "Invalid file type. Only JPEG, PNG, WebP, GIF, SVG allowed." }, { status: 400 });
+        if (!isAllowedImageType(logo.type, logo.name)) {
+          return NextResponse.json({ error: "Invalid file type. Please upload an image." }, { status: 400 });
         }
         const safeName = `item_${Date.now()}`;
         logoUrl = await saveUploadedFile(logo, "logos", safeName);

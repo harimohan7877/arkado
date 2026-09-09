@@ -2,13 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { writeFile } from "fs/promises";
 import { join } from "path";
 import { verifyAdminSession } from "@/lib/admin-auth";
-import { getStoreData, setStoreData, saveUploadedFile } from "@/lib/store-data";
+import { getStoreData, setStoreData, saveUploadedFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-
-const MAX_FILE_SIZE = 500 * 1024;
-const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp", "image/gif"];
 
 interface Category {
   id: string;
@@ -54,13 +51,13 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
 
   const logo = formData.get("logo") as File | null;
   if (logo && logo.size > 0) {
-    if (logo.size > MAX_FILE_SIZE) {
-      return NextResponse.json({ error: "File too large. Max 500KB allowed." }, { status: 400 });
+    if (logo.size > MAX_IMAGE_SIZE) {
+      return NextResponse.json({ error: "File too large. Max 10MB allowed." }, { status: 400 });
     }
-    if (!ALLOWED_TYPES.includes(logo.type)) {
-      return NextResponse.json({ error: "Invalid file type. Only JPEG, PNG, WebP, GIF allowed." }, { status: 400 });
+    if (!isAllowedImageType(logo.type, logo.name)) {
+      return NextResponse.json({ error: "Invalid file type. Please upload an image." }, { status: 400 });
     }
-    const safeId = id.replace(/[^a-z0-9-]/gi, "");
+    const safeId = id.replace(/[^a-z0-9_-]/gi, "");
     updates.logo_url = await saveUploadedFile(logo, "logos", safeId);
   }
 

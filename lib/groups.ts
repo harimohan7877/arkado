@@ -27,7 +27,8 @@ export function getGroupByBoard(board: string): Group | undefined {
 }
 
 export function getGroupByExamId(examId: string): Group | undefined {
-  const exam = (examsData.exams as unknown as Exam[]).find((e) => e.id === examId);
+  const examsList = (Array.isArray(examsData) ? examsData : (examsData as any).exams || []) as unknown as Exam[];
+  const exam = examsList.find((e) => e.id === examId);
   if (!exam?.group) return;
   return getGroupById(exam.group);
 }
@@ -39,7 +40,8 @@ export function getAllGroups(): Group[] {
 export function getExamsByGroup(groupId: string): Exam[] {
   const group = getGroupById(groupId);
   if (!group) return [];
-  return (examsData.exams as unknown as Exam[]).filter((e) =>
+  const examsList = (Array.isArray(examsData) ? examsData : (examsData as any).exams || []) as unknown as Exam[];
+  return examsList.filter((e) =>
     group.exam_ids.includes(e.id)
   );
 }

@@ -204,7 +204,8 @@ export function checkEligibility(user: UserProfile, exams: Exam[]): EligibilityR
 
 // Legacy function for backward compatibility
 export function getEligibleExams(profile: UserProfile): Exam[] {
-  const results = checkEligibility(profile, examsData.exams as unknown as Exam[]);
+  const examsList = (Array.isArray(examsData) ? examsData : (examsData as any).exams || []) as unknown as Exam[];
+  const results = checkEligibility(profile, examsList);
   return results.filter(r => r.eligible).map(r => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { eligible, reasons_eligible, reasons_ineligible, warnings, effective_max_age, ...exam } = r;

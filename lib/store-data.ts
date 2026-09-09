@@ -37,7 +37,7 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
   try {
     const { data: adminRow } = await supabaseAdmin
       .from("admin_settings")
-      .select("id, gemini_key, claude_key, openai_key")
+      .select("id, gemini_key, claude_key, openai_key, openrouter_key")
       .limit(1)
       .maybeSingle();
 
@@ -47,6 +47,9 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
       }
       if (key === "featured_exams" && adminRow.openai_key && (adminRow.openai_key.startsWith("[") || adminRow.openai_key.startsWith("{"))) {
         return JSON.parse(adminRow.openai_key) as T;
+      }
+      if (key === "courses" && adminRow.openrouter_key && (adminRow.openrouter_key.startsWith("[") || adminRow.openrouter_key.startsWith("{"))) {
+        return JSON.parse(adminRow.openrouter_key) as T;
       }
       if (key === "settings" && adminRow.gemini_key && adminRow.gemini_key.startsWith("{")) {
         return JSON.parse(adminRow.gemini_key) as T;
@@ -87,6 +90,8 @@ export async function setStoreData<T>(key: string, localFilePath: string, data: 
         updatePayload.claude_key = jsonContent;
       } else if (key === "featured_exams") {
         updatePayload.openai_key = jsonContent;
+      } else if (key === "courses") {
+        updatePayload.openrouter_key = jsonContent;
       } else if (key === "settings") {
         updatePayload.gemini_key = jsonContent;
       }

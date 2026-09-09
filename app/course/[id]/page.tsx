@@ -43,40 +43,38 @@ export default function CourseDetailPage({ params }: PageProps) {
           );
 
           if (matchedExam) {
-            const isCet = (matchedExam.name || "").includes("CET");
+            const boardName = matchedExam.board_name || matchedExam.board || "Official Board";
             const synth: CourseBundle = {
               id: matchedExam.id,
               exam_id: matchedExam.id,
               title: `${matchedExam.name} - Complete Selection Kit`,
-              slug: matchedExam.id,
+              slug: matchedExam.slug || `exam-${matchedExam.id}`,
               badge: "Complete Selection Kit",
               short_description:
                 matchedExam.viral_subtext ||
-                `${matchedExam.name} हेतु 2026 नए सिलेबस पर आधारित सम्पूर्ण हस्तलिखित थ्योरी नोट्स, 3000+ MCQs और फुल मॉक टेस्ट पेपर्स।`,
+                `${matchedExam.name} (${boardName}) हेतु 2026 नए सिलेबस पर आधारित सम्पूर्ण हस्तलिखित थ्योरी नोट्स, 3000+ MCQs और फुल मॉक टेस्ट पेपर्स।`,
               original_price: 999,
               price: 199,
               discount_percent: 80,
               highlights: [
                 "सम्पूर्ण विषयवार हस्तलिखित थ्योरी नोट्स",
-                "3000+ विषयवार महत्वपूर्ण प्रश्नोत्तर (MCQs) व्याख्या सहित",
+                "3000+ विषयवार वस्तुनिष्ठ प्रश्नोत्तर (MCQs) व्याख्या सहित",
                 "5 फुल लेंथ मॉडल टेस्ट पेपर्स (ओरिजिनल परीक्षा पैटर्न पर)",
                 "प्रिंट हेतु तैयार A4 साइज PDF फॉर्मेट",
               ],
               subjects: [
-                "राजस्थान का इतिहास, कला एवं संस्कृति",
-                "राजस्थान का भूगोल व नए जिले",
-                "दैनिक विज्ञान एवं कंप्यूटर ज्ञान",
-                "तार्किक विवेचन एवं सामान्य हिन्दी",
+                `${matchedExam.name} थ्योरी नोट्स एवं संपूर्ण सिलेबस`,
+                "विषयवार वस्तुनिष्ठ प्रश्नोत्तर (MCQs)",
+                "पिछले वर्षों के हल प्रश्न-पत्र (PYQs)",
+                "मॉडल टेस्ट पेपर्स एवं अभ्यास प्रश्न",
               ],
               syllabus_preview: [],
               pages_count: "1,250+ Pages",
               format: "Printable PDF",
               language: "हिन्दी (Hindi)",
-              cover_image:
-                matchedExam.logo_url ||
-                (isCet ? "/images/bundles/cet_bundle_3d.jpg" : "/images/bundles/patwari_bundle_3d.jpg"),
+              cover_image: matchedExam.logo_url || "/images/bundles/cet_bundle_3d.jpg",
               show_in_slider: false,
-              slider_tagline: "सलेक्शन का पक्का साथी — 80% विशेष छूट",
+              slider_tagline: "",
               sample_pdf_url: matchedExam.notes_link || "https://drive.google.com",
               drive_url: matchedExam.notes_link || "https://drive.google.com",
               rating: 4.9,
@@ -143,7 +141,7 @@ export default function CourseDetailPage({ params }: PageProps) {
     setIsCartOpen(true);
   };
 
-  const examBoard = course.exam_id;
+  const examBoard = (course as any).exam_board || (course as any).board || course.badge || "Verified Exam Kit";
 
   return (
     <div className="min-h-screen bg-neutral-50 flex flex-col justify-between font-sans">

@@ -5,6 +5,27 @@ import { verifyAdminSession } from "@/lib/admin-auth";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
+interface CategoryRecord {
+  id: string;
+  name: string;
+  boards?: {
+    name: string;
+    short_name?: string;
+    exams?: {
+      id: string;
+      name: string;
+      short_name?: string;
+      logo_url?: string;
+      is_active?: boolean;
+      priority?: number;
+      eligibility?: string;
+      exam_pattern?: string;
+      viral_subtext?: string;
+      notes_link?: string;
+    }[];
+  }[];
+}
+
 interface FeaturedExamConfig {
   id: string;
   name: string;
@@ -20,18 +41,20 @@ interface FeaturedStore {
   new_arrivals?: FeaturedExamConfig[];
 }
 
-function buildSyntheticCourse(exam: FeaturedExamConfig, type: "featured" | "new_arrival") {
+function buildDynamicCourseForExam(exam: any, type?: "featured" | "new_arrival") {
   const priority = exam.priority || 1;
-  const isCet = (exam.name || "").includes("CET");
-  const isGrad = (exam.name || "").includes("स्नातक") || (exam.name || "").toLowerCase().includes("grad");
-  
+  const boardName = exam.board_name || exam.board || "Exam Board";
+  const catName = exam.category_name || "General";
+
   return {
     id: `bundle-exam-${exam.id}`,
     exam_id: exam.id,
     title: `${exam.name} - Complete Selection Kit`,
-    slug: isCet ? (isGrad ? "rajasthan-cet-grad" : "rajasthan-cet") : `exam-${exam.id}`,
-    badge: "Notes + MCQs + Mock Tests",
-    short_description: `${exam.name} हेतु 2026 नए सिलेबस पर आधारित सम्पूर्ण हस्तलिखित थ्योरी नोट्स, 3000+ MCQs और फुल मॉक टेस्ट पेपर्स।`,
+    slug: exam.slug || `exam-${exam.id}`,
+    badge: "Complete Selection Kit",
+    short_description:
+      exam.viral_subtext ||
+      `${exam.name} (${boardName}) हेतु 2026 नए सिलेबस पर आधारित सम्पूर्ण हस्तलिखित थ्योरी नोट्स, 3000+ MCQs और फुल मॉक टेस्ट पेपर्स।`,
     original_price: 999,
     price: 199,
     discount_percent: 80,
@@ -39,32 +62,23 @@ function buildSyntheticCourse(exam: FeaturedExamConfig, type: "featured" | "new_
       "सम्पूर्ण विषयवार हस्तलिखित थ्योरी नोट्स",
       "3000+ विषयवार वस्तुनिष्ठ प्रश्नोत्तर (MCQs) व्याख्या सहित",
       "5 फुल लेंथ मॉडल टेस्ट पेपर्स (ओरिजिनल परीक्षा पैटर्न पर)",
-      "A4 साइज प्रिंटेबल PDF नोट्स"
+      "प्रिंट हेतु तैयार A4 साइज PDF फॉर्मेट",
     ],
     subjects: [
-      "राजस्थान का इतिहास, कला एवं संस्कृति",
-      "राजस्थान का भूगोल व नए जिले",
-      "दैनिक विज्ञान एवं कंप्यूटर ज्ञान",
-      "तार्किक विवेचन एवं सामान्य हिन्दी"
+      `${exam.name} थ्योरी नोट्स एवं संपूर्ण सिलेबस`,
+      "विषयवार वस्तुनिष्ठ प्रश्नोत्तर (MCQs)",
+      "पिछले वर्षों के हल प्रश्न-पत्र (PYQs)",
+      "मॉडल टेस्ट पेपर्स एवं अभ्यास प्रश्न",
     ],
-    syllabus_preview: [
-      {
-        subject: "राजस्थान का इतिहास व संस्कृति",
-        chapters: ["प्रमुख राजवंश", "स्थापत्य कला", "मेले व त्योहार", "लोकदेवता व लोकदेवियां"]
-      },
-      {
-        subject: "भूगोल एवं अर्थव्यवस्था",
-        chapters: ["भौतिक स्वरूप व जलवायु", "नदियां व झीलें", "खनिज संसाधन", "कृषि एवं फसलें"]
-      }
-    ],
-    pages_count: "1,350+ Pages",
+    syllabus_preview: [],
+    pages_count: "1,250+ Pages",
     format: "Printable PDF",
     language: "हिन्दी (Hindi)",
-    cover_image: exam.logo_url || (isCet ? "/images/bundles/cet_bundle_3d.jpg" : "/images/bundles/patwari_bundle_3d.jpg"),
+    cover_image: exam.logo_url || "/images/bundles/cet_bundle_3d.jpg",
     show_in_slider: true,
     slider_tagline: "सलेक्शन का पक्का साथी — 80% विशेष छूट",
-    sample_pdf_url: "https://drive.google.com",
-    drive_url: "https://drive.google.com",
+    sample_pdf_url: exam.notes_link || "https://drive.google.com",
+    drive_url: exam.notes_link || "https://drive.google.com",
     rating: 4.9,
     rating_count: "3,850+ छात्र",
     is_active: true,
@@ -87,9 +101,37 @@ export async function GET(req: Request) {
   const includeInactive = searchParams.get("all") === "true";
 
   try {
-    let courses = await getStoreData<any[]>("courses", "data/courses-new.json", []);
+    const customCourses = await getStoreData<any[]>("courses", "data/courses-new.json", []);
+    const categories = await getStoreData<CategoryRecord[]>("categories", "data/categories.json", []);
 
-    // Also read featured exams configured by admin in "फीचर्ड एवं न्यू अराइवल्स"
+    // Extract all active exams from categories
+    const activeExams: any[] = [];
+    for (const c of categories) {
+      for (const b of c.boards || []) {
+        for (const e of b.exams || []) {
+          if (includeInactive || e.is_active) {
+            activeExams.push({
+              ...e,
+              board_name: b.short_name || b.name,
+              category_name: c.name,
+              category_id: c.id,
+            });
+          }
+        }
+      }
+    }
+
+    // Combine custom courses and active exams
+    const allMergedCourses: any[] = [...customCourses];
+    const coveredExamIds = new Set(customCourses.map((c: any) => c.exam_id).filter(Boolean));
+
+    for (const actExam of activeExams) {
+      if (!coveredExamIds.has(actExam.id)) {
+        allMergedCourses.push(buildDynamicCourseForExam(actExam));
+      }
+    }
+
+    // Read featured configuration from admin panel
     const featuredConfig = await getStoreData<FeaturedStore>("featured_exams", "data/featured_exams.json", {
       featured_exams: [],
       new_arrivals: [],
@@ -98,12 +140,10 @@ export async function GET(req: Request) {
     if (featured === "true") {
       const configList = Array.isArray(featuredConfig.featured_exams) ? featuredConfig.featured_exams : [];
       const result: any[] = [];
-      const usedCourseIds = new Set<string>();
+      const usedIds = new Set<string>();
 
-      // 1. First prioritize exams explicitly configured in admin Featured tab
       for (const featExam of configList) {
-        // Try to match with an existing course bundle
-        const matched = courses.find(
+        const matched = allMergedCourses.find(
           (c) =>
             c.exam_id === featExam.id ||
             c.id === featExam.id ||
@@ -118,26 +158,23 @@ export async function GET(req: Request) {
             is_featured: true,
             featured_priority: featExam.priority || result.length + 1,
           });
-          usedCourseIds.add(matched.id);
+          usedIds.add(matched.id);
         } else {
-          // Construct course kit for this exam
-          const syn = buildSyntheticCourse(featExam, "featured");
+          const syn = buildDynamicCourseForExam(featExam, "featured");
           result.push(syn);
-          usedCourseIds.add(syn.id);
+          usedIds.add(syn.id);
         }
       }
 
-      // 2. Add any courses in courses-new.json with is_featured: true
-      for (const c of courses) {
-        if ((includeInactive || c.is_active) && c.is_featured && !usedCourseIds.has(c.id)) {
+      for (const c of allMergedCourses) {
+        if ((includeInactive || c.is_active) && c.is_featured && !usedIds.has(c.id)) {
           result.push(c);
-          usedCourseIds.add(c.id);
+          usedIds.add(c.id);
         }
       }
 
-      // Fallback: if empty, return active courses
       if (result.length === 0) {
-        return NextResponse.json(courses.filter((c: any) => c.is_active).slice(0, 4));
+        return NextResponse.json(allMergedCourses.filter((c) => c.is_active).slice(0, 4));
       }
 
       result.sort((a, b) => (a.featured_priority || 99) - (b.featured_priority || 99));
@@ -147,11 +184,10 @@ export async function GET(req: Request) {
     if (newArrivals === "true") {
       const configList = Array.isArray(featuredConfig.new_arrivals) ? featuredConfig.new_arrivals : [];
       const result: any[] = [];
-      const usedCourseIds = new Set<string>();
+      const usedIds = new Set<string>();
 
-      // 1. Prioritize exams configured in admin New Arrivals tab
       for (const arrExam of configList) {
-        const matched = courses.find(
+        const matched = allMergedCourses.find(
           (c) =>
             c.exam_id === arrExam.id ||
             c.id === arrExam.id ||
@@ -166,25 +202,23 @@ export async function GET(req: Request) {
             is_new_arrival: true,
             new_arrival_priority: arrExam.priority || result.length + 1,
           });
-          usedCourseIds.add(matched.id);
+          usedIds.add(matched.id);
         } else {
-          const syn = buildSyntheticCourse(arrExam, "new_arrival");
+          const syn = buildDynamicCourseForExam(arrExam, "new_arrival");
           result.push(syn);
-          usedCourseIds.add(syn.id);
+          usedIds.add(syn.id);
         }
       }
 
-      // 2. Add any courses in courses-new.json with is_new_arrival: true
-      for (const c of courses) {
-        if ((includeInactive || c.is_active) && c.is_new_arrival && !usedCourseIds.has(c.id)) {
+      for (const c of allMergedCourses) {
+        if ((includeInactive || c.is_active) && c.is_new_arrival && !usedIds.has(c.id)) {
           result.push(c);
-          usedCourseIds.add(c.id);
+          usedIds.add(c.id);
         }
       }
 
-      // Fallback: if empty, return active courses
       if (result.length === 0) {
-        return NextResponse.json(courses.filter((c: any) => c.is_active).slice(0, 4));
+        return NextResponse.json(allMergedCourses.filter((c) => c.is_active).slice(0, 4));
       }
 
       result.sort((a, b) => (a.new_arrival_priority || 99) - (b.new_arrival_priority || 99));
@@ -192,22 +226,26 @@ export async function GET(req: Request) {
     }
 
     if (slider === "true") {
-      let sliderList = courses.filter((c: any) => (includeInactive || c.is_active) && c.show_in_slider);
+      let sliderList = allMergedCourses.filter((c) => (includeInactive || c.is_active) && c.show_in_slider);
       if (sliderList.length === 0) {
-        sliderList = courses.filter((c: any) => c.is_active).slice(0, 4);
+        sliderList = allMergedCourses.filter((c) => c.is_active).slice(0, 4);
       }
       return NextResponse.json(sliderList);
     }
 
     if (exam) {
-      courses = courses.filter((c: any) => (includeInactive || c.is_active) && (c.exam_id === exam || c.id === exam || c.slug === exam));
-    } else {
-      if (!includeInactive) {
-        courses = courses.filter((c: any) => c.is_active);
-      }
+      const filtered = allMergedCourses.filter(
+        (c) => (includeInactive || c.is_active) && (c.exam_id === exam || c.id === exam || c.slug === exam)
+      );
+      return NextResponse.json(filtered);
     }
 
-    return NextResponse.json(courses.sort((a: any, b: any) => (a.priority || 0) - (b.priority || 0)));
+    let finalCourses = allMergedCourses;
+    if (!includeInactive) {
+      finalCourses = finalCourses.filter((c) => c.is_active);
+    }
+
+    return NextResponse.json(finalCourses.sort((a, b) => (a.priority || 0) - (b.priority || 0)));
   } catch {
     return NextResponse.json([]);
   }

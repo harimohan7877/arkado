@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, startTransition } from "react";
+import { useState, useEffect, startTransition, useMemo } from "react";
 
 interface Course {
   id: string;
@@ -30,15 +30,20 @@ interface Course {
   featured_priority?: number;
   is_new_arrival?: boolean;
   new_arrival_priority?: number;
+  is_auto_synced?: boolean;
   priority: number;
-  created_at: string;
-  updated_at: string;
+  created_at?: string;
+  updated_at?: string;
 }
 
 interface Exam {
   id: string;
   name: string;
   short_name: string;
+  logo_url?: string;
+  board?: string;
+  category_name?: string;
+  is_active?: boolean;
 }
 
 interface CoursesTabProps {
@@ -51,18 +56,20 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [editingCourse, setEditingCourse] = useState<Course | null>(null);
+  const [examSearchFilter, setExamSearchFilter] = useState("");
+
   const [formData, setFormData] = useState<Partial<Course>>({
     exam_id: "",
     title: "",
     slug: "",
-    badge: "Complete Kit",
+    badge: "Complete Selection Kit",
     short_description: "",
     original_price: 999,
     price: 199,
     highlights: [],
     subjects: [],
     syllabus_preview: [],
-    pages_count: "",
+    pages_count: "1,250+ Pages",
     format: "Printable PDF",
     language: "Hindi",
     cover_image: "",
@@ -75,16 +82,18 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
     sample_pdf_url: "https://drive.google.com",
     drive_url: "https://drive.google.com",
     rating: 4.9,
-    rating_count: "0",
+    rating_count: "3,500+ छात्र",
     is_active: true,
     priority: 1,
   });
+
   const [coverFile, setCoverFile] = useState<File | null>(null);
   const [coverPreview, setCoverPreview] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const [activeTab, setActiveTab] = useState<"basic" | "content" | "delivery">("basic");
   const [search, setSearch] = useState("");
+  const [filterType, setFilterType] = useState<"all" | "custom" | "synced">("all");
 
   const PRESET_COVERS = [
     "/images/bundles/cet_bundle_3d.jpg",
@@ -95,14 +104,25 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
 
   const fetchData = async () => {
     try {
+      setLoading(true);
       const [coursesRes, examsRes] = await Promise.all([
-        fetch("/api/admin/courses", { headers: getAuthHeaders() }),
-        fetch("/api/admin/exams", { headers: getAuthHeaders() }),
+        fetch(`/api/admin/courses?t=${Date.now()}`, { headers: getAuthHeaders(), cache: "no-store" }),
+        fetch(`/api/admin/exams?t=${Date.now()}`, { headers: getAuthHeaders(), cache: "no-store" }),
       ]);
       if (coursesRes.ok) setCourses(await coursesRes.json());
       if (examsRes.ok) {
-        const examsData: Exam[] = await examsRes.json();
-        setExams(examsData.map((e) => ({ id: e.id, name: e.name, short_name: e.short_name })));
+        const examsData: any[] = await examsRes.json();
+        setExams(
+          examsData.map((e) => ({
+            id: e.id,
+            name: e.name,
+            short_name: e.short_name || e.name,
+            logo_url: e.logo_url || "",
+            board: e.board || "",
+            category_name: e.category_name || "",
+            is_active: e.is_active,
+          }))
+        );
       }
     } catch (err) {
       console.error(err);
@@ -131,45 +151,96 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
     setCoverPreview(url);
   };
 
+  // Open modal for NEW course
   const openCreateModal = () => {
     setEditingCourse(null);
+    const initialExam = exams[0];
+    const defaultCover = initialExam?.logo_url || PRESET_COVERS[0];
+
     setFormData({
-      exam_id: exams[0]?.id || "",
-      title: "",
-      slug: "",
-      badge: "Complete Kit",
-      short_description: "",
+      exam_id: initialExam?.id || "",
+      title: initialExam ? `${initialExam.name} - Complete Selection Kit` : "",
+      slug: initialExam ? `exam-${initialExam.id}` : "",
+      badge: "Complete Selection Kit",
+      short_description: initialExam
+        ? `${initialExam.name} (${initialExam.board || "Exam"}) हेतु 2026 नए सिलेबस पर आधारित सम्पूर्ण हस्तलिखित थ्योरी नोट्स, 3000+ MCQs और फुल मॉक टेस्ट पेपर्स।`
+        : "",
       original_price: 999,
       price: 199,
-      highlights: ["", "", ""],
-      subjects: ["", "", ""],
+      discount_percent: 80,
+      highlights: [
+        "सम्पूर्ण विषयवार हस्तलिखित थ्योरी नोट्स",
+        "3000+ विषयवार वस्तुनिष्ठ प्रश्नोत्तर (MCQs) व्याख्या सहित",
+        "5 फुल लेंथ मॉडल टेस्ट पेपर्स (ओरिजिनल परीक्षा पैटर्न पर)",
+        "प्रिंट हेतु तैयार A4 साइज PDF फॉर्मेट",
+      ],
+      subjects: [
+        initialExam ? `${initialExam.name} थ्योरी नोट्स एवं संपूर्ण सिलेबस` : "सामान्य ज्ञान एवं विषय नोट्स",
+        "विषयवार वस्तुनिष्ठ प्रश्नोत्तर (MCQs)",
+        "पिछले वर्षों के हल प्रश्न-पत्र (PYQs)",
+        "मॉडल टेस्ट पेपर्स एवं अभ्यास प्रश्न",
+      ],
       syllabus_preview: [],
-      pages_count: "",
+      pages_count: "1,250+ Pages",
       format: "Printable PDF",
-      language: "Hindi",
-      cover_image: PRESET_COVERS[0],
+      language: "हिन्दी (Hindi)",
+      cover_image: defaultCover,
       show_in_slider: false,
-      slider_tagline: "",
+      slider_tagline: "सलेक्शन का पक्का साथी — 80% विशेष छूट",
+      is_featured: false,
+      featured_priority: 1,
+      is_new_arrival: false,
+      new_arrival_priority: 1,
       sample_pdf_url: "https://drive.google.com",
       drive_url: "https://drive.google.com",
       rating: 4.9,
-      rating_count: "0",
+      rating_count: "3,500+ छात्र",
       is_active: true,
       priority: courses.length + 1,
     });
     setCoverFile(null);
-    setCoverPreview(PRESET_COVERS[0]);
+    setCoverPreview(defaultCover);
     setActiveTab("basic");
     setShowModal(true);
   };
 
+  // Open modal for EDITING / CUSTOMIZING an existing or auto-synced course
   const openEditModal = (course: Course) => {
     setEditingCourse(course);
-    setFormData({ ...course });
+    setFormData({
+      ...course,
+      highlights: course.highlights?.length ? course.highlights : ["सम्पूर्ण हस्तलिखित थ्योरी नोट्स", "3000+ MCQs", "5 फुल मॉक टेस्ट"],
+      subjects: course.subjects?.length ? course.subjects : [`${course.title} संपूर्ण सिलेबस`, "MCQs & PYQs"],
+    });
     setCoverFile(null);
-    setCoverPreview(course.cover_image);
+    setCoverPreview(course.cover_image || PRESET_COVERS[0]);
     setActiveTab("basic");
     setShowModal(true);
+  };
+
+  // When exam is changed in dropdown, auto-fill details if appropriate
+  const handleExamSelect = (examId: string) => {
+    const selected = exams.find((e) => e.id === examId);
+    if (!selected) return;
+
+    setFormData((prev) => ({
+      ...prev,
+      exam_id: examId,
+      title: `${selected.name} - Complete Selection Kit`,
+      slug: `exam-${selected.id}`,
+      short_description: `${selected.name} (${selected.board || "Exam"}) हेतु 2026 नए सिलेबस पर आधारित सम्पूर्ण हस्तलिखित थ्योरी नोट्स, 3000+ MCQs और फुल मॉक टेस्ट पेपर्स।`,
+      cover_image: selected.logo_url || prev.cover_image || PRESET_COVERS[0],
+      subjects: [
+        `${selected.name} थ्योरी नोट्स एवं संपूर्ण सिलेबस`,
+        "विषयवार वस्तुनिष्ठ प्रश्नोत्तर (MCQs)",
+        "पिछले वर्षों के हल प्रश्न-पत्र (PYQs)",
+        "मॉडल टेस्ट पेपर्स एवं अभ्यास प्रश्न",
+      ],
+    }));
+
+    if (selected.logo_url) {
+      setCoverPreview(selected.logo_url);
+    }
   };
 
   const closeModal = () => {
@@ -186,12 +257,18 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
     try {
       const fd = new FormData();
       Object.entries(formData).forEach(([k, v]) => {
-        if (["highlights", "subjects", "syllabus_preview"].includes(k)) fd.append(k, JSON.stringify(v || []));
-        else if (v !== undefined && v !== null) fd.append(k, String(v));
+        if (["highlights", "subjects", "syllabus_preview"].includes(k)) {
+          fd.append(k, JSON.stringify(v || []));
+        } else if (v !== undefined && v !== null) {
+          fd.append(k, String(v));
+        }
       });
       if (coverFile) fd.append("cover", coverFile);
 
-      const url = editingCourse ? `/api/admin/courses/${editingCourse.id}` : "/api/admin/courses";
+      // If editing an existing course or auto-synced exam
+      const targetId = editingCourse ? editingCourse.id : (formData.slug || `course-${Date.now()}`);
+      const url = editingCourse ? `/api/admin/courses/${targetId}` : "/api/admin/courses";
+
       const res = await fetch(url, {
         method: editingCourse ? "PUT" : "POST",
         headers: { Authorization: getAuthHeaders().Authorization },
@@ -199,44 +276,50 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
       });
 
       if (res.ok) {
-        setMessage({ type: "success", text: editingCourse ? "Course updated!" : "Course created!" });
+        setMessage({
+          type: "success",
+          text: editingCourse ? "कोर्स सफलतापूर्वक अपडेट हो गया!" : "नया कोर्स सफलतापूर्वक बन गया!",
+        });
         fetchData();
         closeModal();
       } else {
         const err = await res.json();
-        throw new Error(err.error || "Failed");
+        throw new Error(err.error || "Save failed");
       }
     } catch (err: unknown) {
-      setMessage({ type: "error", text: err instanceof Error ? err.message : "Save failed" });
+      setMessage({ type: "error", text: err instanceof Error ? err.message : "सेव करने में त्रुटि हुई" });
     } finally {
       setSaving(false);
     }
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Delete this course?")) return;
+    if (!confirm("क्या आप वाकई इस कोर्स को डिलीट करना चाहते हैं?")) return;
     try {
       await fetch(`/api/admin/courses/${id}`, { method: "DELETE", headers: getAuthHeaders() });
       fetchData();
-      setMessage({ type: "success", text: "Course deleted" });
+      setMessage({ type: "success", text: "कोर्स डिलीट कर दिया गया" });
     } catch {
-      setMessage({ type: "error", text: "Delete failed" });
+      setMessage({ type: "error", text: "डिलीट करने में त्रुटि" });
     }
   };
 
   const handleToggleActive = async (course: Course) => {
     try {
-      await fetch(`/api/admin/courses/${course.id}`, {
+      const res = await fetch(`/api/admin/courses/${course.id}`, {
         method: "PUT",
         headers: { ...getAuthHeaders(), "Content-Type": "application/json" },
         body: JSON.stringify({ is_active: !course.is_active }),
       });
-      fetchData();
+      if (res.ok) {
+        fetchData();
+      }
     } catch {
       console.error("Toggle failed");
     }
   };
 
+  // Dynamic highlight helpers
   const addHighlight = () => setFormData({ ...formData, highlights: [...(formData.highlights || []), ""] });
   const removeHighlight = (idx: number) =>
     setFormData({ ...formData, highlights: (formData.highlights || []).filter((_, i) => i !== idx) });
@@ -246,6 +329,7 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
       highlights: (formData.highlights || []).map((h, i) => (i === idx ? val : h)),
     });
 
+  // Dynamic subject helpers
   const addSubject = () => setFormData({ ...formData, subjects: [...(formData.subjects || []), ""] });
   const removeSubject = (idx: number) =>
     setFormData({ ...formData, subjects: (formData.subjects || []).filter((_, i) => i !== idx) });
@@ -255,6 +339,7 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
       subjects: (formData.subjects || []).map((s, i) => (i === idx ? val : s)),
     });
 
+  // Dynamic syllabus helpers
   const addSyllabusSection = () =>
     setFormData({
       ...formData,
@@ -274,129 +359,256 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
     setFormData({
       ...formData,
       syllabus_preview: (formData.syllabus_preview || []).map((s, i) =>
-        i === sIdx ? { ...s, chapters: [...s.chapters, ""] } : s,
+        i === sIdx ? { ...s, chapters: [...s.chapters, ""] } : s
       ),
     });
   const removeChapter = (sIdx: number, cIdx: number) =>
     setFormData({
       ...formData,
       syllabus_preview: (formData.syllabus_preview || []).map((s, i) =>
-        i === sIdx ? { ...s, chapters: s.chapters.filter((_, ci) => ci !== cIdx) } : s,
+        i === sIdx ? { ...s, chapters: s.chapters.filter((_, ci) => ci !== cIdx) } : s
       ),
     });
   const updateChapter = (sIdx: number, cIdx: number, val: string) =>
     setFormData({
       ...formData,
       syllabus_preview: (formData.syllabus_preview || []).map((s, i) =>
-        i === sIdx
-          ? { ...s, chapters: s.chapters.map((c, ci) => (ci === cIdx ? val : c)) }
-          : s,
+        i === sIdx ? { ...s, chapters: s.chapters.map((c, ci) => (ci === cIdx ? val : c)) } : s
       ),
     });
 
-  if (loading)
-    return (
-      <div className="py-12 text-center text-stone-500 bg-white rounded-2xl border border-stone-200">
-        Loading courses...
-      </div>
-    );
+  const getExamName = (examId: string) => {
+    const found = exams.find((e) => e.id === examId || `exam-${e.id}` === examId);
+    return found ? `${found.name} (${found.board || ""})` : examId;
+  };
 
-  const getExamName = (examId: string) => exams.find((e) => e.id === examId)?.name || examId;
+  // Filtered exams for modal dropdown
+  const filteredExamsForModal = useMemo(() => {
+    if (!examSearchFilter.trim()) return exams;
+    const q = examSearchFilter.toLowerCase();
+    return exams.filter(
+      (e) =>
+        e.name.toLowerCase().includes(q) ||
+        e.short_name.toLowerCase().includes(q) ||
+        (e.board && e.board.toLowerCase().includes(q)) ||
+        (e.category_name && e.category_name.toLowerCase().includes(q))
+    );
+  }, [exams, examSearchFilter]);
 
   const filteredCourses = courses
     .filter((c) => {
+      if (filterType === "custom" && c.is_auto_synced) return false;
+      if (filterType === "synced" && !c.is_auto_synced) return false;
       if (!search.trim()) return true;
       const q = search.toLowerCase();
       return (
         c.title.toLowerCase().includes(q) ||
-        c.badge.toLowerCase().includes(q) ||
+        (c.badge && c.badge.toLowerCase().includes(q)) ||
         getExamName(c.exam_id).toLowerCase().includes(q)
       );
     })
-    .sort((a, b) => a.priority - b.priority);
+    .sort((a, b) => (a.priority || 0) - (b.priority || 0));
+
+  const customCount = courses.filter((c) => !c.is_auto_synced).length;
+  const syncedCount = courses.filter((c) => c.is_auto_synced).length;
+
+  if (loading)
+    return (
+      <div className="py-20 text-center text-stone-500 bg-white rounded-2xl border border-stone-200">
+        <div className="w-8 h-8 border-3 border-amber-600/30 border-t-amber-600 rounded-full animate-spin mx-auto mb-3" />
+        <p className="text-xs font-bold text-stone-700">कोर्सेज़ एवं सिलेक्शन किट्स लोड हो रहे हैं...</p>
+      </div>
+    );
 
   return (
     <div className="space-y-5">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      {/* Header & Main Add Button */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-white border border-stone-200 p-5 rounded-2xl shadow-xs">
         <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-stone-900">Courses</h2>
-          <p className="text-stone-500 text-sm">Manage study material bundles: pricing, content, delivery links.</p>
+          <div className="flex items-center gap-2">
+            <span className="text-xl">📚</span>
+            <h2 className="text-lg sm:text-xl font-black text-stone-900">
+              कोर्सेज़ एवं सिलेक्शन किट्स (Courses Management)
+            </h2>
+          </div>
+          <p className="text-stone-500 text-xs mt-1">
+            यहाँ से आप किसी भी परीक्षा के नोट्स, कीमत, PDF लिंक व सिलेबस को लाइव जोड़ और कस्टमाइज़ कर सकते हैं।
+          </p>
         </div>
-        <button onClick={openCreateModal} className="self-start sm:self-auto px-4 py-2.5 bg-amber-600 hover:bg-amber-700 text-white text-sm font-bold rounded-xl">
-          + Add Course
+
+        <button
+          onClick={openCreateModal}
+          className="self-start sm:self-auto px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white text-xs font-black rounded-xl transition shadow-xs flex items-center gap-2 cursor-pointer active:scale-98"
+        >
+          <span className="text-base">+</span>
+          नया कोर्स / किट जोड़ें (Add Course)
         </button>
       </div>
 
       {message && (
-        <div className={`p-3 rounded-xl border text-sm ${message.type === "success" ? "bg-emerald-50 border-emerald-200 text-emerald-700" : "bg-red-50 border-red-200 text-red-700"}`}>
+        <div
+          className={`p-3.5 rounded-xl border text-xs font-bold ${
+            message.type === "success"
+              ? "bg-emerald-50 border-emerald-200 text-emerald-800"
+              : "bg-red-50 border-red-200 text-red-800"
+          }`}
+        >
           {message.text}
         </div>
       )}
 
-      <div className="bg-white border border-stone-200 rounded-2xl p-3">
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search courses..."
-          className="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-stone-50 text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
-        />
+      {/* Filter Tabs & Search */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="flex items-center gap-1.5 bg-stone-100 p-1 rounded-xl">
+          <button
+            onClick={() => setFilterType("all")}
+            className={`px-3 py-1.5 text-xs font-bold rounded-lg transition ${
+              filterType === "all" ? "bg-white text-stone-900 shadow-xs" : "text-stone-600 hover:text-stone-900"
+            }`}
+          >
+            सभी ({courses.length})
+          </button>
+          <button
+            onClick={() => setFilterType("synced")}
+            className={`px-3 py-1.5 text-xs font-bold rounded-lg transition ${
+              filterType === "synced" ? "bg-white text-indigo-700 shadow-xs" : "text-stone-600 hover:text-stone-900"
+            }`}
+          >
+            ⚡ परीक्षा से स्वतः जुड़े ({syncedCount})
+          </button>
+          <button
+            onClick={() => setFilterType("custom")}
+            className={`px-3 py-1.5 text-xs font-bold rounded-lg transition ${
+              filterType === "custom" ? "bg-white text-amber-800 shadow-xs" : "text-stone-600 hover:text-stone-900"
+            }`}
+          >
+            ⭐ कस्टम बंडल्स ({customCount})
+          </button>
+        </div>
+
+        <div className="relative w-full sm:w-72">
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="कोर्स या परीक्षा खोजें..."
+            className="w-full px-4 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-600 focus:outline-none text-xs shadow-2xs"
+          />
+        </div>
       </div>
 
       {/* Desktop table */}
-      <div className="hidden lg:block bg-white border border-stone-200 rounded-2xl overflow-hidden">
-        <table className="w-full">
-          <thead className="bg-stone-50 border-b border-stone-200 text-stone-500 text-xs uppercase tracking-wider">
+      <div className="hidden lg:block bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-xs">
+        <table className="w-full text-left">
+          <thead className="bg-stone-50 border-b border-stone-200 text-stone-600 text-[11px] font-bold uppercase tracking-wider">
             <tr>
-              <th className="p-4 text-left">Course</th>
-              <th className="p-4 text-left">Exam</th>
-              <th className="p-4 text-right">Price</th>
-              <th className="p-4 text-center">Slider</th>
-              <th className="p-4 text-center">Active</th>
-              <th className="p-4 text-right">Actions</th>
+              <th className="p-4">कोर्स व किट</th>
+              <th className="p-4">संबद्ध परीक्षा (Exam)</th>
+              <th className="p-4 text-center">प्रकार</th>
+              <th className="p-4 text-right">कीमत</th>
+              <th className="p-4 text-center">होमपेज</th>
+              <th className="p-4 text-center">स्थिति</th>
+              <th className="p-4 text-right">एक्शन</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-stone-100">
+          <tbody className="divide-y divide-stone-100 text-xs">
             {filteredCourses.map((course) => (
-              <tr key={course.id} className="hover:bg-stone-50">
+              <tr key={course.id} className="hover:bg-amber-50/20 transition-colors">
                 <td className="p-4">
                   <div className="flex items-center gap-3">
                     {course.cover_image && (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={course.cover_image} alt={course.title} className="w-14 h-10 rounded-lg object-cover border border-stone-200" />
+                      <img
+                        src={course.cover_image}
+                        alt=""
+                        className="w-12 h-14 rounded-lg object-cover border border-stone-200 shrink-0"
+                      />
                     )}
                     <div className="min-w-0">
-                      <p className="font-bold text-stone-900 text-sm truncate max-w-xs">{course.title}</p>
-                      <div className="flex items-center gap-1.5 flex-wrap mt-0.5">
-                        <span className="text-[11px] text-stone-500">{course.badge}</span>
-                        {course.is_featured && <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800">🔥 Featured</span>}
-                        {course.is_new_arrival && <span className="px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">✨ New</span>}
+                      <p className="font-extrabold text-stone-900 text-xs truncate max-w-xs">{course.title}</p>
+                      <div className="flex items-center gap-1.5 flex-wrap mt-1">
+                        <span className="text-[10px] text-stone-500 font-medium">{course.badge}</span>
+                        {course.is_featured && (
+                          <span className="px-1.5 py-0.5 rounded text-[9px] font-black bg-amber-100 text-amber-800">
+                            🔥 फीचर्ड #{course.featured_priority || 1}
+                          </span>
+                        )}
+                        {course.is_new_arrival && (
+                          <span className="px-1.5 py-0.5 rounded text-[9px] font-black bg-emerald-100 text-emerald-800">
+                            ✨ न्यू अराइवल #{course.new_arrival_priority || 1}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>
                 </td>
-                <td className="p-4 text-sm text-stone-700">{getExamName(course.exam_id)}</td>
-                <td className="p-4 text-right">
-                  <p className="font-bold text-stone-900">₹{course.price}</p>
-                  <p className="text-[11px] text-stone-400 line-through">₹{course.original_price}</p>
-                </td>
+
+                <td className="p-4 text-stone-700 font-bold max-w-xs truncate">{getExamName(course.exam_id)}</td>
+
                 <td className="p-4 text-center">
-                  <span className={`px-2.5 py-1 rounded-full text-[11px] font-bold ${course.show_in_slider ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-stone-100 text-stone-500 border border-stone-200"}`}>
-                    {course.show_in_slider ? "Yes" : "No"}
-                  </span>
+                  {course.is_auto_synced ? (
+                    <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
+                      ⚡ परीक्षा से स्वतः
+                    </span>
+                  ) : (
+                    <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-200">
+                      ⭐ कस्टम
+                    </span>
+                  )}
                 </td>
+
+                <td className="p-4 text-right">
+                  <p className="font-black text-stone-900">₹{course.price}</p>
+                  <p className="text-[10px] text-stone-400 line-through">₹{course.original_price}</p>
+                </td>
+
+                <td className="p-4 text-center">
+                  <div className="flex items-center justify-center gap-1 flex-wrap">
+                    {course.show_in_slider && (
+                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">
+                        स्लाइडर
+                      </span>
+                    )}
+                    {course.is_featured && (
+                      <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">
+                        फीचर्ड
+                      </span>
+                    )}
+                    {!course.show_in_slider && !course.is_featured && !course.is_new_arrival && (
+                      <span className="text-stone-400 text-[11px]">—</span>
+                    )}
+                  </div>
+                </td>
+
                 <td className="p-4 text-center">
                   <button
                     onClick={() => handleToggleActive(course)}
-                    className={`px-3 py-1 rounded-full text-xs font-bold ${course.is_active ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-stone-100 text-stone-500 border border-stone-200"}`}
+                    className={`px-2.5 py-1 rounded-full text-[11px] font-bold cursor-pointer transition ${
+                      course.is_active
+                        ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
+                        : "bg-stone-100 text-stone-500 border border-stone-200"
+                    }`}
                   >
-                    {course.is_active ? "Active" : "Off"}
+                    {course.is_active ? "● लाइव (ON)" : "○ बंद (OFF)"}
                   </button>
                 </td>
+
                 <td className="p-4 text-right">
-                  <div className="flex items-center justify-end gap-2">
-                    <button onClick={() => openEditModal(course)} className="px-3 py-1.5 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold rounded-lg">Edit</button>
-                    <button onClick={() => handleDelete(course.id)} className="px-3 py-1.5 bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 text-xs font-semibold rounded-lg">Delete</button>
+                  <div className="flex items-center justify-end gap-1.5">
+                    <button
+                      onClick={() => openEditModal(course)}
+                      className="px-3 py-1.5 bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-900 text-xs font-bold rounded-lg transition cursor-pointer"
+                    >
+                      कस्टमाइज़ ✏️
+                    </button>
+                    {!course.is_auto_synced && (
+                      <button
+                        onClick={() => handleDelete(course.id)}
+                        className="px-2.5 py-1.5 bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 text-xs font-semibold rounded-lg transition cursor-pointer"
+                      >
+                        हटाएं
+                      </button>
+                    )}
                   </div>
                 </td>
               </tr>
@@ -404,357 +616,286 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
           </tbody>
         </table>
         {filteredCourses.length === 0 && (
-          <div className="p-12 text-center text-stone-400 text-sm">No courses match your search.</div>
+          <div className="p-12 text-center text-stone-400 text-xs bg-white">कोई कोर्स नहीं मिला।</div>
         )}
       </div>
 
-      {/* Mobile card list */}
-      <div className="lg:hidden space-y-3">
+      {/* Mobile Cards */}
+      <div className="grid grid-cols-1 gap-3 lg:hidden">
         {filteredCourses.map((course) => (
-          <div key={course.id} className="bg-white border border-stone-200 rounded-2xl p-4 space-y-3">
+          <div key={course.id} className="bg-white border border-stone-200 rounded-2xl p-4 space-y-3 shadow-xs">
             <div className="flex items-start gap-3">
               {course.cover_image && (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={course.cover_image} alt={course.title} className="w-16 h-12 rounded-lg object-cover border border-stone-200 shrink-0" />
+                <img src={course.cover_image} alt="" className="w-14 h-16 rounded-xl object-cover border border-stone-200" />
               )}
-              <div className="flex-1 min-w-0">
-                <p className="font-bold text-stone-900 text-sm line-clamp-2">{course.title}</p>
-                <p className="text-[11px] text-stone-500">{course.badge} • {getExamName(course.exam_id)}</p>
+              <div className="min-w-0 flex-1">
+                <p className="font-black text-stone-900 text-sm line-clamp-2 leading-tight">{course.title}</p>
+                <p className="text-xs text-stone-500 mt-0.5 truncate">{getExamName(course.exam_id)}</p>
+                <div className="flex items-center gap-1.5 mt-1 flex-wrap">
+                  {course.is_auto_synced ? (
+                    <span className="px-2 py-0.5 rounded text-[9px] font-bold bg-indigo-50 text-indigo-700">
+                      ⚡ ऑटो-सिंक
+                    </span>
+                  ) : (
+                    <span className="px-2 py-0.5 rounded text-[9px] font-bold bg-amber-50 text-amber-800">
+                      ⭐ कस्टम
+                    </span>
+                  )}
+                  <span className="text-xs font-black text-stone-900">₹{course.price}</span>
+                  <span className="text-[10px] text-stone-400 line-through">₹{course.original_price}</span>
+                </div>
               </div>
+            </div>
+
+            <div className="flex items-center justify-between pt-2 border-t border-stone-100 gap-2">
               <button
                 onClick={() => handleToggleActive(course)}
-                className={`shrink-0 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${course.is_active ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-stone-100 text-stone-500 border border-stone-200"}`}
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold ${
+                  course.is_active ? "bg-emerald-50 text-emerald-700" : "bg-stone-100 text-stone-500"
+                }`}
               >
-                {course.is_active ? "Active" : "Off"}
+                {course.is_active ? "● लाइव (ON)" : "○ बंद"}
               </button>
-            </div>
-            <div className="flex items-center justify-between gap-3 text-sm">
-              <div>
-                <span className="font-bold text-stone-900">₹{course.price}</span>
-                <span className="ml-2 text-xs text-stone-400 line-through">₹{course.original_price}</span>
-              </div>
-              <div className="flex items-center gap-1 flex-wrap">
-                {course.show_in_slider && (
-                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">
-                    Slider
-                  </span>
-                )}
-                {course.is_featured && (
-                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">
-                    🔥 Featured
-                  </span>
-                )}
-                {course.is_new_arrival && (
-                  <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                    ✨ New
-                  </span>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => openEditModal(course)}
+                  className="px-3 py-1.5 bg-amber-600 text-white rounded-lg text-xs font-bold"
+                >
+                  कस्टमाइज़ ✏️
+                </button>
+                {!course.is_auto_synced && (
+                  <button
+                    onClick={() => handleDelete(course.id)}
+                    className="px-3 py-1.5 bg-red-50 text-red-700 border border-red-200 rounded-lg text-xs font-bold"
+                  >
+                    हटाएं
+                  </button>
                 )}
               </div>
-            </div>
-            <div className="flex gap-2 pt-2 border-t border-stone-100">
-              <button onClick={() => openEditModal(course)} className="flex-1 py-2 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold rounded-lg">
-                Edit
-              </button>
-              <button onClick={() => handleDelete(course.id)} className="flex-1 py-2 bg-red-50 border border-red-200 text-red-700 text-xs font-semibold rounded-lg">
-                Delete
-              </button>
             </div>
           </div>
         ))}
-        {filteredCourses.length === 0 && (
-          <div className="p-12 text-center text-stone-400 text-sm bg-white border border-stone-200 rounded-2xl">
-            No courses match your search.
-          </div>
-        )}
       </div>
 
-      {/* Modal */}
+      {/* FULL CUSTOMIZER MODAL */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4 bg-stone-900/60 backdrop-blur-sm">
           <div className="absolute inset-0" onClick={closeModal} />
-          <div className="relative bg-white border border-stone-200 rounded-t-3xl sm:rounded-2xl w-full max-w-3xl max-h-[92vh] overflow-hidden z-10 flex flex-col">
-            <div className="flex justify-between items-center p-4 border-b border-stone-200 flex-wrap gap-2">
-              <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="text-lg font-bold text-stone-900">
-                  {editingCourse ? "Edit Course" : "New Course"}
+          <div className="relative bg-white border border-stone-200 rounded-t-3xl sm:rounded-2xl w-full max-w-3xl max-h-[92vh] overflow-hidden z-10 flex flex-col shadow-2xl">
+            {/* Modal Header */}
+            <div className="flex justify-between items-center p-4 sm:p-5 border-b border-stone-200 bg-stone-50 flex-wrap gap-2">
+              <div className="flex items-center gap-3 flex-wrap">
+                <h3 className="text-base sm:text-lg font-black text-stone-900">
+                  {editingCourse ? `कोर्स कस्टमाइज़ करें: ${editingCourse.title}` : "नया कोर्स / सिलेक्शन किट बनाएं"}
                 </h3>
-                <div className="flex gap-1 bg-stone-100 rounded-lg p-1">
+                <div className="flex gap-1 bg-stone-200/70 rounded-xl p-1">
                   {(["basic", "content", "delivery"] as const).map((t) => (
                     <button
                       key={t}
                       type="button"
                       onClick={() => setActiveTab(t)}
-                      className={`px-3 py-1.5 text-xs font-bold rounded-md transition ${
-                        activeTab === t ? "bg-amber-600 text-white" : "text-stone-600 hover:text-stone-900"
+                      className={`px-3 py-1 text-xs font-bold rounded-lg transition cursor-pointer ${
+                        activeTab === t ? "bg-amber-600 text-white shadow-xs" : "text-stone-600 hover:text-stone-900"
                       }`}
                     >
-                      {t === "basic" ? "Basic" : t === "content" ? "Content" : "Delivery"}
+                      {t === "basic" ? "1. बेसिक व कीमत" : t === "content" ? "2. विषय व सिलेबस" : "3. PDF लिंक्स व फोटो"}
                     </button>
                   ))}
                 </div>
               </div>
-              <button onClick={closeModal} className="w-9 h-9 rounded-lg hover:bg-stone-100 text-stone-500 flex items-center justify-center">✕</button>
+              <button
+                onClick={closeModal}
+                className="w-8 h-8 rounded-lg hover:bg-stone-200 text-stone-500 flex items-center justify-center cursor-pointer"
+              >
+                ✕
+              </button>
             </div>
 
+            {/* Modal Body Form */}
             <form onSubmit={handleSave} className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
               {activeTab === "basic" && (
                 <div className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                      <label className="block text-xs font-bold text-stone-600 mb-1">Exam *</label>
-                      <select
-                        value={formData.exam_id || ""}
-                        onChange={(e) => setFormData({ ...formData, exam_id: e.target.value })}
-                        required
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
-                      >
-                        {exams.map((e) => (
-                          <option key={e.id} value={e.id}>{e.name} ({e.short_name})</option>
-                        ))}
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-stone-600 mb-1">Slug (URL)</label>
+                  {/* Exam Selector with Search */}
+                  <div className="bg-amber-50/50 border border-amber-200 p-3.5 rounded-xl space-y-2">
+                    <label className="block text-xs font-black text-amber-900">
+                      📌 किस परीक्षा के लिए यह कोर्स बना रहे हैं? (Select Exam) *
+                    </label>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       <input
                         type="text"
-                        value={formData.slug || ""}
-                        onChange={(e) => setFormData({ ...formData, slug: e.target.value.toLowerCase().replace(/\s+/g, "-") })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
-                        placeholder="auto-generated from title"
+                        placeholder="परीक्षा का नाम सर्च करें..."
+                        value={examSearchFilter}
+                        onChange={(e) => setExamSearchFilter(e.target.value)}
+                        className="px-3 py-2 text-xs border border-stone-300 rounded-lg bg-white"
                       />
+                      <select
+                        value={formData.exam_id || ""}
+                        onChange={(e) => handleExamSelect(e.target.value)}
+                        required
+                        className="w-full px-3 py-2 rounded-lg border border-stone-300 bg-white text-stone-900 text-xs font-bold"
+                      >
+                        <option value="">-- परीक्षा चुनें ({exams.length} परीक्षाएं उपलब्ध) --</option>
+                        {filteredExamsForModal.map((e) => (
+                          <option key={e.id} value={e.id}>
+                            {e.name} {e.board ? `(${e.board})` : ""}
+                          </option>
+                        ))}
+                      </select>
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-stone-600 mb-1">Title *</label>
+                    <label className="block text-xs font-bold text-stone-700 mb-1">कोर्स का शीर्षक (Title) *</label>
                     <input
                       type="text"
                       value={formData.title || ""}
                       onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                       required
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                      placeholder="उदा. Rajasthan CET 2026 - Complete Selection Kit"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-600 focus:outline-none text-xs font-bold"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-bold text-stone-600 mb-1">Badge</label>
+                      <label className="block text-xs font-bold text-stone-700 mb-1">URL Slug</label>
                       <input
                         type="text"
-                        value={formData.badge || ""}
+                        value={formData.slug || ""}
+                        onChange={(e) =>
+                          setFormData({ ...formData, slug: e.target.value.toLowerCase().replace(/\s+/g, "-") })
+                        }
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-600 focus:outline-none text-xs"
+                        placeholder="auto-generated"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-stone-700 mb-1">बैज (Badge)</label>
+                      <input
+                        type="text"
+                        value={formData.badge || "Complete Selection Kit"}
                         onChange={(e) => setFormData({ ...formData, badge: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-stone-600 mb-1">Language</label>
-                      <input
-                        type="text"
-                        value={formData.language || "Hindi"}
-                        onChange={(e) => setFormData({ ...formData, language: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-600 focus:outline-none text-xs font-semibold"
                       />
                     </div>
                   </div>
 
-                  <div>
-                    <label className="block text-xs font-bold text-stone-600 mb-1">Short Description</label>
-                    <textarea
-                      value={formData.short_description || ""}
-                      onChange={(e) => setFormData({ ...formData, short_description: e.target.value })}
-                      rows={2}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {/* Pricing */}
+                  <div className="grid grid-cols-3 gap-3 p-3.5 bg-stone-50 rounded-xl border border-stone-200">
                     <div>
-                      <label className="block text-xs font-bold text-stone-600 mb-1">Original Price (₹)</label>
+                      <label className="block text-xs font-bold text-stone-700 mb-1">असली कीमत (MRP ₹)</label>
                       <input
                         type="number"
-                        value={formData.original_price || 0}
+                        value={formData.original_price || 999}
                         onChange={(e) => setFormData({ ...formData, original_price: Number(e.target.value) })}
                         min={0}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                        className="w-full px-3 py-2 rounded-lg border border-stone-300 bg-white text-stone-900 text-xs font-bold"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-stone-600 mb-1">Sale Price (₹)</label>
+                      <label className="block text-xs font-bold text-amber-800 mb-1">सेल कीमत (Selling ₹)</label>
                       <input
                         type="number"
-                        value={formData.price || 0}
+                        value={formData.price || 199}
                         onChange={(e) => setFormData({ ...formData, price: Number(e.target.value) })}
                         min={0}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                        className="w-full px-3 py-2 rounded-lg border border-amber-400 bg-white text-amber-900 text-xs font-black"
                       />
                     </div>
-                    <label className="flex items-end gap-2 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={formData.show_in_slider}
-                        onChange={(e) => setFormData({ ...formData, show_in_slider: e.target.checked })}
-                        className="w-4 h-4 rounded border-stone-300 text-amber-600 focus:ring-amber-500"
-                      />
-                      <span className="text-xs font-medium text-stone-700">In Slider</span>
-                    </label>
+                    <div>
+                      <label className="block text-xs font-bold text-emerald-800 mb-1">छूट (Discount %)</label>
+                      <div className="px-3 py-2 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-black">
+                        {formData.original_price && formData.price
+                          ? `${Math.round((1 - formData.price / formData.original_price) * 100)}% OFF`
+                          : "0%"}
+                      </div>
+                    </div>
                   </div>
 
-                  {formData.show_in_slider && (
-                    <div>
-                      <label className="block text-xs font-bold text-stone-600 mb-1">Slider Tagline</label>
-                      <input
-                        type="text"
-                        value={formData.slider_tagline || ""}
-                        onChange={(e) => setFormData({ ...formData, slider_tagline: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
-                      />
-                    </div>
-                  )}
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 bg-stone-50 rounded-xl border border-stone-200">
-                    <div>
-                      <label className="flex items-center gap-2 cursor-pointer mb-1.5">
+                  {/* Promotion Controls */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3.5 bg-stone-50 rounded-xl border border-stone-200">
+                    <div className="space-y-1.5">
+                      <label className="flex items-center gap-2 cursor-pointer">
                         <input
                           type="checkbox"
                           checked={formData.is_featured || false}
                           onChange={(e) => setFormData({ ...formData, is_featured: e.target.checked })}
-                          className="w-4 h-4 rounded border-stone-300 text-amber-600 focus:ring-amber-500"
+                          className="w-4 h-4 rounded text-amber-600"
                         />
-                        <span className="text-xs font-bold text-stone-800">🔥 Featured Deals (होमपेज डील्स)</span>
+                        <span className="text-xs font-bold text-stone-900">🔥 होमपेज फीचर्ड में दिखाएं</span>
                       </label>
                       {formData.is_featured && (
-                        <div className="flex items-center gap-2 mt-1">
-                          <span className="text-[11px] text-stone-500">Priority:</span>
+                        <div className="flex items-center gap-2 pl-6">
+                          <span className="text-[11px] text-stone-500">प्राथमिकता क्रम:</span>
                           <input
                             type="number"
                             value={formData.featured_priority || 1}
                             onChange={(e) => setFormData({ ...formData, featured_priority: Number(e.target.value) })}
                             min={1}
-                            className="w-20 px-2 py-1 text-xs border border-stone-300 rounded-lg bg-white"
+                            className="w-16 px-2 py-1 text-xs border border-stone-300 rounded bg-white font-bold"
                           />
                         </div>
                       )}
                     </div>
 
-                    <div>
-                      <label className="flex items-center gap-2 cursor-pointer mb-1.5">
+                    <div className="space-y-1.5">
+                      <label className="flex items-center gap-2 cursor-pointer">
                         <input
                           type="checkbox"
                           checked={formData.is_new_arrival || false}
                           onChange={(e) => setFormData({ ...formData, is_new_arrival: e.target.checked })}
-                          className="w-4 h-4 rounded border-stone-300 text-amber-600 focus:ring-amber-500"
+                          className="w-4 h-4 rounded text-amber-600"
                         />
-                        <span className="text-xs font-bold text-stone-800">✨ New Arrivals (नए कोर्सेज)</span>
+                        <span className="text-xs font-bold text-stone-900">✨ न्यू अराइवल्स में दिखाएं</span>
                       </label>
                       {formData.is_new_arrival && (
-                        <div className="flex items-center gap-2 mt-1">
-                          <span className="text-[11px] text-stone-500">Priority:</span>
+                        <div className="flex items-center gap-2 pl-6">
+                          <span className="text-[11px] text-stone-500">प्राथमिकता क्रम:</span>
                           <input
                             type="number"
                             value={formData.new_arrival_priority || 1}
                             onChange={(e) => setFormData({ ...formData, new_arrival_priority: Number(e.target.value) })}
                             min={1}
-                            className="w-20 px-2 py-1 text-xs border border-stone-300 rounded-lg bg-white"
+                            className="w-16 px-2 py-1 text-xs border border-stone-300 rounded bg-white font-bold"
                           />
                         </div>
                       )}
                     </div>
                   </div>
 
-                  <div>
-                    <label className="block text-xs font-bold text-stone-600 mb-2">Cover Image</label>
-                    <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 mb-3">
-                      {PRESET_COVERS.map((url) => (
-                        <button
-                          type="button"
-                          key={url}
-                          onClick={() => selectPresetCover(url)}
-                          className={`relative aspect-[4/3] rounded-lg overflow-hidden border-2 transition ${
-                            formData.cover_image === url ? "border-amber-500" : "border-stone-200 hover:border-stone-300"
-                          }`}
-                        >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={url} alt="Preset" className="object-cover w-full h-full" />
-                          {formData.cover_image === url && (
-                            <div className="absolute inset-0 bg-amber-500/40 flex items-center justify-center text-white text-xl">✓</div>
-                          )}
-                        </button>
-                      ))}
-                      <label className="relative aspect-[4/3] rounded-lg border-2 border-dashed border-stone-300 hover:border-amber-500 flex items-center justify-center cursor-pointer bg-stone-50">
-                        <input type="file" accept="image/*" onChange={handleCoverChange} className="absolute inset-0 opacity-0 cursor-pointer" />
-                        <span className="text-stone-500 text-[10px] text-center px-1">Upload</span>
-                      </label>
-                    </div>
-                    {coverPreview && (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={coverPreview} alt="Preview" className="w-40 h-28 rounded-lg object-cover border border-stone-200" />
+                  {/* Slider toggle */}
+                  <div className="p-3.5 bg-stone-50 rounded-xl border border-stone-200 space-y-2">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={formData.show_in_slider || false}
+                        onChange={(e) => setFormData({ ...formData, show_in_slider: e.target.checked })}
+                        className="w-4 h-4 rounded text-amber-600"
+                      />
+                      <span className="text-xs font-bold text-stone-900">🖼️ होमपेज टॉप हीरो स्लाइडर में शामिल करें</span>
+                    </label>
+                    {formData.show_in_slider && (
+                      <input
+                        type="text"
+                        value={formData.slider_tagline || ""}
+                        onChange={(e) => setFormData({ ...formData, slider_tagline: e.target.value })}
+                        placeholder="स्लाइडर टैगलाइन (उदा. सलेक्शन का पक्का साथी — 80% छूट)"
+                        className="w-full px-3 py-2 text-xs border border-stone-300 rounded-lg bg-white"
+                      />
                     )}
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3">
-                    <div>
-                      <label className="block text-xs font-bold text-stone-600 mb-1">Pages Count</label>
-                      <input
-                        type="text"
-                        value={formData.pages_count || ""}
-                        onChange={(e) => setFormData({ ...formData, pages_count: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-stone-600 mb-1">Format</label>
-                      <input
-                        type="text"
-                        value={formData.format || "Printable PDF"}
-                        onChange={(e) => setFormData({ ...formData, format: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3">
-                    <div>
-                      <label className="block text-xs font-bold text-stone-600 mb-1">Rating</label>
-                      <input
-                        type="number"
-                        step="0.1"
-                        min="0"
-                        max="5"
-                        value={formData.rating || 0}
-                        onChange={(e) => setFormData({ ...formData, rating: Number(e.target.value) })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-xs font-bold text-stone-600 mb-1">Rating Count</label>
-                      <input
-                        type="text"
-                        value={formData.rating_count || "0"}
-                        onChange={(e) => setFormData({ ...formData, rating_count: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3">
-                    <div>
-                      <label className="block text-xs font-bold text-stone-600 mb-1">Priority</label>
-                      <input
-                        type="number"
-                        value={formData.priority || 1}
-                        onChange={(e) => setFormData({ ...formData, priority: Number(e.target.value) })}
-                        min={1}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
-                      />
-                    </div>
-                    <label className="flex items-end gap-2 cursor-pointer">
+                  <div className="flex items-center justify-between p-3 bg-stone-50 rounded-xl border border-stone-200">
+                    <span className="text-xs font-bold text-stone-800">लाइव स्थिति (Active)</span>
+                    <label className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="checkbox"
-                        checked={formData.is_active}
+                        checked={formData.is_active !== false}
                         onChange={(e) => setFormData({ ...formData, is_active: e.target.checked })}
-                        className="w-4 h-4 rounded border-stone-300 text-amber-600 focus:ring-amber-500"
+                        className="w-4 h-4 rounded text-emerald-600"
                       />
-                      <span className="text-sm font-medium text-stone-700">Active</span>
+                      <span className="text-xs font-bold text-emerald-700">सक्रिय (Live on Website)</span>
                     </label>
                   </div>
                 </div>
@@ -763,9 +904,27 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
               {activeTab === "content" && (
                 <div className="space-y-5">
                   <div>
+                    <label className="block text-xs font-bold text-stone-700 mb-1">संक्षिप्त विवरण (Short Description)</label>
+                    <textarea
+                      value={formData.short_description || ""}
+                      onChange={(e) => setFormData({ ...formData, short_description: e.target.value })}
+                      rows={2}
+                      className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-xs"
+                      placeholder="कोर्स के मुख्य लाभ व नोट्स की जानकारी..."
+                    />
+                  </div>
+
+                  {/* Highlights */}
+                  <div>
                     <div className="flex justify-between items-center mb-2">
-                      <label className="text-xs font-bold text-stone-600">Highlights</label>
-                      <button type="button" onClick={addHighlight} className="px-3 py-1 text-xs bg-stone-100 hover:bg-stone-200 rounded-lg font-semibold">+ Add</button>
+                      <label className="text-xs font-bold text-stone-800">मुख्य विशेषताएं (Key Highlights)</label>
+                      <button
+                        type="button"
+                        onClick={addHighlight}
+                        className="px-2.5 py-1 text-xs bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 rounded-lg font-bold cursor-pointer"
+                      >
+                        + नया जोड़ें
+                      </button>
                     </div>
                     <div className="space-y-2">
                       {(formData.highlights || []).map((h, i) => (
@@ -774,19 +933,32 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
                             type="text"
                             value={h}
                             onChange={(e) => updateHighlight(i, e.target.value)}
-                            placeholder={`Highlight ${i + 1}`}
-                            className="flex-1 px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                            placeholder={`विशेषता #${i + 1}`}
+                            className="flex-1 px-3 py-2 rounded-lg border border-stone-300 bg-white text-xs"
                           />
-                          <button type="button" onClick={() => removeHighlight(i)} className="px-3 py-2.5 bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 rounded-lg text-xs font-semibold">Remove</button>
+                          <button
+                            type="button"
+                            onClick={() => removeHighlight(i)}
+                            className="px-2.5 py-2 bg-red-50 text-red-700 border border-red-200 rounded-lg text-xs font-bold cursor-pointer"
+                          >
+                            ✕
+                          </button>
                         </div>
                       ))}
                     </div>
                   </div>
 
+                  {/* Subjects */}
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <label className="text-xs font-bold text-stone-600">Subjects</label>
-                      <button type="button" onClick={addSubject} className="px-3 py-1 text-xs bg-stone-100 hover:bg-stone-200 rounded-lg font-semibold">+ Add</button>
+                      <label className="text-xs font-bold text-stone-800">शामिल विषय (Covered Subjects)</label>
+                      <button
+                        type="button"
+                        onClick={addSubject}
+                        className="px-2.5 py-1 text-xs bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 rounded-lg font-bold cursor-pointer"
+                      >
+                        + नया विषय जोड़ें
+                      </button>
                     </div>
                     <div className="space-y-2">
                       {(formData.subjects || []).map((s, i) => (
@@ -795,19 +967,32 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
                             type="text"
                             value={s}
                             onChange={(e) => updateSubject(i, e.target.value)}
-                            placeholder={`Subject ${i + 1}`}
-                            className="flex-1 px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                            placeholder={`विषय #${i + 1}`}
+                            className="flex-1 px-3 py-2 rounded-lg border border-stone-300 bg-white text-xs"
                           />
-                          <button type="button" onClick={() => removeSubject(i)} className="px-3 py-2.5 bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 rounded-lg text-xs font-semibold">Remove</button>
+                          <button
+                            type="button"
+                            onClick={() => removeSubject(i)}
+                            className="px-2.5 py-2 bg-red-50 text-red-700 border border-red-200 rounded-lg text-xs font-bold cursor-pointer"
+                          >
+                            ✕
+                          </button>
                         </div>
                       ))}
                     </div>
                   </div>
 
+                  {/* Syllabus */}
                   <div>
                     <div className="flex justify-between items-center mb-2">
-                      <label className="text-xs font-bold text-stone-600">Syllabus Preview</label>
-                      <button type="button" onClick={addSyllabusSection} className="px-3 py-1 text-xs bg-stone-100 hover:bg-stone-200 rounded-lg font-semibold">+ Add Section</button>
+                      <label className="text-xs font-bold text-stone-800">विस्तृत सिलेबस पूर्वावलोकन (Syllabus Preview)</label>
+                      <button
+                        type="button"
+                        onClick={addSyllabusSection}
+                        className="px-2.5 py-1 text-xs bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 rounded-lg font-bold cursor-pointer"
+                      >
+                        + सेक्शन जोड़ें
+                      </button>
                     </div>
                     <div className="space-y-3">
                       {(formData.syllabus_preview || []).map((sec, si) => (
@@ -817,25 +1002,43 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
                               type="text"
                               value={sec.subject}
                               onChange={(e) => updateSyllabusSubject(si, e.target.value)}
-                              placeholder="Subject name"
-                              className="flex-1 px-3 py-2 rounded-lg border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                              placeholder="विषय का नाम (Subject Name)"
+                              className="flex-1 px-3 py-1.5 rounded-lg border border-stone-300 bg-white text-xs font-bold"
                             />
-                            <button type="button" onClick={() => removeSyllabusSection(si)} className="px-3 py-2 bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 text-xs rounded-lg font-semibold">Remove</button>
+                            <button
+                              type="button"
+                              onClick={() => removeSyllabusSection(si)}
+                              className="px-2.5 py-1.5 bg-red-50 text-red-700 border border-red-200 rounded-lg text-xs font-bold cursor-pointer"
+                            >
+                              सेक्शन हटाएं
+                            </button>
                           </div>
-                          <div className="space-y-2 pl-3">
+                          <div className="space-y-1.5 pl-3 border-l-2 border-amber-300">
                             {sec.chapters.map((ch, ci) => (
                               <div key={ci} className="flex gap-2">
                                 <input
                                   type="text"
                                   value={ch}
                                   onChange={(e) => updateChapter(si, ci, e.target.value)}
-                                  placeholder={`Chapter ${ci + 1}`}
-                                  className="flex-1 px-3 py-2 rounded-lg border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                                  placeholder={`अध्याय / टॉपिक #${ci + 1}`}
+                                  className="flex-1 px-3 py-1.5 rounded-lg border border-stone-300 bg-white text-xs"
                                 />
-                                <button type="button" onClick={() => removeChapter(si, ci)} className="px-3 py-2 bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 text-xs rounded-lg font-semibold">×</button>
+                                <button
+                                  type="button"
+                                  onClick={() => removeChapter(si, ci)}
+                                  className="px-2 py-1 text-stone-400 hover:text-red-700 text-xs"
+                                >
+                                  ✕
+                                </button>
                               </div>
                             ))}
-                            <button type="button" onClick={() => addChapter(si)} className="px-3 py-1 text-xs bg-stone-100 hover:bg-stone-200 rounded-lg font-semibold">+ Chapter</button>
+                            <button
+                              type="button"
+                              onClick={() => addChapter(si)}
+                              className="text-[11px] font-bold text-amber-800 hover:underline cursor-pointer"
+                            >
+                              + टॉपिक जोड़ें
+                            </button>
                           </div>
                         </div>
                       ))}
@@ -846,31 +1049,97 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
 
               {activeTab === "delivery" && (
                 <div className="space-y-4">
+                  {/* Delivery Links */}
                   <div>
-                    <label className="block text-xs font-bold text-stone-600 mb-1">Notes Access Link (Drive URL)</label>
+                    <label className="block text-xs font-bold text-stone-700 mb-1">
+                      📥 पूरे स्टडी मटेरियल का Google Drive Link *
+                    </label>
                     <input
                       type="url"
                       value={formData.drive_url || ""}
                       onChange={(e) => setFormData({ ...formData, drive_url: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                      placeholder="https://drive.google.com/..."
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-xs font-mono"
                     />
-                    <p className="text-[11px] text-stone-400 mt-1">This link will be sent to students after payment verification.</p>
+                    <p className="text-[10px] text-stone-400 mt-1">
+                      यह लिंक छात्र को पेमेंट व UTR वेरीफाई होने के बाद WhatsApp / Gmail पर भेजा जाता है।
+                    </p>
                   </div>
+
                   <div>
-                    <label className="block text-xs font-bold text-stone-600 mb-1">Sample PDF Link</label>
+                    <label className="block text-xs font-bold text-stone-700 mb-1">
+                      📄 फ्री सैंपल PDF लिंक (Sample PDF URL)
+                    </label>
                     <input
                       type="url"
                       value={formData.sample_pdf_url || ""}
                       onChange={(e) => setFormData({ ...formData, sample_pdf_url: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                      placeholder="https://drive.google.com/..."
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-xs font-mono"
                     />
+                    <p className="text-[10px] text-stone-400 mt-1">
+                      छात्र खरीदने से पहले इस लिंक से फ्री में 10-15 पेज सैंपल देख सकते हैं।
+                    </p>
+                  </div>
+
+                  {/* Cover Image Upload & Presets */}
+                  <div>
+                    <label className="block text-xs font-bold text-stone-700 mb-2">कवर फोटो (Cover Image)</label>
+                    <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-3">
+                      {PRESET_COVERS.map((url) => (
+                        <button
+                          type="button"
+                          key={url}
+                          onClick={() => selectPresetCover(url)}
+                          className={`relative aspect-[4/3] rounded-lg overflow-hidden border-2 transition cursor-pointer ${
+                            formData.cover_image === url ? "border-amber-600 ring-2 ring-amber-200" : "border-stone-200"
+                          }`}
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={url} alt="" className="object-cover w-full h-full" />
+                          {formData.cover_image === url && (
+                            <div className="absolute inset-0 bg-amber-600/40 flex items-center justify-center text-white text-lg font-bold">
+                              ✓
+                            </div>
+                          )}
+                        </button>
+                      ))}
+
+                      <label className="relative aspect-[4/3] rounded-lg border-2 border-dashed border-stone-300 hover:border-amber-500 flex flex-col items-center justify-center cursor-pointer bg-stone-50 p-2 text-center">
+                        <input
+                          type="file"
+                          accept="image/*"
+                          onChange={handleCoverChange}
+                          className="absolute inset-0 opacity-0 cursor-pointer"
+                        />
+                        <span className="text-stone-500 text-[10px] font-bold">कस्टम फोटो अपलोड करें</span>
+                      </label>
+                    </div>
+
+                    {coverPreview && (
+                      <div className="flex items-center gap-3 p-2 bg-stone-50 rounded-xl border border-stone-200">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={coverPreview} alt="" className="w-16 h-20 rounded-lg object-cover border border-stone-200" />
+                        <div>
+                          <p className="text-xs font-bold text-stone-800">चयनित कवर फोटो</p>
+                          <p className="text-[10px] text-stone-500">यह फोटो वेबसाइट पर बंडल कार्ड में दिखेगी</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
             </form>
 
+            {/* Modal Footer */}
             <div className="p-4 border-t border-stone-200 bg-stone-50 flex justify-end gap-2">
-              <button type="button" onClick={closeModal} className="px-4 py-2.5 rounded-xl border border-stone-300 text-stone-700 hover:bg-white font-semibold text-sm">Cancel</button>
+              <button
+                type="button"
+                onClick={closeModal}
+                className="px-4 py-2 rounded-xl border border-stone-300 text-stone-700 hover:bg-white font-bold text-xs cursor-pointer"
+              >
+                रद्द करें (Cancel)
+              </button>
               <button
                 type="submit"
                 disabled={saving}
@@ -879,9 +1148,9 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
                   const formEl = (e.currentTarget.closest(".relative") as HTMLElement)?.querySelector("form");
                   formEl?.requestSubmit();
                 }}
-                className="px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm disabled:opacity-50"
+                className="px-5 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-black text-xs disabled:opacity-50 cursor-pointer shadow-xs"
               >
-                {saving ? "Saving..." : editingCourse ? "Update" : "Create"}
+                {saving ? "सेव हो रहा है..." : editingCourse ? "अपडेट करें (Save Changes)" : "कोर्स बनाएं (Create Course)"}
               </button>
             </div>
           </div>

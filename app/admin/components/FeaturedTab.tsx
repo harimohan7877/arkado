@@ -1,19 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 
-interface Course {
+interface ExamSearchResult {
   id: string;
-  title: string;
-  exam_id: string;
-  price: number;
-  original_price: number;
-  cover_image?: string;
-  is_active: boolean;
-  is_featured: boolean;
-  featured_priority: number;
-  is_new_arrival: boolean;
-  new_arrival_priority: number;
+  name: string;
+  short_name?: string;
+  logo_url?: string;
+  board_name: string;
+  category_name: string;
+}
+
+interface RankedExam {
+  id: string;
+  name: string;
+  short_name?: string;
+  logo_url?: string;
+  board_name: string;
+  category_name: string;
+  priority: number;
 }
 
 interface FeaturedTabProps {
@@ -21,10 +26,21 @@ interface FeaturedTabProps {
 }
 
 export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
-  const [courses, setCourses] = useState<Course[]>([]);
+  const [allExams, setAllExams] = useState<ExamSearchResult[]>([]);
+  const [featuredExams, setFeaturedExams] = useState<RankedExam[]>([]);
+  const [newArrivals, setNewArrivals] = useState<RankedExam[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
+
+  // Search states
+  const [featuredSearch, setFeaturedSearch] = useState("");
+  const [showFeaturedDropdown, setShowFeaturedDropdown] = useState(false);
+  const featuredDropdownRef = useRef<HTMLDivElement>(null);
+
+  const [newArrivalSearch, setNewArrivalSearch] = useState("");
+  const [showNewArrivalDropdown, setShowNewArrivalDropdown] = useState(false);
+  const newArrivalDropdownRef = useRef<HTMLDivElement>(null);
 
   const showToast = (msg: string) => {
     setToast(msg);
@@ -32,36 +48,88 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
   };
 
   useEffect(() => {
-    fetchCourses();
+    loadData();
   }, []);
 
-  const fetchCourses = async () => {
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (featuredDropdownRef.current && !featuredDropdownRef.current.contains(e.target as Node)) {
+        setShowFeaturedDropdown(false);
+      }
+      if (newArrivalDropdownRef.current && !newArrivalDropdownRef.current.contains(e.target as Node)) {
+        setShowNewArrivalDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const loadData = async () => {
     try {
       setLoading(true);
-      const res = await fetch("/api/courses?all=true");
-      if (!res.ok) throw new Error("Failed to load courses");
-      const data = await res.json();
-      setCourses(data);
+      // 1. Load all exams from categories
+      const catRes = await fetch(`/api/admin/categories?t=${Date.now()}`, {
+        headers: getAuthHeaders(),
+        cache: "no-store",
+      });
+      const categories = await catRes.json();
+      const examList: ExamSearchResult[] = [];
+
+      if (Array.isArray(categories)) {
+        for (const c of categories) {
+          for (const b of c.boards || []) {
+            for (const e of b.exams || []) {
+              examList.push({
+                id: e.id,
+                name: e.name,
+                short_name: e.short_name || e.name,
+                logo_url: e.logo_url || "",
+                board_name: b.short_name || b.name,
+                category_name: c.name,
+              });
+            }
+          }
+        }
+      }
+      setAllExams(examList);
+
+      // 2. Load featured & new arrival exams
+      const featRes = await fetch(`/api/admin/featured?t=${Date.now()}`, {
+        headers: getAuthHeaders(),
+        cache: "no-store",
+      });
+      if (featRes.ok) {
+        const featData = await featRes.json();
+        setFeaturedExams(featData.featured_exams || []);
+        setNewArrivals(featData.new_arrivals || []);
+      }
     } catch {
-      showToast("कोर्सेस लोड करने में त्रुटि हुई");
+      showToast("डेटा लोड करने में समस्या आई");
     } finally {
       setLoading(false);
     }
   };
 
-  const persistCourses = async (updated: Course[], msg: string) => {
+  const saveData = async (newFeatured: RankedExam[], newNewArr: RankedExam[], msg: string) => {
     try {
       setSaving(true);
-      const res = await fetch("/api/courses", {
+      setFeaturedExams(newFeatured);
+      setNewArrivals(newNewArr);
+
+      const res = await fetch("/api/admin/featured", {
         method: "PUT",
         headers: {
           ...getAuthHeaders(),
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(updated),
+        body: JSON.stringify({
+          featured_exams: newFeatured,
+          new_arrivals: newNewArr,
+        }),
       });
+
       if (!res.ok) throw new Error("Save failed");
-      setCourses(updated);
       showToast(msg);
     } catch {
       showToast("सेव करने में त्रुटि हुई");
@@ -71,104 +139,136 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
   };
 
   // -------------------------------------------------------------
-  // FEATURED TOGGLE & REORDER (Auto-Shift)
+  // FEATURED EXAM HANDLERS
   // -------------------------------------------------------------
-  const handleToggleFeatured = (id: string) => {
-    const updated = courses.map((c) =>
-      c.id === id ? { ...c, is_featured: !c.is_featured } : c
-    );
-    persistCourses(updated, "फीचर्ड स्थिति अपडेट की गई!");
+  const filteredFeaturedResults = useMemo(() => {
+    if (!featuredSearch.trim()) return [];
+    const q = featuredSearch.toLowerCase().trim();
+    const existingIds = new Set(featuredExams.map((e) => e.id));
+    return allExams
+      .filter((e) => !existingIds.has(e.id))
+      .filter(
+        (e) =>
+          e.name.toLowerCase().includes(q) ||
+          (e.short_name && e.short_name.toLowerCase().includes(q)) ||
+          e.board_name.toLowerCase().includes(q)
+      )
+      .slice(0, 10);
+  }, [allExams, featuredSearch, featuredExams]);
+
+  const addFeaturedExam = (exam: ExamSearchResult) => {
+    const nextRank = featuredExams.length + 1;
+    const updated = [...featuredExams, { ...exam, priority: nextRank }];
+    setFeaturedSearch("");
+    setShowFeaturedDropdown(false);
+    saveData(updated, newArrivals, `"${exam.name}" को फीचर्ड में जोड़ा गया (#${nextRank})`);
+  };
+
+  const removeFeaturedExam = (id: string) => {
+    const target = featuredExams.find((e) => e.id === id);
+    const remaining = featuredExams
+      .filter((e) => e.id !== id)
+      .map((e, idx) => ({ ...e, priority: idx + 1 }));
+    saveData(remaining, newArrivals, `"${target?.name || "परीक्षा"}" को फीचर्ड से हटाया गया`);
   };
 
   const handleFeaturedRankChange = (id: string, newRankStr: string) => {
     const newRank = parseInt(newRankStr, 10);
     if (isNaN(newRank) || newRank < 1) return;
 
-    const target = courses.find((c) => c.id === id);
-    if (!target) return;
+    const current = featuredExams.find((e) => e.id === id);
+    if (!current) return;
 
-    // Filter out target and sort other featured items
-    const others = courses
-      .filter((c) => c.id !== id && c.is_featured)
-      .sort((a, b) => a.featured_priority - b.featured_priority);
+    const others = featuredExams
+      .filter((e) => e.id !== id)
+      .sort((a, b) => a.priority - b.priority);
 
+    const clampedRank = Math.max(1, Math.min(newRank, featuredExams.length));
+    const reordered: RankedExam[] = [];
     let rankCounter = 1;
-    const reorderedFeatured: Course[] = [];
 
     for (let i = 0; i <= others.length; i++) {
-      if (rankCounter === newRank) {
-        reorderedFeatured.push({ ...target, featured_priority: rankCounter });
+      if (rankCounter === clampedRank) {
+        reordered.push({ ...current, priority: rankCounter });
         rankCounter++;
       }
       if (i < others.length) {
-        reorderedFeatured.push({ ...others[i], featured_priority: rankCounter });
+        reordered.push({ ...others[i], priority: rankCounter });
         rankCounter++;
       }
     }
 
-    const featuredMap = new Map(reorderedFeatured.map((c) => [c.id, c.featured_priority]));
-    const finalCourses = courses.map((c) =>
-      featuredMap.has(c.id) ? { ...c, featured_priority: featuredMap.get(c.id)! } : c
-    );
-
-    persistCourses(finalCourses, `फीचर्ड क्रम #${newRank} पर सेट किया गया (अन्य स्वतः खिसके)`);
+    saveData(reordered, newArrivals, `क्रम संख्या #${clampedRank} पर सेट की गई`);
   };
 
   // -------------------------------------------------------------
-  // NEW ARRIVAL TOGGLE & REORDER (Auto-Shift)
+  // NEW ARRIVAL EXAM HANDLERS
   // -------------------------------------------------------------
-  const handleToggleNewArrival = (id: string) => {
-    const updated = courses.map((c) =>
-      c.id === id ? { ...c, is_new_arrival: !c.is_new_arrival } : c
-    );
-    persistCourses(updated, "न्यू अराइवल स्थिति अपडेट की गई!");
+  const filteredNewArrivalResults = useMemo(() => {
+    if (!newArrivalSearch.trim()) return [];
+    const q = newArrivalSearch.toLowerCase().trim();
+    const existingIds = new Set(newArrivals.map((e) => e.id));
+    return allExams
+      .filter((e) => !existingIds.has(e.id))
+      .filter(
+        (e) =>
+          e.name.toLowerCase().includes(q) ||
+          (e.short_name && e.short_name.toLowerCase().includes(q)) ||
+          e.board_name.toLowerCase().includes(q)
+      )
+      .slice(0, 10);
+  }, [allExams, newArrivalSearch, newArrivals]);
+
+  const addNewArrivalExam = (exam: ExamSearchResult) => {
+    const nextRank = newArrivals.length + 1;
+    const updated = [...newArrivals, { ...exam, priority: nextRank }];
+    setNewArrivalSearch("");
+    setShowNewArrivalDropdown(false);
+    saveData(featuredExams, updated, `"${exam.name}" को न्यू अराइवल्स में जोड़ा गया (#${nextRank})`);
+  };
+
+  const removeNewArrivalExam = (id: string) => {
+    const target = newArrivals.find((e) => e.id === id);
+    const remaining = newArrivals
+      .filter((e) => e.id !== id)
+      .map((e, idx) => ({ ...e, priority: idx + 1 }));
+    saveData(featuredExams, remaining, `"${target?.name || "परीक्षा"}" को न्यू अराइवल्स से हटाया गया`);
   };
 
   const handleNewArrivalRankChange = (id: string, newRankStr: string) => {
     const newRank = parseInt(newRankStr, 10);
     if (isNaN(newRank) || newRank < 1) return;
 
-    const target = courses.find((c) => c.id === id);
-    if (!target) return;
+    const current = newArrivals.find((e) => e.id === id);
+    if (!current) return;
 
-    const others = courses
-      .filter((c) => c.id !== id && c.is_new_arrival)
-      .sort((a, b) => a.new_arrival_priority - b.new_arrival_priority);
+    const others = newArrivals
+      .filter((e) => e.id !== id)
+      .sort((a, b) => a.priority - b.priority);
 
+    const clampedRank = Math.max(1, Math.min(newRank, newArrivals.length));
+    const reordered: RankedExam[] = [];
     let rankCounter = 1;
-    const reordered: Course[] = [];
 
     for (let i = 0; i <= others.length; i++) {
-      if (rankCounter === newRank) {
-        reordered.push({ ...target, new_arrival_priority: rankCounter });
+      if (rankCounter === clampedRank) {
+        reordered.push({ ...current, priority: rankCounter });
         rankCounter++;
       }
       if (i < others.length) {
-        reordered.push({ ...others[i], new_arrival_priority: rankCounter });
+        reordered.push({ ...others[i], priority: rankCounter });
         rankCounter++;
       }
     }
 
-    const rankMap = new Map(reordered.map((c) => [c.id, c.new_arrival_priority]));
-    const finalCourses = courses.map((c) =>
-      rankMap.has(c.id) ? { ...c, new_arrival_priority: rankMap.get(c.id)! } : c
-    );
-
-    persistCourses(finalCourses, `न्यू अराइवल क्रम #${newRank} पर सेट किया गया`);
-  };
-
-  const handleToggleActive = (id: string) => {
-    const updated = courses.map((c) =>
-      c.id === id ? { ...c, is_active: !c.is_active } : c
-    );
-    persistCourses(updated, "कोर्स की लाइव स्थिति अपडेट की गई!");
+    saveData(featuredExams, reordered, `क्रम संख्या #${clampedRank} पर सेट की गई`);
   };
 
   if (loading) {
     return (
       <div className="py-20 text-center text-stone-400 bg-white rounded-2xl border border-stone-200">
         <div className="w-8 h-8 border-3 border-amber-500/30 border-t-amber-500 rounded-full animate-spin mx-auto mb-3" />
-        <p className="text-xs font-bold text-stone-700">कोर्सेस व प्रोडक्ट्स लोड हो रहे हैं...</p>
+        <p className="text-xs font-bold text-stone-700">लोड हो रहा है...</p>
       </div>
     );
   }
@@ -182,157 +282,281 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
         </div>
       )}
 
-      {/* HEADER EXPLANATION */}
-      <div className="bg-white border border-stone-200 rounded-2xl p-5 shadow-xs">
-        <h2 className="text-base font-bold text-stone-900 flex items-center gap-2">
-          <span>🌟</span>
-          <span>होमपेज प्रदर्शन नियंत्रण (Featured &amp; New Arrivals Management)</span>
-        </h2>
-        <p className="text-xs text-stone-500 mt-1">
-          वेबसाइट के होमपेज पर &quot;फीचर्ड डील्स&quot; और &quot;न्यू अराइवल्स&quot; में कौन-कौन से प्रोडक्ट्स/कोर्स दिखेंगे और किस क्रम संख्या (नंबरिंग) पर आएंगे, उसे यहाँ से नियंत्रित करें।
-        </p>
-      </div>
-
-      {/* PRODUCTS TABLE */}
+      {/* SECTION 1: FEATURED EXAMS (SEARCH ICON ONLY) */}
       <div className="bg-white border border-stone-200 rounded-2xl shadow-xs overflow-hidden">
-        <div className="px-5 py-3.5 border-b border-stone-200 bg-stone-50 flex items-center justify-between">
-          <span className="text-xs font-bold text-stone-800 uppercase tracking-wider">
-            उपलब्ध कोर्सेस एवं नोट्स (कुल {courses.length})
-          </span>
-          {saving && <span className="text-xs font-bold text-amber-600 animate-pulse">सुरक्षित हो रहा है...</span>}
+        <div className="p-5 border-b border-stone-200 bg-amber-50/40">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="text-lg">🌟</span>
+              <div>
+                <h3 className="text-sm font-extrabold text-stone-900">फीचर्ड परीक्षाएं (Featured on Homepage)</h3>
+                <p className="text-xs text-stone-500 mt-0.5">
+                  सर्च आइकन से परीक्षा खोजें और तुरंत जोड़ें। क्रम संख्या डालकर प्राथमिकता सेट करें।
+                </p>
+              </div>
+            </div>
+            {saving && <span className="text-xs font-bold text-amber-600 animate-pulse">सुरक्षित हो रहा है...</span>}
+          </div>
+
+          {/* SEARCH BAR WITH SEARCH ICON */}
+          <div className="relative mt-4" ref={featuredDropdownRef}>
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="🔍 परीक्षा खोजें (उदा. CET, पटवारी, SSC CGL, रेलवे NTPC) और फीचर्ड में जोड़ें..."
+                value={featuredSearch}
+                onChange={(e) => {
+                  setFeaturedSearch(e.target.value);
+                  setShowFeaturedDropdown(true);
+                }}
+                onFocus={() => setShowFeaturedDropdown(true)}
+                className="w-full pl-10 pr-4 py-2.5 bg-white rounded-xl border border-stone-300 text-xs text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600 shadow-2xs font-medium"
+              />
+              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 text-sm">🔍</span>
+              {featuredSearch && (
+                <button
+                  onClick={() => {
+                    setFeaturedSearch("");
+                    setShowFeaturedDropdown(false);
+                  }}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 text-xs font-bold"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+
+            {/* Dropdown Results */}
+            {showFeaturedDropdown && filteredFeaturedResults.length > 0 && (
+              <div className="absolute z-20 top-full left-0 right-0 mt-1.5 bg-white border border-stone-200 rounded-xl shadow-xl overflow-hidden max-h-64 overflow-y-auto divide-y divide-stone-100">
+                {filteredFeaturedResults.map((exam) => (
+                  <div
+                    key={exam.id}
+                    onClick={() => addFeaturedExam(exam)}
+                    className="p-3 hover:bg-amber-50 cursor-pointer flex items-center justify-between transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-stone-900 flex items-center justify-center text-white shrink-0 aspect-square p-0.5 overflow-hidden">
+                        {exam.logo_url ? (
+                          <img src={exam.logo_url} alt="" className="w-full h-full object-contain" />
+                        ) : (
+                          <span className="text-[9px] font-mono text-amber-400 font-bold">
+                            {(exam.short_name || exam.name).substring(0, 3)}
+                          </span>
+                        )}
+                      </div>
+                      <div>
+                        <div className="font-bold text-xs text-stone-900">{exam.name}</div>
+                        <div className="text-[10px] text-stone-500">
+                          {exam.board_name} • {exam.category_name}
+                        </div>
+                      </div>
+                    </div>
+                    <button className="text-xs font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-2.5 py-1 rounded-lg transition-colors">
+                      + जोड़ें
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
-            <thead>
-              <tr className="bg-stone-100/70 border-b border-stone-200 text-stone-600 font-bold text-[11px] uppercase">
-                <th className="py-3 px-4 w-[35%]">प्रोडक्ट / कोर्स का नाम</th>
-                <th className="py-3 px-4 w-[12%] text-center">लाइव स्टेटस</th>
-                <th className="py-3 px-4 w-[26%] text-center bg-amber-50/50">
-                  🌟 फीचर्ड (Featured) • नंबरिंग
-                </th>
-                <th className="py-3 px-4 w-[27%] text-center bg-sky-50/50">
-                  🆕 न्यू अराइवल (New Arrival) • नंबरिंग
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-stone-100">
-              {courses.map((course) => (
-                <tr key={course.id} className="hover:bg-stone-50/80 transition-colors">
-                  {/* Title & Price */}
-                  <td className="py-3.5 px-4">
-                    <div className="font-extrabold text-stone-900 text-xs truncate max-w-[280px]">
-                      {course.title}
+        {/* FEATURED EXAMS LIST */}
+        <div className="p-4">
+          {featuredExams.length === 0 ? (
+            <div className="py-8 text-center text-stone-400 text-xs">
+              <span className="text-2xl block mb-1">🌟</span>
+              अभी कोई परीक्षा फीचर्ड में नहीं जोड़ी गई है। ऊपर दिए गए सर्च बार से खोजकर जोड़ें।
+            </div>
+          ) : (
+            <div className="divide-y divide-stone-100">
+              {featuredExams
+                .sort((a, b) => a.priority - b.priority)
+                .map((exam) => (
+                  <div key={exam.id} className="py-2.5 flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="w-9 h-9 rounded-xl bg-stone-900 border border-stone-700 flex items-center justify-center text-white shrink-0 aspect-square p-0.5 overflow-hidden shadow-2xs">
+                        {exam.logo_url ? (
+                          <img src={exam.logo_url} alt="" className="w-full h-full object-contain" />
+                        ) : (
+                          <span className="text-[9px] font-mono text-amber-400 font-bold">
+                            {(exam.short_name || exam.name).substring(0, 3)}
+                          </span>
+                        )}
+                      </div>
+                      <div className="truncate">
+                        <div className="font-extrabold text-xs text-stone-900 truncate">{exam.name}</div>
+                        <div className="text-[10px] text-stone-500">
+                          {exam.board_name} • {exam.category_name}
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2 mt-0.5 text-[11px] text-stone-500">
-                      <span className="font-mono font-bold text-emerald-700">₹{course.price}</span>
-                      <span className="line-through text-stone-400">₹{course.original_price}</span>
-                      <span className="text-stone-400">• {course.exam_id}</span>
-                    </div>
-                  </td>
 
-                  {/* General Live Active Toggle */}
-                  <td className="py-3.5 px-4 text-center">
-                    <button
-                      onClick={() => handleToggleActive(course.id)}
-                      className={`relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ${
-                        course.is_active ? "bg-emerald-600" : "bg-stone-300"
-                      }`}
-                    >
-                      <span
-                        className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
-                          course.is_active ? "translate-x-4" : "translate-x-0"
-                        }`}
-                      />
+                    <div className="flex items-center gap-3 shrink-0">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[10px] font-bold text-stone-500">क्रम:</span>
+                        <input
+                          type="number"
+                          min="1"
+                          max={featuredExams.length}
+                          defaultValue={exam.priority}
+                          key={`feat-${exam.id}-${exam.priority}`}
+                          onBlur={(e) => handleFeaturedRankChange(exam.id, e.target.value)}
+                          className="w-12 text-center font-mono font-bold bg-white border border-amber-300 rounded py-0.5 px-1 text-xs text-stone-900 focus:border-amber-600 outline-none"
+                        />
+                      </div>
+                      <button
+                        onClick={() => removeFeaturedExam(exam.id)}
+                        className="w-7 h-7 rounded-lg bg-stone-100 hover:bg-rose-50 text-stone-400 hover:text-rose-600 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer"
+                        title="हटाएं"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* SECTION 2: NEW ARRIVALS EXAMS (SEARCH ICON ONLY) */}
+      <div className="bg-white border border-stone-200 rounded-2xl shadow-xs overflow-hidden">
+        <div className="p-5 border-b border-stone-200 bg-sky-50/40">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="text-lg">🆕</span>
+              <div>
+                <h3 className="text-sm font-extrabold text-stone-900">न्यू अराइवल्स (New Arrivals on Homepage)</h3>
+                <p className="text-xs text-stone-500 mt-0.5">
+                  सर्च आइकन से परीक्षा खोजें और तुरंत जोड़ें। होमपेज पर नए आगमन के रूप में प्रदर्शित होंगी।
+                </p>
+              </div>
+            </div>
+            {saving && <span className="text-xs font-bold text-sky-600 animate-pulse">सुरक्षित हो रहा है...</span>}
+          </div>
+
+          {/* SEARCH BAR WITH SEARCH ICON */}
+          <div className="relative mt-4" ref={newArrivalDropdownRef}>
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="🔍 परीक्षा खोजें और न्यू अराइवल्स में जोड़ें..."
+                value={newArrivalSearch}
+                onChange={(e) => {
+                  setNewArrivalSearch(e.target.value);
+                  setShowNewArrivalDropdown(true);
+                }}
+                onFocus={() => setShowNewArrivalDropdown(true)}
+                className="w-full pl-10 pr-4 py-2.5 bg-white rounded-xl border border-stone-300 text-xs text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-sky-600 focus:ring-1 focus:ring-sky-600 shadow-2xs font-medium"
+              />
+              <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-stone-400 text-sm">🔍</span>
+              {newArrivalSearch && (
+                <button
+                  onClick={() => {
+                    setNewArrivalSearch("");
+                    setShowNewArrivalDropdown(false);
+                  }}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 text-xs font-bold"
+                >
+                  ✕
+                </button>
+              )}
+            </div>
+
+            {/* Dropdown Results */}
+            {showNewArrivalDropdown && filteredNewArrivalResults.length > 0 && (
+              <div className="absolute z-20 top-full left-0 right-0 mt-1.5 bg-white border border-stone-200 rounded-xl shadow-xl overflow-hidden max-h-64 overflow-y-auto divide-y divide-stone-100">
+                {filteredNewArrivalResults.map((exam) => (
+                  <div
+                    key={exam.id}
+                    onClick={() => addNewArrivalExam(exam)}
+                    className="p-3 hover:bg-sky-50 cursor-pointer flex items-center justify-between transition-colors"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-stone-900 flex items-center justify-center text-white shrink-0 aspect-square p-0.5 overflow-hidden">
+                        {exam.logo_url ? (
+                          <img src={exam.logo_url} alt="" className="w-full h-full object-contain" />
+                        ) : (
+                          <span className="text-[9px] font-mono text-sky-400 font-bold">
+                            {(exam.short_name || exam.name).substring(0, 3)}
+                          </span>
+                        )}
+                      </div>
+                      <div>
+                        <div className="font-bold text-xs text-stone-900">{exam.name}</div>
+                        <div className="text-[10px] text-stone-500">
+                          {exam.board_name} • {exam.category_name}
+                        </div>
+                      </div>
+                    </div>
+                    <button className="text-xs font-bold text-sky-700 bg-sky-100 hover:bg-sky-200 px-2.5 py-1 rounded-lg transition-colors">
+                      + जोड़ें
                     </button>
-                    <div className="text-[10px] font-bold mt-0.5">
-                      {course.is_active ? (
-                        <span className="text-emerald-700">Live ON</span>
-                      ) : (
-                        <span className="text-stone-400">OFF</span>
-                      )}
-                    </div>
-                  </td>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
 
-                  {/* Featured Toggle + Numbering */}
-                  <td className="py-3.5 px-4 bg-amber-50/30">
-                    <div className="flex items-center justify-center gap-3">
-                      <div className="flex items-center gap-1.5">
-                        <button
-                          onClick={() => handleToggleFeatured(course.id)}
-                          className={`relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ${
-                            course.is_featured ? "bg-amber-600" : "bg-stone-300"
-                          }`}
-                        >
-                          <span
-                            className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
-                              course.is_featured ? "translate-x-4" : "translate-x-0"
-                            }`}
-                          />
-                        </button>
-                        <span className="text-[10px] font-bold text-amber-900">
-                          {course.is_featured ? "ON" : "OFF"}
-                        </span>
+        {/* NEW ARRIVAL EXAMS LIST */}
+        <div className="p-4">
+          {newArrivals.length === 0 ? (
+            <div className="py-8 text-center text-stone-400 text-xs">
+              <span className="text-2xl block mb-1">🆕</span>
+              अभी कोई परीक्षा न्यू अराइवल्स में नहीं जोड़ी गई है। ऊपर दिए गए सर्च बार से खोजकर जोड़ें।
+            </div>
+          ) : (
+            <div className="divide-y divide-stone-100">
+              {newArrivals
+                .sort((a, b) => a.priority - b.priority)
+                .map((exam) => (
+                  <div key={exam.id} className="py-2.5 flex items-center justify-between gap-4">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="w-9 h-9 rounded-xl bg-stone-900 border border-stone-700 flex items-center justify-center text-white shrink-0 aspect-square p-0.5 overflow-hidden shadow-2xs">
+                        {exam.logo_url ? (
+                          <img src={exam.logo_url} alt="" className="w-full h-full object-contain" />
+                        ) : (
+                          <span className="text-[9px] font-mono text-sky-400 font-bold">
+                            {(exam.short_name || exam.name).substring(0, 3)}
+                          </span>
+                        )}
                       </div>
-
-                      {course.is_featured && (
-                        <div className="flex items-center gap-1">
-                          <span className="text-[10px] text-stone-500 font-bold">क्रम:</span>
-                          <input
-                            type="number"
-                            min="1"
-                            max={courses.length}
-                            defaultValue={course.featured_priority || 1}
-                            key={`feat-${course.id}-${course.featured_priority}`}
-                            onBlur={(e) => handleFeaturedRankChange(course.id, e.target.value)}
-                            className="w-12 text-center font-mono font-bold bg-white border border-amber-300 rounded py-0.5 px-1 text-xs text-stone-900 focus:border-amber-600 outline-none"
-                          />
+                      <div className="truncate">
+                        <div className="font-extrabold text-xs text-stone-900 truncate">{exam.name}</div>
+                        <div className="text-[10px] text-stone-500">
+                          {exam.board_name} • {exam.category_name}
                         </div>
-                      )}
-                    </div>
-                  </td>
-
-                  {/* New Arrival Toggle + Numbering */}
-                  <td className="py-3.5 px-4 bg-sky-50/30">
-                    <div className="flex items-center justify-center gap-3">
-                      <div className="flex items-center gap-1.5">
-                        <button
-                          onClick={() => handleToggleNewArrival(course.id)}
-                          className={`relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out ${
-                            course.is_new_arrival ? "bg-sky-600" : "bg-stone-300"
-                          }`}
-                        >
-                          <span
-                            className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
-                              course.is_new_arrival ? "translate-x-4" : "translate-x-0"
-                            }`}
-                          />
-                        </button>
-                        <span className="text-[10px] font-bold text-sky-900">
-                          {course.is_new_arrival ? "ON" : "OFF"}
-                        </span>
                       </div>
-
-                      {course.is_new_arrival && (
-                        <div className="flex items-center gap-1">
-                          <span className="text-[10px] text-stone-500 font-bold">क्रम:</span>
-                          <input
-                            type="number"
-                            min="1"
-                            max={courses.length}
-                            defaultValue={course.new_arrival_priority || 1}
-                            key={`new-${course.id}-${course.new_arrival_priority}`}
-                            onBlur={(e) => handleNewArrivalRankChange(course.id, e.target.value)}
-                            className="w-12 text-center font-mono font-bold bg-white border border-sky-300 rounded py-0.5 px-1 text-xs text-stone-900 focus:border-sky-600 outline-none"
-                          />
-                        </div>
-                      )}
                     </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+
+                    <div className="flex items-center gap-3 shrink-0">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[10px] font-bold text-stone-500">क्रम:</span>
+                        <input
+                          type="number"
+                          min="1"
+                          max={newArrivals.length}
+                          defaultValue={exam.priority}
+                          key={`new-${exam.id}-${exam.priority}`}
+                          onBlur={(e) => handleNewArrivalRankChange(exam.id, e.target.value)}
+                          className="w-12 text-center font-mono font-bold bg-white border border-sky-300 rounded py-0.5 px-1 text-xs text-stone-900 focus:border-sky-600 outline-none"
+                        />
+                      </div>
+                      <button
+                        onClick={() => removeNewArrivalExam(exam.id)}
+                        className="w-7 h-7 rounded-lg bg-stone-100 hover:bg-rose-50 text-stone-400 hover:text-rose-600 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer"
+                        title="हटाएं"
+                      >
+                        ✕
+                      </button>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          )}
         </div>
       </div>
     </div>

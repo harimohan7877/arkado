@@ -1,0 +1,35 @@
+{
+  "bundle_id": "bundle-029",
+  "bundle_num": 29,
+  "category_id": "other-states",
+  "category_name": "अन्य राज्य",
+  "category_icon": "🦁",
+  "title": "अन्य राज्य — गुजरात (GSSSB & GPSC)",
+  "total_exams": 2,
+  "boards_included": [
+    "Gujarat"
+  ],
+  "official_portal": "https://gsssb.gujarat.gov.in",
+  "exams": [
+    {
+      "id": 7010,
+      "name": "GSSSB संयुक्त प्रतियोगी परीक्षा (CCE Group A & B)",
+      "eligibility": "स्नातक",
+      "age_limit": "20-35 वर्ष",
+      "applicant_scale": "5+ लाख",
+      "exam_pattern": "Prelims CBRT (100) + Mains (Descriptive/Objective)",
+      "viral_subtext": "हेड क्लर्क, सीनियर क्लर्क, जूनियर क्लर्क 5,554 पद",
+      "status": "verified"
+    },
+    {
+      "id": 7011,
+      "name": "गुजरात पुलिस लोकरक्षक (LRD) व PSI भर्ती",
+      "eligibility": "12वीं (LRD) / स्नातक (PSI)",
+      "age_limit": "18-33 वर्ष",
+      "applicant_scale": "9+ लाख",
+      "exam_pattern": "शारीरिक दौड़ + 200 अंक लिखित परीक्षा",
+      "viral_subtext": "12,472 पुलिस पद",
+      "status": "verified"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "bundle_number": 106,
+  "bundle_id": "raw_bundle_106",
+  "range": "5251 - 5300",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5251,
+      "group_sl": 3136,
+      "exam_id": 3858,
+      "name": "MH SET Education",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "global_sl": 5252,
+      "group_sl": 3265,
+      "exam_id": 3729,
+      "name": "MAH B.Ed CET",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "global_sl": 5253,
+      "group_sl": 4145,
+      "exam_id": 2849,
+      "name": "ICDS Maharashtra Mukhya Sevika",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "global_sl": 5254,
+      "group_sl": 5102,
+      "exam_id": 1892,
+      "name": "DMER Maharashtra Professor",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "global_sl": 5255,
+      "group_sl": 1860,
+      "exam_id": 5134,
+      "name": "Rajasthan Post Office Postman Mail Guard",
+      "group": "Rajasthan Police & Security Exams"
+    },
+    {
+      "global_sl": 5256,
+      "group_sl": 1863,
+      "exam_id": 5131,
+      "name": "Rajasthan Police SI Telecom",
+      "group": "Rajasthan Police & Security Exams"
+    },
+    {
+      "global_sl": 5257,
+      "group_sl": 1864,
+      "exam_id": 5130,
+      "name": "Rajasthan Police SI",
+      "group": "Rajasthan Police & Security Exams"
+    },
+    {
+      "global_sl": 5258,
+      "group_sl": 1865,
+      "exam_id": 5129,
+      "name": "Rajasthan Police Mahila ASI",
+      "group": "Rajasthan Police & Security Exams"
+    },
+    {
+      "global_sl": 5259,
+      "group_sl": 1866,
+      "exam_id": 5128,
+      "name": "Rajasthan Police Constable Telecommunication",
+      "group": "Rajasthan Police & Security Exams"
+    },
+    {
+      "global_sl": 5260,
+      "group_sl": 1867,
+      "exam_id": 5127,
+      "name": "Rajasthan Police Constable",
+      "group": "Rajasthan Police & Security Exams"
+    },
+    {
+      "global_sl": 5261,
+      "group_sl": 1873,
+      "exam_id": 5121,
+      "name": "Rajasthan Jail Prahari",
+      "group": "Rajasthan Police & Security Exams"
+    },
+    {
+      "global_sl": 5262,
+      "group_sl": 1876,
+      "exam_id": 5118,
+      "name": "Rajasthan Home Guard",
+      "group": "Rajasthan Police & Security Exams"
+    },
+    {
+      "global_sl": 5263,
+      "group_sl": 1889,
+      "exam_id": 5105,
+      "name": "Rajasthan Forest Guard",
+      "group": "Rajasthan Police & Security Exams"
+    },
+    {
+      "global_sl": 5264,
+      "group_sl": 1904,
+      "exam_id": 5090,
+      "name": "Rajasthan Abkari Vibhag Excise Constable",
+      "group": "Rajasthan Police & Security Exams"
+    },
+    {
+      "global_sl": 5265,
+      "group_sl": 2588,
+      "exam_id": 4406,
+      "name": "NIA MTS",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "global_sl": 5266,
+      "group_sl": 2589,
+      "exam_id": 4405,
+      "name": "NIA DEO",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "global_sl": 5267,
+      "group_sl": 2591,
+      "exam_id": 4403,
+      "name": "NIA ASI & Sub Inspector",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "global_sl": 5268,
+      "group_sl": 2738,
+      "exam_id": 4256,
+      "name": "NCB Junior Intelligence Officer",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "global_sl": 5269,
+      "group_sl": 4203,
+      "exam_id": 2791,
+      "name": "IB Security Assistant Motor Transport",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "global_sl": 5270,
+      "group_sl": 4204,
+      "exam_id": 2790,
+      "name": "IB Security Assistant",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "global_sl": 5271,
+      "group_sl": 4205,
+      "exam_id": 2789,
+      "name": "IB MTS",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "global_sl": 5272,
+      "group_sl": 4206,
+      "exam_id": 2788,
+      "name": "IB JIO",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "global_sl": 5273,
+      "group_sl": 4207,
+      "exam_id": 2787,
+      "name": "IB ACIO",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "global_sl": 5274,
+      "group_sl": 6356,
+      "exam_id": 638,
+      "name": "BCAS Security Officer",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "global_sl": 5275,
+      "group_sl": 3298,
+      "exam_id": 3696,
+      "name": "LIC HFL Junior Assistant",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "global_sl": 5276,
+      "group_sl": 3299,
+      "exam_id": 3695,
+      "name": "LIC HFL Apprentice",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "global_sl": 5277,
+      "group_sl": 3300,
+      "exam_id": 3694,
+      "name": "LIC AAO Specialist Legal",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "global_sl": 5278,
+      "group_sl": 3301,
+      "exam_id": 3693,
+      "name": "LIC AAO Specialist CS",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "global_sl": 5279,
+      "group_sl": 3302,
+      "exam_id": 3692,
+      "name": "LIC AAO Specialist CA",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "global_sl": 5280,
+      "group_sl": 3303,
+      "exam_id": 3691,
+      "name": "LIC AAO Specialist Actuarial",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "global_sl": 5281,
+      "group_sl": 3304,
+      "exam_id": 3690,
+      "name": "LIC AAO Insurance Specialists",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "global_sl": 5282,
+      "group_sl": 3305,
+      "exam_id": 3689,
+      "name": "LIC AAO Generalist",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "global_sl": 5283,
+      "group_sl": 3306,
+      "exam_id": 3688,
+      "name": "LIC AAO AE Electrical",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "global_sl": 5284,
+      "group_sl": 3307,
+      "exam_id": 3687,
+      "name": "LIC AAO AE Civil",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "global_sl": 5285,
+      "group_sl": 3566,
+      "exam_id": 3428,
+      "name": "KDCCB Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5286,
+      "group_sl": 3567,
+      "exam_id": 3427,
+      "name": "KDCCB Bank Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5287,
+      "group_sl": 4725,
+      "exam_id": 2269,
+      "name": "GDCC Bank Clerk, Junior Officer",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5288,
+      "group_sl": 5195,
+      "exam_id": 1799,
+      "name": "DCCB Vizianagaram Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5289,
+      "group_sl": 5196,
+      "exam_id": 1798,
+      "name": "DCCB Nellore Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5290,
+      "group_sl": 5197,
+      "exam_id": 1797,
+      "name": "DCCB Kurnool Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5291,
+      "group_sl": 5198,
+      "exam_id": 1796,
+      "name": "DCCB Kakinada Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5292,
+      "group_sl": 5199,
+      "exam_id": 1795,
+      "name": "DCCB Kadapa Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5293,
+      "group_sl": 5200,
+      "exam_id": 1794,
+      "name": "DCCB Guntur Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5294,
+      "group_sl": 5201,
+      "exam_id": 1793,
+      "name": "DCCB Anantapur Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5295,
+      "group_sl": 4440,
+      "exam_id": 2554,
+      "name": "HP TET TGT Non Medical",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5296,
+      "group_sl": 4441,
+      "exam_id": 2553,
+      "name": "HP TET TGT Medical",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5297,
+      "group_sl": 4442,
+      "exam_id": 2552,
+      "name": "HP TET TGT Arts",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5298,
+      "group_sl": 4443,
+      "exam_id": 2551,
+      "name": "HP TET Special Educator For Class 6 to 12",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5299,
+      "group_sl": 4444,
+      "exam_id": 2550,
+      "name": "HP TET Special Educator",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5300,
+      "group_sl": 4445,
+      "exam_id": 2549,
+      "name": "HP TET Shastri Teacher",
+      "group": "Himachal Pradesh TET Exams"
+    }
+  ]
+}

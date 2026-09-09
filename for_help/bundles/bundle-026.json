@@ -1,0 +1,55 @@
+{
+  "bundle_id": "bundle-026",
+  "bundle_num": 26,
+  "category_id": "central-academics",
+  "category_name": "केंद्रीय शिक्षण & PSU",
+  "category_icon": "⚙️",
+  "title": "केंद्रीय शिक्षण & PSU — केंद्रीय सार्वजनिक उपक्रम (PSU) एवं इंजीनियरिंग",
+  "total_exams": 4,
+  "boards_included": [
+    "PSU & Engg"
+  ],
+  "official_portal": "https://gate2026.iitkgp.ac.in",
+  "exams": [
+    {
+      "id": 6010,
+      "name": "GATE (ग्रेजुएट एप्टीट्यूड टेस्ट इन इंजीनियरिंग) 2026",
+      "eligibility": "B.Tech / B.E / M.Sc / MCA",
+      "age_limit": "कोई सीमा नहीं",
+      "applicant_scale": "8.5+ लाख",
+      "exam_pattern": "65 प्रश्न • 100 अंक • 3 घंटे CBT",
+      "viral_subtext": "ONGC, IOCL, NTPC, BHEL भर्ती का मुख्य गेटवे",
+      "status": "verified"
+    },
+    {
+      "id": 6011,
+      "name": "ISRO वैज्ञानिक / इंजीनियर 'SC' (Scientist/Engineer)",
+      "eligibility": "B.E / B.Tech (प्रथम श्रेणी 65% अंक)",
+      "age_limit": "28 वर्ष",
+      "applicant_scale": "1.5 लाख",
+      "exam_pattern": "लिखित परीक्षा (80 प्रश्न) + साक्षात्कार",
+      "viral_subtext": "भारतीय अंतरिक्ष अनुसंधान संगठन",
+      "status": "verified"
+    },
+    {
+      "id": 6012,
+      "name": "DRDO रक्षा अनुसंधान एवं विकास संगठन (CEPTAM)",
+      "eligibility": "डिप्लोमा / ITI / B.Sc",
+      "age_limit": "18-28 वर्ष",
+      "applicant_scale": "4+ लाख",
+      "exam_pattern": "Tier-1 CBT + Tier-2 ट्रेड टेस्ट",
+      "viral_subtext": "सीनियर टेक्निकल असिस्टेंट (STA-B)",
+      "status": "verified"
+    },
+    {
+      "id": 6013,
+      "name": "BARC भाभा परमाणु अनुसंधान केंद्र (OCES/DGFS)",
+      "eligibility": "B.E / B.Tech / M.Sc",
+      "age_limit": "26 वर्ष",
+      "applicant_scale": "1+ लाख",
+      "exam_pattern": "BARC ऑनलाइन परीक्षा / GATE स्कोर + इंटरव्यू",
+      "viral_subtext": "परमाणु वैज्ञानिक संवर्ग",
+      "status": "verified"
+    }
+  ]
+}

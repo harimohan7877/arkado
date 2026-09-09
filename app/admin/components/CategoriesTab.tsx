@@ -1,558 +1,1159 @@
 "use client";
 
-import { useState, useEffect, startTransition } from "react";
+import { useState, useEffect, useMemo, useTransition } from "react";
 
-interface Exam {
+// ==========================================
+// TYPES & INTERFACES
+// ==========================================
+export interface ExamItem {
   id: string;
-  category_id: string;
   name: string;
-  short_name: string;
-  board: string;
-  logo_url?: string;
+  short_name?: string;
+  logo_url?: string; // SQUARE / CHOKOR LOGO
+  priority: number;
   is_active: boolean;
+  eligibility?: string;
+  age_limit?: string;
+  applicant_scale?: string;
+  exam_pattern?: string;
+  viral_subtext?: string;
+  notes_link?: string;
 }
 
-interface Category {
+export interface BoardItem {
+  board_id: string;
+  name: string;
+  short_name: string;
+  icon?: string;
+  logo_url?: string; // ROUND LOGO
+  priority: number;
+  is_active: boolean;
+  viral_preview?: string;
+  viral_names?: string[]; // 2-3 viral names displayed inside card
+  official_portal?: string;
+  exams: ExamItem[];
+}
+
+export interface CategoryItem {
   id: string;
   name: string;
   name_hi?: string;
   icon: string;
-  logo_url?: string;
-  color: string;
+  logo_url?: string; // ROUND LOGO
   priority: number;
   is_active: boolean;
-  exam_ids: string[];
-  created_at: string;
-  updated_at: string;
+  sub_preview?: string;
+  viral_names?: string[]; // 2-3 viral names displayed inside card
+  description?: string;
+  boards: BoardItem[];
 }
 
 interface CategoriesTabProps {
   getAuthHeaders: () => Record<string, string>;
 }
 
-const COLOR_CHOICES = [
-  { value: "bg-indigo-600", label: "Indigo" },
-  { value: "bg-rose-600", label: "Rose" },
-  { value: "bg-amber-600", label: "Amber" },
-  { value: "bg-emerald-600", label: "Emerald" },
-  { value: "bg-sky-600", label: "Sky" },
-  { value: "bg-violet-600", label: "Violet" },
-  { value: "bg-slate-700", label: "Slate" },
-  { value: "bg-teal-700", label: "Teal" },
-];
-
-const ICON_CHOICES = ["🏛️", "🛡️", "📚", "🚂", "⚖️", "🏦", "💻", "🌾", "🏥", "✈️", "🚢", "📊", "🎓", "🏫", "📋"];
+type DrillLevel = "categories" | "boards" | "exams";
 
 export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [allExams, setAllExams] = useState<Exam[]>([]);
+  const [categories, setCategories] = useState<CategoryItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const [showModal, setShowModal] = useState(false);
-  const [editingCategory, setEditingCategory] = useState<Category | null>(null);
-  const [formData, setFormData] = useState<Partial<Category>>({
-    name: "",
-    name_hi: "",
-    icon: "🏛️",
-    color: "bg-indigo-600",
-    priority: 1,
-    is_active: true,
-    exam_ids: [],
-  });
-  const [logoFile, setLogoFile] = useState<File | null>(null);
-  const [logoPreview, setLogoPreview] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
-  const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
-  const [search, setSearch] = useState("");
-  const [examSearch, setExamSearch] = useState("");
+  const [toastMsg, setToastMsg] = useState<{ text: string; type: "success" | "warning" | "error" } | null>(null);
 
-  const fetchAll = async () => {
+  // Progressive Drilldown State
+  const [level, setLevel] = useState<DrillLevel>("categories");
+  const [currentCategory, setCurrentCategory] = useState<CategoryItem | null>(null);
+  const [currentBoard, setCurrentBoard] = useState<BoardItem | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isPending, startTransition] = useTransition();
+
+  // Edit Modal State
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [editLevel, setEditLevel] = useState<DrillLevel>("categories");
+  const [editFormData, setEditFormData] = useState<any>({});
+
+  // Add Item Modal State
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [addFormData, setAddFormData] = useState<any>({});
+
+  // Show toast utility
+  const showToast = (text: string, type: "success" | "warning" | "error" = "success") => {
+    setToastMsg({ text, type });
+    setTimeout(() => setToastMsg(null), 3500);
+  };
+
+  // -------------------------------------------------------------
+  // INITIAL PROGRESSIVE LOAD
+  // -------------------------------------------------------------
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
+  const fetchCategories = async () => {
     try {
-      const [catRes, examRes] = await Promise.all([
-        fetch("/api/admin/categories", { headers: getAuthHeaders() }),
-        fetch("/api/admin/exams", { headers: getAuthHeaders() }),
-      ]);
-      if (catRes.ok) setCategories(await catRes.json());
-      if (examRes.ok) setAllExams(await examRes.json());
-    } catch (err) {
-      console.error(err);
+      setLoading(true);
+      const res = await fetch("/api/admin/categories", {
+        headers: getAuthHeaders(),
+      });
+      if (!res.ok) throw new Error("Failed to load categories");
+      const data: CategoryItem[] = await res.json();
+      // Ensure sorted by priority
+      const sorted = (data || []).sort((a, b) => a.priority - b.priority);
+      setCategories(sorted);
+    } catch (err: any) {
+      showToast(err.message || "श्रेणियां लोड करने में त्रुटि", "error");
     } finally {
       setLoading(false);
     }
   };
 
-  useEffect(() => {
-    startTransition(() => {
-      fetchAll();
-    });
-  }, []);
-
-  const handleLogoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setLogoFile(file);
-      setLogoPreview(URL.createObjectURL(file));
-    }
-  };
-
-  const openCreateModal = () => {
-    setEditingCategory(null);
-    setFormData({
-      name: "",
-      name_hi: "",
-      icon: "🏛️",
-      color: "bg-indigo-600",
-      priority: categories.length + 1,
-      is_active: true,
-      exam_ids: [],
-    });
-    setLogoFile(null);
-    setLogoPreview(null);
-    setExamSearch("");
-    setShowModal(true);
-  };
-
-  const openEditModal = (cat: Category) => {
-    setEditingCategory(cat);
-    setFormData({ ...cat });
-    setLogoFile(null);
-    setLogoPreview(cat.logo_url || null);
-    setExamSearch("");
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-    setEditingCategory(null);
-    setLogoFile(null);
-    setLogoPreview(null);
-    setExamSearch("");
-  };
-
-  const handleSave = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSaving(true);
-    setMessage(null);
-
+  // -------------------------------------------------------------
+  // SAVE HIERARCHICAL DATA TO SERVER
+  // -------------------------------------------------------------
+  const persistCategories = async (updatedList: CategoryItem[], successText = "परिवर्तन सफलतापूर्वक सुरक्षित किया गया!") => {
     try {
-      const fd = new FormData();
-      Object.entries(formData).forEach(([key, value]) => {
-        if (key === "exam_ids") fd.append(key, JSON.stringify(value || []));
-        else if (value !== undefined && value !== null) fd.append(key, String(value));
+      setSaving(true);
+      const res = await fetch("/api/admin/categories", {
+        method: "PUT",
+        headers: {
+          ...getAuthHeaders(),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedList),
       });
-      if (logoFile) fd.append("logo", logoFile);
-
-      const url = editingCategory
-        ? `/api/admin/categories/${editingCategory.id}`
-        : "/api/admin/categories";
-
-      const res = await fetch(url, {
-        method: editingCategory ? "PUT" : "POST",
-        headers: { Authorization: getAuthHeaders().Authorization },
-        body: fd,
-      });
-
-      if (res.ok) {
-        setMessage({ type: "success", text: editingCategory ? "Category updated!" : "Category created!" });
-        fetchAll();
-        closeModal();
-      } else {
-        const err = await res.json();
-        throw new Error(err.error || "Failed to save");
-      }
-    } catch (err: unknown) {
-      setMessage({ type: "error", text: err instanceof Error ? err.message : "Save failed" });
+      if (!res.ok) throw new Error("Failed to save changes");
+      setCategories(updatedList);
+      showToast(successText, "success");
+    } catch (err: any) {
+      showToast(err.message || "सेव करने में त्रुटि हुई", "error");
     } finally {
       setSaving(false);
     }
   };
 
-  const handleDelete = async (id: string) => {
-    if (!confirm("Delete this category? Exams will not be deleted but will lose their category link.")) return;
-    try {
-      const res = await fetch(`/api/admin/categories/${id}`, {
-        method: "DELETE",
-        headers: getAuthHeaders(),
-      });
-      if (res.ok) {
-        fetchAll();
-        setMessage({ type: "success", text: "Category deleted" });
+  // -------------------------------------------------------------
+  // ⚡ AUTO-SHIFT REORDERING ALGORITHM
+  // If an item is given rank X, existing item at X and subsequent items shift +1
+  // -------------------------------------------------------------
+  function autoShiftReorder<T extends { id?: string; board_id?: string; priority: number }>(
+    items: T[],
+    targetIdentifier: string,
+    newRank: number,
+    idKey: "id" | "board_id" = "id"
+  ): T[] {
+    const currentItem = items.find((i: any) => (i[idKey] || i.id) === targetIdentifier);
+    if (!currentItem) return items;
+
+    // Filter out target item and sort others by current priority
+    const others = items
+      .filter((i: any) => (i[idKey] || i.id) !== targetIdentifier)
+      .sort((a, b) => a.priority - b.priority);
+
+    const clampedRank = Math.max(1, Math.min(newRank, items.length));
+    const reordered: T[] = [];
+    let rankCounter = 1;
+
+    for (let i = 0; i <= others.length; i++) {
+      if (rankCounter === clampedRank) {
+        reordered.push({ ...currentItem, priority: rankCounter });
+        rankCounter++;
       }
-    } catch {
-      setMessage({ type: "error", text: "Delete failed" });
+      if (i < others.length) {
+        reordered.push({ ...others[i], priority: rankCounter });
+        rankCounter++;
+      }
     }
-  };
 
-  const handleToggleActive = async (cat: Category) => {
-    try {
-      await fetch(`/api/admin/categories/${cat.id}`, {
-        method: "PUT",
-        headers: { ...getAuthHeaders(), "Content-Type": "application/json" },
-        body: JSON.stringify({ is_active: !cat.is_active }),
-      });
-      fetchAll();
-    } catch (err) {
-      console.error(err);
-    }
-  };
+    return reordered.sort((a, b) => a.priority - b.priority);
+  }
 
-  const toggleExam = (examId: string) => {
-    const current = formData.exam_ids || [];
-    if (current.includes(examId)) {
-      setFormData({ ...formData, exam_ids: current.filter((id) => id !== examId) });
-    } else {
-      setFormData({ ...formData, exam_ids: [...current, examId] });
-    }
-  };
+  // Handle Numbering input change with auto-shift
+  const handleNumberChange = (targetId: string, newRankStr: string, currentLevel: DrillLevel) => {
+    const newRank = parseInt(newRankStr, 10);
+    if (isNaN(newRank) || newRank < 1) return;
 
-  const filteredCategories = categories
-    .filter((c) => {
-      if (!search.trim()) return true;
-      const q = search.toLowerCase();
-      return (
-        c.name.toLowerCase().includes(q) ||
-        (c.name_hi || "").toLowerCase().includes(q) ||
-        c.id.toLowerCase().includes(q)
+    if (currentLevel === "categories") {
+      const updated = autoShiftReorder(categories, targetId, newRank, "id");
+      persistCategories(updated, `श्रेणी का क्रम #${newRank} पर सेट किया गया (अन्य स्वतः खिसके)`);
+    } else if (currentLevel === "boards" && currentCategory) {
+      const currentBoards = currentCategory.boards || [];
+      const updatedBoards = autoShiftReorder(currentBoards, targetId, newRank, "board_id");
+      
+      const updatedCategories = categories.map((cat) =>
+        cat.id === currentCategory.id ? { ...cat, boards: updatedBoards } : cat
       );
-    })
-    .sort((a, b) => a.priority - b.priority);
+      setCurrentCategory({ ...currentCategory, boards: updatedBoards });
+      persistCategories(updatedCategories, `भर्ती बोर्ड का क्रम #${newRank} पर सेट किया गया`);
+    } else if (currentLevel === "exams" && currentCategory && currentBoard) {
+      const currentExams = currentBoard.exams || [];
+      const updatedExams = autoShiftReorder(currentExams, targetId, newRank, "id");
 
-  const filteredExams = allExams.filter((e) => {
-    if (!examSearch.trim()) return true;
-    const q = examSearch.toLowerCase();
-    return e.name.toLowerCase().includes(q) || e.short_name.toLowerCase().includes(q) || e.board.toLowerCase().includes(q);
-  });
+      const updatedBoards = (currentCategory.boards || []).map((b) =>
+        b.board_id === currentBoard.board_id ? { ...b, exams: updatedExams } : b
+      );
+      const updatedCategories = categories.map((cat) =>
+        cat.id === currentCategory.id ? { ...cat, boards: updatedBoards } : cat
+      );
+      setCurrentBoard({ ...currentBoard, exams: updatedExams });
+      setCurrentCategory({ ...currentCategory, boards: updatedBoards });
+      persistCategories(updatedCategories, `परीक्षा का क्रम #${newRank} पर सेट किया गया`);
+    }
+  };
 
-  if (loading) return <div className="py-12 text-center text-stone-500 bg-white rounded-2xl border border-stone-200">Loading categories...</div>;
+  // -------------------------------------------------------------
+  // 🔘 ON/OFF CASCADING TOGGLE
+  // Main category must be ON for boards to be ON, board must be ON for exams to be ON
+  // -------------------------------------------------------------
+  const handleToggleStatus = (targetId: string, currentLevel: DrillLevel) => {
+    if (currentLevel === "categories") {
+      const updated = categories.map((cat) => {
+        if (cat.id === targetId) {
+          const nextActive = !cat.is_active;
+          return { ...cat, is_active: nextActive };
+        }
+        return cat;
+      });
+      persistCategories(updated, "श्रेणी की दृश्यता (On/Off) अपडेट की गई");
+      if (currentCategory && currentCategory.id === targetId) {
+        setCurrentCategory(updated.find((c) => c.id === targetId) || null);
+      }
+    } else if (currentLevel === "boards" && currentCategory) {
+      // Rule: Category must be ON
+      if (!currentCategory.is_active) {
+        showToast("मूल श्रेणी बंद है! पहले मुख्य श्रेणी को चालू (ON) करें।", "warning");
+        return;
+      }
+
+      const updatedBoards = (currentCategory.boards || []).map((b) => {
+        if (b.board_id === targetId) {
+          return { ...b, is_active: !b.is_active };
+        }
+        return b;
+      });
+
+      const updatedCategories = categories.map((cat) =>
+        cat.id === currentCategory.id ? { ...cat, boards: updatedBoards } : cat
+      );
+      setCurrentCategory({ ...currentCategory, boards: updatedBoards });
+      persistCategories(updatedCategories, "भर्ती बोर्ड की दृश्यता (On/Off) अपडेट की गई");
+      if (currentBoard && currentBoard.board_id === targetId) {
+        setCurrentBoard(updatedBoards.find((b) => b.board_id === targetId) || null);
+      }
+    } else if (currentLevel === "exams" && currentCategory && currentBoard) {
+      // Rule: Category AND Board must be ON
+      if (!currentCategory.is_active) {
+        showToast("मूल श्रेणी बंद है! पहले मुख्य श्रेणी को चालू करें।", "warning");
+        return;
+      }
+      if (!currentBoard.is_active) {
+        showToast("मूल भर्ती बोर्ड बंद है! पहले बोर्ड को चालू करें।", "warning");
+        return;
+      }
+
+      const updatedExams = (currentBoard.exams || []).map((e) => {
+        if (e.id === targetId) {
+          return { ...e, is_active: !e.is_active };
+        }
+        return e;
+      });
+
+      const updatedBoards = (currentCategory.boards || []).map((b) =>
+        b.board_id === currentBoard.board_id ? { ...b, exams: updatedExams } : b
+      );
+      const updatedCategories = categories.map((cat) =>
+        cat.id === currentCategory.id ? { ...cat, boards: updatedBoards } : cat
+      );
+      setCurrentBoard({ ...currentBoard, exams: updatedExams });
+      setCurrentCategory({ ...currentCategory, boards: updatedBoards });
+      persistCategories(updatedCategories, "परीक्षा की दृश्यता (On/Off) अपडेट की गई");
+    }
+  };
+
+  // -------------------------------------------------------------
+  // 🧭 DRILLDOWN NAVIGATION (Click Category -> Board -> Exam)
+  // -------------------------------------------------------------
+  const drillIntoCategory = (cat: CategoryItem) => {
+    startTransition(() => {
+      setCurrentCategory(cat);
+      setLevel("boards");
+      setSearchQuery("");
+    });
+  };
+
+  const drillIntoBoard = (board: BoardItem) => {
+    startTransition(() => {
+      setCurrentBoard(board);
+      setLevel("exams");
+      setSearchQuery("");
+    });
+  };
+
+  const jumpToCategories = () => {
+    startTransition(() => {
+      setLevel("categories");
+      setCurrentCategory(null);
+      setCurrentBoard(null);
+      setSearchQuery("");
+    });
+  };
+
+  const jumpToBoards = () => {
+    startTransition(() => {
+      setLevel("boards");
+      setCurrentBoard(null);
+      setSearchQuery("");
+    });
+  };
+
+  // -------------------------------------------------------------
+  // ✏️ EDIT MODAL HANDLERS
+  // -------------------------------------------------------------
+  const openEditModal = (item: any, itemLevel: DrillLevel) => {
+    setEditLevel(itemLevel);
+    setEditFormData({
+      ...item,
+      viral_names_str: (item.viral_names || []).join(", "),
+    });
+    setShowEditModal(true);
+  };
+
+  const handleSaveEdit = () => {
+    // Parse viral_names_str into array
+    const viralNames = (editFormData.viral_names_str || "")
+      .split(",")
+      .map((s: string) => s.trim())
+      .filter((s: string) => s.length > 0)
+      .slice(0, 3); // Top 3 viral names
+
+    if (editLevel === "categories") {
+      const updated = categories.map((c) =>
+        c.id === editFormData.id
+          ? {
+              ...c,
+              name: editFormData.name,
+              name_hi: editFormData.name_hi,
+              icon: editFormData.icon,
+              logo_url: editFormData.logo_url,
+              description: editFormData.description,
+              viral_names: viralNames,
+              sub_preview: viralNames.join(" • "),
+            }
+          : c
+      );
+      persistCategories(updated, "श्रेणी का विवरण सुरक्षित किया गया!");
+      if (currentCategory && currentCategory.id === editFormData.id) {
+        setCurrentCategory(updated.find((c) => c.id === editFormData.id) || null);
+      }
+    } else if (editLevel === "boards" && currentCategory) {
+      const updatedBoards = (currentCategory.boards || []).map((b) =>
+        b.board_id === editFormData.board_id
+          ? {
+              ...b,
+              name: editFormData.name,
+              short_name: editFormData.short_name,
+              icon: editFormData.icon,
+              logo_url: editFormData.logo_url,
+              official_portal: editFormData.official_portal,
+              viral_names: viralNames,
+              viral_preview: viralNames.join(" • "),
+            }
+          : b
+      );
+      const updatedCategories = categories.map((cat) =>
+        cat.id === currentCategory.id ? { ...cat, boards: updatedBoards } : cat
+      );
+      setCurrentCategory({ ...currentCategory, boards: updatedBoards });
+      persistCategories(updatedCategories, "भर्ती बोर्ड का विवरण सुरक्षित किया गया!");
+      if (currentBoard && currentBoard.board_id === editFormData.board_id) {
+        setCurrentBoard(updatedBoards.find((b) => b.board_id === editFormData.board_id) || null);
+      }
+    } else if (editLevel === "exams" && currentCategory && currentBoard) {
+      const updatedExams = (currentBoard.exams || []).map((e) =>
+        e.id === editFormData.id
+          ? {
+              ...e,
+              name: editFormData.name,
+              short_name: editFormData.short_name,
+              logo_url: editFormData.logo_url, // SQUARE LOGO
+              eligibility: editFormData.eligibility,
+              age_limit: editFormData.age_limit,
+              applicant_scale: editFormData.applicant_scale,
+              exam_pattern: editFormData.exam_pattern,
+              viral_subtext: editFormData.viral_subtext,
+              notes_link: editFormData.notes_link,
+            }
+          : e
+      );
+      const updatedBoards = (currentCategory.boards || []).map((b) =>
+        b.board_id === currentBoard.board_id ? { ...b, exams: updatedExams } : b
+      );
+      const updatedCategories = categories.map((cat) =>
+        cat.id === currentCategory.id ? { ...cat, boards: updatedBoards } : cat
+      );
+      setCurrentBoard({ ...currentBoard, exams: updatedExams });
+      setCurrentCategory({ ...currentCategory, boards: updatedBoards });
+      persistCategories(updatedCategories, "परीक्षा का विवरण सुरक्षित किया गया!");
+    }
+
+    setShowEditModal(false);
+  };
+
+  // -------------------------------------------------------------
+  // FILTERED DATA BY CURRENT LEVEL & SEARCH
+  // -------------------------------------------------------------
+  const visibleCategories = useMemo(() => {
+    if (!searchQuery) return categories;
+    const q = searchQuery.toLowerCase();
+    return categories.filter(
+      (c) =>
+        c.name.toLowerCase().includes(q) ||
+        (c.name_hi && c.name_hi.toLowerCase().includes(q)) ||
+        (c.sub_preview && c.sub_preview.toLowerCase().includes(q))
+    );
+  }, [categories, searchQuery]);
+
+  const visibleBoards = useMemo(() => {
+    if (!currentCategory) return [];
+    const boards = (currentCategory.boards || []).sort((a, b) => a.priority - b.priority);
+    if (!searchQuery) return boards;
+    const q = searchQuery.toLowerCase();
+    return boards.filter(
+      (b) =>
+        b.name.toLowerCase().includes(q) ||
+        b.short_name.toLowerCase().includes(q) ||
+        (b.viral_preview && b.viral_preview.toLowerCase().includes(q))
+    );
+  }, [currentCategory, searchQuery]);
+
+  const visibleExams = useMemo(() => {
+    if (!currentBoard) return [];
+    const exams = (currentBoard.exams || []).sort((a, b) => a.priority - b.priority);
+    if (!searchQuery) return exams;
+    const q = searchQuery.toLowerCase();
+    return exams.filter(
+      (e) =>
+        e.name.toLowerCase().includes(q) ||
+        (e.short_name && e.short_name.toLowerCase().includes(q)) ||
+        (e.eligibility && e.eligibility.toLowerCase().includes(q)) ||
+        (e.viral_subtext && e.viral_subtext.toLowerCase().includes(q))
+    );
+  }, [currentBoard, searchQuery]);
+
+  if (loading) {
+    return (
+      <div className="py-20 text-center text-stone-400 bg-white rounded-2xl border border-stone-200">
+        <div className="w-10 h-10 border-3 border-amber-500/30 border-t-amber-500 rounded-full animate-spin mx-auto mb-3" />
+        <p className="text-sm font-bold text-stone-700">श्रेणियाँ व परीक्षा संरचना लोड हो रही है...</p>
+      </div>
+    );
+  }
 
   return (
-    <div className="space-y-5">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-        <div>
-          <h2 className="text-xl sm:text-2xl font-bold text-stone-900">Categories</h2>
-          <p className="text-stone-500 text-sm">Manage exam-issuing bodies. Each category links to one or more exams.</p>
-        </div>
-        <button onClick={openCreateModal} className="self-start sm:self-auto px-4 py-2.5 bg-amber-600 hover:bg-amber-700 text-white text-sm font-bold rounded-xl transition-all">
-          + Add Category
-        </button>
-      </div>
-
-      {message && (
-        <div className={`p-3 rounded-xl border text-sm ${message.type === "success" ? "bg-emerald-50 border-emerald-200 text-emerald-700" : "bg-red-50 border-red-200 text-red-700"}`}>
-          {message.text}
+    <div className="space-y-6">
+      {/* TOAST NOTIFICATION */}
+      {toastMsg && (
+        <div
+          className={`fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl shadow-xl text-sm font-bold flex items-center gap-2.5 transition-all ${
+            toastMsg.type === "success"
+              ? "bg-emerald-600 text-white"
+              : toastMsg.type === "warning"
+              ? "bg-amber-600 text-white"
+              : "bg-rose-600 text-white"
+          }`}
+        >
+          <span>{toastMsg.type === "success" ? "✓" : "⚠️"}</span>
+          <span>{toastMsg.text}</span>
         </div>
       )}
 
-      <div className="bg-white border border-stone-200 rounded-2xl p-3">
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search categories..."
-          className="w-full px-4 py-2.5 rounded-xl border border-stone-300 bg-stone-50 text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
-        />
+      {/* 🧭 BREADCRUMBS NAVIGATION BAR */}
+      <div className="bg-white border border-stone-200 rounded-2xl p-4 shadow-xs flex flex-wrap items-center justify-between gap-4">
+        <nav className="flex items-center gap-2 text-xs sm:text-sm font-bold">
+          <button
+            onClick={jumpToCategories}
+            className={`flex items-center gap-1.5 transition-colors cursor-pointer ${
+              level === "categories" ? "text-amber-700 font-extrabold" : "text-stone-500 hover:text-stone-900"
+            }`}
+          >
+            <span>🏠 श्रेणियाँ (Categories)</span>
+            <span className="text-xs bg-stone-100 text-stone-700 px-2 py-0.5 rounded-full font-mono">
+              {categories.length}
+            </span>
+          </button>
+
+          {currentCategory && (
+            <>
+              <span className="text-stone-300">›</span>
+              <button
+                onClick={jumpToBoards}
+                className={`flex items-center gap-1.5 transition-colors cursor-pointer ${
+                  level === "boards" ? "text-amber-700 font-extrabold" : "text-stone-500 hover:text-stone-900"
+                }`}
+              >
+                <span>{currentCategory.icon} {currentCategory.name}</span>
+                <span className="text-xs bg-stone-100 text-stone-700 px-2 py-0.5 rounded-full font-mono">
+                  {(currentCategory.boards || []).length} बोर्ड्स
+                </span>
+              </button>
+            </>
+          )}
+
+          {currentBoard && (
+            <>
+              <span className="text-stone-300">›</span>
+              <span className="text-amber-700 font-extrabold flex items-center gap-1.5">
+                <span>{currentBoard.icon || "🏛️"} {currentBoard.short_name}</span>
+                <span className="text-xs bg-stone-100 text-stone-700 px-2 py-0.5 rounded-full font-mono">
+                  {(currentBoard.exams || []).length} परीक्षाएं
+                </span>
+              </span>
+            </>
+          )}
+        </nav>
+
+        {/* Instant Search Bar */}
+        <div className="relative w-full sm:w-64">
+          <input
+            type="text"
+            placeholder={
+              level === "categories"
+                ? "श्रेणी खोजें..."
+                : level === "boards"
+                ? "भर्ती बोर्ड खोजें..."
+                : "परीक्षा खोजें..."
+            }
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3.5 py-2 pl-9 outline-none focus:border-amber-500 focus:bg-white transition-all"
+          />
+          <span className="absolute left-3 top-2.5 text-stone-400 text-xs">🔍</span>
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery("")}
+              className="absolute right-3 top-2 text-stone-400 hover:text-stone-700 text-xs font-bold"
+            >
+              ✕
+            </button>
+          )}
+        </div>
       </div>
 
-      {/* Desktop table */}
-      <div className="hidden md:block bg-white border border-stone-200 rounded-2xl overflow-hidden">
-        <table className="w-full">
-          <thead className="bg-stone-50 border-b border-stone-200 text-stone-500 text-xs uppercase tracking-wider">
-            <tr>
-              <th className="p-4 text-left">Category</th>
-              <th className="p-4 text-left">Body / Organization</th>
-              <th className="p-4 text-center">Exams</th>
-              <th className="p-4 text-center">Order</th>
-              <th className="p-4 text-center">Status</th>
-              <th className="p-4 text-right">Actions</th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-stone-100">
-            {filteredCategories.map((cat) => (
-              <tr key={cat.id} className="hover:bg-stone-50">
-                <td className="p-4">
-                  <div className="flex items-center gap-3">
-                    {cat.logo_url ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={cat.logo_url} alt={cat.name} className="w-10 h-10 rounded-xl object-cover border border-stone-200" />
-                    ) : (
-                      <div className="w-10 h-10 rounded-xl bg-stone-100 border border-stone-200 flex items-center justify-center text-xl">
-                        {cat.icon}
-                      </div>
-                    )}
-                    <div>
-                      <p className="font-bold text-stone-900 text-sm">{cat.name}</p>
-                      <p className="text-[11px] text-stone-400 font-mono">{cat.id}</p>
-                    </div>
-                  </div>
-                </td>
-                <td className="p-4 text-sm text-stone-700">{cat.name_hi || "—"}</td>
-                <td className="p-4 text-center">
-                  <span className="inline-flex items-center justify-center min-w-[28px] h-7 px-2 rounded-full bg-amber-50 text-amber-700 text-xs font-bold border border-amber-200">
-                    {cat.exam_ids.length}
-                  </span>
-                </td>
-                <td className="p-4 text-center text-sm font-semibold text-stone-700">{cat.priority}</td>
-                <td className="p-4 text-center">
-                  <button
-                    onClick={() => handleToggleActive(cat)}
-                    className={`px-3 py-1 rounded-full text-xs font-bold ${cat.is_active ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-stone-100 text-stone-500 border border-stone-200"}`}
-                  >
-                    {cat.is_active ? "Active" : "Inactive"}
-                  </button>
-                </td>
-                <td className="p-4 text-right">
-                  <div className="flex items-center justify-end gap-2">
-                    <button onClick={() => openEditModal(cat)} className="px-3 py-1.5 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold rounded-lg">
-                      Edit
-                    </button>
-                    <button onClick={() => handleDelete(cat.id)} className="px-3 py-1.5 bg-red-50 hover:bg-red-100 border border-red-200 text-red-700 text-xs font-semibold rounded-lg">
-                      Delete
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        {filteredCategories.length === 0 && (
-          <div className="p-12 text-center text-stone-400 text-sm">
-            No categories found.
+      {/* ========================================================= */}
+      {/* 4-COLUMN HIERARCHICAL MANAGEMENT TABLE                   */}
+      {/* ========================================================= */}
+      <div className="bg-white border border-stone-200 rounded-2xl shadow-xs overflow-hidden">
+        {/* Table Header */}
+        <div className="px-5 py-4 border-b border-stone-200 bg-stone-50 flex items-center justify-between">
+          <div>
+            <h3 className="font-bold text-sm text-stone-900">
+              {level === "categories" && "स्तर 1: श्रेणियाँ (Categories)"}
+              {level === "boards" && `स्तर 2: ${currentCategory?.name} के भर्ती बोर्ड / आयोग`}
+              {level === "exams" && `स्तर 3: ${currentBoard?.name} की सरकारी परीक्षाएं`}
+            </h3>
+            <p className="text-xs text-stone-500 mt-0.5">
+              {level === "categories" && "नाम पर क्लिक करके अंदर के भर्ती बोर्ड देखें • नंबर बदलने पर बाकी स्वतः आगे खिसक जाएंगे"}
+              {level === "boards" && "बोर्ड पर क्लिक करके अंदर की परीक्षाएं देखें • मूल श्रेणी बंद होने पर बोर्ड स्वतः निष्क्रिय रहेगा"}
+              {level === "exams" && "चौकोर लोगो वाली वास्तविक परीक्षाएं • ऑन/ऑफ दृश्यता नियंत्रित करें"}
+            </p>
           </div>
-        )}
+
+          {/* Quick Back Button when in child level */}
+          {level !== "categories" && (
+            <button
+              onClick={level === "exams" ? jumpToBoards : jumpToCategories}
+              className="text-xs font-bold bg-white border border-stone-200 px-3.5 py-1.5 rounded-lg text-stone-700 hover:bg-stone-50 transition-colors cursor-pointer flex items-center gap-1.5 shadow-2xs"
+            >
+              <span>⬅️</span>
+              <span>{level === "exams" ? "बोर्ड्स पर वापस" : "श्रेणियों पर वापस"}</span>
+            </button>
+          )}
+        </div>
+
+        {/* Table Content */}
+        <div className="overflow-x-auto">
+          <table className="w-full text-left text-xs">
+            <thead>
+              <tr className="bg-stone-100/70 border-b border-stone-200 text-stone-600 font-bold uppercase tracking-wider text-[11px]">
+                <th className="py-3 px-4 w-[45%]">1. नाम (क्लिक करने पर अंदर जाएं)</th>
+                <th className="py-3 px-4 w-[18%]">2. क्रम संख्या (Auto-Shift)</th>
+                <th className="py-3 px-4 w-[18%] text-center">3. स्थिति (On / Off)</th>
+                <th className="py-3 px-4 w-[19%] text-right">4. संपादन (Action)</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-stone-100">
+              {/* ------------------------------------------------------------- */}
+              {/* LEVEL 1: CATEGORIES ROW RENDERING                             */}
+              {/* ------------------------------------------------------------- */}
+              {level === "categories" &&
+                visibleCategories.map((cat) => (
+                  <tr key={cat.id} className="hover:bg-amber-50/40 transition-colors group">
+                    {/* 1. Category Name (Clickable Drilldown) */}
+                    <td className="py-3.5 px-4">
+                      <div
+                        onClick={() => drillIntoCategory(cat)}
+                        className="flex items-center gap-3 cursor-pointer select-none"
+                      >
+                        {/* Round Logo */}
+                        <div className="w-10 h-10 rounded-full bg-stone-100 border border-stone-200 flex items-center justify-center text-xl shrink-0 shadow-2xs group-hover:border-amber-400 transition-colors">
+                          {cat.logo_url ? (
+                            <img src={cat.logo_url} alt="" className="w-full h-full rounded-full object-cover" />
+                          ) : (
+                            cat.icon || "📁"
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className="font-extrabold text-stone-900 group-hover:text-amber-700 transition-colors text-sm truncate">
+                              {cat.name}
+                            </span>
+                            <span className="text-[10px] text-stone-400 group-hover:translate-x-1 transition-transform">
+                              ›
+                            </span>
+                          </div>
+                          {cat.viral_names && cat.viral_names.length > 0 && (
+                            <div className="flex items-center gap-1.5 mt-0.5 flex-wrap">
+                              <span className="text-[10px] text-amber-700 bg-amber-50 border border-amber-200/60 px-1.5 py-0.2 rounded font-medium">
+                                3 मुख्य: {cat.viral_names.slice(0, 3).join(" • ")}
+                              </span>
+                              <span className="text-[10px] text-stone-400">
+                                • {(cat.boards || []).length} बोर्ड्स
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </td>
+
+                    {/* 2. Numbering with Auto-Shift */}
+                    <td className="py-3.5 px-4">
+                      <div className="flex items-center gap-1.5">
+                        <input
+                          type="number"
+                          min="1"
+                          max={categories.length}
+                          defaultValue={cat.priority}
+                          key={`${cat.id}-${cat.priority}`}
+                          onBlur={(e) => handleNumberChange(cat.id, e.target.value, "categories")}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                              (e.target as HTMLInputElement).blur();
+                            }
+                          }}
+                          className="w-14 text-center font-mono font-bold bg-white border border-stone-200 rounded-lg py-1 px-1.5 text-xs text-stone-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none shadow-2xs"
+                        />
+                        <span className="text-[10px] text-stone-400 font-mono">/ {categories.length}</span>
+                      </div>
+                    </td>
+
+                    {/* 3. On/Off Switch */}
+                    <td className="py-3.5 px-4 text-center">
+                      <button
+                        onClick={() => handleToggleStatus(cat.id, "categories")}
+                        className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                          cat.is_active ? "bg-emerald-600" : "bg-stone-300"
+                        }`}
+                        title={cat.is_active ? "लाइव चालू (क्लिक करके बंद करें)" : "छुपा हुआ (क्लिक करके चालू करें)"}
+                      >
+                        <span
+                          className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
+                            cat.is_active ? "translate-x-5" : "translate-x-0"
+                          }`}
+                        />
+                      </button>
+                      <div className="text-[10px] font-bold mt-0.5">
+                        {cat.is_active ? (
+                          <span className="text-emerald-700">लाइव (ON)</span>
+                        ) : (
+                          <span className="text-stone-400">बंद (OFF)</span>
+                        )}
+                      </div>
+                    </td>
+
+                    {/* 4. Edit Action */}
+                    <td className="py-3.5 px-4 text-right">
+                      <button
+                        onClick={() => openEditModal(cat, "categories")}
+                        className="inline-flex items-center gap-1 text-xs font-bold text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer"
+                      >
+                        <span>✏️</span>
+                        <span>एडिट</span>
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+
+              {/* ------------------------------------------------------------- */}
+              {/* LEVEL 2: BOARDS ROW RENDERING                                 */}
+              {/* ------------------------------------------------------------- */}
+              {level === "boards" &&
+                visibleBoards.map((board) => (
+                  <tr key={board.board_id} className="hover:bg-amber-50/40 transition-colors group">
+                    {/* 1. Board Name (Clickable Drilldown) */}
+                    <td className="py-3.5 px-4">
+                      <div
+                        onClick={() => drillIntoBoard(board)}
+                        className="flex items-center gap-3 cursor-pointer select-none"
+                      >
+                        {/* Round Logo */}
+                        <div className="w-10 h-10 rounded-full bg-stone-100 border border-stone-200 flex items-center justify-center text-xl shrink-0 shadow-2xs group-hover:border-amber-400 transition-colors">
+                          {board.logo_url ? (
+                            <img src={board.logo_url} alt="" className="w-full h-full rounded-full object-cover" />
+                          ) : (
+                            board.icon || "🏛️"
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            <span className="font-extrabold text-stone-900 group-hover:text-amber-700 transition-colors text-sm truncate">
+                              {board.short_name || board.name}
+                            </span>
+                            <span className="text-[10px] text-stone-400 group-hover:translate-x-1 transition-transform">
+                              ›
+                            </span>
+                          </div>
+                          <div className="text-[11px] text-stone-500 truncate">{board.name}</div>
+                          {board.viral_names && board.viral_names.length > 0 && (
+                            <div className="flex items-center gap-1.5 mt-0.5">
+                              <span className="text-[10px] text-amber-700 bg-amber-50 border border-amber-200/60 px-1.5 py-0.2 rounded font-medium">
+                                3 मुख्य: {board.viral_names.slice(0, 3).join(" • ")}
+                              </span>
+                              <span className="text-[10px] text-stone-400">
+                                • {(board.exams || []).length} परीक्षाएं
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </td>
+
+                    {/* 2. Board Numbering with Auto-Shift */}
+                    <td className="py-3.5 px-4">
+                      <div className="flex items-center gap-1.5">
+                        <input
+                          type="number"
+                          min="1"
+                          max={(currentCategory?.boards || []).length}
+                          defaultValue={board.priority}
+                          key={`${board.board_id}-${board.priority}`}
+                          onBlur={(e) => handleNumberChange(board.board_id, e.target.value, "boards")}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                              (e.target as HTMLInputElement).blur();
+                            }
+                          }}
+                          className="w-14 text-center font-mono font-bold bg-white border border-stone-200 rounded-lg py-1 px-1.5 text-xs text-stone-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none shadow-2xs"
+                        />
+                        <span className="text-[10px] text-stone-400 font-mono">
+                          / {(currentCategory?.boards || []).length}
+                        </span>
+                      </div>
+                    </td>
+
+                    {/* 3. Board On/Off Switch (Cascading Dependency) */}
+                    <td className="py-3.5 px-4 text-center">
+                      <div className="inline-flex flex-col items-center">
+                        <button
+                          onClick={() => handleToggleStatus(board.board_id, "boards")}
+                          disabled={!currentCategory?.is_active}
+                          className={`relative inline-flex h-6 w-11 shrink-0 rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                            !currentCategory?.is_active
+                              ? "bg-stone-200 opacity-50 cursor-not-allowed"
+                              : board.is_active
+                              ? "bg-emerald-600 cursor-pointer"
+                              : "bg-stone-300 cursor-pointer"
+                          }`}
+                          title={
+                            !currentCategory?.is_active
+                              ? "मूल श्रेणी बंद है! पहले श्रेणी को चालू करें।"
+                              : board.is_active
+                              ? "लाइव चालू"
+                              : "छुपा हुआ"
+                          }
+                        >
+                          <span
+                            className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
+                              board.is_active && currentCategory?.is_active ? "translate-x-5" : "translate-x-0"
+                            }`}
+                          />
+                        </button>
+                        <div className="text-[10px] font-bold mt-0.5">
+                          {!currentCategory?.is_active ? (
+                            <span className="text-amber-700">श्रेणी बंद</span>
+                          ) : board.is_active ? (
+                            <span className="text-emerald-700">लाइव (ON)</span>
+                          ) : (
+                            <span className="text-stone-400">बंद (OFF)</span>
+                          )}
+                        </div>
+                      </div>
+                    </td>
+
+                    {/* 4. Board Edit Action */}
+                    <td className="py-3.5 px-4 text-right">
+                      <button
+                        onClick={() => openEditModal(board, "boards")}
+                        className="inline-flex items-center gap-1 text-xs font-bold text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer"
+                      >
+                        <span>✏️</span>
+                        <span>एडिट</span>
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+
+              {/* ------------------------------------------------------------- */}
+              {/* LEVEL 3: EXAMS ROW RENDERING (CHOKOR / SQUARE LOGO)           */}
+              {/* ------------------------------------------------------------- */}
+              {level === "exams" &&
+                visibleExams.map((exam) => (
+                  <tr key={exam.id} className="hover:bg-amber-50/40 transition-colors">
+                    {/* 1. Exam Name with SQUARE LOGO (चौकोर लोगो) */}
+                    <td className="py-3.5 px-4">
+                      <div className="flex items-center gap-3">
+                        {/* 🎯 SQUARE LOGO (चौकोर लोगो - गोल नहीं) */}
+                        <div className="w-11 h-11 rounded-xl bg-stone-900 border border-stone-700 flex items-center justify-center text-white shrink-0 aspect-square shadow-sm p-1">
+                          {exam.logo_url ? (
+                            <img src={exam.logo_url} alt="" className="w-full h-full rounded-lg object-contain" />
+                          ) : (
+                            <span className="font-mono font-extrabold text-[10px] uppercase text-center leading-tight text-amber-400">
+                              {(exam.short_name || exam.name).substring(0, 4)}
+                            </span>
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="font-extrabold text-stone-900 text-sm truncate">{exam.name}</div>
+                          <div className="flex items-center gap-2 mt-0.5 flex-wrap">
+                            {exam.eligibility && (
+                              <span className="text-[10px] text-stone-600 bg-stone-100 px-1.5 py-0.2 rounded font-medium">
+                                {exam.eligibility}
+                              </span>
+                            )}
+                            {exam.exam_pattern && (
+                              <span className="text-[10px] text-stone-500 truncate max-w-[200px]">
+                                • {exam.exam_pattern}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+
+                    {/* 2. Exam Numbering with Auto-Shift */}
+                    <td className="py-3.5 px-4">
+                      <div className="flex items-center gap-1.5">
+                        <input
+                          type="number"
+                          min="1"
+                          max={(currentBoard?.exams || []).length}
+                          defaultValue={exam.priority}
+                          key={`${exam.id}-${exam.priority}`}
+                          onBlur={(e) => handleNumberChange(exam.id, e.target.value, "exams")}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                              (e.target as HTMLInputElement).blur();
+                            }
+                          }}
+                          className="w-14 text-center font-mono font-bold bg-white border border-stone-200 rounded-lg py-1 px-1.5 text-xs text-stone-800 focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none shadow-2xs"
+                        />
+                        <span className="text-[10px] text-stone-400 font-mono">
+                          / {(currentBoard?.exams || []).length}
+                        </span>
+                      </div>
+                    </td>
+
+                    {/* 3. Exam On/Off Switch (Cascading Dependency) */}
+                    <td className="py-3.5 px-4 text-center">
+                      <div className="inline-flex flex-col items-center">
+                        <button
+                          onClick={() => handleToggleStatus(exam.id, "exams")}
+                          disabled={!currentCategory?.is_active || !currentBoard?.is_active}
+                          className={`relative inline-flex h-6 w-11 shrink-0 rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                            !currentCategory?.is_active || !currentBoard?.is_active
+                              ? "bg-stone-200 opacity-50 cursor-not-allowed"
+                              : exam.is_active
+                              ? "bg-emerald-600 cursor-pointer"
+                              : "bg-stone-300 cursor-pointer"
+                          }`}
+                          title={
+                            !currentCategory?.is_active || !currentBoard?.is_active
+                              ? "मूल बोर्ड या श्रेणी बंद है!"
+                              : exam.is_active
+                              ? "लाइव चालू"
+                              : "छुपा हुआ"
+                          }
+                        >
+                          <span
+                            className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
+                              exam.is_active && currentCategory?.is_active && currentBoard?.is_active
+                                ? "translate-x-5"
+                                : "translate-x-0"
+                            }`}
+                          />
+                        </button>
+                        <div className="text-[10px] font-bold mt-0.5">
+                          {!currentCategory?.is_active || !currentBoard?.is_active ? (
+                            <span className="text-amber-700">मूल बंद</span>
+                          ) : exam.is_active ? (
+                            <span className="text-emerald-700">लाइव (ON)</span>
+                          ) : (
+                            <span className="text-stone-400">बंद (OFF)</span>
+                          )}
+                        </div>
+                      </div>
+                    </td>
+
+                    {/* 4. Exam Edit Action */}
+                    <td className="py-3.5 px-4 text-right">
+                      <button
+                        onClick={() => openEditModal(exam, "exams")}
+                        className="inline-flex items-center gap-1 text-xs font-bold text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer"
+                      >
+                        <span>✏️</span>
+                        <span>एडिट</span>
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      {/* Mobile card list */}
-      <div className="md:hidden space-y-3">
-        {filteredCategories.map((cat) => (
-          <div key={cat.id} className="bg-white border border-stone-200 rounded-2xl p-4 space-y-3">
-            <div className="flex items-start gap-3">
-              {cat.logo_url ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={cat.logo_url} alt={cat.name} className="w-12 h-12 rounded-xl object-cover border border-stone-200 shrink-0" />
-              ) : (
-                <div className="w-12 h-12 rounded-xl bg-stone-100 border border-stone-200 flex items-center justify-center text-2xl shrink-0">
-                  {cat.icon}
-                </div>
-              )}
-              <div className="flex-1 min-w-0">
-                <p className="font-bold text-stone-900 text-sm">{cat.name}</p>
-                <p className="text-xs text-stone-500 line-clamp-2">{cat.name_hi || cat.id}</p>
+      {/* ========================================================= */}
+      {/* ✏️ EDIT MODAL (WITH LIVE CARD PREVIEW & SHAPE ENFORCEMENT)*/}
+      {/* ========================================================= */}
+      {showEditModal && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-white border border-stone-200 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden my-8">
+            {/* Modal Header */}
+            <div className="p-4 sm:p-5 border-b border-stone-200 bg-stone-50 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold uppercase tracking-wider bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded-full">
+                  {editLevel === "categories" && "श्रेणी संपादन (Category Edit)"}
+                  {editLevel === "boards" && "भर्ती बोर्ड संपादन (Board Edit)"}
+                  {editLevel === "exams" && "परीक्षा संपादन (Exam Edit)"}
+                </span>
+                <span className="text-sm font-bold text-stone-900 truncate max-w-[200px]">
+                  {editFormData.name}
+                </span>
               </div>
               <button
-                onClick={() => handleToggleActive(cat)}
-                className={`shrink-0 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${cat.is_active ? "bg-emerald-50 text-emerald-700 border border-emerald-200" : "bg-stone-100 text-stone-500 border border-stone-200"}`}
+                onClick={() => setShowEditModal(false)}
+                className="text-stone-400 hover:text-stone-700 text-base font-bold w-8 h-8 rounded-lg flex items-center justify-center cursor-pointer"
               >
-                {cat.is_active ? "Active" : "Off"}
-              </button>
-            </div>
-            <div className="flex items-center gap-4 text-xs text-stone-600">
-              <span>
-                <strong className="text-stone-900">{cat.exam_ids.length}</strong> exams
-              </span>
-              <span>
-                Order: <strong className="text-stone-900">{cat.priority}</strong>
-              </span>
-            </div>
-            <div className="flex gap-2 pt-2 border-t border-stone-100">
-              <button onClick={() => openEditModal(cat)} className="flex-1 py-2 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold rounded-lg">
-                Edit
-              </button>
-              <button onClick={() => handleDelete(cat.id)} className="flex-1 py-2 bg-red-50 border border-red-200 text-red-700 text-xs font-semibold rounded-lg">
-                Delete
-              </button>
-            </div>
-          </div>
-        ))}
-        {filteredCategories.length === 0 && (
-          <div className="p-12 text-center text-stone-400 text-sm bg-white border border-stone-200 rounded-2xl">
-            No categories found.
-          </div>
-        )}
-      </div>
-
-      {/* Modal */}
-      {showModal && (
-        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center sm:p-4 bg-stone-900/60 backdrop-blur-sm">
-          <div className="absolute inset-0" onClick={closeModal} />
-          <div className="relative bg-white border border-stone-200 rounded-t-3xl sm:rounded-2xl w-full max-w-2xl max-h-[92vh] overflow-hidden z-10 flex flex-col">
-            <div className="flex justify-between items-center p-4 border-b border-stone-200">
-              <h3 className="text-lg font-bold text-stone-900">
-                {editingCategory ? "Edit Category" : "New Category"}
-              </h3>
-              <button onClick={closeModal} className="w-9 h-9 rounded-lg hover:bg-stone-100 text-stone-500 flex items-center justify-center">
                 ✕
               </button>
             </div>
 
-            <form onSubmit={handleSave} className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {/* Modal Body: Split Form + Live Card Preview */}
+            <div className="p-5 sm:p-6 grid grid-cols-1 md:grid-cols-3 gap-6 max-h-[75vh] overflow-y-auto">
+              {/* Form Fields (2 Cols) */}
+              <div className="md:col-span-2 space-y-4">
                 <div>
-                  <label className="block text-xs font-bold text-stone-600 mb-1">Name (English) *</label>
+                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                    नाम (शीर्षक - Name) *
+                  </label>
                   <input
                     type="text"
-                    value={formData.name || ""}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                    placeholder="e.g. RSMSSB"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                    value={editFormData.name || ""}
+                    onChange={(e) => setEditFormData({ ...editFormData, name: e.target.value })}
+                    className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-amber-500 focus:bg-white"
                   />
                 </div>
+
+                {editLevel === "categories" && (
+                  <div>
+                    <label className="block text-xs font-bold text-stone-700 mb-1">
+                      हिंदी नाम (Hindi Name)
+                    </label>
+                    <input
+                      type="text"
+                      value={editFormData.name_hi || ""}
+                      onChange={(e) => setEditFormData({ ...editFormData, name_hi: e.target.value })}
+                      className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-amber-500 focus:bg-white"
+                    />
+                  </div>
+                )}
+
+                {editLevel === "boards" && (
+                  <div>
+                    <label className="block text-xs font-bold text-stone-700 mb-1">
+                      संक्षिप्त नाम (Short Name) उदा. RSMSSB, RPSC
+                    </label>
+                    <input
+                      type="text"
+                      value={editFormData.short_name || ""}
+                      onChange={(e) => setEditFormData({ ...editFormData, short_name: e.target.value })}
+                      className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-amber-500 focus:bg-white"
+                    />
+                  </div>
+                )}
+
+                {/* Logo & Icon Input */}
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-xs font-bold text-stone-700 mb-1">
+                      इमोजी / आइकॉन (Icon)
+                    </label>
+                    <input
+                      type="text"
+                      value={editFormData.icon || ""}
+                      onChange={(e) => setEditFormData({ ...editFormData, icon: e.target.value })}
+                      className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-amber-500 focus:bg-white text-center text-base"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-bold text-stone-700 mb-1">
+                      लोगो इमेज URL
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="https://... या /logo.png"
+                      value={editFormData.logo_url || ""}
+                      onChange={(e) => setEditFormData({ ...editFormData, logo_url: e.target.value })}
+                      className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-amber-500 focus:bg-white"
+                    />
+                  </div>
+                </div>
+
+                {/* 3 Viral Names Field (For Categories and Boards) */}
+                {editLevel !== "exams" && (
+                  <div>
+                    <label className="block text-xs font-bold text-stone-700 mb-1">
+                      ⭐ अंदर दिखने वाले 3 मुख्य नाम (अल्पविराम ',' से अलग करें)
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="उदा. CET 12th, पटवारी, पशु परिचर"
+                      value={editFormData.viral_names_str || ""}
+                      onChange={(e) => setEditFormData({ ...editFormData, viral_names_str: e.target.value })}
+                      className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-amber-500 focus:bg-white font-mono"
+                    />
+                    <p className="text-[11px] text-stone-400 mt-1">
+                      वेबसाइट के गोल घेरे के नीचे यही 3 नाम हल्के से दिखेंगे।
+                    </p>
+                  </div>
+                )}
+
+                {/* Exam Specific Fields */}
+                {editLevel === "exams" && (
+                  <>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label className="block text-xs font-bold text-stone-700 mb-1">योग्यता (Eligibility)</label>
+                        <input
+                          type="text"
+                          value={editFormData.eligibility || ""}
+                          onChange={(e) => setEditFormData({ ...editFormData, eligibility: e.target.value })}
+                          className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-amber-500 focus:bg-white"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold text-stone-700 mb-1">आयु सीमा (Age Limit)</label>
+                        <input
+                          type="text"
+                          value={editFormData.age_limit || ""}
+                          onChange={(e) => setEditFormData({ ...editFormData, age_limit: e.target.value })}
+                          className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-amber-500 focus:bg-white"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-stone-700 mb-1">परीक्षा पैटर्न (Exam Pattern)</label>
+                      <input
+                        type="text"
+                        value={editFormData.exam_pattern || ""}
+                        onChange={(e) => setEditFormData({ ...editFormData, exam_pattern: e.target.value })}
+                        className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-amber-500 focus:bg-white"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-xs font-bold text-stone-700 mb-1">हाईलाइट उपशीर्षक (Viral Subtext)</label>
+                      <input
+                        type="text"
+                        value={editFormData.viral_subtext || ""}
+                        onChange={(e) => setEditFormData({ ...editFormData, viral_subtext: e.target.value })}
+                        className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-amber-500 focus:bg-white"
+                      />
+                    </div>
+                  </>
+                )}
+
                 <div>
-                  <label className="block text-xs font-bold text-stone-600 mb-1">Body / Organization (Hindi)</label>
-                  <input
-                    type="text"
-                    value={formData.name_hi || ""}
-                    onChange={(e) => setFormData({ ...formData, name_hi: e.target.value })}
-                    placeholder="राजस्थान कर्मचारी चयन बोर्ड, जयपुर"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
+                  <label className="block text-xs font-bold text-stone-700 mb-1">विवरण (Description)</label>
+                  <textarea
+                    rows={2}
+                    value={editFormData.description || ""}
+                    onChange={(e) => setEditFormData({ ...editFormData, description: e.target.value })}
+                    className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-amber-500 focus:bg-white"
                   />
                 </div>
               </div>
 
-              <div>
-                <label className="block text-xs font-bold text-stone-600 mb-2">Icon</label>
-                <div className="flex flex-wrap gap-2">
-                  {ICON_CHOICES.map((ic) => (
-                    <button
-                      type="button"
-                      key={ic}
-                      onClick={() => setFormData({ ...formData, icon: ic })}
-                      className={`w-9 h-9 rounded-xl text-lg flex items-center justify-center border-2 transition ${
-                        formData.icon === ic ? "border-amber-500 bg-amber-50" : "border-stone-200 hover:border-stone-300 bg-white"
-                      }`}
-                    >
-                      {ic}
-                    </button>
-                  ))}
-                </div>
-              </div>
+              {/* 🎨 Live Card Preview on Right (Enforces Round for Cat/Board, Square for Exam) */}
+              <div className="bg-stone-50 border border-stone-200 rounded-xl p-4 flex flex-col items-center justify-center text-center">
+                <span className="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-3">
+                  लाइव वेबसाइट प्रीव्यू
+                </span>
 
-              <div>
-                <label className="block text-xs font-bold text-stone-600 mb-2">Color Theme</label>
-                <div className="flex flex-wrap gap-2">
-                  {COLOR_CHOICES.map((c) => (
-                    <button
-                      type="button"
-                      key={c.value}
-                      onClick={() => setFormData({ ...formData, color: c.value })}
-                      className={`px-3 h-9 rounded-xl text-xs font-bold border-2 transition ${
-                        formData.color === c.value ? "border-amber-500 bg-amber-50 text-amber-700" : "border-stone-200 text-stone-600 hover:border-stone-300 bg-white"
-                      }`}
-                    >
-                      <span className={`inline-block w-3 h-3 rounded-full ${c.value} mr-1.5 align-middle`} />
-                      {c.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
+                {editLevel !== "exams" ? (
+                  /* CIRCULAR CARD PREVIEW FOR CATEGORY & BOARD */
+                  <div className="w-36 h-36 rounded-full bg-slate-900 border-2 border-amber-500/80 flex flex-col items-center justify-center p-3 text-center shadow-lg relative">
+                    <div className="text-2xl mb-1">{editFormData.icon || "📁"}</div>
+                    <div className="text-xs font-extrabold text-white truncate max-w-[120px]">
+                      {editFormData.short_name || editFormData.name || "टाइटल"}
+                    </div>
+                    <div className="text-[9px] text-amber-400 mt-1 max-w-[110px] leading-tight font-medium">
+                      {(editFormData.viral_names_str || "नाम 1 • नाम 2").split(",").slice(0, 3).join(" • ")}
+                    </div>
+                    <span className="absolute -bottom-2 bg-slate-950 text-[8px] text-stone-400 border border-stone-700 px-2 py-0.5 rounded-full font-bold">
+                      गोल घेरा (Round)
+                    </span>
+                  </div>
+                ) : (
+                  /* 🎯 SQUARE CARD PREVIEW FOR EXAMS (चौकोर) */
+                  <div className="w-full bg-slate-900 border border-stone-700 rounded-xl p-3.5 text-left shadow-lg">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-8 h-8 rounded-lg bg-emerald-950 border border-emerald-500 flex items-center justify-center text-[10px] text-emerald-400 font-mono font-bold aspect-square">
+                        SQ
+                      </div>
+                      <div className="text-xs font-extrabold text-white truncate max-w-[130px]">
+                        {editFormData.name || "परीक्षा का नाम"}
+                      </div>
+                    </div>
+                    <div className="text-[9px] text-stone-400">
+                      {editFormData.eligibility || "योग्यता"}
+                    </div>
+                    <div className="mt-2 text-center text-[8px] text-emerald-400 bg-emerald-950/60 border border-emerald-800/40 py-1 rounded">
+                      ✓ चौकोर परीक्षा लोगो (Square)
+                    </div>
+                  </div>
+                )}
 
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className="block text-xs font-bold text-stone-600 mb-1">Priority (Order)</label>
-                  <input
-                    type="number"
-                    value={formData.priority || 1}
-                    onChange={(e) => setFormData({ ...formData, priority: Number(e.target.value) })}
-                    min={1}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
-                  />
-                </div>
-                <label className="flex items-end gap-2 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={formData.is_active}
-                    onChange={(e) => setFormData({ ...formData, is_active: e.target.checked })}
-                    className="w-4 h-4 rounded border-stone-300 text-amber-600 focus:ring-amber-500"
-                  />
-                  <span className="text-sm font-medium text-stone-700">Active</span>
-                </label>
+                <p className="text-[10px] text-stone-400 mt-4 leading-normal">
+                  {editLevel !== "exams"
+                    ? "श्रेणी और बोर्ड का कार्ड गोल रहेगा।"
+                    : "परीक्षा का लोगो गोल नहीं, चौकोर रहेगा।"}
+                </p>
               </div>
+            </div>
 
-              <div>
-                <label className="block text-xs font-bold text-stone-600 mb-1">Logo Image (Optional)</label>
-                <div className="flex items-center gap-3">
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleLogoChange}
-                    className="text-xs text-stone-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-amber-600 file:text-white file:font-bold file:cursor-pointer"
-                  />
-                  {logoPreview && (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={logoPreview} alt="Preview" className="w-12 h-12 rounded-lg object-cover border border-stone-200" />
-                  )}
-                </div>
-                <p className="text-[11px] text-stone-400 mt-1">200×200px recommended, max 500KB</p>
-              </div>
-
-              {/* Exam linking */}
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <label className="block text-xs font-bold text-stone-600">Linked Exams ({formData.exam_ids?.length || 0})</label>
-                  <button
-                    type="button"
-                    onClick={() => setFormData({ ...formData, exam_ids: filteredExams.map((e) => e.id) })}
-                    className="text-[11px] text-amber-700 font-bold hover:underline"
-                  >
-                    Select all visible
-                  </button>
-                </div>
-                <input
-                  type="text"
-                  value={examSearch}
-                  onChange={(e) => setExamSearch(e.target.value)}
-                  placeholder="Search exams by name, short name, board..."
-                  className="w-full px-3.5 py-2 mb-2 rounded-xl border border-stone-300 bg-white text-stone-900 focus:border-amber-500 focus:outline-none text-sm"
-                />
-                <div className="border border-stone-200 rounded-xl max-h-56 overflow-y-auto divide-y divide-stone-100">
-                  {filteredExams.length === 0 ? (
-                    <div className="p-4 text-center text-stone-400 text-xs">No exams found</div>
-                  ) : (
-                    filteredExams.map((exam) => {
-                      const checked = (formData.exam_ids || []).includes(exam.id);
-                      return (
-                        <label
-                          key={exam.id}
-                          className={`flex items-center gap-3 p-3 cursor-pointer hover:bg-stone-50 ${checked ? "bg-amber-50" : ""}`}
-                        >
-                          <input
-                            type="checkbox"
-                            checked={checked}
-                            onChange={() => toggleExam(exam.id)}
-                            className="w-4 h-4 rounded border-stone-300 text-amber-600 focus:ring-amber-500 shrink-0"
-                          />
-                          <div className="flex-1 min-w-0">
-                            <p className="text-sm font-semibold text-stone-900 truncate">{exam.name}</p>
-                            <p className="text-[11px] text-stone-500 truncate">
-                              {exam.short_name} • {exam.board}
-                            </p>
-                          </div>
-                          {!exam.is_active && (
-                            <span className="text-[10px] text-stone-400 bg-stone-100 px-1.5 py-0.5 rounded">Inactive</span>
-                          )}
-                        </label>
-                      );
-                    })
-                  )}
-                </div>
-              </div>
-
-              <div className="flex flex-col-reverse sm:flex-row justify-end gap-2 pt-4 border-t border-stone-200">
-                <button
-                  type="button"
-                  onClick={closeModal}
-                  className="px-4 py-2.5 rounded-xl border border-stone-300 text-stone-700 hover:bg-stone-50 font-semibold text-sm"
-                >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  disabled={saving}
-                  className="px-4 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm disabled:opacity-50"
-                >
-                  {saving ? "Saving..." : editingCategory ? "Update" : "Create"}
-                </button>
-              </div>
-            </form>
+            {/* Modal Footer */}
+            <div className="p-4 border-t border-stone-200 bg-stone-50 flex items-center justify-end gap-2.5">
+              <button
+                onClick={() => setShowEditModal(false)}
+                className="text-xs font-bold px-4 py-2 rounded-xl text-stone-600 hover:bg-stone-200 transition-colors cursor-pointer"
+              >
+                रद्द करें
+              </button>
+              <button
+                onClick={handleSaveEdit}
+                disabled={saving}
+                className="text-xs font-bold px-5 py-2 rounded-xl bg-amber-600 hover:bg-amber-700 text-white shadow-xs transition-colors cursor-pointer flex items-center gap-1.5"
+              >
+                {saving ? "सुरक्षित हो रहा है..." : "💾 सुरक्षित करें (Save)"}
+              </button>
+            </div>
           </div>
         </div>
       )}

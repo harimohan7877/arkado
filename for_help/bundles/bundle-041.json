@@ -1,0 +1,26 @@
+{
+  "bundle_id": "bundle-041",
+  "bundle_num": 41,
+  "category_id": "upsc-civil",
+  "category_name": "UPSC सिविल सेवा",
+  "category_icon": "⚖️",
+  "title": "UPSC सिविल सेवा — Central Govt - General Civil Services (Part 3/3)",
+  "total_exams": 2,
+  "boards_included": [
+    "Central Govt - General Civil Services"
+  ],
+  "exams": [
+    {
+      "sl": 6071,
+      "id": 923,
+      "name": "BIS JSA",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 6072,
+      "id": 922,
+      "name": "BIS ASO",
+      "group": "Central Govt - General Civil Services Exams"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "bundle_number": 50,
+  "bundle_id": "raw_bundle_050",
+  "range": "2451 - 2500",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 2451,
+      "group_sl": 2497,
+      "exam_id": 4497,
+      "name": "NPCIL Deputy Manager Contracts and Materials Management",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2452,
+      "group_sl": 2499,
+      "exam_id": 4495,
+      "name": "NPAT BBA",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2453,
+      "group_sl": 2500,
+      "exam_id": 4494,
+      "name": "NPAT B.Tech",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2454,
+      "group_sl": 2537,
+      "exam_id": 4457,
+      "name": "NMAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2455,
+      "group_sl": 2558,
+      "exam_id": 4436,
+      "name": "NIMCET",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2456,
+      "group_sl": 2757,
+      "exam_id": 4237,
+      "name": "National Level Engineering Entrance Exam",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2457,
+      "group_sl": 2801,
+      "exam_id": 4193,
+      "name": "MSc Entrance Exam",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2458,
+      "group_sl": 3107,
+      "exam_id": 3887,
+      "name": "MICAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2459,
+      "group_sl": 3193,
+      "exam_id": 3801,
+      "name": "Material Management",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2460,
+      "group_sl": 3194,
+      "exam_id": 3800,
+      "name": "MAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2461,
+      "group_sl": 3195,
+      "exam_id": 3799,
+      "name": "Mass Communication & Journalism Entrance Exam",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2462,
+      "group_sl": 3212,
+      "exam_id": 3782,
+      "name": "Manipal Entrance Test",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2463,
+      "group_sl": 3213,
+      "exam_id": 3781,
+      "name": "Management",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2464,
+      "group_sl": 3401,
+      "exam_id": 3593,
+      "name": "Kurukshetra University Clerk",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2465,
+      "group_sl": 3703,
+      "exam_id": 3291,
+      "name": "JMI BA LLB Entrance Exam",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2466,
+      "group_sl": 3793,
+      "exam_id": 3201,
+      "name": "JIPMAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2467,
+      "group_sl": 3843,
+      "exam_id": 3151,
+      "name": "JEECUP Entrance",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2468,
+      "group_sl": 3870,
+      "exam_id": 3124,
+      "name": "Jadavpur University Junior Assistant",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2469,
+      "group_sl": 3918,
+      "exam_id": 3076,
+      "name": "ISAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2470,
+      "group_sl": 3919,
+      "exam_id": 3075,
+      "name": "IRMASAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2471,
+      "group_sl": 3934,
+      "exam_id": 3060,
+      "name": "IPMAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2472,
+      "group_sl": 4076,
+      "exam_id": 2918,
+      "name": "IMU CET",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2473,
+      "group_sl": 4104,
+      "exam_id": 2890,
+      "name": "IIFT MBA",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2474,
+      "group_sl": 4119,
+      "exam_id": 2875,
+      "name": "IFFCO Management Trainee HR",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2475,
+      "group_sl": 4173,
+      "exam_id": 2821,
+      "name": "IBSAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2476,
+      "group_sl": 4483,
+      "exam_id": 2511,
+      "name": "Hotel and Catering Management",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2477,
+      "group_sl": 4487,
+      "exam_id": 2507,
+      "name": "HLL Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2478,
+      "group_sl": 4534,
+      "exam_id": 2460,
+      "name": "HAL Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2479,
+      "group_sl": 4695,
+      "exam_id": 2299,
+      "name": "GMAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2480,
+      "group_sl": 4713,
+      "exam_id": 2281,
+      "name": "General Management",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2481,
+      "group_sl": 4767,
+      "exam_id": 2227,
+      "name": "GAHET Diploma AIPMCET",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2482,
+      "group_sl": 4837,
+      "exam_id": 2157,
+      "name": "FACT Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2483,
+      "group_sl": 4902,
+      "exam_id": 2092,
+      "name": "EMAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2484,
+      "group_sl": 5261,
+      "exam_id": 1733,
+      "name": "CWC Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2485,
+      "group_sl": 5461,
+      "exam_id": 1533,
+      "name": "CSS ATMA NMAT ATM",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2486,
+      "group_sl": 5521,
+      "exam_id": 1473,
+      "name": "CS Executive Corporate, Management Accounting",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2487,
+      "group_sl": 5551,
+      "exam_id": 1443,
+      "name": "COMEDK UGET Entrance",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2488,
+      "group_sl": 5573,
+      "exam_id": 1421,
+      "name": "CMAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2489,
+      "group_sl": 5601,
+      "exam_id": 1393,
+      "name": "CIL MT Materials Management",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2490,
+      "group_sl": 5765,
+      "exam_id": 1229,
+      "name": "CEED",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2491,
+      "group_sl": 5795,
+      "exam_id": 1199,
+      "name": "CCI Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2492,
+      "group_sl": 5808,
+      "exam_id": 1186,
+      "name": "CAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2493,
+      "group_sl": 5918,
+      "exam_id": 1076,
+      "name": "BSNL Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2494,
+      "group_sl": 6463,
+      "exam_id": 531,
+      "name": "ATMA",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2495,
+      "group_sl": 29,
+      "exam_id": 6965,
+      "name": "WCD Haryana Anganwadi Worker and Helper",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2496,
+      "group_sl": 4312,
+      "exam_id": 2682,
+      "name": "HPSC PGT Sociology",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2497,
+      "group_sl": 4313,
+      "exam_id": 2681,
+      "name": "HPSC PGT Sanskrit",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2498,
+      "group_sl": 4314,
+      "exam_id": 2680,
+      "name": "HPSC PGT Political Science",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2499,
+      "group_sl": 4315,
+      "exam_id": 2679,
+      "name": "HPSC PGT Physics",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2500,
+      "group_sl": 4316,
+      "exam_id": 2678,
+      "name": "HPSC PGT Physical Education",
+      "group": "Haryana Teaching & School Exams"
+    }
+  ]
+}

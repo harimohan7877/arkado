@@ -1,0 +1,358 @@
+{
+  "bundle_number": 116,
+  "bundle_id": "raw_bundle_116",
+  "range": "5751 - 5800",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5751,
+      "group_sl": 4533,
+      "exam_id": 2461,
+      "name": "HAL Operator",
+      "group": "Engineering & PSU - HAL Exams"
+    },
+    {
+      "global_sl": 5752,
+      "group_sl": 4535,
+      "exam_id": 2459,
+      "name": "HAL ITI Apprentice",
+      "group": "Engineering & PSU - HAL Exams"
+    },
+    {
+      "global_sl": 5753,
+      "group_sl": 4536,
+      "exam_id": 2458,
+      "name": "HAL Diploma Technician",
+      "group": "Engineering & PSU - HAL Exams"
+    },
+    {
+      "global_sl": 5754,
+      "group_sl": 4537,
+      "exam_id": 2457,
+      "name": "HAL Design Trainee",
+      "group": "Engineering & PSU - HAL Exams"
+    },
+    {
+      "global_sl": 5755,
+      "group_sl": 4553,
+      "exam_id": 2441,
+      "name": "Gujarat High Court System Officer",
+      "group": "Gujarat High Court & Court Exams"
+    },
+    {
+      "global_sl": 5756,
+      "group_sl": 4554,
+      "exam_id": 2440,
+      "name": "Gujarat High Court Stenographer",
+      "group": "Gujarat High Court & Court Exams"
+    },
+    {
+      "global_sl": 5757,
+      "group_sl": 4555,
+      "exam_id": 2439,
+      "name": "Gujarat High Court Private Secretary",
+      "group": "Gujarat High Court & Court Exams"
+    },
+    {
+      "global_sl": 5758,
+      "group_sl": 4556,
+      "exam_id": 2438,
+      "name": "Gujarat High Court District Judge",
+      "group": "Gujarat High Court & Court Exams"
+    },
+    {
+      "global_sl": 5759,
+      "group_sl": 4557,
+      "exam_id": 2437,
+      "name": "Gujarat High Court Civil Judge",
+      "group": "Gujarat High Court & Court Exams"
+    },
+    {
+      "global_sl": 5760,
+      "group_sl": 4558,
+      "exam_id": 2436,
+      "name": "Gujarat High Court Assistant",
+      "group": "Gujarat High Court & Court Exams"
+    },
+    {
+      "global_sl": 5761,
+      "group_sl": 5083,
+      "exam_id": 1911,
+      "name": "DMRC JE ME",
+      "group": "Delhi DMRC Metro Exams"
+    },
+    {
+      "global_sl": 5762,
+      "group_sl": 5084,
+      "exam_id": 1910,
+      "name": "DMRC JE EE",
+      "group": "Delhi DMRC Metro Exams"
+    },
+    {
+      "global_sl": 5763,
+      "group_sl": 5085,
+      "exam_id": 1909,
+      "name": "DMRC JE EC",
+      "group": "Delhi DMRC Metro Exams"
+    },
+    {
+      "global_sl": 5764,
+      "group_sl": 5086,
+      "exam_id": 1908,
+      "name": "DMRC JE CE",
+      "group": "Delhi DMRC Metro Exams"
+    },
+    {
+      "global_sl": 5765,
+      "group_sl": 5087,
+      "exam_id": 1907,
+      "name": "DMRC CRA",
+      "group": "Delhi DMRC Metro Exams"
+    },
+    {
+      "global_sl": 5766,
+      "group_sl": 5088,
+      "exam_id": 1906,
+      "name": "DMRC AM",
+      "group": "Delhi DMRC Metro Exams"
+    },
+    {
+      "global_sl": 5767,
+      "group_sl": 5154,
+      "exam_id": 1840,
+      "name": "DFCCIL MTS",
+      "group": "National Railways - DFCCIL Exams"
+    },
+    {
+      "global_sl": 5768,
+      "group_sl": 5155,
+      "exam_id": 1839,
+      "name": "DFCCIL Junior Executive",
+      "group": "National Railways - DFCCIL Exams"
+    },
+    {
+      "global_sl": 5769,
+      "group_sl": 5156,
+      "exam_id": 1838,
+      "name": "DFCCIL Executive Signal & Telecommunication",
+      "group": "National Railways - DFCCIL Exams"
+    },
+    {
+      "global_sl": 5770,
+      "group_sl": 5157,
+      "exam_id": 1837,
+      "name": "DFCCIL Executive Electrical",
+      "group": "National Railways - DFCCIL Exams"
+    },
+    {
+      "global_sl": 5771,
+      "group_sl": 5158,
+      "exam_id": 1836,
+      "name": "DFCCIL Executive Civil",
+      "group": "National Railways - DFCCIL Exams"
+    },
+    {
+      "global_sl": 5772,
+      "group_sl": 5159,
+      "exam_id": 1835,
+      "name": "DFCCIL Assistant Manager",
+      "group": "National Railways - DFCCIL Exams"
+    },
+    {
+      "global_sl": 5773,
+      "group_sl": 5798,
+      "exam_id": 1196,
+      "name": "CBSE Superintendent",
+      "group": "National Academics - CBSE Board Exams"
+    },
+    {
+      "global_sl": 5774,
+      "group_sl": 5799,
+      "exam_id": 1195,
+      "name": "CBSE Junior Assistant",
+      "group": "National Academics - CBSE Board Exams"
+    },
+    {
+      "global_sl": 5775,
+      "group_sl": 5800,
+      "exam_id": 1194,
+      "name": "CBSE Junior Accountant",
+      "group": "National Academics - CBSE Board Exams"
+    },
+    {
+      "global_sl": 5776,
+      "group_sl": 5801,
+      "exam_id": 1193,
+      "name": "CBSE Class 12 Science PCM",
+      "group": "National Academics - CBSE Board Exams"
+    },
+    {
+      "global_sl": 5777,
+      "group_sl": 5802,
+      "exam_id": 1192,
+      "name": "CBSE Class 12 Science PCB",
+      "group": "National Academics - CBSE Board Exams"
+    },
+    {
+      "global_sl": 5778,
+      "group_sl": 5803,
+      "exam_id": 1191,
+      "name": "CBSE Assistant Professor and Assistant Director",
+      "group": "National Academics - CBSE Board Exams"
+    },
+    {
+      "global_sl": 5779,
+      "group_sl": 6041,
+      "exam_id": 953,
+      "name": "BOI Security Officer",
+      "group": "Banking & Finance - BOI Exams"
+    },
+    {
+      "global_sl": 5780,
+      "group_sl": 6042,
+      "exam_id": 952,
+      "name": "BOI PO IT Officer",
+      "group": "Banking & Finance - BOI Exams"
+    },
+    {
+      "global_sl": 5781,
+      "group_sl": 6043,
+      "exam_id": 951,
+      "name": "BOI Manager",
+      "group": "Banking & Finance - BOI Exams"
+    },
+    {
+      "global_sl": 5782,
+      "group_sl": 6044,
+      "exam_id": 950,
+      "name": "BOI Law Officer",
+      "group": "Banking & Finance - BOI Exams"
+    },
+    {
+      "global_sl": 5783,
+      "group_sl": 6045,
+      "exam_id": 949,
+      "name": "BOI Credit Officer",
+      "group": "Banking & Finance - BOI Exams"
+    },
+    {
+      "global_sl": 5784,
+      "group_sl": 6046,
+      "exam_id": 948,
+      "name": "BOI Apprentice",
+      "group": "Banking & Finance - BOI Exams"
+    },
+    {
+      "global_sl": 5785,
+      "group_sl": 6341,
+      "exam_id": 653,
+      "name": "BDL Trainee Engineer Mechanical",
+      "group": "Engineering & PSU - BDL Exams"
+    },
+    {
+      "global_sl": 5786,
+      "group_sl": 6342,
+      "exam_id": 652,
+      "name": "BDL Trainee Engineer Electronics",
+      "group": "Engineering & PSU - BDL Exams"
+    },
+    {
+      "global_sl": 5787,
+      "group_sl": 6343,
+      "exam_id": 651,
+      "name": "BDL Trainee Diploma Assistant Mechanical",
+      "group": "Engineering & PSU - BDL Exams"
+    },
+    {
+      "global_sl": 5788,
+      "group_sl": 6344,
+      "exam_id": 650,
+      "name": "BDL Trainee Diploma Assistant Electronics",
+      "group": "Engineering & PSU - BDL Exams"
+    },
+    {
+      "global_sl": 5789,
+      "group_sl": 6345,
+      "exam_id": 649,
+      "name": "BDL Project Engineer",
+      "group": "Engineering & PSU - BDL Exams"
+    },
+    {
+      "global_sl": 5790,
+      "group_sl": 6346,
+      "exam_id": 648,
+      "name": "BDL MT",
+      "group": "Engineering & PSU - BDL Exams"
+    },
+    {
+      "global_sl": 5791,
+      "group_sl": 196,
+      "exam_id": 6798,
+      "name": "Uttar Bihar Gramin Bank",
+      "group": "Bihar Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5792,
+      "group_sl": 6117,
+      "exam_id": 877,
+      "name": "Bihar State Cooperative Bank Clerk",
+      "group": "Bihar Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5793,
+      "group_sl": 6118,
+      "exam_id": 876,
+      "name": "Bihar State Cooperative Bank Assistant",
+      "group": "Bihar Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5794,
+      "group_sl": 6212,
+      "exam_id": 782,
+      "name": "Bihar Gramin Bank Clerk",
+      "group": "Bihar Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5795,
+      "group_sl": 6225,
+      "exam_id": 769,
+      "name": "Bihar Cooperative Bank Assistant Manager",
+      "group": "Bihar Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5796,
+      "group_sl": 197,
+      "exam_id": 6797,
+      "name": "Utkal Cooperative Bank JAA",
+      "group": "Odisha Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5797,
+      "group_sl": 2263,
+      "exam_id": 4731,
+      "name": "OSCB System Manager",
+      "group": "Odisha Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5798,
+      "group_sl": 2264,
+      "exam_id": 4730,
+      "name": "OSCB Junior Manager",
+      "group": "Odisha Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5799,
+      "group_sl": 2265,
+      "exam_id": 4729,
+      "name": "OSCB DGM",
+      "group": "Odisha Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5800,
+      "group_sl": 2266,
+      "exam_id": 4728,
+      "name": "OSCB Banking Assistant",
+      "group": "Odisha Cooperative Bank Exams"
+    }
+  ]
+}

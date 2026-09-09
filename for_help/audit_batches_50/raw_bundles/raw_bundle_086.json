@@ -1,0 +1,358 @@
+{
+  "bundle_number": 86,
+  "bundle_id": "raw_bundle_086",
+  "range": "4251 - 4300",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4251,
+      "group_sl": 669,
+      "exam_id": 6325,
+      "name": "UIIC Assistant",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4252,
+      "group_sl": 670,
+      "exam_id": 6324,
+      "name": "UIIC AO",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4253,
+      "group_sl": 2342,
+      "exam_id": 4652,
+      "name": "OICL Assistant",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4254,
+      "group_sl": 2343,
+      "exam_id": 4651,
+      "name": "OICL AO Accounts",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4255,
+      "group_sl": 2344,
+      "exam_id": 4650,
+      "name": "OICL AO",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4256,
+      "group_sl": 2345,
+      "exam_id": 4649,
+      "name": "OICL Administrative Officer Generalist",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4257,
+      "group_sl": 2570,
+      "exam_id": 4424,
+      "name": "NICL Assistant",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4258,
+      "group_sl": 2571,
+      "exam_id": 4423,
+      "name": "NICL AO Specialist Legal",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4259,
+      "group_sl": 2572,
+      "exam_id": 4422,
+      "name": "NICL AO Specialist Information Technology",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4260,
+      "group_sl": 2573,
+      "exam_id": 4421,
+      "name": "NICL AO Specialist Finance",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4261,
+      "group_sl": 2574,
+      "exam_id": 4420,
+      "name": "NICL AO Specialist Automobile Engineers",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4262,
+      "group_sl": 2575,
+      "exam_id": 4419,
+      "name": "NICL AO",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4263,
+      "group_sl": 2577,
+      "exam_id": 4417,
+      "name": "NIACL Assistant",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4264,
+      "group_sl": 2578,
+      "exam_id": 4416,
+      "name": "NIACL Apprentice",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4265,
+      "group_sl": 2579,
+      "exam_id": 4415,
+      "name": "NIACL AO Risk Engineers",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4266,
+      "group_sl": 2580,
+      "exam_id": 4414,
+      "name": "NIACL AO Legal Specialists",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4267,
+      "group_sl": 2581,
+      "exam_id": 4413,
+      "name": "NIACL AO IT Specialists",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4268,
+      "group_sl": 2582,
+      "exam_id": 4412,
+      "name": "NIACL AO Health",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4269,
+      "group_sl": 2583,
+      "exam_id": 4411,
+      "name": "NIACL AO Business Analysts",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4270,
+      "group_sl": 2584,
+      "exam_id": 4410,
+      "name": "NIACL AO Automobile Engineers",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4271,
+      "group_sl": 2585,
+      "exam_id": 4409,
+      "name": "NIACL AO Accounts",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4272,
+      "group_sl": 2586,
+      "exam_id": 4408,
+      "name": "NIACL AO",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4273,
+      "group_sl": 3924,
+      "exam_id": 3070,
+      "name": "IRDAI Assistant Manager",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4274,
+      "group_sl": 3978,
+      "exam_id": 3016,
+      "name": "Insurance Exams",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4275,
+      "group_sl": 4701,
+      "exam_id": 2293,
+      "name": "GIC Assistant Manager",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "global_sl": 4276,
+      "group_sl": 2683,
+      "exam_id": 4311,
+      "name": "NEET UG Physics in Hindi",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4277,
+      "group_sl": 2684,
+      "exam_id": 4310,
+      "name": "NEET UG in Hindi",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4278,
+      "group_sl": 2685,
+      "exam_id": 4309,
+      "name": "NEET UG Chemistry in Hindi",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4279,
+      "group_sl": 2686,
+      "exam_id": 4308,
+      "name": "NEET UG Biology in Hindi",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4280,
+      "group_sl": 2687,
+      "exam_id": 4307,
+      "name": "NEET UG Biology In English",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4281,
+      "group_sl": 2689,
+      "exam_id": 4305,
+      "name": "NEET PG Surgery, Orthopaedics and Anaesthesia",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4282,
+      "group_sl": 2690,
+      "exam_id": 4304,
+      "name": "NEET PG Subject Wise",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4283,
+      "group_sl": 2691,
+      "exam_id": 4303,
+      "name": "NEET PG Social and Preventive Medicine",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4284,
+      "group_sl": 2692,
+      "exam_id": 4302,
+      "name": "NEET PG Radiotherapy",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4285,
+      "group_sl": 2693,
+      "exam_id": 4301,
+      "name": "NEET PG Radiology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4286,
+      "group_sl": 2694,
+      "exam_id": 4300,
+      "name": "NEET PG Radiodiagnosis",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4287,
+      "group_sl": 2695,
+      "exam_id": 4299,
+      "name": "NEET PG Psychiatry",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4288,
+      "group_sl": 2696,
+      "exam_id": 4298,
+      "name": "NEET PG Physiology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4289,
+      "group_sl": 2697,
+      "exam_id": 4297,
+      "name": "NEET PG Pharmacology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4290,
+      "group_sl": 2698,
+      "exam_id": 4296,
+      "name": "NEET PG Pathology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4291,
+      "group_sl": 2699,
+      "exam_id": 4295,
+      "name": "NEET PG Paediatrics",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4292,
+      "group_sl": 2700,
+      "exam_id": 4294,
+      "name": "NEET PG Ophthalmology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4293,
+      "group_sl": 2701,
+      "exam_id": 4293,
+      "name": "NEET PG Obstetrics and Gynaecology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4294,
+      "group_sl": 2702,
+      "exam_id": 4292,
+      "name": "NEET PG Microbiology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4295,
+      "group_sl": 2703,
+      "exam_id": 4291,
+      "name": "NEET PG Medicine Dermatology and Venereology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4296,
+      "group_sl": 2704,
+      "exam_id": 4290,
+      "name": "NEET PG Forensic Medicine",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4297,
+      "group_sl": 2705,
+      "exam_id": 4289,
+      "name": "NEET PG ENT",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4298,
+      "group_sl": 2706,
+      "exam_id": 4288,
+      "name": "NEET PG Biochemistry",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4299,
+      "group_sl": 2707,
+      "exam_id": 4287,
+      "name": "NEET PG Anatomy",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "global_sl": 4300,
+      "group_sl": 2708,
+      "exam_id": 4286,
+      "name": "NEET PG",
+      "group": "National Academics - NEET Entrance Exams"
+    }
+  ]
+}

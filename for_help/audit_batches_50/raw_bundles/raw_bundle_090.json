@@ -1,0 +1,358 @@
+{
+  "bundle_number": 90,
+  "bundle_id": "raw_bundle_090",
+  "range": "4451 - 4500",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4451,
+      "group_sl": 3997,
+      "exam_id": 2997,
+      "name": "Indian Navy Sailor MR",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4452,
+      "group_sl": 3998,
+      "exam_id": 2996,
+      "name": "Indian Navy Sailor",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4453,
+      "group_sl": 3999,
+      "exam_id": 2995,
+      "name": "Indian Navy Group C Syrang of Lascars",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4454,
+      "group_sl": 4000,
+      "exam_id": 2994,
+      "name": "Indian Navy Group C Lascar",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4455,
+      "group_sl": 4001,
+      "exam_id": 2993,
+      "name": "Indian Navy Group C Fireman",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4456,
+      "group_sl": 4002,
+      "exam_id": 2992,
+      "name": "Indian Navy Commission Officer",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4457,
+      "group_sl": 4003,
+      "exam_id": 2991,
+      "name": "Indian Navy Civilian Motor Driver",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4458,
+      "group_sl": 4004,
+      "exam_id": 2990,
+      "name": "Indian Navy Chargeman",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4459,
+      "group_sl": 4005,
+      "exam_id": 2989,
+      "name": "Indian Navy Agniveer SSR Medical Assistant",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4460,
+      "group_sl": 4006,
+      "exam_id": 2988,
+      "name": "Indian Navy Agniveer SSR",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4461,
+      "group_sl": 4007,
+      "exam_id": 2987,
+      "name": "Indian Navy Agniveer MR Musician",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4462,
+      "group_sl": 4008,
+      "exam_id": 2986,
+      "name": "Indian Navy AA",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4463,
+      "group_sl": 4736,
+      "exam_id": 2258,
+      "name": "GATE Naval Architecture and Marine Engineering",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4464,
+      "group_sl": 4924,
+      "exam_id": 2070,
+      "name": "Eastern Naval Command MTS",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4465,
+      "group_sl": 178,
+      "exam_id": 6816,
+      "name": "Veterinary Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4466,
+      "group_sl": 1399,
+      "exam_id": 5595,
+      "name": "Science and Technology",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4467,
+      "group_sl": 2104,
+      "exam_id": 4890,
+      "name": "Political Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4468,
+      "group_sl": 2128,
+      "exam_id": 4866,
+      "name": "Physics Sectional Test",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4469,
+      "group_sl": 2130,
+      "exam_id": 4864,
+      "name": "Physics",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4470,
+      "group_sl": 2131,
+      "exam_id": 4863,
+      "name": "Physical Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4471,
+      "group_sl": 3106,
+      "exam_id": 3888,
+      "name": "Microbiology",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4472,
+      "group_sl": 3297,
+      "exam_id": 3697,
+      "name": "Life Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4473,
+      "group_sl": 3308,
+      "exam_id": 3686,
+      "name": "Library Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4474,
+      "group_sl": 3840,
+      "exam_id": 3154,
+      "name": "JET Agriculture Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4475,
+      "group_sl": 3841,
+      "exam_id": 3153,
+      "name": "JEST Physics",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4476,
+      "group_sl": 4485,
+      "exam_id": 2509,
+      "name": "Home Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4477,
+      "group_sl": 4709,
+      "exam_id": 2285,
+      "name": "General Science Sectional Test",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4478,
+      "group_sl": 4711,
+      "exam_id": 2283,
+      "name": "General Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4479,
+      "group_sl": 4795,
+      "exam_id": 2199,
+      "name": "Forensic Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4480,
+      "group_sl": 4904,
+      "exam_id": 2090,
+      "name": "Electronic Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4481,
+      "group_sl": 4928,
+      "exam_id": 2066,
+      "name": "Earth Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4482,
+      "group_sl": 5249,
+      "exam_id": 1745,
+      "name": "Data Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4483,
+      "group_sl": 5629,
+      "exam_id": 1365,
+      "name": "Chemistry Sectional Test",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4484,
+      "group_sl": 6073,
+      "exam_id": 921,
+      "name": "Biology Zoology",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4485,
+      "group_sl": 6075,
+      "exam_id": 919,
+      "name": "Biology Sectional Test",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4486,
+      "group_sl": 6078,
+      "exam_id": 916,
+      "name": "Biology Botany",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "global_sl": 4487,
+      "group_sl": 5045,
+      "exam_id": 1949,
+      "name": "DRDO Technician A",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4488,
+      "group_sl": 5046,
+      "exam_id": 1948,
+      "name": "DRDO SSPL Apprentice",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4489,
+      "group_sl": 5047,
+      "exam_id": 1947,
+      "name": "DRDO Senior Technical Assistant",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4490,
+      "group_sl": 5048,
+      "exam_id": 1946,
+      "name": "DRDO Scientist B",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4491,
+      "group_sl": 5049,
+      "exam_id": 1945,
+      "name": "DRDO JRF",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4492,
+      "group_sl": 5050,
+      "exam_id": 1944,
+      "name": "DRDO ITR Apprentice",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4493,
+      "group_sl": 5051,
+      "exam_id": 1943,
+      "name": "DRDO GTRE Apprentice",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4494,
+      "group_sl": 5052,
+      "exam_id": 1942,
+      "name": "DRDO CEPTAM Technician A Welder",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4495,
+      "group_sl": 5053,
+      "exam_id": 1941,
+      "name": "DRDO CEPTAM Technician A Machinist",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4496,
+      "group_sl": 5054,
+      "exam_id": 1940,
+      "name": "DRDO CEPTAM Technician A Fitter",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4497,
+      "group_sl": 5055,
+      "exam_id": 1939,
+      "name": "DRDO CEPTAM Technician A Electronics",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4498,
+      "group_sl": 5056,
+      "exam_id": 1938,
+      "name": "DRDO CEPTAM Technician A Electrician",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4499,
+      "group_sl": 5057,
+      "exam_id": 1937,
+      "name": "DRDO CEPTAM Senior Technical Assistant Physics",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4500,
+      "group_sl": 5058,
+      "exam_id": 1936,
+      "name": "DRDO CEPTAM Senior Technical Assistant Metallurgical",
+      "group": "Engineering & PSU - DRDO Exams"
+    }
+  ]
+}

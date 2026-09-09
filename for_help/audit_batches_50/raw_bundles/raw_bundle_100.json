@@ -1,0 +1,358 @@
+{
+  "bundle_number": 100,
+  "bundle_id": "raw_bundle_100",
+  "range": "4951 - 5000",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4951,
+      "group_sl": 2656,
+      "exam_id": 4338,
+      "name": "NFSU NFAT MSc Environmental Science",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "global_sl": 4952,
+      "group_sl": 2657,
+      "exam_id": 4337,
+      "name": "NFSU NFAT MSc Clinical Psychology",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "global_sl": 4953,
+      "group_sl": 2658,
+      "exam_id": 4336,
+      "name": "NFSU NFAT MSc Chemistry",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "global_sl": 4954,
+      "group_sl": 2659,
+      "exam_id": 4335,
+      "name": "NFSU NFAT MA Criminology",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "global_sl": 4955,
+      "group_sl": 2660,
+      "exam_id": 4334,
+      "name": "NFSU NFAT M Pharm Forensic Pharmacy",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "global_sl": 4956,
+      "group_sl": 2661,
+      "exam_id": 4333,
+      "name": "NFSU NFAT BA MA Criminology",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "global_sl": 4957,
+      "group_sl": 2662,
+      "exam_id": 4332,
+      "name": "NFSU Laboratory Assistant",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "global_sl": 4958,
+      "group_sl": 2663,
+      "exam_id": 4331,
+      "name": "NFSU Assistant",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "global_sl": 4959,
+      "group_sl": 4174,
+      "exam_id": 2820,
+      "name": "IBPS SO Rajbhasha Adhikari",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4960,
+      "group_sl": 4175,
+      "exam_id": 2819,
+      "name": "IBPS SO Prelims For IT Officer, Agriculture Officer, Marketing Officer, HR Officer",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4961,
+      "group_sl": 4176,
+      "exam_id": 2818,
+      "name": "IBPS SO Preliminary For Rajbhasha Adhikari, Law Officer",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4962,
+      "group_sl": 4177,
+      "exam_id": 2817,
+      "name": "IBPS SO Marketing Officer",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4963,
+      "group_sl": 4178,
+      "exam_id": 2816,
+      "name": "IBPS SO Law Officer",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4964,
+      "group_sl": 4179,
+      "exam_id": 2815,
+      "name": "IBPS SO IT Officer",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4965,
+      "group_sl": 4180,
+      "exam_id": 2814,
+      "name": "IBPS SO HR Officer",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4966,
+      "group_sl": 4181,
+      "exam_id": 2813,
+      "name": "IBPS SO Hindi",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4967,
+      "group_sl": 4182,
+      "exam_id": 2812,
+      "name": "IBPS SO AFO",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4968,
+      "group_sl": 4183,
+      "exam_id": 2811,
+      "name": "IBPS SO",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4969,
+      "group_sl": 4196,
+      "exam_id": 2798,
+      "name": "IBPS PO Hindi",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4970,
+      "group_sl": 4197,
+      "exam_id": 2797,
+      "name": "IBPS PO",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4971,
+      "group_sl": 4198,
+      "exam_id": 2796,
+      "name": "IBPS Deputy Manager",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4972,
+      "group_sl": 4200,
+      "exam_id": 2794,
+      "name": "IBPS Clerk Hindi",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4973,
+      "group_sl": 4201,
+      "exam_id": 2793,
+      "name": "IBPS Clerk",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "global_sl": 4974,
+      "group_sl": 1279,
+      "exam_id": 5715,
+      "name": "South Eastern Railway ALP",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "global_sl": 4975,
+      "group_sl": 1583,
+      "exam_id": 5411,
+      "name": "RRC GDCE Technician Grade III",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "global_sl": 4976,
+      "group_sl": 1593,
+      "exam_id": 5401,
+      "name": "RRB Technician Grade 3",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "global_sl": 4977,
+      "group_sl": 1594,
+      "exam_id": 5400,
+      "name": "RRB Technician Grade 1",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "global_sl": 4978,
+      "group_sl": 1598,
+      "exam_id": 5396,
+      "name": "RRB Radiographer X Ray Technician",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "global_sl": 4979,
+      "group_sl": 1635,
+      "exam_id": 5359,
+      "name": "RRB Dialysis Technician",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "global_sl": 4980,
+      "group_sl": 1638,
+      "exam_id": 5356,
+      "name": "RRB ALP Physics and Maths",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "global_sl": 4981,
+      "group_sl": 1639,
+      "exam_id": 5355,
+      "name": "RRB ALP Mechanical",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "global_sl": 4982,
+      "group_sl": 1640,
+      "exam_id": 5354,
+      "name": "RRB ALP Electronics",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "global_sl": 4983,
+      "group_sl": 1641,
+      "exam_id": 5353,
+      "name": "RRB ALP Electrical",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "global_sl": 4984,
+      "group_sl": 1642,
+      "exam_id": 5352,
+      "name": "RRB ALP Automobile",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "global_sl": 4985,
+      "group_sl": 1643,
+      "exam_id": 5351,
+      "name": "RRB ALP",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "global_sl": 4986,
+      "group_sl": 1933,
+      "exam_id": 5061,
+      "name": "Railway NCR ALP, TC & Goods Guard",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "global_sl": 4987,
+      "group_sl": 3454,
+      "exam_id": 3540,
+      "name": "KRCL Technician 3",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "global_sl": 4988,
+      "group_sl": 1428,
+      "exam_id": 5566,
+      "name": "Sangli Police Patil",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "global_sl": 4989,
+      "group_sl": 2020,
+      "exam_id": 4974,
+      "name": "Pune Police SI",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "global_sl": 4990,
+      "group_sl": 2021,
+      "exam_id": 4973,
+      "name": "Pune Police Constable",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "global_sl": 4991,
+      "group_sl": 2785,
+      "exam_id": 4209,
+      "name": "Mumbai Railway Police Constable",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "global_sl": 4992,
+      "group_sl": 2791,
+      "exam_id": 4203,
+      "name": "MSSC Security Force",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "global_sl": 4993,
+      "group_sl": 2793,
+      "exam_id": 4201,
+      "name": "MSSC Lady Security Guard",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "global_sl": 4994,
+      "group_sl": 2819,
+      "exam_id": 4175,
+      "name": "MPSC Police SI",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "global_sl": 4995,
+      "group_sl": 3231,
+      "exam_id": 3763,
+      "name": "Maharashtra Security Guard",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "global_sl": 4996,
+      "group_sl": 3233,
+      "exam_id": 3761,
+      "name": "Maharashtra Police Legal Director",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "global_sl": 4997,
+      "group_sl": 3234,
+      "exam_id": 3760,
+      "name": "Maharashtra Police Law Instructor",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "global_sl": 4998,
+      "group_sl": 3235,
+      "exam_id": 3759,
+      "name": "Maharashtra Police Constable Driver",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "global_sl": 4999,
+      "group_sl": 3236,
+      "exam_id": 3758,
+      "name": "Maharashtra Police Constable",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "global_sl": 5000,
+      "group_sl": 3244,
+      "exam_id": 3750,
+      "name": "Maharashtra Forest Guard",
+      "group": "Maharashtra Police & Security Exams"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "bundle_number": 14,
+  "bundle_id": "raw_bundle_014",
+  "range": "651 - 700",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 651,
+      "group_sl": 2157,
+      "exam_id": 4837,
+      "name": "PGT Bhotik Vigyan (Physics) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 652,
+      "group_sl": 2158,
+      "exam_id": 4836,
+      "name": "PGT Bhotik Vigyan (Physics)",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 653,
+      "group_sl": 2159,
+      "exam_id": 4835,
+      "name": "PGT Arts Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 654,
+      "group_sl": 2160,
+      "exam_id": 4834,
+      "name": "PGT Arts",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 655,
+      "group_sl": 2161,
+      "exam_id": 4833,
+      "name": "PGT Arthashastra Economics",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 656,
+      "group_sl": 2162,
+      "exam_id": 4832,
+      "name": "PGT Arthashastra (Economics) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 657,
+      "group_sl": 2180,
+      "exam_id": 4814,
+      "name": "PG Dental Entrance Exam",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 658,
+      "group_sl": 2203,
+      "exam_id": 4791,
+      "name": "OUAT Assistant Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 659,
+      "group_sl": 2443,
+      "exam_id": 4551,
+      "name": "NTSE",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 660,
+      "group_sl": 2469,
+      "exam_id": 4525,
+      "name": "NSIT Non Teaching",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 661,
+      "group_sl": 2475,
+      "exam_id": 4519,
+      "name": "NRRMS Computer Assistant",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 662,
+      "group_sl": 2476,
+      "exam_id": 4518,
+      "name": "NRRMS",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 663,
+      "group_sl": 2482,
+      "exam_id": 4512,
+      "name": "NRDRM",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 664,
+      "group_sl": 2483,
+      "exam_id": 4511,
+      "name": "NRA CET Graduation",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 665,
+      "group_sl": 2484,
+      "exam_id": 4510,
+      "name": "NRA CET",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 666,
+      "group_sl": 2515,
+      "exam_id": 4479,
+      "name": "NMMS Class 8",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 667,
+      "group_sl": 2551,
+      "exam_id": 4443,
+      "name": "NIRDPR Young Fellow, CLRP",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 668,
+      "group_sl": 2552,
+      "exam_id": 4442,
+      "name": "NIRDPR Young Fellow",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 669,
+      "group_sl": 2555,
+      "exam_id": 4439,
+      "name": "NIMI Consultant",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 670,
+      "group_sl": 2675,
+      "exam_id": 4319,
+      "name": "NEST",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 671,
+      "group_sl": 2677,
+      "exam_id": 4317,
+      "name": "NERIST Non Teaching",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 672,
+      "group_sl": 2679,
+      "exam_id": 4315,
+      "name": "NEP 2020",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 673,
+      "group_sl": 2788,
+      "exam_id": 4206,
+      "name": "MUHS Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 674,
+      "group_sl": 3182,
+      "exam_id": 3812,
+      "name": "Mathematics PGT, TGT, TET Teaching in Hindi Exam",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 675,
+      "group_sl": 3183,
+      "exam_id": 3811,
+      "name": "Mathematics PGT, TGT, TET Teaching Exam",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 676,
+      "group_sl": 3396,
+      "exam_id": 3598,
+      "name": "KVPY Stream SA",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 677,
+      "group_sl": 3397,
+      "exam_id": 3597,
+      "name": "KVPY SB SX",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 678,
+      "group_sl": 3494,
+      "exam_id": 3500,
+      "name": "KMC Contractual Teacher",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 679,
+      "group_sl": 3694,
+      "exam_id": 3300,
+      "name": "JNVST Class 9",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 680,
+      "group_sl": 3695,
+      "exam_id": 3299,
+      "name": "JNVST Class 6",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 681,
+      "group_sl": 4100,
+      "exam_id": 2894,
+      "name": "IISC Technical Assistant",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 682,
+      "group_sl": 4101,
+      "exam_id": 2893,
+      "name": "IISC Administrative Assistant",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 683,
+      "group_sl": 4102,
+      "exam_id": 2892,
+      "name": "IIMC Non Teaching",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 684,
+      "group_sl": 4106,
+      "exam_id": 2888,
+      "name": "IICPT",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 685,
+      "group_sl": 4107,
+      "exam_id": 2887,
+      "name": "IGNTU LDC",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 686,
+      "group_sl": 4123,
+      "exam_id": 2871,
+      "name": "IEO Class 4",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 687,
+      "group_sl": 4124,
+      "exam_id": 2870,
+      "name": "IEO Class 10",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 688,
+      "group_sl": 4139,
+      "exam_id": 2855,
+      "name": "ICHR JRF",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 689,
+      "group_sl": 4489,
+      "exam_id": 2505,
+      "name": "History PGT, TGT, TET Teaching in Hindi Exam",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 690,
+      "group_sl": 4566,
+      "exam_id": 2428,
+      "name": "GUG Non Teaching",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 691,
+      "group_sl": 4697,
+      "exam_id": 2297,
+      "name": "GKV Teaching & Non Teaching",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 692,
+      "group_sl": 4698,
+      "exam_id": 2296,
+      "name": "GKCIET Assistant Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 693,
+      "group_sl": 4699,
+      "exam_id": 2295,
+      "name": "GIMS Non Teaching Operation Theatre Technician",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 694,
+      "group_sl": 4700,
+      "exam_id": 2294,
+      "name": "GIMS Non Teaching Laboratory Technician",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 695,
+      "group_sl": 4762,
+      "exam_id": 2232,
+      "name": "GAT-B",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 696,
+      "group_sl": 4766,
+      "exam_id": 2228,
+      "name": "GAHET UG AIPMCET",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 697,
+      "group_sl": 4853,
+      "exam_id": 2141,
+      "name": "ESIC Assistant Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 698,
+      "group_sl": 4860,
+      "exam_id": 2134,
+      "name": "ERDO BEC, DEC & BTT",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 699,
+      "group_sl": 4910,
+      "exam_id": 2084,
+      "name": "EDC Office Assistant",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 700,
+      "group_sl": 5019,
+      "exam_id": 1975,
+      "name": "DSRVS BPS",
+      "group": "National Academics - Other Central Academic & School Exams"
+    }
+  ]
+}

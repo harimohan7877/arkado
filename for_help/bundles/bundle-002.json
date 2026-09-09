@@ -1,0 +1,145 @@
+{
+  "bundle_id": "bundle-002",
+  "bundle_num": 2,
+  "category_id": "rajasthan",
+  "category_name": "राजस्थान",
+  "category_icon": "🚩",
+  "title": "राजस्थान — RPSC (राजस्थान लोक सेवा आयोग)",
+  "total_exams": 13,
+  "boards_included": [
+    "RPSC"
+  ],
+  "official_portal": "https://rpsc.rajasthan.gov.in",
+  "exams": [
+    {
+      "id": 5325,
+      "name": "RAS / RTS संयुक्त प्रतियोगी परीक्षा 2026",
+      "eligibility": "स्नातक",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "6.5+ लाख",
+      "exam_pattern": "Prelims (200) + Mains (800) + Interview (100)",
+      "viral_subtext": "राजस्थान की शीर्ष प्रशासनिक सेवा",
+      "status": "verified"
+    },
+    {
+      "id": 5328,
+      "name": "स्कूल व्याख्याता / प्राध्यापक (1st Grade Teacher)",
+      "eligibility": "स्नातकोत्तर (PG) + B.Ed",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "5+ लाख",
+      "exam_pattern": "Paper-1 (GK 150) + Paper-2 (संबंधित विषय 300)",
+      "viral_subtext": "माध्यमिक शिक्षा (सभी 26 विषय)",
+      "status": "verified"
+    },
+    {
+      "id": 5260,
+      "name": "वरिष्ठ अध्यापक (2nd Grade Teacher)",
+      "eligibility": "स्नातक + B.Ed",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "8+ लाख",
+      "exam_pattern": "Paper-1 (GK 200) + Paper-2 (विषय 300)",
+      "viral_subtext": "कक्षा 6 से 10 के शिक्षक (सभी 8 विषय)",
+      "status": "verified"
+    },
+    {
+      "id": 5281,
+      "name": "कॉलेज सहायक प्रोफेसर (Assistant Professor)",
+      "eligibility": "मास्टर डिग्री (55%) + NET / SLET / PhD",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "1.2 लाख",
+      "exam_pattern": "Paper-1 & 2 (विषय 150) + Paper-3 (राजस्थान GK 50) + Interview",
+      "viral_subtext": "कॉलेज शिक्षा विभाग (सभी 28 विषय)",
+      "status": "verified"
+    },
+    {
+      "id": 5130,
+      "name": "पुलिस उपनिरीक्षक (Sub-Inspector - SI)",
+      "eligibility": "स्नातक",
+      "age_limit": "20-25 वर्ष",
+      "applicant_scale": "4.5 लाख",
+      "exam_pattern": "Paper-1 (हिंदी 200) + Paper-2 (GK 200) + PET + Interview",
+      "viral_subtext": "राजस्थान पुलिस दारोगा भर्ती",
+      "status": "verified"
+    },
+    {
+      "id": 5327,
+      "name": "राजस्व अधिकारी (RO) एवं अधिशासी अधिकारी (EO)",
+      "eligibility": "स्नातक",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "3.5 लाख",
+      "exam_pattern": "भाग-A (GK 80) + भाग-B (नगरपालिका अधिनियम 40)",
+      "viral_subtext": "स्वायत्त शासन विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 5315,
+      "name": "कनिष्ठ विधि अधिकारी (Junior Legal Officer - JLO)",
+      "eligibility": "विधि स्नातक (LLB)",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "50,000",
+      "exam_pattern": "4 पेपर्स (संविधान, CPC/CRPC, साक्ष्य अधिनियम, भाषा)",
+      "viral_subtext": "विधि एवं न्याय विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 5278,
+      "name": "सहायक सांख्यिकी अधिकारी (ASO) एवं SO",
+      "eligibility": "सांख्यिकी / गणित / अर्थशास्त्र / M.Com",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "60,000",
+      "exam_pattern": "भाग-A (GK 30) + भाग-B (सांख्यिकी 70)",
+      "viral_subtext": "आर्थिक एवं सांख्यिकी विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 5275,
+      "name": "सहायक कृषि अधिकारी (AAO) एवं कृषि अधिकारी",
+      "eligibility": "B.Sc / M.Sc (Agriculture)",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "40,000",
+      "exam_pattern": "राजस्थान सामान्य ज्ञान + कृषि विज्ञान",
+      "viral_subtext": "कृषि विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 5271,
+      "name": "सहायक अभियंता (AEN - Civil, Elect, Mech)",
+      "eligibility": "B.Tech / B.E (Engineering)",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "70,000",
+      "exam_pattern": "Prelims + Mains (Written) + Interview",
+      "viral_subtext": "PWD, WRD, PHED, पंचायती राज",
+      "status": "verified"
+    },
+    {
+      "id": 5311,
+      "name": "खाद्य सुरक्षा अधिकारी (Food Safety Officer - FSO)",
+      "eligibility": "डिग्री (Food Tech/Dairy/Bio/Agri/Chem)",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "50,000",
+      "exam_pattern": "राजस्थान सामान्य ज्ञान + खाद्य सुरक्षा विज्ञान",
+      "viral_subtext": "चिकित्सा एवं स्वास्थ्य विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 5322,
+      "name": "प्रोग्रामर भर्ती (RPSC Programmer)",
+      "eligibility": "B.Tech (CS/IT) / MCA",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "45,000",
+      "exam_pattern": "Paper-1 (100) + Paper-2 (100)",
+      "viral_subtext": "DOIT&C एवं विभिन्न विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 5310,
+      "name": "उप कारापाल सीधी भर्ती (Deputy Jailor)",
+      "eligibility": "स्नातक",
+      "age_limit": "18-26 वर्ष",
+      "applicant_scale": "1+ लाख",
+      "exam_pattern": "लिखित परीक्षा + शारीरिक माप-दक्षता",
+      "viral_subtext": "कारागार विभाग",
+      "status": "verified"
+    }
+  ]
+}

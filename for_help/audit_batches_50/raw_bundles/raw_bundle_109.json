@@ -1,0 +1,358 @@
+{
+  "bundle_number": 109,
+  "bundle_id": "raw_bundle_109",
+  "range": "5401 - 5450",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5401,
+      "group_sl": 4956,
+      "exam_id": 2038,
+      "name": "DSSSB SI, Technical Assistant",
+      "group": "Delhi Police & Security Exams"
+    },
+    {
+      "global_sl": 5402,
+      "group_sl": 5003,
+      "exam_id": 1991,
+      "name": "DSSSB Forest Guard",
+      "group": "Delhi Police & Security Exams"
+    },
+    {
+      "global_sl": 5403,
+      "group_sl": 5163,
+      "exam_id": 1831,
+      "name": "Delhi Police MTS",
+      "group": "Delhi Police & Security Exams"
+    },
+    {
+      "global_sl": 5404,
+      "group_sl": 5164,
+      "exam_id": 1830,
+      "name": "Delhi Police Head Constable Ministerial",
+      "group": "Delhi Police & Security Exams"
+    },
+    {
+      "global_sl": 5405,
+      "group_sl": 5165,
+      "exam_id": 1829,
+      "name": "Delhi Police Head Constable",
+      "group": "Delhi Police & Security Exams"
+    },
+    {
+      "global_sl": 5406,
+      "group_sl": 5166,
+      "exam_id": 1828,
+      "name": "Delhi Police Constable Driver",
+      "group": "Delhi Police & Security Exams"
+    },
+    {
+      "global_sl": 5407,
+      "group_sl": 5167,
+      "exam_id": 1827,
+      "name": "Delhi Police Constable",
+      "group": "Delhi Police & Security Exams"
+    },
+    {
+      "global_sl": 5408,
+      "group_sl": 5169,
+      "exam_id": 1825,
+      "name": "Delhi Home Guard",
+      "group": "Delhi Police & Security Exams"
+    },
+    {
+      "global_sl": 5409,
+      "group_sl": 6482,
+      "exam_id": 512,
+      "name": "Assam Rifles Rally GD Constable",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "global_sl": 5410,
+      "group_sl": 6488,
+      "exam_id": 506,
+      "name": "Assam Police UDC, LDC & Stenographer",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "global_sl": 5411,
+      "group_sl": 6489,
+      "exam_id": 505,
+      "name": "Assam Police SI",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "global_sl": 5412,
+      "group_sl": 6490,
+      "exam_id": 504,
+      "name": "Assam Police Ministerial Staff",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "global_sl": 5413,
+      "group_sl": 6491,
+      "exam_id": 503,
+      "name": "Assam Police Jail Warder",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "global_sl": 5414,
+      "group_sl": 6492,
+      "exam_id": 502,
+      "name": "Assam Police JA",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "global_sl": 5415,
+      "group_sl": 6493,
+      "exam_id": 501,
+      "name": "Assam Police Grade 4",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "global_sl": 5416,
+      "group_sl": 6494,
+      "exam_id": 500,
+      "name": "Assam Police Forest Guard",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "global_sl": 5417,
+      "group_sl": 6495,
+      "exam_id": 499,
+      "name": "Assam Police Excise Constable",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "global_sl": 5418,
+      "group_sl": 154,
+      "exam_id": 6840,
+      "name": "VSSC Pharmacist",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "global_sl": 5419,
+      "group_sl": 2135,
+      "exam_id": 4859,
+      "name": "Pharmacy Officer",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "global_sl": 5420,
+      "group_sl": 2136,
+      "exam_id": 4858,
+      "name": "Pharmacy Exams",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "global_sl": 5421,
+      "group_sl": 2137,
+      "exam_id": 4857,
+      "name": "Pharmacist Exams",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "global_sl": 5422,
+      "group_sl": 2553,
+      "exam_id": 4441,
+      "name": "NIPER JEE",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "global_sl": 5423,
+      "group_sl": 4670,
+      "exam_id": 2324,
+      "name": "GPAT",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "global_sl": 5424,
+      "group_sl": 5784,
+      "exam_id": 1210,
+      "name": "CCRAS Pharmacist",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "global_sl": 5425,
+      "group_sl": 6433,
+      "exam_id": 561,
+      "name": "B Pharmacy",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "global_sl": 5426,
+      "group_sl": 278,
+      "exam_id": 6716,
+      "name": "UPSC IES ISS",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "global_sl": 5427,
+      "group_sl": 279,
+      "exam_id": 6715,
+      "name": "UPSC ESE IRMS Stores",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "global_sl": 5428,
+      "group_sl": 280,
+      "exam_id": 6714,
+      "name": "UPSC ESE IRMS",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "global_sl": 5429,
+      "group_sl": 4854,
+      "exam_id": 2140,
+      "name": "ESE Mechanical Engineering",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "global_sl": 5430,
+      "group_sl": 4855,
+      "exam_id": 2139,
+      "name": "ESE General Studies",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "global_sl": 5431,
+      "group_sl": 4856,
+      "exam_id": 2138,
+      "name": "ESE Electronics and Telecommunication Engineering",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "global_sl": 5432,
+      "group_sl": 4857,
+      "exam_id": 2137,
+      "name": "ESE Electrical Engineering",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "global_sl": 5433,
+      "group_sl": 4858,
+      "exam_id": 2136,
+      "name": "ESE Civil Engineering",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "global_sl": 5434,
+      "group_sl": 660,
+      "exam_id": 6334,
+      "name": "UKMSSB X Ray Technician",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "global_sl": 5435,
+      "group_sl": 661,
+      "exam_id": 6333,
+      "name": "UKMSSB Tutor",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "global_sl": 5436,
+      "group_sl": 662,
+      "exam_id": 6332,
+      "name": "UKMSSB Pharmacist",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "global_sl": 5437,
+      "group_sl": 663,
+      "exam_id": 6331,
+      "name": "UKMSSB MSW",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "global_sl": 5438,
+      "group_sl": 664,
+      "exam_id": 6330,
+      "name": "UKMSSB MO",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "global_sl": 5439,
+      "group_sl": 665,
+      "exam_id": 6329,
+      "name": "UKMSSB Lab Technician",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "global_sl": 5440,
+      "group_sl": 666,
+      "exam_id": 6328,
+      "name": "UKMSSB Dental Hygienist",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "global_sl": 5441,
+      "group_sl": 667,
+      "exam_id": 6327,
+      "name": "UKMSSB CSSD Technician",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "global_sl": 5442,
+      "group_sl": 1089,
+      "exam_id": 5905,
+      "name": "THDC Trade Apprentice",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "global_sl": 5443,
+      "group_sl": 1090,
+      "exam_id": 5904,
+      "name": "THDC JET Mechanical",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "global_sl": 5444,
+      "group_sl": 1091,
+      "exam_id": 5903,
+      "name": "THDC JET Electrical",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "global_sl": 5445,
+      "group_sl": 1092,
+      "exam_id": 5902,
+      "name": "THDC JET Civil",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "global_sl": 5446,
+      "group_sl": 1093,
+      "exam_id": 5901,
+      "name": "THDC Executive Human Resource",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "global_sl": 5447,
+      "group_sl": 1095,
+      "exam_id": 5899,
+      "name": "THDC Engineer Mechanical",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "global_sl": 5448,
+      "group_sl": 1096,
+      "exam_id": 5898,
+      "name": "THDC Engineer Electrical",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "global_sl": 5449,
+      "group_sl": 1097,
+      "exam_id": 5897,
+      "name": "THDC Engineer Civil",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "global_sl": 5450,
+      "group_sl": 1457,
+      "exam_id": 5537,
+      "name": "RVUNL Technician",
+      "group": "Rajasthan RVUNL Exams"
+    }
+  ]
+}

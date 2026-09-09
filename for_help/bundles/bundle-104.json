@@ -1,0 +1,344 @@
+{
+  "bundle_id": "bundle-104",
+  "bundle_num": 104,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Punjab General Govt",
+  "total_exams": 55,
+  "boards_included": [
+    "Punjab General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 1950,
+      "id": 5044,
+      "name": "PWRMDC Tubewell Operator",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1954,
+      "id": 5040,
+      "name": "Punjab Wakf Board Clerk",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1955,
+      "id": 5039,
+      "name": "Punjab Verka Milkfed Clerk",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1956,
+      "id": 5038,
+      "name": "Punjab Sugar Mill Manufacturing Chemist",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1957,
+      "id": 5037,
+      "name": "Punjab Sugar Mill Assistant Engineer Mechanical",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1958,
+      "id": 5036,
+      "name": "Punjab SET Sociology",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1959,
+      "id": 5035,
+      "name": "Punjab SET Sanskrit",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1960,
+      "id": 5034,
+      "name": "Punjab SET Public Administration",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1961,
+      "id": 5033,
+      "name": "Punjab SET Psychology",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1962,
+      "id": 5032,
+      "name": "Punjab SET Political Science",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1963,
+      "id": 5031,
+      "name": "Punjab SET Physical Science",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1965,
+      "id": 5029,
+      "name": "Punjab SET Philosophy",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1966,
+      "id": 5028,
+      "name": "Punjab SET Paper 1",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1967,
+      "id": 5027,
+      "name": "Punjab SET Music",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1968,
+      "id": 5026,
+      "name": "Punjab SET Mathematical Sciences",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1969,
+      "id": 5025,
+      "name": "Punjab SET Mass Communication and Journalism",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1970,
+      "id": 5024,
+      "name": "Punjab SET Life Sciences",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1971,
+      "id": 5023,
+      "name": "Punjab SET History",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1972,
+      "id": 5022,
+      "name": "Punjab SET Hindi",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1973,
+      "id": 5021,
+      "name": "Punjab SET Geography",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1974,
+      "id": 5020,
+      "name": "Punjab SET English",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1976,
+      "id": 5018,
+      "name": "Punjab SET Economics",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1977,
+      "id": 5017,
+      "name": "Punjab SET Computer Science",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1978,
+      "id": 5016,
+      "name": "Punjab SET Commerce",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1979,
+      "id": 5015,
+      "name": "Punjab SET Chemical Science",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1982,
+      "id": 5012,
+      "name": "Punjab Post Office GDS",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 1988,
+      "id": 5006,
+      "name": "Punjab Patwari",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2009,
+      "id": 4985,
+      "name": "Punjab General Knowledge",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2029,
+      "id": 4965,
+      "name": "PUDA JE",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2079,
+      "id": 4915,
+      "name": "PPSC Veterinary Officer",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2080,
+      "id": 4914,
+      "name": "PPSC Sister Tutor",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2081,
+      "id": 4913,
+      "name": "PPSC Senior Assistant",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2082,
+      "id": 4912,
+      "name": "PPSC Section Officer",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2083,
+      "id": 4911,
+      "name": "PPSC SDE",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2084,
+      "id": 4910,
+      "name": "PPSC Naib Tehsildar",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2085,
+      "id": 4909,
+      "name": "PPSC MO",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2086,
+      "id": 4908,
+      "name": "PPSC JE",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2087,
+      "id": 4907,
+      "name": "PPSC Inspectors Audit, Audit Officer",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2089,
+      "id": 4905,
+      "name": "PPSC Headmaster",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2090,
+      "id": 4904,
+      "name": "PPSC HDO",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2091,
+      "id": 4903,
+      "name": "PPSC Draftsmen",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2092,
+      "id": 4902,
+      "name": "PPSC Civil Service",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2094,
+      "id": 4900,
+      "name": "PPSC Building Inspector",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2095,
+      "id": 4899,
+      "name": "PPSC Analyst",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2096,
+      "id": 4898,
+      "name": "PPSC ADO",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2097,
+      "id": 4897,
+      "name": "PPSC ADA",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 2098,
+      "id": 4896,
+      "name": "PPSC",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 3096,
+      "id": 3898,
+      "name": "MILKFED Punjab Senior Executive",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 3197,
+      "id": 3797,
+      "name": "MARKFED Punjab Steno Typist",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 3198,
+      "id": 3796,
+      "name": "Markfed Punjab Salesman",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 3199,
+      "id": 3795,
+      "name": "Markfed Punjab AFO",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 4814,
+      "id": 2180,
+      "name": "FCI Punjab Watchman",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 4929,
+      "id": 2065,
+      "name": "DWSS Punjab JE",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 5146,
+      "id": 1848,
+      "name": "DGR Punjab Technical Assistant",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "sl": 5775,
+      "id": 1219,
+      "name": "CDAC Mohali Project Engineer",
+      "group": "Punjab General Government Exams"
+    }
+  ]
+}

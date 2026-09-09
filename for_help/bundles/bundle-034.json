@@ -1,0 +1,409 @@
+{
+  "bundle_id": "bundle-034",
+  "bundle_num": 34,
+  "category_id": "railways",
+  "category_name": "रेलवे (RRB)",
+  "category_icon": "🚆",
+  "title": "रेलवे (RRB) — National Railways - RRB NTPC • National Railways - RRB ALP & Technician • National Railways - RRB Group D",
+  "total_exams": 65,
+  "boards_included": [
+    "National Railways - RRB NTPC",
+    "National Railways - RRB ALP & Technician",
+    "National Railways - RRB Group D",
+    "National Railways - RRB JE",
+    "National Railways - RRB Apprentice",
+    "National Railways - DFCCIL"
+  ],
+  "exams": [
+    {
+      "sl": 1390,
+      "id": 5604,
+      "name": "SCR Junior Engineer",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1576,
+      "id": 5418,
+      "name": "RRC WR Junior Engineer",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1588,
+      "id": 5406,
+      "name": "RRC GDCE JE Electrical",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1615,
+      "id": 5379,
+      "name": "RRB Junior Engineer Works",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1616,
+      "id": 5378,
+      "name": "RRB Junior Engineer Signal and Telecommunications",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1617,
+      "id": 5377,
+      "name": "RRB Junior Engineer P Way",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1618,
+      "id": 5376,
+      "name": "RRB Junior Engineer Mechanical Workshop",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1619,
+      "id": 5375,
+      "name": "RRB Junior Engineer Electrical TRS",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1620,
+      "id": 5374,
+      "name": "RRB Junior Engineer Electrical TRD",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1621,
+      "id": 5373,
+      "name": "RRB Junior Engineer Diesel Mechanical",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1622,
+      "id": 5372,
+      "name": "RRB Junior Engineer Diesel Electrical",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1623,
+      "id": 5371,
+      "name": "RRB Junior Engineer Carriage and Wagon",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1624,
+      "id": 5370,
+      "name": "RRB JE Track Machine",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1625,
+      "id": 5369,
+      "name": "RRB JE Production Technology",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1626,
+      "id": 5368,
+      "name": "RRB JE Mechanical",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1627,
+      "id": 5367,
+      "name": "RRB JE Electronics Telecommunication",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1628,
+      "id": 5366,
+      "name": "RRB JE Electrical",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1629,
+      "id": 5365,
+      "name": "RRB JE Depot Material Superintendent",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1630,
+      "id": 5364,
+      "name": "RRB JE Civil",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1631,
+      "id": 5363,
+      "name": "RRB JE Chemical and Metallurgical Assistant",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 1632,
+      "id": 5362,
+      "name": "RRB JE",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 2721,
+      "id": 4273,
+      "name": "NCRTC JE",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 3455,
+      "id": 3539,
+      "name": "KRCL JE",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "sl": 13,
+      "id": 6981,
+      "name": "Western Railway Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 19,
+      "id": 6975,
+      "name": "WCR Trade Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 1280,
+      "id": 5714,
+      "name": "South Central Railway Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 1375,
+      "id": 5619,
+      "name": "SECR Trade Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 1578,
+      "id": 5416,
+      "name": "RRC Trade Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 1580,
+      "id": 5414,
+      "name": "RRC NWR Jaipur Trade Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 1581,
+      "id": 5413,
+      "name": "RRC Hubli Trade Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 1591,
+      "id": 5403,
+      "name": "RRC Central Railway Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 1917,
+      "id": 5077,
+      "name": "Railway SER Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 2507,
+      "id": 4487,
+      "name": "Northern Railway Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 2511,
+      "id": 4483,
+      "name": "North Central Railway Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 2664,
+      "id": 4330,
+      "name": "NFR Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 3940,
+      "id": 3054,
+      "name": "IOCL WR Trade Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 3943,
+      "id": 3051,
+      "name": "IOCL SR Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 4923,
+      "id": 2071,
+      "name": "Eastern Railway Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 4926,
+      "id": 2068,
+      "name": "East Coast Railway Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 6051,
+      "id": 943,
+      "name": "BOAT WR Graduate Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "sl": 1279,
+      "id": 5715,
+      "name": "South Eastern Railway ALP",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "sl": 1583,
+      "id": 5411,
+      "name": "RRC GDCE Technician Grade III",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "sl": 1593,
+      "id": 5401,
+      "name": "RRB Technician Grade 3",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "sl": 1594,
+      "id": 5400,
+      "name": "RRB Technician Grade 1",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "sl": 1598,
+      "id": 5396,
+      "name": "RRB Radiographer X Ray Technician",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "sl": 1635,
+      "id": 5359,
+      "name": "RRB Dialysis Technician",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "sl": 1638,
+      "id": 5356,
+      "name": "RRB ALP Physics and Maths",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "sl": 1639,
+      "id": 5355,
+      "name": "RRB ALP Mechanical",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "sl": 1640,
+      "id": 5354,
+      "name": "RRB ALP Electronics",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "sl": 1641,
+      "id": 5353,
+      "name": "RRB ALP Electrical",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "sl": 1642,
+      "id": 5352,
+      "name": "RRB ALP Automobile",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "sl": 1643,
+      "id": 5351,
+      "name": "RRB ALP",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "sl": 1933,
+      "id": 5061,
+      "name": "Railway NCR ALP, TC & Goods Guard",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "sl": 3454,
+      "id": 3540,
+      "name": "KRCL Technician 3",
+      "group": "National Railways - RRB ALP & Technician Exams"
+    },
+    {
+      "sl": 5154,
+      "id": 1840,
+      "name": "DFCCIL MTS",
+      "group": "National Railways - DFCCIL Exams"
+    },
+    {
+      "sl": 5155,
+      "id": 1839,
+      "name": "DFCCIL Junior Executive",
+      "group": "National Railways - DFCCIL Exams"
+    },
+    {
+      "sl": 5156,
+      "id": 1838,
+      "name": "DFCCIL Executive Signal & Telecommunication",
+      "group": "National Railways - DFCCIL Exams"
+    },
+    {
+      "sl": 5157,
+      "id": 1837,
+      "name": "DFCCIL Executive Electrical",
+      "group": "National Railways - DFCCIL Exams"
+    },
+    {
+      "sl": 5158,
+      "id": 1836,
+      "name": "DFCCIL Executive Civil",
+      "group": "National Railways - DFCCIL Exams"
+    },
+    {
+      "sl": 5159,
+      "id": 1835,
+      "name": "DFCCIL Assistant Manager",
+      "group": "National Railways - DFCCIL Exams"
+    },
+    {
+      "sl": 1604,
+      "id": 5390,
+      "name": "RRB NTPC Under Graduate Level",
+      "group": "National Railways - RRB NTPC Exams"
+    },
+    {
+      "sl": 1605,
+      "id": 5389,
+      "name": "RRB NTPC Senior Clerk Cum Typist",
+      "group": "National Railways - RRB NTPC Exams"
+    },
+    {
+      "sl": 1606,
+      "id": 5388,
+      "name": "RRB NTPC Paramedical Staff",
+      "group": "National Railways - RRB NTPC Exams"
+    },
+    {
+      "sl": 1607,
+      "id": 5387,
+      "name": "RRB NTPC",
+      "group": "National Railways - RRB NTPC Exams"
+    },
+    {
+      "sl": 1936,
+      "id": 5058,
+      "name": "Railway Group D",
+      "group": "National Railways - RRB Group D Exams"
+    }
+  ]
+}

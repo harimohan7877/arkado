@@ -1,0 +1,358 @@
+{
+  "bundle_number": 61,
+  "bundle_id": "raw_bundle_061",
+  "range": "3001 - 3050",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3001,
+      "group_sl": 2384,
+      "exam_id": 4610,
+      "name": "OBC Advocates",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3002,
+      "group_sl": 2543,
+      "exam_id": 4451,
+      "name": "NLAT",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3003,
+      "group_sl": 2724,
+      "exam_id": 4270,
+      "name": "NCLT Stenographer",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3004,
+      "group_sl": 2783,
+      "exam_id": 4211,
+      "name": "Muslim Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3005,
+      "group_sl": 3092,
+      "exam_id": 3902,
+      "name": "Mining Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3006,
+      "group_sl": 3217,
+      "exam_id": 3777,
+      "name": "Maintenance and Welfare of Parents and Senior Citizens Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3007,
+      "group_sl": 3278,
+      "exam_id": 3716,
+      "name": "LSSSSB Technical Legal Assistant",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3008,
+      "group_sl": 3282,
+      "exam_id": 3712,
+      "name": "LSAT",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3009,
+      "group_sl": 3296,
+      "exam_id": 3698,
+      "name": "Limited Liability Partnership LLP Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3010,
+      "group_sl": 3316,
+      "exam_id": 3678,
+      "name": "Law of Torts",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3011,
+      "group_sl": 3317,
+      "exam_id": 3677,
+      "name": "Law Of Constitution of India",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3012,
+      "group_sl": 3318,
+      "exam_id": 3676,
+      "name": "Law Of Civil Procedure",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3013,
+      "group_sl": 3319,
+      "exam_id": 3675,
+      "name": "Law Of Evidence Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3014,
+      "group_sl": 3320,
+      "exam_id": 3674,
+      "name": "Law Exams",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3015,
+      "group_sl": 3327,
+      "exam_id": 3667,
+      "name": "Labour Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3016,
+      "group_sl": 3595,
+      "exam_id": 3399,
+      "name": "Jurisprudence",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3017,
+      "group_sl": 3977,
+      "exam_id": 3017,
+      "name": "Intellectual Property Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3018,
+      "group_sl": 4012,
+      "exam_id": 2982,
+      "name": "Indian Evidence Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3019,
+      "group_sl": 4014,
+      "exam_id": 2980,
+      "name": "Indian Contract Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3020,
+      "group_sl": 4072,
+      "exam_id": 2922,
+      "name": "Indecent Representation of Women Prohibition Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3021,
+      "group_sl": 4079,
+      "exam_id": 2915,
+      "name": "ILICAT",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3022,
+      "group_sl": 4492,
+      "exam_id": 2502,
+      "name": "Hindu Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3023,
+      "group_sl": 4833,
+      "exam_id": 2161,
+      "name": "Family Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3024,
+      "group_sl": 5072,
+      "exam_id": 1922,
+      "name": "Dowry Prohibition Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3025,
+      "group_sl": 5109,
+      "exam_id": 1885,
+      "name": "DLSA Para Legal Volunteer",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3026,
+      "group_sl": 5258,
+      "exam_id": 1736,
+      "name": "Cyber Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3027,
+      "group_sl": 5519,
+      "exam_id": 1475,
+      "name": "CS Executive Tax Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3028,
+      "group_sl": 5575,
+      "exam_id": 1419,
+      "name": "CLAT",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3029,
+      "group_sl": 5582,
+      "exam_id": 1412,
+      "name": "Civil Judge, Public Prosecutor",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3030,
+      "group_sl": 5603,
+      "exam_id": 1391,
+      "name": "CIL MT Legal",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3031,
+      "group_sl": 190,
+      "exam_id": 6804,
+      "name": "Uttarakhand LT Teacher",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3032,
+      "group_sl": 205,
+      "exam_id": 6789,
+      "name": "USET Physical Education",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3033,
+      "group_sl": 220,
+      "exam_id": 6774,
+      "name": "USET Education",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3034,
+      "group_sl": 570,
+      "exam_id": 6424,
+      "name": "UKSSSC Special Education Teacher",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3035,
+      "group_sl": 591,
+      "exam_id": 6403,
+      "name": "UKSSSC Assistant Teacher LT Science",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3036,
+      "group_sl": 592,
+      "exam_id": 6402,
+      "name": "UKSSSC Assistant Teacher LT Physical Education",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3037,
+      "group_sl": 593,
+      "exam_id": 6401,
+      "name": "UKSSSC Assistant Teacher LT Music",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3038,
+      "group_sl": 594,
+      "exam_id": 6400,
+      "name": "UKSSSC Assistant Teacher LT Mathematics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3039,
+      "group_sl": 595,
+      "exam_id": 6399,
+      "name": "UKSSSC Assistant Teacher LT Home Science",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3040,
+      "group_sl": 596,
+      "exam_id": 6398,
+      "name": "UKSSSC Assistant Teacher LT Hindi",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3041,
+      "group_sl": 597,
+      "exam_id": 6397,
+      "name": "UKSSSC Assistant Teacher LT General",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3042,
+      "group_sl": 598,
+      "exam_id": 6396,
+      "name": "UKSSSC Assistant Teacher LT English",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3043,
+      "group_sl": 599,
+      "exam_id": 6395,
+      "name": "UKSSSC Assistant Teacher LT Commerce",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3044,
+      "group_sl": 600,
+      "exam_id": 6394,
+      "name": "UKSSSC Assistant Teacher",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3045,
+      "group_sl": 610,
+      "exam_id": 6384,
+      "name": "UKPSC Polytechnic Lecturer Physics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3046,
+      "group_sl": 612,
+      "exam_id": 6382,
+      "name": "UKPSC Polytechnic Lecturer Mechanical",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3047,
+      "group_sl": 613,
+      "exam_id": 6381,
+      "name": "UKPSC Polytechnic Lecturer Electronics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3048,
+      "group_sl": 614,
+      "exam_id": 6380,
+      "name": "UKPSC Polytechnic Lecturer Electrical",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3049,
+      "group_sl": 615,
+      "exam_id": 6379,
+      "name": "UKPSC Polytechnic Lecturer Computer Science",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3050,
+      "group_sl": 616,
+      "exam_id": 6378,
+      "name": "UKPSC Polytechnic Lecturer Civil",
+      "group": "Uttarakhand Teaching & School Exams"
+    }
+  ]
+}

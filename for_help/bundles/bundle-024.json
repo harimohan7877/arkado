@@ -1,0 +1,45 @@
+{
+  "bundle_id": "bundle-024",
+  "bundle_num": 24,
+  "category_id": "national-central",
+  "category_name": "अखिल भारतीय / राष्ट्रीय",
+  "category_icon": "🇮🇳",
+  "title": "अखिल भारतीय / राष्ट्रीय — तीनों सेनाएं (Armed Forces Recruitment)",
+  "total_exams": 3,
+  "boards_included": [
+    "Defence"
+  ],
+  "official_portal": "https://joinindianarmy.nic.in",
+  "exams": [
+    {
+      "id": 5040,
+      "name": "इंडियन आर्मी अग्निवीर (GD / Clerk / Tech)",
+      "eligibility": "8वीं / 10वीं / 12वीं पास",
+      "age_limit": "17.5-21 वर्ष",
+      "applicant_scale": "20+ लाख",
+      "exam_pattern": "CEE ऑनलाइन परीक्षा + शारीरिक दक्षता दौड़ (1.6 किमी)",
+      "viral_subtext": "थल सेना भर्ती",
+      "status": "verified"
+    },
+    {
+      "id": 5041,
+      "name": "इंडियन एयरफोर्स अग्निवीर वायु",
+      "eligibility": "12वीं (Math/Phys/Eng 50%)",
+      "age_limit": "17.5-21 वर्ष",
+      "applicant_scale": "7+ लाख",
+      "exam_pattern": "Phase-1 ऑनलाइन CBT + Phase-2 PFT व एडाप्टेबिलिटी",
+      "viral_subtext": "वायु सेना भर्ती",
+      "status": "verified"
+    },
+    {
+      "id": 5042,
+      "name": "इंडियन नेवी अग्निवीर (SSR एवं MR)",
+      "eligibility": "10वीं / 12वीं (PCM)",
+      "age_limit": "17.5-21 वर्ष",
+      "applicant_scale": "6+ लाख",
+      "exam_pattern": "INET ऑनलाइन + PFT",
+      "viral_subtext": "नौसेना भर्ती",
+      "status": "verified"
+    }
+  ]
+}

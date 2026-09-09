@@ -1,0 +1,358 @@
+{
+  "bundle_number": 78,
+  "bundle_id": "raw_bundle_078",
+  "range": "3851 - 3900",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3851,
+      "group_sl": 2235,
+      "exam_id": 4759,
+      "name": "OSSC Laboratory Assistant",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3852,
+      "group_sl": 2236,
+      "exam_id": 4758,
+      "name": "OSSC Junior Mining Officer",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3853,
+      "group_sl": 2237,
+      "exam_id": 4757,
+      "name": "OSSC Junior Librarian",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3854,
+      "group_sl": 2238,
+      "exam_id": 4756,
+      "name": "OSSC Junior Fisheries Technical Assistant",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3855,
+      "group_sl": 2239,
+      "exam_id": 4755,
+      "name": "OSSC Junior Assistant",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3856,
+      "group_sl": 2240,
+      "exam_id": 4754,
+      "name": "OSSC JE",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3857,
+      "group_sl": 2241,
+      "exam_id": 4753,
+      "name": "OSSC IPO",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3858,
+      "group_sl": 2242,
+      "exam_id": 4752,
+      "name": "OSSC Inspector of Supplies",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3859,
+      "group_sl": 2243,
+      "exam_id": 4751,
+      "name": "OSSC Excise Sub Inspector",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3860,
+      "group_sl": 2244,
+      "exam_id": 4750,
+      "name": "OSSC District Culture Officer",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3861,
+      "group_sl": 2245,
+      "exam_id": 4749,
+      "name": "OSSC CHSL",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3862,
+      "group_sl": 2246,
+      "exam_id": 4748,
+      "name": "OSSC CGL Librarian",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3863,
+      "group_sl": 2247,
+      "exam_id": 4747,
+      "name": "OSSC CGL Laboratory Assistant",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3864,
+      "group_sl": 2248,
+      "exam_id": 4746,
+      "name": "OSSC CGL Assistant Embankment Inspector",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3865,
+      "group_sl": 2249,
+      "exam_id": 4745,
+      "name": "OSSC CGL",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3866,
+      "group_sl": 2250,
+      "exam_id": 4744,
+      "name": "OSSC BSSO",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3867,
+      "group_sl": 2251,
+      "exam_id": 4743,
+      "name": "OSSC Ayush Assistant Homeopathic",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3868,
+      "group_sl": 2252,
+      "exam_id": 4742,
+      "name": "OSSC Ayush Assistant Ayurvedic",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3869,
+      "group_sl": 2253,
+      "exam_id": 4741,
+      "name": "OSSC Ayush Assistant",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3870,
+      "group_sl": 2254,
+      "exam_id": 4740,
+      "name": "OSSC Auditor",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3871,
+      "group_sl": 2255,
+      "exam_id": 4739,
+      "name": "OSSC ATO",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3872,
+      "group_sl": 2256,
+      "exam_id": 4738,
+      "name": "OSSC Accountant",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3873,
+      "group_sl": 6,
+      "exam_id": 6988,
+      "name": "WSSO Haryana Block Resource Coordinator",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3874,
+      "group_sl": 671,
+      "exam_id": 6323,
+      "name": "UHSR Rohtak Non Teaching",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3875,
+      "group_sl": 672,
+      "exam_id": 6322,
+      "name": "UHSR Group C",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3876,
+      "group_sl": 2018,
+      "exam_id": 4976,
+      "name": "Punjab and Haryana HC Clerk",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3877,
+      "group_sl": 4330,
+      "exam_id": 2664,
+      "name": "HPSC HDO",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3878,
+      "group_sl": 4331,
+      "exam_id": 2663,
+      "name": "HPSC HCS Allied Service",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3879,
+      "group_sl": 4332,
+      "exam_id": 2662,
+      "name": "HPSC FSO",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3880,
+      "group_sl": 4355,
+      "exam_id": 2639,
+      "name": "HPSC Assistant Engineer Civil",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3881,
+      "group_sl": 4356,
+      "exam_id": 2638,
+      "name": "HPSC AEE",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3882,
+      "group_sl": 4357,
+      "exam_id": 2637,
+      "name": "HPSC ADO",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3883,
+      "group_sl": 4358,
+      "exam_id": 2636,
+      "name": "HPSC ADA",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3884,
+      "group_sl": 4507,
+      "exam_id": 2487,
+      "name": "Haryana SET Physics",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3885,
+      "group_sl": 4508,
+      "exam_id": 2486,
+      "name": "Haryana SET Physical Science",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3886,
+      "group_sl": 4509,
+      "exam_id": 2485,
+      "name": "Haryana SET Paper 1",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3887,
+      "group_sl": 4510,
+      "exam_id": 2484,
+      "name": "Haryana SET Mathematical Science",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3888,
+      "group_sl": 4511,
+      "exam_id": 2483,
+      "name": "Haryana SET History",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3889,
+      "group_sl": 4512,
+      "exam_id": 2482,
+      "name": "Haryana SET Hindi",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3890,
+      "group_sl": 4513,
+      "exam_id": 2481,
+      "name": "Haryana SET English",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3891,
+      "group_sl": 4515,
+      "exam_id": 2479,
+      "name": "Haryana SET Chemistry",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3892,
+      "group_sl": 4516,
+      "exam_id": 2478,
+      "name": "Haryana Roadways Conductor",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3893,
+      "group_sl": 4517,
+      "exam_id": 2477,
+      "name": "Haryana Postal Circle GDS",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3894,
+      "group_sl": 4518,
+      "exam_id": 2476,
+      "name": "Haryana Post Office MTS",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3895,
+      "group_sl": 4521,
+      "exam_id": 2473,
+      "name": "Haryana Patwari & Gram Sachiv",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3896,
+      "group_sl": 4524,
+      "exam_id": 2470,
+      "name": "Haryana HFA Coordinator",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3897,
+      "group_sl": 4525,
+      "exam_id": 2469,
+      "name": "Haryana GK in Hindi",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3898,
+      "group_sl": 4526,
+      "exam_id": 2468,
+      "name": "Haryana GK in English",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3899,
+      "group_sl": 4825,
+      "exam_id": 2169,
+      "name": "FCI Haryana Watchman",
+      "group": "Haryana General Government Exams"
+    },
+    {
+      "global_sl": 3900,
+      "group_sl": 5140,
+      "exam_id": 1854,
+      "name": "DHFWS Hisar MO",
+      "group": "Haryana General Government Exams"
+    }
+  ]
+}

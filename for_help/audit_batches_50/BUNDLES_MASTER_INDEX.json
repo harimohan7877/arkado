@@ -1,0 +1,1837 @@
+{
+  "metadata": {
+    "title": "सरकारी साथी — 130 परीक्षा बंडल्स मास्टर ऑडिट लेजर (50-50 ग्रुप)",
+    "total_raw_exams": 6493,
+    "total_bundles": 130,
+    "batch_size": 50,
+    "overall_summary": {
+      "total_verified_keep": 5736,
+      "total_merged_subjects": 534,
+      "total_deleted_bogus_or_admissions": 223,
+      "total_moved_misplaced": 0
+    },
+    "status": "100% ऑडिट एवं सत्यापन पूर्ण"
+  },
+  "bundles": [
+    {
+      "bundle_number": 1,
+      "bundle_id": "audit_bundle_001",
+      "range": "1 - 50",
+      "items_count": 50,
+      "keep": 0,
+      "merge": 0,
+      "delete": 50,
+      "move": 0,
+      "sample_exams": [
+        "CUET UG Telugu",
+        "CUET UG Teaching Aptitude"
+      ]
+    },
+    {
+      "bundle_number": 2,
+      "bundle_id": "audit_bundle_002",
+      "range": "51 - 100",
+      "items_count": 50,
+      "keep": 0,
+      "merge": 0,
+      "delete": 50,
+      "move": 0,
+      "sample_exams": [
+        "CUET PG Textile Engineering",
+        "CUET PG Textile Design"
+      ]
+    },
+    {
+      "bundle_number": 3,
+      "bundle_id": "audit_bundle_003",
+      "range": "101 - 150",
+      "items_count": 50,
+      "keep": 0,
+      "merge": 0,
+      "delete": 50,
+      "move": 0,
+      "sample_exams": [
+        "CUET PG Krishna Yajurveda",
+        "CUET PG Karnatak Music"
+      ]
+    },
+    {
+      "bundle_number": 4,
+      "bundle_id": "audit_bundle_004",
+      "range": "151 - 200",
+      "items_count": 50,
+      "keep": 28,
+      "merge": 0,
+      "delete": 22,
+      "move": 0,
+      "sample_exams": [
+        "CUET PG B.Ed Humanities and Social Sciences",
+        "CUET PG B.Ed"
+      ]
+    },
+    {
+      "bundle_number": 5,
+      "bundle_id": "audit_bundle_005",
+      "range": "201 - 250",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "BTSC Lab Technician",
+        "BTSC JE Mechanical"
+      ]
+    },
+    {
+      "bundle_number": 6,
+      "bundle_id": "audit_bundle_006",
+      "range": "251 - 300",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Bihar Vikas Mission Exam",
+        "Bihar Vidhan Sabha DEO"
+      ]
+    },
+    {
+      "bundle_number": 7,
+      "bundle_id": "audit_bundle_007",
+      "range": "301 - 350",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Bihar Jeevika Community Coordinator",
+        "Bihar Jeevika Block IT Executive"
+      ]
+    },
+    {
+      "bundle_number": 8,
+      "bundle_id": "audit_bundle_008",
+      "range": "351 - 400",
+      "items_count": 50,
+      "keep": 43,
+      "merge": 0,
+      "delete": 7,
+      "move": 0,
+      "sample_exams": [
+        "OPAL Executive & Non-Executive",
+        "NWDA LDC"
+      ]
+    },
+    {
+      "bundle_number": 9,
+      "bundle_id": "audit_bundle_009",
+      "range": "401 - 450",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "IIT JAM Biotechnology",
+        "IGM Junior Technician"
+      ]
+    },
+    {
+      "bundle_number": 10,
+      "bundle_id": "audit_bundle_010",
+      "range": "451 - 500",
+      "items_count": 50,
+      "keep": 38,
+      "merge": 12,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "CVPP Trainee Engineer and Junior Engineer Recruitment",
+        "Code of Civil Procedure"
+      ]
+    },
+    {
+      "bundle_number": 11,
+      "bundle_id": "audit_bundle_011",
+      "range": "501 - 550",
+      "items_count": 50,
+      "keep": 19,
+      "merge": 31,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "UPPSC Lecturer Economics",
+        "UPPSC Lecturer Commerce"
+      ]
+    },
+    {
+      "bundle_number": 12,
+      "bundle_id": "audit_bundle_012",
+      "range": "551 - 600",
+      "items_count": 50,
+      "keep": 27,
+      "merge": 23,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "UPPSC Assistant Professor Commerce",
+        "UPPSC Assistant Professor Chemistry"
+      ]
+    },
+    {
+      "bundle_number": 13,
+      "bundle_id": "audit_bundle_013",
+      "range": "601 - 650",
+      "items_count": 50,
+      "keep": 29,
+      "merge": 21,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "UP B.ED JEE Agriculture",
+        "UP B.Ed"
+      ]
+    },
+    {
+      "bundle_number": 14,
+      "bundle_id": "audit_bundle_014",
+      "range": "651 - 700",
+      "items_count": 50,
+      "keep": 43,
+      "merge": 7,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "PGT Bhotik Vigyan (Physics) Hindi",
+        "PGT Bhotik Vigyan (Physics)"
+      ]
+    },
+    {
+      "bundle_number": 15,
+      "bundle_id": "audit_bundle_015",
+      "range": "701 - 750",
+      "items_count": 50,
+      "keep": 44,
+      "merge": 6,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "DSRVS ARDO",
+        "DNH & Daman Upper Primary Teacher Social Science"
+      ]
+    },
+    {
+      "bundle_number": 16,
+      "bundle_id": "audit_bundle_016",
+      "range": "751 - 800",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Secretariat Administration Department (SAD) Recruitment",
+        "SAI Performance Analyst"
+      ]
+    },
+    {
+      "bundle_number": 17,
+      "bundle_id": "audit_bundle_017",
+      "range": "801 - 850",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "FCI Manager",
+        "FCI JE"
+      ]
+    },
+    {
+      "bundle_number": 18,
+      "bundle_id": "audit_bundle_018",
+      "range": "851 - 900",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "BIS ASO",
+        "VMGMC Solapur Group D"
+      ]
+    },
+    {
+      "bundle_number": 19,
+      "bundle_id": "audit_bundle_019",
+      "range": "901 - 950",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "MH SET Physical Science",
+        "MH SET Philosophy"
+      ]
+    },
+    {
+      "bundle_number": 20,
+      "bundle_id": "audit_bundle_020",
+      "range": "951 - 1000",
+      "items_count": 50,
+      "keep": 47,
+      "merge": 3,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "DMER Mumbai Dietitian",
+        "CNP Nashik Supervisor"
+      ]
+    },
+    {
+      "bundle_number": 21,
+      "bundle_id": "audit_bundle_021",
+      "range": "1001 - 1050",
+      "items_count": 50,
+      "keep": 36,
+      "merge": 14,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Railway TGT Teacher PCB",
+        "Railway TGT Teacher Maths"
+      ]
+    },
+    {
+      "bundle_number": 22,
+      "bundle_id": "audit_bundle_022",
+      "range": "1051 - 1100",
+      "items_count": 50,
+      "keep": 48,
+      "merge": 0,
+      "delete": 2,
+      "move": 0,
+      "sample_exams": [
+        "IBPS RRB Officer Scale II CA",
+        "IBPS RRB Officer Scale II Agriculture"
+      ]
+    },
+    {
+      "bundle_number": 23,
+      "bundle_id": "audit_bundle_023",
+      "range": "1101 - 1150",
+      "items_count": 50,
+      "keep": 22,
+      "merge": 24,
+      "delete": 4,
+      "move": 0,
+      "sample_exams": [
+        "RIICO Stenographer",
+        "RIICO Personal Assistant Grade II"
+      ]
+    },
+    {
+      "bundle_number": 24,
+      "bundle_id": "audit_bundle_024",
+      "range": "1151 - 1200",
+      "items_count": 50,
+      "keep": 35,
+      "merge": 13,
+      "delete": 2,
+      "move": 0,
+      "sample_exams": [
+        "Rajasthan General Knowledge",
+        "Rajasthan DLSA"
+      ]
+    },
+    {
+      "bundle_number": 25,
+      "bundle_id": "audit_bundle_025",
+      "range": "1201 - 1250",
+      "items_count": 50,
+      "keep": 33,
+      "merge": 17,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "UGC NET Performing Arts Dance, Drama, Theatre",
+        "UGC NET Paper 1"
+      ]
+    },
+    {
+      "bundle_number": 26,
+      "bundle_id": "audit_bundle_026",
+      "range": "1251 - 1300",
+      "items_count": 50,
+      "keep": 47,
+      "merge": 2,
+      "delete": 1,
+      "move": 0,
+      "sample_exams": [
+        "UGC NET Commerce",
+        "UGC NET Bengali"
+      ]
+    },
+    {
+      "bundle_number": 27,
+      "bundle_id": "audit_bundle_027",
+      "range": "1301 - 1350",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "UPPSC PCS",
+        "UPPSC Mines Inspector"
+      ]
+    },
+    {
+      "bundle_number": 28,
+      "bundle_id": "audit_bundle_028",
+      "range": "1351 - 1400",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "IOCL Mathura Trade Apprentice",
+        "FCI UP Watchman"
+      ]
+    },
+    {
+      "bundle_number": 29,
+      "bundle_id": "audit_bundle_029",
+      "range": "1401 - 1450",
+      "items_count": 50,
+      "keep": 48,
+      "merge": 2,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Indian Overseas Bank SO Manager and Senior Manager Risk",
+        "Indian Overseas Bank SO Manager and Senior Manager IT"
+      ]
+    },
+    {
+      "bundle_number": 30,
+      "bundle_id": "audit_bundle_030",
+      "range": "1451 - 1500",
+      "items_count": 50,
+      "keep": 25,
+      "merge": 25,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "SSB Odisha Lecturer Sanskrit",
+        "SSB Odisha Lecturer Psychology"
+      ]
+    },
+    {
+      "bundle_number": 31,
+      "bundle_id": "audit_bundle_031",
+      "range": "1501 - 1550",
+      "items_count": 50,
+      "keep": 40,
+      "merge": 10,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Odisha LTR Teacher TGT Arts",
+        "Odisha LTR Teacher Sanskrit Teacher"
+      ]
+    },
+    {
+      "bundle_number": 32,
+      "bundle_id": "audit_bundle_032",
+      "range": "1551 - 1600",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "MP SET Sociology",
+        "MP SET Sanskrit Traditional Subject"
+      ]
+    },
+    {
+      "bundle_number": 33,
+      "bundle_id": "audit_bundle_033",
+      "range": "1601 - 1650",
+      "items_count": 50,
+      "keep": 35,
+      "merge": 15,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "CPCT",
+        "BNP Dewas Junior Technician"
+      ]
+    },
+    {
+      "bundle_number": 34,
+      "bundle_id": "audit_bundle_034",
+      "range": "1651 - 1700",
+      "items_count": 50,
+      "keep": 48,
+      "merge": 2,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "JSSC PGT Teacher Economics",
+        "JSSC PGT Teacher Commerce"
+      ]
+    },
+    {
+      "bundle_number": 35,
+      "bundle_id": "audit_bundle_035",
+      "range": "1701 - 1750",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "WBPSC Fishery Extension Officer",
+        "WBPSC Fire Operator"
+      ]
+    },
+    {
+      "bundle_number": 36,
+      "bundle_id": "audit_bundle_036",
+      "range": "1751 - 1800",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Burdwan Zilla Parishad Panchayat Secretary",
+        "Baranagar Municipality Mazdoor"
+      ]
+    },
+    {
+      "bundle_number": 37,
+      "bundle_id": "audit_bundle_037",
+      "range": "1801 - 1850",
+      "items_count": 50,
+      "keep": 49,
+      "merge": 0,
+      "delete": 1,
+      "move": 0,
+      "sample_exams": [
+        "UKSSSC Assistant Storekeeper",
+        "UKSSSC Assistant Food Processing Inspector"
+      ]
+    },
+    {
+      "bundle_number": 38,
+      "bundle_id": "audit_bundle_038",
+      "range": "1851 - 1900",
+      "items_count": 50,
+      "keep": 45,
+      "merge": 0,
+      "delete": 5,
+      "move": 0,
+      "sample_exams": [
+        "NEET Physics in English",
+        "NEET MDS"
+      ]
+    },
+    {
+      "bundle_number": 39,
+      "bundle_id": "audit_bundle_039",
+      "range": "1901 - 1950",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "RDPR Karnataka Technical Assistant",
+        "RDPR Karnataka Consultant"
+      ]
+    },
+    {
+      "bundle_number": 40,
+      "bundle_id": "audit_bundle_040",
+      "range": "1951 - 2000",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "KPSC Assistant Engineer",
+        "KPSC AE"
+      ]
+    },
+    {
+      "bundle_number": 41,
+      "bundle_id": "audit_bundle_041",
+      "range": "2001 - 2050",
+      "items_count": 50,
+      "keep": 45,
+      "merge": 5,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "DSSSB Junior Clerk",
+        "DSSSB Junior Assistant"
+      ]
+    },
+    {
+      "bundle_number": 42,
+      "bundle_id": "audit_bundle_042",
+      "range": "2051 - 2100",
+      "items_count": 50,
+      "keep": 33,
+      "merge": 17,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "RPSC School Lecturer Home Science",
+        "RPSC School Lecturer History"
+      ]
+    },
+    {
+      "bundle_number": 43,
+      "bundle_id": "audit_bundle_043",
+      "range": "2101 - 2150",
+      "items_count": 50,
+      "keep": 48,
+      "merge": 2,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "RPSC 1st Grade Special Teacher Music",
+        "RPSC 1st Grade Special Teacher History"
+      ]
+    },
+    {
+      "bundle_number": 44,
+      "bundle_id": "audit_bundle_044",
+      "range": "2151 - 2200",
+      "items_count": 50,
+      "keep": 45,
+      "merge": 5,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "TS SET Psychology",
+        "TS SET Political Science"
+      ]
+    },
+    {
+      "bundle_number": 45,
+      "bundle_id": "audit_bundle_045",
+      "range": "2201 - 2250",
+      "items_count": 50,
+      "keep": 29,
+      "merge": 21,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "KVS PRT English",
+        "KVS PRT"
+      ]
+    },
+    {
+      "bundle_number": 46,
+      "bundle_id": "audit_bundle_046",
+      "range": "2251 - 2300",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "SSB SI",
+        "SSB Paramedical Head Constable"
+      ]
+    },
+    {
+      "bundle_number": 47,
+      "bundle_id": "audit_bundle_047",
+      "range": "2301 - 2350",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "CISF ASI",
+        "CAPF HC and ASI"
+      ]
+    },
+    {
+      "bundle_number": 48,
+      "bundle_id": "audit_bundle_048",
+      "range": "2351 - 2400",
+      "items_count": 50,
+      "keep": 43,
+      "merge": 7,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "TN Village Assistant",
+        "TN SET Social Work"
+      ]
+    },
+    {
+      "bundle_number": 49,
+      "bundle_id": "audit_bundle_049",
+      "range": "2401 - 2450",
+      "items_count": 50,
+      "keep": 40,
+      "merge": 10,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "TN TRB PG Assistant English",
+        "TN TRB PG Assistant Economics"
+      ]
+    },
+    {
+      "bundle_number": 50,
+      "bundle_id": "audit_bundle_050",
+      "range": "2451 - 2500",
+      "items_count": 50,
+      "keep": 47,
+      "merge": 3,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "NPCIL Deputy Manager Contracts and Materials Management",
+        "NPAT BBA"
+      ]
+    },
+    {
+      "bundle_number": 51,
+      "bundle_id": "audit_bundle_051",
+      "range": "2501 - 2550",
+      "items_count": 50,
+      "keep": 18,
+      "merge": 32,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "HPSC PGT Music",
+        "HPSC PGT Mathematics"
+      ]
+    },
+    {
+      "bundle_number": 52,
+      "bundle_id": "audit_bundle_052",
+      "range": "2551 - 2600",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "DSE Haryana PGT (Economics)",
+        "DSE Haryana PGT (Commerce)"
+      ]
+    },
+    {
+      "bundle_number": 53,
+      "bundle_id": "audit_bundle_053",
+      "range": "2601 - 2650",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Jharkhand Eligibility Test Computer Science and Application",
+        "Jharkhand Eligibility Test Commerce"
+      ]
+    },
+    {
+      "bundle_number": 54,
+      "bundle_id": "audit_bundle_054",
+      "range": "2651 - 2700",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "GSET Chemical Science",
+        "GSCSCL Manager & Senior Assistant"
+      ]
+    },
+    {
+      "bundle_number": 55,
+      "bundle_id": "audit_bundle_055",
+      "range": "2701 - 2750",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "PPSC MO",
+        "PPSC JE"
+      ]
+    },
+    {
+      "bundle_number": 56,
+      "bundle_id": "audit_bundle_056",
+      "range": "2751 - 2800",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "MPESB Hospital Assistant",
+        "MPESB Group 5 Unani Compounder"
+      ]
+    },
+    {
+      "bundle_number": 57,
+      "bundle_id": "audit_bundle_057",
+      "range": "2801 - 2850",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "RSMSSB NHM Block Program Officer",
+        "RSMSSB NHM Bio Medical Engineer"
+      ]
+    },
+    {
+      "bundle_number": 58,
+      "bundle_id": "audit_bundle_058",
+      "range": "2851 - 2900",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "BPSC Middle School Teacher Hindi",
+        "BPSC Middle School Teacher English"
+      ]
+    },
+    {
+      "bundle_number": 59,
+      "bundle_id": "audit_bundle_059",
+      "range": "2901 - 2950",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "LGBRIMH Staff Nurse",
+        "KMC Staff Nurse"
+      ]
+    },
+    {
+      "bundle_number": 60,
+      "bundle_id": "audit_bundle_060",
+      "range": "2951 - 3000",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "HPPSC ADO",
+        "HPPSC Administrative CCE"
+      ]
+    },
+    {
+      "bundle_number": 61,
+      "bundle_id": "audit_bundle_061",
+      "range": "3001 - 3050",
+      "items_count": 50,
+      "keep": 47,
+      "merge": 2,
+      "delete": 1,
+      "move": 0,
+      "sample_exams": [
+        "OBC Advocates",
+        "NLAT"
+      ]
+    },
+    {
+      "bundle_number": 62,
+      "bundle_id": "audit_bundle_062",
+      "range": "3051 - 3100",
+      "items_count": 50,
+      "keep": 30,
+      "merge": 20,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "UKPSC Polytechnic Lecturer Chemistry",
+        "UKPSC Polytechnic Lecturer"
+      ]
+    },
+    {
+      "bundle_number": 63,
+      "bundle_id": "audit_bundle_063",
+      "range": "3101 - 3150",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "IOCL Eastern Region Trade Apprentice (DEO)",
+        "IOCL Eastern Region Trade Apprentice"
+      ]
+    },
+    {
+      "bundle_number": 64,
+      "bundle_id": "audit_bundle_064",
+      "range": "3151 - 3200",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "MCL Junior Overman, Mining Sirdar",
+        "MCL Assistant Foreman"
+      ]
+    },
+    {
+      "bundle_number": 65,
+      "bundle_id": "audit_bundle_065",
+      "range": "3201 - 3250",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "RSSB Teaching Associate Agricultural Economics",
+        "RSSB Teaching Associate ABST"
+      ]
+    },
+    {
+      "bundle_number": 66,
+      "bundle_id": "audit_bundle_066",
+      "range": "3251 - 3300",
+      "items_count": 50,
+      "keep": 35,
+      "merge": 15,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "KEAM",
+        "FCI Kerala Watchman"
+      ]
+    },
+    {
+      "bundle_number": 67,
+      "bundle_id": "audit_bundle_067",
+      "range": "3301 - 3350",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "DAV Schools Lab Assistant Computer Science",
+        "DAV Schools Lab Assistant Chemistry"
+      ]
+    },
+    {
+      "bundle_number": 68,
+      "bundle_id": "audit_bundle_068",
+      "range": "3351 - 3400",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "CG Administration Clerk",
+        "THDC Executive Finance"
+      ]
+    },
+    {
+      "bundle_number": 69,
+      "bundle_id": "audit_bundle_069",
+      "range": "3401 - 3450",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "JK SET Tourism Administration & Management",
+        "JK SET Sociology"
+      ]
+    },
+    {
+      "bundle_number": 70,
+      "bundle_id": "audit_bundle_070",
+      "range": "3451 - 3500",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "OPSC Assistant Director Law",
+        "OPSC ASO"
+      ]
+    },
+    {
+      "bundle_number": 71,
+      "bundle_id": "audit_bundle_071",
+      "range": "3501 - 3550",
+      "items_count": 50,
+      "keep": 47,
+      "merge": 3,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Indian Army Education Havildar Information Operations",
+        "Indian Army Education Havildar Arts"
+      ]
+    },
+    {
+      "bundle_number": 72,
+      "bundle_id": "audit_bundle_072",
+      "range": "3551 - 3600",
+      "items_count": 50,
+      "keep": 43,
+      "merge": 7,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Science Olympiad Class 5",
+        "Science Olympiad Class 4"
+      ]
+    },
+    {
+      "bundle_number": 73,
+      "bundle_id": "audit_bundle_073",
+      "range": "3601 - 3650",
+      "items_count": 50,
+      "keep": 34,
+      "merge": 16,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "NVS PGT History",
+        "NVS PGT Hindi"
+      ]
+    },
+    {
+      "bundle_number": 74,
+      "bundle_id": "audit_bundle_074",
+      "range": "3651 - 3700",
+      "items_count": 50,
+      "keep": 35,
+      "merge": 15,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "MP High School Teacher Chemistry",
+        "MP High School Teacher Biology"
+      ]
+    },
+    {
+      "bundle_number": 75,
+      "bundle_id": "audit_bundle_075",
+      "range": "3701 - 3750",
+      "items_count": 50,
+      "keep": 38,
+      "merge": 12,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "DSSSB PRT",
+        "DSSSB PGT Sociology"
+      ]
+    },
+    {
+      "bundle_number": 76,
+      "bundle_id": "audit_bundle_076",
+      "range": "3751 - 3800",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Chemistry Sectional Test in Hindi",
+        "Chemistry Hindi"
+      ]
+    },
+    {
+      "bundle_number": 77,
+      "bundle_id": "audit_bundle_077",
+      "range": "3801 - 3850",
+      "items_count": 50,
+      "keep": 49,
+      "merge": 0,
+      "delete": 1,
+      "move": 0,
+      "sample_exams": [
+        "JKSSB Junior Staff Nurse",
+        "JKSSB Junior Assistant"
+      ]
+    },
+    {
+      "bundle_number": 78,
+      "bundle_id": "audit_bundle_078",
+      "range": "3851 - 3900",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "OSSC Laboratory Assistant",
+        "OSSC Junior Mining Officer"
+      ]
+    },
+    {
+      "bundle_number": 79,
+      "bundle_id": "audit_bundle_079",
+      "range": "3901 - 3950",
+      "items_count": 50,
+      "keep": 39,
+      "merge": 11,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "WBSSC Special Education Teacher",
+        "WBSSC SLST Secondary Assistant Teacher Physical Science"
+      ]
+    },
+    {
+      "bundle_number": 80,
+      "bundle_id": "audit_bundle_080",
+      "range": "3951 - 4000",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "UPHESC Assistant Professor B.Ed.",
+        "UPHESC Assistant Professor (Horticulture)"
+      ]
+    },
+    {
+      "bundle_number": 81,
+      "bundle_id": "audit_bundle_081",
+      "range": "4001 - 4050",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Bihar Home Guard Zoology and Physics",
+        "Bihar Home Guard Zoology and Chemistry"
+      ]
+    },
+    {
+      "bundle_number": 82,
+      "bundle_id": "audit_bundle_082",
+      "range": "4051 - 4100",
+      "items_count": 50,
+      "keep": 36,
+      "merge": 14,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "GSSSB Police SI",
+        "GSSSB Planning Assistant"
+      ]
+    },
+    {
+      "bundle_number": 83,
+      "bundle_id": "audit_bundle_083",
+      "range": "4101 - 4150",
+      "items_count": 50,
+      "keep": 39,
+      "merge": 11,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Bank of Baroda MSME Relationship",
+        "Bank of Baroda Manager Trade Finance Operations"
+      ]
+    },
+    {
+      "bundle_number": 84,
+      "bundle_id": "audit_bundle_084",
+      "range": "4151 - 4200",
+      "items_count": 50,
+      "keep": 41,
+      "merge": 9,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "SCI Court Master",
+        "Sangrur District Court Junior Clerk"
+      ]
+    },
+    {
+      "bundle_number": 85,
+      "bundle_id": "audit_bundle_085",
+      "range": "4201 - 4250",
+      "items_count": 50,
+      "keep": 33,
+      "merge": 17,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "HTET TGT Science",
+        "HTET TGT Sanskrit"
+      ]
+    },
+    {
+      "bundle_number": 86,
+      "bundle_id": "audit_bundle_086",
+      "range": "4251 - 4300",
+      "items_count": 50,
+      "keep": 25,
+      "merge": 0,
+      "delete": 25,
+      "move": 0,
+      "sample_exams": [
+        "UIIC Assistant",
+        "UIIC AO"
+      ]
+    },
+    {
+      "bundle_number": 87,
+      "bundle_id": "audit_bundle_087",
+      "range": "4301 - 4350",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "RMSA Assam Computer Instructor",
+        "PNRD Assam GRS"
+      ]
+    },
+    {
+      "bundle_number": 88,
+      "bundle_id": "audit_bundle_088",
+      "range": "4351 - 4400",
+      "items_count": 50,
+      "keep": 36,
+      "merge": 14,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "BARC Stipendiary Trainee Plant Operator",
+        "BARC Stipendiary Trainee Physics"
+      ]
+    },
+    {
+      "bundle_number": 89,
+      "bundle_id": "audit_bundle_089",
+      "range": "4401 - 4450",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Statistics",
+        "Static GK"
+      ]
+    },
+    {
+      "bundle_number": 90,
+      "bundle_id": "audit_bundle_090",
+      "range": "4451 - 4500",
+      "items_count": 50,
+      "keep": 49,
+      "merge": 0,
+      "delete": 1,
+      "move": 0,
+      "sample_exams": [
+        "Indian Navy Sailor MR",
+        "Indian Navy Sailor"
+      ]
+    },
+    {
+      "bundle_number": 91,
+      "bundle_id": "audit_bundle_091",
+      "range": "4501 - 4550",
+      "items_count": 50,
+      "keep": 42,
+      "merge": 8,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "DRDO CEPTAM Senior Technical Assistant Mechanical",
+        "DRDO CEPTAM Senior Technical Assistant Electronics and Communication"
+      ]
+    },
+    {
+      "bundle_number": 92,
+      "bundle_id": "audit_bundle_092",
+      "range": "4551 - 4600",
+      "items_count": 50,
+      "keep": 49,
+      "merge": 1,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "KEA Assistant Professor (Chemistry)",
+        "CG Vyapam Watchroom and Wireless Operator"
+      ]
+    },
+    {
+      "bundle_number": 93,
+      "bundle_id": "audit_bundle_093",
+      "range": "4601 - 4650",
+      "items_count": 50,
+      "keep": 40,
+      "merge": 10,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "BEL Project Engineer",
+        "BEL Probationary Engineer Mechanical"
+      ]
+    },
+    {
+      "bundle_number": 94,
+      "bundle_id": "audit_bundle_094",
+      "range": "4651 - 4700",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "YDCC Junior Clerk",
+        "TJSB Sahakari Bank Trainee Officer"
+      ]
+    },
+    {
+      "bundle_number": 95,
+      "bundle_id": "audit_bundle_095",
+      "range": "4701 - 4750",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "CSL Junior Technical Assistant",
+        "CSL Fireman"
+      ]
+    },
+    {
+      "bundle_number": 96,
+      "bundle_id": "audit_bundle_096",
+      "range": "4751 - 4800",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "SSC CR Junior Conservation Assistant",
+        "SSC CET"
+      ]
+    },
+    {
+      "bundle_number": 97,
+      "bundle_id": "audit_bundle_097",
+      "range": "4801 - 4850",
+      "items_count": 50,
+      "keep": 42,
+      "merge": 8,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "WB Forest Guard",
+        "Kolkata Police SI"
+      ]
+    },
+    {
+      "bundle_number": 98,
+      "bundle_id": "audit_bundle_098",
+      "range": "4851 - 4900",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "HP SET Physical Education",
+        "HP SET Education"
+      ]
+    },
+    {
+      "bundle_number": 99,
+      "bundle_id": "audit_bundle_099",
+      "range": "4901 - 4950",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Tripura MTS",
+        "Tripura General Knowledge"
+      ]
+    },
+    {
+      "bundle_number": 100,
+      "bundle_id": "audit_bundle_100",
+      "range": "4951 - 5000",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "NFSU NFAT MSc Environmental Science",
+        "NFSU NFAT MSc Clinical Psychology"
+      ]
+    },
+    {
+      "bundle_number": 101,
+      "bundle_id": "audit_bundle_101",
+      "range": "5001 - 5050",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Beed Police Patil Bharti",
+        "Patna High Court Translator"
+      ]
+    },
+    {
+      "bundle_number": 102,
+      "bundle_id": "audit_bundle_102",
+      "range": "5051 - 5100",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Madras High Court Residential Assistant",
+        "Madras High Court Personal Assistant"
+      ]
+    },
+    {
+      "bundle_number": 103,
+      "bundle_id": "audit_bundle_103",
+      "range": "5101 - 5150",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "MP TET Secondary Teacher Music",
+        "MP TET Secondary Teacher Mathematics"
+      ]
+    },
+    {
+      "bundle_number": 104,
+      "bundle_id": "audit_bundle_104",
+      "range": "5151 - 5200",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Telangana High Court Junior Assistant",
+        "Telangana High Court Field Assistant"
+      ]
+    },
+    {
+      "bundle_number": 105,
+      "bundle_id": "audit_bundle_105",
+      "range": "5201 - 5250",
+      "items_count": 50,
+      "keep": 43,
+      "merge": 7,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Computer Knowledge Sectional Test",
+        "Computer Knowledge"
+      ]
+    },
+    {
+      "bundle_number": 106,
+      "bundle_id": "audit_bundle_106",
+      "range": "5251 - 5300",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "MH SET Education",
+        "MAH B.Ed CET"
+      ]
+    },
+    {
+      "bundle_number": 107,
+      "bundle_id": "audit_bundle_107",
+      "range": "5301 - 5350",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "HP TET Sanskrit",
+        "HP TET Punjabi"
+      ]
+    },
+    {
+      "bundle_number": 108,
+      "bundle_id": "audit_bundle_108",
+      "range": "5351 - 5400",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "BEML JE Mechanical",
+        "BEML JE Electrical"
+      ]
+    },
+    {
+      "bundle_number": 109,
+      "bundle_id": "audit_bundle_109",
+      "range": "5401 - 5450",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "DSSSB SI, Technical Assistant",
+        "DSSSB Forest Guard"
+      ]
+    },
+    {
+      "bundle_number": 110,
+      "bundle_id": "audit_bundle_110",
+      "range": "5451 - 5500",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "RVUNL Technical Helper 2",
+        "RVUNL Stenographer"
+      ]
+    },
+    {
+      "bundle_number": 111,
+      "bundle_id": "audit_bundle_111",
+      "range": "5501 - 5550",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "BTSC Pharmacist",
+        "BTSC General Medical Officer"
+      ]
+    },
+    {
+      "bundle_number": 112,
+      "bundle_id": "audit_bundle_112",
+      "range": "5551 - 5600",
+      "items_count": 50,
+      "keep": 48,
+      "merge": 2,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Orissa High Court Junior Stenographer",
+        "OPSC Civil Judge"
+      ]
+    },
+    {
+      "bundle_number": 113,
+      "bundle_id": "audit_bundle_113",
+      "range": "5601 - 5650",
+      "items_count": 50,
+      "keep": 48,
+      "merge": 2,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Bombay High Court Junior Clerk",
+        "Bombay High Court Driver"
+      ]
+    },
+    {
+      "bundle_number": 114,
+      "bundle_id": "audit_bundle_114",
+      "range": "5651 - 5700",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "UKSSSC Chief Constable",
+        "UKPSC Jail Warder"
+      ]
+    },
+    {
+      "bundle_number": 115,
+      "bundle_id": "audit_bundle_115",
+      "range": "5701 - 5750",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Punjab and Sind Bank SO Agriculture Manager",
+        "Punjab and Sind Bank SO"
+      ]
+    },
+    {
+      "bundle_number": 116,
+      "bundle_id": "audit_bundle_116",
+      "range": "5751 - 5800",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "HAL Operator",
+        "HAL ITI Apprentice"
+      ]
+    },
+    {
+      "bundle_number": 117,
+      "bundle_id": "audit_bundle_117",
+      "range": "5801 - 5850",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "UCO Bank SO Software Developer",
+        "UCO Bank SO"
+      ]
+    },
+    {
+      "bundle_number": 118,
+      "bundle_id": "audit_bundle_118",
+      "range": "5851 - 5900",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "NMMC Ward Boy",
+        "NMMC JE"
+      ]
+    },
+    {
+      "bundle_number": 119,
+      "bundle_id": "audit_bundle_119",
+      "range": "5901 - 5950",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "HP Postman Mail Guard",
+        "HP Police SI"
+      ]
+    },
+    {
+      "bundle_number": 120,
+      "bundle_id": "audit_bundle_120",
+      "range": "5951 - 6000",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Ludhiana District Court Clerk",
+        "Ludhiana Court Clerk"
+      ]
+    },
+    {
+      "bundle_number": 121,
+      "bundle_id": "audit_bundle_121",
+      "range": "6001 - 6050",
+      "items_count": 50,
+      "keep": 49,
+      "merge": 1,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "IGNOU B.ED",
+        "HPU Clerk"
+      ]
+    },
+    {
+      "bundle_number": 122,
+      "bundle_id": "audit_bundle_122",
+      "range": "6051 - 6100",
+      "items_count": 50,
+      "keep": 49,
+      "merge": 0,
+      "delete": 1,
+      "move": 0,
+      "sample_exams": [
+        "BOB SO Manager Forex Acquisition & Relationship",
+        "BOB Senior Relationship Manager"
+      ]
+    },
+    {
+      "bundle_number": 123,
+      "bundle_id": "audit_bundle_123",
+      "range": "6101 - 6150",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "RMC Junior Clerk",
+        "RMC Driver Operator"
+      ]
+    },
+    {
+      "bundle_number": 124,
+      "bundle_id": "audit_bundle_124",
+      "range": "6151 - 6200",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "MECL Technician",
+        "MECL Mechanic cum Operator"
+      ]
+    },
+    {
+      "bundle_number": 125,
+      "bundle_id": "audit_bundle_125",
+      "range": "6201 - 6250",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "Goa Home Guard",
+        "Goa Electricity Line Helper"
+      ]
+    },
+    {
+      "bundle_number": 126,
+      "bundle_id": "audit_bundle_126",
+      "range": "6251 - 6300",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "TPSC Assistant Professor",
+        "TPSC Medical Officer Dental"
+      ]
+    },
+    {
+      "bundle_number": 127,
+      "bundle_id": "audit_bundle_127",
+      "range": "6301 - 6350",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "NHAI Deputy Manager",
+        "NFC Stipendiary Trainee"
+      ]
+    },
+    {
+      "bundle_number": 128,
+      "bundle_id": "audit_bundle_128",
+      "range": "6351 - 6400",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "BHMS Homeopathy",
+        "FACT Trade Apprentice"
+      ]
+    },
+    {
+      "bundle_number": 129,
+      "bundle_id": "audit_bundle_129",
+      "range": "6401 - 6450",
+      "items_count": 50,
+      "keep": 50,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "NWKRTC Driver Grade III",
+        "Noida Metro Maintainer"
+      ]
+    },
+    {
+      "bundle_number": 130,
+      "bundle_id": "audit_bundle_130",
+      "range": "6451 - 6493",
+      "items_count": 43,
+      "keep": 43,
+      "merge": 0,
+      "delete": 0,
+      "move": 0,
+      "sample_exams": [
+        "IIT Mandi Non Teaching",
+        "IIT Kanpur Junior Assistant"
+      ]
+    }
+  ]
+}

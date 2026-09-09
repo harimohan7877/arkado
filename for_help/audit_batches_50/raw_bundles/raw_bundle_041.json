@@ -1,0 +1,358 @@
+{
+  "bundle_number": 41,
+  "bundle_id": "raw_bundle_041",
+  "range": "2001 - 2050",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 2001,
+      "group_sl": 4994,
+      "exam_id": 2000,
+      "name": "DSSSB Junior Clerk",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2002,
+      "group_sl": 4995,
+      "exam_id": 1999,
+      "name": "DSSSB Junior Assistant",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2003,
+      "group_sl": 4996,
+      "exam_id": 1998,
+      "name": "DSSSB JSA",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2004,
+      "group_sl": 4997,
+      "exam_id": 1997,
+      "name": "DSSSB JJA",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2005,
+      "group_sl": 4998,
+      "exam_id": 1996,
+      "name": "DSSSB JE Civil",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2006,
+      "group_sl": 4999,
+      "exam_id": 1995,
+      "name": "DSSSB JE",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2007,
+      "group_sl": 5000,
+      "exam_id": 1994,
+      "name": "DSSSB Inspecting Officer",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2008,
+      "group_sl": 5001,
+      "exam_id": 1993,
+      "name": "DSSSB Hindi",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2009,
+      "group_sl": 5002,
+      "exam_id": 1992,
+      "name": "DSSSB General Awareness",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2010,
+      "group_sl": 5004,
+      "exam_id": 1990,
+      "name": "DSSSB Fire Operator",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2011,
+      "group_sl": 5005,
+      "exam_id": 1989,
+      "name": "DSSSB English",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2012,
+      "group_sl": 5008,
+      "exam_id": 1986,
+      "name": "DSSSB Child Development and Pedagogy",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2013,
+      "group_sl": 5009,
+      "exam_id": 1985,
+      "name": "DSSSB Caretaker",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2014,
+      "group_sl": 5010,
+      "exam_id": 1984,
+      "name": "DSSSB Bailiff",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2015,
+      "group_sl": 5013,
+      "exam_id": 1981,
+      "name": "DSSSB Assistant Superintendent",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2016,
+      "group_sl": 5014,
+      "exam_id": 1980,
+      "name": "DSSSB Assistant Section Officer",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2017,
+      "group_sl": 5015,
+      "exam_id": 1979,
+      "name": "DSSSB Assistant Public Health Inspector",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2018,
+      "group_sl": 5016,
+      "exam_id": 1978,
+      "name": "DSSSB Assistant Grade I",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2019,
+      "group_sl": 5017,
+      "exam_id": 1977,
+      "name": "DSSSB AE",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2020,
+      "group_sl": 5070,
+      "exam_id": 1924,
+      "name": "DPCC JRF, SRF",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2021,
+      "group_sl": 5161,
+      "exam_id": 1833,
+      "name": "Delhi Postal Circle Postal Assistant",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2022,
+      "group_sl": 5162,
+      "exam_id": 1832,
+      "name": "Delhi Post Office GDS",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2023,
+      "group_sl": 5168,
+      "exam_id": 1826,
+      "name": "Delhi JMI Non Teaching",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2024,
+      "group_sl": 5173,
+      "exam_id": 1821,
+      "name": "Delhi General Knowledge Hindi",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2025,
+      "group_sl": 5176,
+      "exam_id": 1818,
+      "name": "Delhi Cantonment Board Safaiwala",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2026,
+      "group_sl": 5180,
+      "exam_id": 1814,
+      "name": "DDA Stenographer",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2027,
+      "group_sl": 5181,
+      "exam_id": 1813,
+      "name": "DDA SO Horticulture",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2028,
+      "group_sl": 5182,
+      "exam_id": 1812,
+      "name": "DDA Planning Assistant",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2029,
+      "group_sl": 5183,
+      "exam_id": 1811,
+      "name": "DDA Patwari",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2030,
+      "group_sl": 5184,
+      "exam_id": 1810,
+      "name": "DDA MTS",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2031,
+      "group_sl": 5185,
+      "exam_id": 1809,
+      "name": "DDA Mali",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2032,
+      "group_sl": 5186,
+      "exam_id": 1808,
+      "name": "DDA JSA",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2033,
+      "group_sl": 5187,
+      "exam_id": 1807,
+      "name": "DDA JE Electrical and Mechanical",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2034,
+      "group_sl": 5188,
+      "exam_id": 1806,
+      "name": "DDA JE",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2035,
+      "group_sl": 5189,
+      "exam_id": 1805,
+      "name": "DDA Assistant Director Planning",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2036,
+      "group_sl": 5190,
+      "exam_id": 1804,
+      "name": "DDA Assistant Director Ministerial",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2037,
+      "group_sl": 5191,
+      "exam_id": 1803,
+      "name": "DDA ASO",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2038,
+      "group_sl": 5203,
+      "exam_id": 1791,
+      "name": "DBRAU Delhi University Non Teaching",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2039,
+      "group_sl": 5458,
+      "exam_id": 1536,
+      "name": "CSU Delhi Non Teaching UDC",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2040,
+      "group_sl": 5459,
+      "exam_id": 1535,
+      "name": "CSU Delhi Non Teaching MTS",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2041,
+      "group_sl": 5460,
+      "exam_id": 1534,
+      "name": "CSU Delhi Non Teaching LDC",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2042,
+      "group_sl": 25,
+      "exam_id": 6969,
+      "name": "WCD Rajasthan Anganwadi Worker & Helper",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2043,
+      "group_sl": 1648,
+      "exam_id": 5346,
+      "name": "RPSC Senior Physical Education Teacher",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2044,
+      "group_sl": 1649,
+      "exam_id": 5345,
+      "name": "RPSC School Lecturer Sociology",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2045,
+      "group_sl": 1650,
+      "exam_id": 5344,
+      "name": "RPSC School Lecturer Sanskrit Department",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2046,
+      "group_sl": 1651,
+      "exam_id": 5343,
+      "name": "RPSC School Lecturer Sanskrit",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2047,
+      "group_sl": 1652,
+      "exam_id": 5342,
+      "name": "RPSC School Lecturer Political Science",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2048,
+      "group_sl": 1653,
+      "exam_id": 5341,
+      "name": "RPSC School Lecturer Physics",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2049,
+      "group_sl": 1654,
+      "exam_id": 5340,
+      "name": "RPSC School Lecturer Physical Education",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2050,
+      "group_sl": 1655,
+      "exam_id": 5339,
+      "name": "RPSC School Lecturer Mathematics",
+      "group": "Rajasthan Teaching & School Exams"
+    }
+  ]
+}

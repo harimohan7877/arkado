@@ -1,0 +1,441 @@
+{
+  "bundle_id": "bundle-075",
+  "bundle_num": 75,
+  "category_id": "engineering-psu",
+  "category_name": "इंजीनियरिंग & PSU",
+  "category_icon": "⚙️",
+  "title": "इंजीनियरिंग & PSU — Engineering & PSU - ISRO • Engineering & PSU - Coal Sector",
+  "total_exams": 71,
+  "boards_included": [
+    "Engineering & PSU - ISRO",
+    "Engineering & PSU - Coal Sector"
+  ],
+  "exams": [
+    {
+      "sl": 23,
+      "id": 6971,
+      "name": "WCL Mining Sirdar",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 24,
+      "id": 6970,
+      "name": "WCL Graduate Apprentice",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 1376,
+      "id": 5618,
+      "name": "SECL Trade Apprentice",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 1377,
+      "id": 5617,
+      "name": "SECL Mining Sirdar",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 1378,
+      "id": 5616,
+      "name": "SECL Junior Technical Inspector",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 1379,
+      "id": 5615,
+      "name": "SECL Junior Overman",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 1380,
+      "id": 5614,
+      "name": "SECL Dy. Surveyor",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 1381,
+      "id": 5613,
+      "name": "SECL Dumper Operator",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 1382,
+      "id": 5612,
+      "name": "SECL Clerk Grade 3",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 1383,
+      "id": 5611,
+      "name": "SECL Assistant Loading Clerk",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 1384,
+      "id": 5610,
+      "name": "SECL Assistant Foreman",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 2538,
+      "id": 4456,
+      "name": "NLCIL Mining Sirdar",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 2539,
+      "id": 4455,
+      "name": "NLCIL Junior Overman",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 2540,
+      "id": 4454,
+      "name": "NLC Trade Apprentice",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 2541,
+      "id": 4453,
+      "name": "NLC Industrial Trainee",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 2542,
+      "id": 4452,
+      "name": "NLC GET",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 2725,
+      "id": 4269,
+      "name": "NCL Technician",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 2726,
+      "id": 4268,
+      "name": "NCL Paramedical Staff",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 2727,
+      "id": 4267,
+      "name": "NCL Overseer Civil",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 2728,
+      "id": 4266,
+      "name": "NCL Mining Sirdar, Surveyor",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 2729,
+      "id": 4265,
+      "name": "NCL HEMM Operator",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 2730,
+      "id": 4264,
+      "name": "NCL Clerk & Security Guard",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 2731,
+      "id": 4263,
+      "name": "NCL Assistant Foreman",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 3169,
+      "id": 3825,
+      "name": "MCL Technician",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 3170,
+      "id": 3824,
+      "name": "MCL Surveyor",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 3171,
+      "id": 3823,
+      "name": "MCL Junior Overman, Mining Sirdar",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 3172,
+      "id": 3822,
+      "name": "MCL Assistant Foreman",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5596,
+      "id": 1398,
+      "name": "CIL MT System",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5597,
+      "id": 1397,
+      "name": "CIL MT Security",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5598,
+      "id": 1396,
+      "name": "CIL MT Personnel and HR",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5599,
+      "id": 1395,
+      "name": "CIL MT Mining",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5600,
+      "id": 1394,
+      "name": "CIL MT Mechanical",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5602,
+      "id": 1392,
+      "name": "CIL MT Marketing & Sales",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5604,
+      "id": 1390,
+      "name": "CIL MT Geology",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5606,
+      "id": 1388,
+      "name": "CIL MT Environment",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5607,
+      "id": 1387,
+      "name": "CIL MT Electronics",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5608,
+      "id": 1386,
+      "name": "CIL MT Electrical",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5609,
+      "id": 1385,
+      "name": "CIL MT Community Development",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5610,
+      "id": 1384,
+      "name": "CIL MT Coal Preparation",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5611,
+      "id": 1383,
+      "name": "CIL MT Civil",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5789,
+      "id": 1205,
+      "name": "CCL Mining Sirdar",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5790,
+      "id": 1204,
+      "name": "CCL Junior Overman",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5791,
+      "id": 1203,
+      "name": "CCL Electrician Technician",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5792,
+      "id": 1202,
+      "name": "CCL Assistant Foreman Electrical",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 5793,
+      "id": 1201,
+      "name": "CCL Apprentice",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 6355,
+      "id": 639,
+      "name": "BCCL Junior Overman",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "sl": 150,
+      "id": 6844,
+      "name": "VSSC Technician B",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 151,
+      "id": 6843,
+      "name": "VSSC Technician Apprentice",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 152,
+      "id": 6842,
+      "name": "VSSC Technical Assistant",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 153,
+      "id": 6841,
+      "name": "VSSC Scientist Engineer",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3894,
+      "id": 3100,
+      "name": "ISRO Trade Apprentice",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3895,
+      "id": 3099,
+      "name": "ISRO Technician B Electrician",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3896,
+      "id": 3098,
+      "name": "ISRO Stenographer",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3897,
+      "id": 3097,
+      "name": "ISRO SDSC SHAR Technician B",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3898,
+      "id": 3096,
+      "name": "ISRO SDSC SHAR Technical Assistant",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3899,
+      "id": 3095,
+      "name": "ISRO SDSC SHAR Scientist Engineer",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3900,
+      "id": 3094,
+      "name": "ISRO Scientist Mechanical",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3901,
+      "id": 3093,
+      "name": "ISRO Scientist Electronics",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3902,
+      "id": 3092,
+      "name": "ISRO Scientist EE",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3903,
+      "id": 3091,
+      "name": "ISRO Scientist Computer Science",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3904,
+      "id": 3090,
+      "name": "ISRO Scientist CE (Civil Engineering)",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3905,
+      "id": 3089,
+      "name": "ISRO SAC Technician B",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3906,
+      "id": 3088,
+      "name": "ISRO NRSC Junior Research Fellow Exam",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3907,
+      "id": 3087,
+      "name": "ISRO LPSC Technical Assistant",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3908,
+      "id": 3086,
+      "name": "ISRO JPA",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3909,
+      "id": 3085,
+      "name": "ISRO ICRB Scientist Engineer",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3910,
+      "id": 3084,
+      "name": "ISRO HSFC Technician B",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3911,
+      "id": 3083,
+      "name": "ISRO HSFC Technical Assistant",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3912,
+      "id": 3082,
+      "name": "ISRO Draughtsman",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3913,
+      "id": 3081,
+      "name": "ISRO Computer Science",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "sl": 3914,
+      "id": 3080,
+      "name": "ISRO Assistant, UDC",
+      "group": "Engineering & PSU - ISRO Exams"
+    }
+  ]
+}

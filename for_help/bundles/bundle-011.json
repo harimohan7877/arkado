@@ -1,0 +1,65 @@
+{
+  "bundle_id": "bundle-011",
+  "bundle_num": 11,
+  "category_id": "bihar",
+  "category_name": "बिहार",
+  "category_icon": "🟡",
+  "title": "बिहार — BPSC (बिहार लोक सेवा आयोग)",
+  "total_exams": 5,
+  "boards_included": [
+    "BPSC"
+  ],
+  "official_portal": "https://bpsc.bih.nic.in",
+  "exams": [
+    {
+      "id": 3001,
+      "name": "बिहार BPSC शिक्षक भर्ती (TRE - कक्षा 1 से 12)",
+      "eligibility": "D.El.Ed / B.Ed + CTET/STET",
+      "age_limit": "21-37 वर्ष",
+      "applicant_scale": "10+ लाख",
+      "exam_pattern": "भाषा (30) + सामान्य अध्ययन (40) + विषय (80) = 150 प्रश्न",
+      "viral_subtext": "प्राथमिक, माध्यमिक एवं उच्च माध्यमिक शिक्षक",
+      "status": "verified"
+    },
+    {
+      "id": 3002,
+      "name": "BPSC संयुक्त प्रतियोगी परीक्षा (CCE 70वीं/71वीं)",
+      "eligibility": "स्नातक",
+      "age_limit": "20-37 वर्ष",
+      "applicant_scale": "5+ लाख",
+      "exam_pattern": "Prelims (150 प्रश्न) + Mains (900 अंक) + Interview (120)",
+      "viral_subtext": "SDM, DSP, BDO बिहार प्रशासनिक सेवा",
+      "status": "verified"
+    },
+    {
+      "id": 3003,
+      "name": "BPSC प्रधान शिक्षक एवं प्रधानाध्यापक भर्ती (Head Teacher)",
+      "eligibility": "स्नातक/PG + D.El.Ed/B.Ed + 8 वर्ष अनुभव",
+      "age_limit": "31-47 वर्ष",
+      "applicant_scale": "1.5 लाख",
+      "exam_pattern": "सामान्य अध्ययन (75) + D.El.Ed/B.Ed विषय (75)",
+      "viral_subtext": "प्राथमिक विद्यालयों में 40,247 पद",
+      "status": "verified"
+    },
+    {
+      "id": 3004,
+      "name": "BPSC सहायक अभियंता (AE - Civil, Mech, Elect)",
+      "eligibility": "B.Tech / B.E (Engineering)",
+      "age_limit": "21-37 वर्ष",
+      "applicant_scale": "60,000",
+      "exam_pattern": "4 अनिवार्य पेपर्स + 2 ऐच्छिक तकनीकी पेपर्स",
+      "viral_subtext": "भवन निर्माण, जल संसाधन, RWD विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 3005,
+      "name": "BPSC बाल विकास परियोजना पदाधिकारी (CDPO)",
+      "eligibility": "स्नातक",
+      "age_limit": "21-37 वर्ष",
+      "applicant_scale": "1.8 लाख",
+      "exam_pattern": "Prelims + Mains + Interview",
+      "viral_subtext": "समाज कल्याण विभाग",
+      "status": "verified"
+    }
+  ]
+}

@@ -1,0 +1,456 @@
+{
+  "bundle_id": "bundle-119",
+  "bundle_num": 119,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Tripura General Govt • West Bengal Police & Security • Tamil Nadu High Court & Court",
+  "total_exams": 73,
+  "boards_included": [
+    "Tripura General Govt",
+    "West Bengal Police & Security",
+    "Tamil Nadu High Court & Court",
+    "Maharashtra Police & Security",
+    "Goa General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 82,
+      "id": 6912,
+      "name": "WBPSC Food SI",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 90,
+      "id": 6904,
+      "name": "WBPRB Excise SI",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 135,
+      "id": 6859,
+      "name": "WB Postman Mail Guard",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 137,
+      "id": 6857,
+      "name": "WB Police Wireless Operator",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 138,
+      "id": 6856,
+      "name": "WB Police Staff Officer",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 139,
+      "id": 6855,
+      "name": "WB Police SI",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 140,
+      "id": 6854,
+      "name": "WB Police LDC",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 141,
+      "id": 6853,
+      "name": "WB Police Lady Constable",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 142,
+      "id": 6852,
+      "name": "WB Police Jail Warder",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 143,
+      "id": 6851,
+      "name": "WB Police Excise Constable",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 144,
+      "id": 6850,
+      "name": "WB Police Constable",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 145,
+      "id": 6849,
+      "name": "WB Police Agragami",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 147,
+      "id": 6847,
+      "name": "WB Forest Guard",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 3486,
+      "id": 3508,
+      "name": "Kolkata Police SI",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 3487,
+      "id": 3507,
+      "name": "Kolkata Police Constable",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 3488,
+      "id": 3506,
+      "name": "Kolkata Police Civic Volunteer",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "sl": 788,
+      "id": 6206,
+      "name": "TTADC Sub Zonal Development Officer",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 878,
+      "id": 6116,
+      "name": "TRLM Cluster Coordinator",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 884,
+      "id": 6110,
+      "name": "Tripura MTS",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 886,
+      "id": 6108,
+      "name": "Tripura General Knowledge",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 887,
+      "id": 6107,
+      "name": "Tripura Forester",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 925,
+      "id": 6069,
+      "name": "TPSC Veterinary Officer",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 926,
+      "id": 6068,
+      "name": "TPSC Supervisor",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 927,
+      "id": 6067,
+      "name": "TPSC Sub Inspector",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 928,
+      "id": 6066,
+      "name": "TPSC Personal Assistant",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 930,
+      "id": 6064,
+      "name": "TPSC LDA Typist Grade 4",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 932,
+      "id": 6062,
+      "name": "TPSC CDPO",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 933,
+      "id": 6061,
+      "name": "TPSC Assistant Technical Officer",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 935,
+      "id": 6059,
+      "name": "TPSC AO",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 936,
+      "id": 6058,
+      "name": "TPSC",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 1800,
+      "id": 5194,
+      "name": "RDD Tripura GRS",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "sl": 1141,
+      "id": 5853,
+      "name": "TCP Goa MTS",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 1278,
+      "id": 5716,
+      "name": "South Goa District Talathi LDC",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 2509,
+      "id": 4485,
+      "name": "North Goa District Talathi LDC, MTS",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 3936,
+      "id": 3058,
+      "name": "IPHB Goa Psychiatric Patient Caretaker",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 4610,
+      "id": 2384,
+      "name": "GSL Trainee Project Executive",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 4611,
+      "id": 2383,
+      "name": "GSL Technical Assistant",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 4612,
+      "id": 2382,
+      "name": "GSL Management Trainee",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 4671,
+      "id": 2323,
+      "name": "Goa SET",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 4674,
+      "id": 2320,
+      "name": "Goa MTS",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 4675,
+      "id": 2319,
+      "name": "Goa Labour Department",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 4676,
+      "id": 2318,
+      "name": "Goa JE",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 4679,
+      "id": 2315,
+      "name": "Goa General Knowledge",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 5068,
+      "id": 1926,
+      "name": "DPSE Goa Investigator",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 5113,
+      "id": 1881,
+      "name": "Directorate of Accounts Goa Accountant",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 5153,
+      "id": 1841,
+      "name": "DFES Goa Fire Fighter",
+      "group": "Goa General Government Exams"
+    },
+    {
+      "sl": 1428,
+      "id": 5566,
+      "name": "Sangli Police Patil",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "sl": 2020,
+      "id": 4974,
+      "name": "Pune Police SI",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "sl": 2021,
+      "id": 4973,
+      "name": "Pune Police Constable",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "sl": 2785,
+      "id": 4209,
+      "name": "Mumbai Railway Police Constable",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "sl": 2791,
+      "id": 4203,
+      "name": "MSSC Security Force",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "sl": 2793,
+      "id": 4201,
+      "name": "MSSC Lady Security Guard",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "sl": 2819,
+      "id": 4175,
+      "name": "MPSC Police SI",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "sl": 3231,
+      "id": 3763,
+      "name": "Maharashtra Security Guard",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "sl": 3233,
+      "id": 3761,
+      "name": "Maharashtra Police Legal Director",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "sl": 3234,
+      "id": 3760,
+      "name": "Maharashtra Police Law Instructor",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "sl": 3235,
+      "id": 3759,
+      "name": "Maharashtra Police Constable Driver",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "sl": 3236,
+      "id": 3758,
+      "name": "Maharashtra Police Constable",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "sl": 3244,
+      "id": 3750,
+      "name": "Maharashtra Forest Guard",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "sl": 6330,
+      "id": 664,
+      "name": "Beed Police Patil Bharti",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "sl": 964,
+      "id": 6030,
+      "name": "TNPSC Civil Judge",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "sl": 1081,
+      "id": 5913,
+      "name": "Tirunelveli District Court Office Assistant",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "sl": 1308,
+      "id": 5686,
+      "name": "Sivaganga District Court Computer Operator",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "sl": 3114,
+      "id": 3880,
+      "name": "MHC Sweeper, Sanitary Worker",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "sl": 3115,
+      "id": 3879,
+      "name": "MHC Computer Operator",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "sl": 3116,
+      "id": 3878,
+      "name": "MHC Assistant Programmer",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "sl": 3266,
+      "id": 3728,
+      "name": "Madras High Court VC Host",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "sl": 3267,
+      "id": 3727,
+      "name": "Madras High Court Residential Assistant",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "sl": 3268,
+      "id": 3726,
+      "name": "Madras High Court Personal Assistant",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "sl": 3269,
+      "id": 3725,
+      "name": "Madras High Court Office Assistant",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "sl": 3270,
+      "id": 3724,
+      "name": "Madras High Court Junior Bailiff",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "sl": 3271,
+      "id": 3723,
+      "name": "Madras High Court Driver",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "sl": 3272,
+      "id": 3722,
+      "name": "Madras High Court Civil Judge",
+      "group": "Tamil Nadu High Court & Court Exams"
+    }
+  ]
+}

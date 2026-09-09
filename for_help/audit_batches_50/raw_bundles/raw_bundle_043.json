@@ -1,0 +1,358 @@
+{
+  "bundle_number": 43,
+  "bundle_id": "raw_bundle_043",
+  "range": "2101 - 2150",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 2101,
+      "group_sl": 1738,
+      "exam_id": 5256,
+      "name": "RPSC 1st Grade Special Teacher Music",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2102,
+      "group_sl": 1739,
+      "exam_id": 5255,
+      "name": "RPSC 1st Grade Special Teacher History",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2103,
+      "group_sl": 1740,
+      "exam_id": 5254,
+      "name": "RPSC 1st Grade Special Teacher Hindi",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2104,
+      "group_sl": 1741,
+      "exam_id": 5253,
+      "name": "RPSC 1st Grade Special Teacher English",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2105,
+      "group_sl": 1742,
+      "exam_id": 5252,
+      "name": "RPSC 1st Grade Agriculture Teacher",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2106,
+      "group_sl": 1823,
+      "exam_id": 5171,
+      "name": "Rajasthan Vidyalaya Sahayak Teacher",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2107,
+      "group_sl": 1838,
+      "exam_id": 5156,
+      "name": "Rajasthan SET Physical Education",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2108,
+      "group_sl": 1851,
+      "exam_id": 5143,
+      "name": "Rajasthan SET Education",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2109,
+      "group_sl": 1857,
+      "exam_id": 5137,
+      "name": "Rajasthan Sanskrit Teacher",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2110,
+      "group_sl": 1862,
+      "exam_id": 5132,
+      "name": "Rajasthan Polytechnic Lecturer",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2111,
+      "group_sl": 1903,
+      "exam_id": 5091,
+      "name": "Rajasthan Anganwadi Supervisor",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2112,
+      "group_sl": 789,
+      "exam_id": 6205,
+      "name": "TSWDCW Extension Officer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2113,
+      "group_sl": 790,
+      "exam_id": 6204,
+      "name": "TSTRANSCO Junior Lineman",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2114,
+      "group_sl": 791,
+      "exam_id": 6203,
+      "name": "TSTRANSCO JPO",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2115,
+      "group_sl": 792,
+      "exam_id": 6202,
+      "name": "TSTRANSCO AE",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2116,
+      "group_sl": 793,
+      "exam_id": 6201,
+      "name": "TSSPDCL Sub Engineer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2117,
+      "group_sl": 794,
+      "exam_id": 6200,
+      "name": "TSSPDCL JLM",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2118,
+      "group_sl": 795,
+      "exam_id": 6199,
+      "name": "TSSPDCL JACO",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2119,
+      "group_sl": 796,
+      "exam_id": 6198,
+      "name": "TSSPDCL AE",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2120,
+      "group_sl": 799,
+      "exam_id": 6195,
+      "name": "TSPSC Senior Accountant",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2121,
+      "group_sl": 800,
+      "exam_id": 6194,
+      "name": "TSPSC Revenue Dept. Deputy Surveyor",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2122,
+      "group_sl": 805,
+      "exam_id": 6189,
+      "name": "TSPSC Physical Director",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2123,
+      "group_sl": 807,
+      "exam_id": 6187,
+      "name": "TSPSC Manager",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2124,
+      "group_sl": 808,
+      "exam_id": 6186,
+      "name": "TSPSC Librarian",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2125,
+      "group_sl": 809,
+      "exam_id": 6185,
+      "name": "TSPSC Lab Technician",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2126,
+      "group_sl": 810,
+      "exam_id": 6184,
+      "name": "TSPSC Junior Stenographer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2127,
+      "group_sl": 820,
+      "exam_id": 6174,
+      "name": "TSPSC Junior Assistant",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2128,
+      "group_sl": 821,
+      "exam_id": 6173,
+      "name": "TSPSC JTO Mechanical",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2129,
+      "group_sl": 822,
+      "exam_id": 6172,
+      "name": "TSPSC JTO Civil",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2130,
+      "group_sl": 823,
+      "exam_id": 6171,
+      "name": "TSPSC Group 4",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2131,
+      "group_sl": 824,
+      "exam_id": 6170,
+      "name": "TSPSC Group 2",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2132,
+      "group_sl": 825,
+      "exam_id": 6169,
+      "name": "TSPSC Group 1",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2133,
+      "group_sl": 826,
+      "exam_id": 6168,
+      "name": "TSPSC FSO",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2134,
+      "group_sl": 828,
+      "exam_id": 6166,
+      "name": "TSPSC Extension Officer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2135,
+      "group_sl": 830,
+      "exam_id": 6164,
+      "name": "TSPSC Divisional Accounts Officer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2136,
+      "group_sl": 831,
+      "exam_id": 6163,
+      "name": "TSPSC Deputy Surveyor",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2137,
+      "group_sl": 832,
+      "exam_id": 6162,
+      "name": "TSPSC AMVI",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2138,
+      "group_sl": 833,
+      "exam_id": 6161,
+      "name": "TSPSC Agriculture Officer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2139,
+      "group_sl": 834,
+      "exam_id": 6160,
+      "name": "TSPSC AEE Mechanical",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2140,
+      "group_sl": 835,
+      "exam_id": 6159,
+      "name": "TSPSC AEE Electrical",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2141,
+      "group_sl": 836,
+      "exam_id": 6158,
+      "name": "TSPSC AEE Civil",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2142,
+      "group_sl": 837,
+      "exam_id": 6157,
+      "name": "TSNPDCL Sub Engineer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2143,
+      "group_sl": 838,
+      "exam_id": 6156,
+      "name": "TSNPDCL Junior Assistant",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2144,
+      "group_sl": 839,
+      "exam_id": 6155,
+      "name": "TSGENCO AE Mechanical",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2145,
+      "group_sl": 840,
+      "exam_id": 6154,
+      "name": "TSGENCO AE Electronics",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2146,
+      "group_sl": 841,
+      "exam_id": 6153,
+      "name": "TSGENCO AE Electrical",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2147,
+      "group_sl": 842,
+      "exam_id": 6152,
+      "name": "TSGENCO AE Civil",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2148,
+      "group_sl": 851,
+      "exam_id": 6143,
+      "name": "TS SET Sociology",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2149,
+      "group_sl": 852,
+      "exam_id": 6142,
+      "name": "TS SET Sanskrit",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2150,
+      "group_sl": 853,
+      "exam_id": 6141,
+      "name": "TS SET Public Administration",
+      "group": "Telangana General Government Exams"
+    }
+  ]
+}

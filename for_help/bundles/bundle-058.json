@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-058",
+  "bundle_num": 58,
+  "category_id": "teaching",
+  "category_name": "केंद्रीय शिक्षण",
+  "category_icon": "📚",
+  "title": "केंद्रीय शिक्षण — National Academics - Other Central Academic & School (Part 2/3)",
+  "total_exams": 60,
+  "boards_included": [
+    "National Academics - Other Central Academic & School"
+  ],
+  "exams": [
+    {
+      "sl": 2483,
+      "id": 4511,
+      "name": "NRA CET Graduation",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2484,
+      "id": 4510,
+      "name": "NRA CET",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2515,
+      "id": 4479,
+      "name": "NMMS Class 8",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2551,
+      "id": 4443,
+      "name": "NIRDPR Young Fellow, CLRP",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2552,
+      "id": 4442,
+      "name": "NIRDPR Young Fellow",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2555,
+      "id": 4439,
+      "name": "NIMI Consultant",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2675,
+      "id": 4319,
+      "name": "NEST",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2677,
+      "id": 4317,
+      "name": "NERIST Non Teaching",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2679,
+      "id": 4315,
+      "name": "NEP 2020",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2788,
+      "id": 4206,
+      "name": "MUHS Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 3182,
+      "id": 3812,
+      "name": "Mathematics PGT, TGT, TET Teaching in Hindi Exam",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 3183,
+      "id": 3811,
+      "name": "Mathematics PGT, TGT, TET Teaching Exam",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 3396,
+      "id": 3598,
+      "name": "KVPY Stream SA",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 3397,
+      "id": 3597,
+      "name": "KVPY SB SX",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 3494,
+      "id": 3500,
+      "name": "KMC Contractual Teacher",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 3694,
+      "id": 3300,
+      "name": "JNVST Class 9",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 3695,
+      "id": 3299,
+      "name": "JNVST Class 6",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4100,
+      "id": 2894,
+      "name": "IISC Technical Assistant",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4101,
+      "id": 2893,
+      "name": "IISC Administrative Assistant",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4102,
+      "id": 2892,
+      "name": "IIMC Non Teaching",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4106,
+      "id": 2888,
+      "name": "IICPT",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4107,
+      "id": 2887,
+      "name": "IGNTU LDC",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4123,
+      "id": 2871,
+      "name": "IEO Class 4",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4124,
+      "id": 2870,
+      "name": "IEO Class 10",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4139,
+      "id": 2855,
+      "name": "ICHR JRF",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4489,
+      "id": 2505,
+      "name": "History PGT, TGT, TET Teaching in Hindi Exam",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4566,
+      "id": 2428,
+      "name": "GUG Non Teaching",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4697,
+      "id": 2297,
+      "name": "GKV Teaching & Non Teaching",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4698,
+      "id": 2296,
+      "name": "GKCIET Assistant Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4699,
+      "id": 2295,
+      "name": "GIMS Non Teaching Operation Theatre Technician",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4700,
+      "id": 2294,
+      "name": "GIMS Non Teaching Laboratory Technician",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4762,
+      "id": 2232,
+      "name": "GAT-B",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4766,
+      "id": 2228,
+      "name": "GAHET UG AIPMCET",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4853,
+      "id": 2141,
+      "name": "ESIC Assistant Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4860,
+      "id": 2134,
+      "name": "ERDO BEC, DEC & BTT",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 4910,
+      "id": 2084,
+      "name": "EDC Office Assistant",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 5019,
+      "id": 1975,
+      "name": "DSRVS BPS",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 5020,
+      "id": 1974,
+      "name": "DSRVS ARDO",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 5079,
+      "id": 1915,
+      "name": "DNH & Daman Upper Primary Teacher Social Science",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 5080,
+      "id": 1914,
+      "name": "DNH & Daman Upper Primary Teacher Maths & Science",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 5081,
+      "id": 1913,
+      "name": "DNH & Daman Upper Primary Teacher English",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 5082,
+      "id": 1912,
+      "name": "DNH & Daman Primary Teacher",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 5266,
+      "id": 1728,
+      "name": "CUSB Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 5269,
+      "id": 1725,
+      "name": "CUK Assistant Professor & Associate Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 5270,
+      "id": 1724,
+      "name": "CUHP Associate Professor, Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 5443,
+      "id": 1551,
+      "name": "CUCET",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 5934,
+      "id": 1060,
+      "name": "BSEH Aarohi School Teaching & Non Teaching",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6052,
+      "id": 942,
+      "name": "BOAT Junior Assistant",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6286,
+      "id": 708,
+      "name": "BET Pharmaceutical Biotechnology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6287,
+      "id": 707,
+      "name": "BET Neuroscience",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6288,
+      "id": 706,
+      "name": "BET Molecular and Human Genetics",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6289,
+      "id": 705,
+      "name": "BET Medical Biotechnology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6290,
+      "id": 704,
+      "name": "BET Marine Biotechnology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6291,
+      "id": 703,
+      "name": "BET M. Tech. Biotechnology, Biochemical Engineering",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6292,
+      "id": 702,
+      "name": "BET Environmental Biotechnology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6293,
+      "id": 701,
+      "name": "BET Bioinformatics & Computational Biology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6294,
+      "id": 700,
+      "name": "BET Animal Biotechnology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6295,
+      "id": 699,
+      "name": "BET Agricultural Biotechnology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6465,
+      "id": 529,
+      "name": "Assistant Professor Sociology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6466,
+      "id": 528,
+      "name": "Assistant Professor Sanskrit",
+      "group": "National Academics - Other Central Academic & School Exams"
+    }
+  ]
+}

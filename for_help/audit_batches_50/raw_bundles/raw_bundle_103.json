@@ -1,0 +1,358 @@
+{
+  "bundle_number": 103,
+  "bundle_id": "raw_bundle_103",
+  "range": "5101 - 5150",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5101,
+      "group_sl": 2977,
+      "exam_id": 4017,
+      "name": "MP TET Secondary Teacher Music",
+      "group": "Madhya Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5102,
+      "group_sl": 2978,
+      "exam_id": 4016,
+      "name": "MP TET Secondary Teacher Mathematics",
+      "group": "Madhya Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5103,
+      "group_sl": 2979,
+      "exam_id": 4015,
+      "name": "MP TET Secondary Teacher Hindi",
+      "group": "Madhya Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5104,
+      "group_sl": 2980,
+      "exam_id": 4014,
+      "name": "MP TET Secondary Teacher English",
+      "group": "Madhya Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5105,
+      "group_sl": 2981,
+      "exam_id": 4013,
+      "name": "MP TET Primary Teacher Sports",
+      "group": "Madhya Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5106,
+      "group_sl": 2982,
+      "exam_id": 4012,
+      "name": "MP TET Primary Teacher Music",
+      "group": "Madhya Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5107,
+      "group_sl": 2983,
+      "exam_id": 4011,
+      "name": "MP TET Paper 1",
+      "group": "Madhya Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5108,
+      "group_sl": 2984,
+      "exam_id": 4010,
+      "name": "MP TET Mathematics, Science",
+      "group": "Madhya Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5109,
+      "group_sl": 3218,
+      "exam_id": 3776,
+      "name": "MAHATRANSCO LDC",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "global_sl": 5110,
+      "group_sl": 3219,
+      "exam_id": 3775,
+      "name": "MAHATRANSCO Deputy Executive Engineer",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "global_sl": 5111,
+      "group_sl": 3220,
+      "exam_id": 3774,
+      "name": "MAHATRANSCO AE",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "global_sl": 5112,
+      "group_sl": 3221,
+      "exam_id": 3773,
+      "name": "MAHATRANSCO Additional Executive Engineer",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "global_sl": 5113,
+      "group_sl": 3250,
+      "exam_id": 3744,
+      "name": "MAHAGENCO Technician 3",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "global_sl": 5114,
+      "group_sl": 3251,
+      "exam_id": 3743,
+      "name": "MAHAGENCO LDC",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "global_sl": 5115,
+      "group_sl": 3252,
+      "exam_id": 3742,
+      "name": "MAHAGENCO Engineer",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "global_sl": 5116,
+      "group_sl": 3253,
+      "exam_id": 3741,
+      "name": "MAHADISCOM Vidyut Sahayak",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "global_sl": 5117,
+      "group_sl": 3254,
+      "exam_id": 3740,
+      "name": "MAHADISCOM Upkendra Sahayak",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "global_sl": 5118,
+      "group_sl": 3255,
+      "exam_id": 3739,
+      "name": "MAHADISCOM Manager",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "global_sl": 5119,
+      "group_sl": 3256,
+      "exam_id": 3738,
+      "name": "MAHADISCOM Graduate Engineer Trainee",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "global_sl": 5120,
+      "group_sl": 3257,
+      "exam_id": 3737,
+      "name": "MAHADISCOM Executive Engineer",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "global_sl": 5121,
+      "group_sl": 3258,
+      "exam_id": 3736,
+      "name": "MAHADISCOM Apprentice",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "global_sl": 5122,
+      "group_sl": 4172,
+      "exam_id": 2822,
+      "name": "ICAI Executive Officer",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "global_sl": 5123,
+      "group_sl": 5830,
+      "exam_id": 1164,
+      "name": "CA Intermediate Taxation",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "global_sl": 5124,
+      "group_sl": 5831,
+      "exam_id": 1163,
+      "name": "CA Intermediate Financial Management and Strategic Management",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "global_sl": 5125,
+      "group_sl": 5832,
+      "exam_id": 1162,
+      "name": "CA Intermediate Cost and Management Accounting",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "global_sl": 5126,
+      "group_sl": 5833,
+      "exam_id": 1161,
+      "name": "CA Intermediate Corporate and Other Law",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "global_sl": 5127,
+      "group_sl": 5834,
+      "exam_id": 1160,
+      "name": "CA Intermediate Auditing and Ethics",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "global_sl": 5128,
+      "group_sl": 5835,
+      "exam_id": 1159,
+      "name": "CA Intermediate Advanced Accounting",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "global_sl": 5129,
+      "group_sl": 5836,
+      "exam_id": 1158,
+      "name": "CA Foundation",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "global_sl": 5130,
+      "group_sl": 5837,
+      "exam_id": 1157,
+      "name": "CA Final Paper 6",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "global_sl": 5131,
+      "group_sl": 5838,
+      "exam_id": 1156,
+      "name": "CA Final Financial Reporting",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "global_sl": 5132,
+      "group_sl": 5839,
+      "exam_id": 1155,
+      "name": "CA Final Direct Tax Laws and International Taxation",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "global_sl": 5133,
+      "group_sl": 5840,
+      "exam_id": 1154,
+      "name": "CA Final Advanced Financial Management",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "global_sl": 5134,
+      "group_sl": 5841,
+      "exam_id": 1153,
+      "name": "CA Final Advanced Auditing and Professional Ethics",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "global_sl": 5135,
+      "group_sl": 545,
+      "exam_id": 6449,
+      "name": "UP Cooperative Bank Stenographer",
+      "group": "Uttar Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5136,
+      "group_sl": 546,
+      "exam_id": 6448,
+      "name": "UP Cooperative Bank Manager",
+      "group": "Uttar Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5137,
+      "group_sl": 547,
+      "exam_id": 6447,
+      "name": "UP Cooperative Bank Junior Manager",
+      "group": "Uttar Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5138,
+      "group_sl": 548,
+      "exam_id": 6446,
+      "name": "UP Cooperative Bank Junior Engineer",
+      "group": "Uttar Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5139,
+      "group_sl": 549,
+      "exam_id": 6445,
+      "name": "UP Cooperative Bank Junior Assistant",
+      "group": "Uttar Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5140,
+      "group_sl": 550,
+      "exam_id": 6444,
+      "name": "UP Cooperative Bank Clerk",
+      "group": "Uttar Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5141,
+      "group_sl": 551,
+      "exam_id": 6443,
+      "name": "UP Cooperative Bank Assistant Typist",
+      "group": "Uttar Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5142,
+      "group_sl": 552,
+      "exam_id": 6442,
+      "name": "UP Cooperative Bank Assistant Manager",
+      "group": "Uttar Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5143,
+      "group_sl": 553,
+      "exam_id": 6441,
+      "name": "UP Cooperative Bank Assistant Engineer",
+      "group": "Uttar Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5144,
+      "group_sl": 554,
+      "exam_id": 6440,
+      "name": "UP Cooperative Bank Assistant",
+      "group": "Uttar Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5145,
+      "group_sl": 555,
+      "exam_id": 6439,
+      "name": "UP Cooperative Bank Accountant",
+      "group": "Uttar Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5146,
+      "group_sl": 6359,
+      "exam_id": 635,
+      "name": "Baroda UP Bank Apprentice",
+      "group": "Uttar Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5147,
+      "group_sl": 1121,
+      "exam_id": 5873,
+      "name": "Telangana High Court Typist",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "global_sl": 5148,
+      "group_sl": 1122,
+      "exam_id": 5872,
+      "name": "Telangana High Court Stenographer",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "global_sl": 5149,
+      "group_sl": 1123,
+      "exam_id": 5871,
+      "name": "Telangana High Court Process Server",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "global_sl": 5150,
+      "group_sl": 1124,
+      "exam_id": 5870,
+      "name": "Telangana High Court Office Subordinate",
+      "group": "Telangana High Court & Court Exams"
+    }
+  ]
+}

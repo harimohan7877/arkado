@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-088",
+  "bundle_num": 88,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — West Bengal General Govt (Part 1/2)",
+  "total_exams": 60,
+  "boards_included": [
+    "West Bengal General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 15,
+      "id": 6979,
+      "name": "West Bengal Post Office MTS",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 16,
+      "id": 6978,
+      "name": "West Bengal General Knowledge",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 18,
+      "id": 6976,
+      "name": "WEBCSC Clerk",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 33,
+      "id": 6961,
+      "name": "WBTET",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 57,
+      "id": 6937,
+      "name": "WBSSC Headmaster & Headmistresses",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 58,
+      "id": 6936,
+      "name": "WBSSC Group C and D",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 61,
+      "id": 6933,
+      "name": "WBSETCL Office Executive",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 62,
+      "id": 6932,
+      "name": "WBSETCL JE",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 63,
+      "id": 6931,
+      "name": "WBSETCL Assistant Engineer Electrical",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 64,
+      "id": 6930,
+      "name": "WBSETCL Assistant Engineer Civil",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 65,
+      "id": 6929,
+      "name": "WBSEDCL Office Executive",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 66,
+      "id": 6928,
+      "name": "WBSEDCL JE",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 67,
+      "id": 6927,
+      "name": "WBSEDCL Assistant Manager",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 68,
+      "id": 6926,
+      "name": "WBSEDCL AE",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 69,
+      "id": 6925,
+      "name": "WBSBCL Assistant Depot Manager",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 70,
+      "id": 6924,
+      "name": "WBPSC Workshop Instructor",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 71,
+      "id": 6923,
+      "name": "WBPSC Supervisor",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 74,
+      "id": 6920,
+      "name": "WBPSC MVI",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 75,
+      "id": 6919,
+      "name": "WBPSC Miscellaneous",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 78,
+      "id": 6916,
+      "name": "WBPSC LDA",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 79,
+      "id": 6915,
+      "name": "WBPSC Laboratory Assistant",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 81,
+      "id": 6913,
+      "name": "WBPSC JE",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 83,
+      "id": 6911,
+      "name": "WBPSC Fishery Extension Officer",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 84,
+      "id": 6910,
+      "name": "WBPSC Fire Operator",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 85,
+      "id": 6909,
+      "name": "WBPSC Clerkship",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 86,
+      "id": 6908,
+      "name": "WBPSC Audit, Accounts Service",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 88,
+      "id": 6906,
+      "name": "WBPSC Assistant Director",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 89,
+      "id": 6905,
+      "name": "WBPSC AE",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 91,
+      "id": 6903,
+      "name": "WBPDCL Sub Assistant Engineer",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 92,
+      "id": 6902,
+      "name": "WBPDCL Operator Technician Fitter",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 93,
+      "id": 6901,
+      "name": "WBPDCL Operator Technician Electrician",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 94,
+      "id": 6900,
+      "name": "WBPDCL Operation and Maintenance Supervisor",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 95,
+      "id": 6899,
+      "name": "WBPDCL Office Executive",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 96,
+      "id": 6898,
+      "name": "WBPDCL Chemist",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 97,
+      "id": 6897,
+      "name": "WBPDCL Assistant Manager Mechanical",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 98,
+      "id": 6896,
+      "name": "WBPDCL Assistant Manager IT",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 99,
+      "id": 6895,
+      "name": "WBPDCL Assistant Manager Instrumentation",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 100,
+      "id": 6894,
+      "name": "WBPDCL Assistant Manager HR",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 101,
+      "id": 6893,
+      "name": "WBPDCL Assistant Manager Electrical",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 102,
+      "id": 6892,
+      "name": "WBPDCL Assistant Manager Civil",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 103,
+      "id": 6891,
+      "name": "WBMSC Sub Assistant Engineer",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 104,
+      "id": 6890,
+      "name": "WBMSC Conservancy Mazdoor",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 105,
+      "id": 6889,
+      "name": "WBMSC Assistant Engineer Mechanical",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 106,
+      "id": 6888,
+      "name": "WBMSC Assistant Engineer Electrical",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 107,
+      "id": 6887,
+      "name": "WBMSC Assistant Engineer Civil",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 108,
+      "id": 6886,
+      "name": "WBJEE JENPAS UG",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 109,
+      "id": 6885,
+      "name": "WBJEE",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 110,
+      "id": 6884,
+      "name": "WBHRB Tutor Demonstrator",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 115,
+      "id": 6879,
+      "name": "WBHRB Facility Manager",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 116,
+      "id": 6878,
+      "name": "WBHRB Driver",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 118,
+      "id": 6876,
+      "name": "WBCSC Group C",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 119,
+      "id": 6875,
+      "name": "WBCSC Clerk",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 123,
+      "id": 6871,
+      "name": "WB SET Political Science",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 124,
+      "id": 6870,
+      "name": "WB SET Physical Science",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 126,
+      "id": 6868,
+      "name": "WB SET Philosophy",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 127,
+      "id": 6867,
+      "name": "WB SET Paper 1",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 128,
+      "id": 6866,
+      "name": "WB SET Law",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 129,
+      "id": 6865,
+      "name": "WB SET History",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 130,
+      "id": 6864,
+      "name": "WB SET Geography",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 132,
+      "id": 6862,
+      "name": "WB SET Economics",
+      "group": "West Bengal General Government Exams"
+    }
+  ]
+}

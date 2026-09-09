@@ -1,0 +1,86 @@
+{
+  "bundle_id": "bundle-082",
+  "bundle_num": 82,
+  "category_id": "medical-health",
+  "category_name": "मेडिकल & नर्सिंग",
+  "category_icon": "🩺",
+  "title": "मेडिकल & नर्सिंग — Medical & Nursing - Other Central Medical & Health (Part 2/2)",
+  "total_exams": 12,
+  "boards_included": [
+    "Medical & Nursing - Other Central Medical & Health"
+  ],
+  "exams": [
+    {
+      "sl": 4901,
+      "id": 2093,
+      "name": "Emergency Room Nurse",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 5090,
+      "id": 1904,
+      "name": "DMLT",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 5152,
+      "id": 1842,
+      "name": "DFSL Scientific Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 5546,
+      "id": 1448,
+      "name": "Community Health Officer",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 5547,
+      "id": 1447,
+      "name": "Community Health Nurse",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 5559,
+      "id": 1435,
+      "name": "CNET",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 5612,
+      "id": 1382,
+      "name": "CIL Medical Professionals",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 5694,
+      "id": 1300,
+      "name": "CGHS Medical Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 5766,
+      "id": 1228,
+      "name": "CDSCO Bench Chemist",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 5809,
+      "id": 1185,
+      "name": "Cardiac Care Nurse",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 5984,
+      "id": 1010,
+      "name": "BPSMV Clerk Lab Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 6018,
+      "id": 976,
+      "name": "BPRD Lab Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    }
+  ]
+}

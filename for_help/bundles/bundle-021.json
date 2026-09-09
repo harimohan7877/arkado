@@ -1,0 +1,65 @@
+{
+  "bundle_id": "bundle-021",
+  "bundle_num": 21,
+  "category_id": "national-central",
+  "category_name": "अखिल भारतीय / राष्ट्रीय",
+  "category_icon": "🇮🇳",
+  "title": "अखिल भारतीय / राष्ट्रीय — RRB (रेलवे भर्ती बोर्ड)",
+  "total_exams": 5,
+  "boards_included": [
+    "Railways"
+  ],
+  "official_portal": "https://indianrailways.gov.in",
+  "exams": [
+    {
+      "id": 5010,
+      "name": "RRB NTPC (नॉन टेक्निकल ग्रेजुएट व 12th)",
+      "eligibility": "12वीं / स्नातक",
+      "age_limit": "18-33 वर्ष",
+      "applicant_scale": "1.2+ करोड़",
+      "exam_pattern": "CBT-1 (100 प्रश्न) + CBT-2 (120 प्रश्न) + टाइपिंग/CBAT",
+      "viral_subtext": "स्टेशन मास्टर, गुड्स गार्ड, कमर्शियल क्लर्क 11,558 पद",
+      "status": "verified"
+    },
+    {
+      "id": 5011,
+      "name": "रेलवे ग्रुप D (Level-1 सीधी भर्ती)",
+      "eligibility": "10वीं पास / ITI",
+      "age_limit": "18-33 वर्ष",
+      "applicant_scale": "1+ करोड़",
+      "exam_pattern": "CBT (100 प्रश्न, 90 मिनट) + PET शारीरिक दक्षता",
+      "viral_subtext": "ट्रैक मेंटेनर, पॉइंट्समैन 1 लाख+ संभावित पद",
+      "status": "verified"
+    },
+    {
+      "id": 5012,
+      "name": "RRB ALP (सहायक लोको पायलट)",
+      "eligibility": "10वीं + ITI / डिप्लोमा (मैकेनिकल/इलेक्ट्रिकल)",
+      "age_limit": "18-30 वर्ष",
+      "applicant_scale": "25+ लाख",
+      "exam_pattern": "CBT-1 (75 प्रश्न) + CBT-2 (175 प्रश्न) + CBAT साइको",
+      "viral_subtext": "ट्रेन ड्राइवर 18,799 पद",
+      "status": "verified"
+    },
+    {
+      "id": 5013,
+      "name": "RRB तकनीशियन भर्ती (Technician Grade I & III)",
+      "eligibility": "10वीं + ITI / B.Sc / Diploma",
+      "age_limit": "18-33 वर्ष",
+      "applicant_scale": "20+ लाख",
+      "exam_pattern": "CBT परीक्षा (100 प्रश्न)",
+      "viral_subtext": "सिग्नल व टेलीकॉम, कैरिज 9,144 पद",
+      "status": "verified"
+    },
+    {
+      "id": 5014,
+      "name": "RPF रेलवे सुरक्षा बल (कांस्टेबल एवं SI भर्ती)",
+      "eligibility": "10वीं (कांस्टेबल) / स्नातक (SI)",
+      "age_limit": "18-28 वर्ष",
+      "applicant_scale": "30+ लाख",
+      "exam_pattern": "CBT (120 प्रश्न: GS 50, अंकगणित 35, रीजनिंग 35) + PET",
+      "viral_subtext": "रेलवे सुरक्षा विशेष बल 4,660 पद",
+      "status": "verified"
+    }
+  ]
+}

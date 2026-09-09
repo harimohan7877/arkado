@@ -1,0 +1,377 @@
+{
+  "bundle_id": "bundle-070",
+  "bundle_num": 70,
+  "category_id": "teaching",
+  "category_name": "केंद्रीय शिक्षण",
+  "category_icon": "📚",
+  "title": "केंद्रीय शिक्षण — National Academics - CBSE Board • National Academics - NIFT • National Academics - ISI Non-Teaching",
+  "total_exams": 57,
+  "boards_included": [
+    "National Academics - CBSE Board",
+    "National Academics - NIFT",
+    "National Academics - ISI Non-Teaching",
+    "Tamil Nadu Teaching & School",
+    "Mizoram Teaching & School",
+    "Assam Teaching & School",
+    "National Academics - IGNOU",
+    "National Academics - JNU Non-Teaching",
+    "National Academics - NTA",
+    "Jammu & Kashmir Teaching & School",
+    "National Academics - NIT Non-Teaching",
+    "Jharkhand Teaching & School",
+    "National Academics - LPUNEST",
+    "National Academics - NIOS",
+    "National Academics - IISER Non-Teaching",
+    "National Academics - IIT Non-Teaching",
+    "National Academics - BITSAT",
+    "Nagaland Teaching & School",
+    "National Academics - NCERT",
+    "Manipur Teaching & School",
+    "National Academics - KIITEE",
+    "Tripura Teaching & School"
+  ],
+  "exams": [
+    {
+      "sl": 3735,
+      "id": 3259,
+      "name": "JKPSC School Lecturer English",
+      "group": "Jammu & Kashmir Teaching & School Exams"
+    },
+    {
+      "sl": 3736,
+      "id": 3258,
+      "name": "JKPSC School Lecturer Education",
+      "group": "Jammu & Kashmir Teaching & School Exams"
+    },
+    {
+      "sl": 3737,
+      "id": 3257,
+      "name": "JKPSC School Lecturer Economics",
+      "group": "Jammu & Kashmir Teaching & School Exams"
+    },
+    {
+      "sl": 3738,
+      "id": 3256,
+      "name": "JKPSC School Lecturer Chemistry",
+      "group": "Jammu & Kashmir Teaching & School Exams"
+    },
+    {
+      "sl": 3739,
+      "id": 3255,
+      "name": "JKPSC School Lecturer Botany",
+      "group": "Jammu & Kashmir Teaching & School Exams"
+    },
+    {
+      "sl": 3754,
+      "id": 3240,
+      "name": "JK SET Physical Education",
+      "group": "Jammu & Kashmir Teaching & School Exams"
+    },
+    {
+      "sl": 3772,
+      "id": 3222,
+      "name": "JK SET Education",
+      "group": "Jammu & Kashmir Teaching & School Exams"
+    },
+    {
+      "sl": 5798,
+      "id": 1196,
+      "name": "CBSE Superintendent",
+      "group": "National Academics - CBSE Board Exams"
+    },
+    {
+      "sl": 5799,
+      "id": 1195,
+      "name": "CBSE Junior Assistant",
+      "group": "National Academics - CBSE Board Exams"
+    },
+    {
+      "sl": 5800,
+      "id": 1194,
+      "name": "CBSE Junior Accountant",
+      "group": "National Academics - CBSE Board Exams"
+    },
+    {
+      "sl": 5801,
+      "id": 1193,
+      "name": "CBSE Class 12 Science PCM",
+      "group": "National Academics - CBSE Board Exams"
+    },
+    {
+      "sl": 5802,
+      "id": 1192,
+      "name": "CBSE Class 12 Science PCB",
+      "group": "National Academics - CBSE Board Exams"
+    },
+    {
+      "sl": 5803,
+      "id": 1191,
+      "name": "CBSE Assistant Professor and Assistant Director",
+      "group": "National Academics - CBSE Board Exams"
+    },
+    {
+      "sl": 3499,
+      "id": 3495,
+      "name": "KIITEE MCA",
+      "group": "National Academics - KIITEE Exams"
+    },
+    {
+      "sl": 3500,
+      "id": 3494,
+      "name": "KIITEE MBA",
+      "group": "National Academics - KIITEE Exams"
+    },
+    {
+      "sl": 3501,
+      "id": 3493,
+      "name": "KIITEE BCA",
+      "group": "National Academics - KIITEE Exams"
+    },
+    {
+      "sl": 3502,
+      "id": 3492,
+      "name": "KIITEE B.Tech Lateral Entry",
+      "group": "National Academics - KIITEE Exams"
+    },
+    {
+      "sl": 3503,
+      "id": 3491,
+      "name": "KIITEE B.Tech",
+      "group": "National Academics - KIITEE Exams"
+    },
+    {
+      "sl": 3205,
+      "id": 3789,
+      "name": "Manipur Pre Primary Teacher",
+      "group": "Manipur Teaching & School Exams"
+    },
+    {
+      "sl": 3208,
+      "id": 3786,
+      "name": "Manipur Graduate Teacher",
+      "group": "Manipur Teaching & School Exams"
+    },
+    {
+      "sl": 3210,
+      "id": 3784,
+      "name": "Manipur Education MTS",
+      "group": "Manipur Teaching & School Exams"
+    },
+    {
+      "sl": 3211,
+      "id": 3783,
+      "name": "Manipur Education Department Lecturer",
+      "group": "Manipur Teaching & School Exams"
+    },
+    {
+      "sl": 4108,
+      "id": 2886,
+      "name": "IGNOU Stenographer",
+      "group": "National Academics - IGNOU Exams"
+    },
+    {
+      "sl": 4109,
+      "id": 2885,
+      "name": "IGNOU MBA",
+      "group": "National Academics - IGNOU Exams"
+    },
+    {
+      "sl": 4110,
+      "id": 2884,
+      "name": "IGNOU Junior Assistant",
+      "group": "National Academics - IGNOU Exams"
+    },
+    {
+      "sl": 4111,
+      "id": 2883,
+      "name": "IGNOU B.ED",
+      "group": "National Academics - IGNOU Exams"
+    },
+    {
+      "sl": 1260,
+      "id": 5734,
+      "name": "SSA Assam CRCC",
+      "group": "Assam Teaching & School Exams"
+    },
+    {
+      "sl": 5178,
+      "id": 1816,
+      "name": "DEE Assam Teacher",
+      "group": "Assam Teaching & School Exams"
+    },
+    {
+      "sl": 5179,
+      "id": 1815,
+      "name": "DEE Assam Assistant Teacher",
+      "group": "Assam Teaching & School Exams"
+    },
+    {
+      "sl": 2560,
+      "id": 4434,
+      "name": "NIFT Junior Assistant",
+      "group": "National Academics - NIFT Exams"
+    },
+    {
+      "sl": 2561,
+      "id": 4433,
+      "name": "NIFT Assistant Professor",
+      "group": "National Academics - NIFT Exams"
+    },
+    {
+      "sl": 2562,
+      "id": 4432,
+      "name": "NIFT",
+      "group": "National Academics - NIFT Exams"
+    },
+    {
+      "sl": 3691,
+      "id": 3303,
+      "name": "JPSC Assistant Professor",
+      "group": "Jharkhand Teaching & School Exams"
+    },
+    {
+      "sl": 3831,
+      "id": 3163,
+      "name": "Jharkhand Eligibility Test Education",
+      "group": "Jharkhand Teaching & School Exams"
+    },
+    {
+      "sl": 3839,
+      "id": 3155,
+      "name": "Jharkhand B.Ed",
+      "group": "Jharkhand Teaching & School Exams"
+    },
+    {
+      "sl": 3696,
+      "id": 3298,
+      "name": "JNU Non Teaching",
+      "group": "National Academics - JNU Non-Teaching Exams"
+    },
+    {
+      "sl": 3697,
+      "id": 3297,
+      "name": "JNU CEEB",
+      "group": "National Academics - JNU Non-Teaching Exams"
+    },
+    {
+      "sl": 3698,
+      "id": 3296,
+      "name": "JNU Associate Professor",
+      "group": "National Academics - JNU Non-Teaching Exams"
+    },
+    {
+      "sl": 900,
+      "id": 6094,
+      "name": "TRBT Graduate Teacher",
+      "group": "Tripura Teaching & School Exams"
+    },
+    {
+      "sl": 934,
+      "id": 6060,
+      "name": "TPSC Assistant Professor",
+      "group": "Tripura Teaching & School Exams"
+    },
+    {
+      "sl": 943,
+      "id": 6051,
+      "name": "TNRD Village Panchayat Secretary",
+      "group": "Tamil Nadu Teaching & School Exams"
+    },
+    {
+      "sl": 1047,
+      "id": 5947,
+      "name": "TN SET Education",
+      "group": "Tamil Nadu Teaching & School Exams"
+    },
+    {
+      "sl": 2461,
+      "id": 4533,
+      "name": "NTA GAT B",
+      "group": "National Academics - NTA Exams"
+    },
+    {
+      "sl": 2468,
+      "id": 4526,
+      "name": "NTA CET",
+      "group": "National Academics - NTA Exams"
+    },
+    {
+      "sl": 2486,
+      "id": 4508,
+      "name": "NPSC Assistant Professor",
+      "group": "Nagaland Teaching & School Exams"
+    },
+    {
+      "sl": 2770,
+      "id": 4224,
+      "name": "Nagaland University Professor",
+      "group": "Nagaland Teaching & School Exams"
+    },
+    {
+      "sl": 2547,
+      "id": 4447,
+      "name": "NIT Trichy Non Teaching",
+      "group": "National Academics - NIT Non-Teaching Exams"
+    },
+    {
+      "sl": 2548,
+      "id": 4446,
+      "name": "NIT Trichy Assistant Professor",
+      "group": "National Academics - NIT Non-Teaching Exams"
+    },
+    {
+      "sl": 2735,
+      "id": 4259,
+      "name": "NCERT Group C Storekeeper",
+      "group": "National Academics - NCERT Exams"
+    },
+    {
+      "sl": 2736,
+      "id": 4258,
+      "name": "NCERT Group C LDC",
+      "group": "National Academics - NCERT Exams"
+    },
+    {
+      "sl": 2554,
+      "id": 4440,
+      "name": "NIOS Junior Assistant",
+      "group": "National Academics - NIOS Exams"
+    },
+    {
+      "sl": 3088,
+      "id": 3906,
+      "name": "Mizoram Graduate Teacher",
+      "group": "Mizoram Teaching & School Exams"
+    },
+    {
+      "sl": 3283,
+      "id": 3711,
+      "name": "LPUNEST",
+      "group": "National Academics - LPUNEST Exams"
+    },
+    {
+      "sl": 3917,
+      "id": 3077,
+      "name": "ISI Office Assistant",
+      "group": "National Academics - ISI Non-Teaching Exams"
+    },
+    {
+      "sl": 4082,
+      "id": 2912,
+      "name": "IIT Mandi Non Teaching",
+      "group": "National Academics - IIT Non-Teaching Exams"
+    },
+    {
+      "sl": 4099,
+      "id": 2895,
+      "name": "IISER Junior Assistant",
+      "group": "National Academics - IISER Non-Teaching Exams"
+    },
+    {
+      "sl": 6066,
+      "id": 928,
+      "name": "BITSAT (BITS Pilani)",
+      "group": "National Academics - BITSAT Exams"
+    }
+  ]
+}

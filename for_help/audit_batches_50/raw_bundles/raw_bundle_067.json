@@ -1,0 +1,358 @@
+{
+  "bundle_number": 67,
+  "bundle_id": "raw_bundle_067",
+  "range": "3301 - 3350",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3301,
+      "group_sl": 5242,
+      "exam_id": 1752,
+      "name": "DAV Schools Lab Assistant Computer Science",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "global_sl": 3302,
+      "group_sl": 5243,
+      "exam_id": 1751,
+      "name": "DAV Schools Lab Assistant Chemistry",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "global_sl": 3303,
+      "group_sl": 5244,
+      "exam_id": 1750,
+      "name": "DAV Schools Lab Assistant Biology",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "global_sl": 3304,
+      "group_sl": 5245,
+      "exam_id": 1749,
+      "name": "DAV Schools Counsellor",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "global_sl": 3305,
+      "group_sl": 5246,
+      "exam_id": 1748,
+      "name": "DAV School LDC Accounts",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "global_sl": 3306,
+      "group_sl": 5247,
+      "exam_id": 1747,
+      "name": "DAV School Front Office Assistant and Receptionist",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "global_sl": 3307,
+      "group_sl": 5248,
+      "exam_id": 1746,
+      "name": "DAV School Assistant and UDC",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "global_sl": 3308,
+      "group_sl": 2745,
+      "exam_id": 4249,
+      "name": "NBCFDM Chhattisgarh",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3309,
+      "group_sl": 4826,
+      "exam_id": 2168,
+      "name": "FCI Chhattisgarh Watchman",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3310,
+      "group_sl": 5619,
+      "exam_id": 1375,
+      "name": "Chhattisgarh Postal Circle GDS",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3311,
+      "group_sl": 5620,
+      "exam_id": 1374,
+      "name": "Chhattisgarh Post Office Postman",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3312,
+      "group_sl": 5625,
+      "exam_id": 1369,
+      "name": "Chhattisgarh General Knowledge in Hindi",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3313,
+      "group_sl": 5626,
+      "exam_id": 1368,
+      "name": "Chhattisgarh General Knowledge",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3314,
+      "group_sl": 5654,
+      "exam_id": 1340,
+      "name": "CGRDC Project Manager",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3315,
+      "group_sl": 5655,
+      "exam_id": 1339,
+      "name": "CGPSC VAS",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3316,
+      "group_sl": 5656,
+      "exam_id": 1338,
+      "name": "CGPSC TSI",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3317,
+      "group_sl": 5657,
+      "exam_id": 1337,
+      "name": "CGPSC Tax Inspector",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3318,
+      "group_sl": 5658,
+      "exam_id": 1336,
+      "name": "CGPSC SSE",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3319,
+      "group_sl": 5660,
+      "exam_id": 1334,
+      "name": "CGPSC Scientific Officer",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3320,
+      "group_sl": 5661,
+      "exam_id": 1333,
+      "name": "CGPSC Principal",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3321,
+      "group_sl": 5662,
+      "exam_id": 1332,
+      "name": "CGPSC Mining Inspector",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3322,
+      "group_sl": 5664,
+      "exam_id": 1330,
+      "name": "CGPSC Librarian & Sports Officer",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3323,
+      "group_sl": 5666,
+      "exam_id": 1328,
+      "name": "CGPSC HMO",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3324,
+      "group_sl": 5686,
+      "exam_id": 1308,
+      "name": "CGPSC AMO",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3325,
+      "group_sl": 5687,
+      "exam_id": 1307,
+      "name": "CGPSC AE",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3326,
+      "group_sl": 5688,
+      "exam_id": 1306,
+      "name": "CGPSC ADPPO",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3327,
+      "group_sl": 5689,
+      "exam_id": 1305,
+      "name": "CGPSC ADI",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3328,
+      "group_sl": 5719,
+      "exam_id": 1275,
+      "name": "CG SET Sociology",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3329,
+      "group_sl": 5720,
+      "exam_id": 1274,
+      "name": "CG SET Sanskrit",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3330,
+      "group_sl": 5721,
+      "exam_id": 1273,
+      "name": "CG SET Psychology",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3331,
+      "group_sl": 5722,
+      "exam_id": 1272,
+      "name": "CG SET Political Science",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3332,
+      "group_sl": 5723,
+      "exam_id": 1271,
+      "name": "CG SET Physical Science",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3333,
+      "group_sl": 5725,
+      "exam_id": 1269,
+      "name": "CG SET Paper 1",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3334,
+      "group_sl": 5726,
+      "exam_id": 1268,
+      "name": "CG SET Life Sciences",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3335,
+      "group_sl": 5727,
+      "exam_id": 1267,
+      "name": "CG SET Library and Information Science",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3336,
+      "group_sl": 5728,
+      "exam_id": 1266,
+      "name": "CG SET Law",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3337,
+      "group_sl": 5729,
+      "exam_id": 1265,
+      "name": "CG SET Home Science",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3338,
+      "group_sl": 5730,
+      "exam_id": 1264,
+      "name": "CG SET History",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3339,
+      "group_sl": 5731,
+      "exam_id": 1263,
+      "name": "CG SET Hindi",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3340,
+      "group_sl": 5732,
+      "exam_id": 1262,
+      "name": "CG SET Geography",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3341,
+      "group_sl": 5733,
+      "exam_id": 1261,
+      "name": "CG SET English",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3342,
+      "group_sl": 5734,
+      "exam_id": 1260,
+      "name": "CG SET Economics",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3343,
+      "group_sl": 5735,
+      "exam_id": 1259,
+      "name": "CG SET Commerce",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3344,
+      "group_sl": 5736,
+      "exam_id": 1258,
+      "name": "CG SET Chemical Science",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3345,
+      "group_sl": 5737,
+      "exam_id": 1257,
+      "name": "CG SET",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3346,
+      "group_sl": 5739,
+      "exam_id": 1255,
+      "name": "CG Pre BEd",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3347,
+      "group_sl": 5740,
+      "exam_id": 1254,
+      "name": "CG PPT",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3348,
+      "group_sl": 5741,
+      "exam_id": 1253,
+      "name": "CG PPHT",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3349,
+      "group_sl": 5745,
+      "exam_id": 1249,
+      "name": "CG PAT Agriculture Stream",
+      "group": "Chhattisgarh General Government Exams"
+    },
+    {
+      "global_sl": 3350,
+      "group_sl": 5746,
+      "exam_id": 1248,
+      "name": "CG PAT",
+      "group": "Chhattisgarh General Government Exams"
+    }
+  ]
+}

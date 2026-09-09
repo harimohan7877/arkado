@@ -1,0 +1,123 @@
+{
+  "bundle_id": "bundle-053",
+  "bundle_num": 53,
+  "category_id": "defence",
+  "category_name": "डिफेंस एवं सेनाएं",
+  "category_icon": "🛡️",
+  "title": "डिफेंस एवं सेनाएं — Defence & Security - Indian Air Force • Defence & Security - Intelligence & Security Agencies",
+  "total_exams": 18,
+  "boards_included": [
+    "Defence & Security - Indian Air Force",
+    "Defence & Security - Intelligence & Security Agencies"
+  ],
+  "exams": [
+    {
+      "sl": 2588,
+      "id": 4406,
+      "name": "NIA MTS",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "sl": 2589,
+      "id": 4405,
+      "name": "NIA DEO",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "sl": 2591,
+      "id": 4403,
+      "name": "NIA ASI & Sub Inspector",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "sl": 2738,
+      "id": 4256,
+      "name": "NCB Junior Intelligence Officer",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "sl": 4203,
+      "id": 2791,
+      "name": "IB Security Assistant Motor Transport",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "sl": 4204,
+      "id": 2790,
+      "name": "IB Security Assistant",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "sl": 4205,
+      "id": 2789,
+      "name": "IB MTS",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "sl": 4206,
+      "id": 2788,
+      "name": "IB JIO",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "sl": 4207,
+      "id": 2787,
+      "name": "IB ACIO",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "sl": 6356,
+      "id": 638,
+      "name": "BCAS Security Officer",
+      "group": "Defence & Security - Intelligence & Security Agencies Exams"
+    },
+    {
+      "sl": 4060,
+      "id": 2934,
+      "name": "Indian Air Force Y Group",
+      "group": "Defence & Security - Indian Air Force Exams"
+    },
+    {
+      "sl": 4061,
+      "id": 2933,
+      "name": "Indian Air Force XY Group",
+      "group": "Defence & Security - Indian Air Force Exams"
+    },
+    {
+      "sl": 4062,
+      "id": 2932,
+      "name": "Indian Air Force X Group",
+      "group": "Defence & Security - Indian Air Force Exams"
+    },
+    {
+      "sl": 4063,
+      "id": 2931,
+      "name": "Indian Air Force Group C",
+      "group": "Defence & Security - Indian Air Force Exams"
+    },
+    {
+      "sl": 4064,
+      "id": 2930,
+      "name": "Indian Air Force Apprentice",
+      "group": "Defence & Security - Indian Air Force Exams"
+    },
+    {
+      "sl": 4065,
+      "id": 2929,
+      "name": "Indian Air Force Agniveer Vayu Non Combatant",
+      "group": "Defence & Security - Indian Air Force Exams"
+    },
+    {
+      "sl": 4066,
+      "id": 2928,
+      "name": "Indian Air Force Agniveer Vayu",
+      "group": "Defence & Security - Indian Air Force Exams"
+    },
+    {
+      "sl": 4211,
+      "id": 2783,
+      "name": "IAF Commissioned Officer",
+      "group": "Defence & Security - Indian Air Force Exams"
+    }
+  ]
+}

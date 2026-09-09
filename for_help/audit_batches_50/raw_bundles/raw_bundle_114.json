@@ -1,0 +1,358 @@
+{
+  "bundle_number": 114,
+  "bundle_id": "raw_bundle_114",
+  "range": "5651 - 5700",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5651,
+      "group_sl": 589,
+      "exam_id": 6405,
+      "name": "UKSSSC Chief Constable",
+      "group": "Uttarakhand Police & Security Exams"
+    },
+    {
+      "global_sl": 5652,
+      "group_sl": 636,
+      "exam_id": 6358,
+      "name": "UKPSC Jail Warder",
+      "group": "Uttarakhand Police & Security Exams"
+    },
+    {
+      "global_sl": 5653,
+      "group_sl": 432,
+      "exam_id": 6562,
+      "name": "UPMRC Station Controller",
+      "group": "Uttar Pradesh UPMRC Metro Exams"
+    },
+    {
+      "global_sl": 5654,
+      "group_sl": 433,
+      "exam_id": 6561,
+      "name": "UPMRC Maintainer Electrical",
+      "group": "Uttar Pradesh UPMRC Metro Exams"
+    },
+    {
+      "global_sl": 5655,
+      "group_sl": 434,
+      "exam_id": 6560,
+      "name": "UPMRC JE Electrical",
+      "group": "Uttar Pradesh UPMRC Metro Exams"
+    },
+    {
+      "global_sl": 5656,
+      "group_sl": 435,
+      "exam_id": 6559,
+      "name": "UPMRC JE Civil",
+      "group": "Uttar Pradesh UPMRC Metro Exams"
+    },
+    {
+      "global_sl": 5657,
+      "group_sl": 436,
+      "exam_id": 6558,
+      "name": "UPMRC JE",
+      "group": "Uttar Pradesh UPMRC Metro Exams"
+    },
+    {
+      "global_sl": 5658,
+      "group_sl": 437,
+      "exam_id": 6557,
+      "name": "UPMRC Assistant Manager",
+      "group": "Uttar Pradesh UPMRC Metro Exams"
+    },
+    {
+      "global_sl": 5659,
+      "group_sl": 525,
+      "exam_id": 6469,
+      "name": "UP NHM Psychologist & Medical Officer",
+      "group": "Uttar Pradesh National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5660,
+      "group_sl": 526,
+      "exam_id": 6468,
+      "name": "UP NHM Lab Technician",
+      "group": "Uttar Pradesh National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5661,
+      "group_sl": 527,
+      "exam_id": 6467,
+      "name": "UP NHM Block Account Manager",
+      "group": "Uttar Pradesh National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5662,
+      "group_sl": 528,
+      "exam_id": 6466,
+      "name": "UP NHM ANM",
+      "group": "Uttar Pradesh National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5663,
+      "group_sl": 2603,
+      "exam_id": 4391,
+      "name": "NHM UP Staff Nurse",
+      "group": "Uttar Pradesh National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5664,
+      "group_sl": 2604,
+      "exam_id": 4390,
+      "name": "NHM UP CHO",
+      "group": "Uttar Pradesh National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5665,
+      "group_sl": 937,
+      "exam_id": 6057,
+      "name": "TNUSRB SI",
+      "group": "Tamil Nadu Police & Security Exams"
+    },
+    {
+      "global_sl": 5666,
+      "group_sl": 938,
+      "exam_id": 6056,
+      "name": "TNUSRB Jail Warder",
+      "group": "Tamil Nadu Police & Security Exams"
+    },
+    {
+      "global_sl": 5667,
+      "group_sl": 939,
+      "exam_id": 6055,
+      "name": "TNUSRB Fireman",
+      "group": "Tamil Nadu Police & Security Exams"
+    },
+    {
+      "global_sl": 5668,
+      "group_sl": 940,
+      "exam_id": 6054,
+      "name": "TNUSRB Constable",
+      "group": "Tamil Nadu Police & Security Exams"
+    },
+    {
+      "global_sl": 5669,
+      "group_sl": 985,
+      "exam_id": 6009,
+      "name": "TNFUSRC Forest Guard",
+      "group": "Tamil Nadu Police & Security Exams"
+    },
+    {
+      "global_sl": 5670,
+      "group_sl": 1053,
+      "exam_id": 5941,
+      "name": "TN Police SI",
+      "group": "Tamil Nadu Police & Security Exams"
+    },
+    {
+      "global_sl": 5671,
+      "group_sl": 1143,
+      "exam_id": 5851,
+      "name": "TANGEDCO Junior Assistant",
+      "group": "Tamil Nadu TANGEDCO Exams"
+    },
+    {
+      "global_sl": 5672,
+      "group_sl": 1144,
+      "exam_id": 5850,
+      "name": "TANGEDCO Gangman Trainee",
+      "group": "Tamil Nadu TANGEDCO Exams"
+    },
+    {
+      "global_sl": 5673,
+      "group_sl": 1145,
+      "exam_id": 5849,
+      "name": "TANGEDCO Field Assistant",
+      "group": "Tamil Nadu TANGEDCO Exams"
+    },
+    {
+      "global_sl": 5674,
+      "group_sl": 1146,
+      "exam_id": 5848,
+      "name": "TANGEDCO Assessor",
+      "group": "Tamil Nadu TANGEDCO Exams"
+    },
+    {
+      "global_sl": 5675,
+      "group_sl": 1147,
+      "exam_id": 5847,
+      "name": "TANGEDCO Apprentice",
+      "group": "Tamil Nadu TANGEDCO Exams"
+    },
+    {
+      "global_sl": 5676,
+      "group_sl": 1148,
+      "exam_id": 5846,
+      "name": "TANGEDCO AE",
+      "group": "Tamil Nadu TANGEDCO Exams"
+    },
+    {
+      "global_sl": 5677,
+      "group_sl": 1189,
+      "exam_id": 5805,
+      "name": "SSC Selection Post Phase 13",
+      "group": "Staff Selection Commission - SSC Selection Post & Scientific Assistant Exams"
+    },
+    {
+      "global_sl": 5678,
+      "group_sl": 1190,
+      "exam_id": 5804,
+      "name": "SSC Selection Post Phase 11",
+      "group": "Staff Selection Commission - SSC Selection Post & Scientific Assistant Exams"
+    },
+    {
+      "global_sl": 5679,
+      "group_sl": 1191,
+      "exam_id": 5803,
+      "name": "SSC Scientific Assistant IMD",
+      "group": "Staff Selection Commission - SSC Selection Post & Scientific Assistant Exams"
+    },
+    {
+      "global_sl": 5680,
+      "group_sl": 1192,
+      "exam_id": 5802,
+      "name": "SSC Scientific Assistant",
+      "group": "Staff Selection Commission - SSC Selection Post & Scientific Assistant Exams"
+    },
+    {
+      "global_sl": 5681,
+      "group_sl": 1193,
+      "exam_id": 5801,
+      "name": "SSC Phase 7",
+      "group": "Staff Selection Commission - SSC Selection Post & Scientific Assistant Exams"
+    },
+    {
+      "global_sl": 5682,
+      "group_sl": 1194,
+      "exam_id": 5800,
+      "name": "SSC Phase 14",
+      "group": "Staff Selection Commission - SSC Selection Post & Scientific Assistant Exams"
+    },
+    {
+      "global_sl": 5683,
+      "group_sl": 1301,
+      "exam_id": 5693,
+      "name": "SJVN Workman Trainee",
+      "group": "Engineering & PSU - SJVN Exams"
+    },
+    {
+      "global_sl": 5684,
+      "group_sl": 1302,
+      "exam_id": 5692,
+      "name": "SJVN Junior Field Engineer Mechanical",
+      "group": "Engineering & PSU - SJVN Exams"
+    },
+    {
+      "global_sl": 5685,
+      "group_sl": 1303,
+      "exam_id": 5691,
+      "name": "SJVN Junior Field Engineer Electrical",
+      "group": "Engineering & PSU - SJVN Exams"
+    },
+    {
+      "global_sl": 5686,
+      "group_sl": 1304,
+      "exam_id": 5690,
+      "name": "SJVN Junior Field Engineer Civil",
+      "group": "Engineering & PSU - SJVN Exams"
+    },
+    {
+      "global_sl": 5687,
+      "group_sl": 1306,
+      "exam_id": 5688,
+      "name": "SJVN Executive Trainee",
+      "group": "Engineering & PSU - SJVN Exams"
+    },
+    {
+      "global_sl": 5688,
+      "group_sl": 1307,
+      "exam_id": 5687,
+      "name": "SJVN Apprentice",
+      "group": "Engineering & PSU - SJVN Exams"
+    },
+    {
+      "global_sl": 5689,
+      "group_sl": 1335,
+      "exam_id": 5659,
+      "name": "SGPGI Store Keeper",
+      "group": "Uttar Pradesh SGPGI Exams"
+    },
+    {
+      "global_sl": 5690,
+      "group_sl": 1336,
+      "exam_id": 5658,
+      "name": "SGPGI Senior Administrative Assistant",
+      "group": "Uttar Pradesh SGPGI Exams"
+    },
+    {
+      "global_sl": 5691,
+      "group_sl": 1337,
+      "exam_id": 5657,
+      "name": "SGPGI OT Assistant",
+      "group": "Uttar Pradesh SGPGI Exams"
+    },
+    {
+      "global_sl": 5692,
+      "group_sl": 1338,
+      "exam_id": 5656,
+      "name": "SGPGI Nursing Officer",
+      "group": "Uttar Pradesh SGPGI Exams"
+    },
+    {
+      "global_sl": 5693,
+      "group_sl": 1339,
+      "exam_id": 5655,
+      "name": "SGPGI Hospital Attendant",
+      "group": "Uttar Pradesh SGPGI Exams"
+    },
+    {
+      "global_sl": 5694,
+      "group_sl": 1340,
+      "exam_id": 5654,
+      "name": "SGPGI CSSD Assistant",
+      "group": "Uttar Pradesh SGPGI Exams"
+    },
+    {
+      "global_sl": 5695,
+      "group_sl": 1983,
+      "exam_id": 5011,
+      "name": "Punjab Police SI",
+      "group": "Punjab Police & Security Exams"
+    },
+    {
+      "global_sl": 5696,
+      "group_sl": 1984,
+      "exam_id": 5010,
+      "name": "Punjab Police Jail Warder",
+      "group": "Punjab Police & Security Exams"
+    },
+    {
+      "global_sl": 5697,
+      "group_sl": 1985,
+      "exam_id": 5009,
+      "name": "Punjab Police Intelligence Assistant",
+      "group": "Punjab Police & Security Exams"
+    },
+    {
+      "global_sl": 5698,
+      "group_sl": 1986,
+      "exam_id": 5008,
+      "name": "Punjab Police Head Constable",
+      "group": "Punjab Police & Security Exams"
+    },
+    {
+      "global_sl": 5699,
+      "group_sl": 1987,
+      "exam_id": 5007,
+      "name": "Punjab Police Constable",
+      "group": "Punjab Police & Security Exams"
+    },
+    {
+      "global_sl": 5700,
+      "group_sl": 2013,
+      "exam_id": 4981,
+      "name": "Punjab and Sind Bank SO Security Manager",
+      "group": "Punjab Police & Security Exams"
+    }
+  ]
+}

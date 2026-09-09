@@ -1,0 +1,25 @@
+{
+  "bundle_id": "bundle-018",
+  "bundle_num": 18,
+  "category_id": "madhya-pradesh",
+  "category_name": "मध्य प्रदेश",
+  "category_icon": "🟣",
+  "title": "मध्य प्रदेश — MPPSC (मध्य प्रदेश लोक सेवा आयोग इंदौर)",
+  "total_exams": 1,
+  "boards_included": [
+    "MPPSC"
+  ],
+  "official_portal": "https://mppsc.mp.gov.in",
+  "exams": [
+    {
+      "id": 4024,
+      "name": "MP राज्य सेवा परीक्षा (State Service Exam - PCS)",
+      "eligibility": "स्नातक",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "3+ लाख",
+      "exam_pattern": "Prelims (GS+CSAT) + Mains (6 पेपर्स) + Interview",
+      "viral_subtext": "डिप्टी कलेक्टर, DSP, नायब तहसीलदार",
+      "status": "verified"
+    }
+  ]
+}

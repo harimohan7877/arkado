@@ -1,0 +1,358 @@
+{
+  "bundle_number": 105,
+  "bundle_id": "raw_bundle_105",
+  "range": "5201 - 5250",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5201,
+      "group_sl": 5543,
+      "exam_id": 1451,
+      "name": "Computer Knowledge Sectional Test",
+      "group": "General Subjects - Computer Literacy"
+    },
+    {
+      "global_sl": 5202,
+      "group_sl": 5545,
+      "exam_id": 1449,
+      "name": "Computer Knowledge",
+      "group": "General Subjects - Computer Literacy"
+    },
+    {
+      "global_sl": 5203,
+      "group_sl": 5797,
+      "exam_id": 1197,
+      "name": "CCC",
+      "group": "General Subjects - Computer Literacy"
+    },
+    {
+      "global_sl": 5204,
+      "group_sl": 6358,
+      "exam_id": 636,
+      "name": "Basic Computer Skills",
+      "group": "General Subjects - Computer Literacy"
+    },
+    {
+      "global_sl": 5205,
+      "group_sl": 168,
+      "exam_id": 6826,
+      "name": "Vizag Steel Plant Apprentice",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "global_sl": 5206,
+      "group_sl": 170,
+      "exam_id": 6824,
+      "name": "VIZAG Steel Junior Trainee",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "global_sl": 5207,
+      "group_sl": 1437,
+      "exam_id": 5557,
+      "name": "SAIL Young Professional",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "global_sl": 5208,
+      "group_sl": 1438,
+      "exam_id": 5556,
+      "name": "SAIL Rourkela Technical Staff",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "global_sl": 5209,
+      "group_sl": 1439,
+      "exam_id": 5555,
+      "name": "SAIL Rourkela ACTT",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "global_sl": 5210,
+      "group_sl": 1441,
+      "exam_id": 5553,
+      "name": "SAIL OCTT",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "global_sl": 5211,
+      "group_sl": 1446,
+      "exam_id": 5548,
+      "name": "SAIL IISCO MO",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "global_sl": 5212,
+      "group_sl": 1447,
+      "exam_id": 5547,
+      "name": "SAIL Fire Engineer",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "global_sl": 5213,
+      "group_sl": 1448,
+      "exam_id": 5546,
+      "name": "SAIL Executive & Non Executive",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "global_sl": 5214,
+      "group_sl": 1449,
+      "exam_id": 5545,
+      "name": "SAIL ACTT",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "global_sl": 5215,
+      "group_sl": 944,
+      "exam_id": 6050,
+      "name": "TNPSC Veterinary Assistant Surgeon",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5216,
+      "group_sl": 989,
+      "exam_id": 6005,
+      "name": "TNAHD Veterinary Analyst",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5217,
+      "group_sl": 1054,
+      "exam_id": 5940,
+      "name": "TN MRB Pharmacist",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5218,
+      "group_sl": 1055,
+      "exam_id": 5939,
+      "name": "TN MRB Nurse",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5219,
+      "group_sl": 1059,
+      "exam_id": 5935,
+      "name": "TN MRB Assistant Surgeon Radiology",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5220,
+      "group_sl": 1060,
+      "exam_id": 5934,
+      "name": "TN MRB Assistant Surgeon Obstetrics and Gynaecology",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5221,
+      "group_sl": 1061,
+      "exam_id": 5933,
+      "name": "TN MRB Assistant Surgeon Geriatrics",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5222,
+      "group_sl": 1062,
+      "exam_id": 5932,
+      "name": "TN MRB Assistant Surgeon Forensic Medicine",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5223,
+      "group_sl": 1063,
+      "exam_id": 5931,
+      "name": "TN MRB Assistant Surgeon Cardiothoracic Surgery",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5224,
+      "group_sl": 1064,
+      "exam_id": 5930,
+      "name": "TN MRB Assistant Surgeon",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5225,
+      "group_sl": 1259,
+      "exam_id": 5735,
+      "name": "SSA Chandigarh TGT",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "global_sl": 5226,
+      "group_sl": 2544,
+      "exam_id": 4450,
+      "name": "NITTTR Chandigarh Teacher",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "global_sl": 5227,
+      "group_sl": 5636,
+      "exam_id": 1358,
+      "name": "Chandigarh TGT Social Science",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "global_sl": 5228,
+      "group_sl": 5638,
+      "exam_id": 1356,
+      "name": "Chandigarh TGT Science",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "global_sl": 5229,
+      "group_sl": 5639,
+      "exam_id": 1355,
+      "name": "Chandigarh TGT Sanskrit",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "global_sl": 5230,
+      "group_sl": 5640,
+      "exam_id": 1354,
+      "name": "Chandigarh TGT Music",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "global_sl": 5231,
+      "group_sl": 5641,
+      "exam_id": 1353,
+      "name": "Chandigarh TGT Mathematics",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "global_sl": 5232,
+      "group_sl": 5642,
+      "exam_id": 1352,
+      "name": "Chandigarh TGT Home Science",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "global_sl": 5233,
+      "group_sl": 5643,
+      "exam_id": 1351,
+      "name": "Chandigarh TGT Hindi",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "global_sl": 5234,
+      "group_sl": 5644,
+      "exam_id": 1350,
+      "name": "Chandigarh TGT English",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "global_sl": 5235,
+      "group_sl": 1285,
+      "exam_id": 5709,
+      "name": "SMC Technical Assistant",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5236,
+      "group_sl": 1288,
+      "exam_id": 5706,
+      "name": "SMC Maintenance Assistant",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5237,
+      "group_sl": 1289,
+      "exam_id": 5705,
+      "name": "SMC Laboratory Technician",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5238,
+      "group_sl": 1291,
+      "exam_id": 5703,
+      "name": "SMC Fitter",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5239,
+      "group_sl": 1292,
+      "exam_id": 5702,
+      "name": "SMC Driver",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5240,
+      "group_sl": 1293,
+      "exam_id": 5701,
+      "name": "SMC Deputy Town Planner",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5241,
+      "group_sl": 1294,
+      "exam_id": 5700,
+      "name": "SMC Clerk",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5242,
+      "group_sl": 1295,
+      "exam_id": 5699,
+      "name": "SMC Assistant Town Planner",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5243,
+      "group_sl": 1296,
+      "exam_id": 5698,
+      "name": "SMC Assistant Engineer Electrical",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5244,
+      "group_sl": 1297,
+      "exam_id": 5697,
+      "name": "SMC Assistant Engineer Civil",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5245,
+      "group_sl": 1330,
+      "exam_id": 5664,
+      "name": "Shri Swami Vivekanand Shikshan Sanstha Kolhapur Teacher",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "global_sl": 5246,
+      "group_sl": 2415,
+      "exam_id": 4579,
+      "name": "NVS Pune Teacher",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "global_sl": 5247,
+      "group_sl": 2821,
+      "exam_id": 4173,
+      "name": "MPSC Lecturer",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "global_sl": 5248,
+      "group_sl": 2832,
+      "exam_id": 4162,
+      "name": "MPSC Associate Professor",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "global_sl": 5249,
+      "group_sl": 2833,
+      "exam_id": 4161,
+      "name": "MPSC Assistant Professor",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "global_sl": 5250,
+      "group_sl": 3124,
+      "exam_id": 3870,
+      "name": "MH SET Physical Education",
+      "group": "Maharashtra Teaching & School Exams"
+    }
+  ]
+}

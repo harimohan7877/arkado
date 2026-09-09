@@ -1,0 +1,358 @@
+{
+  "bundle_number": 64,
+  "bundle_id": "raw_bundle_064",
+  "range": "3151 - 3200",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3151,
+      "group_sl": 3171,
+      "exam_id": 3823,
+      "name": "MCL Junior Overman, Mining Sirdar",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3152,
+      "group_sl": 3172,
+      "exam_id": 3822,
+      "name": "MCL Assistant Foreman",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3153,
+      "group_sl": 5596,
+      "exam_id": 1398,
+      "name": "CIL MT System",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3154,
+      "group_sl": 5597,
+      "exam_id": 1397,
+      "name": "CIL MT Security",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3155,
+      "group_sl": 5598,
+      "exam_id": 1396,
+      "name": "CIL MT Personnel and HR",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3156,
+      "group_sl": 5599,
+      "exam_id": 1395,
+      "name": "CIL MT Mining",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3157,
+      "group_sl": 5600,
+      "exam_id": 1394,
+      "name": "CIL MT Mechanical",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3158,
+      "group_sl": 5602,
+      "exam_id": 1392,
+      "name": "CIL MT Marketing & Sales",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3159,
+      "group_sl": 5604,
+      "exam_id": 1390,
+      "name": "CIL MT Geology",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3160,
+      "group_sl": 5606,
+      "exam_id": 1388,
+      "name": "CIL MT Environment",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3161,
+      "group_sl": 5607,
+      "exam_id": 1387,
+      "name": "CIL MT Electronics",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3162,
+      "group_sl": 5608,
+      "exam_id": 1386,
+      "name": "CIL MT Electrical",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3163,
+      "group_sl": 5609,
+      "exam_id": 1385,
+      "name": "CIL MT Community Development",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3164,
+      "group_sl": 5610,
+      "exam_id": 1384,
+      "name": "CIL MT Coal Preparation",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3165,
+      "group_sl": 5611,
+      "exam_id": 1383,
+      "name": "CIL MT Civil",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3166,
+      "group_sl": 5789,
+      "exam_id": 1205,
+      "name": "CCL Mining Sirdar",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3167,
+      "group_sl": 5790,
+      "exam_id": 1204,
+      "name": "CCL Junior Overman",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3168,
+      "group_sl": 5791,
+      "exam_id": 1203,
+      "name": "CCL Electrician Technician",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3169,
+      "group_sl": 5792,
+      "exam_id": 1202,
+      "name": "CCL Assistant Foreman Electrical",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3170,
+      "group_sl": 5793,
+      "exam_id": 1201,
+      "name": "CCL Apprentice",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3171,
+      "group_sl": 6355,
+      "exam_id": 639,
+      "name": "BCCL Junior Overman",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3172,
+      "group_sl": 1469,
+      "exam_id": 5525,
+      "name": "RSSB Teaching Associate Zoology",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3173,
+      "group_sl": 1470,
+      "exam_id": 5524,
+      "name": "RSSB Teaching Associate Soil Science and Agricultural Chemistry",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3174,
+      "group_sl": 1471,
+      "exam_id": 5523,
+      "name": "RSSB Teaching Associate Sociology",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3175,
+      "group_sl": 1472,
+      "exam_id": 5522,
+      "name": "RSSB Teaching Associate Sanskrit",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3176,
+      "group_sl": 1473,
+      "exam_id": 5521,
+      "name": "RSSB Teaching Associate Public Administration",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3177,
+      "group_sl": 1474,
+      "exam_id": 5520,
+      "name": "RSSB Teaching Associate Political Science",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3178,
+      "group_sl": 1475,
+      "exam_id": 5519,
+      "name": "RSSB Teaching Associate Plant Pathology",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3179,
+      "group_sl": 1476,
+      "exam_id": 5518,
+      "name": "RSSB Teaching Associate Physics",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3180,
+      "group_sl": 1477,
+      "exam_id": 5517,
+      "name": "RSSB Teaching Associate Mathematics",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3181,
+      "group_sl": 1478,
+      "exam_id": 5516,
+      "name": "RSSB Teaching Associate Law",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3182,
+      "group_sl": 1479,
+      "exam_id": 5515,
+      "name": "RSSB Teaching Associate Horticulture",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3183,
+      "group_sl": 1480,
+      "exam_id": 5514,
+      "name": "RSSB Teaching Associate Home Science",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3184,
+      "group_sl": 1481,
+      "exam_id": 5513,
+      "name": "RSSB Teaching Associate History",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3185,
+      "group_sl": 1482,
+      "exam_id": 5512,
+      "name": "RSSB Teaching Associate Hindi",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3186,
+      "group_sl": 1483,
+      "exam_id": 5511,
+      "name": "RSSB Teaching Associate Geography",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3187,
+      "group_sl": 1484,
+      "exam_id": 5510,
+      "name": "RSSB Teaching Associate Genetics and Plant Breeding",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3188,
+      "group_sl": 1485,
+      "exam_id": 5509,
+      "name": "RSSB Teaching Associate Entomology",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3189,
+      "group_sl": 1486,
+      "exam_id": 5508,
+      "name": "RSSB Teaching Associate English",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3190,
+      "group_sl": 1487,
+      "exam_id": 5507,
+      "name": "RSSB Teaching Associate Economics",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3191,
+      "group_sl": 1488,
+      "exam_id": 5506,
+      "name": "RSSB Teaching Associate Economic Administration and Financial Management",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3192,
+      "group_sl": 1489,
+      "exam_id": 5505,
+      "name": "RSSB Teaching Associate Drawing",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3193,
+      "group_sl": 1490,
+      "exam_id": 5504,
+      "name": "RSSB Teaching Associate Computer Science",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3194,
+      "group_sl": 1491,
+      "exam_id": 5503,
+      "name": "RSSB Teaching Associate Chemistry",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3195,
+      "group_sl": 1492,
+      "exam_id": 5502,
+      "name": "RSSB Teaching Associate Business Administration",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3196,
+      "group_sl": 1493,
+      "exam_id": 5501,
+      "name": "RSSB Teaching Associate Botany",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3197,
+      "group_sl": 1494,
+      "exam_id": 5500,
+      "name": "RSSB Teaching Associate Animal Science",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3198,
+      "group_sl": 1495,
+      "exam_id": 5499,
+      "name": "RSSB Teaching Associate Agronomy",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3199,
+      "group_sl": 1496,
+      "exam_id": 5498,
+      "name": "RSSB Teaching Associate Agricultural Extension and Communication",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3200,
+      "group_sl": 1497,
+      "exam_id": 5497,
+      "name": "RSSB Teaching Associate Agricultural Engineering",
+      "group": "Rajasthan RSSB Exams"
+    }
+  ]
+}

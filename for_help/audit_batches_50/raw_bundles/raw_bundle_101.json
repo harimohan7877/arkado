@@ -1,0 +1,358 @@
+{
+  "bundle_number": 101,
+  "bundle_id": "raw_bundle_101",
+  "range": "5001 - 5050",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5001,
+      "group_sl": 6330,
+      "exam_id": 664,
+      "name": "Beed Police Patil Bharti",
+      "group": "Maharashtra Police & Security Exams"
+    },
+    {
+      "global_sl": 5002,
+      "group_sl": 2192,
+      "exam_id": 4802,
+      "name": "Patna High Court Translator",
+      "group": "Bihar High Court & Court Exams"
+    },
+    {
+      "global_sl": 5003,
+      "group_sl": 2193,
+      "exam_id": 4801,
+      "name": "Patna High Court Technical Assistant",
+      "group": "Bihar High Court & Court Exams"
+    },
+    {
+      "global_sl": 5004,
+      "group_sl": 2194,
+      "exam_id": 4800,
+      "name": "Patna High Court Stenographer",
+      "group": "Bihar High Court & Court Exams"
+    },
+    {
+      "global_sl": 5005,
+      "group_sl": 2195,
+      "exam_id": 4799,
+      "name": "Patna High Court Library Assistant",
+      "group": "Bihar High Court & Court Exams"
+    },
+    {
+      "global_sl": 5006,
+      "group_sl": 2196,
+      "exam_id": 4798,
+      "name": "Patna High Court Group C",
+      "group": "Bihar High Court & Court Exams"
+    },
+    {
+      "global_sl": 5007,
+      "group_sl": 2197,
+      "exam_id": 4797,
+      "name": "Patna High Court District Judge",
+      "group": "Bihar High Court & Court Exams"
+    },
+    {
+      "global_sl": 5008,
+      "group_sl": 2198,
+      "exam_id": 4796,
+      "name": "Patna High Court Computer Operator cum Typist",
+      "group": "Bihar High Court & Court Exams"
+    },
+    {
+      "global_sl": 5009,
+      "group_sl": 2199,
+      "exam_id": 4795,
+      "name": "Patna High Court Assistant",
+      "group": "Bihar High Court & Court Exams"
+    },
+    {
+      "global_sl": 5010,
+      "group_sl": 2200,
+      "exam_id": 4794,
+      "name": "Patna HC Personal Assistant",
+      "group": "Bihar High Court & Court Exams"
+    },
+    {
+      "global_sl": 5011,
+      "group_sl": 6003,
+      "exam_id": 991,
+      "name": "BPSC Civil Judge",
+      "group": "Bihar High Court & Court Exams"
+    },
+    {
+      "global_sl": 5012,
+      "group_sl": 6228,
+      "exam_id": 766,
+      "name": "Bihar Civil Court Stenographer",
+      "group": "Bihar High Court & Court Exams"
+    },
+    {
+      "global_sl": 5013,
+      "group_sl": 6229,
+      "exam_id": 765,
+      "name": "Bihar Civil Court Reader",
+      "group": "Bihar High Court & Court Exams"
+    },
+    {
+      "global_sl": 5014,
+      "group_sl": 6230,
+      "exam_id": 764,
+      "name": "Bihar Civil Court Peon",
+      "group": "Bihar High Court & Court Exams"
+    },
+    {
+      "global_sl": 5015,
+      "group_sl": 6231,
+      "exam_id": 763,
+      "name": "Bihar Civil Court Clerk",
+      "group": "Bihar High Court & Court Exams"
+    },
+    {
+      "global_sl": 5016,
+      "group_sl": 2882,
+      "exam_id": 4112,
+      "name": "MPPKVVCL Trade Apprentice",
+      "group": "Madhya Pradesh MPPKVVCL Exams"
+    },
+    {
+      "global_sl": 5017,
+      "group_sl": 2883,
+      "exam_id": 4111,
+      "name": "MPPKVVCL Testing Assistant",
+      "group": "Madhya Pradesh MPPKVVCL Exams"
+    },
+    {
+      "global_sl": 5018,
+      "group_sl": 2884,
+      "exam_id": 4110,
+      "name": "MPPKVVCL Security Guard",
+      "group": "Madhya Pradesh MPPKVVCL Exams"
+    },
+    {
+      "global_sl": 5019,
+      "group_sl": 2885,
+      "exam_id": 4109,
+      "name": "MPPKVVCL Plant Assistant Mechanical",
+      "group": "Madhya Pradesh MPPKVVCL Exams"
+    },
+    {
+      "global_sl": 5020,
+      "group_sl": 2886,
+      "exam_id": 4108,
+      "name": "MPPKVVCL Plant Assistant Electrical",
+      "group": "Madhya Pradesh MPPKVVCL Exams"
+    },
+    {
+      "global_sl": 5021,
+      "group_sl": 2887,
+      "exam_id": 4107,
+      "name": "MPPKVVCL Office Assistant",
+      "group": "Madhya Pradesh MPPKVVCL Exams"
+    },
+    {
+      "global_sl": 5022,
+      "group_sl": 2888,
+      "exam_id": 4106,
+      "name": "MPPKVVCL Manager",
+      "group": "Madhya Pradesh MPPKVVCL Exams"
+    },
+    {
+      "global_sl": 5023,
+      "group_sl": 2889,
+      "exam_id": 4105,
+      "name": "MPPKVVCL Line Attendant",
+      "group": "Madhya Pradesh MPPKVVCL Exams"
+    },
+    {
+      "global_sl": 5024,
+      "group_sl": 2890,
+      "exam_id": 4104,
+      "name": "MPPKVVCL Junior Engineer Civil",
+      "group": "Madhya Pradesh MPPKVVCL Exams"
+    },
+    {
+      "global_sl": 5025,
+      "group_sl": 2891,
+      "exam_id": 4103,
+      "name": "MPPKVVCL Junior Engineer",
+      "group": "Madhya Pradesh MPPKVVCL Exams"
+    },
+    {
+      "global_sl": 5026,
+      "group_sl": 2892,
+      "exam_id": 4102,
+      "name": "MPPKVVCL Civil Attendant",
+      "group": "Madhya Pradesh MPPKVVCL Exams"
+    },
+    {
+      "global_sl": 5027,
+      "group_sl": 2893,
+      "exam_id": 4101,
+      "name": "MPPKVVCL Assistant Law Officer",
+      "group": "Madhya Pradesh MPPKVVCL Exams"
+    },
+    {
+      "global_sl": 5028,
+      "group_sl": 2894,
+      "exam_id": 4100,
+      "name": "MPPKVVCL Assistant Engineer Electrical",
+      "group": "Madhya Pradesh MPPKVVCL Exams"
+    },
+    {
+      "global_sl": 5029,
+      "group_sl": 2895,
+      "exam_id": 4099,
+      "name": "MPPKVVCL Assistant Engineer Civil",
+      "group": "Madhya Pradesh MPPKVVCL Exams"
+    },
+    {
+      "global_sl": 5030,
+      "group_sl": 5444,
+      "exam_id": 1550,
+      "name": "CTET Social Science Hindi",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "global_sl": 5031,
+      "group_sl": 5445,
+      "exam_id": 1549,
+      "name": "CTET Social Science & Pedagogy",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "global_sl": 5032,
+      "group_sl": 5446,
+      "exam_id": 1548,
+      "name": "CTET Social Science",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "global_sl": 5033,
+      "group_sl": 5447,
+      "exam_id": 1547,
+      "name": "CTET Science",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "global_sl": 5034,
+      "group_sl": 5448,
+      "exam_id": 1546,
+      "name": "CTET Sanskrit",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "global_sl": 5035,
+      "group_sl": 5449,
+      "exam_id": 1545,
+      "name": "CTET Paper 1",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "global_sl": 5036,
+      "group_sl": 5450,
+      "exam_id": 1544,
+      "name": "CTET Maths and Science Hindi",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "global_sl": 5037,
+      "group_sl": 5451,
+      "exam_id": 1543,
+      "name": "CTET Maths and Science",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "global_sl": 5038,
+      "group_sl": 5452,
+      "exam_id": 1542,
+      "name": "CTET Maths",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "global_sl": 5039,
+      "group_sl": 5453,
+      "exam_id": 1541,
+      "name": "CTET Hindi Language",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "global_sl": 5040,
+      "group_sl": 5454,
+      "exam_id": 1540,
+      "name": "CTET Environmental Studies",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "global_sl": 5041,
+      "group_sl": 5455,
+      "exam_id": 1539,
+      "name": "CTET English Language",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "global_sl": 5042,
+      "group_sl": 5456,
+      "exam_id": 1538,
+      "name": "CTET Child Development & Pedagogy",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "global_sl": 5043,
+      "group_sl": 5457,
+      "exam_id": 1537,
+      "name": "CTET",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "global_sl": 5044,
+      "group_sl": 964,
+      "exam_id": 6030,
+      "name": "TNPSC Civil Judge",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "global_sl": 5045,
+      "group_sl": 1081,
+      "exam_id": 5913,
+      "name": "Tirunelveli District Court Office Assistant",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "global_sl": 5046,
+      "group_sl": 1308,
+      "exam_id": 5686,
+      "name": "Sivaganga District Court Computer Operator",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "global_sl": 5047,
+      "group_sl": 3114,
+      "exam_id": 3880,
+      "name": "MHC Sweeper, Sanitary Worker",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "global_sl": 5048,
+      "group_sl": 3115,
+      "exam_id": 3879,
+      "name": "MHC Computer Operator",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "global_sl": 5049,
+      "group_sl": 3116,
+      "exam_id": 3878,
+      "name": "MHC Assistant Programmer",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "global_sl": 5050,
+      "group_sl": 3266,
+      "exam_id": 3728,
+      "name": "Madras High Court VC Host",
+      "group": "Tamil Nadu High Court & Court Exams"
+    }
+  ]
+}

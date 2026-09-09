@@ -1,0 +1,358 @@
+{
+  "bundle_number": 4,
+  "bundle_id": "raw_bundle_004",
+  "range": "151 - 200",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 151,
+      "group_sl": 5421,
+      "exam_id": 1573,
+      "name": "CUET PG B.Ed Humanities and Social Sciences",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 152,
+      "group_sl": 5422,
+      "exam_id": 1572,
+      "name": "CUET PG B.Ed",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 153,
+      "group_sl": 5423,
+      "exam_id": 1571,
+      "name": "CUET PG Atmospheric Science",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 154,
+      "group_sl": 5424,
+      "exam_id": 1570,
+      "name": "CUET PG Assamese",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 155,
+      "group_sl": 5425,
+      "exam_id": 1569,
+      "name": "CUET PG Art and Aesthetics",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 156,
+      "group_sl": 5426,
+      "exam_id": 1568,
+      "name": "CUET PG Architecture",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 157,
+      "group_sl": 5427,
+      "exam_id": 1567,
+      "name": "CUET PG Applied Microbiology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 158,
+      "group_sl": 5428,
+      "exam_id": 1566,
+      "name": "CUET PG Applied Geography and Geoinformatics",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 159,
+      "group_sl": 5429,
+      "exam_id": 1565,
+      "name": "CUET PG Applied Arts",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 160,
+      "group_sl": 5430,
+      "exam_id": 1564,
+      "name": "CUET PG Anthropology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 161,
+      "group_sl": 5431,
+      "exam_id": 1563,
+      "name": "CUET PG Animal Science",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 162,
+      "group_sl": 5432,
+      "exam_id": 1562,
+      "name": "CUET PG Ancient Indian History",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 163,
+      "group_sl": 5433,
+      "exam_id": 1561,
+      "name": "CUET PG Agroforestry",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 164,
+      "group_sl": 5434,
+      "exam_id": 1560,
+      "name": "CUET PG Agriculture Science",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 165,
+      "group_sl": 5435,
+      "exam_id": 1559,
+      "name": "CUET PG Agricultural Science",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 166,
+      "group_sl": 5436,
+      "exam_id": 1558,
+      "name": "CUET PG Agri Business Management",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 167,
+      "group_sl": 5437,
+      "exam_id": 1557,
+      "name": "CUET PG Agama",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 168,
+      "group_sl": 5438,
+      "exam_id": 1556,
+      "name": "CUET Fashion Studies",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 169,
+      "group_sl": 5439,
+      "exam_id": 1555,
+      "name": "CUET Entrepreneurship",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 170,
+      "group_sl": 5440,
+      "exam_id": 1554,
+      "name": "CUET BTech",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 171,
+      "group_sl": 5441,
+      "exam_id": 1553,
+      "name": "CUET BBA Mathematics",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 172,
+      "group_sl": 5442,
+      "exam_id": 1552,
+      "name": "CUET BBA Business Studies",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 173,
+      "group_sl": 1181,
+      "exam_id": 5813,
+      "name": "SSUPSW Bihar Technician & Manager",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 174,
+      "group_sl": 1746,
+      "exam_id": 5248,
+      "name": "RPCAU Supporting Staff",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 175,
+      "group_sl": 1747,
+      "exam_id": 5247,
+      "name": "RPCAU KVK",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 176,
+      "group_sl": 2782,
+      "exam_id": 4212,
+      "name": "MWRD Bihar JE",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 177,
+      "group_sl": 5848,
+      "exam_id": 1146,
+      "name": "BTSSO Extraction Worker",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 178,
+      "group_sl": 5849,
+      "exam_id": 1145,
+      "name": "BTSC X Ray Technician",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 179,
+      "group_sl": 5850,
+      "exam_id": 1144,
+      "name": "BTSC Work Inspector Mechanical",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 180,
+      "group_sl": 5851,
+      "exam_id": 1143,
+      "name": "BTSC Work Inspector",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 181,
+      "group_sl": 5854,
+      "exam_id": 1140,
+      "name": "BTSC SMO Psychiatrist",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 182,
+      "group_sl": 5855,
+      "exam_id": 1139,
+      "name": "BTSC SMO Physician",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 183,
+      "group_sl": 5856,
+      "exam_id": 1138,
+      "name": "BTSC SMO Pediatrics",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 184,
+      "group_sl": 5858,
+      "exam_id": 1136,
+      "name": "BTSC SMO Orthopedics",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 185,
+      "group_sl": 5859,
+      "exam_id": 1135,
+      "name": "BTSC SMO Ophthalmology",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 186,
+      "group_sl": 5860,
+      "exam_id": 1134,
+      "name": "BTSC SMO Microbiology",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 187,
+      "group_sl": 5861,
+      "exam_id": 1133,
+      "name": "BTSC SMO Gynecology",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 188,
+      "group_sl": 5862,
+      "exam_id": 1132,
+      "name": "BTSC SMO General Surgery",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 189,
+      "group_sl": 5863,
+      "exam_id": 1131,
+      "name": "BTSC SMO ENT",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 190,
+      "group_sl": 5864,
+      "exam_id": 1130,
+      "name": "BTSC SMO Dermatology",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 191,
+      "group_sl": 5865,
+      "exam_id": 1129,
+      "name": "BTSC SMO Anesthetist",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 192,
+      "group_sl": 5866,
+      "exam_id": 1128,
+      "name": "BTSC Pump Operator",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 193,
+      "group_sl": 5867,
+      "exam_id": 1127,
+      "name": "BTSC Polytechnic Instructor",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 194,
+      "group_sl": 5869,
+      "exam_id": 1125,
+      "name": "BTSC OT Assistant",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 195,
+      "group_sl": 5870,
+      "exam_id": 1124,
+      "name": "BTSC Laboratory Assistant Science",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 196,
+      "group_sl": 5871,
+      "exam_id": 1123,
+      "name": "BTSC Laboratory Assistant Mechanical",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 197,
+      "group_sl": 5872,
+      "exam_id": 1122,
+      "name": "BTSC Laboratory Assistant Electronics",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 198,
+      "group_sl": 5873,
+      "exam_id": 1121,
+      "name": "BTSC Laboratory Assistant Electrical",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 199,
+      "group_sl": 5874,
+      "exam_id": 1120,
+      "name": "BTSC Laboratory Assistant Computer Science",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 200,
+      "group_sl": 5875,
+      "exam_id": 1119,
+      "name": "BTSC Laboratory Assistant",
+      "group": "Bihar General Government Exams"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "bundle_number": 72,
+  "bundle_id": "raw_bundle_072",
+  "range": "3551 - 3600",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3551,
+      "group_sl": 1395,
+      "exam_id": 5599,
+      "name": "Science Olympiad Class 5",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3552,
+      "group_sl": 1396,
+      "exam_id": 5598,
+      "name": "Science Olympiad Class 4",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3553,
+      "group_sl": 1397,
+      "exam_id": 5597,
+      "name": "Science Olympiad Class 3",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3554,
+      "group_sl": 1398,
+      "exam_id": 5596,
+      "name": "Science Olympiad Class 1",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3555,
+      "group_sl": 2756,
+      "exam_id": 4238,
+      "name": "National Science Olympiad Class-10",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3556,
+      "group_sl": 2758,
+      "exam_id": 4236,
+      "name": "National Cyber Olympiad",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3557,
+      "group_sl": 3184,
+      "exam_id": 3810,
+      "name": "Mathematics Olympiad Class 8",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3558,
+      "group_sl": 3185,
+      "exam_id": 3809,
+      "name": "Mathematics Olympiad Class 7",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3559,
+      "group_sl": 3186,
+      "exam_id": 3808,
+      "name": "Mathematics Olympiad Class 6",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3560,
+      "group_sl": 3187,
+      "exam_id": 3807,
+      "name": "Mathematics Olympiad Class 5",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3561,
+      "group_sl": 3188,
+      "exam_id": 3806,
+      "name": "Mathematics Olympiad Class 4",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3562,
+      "group_sl": 3189,
+      "exam_id": 3805,
+      "name": "Mathematics Olympiad Class 3",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3563,
+      "group_sl": 3190,
+      "exam_id": 3804,
+      "name": "Mathematics Olympiad Class 2",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3564,
+      "group_sl": 3191,
+      "exam_id": 3803,
+      "name": "Mathematics Olympiad Class 1",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3565,
+      "group_sl": 3285,
+      "exam_id": 3709,
+      "name": "Logical Reasoning Olympiad Class 8",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3566,
+      "group_sl": 3286,
+      "exam_id": 3708,
+      "name": "Logical Reasoning Olympiad Class 7",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3567,
+      "group_sl": 3287,
+      "exam_id": 3707,
+      "name": "Logical Reasoning Olympiad Class 6",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3568,
+      "group_sl": 3288,
+      "exam_id": 3706,
+      "name": "Logical Reasoning Olympiad Class 5",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3569,
+      "group_sl": 3289,
+      "exam_id": 3705,
+      "name": "Logical Reasoning Olympiad Class 4",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3570,
+      "group_sl": 3290,
+      "exam_id": 3704,
+      "name": "Logical Reasoning Olympiad Class 3",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3571,
+      "group_sl": 3291,
+      "exam_id": 3703,
+      "name": "Logical Reasoning Olympiad Class 1",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3572,
+      "group_sl": 3976,
+      "exam_id": 3018,
+      "name": "International Mathematics Olympiad",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3573,
+      "group_sl": 4716,
+      "exam_id": 2278,
+      "name": "General Knowledge Olympiad Class 5",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3574,
+      "group_sl": 4717,
+      "exam_id": 2277,
+      "name": "General Knowledge Olympiad Class 4",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3575,
+      "group_sl": 4718,
+      "exam_id": 2276,
+      "name": "General Knowledge Olympiad Class 1",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3576,
+      "group_sl": 4868,
+      "exam_id": 2126,
+      "name": "English Olympiad Class 7",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3577,
+      "group_sl": 4869,
+      "exam_id": 2125,
+      "name": "English Olympiad Class 6",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3578,
+      "group_sl": 4870,
+      "exam_id": 2124,
+      "name": "English Olympiad Class 5",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3579,
+      "group_sl": 4871,
+      "exam_id": 2123,
+      "name": "English Olympiad Class 3",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3580,
+      "group_sl": 4872,
+      "exam_id": 2122,
+      "name": "English Olympiad Class 1",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3581,
+      "group_sl": 5254,
+      "exam_id": 1740,
+      "name": "Cyber Olympiad Class 7",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3582,
+      "group_sl": 5255,
+      "exam_id": 1739,
+      "name": "Cyber Olympiad Class 4",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3583,
+      "group_sl": 5256,
+      "exam_id": 1738,
+      "name": "Cyber Olympiad Class 3",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3584,
+      "group_sl": 5257,
+      "exam_id": 1737,
+      "name": "Cyber Olympiad Class 1",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3585,
+      "group_sl": 2403,
+      "exam_id": 4591,
+      "name": "NVS TGT Special Educator",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3586,
+      "group_sl": 2404,
+      "exam_id": 4590,
+      "name": "NVS TGT Social Studies",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3587,
+      "group_sl": 2405,
+      "exam_id": 4589,
+      "name": "NVS TGT Science",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3588,
+      "group_sl": 2406,
+      "exam_id": 4588,
+      "name": "NVS TGT Physical Education",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3589,
+      "group_sl": 2407,
+      "exam_id": 4587,
+      "name": "NVS TGT Music",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3590,
+      "group_sl": 2408,
+      "exam_id": 4586,
+      "name": "NVS TGT Mathematics",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3591,
+      "group_sl": 2409,
+      "exam_id": 4585,
+      "name": "NVS TGT Library",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3592,
+      "group_sl": 2410,
+      "exam_id": 4584,
+      "name": "NVS TGT Hindi",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3593,
+      "group_sl": 2411,
+      "exam_id": 4583,
+      "name": "NVS TGT English",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3594,
+      "group_sl": 2412,
+      "exam_id": 4582,
+      "name": "NVS TGT Computer Science",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3595,
+      "group_sl": 2413,
+      "exam_id": 4581,
+      "name": "NVS TGT Art",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3596,
+      "group_sl": 2414,
+      "exam_id": 4580,
+      "name": "NVS Stenographer",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3597,
+      "group_sl": 2416,
+      "exam_id": 4578,
+      "name": "NVS Principal",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3598,
+      "group_sl": 2417,
+      "exam_id": 4577,
+      "name": "NVS PGT Physics",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3599,
+      "group_sl": 2418,
+      "exam_id": 4576,
+      "name": "NVS PGT Physical Education",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3600,
+      "group_sl": 2419,
+      "exam_id": 4575,
+      "name": "NVS PGT Mathematics",
+      "group": "Central Schools - NVS Exams"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "bundle_number": 96,
+  "bundle_id": "raw_bundle_096",
+  "range": "4751 - 4800",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4751,
+      "group_sl": 1212,
+      "exam_id": 5782,
+      "name": "SSC CR Junior Conservation Assistant",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4752,
+      "group_sl": 1218,
+      "exam_id": 5776,
+      "name": "SSC CET",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4753,
+      "group_sl": 1219,
+      "exam_id": 5775,
+      "name": "SSC CBI SI",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4754,
+      "group_sl": 3995,
+      "exam_id": 2999,
+      "name": "Indian Navy SSC Officer",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4755,
+      "group_sl": 4035,
+      "exam_id": 2959,
+      "name": "Indian Army SSC Technical",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4756,
+      "group_sl": 3865,
+      "exam_id": 3129,
+      "name": "JAIIB Retail Banking and Wealth Management",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4757,
+      "group_sl": 3866,
+      "exam_id": 3128,
+      "name": "JAIIB Principles & Practices of Banking",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4758,
+      "group_sl": 3867,
+      "exam_id": 3127,
+      "name": "JAIIB Indian Economy and Indian Financial System",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4759,
+      "group_sl": 3868,
+      "exam_id": 3126,
+      "name": "JAIIB Accounting and Finance for Bankers",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4760,
+      "group_sl": 4202,
+      "exam_id": 2792,
+      "name": "IBBI Officer Grade A",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4761,
+      "group_sl": 5512,
+      "exam_id": 1482,
+      "name": "CSEET",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4762,
+      "group_sl": 5574,
+      "exam_id": 1420,
+      "name": "CMA Foundation",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4763,
+      "group_sl": 5817,
+      "exam_id": 1177,
+      "name": "CAIIB Retail Banking in India",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4764,
+      "group_sl": 5818,
+      "exam_id": 1176,
+      "name": "CAIIB Elective Paper Rural Banking",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4765,
+      "group_sl": 5819,
+      "exam_id": 1175,
+      "name": "CAIIB Elective Paper Risk Management",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4766,
+      "group_sl": 5820,
+      "exam_id": 1174,
+      "name": "CAIIB Elective Paper Information Technology",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4767,
+      "group_sl": 5821,
+      "exam_id": 1173,
+      "name": "CAIIB Elective Paper Human Resource Management",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4768,
+      "group_sl": 5822,
+      "exam_id": 1172,
+      "name": "CAIIB Elective Paper Central Banking",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4769,
+      "group_sl": 5823,
+      "exam_id": 1171,
+      "name": "CAIIB Banking Regulations and Business Laws",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4770,
+      "group_sl": 5824,
+      "exam_id": 1170,
+      "name": "CAIIB Bank Financial Management",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4771,
+      "group_sl": 5825,
+      "exam_id": 1169,
+      "name": "CAIIB Advanced Bank Management",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4772,
+      "group_sl": 5826,
+      "exam_id": 1168,
+      "name": "CAIIB Advance Business and Financial Management",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "global_sl": 4773,
+      "group_sl": 73,
+      "exam_id": 6921,
+      "name": "WBPSC Pharmacist Grade 3",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4774,
+      "group_sl": 76,
+      "exam_id": 6918,
+      "name": "WBPSC Medical Technologist",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4775,
+      "group_sl": 111,
+      "exam_id": 6883,
+      "name": "WBHRB Staff Nurse",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4776,
+      "group_sl": 112,
+      "exam_id": 6882,
+      "name": "WBHRB Pharmacist Grade 3",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4777,
+      "group_sl": 113,
+      "exam_id": 6881,
+      "name": "WBHRB Medical Technologist",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4778,
+      "group_sl": 114,
+      "exam_id": 6880,
+      "name": "WBHRB Medical Officer",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4779,
+      "group_sl": 117,
+      "exam_id": 6877,
+      "name": "WBHRB Block Medical Officer, Librarian",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4780,
+      "group_sl": 5124,
+      "exam_id": 1870,
+      "name": "DHFWS Purba Bardhaman CHO",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4781,
+      "group_sl": 5130,
+      "exam_id": 1864,
+      "name": "DHFWS Nadia Staff Nurse",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4782,
+      "group_sl": 5131,
+      "exam_id": 1863,
+      "name": "DHFWS Nadia Specialist Medical Officer Paediatrics Polyclinic",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4783,
+      "group_sl": 5132,
+      "exam_id": 1862,
+      "name": "DHFWS Nadia Specialist Medical Officer Ophthalmology Polyclinic",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4784,
+      "group_sl": 5133,
+      "exam_id": 1861,
+      "name": "DHFWS Nadia Specialist Medical Officer Medicine Polyclinic",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4785,
+      "group_sl": 5134,
+      "exam_id": 1860,
+      "name": "DHFWS Nadia Specialist Medical Officer Gynaecology and Obstetrics Polyclinic",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4786,
+      "group_sl": 5135,
+      "exam_id": 1859,
+      "name": "DHFWS Nadia Medical Officer",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4787,
+      "group_sl": 5138,
+      "exam_id": 1856,
+      "name": "DHFWS Nadia CHO",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4788,
+      "group_sl": 5562,
+      "exam_id": 1432,
+      "name": "CMOH Murshidabad CHO Nurse",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4789,
+      "group_sl": 82,
+      "exam_id": 6912,
+      "name": "WBPSC Food SI",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4790,
+      "group_sl": 90,
+      "exam_id": 6904,
+      "name": "WBPRB Excise SI",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4791,
+      "group_sl": 135,
+      "exam_id": 6859,
+      "name": "WB Postman Mail Guard",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4792,
+      "group_sl": 137,
+      "exam_id": 6857,
+      "name": "WB Police Wireless Operator",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4793,
+      "group_sl": 138,
+      "exam_id": 6856,
+      "name": "WB Police Staff Officer",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4794,
+      "group_sl": 139,
+      "exam_id": 6855,
+      "name": "WB Police SI",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4795,
+      "group_sl": 140,
+      "exam_id": 6854,
+      "name": "WB Police LDC",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4796,
+      "group_sl": 141,
+      "exam_id": 6853,
+      "name": "WB Police Lady Constable",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4797,
+      "group_sl": 142,
+      "exam_id": 6852,
+      "name": "WB Police Jail Warder",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4798,
+      "group_sl": 143,
+      "exam_id": 6851,
+      "name": "WB Police Excise Constable",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4799,
+      "group_sl": 144,
+      "exam_id": 6850,
+      "name": "WB Police Constable",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4800,
+      "group_sl": 145,
+      "exam_id": 6849,
+      "name": "WB Police Agragami",
+      "group": "West Bengal Police & Security Exams"
+    }
+  ]
+}

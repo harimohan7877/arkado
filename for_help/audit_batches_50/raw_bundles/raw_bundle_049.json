@@ -1,0 +1,358 @@
+{
+  "bundle_number": 49,
+  "bundle_id": "raw_bundle_049",
+  "range": "2401 - 2450",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 2401,
+      "group_sl": 999,
+      "exam_id": 5995,
+      "name": "TN TRB PG Assistant English",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2402,
+      "group_sl": 1000,
+      "exam_id": 5994,
+      "name": "TN TRB PG Assistant Economics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2403,
+      "group_sl": 1001,
+      "exam_id": 5993,
+      "name": "TN TRB PG Assistant Commerce",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2404,
+      "group_sl": 1002,
+      "exam_id": 5992,
+      "name": "TN TRB PG Assistant Chemistry",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2405,
+      "group_sl": 1003,
+      "exam_id": 5991,
+      "name": "TN TRB PG Assistant Botany",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2406,
+      "group_sl": 1004,
+      "exam_id": 5990,
+      "name": "TN TRB ME",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2407,
+      "group_sl": 1005,
+      "exam_id": 5989,
+      "name": "TN TRB Lecturers ECE",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2408,
+      "group_sl": 1006,
+      "exam_id": 5988,
+      "name": "TN TRB Lecturers CSE",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2409,
+      "group_sl": 1007,
+      "exam_id": 5987,
+      "name": "TN TRB Graduate Teacher Zoology",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2410,
+      "group_sl": 1008,
+      "exam_id": 5986,
+      "name": "TN TRB Graduate Teacher Physics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2411,
+      "group_sl": 1009,
+      "exam_id": 5985,
+      "name": "TN TRB Graduate Teacher Maths",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2412,
+      "group_sl": 1010,
+      "exam_id": 5984,
+      "name": "TN TRB Graduate Teacher History",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2413,
+      "group_sl": 1011,
+      "exam_id": 5983,
+      "name": "TN TRB Graduate Teacher Geography",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2414,
+      "group_sl": 1012,
+      "exam_id": 5982,
+      "name": "TN TRB Graduate Teacher English",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2415,
+      "group_sl": 1013,
+      "exam_id": 5981,
+      "name": "TN TRB Graduate Teacher Chemistry",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2416,
+      "group_sl": 1014,
+      "exam_id": 5980,
+      "name": "TN TRB Graduate Teacher Botany",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2417,
+      "group_sl": 1015,
+      "exam_id": 5979,
+      "name": "TN TRB EE",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2418,
+      "group_sl": 1016,
+      "exam_id": 5978,
+      "name": "TN TRB BEO",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2419,
+      "group_sl": 1017,
+      "exam_id": 5977,
+      "name": "TN TRB Assistant Professor Zoology",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2420,
+      "group_sl": 1018,
+      "exam_id": 5976,
+      "name": "TN TRB Assistant Professor Statistics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2421,
+      "group_sl": 1019,
+      "exam_id": 5975,
+      "name": "TN TRB Assistant Professor Political Science",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2422,
+      "group_sl": 1020,
+      "exam_id": 5974,
+      "name": "TN TRB Assistant Professor Physics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2423,
+      "group_sl": 1021,
+      "exam_id": 5973,
+      "name": "TN TRB Assistant Professor Mathematics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2424,
+      "group_sl": 1022,
+      "exam_id": 5972,
+      "name": "TN TRB Assistant Professor Home Science",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2425,
+      "group_sl": 1023,
+      "exam_id": 5971,
+      "name": "TN TRB Assistant Professor History",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2426,
+      "group_sl": 1024,
+      "exam_id": 5970,
+      "name": "TN TRB Assistant Professor Geography",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2427,
+      "group_sl": 1025,
+      "exam_id": 5969,
+      "name": "TN TRB Assistant Professor English",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2428,
+      "group_sl": 1026,
+      "exam_id": 5968,
+      "name": "TN TRB Assistant Professor Education",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2429,
+      "group_sl": 1027,
+      "exam_id": 5967,
+      "name": "TN TRB Assistant Professor Economics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2430,
+      "group_sl": 1028,
+      "exam_id": 5966,
+      "name": "TN TRB Assistant Professor Computer Science",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2431,
+      "group_sl": 1029,
+      "exam_id": 5965,
+      "name": "TN TRB Assistant Professor Commerce",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2432,
+      "group_sl": 1030,
+      "exam_id": 5964,
+      "name": "TN TRB Assistant Professor Chemistry",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2433,
+      "group_sl": 1031,
+      "exam_id": 5963,
+      "name": "TN TRB Assistant Professor Botany",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2434,
+      "group_sl": 1032,
+      "exam_id": 5962,
+      "name": "TN TRB Assistant Professor Biochemistry",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2435,
+      "group_sl": 1033,
+      "exam_id": 5961,
+      "name": "TN TRB Assistant Professor",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2436,
+      "group_sl": 5,
+      "exam_id": 6989,
+      "name": "XAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2437,
+      "group_sl": 169,
+      "exam_id": 6825,
+      "name": "Vizag Steel Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2438,
+      "group_sl": 778,
+      "exam_id": 6216,
+      "name": "UCEED",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2439,
+      "group_sl": 1077,
+      "exam_id": 5917,
+      "name": "TISSNET",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2440,
+      "group_sl": 1149,
+      "exam_id": 5845,
+      "name": "TANCET MBA",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2441,
+      "group_sl": 1177,
+      "exam_id": 5817,
+      "name": "State Level Engineering Entrance",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2442,
+      "group_sl": 1262,
+      "exam_id": 5732,
+      "name": "SRCC GBO",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2443,
+      "group_sl": 1284,
+      "exam_id": 5710,
+      "name": "SNAP",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2444,
+      "group_sl": 1444,
+      "exam_id": 5550,
+      "name": "SAIL Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2445,
+      "group_sl": 1750,
+      "exam_id": 5244,
+      "name": "RMS Admission Class VI",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2446,
+      "group_sl": 1751,
+      "exam_id": 5243,
+      "name": "RMS Admission Class IX",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2447,
+      "group_sl": 1763,
+      "exam_id": 5231,
+      "name": "RIMC Admission",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2448,
+      "group_sl": 2334,
+      "exam_id": 4660,
+      "name": "OMAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2449,
+      "group_sl": 2335,
+      "exam_id": 4659,
+      "name": "OJEE MBA",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "global_sl": 2450,
+      "group_sl": 2442,
+      "exam_id": 4552,
+      "name": "NUCAT",
+      "group": "Management & Admission Entrance Exams"
+    }
+  ]
+}

@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-081",
+  "bundle_num": 81,
+  "category_id": "medical-health",
+  "category_name": "मेडिकल & नर्सिंग",
+  "category_icon": "🩺",
+  "title": "मेडिकल & नर्सिंग — Medical & Nursing - Other Central Medical & Health (Part 1/2)",
+  "total_exams": 60,
+  "boards_included": [
+    "Medical & Nursing - Other Central Medical & Health"
+  ],
+  "exams": [
+    {
+      "sl": 162,
+      "id": 6832,
+      "name": "VMMC Junior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 180,
+      "id": 6814,
+      "name": "VCRC Technician",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 181,
+      "id": 6813,
+      "name": "VCRC Technical Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 983,
+      "id": 6011,
+      "name": "TNMRB Assistant Surgeon Speciality",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 1069,
+      "id": 5925,
+      "name": "TMC Senior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 1070,
+      "id": 5924,
+      "name": "TMC Nurse A",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 1072,
+      "id": 5922,
+      "name": "TMC Female Nurse",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 1073,
+      "id": 5921,
+      "name": "TMC Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 1300,
+      "id": 5694,
+      "name": "SKIMS Lab Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 1442,
+      "id": 5552,
+      "name": "SAIL Medical Officer",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 1443,
+      "id": 5551,
+      "name": "SAIL Medical Executive & Paramedical Staff",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 1752,
+      "id": 5242,
+      "name": "RMLH Junior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 1944,
+      "id": 5050,
+      "name": "Radiodiagnosis",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2019,
+      "id": 4975,
+      "name": "PUNEZP Health Worker",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2164,
+      "id": 4830,
+      "name": "PGIMER Senior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2165,
+      "id": 4829,
+      "name": "PGIMER Junior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2325,
+      "id": 4669,
+      "name": "ONGC Medical Officer",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2530,
+      "id": 4464,
+      "name": "NMDC Field Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2557,
+      "id": 4437,
+      "name": "NIMHANS Junior Secretarial Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2559,
+      "id": 4435,
+      "name": "NIHFW Group B, C, D",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2629,
+      "id": 4365,
+      "name": "NHM CHO",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2670,
+      "id": 4324,
+      "name": "NFL Attendant Mechanical Fitter",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2673,
+      "id": 4321,
+      "name": "NFC Nurse A",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2682,
+      "id": 4312,
+      "name": "NEET Zoology",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2688,
+      "id": 4306,
+      "name": "NEET Physics in English",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2709,
+      "id": 4285,
+      "name": "NEET MDS",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2710,
+      "id": 4284,
+      "name": "NEET in English",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2711,
+      "id": 4283,
+      "name": "NEET Chemistry in English",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2712,
+      "id": 4282,
+      "name": "NEET Botany",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2739,
+      "id": 4255,
+      "name": "NBEMS Senior Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2740,
+      "id": 4254,
+      "name": "NBEMS Junior Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2741,
+      "id": 4253,
+      "name": "NBE Junior Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 2840,
+      "id": 4154,
+      "name": "MPPTCL Line Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 3159,
+      "id": 3835,
+      "name": "Medical Termination of Pregnancy MTP Act",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 3309,
+      "id": 3685,
+      "name": "LHMC Senior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 3311,
+      "id": 3683,
+      "name": "LHMC Junior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 3788,
+      "id": 3206,
+      "name": "JIPMER Senior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 3791,
+      "id": 3203,
+      "name": "JIPMER LDC",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 3792,
+      "id": 3202,
+      "name": "JIPMER",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 3858,
+      "id": 3136,
+      "name": "JCECEB CHO",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 3950,
+      "id": 3044,
+      "name": "IOCL Pipeline Technical Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 3959,
+      "id": 3035,
+      "name": "IOCL Junior Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4080,
+      "id": 2914,
+      "name": "ILBS Junior Executive Nurse",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4114,
+      "id": 2880,
+      "name": "IGIMS Sister Grade 2",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4133,
+      "id": 2861,
+      "name": "ICMR Scientist B Non Medical",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4134,
+      "id": 2860,
+      "name": "ICMR NIV Technician",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4135,
+      "id": 2859,
+      "name": "ICMR NIV Technical Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4136,
+      "id": 2858,
+      "name": "ICMR JRF",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4137,
+      "id": 2857,
+      "name": "ICMR Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4293,
+      "id": 2701,
+      "name": "HQ Southern Command Health Inspector",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4705,
+      "id": 2289,
+      "name": "Geriatric Nurse",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4707,
+      "id": 2287,
+      "name": "General Surgery",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4712,
+      "id": 2282,
+      "name": "General Medicine",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4770,
+      "id": 2224,
+      "name": "FSSAI Technical Officer",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4771,
+      "id": 2223,
+      "name": "FSSAI Director, Manager",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4772,
+      "id": 2222,
+      "name": "FSSAI CFSO",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4773,
+      "id": 2221,
+      "name": "FSSAI Assistant Manager",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4774,
+      "id": 2220,
+      "name": "FSSAI Administrative Officer",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4797,
+      "id": 2197,
+      "name": "Food Safety Officer",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "sl": 4798,
+      "id": 2196,
+      "name": "FMGE",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    }
+  ]
+}

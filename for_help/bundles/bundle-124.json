@@ -1,0 +1,480 @@
+{
+  "bundle_id": "bundle-124",
+  "bundle_num": 124,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Maharashtra KDMC Municipal Corporation • Puducherry General Govt • Kerala KTET",
+  "total_exams": 74,
+  "boards_included": [
+    "Maharashtra KDMC Municipal Corporation",
+    "Puducherry General Govt",
+    "Kerala KTET",
+    "Gujarat RMC Municipal Corporation",
+    "Tripura Police & Security",
+    "Meghalaya PSC",
+    "Punjab TET",
+    "Maharashtra VNMKV",
+    "Karnataka High Court & Court",
+    "Gujarat GSECL",
+    "Nagaland General Govt",
+    "Sikkim TET",
+    "Chhattisgarh Police & Security",
+    "Telangana TET",
+    "Tamil Nadu TET",
+    "Jharkhand TET",
+    "Tripura TET",
+    "Chhattisgarh High Court & Court",
+    "Karnataka BMRCL Metro",
+    "Uttarakhand TET",
+    "General Subjects - Quantitative Aptitude",
+    "Odisha Power & Electricity",
+    "Chhattisgarh CSPHCL"
+  ],
+  "exams": [
+    {
+      "sl": 4637,
+      "id": 2357,
+      "name": "GSECL Vidyut Sahayak Plant Attendant Mechanical",
+      "group": "Gujarat GSECL Exams"
+    },
+    {
+      "sl": 4638,
+      "id": 2356,
+      "name": "GSECL Vidyut Sahayak Plant Attendant Electrical",
+      "group": "Gujarat GSECL Exams"
+    },
+    {
+      "sl": 4639,
+      "id": 2355,
+      "name": "GSECL Vidyut Sahayak Junior Engineer",
+      "group": "Gujarat GSECL Exams"
+    },
+    {
+      "sl": 4640,
+      "id": 2354,
+      "name": "GSECL Instrument Mechanic",
+      "group": "Gujarat GSECL Exams"
+    },
+    {
+      "sl": 5462,
+      "id": 1532,
+      "name": "CSPHCL Line Attendant",
+      "group": "Chhattisgarh CSPHCL Exams"
+    },
+    {
+      "sl": 5463,
+      "id": 1531,
+      "name": "CSPHCL JE",
+      "group": "Chhattisgarh CSPHCL Exams"
+    },
+    {
+      "sl": 5464,
+      "id": 1530,
+      "name": "CSPHCL DEO",
+      "group": "Chhattisgarh CSPHCL Exams"
+    },
+    {
+      "sl": 5465,
+      "id": 1529,
+      "name": "CSPHCL AE",
+      "group": "Chhattisgarh CSPHCL Exams"
+    },
+    {
+      "sl": 5621,
+      "id": 1373,
+      "name": "Chhattisgarh Police SI",
+      "group": "Chhattisgarh Police & Security Exams"
+    },
+    {
+      "sl": 5742,
+      "id": 1252,
+      "name": "CG Police Female Police Volunteer",
+      "group": "Chhattisgarh Police & Security Exams"
+    },
+    {
+      "sl": 5743,
+      "id": 1251,
+      "name": "CG Police Constable",
+      "group": "Chhattisgarh Police & Security Exams"
+    },
+    {
+      "sl": 5747,
+      "id": 1247,
+      "name": "CG Forest Guard",
+      "group": "Chhattisgarh Police & Security Exams"
+    },
+    {
+      "sl": 5622,
+      "id": 1372,
+      "name": "Chhattisgarh High Court Stenographer",
+      "group": "Chhattisgarh High Court & Court Exams"
+    },
+    {
+      "sl": 5623,
+      "id": 1371,
+      "name": "Chhattisgarh High Court DEO",
+      "group": "Chhattisgarh High Court & Court Exams"
+    },
+    {
+      "sl": 5624,
+      "id": 1370,
+      "name": "Chhattisgarh High Court Assistant Grade III",
+      "group": "Chhattisgarh High Court & Court Exams"
+    },
+    {
+      "sl": 5668,
+      "id": 1326,
+      "name": "CGPSC Civil Judge",
+      "group": "Chhattisgarh High Court & Court Exams"
+    },
+    {
+      "sl": 6055,
+      "id": 939,
+      "name": "BMRCL Station Controller",
+      "group": "Karnataka BMRCL Metro Exams"
+    },
+    {
+      "sl": 6056,
+      "id": 938,
+      "name": "BMRCL Section Engineer",
+      "group": "Karnataka BMRCL Metro Exams"
+    },
+    {
+      "sl": 6057,
+      "id": 937,
+      "name": "BMRCL Maintainer",
+      "group": "Karnataka BMRCL Metro Exams"
+    },
+    {
+      "sl": 6058,
+      "id": 936,
+      "name": "BMRCL JE",
+      "group": "Karnataka BMRCL Metro Exams"
+    },
+    {
+      "sl": 155,
+      "id": 6839,
+      "name": "VNMKV Peon",
+      "group": "Maharashtra VNMKV Exams"
+    },
+    {
+      "sl": 156,
+      "id": 6838,
+      "name": "VNMKV Junior Clerk",
+      "group": "Maharashtra VNMKV Exams"
+    },
+    {
+      "sl": 157,
+      "id": 6837,
+      "name": "VNMKV Agricultural Assistant",
+      "group": "Maharashtra VNMKV Exams"
+    },
+    {
+      "sl": 184,
+      "id": 6810,
+      "name": "Uttarakhand TET Social Studies",
+      "group": "Uttarakhand TET Exams"
+    },
+    {
+      "sl": 185,
+      "id": 6809,
+      "name": "Uttarakhand TET Paper 1",
+      "group": "Uttarakhand TET Exams"
+    },
+    {
+      "sl": 186,
+      "id": 6808,
+      "name": "Uttarakhand TET Mathematics & Science",
+      "group": "Uttarakhand TET Exams"
+    },
+    {
+      "sl": 229,
+      "id": 6765,
+      "name": "UPTET Maths and Science",
+      "group": "General Subjects - Quantitative Aptitude"
+    },
+    {
+      "sl": 1946,
+      "id": 5048,
+      "name": "Quantitative Aptitude Sectional Test",
+      "group": "General Subjects - Quantitative Aptitude"
+    },
+    {
+      "sl": 1948,
+      "id": 5046,
+      "name": "Quantitative Aptitude and Numerical Ability",
+      "group": "General Subjects - Quantitative Aptitude"
+    },
+    {
+      "sl": 848,
+      "id": 6146,
+      "name": "TS TET Social Studies",
+      "group": "Telangana TET Exams"
+    },
+    {
+      "sl": 849,
+      "id": 6145,
+      "name": "TS TET Paper 1",
+      "group": "Telangana TET Exams"
+    },
+    {
+      "sl": 850,
+      "id": 6144,
+      "name": "TS TET Mathematics & Science",
+      "group": "Telangana TET Exams"
+    },
+    {
+      "sl": 879,
+      "id": 6115,
+      "name": "Tripura TET Social Studies",
+      "group": "Tripura TET Exams"
+    },
+    {
+      "sl": 880,
+      "id": 6114,
+      "name": "Tripura TET Paper 1",
+      "group": "Tripura TET Exams"
+    },
+    {
+      "sl": 881,
+      "id": 6113,
+      "name": "Tripura TET Mathematics & Science",
+      "group": "Tripura TET Exams"
+    },
+    {
+      "sl": 882,
+      "id": 6112,
+      "name": "Tripura Police Riflemen",
+      "group": "Tripura Police & Security Exams"
+    },
+    {
+      "sl": 883,
+      "id": 6111,
+      "name": "Tripura Police Constable",
+      "group": "Tripura Police & Security Exams"
+    },
+    {
+      "sl": 888,
+      "id": 6106,
+      "name": "Tripura Forest Guard",
+      "group": "Tripura Police & Security Exams"
+    },
+    {
+      "sl": 1034,
+      "id": 5960,
+      "name": "TN TET Social Studies",
+      "group": "Tamil Nadu TET Exams"
+    },
+    {
+      "sl": 1035,
+      "id": 5959,
+      "name": "TN TET Paper 1",
+      "group": "Tamil Nadu TET Exams"
+    },
+    {
+      "sl": 1036,
+      "id": 5958,
+      "name": "TN TET Mathematics and Science",
+      "group": "Tamil Nadu TET Exams"
+    },
+    {
+      "sl": 1314,
+      "id": 5680,
+      "name": "Sikkim TET Social Studies",
+      "group": "Sikkim TET Exams"
+    },
+    {
+      "sl": 1315,
+      "id": 5679,
+      "name": "Sikkim TET Paper 1",
+      "group": "Sikkim TET Exams"
+    },
+    {
+      "sl": 1316,
+      "id": 5678,
+      "name": "Sikkim TET Maths and Science",
+      "group": "Sikkim TET Exams"
+    },
+    {
+      "sl": 1754,
+      "id": 5240,
+      "name": "RMC Sub Officer",
+      "group": "Gujarat RMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 1755,
+      "id": 5239,
+      "name": "RMC Junior Clerk",
+      "group": "Gujarat RMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 1756,
+      "id": 5238,
+      "name": "RMC Driver Operator",
+      "group": "Gujarat RMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2028,
+      "id": 4966,
+      "name": "Puducherry General Knowledge",
+      "group": "Puducherry General Government Exams"
+    },
+    {
+      "sl": 5125,
+      "id": 1869,
+      "name": "DHFWS Puducherry Theatre Assistant",
+      "group": "Puducherry General Government Exams"
+    },
+    {
+      "sl": 5127,
+      "id": 1867,
+      "name": "DHFWS Puducherry Health Assistant",
+      "group": "Puducherry General Government Exams"
+    },
+    {
+      "sl": 2073,
+      "id": 4921,
+      "name": "PS TET Social Studies & Social Science",
+      "group": "Punjab TET Exams"
+    },
+    {
+      "sl": 2074,
+      "id": 4920,
+      "name": "PS TET Paper 1",
+      "group": "Punjab TET Exams"
+    },
+    {
+      "sl": 2075,
+      "id": 4919,
+      "name": "PS TET Mathematics and Science",
+      "group": "Punjab TET Exams"
+    },
+    {
+      "sl": 2270,
+      "id": 4724,
+      "name": "OPTCL Office Assistant",
+      "group": "Odisha Power & Electricity Exams"
+    },
+    {
+      "sl": 2271,
+      "id": 4723,
+      "name": "OPTCL JOMT",
+      "group": "Odisha Power & Electricity Exams"
+    },
+    {
+      "sl": 2272,
+      "id": 4722,
+      "name": "OPTCL JMT",
+      "group": "Odisha Power & Electricity Exams"
+    },
+    {
+      "sl": 2485,
+      "id": 4509,
+      "name": "NPSC CTS",
+      "group": "Nagaland General Government Exams"
+    },
+    {
+      "sl": 2487,
+      "id": 4507,
+      "name": "NPSC",
+      "group": "Nagaland General Government Exams"
+    },
+    {
+      "sl": 2773,
+      "id": 4221,
+      "name": "Nagaland General Knowledge",
+      "group": "Nagaland General Government Exams"
+    },
+    {
+      "sl": 3153,
+      "id": 3841,
+      "name": "Meghalaya PSC MO, Health Officer",
+      "group": "Meghalaya PSC Exams"
+    },
+    {
+      "sl": 3154,
+      "id": 3840,
+      "name": "Meghalaya PSC LDA",
+      "group": "Meghalaya PSC Exams"
+    },
+    {
+      "sl": 3155,
+      "id": 3839,
+      "name": "Meghalaya PSC AE",
+      "group": "Meghalaya PSC Exams"
+    },
+    {
+      "sl": 3402,
+      "id": 3592,
+      "name": "KTET Social Science",
+      "group": "Kerala KTET Exams"
+    },
+    {
+      "sl": 3403,
+      "id": 3591,
+      "name": "KTET Maths and Science",
+      "group": "Kerala KTET Exams"
+    },
+    {
+      "sl": 3404,
+      "id": 3590,
+      "name": "KTET",
+      "group": "Kerala KTET Exams"
+    },
+    {
+      "sl": 3563,
+      "id": 3431,
+      "name": "KDMC JE",
+      "group": "Maharashtra KDMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 3564,
+      "id": 3430,
+      "name": "KDMC Fireman",
+      "group": "Maharashtra KDMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 3565,
+      "id": 3429,
+      "name": "KDMC Clerk Typist",
+      "group": "Maharashtra KDMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 3575,
+      "id": 3419,
+      "name": "Karnataka High Court Typist",
+      "group": "Karnataka High Court & Court Exams"
+    },
+    {
+      "sl": 3576,
+      "id": 3418,
+      "name": "Karnataka High Court SDA",
+      "group": "Karnataka High Court & Court Exams"
+    },
+    {
+      "sl": 3578,
+      "id": 3416,
+      "name": "Karnataka HC Civil Judge",
+      "group": "Karnataka High Court & Court Exams"
+    },
+    {
+      "sl": 3596,
+      "id": 3398,
+      "name": "JTET Social Studies",
+      "group": "Jharkhand TET Exams"
+    },
+    {
+      "sl": 3597,
+      "id": 3397,
+      "name": "JTET Maths and Science",
+      "group": "Jharkhand TET Exams"
+    },
+    {
+      "sl": 3795,
+      "id": 3199,
+      "name": "Jharkhand TET Paper 1",
+      "group": "Jharkhand TET Exams"
+    }
+  ]
+}

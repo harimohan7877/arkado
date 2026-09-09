@@ -1,0 +1,358 @@
+{
+  "bundle_number": 30,
+  "bundle_id": "raw_bundle_030",
+  "range": "1451 - 1500",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1451,
+      "group_sl": 1235,
+      "exam_id": 5759,
+      "name": "SSB Odisha Lecturer Sanskrit",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1452,
+      "group_sl": 1236,
+      "exam_id": 5758,
+      "name": "SSB Odisha Lecturer Psychology",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1453,
+      "group_sl": 1237,
+      "exam_id": 5757,
+      "name": "SSB Odisha Lecturer Political Science",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1454,
+      "group_sl": 1238,
+      "exam_id": 5756,
+      "name": "SSB Odisha Lecturer Physics",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1455,
+      "group_sl": 1239,
+      "exam_id": 5755,
+      "name": "SSB Odisha Lecturer Philosophy",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1456,
+      "group_sl": 1240,
+      "exam_id": 5754,
+      "name": "SSB Odisha Lecturer Home Science",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1457,
+      "group_sl": 1241,
+      "exam_id": 5753,
+      "name": "SSB Odisha Lecturer History",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1458,
+      "group_sl": 1242,
+      "exam_id": 5752,
+      "name": "SSB Odisha Lecturer Hindi",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1459,
+      "group_sl": 1243,
+      "exam_id": 5751,
+      "name": "SSB Odisha Lecturer Geography",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1460,
+      "group_sl": 1244,
+      "exam_id": 5750,
+      "name": "SSB Odisha Lecturer English",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1461,
+      "group_sl": 1245,
+      "exam_id": 5749,
+      "name": "SSB Odisha Lecturer Education",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1462,
+      "group_sl": 1246,
+      "exam_id": 5748,
+      "name": "SSB Odisha Lecturer Economics",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1463,
+      "group_sl": 1247,
+      "exam_id": 5747,
+      "name": "SSB Odisha Lecturer Computer Science",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1464,
+      "group_sl": 1248,
+      "exam_id": 5746,
+      "name": "SSB Odisha Lecturer Commerce",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1465,
+      "group_sl": 1249,
+      "exam_id": 5745,
+      "name": "SSB Odisha Lecturer Chemistry",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1466,
+      "group_sl": 2274,
+      "exam_id": 4720,
+      "name": "OPSC PGT Zoology",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1467,
+      "group_sl": 2275,
+      "exam_id": 4719,
+      "name": "OPSC PGT Sociology",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1468,
+      "group_sl": 2276,
+      "exam_id": 4718,
+      "name": "OPSC PGT Sanskrit",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1469,
+      "group_sl": 2277,
+      "exam_id": 4717,
+      "name": "OPSC PGT Political Science",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1470,
+      "group_sl": 2278,
+      "exam_id": 4716,
+      "name": "OPSC PGT Physics",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1471,
+      "group_sl": 2279,
+      "exam_id": 4715,
+      "name": "OPSC PGT Mathematics",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1472,
+      "group_sl": 2280,
+      "exam_id": 4714,
+      "name": "OPSC PGT History",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1473,
+      "group_sl": 2281,
+      "exam_id": 4713,
+      "name": "OPSC PGT English",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1474,
+      "group_sl": 2282,
+      "exam_id": 4712,
+      "name": "OPSC PGT Education",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1475,
+      "group_sl": 2283,
+      "exam_id": 4711,
+      "name": "OPSC PGT Economics",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1476,
+      "group_sl": 2284,
+      "exam_id": 4710,
+      "name": "OPSC PGT Commerce",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1477,
+      "group_sl": 2285,
+      "exam_id": 4709,
+      "name": "OPSC PGT Chemistry",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1478,
+      "group_sl": 2286,
+      "exam_id": 4708,
+      "name": "OPSC PGT Botany",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1479,
+      "group_sl": 2289,
+      "exam_id": 4705,
+      "name": "OPSC Lecturer Civil",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1480,
+      "group_sl": 2298,
+      "exam_id": 4696,
+      "name": "OPSC Assistant Professor Radiodiagnosis",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1481,
+      "group_sl": 2300,
+      "exam_id": 4694,
+      "name": "OPSC Assistant Professor Paediatrics",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1482,
+      "group_sl": 2301,
+      "exam_id": 4693,
+      "name": "OPSC Assistant Professor Orthopaedic Surgery",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1483,
+      "group_sl": 2302,
+      "exam_id": 4692,
+      "name": "OPSC Assistant Professor Ophthalmology",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1484,
+      "group_sl": 2303,
+      "exam_id": 4691,
+      "name": "OPSC Assistant Professor Obstetrics and Gynaecology",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1485,
+      "group_sl": 2304,
+      "exam_id": 4690,
+      "name": "OPSC Assistant Professor Microbiology",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1486,
+      "group_sl": 2305,
+      "exam_id": 4689,
+      "name": "OPSC Assistant Professor General Surgery",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1487,
+      "group_sl": 2306,
+      "exam_id": 4688,
+      "name": "OPSC Assistant Professor General Medicine",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1488,
+      "group_sl": 2307,
+      "exam_id": 4687,
+      "name": "OPSC Assistant Professor Emergency Medicine",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1489,
+      "group_sl": 2308,
+      "exam_id": 4686,
+      "name": "OPSC Assistant Professor Community Medicine",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1490,
+      "group_sl": 2309,
+      "exam_id": 4685,
+      "name": "OPSC Assistant Professor Biochemistry",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1491,
+      "group_sl": 2310,
+      "exam_id": 4684,
+      "name": "OPSC Assistant Professor Anatomy",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1492,
+      "group_sl": 2311,
+      "exam_id": 4683,
+      "name": "OPSC Assistant Professor Anaesthesiology",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1493,
+      "group_sl": 2355,
+      "exam_id": 4639,
+      "name": "Odisha SSB PGT Sanskrit",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1494,
+      "group_sl": 2356,
+      "exam_id": 4638,
+      "name": "Odisha SSB PGT Political Science",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1495,
+      "group_sl": 2357,
+      "exam_id": 4637,
+      "name": "Odisha SSB PGT History",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1496,
+      "group_sl": 2358,
+      "exam_id": 4636,
+      "name": "Odisha SSB PGT English",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1497,
+      "group_sl": 2359,
+      "exam_id": 4635,
+      "name": "Odisha SSB PGT Education",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1498,
+      "group_sl": 2360,
+      "exam_id": 4634,
+      "name": "Odisha SSB PGT Economics",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1499,
+      "group_sl": 2371,
+      "exam_id": 4623,
+      "name": "Odisha LTR Teacher TGT Science PCM",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1500,
+      "group_sl": 2372,
+      "exam_id": 4622,
+      "name": "Odisha LTR Teacher TGT Science CBZ",
+      "group": "Odisha Teaching & School Exams"
+    }
+  ]
+}

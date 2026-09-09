@@ -1,0 +1,358 @@
+{
+  "bundle_number": 55,
+  "bundle_id": "raw_bundle_055",
+  "range": "2701 - 2750",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 2701,
+      "group_sl": 2085,
+      "exam_id": 4909,
+      "name": "PPSC MO",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2702,
+      "group_sl": 2086,
+      "exam_id": 4908,
+      "name": "PPSC JE",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2703,
+      "group_sl": 2087,
+      "exam_id": 4907,
+      "name": "PPSC Inspectors Audit, Audit Officer",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2704,
+      "group_sl": 2089,
+      "exam_id": 4905,
+      "name": "PPSC Headmaster",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2705,
+      "group_sl": 2090,
+      "exam_id": 4904,
+      "name": "PPSC HDO",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2706,
+      "group_sl": 2091,
+      "exam_id": 4903,
+      "name": "PPSC Draftsmen",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2707,
+      "group_sl": 2092,
+      "exam_id": 4902,
+      "name": "PPSC Civil Service",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2708,
+      "group_sl": 2094,
+      "exam_id": 4900,
+      "name": "PPSC Building Inspector",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2709,
+      "group_sl": 2095,
+      "exam_id": 4899,
+      "name": "PPSC Analyst",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2710,
+      "group_sl": 2096,
+      "exam_id": 4898,
+      "name": "PPSC ADO",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2711,
+      "group_sl": 2097,
+      "exam_id": 4897,
+      "name": "PPSC ADA",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2712,
+      "group_sl": 2098,
+      "exam_id": 4896,
+      "name": "PPSC",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2713,
+      "group_sl": 3096,
+      "exam_id": 3898,
+      "name": "MILKFED Punjab Senior Executive",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2714,
+      "group_sl": 3197,
+      "exam_id": 3797,
+      "name": "MARKFED Punjab Steno Typist",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2715,
+      "group_sl": 3198,
+      "exam_id": 3796,
+      "name": "Markfed Punjab Salesman",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2716,
+      "group_sl": 3199,
+      "exam_id": 3795,
+      "name": "Markfed Punjab AFO",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2717,
+      "group_sl": 4814,
+      "exam_id": 2180,
+      "name": "FCI Punjab Watchman",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2718,
+      "group_sl": 4929,
+      "exam_id": 2065,
+      "name": "DWSS Punjab JE",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2719,
+      "group_sl": 5146,
+      "exam_id": 1848,
+      "name": "DGR Punjab Technical Assistant",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2720,
+      "group_sl": 5775,
+      "exam_id": 1219,
+      "name": "CDAC Mohali Project Engineer",
+      "group": "Punjab General Government Exams"
+    },
+    {
+      "global_sl": 2721,
+      "group_sl": 2908,
+      "exam_id": 4086,
+      "name": "MPESB Sister Tutor",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2722,
+      "group_sl": 2909,
+      "exam_id": 4085,
+      "name": "MPESB Senior Laboratory Assistant",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2723,
+      "group_sl": 2910,
+      "exam_id": 4084,
+      "name": "MPESB Senior Guide",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2724,
+      "group_sl": 2911,
+      "exam_id": 4083,
+      "name": "​MPESB Primary School Teacher",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2725,
+      "group_sl": 2912,
+      "exam_id": 4082,
+      "name": "MPESB Physiotherapist",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2726,
+      "group_sl": 2913,
+      "exam_id": 4081,
+      "name": "MPESB Occupational Therapist",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2727,
+      "group_sl": 2914,
+      "exam_id": 4080,
+      "name": "MPESB Nursing Officer",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2728,
+      "group_sl": 2915,
+      "exam_id": 4079,
+      "name": "MPESB Medical Social Worker",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2729,
+      "group_sl": 2916,
+      "exam_id": 4078,
+      "name": "MPESB Lab Assistant",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2730,
+      "group_sl": 2917,
+      "exam_id": 4077,
+      "name": "MPESB Junior Supply Officer",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2731,
+      "group_sl": 2918,
+      "exam_id": 4076,
+      "name": "MPESB Junior Silk Inspector",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2732,
+      "group_sl": 2919,
+      "exam_id": 4075,
+      "name": "MPESB Junior Laboratory Assistant",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2733,
+      "group_sl": 2920,
+      "exam_id": 4074,
+      "name": "MPESB Jail Warder",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2734,
+      "group_sl": 2921,
+      "exam_id": 4073,
+      "name": "MPESB ITI Training Officer Welder",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2735,
+      "group_sl": 2922,
+      "exam_id": 4072,
+      "name": "MPESB ITI Training Officer Turner",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2736,
+      "group_sl": 2923,
+      "exam_id": 4071,
+      "name": "MPESB ITI Training Officer Solar Technician",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2737,
+      "group_sl": 2924,
+      "exam_id": 4070,
+      "name": "MPESB ITI Training Officer Sewing Technology",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2738,
+      "group_sl": 2925,
+      "exam_id": 4069,
+      "name": "MPESB ITI Training Officer Refrigeration and Air Conditioning",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2739,
+      "group_sl": 2926,
+      "exam_id": 4068,
+      "name": "MPESB ITI Training Officer Motor Mechanic",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2740,
+      "group_sl": 2927,
+      "exam_id": 4067,
+      "name": "MPESB ITI Training Officer Mathematics",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2741,
+      "group_sl": 2928,
+      "exam_id": 4066,
+      "name": "MPESB ITI Training Officer Machinist",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2742,
+      "group_sl": 2929,
+      "exam_id": 4065,
+      "name": "MPESB ITI Training Officer Fitter",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2743,
+      "group_sl": 2930,
+      "exam_id": 4064,
+      "name": "MPESB ITI Training Officer Fashion Technology",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2744,
+      "group_sl": 2931,
+      "exam_id": 4063,
+      "name": "MPESB ITI Training Officer Electronics Mechanic",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2745,
+      "group_sl": 2932,
+      "exam_id": 4062,
+      "name": "MPESB ITI Training Officer Electrician",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2746,
+      "group_sl": 2933,
+      "exam_id": 4061,
+      "name": "MPESB ITI Training Officer Diesel Mechanic",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2747,
+      "group_sl": 2934,
+      "exam_id": 4060,
+      "name": "MPESB ITI Training Officer Cosmetology",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2748,
+      "group_sl": 2935,
+      "exam_id": 4059,
+      "name": "MPESB ITI Training Officer COPA",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2749,
+      "group_sl": 2936,
+      "exam_id": 4058,
+      "name": "MPESB ITI Training Officer Carpenter",
+      "group": "Madhya Pradesh MPESB Exams"
+    },
+    {
+      "global_sl": 2750,
+      "group_sl": 2937,
+      "exam_id": 4057,
+      "name": "MPESB Inspector of Weights and Measures",
+      "group": "Madhya Pradesh MPESB Exams"
+    }
+  ]
+}

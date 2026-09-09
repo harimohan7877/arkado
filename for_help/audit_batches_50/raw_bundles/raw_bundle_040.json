@@ -1,0 +1,358 @@
+{
+  "bundle_number": 40,
+  "bundle_id": "raw_bundle_040",
+  "range": "1951 - 2000",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1951,
+      "group_sl": 3480,
+      "exam_id": 3514,
+      "name": "KPSC Assistant Engineer",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1952,
+      "group_sl": 3481,
+      "exam_id": 3513,
+      "name": "KPSC AE",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1953,
+      "group_sl": 3485,
+      "exam_id": 3509,
+      "name": "KOMUL Assistant Manager",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1954,
+      "group_sl": 3495,
+      "exam_id": 3499,
+      "name": "KMAT",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1955,
+      "group_sl": 3547,
+      "exam_id": 3447,
+      "name": "KEA Junior Assistant",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1956,
+      "group_sl": 3548,
+      "exam_id": 3446,
+      "name": "KEA Assistant Public Prosecutor",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1957,
+      "group_sl": 3560,
+      "exam_id": 3434,
+      "name": "KEA AO AAO",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1958,
+      "group_sl": 3569,
+      "exam_id": 3425,
+      "name": "KCET",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1959,
+      "group_sl": 3571,
+      "exam_id": 3423,
+      "name": "Karnataka PWD JE",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1960,
+      "group_sl": 3574,
+      "exam_id": 3420,
+      "name": "Karnataka Postal Circle GDS",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1961,
+      "group_sl": 3577,
+      "exam_id": 3417,
+      "name": "Karnataka HC Group D",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1962,
+      "group_sl": 3579,
+      "exam_id": 3415,
+      "name": "Karnataka GPT",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1963,
+      "group_sl": 3580,
+      "exam_id": 3414,
+      "name": "Karnataka General Knowledge",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1964,
+      "group_sl": 3582,
+      "exam_id": 3412,
+      "name": "Karnataka COMEDK",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1965,
+      "group_sl": 3586,
+      "exam_id": 3408,
+      "name": "Karnataka AHVS Veterinary Officer",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1966,
+      "group_sl": 5842,
+      "exam_id": 1152,
+      "name": "BWSSB Measure Reader",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1967,
+      "group_sl": 5843,
+      "exam_id": 1151,
+      "name": "BWSSB Junior Engineer",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1968,
+      "group_sl": 5844,
+      "exam_id": 1150,
+      "name": "BWSSB Junior Assistant",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1969,
+      "group_sl": 5845,
+      "exam_id": 1149,
+      "name": "BWSSB Assistant Engineer",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1970,
+      "group_sl": 6054,
+      "exam_id": 940,
+      "name": "BMTC Conductor",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1971,
+      "group_sl": 776,
+      "exam_id": 6218,
+      "name": "UCMS Junior Assistant",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1972,
+      "group_sl": 1386,
+      "exam_id": 5608,
+      "name": "SDMC Counselor",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1973,
+      "group_sl": 2462,
+      "exam_id": 4532,
+      "name": "NTA Delhi University Senior Assistant",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1974,
+      "group_sl": 2465,
+      "exam_id": 4529,
+      "name": "NTA Delhi University Laboratory Assistant",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1975,
+      "group_sl": 2466,
+      "exam_id": 4528,
+      "name": "NTA Delhi University JE Civil",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1976,
+      "group_sl": 2467,
+      "exam_id": 4527,
+      "name": "NTA Delhi University Assistant",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1977,
+      "group_sl": 4938,
+      "exam_id": 2056,
+      "name": "DTU Stenographer Grade II & III",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1978,
+      "group_sl": 4939,
+      "exam_id": 2055,
+      "name": "DTU Delhi Non Teaching",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1979,
+      "group_sl": 4941,
+      "exam_id": 2053,
+      "name": "DSSSB Welfare Officer",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1980,
+      "group_sl": 4952,
+      "exam_id": 2042,
+      "name": "DSSSB Technician",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1981,
+      "group_sl": 4953,
+      "exam_id": 2041,
+      "name": "DSSSB Surveyor",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1982,
+      "group_sl": 4954,
+      "exam_id": 2040,
+      "name": "DSSSB Stenographer",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1983,
+      "group_sl": 4955,
+      "exam_id": 2039,
+      "name": "DSSSB SPA",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1984,
+      "group_sl": 4957,
+      "exam_id": 2037,
+      "name": "DSSSB Section Officer",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1985,
+      "group_sl": 4958,
+      "exam_id": 2036,
+      "name": "DSSSB Reasoning",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1986,
+      "group_sl": 4979,
+      "exam_id": 2015,
+      "name": "DSSSB Personal Assistant",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1987,
+      "group_sl": 4980,
+      "exam_id": 2014,
+      "name": "DSSSB Patwari",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1988,
+      "group_sl": 4981,
+      "exam_id": 2013,
+      "name": "DSSSB Optometrist",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1989,
+      "group_sl": 4982,
+      "exam_id": 2012,
+      "name": "DSSSB Nursing Officer",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1990,
+      "group_sl": 4983,
+      "exam_id": 2011,
+      "name": "DSSSB MTS",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1991,
+      "group_sl": 4984,
+      "exam_id": 2010,
+      "name": "DSSSB Meter and Relay Tester",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1992,
+      "group_sl": 4985,
+      "exam_id": 2009,
+      "name": "DSSSB Mathematics",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1993,
+      "group_sl": 4986,
+      "exam_id": 2008,
+      "name": "DSSSB Mason",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1994,
+      "group_sl": 4987,
+      "exam_id": 2007,
+      "name": "DSSSB Manager",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1995,
+      "group_sl": 4988,
+      "exam_id": 2006,
+      "name": "DSSSB Malaria Inspector",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1996,
+      "group_sl": 4989,
+      "exam_id": 2005,
+      "name": "DSSSB Librarian",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1997,
+      "group_sl": 4990,
+      "exam_id": 2004,
+      "name": "DSSSB Legal Assistant",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1998,
+      "group_sl": 4991,
+      "exam_id": 2003,
+      "name": "DSSSB LDC",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 1999,
+      "group_sl": 4992,
+      "exam_id": 2002,
+      "name": "DSSSB Laboratory Technician",
+      "group": "Delhi General Government Exams"
+    },
+    {
+      "global_sl": 2000,
+      "group_sl": 4993,
+      "exam_id": 2001,
+      "name": "DSSSB Junior Stenographer",
+      "group": "Delhi General Government Exams"
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "bundle_id": "bundle-111",
+  "bundle_num": 111,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Jammu & Kashmir General Govt",
+  "total_exams": 41,
+  "boards_included": [
+    "Jammu & Kashmir General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 3323,
+      "id": 3671,
+      "name": "LAHDC Panchayat Accounts Assistant",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3324,
+      "id": 3670,
+      "name": "LAHDC",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3740,
+      "id": 3254,
+      "name": "JKPSC Prosecuting Officer",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3741,
+      "id": 3253,
+      "name": "JKPSC MO",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3742,
+      "id": 3252,
+      "name": "JKPSC CCE",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3744,
+      "id": 3250,
+      "name": "JKPSC AE Mechanical",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3745,
+      "id": 3249,
+      "name": "JKPSC AE Civil",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3746,
+      "id": 3248,
+      "name": "JK SET Tourism Administration & Management",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3747,
+      "id": 3247,
+      "name": "JK SET Sociology",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3748,
+      "id": 3246,
+      "name": "JK SET Social Work",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3749,
+      "id": 3245,
+      "name": "JK SET Sanskrit",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3750,
+      "id": 3244,
+      "name": "JK SET Public Administration",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3751,
+      "id": 3243,
+      "name": "JK SET Psychology",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3752,
+      "id": 3242,
+      "name": "JK SET Political Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3753,
+      "id": 3241,
+      "name": "JK SET Physical Sciences",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3755,
+      "id": 3239,
+      "name": "JK SET Philosophy",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3756,
+      "id": 3238,
+      "name": "JK SET Paper 1",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3757,
+      "id": 3237,
+      "name": "JK SET Music",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3758,
+      "id": 3236,
+      "name": "JK SET Mathematical Sciences",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3759,
+      "id": 3235,
+      "name": "JK SET Mass Communication & Journalism",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3760,
+      "id": 3234,
+      "name": "JK SET Management",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3761,
+      "id": 3233,
+      "name": "JK SET Linguistics",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3762,
+      "id": 3232,
+      "name": "JK SET Life Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3763,
+      "id": 3231,
+      "name": "JK SET Library & Information Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3764,
+      "id": 3230,
+      "name": "JK SET Law",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3765,
+      "id": 3229,
+      "name": "JK SET Home Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3766,
+      "id": 3228,
+      "name": "JK SET History",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3767,
+      "id": 3227,
+      "name": "JK SET Hindi",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3768,
+      "id": 3226,
+      "name": "JK SET Geography",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3769,
+      "id": 3225,
+      "name": "JK SET Environmental Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3770,
+      "id": 3224,
+      "name": "JK SET English",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3771,
+      "id": 3223,
+      "name": "JK SET Electronic Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3773,
+      "id": 3221,
+      "name": "JK SET Economics",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3774,
+      "id": 3220,
+      "name": "JK SET Computer Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3775,
+      "id": 3219,
+      "name": "JK SET Commerce",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3776,
+      "id": 3218,
+      "name": "JK SET Chemical Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3777,
+      "id": 3217,
+      "name": "JK SET Anthropology",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3778,
+      "id": 3216,
+      "name": "JK Postal Circle GDS",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3782,
+      "id": 3212,
+      "name": "JK ICDS State, District Block Coordinator",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3784,
+      "id": 3210,
+      "name": "JK HC Junior Assistant & Steno Typist",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "sl": 3862,
+      "id": 3132,
+      "name": "Jammu Kashmir General Knowledge",
+      "group": "Jammu & Kashmir General Government Exams"
+    }
+  ]
+}

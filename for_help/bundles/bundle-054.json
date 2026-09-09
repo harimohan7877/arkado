@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-054",
+  "bundle_num": 54,
+  "category_id": "teaching",
+  "category_name": "केंद्रीय शिक्षण",
+  "category_icon": "📚",
+  "title": "केंद्रीय शिक्षण — National Academics - CUET Admission (Part 1/3)",
+  "total_exams": 60,
+  "boards_included": [
+    "National Academics - CUET Admission"
+  ],
+  "exams": [
+    {
+      "sl": 5271,
+      "id": 1723,
+      "name": "CUET UG Telugu",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5272,
+      "id": 1722,
+      "name": "CUET UG Teaching Aptitude",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5273,
+      "id": 1721,
+      "name": "CUET UG Tamil",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5274,
+      "id": 1720,
+      "name": "CUET UG Sociology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5275,
+      "id": 1719,
+      "name": "CUET UG Sanskrit",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5276,
+      "id": 1718,
+      "name": "CUET UG Punjabi",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5277,
+      "id": 1717,
+      "name": "CUET UG Psychology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5278,
+      "id": 1716,
+      "name": "CUET UG Political Science",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5279,
+      "id": 1715,
+      "name": "CUET UG Physics",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5280,
+      "id": 1714,
+      "name": "CUET UG Physical Education",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5281,
+      "id": 1713,
+      "name": "CUET UG Performing Arts",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5282,
+      "id": 1712,
+      "name": "CUET UG Odia",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5283,
+      "id": 1711,
+      "name": "CUET UG Mathematics",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5284,
+      "id": 1710,
+      "name": "CUET UG Mass Communication",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5285,
+      "id": 1709,
+      "name": "CUET UG Marathi",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5286,
+      "id": 1708,
+      "name": "CUET UG Malayalam",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5287,
+      "id": 1707,
+      "name": "CUET UG Legal Studies",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5288,
+      "id": 1706,
+      "name": "CUET UG Knowledge Tradition Practices in India",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5289,
+      "id": 1705,
+      "name": "CUET UG Kannada",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5290,
+      "id": 1704,
+      "name": "CUET UG Home Science",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5291,
+      "id": 1703,
+      "name": "CUET UG History",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5292,
+      "id": 1702,
+      "name": "CUET UG Hindi",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5293,
+      "id": 1701,
+      "name": "CUET UG Gujarati",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5294,
+      "id": 1700,
+      "name": "CUET UG Geography",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5295,
+      "id": 1699,
+      "name": "CUET UG General Test",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5296,
+      "id": 1698,
+      "name": "CUET UG Environmental Studies",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5297,
+      "id": 1697,
+      "name": "CUET UG English",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5298,
+      "id": 1696,
+      "name": "CUET UG Engineering Graphics",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5299,
+      "id": 1695,
+      "name": "CUET UG Economics",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5300,
+      "id": 1694,
+      "name": "CUET UG Computer Science",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5301,
+      "id": 1693,
+      "name": "CUET UG Commerce",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5302,
+      "id": 1692,
+      "name": "CUET UG Chemistry",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5303,
+      "id": 1691,
+      "name": "CUET UG Business Studies",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5304,
+      "id": 1690,
+      "name": "CUET UG Biology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5305,
+      "id": 1689,
+      "name": "CUET UG Bengali",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5306,
+      "id": 1688,
+      "name": "CUET UG Assamese",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5307,
+      "id": 1687,
+      "name": "CUET UG Arts",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5308,
+      "id": 1686,
+      "name": "CUET UG Anthropology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5309,
+      "id": 1685,
+      "name": "CUET UG Agriculture",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5310,
+      "id": 1684,
+      "name": "CUET UG Accountancy",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5311,
+      "id": 1683,
+      "name": "CUET Tourism",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5312,
+      "id": 1682,
+      "name": "CUET PG Zoology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5313,
+      "id": 1681,
+      "name": "CUET PG Yoga",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5314,
+      "id": 1680,
+      "name": "CUET PG Water Engineering & Management",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5315,
+      "id": 1679,
+      "name": "CUET PG Vyakarana and Shabdabodha System",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5316,
+      "id": 1678,
+      "name": "CUET PG Vyakaran",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5317,
+      "id": 1677,
+      "name": "CUET PG Vedanta, Sarvadarshan, Mimansa, Nyaya",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5318,
+      "id": 1676,
+      "name": "CUET PG Vedanta",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5319,
+      "id": 1675,
+      "name": "CUET PG Veda",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5320,
+      "id": 1674,
+      "name": "CUET PG Theatre",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5321,
+      "id": 1673,
+      "name": "CUET PG Textile Engineering",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5322,
+      "id": 1672,
+      "name": "CUET PG Textile Design",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5323,
+      "id": 1671,
+      "name": "CUET PG Tamil",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5324,
+      "id": 1670,
+      "name": "CUET PG Statistics",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5325,
+      "id": 1669,
+      "name": "CUET PG Sports Physiology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5326,
+      "id": 1668,
+      "name": "CUET PG Soil Science",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5327,
+      "id": 1667,
+      "name": "CUET PG Sociology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5328,
+      "id": 1666,
+      "name": "CUET PG Social Work",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5329,
+      "id": 1665,
+      "name": "CUET PG Shukla Yajurveda",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "sl": 5330,
+      "id": 1664,
+      "name": "CUET PG Shiksha Shastri",
+      "group": "National Academics - CUET Admission Exams"
+    }
+  ]
+}

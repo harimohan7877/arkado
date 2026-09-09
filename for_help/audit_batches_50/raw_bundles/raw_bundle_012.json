@@ -1,0 +1,358 @@
+{
+  "bundle_number": 12,
+  "bundle_id": "raw_bundle_012",
+  "range": "551 - 600",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 551,
+      "group_sl": 401,
+      "exam_id": 6593,
+      "name": "UPPSC Assistant Professor Commerce",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 552,
+      "group_sl": 402,
+      "exam_id": 6592,
+      "name": "UPPSC Assistant Professor Chemistry",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 553,
+      "group_sl": 403,
+      "exam_id": 6591,
+      "name": "UPPSC Assistant Professor Botany",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 554,
+      "group_sl": 472,
+      "exam_id": 6522,
+      "name": "UP TGT Social Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 555,
+      "group_sl": 473,
+      "exam_id": 6521,
+      "name": "UP TGT Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 556,
+      "group_sl": 474,
+      "exam_id": 6520,
+      "name": "UP TGT Sanskrit",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 557,
+      "group_sl": 475,
+      "exam_id": 6519,
+      "name": "UP TGT Physical Education",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 558,
+      "group_sl": 476,
+      "exam_id": 6518,
+      "name": "UP TGT Mathematics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 559,
+      "group_sl": 477,
+      "exam_id": 6517,
+      "name": "UP TGT Home Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 560,
+      "group_sl": 478,
+      "exam_id": 6516,
+      "name": "UP TGT Hindi",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 561,
+      "group_sl": 479,
+      "exam_id": 6515,
+      "name": "UP TGT English",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 562,
+      "group_sl": 480,
+      "exam_id": 6514,
+      "name": "UP TGT Commerce",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 563,
+      "group_sl": 481,
+      "exam_id": 6513,
+      "name": "UP TGT Biology",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 564,
+      "group_sl": 482,
+      "exam_id": 6512,
+      "name": "UP TGT Agriculture",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 565,
+      "group_sl": 501,
+      "exam_id": 6493,
+      "name": "UP PGT Sociology",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 566,
+      "group_sl": 502,
+      "exam_id": 6492,
+      "name": "UP PGT Sanskrit",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 567,
+      "group_sl": 503,
+      "exam_id": 6491,
+      "name": "UP PGT Psychology",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 568,
+      "group_sl": 504,
+      "exam_id": 6490,
+      "name": "UP PGT Political Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 569,
+      "group_sl": 505,
+      "exam_id": 6489,
+      "name": "UP PGT Physics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 570,
+      "group_sl": 506,
+      "exam_id": 6488,
+      "name": "UP PGT Physical Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 571,
+      "group_sl": 507,
+      "exam_id": 6487,
+      "name": "UP PGT Physical Education",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 572,
+      "group_sl": 508,
+      "exam_id": 6486,
+      "name": "UP PGT Philosophy",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 573,
+      "group_sl": 509,
+      "exam_id": 6485,
+      "name": "UP PGT Pedagogy",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 574,
+      "group_sl": 510,
+      "exam_id": 6484,
+      "name": "UP PGT Music",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 575,
+      "group_sl": 511,
+      "exam_id": 6483,
+      "name": "UP PGT Mathematics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 576,
+      "group_sl": 512,
+      "exam_id": 6482,
+      "name": "UP PGT Life Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 577,
+      "group_sl": 513,
+      "exam_id": 6481,
+      "name": "UP PGT Home Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 578,
+      "group_sl": 514,
+      "exam_id": 6480,
+      "name": "UP PGT History",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 579,
+      "group_sl": 515,
+      "exam_id": 6479,
+      "name": "UP PGT Hindi",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 580,
+      "group_sl": 516,
+      "exam_id": 6478,
+      "name": "UP PGT Geography",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 581,
+      "group_sl": 517,
+      "exam_id": 6477,
+      "name": "UP PGT English",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 582,
+      "group_sl": 518,
+      "exam_id": 6476,
+      "name": "UP PGT Economics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 583,
+      "group_sl": 519,
+      "exam_id": 6475,
+      "name": "UP PGT Commerce",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 584,
+      "group_sl": 520,
+      "exam_id": 6474,
+      "name": "UP PGT Chemistry",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 585,
+      "group_sl": 521,
+      "exam_id": 6473,
+      "name": "UP PGT Chemical Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 586,
+      "group_sl": 522,
+      "exam_id": 6472,
+      "name": "UP PGT Biology",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 587,
+      "group_sl": 523,
+      "exam_id": 6471,
+      "name": "UP PGT Agriculture",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 588,
+      "group_sl": 531,
+      "exam_id": 6463,
+      "name": "UP Junior Teacher Social Studies",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 589,
+      "group_sl": 532,
+      "exam_id": 6462,
+      "name": "UP Junior Teacher Maths & Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 590,
+      "group_sl": 533,
+      "exam_id": 6461,
+      "name": "UP Jr High school Pradhanaadhyapak and Sahayak Adhyapak (Sanskrit)",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 591,
+      "group_sl": 534,
+      "exam_id": 6460,
+      "name": "UP Jr High school Pradhanaadhyapak and Sahayak Adhyapak (Samanye Gyan)",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 592,
+      "group_sl": 535,
+      "exam_id": 6459,
+      "name": "UP Jr High school Pradhanaadhyapak and Sahayak Adhyapak (Samajik Addhyan)",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 593,
+      "group_sl": 536,
+      "exam_id": 6458,
+      "name": "UP Jr High school Pradhanaadhyapak and Sahayak Adhyapak (Ganit Ayum Vigyan)",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 594,
+      "group_sl": 537,
+      "exam_id": 6457,
+      "name": "UP Jr High school Pradhanaadhyapak and Sahayak Adhyapak (English language)",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 595,
+      "group_sl": 538,
+      "exam_id": 6456,
+      "name": "UP Jr High school Pradhanaadhyapak and Sahayak Adhyapak (Bhasha Hindi)",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 596,
+      "group_sl": 539,
+      "exam_id": 6455,
+      "name": "UP Jr High school Pradhanaadhyapak and Sahayak Adhyapak",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 597,
+      "group_sl": 557,
+      "exam_id": 6437,
+      "name": "UP B.ED JEE Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 598,
+      "group_sl": 558,
+      "exam_id": 6436,
+      "name": "UP B.ED JEE Paper 1",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 599,
+      "group_sl": 559,
+      "exam_id": 6435,
+      "name": "UP B.ED JEE Commerce",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 600,
+      "group_sl": 560,
+      "exam_id": 6434,
+      "name": "UP B.ED JEE Arts",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    }
+  ]
+}

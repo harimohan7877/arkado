@@ -1,0 +1,358 @@
+{
+  "bundle_number": 84,
+  "bundle_id": "raw_bundle_084",
+  "range": "4151 - 4200",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4151,
+      "group_sl": 1403,
+      "exam_id": 5591,
+      "name": "SCI Court Master",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4152,
+      "group_sl": 1427,
+      "exam_id": 5567,
+      "name": "Sangrur District Court Junior Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4153,
+      "group_sl": 1821,
+      "exam_id": 5173,
+      "name": "Ramanathapuram District Court Office Assistant",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4154,
+      "group_sl": 2026,
+      "exam_id": 4968,
+      "name": "Pudukkottai District Court Office Assistant",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4155,
+      "group_sl": 2748,
+      "exam_id": 4246,
+      "name": "Nayagarh District Court Junior Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4156,
+      "group_sl": 2781,
+      "exam_id": 4213,
+      "name": "Nabarangpur District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4157,
+      "group_sl": 2787,
+      "exam_id": 4207,
+      "name": "Muktsar District Court Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4158,
+      "group_sl": 3071,
+      "exam_id": 3923,
+      "name": "Moga District Court Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4159,
+      "group_sl": 3181,
+      "exam_id": 3813,
+      "name": "Mayurbhanj District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4160,
+      "group_sl": 3214,
+      "exam_id": 3780,
+      "name": "Malkangiri District Court Junior Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4161,
+      "group_sl": 3483,
+      "exam_id": 3511,
+      "name": "Koraput District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4162,
+      "group_sl": 3591,
+      "exam_id": 3403,
+      "name": "Kandhamal District Court Junior Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4163,
+      "group_sl": 3593,
+      "exam_id": 3401,
+      "name": "Kalahandi District Court Junior Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4164,
+      "group_sl": 3794,
+      "exam_id": 3200,
+      "name": "Jharsuguda District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4165,
+      "group_sl": 3869,
+      "exam_id": 3125,
+      "name": "Jagatsinghpur District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4166,
+      "group_sl": 4802,
+      "exam_id": 2192,
+      "name": "Ferozepur Court Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4167,
+      "group_sl": 4832,
+      "exam_id": 2162,
+      "name": "Faridkot District Court Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4168,
+      "group_sl": 5539,
+      "exam_id": 1455,
+      "name": "Contempt of Courts Act",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4169,
+      "group_sl": 5548,
+      "exam_id": 1446,
+      "name": "Commercial Courts Act",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4170,
+      "group_sl": 6034,
+      "exam_id": 960,
+      "name": "Boudh District Court Junior Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4171,
+      "group_sl": 6296,
+      "exam_id": 698,
+      "name": "Bengalore District court Recruitment",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4172,
+      "group_sl": 6360,
+      "exam_id": 634,
+      "name": "Bargarh District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4173,
+      "group_sl": 6431,
+      "exam_id": 563,
+      "name": "Balangir District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4174,
+      "group_sl": 1256,
+      "exam_id": 5738,
+      "name": "SSA Punjab Master Cadre Teacher",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4175,
+      "group_sl": 1964,
+      "exam_id": 5030,
+      "name": "Punjab SET Physical Education",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4176,
+      "group_sl": 1975,
+      "exam_id": 5019,
+      "name": "Punjab SET Education",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4177,
+      "group_sl": 1980,
+      "exam_id": 5014,
+      "name": "Punjab PTI Teacher",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4178,
+      "group_sl": 1981,
+      "exam_id": 5013,
+      "name": "Punjab Pre Primary Teacher",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4179,
+      "group_sl": 1990,
+      "exam_id": 5004,
+      "name": "Punjab Master Cadre Teacher Social Studies",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4180,
+      "group_sl": 1991,
+      "exam_id": 5003,
+      "name": "Punjab Master Cadre Teacher Science",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4181,
+      "group_sl": 1992,
+      "exam_id": 5002,
+      "name": "Punjab Master Cadre Teacher Physical Education",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4182,
+      "group_sl": 1993,
+      "exam_id": 5001,
+      "name": "Punjab Master Cadre Teacher Mathematics",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4183,
+      "group_sl": 1994,
+      "exam_id": 5000,
+      "name": "Punjab Master Cadre Teacher English",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4184,
+      "group_sl": 1995,
+      "exam_id": 4999,
+      "name": "Punjab Lecturer Sociology",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4185,
+      "group_sl": 1996,
+      "exam_id": 4998,
+      "name": "Punjab Lecturer Political Science",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4186,
+      "group_sl": 1997,
+      "exam_id": 4997,
+      "name": "Punjab Lecturer Physics",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4187,
+      "group_sl": 1998,
+      "exam_id": 4996,
+      "name": "Punjab Lecturer Paper 1",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4188,
+      "group_sl": 1999,
+      "exam_id": 4995,
+      "name": "Punjab Lecturer Mathematics",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4189,
+      "group_sl": 2000,
+      "exam_id": 4994,
+      "name": "Punjab Lecturer History",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4190,
+      "group_sl": 2001,
+      "exam_id": 4993,
+      "name": "Punjab Lecturer Hindi",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4191,
+      "group_sl": 2002,
+      "exam_id": 4992,
+      "name": "Punjab Lecturer Geography",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4192,
+      "group_sl": 2003,
+      "exam_id": 4991,
+      "name": "Punjab Lecturer English",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4193,
+      "group_sl": 2004,
+      "exam_id": 4990,
+      "name": "Punjab Lecturer Economics",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4194,
+      "group_sl": 2005,
+      "exam_id": 4989,
+      "name": "Punjab Lecturer Commerce",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4195,
+      "group_sl": 2006,
+      "exam_id": 4988,
+      "name": "Punjab Lecturer Chemistry",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4196,
+      "group_sl": 2007,
+      "exam_id": 4987,
+      "name": "Punjab Lecturer Biology",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4197,
+      "group_sl": 2010,
+      "exam_id": 4984,
+      "name": "Punjab ETT Teacher",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4198,
+      "group_sl": 2011,
+      "exam_id": 4983,
+      "name": "Punjab ERB Teacher",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4199,
+      "group_sl": 2012,
+      "exam_id": 4982,
+      "name": "Punjab Anganwadi Worker and Helper",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "global_sl": 4200,
+      "group_sl": 4218,
+      "exam_id": 2776,
+      "name": "HTET TGT Social Studies",
+      "group": "Haryana HTET Exams"
+    }
+  ]
+}

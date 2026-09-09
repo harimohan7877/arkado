@@ -1,0 +1,358 @@
+{
+  "bundle_number": 27,
+  "bundle_id": "raw_bundle_027",
+  "range": "1301 - 1350",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1301,
+      "group_sl": 316,
+      "exam_id": 6678,
+      "name": "UPPSC PCS",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1302,
+      "group_sl": 317,
+      "exam_id": 6677,
+      "name": "UPPSC Mines Inspector",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1303,
+      "group_sl": 348,
+      "exam_id": 6646,
+      "name": "UPPSC Inspector of Drugs",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1304,
+      "group_sl": 381,
+      "exam_id": 6613,
+      "name": "UPPSC FSO",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1305,
+      "group_sl": 383,
+      "exam_id": 6611,
+      "name": "UPPSC Computer Assistant",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1306,
+      "group_sl": 385,
+      "exam_id": 6609,
+      "name": "UPPSC BEO",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1307,
+      "group_sl": 404,
+      "exam_id": 6590,
+      "name": "UPPSC APS",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1308,
+      "group_sl": 405,
+      "exam_id": 6589,
+      "name": "UPPSC APO",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1309,
+      "group_sl": 406,
+      "exam_id": 6588,
+      "name": "UPPSC Agriculture Service",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1310,
+      "group_sl": 407,
+      "exam_id": 6587,
+      "name": "UPPSC AE Mechanical",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1311,
+      "group_sl": 408,
+      "exam_id": 6586,
+      "name": "UPPSC AE Electrical",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1312,
+      "group_sl": 409,
+      "exam_id": 6585,
+      "name": "UPPSC AE Agriculture",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1313,
+      "group_sl": 410,
+      "exam_id": 6584,
+      "name": "UPPSC AE",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1314,
+      "group_sl": 411,
+      "exam_id": 6583,
+      "name": "UPPSC ACF RFO",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1315,
+      "group_sl": 412,
+      "exam_id": 6582,
+      "name": "UPPCL Technician Line",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1316,
+      "group_sl": 413,
+      "exam_id": 6581,
+      "name": "UPPCL Technician Grade 2",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1317,
+      "group_sl": 414,
+      "exam_id": 6580,
+      "name": "UPPCL Office Assistant, Stenographer",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1318,
+      "group_sl": 415,
+      "exam_id": 6579,
+      "name": "UPPCL JE Electronics And Telecommunication",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1319,
+      "group_sl": 416,
+      "exam_id": 6578,
+      "name": "UPPCL JE Electrical",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1320,
+      "group_sl": 417,
+      "exam_id": 6577,
+      "name": "UPPCL JE Civil",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1321,
+      "group_sl": 418,
+      "exam_id": 6576,
+      "name": "UPPCL Executive Assistant",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1322,
+      "group_sl": 419,
+      "exam_id": 6575,
+      "name": "UPPCL Camp Assistant",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1323,
+      "group_sl": 420,
+      "exam_id": 6574,
+      "name": "UPPCL Assistant Accountant",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1324,
+      "group_sl": 421,
+      "exam_id": 6573,
+      "name": "UPPCL ARO",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1325,
+      "group_sl": 422,
+      "exam_id": 6572,
+      "name": "UPPCL AE Electronics And Telecommunication",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1326,
+      "group_sl": 423,
+      "exam_id": 6571,
+      "name": "UPPCL AE Electrical",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1327,
+      "group_sl": 424,
+      "exam_id": 6570,
+      "name": "UPPCL AE Computer Science",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1328,
+      "group_sl": 425,
+      "exam_id": 6569,
+      "name": "UPPCL AE Civil",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1329,
+      "group_sl": 426,
+      "exam_id": 6568,
+      "name": "UPPCL Accounts Officer",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1330,
+      "group_sl": 427,
+      "exam_id": 6567,
+      "name": "UPPCL Account Clerk",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1331,
+      "group_sl": 428,
+      "exam_id": 6566,
+      "name": "UPPCB Assistant Scientific Officer",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1332,
+      "group_sl": 429,
+      "exam_id": 6565,
+      "name": "UPPCB Assistant Environmental Engineer",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1333,
+      "group_sl": 430,
+      "exam_id": 6564,
+      "name": "UPNEDA Suryamitra Group B, C",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1334,
+      "group_sl": 466,
+      "exam_id": 6528,
+      "name": "UPESEAT",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1335,
+      "group_sl": 468,
+      "exam_id": 6526,
+      "name": "UPCATET PCB",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1336,
+      "group_sl": 469,
+      "exam_id": 6525,
+      "name": "UPCATET",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1337,
+      "group_sl": 470,
+      "exam_id": 6524,
+      "name": "UP Vidhan Parishad RO",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1338,
+      "group_sl": 471,
+      "exam_id": 6523,
+      "name": "UP Veterinary Entrance",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1339,
+      "group_sl": 484,
+      "exam_id": 6510,
+      "name": "UP Social Audit BRP",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1340,
+      "group_sl": 485,
+      "exam_id": 6509,
+      "name": "UP Sichai Vibhag Group C",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1341,
+      "group_sl": 486,
+      "exam_id": 6508,
+      "name": "UP Seva Mandal Assistant Manager",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1342,
+      "group_sl": 487,
+      "exam_id": 6507,
+      "name": "UP Post Office GDS",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1343,
+      "group_sl": 529,
+      "exam_id": 6465,
+      "name": "UP Mandi Parishad Group B, C",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1344,
+      "group_sl": 530,
+      "exam_id": 6464,
+      "name": "UP Lok Kalyan Mitra",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1345,
+      "group_sl": 543,
+      "exam_id": 6451,
+      "name": "UP General Knowledge in Hindi",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1346,
+      "group_sl": 544,
+      "exam_id": 6450,
+      "name": "UP General Knowledge in English",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1347,
+      "group_sl": 556,
+      "exam_id": 6438,
+      "name": "UP Civil JE",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1348,
+      "group_sl": 2167,
+      "exam_id": 4827,
+      "name": "PGCIL UP Diploma Trainee",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1349,
+      "group_sl": 2513,
+      "exam_id": 4481,
+      "name": "Noida International Aviation Services",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1350,
+      "group_sl": 2723,
+      "exam_id": 4271,
+      "name": "NCR Allahabad Apprentice",
+      "group": "Uttar Pradesh General Government Exams"
+    }
+  ]
+}

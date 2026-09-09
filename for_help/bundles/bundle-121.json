@@ -1,0 +1,447 @@
+{
+  "bundle_id": "bundle-121",
+  "bundle_num": 121,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Gujarat GPSSB • Judiciary & Law - High Court & Supreme Court • Uttarakhand UKMSSB",
+  "total_exams": 71,
+  "boards_included": [
+    "Gujarat GPSSB",
+    "Judiciary & Law - High Court & Supreme Court",
+    "Uttarakhand UKMSSB",
+    "Odisha Police & Security",
+    "Himachal Pradesh TET",
+    "Manipur General Govt",
+    "Gujarat Police & Security",
+    "Assam Police & Security"
+  ],
+  "exams": [
+    {
+      "sl": 4440,
+      "id": 2554,
+      "name": "HP TET TGT Non Medical",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "sl": 4441,
+      "id": 2553,
+      "name": "HP TET TGT Medical",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "sl": 4442,
+      "id": 2552,
+      "name": "HP TET TGT Arts",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "sl": 4443,
+      "id": 2551,
+      "name": "HP TET Special Educator For Class 6 to 12",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "sl": 4444,
+      "id": 2550,
+      "name": "HP TET Special Educator",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "sl": 4445,
+      "id": 2549,
+      "name": "HP TET Shastri Teacher",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "sl": 4446,
+      "id": 2548,
+      "name": "HP TET Sanskrit",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "sl": 4447,
+      "id": 2547,
+      "name": "HP TET Punjabi",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "sl": 4448,
+      "id": 2546,
+      "name": "HP TET JBT",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "sl": 4449,
+      "id": 2545,
+      "name": "HP TET Hindi",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "sl": 4546,
+      "id": 2448,
+      "name": "Gujarat Police SI Wireless",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "sl": 4547,
+      "id": 2447,
+      "name": "Gujarat Police SI Technical Operator",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "sl": 4548,
+      "id": 2446,
+      "name": "Gujarat Police SI Motor Transport",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "sl": 4549,
+      "id": 2445,
+      "name": "Gujarat Police SI",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "sl": 4550,
+      "id": 2444,
+      "name": "Gujarat Police Head Constable Driver Mechanic",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "sl": 4551,
+      "id": 2443,
+      "name": "Gujarat Police Constable",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "sl": 4552,
+      "id": 2442,
+      "name": "Gujarat Police ASI",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "sl": 4564,
+      "id": 2430,
+      "name": "Gujarat Forest Guard",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "sl": 4599,
+      "id": 2395,
+      "name": "GSSC Police Constable Driver",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "sl": 4600,
+      "id": 2394,
+      "name": "GSSC Police Constable",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "sl": 4643,
+      "id": 2351,
+      "name": "GPSSB Village Panchayat Secretary",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "sl": 4644,
+      "id": 2350,
+      "name": "GPSSB Pashudhan Nirikshak",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "sl": 4645,
+      "id": 2349,
+      "name": "GPSSB Mukhya Sevika",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "sl": 4646,
+      "id": 2348,
+      "name": "GPSSB MPHW",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "sl": 4647,
+      "id": 2347,
+      "name": "GPSSB Laboratory Technician",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "sl": 4648,
+      "id": 2346,
+      "name": "GPSSB Junior Pharmacist",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "sl": 4649,
+      "id": 2345,
+      "name": "GPSSB Junior Clerk",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "sl": 4650,
+      "id": 2344,
+      "name": "GPSSB Gram Sevak",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "sl": 4651,
+      "id": 2343,
+      "name": "GPSSB FHW",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "sl": 4652,
+      "id": 2342,
+      "name": "GPSSB Additional Assistant Engineer",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "sl": 1158,
+      "id": 5836,
+      "name": "Supreme Court of India Law Clerk",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "sl": 1159,
+      "id": 5835,
+      "name": "Supreme Court of India Junior Court Assistant",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "sl": 1160,
+      "id": 5834,
+      "name": "Supreme Court of India Court Assistant",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "sl": 1161,
+      "id": 5833,
+      "name": "Supreme Court of India Assistant Librarian",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "sl": 4726,
+      "id": 2268,
+      "name": "Gauhati High Court MTS",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "sl": 4727,
+      "id": 2267,
+      "name": "Gauhati High Court LDA",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "sl": 4728,
+      "id": 2266,
+      "name": "Gauhati High Court Law Clerk",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "sl": 4729,
+      "id": 2265,
+      "name": "Gauhati High Court JAA",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "sl": 4730,
+      "id": 2264,
+      "name": "Gauhati High Court Grade 3",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "sl": 6482,
+      "id": 512,
+      "name": "Assam Rifles Rally GD Constable",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "sl": 6488,
+      "id": 506,
+      "name": "Assam Police UDC, LDC & Stenographer",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "sl": 6489,
+      "id": 505,
+      "name": "Assam Police SI",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "sl": 6490,
+      "id": 504,
+      "name": "Assam Police Ministerial Staff",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "sl": 6491,
+      "id": 503,
+      "name": "Assam Police Jail Warder",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "sl": 6492,
+      "id": 502,
+      "name": "Assam Police JA",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "sl": 6493,
+      "id": 501,
+      "name": "Assam Police Grade 4",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "sl": 6494,
+      "id": 500,
+      "name": "Assam Police Forest Guard",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "sl": 6495,
+      "id": 499,
+      "name": "Assam Police Excise Constable",
+      "group": "Assam Police & Security Exams"
+    },
+    {
+      "sl": 660,
+      "id": 6334,
+      "name": "UKMSSB X Ray Technician",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "sl": 661,
+      "id": 6333,
+      "name": "UKMSSB Tutor",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "sl": 662,
+      "id": 6332,
+      "name": "UKMSSB Pharmacist",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "sl": 663,
+      "id": 6331,
+      "name": "UKMSSB MSW",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "sl": 664,
+      "id": 6330,
+      "name": "UKMSSB MO",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "sl": 665,
+      "id": 6329,
+      "name": "UKMSSB Lab Technician",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "sl": 666,
+      "id": 6328,
+      "name": "UKMSSB Dental Hygienist",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "sl": 667,
+      "id": 6327,
+      "name": "UKMSSB CSSD Technician",
+      "group": "Uttarakhand UKMSSB Exams"
+    },
+    {
+      "sl": 2362,
+      "id": 4632,
+      "name": "Odisha Postal Circle Postman Mail Guard",
+      "group": "Odisha Police & Security Exams"
+    },
+    {
+      "sl": 2364,
+      "id": 4630,
+      "name": "Odisha Police Station Officer",
+      "group": "Odisha Police & Security Exams"
+    },
+    {
+      "sl": 2365,
+      "id": 4629,
+      "name": "Odisha Police SI Armed",
+      "group": "Odisha Police & Security Exams"
+    },
+    {
+      "sl": 2366,
+      "id": 4628,
+      "name": "Odisha Police Jail Warder",
+      "group": "Odisha Police & Security Exams"
+    },
+    {
+      "sl": 2367,
+      "id": 4627,
+      "name": "Odisha Police Driver",
+      "group": "Odisha Police & Security Exams"
+    },
+    {
+      "sl": 2368,
+      "id": 4626,
+      "name": "Odisha Police Constable",
+      "group": "Odisha Police & Security Exams"
+    },
+    {
+      "sl": 2369,
+      "id": 4625,
+      "name": "Odisha Police Assistant Jailor",
+      "group": "Odisha Police & Security Exams"
+    },
+    {
+      "sl": 2370,
+      "id": 4624,
+      "name": "Odisha Police ASI",
+      "group": "Odisha Police & Security Exams"
+    },
+    {
+      "sl": 1310,
+      "id": 5684,
+      "name": "SIRD Manipur SO",
+      "group": "Manipur General Government Exams"
+    },
+    {
+      "sl": 2134,
+      "id": 4860,
+      "name": "PHED Manipur LDC Junior Supervisor",
+      "group": "Manipur General Government Exams"
+    },
+    {
+      "sl": 3207,
+      "id": 3787,
+      "name": "Manipur HC Stenographer",
+      "group": "Manipur General Government Exams"
+    },
+    {
+      "sl": 3209,
+      "id": 3785,
+      "name": "Manipur General Knowledge",
+      "group": "Manipur General Government Exams"
+    },
+    {
+      "sl": 4768,
+      "id": 2226,
+      "name": "GAD Manipur Stenographer Grade 3",
+      "group": "Manipur General Government Exams"
+    },
+    {
+      "sl": 4769,
+      "id": 2225,
+      "name": "GAD Manipur Group D",
+      "group": "Manipur General Government Exams"
+    },
+    {
+      "sl": 5112,
+      "id": 1882,
+      "name": "Directorate of Agriculture Manipur LDC",
+      "group": "Manipur General Government Exams"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "bundle_id": "bundle-042",
+  "bundle_num": 42,
+  "category_id": "upsc-civil",
+  "category_name": "UPSC सिविल सेवा",
+  "category_icon": "⚖️",
+  "title": "UPSC सिविल सेवा — UPSC - Engineering Services  (ESE/IES) • UPSC - NDA & CDS • UPSC - Civil Services  (IAS/IFS)",
+  "total_exams": 14,
+  "boards_included": [
+    "UPSC - Engineering Services  (ESE/IES)",
+    "UPSC - NDA & CDS",
+    "UPSC - Civil Services  (IAS/IFS)"
+  ],
+  "exams": [
+    {
+      "sl": 278,
+      "id": 6716,
+      "name": "UPSC IES ISS",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "sl": 279,
+      "id": 6715,
+      "name": "UPSC ESE IRMS Stores",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "sl": 280,
+      "id": 6714,
+      "name": "UPSC ESE IRMS",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "sl": 4854,
+      "id": 2140,
+      "name": "ESE Mechanical Engineering",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "sl": 4855,
+      "id": 2139,
+      "name": "ESE General Studies",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "sl": 4856,
+      "id": 2138,
+      "name": "ESE Electronics and Telecommunication Engineering",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "sl": 4857,
+      "id": 2137,
+      "name": "ESE Electrical Engineering",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "sl": 4858,
+      "id": 2136,
+      "name": "ESE Civil Engineering",
+      "group": "UPSC - Engineering Services Exams (ESE/IES)"
+    },
+    {
+      "sl": 4009,
+      "id": 2985,
+      "name": "Indian History for Civil Services",
+      "group": "UPSC - Civil Services Exams (IAS/IFS)"
+    },
+    {
+      "sl": 4208,
+      "id": 2786,
+      "name": "IAS in Hindi",
+      "group": "UPSC - Civil Services Exams (IAS/IFS)"
+    },
+    {
+      "sl": 4209,
+      "id": 2785,
+      "name": "IAS General Knowledge Hindi",
+      "group": "UPSC - Civil Services Exams (IAS/IFS)"
+    },
+    {
+      "sl": 4210,
+      "id": 2784,
+      "name": "IAS",
+      "group": "UPSC - Civil Services Exams (IAS/IFS)"
+    },
+    {
+      "sl": 2718,
+      "id": 4276,
+      "name": "NDA",
+      "group": "UPSC - NDA & CDS Exams"
+    },
+    {
+      "sl": 5767,
+      "id": 1227,
+      "name": "CDS",
+      "group": "UPSC - NDA & CDS Exams"
+    }
+  ]
+}

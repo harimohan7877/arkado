@@ -1,0 +1,417 @@
+{
+  "bundle_id": "bundle-113",
+  "bundle_num": 113,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — General Subjects - Hindi & Vernacular Languages • Himachal Pradesh HPRCA",
+  "total_exams": 67,
+  "boards_included": [
+    "General Subjects - Hindi & Vernacular Languages",
+    "Himachal Pradesh HPRCA"
+  ],
+  "exams": [
+    {
+      "sl": 4359,
+      "id": 2635,
+      "name": "HPRCA TGT Non Medical",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4360,
+      "id": 2634,
+      "name": "HPRCA TGT Medical",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4361,
+      "id": 2633,
+      "name": "HPRCA TGT Arts",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4362,
+      "id": 2632,
+      "name": "HPRCA Teachers",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4363,
+      "id": 2631,
+      "name": "HPRCA Teacher Drawing",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4364,
+      "id": 2630,
+      "name": "HPRCA Special Educator Class VI, XII",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4365,
+      "id": 2629,
+      "name": "HPRCA Special Educator",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4366,
+      "id": 2628,
+      "name": "HPRCA Physical Education Teacher",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4367,
+      "id": 2627,
+      "name": "HPRCA Pharmacist",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4368,
+      "id": 2626,
+      "name": "HPRCA PGT Teacher Sociology",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4369,
+      "id": 2625,
+      "name": "HPRCA PGT Teacher Sanskrit",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4370,
+      "id": 2624,
+      "name": "HPRCA PGT Teacher Public Administration",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4371,
+      "id": 2623,
+      "name": "HPRCA PGT Teacher Psychology",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4372,
+      "id": 2622,
+      "name": "HPRCA PGT Teacher Political Science",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4373,
+      "id": 2621,
+      "name": "HPRCA PGT Teacher Physics",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4374,
+      "id": 2620,
+      "name": "HPRCA PGT Teacher Physical Education",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4375,
+      "id": 2619,
+      "name": "HPRCA PGT Teacher History",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4376,
+      "id": 2618,
+      "name": "HPRCA PGT Teacher Hindi",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4377,
+      "id": 2617,
+      "name": "HPRCA PGT Teacher Geography",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4378,
+      "id": 2616,
+      "name": "HPRCA PGT Teacher Fine Arts",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4379,
+      "id": 2615,
+      "name": "HPRCA PGT Teacher Economics",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4380,
+      "id": 2614,
+      "name": "HPRCA PGT Teacher Computer",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4381,
+      "id": 2613,
+      "name": "HPRCA PGT Teacher Commerce",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4382,
+      "id": 2612,
+      "name": "HPRCA PGT Teacher Chemistry",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4383,
+      "id": 2611,
+      "name": "HPRCA PGT Teacher Biology",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4384,
+      "id": 2610,
+      "name": "HPRCA Panchayat Secretary",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4385,
+      "id": 2609,
+      "name": "HPRCA Operation Theatre Assistant",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4386,
+      "id": 2608,
+      "name": "HPRCA Music Teacher",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4387,
+      "id": 2607,
+      "name": "HPRCA Medical Laboratory Technician",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4388,
+      "id": 2606,
+      "name": "HPRCA Junior Office Assistant IT",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4389,
+      "id": 2605,
+      "name": "HPRCA Junior Office Assistant",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4390,
+      "id": 2604,
+      "name": "HPRCA JE",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4391,
+      "id": 2603,
+      "name": "HPRCA JBT Teacher",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4392,
+      "id": 2602,
+      "name": "HPRCA Horticulture Extension Officer",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 4393,
+      "id": 2601,
+      "name": "HPRCA Assistant Staff Nurse",
+      "group": "Himachal Pradesh HPRCA Exams"
+    },
+    {
+      "sl": 1426,
+      "id": 5568,
+      "name": "Sanskrit",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 1793,
+      "id": 5201,
+      "name": "Reasoning Sectional in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 1794,
+      "id": 5200,
+      "name": "Reasoning in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 1796,
+      "id": 5198,
+      "name": "Reasoning FREE Quiz in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 1945,
+      "id": 5049,
+      "name": "Quantitative Aptitude Sectional Test (Hindi)",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 1947,
+      "id": 5047,
+      "name": "QUANTITATIVE APTITUDE AND NUMERICAL ABILITY (Hindi)",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 2127,
+      "id": 4867,
+      "name": "Physics Sectional Test in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 2129,
+      "id": 4865,
+      "name": "Physics Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4494,
+      "id": 2500,
+      "name": "Hindi Bhasha and Sahitya",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4708,
+      "id": 2286,
+      "name": "General Science Sectional Test in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4710,
+      "id": 2284,
+      "name": "General Science in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4714,
+      "id": 2280,
+      "name": "General Knowledge Sectional Test in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4719,
+      "id": 2275,
+      "name": "General Knowledge in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4721,
+      "id": 2273,
+      "name": "General Hindi Sectional Test",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4722,
+      "id": 2272,
+      "name": "General Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4777,
+      "id": 2217,
+      "name": "FREE Quiz Quantitative Aptitude in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4779,
+      "id": 2215,
+      "name": "FREE Quiz Physics in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4781,
+      "id": 2213,
+      "name": "FREE Quiz Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4782,
+      "id": 2212,
+      "name": "FREE Quiz General Science in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4785,
+      "id": 2209,
+      "name": "FREE Quiz Computer Knowledge in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4787,
+      "id": 2207,
+      "name": "FREE Quiz Chemistry in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4789,
+      "id": 2205,
+      "name": "FREE Quiz Biology in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4793,
+      "id": 2201,
+      "name": "FREE Quiz - General Knowledge in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 4866,
+      "id": 2128,
+      "name": "Environmental Studies (Hindi)",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 5267,
+      "id": 1727,
+      "name": "Current affairs - Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 5542,
+      "id": 1452,
+      "name": "Computer Knowledge Sectional Test (Hindi)",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 5544,
+      "id": 1450,
+      "name": "Computer Knowledge Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 5617,
+      "id": 1377,
+      "name": "Child Development and Pedagogy Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 5628,
+      "id": 1366,
+      "name": "Chemistry Sectional Test in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 5630,
+      "id": 1364,
+      "name": "Chemistry Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 6074,
+      "id": 920,
+      "name": "Biology Sectional Test in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "sl": 6077,
+      "id": 917,
+      "name": "Biology Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    }
+  ]
+}

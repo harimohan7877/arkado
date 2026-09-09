@@ -1,0 +1,358 @@
+{
+  "bundle_number": 113,
+  "bundle_id": "raw_bundle_113",
+  "range": "5601 - 5650",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5601,
+      "group_sl": 6037,
+      "exam_id": 957,
+      "name": "Bombay High Court Junior Clerk",
+      "group": "Maharashtra High Court & Court Exams"
+    },
+    {
+      "global_sl": 5602,
+      "group_sl": 6038,
+      "exam_id": 956,
+      "name": "Bombay High Court Driver",
+      "group": "Maharashtra High Court & Court Exams"
+    },
+    {
+      "global_sl": 5603,
+      "group_sl": 6039,
+      "exam_id": 955,
+      "name": "Bombay High Court District Judge",
+      "group": "Maharashtra High Court & Court Exams"
+    },
+    {
+      "global_sl": 5604,
+      "group_sl": 6040,
+      "exam_id": 954,
+      "name": "Bombay HC Clerk",
+      "group": "Maharashtra High Court & Court Exams"
+    },
+    {
+      "global_sl": 5605,
+      "group_sl": 2843,
+      "exam_id": 4151,
+      "name": "MPPSC Transport SI",
+      "group": "Madhya Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 5606,
+      "group_sl": 2897,
+      "exam_id": 4097,
+      "name": "MPPGCL Security Guard",
+      "group": "Madhya Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 5607,
+      "group_sl": 3025,
+      "exam_id": 3969,
+      "name": "MP Police SI",
+      "group": "Madhya Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 5608,
+      "group_sl": 3026,
+      "exam_id": 3968,
+      "name": "MP Police Head Constable and ASI",
+      "group": "Madhya Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 5609,
+      "group_sl": 3027,
+      "exam_id": 3967,
+      "name": "MP Police Constable",
+      "group": "Madhya Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 5610,
+      "group_sl": 3028,
+      "exam_id": 3966,
+      "name": "MP Police ASI and Subedar Steno",
+      "group": "Madhya Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 5611,
+      "group_sl": 3061,
+      "exam_id": 3933,
+      "name": "MP Excise Constable",
+      "group": "Madhya Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 5612,
+      "group_sl": 2907,
+      "exam_id": 4087,
+      "name": "MPHC Data Processing Assistant",
+      "group": "Madhya Pradesh High Court & Court Exams"
+    },
+    {
+      "global_sl": 5613,
+      "group_sl": 3046,
+      "exam_id": 3948,
+      "name": "MP High Court Stenographer",
+      "group": "Madhya Pradesh High Court & Court Exams"
+    },
+    {
+      "global_sl": 5614,
+      "group_sl": 3047,
+      "exam_id": 3947,
+      "name": "MP High Court Law Clerk",
+      "group": "Madhya Pradesh High Court & Court Exams"
+    },
+    {
+      "global_sl": 5615,
+      "group_sl": 3048,
+      "exam_id": 3946,
+      "name": "MP High Court JSA",
+      "group": "Madhya Pradesh High Court & Court Exams"
+    },
+    {
+      "global_sl": 5616,
+      "group_sl": 3049,
+      "exam_id": 3945,
+      "name": "MP High Court Grade 4",
+      "group": "Madhya Pradesh High Court & Court Exams"
+    },
+    {
+      "global_sl": 5617,
+      "group_sl": 3050,
+      "exam_id": 3944,
+      "name": "MP High Court District Judge",
+      "group": "Madhya Pradesh High Court & Court Exams"
+    },
+    {
+      "global_sl": 5618,
+      "group_sl": 3053,
+      "exam_id": 3941,
+      "name": "MP HC Civil Judge",
+      "group": "Madhya Pradesh High Court & Court Exams"
+    },
+    {
+      "global_sl": 5619,
+      "group_sl": 3504,
+      "exam_id": 3490,
+      "name": "KGMU Technician Radiotherapy",
+      "group": "Uttar Pradesh KGMU Exams"
+    },
+    {
+      "global_sl": 5620,
+      "group_sl": 3505,
+      "exam_id": 3489,
+      "name": "KGMU Technician Radiology",
+      "group": "Uttar Pradesh KGMU Exams"
+    },
+    {
+      "global_sl": 5621,
+      "group_sl": 3506,
+      "exam_id": 3488,
+      "name": "KGMU Technician Dialysis",
+      "group": "Uttar Pradesh KGMU Exams"
+    },
+    {
+      "global_sl": 5622,
+      "group_sl": 3507,
+      "exam_id": 3487,
+      "name": "KGMU Pharmacist",
+      "group": "Uttar Pradesh KGMU Exams"
+    },
+    {
+      "global_sl": 5623,
+      "group_sl": 3508,
+      "exam_id": 3486,
+      "name": "KGMU OT Assistant",
+      "group": "Uttar Pradesh KGMU Exams"
+    },
+    {
+      "global_sl": 5624,
+      "group_sl": 3509,
+      "exam_id": 3485,
+      "name": "KGMU Nursing Officer",
+      "group": "Uttar Pradesh KGMU Exams"
+    },
+    {
+      "global_sl": 5625,
+      "group_sl": 3510,
+      "exam_id": 3484,
+      "name": "KGMU Medical Lab Technologist",
+      "group": "Uttar Pradesh KGMU Exams"
+    },
+    {
+      "global_sl": 5626,
+      "group_sl": 3735,
+      "exam_id": 3259,
+      "name": "JKPSC School Lecturer English",
+      "group": "Jammu & Kashmir Teaching & School Exams"
+    },
+    {
+      "global_sl": 5627,
+      "group_sl": 3736,
+      "exam_id": 3258,
+      "name": "JKPSC School Lecturer Education",
+      "group": "Jammu & Kashmir Teaching & School Exams"
+    },
+    {
+      "global_sl": 5628,
+      "group_sl": 3737,
+      "exam_id": 3257,
+      "name": "JKPSC School Lecturer Economics",
+      "group": "Jammu & Kashmir Teaching & School Exams"
+    },
+    {
+      "global_sl": 5629,
+      "group_sl": 3738,
+      "exam_id": 3256,
+      "name": "JKPSC School Lecturer Chemistry",
+      "group": "Jammu & Kashmir Teaching & School Exams"
+    },
+    {
+      "global_sl": 5630,
+      "group_sl": 3739,
+      "exam_id": 3255,
+      "name": "JKPSC School Lecturer Botany",
+      "group": "Jammu & Kashmir Teaching & School Exams"
+    },
+    {
+      "global_sl": 5631,
+      "group_sl": 3754,
+      "exam_id": 3240,
+      "name": "JK SET Physical Education",
+      "group": "Jammu & Kashmir Teaching & School Exams"
+    },
+    {
+      "global_sl": 5632,
+      "group_sl": 3772,
+      "exam_id": 3222,
+      "name": "JK SET Education",
+      "group": "Jammu & Kashmir Teaching & School Exams"
+    },
+    {
+      "global_sl": 5633,
+      "group_sl": 4914,
+      "exam_id": 2080,
+      "name": "ECIL Technical Officer",
+      "group": "Engineering & PSU - ECIL Exams"
+    },
+    {
+      "global_sl": 5634,
+      "group_sl": 4915,
+      "exam_id": 2079,
+      "name": "ECIL Scientific Officer",
+      "group": "Engineering & PSU - ECIL Exams"
+    },
+    {
+      "global_sl": 5635,
+      "group_sl": 4916,
+      "exam_id": 2078,
+      "name": "ECIL Junior Technical Officer",
+      "group": "Engineering & PSU - ECIL Exams"
+    },
+    {
+      "global_sl": 5636,
+      "group_sl": 4917,
+      "exam_id": 2077,
+      "name": "ECIL GET Mechanical",
+      "group": "Engineering & PSU - ECIL Exams"
+    },
+    {
+      "global_sl": 5637,
+      "group_sl": 4918,
+      "exam_id": 2076,
+      "name": "ECIL GET ECE",
+      "group": "Engineering & PSU - ECIL Exams"
+    },
+    {
+      "global_sl": 5638,
+      "group_sl": 4919,
+      "exam_id": 2075,
+      "name": "ECIL GET Computer Science",
+      "group": "Engineering & PSU - ECIL Exams"
+    },
+    {
+      "global_sl": 5639,
+      "group_sl": 4920,
+      "exam_id": 2074,
+      "name": "ECIL GET Civil",
+      "group": "Engineering & PSU - ECIL Exams"
+    },
+    {
+      "global_sl": 5640,
+      "group_sl": 5910,
+      "exam_id": 1084,
+      "name": "BSPHCL Technician",
+      "group": "Bihar BSPHCL Exams"
+    },
+    {
+      "global_sl": 5641,
+      "group_sl": 5911,
+      "exam_id": 1083,
+      "name": "BSPHCL Store Assistant",
+      "group": "Bihar BSPHCL Exams"
+    },
+    {
+      "global_sl": 5642,
+      "group_sl": 5912,
+      "exam_id": 1082,
+      "name": "BSPHCL Junior Accounts Clerk",
+      "group": "Bihar BSPHCL Exams"
+    },
+    {
+      "global_sl": 5643,
+      "group_sl": 5913,
+      "exam_id": 1081,
+      "name": "BSPHCL JE",
+      "group": "Bihar BSPHCL Exams"
+    },
+    {
+      "global_sl": 5644,
+      "group_sl": 5914,
+      "exam_id": 1080,
+      "name": "BSPHCL Correspondence Clerk",
+      "group": "Bihar BSPHCL Exams"
+    },
+    {
+      "global_sl": 5645,
+      "group_sl": 5915,
+      "exam_id": 1079,
+      "name": "BSPHCL Assistant Operator",
+      "group": "Bihar BSPHCL Exams"
+    },
+    {
+      "global_sl": 5646,
+      "group_sl": 5916,
+      "exam_id": 1078,
+      "name": "BSPHCL Assistant Electrical Engineer",
+      "group": "Bihar BSPHCL Exams"
+    },
+    {
+      "global_sl": 5647,
+      "group_sl": 188,
+      "exam_id": 6806,
+      "name": "Uttarakhand Police SI",
+      "group": "Uttarakhand Police & Security Exams"
+    },
+    {
+      "global_sl": 5648,
+      "group_sl": 573,
+      "exam_id": 6421,
+      "name": "UKSSSC Police Constable",
+      "group": "Uttarakhand Police & Security Exams"
+    },
+    {
+      "global_sl": 5649,
+      "group_sl": 580,
+      "exam_id": 6414,
+      "name": "UKSSSC Home Guard",
+      "group": "Uttarakhand Police & Security Exams"
+    },
+    {
+      "global_sl": 5650,
+      "group_sl": 584,
+      "exam_id": 6410,
+      "name": "UKSSSC Forest Guard",
+      "group": "Uttarakhand Police & Security Exams"
+    }
+  ]
+}

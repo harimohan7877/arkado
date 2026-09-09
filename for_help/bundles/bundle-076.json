@@ -1,0 +1,412 @@
+{
+  "bundle_id": "bundle-076",
+  "bundle_num": 76,
+  "category_id": "engineering-psu",
+  "category_name": "इंजीनियरिंग & PSU",
+  "category_icon": "⚙️",
+  "title": "इंजीनियरिंग & PSU — Engineering & PSU - BEL • Engineering & PSU - BARC • Engineering & PSU - DRDO",
+  "total_exams": 66,
+  "boards_included": [
+    "Engineering & PSU - BEL",
+    "Engineering & PSU - BARC",
+    "Engineering & PSU - DRDO"
+  ],
+  "exams": [
+    {
+      "sl": 6361,
+      "id": 633,
+      "name": "BARC Work Assistant",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6362,
+      "id": 632,
+      "name": "BARC UDC",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6363,
+      "id": 631,
+      "name": "BARC Stipendiary Trainee Plant Operator",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6364,
+      "id": 630,
+      "name": "BARC Stipendiary Trainee Physics",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6365,
+      "id": 629,
+      "name": "BARC Stipendiary Trainee Mechanical",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6366,
+      "id": 628,
+      "name": "BARC Stipendiary Trainee Mechanic Motor Vehicle",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6367,
+      "id": 627,
+      "name": "BARC Stipendiary Trainee Laboratory",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6368,
+      "id": 626,
+      "name": "BARC Stipendiary Trainee Electronics",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6369,
+      "id": 625,
+      "name": "BARC Stipendiary Trainee Electronic Mechanic",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6370,
+      "id": 624,
+      "name": "BARC Stipendiary Trainee Electrician",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6371,
+      "id": 623,
+      "name": "BARC Stipendiary Trainee Electrical",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6372,
+      "id": 622,
+      "name": "BARC Stipendiary Trainee Draughtsman Civil",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6373,
+      "id": 621,
+      "name": "BARC Stipendiary Trainee Computer Science",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6374,
+      "id": 620,
+      "name": "BARC Stipendiary Trainee Civil",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6375,
+      "id": 619,
+      "name": "BARC Stipendiary Trainee Chemistry",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6376,
+      "id": 618,
+      "name": "BARC Stipendiary Trainee Chemical",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6377,
+      "id": 617,
+      "name": "BARC Stipendiary Trainee",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6378,
+      "id": 616,
+      "name": "BARC Security Guard",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6379,
+      "id": 615,
+      "name": "BARC Scientific Officer",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6380,
+      "id": 614,
+      "name": "BARC JRF",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6381,
+      "id": 613,
+      "name": "BARC Electronics & Communication Engineering",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6382,
+      "id": 612,
+      "name": "BARC EE",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6383,
+      "id": 611,
+      "name": "BARC Computer Science Engineering",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 6384,
+      "id": 610,
+      "name": "BARC Civil Engineering",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "sl": 5045,
+      "id": 1949,
+      "name": "DRDO Technician A",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5046,
+      "id": 1948,
+      "name": "DRDO SSPL Apprentice",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5047,
+      "id": 1947,
+      "name": "DRDO Senior Technical Assistant",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5048,
+      "id": 1946,
+      "name": "DRDO Scientist B",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5049,
+      "id": 1945,
+      "name": "DRDO JRF",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5050,
+      "id": 1944,
+      "name": "DRDO ITR Apprentice",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5051,
+      "id": 1943,
+      "name": "DRDO GTRE Apprentice",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5052,
+      "id": 1942,
+      "name": "DRDO CEPTAM Technician A Welder",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5053,
+      "id": 1941,
+      "name": "DRDO CEPTAM Technician A Machinist",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5054,
+      "id": 1940,
+      "name": "DRDO CEPTAM Technician A Fitter",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5055,
+      "id": 1939,
+      "name": "DRDO CEPTAM Technician A Electronics",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5056,
+      "id": 1938,
+      "name": "DRDO CEPTAM Technician A Electrician",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5057,
+      "id": 1937,
+      "name": "DRDO CEPTAM Senior Technical Assistant Physics",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5058,
+      "id": 1936,
+      "name": "DRDO CEPTAM Senior Technical Assistant Metallurgical",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5059,
+      "id": 1935,
+      "name": "DRDO CEPTAM Senior Technical Assistant Mechanical",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5060,
+      "id": 1934,
+      "name": "DRDO CEPTAM Senior Technical Assistant Electronics and Communication",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5061,
+      "id": 1933,
+      "name": "DRDO CEPTAM Senior Technical Assistant Electrical",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5062,
+      "id": 1932,
+      "name": "DRDO CEPTAM Senior Technical Assistant Computer Science",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5063,
+      "id": 1931,
+      "name": "DRDO CEPTAM Senior Technical Assistant Civil",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5064,
+      "id": 1930,
+      "name": "DRDO CEPTAM Senior Technical Assistant Chemistry",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5065,
+      "id": 1929,
+      "name": "DRDO CEPTAM MTS",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 5066,
+      "id": 1928,
+      "name": "DRDO Apprentice",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "sl": 6308,
+      "id": 686,
+      "name": "BEL Trainee Engineer Mechanical",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6309,
+      "id": 685,
+      "name": "BEL Trainee Engineer Electrical",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6310,
+      "id": 684,
+      "name": "BEL Trainee Engineer Computer Science",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6311,
+      "id": 683,
+      "name": "BEL Trainee Engineer",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6312,
+      "id": 682,
+      "name": "BEL Trade Apprentice",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6313,
+      "id": 681,
+      "name": "BEL Technician",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6314,
+      "id": 680,
+      "name": "BEL Software Trainee",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6315,
+      "id": 679,
+      "name": "BEL Senior Assistant Engineer",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6316,
+      "id": 678,
+      "name": "BEL Project Engineer",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6317,
+      "id": 677,
+      "name": "BEL Probationary Engineer Mechanical",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6318,
+      "id": 676,
+      "name": "BEL Probationary Engineer Electronics",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6319,
+      "id": 675,
+      "name": "BEL Probationary Engineer Electrical",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6320,
+      "id": 674,
+      "name": "BEL Probationary Engineer Computer Science",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6322,
+      "id": 672,
+      "name": "BEL Fixed Tenure Engineer",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6323,
+      "id": 671,
+      "name": "BEL Field Operation Engineer",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6324,
+      "id": 670,
+      "name": "BEL EAT",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6325,
+      "id": 669,
+      "name": "BEL Diploma Apprentice",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6326,
+      "id": 668,
+      "name": "BEL Deputy Engineer Civil Engineering",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6327,
+      "id": 667,
+      "name": "BEL Deputy Engineer",
+      "group": "Engineering & PSU - BEL Exams"
+    },
+    {
+      "sl": 6328,
+      "id": 666,
+      "name": "BEL Deputy & Contract Engineer",
+      "group": "Engineering & PSU - BEL Exams"
+    }
+  ]
+}

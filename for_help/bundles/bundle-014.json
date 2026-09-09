@@ -1,0 +1,35 @@
+{
+  "bundle_id": "bundle-014",
+  "bundle_num": 14,
+  "category_id": "bihar",
+  "category_name": "बिहार",
+  "category_icon": "🟡",
+  "title": "बिहार — बिहार विद्यालय परीक्षा समिति (STET / BTET)",
+  "total_exams": 2,
+  "boards_included": [
+    "BSEB STET"
+  ],
+  "official_portal": "https://bsebstet2024.com",
+  "exams": [
+    {
+      "id": 3013,
+      "name": "बिहार माध्यमिक शिक्षक पात्रता (STET Paper-1 - कक्षा 9-10)",
+      "eligibility": "संबंधित विषय में स्नातक (50%) + B.Ed",
+      "age_limit": "21-37 वर्ष",
+      "applicant_scale": "3.5 लाख",
+      "exam_pattern": "संबंधित विषय (100) + शिक्षण कला व अन्य दक्षता (50) = 150 अंक",
+      "viral_subtext": "हाईस्कूल शिक्षक पात्रता (सभी विषय)",
+      "status": "verified"
+    },
+    {
+      "id": 3014,
+      "name": "बिहार उच्च माध्यमिक शिक्षक पात्रता (STET Paper-2 - कक्षा 11-12)",
+      "eligibility": "संबंधित विषय में स्नातकोत्तर (PG) + B.Ed",
+      "age_limit": "21-37 वर्ष",
+      "applicant_scale": "2.5 लाख",
+      "exam_pattern": "विषय (100) + शिक्षण कला (50)",
+      "viral_subtext": "इंटर कॉलेज शिक्षक पात्रता (सभी विषय)",
+      "status": "verified"
+    }
+  ]
+}

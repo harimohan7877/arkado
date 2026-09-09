@@ -1,0 +1,358 @@
+{
+  "bundle_number": 125,
+  "bundle_id": "raw_bundle_125",
+  "range": "6201 - 6250",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 6201,
+      "group_sl": 4678,
+      "exam_id": 2316,
+      "name": "Goa Home Guard",
+      "group": "Goa Police & Security Exams"
+    },
+    {
+      "global_sl": 6202,
+      "group_sl": 4680,
+      "exam_id": 2314,
+      "name": "Goa Electricity Line Helper",
+      "group": "Goa Power & Electricity Exams"
+    },
+    {
+      "global_sl": 6203,
+      "group_sl": 4681,
+      "exam_id": 2313,
+      "name": "Goa Electricity LDC",
+      "group": "Goa Power & Electricity Exams"
+    },
+    {
+      "global_sl": 6204,
+      "group_sl": 4682,
+      "exam_id": 2312,
+      "name": "Goa Electricity ALM",
+      "group": "Goa Power & Electricity Exams"
+    },
+    {
+      "global_sl": 6205,
+      "group_sl": 4931,
+      "exam_id": 2063,
+      "name": "DVC JE Mechanical",
+      "group": "Engineering & PSU - DVC Exams"
+    },
+    {
+      "global_sl": 6206,
+      "group_sl": 4932,
+      "exam_id": 2062,
+      "name": "DVC JE Electrical",
+      "group": "Engineering & PSU - DVC Exams"
+    },
+    {
+      "global_sl": 6207,
+      "group_sl": 4933,
+      "exam_id": 2061,
+      "name": "DVC JE Civil",
+      "group": "Engineering & PSU - DVC Exams"
+    },
+    {
+      "global_sl": 6208,
+      "group_sl": 5469,
+      "exam_id": 1525,
+      "name": "CSMC JE",
+      "group": "Maharashtra CSMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6209,
+      "group_sl": 5470,
+      "exam_id": 1524,
+      "name": "CSMC Fireman",
+      "group": "Maharashtra CSMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6210,
+      "group_sl": 5471,
+      "exam_id": 1523,
+      "name": "CSMC Civil Engineering Assistant",
+      "group": "Maharashtra CSMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6211,
+      "group_sl": 5536,
+      "exam_id": 1458,
+      "name": "Cooperative Management",
+      "group": "Banking & Finance - Cooperative Banks Exams"
+    },
+    {
+      "global_sl": 6212,
+      "group_sl": 5537,
+      "exam_id": 1457,
+      "name": "Cooperative Credit & Banking",
+      "group": "Banking & Finance - Cooperative Banks Exams"
+    },
+    {
+      "global_sl": 6213,
+      "group_sl": 5538,
+      "exam_id": 1456,
+      "name": "Cooperative Accounting",
+      "group": "Banking & Finance - Cooperative Banks Exams"
+    },
+    {
+      "global_sl": 6214,
+      "group_sl": 5576,
+      "exam_id": 1418,
+      "name": "Class 9 Mathematics",
+      "group": "General Subjects - School Education & Classes"
+    },
+    {
+      "global_sl": 6215,
+      "group_sl": 5577,
+      "exam_id": 1417,
+      "name": "Class 6 Mathematics",
+      "group": "General Subjects - School Education & Classes"
+    },
+    {
+      "global_sl": 6216,
+      "group_sl": 5581,
+      "exam_id": 1413,
+      "name": "Class 10 Mathematics",
+      "group": "General Subjects - School Education & Classes"
+    },
+    {
+      "global_sl": 6217,
+      "group_sl": 5690,
+      "exam_id": 1304,
+      "name": "CGPEB Pharmacist Grade 3",
+      "group": "Chhattisgarh CGPEB Exams"
+    },
+    {
+      "global_sl": 6218,
+      "group_sl": 5691,
+      "exam_id": 1303,
+      "name": "CGPEB Hostel Superintendent",
+      "group": "Chhattisgarh CGPEB Exams"
+    },
+    {
+      "global_sl": 6219,
+      "group_sl": 5692,
+      "exam_id": 1302,
+      "name": "CGPEB DEO",
+      "group": "Chhattisgarh CGPEB Exams"
+    },
+    {
+      "global_sl": 6220,
+      "group_sl": 5716,
+      "exam_id": 1278,
+      "name": "CG TET Social Studies Paper 2",
+      "group": "Chhattisgarh TET Exams"
+    },
+    {
+      "global_sl": 6221,
+      "group_sl": 5717,
+      "exam_id": 1277,
+      "name": "CG TET Paper 1",
+      "group": "Chhattisgarh TET Exams"
+    },
+    {
+      "global_sl": 6222,
+      "group_sl": 5718,
+      "exam_id": 1276,
+      "name": "CG TET Maths & Science",
+      "group": "Chhattisgarh TET Exams"
+    },
+    {
+      "global_sl": 6223,
+      "group_sl": 5771,
+      "exam_id": 1223,
+      "name": "CDAC Project Engineer Exam",
+      "group": "Engineering & PSU - CDAC Exams"
+    },
+    {
+      "global_sl": 6224,
+      "group_sl": 5772,
+      "exam_id": 1222,
+      "name": "CDAC Project Engineer",
+      "group": "Engineering & PSU - CDAC Exams"
+    },
+    {
+      "global_sl": 6225,
+      "group_sl": 5776,
+      "exam_id": 1218,
+      "name": "CDAC Design Engineer",
+      "group": "Engineering & PSU - CDAC Exams"
+    },
+    {
+      "global_sl": 6226,
+      "group_sl": 5977,
+      "exam_id": 1017,
+      "name": "BRBNMPL Process Assistant Grade I",
+      "group": "Banking & Finance - BRBNMPL Exams"
+    },
+    {
+      "global_sl": 6227,
+      "group_sl": 5978,
+      "exam_id": 1016,
+      "name": "BRBNMPL Industrial Workman",
+      "group": "Banking & Finance - BRBNMPL Exams"
+    },
+    {
+      "global_sl": 6228,
+      "group_sl": 5979,
+      "exam_id": 1015,
+      "name": "BRBNMPL Deputy Manager",
+      "group": "Banking & Finance - BRBNMPL Exams"
+    },
+    {
+      "global_sl": 6229,
+      "group_sl": 6475,
+      "exam_id": 519,
+      "name": "Assam TET Social Studies",
+      "group": "Assam TET Exams"
+    },
+    {
+      "global_sl": 6230,
+      "group_sl": 6476,
+      "exam_id": 518,
+      "name": "Assam TET Paper 1",
+      "group": "Assam TET Exams"
+    },
+    {
+      "global_sl": 6231,
+      "group_sl": 6477,
+      "exam_id": 517,
+      "name": "Assam TET Mathematics & Science",
+      "group": "Assam TET Exams"
+    },
+    {
+      "global_sl": 6232,
+      "group_sl": 59,
+      "exam_id": 6935,
+      "name": "WBSHFWS Pharmacist",
+      "group": "West Bengal WBSHFWS Exams"
+    },
+    {
+      "global_sl": 6233,
+      "group_sl": 60,
+      "exam_id": 6934,
+      "name": "WBSHFWS CHO",
+      "group": "West Bengal WBSHFWS Exams"
+    },
+    {
+      "global_sl": 6234,
+      "group_sl": 80,
+      "exam_id": 6914,
+      "name": "WBPSC Judicial Service",
+      "group": "West Bengal High Court & Court Exams"
+    },
+    {
+      "global_sl": 6235,
+      "group_sl": 5814,
+      "exam_id": 1180,
+      "name": "Calcutta High Court Group D",
+      "group": "West Bengal High Court & Court Exams"
+    },
+    {
+      "global_sl": 6236,
+      "group_sl": 121,
+      "exam_id": 6873,
+      "name": "WB TET Paper 1",
+      "group": "West Bengal TET Exams"
+    },
+    {
+      "global_sl": 6237,
+      "group_sl": 122,
+      "exam_id": 6872,
+      "name": "WB TET",
+      "group": "West Bengal TET Exams"
+    },
+    {
+      "global_sl": 6238,
+      "group_sl": 148,
+      "exam_id": 6846,
+      "name": "WAPCOS Limited Engineer",
+      "group": "Engineering & PSU - WAPCOS Exams"
+    },
+    {
+      "global_sl": 6239,
+      "group_sl": 149,
+      "exam_id": 6845,
+      "name": "WAPCOS JE",
+      "group": "Engineering & PSU - WAPCOS Exams"
+    },
+    {
+      "global_sl": 6240,
+      "group_sl": 166,
+      "exam_id": 6828,
+      "name": "VMC Junior Clerk",
+      "group": "Gujarat VMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6241,
+      "group_sl": 167,
+      "exam_id": 6827,
+      "name": "VMC Apprentice",
+      "group": "Gujarat VMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6242,
+      "group_sl": 226,
+      "exam_id": 6768,
+      "name": "UPUMS Nursing Officer",
+      "group": "Uttar Pradesh UPUMS Exams"
+    },
+    {
+      "global_sl": 6243,
+      "group_sl": 227,
+      "exam_id": 6767,
+      "name": "UPUMS Faculty",
+      "group": "Uttar Pradesh UPUMS Exams"
+    },
+    {
+      "global_sl": 6244,
+      "group_sl": 673,
+      "exam_id": 6321,
+      "name": "UGVCL Vidyut Sahayak",
+      "group": "Gujarat UGVCL Exams"
+    },
+    {
+      "global_sl": 6245,
+      "group_sl": 674,
+      "exam_id": 6320,
+      "name": "UGVCL Assistant Manager",
+      "group": "Gujarat UGVCL Exams"
+    },
+    {
+      "global_sl": 6246,
+      "group_sl": 843,
+      "exam_id": 6151,
+      "name": "TSCAB Staff Assistant and Manager",
+      "group": "Telangana Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 6247,
+      "group_sl": 844,
+      "exam_id": 6150,
+      "name": "TSCAB Staff Assistant",
+      "group": "Telangana Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 6248,
+      "group_sl": 885,
+      "exam_id": 6109,
+      "name": "Tripura High Court LDC",
+      "group": "Tripura High Court & Court Exams"
+    },
+    {
+      "global_sl": 6249,
+      "group_sl": 2508,
+      "exam_id": 4486,
+      "name": "North Tripura District Court Group D",
+      "group": "Tripura High Court & Court Exams"
+    },
+    {
+      "global_sl": 6250,
+      "group_sl": 900,
+      "exam_id": 6094,
+      "name": "TRBT Graduate Teacher",
+      "group": "Tripura Teaching & School Exams"
+    }
+  ]
+}

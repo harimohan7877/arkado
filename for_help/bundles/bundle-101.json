@@ -1,0 +1,368 @@
+{
+  "bundle_id": "bundle-101",
+  "bundle_num": 101,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Management & Admission Entrance",
+  "total_exams": 59,
+  "boards_included": [
+    "Management & Admission Entrance"
+  ],
+  "exams": [
+    {
+      "sl": 5,
+      "id": 6989,
+      "name": "XAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 169,
+      "id": 6825,
+      "name": "Vizag Steel Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 778,
+      "id": 6216,
+      "name": "UCEED",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 1077,
+      "id": 5917,
+      "name": "TISSNET",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 1149,
+      "id": 5845,
+      "name": "TANCET MBA",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 1177,
+      "id": 5817,
+      "name": "State Level Engineering Entrance",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 1262,
+      "id": 5732,
+      "name": "SRCC GBO",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 1284,
+      "id": 5710,
+      "name": "SNAP",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 1444,
+      "id": 5550,
+      "name": "SAIL Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 1750,
+      "id": 5244,
+      "name": "RMS Admission Class VI",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 1751,
+      "id": 5243,
+      "name": "RMS Admission Class IX",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 1763,
+      "id": 5231,
+      "name": "RIMC Admission",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 2334,
+      "id": 4660,
+      "name": "OMAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 2335,
+      "id": 4659,
+      "name": "OJEE MBA",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 2442,
+      "id": 4552,
+      "name": "NUCAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 2497,
+      "id": 4497,
+      "name": "NPCIL Deputy Manager Contracts and Materials Management",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 2499,
+      "id": 4495,
+      "name": "NPAT BBA",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 2500,
+      "id": 4494,
+      "name": "NPAT B.Tech",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 2537,
+      "id": 4457,
+      "name": "NMAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 2558,
+      "id": 4436,
+      "name": "NIMCET",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 2757,
+      "id": 4237,
+      "name": "National Level Engineering Entrance Exam",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 2801,
+      "id": 4193,
+      "name": "MSc Entrance Exam",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 3107,
+      "id": 3887,
+      "name": "MICAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 3193,
+      "id": 3801,
+      "name": "Material Management",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 3194,
+      "id": 3800,
+      "name": "MAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 3195,
+      "id": 3799,
+      "name": "Mass Communication & Journalism Entrance Exam",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 3212,
+      "id": 3782,
+      "name": "Manipal Entrance Test",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 3213,
+      "id": 3781,
+      "name": "Management",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 3401,
+      "id": 3593,
+      "name": "Kurukshetra University Clerk",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 3703,
+      "id": 3291,
+      "name": "JMI BA LLB Entrance Exam",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 3793,
+      "id": 3201,
+      "name": "JIPMAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 3843,
+      "id": 3151,
+      "name": "JEECUP Entrance",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 3870,
+      "id": 3124,
+      "name": "Jadavpur University Junior Assistant",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 3918,
+      "id": 3076,
+      "name": "ISAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 3919,
+      "id": 3075,
+      "name": "IRMASAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 3934,
+      "id": 3060,
+      "name": "IPMAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 4076,
+      "id": 2918,
+      "name": "IMU CET",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 4104,
+      "id": 2890,
+      "name": "IIFT MBA",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 4119,
+      "id": 2875,
+      "name": "IFFCO Management Trainee HR",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 4173,
+      "id": 2821,
+      "name": "IBSAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 4483,
+      "id": 2511,
+      "name": "Hotel and Catering Management",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 4487,
+      "id": 2507,
+      "name": "HLL Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 4534,
+      "id": 2460,
+      "name": "HAL Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 4695,
+      "id": 2299,
+      "name": "GMAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 4713,
+      "id": 2281,
+      "name": "General Management",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 4767,
+      "id": 2227,
+      "name": "GAHET Diploma AIPMCET",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 4837,
+      "id": 2157,
+      "name": "FACT Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 4902,
+      "id": 2092,
+      "name": "EMAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 5261,
+      "id": 1733,
+      "name": "CWC Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 5461,
+      "id": 1533,
+      "name": "CSS ATMA NMAT ATM",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 5521,
+      "id": 1473,
+      "name": "CS Executive Corporate, Management Accounting",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 5551,
+      "id": 1443,
+      "name": "COMEDK UGET Entrance",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 5573,
+      "id": 1421,
+      "name": "CMAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 5601,
+      "id": 1393,
+      "name": "CIL MT Materials Management",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 5765,
+      "id": 1229,
+      "name": "CEED",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 5795,
+      "id": 1199,
+      "name": "CCI Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 5808,
+      "id": 1186,
+      "name": "CAT",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 5918,
+      "id": 1076,
+      "name": "BSNL Management Trainee",
+      "group": "Management & Admission Entrance Exams"
+    },
+    {
+      "sl": 6463,
+      "id": 531,
+      "name": "ATMA",
+      "group": "Management & Admission Entrance Exams"
+    }
+  ]
+}

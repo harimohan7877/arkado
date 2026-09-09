@@ -1,0 +1,35 @@
+{
+  "bundle_id": "bundle-027",
+  "bundle_num": 27,
+  "category_id": "central-academics",
+  "category_name": "केंद्रीय शिक्षण & PSU",
+  "category_icon": "⚙️",
+  "title": "केंद्रीय शिक्षण & PSU — केंद्रीय मेडिकल एवं नर्सिंग संस्थान",
+  "total_exams": 2,
+  "boards_included": [
+    "Medical & Nursing"
+  ],
+  "official_portal": "https://aiimsexams.ac.in",
+  "exams": [
+    {
+      "id": 6020,
+      "name": "AIIMS NORCET (नर्सिंग ऑफिसर भर्ती परीक्षा)",
+      "eligibility": "B.Sc (Nursing) / GNM + 2 वर्ष अनुभव",
+      "age_limit": "18-30 वर्ष",
+      "applicant_scale": "1.8 लाख",
+      "exam_pattern": "Stage-1 Prelims (100) + Stage-2 Mains (100 प्रश्न केस सिनेरियो)",
+      "viral_subtext": "देश के सभी AIIMS अस्पतालों में 4,000+ पद",
+      "status": "verified"
+    },
+    {
+      "id": 6021,
+      "name": "ESIC नर्सिंग ऑफिसर एवं फार्मासिस्ट",
+      "eligibility": "डिप्लोमा / B.Sc Nursing",
+      "age_limit": "18-30 वर्ष",
+      "applicant_scale": "2+ लाख",
+      "exam_pattern": "UPSC द्वारा आयोजित (125 प्रश्न, 300 अंक)",
+      "viral_subtext": "श्रम एवं रोजगार मंत्रालय अस्पताल 1,930 पद",
+      "status": "verified"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "bundle_number": 121,
+  "bundle_id": "raw_bundle_121",
+  "range": "6001 - 6050",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 6001,
+      "group_sl": 4111,
+      "exam_id": 2883,
+      "name": "IGNOU B.ED",
+      "group": "National Academics - IGNOU Exams"
+    },
+    {
+      "global_sl": 6002,
+      "group_sl": 4295,
+      "exam_id": 2699,
+      "name": "HPU Clerk",
+      "group": "Himachal Pradesh HPU Exams"
+    },
+    {
+      "global_sl": 6003,
+      "group_sl": 4296,
+      "exam_id": 2698,
+      "name": "HPU AE Mechanical",
+      "group": "Himachal Pradesh HPU Exams"
+    },
+    {
+      "global_sl": 6004,
+      "group_sl": 4297,
+      "exam_id": 2697,
+      "name": "HPU AE Electrical",
+      "group": "Himachal Pradesh HPU Exams"
+    },
+    {
+      "global_sl": 6005,
+      "group_sl": 4298,
+      "exam_id": 2696,
+      "name": "HPU AE Civil",
+      "group": "Himachal Pradesh HPU Exams"
+    },
+    {
+      "global_sl": 6006,
+      "group_sl": 4436,
+      "exam_id": 2558,
+      "name": "HPCET MSc Physics",
+      "group": "Himachal Pradesh HPCET Entrance Exams"
+    },
+    {
+      "global_sl": 6007,
+      "group_sl": 4437,
+      "exam_id": 2557,
+      "name": "HPCET MSc Environmental Sciences",
+      "group": "Himachal Pradesh HPCET Entrance Exams"
+    },
+    {
+      "global_sl": 6008,
+      "group_sl": 4438,
+      "exam_id": 2556,
+      "name": "HPCET MCA and MBA",
+      "group": "Himachal Pradesh HPCET Entrance Exams"
+    },
+    {
+      "global_sl": 6009,
+      "group_sl": 4439,
+      "exam_id": 2555,
+      "name": "HPCET BSc",
+      "group": "Himachal Pradesh HPCET Entrance Exams"
+    },
+    {
+      "global_sl": 6010,
+      "group_sl": 4605,
+      "exam_id": 2389,
+      "name": "GSRTC Traffic Controller",
+      "group": "Gujarat Transport & Roadways Exams"
+    },
+    {
+      "global_sl": 6011,
+      "group_sl": 4606,
+      "exam_id": 2388,
+      "name": "GSRTC Helper",
+      "group": "Gujarat Transport & Roadways Exams"
+    },
+    {
+      "global_sl": 6012,
+      "group_sl": 4607,
+      "exam_id": 2387,
+      "name": "GSRTC Driver",
+      "group": "Gujarat Transport & Roadways Exams"
+    },
+    {
+      "global_sl": 6013,
+      "group_sl": 4608,
+      "exam_id": 2386,
+      "name": "GSRTC Conductor",
+      "group": "Gujarat Transport & Roadways Exams"
+    },
+    {
+      "global_sl": 6014,
+      "group_sl": 4637,
+      "exam_id": 2357,
+      "name": "GSECL Vidyut Sahayak Plant Attendant Mechanical",
+      "group": "Gujarat GSECL Exams"
+    },
+    {
+      "global_sl": 6015,
+      "group_sl": 4638,
+      "exam_id": 2356,
+      "name": "GSECL Vidyut Sahayak Plant Attendant Electrical",
+      "group": "Gujarat GSECL Exams"
+    },
+    {
+      "global_sl": 6016,
+      "group_sl": 4639,
+      "exam_id": 2355,
+      "name": "GSECL Vidyut Sahayak Junior Engineer",
+      "group": "Gujarat GSECL Exams"
+    },
+    {
+      "global_sl": 6017,
+      "group_sl": 4640,
+      "exam_id": 2354,
+      "name": "GSECL Instrument Mechanic",
+      "group": "Gujarat GSECL Exams"
+    },
+    {
+      "global_sl": 6018,
+      "group_sl": 4685,
+      "exam_id": 2309,
+      "name": "GMCH Chandigarh Staff Nurse",
+      "group": "Chandigarh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6019,
+      "group_sl": 4686,
+      "exam_id": 2308,
+      "name": "GMCH Chandigarh Senior Resident",
+      "group": "Chandigarh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6020,
+      "group_sl": 5104,
+      "exam_id": 1890,
+      "name": "DMER Chandigarh Staff Nurse",
+      "group": "Chandigarh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6021,
+      "group_sl": 5637,
+      "exam_id": 1357,
+      "name": "Chandigarh TGT Science Non Medical",
+      "group": "Chandigarh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6022,
+      "group_sl": 4688,
+      "exam_id": 2306,
+      "name": "GMCH Assam Staff Nurse",
+      "group": "Assam Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6023,
+      "group_sl": 5105,
+      "exam_id": 1889,
+      "name": "DME Assam Staff Nurse",
+      "group": "Assam Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6024,
+      "group_sl": 5121,
+      "exam_id": 1873,
+      "name": "DHS Assam Staff Nurse Critical Care",
+      "group": "Assam Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6025,
+      "group_sl": 5122,
+      "exam_id": 1872,
+      "name": "DHS Assam Staff Nurse",
+      "group": "Assam Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6026,
+      "group_sl": 4934,
+      "exam_id": 2060,
+      "name": "DU LLB",
+      "group": "Delhi DU Exams"
+    },
+    {
+      "global_sl": 6027,
+      "group_sl": 4935,
+      "exam_id": 2059,
+      "name": "DU Junior Assistant",
+      "group": "Delhi DU Exams"
+    },
+    {
+      "global_sl": 6028,
+      "group_sl": 4936,
+      "exam_id": 2058,
+      "name": "DU JAT",
+      "group": "Delhi DU Exams"
+    },
+    {
+      "global_sl": 6029,
+      "group_sl": 4937,
+      "exam_id": 2057,
+      "name": "DU B.ED JEE",
+      "group": "Delhi DU Exams"
+    },
+    {
+      "global_sl": 6030,
+      "group_sl": 5259,
+      "exam_id": 1735,
+      "name": "CWC Superintendent",
+      "group": "Engineering & PSU - CWC Exams"
+    },
+    {
+      "global_sl": 6031,
+      "group_sl": 5260,
+      "exam_id": 1734,
+      "name": "CWC Skilled Work Assistant & OBC Recruitment",
+      "group": "Engineering & PSU - CWC Exams"
+    },
+    {
+      "global_sl": 6032,
+      "group_sl": 5262,
+      "exam_id": 1732,
+      "name": "CWC JTA",
+      "group": "Engineering & PSU - CWC Exams"
+    },
+    {
+      "global_sl": 6033,
+      "group_sl": 5263,
+      "exam_id": 1731,
+      "name": "CWC AE",
+      "group": "Engineering & PSU - CWC Exams"
+    },
+    {
+      "global_sl": 6034,
+      "group_sl": 5462,
+      "exam_id": 1532,
+      "name": "CSPHCL Line Attendant",
+      "group": "Chhattisgarh CSPHCL Exams"
+    },
+    {
+      "global_sl": 6035,
+      "group_sl": 5463,
+      "exam_id": 1531,
+      "name": "CSPHCL JE",
+      "group": "Chhattisgarh CSPHCL Exams"
+    },
+    {
+      "global_sl": 6036,
+      "group_sl": 5464,
+      "exam_id": 1530,
+      "name": "CSPHCL DEO",
+      "group": "Chhattisgarh CSPHCL Exams"
+    },
+    {
+      "global_sl": 6037,
+      "group_sl": 5465,
+      "exam_id": 1529,
+      "name": "CSPHCL AE",
+      "group": "Chhattisgarh CSPHCL Exams"
+    },
+    {
+      "global_sl": 6038,
+      "group_sl": 5621,
+      "exam_id": 1373,
+      "name": "Chhattisgarh Police SI",
+      "group": "Chhattisgarh Police & Security Exams"
+    },
+    {
+      "global_sl": 6039,
+      "group_sl": 5742,
+      "exam_id": 1252,
+      "name": "CG Police Female Police Volunteer",
+      "group": "Chhattisgarh Police & Security Exams"
+    },
+    {
+      "global_sl": 6040,
+      "group_sl": 5743,
+      "exam_id": 1251,
+      "name": "CG Police Constable",
+      "group": "Chhattisgarh Police & Security Exams"
+    },
+    {
+      "global_sl": 6041,
+      "group_sl": 5747,
+      "exam_id": 1247,
+      "name": "CG Forest Guard",
+      "group": "Chhattisgarh Police & Security Exams"
+    },
+    {
+      "global_sl": 6042,
+      "group_sl": 5622,
+      "exam_id": 1372,
+      "name": "Chhattisgarh High Court Stenographer",
+      "group": "Chhattisgarh High Court & Court Exams"
+    },
+    {
+      "global_sl": 6043,
+      "group_sl": 5623,
+      "exam_id": 1371,
+      "name": "Chhattisgarh High Court DEO",
+      "group": "Chhattisgarh High Court & Court Exams"
+    },
+    {
+      "global_sl": 6044,
+      "group_sl": 5624,
+      "exam_id": 1370,
+      "name": "Chhattisgarh High Court Assistant Grade III",
+      "group": "Chhattisgarh High Court & Court Exams"
+    },
+    {
+      "global_sl": 6045,
+      "group_sl": 5668,
+      "exam_id": 1326,
+      "name": "CGPSC Civil Judge",
+      "group": "Chhattisgarh High Court & Court Exams"
+    },
+    {
+      "global_sl": 6046,
+      "group_sl": 5917,
+      "exam_id": 1077,
+      "name": "BSNL Senior Executive Trainee",
+      "group": "Engineering & PSU - Telecom Sector Exams"
+    },
+    {
+      "global_sl": 6047,
+      "group_sl": 5919,
+      "exam_id": 1075,
+      "name": "BSNL JTO",
+      "group": "Engineering & PSU - Telecom Sector Exams"
+    },
+    {
+      "global_sl": 6048,
+      "group_sl": 5920,
+      "exam_id": 1074,
+      "name": "BSNL JE",
+      "group": "Engineering & PSU - Telecom Sector Exams"
+    },
+    {
+      "global_sl": 6049,
+      "group_sl": 5921,
+      "exam_id": 1073,
+      "name": "BSNL JAO",
+      "group": "Engineering & PSU - Telecom Sector Exams"
+    },
+    {
+      "global_sl": 6050,
+      "group_sl": 6047,
+      "exam_id": 947,
+      "name": "BOB SO Manager Trade Finance Operations",
+      "group": "Banking & Finance - BOB Exams"
+    }
+  ]
+}

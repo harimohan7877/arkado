@@ -1,0 +1,358 @@
+{
+  "bundle_number": 19,
+  "bundle_id": "raw_bundle_019",
+  "range": "901 - 950",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 901,
+      "group_sl": 3123,
+      "exam_id": 3871,
+      "name": "MH SET Physical Science",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 902,
+      "group_sl": 3125,
+      "exam_id": 3869,
+      "name": "MH SET Philosophy",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 903,
+      "group_sl": 3126,
+      "exam_id": 3868,
+      "name": "MH SET Paper 1",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 904,
+      "group_sl": 3127,
+      "exam_id": 3867,
+      "name": "MH SET Mathematical Science",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 905,
+      "group_sl": 3128,
+      "exam_id": 3866,
+      "name": "MH SET Management",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 906,
+      "group_sl": 3129,
+      "exam_id": 3865,
+      "name": "MH SET Life Science",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 907,
+      "group_sl": 3130,
+      "exam_id": 3864,
+      "name": "MH SET Library & Information Science",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 908,
+      "group_sl": 3131,
+      "exam_id": 3863,
+      "name": "MH SET Law",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 909,
+      "group_sl": 3132,
+      "exam_id": 3862,
+      "name": "MH SET Journalism & Mass Communication",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 910,
+      "group_sl": 3133,
+      "exam_id": 3861,
+      "name": "MH SET Home Science",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 911,
+      "group_sl": 3134,
+      "exam_id": 3860,
+      "name": "MH SET History",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 912,
+      "group_sl": 3135,
+      "exam_id": 3859,
+      "name": "MH SET Geography",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 913,
+      "group_sl": 3137,
+      "exam_id": 3857,
+      "name": "MH SET Economics",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 914,
+      "group_sl": 3138,
+      "exam_id": 3856,
+      "name": "MH SET Defence & Strategic Studies",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 915,
+      "group_sl": 3139,
+      "exam_id": 3855,
+      "name": "MH SET Commerce",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 916,
+      "group_sl": 3140,
+      "exam_id": 3854,
+      "name": "MH SET Chemical Science",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 917,
+      "group_sl": 3160,
+      "exam_id": 3834,
+      "name": "MEDA Project Officer",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 918,
+      "group_sl": 3222,
+      "exam_id": 3772,
+      "name": "Maharashtra ZP Supervisor",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 919,
+      "group_sl": 3224,
+      "exam_id": 3770,
+      "name": "Maharashtra ZP Laboratory Technician",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 920,
+      "group_sl": 3225,
+      "exam_id": 3769,
+      "name": "Maharashtra ZP Junior Assistant Clerk",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 921,
+      "group_sl": 3226,
+      "exam_id": 3768,
+      "name": "Maharashtra ZP Junior Assistant Accounts",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 922,
+      "group_sl": 3227,
+      "exam_id": 3767,
+      "name": "Maharashtra ZP Health Supervisor",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 923,
+      "group_sl": 3228,
+      "exam_id": 3766,
+      "name": "Maharashtra Zilla Parishad",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 924,
+      "group_sl": 3229,
+      "exam_id": 3765,
+      "name": "Maharashtra WRD JE",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 925,
+      "group_sl": 3230,
+      "exam_id": 3764,
+      "name": "Maharashtra Talathi",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 926,
+      "group_sl": 3232,
+      "exam_id": 3762,
+      "name": "Maharashtra PWD JE",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 927,
+      "group_sl": 3237,
+      "exam_id": 3757,
+      "name": "Maharashtra Krushi Sevak",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 928,
+      "group_sl": 3238,
+      "exam_id": 3756,
+      "name": "Maharashtra Jeevan Pradhikaran JE Mechanical",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 929,
+      "group_sl": 3239,
+      "exam_id": 3755,
+      "name": "Maharashtra Jeevan Pradhikaran JE Civil",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 930,
+      "group_sl": 3240,
+      "exam_id": 3754,
+      "name": "Maharashtra Jeevan Pradhikaran Civil Engineering Assistant",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 931,
+      "group_sl": 3241,
+      "exam_id": 3753,
+      "name": "Maharashtra Jeevan Pradhikaran",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 932,
+      "group_sl": 3243,
+      "exam_id": 3751,
+      "name": "Maharashtra General Knowledge",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 933,
+      "group_sl": 3245,
+      "exam_id": 3749,
+      "name": "Maharashtra Finance Department Group 1 & 2",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 934,
+      "group_sl": 3246,
+      "exam_id": 3748,
+      "name": "Maharashtra DMA Electrical Engineer",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 935,
+      "group_sl": 3247,
+      "exam_id": 3747,
+      "name": "Maharashtra DMA Civil Engineer",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 936,
+      "group_sl": 3248,
+      "exam_id": 3746,
+      "name": "Maharashtra Current Affairs",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 937,
+      "group_sl": 3249,
+      "exam_id": 3745,
+      "name": "Maharashtra Arogya Sevak",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 938,
+      "group_sl": 3260,
+      "exam_id": 3734,
+      "name": "MAHA TAIT",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 939,
+      "group_sl": 3592,
+      "exam_id": 3402,
+      "name": "Kamgar Ayuktalay Group C",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 940,
+      "group_sl": 3915,
+      "exam_id": 3079,
+      "name": "ISP Nashik Supervisor",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 941,
+      "group_sl": 3916,
+      "exam_id": 3078,
+      "name": "ISP Nashik JOA",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 942,
+      "group_sl": 4292,
+      "exam_id": 2702,
+      "name": "HQ Southern Command Pune Tradesman Mate",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 943,
+      "group_sl": 4930,
+      "exam_id": 2064,
+      "name": "DVET Maharashtra Craft Instructor",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 944,
+      "group_sl": 5092,
+      "exam_id": 1902,
+      "name": "DMER Mumbai Xray Technician",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 945,
+      "group_sl": 5093,
+      "exam_id": 1901,
+      "name": "DMER Mumbai Xray Assistant",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 946,
+      "group_sl": 5095,
+      "exam_id": 1899,
+      "name": "DMER Mumbai Social Service Superintendent",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 947,
+      "group_sl": 5097,
+      "exam_id": 1897,
+      "name": "DMER Mumbai Laboratory Technician",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 948,
+      "group_sl": 5098,
+      "exam_id": 1896,
+      "name": "DMER Mumbai Laboratory Assistant",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 949,
+      "group_sl": 5099,
+      "exam_id": 1895,
+      "name": "DMER Mumbai ECG Technician",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 950,
+      "group_sl": 5100,
+      "exam_id": 1894,
+      "name": "DMER Mumbai Documentalist",
+      "group": "Maharashtra General Government Exams"
+    }
+  ]
+}

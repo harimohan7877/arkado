@@ -1,0 +1,35 @@
+{
+  "bundle_id": "bundle-004",
+  "bundle_num": 4,
+  "category_id": "rajasthan",
+  "category_name": "राजस्थान",
+  "category_icon": "🚩",
+  "title": "राजस्थान — माध्यमिक शिक्षा बोर्ड (REET)",
+  "total_exams": 2,
+  "boards_included": [
+    "REET"
+  ],
+  "official_portal": "https://rajeduboard.rajasthan.gov.in",
+  "exams": [
+    {
+      "id": 5208,
+      "name": "REET पात्रता परीक्षा - लेवल-1 (कक्षा 1-5)",
+      "eligibility": "12वीं (50%) + D.El.Ed (BSTC)",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "4+ लाख",
+      "exam_pattern": "150 प्रश्न • 150 अंक (बाल विकास, भाषा 1, भाषा 2, गणित, पर्यावरण)",
+      "viral_subtext": "प्राथमिक शिक्षक पात्रता",
+      "status": "verified"
+    },
+    {
+      "id": 5209,
+      "name": "REET पात्रता परीक्षा - लेवल-2 (कक्षा 6-8)",
+      "eligibility": "स्नातक + B.Ed / D.El.Ed",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "8+ लाख",
+      "exam_pattern": "150 प्रश्न • 150 अंक (बाल विकास, भाषाएं, संबंधित विषय)",
+      "viral_subtext": "उच्च प्राथमिक शिक्षक पात्रता",
+      "status": "verified"
+    }
+  ]
+}

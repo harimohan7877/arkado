@@ -1,0 +1,74 @@
+{
+  "bundle_id": "bundle-095",
+  "bundle_num": 95,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Telangana General Govt (Part 2/2)",
+  "total_exams": 10,
+  "boards_included": [
+    "Telangana General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 984,
+      "id": 6010,
+      "name": "TNHB Assistant Engineer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 1106,
+      "id": 5888,
+      "name": "TGPSC Assistant Scientist",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 1116,
+      "id": 5878,
+      "name": "Telangana Post Office GDS",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 1120,
+      "id": 5874,
+      "name": "Telangana Junior Panchayat Secretary",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 1130,
+      "id": 5864,
+      "name": "Telangana General Knowledge",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 1131,
+      "id": 5863,
+      "name": "Telangana Fisheries Officer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 1406,
+      "id": 5588,
+      "name": "SCCL Non Executive",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 1407,
+      "id": 5587,
+      "name": "SCCL Junior Assistant",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 3111,
+      "id": 3883,
+      "name": "MHSRB Telangana Lab Technician",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 4103,
+      "id": 2891,
+      "name": "IIIT Hyderabad UGEE",
+      "group": "Telangana General Government Exams"
+    }
+  ]
+}

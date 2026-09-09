@@ -1,0 +1,358 @@
+{
+  "bundle_number": 108,
+  "bundle_id": "raw_bundle_108",
+  "range": "5351 - 5400",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5351,
+      "group_sl": 6303,
+      "exam_id": 691,
+      "name": "BEML JE Mechanical",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "global_sl": 5352,
+      "group_sl": 6304,
+      "exam_id": 690,
+      "name": "BEML JE Electrical",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "global_sl": 5353,
+      "group_sl": 6305,
+      "exam_id": 689,
+      "name": "BEML Diploma Trainee Electrical",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "global_sl": 5354,
+      "group_sl": 6306,
+      "exam_id": 688,
+      "name": "BEML Diploma Trainee",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "global_sl": 5355,
+      "group_sl": 1158,
+      "exam_id": 5836,
+      "name": "Supreme Court of India Law Clerk",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "global_sl": 5356,
+      "group_sl": 1159,
+      "exam_id": 5835,
+      "name": "Supreme Court of India Junior Court Assistant",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "global_sl": 5357,
+      "group_sl": 1160,
+      "exam_id": 5834,
+      "name": "Supreme Court of India Court Assistant",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "global_sl": 5358,
+      "group_sl": 1161,
+      "exam_id": 5833,
+      "name": "Supreme Court of India Assistant Librarian",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "global_sl": 5359,
+      "group_sl": 4726,
+      "exam_id": 2268,
+      "name": "Gauhati High Court MTS",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "global_sl": 5360,
+      "group_sl": 4727,
+      "exam_id": 2267,
+      "name": "Gauhati High Court LDA",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "global_sl": 5361,
+      "group_sl": 4728,
+      "exam_id": 2266,
+      "name": "Gauhati High Court Law Clerk",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "global_sl": 5362,
+      "group_sl": 4729,
+      "exam_id": 2265,
+      "name": "Gauhati High Court JAA",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "global_sl": 5363,
+      "group_sl": 4730,
+      "exam_id": 2264,
+      "name": "Gauhati High Court Grade 3",
+      "group": "Judiciary & Law - High Court & Supreme Court Exams"
+    },
+    {
+      "global_sl": 5364,
+      "group_sl": 1323,
+      "exam_id": 5671,
+      "name": "SHS Bihar Pharmacist",
+      "group": "Bihar National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5365,
+      "group_sl": 1324,
+      "exam_id": 5670,
+      "name": "SHS Bihar Ophthalmic Assistant",
+      "group": "Bihar National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5366,
+      "group_sl": 1325,
+      "exam_id": 5669,
+      "name": "SHS Bihar CHO",
+      "group": "Bihar National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5367,
+      "group_sl": 1326,
+      "exam_id": 5668,
+      "name": "SHS Bihar Ayush Doctor Unani",
+      "group": "Bihar National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5368,
+      "group_sl": 1327,
+      "exam_id": 5667,
+      "name": "SHS Bihar Ayush Doctor Homeopathic",
+      "group": "Bihar National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5369,
+      "group_sl": 1328,
+      "exam_id": 5666,
+      "name": "SHS Bihar Ayush Doctor Ayurvedic",
+      "group": "Bihar National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5370,
+      "group_sl": 1329,
+      "exam_id": 5665,
+      "name": "SHS Bihar ANM",
+      "group": "Bihar National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5371,
+      "group_sl": 2632,
+      "exam_id": 4362,
+      "name": "NHM Bihar Nurse & Ayurveda",
+      "group": "Bihar National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5372,
+      "group_sl": 2633,
+      "exam_id": 4361,
+      "name": "NHM Bihar CHO",
+      "group": "Bihar National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5373,
+      "group_sl": 1802,
+      "exam_id": 5192,
+      "name": "RCFL Technician Mechanical",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "global_sl": 5374,
+      "group_sl": 1803,
+      "exam_id": 5191,
+      "name": "RCFL Technician Electrical",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "global_sl": 5375,
+      "group_sl": 1804,
+      "exam_id": 5190,
+      "name": "RCFL Operator Trainee",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "global_sl": 5376,
+      "group_sl": 1805,
+      "exam_id": 5189,
+      "name": "RCFL Operator Grade 1",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "global_sl": 5377,
+      "group_sl": 1806,
+      "exam_id": 5188,
+      "name": "RCFL MT Material",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "global_sl": 5378,
+      "group_sl": 1807,
+      "exam_id": 5187,
+      "name": "RCFL MT Electrical",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "global_sl": 5379,
+      "group_sl": 1808,
+      "exam_id": 5186,
+      "name": "RCFL MT Chemical",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "global_sl": 5380,
+      "group_sl": 1809,
+      "exam_id": 5185,
+      "name": "RCFL MT",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "global_sl": 5381,
+      "group_sl": 1810,
+      "exam_id": 5184,
+      "name": "RCFL Engineer & Officer",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "global_sl": 5382,
+      "group_sl": 2449,
+      "exam_id": 4545,
+      "name": "NTPC MO",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "global_sl": 5383,
+      "group_sl": 2450,
+      "exam_id": 4544,
+      "name": "NTPC Executive Trainee",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "global_sl": 5384,
+      "group_sl": 2451,
+      "exam_id": 4543,
+      "name": "NTPC Executive",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "global_sl": 5385,
+      "group_sl": 2452,
+      "exam_id": 4542,
+      "name": "NTPC Engineer",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "global_sl": 5386,
+      "group_sl": 2453,
+      "exam_id": 4541,
+      "name": "NTPC Diploma Engineer",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "global_sl": 5387,
+      "group_sl": 2454,
+      "exam_id": 4540,
+      "name": "NTPC Deputy Manager",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "global_sl": 5388,
+      "group_sl": 2455,
+      "exam_id": 4539,
+      "name": "NTPC Assistant Executive",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "global_sl": 5389,
+      "group_sl": 2456,
+      "exam_id": 4538,
+      "name": "NTPC Assistant Chemist Trainee",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "global_sl": 5390,
+      "group_sl": 2457,
+      "exam_id": 4537,
+      "name": "NTPC AE",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "global_sl": 5391,
+      "group_sl": 2488,
+      "exam_id": 4506,
+      "name": "NPCIL Trade Apprentice",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "global_sl": 5392,
+      "group_sl": 2489,
+      "exam_id": 4505,
+      "name": "NPCIL Stipendiary Trainee Plant Operator",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "global_sl": 5393,
+      "group_sl": 2490,
+      "exam_id": 4504,
+      "name": "NPCIL Stipendiary Trainee Instrument Mechanic",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "global_sl": 5394,
+      "group_sl": 2491,
+      "exam_id": 4503,
+      "name": "NPCIL Stipendiary Trainee Fitter",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "global_sl": 5395,
+      "group_sl": 2492,
+      "exam_id": 4502,
+      "name": "NPCIL Stipendiary Trainee",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "global_sl": 5396,
+      "group_sl": 2493,
+      "exam_id": 4501,
+      "name": "NPCIL Scientific Assistant",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "global_sl": 5397,
+      "group_sl": 2494,
+      "exam_id": 4500,
+      "name": "NPCIL Executive Trainee",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "global_sl": 5398,
+      "group_sl": 2495,
+      "exam_id": 4499,
+      "name": "NPCIL Deputy Manager Human Resource",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "global_sl": 5399,
+      "group_sl": 2498,
+      "exam_id": 4496,
+      "name": "NPCIL Assistant Grade 1",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "global_sl": 5400,
+      "group_sl": 4942,
+      "exam_id": 2052,
+      "name": "DSSSB Warder",
+      "group": "Delhi Police & Security Exams"
+    }
+  ]
+}

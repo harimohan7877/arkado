@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-043",
+  "bundle_num": 43,
+  "category_id": "banking",
+  "category_name": "बैंकिंग एवं वित्त",
+  "category_icon": "🏦",
+  "title": "बैंकिंग एवं वित्त — Banking & Finance - Other Nationalized & Commercial Banks (Part 1/2)",
+  "total_exams": 60,
+  "boards_included": [
+    "Banking & Finance - Other Nationalized & Commercial Banks"
+  ],
+  "exams": [
+    {
+      "sl": 174,
+      "id": 6820,
+      "name": "Vijaya Bank Probationary Assistant Manager",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 175,
+      "id": 6819,
+      "name": "Vijaya Bank Peon",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 176,
+      "id": 6818,
+      "name": "Vijaya Bank Assistant Manager",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 177,
+      "id": 6817,
+      "name": "Vidya Sahakari Bank Clerk",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 182,
+      "id": 6812,
+      "name": "VCBL PO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 183,
+      "id": 6811,
+      "name": "VAMNICOM Trainee Clerk",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 564,
+      "id": 6430,
+      "name": "Union Bank Wealth Manager SO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 565,
+      "id": 6429,
+      "name": "Union Bank LBO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 845,
+      "id": 6149,
+      "name": "TSC Bank MTS",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 846,
+      "id": 6148,
+      "name": "TSC Bank Clerk",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 847,
+      "id": 6147,
+      "name": "TSC Bank Assistant Manager",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 1153,
+      "id": 5841,
+      "name": "Syndicate Bank SO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 1154,
+      "id": 5840,
+      "name": "Syndicate Bank PO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 1166,
+      "id": 5828,
+      "name": "Stree Nidhi Assistant Manager",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 1276,
+      "id": 5718,
+      "name": "South Indian Bank PO, Clerk",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 1277,
+      "id": 5717,
+      "name": "South Indian Bank Junior Officer",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 1312,
+      "id": 5682,
+      "name": "SIMCO Social Marketing Manager and Credit Executive",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 1313,
+      "id": 5681,
+      "name": "SIMCO Clerk and Office Assistant",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 1385,
+      "id": 5609,
+      "name": "SEBI Grade A",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 1797,
+      "id": 5197,
+      "name": "Reasoning for Bank Exams",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2181,
+      "id": 4813,
+      "name": "PFRDA Grade A Rajbhasha",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2182,
+      "id": 4812,
+      "name": "PFRDA Grade A IT",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2441,
+      "id": 4553,
+      "name": "Numerical Ability for Bank Exams",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2470,
+      "id": 4524,
+      "name": "NSIC Deputy Manager",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2471,
+      "id": 4523,
+      "name": "NSIC AO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2638,
+      "id": 4356,
+      "name": "NHB Senior Horticulture Officer",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2639,
+      "id": 4355,
+      "name": "NHB Assistant Manager",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2676,
+      "id": 4318,
+      "name": "NESFB Credit Officer",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2714,
+      "id": 4280,
+      "name": "NEDFI Junior Executive Officer",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2737,
+      "id": 4257,
+      "name": "NCDC Junior Assistant",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2774,
+      "id": 4220,
+      "name": "NaBFID Officer Analyst",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2775,
+      "id": 4219,
+      "name": "NABCONS Project Consultant",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2802,
+      "id": 4192,
+      "name": "MSC Bank Trainee Peon",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2803,
+      "id": 4191,
+      "name": "MSC Bank Trainee Junior Officer",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2804,
+      "id": 4190,
+      "name": "MSC Bank Trainee Associates",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 2805,
+      "id": 4189,
+      "name": "MSC Bank Assistant Manager",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3168,
+      "id": 3826,
+      "name": "MDCC Bank Assistant",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3313,
+      "id": 3681,
+      "name": "Legal and Regulatory Aspects of Banking",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3321,
+      "id": 3673,
+      "name": "Lakshmi Vilas Bank PO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3482,
+      "id": 3512,
+      "name": "Kotak Mahindra Assistant Manager",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3490,
+      "id": 3504,
+      "name": "KNSB Assistant Grade 2",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3570,
+      "id": 3424,
+      "name": "KCCB Bank Clerk & Officer Grade IV",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3860,
+      "id": 3134,
+      "name": "Janakalyan Sahakari Bank Clerk",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3871,
+      "id": 3123,
+      "name": "J&K Bank Clerk",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3983,
+      "id": 3011,
+      "name": "Indian Overseas Bank SO Manager Treasury",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3984,
+      "id": 3010,
+      "name": "Indian Overseas Bank SO Manager Civil and Architect",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3985,
+      "id": 3009,
+      "name": "Indian Overseas Bank SO Manager and Senior Manager Risk",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3986,
+      "id": 3008,
+      "name": "Indian Overseas Bank SO Manager and Senior Manager IT",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3988,
+      "id": 3006,
+      "name": "Indian Overseas Bank SO Manager and Senior Manager Information Security",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3989,
+      "id": 3005,
+      "name": "Indian Overseas Bank SO Manager and Senior Manager Corporate Credit",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3990,
+      "id": 3004,
+      "name": "Indian Overseas Bank LBO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 3991,
+      "id": 3003,
+      "name": "Indian Overseas Bank Apprentice",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 4025,
+      "id": 2969,
+      "name": "Indian Bank SO Manager Corporate Credit Analyst",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 4026,
+      "id": 2968,
+      "name": "Indian Bank SO Manager",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 4027,
+      "id": 2967,
+      "name": "Indian Bank SO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 4028,
+      "id": 2966,
+      "name": "Indian Bank Security Guard",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 4029,
+      "id": 2965,
+      "name": "Indian Bank PO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 4030,
+      "id": 2964,
+      "name": "Indian Bank Local Bank Officer",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 4031,
+      "id": 2963,
+      "name": "Indian Bank Apprentice",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 4105,
+      "id": 2889,
+      "name": "IIFCL Assistant Manager",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    }
+  ]
+}

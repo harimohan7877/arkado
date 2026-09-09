@@ -1,0 +1,465 @@
+{
+  "bundle_id": "bundle-084",
+  "bundle_num": 84,
+  "category_id": "medical-health",
+  "category_name": "मेडिकल & नर्सिंग",
+  "category_icon": "🩺",
+  "title": "मेडिकल & नर्सिंग — Odisha Medical & Nursing • Jharkhand Medical & Nursing • Maharashtra Medical & Nursing",
+  "total_exams": 74,
+  "boards_included": [
+    "Odisha Medical & Nursing",
+    "Jharkhand Medical & Nursing",
+    "Maharashtra Medical & Nursing",
+    "Gujarat Medical & Nursing",
+    "Tamil Nadu Medical & Nursing",
+    "Medical & Nursing - Pharmacy",
+    "Medical & Nursing - AYUSH",
+    "Telangana Medical & Nursing"
+  ],
+  "exams": [
+    {
+      "sl": 164,
+      "id": 6830,
+      "name": "VMC Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 165,
+      "id": 6829,
+      "name": "VMC Public Health Worker & Health Worker",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 1286,
+      "id": 5708,
+      "name": "SMC Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 1287,
+      "id": 5707,
+      "name": "SMC Medical Officer",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 1290,
+      "id": 5704,
+      "name": "SMC Junior Pharmacist",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 4544,
+      "id": 2450,
+      "name": "Gujarat Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 4654,
+      "id": 2340,
+      "name": "GPSC Medical Officer",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 4655,
+      "id": 2339,
+      "name": "GPSC Insurance Medical Officer",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 4689,
+      "id": 2305,
+      "name": "GMC Udhampur Junior Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 4690,
+      "id": 2304,
+      "name": "GMC Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 4691,
+      "id": 2303,
+      "name": "GMC Shivpuri Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 4692,
+      "id": 2302,
+      "name": "GMC Handwara Junior Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 4693,
+      "id": 2301,
+      "name": "GMC Female Health Worker & MPHW",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 4694,
+      "id": 2300,
+      "name": "GMC Chhindwara Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 5142,
+      "id": 1852,
+      "name": "DHFW Gujarat Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "sl": 2517,
+      "id": 4477,
+      "name": "NMMC Staff Nurse",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "sl": 2518,
+      "id": 4476,
+      "name": "NMMC Multipurpose Health Worker",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "sl": 2519,
+      "id": 4475,
+      "name": "NMMC Medical Officer",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "sl": 2523,
+      "id": 4471,
+      "name": "NMMC ANM",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "sl": 2820,
+      "id": 4174,
+      "name": "MPSC Medical Officer",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "sl": 3174,
+      "id": 3820,
+      "name": "MCGM Staff Nurse",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "sl": 3175,
+      "id": 3819,
+      "name": "MCGM Medical Officer",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "sl": 3223,
+      "id": 3771,
+      "name": "Maharashtra ZP Pharmacist",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "sl": 3242,
+      "id": 3752,
+      "name": "Maharashtra Health Department MO",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "sl": 3562,
+      "id": 3432,
+      "name": "KDMC Staff Nurse",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "sl": 5094,
+      "id": 1900,
+      "name": "DMER Mumbai Staff Nurse",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "sl": 5096,
+      "id": 1898,
+      "name": "DMER Mumbai Pharmacist",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "sl": 6059,
+      "id": 935,
+      "name": "BMC Sagar Staff Nurse",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "sl": 944,
+      "id": 6050,
+      "name": "TNPSC Veterinary Assistant Surgeon",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "sl": 989,
+      "id": 6005,
+      "name": "TNAHD Veterinary Analyst",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "sl": 1054,
+      "id": 5940,
+      "name": "TN MRB Pharmacist",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "sl": 1055,
+      "id": 5939,
+      "name": "TN MRB Nurse",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "sl": 1059,
+      "id": 5935,
+      "name": "TN MRB Assistant Surgeon Radiology",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "sl": 1060,
+      "id": 5934,
+      "name": "TN MRB Assistant Surgeon Obstetrics and Gynaecology",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "sl": 1061,
+      "id": 5933,
+      "name": "TN MRB Assistant Surgeon Geriatrics",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "sl": 1062,
+      "id": 5932,
+      "name": "TN MRB Assistant Surgeon Forensic Medicine",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "sl": 1063,
+      "id": 5931,
+      "name": "TN MRB Assistant Surgeon Cardiothoracic Surgery",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "sl": 1064,
+      "id": 5930,
+      "name": "TN MRB Assistant Surgeon",
+      "group": "Tamil Nadu Medical & Nursing Exams"
+    },
+    {
+      "sl": 5777,
+      "id": 1217,
+      "name": "CCRH Research Officer",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "sl": 5778,
+      "id": 1216,
+      "name": "CCRH Medical Laboratory Technologist",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "sl": 5779,
+      "id": 1215,
+      "name": "CCRH LDC",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "sl": 5780,
+      "id": 1214,
+      "name": "CCRAS UDC",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "sl": 5781,
+      "id": 1213,
+      "name": "CCRAS Stenographer Grade II",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "sl": 5783,
+      "id": 1211,
+      "name": "CCRAS Research Officer",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "sl": 5785,
+      "id": 1209,
+      "name": "CCRAS MTS",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "sl": 5786,
+      "id": 1208,
+      "name": "CCRAS Medical Laboratory Technologist",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "sl": 5787,
+      "id": 1207,
+      "name": "CCRAS LDC",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "sl": 6434,
+      "id": 560,
+      "name": "Ayurveda Exam",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "sl": 154,
+      "id": 6840,
+      "name": "VSSC Pharmacist",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "sl": 2135,
+      "id": 4859,
+      "name": "Pharmacy Officer",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "sl": 2136,
+      "id": 4858,
+      "name": "Pharmacy Exams",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "sl": 2137,
+      "id": 4857,
+      "name": "Pharmacist Exams",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "sl": 2553,
+      "id": 4441,
+      "name": "NIPER JEE",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "sl": 4670,
+      "id": 2324,
+      "name": "GPAT",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "sl": 5784,
+      "id": 1210,
+      "name": "CCRAS Pharmacist",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "sl": 6433,
+      "id": 561,
+      "name": "B Pharmacy",
+      "group": "Medical & Nursing - Pharmacy Exams"
+    },
+    {
+      "sl": 3679,
+      "id": 3315,
+      "name": "JRHMS Medical Officer",
+      "group": "Jharkhand Medical & Nursing Exams"
+    },
+    {
+      "sl": 3680,
+      "id": 3314,
+      "name": "JRHMS CHO",
+      "group": "Jharkhand Medical & Nursing Exams"
+    },
+    {
+      "sl": 3683,
+      "id": 3311,
+      "name": "JPSC Medical Officer",
+      "group": "Jharkhand Medical & Nursing Exams"
+    },
+    {
+      "sl": 3684,
+      "id": 3310,
+      "name": "JPSC Homeopathic Medical Officer",
+      "group": "Jharkhand Medical & Nursing Exams"
+    },
+    {
+      "sl": 3687,
+      "id": 3307,
+      "name": "JPSC Drug Inspector",
+      "group": "Jharkhand Medical & Nursing Exams"
+    },
+    {
+      "sl": 5117,
+      "id": 1877,
+      "name": "DHS Dhanbad Staff Nurse",
+      "group": "Jharkhand Medical & Nursing Exams"
+    },
+    {
+      "sl": 5118,
+      "id": 1876,
+      "name": "DHS Dhanbad Pharmacist",
+      "group": "Jharkhand Medical & Nursing Exams"
+    },
+    {
+      "sl": 5119,
+      "id": 1875,
+      "name": "DHS Dhanbad ANM",
+      "group": "Jharkhand Medical & Nursing Exams"
+    },
+    {
+      "sl": 797,
+      "id": 6197,
+      "name": "TSPSC Veterinary Assistant Surgeon",
+      "group": "Telangana Medical & Nursing Exams"
+    },
+    {
+      "sl": 798,
+      "id": 6196,
+      "name": "TSPSC Staff Nurse",
+      "group": "Telangana Medical & Nursing Exams"
+    },
+    {
+      "sl": 806,
+      "id": 6188,
+      "name": "TSPSC Pharmacist",
+      "group": "Telangana Medical & Nursing Exams"
+    },
+    {
+      "sl": 876,
+      "id": 6118,
+      "name": "TS EAMCET Medical",
+      "group": "Telangana Medical & Nursing Exams"
+    },
+    {
+      "sl": 3110,
+      "id": 3884,
+      "name": "MHSRB Telangana Pharmacist",
+      "group": "Telangana Medical & Nursing Exams"
+    },
+    {
+      "sl": 2273,
+      "id": 4721,
+      "name": "OPSC Veterinary Assistant Surgeon",
+      "group": "Odisha Medical & Nursing Exams"
+    },
+    {
+      "sl": 2288,
+      "id": 4706,
+      "name": "OPSC Medical Officer",
+      "group": "Odisha Medical & Nursing Exams"
+    },
+    {
+      "sl": 2291,
+      "id": 4703,
+      "name": "OPSC Homeopathic Medical Officer",
+      "group": "Odisha Medical & Nursing Exams"
+    },
+    {
+      "sl": 2294,
+      "id": 4700,
+      "name": "OPSC Dental Surgeon",
+      "group": "Odisha Medical & Nursing Exams"
+    },
+    {
+      "sl": 2299,
+      "id": 4695,
+      "name": "OPSC Assistant Professor Pathology",
+      "group": "Odisha Medical & Nursing Exams"
+    }
+  ]
+}

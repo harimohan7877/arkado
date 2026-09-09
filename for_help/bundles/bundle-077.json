@@ -1,0 +1,438 @@
+{
+  "bundle_id": "bundle-077",
+  "bundle_num": 77,
+  "category_id": "engineering-psu",
+  "category_name": "इंजीनियरिंग & PSU",
+  "category_icon": "⚙️",
+  "title": "इंजीनियरिंग & PSU — Engineering & PSU - Steel Sector • Engineering & PSU - BHEL • Engineering & PSU - BEML",
+  "total_exams": 70,
+  "boards_included": [
+    "Engineering & PSU - Steel Sector",
+    "Engineering & PSU - BHEL",
+    "Engineering & PSU - BEML",
+    "Engineering & PSU - Power Grid",
+    "Engineering & PSU - CSL"
+  ],
+  "exams": [
+    {
+      "sl": 6256,
+      "id": 738,
+      "name": "BHEL Trade Apprentice",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6258,
+      "id": 736,
+      "name": "BHEL Supervisor Trainee Electronics",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6259,
+      "id": 735,
+      "name": "BHEL Supervisor Trainee Electrical",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6260,
+      "id": 734,
+      "name": "BHEL Supervisor Trainee Civil",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6261,
+      "id": 733,
+      "name": "BHEL Supervisor Trainee",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6262,
+      "id": 732,
+      "name": "BHEL Haridwar Graduate Apprentice",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6263,
+      "id": 731,
+      "name": "BHEL Haridwar Apprentice",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6264,
+      "id": 730,
+      "name": "BHEL Graduate Apprentice",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6265,
+      "id": 729,
+      "name": "BHEL Engineer, Executive Trainee",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6266,
+      "id": 728,
+      "name": "BHEL Engineer Trainee Electronics",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6267,
+      "id": 727,
+      "name": "BHEL Engineer Trainee Civil",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6268,
+      "id": 726,
+      "name": "BHEL Engineer Trainee",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6269,
+      "id": 725,
+      "name": "BHEL Artisan Welder",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6270,
+      "id": 724,
+      "name": "BHEL Artisan Turner",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6271,
+      "id": 723,
+      "name": "BHEL Artisan Machinist",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6272,
+      "id": 722,
+      "name": "BHEL Artisan Foundryman",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6273,
+      "id": 721,
+      "name": "BHEL Artisan Fitter",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6274,
+      "id": 720,
+      "name": "BHEL Artisan Electronics Mechanic",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 6275,
+      "id": 719,
+      "name": "BHEL Artisan Electrician",
+      "group": "Engineering & PSU - BHEL Exams"
+    },
+    {
+      "sl": 5472,
+      "id": 1522,
+      "name": "CSL Workmen Welder Cum Fitter Welder Gas and Electric",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5473,
+      "id": 1521,
+      "name": "CSL Workmen Welder Cum Fitter Mechanic Diesel",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5474,
+      "id": 1520,
+      "name": "CSL Workmen Welder Cum Fitter",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5475,
+      "id": 1519,
+      "name": "CSL Workmen Sheet Metal Worker",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5476,
+      "id": 1518,
+      "name": "CSL Workmen Plumber",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5477,
+      "id": 1517,
+      "name": "CSL Workmen Instrument Mechanic",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5478,
+      "id": 1516,
+      "name": "CSL Workmen Fitter Electrical",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5479,
+      "id": 1515,
+      "name": "CSL Workmen Electronic Mechanic",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5480,
+      "id": 1514,
+      "name": "CSL Workmen",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5481,
+      "id": 1513,
+      "name": "CSL Trade Apprentice",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5482,
+      "id": 1512,
+      "name": "CSL Ship Draftsman Trainee",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5483,
+      "id": 1511,
+      "name": "CSL Safety Assistant",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5484,
+      "id": 1510,
+      "name": "CSL Rigger Trainee",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5485,
+      "id": 1509,
+      "name": "CSL Project Assistant",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5486,
+      "id": 1508,
+      "name": "CSL Junior Technical Assistant",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5487,
+      "id": 1507,
+      "name": "CSL Fireman",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5488,
+      "id": 1506,
+      "name": "CSL Executive Trainee",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 5489,
+      "id": 1505,
+      "name": "CSL Assistant",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "sl": 2168,
+      "id": 4826,
+      "name": "PGCIL Trainee Supervisor",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "sl": 2169,
+      "id": 4825,
+      "name": "PGCIL Junior Technician Trainee",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "sl": 2170,
+      "id": 4824,
+      "name": "PGCIL Junior Officer Trainee",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "sl": 2171,
+      "id": 4823,
+      "name": "PGCIL Junior Engineer (Electrical)",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "sl": 2172,
+      "id": 4822,
+      "name": "PGCIL Field Supervisor Electrical",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "sl": 2173,
+      "id": 4821,
+      "name": "PGCIL Field Supervisor ECE",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "sl": 2174,
+      "id": 4820,
+      "name": "PGCIL Field Supervisor Civil",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "sl": 2175,
+      "id": 4819,
+      "name": "PGCIL Field Engineer Civil",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "sl": 2176,
+      "id": 4818,
+      "name": "PGCIL Field Engineer",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "sl": 2177,
+      "id": 4817,
+      "name": "PGCIL Diploma Trainee",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "sl": 2178,
+      "id": 4816,
+      "name": "PGCIL Assistant Officer Trainee",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "sl": 2179,
+      "id": 4815,
+      "name": "PGCIL Assistant Engineer Trainee",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "sl": 5533,
+      "id": 1461,
+      "name": "CPRI Assistant Grade 2",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "sl": 168,
+      "id": 6826,
+      "name": "Vizag Steel Plant Apprentice",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "sl": 170,
+      "id": 6824,
+      "name": "VIZAG Steel Junior Trainee",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "sl": 1437,
+      "id": 5557,
+      "name": "SAIL Young Professional",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "sl": 1438,
+      "id": 5556,
+      "name": "SAIL Rourkela Technical Staff",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "sl": 1439,
+      "id": 5555,
+      "name": "SAIL Rourkela ACTT",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "sl": 1441,
+      "id": 5553,
+      "name": "SAIL OCTT",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "sl": 1446,
+      "id": 5548,
+      "name": "SAIL IISCO MO",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "sl": 1447,
+      "id": 5547,
+      "name": "SAIL Fire Engineer",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "sl": 1448,
+      "id": 5546,
+      "name": "SAIL Executive & Non Executive",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "sl": 1449,
+      "id": 5545,
+      "name": "SAIL ACTT",
+      "group": "Engineering & PSU - Steel Sector Exams"
+    },
+    {
+      "sl": 6297,
+      "id": 697,
+      "name": "BEML Operator Welder",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "sl": 6298,
+      "id": 696,
+      "name": "BEML Operator Turner",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "sl": 6299,
+      "id": 695,
+      "name": "BEML Operator Machinist",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "sl": 6300,
+      "id": 694,
+      "name": "BEML Operator Fitter",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "sl": 6301,
+      "id": 693,
+      "name": "BEML Operator Electrician",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "sl": 6302,
+      "id": 692,
+      "name": "BEML MT",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "sl": 6303,
+      "id": 691,
+      "name": "BEML JE Mechanical",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "sl": 6304,
+      "id": 690,
+      "name": "BEML JE Electrical",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "sl": 6305,
+      "id": 689,
+      "name": "BEML Diploma Trainee Electrical",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "sl": 6306,
+      "id": 688,
+      "name": "BEML Diploma Trainee",
+      "group": "Engineering & PSU - BEML Exams"
+    }
+  ]
+}

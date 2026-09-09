@@ -1,0 +1,195 @@
+{
+  "bundle_id": "bundle-001",
+  "bundle_num": 1,
+  "category_id": "rajasthan",
+  "category_name": "राजस्थान",
+  "category_icon": "🚩",
+  "title": "राजस्थान — RSMSSB (राजस्थान कर्मचारी चयन बोर्ड)",
+  "total_exams": 18,
+  "boards_included": [
+    "RSMSSB"
+  ],
+  "official_portal": "https://rsmssb.rajasthan.gov.in",
+  "exams": [
+    {
+      "id": 1001,
+      "name": "राजस्थान CET (12वीं स्तर) 2026",
+      "eligibility": "12वीं उत्तीर्ण",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "18.5+ लाख",
+      "exam_pattern": "150 प्रश्न • 300 अंक • नेगेटिव 1/3 • 5वां विकल्प अनिवार्य",
+      "viral_subtext": "10 इकाइयां नोट्स, 1200 MCQs व B&W प्रिंट पेपर लाइव",
+      "status": "verified"
+    },
+    {
+      "id": 1002,
+      "name": "राजस्थान CET (स्नातक स्तर) 2026",
+      "eligibility": "स्नातक",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "11+ लाख",
+      "exam_pattern": "150 प्रश्न • 300 अंक • 3 घंटे",
+      "viral_subtext": "पटवारी, प्लाटून कमांडर, जिलेदार आदि",
+      "status": "verified"
+    },
+    {
+      "id": 5125,
+      "name": "राजस्थान पटवारी सीधी भर्ती 2026",
+      "eligibility": "स्नातक + RSCIT (CET स्कोर आधारित)",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "8+ लाख",
+      "exam_pattern": "150 प्रश्न • 300 अंक",
+      "viral_subtext": "राजस्व विभाग 3000+ पद",
+      "status": "verified"
+    },
+    {
+      "id": 5426,
+      "name": "पशु परिचर सीधी भर्ती (Animal Attendant)",
+      "eligibility": "10वीं पास",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "17+ लाख",
+      "exam_pattern": "भाग-अ (105 GK/Math/Sci) + भाग-ब (45 पशुपालन)",
+      "viral_subtext": "5,934 पद • बिना CET सीधी भर्ती",
+      "status": "verified"
+    },
+    {
+      "id": 5487,
+      "name": "कनिष्ठ सहायक / लिपिक ग्रेड-II (LDC)",
+      "eligibility": "12वीं + कंप्यूटर (CET आधारित)",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "5+ लाख",
+      "exam_pattern": "Paper-1 (100) + Paper-2 (100) + टाइपिंग",
+      "viral_subtext": "सचिवालय, RPSC व अधीनस्थ विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 5478,
+      "name": "ग्राम विकास अधिकारी (VDO)",
+      "eligibility": "स्नातक + RSCIT",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "7+ लाख",
+      "exam_pattern": "प्रारंभिक + मुख्य परीक्षा (160 प्रश्न, 200 अंक)",
+      "viral_subtext": "पंचायती राज विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 5097,
+      "name": "संगणक सीधी भर्ती (Computor)",
+      "eligibility": "गणित/सांख्यिकी/अर्थशास्त्र में स्नातक",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "1.8 लाख",
+      "exam_pattern": "भाग-A (GK 30) + भाग-B (Statistics/Maths 70)",
+      "viral_subtext": "आर्थिक एवं सांख्यिकी निदेशालय",
+      "status": "verified"
+    },
+    {
+      "id": 5120,
+      "name": "सूचना सहायक (Informatics Assistant)",
+      "eligibility": "कंप्यूटर में डिग्री / डिप्लोमा + टाइपिंग",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "1.5 लाख",
+      "exam_pattern": "लिखित परीक्षा (100 अंक) + टाइपिंग टेस्ट",
+      "viral_subtext": "DOIT&C विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 5473,
+      "name": "शीघ्रलिपिक / स्टेनोग्राफर भर्ती",
+      "eligibility": "12वीं + आशुलिपि ज्ञान",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "1.2 लाख",
+      "exam_pattern": "लिखित परीक्षा + डिक्टेशन टेस्ट (100 शब्द/मिनट)",
+      "viral_subtext": "सचिवालय व अधीनस्थ कार्यालय",
+      "status": "verified"
+    },
+    {
+      "id": 5445,
+      "name": "प्रयोगशाला सहायक (Lab Assistant)",
+      "eligibility": "12वीं (विज्ञान / भूगोल / गृह विज्ञान)",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "4+ लाख",
+      "exam_pattern": "Paper-1 (GK 200) + Paper-2 (Subject 200)",
+      "viral_subtext": "माध्यमिक शिक्षा व कॉलेज शिक्षा",
+      "status": "verified"
+    },
+    {
+      "id": 5488,
+      "name": "महिला पर्यवेक्षक (Supervisor Mahila)",
+      "eligibility": "स्नातक (CET आधारित)",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "2.5 लाख",
+      "exam_pattern": "150 प्रश्न • 300 अंक",
+      "viral_subtext": "महिला एवं बाल विकास विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 5441,
+      "name": "कनिष्ठ लेखाकार एवं TRA भर्ती",
+      "eligibility": "वाणिज्य / स्नातक + RSCIT",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "3+ लाख",
+      "exam_pattern": "Paper-1 (सामान्य ज्ञान) + Paper-2 (वाणिज्य/अकाउंट्स)",
+      "viral_subtext": "कोष व लेखा विभाग 5,388 पद",
+      "status": "verified"
+    },
+    {
+      "id": 5438,
+      "name": "कनिष्ठ अभियंता (JEN - Civil, Mech, Elect, Agri)",
+      "eligibility": "डिप्लोमा / B.Tech (इंजीनियरिंग)",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "1+ लाख",
+      "exam_pattern": "भाग-A (राजस्थान GK 40) + भाग-B (इंजीनियरिंग 80)",
+      "viral_subtext": "PWD, WRD, PHED विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 5482,
+      "name": "वनपाल एवं वनरक्षक भर्ती",
+      "eligibility": "10वीं / 12वीं पास",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "12+ लाख",
+      "exam_pattern": "लिखित परीक्षा (100 प्रश्न) + शारीरिक दक्षता",
+      "viral_subtext": "वन विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 5480,
+      "name": "कृषि पर्यवेक्षक सीधी भर्ती (Agri Supervisor)",
+      "eligibility": "12वीं (कृषि) / B.Sc (Agriculture)",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "1.5 लाख",
+      "exam_pattern": "100 प्रश्न • 300 अंक (सामान्य हिंदी, GK, कृषि)",
+      "viral_subtext": "कृषि विभाग 430 पद",
+      "status": "verified"
+    },
+    {
+      "id": 5442,
+      "name": "कनिष्ठ अनुदेशक भर्ती (Junior Instructor)",
+      "eligibility": "ITI / Diploma / Degree + CITS",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "80,000",
+      "exam_pattern": "सामान्य ज्ञान (40) + संबंधित ट्रेड (80)",
+      "viral_subtext": "कौशल नियोजन एवं उद्यमिता",
+      "status": "verified"
+    },
+    {
+      "id": 5434,
+      "name": "छात्रावास अधीक्षक ग्रेड-II (Hostel Supt)",
+      "eligibility": "12वीं पास (CET आधारित)",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "2+ लाख",
+      "exam_pattern": "100 प्रश्न • 100 अंक",
+      "viral_subtext": "सामाजिक न्याय एवं अधिकारिता",
+      "status": "verified"
+    },
+    {
+      "id": 5431,
+      "name": "फायरमैन एवं सहायक अग्निशमन अधिकारी",
+      "eligibility": "10वीं + फायरमैन ट्रेनिंग डिप्लोमा",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "1.2 लाख",
+      "exam_pattern": "लिखित परीक्षा (120 अंक) + प्रैक्टिकल (150 अंक)",
+      "viral_subtext": "स्वायत्त शासन विभाग",
+      "status": "verified"
+    }
+  ]
+}

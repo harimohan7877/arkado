@@ -1,0 +1,182 @@
+{
+  "bundle_id": "bundle-044",
+  "bundle_num": 44,
+  "category_id": "banking",
+  "category_name": "बैंकिंग एवं वित्त",
+  "category_icon": "🏦",
+  "title": "बैंकिंग एवं वित्त — Banking & Finance - Other Nationalized & Commercial Banks (Part 2/2)",
+  "total_exams": 28,
+  "boards_included": [
+    "Banking & Finance - Other Nationalized & Commercial Banks"
+  ],
+  "exams": [
+    {
+      "sl": 4118,
+      "id": 2876,
+      "name": "IFSCA Grade A",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 4138,
+      "id": 2856,
+      "name": "ICICI Bank PO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 4217,
+      "id": 2777,
+      "name": "HUDCO Trainee Officer",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 4496,
+      "id": 2498,
+      "name": "HFL Assistant, Assistant Manager",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 4791,
+      "id": 2203,
+      "name": "FREE Quiz Banking Awareness in English",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 4859,
+      "id": 2135,
+      "name": "ESAF Bank SO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 4921,
+      "id": 2073,
+      "name": "ECGC PO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 5076,
+      "id": 1918,
+      "name": "DNS Bank Probationary Management Officer",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 5077,
+      "id": 1917,
+      "name": "DNS Bank Assistant Manager",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 5561,
+      "id": 1433,
+      "name": "CMPFO Stenographer, LDC",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 5752,
+      "id": 1242,
+      "name": "CFHL Junior Officer",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 5755,
+      "id": 1239,
+      "name": "Central Bank of India ZBO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 5756,
+      "id": 1238,
+      "name": "Central Bank of India SO Production Support",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 5757,
+      "id": 1237,
+      "name": "Central Bank of India SO IT Officer",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 5758,
+      "id": 1236,
+      "name": "Central Bank of India SO Information Security",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 5759,
+      "id": 1235,
+      "name": "Central Bank of India SO Digital Channel Manager",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 5760,
+      "id": 1234,
+      "name": "Central Bank of India SO",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 5761,
+      "id": 1233,
+      "name": "Central Bank of India Safai Karmchari",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 5762,
+      "id": 1232,
+      "name": "Central Bank Credit Officer",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 5806,
+      "id": 1188,
+      "name": "CBHFL Officer, Senior Officer",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 6388,
+      "id": 606,
+      "name": "Bank PO Quantitative Aptitude",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 6389,
+      "id": 605,
+      "name": "Bank PO English",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 6395,
+      "id": 599,
+      "name": "Bank of India SO Senior Manager IT",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 6396,
+      "id": 598,
+      "name": "Bank of India SO Senior Manager and Manager Risk Management",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 6397,
+      "id": 597,
+      "name": "Bank of India SO Manager IT",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 6399,
+      "id": 595,
+      "name": "Bank of India SO Chief Manager IT",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 6427,
+      "id": 567,
+      "name": "Bank Clerk Reasoning in English",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    },
+    {
+      "sl": 6428,
+      "id": 566,
+      "name": "Bank Clerk English",
+      "group": "Banking & Finance - Other Nationalized & Commercial Banks Exams"
+    }
+  ]
+}

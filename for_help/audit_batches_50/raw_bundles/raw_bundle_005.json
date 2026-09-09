@@ -1,0 +1,358 @@
+{
+  "bundle_number": 5,
+  "bundle_id": "raw_bundle_005",
+  "range": "201 - 250",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 201,
+      "group_sl": 5876,
+      "exam_id": 1118,
+      "name": "BTSC Lab Technician",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 202,
+      "group_sl": 5877,
+      "exam_id": 1117,
+      "name": "BTSC JE Mechanical",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 203,
+      "group_sl": 5878,
+      "exam_id": 1116,
+      "name": "BTSC JE Electrical",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 204,
+      "group_sl": 5879,
+      "exam_id": 1115,
+      "name": "BTSC JE Civil",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 205,
+      "group_sl": 5880,
+      "exam_id": 1114,
+      "name": "BTSC ITI Instructor Welder",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 206,
+      "group_sl": 5881,
+      "exam_id": 1113,
+      "name": "BTSC ITI Instructor Machinist",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 207,
+      "group_sl": 5882,
+      "exam_id": 1112,
+      "name": "BTSC ITI Instructor Fitter",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 208,
+      "group_sl": 5883,
+      "exam_id": 1111,
+      "name": "BTSC ITI Instructor Electronics Mechanic",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 209,
+      "group_sl": 5884,
+      "exam_id": 1110,
+      "name": "BTSC ITI Instructor Electrician",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 210,
+      "group_sl": 5885,
+      "exam_id": 1109,
+      "name": "BTSC ITI Instructor",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 211,
+      "group_sl": 5886,
+      "exam_id": 1108,
+      "name": "BTSC Hostel Manager",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 212,
+      "group_sl": 5888,
+      "exam_id": 1106,
+      "name": "BTSC FSO",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 213,
+      "group_sl": 5889,
+      "exam_id": 1105,
+      "name": "BTSC ECG Technician",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 214,
+      "group_sl": 5890,
+      "exam_id": 1104,
+      "name": "BTSC Dresser",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 215,
+      "group_sl": 5891,
+      "exam_id": 1103,
+      "name": "BTSC Dentist",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 216,
+      "group_sl": 5892,
+      "exam_id": 1102,
+      "name": "BTSC Dental Hygienist",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 217,
+      "group_sl": 5893,
+      "exam_id": 1101,
+      "name": "BTSC Dairy Field Officer",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 218,
+      "group_sl": 5894,
+      "exam_id": 1100,
+      "name": "BTSC Bihar MO",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 219,
+      "group_sl": 5895,
+      "exam_id": 1099,
+      "name": "BTSC Bihar Insect Collector",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 220,
+      "group_sl": 5897,
+      "exam_id": 1097,
+      "name": "BSWC Technical Assistant",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 221,
+      "group_sl": 5898,
+      "exam_id": 1096,
+      "name": "BSWC",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 222,
+      "group_sl": 5899,
+      "exam_id": 1095,
+      "name": "BSSS Executive Assistant",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 223,
+      "group_sl": 5922,
+      "exam_id": 1072,
+      "name": "BSMFC Recovery Agent",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 224,
+      "group_sl": 5949,
+      "exam_id": 1045,
+      "name": "BSEB Assistant",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 225,
+      "group_sl": 5975,
+      "exam_id": 1019,
+      "name": "BRLPS Block Project Manager",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 226,
+      "group_sl": 5976,
+      "exam_id": 1018,
+      "name": "BRLPS Block Coordinator",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 227,
+      "group_sl": 5980,
+      "exam_id": 1014,
+      "name": "BPSSC Steno ASI",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 228,
+      "group_sl": 5983,
+      "exam_id": 1011,
+      "name": "BPSSC Havildar Clerk",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 229,
+      "group_sl": 5986,
+      "exam_id": 1008,
+      "name": "BPSC Vice Principal",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 230,
+      "group_sl": 5988,
+      "exam_id": 1006,
+      "name": "BPSC Sugar Cane Officer",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 231,
+      "group_sl": 5989,
+      "exam_id": 1005,
+      "name": "BPSC Stenographer",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 232,
+      "group_sl": 5992,
+      "exam_id": 1002,
+      "name": "BPSC Polytechnic HOD",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 233,
+      "group_sl": 5993,
+      "exam_id": 1001,
+      "name": "BPSC MVI",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 234,
+      "group_sl": 5999,
+      "exam_id": 995,
+      "name": "BPSC JE",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 235,
+      "group_sl": 6001,
+      "exam_id": 993,
+      "name": "BPSC Head Master",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 236,
+      "group_sl": 6002,
+      "exam_id": 992,
+      "name": "BPSC DSO",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 237,
+      "group_sl": 6004,
+      "exam_id": 990,
+      "name": "BPSC CDPO",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 238,
+      "group_sl": 6005,
+      "exam_id": 989,
+      "name": "BPSC CCE",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 239,
+      "group_sl": 6006,
+      "exam_id": 988,
+      "name": "BPSC Auditor",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 240,
+      "group_sl": 6007,
+      "exam_id": 987,
+      "name": "BPSC Assistant Town Planner",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 241,
+      "group_sl": 6008,
+      "exam_id": 986,
+      "name": "BPSC Assistant Public Sanitary, Waste Management Officer",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 242,
+      "group_sl": 6010,
+      "exam_id": 984,
+      "name": "BPSC Assistant Architect",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 243,
+      "group_sl": 6011,
+      "exam_id": 983,
+      "name": "BPSC Assistant",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 244,
+      "group_sl": 6012,
+      "exam_id": 982,
+      "name": "BPSC ASO",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 245,
+      "group_sl": 6013,
+      "exam_id": 981,
+      "name": "BPSC APO",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 246,
+      "group_sl": 6014,
+      "exam_id": 980,
+      "name": "BPSC AEDO",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 247,
+      "group_sl": 6015,
+      "exam_id": 979,
+      "name": "BPSC AE Electrical",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 248,
+      "group_sl": 6016,
+      "exam_id": 978,
+      "name": "BPSC AE",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 249,
+      "group_sl": 6017,
+      "exam_id": 977,
+      "name": "BPSC AAO",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 250,
+      "group_sl": 6067,
+      "exam_id": 927,
+      "name": "BISCOMAUN MTS",
+      "group": "Bihar General Government Exams"
+    }
+  ]
+}

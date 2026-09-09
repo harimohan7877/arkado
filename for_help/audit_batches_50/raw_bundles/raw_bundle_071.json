@@ -1,0 +1,358 @@
+{
+  "bundle_number": 71,
+  "bundle_id": "raw_bundle_071",
+  "range": "3501 - 3550",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3501,
+      "group_sl": 4052,
+      "exam_id": 2942,
+      "name": "Indian Army Education Havildar Information Operations",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3502,
+      "group_sl": 4053,
+      "exam_id": 2941,
+      "name": "Indian Army Education Havildar Arts",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3503,
+      "group_sl": 4054,
+      "exam_id": 2940,
+      "name": "Indian Army Dental Corps",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3504,
+      "group_sl": 4055,
+      "exam_id": 2939,
+      "name": "Indian Army CSBO",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3505,
+      "group_sl": 4056,
+      "exam_id": 2938,
+      "name": "Indian Army Clerk",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3506,
+      "group_sl": 4057,
+      "exam_id": 2937,
+      "name": "Indian Army Agniveer Technical",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3507,
+      "group_sl": 4058,
+      "exam_id": 2936,
+      "name": "Indian Army Agneepath GD",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3508,
+      "group_sl": 4059,
+      "exam_id": 2935,
+      "name": "Indian Army Agneepath Clerk",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3509,
+      "group_sl": 4078,
+      "exam_id": 2916,
+      "name": "IMA Dehradun Group C",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3510,
+      "group_sl": 4834,
+      "exam_id": 2160,
+      "name": "FAD Tradesman Mate, MTS",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3511,
+      "group_sl": 5828,
+      "exam_id": 1166,
+      "name": "CAD Pulgaon Group C",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3512,
+      "group_sl": 4246,
+      "exam_id": 2748,
+      "name": "HSSC Work Supervisor",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3513,
+      "group_sl": 4247,
+      "exam_id": 2747,
+      "name": "HSSC Turner, Fitler Instructor",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3514,
+      "group_sl": 4248,
+      "exam_id": 2746,
+      "name": "HSSC TGT Sanskrit",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3515,
+      "group_sl": 4249,
+      "exam_id": 2745,
+      "name": "HSSC TGT Physical Education",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3516,
+      "group_sl": 4250,
+      "exam_id": 2744,
+      "name": "HSSC TGT English",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3517,
+      "group_sl": 4251,
+      "exam_id": 2743,
+      "name": "HSSC Staff Nurse",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3518,
+      "group_sl": 4252,
+      "exam_id": 2742,
+      "name": "HSSC Salesman (Chargeman)",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3519,
+      "group_sl": 4253,
+      "exam_id": 2741,
+      "name": "HSSC PGT Sanskrit",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3520,
+      "group_sl": 4254,
+      "exam_id": 2740,
+      "name": "HSSC PGT",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3521,
+      "group_sl": 4255,
+      "exam_id": 2739,
+      "name": "HSSC Operator, Clerk",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3522,
+      "group_sl": 4256,
+      "exam_id": 2738,
+      "name": "HSSC MPHW",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3523,
+      "group_sl": 4257,
+      "exam_id": 2737,
+      "name": "HSSC Lab Attendant",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3524,
+      "group_sl": 4258,
+      "exam_id": 2736,
+      "name": "HSSC JE Mechanical",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3525,
+      "group_sl": 4259,
+      "exam_id": 2735,
+      "name": "HSSC JE Electrical",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3526,
+      "group_sl": 4260,
+      "exam_id": 2734,
+      "name": "HSSC JE Civil",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3527,
+      "group_sl": 4261,
+      "exam_id": 2733,
+      "name": "HSSC Instructor",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3528,
+      "group_sl": 4262,
+      "exam_id": 2732,
+      "name": "HSSC Horticulture JE and Junior Technical Assistant",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3529,
+      "group_sl": 4263,
+      "exam_id": 2731,
+      "name": "HSSC Group D",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3530,
+      "group_sl": 4264,
+      "exam_id": 2730,
+      "name": "HSSC Forest Guard",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3531,
+      "group_sl": 4265,
+      "exam_id": 2729,
+      "name": "HSSC Fire Operator",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3532,
+      "group_sl": 4266,
+      "exam_id": 2728,
+      "name": "HSSC Computer Instructor",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3533,
+      "group_sl": 4267,
+      "exam_id": 2727,
+      "name": "HSSC Clerk",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3534,
+      "group_sl": 4268,
+      "exam_id": 2726,
+      "name": "HSSC CET Group C Group 9 Technician and Plant Attendant",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3535,
+      "group_sl": 4269,
+      "exam_id": 2725,
+      "name": "HSSC CET Group C Group 9 Motor Vehicle Inspector",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3536,
+      "group_sl": 4270,
+      "exam_id": 2724,
+      "name": "HSSC CET Group C Group 5 Fitter",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3537,
+      "group_sl": 4271,
+      "exam_id": 2723,
+      "name": "HSSC CET Group C Group 5 Dietician",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3538,
+      "group_sl": 4272,
+      "exam_id": 2722,
+      "name": "HSSC CET Group C Group 4 Mechanic",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3539,
+      "group_sl": 4273,
+      "exam_id": 2721,
+      "name": "HSSC CET Group C Group 3 Steno Typist",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3540,
+      "group_sl": 4274,
+      "exam_id": 2720,
+      "name": "HSSC CET Group C Group 3 Radiographer",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3541,
+      "group_sl": 4275,
+      "exam_id": 2719,
+      "name": "HSSC CET Group C Group 2 Steno Typist English",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3542,
+      "group_sl": 4276,
+      "exam_id": 2718,
+      "name": "HSSC CET Group C Group 2 Draftsman Civil",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3543,
+      "group_sl": 4277,
+      "exam_id": 2717,
+      "name": "HSSC CET Group C Group 10 Assistant Draughtsman Civil",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3544,
+      "group_sl": 4278,
+      "exam_id": 2716,
+      "name": "HSSC CET Group C Group 1 Steno Typist Hindi",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3545,
+      "group_sl": 4279,
+      "exam_id": 2715,
+      "name": "HSSC CET Group C Group 1 Forester",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3546,
+      "group_sl": 4280,
+      "exam_id": 2714,
+      "name": "HSSC CET",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3547,
+      "group_sl": 4281,
+      "exam_id": 2713,
+      "name": "HSSC Canal Patwari",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3548,
+      "group_sl": 4282,
+      "exam_id": 2712,
+      "name": "HSSC ALM",
+      "group": "Haryana HSSC Exams"
+    },
+    {
+      "global_sl": 3549,
+      "group_sl": 1393,
+      "exam_id": 5601,
+      "name": "Science Olympiad Class 7",
+      "group": "National Academics - School Olympiads"
+    },
+    {
+      "global_sl": 3550,
+      "group_sl": 1394,
+      "exam_id": 5600,
+      "name": "Science Olympiad Class 6",
+      "group": "National Academics - School Olympiads"
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "bundle_id": "bundle-064",
+  "bundle_num": 64,
+  "category_id": "teaching",
+  "category_name": "केंद्रीय शिक्षण",
+  "category_icon": "📚",
+  "title": "केंद्रीय शिक्षण — Uttarakhand Teaching & School",
+  "total_exams": 48,
+  "boards_included": [
+    "Uttarakhand Teaching & School"
+  ],
+  "exams": [
+    {
+      "sl": 190,
+      "id": 6804,
+      "name": "Uttarakhand LT Teacher",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 205,
+      "id": 6789,
+      "name": "USET Physical Education",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 220,
+      "id": 6774,
+      "name": "USET Education",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 570,
+      "id": 6424,
+      "name": "UKSSSC Special Education Teacher",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 591,
+      "id": 6403,
+      "name": "UKSSSC Assistant Teacher LT Science",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 592,
+      "id": 6402,
+      "name": "UKSSSC Assistant Teacher LT Physical Education",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 593,
+      "id": 6401,
+      "name": "UKSSSC Assistant Teacher LT Music",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 594,
+      "id": 6400,
+      "name": "UKSSSC Assistant Teacher LT Mathematics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 595,
+      "id": 6399,
+      "name": "UKSSSC Assistant Teacher LT Home Science",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 596,
+      "id": 6398,
+      "name": "UKSSSC Assistant Teacher LT Hindi",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 597,
+      "id": 6397,
+      "name": "UKSSSC Assistant Teacher LT General",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 598,
+      "id": 6396,
+      "name": "UKSSSC Assistant Teacher LT English",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 599,
+      "id": 6395,
+      "name": "UKSSSC Assistant Teacher LT Commerce",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 600,
+      "id": 6394,
+      "name": "UKSSSC Assistant Teacher",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 610,
+      "id": 6384,
+      "name": "UKPSC Polytechnic Lecturer Physics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 612,
+      "id": 6382,
+      "name": "UKPSC Polytechnic Lecturer Mechanical",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 613,
+      "id": 6381,
+      "name": "UKPSC Polytechnic Lecturer Electronics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 614,
+      "id": 6380,
+      "name": "UKPSC Polytechnic Lecturer Electrical",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 615,
+      "id": 6379,
+      "name": "UKPSC Polytechnic Lecturer Computer Science",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 616,
+      "id": 6378,
+      "name": "UKPSC Polytechnic Lecturer Civil",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 617,
+      "id": 6377,
+      "name": "UKPSC Polytechnic Lecturer Chemistry",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 618,
+      "id": 6376,
+      "name": "UKPSC Polytechnic Lecturer",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 621,
+      "id": 6373,
+      "name": "UKPSC Lecturer Sociology",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 622,
+      "id": 6372,
+      "name": "UKPSC Lecturer Sanskrit",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 623,
+      "id": 6371,
+      "name": "UKPSC Lecturer Physics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 624,
+      "id": 6370,
+      "name": "UKPSC Lecturer Mathematics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 625,
+      "id": 6369,
+      "name": "UKPSC Lecturer History",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 626,
+      "id": 6368,
+      "name": "UKPSC Lecturer Hindi",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 627,
+      "id": 6367,
+      "name": "UKPSC Lecturer Geography",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 628,
+      "id": 6366,
+      "name": "UKPSC Lecturer English",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 629,
+      "id": 6365,
+      "name": "UKPSC Lecturer Economics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 630,
+      "id": 6364,
+      "name": "UKPSC Lecturer Civics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 631,
+      "id": 6363,
+      "name": "UKPSC Lecturer Chemistry",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 632,
+      "id": 6362,
+      "name": "UKPSC Lecturer Biology",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 633,
+      "id": 6361,
+      "name": "UKPSC Lecturer",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 643,
+      "id": 6351,
+      "name": "UKPSC Assistant Professor Sociology",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 644,
+      "id": 6350,
+      "name": "UKPSC Assistant Professor Sanskrit",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 645,
+      "id": 6349,
+      "name": "UKPSC Assistant Professor Physics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 646,
+      "id": 6348,
+      "name": "UKPSC Assistant Professor Hindi",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 647,
+      "id": 6347,
+      "name": "UKPSC Assistant Professor Chemistry",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 648,
+      "id": 6346,
+      "name": "UKPSC Assistant Professor (Political Science)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 649,
+      "id": 6345,
+      "name": "UKPSC Assistant Professor (Mathematics)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 650,
+      "id": 6344,
+      "name": "UKPSC Assistant Professor (Home Science)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 651,
+      "id": 6343,
+      "name": "UKPSC Assistant Professor (History)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 652,
+      "id": 6342,
+      "name": "UKPSC Assistant Professor (Geography)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 653,
+      "id": 6341,
+      "name": "UKPSC Assistant Professor (English)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 654,
+      "id": 6340,
+      "name": "UKPSC Assistant Professor (Economics)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "sl": 655,
+      "id": 6339,
+      "name": "UKPSC Assistant Professor (Commerce)",
+      "group": "Uttarakhand Teaching & School Exams"
+    }
+  ]
+}

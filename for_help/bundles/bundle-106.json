@@ -1,0 +1,308 @@
+{
+  "bundle_id": "bundle-106",
+  "bundle_num": 106,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Judiciary & Law - General Legal & Judicial",
+  "total_exams": 49,
+  "boards_included": [
+    "Judiciary & Law - General Legal & Judicial"
+  ],
+  "exams": [
+    {
+      "sl": 10,
+      "id": 6984,
+      "name": "Women Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 566,
+      "id": 6428,
+      "name": "ULSAT",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 918,
+      "id": 6076,
+      "name": "Transfer of Property Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 1083,
+      "id": 5911,
+      "name": "The Transgender Persons Protection of Rights Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 1084,
+      "id": 5910,
+      "name": "The Specific Relief Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 1085,
+      "id": 5909,
+      "name": "The Prohibition of Child Marriage Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 1086,
+      "id": 5908,
+      "name": "The Probation of Offenders Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 1087,
+      "id": 5907,
+      "name": "The Limitation Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 1088,
+      "id": 5906,
+      "name": "The Indian Trusts Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 1272,
+      "id": 5722,
+      "name": "Special Marriage Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 1298,
+      "id": 5696,
+      "name": "SLAT",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 1401,
+      "id": 5593,
+      "name": "SCI Law Clerk cum Research Assistant",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 1434,
+      "id": 5560,
+      "name": "Sale of Goods Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 1772,
+      "id": 5222,
+      "name": "Right to Information RTI Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 1775,
+      "id": 5219,
+      "name": "Registration Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 2076,
+      "id": 4918,
+      "name": "Protection of Women from Domestic Violence Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 2100,
+      "id": 4894,
+      "name": "Power of Attorney Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 2101,
+      "id": 4893,
+      "name": "POSH Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 2105,
+      "id": 4889,
+      "name": "POCSO Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 2384,
+      "id": 4610,
+      "name": "OBC Advocates",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 2543,
+      "id": 4451,
+      "name": "NLAT",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 2724,
+      "id": 4270,
+      "name": "NCLT Stenographer",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 2783,
+      "id": 4211,
+      "name": "Muslim Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 3092,
+      "id": 3902,
+      "name": "Mining Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 3217,
+      "id": 3777,
+      "name": "Maintenance and Welfare of Parents and Senior Citizens Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 3278,
+      "id": 3716,
+      "name": "LSSSSB Technical Legal Assistant",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 3282,
+      "id": 3712,
+      "name": "LSAT",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 3296,
+      "id": 3698,
+      "name": "Limited Liability Partnership LLP Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 3316,
+      "id": 3678,
+      "name": "Law of Torts",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 3317,
+      "id": 3677,
+      "name": "Law Of Constitution of India",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 3318,
+      "id": 3676,
+      "name": "Law Of Civil Procedure",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 3319,
+      "id": 3675,
+      "name": "Law Of Evidence Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 3320,
+      "id": 3674,
+      "name": "Law Exams",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 3327,
+      "id": 3667,
+      "name": "Labour Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 3595,
+      "id": 3399,
+      "name": "Jurisprudence",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 3977,
+      "id": 3017,
+      "name": "Intellectual Property Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 4012,
+      "id": 2982,
+      "name": "Indian Evidence Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 4014,
+      "id": 2980,
+      "name": "Indian Contract Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 4072,
+      "id": 2922,
+      "name": "Indecent Representation of Women Prohibition Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 4079,
+      "id": 2915,
+      "name": "ILICAT",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 4492,
+      "id": 2502,
+      "name": "Hindu Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 4833,
+      "id": 2161,
+      "name": "Family Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 5072,
+      "id": 1922,
+      "name": "Dowry Prohibition Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 5109,
+      "id": 1885,
+      "name": "DLSA Para Legal Volunteer",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 5258,
+      "id": 1736,
+      "name": "Cyber Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 5519,
+      "id": 1475,
+      "name": "CS Executive Tax Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 5575,
+      "id": 1419,
+      "name": "CLAT",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 5582,
+      "id": 1412,
+      "name": "Civil Judge, Public Prosecutor",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "sl": 5603,
+      "id": 1391,
+      "name": "CIL MT Legal",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    }
+  ]
+}

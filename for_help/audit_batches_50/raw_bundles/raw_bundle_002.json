@@ -1,0 +1,358 @@
+{
+  "bundle_number": 2,
+  "bundle_id": "raw_bundle_002",
+  "range": "51 - 100",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 51,
+      "group_sl": 5321,
+      "exam_id": 1673,
+      "name": "CUET PG Textile Engineering",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 52,
+      "group_sl": 5322,
+      "exam_id": 1672,
+      "name": "CUET PG Textile Design",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 53,
+      "group_sl": 5323,
+      "exam_id": 1671,
+      "name": "CUET PG Tamil",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 54,
+      "group_sl": 5324,
+      "exam_id": 1670,
+      "name": "CUET PG Statistics",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 55,
+      "group_sl": 5325,
+      "exam_id": 1669,
+      "name": "CUET PG Sports Physiology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 56,
+      "group_sl": 5326,
+      "exam_id": 1668,
+      "name": "CUET PG Soil Science",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 57,
+      "group_sl": 5327,
+      "exam_id": 1667,
+      "name": "CUET PG Sociology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 58,
+      "group_sl": 5328,
+      "exam_id": 1666,
+      "name": "CUET PG Social Work",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 59,
+      "group_sl": 5329,
+      "exam_id": 1665,
+      "name": "CUET PG Shukla Yajurveda",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 60,
+      "group_sl": 5330,
+      "exam_id": 1664,
+      "name": "CUET PG Shiksha Shastri",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 61,
+      "group_sl": 5331,
+      "exam_id": 1663,
+      "name": "CUET PG Shiksha Acharya",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 62,
+      "group_sl": 5332,
+      "exam_id": 1662,
+      "name": "CUET PG Sanskrit",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 63,
+      "group_sl": 5333,
+      "exam_id": 1661,
+      "name": "CUET PG Samveda",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 64,
+      "group_sl": 5334,
+      "exam_id": 1660,
+      "name": "CUET PG Sahitya Alankara and Kavya varga",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 65,
+      "group_sl": 5335,
+      "exam_id": 1659,
+      "name": "CUET PG Sahitya",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 66,
+      "group_sl": 5336,
+      "exam_id": 1658,
+      "name": "CUET PG Rigveda",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 67,
+      "group_sl": 5337,
+      "exam_id": 1657,
+      "name": "CUET PG Rabindra Sangit",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 68,
+      "group_sl": 5338,
+      "exam_id": 1656,
+      "name": "CUET PG Puranetihasa",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 69,
+      "group_sl": 5339,
+      "exam_id": 1655,
+      "name": "CUET PG Public Health",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 70,
+      "group_sl": 5340,
+      "exam_id": 1654,
+      "name": "CUET PG Psychology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 71,
+      "group_sl": 5341,
+      "exam_id": 1653,
+      "name": "CUET PG Pottery and Ceramic",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 72,
+      "group_sl": 5342,
+      "exam_id": 1652,
+      "name": "CUET PG Political Science",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 73,
+      "group_sl": 5343,
+      "exam_id": 1651,
+      "name": "CUET PG Plastic Arts",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 74,
+      "group_sl": 5344,
+      "exam_id": 1650,
+      "name": "CUET PG Plant Biotechnology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 75,
+      "group_sl": 5345,
+      "exam_id": 1649,
+      "name": "CUET PG Physiotherapy",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 76,
+      "group_sl": 5346,
+      "exam_id": 1648,
+      "name": "CUET PG Physics",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 77,
+      "group_sl": 5347,
+      "exam_id": 1647,
+      "name": "CUET PG Physical Education",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 78,
+      "group_sl": 5348,
+      "exam_id": 1646,
+      "name": "CUET PG Philosophy",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 79,
+      "group_sl": 5349,
+      "exam_id": 1645,
+      "name": "CUET PG Pharmacy",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 80,
+      "group_sl": 5350,
+      "exam_id": 1644,
+      "name": "CUET PG Phalit Jyotish and Siddhant Jyotish",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 81,
+      "group_sl": 5351,
+      "exam_id": 1643,
+      "name": "CUET PG Part A General",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 82,
+      "group_sl": 5352,
+      "exam_id": 1642,
+      "name": "CUET PG Painting",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 83,
+      "group_sl": 5353,
+      "exam_id": 1641,
+      "name": "CUET PG Odia",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 84,
+      "group_sl": 5354,
+      "exam_id": 1640,
+      "name": "CUET PG Nyaya Vaisheshika",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 85,
+      "group_sl": 5355,
+      "exam_id": 1639,
+      "name": "CUET PG Nanoscience Integrative Biosciences",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 86,
+      "group_sl": 5356,
+      "exam_id": 1638,
+      "name": "CUET PG Nanoscience",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 87,
+      "group_sl": 5357,
+      "exam_id": 1637,
+      "name": "CUET PG Nanoelectronics",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 88,
+      "group_sl": 5358,
+      "exam_id": 1636,
+      "name": "CUET PG Music",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 89,
+      "group_sl": 5359,
+      "exam_id": 1635,
+      "name": "CUET PG Museology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 90,
+      "group_sl": 5360,
+      "exam_id": 1634,
+      "name": "CUET PG Medical Laboratory Technology",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 91,
+      "group_sl": 5361,
+      "exam_id": 1633,
+      "name": "CUET PG Mechanical Engineering",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 92,
+      "group_sl": 5362,
+      "exam_id": 1632,
+      "name": "CUET PG MBA",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 93,
+      "group_sl": 5363,
+      "exam_id": 1631,
+      "name": "CUET PG Mathematics",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 94,
+      "group_sl": 5364,
+      "exam_id": 1630,
+      "name": "CUET PG Material Science",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 95,
+      "group_sl": 5365,
+      "exam_id": 1629,
+      "name": "CUET PG Masters of Education",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 96,
+      "group_sl": 5366,
+      "exam_id": 1628,
+      "name": "CUET PG Mass Communication and Journalism",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 97,
+      "group_sl": 5367,
+      "exam_id": 1627,
+      "name": "CUET PG Linguistics",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 98,
+      "group_sl": 5368,
+      "exam_id": 1626,
+      "name": "CUET PG Life Science",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 99,
+      "group_sl": 5369,
+      "exam_id": 1625,
+      "name": "CUET PG Library & Information Science",
+      "group": "National Academics - CUET Admission Exams"
+    },
+    {
+      "global_sl": 100,
+      "group_sl": 5370,
+      "exam_id": 1624,
+      "name": "CUET PG Law",
+      "group": "National Academics - CUET Admission Exams"
+    }
+  ]
+}

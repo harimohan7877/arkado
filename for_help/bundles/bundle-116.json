@@ -1,0 +1,333 @@
+{
+  "bundle_id": "bundle-116",
+  "bundle_num": 116,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Judiciary & Law - Court Clerk & Staff • Central Schools - EMRS",
+  "total_exams": 53,
+  "boards_included": [
+    "Judiciary & Law - Court Clerk & Staff",
+    "Central Schools - EMRS"
+  ],
+  "exams": [
+    {
+      "sl": 4874,
+      "id": 2120,
+      "name": "EMRS TGT Social Studies",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4875,
+      "id": 2119,
+      "name": "EMRS TGT Science",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4876,
+      "id": 2118,
+      "name": "EMRS TGT PET",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4877,
+      "id": 2117,
+      "name": "EMRS TGT Music",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4878,
+      "id": 2116,
+      "name": "EMRS TGT Mathematics",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4879,
+      "id": 2115,
+      "name": "EMRS TGT Librarian",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4880,
+      "id": 2114,
+      "name": "EMRS TGT Hindi",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4881,
+      "id": 2113,
+      "name": "EMRS TGT English",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4882,
+      "id": 2112,
+      "name": "EMRS TGT Computer Science",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4883,
+      "id": 2111,
+      "name": "EMRS TGT Art Teacher",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4884,
+      "id": 2110,
+      "name": "EMRS Principal",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4885,
+      "id": 2109,
+      "name": "EMRS PGT Physics",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4886,
+      "id": 2108,
+      "name": "EMRS PGT Mathematics",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4887,
+      "id": 2107,
+      "name": "EMRS PGT History",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4888,
+      "id": 2106,
+      "name": "EMRS PGT Hindi",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4889,
+      "id": 2105,
+      "name": "EMRS PGT Geography",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4890,
+      "id": 2104,
+      "name": "EMRS PGT English",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4891,
+      "id": 2103,
+      "name": "EMRS PGT Economics",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4892,
+      "id": 2102,
+      "name": "EMRS PGT Computer Science",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4893,
+      "id": 2101,
+      "name": "EMRS PGT Commerce",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4894,
+      "id": 2100,
+      "name": "EMRS PGT Chemistry",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4895,
+      "id": 2099,
+      "name": "EMRS PGT Biology",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4896,
+      "id": 2098,
+      "name": "EMRS Lab Attendant",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4897,
+      "id": 2097,
+      "name": "EMRS JSA",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4898,
+      "id": 2096,
+      "name": "EMRS Hostel Warden",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4899,
+      "id": 2095,
+      "name": "EMRS Female Staff Nurse",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 4900,
+      "id": 2094,
+      "name": "EMRS Accountant",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "sl": 1079,
+      "id": 5915,
+      "name": "Tiruvannamalai District Court Office Assistant",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 1080,
+      "id": 5914,
+      "name": "Tiruppur District Court",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 1165,
+      "id": 5829,
+      "name": "Sundargarh District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 1403,
+      "id": 5591,
+      "name": "SCI Court Master",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 1427,
+      "id": 5567,
+      "name": "Sangrur District Court Junior Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 1821,
+      "id": 5173,
+      "name": "Ramanathapuram District Court Office Assistant",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 2026,
+      "id": 4968,
+      "name": "Pudukkottai District Court Office Assistant",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 2748,
+      "id": 4246,
+      "name": "Nayagarh District Court Junior Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 2781,
+      "id": 4213,
+      "name": "Nabarangpur District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 2787,
+      "id": 4207,
+      "name": "Muktsar District Court Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 3071,
+      "id": 3923,
+      "name": "Moga District Court Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 3181,
+      "id": 3813,
+      "name": "Mayurbhanj District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 3214,
+      "id": 3780,
+      "name": "Malkangiri District Court Junior Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 3483,
+      "id": 3511,
+      "name": "Koraput District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 3591,
+      "id": 3403,
+      "name": "Kandhamal District Court Junior Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 3593,
+      "id": 3401,
+      "name": "Kalahandi District Court Junior Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 3794,
+      "id": 3200,
+      "name": "Jharsuguda District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 3869,
+      "id": 3125,
+      "name": "Jagatsinghpur District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 4802,
+      "id": 2192,
+      "name": "Ferozepur Court Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 4832,
+      "id": 2162,
+      "name": "Faridkot District Court Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 5539,
+      "id": 1455,
+      "name": "Contempt of Courts Act",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 5548,
+      "id": 1446,
+      "name": "Commercial Courts Act",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 6034,
+      "id": 960,
+      "name": "Boudh District Court Junior Clerk",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 6296,
+      "id": 698,
+      "name": "Bengalore District court Recruitment",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 6360,
+      "id": 634,
+      "name": "Bargarh District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "sl": 6431,
+      "id": 563,
+      "name": "Balangir District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    }
+  ]
+}

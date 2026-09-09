@@ -1,0 +1,358 @@
+{
+  "bundle_number": 63,
+  "bundle_id": "raw_bundle_063",
+  "range": "3101 - 3150",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3101,
+      "group_sl": 3967,
+      "exam_id": 3027,
+      "name": "IOCL Eastern Region Trade Apprentice (DEO)",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3102,
+      "group_sl": 3969,
+      "exam_id": 3025,
+      "name": "IOCL Eastern Region Trade Apprentice",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3103,
+      "group_sl": 3970,
+      "exam_id": 3024,
+      "name": "IOCL Boiler Operation Engineer",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3104,
+      "group_sl": 3972,
+      "exam_id": 3022,
+      "name": "IOCL AQCO",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3105,
+      "group_sl": 4422,
+      "exam_id": 2572,
+      "name": "HPCL Project Engineer",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3106,
+      "group_sl": 4423,
+      "exam_id": 2571,
+      "name": "HPCL Operation Technician",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3107,
+      "group_sl": 4424,
+      "exam_id": 2570,
+      "name": "HPCL Officers",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3108,
+      "group_sl": 4425,
+      "exam_id": 2569,
+      "name": "HPCL Maintenance Technician",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3109,
+      "group_sl": 4426,
+      "exam_id": 2568,
+      "name": "HPCL Junior Executive Quality Control",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3110,
+      "group_sl": 4427,
+      "exam_id": 2567,
+      "name": "HPCL Junior Executive Mechanical",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3111,
+      "group_sl": 4428,
+      "exam_id": 2566,
+      "name": "HPCL Junior Executive Instrumentation",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3112,
+      "group_sl": 4429,
+      "exam_id": 2565,
+      "name": "HPCL Junior Executive Fire and Safety",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3113,
+      "group_sl": 4430,
+      "exam_id": 2564,
+      "name": "HPCL Junior Executive Electrical",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3114,
+      "group_sl": 4431,
+      "exam_id": 2563,
+      "name": "HPCL Junior Executive Civil",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3115,
+      "group_sl": 4432,
+      "exam_id": 2562,
+      "name": "HPCL Junior Executive Chemical",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3116,
+      "group_sl": 4433,
+      "exam_id": 2561,
+      "name": "HPCL Engineer",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3117,
+      "group_sl": 4434,
+      "exam_id": 2560,
+      "name": "HPCL Assistant Process Technician",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3118,
+      "group_sl": 4763,
+      "exam_id": 2231,
+      "name": "GAIL Senior Engineer, Officer",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3119,
+      "group_sl": 4764,
+      "exam_id": 2230,
+      "name": "GAIL Operator Chemical",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3120,
+      "group_sl": 4765,
+      "exam_id": 2229,
+      "name": "GAIL Foreman",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3121,
+      "group_sl": 6028,
+      "exam_id": 966,
+      "name": "BPCL Process Technician & Utility Operator",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3122,
+      "group_sl": 6029,
+      "exam_id": 965,
+      "name": "BPCL Kochi Refinery General Workman",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3123,
+      "group_sl": 6031,
+      "exam_id": 963,
+      "name": "BPCL Junior Executive",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3124,
+      "group_sl": 6032,
+      "exam_id": 962,
+      "name": "BPCL Associate Executive Quality Assurance",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3125,
+      "group_sl": 6033,
+      "exam_id": 961,
+      "name": "BPCL Apprentice",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3126,
+      "group_sl": 23,
+      "exam_id": 6971,
+      "name": "WCL Mining Sirdar",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3127,
+      "group_sl": 24,
+      "exam_id": 6970,
+      "name": "WCL Graduate Apprentice",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3128,
+      "group_sl": 1376,
+      "exam_id": 5618,
+      "name": "SECL Trade Apprentice",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3129,
+      "group_sl": 1377,
+      "exam_id": 5617,
+      "name": "SECL Mining Sirdar",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3130,
+      "group_sl": 1378,
+      "exam_id": 5616,
+      "name": "SECL Junior Technical Inspector",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3131,
+      "group_sl": 1379,
+      "exam_id": 5615,
+      "name": "SECL Junior Overman",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3132,
+      "group_sl": 1380,
+      "exam_id": 5614,
+      "name": "SECL Dy. Surveyor",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3133,
+      "group_sl": 1381,
+      "exam_id": 5613,
+      "name": "SECL Dumper Operator",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3134,
+      "group_sl": 1382,
+      "exam_id": 5612,
+      "name": "SECL Clerk Grade 3",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3135,
+      "group_sl": 1383,
+      "exam_id": 5611,
+      "name": "SECL Assistant Loading Clerk",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3136,
+      "group_sl": 1384,
+      "exam_id": 5610,
+      "name": "SECL Assistant Foreman",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3137,
+      "group_sl": 2538,
+      "exam_id": 4456,
+      "name": "NLCIL Mining Sirdar",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3138,
+      "group_sl": 2539,
+      "exam_id": 4455,
+      "name": "NLCIL Junior Overman",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3139,
+      "group_sl": 2540,
+      "exam_id": 4454,
+      "name": "NLC Trade Apprentice",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3140,
+      "group_sl": 2541,
+      "exam_id": 4453,
+      "name": "NLC Industrial Trainee",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3141,
+      "group_sl": 2542,
+      "exam_id": 4452,
+      "name": "NLC GET",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3142,
+      "group_sl": 2725,
+      "exam_id": 4269,
+      "name": "NCL Technician",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3143,
+      "group_sl": 2726,
+      "exam_id": 4268,
+      "name": "NCL Paramedical Staff",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3144,
+      "group_sl": 2727,
+      "exam_id": 4267,
+      "name": "NCL Overseer Civil",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3145,
+      "group_sl": 2728,
+      "exam_id": 4266,
+      "name": "NCL Mining Sirdar, Surveyor",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3146,
+      "group_sl": 2729,
+      "exam_id": 4265,
+      "name": "NCL HEMM Operator",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3147,
+      "group_sl": 2730,
+      "exam_id": 4264,
+      "name": "NCL Clerk & Security Guard",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3148,
+      "group_sl": 2731,
+      "exam_id": 4263,
+      "name": "NCL Assistant Foreman",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3149,
+      "group_sl": 3169,
+      "exam_id": 3825,
+      "name": "MCL Technician",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    },
+    {
+      "global_sl": 3150,
+      "group_sl": 3170,
+      "exam_id": 3824,
+      "name": "MCL Surveyor",
+      "group": "Engineering & PSU - Coal Sector Exams"
+    }
+  ]
+}

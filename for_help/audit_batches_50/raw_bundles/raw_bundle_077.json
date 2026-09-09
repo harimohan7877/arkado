@@ -1,0 +1,358 @@
+{
+  "bundle_number": 77,
+  "bundle_id": "raw_bundle_077",
+  "range": "3801 - 3850",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3801,
+      "group_sl": 3720,
+      "exam_id": 3274,
+      "name": "JKSSB Junior Staff Nurse",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3802,
+      "group_sl": 3721,
+      "exam_id": 3273,
+      "name": "JKSSB Junior Assistant",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3803,
+      "group_sl": 3722,
+      "exam_id": 3272,
+      "name": "JKSSB JE Mechanical",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3804,
+      "group_sl": 3723,
+      "exam_id": 3271,
+      "name": "JKSSB JE Civil",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3805,
+      "group_sl": 3724,
+      "exam_id": 3270,
+      "name": "JKSSB JE",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3806,
+      "group_sl": 3725,
+      "exam_id": 3269,
+      "name": "JKSSB Fisheries Development Officer",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3807,
+      "group_sl": 3726,
+      "exam_id": 3268,
+      "name": "JKSSB Driver",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3808,
+      "group_sl": 3727,
+      "exam_id": 3267,
+      "name": "JKSSB Draftsman Civil",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3809,
+      "group_sl": 3728,
+      "exam_id": 3266,
+      "name": "JKSSB Class 4",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3810,
+      "group_sl": 3729,
+      "exam_id": 3265,
+      "name": "JKSSB Attendant General Cadre",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3811,
+      "group_sl": 3730,
+      "exam_id": 3264,
+      "name": "JKSSB Assistant Storekeeper",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3812,
+      "group_sl": 3731,
+      "exam_id": 3263,
+      "name": "JKSSB Assistant Handicrafts Training Officer",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3813,
+      "group_sl": 3732,
+      "exam_id": 3262,
+      "name": "JKSSB Assistant Compiler",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3814,
+      "group_sl": 3733,
+      "exam_id": 3261,
+      "name": "JKSSB Account Assistant",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3815,
+      "group_sl": 7,
+      "exam_id": 6987,
+      "name": "World History",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3816,
+      "group_sl": 8,
+      "exam_id": 6986,
+      "name": "World Geography",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3817,
+      "group_sl": 9,
+      "exam_id": 6985,
+      "name": "Women Studies",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3818,
+      "group_sl": 228,
+      "exam_id": 6766,
+      "name": "UPTET Social Studies",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3819,
+      "group_sl": 1281,
+      "exam_id": 5713,
+      "name": "Sociology",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3820,
+      "group_sl": 1282,
+      "exam_id": 5712,
+      "name": "Social Work",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3821,
+      "group_sl": 1283,
+      "exam_id": 5711,
+      "name": "Social Studies",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3822,
+      "group_sl": 1391,
+      "exam_id": 5603,
+      "name": "Scouts and Guides Knowledge",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3823,
+      "group_sl": 1771,
+      "exam_id": 5223,
+      "name": "Rights and Welfare of Senior Citizens",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3824,
+      "group_sl": 2030,
+      "exam_id": 4964,
+      "name": "Public Administration",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3825,
+      "group_sl": 2031,
+      "exam_id": 4963,
+      "name": "Psychology",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3826,
+      "group_sl": 2102,
+      "exam_id": 4892,
+      "name": "Population Studies",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3827,
+      "group_sl": 2133,
+      "exam_id": 4861,
+      "name": "Philosophy",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3828,
+      "group_sl": 2784,
+      "exam_id": 4210,
+      "name": "Music",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3829,
+      "group_sl": 3974,
+      "exam_id": 3020,
+      "name": "Interview Guide Dummy",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3830,
+      "group_sl": 3975,
+      "exam_id": 3019,
+      "name": "International Organisations and Current International Affairs",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3831,
+      "group_sl": 3981,
+      "exam_id": 3013,
+      "name": "Indian Polity & Constitution",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3832,
+      "group_sl": 4010,
+      "exam_id": 2984,
+      "name": "Indian History",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3833,
+      "group_sl": 4011,
+      "exam_id": 2983,
+      "name": "Indian Geography",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3834,
+      "group_sl": 4013,
+      "exam_id": 2981,
+      "name": "Indian Culture",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3835,
+      "group_sl": 4015,
+      "exam_id": 2979,
+      "name": "Indian Constitution and Polity",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3836,
+      "group_sl": 4016,
+      "exam_id": 2978,
+      "name": "Indian Constitution",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3837,
+      "group_sl": 4490,
+      "exam_id": 2504,
+      "name": "History",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3838,
+      "group_sl": 4706,
+      "exam_id": 2288,
+      "name": "Geography",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3839,
+      "group_sl": 4867,
+      "exam_id": 2127,
+      "name": "Environmental Studies",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3840,
+      "group_sl": 4912,
+      "exam_id": 2082,
+      "name": "Economics",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3841,
+      "group_sl": 5177,
+      "exam_id": 1817,
+      "name": "Defence and Strategic Studies",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3842,
+      "group_sl": 5584,
+      "exam_id": 1410,
+      "name": "Civics",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3843,
+      "group_sl": 5618,
+      "exam_id": 1376,
+      "name": "Child Development and Pedagogy",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "global_sl": 3844,
+      "group_sl": 2228,
+      "exam_id": 4766,
+      "name": "OSSC Welfare Extension Officer",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3845,
+      "group_sl": 2229,
+      "exam_id": 4765,
+      "name": "OSSC Vital Statistics Assistant",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3846,
+      "group_sl": 2230,
+      "exam_id": 4764,
+      "name": "OSSC Traffic Constable",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3847,
+      "group_sl": 2231,
+      "exam_id": 4763,
+      "name": "OSSC Station Officer",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3848,
+      "group_sl": 2232,
+      "exam_id": 4762,
+      "name": "OSSC Staff Nurse",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3849,
+      "group_sl": 2233,
+      "exam_id": 4761,
+      "name": "OSSC SI",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "global_sl": 3850,
+      "group_sl": 2234,
+      "exam_id": 4760,
+      "name": "OSSC SCEW",
+      "group": "Odisha OSSC Exams"
+    }
+  ]
+}

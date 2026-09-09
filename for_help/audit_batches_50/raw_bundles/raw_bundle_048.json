@@ -1,0 +1,358 @@
+{
+  "bundle_number": 48,
+  "bundle_id": "raw_bundle_048",
+  "range": "2351 - 2400",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 2351,
+      "group_sl": 990,
+      "exam_id": 6004,
+      "name": "TN Village Assistant",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2352,
+      "group_sl": 1037,
+      "exam_id": 5957,
+      "name": "TN SET Social Work",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2353,
+      "group_sl": 1038,
+      "exam_id": 5956,
+      "name": "TN SET Sanskrit",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2354,
+      "group_sl": 1039,
+      "exam_id": 5955,
+      "name": "TN SET Psychology",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2355,
+      "group_sl": 1040,
+      "exam_id": 5954,
+      "name": "TN SET Physical Science",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2356,
+      "group_sl": 1041,
+      "exam_id": 5953,
+      "name": "TN SET Paper 1",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2357,
+      "group_sl": 1042,
+      "exam_id": 5952,
+      "name": "TN SET Mathematics",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2358,
+      "group_sl": 1043,
+      "exam_id": 5951,
+      "name": "TN SET Management",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2359,
+      "group_sl": 1044,
+      "exam_id": 5950,
+      "name": "TN SET Law",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2360,
+      "group_sl": 1045,
+      "exam_id": 5949,
+      "name": "TN SET Geography",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2361,
+      "group_sl": 1046,
+      "exam_id": 5948,
+      "name": "TN SET English",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2362,
+      "group_sl": 1048,
+      "exam_id": 5946,
+      "name": "TN SET Economics",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2363,
+      "group_sl": 1049,
+      "exam_id": 5945,
+      "name": "TN SET Computer Science",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2364,
+      "group_sl": 1050,
+      "exam_id": 5944,
+      "name": "TN SET Commerce",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2365,
+      "group_sl": 1051,
+      "exam_id": 5943,
+      "name": "TN SET Chemical Science",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2366,
+      "group_sl": 1052,
+      "exam_id": 5942,
+      "name": "TN Postal Circle MTS",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2367,
+      "group_sl": 1056,
+      "exam_id": 5938,
+      "name": "TN MRB Junior Analyst",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2368,
+      "group_sl": 1057,
+      "exam_id": 5937,
+      "name": "TN MRB Health Inspector",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2369,
+      "group_sl": 1058,
+      "exam_id": 5936,
+      "name": "TN MRB FSO",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2370,
+      "group_sl": 1065,
+      "exam_id": 5929,
+      "name": "TN MRB AMO",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2371,
+      "group_sl": 1066,
+      "exam_id": 5928,
+      "name": "TN Labour Dept DEO",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2372,
+      "group_sl": 1082,
+      "exam_id": 5912,
+      "name": "Thoothukudi RDM Village Assistant",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2373,
+      "group_sl": 1142,
+      "exam_id": 5852,
+      "name": "TANUVAS Technician",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2374,
+      "group_sl": 1150,
+      "exam_id": 5844,
+      "name": "Tamil Nadu General Knowledge",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2375,
+      "group_sl": 6257,
+      "exam_id": 737,
+      "name": "BHEL Tiruchirappalli Trade Apprentice",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "global_sl": 2376,
+      "group_sl": 901,
+      "exam_id": 6093,
+      "name": "TRB Tripura Physical Education Teacher",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2377,
+      "group_sl": 902,
+      "exam_id": 6092,
+      "name": "TRB Tripura PGT Statistics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2378,
+      "group_sl": 903,
+      "exam_id": 6091,
+      "name": "TRB Tripura PGT Sociology",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2379,
+      "group_sl": 904,
+      "exam_id": 6090,
+      "name": "TRB Tripura PGT Sanskrit",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2380,
+      "group_sl": 905,
+      "exam_id": 6089,
+      "name": "TRB Tripura PGT Psychology",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2381,
+      "group_sl": 906,
+      "exam_id": 6088,
+      "name": "TRB Tripura PGT Political Science",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2382,
+      "group_sl": 907,
+      "exam_id": 6087,
+      "name": "TRB Tripura PGT Physics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2383,
+      "group_sl": 908,
+      "exam_id": 6086,
+      "name": "TRB Tripura PGT Philosophy",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2384,
+      "group_sl": 909,
+      "exam_id": 6085,
+      "name": "TRB Tripura PGT Geography",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2385,
+      "group_sl": 910,
+      "exam_id": 6084,
+      "name": "TRB Tripura PGT English",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2386,
+      "group_sl": 911,
+      "exam_id": 6083,
+      "name": "TRB Tripura PGT Education",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2387,
+      "group_sl": 912,
+      "exam_id": 6082,
+      "name": "TRB Tripura PGT Economics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2388,
+      "group_sl": 913,
+      "exam_id": 6081,
+      "name": "TRB Tripura PGT Commerce",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2389,
+      "group_sl": 914,
+      "exam_id": 6080,
+      "name": "TRB Tripura PGT Chemistry",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2390,
+      "group_sl": 915,
+      "exam_id": 6079,
+      "name": "TRB Tripura PGT Biology",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2391,
+      "group_sl": 916,
+      "exam_id": 6078,
+      "name": "TRB TN Computer Instructor",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2392,
+      "group_sl": 917,
+      "exam_id": 6077,
+      "name": "TRB Tamilnadu Assistant Professor Exam",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2393,
+      "group_sl": 991,
+      "exam_id": 6003,
+      "name": "TN TRB Special Teacher",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2394,
+      "group_sl": 992,
+      "exam_id": 6002,
+      "name": "TN TRB Polytechnic Lecturer EEE",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2395,
+      "group_sl": 993,
+      "exam_id": 6001,
+      "name": "TN TRB PG Assistant Zoology",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2396,
+      "group_sl": 994,
+      "exam_id": 6000,
+      "name": "TN TRB PG Assistant Tamil",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2397,
+      "group_sl": 995,
+      "exam_id": 5999,
+      "name": "TN TRB PG Assistant Physics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2398,
+      "group_sl": 996,
+      "exam_id": 5998,
+      "name": "TN TRB PG Assistant Mathematics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2399,
+      "group_sl": 997,
+      "exam_id": 5997,
+      "name": "TN TRB PG Assistant History",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "global_sl": 2400,
+      "group_sl": 998,
+      "exam_id": 5996,
+      "name": "TN TRB PG Assistant Geography",
+      "group": "Tamil Nadu TRB Exams"
+    }
+  ]
+}

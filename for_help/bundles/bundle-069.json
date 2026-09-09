@@ -1,0 +1,451 @@
+{
+  "bundle_id": "bundle-069",
+  "bundle_num": 69,
+  "category_id": "teaching",
+  "category_name": "केंद्रीय शिक्षण",
+  "category_icon": "📚",
+  "title": "केंद्रीय शिक्षण — Chandigarh Teaching & School • Himachal Pradesh Teaching & School • Maharashtra Teaching & School",
+  "total_exams": 72,
+  "boards_included": [
+    "Chandigarh Teaching & School",
+    "Himachal Pradesh Teaching & School",
+    "Maharashtra Teaching & School",
+    "Gujarat Teaching & School",
+    "National Academics - CTET",
+    "National Academics - NFSU"
+  ],
+  "exams": [
+    {
+      "sl": 4299,
+      "id": 2695,
+      "name": "HPSSSB TGT",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4306,
+      "id": 2688,
+      "name": "HPSSC TGT, MLT",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4397,
+      "id": 2597,
+      "name": "HPPSC PGT Political Science",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4398,
+      "id": 2596,
+      "name": "HPPSC PGT Physics",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4399,
+      "id": 2595,
+      "name": "HPPSC PGT Paper 1",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4400,
+      "id": 2594,
+      "name": "HPPSC PGT Mathematics",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4401,
+      "id": 2593,
+      "name": "HPPSC PGT History",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4402,
+      "id": 2592,
+      "name": "HPPSC PGT Hindi",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4403,
+      "id": 2591,
+      "name": "HPPSC PGT English",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4404,
+      "id": 2590,
+      "name": "HPPSC PGT Economics",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4405,
+      "id": 2589,
+      "name": "HPPSC PGT Commerce",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4406,
+      "id": 2588,
+      "name": "HPPSC PGT Chemistry",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4407,
+      "id": 2587,
+      "name": "HPPSC PGT Biology",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4410,
+      "id": 2584,
+      "name": "HPPSC Lecturer",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4457,
+      "id": 2537,
+      "name": "HP SET Physical Education",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 4467,
+      "id": 2527,
+      "name": "HP SET Education",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "sl": 2649,
+      "id": 4345,
+      "name": "NFSU NFAT MSc Pharmaceutical Chemistry",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 2650,
+      "id": 4344,
+      "name": "NFSU NFAT MSc Neuropsychology",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 2651,
+      "id": 4343,
+      "name": "NFSU NFAT MSc Forensic Toxicology",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 2652,
+      "id": 4342,
+      "name": "NFSU NFAT MSc Forensic Science",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 2653,
+      "id": 4341,
+      "name": "NFSU NFAT MSc Forensic Psychology",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 2654,
+      "id": 4340,
+      "name": "NFSU NFAT MSc Forensic Biotechnology",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 2655,
+      "id": 4339,
+      "name": "NFSU NFAT MSc Food Technology",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 2656,
+      "id": 4338,
+      "name": "NFSU NFAT MSc Environmental Science",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 2657,
+      "id": 4337,
+      "name": "NFSU NFAT MSc Clinical Psychology",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 2658,
+      "id": 4336,
+      "name": "NFSU NFAT MSc Chemistry",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 2659,
+      "id": 4335,
+      "name": "NFSU NFAT MA Criminology",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 2660,
+      "id": 4334,
+      "name": "NFSU NFAT M Pharm Forensic Pharmacy",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 2661,
+      "id": 4333,
+      "name": "NFSU NFAT BA MA Criminology",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 2662,
+      "id": 4332,
+      "name": "NFSU Laboratory Assistant",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 2663,
+      "id": 4331,
+      "name": "NFSU Assistant",
+      "group": "National Academics - NFSU Exams"
+    },
+    {
+      "sl": 5444,
+      "id": 1550,
+      "name": "CTET Social Science Hindi",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "sl": 5445,
+      "id": 1549,
+      "name": "CTET Social Science & Pedagogy",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "sl": 5446,
+      "id": 1548,
+      "name": "CTET Social Science",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "sl": 5447,
+      "id": 1547,
+      "name": "CTET Science",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "sl": 5448,
+      "id": 1546,
+      "name": "CTET Sanskrit",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "sl": 5449,
+      "id": 1545,
+      "name": "CTET Paper 1",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "sl": 5450,
+      "id": 1544,
+      "name": "CTET Maths and Science Hindi",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "sl": 5451,
+      "id": 1543,
+      "name": "CTET Maths and Science",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "sl": 5452,
+      "id": 1542,
+      "name": "CTET Maths",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "sl": 5453,
+      "id": 1541,
+      "name": "CTET Hindi Language",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "sl": 5454,
+      "id": 1540,
+      "name": "CTET Environmental Studies",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "sl": 5455,
+      "id": 1539,
+      "name": "CTET English Language",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "sl": 5456,
+      "id": 1538,
+      "name": "CTET Child Development & Pedagogy",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "sl": 5457,
+      "id": 1537,
+      "name": "CTET",
+      "group": "National Academics - CTET Exams"
+    },
+    {
+      "sl": 1259,
+      "id": 5735,
+      "name": "SSA Chandigarh TGT",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "sl": 2544,
+      "id": 4450,
+      "name": "NITTTR Chandigarh Teacher",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "sl": 5636,
+      "id": 1358,
+      "name": "Chandigarh TGT Social Science",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "sl": 5638,
+      "id": 1356,
+      "name": "Chandigarh TGT Science",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "sl": 5639,
+      "id": 1355,
+      "name": "Chandigarh TGT Sanskrit",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "sl": 5640,
+      "id": 1354,
+      "name": "Chandigarh TGT Music",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "sl": 5641,
+      "id": 1353,
+      "name": "Chandigarh TGT Mathematics",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "sl": 5642,
+      "id": 1352,
+      "name": "Chandigarh TGT Home Science",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "sl": 5643,
+      "id": 1351,
+      "name": "Chandigarh TGT Hindi",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "sl": 5644,
+      "id": 1350,
+      "name": "Chandigarh TGT English",
+      "group": "Chandigarh Teaching & School Exams"
+    },
+    {
+      "sl": 1330,
+      "id": 5664,
+      "name": "Shri Swami Vivekanand Shikshan Sanstha Kolhapur Teacher",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "sl": 2415,
+      "id": 4579,
+      "name": "NVS Pune Teacher",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "sl": 2821,
+      "id": 4173,
+      "name": "MPSC Lecturer",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "sl": 2832,
+      "id": 4162,
+      "name": "MPSC Associate Professor",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "sl": 2833,
+      "id": 4161,
+      "name": "MPSC Assistant Professor",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "sl": 3124,
+      "id": 3870,
+      "name": "MH SET Physical Education",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "sl": 3136,
+      "id": 3858,
+      "name": "MH SET Education",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "sl": 3265,
+      "id": 3729,
+      "name": "MAH B.Ed CET",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "sl": 4145,
+      "id": 2849,
+      "name": "ICDS Maharashtra Mukhya Sevika",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "sl": 5102,
+      "id": 1892,
+      "name": "DMER Maharashtra Professor",
+      "group": "Maharashtra Teaching & School Exams"
+    },
+    {
+      "sl": 1257,
+      "id": 5737,
+      "name": "SSA Gujarat DEO, Block Coordinator",
+      "group": "Gujarat Teaching & School Exams"
+    },
+    {
+      "sl": 4147,
+      "id": 2847,
+      "name": "ICDS Gujarat Anganwadi Supervisor",
+      "group": "Gujarat Teaching & School Exams"
+    },
+    {
+      "sl": 4598,
+      "id": 2396,
+      "name": "GSSC Primary School Teacher",
+      "group": "Gujarat Teaching & School Exams"
+    },
+    {
+      "sl": 4619,
+      "id": 2375,
+      "name": "GSET Physical Education",
+      "group": "Gujarat Teaching & School Exams"
+    },
+    {
+      "sl": 4631,
+      "id": 2363,
+      "name": "GSET Education",
+      "group": "Gujarat Teaching & School Exams"
+    },
+    {
+      "sl": 4665,
+      "id": 2329,
+      "name": "GPSC Associate Professor",
+      "group": "Gujarat Teaching & School Exams"
+    },
+    {
+      "sl": 4666,
+      "id": 2328,
+      "name": "GPSC Assistant Professor",
+      "group": "Gujarat Teaching & School Exams"
+    }
+  ]
+}

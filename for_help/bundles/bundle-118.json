@@ -1,0 +1,412 @@
+{
+  "bundle_id": "bundle-118",
+  "bundle_num": 118,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Chhattisgarh Subordinate Services Selection Board • General Subjects - General Science (PCB) • General Subjects - General Knowledge & Miscellaneous Studies",
+  "total_exams": 66,
+  "boards_included": [
+    "Chhattisgarh Subordinate Services Selection Board",
+    "General Subjects - General Science (PCB)",
+    "General Subjects - General Knowledge & Miscellaneous Studies"
+  ],
+  "exams": [
+    {
+      "sl": 3,
+      "id": 6991,
+      "name": "Yoga",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 17,
+      "id": 6977,
+      "name": "Welding",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 172,
+      "id": 6822,
+      "name": "Visual Art",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 1068,
+      "id": 5926,
+      "name": "TMC Trade Helper",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 1175,
+      "id": 5819,
+      "name": "Statistics",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 1176,
+      "id": 5818,
+      "name": "Static GK",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 1949,
+      "id": 5045,
+      "name": "Python",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 2132,
+      "id": 4862,
+      "name": "Physical Education",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 3196,
+      "id": 3798,
+      "name": "Mass Communication",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 3322,
+      "id": 3672,
+      "name": "Lakshadweep General Knowledge",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 3326,
+      "id": 3668,
+      "name": "Ladakh GK",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 3982,
+      "id": 3012,
+      "name": "Indian Penal Code",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 4715,
+      "id": 2279,
+      "name": "General Knowledge Sectional Test",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 4720,
+      "id": 2274,
+      "name": "General Knowledge",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 4909,
+      "id": 2085,
+      "name": "Education",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 5251,
+      "id": 1743,
+      "name": "Daman & Diu General Knowledge",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 5252,
+      "id": 1742,
+      "name": "Dadra and Nagar Haveli General Knowledge",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 5268,
+      "id": 1726,
+      "name": "Current Affairs",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 5553,
+      "id": 1441,
+      "name": "Code of Criminal Procedure",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 6277,
+      "id": 717,
+      "name": "Bharatiya Sakshya Adhiniyam",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 6278,
+      "id": 716,
+      "name": "Bharatiya Nyaya Sanhita",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 6279,
+      "id": 715,
+      "name": "Bharatiya Nagarik Suraksha Sanhita",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 6460,
+      "id": 534,
+      "name": "Aviation Knowledge",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "sl": 178,
+      "id": 6816,
+      "name": "Veterinary Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 1399,
+      "id": 5595,
+      "name": "Science and Technology",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 2104,
+      "id": 4890,
+      "name": "Political Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 2128,
+      "id": 4866,
+      "name": "Physics Sectional Test",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 2130,
+      "id": 4864,
+      "name": "Physics",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 2131,
+      "id": 4863,
+      "name": "Physical Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 3106,
+      "id": 3888,
+      "name": "Microbiology",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 3297,
+      "id": 3697,
+      "name": "Life Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 3308,
+      "id": 3686,
+      "name": "Library Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 3840,
+      "id": 3154,
+      "name": "JET Agriculture Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 3841,
+      "id": 3153,
+      "name": "JEST Physics",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 4485,
+      "id": 2509,
+      "name": "Home Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 4709,
+      "id": 2285,
+      "name": "General Science Sectional Test",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 4711,
+      "id": 2283,
+      "name": "General Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 4795,
+      "id": 2199,
+      "name": "Forensic Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 4904,
+      "id": 2090,
+      "name": "Electronic Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 4928,
+      "id": 2066,
+      "name": "Earth Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 5249,
+      "id": 1745,
+      "name": "Data Science",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 5629,
+      "id": 1365,
+      "name": "Chemistry Sectional Test",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 6073,
+      "id": 921,
+      "name": "Biology Zoology",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 6075,
+      "id": 919,
+      "name": "Biology Sectional Test",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 6078,
+      "id": 916,
+      "name": "Biology Botany",
+      "group": "General Subjects - General Science (PCB)"
+    },
+    {
+      "sl": 5695,
+      "id": 1299,
+      "name": "CG Vyapam Watchroom and Wireless Operator",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5696,
+      "id": 1298,
+      "name": "CG Vyapam Vehicle Driver",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5697,
+      "id": 1297,
+      "name": "CG Vyapam Tracer",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5698,
+      "id": 1296,
+      "name": "CG Vyapam Teacher & Lecturer",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5699,
+      "id": 1295,
+      "name": "CG Vyapam Sub Engineer",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5700,
+      "id": 1294,
+      "name": "CG Vyapam Sub Auditor",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5701,
+      "id": 1293,
+      "name": "CG Vyapam Store Keeper",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5702,
+      "id": 1292,
+      "name": "CG Vyapam Station Officer",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5703,
+      "id": 1291,
+      "name": "CG Vyapam Staff Nurse",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5704,
+      "id": 1290,
+      "name": "CG Vyapam SI",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5705,
+      "id": 1289,
+      "name": "CG Vyapam RAEO",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5706,
+      "id": 1288,
+      "name": "CG Vyapam Patwari",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5707,
+      "id": 1287,
+      "name": "CG Vyapam Lekhpal",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5708,
+      "id": 1286,
+      "name": "CG Vyapam Lab Technician",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5709,
+      "id": 1285,
+      "name": "CG Vyapam JE",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5710,
+      "id": 1284,
+      "name": "CG Vyapam Food Inspector",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5711,
+      "id": 1283,
+      "name": "CG Vyapam Fireman",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5712,
+      "id": 1282,
+      "name": "CG Vyapam Excise Constable",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5713,
+      "id": 1281,
+      "name": "CG Vyapam Assistant Inspector",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5714,
+      "id": 1280,
+      "name": "CG Vyapam Assistant Draftsman",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    },
+    {
+      "sl": 5715,
+      "id": 1279,
+      "name": "CG Vyapam ADEO",
+      "group": "Chhattisgarh Subordinate Services Selection Board Exams"
+    }
+  ]
+}

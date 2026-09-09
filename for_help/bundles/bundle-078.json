@@ -1,0 +1,448 @@
+{
+  "bundle_id": "bundle-078",
+  "bundle_num": 78,
+  "category_id": "engineering-psu",
+  "category_name": "इंजीनियरिंग & PSU",
+  "category_icon": "⚙️",
+  "title": "इंजीनियरिंग & PSU — Engineering & PSU - RCFL • Engineering & PSU - Mining Sector • Engineering & PSU - NMDC",
+  "total_exams": 71,
+  "boards_included": [
+    "Engineering & PSU - RCFL",
+    "Engineering & PSU - Mining Sector",
+    "Engineering & PSU - NMDC",
+    "Engineering & PSU - NPCIL",
+    "Engineering & PSU - NTPC",
+    "Engineering & PSU - NIELIT",
+    "Engineering & PSU - ECIL",
+    "Engineering & PSU - THDC",
+    "Engineering & PSU - BECIL"
+  ],
+  "exams": [
+    {
+      "sl": 1802,
+      "id": 5192,
+      "name": "RCFL Technician Mechanical",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "sl": 1803,
+      "id": 5191,
+      "name": "RCFL Technician Electrical",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "sl": 1804,
+      "id": 5190,
+      "name": "RCFL Operator Trainee",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "sl": 1805,
+      "id": 5189,
+      "name": "RCFL Operator Grade 1",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "sl": 1806,
+      "id": 5188,
+      "name": "RCFL MT Material",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "sl": 1807,
+      "id": 5187,
+      "name": "RCFL MT Electrical",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "sl": 1808,
+      "id": 5186,
+      "name": "RCFL MT Chemical",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "sl": 1809,
+      "id": 5185,
+      "name": "RCFL MT",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "sl": 1810,
+      "id": 5184,
+      "name": "RCFL Engineer & Officer",
+      "group": "Engineering & PSU - RCFL Exams"
+    },
+    {
+      "sl": 2449,
+      "id": 4545,
+      "name": "NTPC MO",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "sl": 2450,
+      "id": 4544,
+      "name": "NTPC Executive Trainee",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "sl": 2451,
+      "id": 4543,
+      "name": "NTPC Executive",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "sl": 2452,
+      "id": 4542,
+      "name": "NTPC Engineer",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "sl": 2453,
+      "id": 4541,
+      "name": "NTPC Diploma Engineer",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "sl": 2454,
+      "id": 4540,
+      "name": "NTPC Deputy Manager",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "sl": 2455,
+      "id": 4539,
+      "name": "NTPC Assistant Executive",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "sl": 2456,
+      "id": 4538,
+      "name": "NTPC Assistant Chemist Trainee",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "sl": 2457,
+      "id": 4537,
+      "name": "NTPC AE",
+      "group": "Engineering & PSU - NTPC Exams"
+    },
+    {
+      "sl": 2488,
+      "id": 4506,
+      "name": "NPCIL Trade Apprentice",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "sl": 2489,
+      "id": 4505,
+      "name": "NPCIL Stipendiary Trainee Plant Operator",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "sl": 2490,
+      "id": 4504,
+      "name": "NPCIL Stipendiary Trainee Instrument Mechanic",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "sl": 2491,
+      "id": 4503,
+      "name": "NPCIL Stipendiary Trainee Fitter",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "sl": 2492,
+      "id": 4502,
+      "name": "NPCIL Stipendiary Trainee",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "sl": 2493,
+      "id": 4501,
+      "name": "NPCIL Scientific Assistant",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "sl": 2494,
+      "id": 4500,
+      "name": "NPCIL Executive Trainee",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "sl": 2495,
+      "id": 4499,
+      "name": "NPCIL Deputy Manager Human Resource",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "sl": 2498,
+      "id": 4496,
+      "name": "NPCIL Assistant Grade 1",
+      "group": "Engineering & PSU - NPCIL Exams"
+    },
+    {
+      "sl": 1089,
+      "id": 5905,
+      "name": "THDC Trade Apprentice",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "sl": 1090,
+      "id": 5904,
+      "name": "THDC JET Mechanical",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "sl": 1091,
+      "id": 5903,
+      "name": "THDC JET Electrical",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "sl": 1092,
+      "id": 5902,
+      "name": "THDC JET Civil",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "sl": 1093,
+      "id": 5901,
+      "name": "THDC Executive Human Resource",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "sl": 1095,
+      "id": 5899,
+      "name": "THDC Engineer Mechanical",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "sl": 1096,
+      "id": 5898,
+      "name": "THDC Engineer Electrical",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "sl": 1097,
+      "id": 5897,
+      "name": "THDC Engineer Civil",
+      "group": "Engineering & PSU - THDC Exams"
+    },
+    {
+      "sl": 6331,
+      "id": 663,
+      "name": "BECIL Unskilled Manpower, Skilled Manpower",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "sl": 6332,
+      "id": 662,
+      "name": "BECIL Surveyor",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "sl": 6333,
+      "id": 661,
+      "name": "BECIL Stenographer",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "sl": 6336,
+      "id": 658,
+      "name": "BECIL MTS",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "sl": 6337,
+      "id": 657,
+      "name": "BECIL Junior Engineer Maintainer",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "sl": 6338,
+      "id": 656,
+      "name": "BECIL Investigator",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "sl": 6339,
+      "id": 655,
+      "name": "BECIL Group B, C",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "sl": 6340,
+      "id": 654,
+      "name": "BECIL DEO",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "sl": 777,
+      "id": 6217,
+      "name": "UCIL Mining Mate",
+      "group": "Engineering & PSU - Mining Sector Exams"
+    },
+    {
+      "sl": 1440,
+      "id": 5554,
+      "name": "SAIL RMD Mining Mate",
+      "group": "Engineering & PSU - Mining Sector Exams"
+    },
+    {
+      "sl": 2762,
+      "id": 4232,
+      "name": "NALCO Mining Mate",
+      "group": "Engineering & PSU - Mining Sector Exams"
+    },
+    {
+      "sl": 3093,
+      "id": 3901,
+      "name": "Mining Engineering",
+      "group": "Engineering & PSU - Mining Sector Exams"
+    },
+    {
+      "sl": 3094,
+      "id": 3900,
+      "name": "Mines Inspector",
+      "group": "Engineering & PSU - Mining Sector Exams"
+    },
+    {
+      "sl": 4737,
+      "id": 2257,
+      "name": "GATE Mining Engineering",
+      "group": "Engineering & PSU - Mining Sector Exams"
+    },
+    {
+      "sl": 4913,
+      "id": 2081,
+      "name": "ECL Mining Sirdar",
+      "group": "Engineering & PSU - Mining Sector Exams"
+    },
+    {
+      "sl": 2525,
+      "id": 4469,
+      "name": "NMDC MCO",
+      "group": "Engineering & PSU - NMDC Exams"
+    },
+    {
+      "sl": 2526,
+      "id": 4468,
+      "name": "NMDC Maintenance Assistant Mechanical",
+      "group": "Engineering & PSU - NMDC Exams"
+    },
+    {
+      "sl": 2527,
+      "id": 4467,
+      "name": "NMDC Maintenance Assistant",
+      "group": "Engineering & PSU - NMDC Exams"
+    },
+    {
+      "sl": 2528,
+      "id": 4466,
+      "name": "NMDC JOT",
+      "group": "Engineering & PSU - NMDC Exams"
+    },
+    {
+      "sl": 2529,
+      "id": 4465,
+      "name": "NMDC HEM Operator",
+      "group": "Engineering & PSU - NMDC Exams"
+    },
+    {
+      "sl": 2531,
+      "id": 4463,
+      "name": "NMDC Executive Trainee",
+      "group": "Engineering & PSU - NMDC Exams"
+    },
+    {
+      "sl": 2532,
+      "id": 4462,
+      "name": "NMDC Electrician",
+      "group": "Engineering & PSU - NMDC Exams"
+    },
+    {
+      "sl": 2563,
+      "id": 4431,
+      "name": "NIELIT Scientist C & D",
+      "group": "Engineering & PSU - NIELIT Exams"
+    },
+    {
+      "sl": 2564,
+      "id": 4430,
+      "name": "NIELIT Scientist B",
+      "group": "Engineering & PSU - NIELIT Exams"
+    },
+    {
+      "sl": 2565,
+      "id": 4429,
+      "name": "NIELIT Scientific Assistant IT",
+      "group": "Engineering & PSU - NIELIT Exams"
+    },
+    {
+      "sl": 2566,
+      "id": 4428,
+      "name": "NIELIT Scientific Assistant Computer Science",
+      "group": "Engineering & PSU - NIELIT Exams"
+    },
+    {
+      "sl": 2567,
+      "id": 4427,
+      "name": "NIELIT Scientific Assistant",
+      "group": "Engineering & PSU - NIELIT Exams"
+    },
+    {
+      "sl": 2568,
+      "id": 4426,
+      "name": "NIELIT Programmer",
+      "group": "Engineering & PSU - NIELIT Exams"
+    },
+    {
+      "sl": 2569,
+      "id": 4425,
+      "name": "NIELIT Junior & Senior Faculty",
+      "group": "Engineering & PSU - NIELIT Exams"
+    },
+    {
+      "sl": 4914,
+      "id": 2080,
+      "name": "ECIL Technical Officer",
+      "group": "Engineering & PSU - ECIL Exams"
+    },
+    {
+      "sl": 4915,
+      "id": 2079,
+      "name": "ECIL Scientific Officer",
+      "group": "Engineering & PSU - ECIL Exams"
+    },
+    {
+      "sl": 4916,
+      "id": 2078,
+      "name": "ECIL Junior Technical Officer",
+      "group": "Engineering & PSU - ECIL Exams"
+    },
+    {
+      "sl": 4917,
+      "id": 2077,
+      "name": "ECIL GET Mechanical",
+      "group": "Engineering & PSU - ECIL Exams"
+    },
+    {
+      "sl": 4918,
+      "id": 2076,
+      "name": "ECIL GET ECE",
+      "group": "Engineering & PSU - ECIL Exams"
+    },
+    {
+      "sl": 4919,
+      "id": 2075,
+      "name": "ECIL GET Computer Science",
+      "group": "Engineering & PSU - ECIL Exams"
+    },
+    {
+      "sl": 4920,
+      "id": 2074,
+      "name": "ECIL GET Civil",
+      "group": "Engineering & PSU - ECIL Exams"
+    }
+  ]
+}

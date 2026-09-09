@@ -1,0 +1,115 @@
+{
+  "bundle_id": "bundle-008",
+  "bundle_num": 8,
+  "category_id": "uttar-pradesh",
+  "category_name": "उत्तर प्रदेश",
+  "category_icon": "🟢",
+  "title": "उत्तर प्रदेश — UPSSSC (अधीनस्थ सेवा चयन आयोग)",
+  "total_exams": 10,
+  "boards_included": [
+    "UPSSSC"
+  ],
+  "official_portal": "https://upsssc.gov.in",
+  "exams": [
+    {
+      "id": 2005,
+      "name": "UPSSSC PET 2026 (प्रारंभिक अर्हता परीक्षा)",
+      "eligibility": "10वीं / 12वीं / स्नातक",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "25+ लाख",
+      "exam_pattern": "100 प्रश्न • 100 अंक • 2 घंटे • नेगेटिव 1/4",
+      "viral_subtext": "समूह ग भर्तियों का 25+ लाख छात्रों का गेटवे",
+      "status": "verified"
+    },
+    {
+      "id": 6747,
+      "name": "UP राजस्व लेखपाल एवं चकबंदी लेखपाल",
+      "eligibility": "12वीं + PET स्कोर कार्ड",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "2.5 लाख",
+      "exam_pattern": "100 प्रश्न • 100 अंक (सामान्य हिंदी, गणित, सामान्य ज्ञान, ग्राम्य विकास)",
+      "viral_subtext": "राजस्व परिषद 8,000+ पद",
+      "status": "verified"
+    },
+    {
+      "id": 6740,
+      "name": "ग्राम विकास अधिकारी (VDO) व ग्राम पंचायत अधिकारी",
+      "eligibility": "12वीं + CCC कंप्यूटर + PET स्कोर",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "3+ लाख",
+      "exam_pattern": "150 प्रश्न • 300 अंक • नेगेटिव 1/2",
+      "viral_subtext": "पंचायती राज विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 6746,
+      "name": "कनिष्ठ सहायक / जूनियर क्लर्क (Junior Assistant)",
+      "eligibility": "12वीं + CCC + हिंदी/अंग्रेजी टाइपिंग + PET",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "1.8 लाख",
+      "exam_pattern": "100 अंक लिखित + टाइपिंग टेस्ट",
+      "viral_subtext": "सचिवालय व विभिन्न सरकारी विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 6744,
+      "name": "UPSSSC कनिष्ठ अभियंता (Junior Engineer - JE)",
+      "eligibility": "इंजीनियरिंग में 3-वर्षीय डिप्लोमा + PET",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "80,000",
+      "exam_pattern": "Paper-1 (सामान्य) + Paper-2 (तकनीकी)",
+      "viral_subtext": "PWD, सिंचाई व ग्रामीण अभियंत्रण",
+      "status": "verified"
+    },
+    {
+      "id": 6760,
+      "name": "गन्ना पर्यवेक्षक (Sugarcane Supervisor)",
+      "eligibility": "B.Sc (कृषि) + CCC + PET",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "40,000",
+      "exam_pattern": "लिखित परीक्षा (100 प्रश्न)",
+      "viral_subtext": "गन्ना विकास एवं चीनी उद्योग",
+      "status": "verified"
+    },
+    {
+      "id": 6728,
+      "name": "कृषि प्राविधिक सहायक (AGTA)",
+      "eligibility": "B.Sc (Agriculture/Horticulture/Forestry) + PET",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "50,000",
+      "exam_pattern": "100 प्रश्न • 100 अंक",
+      "viral_subtext": "कृषि विभाग 3,446 पद",
+      "status": "verified"
+    },
+    {
+      "id": 6743,
+      "name": "अनुदेशक भर्ती (ITI Instructor)",
+      "eligibility": "10वीं + ITI/Diploma + CITS + PET",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "30,000",
+      "exam_pattern": "100 प्रश्न लिखित परीक्षा",
+      "viral_subtext": "व्यवसायिक शिक्षा विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 6761,
+      "name": "सप्लाई इंस्पेक्टर एवं अपर निजी सचिव",
+      "eligibility": "स्नातक + PET स्कोर",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "1+ लाख",
+      "exam_pattern": "100 प्रश्न लिखित परीक्षा",
+      "viral_subtext": "खाद्य एवं रसद विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 6752,
+      "name": "मुख्य सेविका भर्ती (Mukhya Sevika)",
+      "eligibility": "स्नातक (समाजशास्त्र / गृह विज्ञान) + PET",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "60,000",
+      "exam_pattern": "100 प्रश्न • 100 अंक",
+      "viral_subtext": "महिला कल्याण विभाग",
+      "status": "verified"
+    }
+  ]
+}

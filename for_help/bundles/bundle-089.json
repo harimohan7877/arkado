@@ -1,0 +1,98 @@
+{
+  "bundle_id": "bundle-089",
+  "bundle_num": 89,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — West Bengal General Govt (Part 2/2)",
+  "total_exams": 14,
+  "boards_included": [
+    "West Bengal General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 133,
+      "id": 6861,
+      "name": "WB SET Commerce",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 134,
+      "id": 6860,
+      "name": "WB SET Chemical Science",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 136,
+      "id": 6858,
+      "name": "WB Post Office GDS",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 146,
+      "id": 6848,
+      "name": "WB Gram Panchayat Karmee",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 1445,
+      "id": 5549,
+      "name": "SAIL Kolkata Executive, Non Executive",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 2190,
+      "id": 4804,
+      "name": "PBSSD BLS",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 2742,
+      "id": 4252,
+      "name": "NBCFDM West Bengal",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 5089,
+      "id": 1905,
+      "name": "DMMU and DRDC Purba Bardhaman Community Auditor",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 5136,
+      "id": 1858,
+      "name": "DHFWS Nadia Laboratory Technician",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 5137,
+      "id": 1857,
+      "name": "DHFWS Nadia Community Health Assistant",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 5815,
+      "id": 1179,
+      "name": "Calcutta HC LDA",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 5816,
+      "id": 1178,
+      "name": "Calcutta HC DEO",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 5847,
+      "id": 1147,
+      "name": "Burdwan Zilla Parishad Panchayat Secretary",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "sl": 6385,
+      "id": 609,
+      "name": "Baranagar Municipality Mazdoor",
+      "group": "West Bengal General Government Exams"
+    }
+  ]
+}

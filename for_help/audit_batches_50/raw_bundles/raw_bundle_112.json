@@ -1,0 +1,358 @@
+{
+  "bundle_number": 112,
+  "bundle_id": "raw_bundle_112",
+  "range": "5551 - 5600",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5551,
+      "group_sl": 2268,
+      "exam_id": 4726,
+      "name": "Orissa High Court Junior Stenographer",
+      "group": "Odisha High Court & Court Exams"
+    },
+    {
+      "global_sl": 5552,
+      "group_sl": 2296,
+      "exam_id": 4698,
+      "name": "OPSC Civil Judge",
+      "group": "Odisha High Court & Court Exams"
+    },
+    {
+      "global_sl": 5553,
+      "group_sl": 2381,
+      "exam_id": 4613,
+      "name": "Odisha High Court ASO",
+      "group": "Odisha High Court & Court Exams"
+    },
+    {
+      "global_sl": 5554,
+      "group_sl": 3544,
+      "exam_id": 3450,
+      "name": "Keonjhar District Court Junior Clerk Copyist",
+      "group": "Odisha High Court & Court Exams"
+    },
+    {
+      "global_sl": 5555,
+      "group_sl": 3864,
+      "exam_id": 3130,
+      "name": "Jajpur District Court Junior Clerk Copyist",
+      "group": "Odisha High Court & Court Exams"
+    },
+    {
+      "global_sl": 5556,
+      "group_sl": 1813,
+      "exam_id": 5181,
+      "name": "RBI SO Grade B",
+      "group": "Banking & Finance - RBI Exams"
+    },
+    {
+      "global_sl": 5557,
+      "group_sl": 1814,
+      "exam_id": 5180,
+      "name": "RBI SO Grade A",
+      "group": "Banking & Finance - RBI Exams"
+    },
+    {
+      "global_sl": 5558,
+      "group_sl": 1815,
+      "exam_id": 5179,
+      "name": "RBI Security Guard",
+      "group": "Banking & Finance - RBI Exams"
+    },
+    {
+      "global_sl": 5559,
+      "group_sl": 1816,
+      "exam_id": 5178,
+      "name": "RBI Office Attendant",
+      "group": "Banking & Finance - RBI Exams"
+    },
+    {
+      "global_sl": 5560,
+      "group_sl": 1817,
+      "exam_id": 5177,
+      "name": "RBI JE",
+      "group": "Banking & Finance - RBI Exams"
+    },
+    {
+      "global_sl": 5561,
+      "group_sl": 1818,
+      "exam_id": 5176,
+      "name": "RBI Grade B",
+      "group": "Banking & Finance - RBI Exams"
+    },
+    {
+      "global_sl": 5562,
+      "group_sl": 1819,
+      "exam_id": 5175,
+      "name": "RBI Assistant",
+      "group": "Banking & Finance - RBI Exams"
+    },
+    {
+      "global_sl": 5563,
+      "group_sl": 1878,
+      "exam_id": 5116,
+      "name": "Rajasthan High Court System Assistant",
+      "group": "Rajasthan High Court & Court Exams"
+    },
+    {
+      "global_sl": 5564,
+      "group_sl": 1879,
+      "exam_id": 5115,
+      "name": "Rajasthan High Court Stenographer",
+      "group": "Rajasthan High Court & Court Exams"
+    },
+    {
+      "global_sl": 5565,
+      "group_sl": 1880,
+      "exam_id": 5114,
+      "name": "Rajasthan High Court Library Restorer",
+      "group": "Rajasthan High Court & Court Exams"
+    },
+    {
+      "global_sl": 5566,
+      "group_sl": 1881,
+      "exam_id": 5113,
+      "name": "Rajasthan High Court Group D",
+      "group": "Rajasthan High Court & Court Exams"
+    },
+    {
+      "global_sl": 5567,
+      "group_sl": 1882,
+      "exam_id": 5112,
+      "name": "Rajasthan High Court Driver",
+      "group": "Rajasthan High Court & Court Exams"
+    },
+    {
+      "global_sl": 5568,
+      "group_sl": 1883,
+      "exam_id": 5111,
+      "name": "Rajasthan High Court Civil Judge",
+      "group": "Rajasthan High Court & Court Exams"
+    },
+    {
+      "global_sl": 5569,
+      "group_sl": 1884,
+      "exam_id": 5110,
+      "name": "Rajasthan HC District Judge",
+      "group": "Rajasthan High Court & Court Exams"
+    },
+    {
+      "global_sl": 5570,
+      "group_sl": 2032,
+      "exam_id": 4962,
+      "name": "PSTCL Lower Division Clerk",
+      "group": "Punjab PSTCL Exams"
+    },
+    {
+      "global_sl": 5571,
+      "group_sl": 2033,
+      "exam_id": 4961,
+      "name": "PSTCL LDC Accounts",
+      "group": "Punjab PSTCL Exams"
+    },
+    {
+      "global_sl": 5572,
+      "group_sl": 2034,
+      "exam_id": 4960,
+      "name": "PSTCL JE",
+      "group": "Punjab PSTCL Exams"
+    },
+    {
+      "global_sl": 5573,
+      "group_sl": 2035,
+      "exam_id": 4959,
+      "name": "PSTCL Electrician",
+      "group": "Punjab PSTCL Exams"
+    },
+    {
+      "global_sl": 5574,
+      "group_sl": 2036,
+      "exam_id": 4958,
+      "name": "PSTCL ASSA",
+      "group": "Punjab PSTCL Exams"
+    },
+    {
+      "global_sl": 5575,
+      "group_sl": 2037,
+      "exam_id": 4957,
+      "name": "PSTCL ALM",
+      "group": "Punjab PSTCL Exams"
+    },
+    {
+      "global_sl": 5576,
+      "group_sl": 2038,
+      "exam_id": 4956,
+      "name": "PSTCL AE",
+      "group": "Punjab PSTCL Exams"
+    },
+    {
+      "global_sl": 5577,
+      "group_sl": 2205,
+      "exam_id": 4789,
+      "name": "OSSTET TGT Science PCM",
+      "group": "Odisha OSSTET Exams"
+    },
+    {
+      "global_sl": 5578,
+      "group_sl": 2206,
+      "exam_id": 4788,
+      "name": "OSSTET TGT Science CBZ",
+      "group": "Odisha OSSTET Exams"
+    },
+    {
+      "global_sl": 5579,
+      "group_sl": 2207,
+      "exam_id": 4787,
+      "name": "OSSTET TGT Arts",
+      "group": "Odisha OSSTET Exams"
+    },
+    {
+      "global_sl": 5580,
+      "group_sl": 2208,
+      "exam_id": 4786,
+      "name": "OSSTET Physical Education Teacher",
+      "group": "Odisha OSSTET Exams"
+    },
+    {
+      "global_sl": 5581,
+      "group_sl": 2209,
+      "exam_id": 4785,
+      "name": "OSSTET Hindi Teacher",
+      "group": "Odisha OSSTET Exams"
+    },
+    {
+      "global_sl": 5582,
+      "group_sl": 2210,
+      "exam_id": 4784,
+      "name": "OSSTET Classical Teacher Telugu",
+      "group": "Odisha OSSTET Exams"
+    },
+    {
+      "global_sl": 5583,
+      "group_sl": 2211,
+      "exam_id": 4783,
+      "name": "OSSTET Classical Teacher Sanskrit",
+      "group": "Odisha OSSTET Exams"
+    },
+    {
+      "global_sl": 5584,
+      "group_sl": 2525,
+      "exam_id": 4469,
+      "name": "NMDC MCO",
+      "group": "Engineering & PSU - NMDC Exams"
+    },
+    {
+      "global_sl": 5585,
+      "group_sl": 2526,
+      "exam_id": 4468,
+      "name": "NMDC Maintenance Assistant Mechanical",
+      "group": "Engineering & PSU - NMDC Exams"
+    },
+    {
+      "global_sl": 5586,
+      "group_sl": 2527,
+      "exam_id": 4467,
+      "name": "NMDC Maintenance Assistant",
+      "group": "Engineering & PSU - NMDC Exams"
+    },
+    {
+      "global_sl": 5587,
+      "group_sl": 2528,
+      "exam_id": 4466,
+      "name": "NMDC JOT",
+      "group": "Engineering & PSU - NMDC Exams"
+    },
+    {
+      "global_sl": 5588,
+      "group_sl": 2529,
+      "exam_id": 4465,
+      "name": "NMDC HEM Operator",
+      "group": "Engineering & PSU - NMDC Exams"
+    },
+    {
+      "global_sl": 5589,
+      "group_sl": 2531,
+      "exam_id": 4463,
+      "name": "NMDC Executive Trainee",
+      "group": "Engineering & PSU - NMDC Exams"
+    },
+    {
+      "global_sl": 5590,
+      "group_sl": 2532,
+      "exam_id": 4462,
+      "name": "NMDC Electrician",
+      "group": "Engineering & PSU - NMDC Exams"
+    },
+    {
+      "global_sl": 5591,
+      "group_sl": 2563,
+      "exam_id": 4431,
+      "name": "NIELIT Scientist C & D",
+      "group": "Engineering & PSU - NIELIT Exams"
+    },
+    {
+      "global_sl": 5592,
+      "group_sl": 2564,
+      "exam_id": 4430,
+      "name": "NIELIT Scientist B",
+      "group": "Engineering & PSU - NIELIT Exams"
+    },
+    {
+      "global_sl": 5593,
+      "group_sl": 2565,
+      "exam_id": 4429,
+      "name": "NIELIT Scientific Assistant IT",
+      "group": "Engineering & PSU - NIELIT Exams"
+    },
+    {
+      "global_sl": 5594,
+      "group_sl": 2566,
+      "exam_id": 4428,
+      "name": "NIELIT Scientific Assistant Computer Science",
+      "group": "Engineering & PSU - NIELIT Exams"
+    },
+    {
+      "global_sl": 5595,
+      "group_sl": 2567,
+      "exam_id": 4427,
+      "name": "NIELIT Scientific Assistant",
+      "group": "Engineering & PSU - NIELIT Exams"
+    },
+    {
+      "global_sl": 5596,
+      "group_sl": 2568,
+      "exam_id": 4426,
+      "name": "NIELIT Programmer",
+      "group": "Engineering & PSU - NIELIT Exams"
+    },
+    {
+      "global_sl": 5597,
+      "group_sl": 2569,
+      "exam_id": 4425,
+      "name": "NIELIT Junior & Senior Faculty",
+      "group": "Engineering & PSU - NIELIT Exams"
+    },
+    {
+      "global_sl": 5598,
+      "group_sl": 2830,
+      "exam_id": 4164,
+      "name": "MPSC Civil Judge",
+      "group": "Maharashtra High Court & Court Exams"
+    },
+    {
+      "global_sl": 5599,
+      "group_sl": 6035,
+      "exam_id": 959,
+      "name": "Bombay High Court Peon",
+      "group": "Maharashtra High Court & Court Exams"
+    },
+    {
+      "global_sl": 5600,
+      "group_sl": 6036,
+      "exam_id": 958,
+      "name": "Bombay High Court PA",
+      "group": "Maharashtra High Court & Court Exams"
+    }
+  ]
+}

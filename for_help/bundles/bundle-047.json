@@ -1,0 +1,466 @@
+{
+  "bundle_id": "bundle-047",
+  "bundle_num": 47,
+  "category_id": "banking",
+  "category_name": "बैंकिंग एवं वित्त",
+  "category_icon": "🏦",
+  "title": "बैंकिंग एवं वित्त — Banking & Finance - PNB • Banking & Finance - CA • Andhra Pradesh Cooperative Bank",
+  "total_exams": 74,
+  "boards_included": [
+    "Banking & Finance - PNB",
+    "Banking & Finance - CA",
+    "Andhra Pradesh Cooperative Bank",
+    "Banking & Finance - SIDBI & IDBI",
+    "Punjab Cooperative Bank",
+    "Banking & Finance - LIC",
+    "Karnataka Cooperative Bank",
+    "Banking & Finance - BOI",
+    "Banking & Finance - RBI"
+  ],
+  "exams": [
+    {
+      "sl": 4172,
+      "id": 2822,
+      "name": "ICAI Executive Officer",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "sl": 5830,
+      "id": 1164,
+      "name": "CA Intermediate Taxation",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "sl": 5831,
+      "id": 1163,
+      "name": "CA Intermediate Financial Management and Strategic Management",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "sl": 5832,
+      "id": 1162,
+      "name": "CA Intermediate Cost and Management Accounting",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "sl": 5833,
+      "id": 1161,
+      "name": "CA Intermediate Corporate and Other Law",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "sl": 5834,
+      "id": 1160,
+      "name": "CA Intermediate Auditing and Ethics",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "sl": 5835,
+      "id": 1159,
+      "name": "CA Intermediate Advanced Accounting",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "sl": 5836,
+      "id": 1158,
+      "name": "CA Foundation",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "sl": 5837,
+      "id": 1157,
+      "name": "CA Final Paper 6",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "sl": 5838,
+      "id": 1156,
+      "name": "CA Final Financial Reporting",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "sl": 5839,
+      "id": 1155,
+      "name": "CA Final Direct Tax Laws and International Taxation",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "sl": 5840,
+      "id": 1154,
+      "name": "CA Final Advanced Financial Management",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "sl": 5841,
+      "id": 1153,
+      "name": "CA Final Advanced Auditing and Professional Ethics",
+      "group": "Banking & Finance - CA Exams"
+    },
+    {
+      "sl": 3298,
+      "id": 3696,
+      "name": "LIC HFL Junior Assistant",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "sl": 3299,
+      "id": 3695,
+      "name": "LIC HFL Apprentice",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "sl": 3300,
+      "id": 3694,
+      "name": "LIC AAO Specialist Legal",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "sl": 3301,
+      "id": 3693,
+      "name": "LIC AAO Specialist CS",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "sl": 3302,
+      "id": 3692,
+      "name": "LIC AAO Specialist CA",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "sl": 3303,
+      "id": 3691,
+      "name": "LIC AAO Specialist Actuarial",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "sl": 3304,
+      "id": 3690,
+      "name": "LIC AAO Insurance Specialists",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "sl": 3305,
+      "id": 3689,
+      "name": "LIC AAO Generalist",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "sl": 3306,
+      "id": 3688,
+      "name": "LIC AAO AE Electrical",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "sl": 3307,
+      "id": 3687,
+      "name": "LIC AAO AE Civil",
+      "group": "Banking & Finance - LIC Exams"
+    },
+    {
+      "sl": 3566,
+      "id": 3428,
+      "name": "KDCCB Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "sl": 3567,
+      "id": 3427,
+      "name": "KDCCB Bank Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "sl": 4725,
+      "id": 2269,
+      "name": "GDCC Bank Clerk, Junior Officer",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "sl": 5195,
+      "id": 1799,
+      "name": "DCCB Vizianagaram Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "sl": 5196,
+      "id": 1798,
+      "name": "DCCB Nellore Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "sl": 5197,
+      "id": 1797,
+      "name": "DCCB Kurnool Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "sl": 5198,
+      "id": 1796,
+      "name": "DCCB Kakinada Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "sl": 5199,
+      "id": 1795,
+      "name": "DCCB Kadapa Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "sl": 5200,
+      "id": 1794,
+      "name": "DCCB Guntur Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "sl": 5201,
+      "id": 1793,
+      "name": "DCCB Anantapur Staff Assistant",
+      "group": "Andhra Pradesh Cooperative Bank Exams"
+    },
+    {
+      "sl": 2111,
+      "id": 4883,
+      "name": "PNB SO Officer Industry",
+      "group": "Banking & Finance - PNB Exams"
+    },
+    {
+      "sl": 2112,
+      "id": 4882,
+      "name": "PNB SO Law Officer",
+      "group": "Banking & Finance - PNB Exams"
+    },
+    {
+      "sl": 2113,
+      "id": 4881,
+      "name": "PNB SO Engineer",
+      "group": "Banking & Finance - PNB Exams"
+    },
+    {
+      "sl": 2114,
+      "id": 4880,
+      "name": "PNB SO",
+      "group": "Banking & Finance - PNB Exams"
+    },
+    {
+      "sl": 2115,
+      "id": 4879,
+      "name": "PNB PO, Clerk",
+      "group": "Banking & Finance - PNB Exams"
+    },
+    {
+      "sl": 2116,
+      "id": 4878,
+      "name": "PNB Officer, Manager",
+      "group": "Banking & Finance - PNB Exams"
+    },
+    {
+      "sl": 2117,
+      "id": 4877,
+      "name": "PNB LBO",
+      "group": "Banking & Finance - PNB Exams"
+    },
+    {
+      "sl": 2118,
+      "id": 4876,
+      "name": "PNB Bank Apprentice",
+      "group": "Banking & Finance - PNB Exams"
+    },
+    {
+      "sl": 1322,
+      "id": 5672,
+      "name": "SIDBI Assistant Manager",
+      "group": "Banking & Finance - SIDBI & IDBI Exams"
+    },
+    {
+      "sl": 4125,
+      "id": 2869,
+      "name": "IDBI Junior Assistant Manager AAO",
+      "group": "Banking & Finance - SIDBI & IDBI Exams"
+    },
+    {
+      "sl": 4126,
+      "id": 2868,
+      "name": "IDBI Junior Assistant Manager",
+      "group": "Banking & Finance - SIDBI & IDBI Exams"
+    },
+    {
+      "sl": 4127,
+      "id": 2867,
+      "name": "IDBI Bank SO",
+      "group": "Banking & Finance - SIDBI & IDBI Exams"
+    },
+    {
+      "sl": 4128,
+      "id": 2866,
+      "name": "IDBI Bank SCO",
+      "group": "Banking & Finance - SIDBI & IDBI Exams"
+    },
+    {
+      "sl": 4129,
+      "id": 2865,
+      "name": "IDBI Bank Executive",
+      "group": "Banking & Finance - SIDBI & IDBI Exams"
+    },
+    {
+      "sl": 4130,
+      "id": 2864,
+      "name": "IDBI Bank Assistant Manager",
+      "group": "Banking & Finance - SIDBI & IDBI Exams"
+    },
+    {
+      "sl": 1387,
+      "id": 5607,
+      "name": "SDCC Bank Junior Clerk",
+      "group": "Karnataka Cooperative Bank Exams"
+    },
+    {
+      "sl": 1405,
+      "id": 5589,
+      "name": "SCDCC Bank Second Division Clerk",
+      "group": "Karnataka Cooperative Bank Exams"
+    },
+    {
+      "sl": 3416,
+      "id": 3578,
+      "name": "KSFC Deputy Manager",
+      "group": "Karnataka Cooperative Bank Exams"
+    },
+    {
+      "sl": 3583,
+      "id": 3411,
+      "name": "Karnataka Bank PO",
+      "group": "Karnataka Cooperative Bank Exams"
+    },
+    {
+      "sl": 3584,
+      "id": 3410,
+      "name": "Karnataka Bank Clerk",
+      "group": "Karnataka Cooperative Bank Exams"
+    },
+    {
+      "sl": 3585,
+      "id": 3409,
+      "name": "Karnataka Apex Bank Banking Assistant",
+      "group": "Karnataka Cooperative Bank Exams"
+    },
+    {
+      "sl": 6307,
+      "id": 687,
+      "name": "Bellary DCC Bank SDA",
+      "group": "Karnataka Cooperative Bank Exams"
+    },
+    {
+      "sl": 1813,
+      "id": 5181,
+      "name": "RBI SO Grade B",
+      "group": "Banking & Finance - RBI Exams"
+    },
+    {
+      "sl": 1814,
+      "id": 5180,
+      "name": "RBI SO Grade A",
+      "group": "Banking & Finance - RBI Exams"
+    },
+    {
+      "sl": 1815,
+      "id": 5179,
+      "name": "RBI Security Guard",
+      "group": "Banking & Finance - RBI Exams"
+    },
+    {
+      "sl": 1816,
+      "id": 5178,
+      "name": "RBI Office Attendant",
+      "group": "Banking & Finance - RBI Exams"
+    },
+    {
+      "sl": 1817,
+      "id": 5177,
+      "name": "RBI JE",
+      "group": "Banking & Finance - RBI Exams"
+    },
+    {
+      "sl": 1818,
+      "id": 5176,
+      "name": "RBI Grade B",
+      "group": "Banking & Finance - RBI Exams"
+    },
+    {
+      "sl": 1819,
+      "id": 5175,
+      "name": "RBI Assistant",
+      "group": "Banking & Finance - RBI Exams"
+    },
+    {
+      "sl": 2014,
+      "id": 4980,
+      "name": "Punjab and Sind Bank SO Agriculture Manager",
+      "group": "Punjab Cooperative Bank Exams"
+    },
+    {
+      "sl": 2015,
+      "id": 4979,
+      "name": "Punjab and Sind Bank SO",
+      "group": "Punjab Cooperative Bank Exams"
+    },
+    {
+      "sl": 2016,
+      "id": 4978,
+      "name": "Punjab and Sind Bank Relationship Manager",
+      "group": "Punjab Cooperative Bank Exams"
+    },
+    {
+      "sl": 2017,
+      "id": 4977,
+      "name": "Punjab and Sind Bank LBO",
+      "group": "Punjab Cooperative Bank Exams"
+    },
+    {
+      "sl": 2072,
+      "id": 4922,
+      "name": "PSCB Bank Clerk",
+      "group": "Punjab Cooperative Bank Exams"
+    },
+    {
+      "sl": 2088,
+      "id": 4906,
+      "name": "PPSC Inspector Cooperative Societies",
+      "group": "Punjab Cooperative Bank Exams"
+    },
+    {
+      "sl": 6041,
+      "id": 953,
+      "name": "BOI Security Officer",
+      "group": "Banking & Finance - BOI Exams"
+    },
+    {
+      "sl": 6042,
+      "id": 952,
+      "name": "BOI PO IT Officer",
+      "group": "Banking & Finance - BOI Exams"
+    },
+    {
+      "sl": 6043,
+      "id": 951,
+      "name": "BOI Manager",
+      "group": "Banking & Finance - BOI Exams"
+    },
+    {
+      "sl": 6044,
+      "id": 950,
+      "name": "BOI Law Officer",
+      "group": "Banking & Finance - BOI Exams"
+    },
+    {
+      "sl": 6045,
+      "id": 949,
+      "name": "BOI Credit Officer",
+      "group": "Banking & Finance - BOI Exams"
+    },
+    {
+      "sl": 6046,
+      "id": 948,
+      "name": "BOI Apprentice",
+      "group": "Banking & Finance - BOI Exams"
+    }
+  ]
+}

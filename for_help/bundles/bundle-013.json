@@ -1,0 +1,55 @@
+{
+  "bundle_id": "bundle-013",
+  "bundle_num": 13,
+  "category_id": "bihar",
+  "category_name": "बिहार",
+  "category_icon": "🟡",
+  "title": "बिहार — CSBC / BPSSC (बिहार पुलिस भर्ती पर्षद)",
+  "total_exams": 4,
+  "boards_included": [
+    "Bihar Police"
+  ],
+  "official_portal": "https://csbc.bih.nic.in",
+  "exams": [
+    {
+      "id": 3009,
+      "name": "बिहार पुलिस सिपाही भर्ती (CSBC Constable)",
+      "eligibility": "12वीं पास",
+      "age_limit": "18-25 वर्ष",
+      "applicant_scale": "18+ लाख",
+      "exam_pattern": "लिखित परीक्षा 100 अंक (क्वालिफाइंग) + शारीरिक दक्षता 100 अंक (मेरिट)",
+      "viral_subtext": "21,391 कांस्टेबल पद • शारीरिक दक्षता से मेरिट",
+      "status": "verified"
+    },
+    {
+      "id": 3010,
+      "name": "बिहार पुलिस दारोगा / सब-इंस्पेक्टर (BPSSC SI)",
+      "eligibility": "स्नातक",
+      "age_limit": "20-37 वर्ष",
+      "applicant_scale": "6+ लाख",
+      "exam_pattern": "Prelims (100 प्रश्न) + Mains (Paper-1 Hindi, Paper-2 GS) + PET",
+      "viral_subtext": "नागरिक पुलिस दारोगा संवर्ग",
+      "status": "verified"
+    },
+    {
+      "id": 3011,
+      "name": "मद्य निषेध एवं उत्पाद सिपाही (Excise Constable)",
+      "eligibility": "12वीं पास",
+      "age_limit": "18-25 वर्ष",
+      "applicant_scale": "4+ लाख",
+      "exam_pattern": "लिखित + शारीरिक दक्षता",
+      "viral_subtext": "मद्य निषेध एवं निबंधन विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 3012,
+      "name": "बिहार अग्निशमन सेवा सिपाही (Fireman)",
+      "eligibility": "12वीं पास",
+      "age_limit": "18-25 वर्ष",
+      "applicant_scale": "3.5 लाख",
+      "exam_pattern": "100 प्रश्न लिखित + शारीरिक परीक्षा",
+      "viral_subtext": "गृह (विशेष) विभाग",
+      "status": "verified"
+    }
+  ]
+}

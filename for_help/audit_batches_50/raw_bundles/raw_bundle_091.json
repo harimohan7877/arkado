@@ -1,0 +1,358 @@
+{
+  "bundle_number": 91,
+  "bundle_id": "raw_bundle_091",
+  "range": "4501 - 4550",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4501,
+      "group_sl": 5059,
+      "exam_id": 1935,
+      "name": "DRDO CEPTAM Senior Technical Assistant Mechanical",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4502,
+      "group_sl": 5060,
+      "exam_id": 1934,
+      "name": "DRDO CEPTAM Senior Technical Assistant Electronics and Communication",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4503,
+      "group_sl": 5061,
+      "exam_id": 1933,
+      "name": "DRDO CEPTAM Senior Technical Assistant Electrical",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4504,
+      "group_sl": 5062,
+      "exam_id": 1932,
+      "name": "DRDO CEPTAM Senior Technical Assistant Computer Science",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4505,
+      "group_sl": 5063,
+      "exam_id": 1931,
+      "name": "DRDO CEPTAM Senior Technical Assistant Civil",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4506,
+      "group_sl": 5064,
+      "exam_id": 1930,
+      "name": "DRDO CEPTAM Senior Technical Assistant Chemistry",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4507,
+      "group_sl": 5065,
+      "exam_id": 1929,
+      "name": "DRDO CEPTAM MTS",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4508,
+      "group_sl": 5066,
+      "exam_id": 1928,
+      "name": "DRDO Apprentice",
+      "group": "Engineering & PSU - DRDO Exams"
+    },
+    {
+      "global_sl": 4509,
+      "group_sl": 5490,
+      "exam_id": 1504,
+      "name": "CSIR SO",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4510,
+      "group_sl": 5491,
+      "exam_id": 1503,
+      "name": "CSIR NPL Technician",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4511,
+      "group_sl": 5492,
+      "exam_id": 1502,
+      "name": "CSIR NML",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4512,
+      "group_sl": 5493,
+      "exam_id": 1501,
+      "name": "CSIR NET Physical Sciences",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4513,
+      "group_sl": 5494,
+      "exam_id": 1500,
+      "name": "CSIR NET Mathematical Sciences",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4514,
+      "group_sl": 5495,
+      "exam_id": 1499,
+      "name": "CSIR NET Life Science Hindi",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4515,
+      "group_sl": 5496,
+      "exam_id": 1498,
+      "name": "CSIR NET Life Science",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4516,
+      "group_sl": 5497,
+      "exam_id": 1497,
+      "name": "CSIR NET General Aptitude",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4517,
+      "group_sl": 5498,
+      "exam_id": 1496,
+      "name": "CSIR NET Earth Science",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4518,
+      "group_sl": 5499,
+      "exam_id": 1495,
+      "name": "CSIR NET Chemical Science",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4519,
+      "group_sl": 5500,
+      "exam_id": 1494,
+      "name": "CSIR NCL JSA",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4520,
+      "group_sl": 5501,
+      "exam_id": 1493,
+      "name": "CSIR NAL Technician Fitter",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4521,
+      "group_sl": 5502,
+      "exam_id": 1492,
+      "name": "CSIR IMMT JSA",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4522,
+      "group_sl": 5503,
+      "exam_id": 1491,
+      "name": "CSIR IICT JSA",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4523,
+      "group_sl": 5504,
+      "exam_id": 1490,
+      "name": "CSIR CRRI Junior Stenographer",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4524,
+      "group_sl": 5505,
+      "exam_id": 1489,
+      "name": "CSIR CRRI JSA",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4525,
+      "group_sl": 5506,
+      "exam_id": 1488,
+      "name": "CSIR CLRI Technician Grade 2",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4526,
+      "group_sl": 5507,
+      "exam_id": 1487,
+      "name": "CSIR CGCRI Technical Assistant",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4527,
+      "group_sl": 5508,
+      "exam_id": 1486,
+      "name": "CSIR CECRI Technical Assistant",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4528,
+      "group_sl": 5509,
+      "exam_id": 1485,
+      "name": "CSIR CCMB Technician",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4529,
+      "group_sl": 5510,
+      "exam_id": 1484,
+      "name": "CSIR CCMB Technical Assistant",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4530,
+      "group_sl": 5511,
+      "exam_id": 1483,
+      "name": "CSIR ASO",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "global_sl": 4531,
+      "group_sl": 26,
+      "exam_id": 6968,
+      "name": "WCD Mysuru Anganwadi Worker & Helper",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4532,
+      "group_sl": 27,
+      "exam_id": 6967,
+      "name": "WCD Kolar Anganwadi Helper",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4533,
+      "group_sl": 28,
+      "exam_id": 6966,
+      "name": "WCD Karnataka Anganwadi",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4534,
+      "group_sl": 31,
+      "exam_id": 6963,
+      "name": "WCD Davanagere Anganwadi Helper",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4535,
+      "group_sl": 32,
+      "exam_id": 6962,
+      "name": "WCD Chikkaballapur Anganwadi Helper",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4536,
+      "group_sl": 1372,
+      "exam_id": 5622,
+      "name": "SED Karnataka Primary Guest Teacher",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4537,
+      "group_sl": 3426,
+      "exam_id": 3568,
+      "name": "KSET Physical Education",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4538,
+      "group_sl": 3443,
+      "exam_id": 3551,
+      "name": "KSET Education",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4539,
+      "group_sl": 3462,
+      "exam_id": 3532,
+      "name": "KPSC Lecturer",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4540,
+      "group_sl": 3479,
+      "exam_id": 3515,
+      "name": "KPSC Assistant Professor",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4541,
+      "group_sl": 3549,
+      "exam_id": 3445,
+      "name": "KEA Assistant Professor Management",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4542,
+      "group_sl": 3550,
+      "exam_id": 3444,
+      "name": "KEA Assistant Professor Economics",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4543,
+      "group_sl": 3551,
+      "exam_id": 3443,
+      "name": "KEA Assistant Professor Computer Science",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4544,
+      "group_sl": 3552,
+      "exam_id": 3442,
+      "name": "KEA Assistant Professor Commerce",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4545,
+      "group_sl": 3553,
+      "exam_id": 3441,
+      "name": "KEA Assistant Professor (Sociology)",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4546,
+      "group_sl": 3554,
+      "exam_id": 3440,
+      "name": "KEA Assistant Professor (Political Science)",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4547,
+      "group_sl": 3555,
+      "exam_id": 3439,
+      "name": "KEA Assistant Professor (Physics)",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4548,
+      "group_sl": 3556,
+      "exam_id": 3438,
+      "name": "KEA Assistant Professor (Mathematics)",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4549,
+      "group_sl": 3557,
+      "exam_id": 3437,
+      "name": "KEA Assistant Professor (History)",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "global_sl": 4550,
+      "group_sl": 3558,
+      "exam_id": 3436,
+      "name": "KEA Assistant Professor (English)",
+      "group": "Karnataka Teaching & School Exams"
+    }
+  ]
+}

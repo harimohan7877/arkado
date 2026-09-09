@@ -1,0 +1,358 @@
+{
+  "bundle_number": 95,
+  "bundle_id": "raw_bundle_095",
+  "range": "4701 - 4750",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4701,
+      "group_sl": 5486,
+      "exam_id": 1508,
+      "name": "CSL Junior Technical Assistant",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4702,
+      "group_sl": 5487,
+      "exam_id": 1507,
+      "name": "CSL Fireman",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4703,
+      "group_sl": 5488,
+      "exam_id": 1506,
+      "name": "CSL Executive Trainee",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4704,
+      "group_sl": 5489,
+      "exam_id": 1505,
+      "name": "CSL Assistant",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4705,
+      "group_sl": 13,
+      "exam_id": 6981,
+      "name": "Western Railway Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4706,
+      "group_sl": 19,
+      "exam_id": 6975,
+      "name": "WCR Trade Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4707,
+      "group_sl": 1280,
+      "exam_id": 5714,
+      "name": "South Central Railway Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4708,
+      "group_sl": 1375,
+      "exam_id": 5619,
+      "name": "SECR Trade Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4709,
+      "group_sl": 1578,
+      "exam_id": 5416,
+      "name": "RRC Trade Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4710,
+      "group_sl": 1580,
+      "exam_id": 5414,
+      "name": "RRC NWR Jaipur Trade Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4711,
+      "group_sl": 1581,
+      "exam_id": 5413,
+      "name": "RRC Hubli Trade Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4712,
+      "group_sl": 1591,
+      "exam_id": 5403,
+      "name": "RRC Central Railway Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4713,
+      "group_sl": 1917,
+      "exam_id": 5077,
+      "name": "Railway SER Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4714,
+      "group_sl": 2507,
+      "exam_id": 4487,
+      "name": "Northern Railway Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4715,
+      "group_sl": 2511,
+      "exam_id": 4483,
+      "name": "North Central Railway Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4716,
+      "group_sl": 2664,
+      "exam_id": 4330,
+      "name": "NFR Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4717,
+      "group_sl": 3940,
+      "exam_id": 3054,
+      "name": "IOCL WR Trade Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4718,
+      "group_sl": 3943,
+      "exam_id": 3051,
+      "name": "IOCL SR Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4719,
+      "group_sl": 4923,
+      "exam_id": 2071,
+      "name": "Eastern Railway Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4720,
+      "group_sl": 4926,
+      "exam_id": 2068,
+      "name": "East Coast Railway Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4721,
+      "group_sl": 6051,
+      "exam_id": 943,
+      "name": "BOAT WR Graduate Apprentice",
+      "group": "National Railways - RRB Apprentice Exams"
+    },
+    {
+      "global_sl": 4722,
+      "group_sl": 281,
+      "exam_id": 6713,
+      "name": "UPSC EPFO APFC",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4723,
+      "group_sl": 282,
+      "exam_id": 6712,
+      "name": "UPSC EPFO AO EO",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4724,
+      "group_sl": 4842,
+      "exam_id": 2152,
+      "name": "ESIC UDC",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4725,
+      "group_sl": 4843,
+      "exam_id": 2151,
+      "name": "ESIC Stenographer",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4726,
+      "group_sl": 4844,
+      "exam_id": 2150,
+      "name": "ESIC Staff Nurse",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4727,
+      "group_sl": 4845,
+      "exam_id": 2149,
+      "name": "ESIC SSO",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4728,
+      "group_sl": 4846,
+      "exam_id": 2148,
+      "name": "ESIC Specialist Grade 2",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4729,
+      "group_sl": 4847,
+      "exam_id": 2147,
+      "name": "ESIC Security Officer",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4730,
+      "group_sl": 4848,
+      "exam_id": 2146,
+      "name": "ESIC Paramedical",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4731,
+      "group_sl": 4849,
+      "exam_id": 2145,
+      "name": "ESIC Nursing Officer",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4732,
+      "group_sl": 4850,
+      "exam_id": 2144,
+      "name": "ESIC MTS",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4733,
+      "group_sl": 4852,
+      "exam_id": 2142,
+      "name": "ESIC IMO",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4734,
+      "group_sl": 4861,
+      "exam_id": 2133,
+      "name": "EPFO Stenographer",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4735,
+      "group_sl": 4862,
+      "exam_id": 2132,
+      "name": "EPFO SSA",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4736,
+      "group_sl": 4863,
+      "exam_id": 2131,
+      "name": "EPFO Section Supervisor",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4737,
+      "group_sl": 4864,
+      "exam_id": 2130,
+      "name": "EPFO LDC and JSA",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4738,
+      "group_sl": 4865,
+      "exam_id": 2129,
+      "name": "EPFO Assistant",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "global_sl": 4739,
+      "group_sl": 1187,
+      "exam_id": 5807,
+      "name": "SSC SR Medical Attendant",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4740,
+      "group_sl": 1188,
+      "exam_id": 5806,
+      "name": "SSC SI, ASI",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4741,
+      "group_sl": 1195,
+      "exam_id": 5799,
+      "name": "SSC Pharmacist",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4742,
+      "group_sl": 1196,
+      "exam_id": 5798,
+      "name": "SSC Nursing Officer",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4743,
+      "group_sl": 1197,
+      "exam_id": 5797,
+      "name": "SSC Northen Region Group B & C",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4744,
+      "group_sl": 1199,
+      "exam_id": 5795,
+      "name": "SSC Mathematics in English",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4745,
+      "group_sl": 1200,
+      "exam_id": 5794,
+      "name": "SSC Ladakh Non Gazetted",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4746,
+      "group_sl": 1201,
+      "exam_id": 5793,
+      "name": "SSC KKR DEO",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4747,
+      "group_sl": 1207,
+      "exam_id": 5787,
+      "name": "SSC General Intelligence & Reasoning in Hindi",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4748,
+      "group_sl": 1209,
+      "exam_id": 5785,
+      "name": "SSC Forest Guard Department",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4749,
+      "group_sl": 1210,
+      "exam_id": 5784,
+      "name": "SSC English",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "global_sl": 4750,
+      "group_sl": 1211,
+      "exam_id": 5783,
+      "name": "SSC Delhi Police SI",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "bundle_number": 80,
+  "bundle_id": "raw_bundle_080",
+  "range": "3951 - 4000",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3951,
+      "group_sl": 460,
+      "exam_id": 6534,
+      "name": "UPHESC Assistant Professor B.Ed.",
+      "group": "Uttar Pradesh PSC Exams"
+    },
+    {
+      "global_sl": 3952,
+      "group_sl": 461,
+      "exam_id": 6533,
+      "name": "UPHESC Assistant Professor (Horticulture)",
+      "group": "Uttar Pradesh PSC Exams"
+    },
+    {
+      "global_sl": 3953,
+      "group_sl": 462,
+      "exam_id": 6532,
+      "name": "UPHESC Assistant Professor (Agri. Extension)",
+      "group": "Uttar Pradesh PSC Exams"
+    },
+    {
+      "global_sl": 3954,
+      "group_sl": 463,
+      "exam_id": 6531,
+      "name": "UPHESC Assistant Professor (Agri. Economics)",
+      "group": "Uttar Pradesh PSC Exams"
+    },
+    {
+      "global_sl": 3955,
+      "group_sl": 464,
+      "exam_id": 6530,
+      "name": "UPHESC Assistant Professor",
+      "group": "Uttar Pradesh PSC Exams"
+    },
+    {
+      "global_sl": 3956,
+      "group_sl": 465,
+      "exam_id": 6529,
+      "name": "UPESSC Assistant Professor BEd",
+      "group": "Uttar Pradesh PSC Exams"
+    },
+    {
+      "global_sl": 3957,
+      "group_sl": 2039,
+      "exam_id": 4955,
+      "name": "PSSSB Welfare Officer",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3958,
+      "group_sl": 2040,
+      "exam_id": 4954,
+      "name": "PSSSB Veterinary Inspector",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3959,
+      "group_sl": 2041,
+      "exam_id": 4953,
+      "name": "PSSSB VDO",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3960,
+      "group_sl": 2042,
+      "exam_id": 4952,
+      "name": "PSSSB Treasury Officer",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3961,
+      "group_sl": 2043,
+      "exam_id": 4951,
+      "name": "PSSSB Technical Assistant",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3962,
+      "group_sl": 2044,
+      "exam_id": 4950,
+      "name": "PSSSB Supervisor",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3963,
+      "group_sl": 2045,
+      "exam_id": 4949,
+      "name": "PSSSB Storekeeper",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3964,
+      "group_sl": 2046,
+      "exam_id": 4948,
+      "name": "PSSSB Steno Typist",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3965,
+      "group_sl": 2047,
+      "exam_id": 4947,
+      "name": "PSSSB Senior Industrial Promotion Officer",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3966,
+      "group_sl": 2048,
+      "exam_id": 4946,
+      "name": "PSSSB Senior Assistant",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3967,
+      "group_sl": 2049,
+      "exam_id": 4945,
+      "name": "PSSSB School Librarian",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3968,
+      "group_sl": 2050,
+      "exam_id": 4944,
+      "name": "PSSSB Legal Clerk",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3969,
+      "group_sl": 2051,
+      "exam_id": 4943,
+      "name": "PSSSB Junior Technician",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3970,
+      "group_sl": 2052,
+      "exam_id": 4942,
+      "name": "PSSSB Junior Draftsman",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3971,
+      "group_sl": 2053,
+      "exam_id": 4941,
+      "name": "PSSSB Junior Auditor",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3972,
+      "group_sl": 2054,
+      "exam_id": 4940,
+      "name": "PSSSB JE",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3973,
+      "group_sl": 2055,
+      "exam_id": 4939,
+      "name": "PSSSB Jail Warder",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3974,
+      "group_sl": 2056,
+      "exam_id": 4938,
+      "name": "PSSSB Inspector Audit",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3975,
+      "group_sl": 2057,
+      "exam_id": 4937,
+      "name": "PSSSB Hostel Superintendent",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3976,
+      "group_sl": 2058,
+      "exam_id": 4936,
+      "name": "PSSSB Horticulture Supervisor",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3977,
+      "group_sl": 2059,
+      "exam_id": 4935,
+      "name": "PSSSB Group D",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3978,
+      "group_sl": 2060,
+      "exam_id": 4934,
+      "name": "PSSSB Forest Guard",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3979,
+      "group_sl": 2061,
+      "exam_id": 4933,
+      "name": "PSSSB Fishery Officer",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3980,
+      "group_sl": 2062,
+      "exam_id": 4932,
+      "name": "PSSSB Excise and Taxation Inspector",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3981,
+      "group_sl": 2063,
+      "exam_id": 4931,
+      "name": "PSSSB Dairy Development Inspector",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3982,
+      "group_sl": 2064,
+      "exam_id": 4930,
+      "name": "PSSSB Clerk",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3983,
+      "group_sl": 2065,
+      "exam_id": 4929,
+      "name": "PSSSB BLEO",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3984,
+      "group_sl": 2066,
+      "exam_id": 4928,
+      "name": "PSSSB ADA",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "global_sl": 3985,
+      "group_sl": 5514,
+      "exam_id": 1480,
+      "name": "CSBC Bihar Police Constable Operator",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 3986,
+      "group_sl": 5981,
+      "exam_id": 1013,
+      "name": "BPSSC Police Havildar Instructor",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 3987,
+      "group_sl": 5982,
+      "exam_id": 1012,
+      "name": "BPSSC Police ASI Technical",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 3988,
+      "group_sl": 6080,
+      "exam_id": 914,
+      "name": "Bihar Vidhan Sabha Security Guard",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 3989,
+      "group_sl": 6164,
+      "exam_id": 830,
+      "name": "Bihar Police SI",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 3990,
+      "group_sl": 6165,
+      "exam_id": 829,
+      "name": "Bihar Police Prohibition SI",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 3991,
+      "group_sl": 6166,
+      "exam_id": 828,
+      "name": "Bihar Police Prohibition Constable",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 3992,
+      "group_sl": 6167,
+      "exam_id": 827,
+      "name": "Bihar Police Mobile Squad Constable",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 3993,
+      "group_sl": 6168,
+      "exam_id": 826,
+      "name": "Bihar Police Lady Constable",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 3994,
+      "group_sl": 6169,
+      "exam_id": 825,
+      "name": "Bihar Police Jail Warder",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 3995,
+      "group_sl": 6170,
+      "exam_id": 824,
+      "name": "Bihar Police Forester",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 3996,
+      "group_sl": 6171,
+      "exam_id": 823,
+      "name": "Bihar Police Fireman",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 3997,
+      "group_sl": 6172,
+      "exam_id": 822,
+      "name": "Bihar Police Enforcement SI",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 3998,
+      "group_sl": 6173,
+      "exam_id": 821,
+      "name": "Bihar Police Constable Driver",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 3999,
+      "group_sl": 6174,
+      "exam_id": 820,
+      "name": "Bihar Police Constable",
+      "group": "Bihar Police & Security Exams"
+    },
+    {
+      "global_sl": 4000,
+      "group_sl": 6175,
+      "exam_id": 819,
+      "name": "Bihar Police ASI Operation",
+      "group": "Bihar Police & Security Exams"
+    }
+  ]
+}

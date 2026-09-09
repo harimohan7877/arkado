@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-040",
+  "bundle_num": 40,
+  "category_id": "upsc-civil",
+  "category_name": "UPSC सिविल सेवा",
+  "category_icon": "⚖️",
+  "title": "UPSC सिविल सेवा — Central Govt - General Civil Services (Part 2/3)",
+  "total_exams": 60,
+  "boards_included": [
+    "Central Govt - General Civil Services"
+  ],
+  "exams": [
+    {
+      "sl": 4071,
+      "id": 2923,
+      "name": "India Post Office AAO",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4073,
+      "id": 2921,
+      "name": "Income Tax Recruitment",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4140,
+      "id": 2854,
+      "name": "ICFRE Technical Assistant",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4141,
+      "id": 2853,
+      "name": "ICFRE Scientist B",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4142,
+      "id": 2852,
+      "name": "ICFRE Forest Conservator",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4294,
+      "id": 2700,
+      "name": "HQ Northern Command Group C",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4810,
+      "id": 2184,
+      "name": "FCI Watchman Class IV",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4812,
+      "id": 2182,
+      "name": "FCI Steno Grade II",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4817,
+      "id": 2177,
+      "name": "FCI Manager Technical",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4818,
+      "id": 2176,
+      "name": "FCI Manager Movement",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4819,
+      "id": 2175,
+      "name": "FCI Manager General, Depot",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4821,
+      "id": 2173,
+      "name": "FCI Manager",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4823,
+      "id": 2171,
+      "name": "FCI JE",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4827,
+      "id": 2167,
+      "name": "FCI Assistant Grade 3 Technical",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4828,
+      "id": 2166,
+      "name": "FCI Assistant Grade 3 General, Depot",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4831,
+      "id": 2163,
+      "name": "FCI AGM",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5018,
+      "id": 1976,
+      "name": "DSSC Group C",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5067,
+      "id": 1927,
+      "name": "DRDA GRS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5069,
+      "id": 1925,
+      "name": "DPS Junior Purchase Assistant",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5071,
+      "id": 1923,
+      "name": "DPAR Stenographer Grade 2",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5073,
+      "id": 1921,
+      "name": "DOT Sub Divisional Engineer",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5074,
+      "id": 1920,
+      "name": "DOT LDC",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5075,
+      "id": 1919,
+      "name": "DOT Assistant Director & JTO",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5147,
+      "id": 1847,
+      "name": "DGDE SDO",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5148,
+      "id": 1846,
+      "name": "DGAQA LDC, MTS, Stenographer",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5149,
+      "id": 1845,
+      "name": "DGAFMS Tradesman Mate",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5150,
+      "id": 1844,
+      "name": "DGAFMS Store Keeper",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5151,
+      "id": 1843,
+      "name": "DGAFMS MTS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5515,
+      "id": 1479,
+      "name": "CSB UDC",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5516,
+      "id": 1478,
+      "name": "CSB Scientist B",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5517,
+      "id": 1477,
+      "name": "CSB BTC Kokrajhar Forest Guard and Forester",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5518,
+      "id": 1476,
+      "name": "CSB Assistant Superintendent",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5552,
+      "id": 1442,
+      "name": "Coir Board Assistant",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5811,
+      "id": 1183,
+      "name": "Cantonment Board Safaiwala",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5827,
+      "id": 1167,
+      "name": "CAG Auditor",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5829,
+      "id": 1165,
+      "name": "Cabinet Secretariat DFO",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5963,
+      "id": 1031,
+      "name": "BRO Vehicle Mechanic",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5964,
+      "id": 1030,
+      "name": "BRO Store Keeper Technical",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5965,
+      "id": 1029,
+      "name": "BRO Operator Excavating Machinery",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5966,
+      "id": 1028,
+      "name": "BRO Operator Communication",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5967,
+      "id": 1027,
+      "name": "BRO MSW Painter",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5968,
+      "id": 1026,
+      "name": "BRO MSW Mason",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5969,
+      "id": 1025,
+      "name": "BRO MSW DES",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5970,
+      "id": 1024,
+      "name": "BRO MSW Cook",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5971,
+      "id": 1023,
+      "name": "BRO MSW Blacksmith",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5972,
+      "id": 1022,
+      "name": "BRO Electrician",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5973,
+      "id": 1021,
+      "name": "BRO DVRMT",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 5974,
+      "id": 1020,
+      "name": "BRO Draughtsman",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 6019,
+      "id": 975,
+      "name": "BPNL Surveyor",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 6020,
+      "id": 974,
+      "name": "BPNL Skill Admission Consultant",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 6021,
+      "id": 973,
+      "name": "BPNL Sales Assistant",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 6022,
+      "id": 972,
+      "name": "BPNL Planning Assistant",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 6023,
+      "id": 971,
+      "name": "BPNL Marketing Manager, Assistant",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 6024,
+      "id": 970,
+      "name": "BPNL Livestock",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 6025,
+      "id": 969,
+      "name": "BPNL Field Manager",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 6026,
+      "id": 968,
+      "name": "BPNL AHW",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 6027,
+      "id": 967,
+      "name": "BPNL",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 6068,
+      "id": 926,
+      "name": "BIS Technical Assistant",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 6069,
+      "id": 925,
+      "name": "BIS SSA",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 6070,
+      "id": 924,
+      "name": "BIS Scientist B",
+      "group": "Central Govt - General Civil Services Exams"
+    }
+  ]
+}

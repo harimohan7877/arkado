@@ -1,0 +1,448 @@
+{
+  "bundle_id": "bundle-052",
+  "bundle_num": 52,
+  "category_id": "defence",
+  "category_name": "डिफेंस एवं सेनाएं",
+  "category_icon": "🛡️",
+  "title": "डिफेंस एवं सेनाएं — Defence & Security - Central Police • Defence & Security - Indian Army • Defence & Security - Indian Navy",
+  "total_exams": 72,
+  "boards_included": [
+    "Defence & Security - Central Police",
+    "Defence & Security - Indian Army",
+    "Defence & Security - Indian Navy"
+  ],
+  "exams": [
+    {
+      "sl": 1111,
+      "id": 5883,
+      "name": "Territorial Army Soldier GD",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 1112,
+      "id": 5882,
+      "name": "Territorial Army Officer",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 1152,
+      "id": 5842,
+      "name": "TA Army Bharti Clerk",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 1435,
+      "id": 5559,
+      "name": "Sainik School Admission Class VI",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 1436,
+      "id": 5558,
+      "name": "Sainik School Admission Class IX",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 1820,
+      "id": 5174,
+      "name": "Rashtriya Military School Admission",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 3098,
+      "id": 3896,
+      "name": "Military Engineering Services",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4032,
+      "id": 2962,
+      "name": "Indian Army Vehicle Mechanic",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4033,
+      "id": 2961,
+      "name": "Indian Army Tradesman Mate",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4034,
+      "id": 2960,
+      "name": "Indian Army TES",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4036,
+      "id": 2958,
+      "name": "Indian Army Soldier GD",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4037,
+      "id": 2957,
+      "name": "Indian Army OTA",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4038,
+      "id": 2956,
+      "name": "Indian Army Nursing Assistant",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4039,
+      "id": 2955,
+      "name": "Indian Army MNS",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4040,
+      "id": 2954,
+      "name": "Indian Army Lower Division Clerk",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4041,
+      "id": 2953,
+      "name": "Indian Army JCO Catering",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4042,
+      "id": 2952,
+      "name": "Indian Army JCO",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4043,
+      "id": 2951,
+      "name": "Indian Army Infantry School Group C",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4044,
+      "id": 2950,
+      "name": "Indian Army Havildar SAC",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4045,
+      "id": 2949,
+      "name": "Indian Army Graduate Engineer",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4046,
+      "id": 2948,
+      "name": "Indian Army Fitter, Tin and Copper Smith",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4047,
+      "id": 2947,
+      "name": "Indian Army Fireman",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4048,
+      "id": 2946,
+      "name": "Indian Army Female Soldier GD",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4049,
+      "id": 2945,
+      "name": "Indian Army Electrician and Telecom Mechanic",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4050,
+      "id": 2944,
+      "name": "Indian Army Education Havildar Science",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4051,
+      "id": 2943,
+      "name": "Indian Army Education Havildar IT",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4052,
+      "id": 2942,
+      "name": "Indian Army Education Havildar Information Operations",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4053,
+      "id": 2941,
+      "name": "Indian Army Education Havildar Arts",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4054,
+      "id": 2940,
+      "name": "Indian Army Dental Corps",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4055,
+      "id": 2939,
+      "name": "Indian Army CSBO",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4056,
+      "id": 2938,
+      "name": "Indian Army Clerk",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4057,
+      "id": 2937,
+      "name": "Indian Army Agniveer Technical",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4058,
+      "id": 2936,
+      "name": "Indian Army Agneepath GD",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4059,
+      "id": 2935,
+      "name": "Indian Army Agneepath Clerk",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4078,
+      "id": 2916,
+      "name": "IMA Dehradun Group C",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 4834,
+      "id": 2160,
+      "name": "FAD Tradesman Mate, MTS",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 5828,
+      "id": 1166,
+      "name": "CAD Pulgaon Group C",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "sl": 14,
+      "id": 6980,
+      "name": "Western Naval Command Chargeman",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 2749,
+      "id": 4245,
+      "name": "Naval Ship Repair Yard Tradesman",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 2750,
+      "id": 4244,
+      "name": "Naval Ship Repair Yard Karwar Apprentice",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 2751,
+      "id": 4243,
+      "name": "Naval Ship Repair Yard Apprentice",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 3980,
+      "id": 3014,
+      "name": "INET",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 3993,
+      "id": 3001,
+      "name": "Indian Navy Tradesman Skilled Apprentice",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 3994,
+      "id": 3000,
+      "name": "Indian Navy Tradesman Mate",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 3996,
+      "id": 2998,
+      "name": "Indian Navy Senior Draughtsman",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 3997,
+      "id": 2997,
+      "name": "Indian Navy Sailor MR",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 3998,
+      "id": 2996,
+      "name": "Indian Navy Sailor",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 3999,
+      "id": 2995,
+      "name": "Indian Navy Group C Syrang of Lascars",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 4000,
+      "id": 2994,
+      "name": "Indian Navy Group C Lascar",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 4001,
+      "id": 2993,
+      "name": "Indian Navy Group C Fireman",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 4002,
+      "id": 2992,
+      "name": "Indian Navy Commission Officer",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 4003,
+      "id": 2991,
+      "name": "Indian Navy Civilian Motor Driver",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 4004,
+      "id": 2990,
+      "name": "Indian Navy Chargeman",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 4005,
+      "id": 2989,
+      "name": "Indian Navy Agniveer SSR Medical Assistant",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 4006,
+      "id": 2988,
+      "name": "Indian Navy Agniveer SSR",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 4007,
+      "id": 2987,
+      "name": "Indian Navy Agniveer MR Musician",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 4008,
+      "id": 2986,
+      "name": "Indian Navy AA",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 4736,
+      "id": 2258,
+      "name": "GATE Naval Architecture and Marine Engineering",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 4924,
+      "id": 2070,
+      "name": "Eastern Naval Command MTS",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "sl": 1184,
+      "id": 5810,
+      "name": "SSF GD Constable",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "sl": 1743,
+      "id": 5251,
+      "name": "RPF SI",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "sl": 1744,
+      "id": 5250,
+      "name": "RPF Constable",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "sl": 2267,
+      "id": 4727,
+      "name": "OSAP IRB Constable",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "sl": 2587,
+      "id": 4407,
+      "name": "NIA SI",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "sl": 2590,
+      "id": 4404,
+      "name": "NIA Constable, ASI",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "sl": 2595,
+      "id": 4399,
+      "name": "NHRC Constable Inspector",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "sl": 2678,
+      "id": 4316,
+      "name": "NEPA Constable",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "sl": 3325,
+      "id": 3669,
+      "name": "Ladakh Police Constable",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "sl": 3926,
+      "id": 3068,
+      "name": "IRB Police Constable",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "sl": 3927,
+      "id": 3067,
+      "name": "IRB GD Constable",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "sl": 4491,
+      "id": 2503,
+      "name": "Hingoli Police Patil",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "sl": 5078,
+      "id": 1916,
+      "name": "DNH Police Constable & Sub Inspector",
+      "group": "Defence & Security - Central Police Exams"
+    }
+  ]
+}

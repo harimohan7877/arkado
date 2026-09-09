@@ -1,0 +1,55 @@
+{
+  "bundle_id": "bundle-005",
+  "bundle_num": 5,
+  "category_id": "rajasthan",
+  "category_name": "राजस्थान",
+  "category_icon": "🚩",
+  "title": "राजस्थान — राजस्थान उच्च न्यायालय (RHC जोधपुर)",
+  "total_exams": 4,
+  "boards_included": [
+    "High Court"
+  ],
+  "official_portal": "https://hcraj.nic.in",
+  "exams": [
+    {
+      "id": 5109,
+      "name": "हाई कोर्ट कनिष्ठ न्यायिक सहायक (JJA) व क्लर्क Grade-II",
+      "eligibility": "स्नातक + कंप्यूटर ज्ञान",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "5+ लाख",
+      "exam_pattern": "लिखित परीक्षा (हिंदी, अंग्रेजी, GK 300) + टाइपिंग",
+      "viral_subtext": "हाई कोर्ट व जिला न्यायालय • CET से मुक्त",
+      "status": "verified"
+    },
+    {
+      "id": 5115,
+      "name": "हाई कोर्ट स्टेनोग्राफर भर्ती (हिंदी व अंग्रेजी)",
+      "eligibility": "12वीं/स्नातक + आशुलिपि",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "40,000",
+      "exam_pattern": "डिक्टेशन + कंप्यूटर टाइपिंग",
+      "viral_subtext": "आशुलिपिक संवर्ग",
+      "status": "verified"
+    },
+    {
+      "id": 5116,
+      "name": "सिस्टम असिस्टेंट भर्ती (System Assistant)",
+      "eligibility": "BCA / B.Tech (CS/IT)",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "45,000",
+      "exam_pattern": "कंप्यूटर ज्ञान + टाइपिंग टेस्ट",
+      "viral_subtext": "न्यायालय IT सेल 230 पद",
+      "status": "verified"
+    },
+    {
+      "id": 5111,
+      "name": "राजस्थान न्यायिक सेवा (Civil Judge - RJS)",
+      "eligibility": "LLB (विधि स्नातक)",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "30,000",
+      "exam_pattern": "प्रारंभिक + मुख्य लिखित + साक्षात्कार",
+      "viral_subtext": "सिविल न्यायाधीश संवर्ग",
+      "status": "verified"
+    }
+  ]
+}

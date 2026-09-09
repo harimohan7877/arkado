@@ -1,0 +1,454 @@
+{
+  "bundle_id": "bundle-067",
+  "bundle_num": 67,
+  "category_id": "teaching",
+  "category_name": "केंद्रीय शिक्षण",
+  "category_icon": "📚",
+  "title": "केंद्रीय शिक्षण — Punjab Teaching & School • National Academics - CSIR NET • National Academics - NEET Entrance",
+  "total_exams": 73,
+  "boards_included": [
+    "Punjab Teaching & School",
+    "National Academics - CSIR NET",
+    "National Academics - NEET Entrance"
+  ],
+  "exams": [
+    {
+      "sl": 1256,
+      "id": 5738,
+      "name": "SSA Punjab Master Cadre Teacher",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 1964,
+      "id": 5030,
+      "name": "Punjab SET Physical Education",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 1975,
+      "id": 5019,
+      "name": "Punjab SET Education",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 1980,
+      "id": 5014,
+      "name": "Punjab PTI Teacher",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 1981,
+      "id": 5013,
+      "name": "Punjab Pre Primary Teacher",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 1990,
+      "id": 5004,
+      "name": "Punjab Master Cadre Teacher Social Studies",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 1991,
+      "id": 5003,
+      "name": "Punjab Master Cadre Teacher Science",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 1992,
+      "id": 5002,
+      "name": "Punjab Master Cadre Teacher Physical Education",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 1993,
+      "id": 5001,
+      "name": "Punjab Master Cadre Teacher Mathematics",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 1994,
+      "id": 5000,
+      "name": "Punjab Master Cadre Teacher English",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 1995,
+      "id": 4999,
+      "name": "Punjab Lecturer Sociology",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 1996,
+      "id": 4998,
+      "name": "Punjab Lecturer Political Science",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 1997,
+      "id": 4997,
+      "name": "Punjab Lecturer Physics",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 1998,
+      "id": 4996,
+      "name": "Punjab Lecturer Paper 1",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 1999,
+      "id": 4995,
+      "name": "Punjab Lecturer Mathematics",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 2000,
+      "id": 4994,
+      "name": "Punjab Lecturer History",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 2001,
+      "id": 4993,
+      "name": "Punjab Lecturer Hindi",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 2002,
+      "id": 4992,
+      "name": "Punjab Lecturer Geography",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 2003,
+      "id": 4991,
+      "name": "Punjab Lecturer English",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 2004,
+      "id": 4990,
+      "name": "Punjab Lecturer Economics",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 2005,
+      "id": 4989,
+      "name": "Punjab Lecturer Commerce",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 2006,
+      "id": 4988,
+      "name": "Punjab Lecturer Chemistry",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 2007,
+      "id": 4987,
+      "name": "Punjab Lecturer Biology",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 2010,
+      "id": 4984,
+      "name": "Punjab ETT Teacher",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 2011,
+      "id": 4983,
+      "name": "Punjab ERB Teacher",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 2012,
+      "id": 4982,
+      "name": "Punjab Anganwadi Worker and Helper",
+      "group": "Punjab Teaching & School Exams"
+    },
+    {
+      "sl": 2683,
+      "id": 4311,
+      "name": "NEET UG Physics in Hindi",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2684,
+      "id": 4310,
+      "name": "NEET UG in Hindi",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2685,
+      "id": 4309,
+      "name": "NEET UG Chemistry in Hindi",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2686,
+      "id": 4308,
+      "name": "NEET UG Biology in Hindi",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2687,
+      "id": 4307,
+      "name": "NEET UG Biology In English",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2689,
+      "id": 4305,
+      "name": "NEET PG Surgery, Orthopaedics and Anaesthesia",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2690,
+      "id": 4304,
+      "name": "NEET PG Subject Wise",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2691,
+      "id": 4303,
+      "name": "NEET PG Social and Preventive Medicine",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2692,
+      "id": 4302,
+      "name": "NEET PG Radiotherapy",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2693,
+      "id": 4301,
+      "name": "NEET PG Radiology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2694,
+      "id": 4300,
+      "name": "NEET PG Radiodiagnosis",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2695,
+      "id": 4299,
+      "name": "NEET PG Psychiatry",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2696,
+      "id": 4298,
+      "name": "NEET PG Physiology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2697,
+      "id": 4297,
+      "name": "NEET PG Pharmacology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2698,
+      "id": 4296,
+      "name": "NEET PG Pathology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2699,
+      "id": 4295,
+      "name": "NEET PG Paediatrics",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2700,
+      "id": 4294,
+      "name": "NEET PG Ophthalmology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2701,
+      "id": 4293,
+      "name": "NEET PG Obstetrics and Gynaecology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2702,
+      "id": 4292,
+      "name": "NEET PG Microbiology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2703,
+      "id": 4291,
+      "name": "NEET PG Medicine Dermatology and Venereology",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2704,
+      "id": 4290,
+      "name": "NEET PG Forensic Medicine",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2705,
+      "id": 4289,
+      "name": "NEET PG ENT",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2706,
+      "id": 4288,
+      "name": "NEET PG Biochemistry",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2707,
+      "id": 4287,
+      "name": "NEET PG Anatomy",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 2708,
+      "id": 4286,
+      "name": "NEET PG",
+      "group": "National Academics - NEET Entrance Exams"
+    },
+    {
+      "sl": 5490,
+      "id": 1504,
+      "name": "CSIR SO",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5491,
+      "id": 1503,
+      "name": "CSIR NPL Technician",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5492,
+      "id": 1502,
+      "name": "CSIR NML",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5493,
+      "id": 1501,
+      "name": "CSIR NET Physical Sciences",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5494,
+      "id": 1500,
+      "name": "CSIR NET Mathematical Sciences",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5495,
+      "id": 1499,
+      "name": "CSIR NET Life Science Hindi",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5496,
+      "id": 1498,
+      "name": "CSIR NET Life Science",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5497,
+      "id": 1497,
+      "name": "CSIR NET General Aptitude",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5498,
+      "id": 1496,
+      "name": "CSIR NET Earth Science",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5499,
+      "id": 1495,
+      "name": "CSIR NET Chemical Science",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5500,
+      "id": 1494,
+      "name": "CSIR NCL JSA",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5501,
+      "id": 1493,
+      "name": "CSIR NAL Technician Fitter",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5502,
+      "id": 1492,
+      "name": "CSIR IMMT JSA",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5503,
+      "id": 1491,
+      "name": "CSIR IICT JSA",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5504,
+      "id": 1490,
+      "name": "CSIR CRRI Junior Stenographer",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5505,
+      "id": 1489,
+      "name": "CSIR CRRI JSA",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5506,
+      "id": 1488,
+      "name": "CSIR CLRI Technician Grade 2",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5507,
+      "id": 1487,
+      "name": "CSIR CGCRI Technical Assistant",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5508,
+      "id": 1486,
+      "name": "CSIR CECRI Technical Assistant",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5509,
+      "id": 1485,
+      "name": "CSIR CCMB Technician",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5510,
+      "id": 1484,
+      "name": "CSIR CCMB Technical Assistant",
+      "group": "National Academics - CSIR NET Exams"
+    },
+    {
+      "sl": 5511,
+      "id": 1483,
+      "name": "CSIR ASO",
+      "group": "National Academics - CSIR NET Exams"
+    }
+  ]
+}

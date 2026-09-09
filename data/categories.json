@@ -1,1 +1,3334 @@
-[]
+[
+  {
+    "id": "top_exams",
+    "name": "टॉप परीक्षाएं (Top Exams)",
+    "name_hi": "शीर्ष परीक्षाएं",
+    "icon": "🔥",
+    "logo_url": "",
+    "priority": 1,
+    "is_active": true,
+    "sub_preview": "CET 12th • UP पुलिस • SSC CGL • रेलवे NTPC • पटवारी",
+    "viral_names": [
+      "CET 12th",
+      "UP पुलिस",
+      "SSC CGL"
+    ],
+    "description": "भारत एवं राज्यों की सर्वाधिक लोकप्रिय व बड़ी सरकारी भर्तियां",
+    "boards": [
+      {
+        "board_id": "top_viral_board",
+        "name": "शीर्ष वायरल परीक्षाएं (Top Viral Exams)",
+        "short_name": "Top Exams",
+        "icon": "🔥",
+        "logo_url": "",
+        "priority": 1,
+        "is_active": true,
+        "viral_preview": "CET 12th • UP पुलिस • SSC CGL • RRB NTPC • पटवारी",
+        "viral_names": [
+          "CET 12th",
+          "UP पुलिस",
+          "SSC CGL"
+        ],
+        "official_portal": "",
+        "exams": [
+          {
+            "id": "1001",
+            "name": "राजस्थान CET (12वीं स्तर) 2026",
+            "short_name": "CET 12th",
+            "logo_url": "",
+            "priority": 1,
+            "is_active": true,
+            "eligibility": "12वीं उत्तीर्ण",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "18.5+ लाख",
+            "exam_pattern": "150 प्रश्न • 300 अंक",
+            "viral_subtext": "10 इकाइयां नोट्स व प्रिंट टेस्ट"
+          },
+          {
+            "id": "2001",
+            "name": "UP पुलिस कांस्टेबल भर्ती 2026",
+            "short_name": "UP Police",
+            "logo_url": "",
+            "priority": 2,
+            "is_active": true,
+            "eligibility": "12वीं उत्तीर्ण",
+            "age_limit": "18-25 वर्ष",
+            "applicant_scale": "48+ लाख",
+            "exam_pattern": "150 प्रश्न • 300 अंक",
+            "viral_subtext": "60,244 सिपाही पद"
+          },
+          {
+            "id": "5001",
+            "name": "SSC CGL (संयुक्त स्नातक स्तरीय परीक्षा)",
+            "short_name": "SSC CGL",
+            "logo_url": "",
+            "priority": 3,
+            "is_active": true,
+            "eligibility": "स्नातक",
+            "age_limit": "18-32 वर्ष",
+            "applicant_scale": "28+ लाख",
+            "exam_pattern": "Tier-1 + Tier-2 CBT",
+            "viral_subtext": "17,000+ पद (ASO, ITI, इंस्पेक्टर)"
+          },
+          {
+            "id": "5101",
+            "name": "RRB NTPC (रेलवे गैर-तकनीकी भर्ती)",
+            "short_name": "RRB NTPC",
+            "logo_url": "",
+            "priority": 4,
+            "is_active": true,
+            "eligibility": "स्नातक / 12वीं",
+            "age_limit": "18-36 वर्ष",
+            "applicant_scale": "1.2+ करोड़",
+            "exam_pattern": "CBT-1 + CBT-2 + साइको/टाइपिंग",
+            "viral_subtext": "स्टेशन मास्टर, गुड्स गार्ड"
+          },
+          {
+            "id": "3001",
+            "name": "BPSC संयुक्त प्रतियोगी परीक्षा (70वीं/71वीं CCE)",
+            "short_name": "BPSC CCE",
+            "logo_url": "",
+            "priority": 5,
+            "is_active": true,
+            "eligibility": "स्नातक",
+            "age_limit": "20-37 वर्ष",
+            "applicant_scale": "5.5+ लाख",
+            "exam_pattern": "Prelims + Mains + Interview",
+            "viral_subtext": "SDM, DSP संवर्ग"
+          },
+          {
+            "id": "5426",
+            "name": "पशु परिचर सीधी भर्ती (Animal Attendant)",
+            "short_name": "पशु परिचर",
+            "logo_url": "",
+            "priority": 6,
+            "is_active": true,
+            "eligibility": "10वीं पास",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "17+ लाख",
+            "exam_pattern": "भाग-अ (105) + भाग-ब (45)",
+            "viral_subtext": "5,934 पद • बिना CET सीधी भर्ती"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "national_commissions",
+    "name": "अखिल भारतीय आयोग (National Commissions)",
+    "name_hi": "राष्ट्रीय आयोग",
+    "icon": "🏛️",
+    "logo_url": "",
+    "priority": 2,
+    "is_active": true,
+    "sub_preview": "SSC • रेलवे RRB • UPSC • बैंकिंग IBPS/SBI • Defence",
+    "viral_names": [
+      "SSC CGL",
+      "RRB NTPC",
+      "UPSC CSE"
+    ],
+    "description": "कर्मचारी चयन आयोग, रेलवे भर्ती बोर्ड, संघ लोक सेवा आयोग व बैंकिंग",
+    "boards": [
+      {
+        "board_id": "ssc_all",
+        "name": "Staff Selection Commission (SSC New Delhi)",
+        "short_name": "SSC",
+        "icon": "🏛️",
+        "official_portal": "https://ssc.gov.in",
+        "viral_preview": "CGL • CHSL • GD • MTS • CPO",
+        "exams": [
+          {
+            "id": 5001,
+            "name": "SSC CGL (संयुक्त स्नातक स्तरीय परीक्षा 2026)",
+            "eligibility": "स्नातक",
+            "age_limit": "18-32 वर्ष",
+            "applicant_scale": "28+ लाख",
+            "exam_pattern": "Tier-1 (200 अंक CBT) + Tier-2 (Paper-1 मैथ्स, रीज़निंग, इंग्लिश, GS, कंप्यूटर + टाइपिंग)",
+            "viral_subtext": "केंद्रीय मंत्रालयों में ASO, इंस्पेक्टर, ITI, टैक्स असिस्टेंट 17,000+ पद",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "SSC CGL"
+          },
+          {
+            "id": 5002,
+            "name": "SSC CHSL (संयुक्त उच्चतर माध्यमिक स्तर 10+2)",
+            "eligibility": "12वीं पास",
+            "age_limit": "18-27 वर्ष",
+            "applicant_scale": "32+ लाख",
+            "exam_pattern": "Tier-1 (100 प्रश्न • 200 अंक) + Tier-2 (सब्जेक्टिव CBT + स्किल/टाइपिंग टेस्ट)",
+            "viral_subtext": "LDC, JSA, डाटा एंट्री ऑपरेटर (DEO)",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "SSC CHSL"
+          },
+          {
+            "id": 5003,
+            "name": "SSC GD कांस्टेबल भर्ती (CAPFs, NIA, SSF, असम राइफल्स)",
+            "eligibility": "10वीं पास",
+            "age_limit": "18-23 वर्ष",
+            "applicant_scale": "47+ लाख",
+            "exam_pattern": "CBT (80 प्रश्न • 160 अंक) + PST/PET (5 KM दौड़)",
+            "viral_subtext": "BSF, CRPF, CISF, ITBP, SSB में 39,000+ सिपाही पद",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "SSC GD कांस्टेबल भर्ती"
+          },
+          {
+            "id": 5004,
+            "name": "SSC MTS एवं हवलदार (गैर-तकनीकी कर्मचारी)",
+            "eligibility": "10वीं पास",
+            "age_limit": "18-25 / 27 वर्ष",
+            "applicant_scale": "40+ लाख",
+            "exam_pattern": "सत्र-1 (मैथ्स/रीज़निंग बिना नेगेटिव) + सत्र-2 (GS/इंग्लिश मेरिट आधारित)",
+            "viral_subtext": "केंद्रीय कार्यालयों में 9,500+ मल्टी टास्किंग पद",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "SSC MTS एवं हवलदार"
+          },
+          {
+            "id": 5005,
+            "name": "SSC CPO (दिल्ली पुलिस व CAPF सब-इंस्पेक्टर SI)",
+            "eligibility": "स्नातक",
+            "age_limit": "20-25 वर्ष",
+            "applicant_scale": "8+ लाख",
+            "exam_pattern": "Paper-1 (200 CBT) + PET/PST + Paper-2 (अंग्रेजी 200 अंक) + मेडिकल",
+            "viral_subtext": "दिल्ली पुलिस व अर्धसैनिक बलों में दारोगा पद",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "SSC CPO"
+          },
+          {
+            "id": 5006,
+            "name": "SSC कनिष्ठ अभियंता (JE - Civil, Electrical, Mechanical)",
+            "eligibility": "डिप्लोमा / B.Tech (इंजीनियरिंग)",
+            "age_limit": "18-30/32 वर्ष",
+            "applicant_scale": "5+ लाख",
+            "exam_pattern": "Paper-1 (CBT 200 अंक) + Paper-2 (तकनीकी CBT 300 अंक)",
+            "viral_subtext": "CPWD, MES, CWC केंद्रीय विभाग",
+            "status": "verified",
+            "priority": 6,
+            "is_active": true,
+            "short_name": "SSC कनिष्ठ अभियंता"
+          },
+          {
+            "id": 5007,
+            "name": "SSC स्टेनोग्राफर ग्रेड 'C' एवं 'D'",
+            "eligibility": "12वीं पास + आशुलिपि ज्ञान",
+            "age_limit": "18-30 वर्ष",
+            "applicant_scale": "4+ लाख",
+            "exam_pattern": "लिखित CBT (200 प्रश्न • 200 अंक) + स्किल टेस्ट (डिक्टेशन 80/100 wpm)",
+            "viral_subtext": "केंद्रीय सचिवालय आशुलिपिक",
+            "status": "verified",
+            "priority": 7,
+            "is_active": true,
+            "short_name": "SSC स्टेनोग्राफर ग्रेड 'C' एवं 'D'"
+          }
+        ],
+        "priority": 1,
+        "is_active": true,
+        "viral_names": [
+          "CGL",
+          "CHSL",
+          "GD"
+        ]
+      },
+      {
+        "board_id": "rrb_all",
+        "name": "रेलवे भर्ती बोर्ड (RRB & RRC All Zones)",
+        "short_name": "RRB Railways",
+        "icon": "🚆",
+        "official_portal": "https://indianrailways.gov.in",
+        "viral_preview": "RRB NTPC • ग्रुप D • ALP • Technician • JE",
+        "exams": [
+          {
+            "id": 5101,
+            "name": "RRB NTPC (गैर-तकनीकी लोकप्रिय श्रेणियां - स्नातक स्तर)",
+            "eligibility": "स्नातक",
+            "age_limit": "18-36 वर्ष",
+            "applicant_scale": "1.2+ करोड़",
+            "exam_pattern": "CBT-1 (100) + CBT-2 (120 अंक) + CBAT (साइको/टाइपिंग)",
+            "viral_subtext": "स्टेशन मास्टर, गुड्स ट्रेन मैनेजर, सीनियर क्लर्क 8,113 पद",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "RRB NTPC"
+          },
+          {
+            "id": 5102,
+            "name": "RRB NTPC (12वीं स्तर - जूनियर क्लर्क, टिकट क्लर्क)",
+            "eligibility": "12वीं पास",
+            "age_limit": "18-33 वर्ष",
+            "applicant_scale": "60+ लाख",
+            "exam_pattern": "CBT-1 (100 प्रश्न) + CBT-2 (120 प्रश्न) + टाइपिंग",
+            "viral_subtext": "कमर्शियल कम टिकट क्लर्क, ट्रेन क्लर्क 3,445 पद",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "RRB NTPC"
+          },
+          {
+            "id": 5103,
+            "name": "RRB सहायक लोको पायलट (ALP - Assistant Loco Pilot)",
+            "eligibility": "10वीं + ITI / डिप्लोमा / B.Tech",
+            "age_limit": "18-33 वर्ष",
+            "applicant_scale": "19+ लाख",
+            "exam_pattern": "CBT-1 (75 प्रश्न) + CBT-2 (भाग-A 100 + भाग-B ट्रेड 75) + CBAT साइको",
+            "viral_subtext": "ट्रेन ड्राइवर पद 18,799 पद",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "RRB सहायक लोको पायलट"
+          },
+          {
+            "id": 5104,
+            "name": "RRB तकनीशियन भर्ती (Technician Grade-I & III)",
+            "eligibility": "10वीं + ITI / B.Sc / डिप्लोमा",
+            "age_limit": "18-36 वर्ष",
+            "applicant_scale": "15+ लाख",
+            "exam_pattern": "एकल चरण CBT (100 प्रश्न • 100 अंक • नेगेटिव 1/3)",
+            "viral_subtext": "रेलवे कार्यशाला एवं सिग्नल टेलीकॉम 14,298 पद",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "RRB तकनीशियन भर्ती"
+          },
+          {
+            "id": 5105,
+            "name": "RRC ग्रुप 'D' (लेवल-1 ट्रैक मेंटेनर, पॉइंट्समैन, खलासी)",
+            "eligibility": "10वीं पास या ITI",
+            "age_limit": "18-36 वर्ष",
+            "applicant_scale": "1.1+ करोड़",
+            "exam_pattern": "CBT (100 प्रश्न • विज्ञान, मैथ्स, रीज़निंग, GA) + शारीरिक दक्षता (PET)",
+            "viral_subtext": "रेलवे में 1 लाख+ ट्रैक मेंटेनर व गैंगमैन पद",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "RRC ग्रुप 'D'"
+          },
+          {
+            "id": 5106,
+            "name": "RRB कनिष्ठ अभियंता (Junior Engineer - JE & DMS/CMA)",
+            "eligibility": "इंजीनियरिंग में 3-वर्षीय डिप्लोमा / डिग्री",
+            "age_limit": "18-36 वर्ष",
+            "applicant_scale": "8+ लाख",
+            "exam_pattern": "CBT-1 (स्क्रीनिंग 100 अंक) + CBT-2 (तकनीकी 150 अंक)",
+            "viral_subtext": "रेलवे में 7,951 कनिष्ठ अभियंता पद",
+            "status": "verified",
+            "priority": 6,
+            "is_active": true,
+            "short_name": "RRB कनिष्ठ अभियंता"
+          },
+          {
+            "id": 5107,
+            "name": "RPF सब-इंस्पेक्टर एवं कांस्टेबल (रेलवे सुरक्षा बल)",
+            "eligibility": "10वीं (कांस्टेबल) / स्नातक (SI)",
+            "age_limit": "18-28 वर्ष",
+            "applicant_scale": "25+ लाख",
+            "exam_pattern": "CBT (120 प्रश्न • 120 अंक • 90 मिनट) + PET/PMT",
+            "viral_subtext": "रेलवे पुलिस 4,660 पद",
+            "status": "verified",
+            "priority": 7,
+            "is_active": true,
+            "short_name": "RPF सब-इंस्पेक्टर एवं कांस्टेबल"
+          }
+        ],
+        "priority": 2,
+        "is_active": true,
+        "viral_names": [
+          "RRB NTPC",
+          "ग्रुप D",
+          "ALP"
+        ]
+      },
+      {
+        "board_id": "upsc_all",
+        "name": "Union Public Service Commission (UPSC Dholpur House)",
+        "short_name": "UPSC",
+        "icon": "⚖️",
+        "official_portal": "https://upsc.gov.in",
+        "viral_preview": "IAS/IPS (CSE) • NDA • CDS • CAPF • IES",
+        "exams": [
+          {
+            "id": 5201,
+            "name": "UPSC सिविल सेवा परीक्षा (Civil Services Exam - IAS/IPS 2026)",
+            "eligibility": "स्नातक",
+            "age_limit": "21-32 वर्ष",
+            "applicant_scale": "13+ लाख",
+            "exam_pattern": "Prelims (GS 200 + CSAT 200) + Mains (9 Papers 1750 अंक) + Personality Test (275 अंक)",
+            "viral_subtext": "भारत की सर्वोच्च प्रशासनिक सेवा (IAS, IPS, IFS, IRS)",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "UPSC सिविल सेवा परीक्षा"
+          },
+          {
+            "id": 5202,
+            "name": "UPSC राष्ट्रीय रक्षा अकादमी (NDA & NA - I व II)",
+            "eligibility": "12वीं पास / अपीयरिंग (PCM)",
+            "age_limit": "16.5 - 19.5 वर्ष",
+            "applicant_scale": "6+ लाख",
+            "exam_pattern": "लिखित (गणित 300 + GAT 600 = 900 अंक) + SSB साक्षात्कार (900 अंक)",
+            "viral_subtext": "थल, जल व वायु सेना में सीधे अधिकारी संवर्ग",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "UPSC राष्ट्रीय रक्षा अकादमी"
+          },
+          {
+            "id": 5203,
+            "name": "UPSC सम्मिलित रक्षा सेवा (CDS - I व II)",
+            "eligibility": "स्नातक / इंजीनियरिंग",
+            "age_limit": "19-24 वर्ष",
+            "applicant_scale": "3.5 लाख",
+            "exam_pattern": "लिखित (अंग्रेजी, सामान्य ज्ञान, गणित = 300 अंक) + SSB इंटरव्यू (300 अंक)",
+            "viral_subtext": "IMA, INA, AFA, OTA अधिकारी चयन",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "UPSC सम्मिलित रक्षा सेवा"
+          },
+          {
+            "id": 5204,
+            "name": "UPSC केंद्रीय सशस्त्र पुलिस बल (CAPF - Assistant Commandant)",
+            "eligibility": "स्नातक",
+            "age_limit": "20-25 वर्ष",
+            "applicant_scale": "3+ लाख",
+            "exam_pattern": "Paper-1 (GS/Mental Ability 250) + Paper-2 (निबंध, सार-लेखन 200) + PET + Interview",
+            "viral_subtext": "BSF, CRPF, CISF में सीधे सहायक कमांडेंट",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "UPSC केंद्रीय सशस्त्र पुलिस बल"
+          },
+          {
+            "id": 5205,
+            "name": "UPSC भारतीय इंजीनियरिंग सेवा (ESE / IES)",
+            "eligibility": "इंजीनियरिंग में स्नातक (B.E/B.Tech)",
+            "age_limit": "21-30 वर्ष",
+            "applicant_scale": "2.5 लाख",
+            "exam_pattern": "Prelims (500) + Mains (पारंपरिक 600) + Personality Test (200)",
+            "viral_subtext": "केंद्रीय क्लास-1 राजपत्रित तकनीकी सेवा",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "UPSC भारतीय इंजीनियरिंग सेवा"
+          },
+          {
+            "id": 5206,
+            "name": "UPSC सम्मिलित चिकित्सा सेवा (Combined Medical Services - CMS)",
+            "eligibility": "MBBS उत्तीर्ण",
+            "age_limit": "अधिकतम 32 वर्ष",
+            "applicant_scale": "45,000",
+            "exam_pattern": "लिखित CBT (2 पेपर्स 500 अंक) + इंटरव्यू (100 अंक)",
+            "viral_subtext": "रेलवे, CGHS व नगर निगम में चिकित्सा अधिकारी",
+            "status": "verified",
+            "priority": 6,
+            "is_active": true,
+            "short_name": "UPSC सम्मिलित चिकित्सा सेवा"
+          }
+        ],
+        "priority": 3,
+        "is_active": true,
+        "viral_names": [
+          "IAS/IPS (CSE)",
+          "NDA",
+          "CDS"
+        ]
+      },
+      {
+        "board_id": "ibps_all",
+        "name": "इंस्टीट्यूट ऑफ बैंकिंग कार्मिक चयन (IBPS & SBI)",
+        "short_name": "IBPS & SBI",
+        "icon": "🏦",
+        "official_portal": "https://ibps.in",
+        "viral_preview": "IBPS PO • क्लर्क • SBI PO • ग्रामीण बैंक",
+        "exams": [
+          {
+            "id": 5301,
+            "name": "IBPS प्रोबेशनरी ऑफिसर (PO / Management Trainee)",
+            "eligibility": "स्नातक",
+            "age_limit": "20-30 वर्ष",
+            "applicant_scale": "8+ लाख",
+            "exam_pattern": "Prelims (100 अंक) + Mains (225 अंक CBT+Descriptive) + Interview (100 अंक)",
+            "viral_subtext": "11 राष्ट्रीयकृत बैंकों में स्केल-1 अधिकारी",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "IBPS प्रोबेशनरी ऑफिसर"
+          },
+          {
+            "id": 5302,
+            "name": "IBPS क्लर्क (Customer Service Associate)",
+            "eligibility": "स्नातक",
+            "age_limit": "20-28 वर्ष",
+            "applicant_scale": "10+ लाख",
+            "exam_pattern": "Prelims (100 प्रश्न) + Mains (190 प्रश्न • 200 अंक) • बिना इंटरव्यू चयन",
+            "viral_subtext": "सार्वजनिक क्षेत्र के बैंकों में क्लर्क 10,000+ पद",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "IBPS क्लर्क"
+          },
+          {
+            "id": 5303,
+            "name": "SBI प्रोबेशनरी ऑफिसर (SBI PO 2026)",
+            "eligibility": "स्नातक",
+            "age_limit": "21-30 वर्ष",
+            "applicant_scale": "9+ लाख",
+            "exam_pattern": "Phase-1 (100) + Phase-2 (250) + Phase-3 (ग्रुप एक्सरसाइज 20 + इंटरव्यू 30)",
+            "viral_subtext": "स्टेट बैंक ऑफ इंडिया का प्रीमियर ऑफिसर पद",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "SBI प्रोबेशनरी ऑफिसर"
+          },
+          {
+            "id": 5304,
+            "name": "SBI क्लर्क (Junior Associates - Customer Support)",
+            "eligibility": "स्नातक",
+            "age_limit": "20-28 वर्ष",
+            "applicant_scale": "14+ लाख",
+            "exam_pattern": "Prelims (100 अंक) + Mains (200 अंक) + स्थानीय भाषा टेस्ट",
+            "viral_subtext": "SBI में 8,000+ क्लर्क पद",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "SBI क्लर्क"
+          },
+          {
+            "id": 5305,
+            "name": "IBPS RRB अधिकारी स्केल-I (ग्रामीण बैंक PO)",
+            "eligibility": "स्नातक",
+            "age_limit": "18-30 वर्ष",
+            "applicant_scale": "6+ लाख",
+            "exam_pattern": "Prelims (रीज़निंग + मैथ्स 80 प्रश्न) + Mains (200) + Interview",
+            "viral_subtext": "देशभर के 43 ग्रामीण बैंकों में PO",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "IBPS RRB अधिकारी स्केल-I"
+          },
+          {
+            "id": 5306,
+            "name": "IBPS RRB कार्यालय सहायक (Office Assistant / क्लर्क)",
+            "eligibility": "स्नातक",
+            "age_limit": "18-28 वर्ष",
+            "applicant_scale": "8+ लाख",
+            "exam_pattern": "Prelims (80 अंक) + Mains (200 प्रश्न • 200 अंक) • नो इंटरव्यू",
+            "viral_subtext": "ग्रामीण बैंकों में मल्टीपर्पज क्लर्क 6,000 पद",
+            "status": "verified",
+            "priority": 6,
+            "is_active": true,
+            "short_name": "IBPS RRB कार्यालय सहायक"
+          },
+          {
+            "id": 5307,
+            "name": "RBI ग्रेड 'B' अधिकारी सीधी भर्ती",
+            "eligibility": "स्नातक (60% अंक)",
+            "age_limit": "21-30 वर्ष",
+            "applicant_scale": "2.5 लाख",
+            "exam_pattern": "Phase-1 (200) + Phase-2 (3 पेपर्स 300 अंक) + Interview (75)",
+            "viral_subtext": "भारतीय रिज़र्व बैंक में शीर्ष नियामक पद",
+            "status": "verified",
+            "priority": 7,
+            "is_active": true,
+            "short_name": "RBI ग्रेड 'B' अधिकारी सीधी भर्ती"
+          }
+        ],
+        "priority": 4,
+        "is_active": true,
+        "viral_names": [
+          "IBPS PO",
+          "क्लर्क",
+          "SBI PO"
+        ]
+      },
+      {
+        "board_id": "defence_all",
+        "name": "भारतीय थल, जल एवं वायु सेना मुख्यालय",
+        "short_name": "Indian Armed Forces",
+        "icon": "⚔️",
+        "official_portal": "https://joinindianarmy.nic.in",
+        "viral_preview": "अग्निवीर Army • Navy • Air Force • AFCAT",
+        "exams": [
+          {
+            "id": 5401,
+            "name": "भारतीय सेना अग्निवीर भर्ती (GD / टेक्निकल / क्लर्क / ट्रेड्समैन)",
+            "eligibility": "10वीं / 12वीं / 8वीं पास",
+            "age_limit": "17.5 - 21 वर्ष",
+            "applicant_scale": "18+ लाख",
+            "exam_pattern": "Common Entrance Exam (CEE 100 अंक) + फिजिकल फिटनेस टेस्ट (1.6 KM दौड़)",
+            "viral_subtext": "थल सेना में 25,000+ अग्निवीर पद",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "भारतीय सेना अग्निवीर भर्ती"
+          },
+          {
+            "id": 5402,
+            "name": "भारतीय वायु सेना अग्निवीर वायु (Agniveervayu Intake 2026)",
+            "eligibility": "12वीं (गणित, भौतिकी, अंग्रेजी 50%) / डिप्लोमा",
+            "age_limit": "17.5 - 21 वर्ष",
+            "applicant_scale": "7+ लाख",
+            "exam_pattern": "ऑनलाइन परीक्षा (विज्ञान / गैर-विज्ञान विषय) + PFT + अनुकूलन परीक्षण",
+            "viral_subtext": "एयरफोर्स एयरमैन संवर्ग",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "भारतीय वायु सेना अग्निवीर वायु"
+          },
+          {
+            "id": 5403,
+            "name": "भारतीय नौसेना अग्निवीर भर्ती (SSR एवं MR)",
+            "eligibility": "12वीं (गणित, भौतिकी) / 10वीं पास",
+            "age_limit": "17.5 - 21 वर्ष",
+            "applicant_scale": "6+ लाख",
+            "exam_pattern": "INET कंप्यूटर आधारित परीक्षा (100 प्रश्न) + PFT + मेडिकल",
+            "viral_subtext": "नौसेना सेलर संवर्ग",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "भारतीय नौसेना अग्निवीर भर्ती"
+          },
+          {
+            "id": 5404,
+            "name": "वायु सेना कॉमन एडमिशन टेस्ट (AFCAT अधिकारी भर्ती)",
+            "eligibility": "स्नातक / B.Tech",
+            "age_limit": "20-24 वर्ष",
+            "applicant_scale": "2.5 लाख",
+            "exam_pattern": "ऑनलाइन CBT (100 प्रश्न • 300 अंक) + AFSB साक्षात्कार",
+            "viral_subtext": "फ्लाइंग एवं ग्राउंड ड्यूटी ऑफिसर",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "वायु सेना कॉमन एडमिशन टेस्ट"
+          },
+          {
+            "id": 5405,
+            "name": "भारतीय तटरक्षक नाविक भर्ती (Indian Coast Guard - Navik GD/DB)",
+            "eligibility": "10वीं / 12वीं (गणित एवं भौतिकी)",
+            "age_limit": "18-22 वर्ष",
+            "applicant_scale": "3.5 लाख",
+            "exam_pattern": "Section-I + Section-II ऑनलाइन परीक्षा + PFT",
+            "viral_subtext": "कोस्ट गार्ड नाविक संवर्ग",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "भारतीय तटरक्षक नाविक भर्ती"
+          }
+        ],
+        "priority": 5,
+        "is_active": true,
+        "viral_names": [
+          "अग्निवीर Army",
+          "Navy",
+          "Air Force"
+        ]
+      }
+    ]
+  },
+  {
+    "category_id": "rajasthan",
+    "name": "राजस्थान (Rajasthan State)",
+    "icon": "🏰",
+    "sub_preview": "CET 12th • पटवारी • RAS • पुलिस • LDC",
+    "boards": [
+      {
+        "board_id": "rsmssb",
+        "name": "RSMSSB (राजस्थान कर्मचारी चयन बोर्ड)",
+        "short_name": "RSMSSB",
+        "icon": "🏛️",
+        "official_portal": "https://rsmssb.rajasthan.gov.in",
+        "viral_preview": "CET 12th • पटवारी • LDC • पशु परिचर",
+        "exams": [
+          {
+            "id": 1001,
+            "name": "राजस्थान CET (12वीं स्तर) 2026",
+            "eligibility": "12वीं उत्तीर्ण",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "18.5+ लाख",
+            "exam_pattern": "150 प्रश्न • 300 अंक • नेगेटिव 1/3 • 5वां विकल्प अनिवार्य",
+            "viral_subtext": "10 इकाइयां नोट्स, 1200 MCQs व B&W प्रिंट पेपर लाइव",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "राजस्थान CET"
+          },
+          {
+            "id": 1002,
+            "name": "राजस्थान CET (स्नातक स्तर) 2026",
+            "eligibility": "स्नातक",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "11+ लाख",
+            "exam_pattern": "150 प्रश्न • 300 अंक • 3 घंटे",
+            "viral_subtext": "पटवारी, प्लाटून कमांडर, जिलेदार आदि",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "राजस्थान CET"
+          },
+          {
+            "id": 5125,
+            "name": "राजस्थान पटवारी सीधी भर्ती 2026",
+            "eligibility": "स्नातक + RSCIT (CET स्कोर आधारित)",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "8+ लाख",
+            "exam_pattern": "150 प्रश्न • 300 अंक",
+            "viral_subtext": "राजस्व विभाग 3000+ पद",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "राजस्थान पटवारी सीधी भर्ती 2026"
+          },
+          {
+            "id": 5426,
+            "name": "पशु परिचर सीधी भर्ती (Animal Attendant)",
+            "eligibility": "10वीं पास",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "17+ लाख",
+            "exam_pattern": "भाग-अ (105 GK/Math/Sci) + भाग-ब (45 पशुपालन)",
+            "viral_subtext": "5,934 पद • बिना CET सीधी भर्ती",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "पशु परिचर सीधी भर्ती"
+          },
+          {
+            "id": 5487,
+            "name": "कनिष्ठ सहायक / लिपिक ग्रेड-II (LDC)",
+            "eligibility": "12वीं + कंप्यूटर (CET आधारित)",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "5+ लाख",
+            "exam_pattern": "Paper-1 (100) + Paper-2 (100) + टाइपिंग",
+            "viral_subtext": "सचिवालय, RPSC व अधीनस्थ विभाग",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "कनिष्ठ सहायक / लिपिक ग्रेड-II"
+          },
+          {
+            "id": 5478,
+            "name": "ग्राम विकास अधिकारी (VDO)",
+            "eligibility": "स्नातक + RSCIT",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "7+ लाख",
+            "exam_pattern": "प्रारंभिक + मुख्य परीक्षा (160 प्रश्न, 200 अंक)",
+            "viral_subtext": "पंचायती राज विभाग",
+            "status": "verified",
+            "priority": 6,
+            "is_active": true,
+            "short_name": "ग्राम विकास अधिकारी"
+          },
+          {
+            "id": 5097,
+            "name": "संगणक सीधी भर्ती (Computor)",
+            "eligibility": "गणित/सांख्यिकी/अर्थशास्त्र में स्नातक",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "1.8 लाख",
+            "exam_pattern": "भाग-A (GK 30) + भाग-B (Statistics/Maths 70)",
+            "viral_subtext": "आर्थिक एवं सांख्यिकी निदेशालय",
+            "status": "verified",
+            "priority": 7,
+            "is_active": true,
+            "short_name": "संगणक सीधी भर्ती"
+          },
+          {
+            "id": 5120,
+            "name": "सूचना सहायक (Informatics Assistant)",
+            "eligibility": "कंप्यूटर में डिग्री / डिप्लोमा + टाइपिंग",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "1.5 लाख",
+            "exam_pattern": "लिखित परीक्षा (100 अंक) + टाइपिंग टेस्ट",
+            "viral_subtext": "DOIT&C विभाग",
+            "status": "verified",
+            "priority": 8,
+            "is_active": true,
+            "short_name": "सूचना सहायक"
+          },
+          {
+            "id": 5473,
+            "name": "शीघ्रलिपिक / स्टेनोग्राफर भर्ती",
+            "eligibility": "12वीं + आशुलिपि ज्ञान",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "1.2 लाख",
+            "exam_pattern": "लिखित परीक्षा + डिक्टेशन टेस्ट (100 शब्द/मिनट)",
+            "viral_subtext": "सचिवालय व अधीनस्थ कार्यालय",
+            "status": "verified",
+            "priority": 9,
+            "is_active": true,
+            "short_name": "शीघ्रलिपिक / स्टेनोग्राफर भर्ती"
+          },
+          {
+            "id": 5445,
+            "name": "प्रयोगशाला सहायक (Lab Assistant)",
+            "eligibility": "12वीं (विज्ञान / भूगोल / गृह विज्ञान)",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "4+ लाख",
+            "exam_pattern": "Paper-1 (GK 200) + Paper-2 (Subject 200)",
+            "viral_subtext": "माध्यमिक शिक्षा व कॉलेज शिक्षा",
+            "status": "verified",
+            "priority": 10,
+            "is_active": true,
+            "short_name": "प्रयोगशाला सहायक"
+          },
+          {
+            "id": 5488,
+            "name": "महिला पर्यवेक्षक (Supervisor Mahila)",
+            "eligibility": "स्नातक (CET आधारित)",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "2.5 लाख",
+            "exam_pattern": "150 प्रश्न • 300 अंक",
+            "viral_subtext": "महिला एवं बाल विकास विभाग",
+            "status": "verified",
+            "priority": 11,
+            "is_active": true,
+            "short_name": "महिला पर्यवेक्षक"
+          },
+          {
+            "id": 5441,
+            "name": "कनिष्ठ लेखाकार एवं TRA भर्ती",
+            "eligibility": "वाणिज्य / स्नातक + RSCIT",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "3+ लाख",
+            "exam_pattern": "Paper-1 (सामान्य ज्ञान) + Paper-2 (वाणिज्य/अकाउंट्स)",
+            "viral_subtext": "कोष व लेखा विभाग 5,388 पद",
+            "status": "verified",
+            "priority": 12,
+            "is_active": true,
+            "short_name": "कनिष्ठ लेखाकार एवं TRA भर्ती"
+          },
+          {
+            "id": 5438,
+            "name": "कनिष्ठ अभियंता (JEN - Civil, Mech, Elect, Agri)",
+            "eligibility": "डिप्लोमा / B.Tech (इंजीनियरिंग)",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "1+ लाख",
+            "exam_pattern": "भाग-A (राजस्थान GK 40) + भाग-B (इंजीनियरिंग 80)",
+            "viral_subtext": "PWD, WRD, PHED विभाग",
+            "status": "verified",
+            "priority": 13,
+            "is_active": true,
+            "short_name": "कनिष्ठ अभियंता"
+          },
+          {
+            "id": 5482,
+            "name": "वनपाल एवं वनरक्षक भर्ती",
+            "eligibility": "10वीं / 12वीं पास",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "12+ लाख",
+            "exam_pattern": "लिखित परीक्षा (100 प्रश्न) + शारीरिक दक्षता",
+            "viral_subtext": "वन विभाग",
+            "status": "verified",
+            "priority": 14,
+            "is_active": true,
+            "short_name": "वनपाल एवं वनरक्षक भर्ती"
+          },
+          {
+            "id": 5480,
+            "name": "कृषि पर्यवेक्षक सीधी भर्ती (Agri Supervisor)",
+            "eligibility": "12वीं (कृषि) / B.Sc (Agriculture)",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "1.5 लाख",
+            "exam_pattern": "100 प्रश्न • 300 अंक (सामान्य हिंदी, GK, कृषि)",
+            "viral_subtext": "कृषि विभाग 430 पद",
+            "status": "verified",
+            "priority": 15,
+            "is_active": true,
+            "short_name": "कृषि पर्यवेक्षक सीधी भर्ती"
+          },
+          {
+            "id": 5442,
+            "name": "कनिष्ठ अनुदेशक भर्ती (Junior Instructor)",
+            "eligibility": "ITI / Diploma / Degree + CITS",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "80,000",
+            "exam_pattern": "सामान्य ज्ञान (40) + संबंधित ट्रेड (80)",
+            "viral_subtext": "कौशल नियोजन एवं उद्यमिता",
+            "status": "verified",
+            "priority": 16,
+            "is_active": true,
+            "short_name": "कनिष्ठ अनुदेशक भर्ती"
+          },
+          {
+            "id": 5434,
+            "name": "छात्रावास अधीक्षक ग्रेड-II (Hostel Supt)",
+            "eligibility": "12वीं पास (CET आधारित)",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "2+ लाख",
+            "exam_pattern": "100 प्रश्न • 100 अंक",
+            "viral_subtext": "सामाजिक न्याय एवं अधिकारिता",
+            "status": "verified",
+            "priority": 17,
+            "is_active": true,
+            "short_name": "छात्रावास अधीक्षक ग्रेड-II"
+          },
+          {
+            "id": 5431,
+            "name": "फायरमैन एवं सहायक अग्निशमन अधिकारी",
+            "eligibility": "10वीं + फायरमैन ट्रेनिंग डिप्लोमा",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "1.2 लाख",
+            "exam_pattern": "लिखित परीक्षा (120 अंक) + प्रैक्टिकल (150 अंक)",
+            "viral_subtext": "स्वायत्त शासन विभाग",
+            "status": "verified",
+            "priority": 18,
+            "is_active": true,
+            "short_name": "फायरमैन एवं सहायक अग्निशमन अधिकारी"
+          }
+        ],
+        "priority": 1,
+        "is_active": true,
+        "viral_names": [
+          "CET 12th",
+          "पटवारी",
+          "LDC"
+        ]
+      },
+      {
+        "board_id": "rpsc",
+        "name": "RPSC (राजस्थान लोक सेवा आयोग)",
+        "short_name": "RPSC",
+        "icon": "⚖️",
+        "official_portal": "https://rpsc.rajasthan.gov.in",
+        "viral_preview": "RAS • 1st/2nd Grade • SI • RO/EO",
+        "exams": [
+          {
+            "id": 5325,
+            "name": "RAS / RTS संयुक्त प्रतियोगी परीक्षा 2026",
+            "eligibility": "स्नातक",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "6.5+ लाख",
+            "exam_pattern": "Prelims (200) + Mains (800) + Interview (100)",
+            "viral_subtext": "राजस्थान की शीर्ष प्रशासनिक सेवा",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "RAS / RTS संयुक्त प्रतियोगी परीक्षा 2026"
+          },
+          {
+            "id": 5328,
+            "name": "स्कूल व्याख्याता / प्राध्यापक (1st Grade Teacher)",
+            "eligibility": "स्नातकोत्तर (PG) + B.Ed",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "5+ लाख",
+            "exam_pattern": "Paper-1 (GK 150) + Paper-2 (संबंधित विषय 300)",
+            "viral_subtext": "माध्यमिक शिक्षा (सभी 26 विषय)",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "स्कूल व्याख्याता / प्राध्यापक"
+          },
+          {
+            "id": 5260,
+            "name": "वरिष्ठ अध्यापक (2nd Grade Teacher)",
+            "eligibility": "स्नातक + B.Ed",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "8+ लाख",
+            "exam_pattern": "Paper-1 (GK 200) + Paper-2 (विषय 300)",
+            "viral_subtext": "कक्षा 6 से 10 के शिक्षक (सभी 8 विषय)",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "वरिष्ठ अध्यापक"
+          },
+          {
+            "id": 5281,
+            "name": "कॉलेज सहायक प्रोफेसर (Assistant Professor)",
+            "eligibility": "मास्टर डिग्री (55%) + NET / SLET / PhD",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "1.2 लाख",
+            "exam_pattern": "Paper-1 & 2 (विषय 150) + Paper-3 (राजस्थान GK 50) + Interview",
+            "viral_subtext": "कॉलेज शिक्षा विभाग (सभी 28 विषय)",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "कॉलेज सहायक प्रोफेसर"
+          },
+          {
+            "id": 5130,
+            "name": "पुलिस उपनिरीक्षक (Sub-Inspector - SI)",
+            "eligibility": "स्नातक",
+            "age_limit": "20-25 वर्ष",
+            "applicant_scale": "4.5 लाख",
+            "exam_pattern": "Paper-1 (हिंदी 200) + Paper-2 (GK 200) + PET + Interview",
+            "viral_subtext": "राजस्थान पुलिस दारोगा भर्ती",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "पुलिस उपनिरीक्षक"
+          },
+          {
+            "id": 5327,
+            "name": "राजस्व अधिकारी (RO) एवं अधिशासी अधिकारी (EO)",
+            "eligibility": "स्नातक",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "3.5 लाख",
+            "exam_pattern": "भाग-A (GK 80) + भाग-B (नगरपालिका अधिनियम 40)",
+            "viral_subtext": "स्वायत्त शासन विभाग",
+            "status": "verified",
+            "priority": 6,
+            "is_active": true,
+            "short_name": "राजस्व अधिकारी"
+          },
+          {
+            "id": 5315,
+            "name": "कनिष्ठ विधि अधिकारी (Junior Legal Officer - JLO)",
+            "eligibility": "विधि स्नातक (LLB)",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "50,000",
+            "exam_pattern": "4 पेपर्स (संविधान, CPC/CRPC, साक्ष्य अधिनियम, भाषा)",
+            "viral_subtext": "विधि एवं न्याय विभाग",
+            "status": "verified",
+            "priority": 7,
+            "is_active": true,
+            "short_name": "कनिष्ठ विधि अधिकारी"
+          },
+          {
+            "id": 5278,
+            "name": "सहायक सांख्यिकी अधिकारी (ASO) एवं SO",
+            "eligibility": "सांख्यिकी / गणित / अर्थशास्त्र / M.Com",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "60,000",
+            "exam_pattern": "भाग-A (GK 30) + भाग-B (सांख्यिकी 70)",
+            "viral_subtext": "आर्थिक एवं सांख्यिकी विभाग",
+            "status": "verified",
+            "priority": 8,
+            "is_active": true,
+            "short_name": "सहायक सांख्यिकी अधिकारी"
+          },
+          {
+            "id": 5275,
+            "name": "सहायक कृषि अधिकारी (AAO) एवं कृषि अधिकारी",
+            "eligibility": "B.Sc / M.Sc (Agriculture)",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "40,000",
+            "exam_pattern": "राजस्थान सामान्य ज्ञान + कृषि विज्ञान",
+            "viral_subtext": "कृषि विभाग",
+            "status": "verified",
+            "priority": 9,
+            "is_active": true,
+            "short_name": "सहायक कृषि अधिकारी"
+          },
+          {
+            "id": 5271,
+            "name": "सहायक अभियंता (AEN - Civil, Elect, Mech)",
+            "eligibility": "B.Tech / B.E (Engineering)",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "70,000",
+            "exam_pattern": "Prelims + Mains (Written) + Interview",
+            "viral_subtext": "PWD, WRD, PHED, पंचायती राज",
+            "status": "verified",
+            "priority": 10,
+            "is_active": true,
+            "short_name": "सहायक अभियंता"
+          },
+          {
+            "id": 5311,
+            "name": "खाद्य सुरक्षा अधिकारी (Food Safety Officer - FSO)",
+            "eligibility": "डिग्री (Food Tech/Dairy/Bio/Agri/Chem)",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "50,000",
+            "exam_pattern": "राजस्थान सामान्य ज्ञान + खाद्य सुरक्षा विज्ञान",
+            "viral_subtext": "चिकित्सा एवं स्वास्थ्य विभाग",
+            "status": "verified",
+            "priority": 11,
+            "is_active": true,
+            "short_name": "खाद्य सुरक्षा अधिकारी"
+          },
+          {
+            "id": 5322,
+            "name": "प्रोग्रामर भर्ती (RPSC Programmer)",
+            "eligibility": "B.Tech (CS/IT) / MCA",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "45,000",
+            "exam_pattern": "Paper-1 (100) + Paper-2 (100)",
+            "viral_subtext": "DOIT&C एवं विभिन्न विभाग",
+            "status": "verified",
+            "priority": 12,
+            "is_active": true,
+            "short_name": "प्रोग्रामर भर्ती"
+          },
+          {
+            "id": 5310,
+            "name": "उप कारापाल सीधी भर्ती (Deputy Jailor)",
+            "eligibility": "स्नातक",
+            "age_limit": "18-26 वर्ष",
+            "applicant_scale": "1+ लाख",
+            "exam_pattern": "लिखित परीक्षा + शारीरिक माप-दक्षता",
+            "viral_subtext": "कारागार विभाग",
+            "status": "verified",
+            "priority": 13,
+            "is_active": true,
+            "short_name": "उप कारापाल सीधी भर्ती"
+          }
+        ],
+        "priority": 2,
+        "is_active": true,
+        "viral_names": [
+          "RAS",
+          "1st/2nd Grade",
+          "SI"
+        ]
+      },
+      {
+        "board_id": "rajpolice",
+        "name": "राजस्थान पुलिस मुख्यालय (Rajasthan Police)",
+        "short_name": "Police",
+        "icon": "👮",
+        "official_portal": "https://police.rajasthan.gov.in",
+        "viral_preview": "कांस्टेबल GD • RAC • चालक • दूरसंचार",
+        "exams": [
+          {
+            "id": 5128,
+            "name": "राजस्थान पुलिस कांस्टेबल (GD / सामान्य ड्यूटी)",
+            "eligibility": "12वीं पास (CET 12th लेवल अनिवार्य)",
+            "age_limit": "18-24 वर्ष",
+            "applicant_scale": "3.5 लाख",
+            "exam_pattern": "CBT (150 प्रश्न • 150 अंक) + PET/PST",
+            "viral_subtext": "जिला पुलिस बल 3,578 पद",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "राजस्थान पुलिस कांस्टेबल"
+          },
+          {
+            "id": 5129,
+            "name": "RAC एवं MBC बटालियन कांस्टेबल भर्ती",
+            "eligibility": "10वीं पास (CET से पूर्णतः मुक्त)",
+            "age_limit": "18-24 वर्ष",
+            "applicant_scale": "6+ लाख",
+            "exam_pattern": "लिखित परीक्षा (150 प्रश्न) + फिजिकल 5 KM दौड़",
+            "viral_subtext": "बिना CET 10वीं पास भर्ती",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "RAC एवं MBC बटालियन कांस्टेबल भर्ती"
+          },
+          {
+            "id": 5131,
+            "name": "पुलिस दूरसंचार ऑपरेटर (Police Telecom)",
+            "eligibility": "12वीं (भौतिक विज्ञान एवं गणित) + CET",
+            "age_limit": "18-24 वर्ष",
+            "applicant_scale": "80,000",
+            "exam_pattern": "CBT लिखित परीक्षा + कंप्यूटर दक्षता",
+            "viral_subtext": "दूरसंचार विंग",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "पुलिस दूरसंचार ऑपरेटर"
+          },
+          {
+            "id": 5132,
+            "name": "पुलिस चालक एवं घुड़सवार / श्वान दल",
+            "eligibility": "10वीं/12वीं + वैध ड्राइविंग लाइसेंस (LMV/HMV)",
+            "age_limit": "18-27 वर्ष",
+            "applicant_scale": "90,000",
+            "exam_pattern": "लिखित परीक्षा + ड्राइविंग स्किल टेस्ट (30 अंक)",
+            "viral_subtext": "ड्राइवर संवर्ग",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "पुलिस चालक एवं घुड़सवार / श्वान दल"
+          }
+        ],
+        "priority": 3,
+        "is_active": true,
+        "viral_names": [
+          "कांस्टेबल GD",
+          "RAC",
+          "चालक"
+        ]
+      },
+      {
+        "board_id": "reet",
+        "name": "राजस्थान अध्यापक पात्रता परीक्षा परिषद (REET)",
+        "short_name": "REET",
+        "icon": "📖",
+        "official_portal": "https://rajeduboard.rajasthan.gov.in",
+        "viral_preview": "रीट Level-1 • रीट Level-2",
+        "exams": [
+          {
+            "id": 5208,
+            "name": "REET पात्रता परीक्षा - लेवल-1 (कक्षा 1-5)",
+            "eligibility": "12वीं (50%) + D.El.Ed (BSTC)",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "4+ लाख",
+            "exam_pattern": "150 प्रश्न • 150 अंक (बाल विकास, भाषा 1, भाषा 2, गणित, पर्यावरण)",
+            "viral_subtext": "प्राथमिक शिक्षक पात्रता",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "REET पात्रता परीक्षा - लेवल-1"
+          },
+          {
+            "id": 5209,
+            "name": "REET पात्रता परीक्षा - लेवल-2 (कक्षा 6-8)",
+            "eligibility": "स्नातक + B.Ed / D.El.Ed",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "8+ लाख",
+            "exam_pattern": "150 प्रश्न • 150 अंक (बाल विकास, भाषाएं, संबंधित विषय)",
+            "viral_subtext": "उच्च प्राथमिक शिक्षक पात्रता",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "REET पात्रता परीक्षा - लेवल-2"
+          }
+        ],
+        "priority": 4,
+        "is_active": true,
+        "viral_names": [
+          "रीट Level-1",
+          "रीट Level-2"
+        ]
+      },
+      {
+        "board_id": "rhc",
+        "name": "राजस्थान उच्च न्यायालय (RHC जोधपुर)",
+        "short_name": "High Court",
+        "icon": "🏛️",
+        "official_portal": "https://hcraj.nic.in",
+        "viral_preview": "LDC • JJA • स्टेनो • सिस्टम असिस्टेंट",
+        "exams": [
+          {
+            "id": 5109,
+            "name": "हाई कोर्ट कनिष्ठ न्यायिक सहायक (JJA) व क्लर्क Grade-II",
+            "eligibility": "स्नातक + कंप्यूटर ज्ञान",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "5+ लाख",
+            "exam_pattern": "लिखित परीक्षा (हिंदी, अंग्रेजी, GK 300) + टाइपिंग",
+            "viral_subtext": "हाई कोर्ट व जिला न्यायालय • CET से मुक्त",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "हाई कोर्ट कनिष्ठ न्यायिक सहायक"
+          },
+          {
+            "id": 5115,
+            "name": "हाई कोर्ट स्टेनोग्राफर भर्ती (हिंदी व अंग्रेजी)",
+            "eligibility": "12वीं/स्नातक + आशुलिपि",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "40,000",
+            "exam_pattern": "डिक्टेशन + कंप्यूटर टाइपिंग",
+            "viral_subtext": "आशुलिपिक संवर्ग",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "हाई कोर्ट स्टेनोग्राफर भर्ती"
+          },
+          {
+            "id": 5116,
+            "name": "सिस्टम असिस्टेंट भर्ती (System Assistant)",
+            "eligibility": "BCA / B.Tech (CS/IT)",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "45,000",
+            "exam_pattern": "कंप्यूटर ज्ञान + टाइपिंग टेस्ट",
+            "viral_subtext": "न्यायालय IT सेल 230 पद",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "सिस्टम असिस्टेंट भर्ती"
+          },
+          {
+            "id": 5111,
+            "name": "राजस्थान न्यायिक सेवा (Civil Judge - RJS)",
+            "eligibility": "LLB (विधि स्नातक)",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "30,000",
+            "exam_pattern": "प्रारंभिक + मुख्य लिखित + साक्षात्कार",
+            "viral_subtext": "सिविल न्यायाधीश संवर्ग",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "राजस्थान न्यायिक सेवा"
+          }
+        ],
+        "priority": 5,
+        "is_active": true,
+        "viral_names": [
+          "LDC",
+          "JJA",
+          "स्टेनो"
+        ]
+      },
+      {
+        "board_id": "rvunl",
+        "name": "ऊर्जा विभाग एवं अन्य राज्य निगम",
+        "short_name": "RVUNL & निगम",
+        "icon": "⚡",
+        "official_portal": "https://energy.rajasthan.gov.in",
+        "viral_preview": "विद्युत JEN • AEN • RIICO • SET",
+        "exams": [
+          {
+            "id": 5530,
+            "name": "RVUNL कनिष्ठ अभियंता (JEN - Civil, Elect, Mech)",
+            "eligibility": "B.Tech / Diploma",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "80,000",
+            "exam_pattern": "CBT (भाग-A तकनीकी 60 + भाग-B सामान्य ज्ञान 40)",
+            "viral_subtext": "पावर कंपनियां (RVUNL, RVPNL, JVVNL)",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "RVUNL कनिष्ठ अभियंता"
+          },
+          {
+            "id": 5531,
+            "name": "RVUNL कनिष्ठ सहायक व कमर्शियल असिस्टेंट-II",
+            "eligibility": "स्नातक + RSCIT",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "1.5 लाख",
+            "exam_pattern": "लिखित परीक्षा + कंप्यूटर टाइपिंग टेस्ट",
+            "viral_subtext": "विद्युत वितरण निगम",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "RVUNL कनिष्ठ सहायक व कमर्शियल असिस्टेंट-II"
+          },
+          {
+            "id": 3400,
+            "name": "JVVNL टेक्निकल हेल्पर सीधी भर्ती",
+            "eligibility": "10वीं + ITI (इलेक्ट्रीशियन/लाइनमैन)",
+            "age_limit": "18-28 वर्ष",
+            "applicant_scale": "1.8 लाख",
+            "exam_pattern": "प्री + मेन्स CBT परीक्षा",
+            "viral_subtext": "बिजली वितरण निगम",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "JVVNL टेक्निकल हेल्पर सीधी भर्ती"
+          },
+          {
+            "id": 5227,
+            "name": "RIICO कनिष्ठ सहायक एवं आशुलिपिक",
+            "eligibility": "12वीं + कंप्यूटर / आशुलिपि",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "50,000",
+            "exam_pattern": "लिखित परीक्षा + स्किल टेस्ट",
+            "viral_subtext": "औद्योगिक विकास निगम",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "RIICO कनिष्ठ सहायक एवं आशुलिपिक"
+          },
+          {
+            "id": 5138,
+            "name": "Rajasthan SET (राज्य पात्रता परीक्षा - सभी विषय)",
+            "eligibility": "मास्टर डिग्री (55%)",
+            "age_limit": "कोई ऊपरी आयु सीमा नहीं",
+            "applicant_scale": "1.2 लाख",
+            "exam_pattern": "Paper-1 (शिक्षण अभिक्षमता 100) + Paper-2 (विषय 200)",
+            "viral_subtext": "GGTU बांसवाड़ा द्वारा आयोजित",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "Rajasthan SET"
+          }
+        ],
+        "priority": 6,
+        "is_active": true,
+        "viral_names": [
+          "विद्युत JEN",
+          "AEN",
+          "RIICO"
+        ]
+      }
+    ],
+    "total_exams": 46,
+    "id": "rajasthan",
+    "priority": 3,
+    "viral_names": [
+      "CET 12th",
+      "पटवारी",
+      "RAS"
+    ]
+  },
+  {
+    "category_id": "uttar_pradesh",
+    "name": "उत्तर प्रदेश (Uttar Pradesh)",
+    "icon": "🚩",
+    "sub_preview": "UP पुलिस • PET • लेखपाल • PCS • Super TET",
+    "boards": [
+      {
+        "board_id": "uppbpb",
+        "name": "UPPBPB (पुलिस भर्ती एवं प्रोन्नति बोर्ड)",
+        "short_name": "UP Police",
+        "icon": "👮",
+        "official_portal": "https://uppbpb.gov.in",
+        "viral_preview": "कांस्टेबल • उपनिरीक्षक (SI) • जेल वार्डर",
+        "exams": [
+          {
+            "id": 2001,
+            "name": "UP पुलिस कांस्टेबल भर्ती 2026",
+            "eligibility": "12वीं उत्तीर्ण",
+            "age_limit": "18-25 वर्ष",
+            "applicant_scale": "48+ लाख",
+            "exam_pattern": "150 प्रश्न • 300 अंक • नेगेटिव 0.50",
+            "viral_subtext": "60,244 सिपाही पद • देश की सबसे बड़ी पुलिस भर्ती",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "UP पुलिस कांस्टेबल भर्ती 2026"
+          },
+          {
+            "id": 2002,
+            "name": "UP पुलिस उपनिरीक्षक (SI / दारोगा) भर्ती",
+            "eligibility": "स्नातक",
+            "age_limit": "21-28 वर्ष",
+            "applicant_scale": "12+ लाख",
+            "exam_pattern": "160 प्रश्न • 400 अंक (हिंदी, मूलविधि/संविधान, मानसिक योग्यता, गणित)",
+            "viral_subtext": "नागरिक पुलिस सब-इंस्पेक्टर",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "UP पुलिस उपनिरीक्षक"
+          },
+          {
+            "id": 6738,
+            "name": "UP जेल वार्डर, फायरमैन एवं घुड़सवार पुलिस",
+            "eligibility": "12वीं पास",
+            "age_limit": "18-22 वर्ष",
+            "applicant_scale": "6+ लाख",
+            "exam_pattern": "150 प्रश्न • 300 अंक",
+            "viral_subtext": "कारागार प्रशासन एवं अग्निशमन",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "UP जेल वार्डर, फायरमैन एवं घुड़सवार पुलिस"
+          },
+          {
+            "id": 2004,
+            "name": "UP पुलिस रेडियो ऑपरेटर (हेड / असिस्टेंट / कर्मशाला)",
+            "eligibility": "12वीं (PCM) / 3-वर्षीय डिप्लोमा / ITI",
+            "age_limit": "18-28 वर्ष",
+            "applicant_scale": "5+ लाख",
+            "exam_pattern": "400 अंक ऑनलाइन परीक्षा",
+            "viral_subtext": "पुलिस वायरलेस दूरसंचार",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "UP पुलिस रेडियो ऑपरेटर"
+          },
+          {
+            "id": 6735,
+            "name": "UP पुलिस कंप्यूटर ऑपरेटर एवं प्रोग्रामर",
+            "eligibility": "12वीं (PCM) + 'O' Level कंप्यूटर",
+            "age_limit": "18-28 वर्ष",
+            "applicant_scale": "1.5 लाख",
+            "exam_pattern": "लिखित परीक्षा (200 अंक) + टाइपिंग टेस्ट",
+            "viral_subtext": "पुलिस IT सेल भर्ती",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "UP पुलिस कंप्यूटर ऑपरेटर एवं प्रोग्रामर"
+          }
+        ],
+        "priority": 1,
+        "is_active": true,
+        "viral_names": [
+          "कांस्टेबल",
+          "उपनिरीक्षक (SI)",
+          "जेल वार्डर"
+        ]
+      },
+      {
+        "board_id": "upsssc",
+        "name": "UPSSSC (अधीनस्थ सेवा चयन आयोग)",
+        "short_name": "UPSSSC",
+        "icon": "🏛️",
+        "official_portal": "https://upsssc.gov.in",
+        "viral_preview": "PET • राजस्व लेखपाल • VDO • कनिष्ठ सहायक",
+        "exams": [
+          {
+            "id": 2005,
+            "name": "UPSSSC PET 2026 (प्रारंभिक अर्हता परीक्षा)",
+            "eligibility": "10वीं / 12वीं / स्नातक",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "25+ लाख",
+            "exam_pattern": "100 प्रश्न • 100 अंक • 2 घंटे • नेगेटिव 1/4",
+            "viral_subtext": "समूह ग भर्तियों का 25+ लाख छात्रों का गेटवे",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "UPSSSC PET 2026"
+          },
+          {
+            "id": 6747,
+            "name": "UP राजस्व लेखपाल एवं चकबंदी लेखपाल",
+            "eligibility": "12वीं + PET स्कोर कार्ड",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "2.5 लाख",
+            "exam_pattern": "100 प्रश्न • 100 अंक (सामान्य हिंदी, गणित, सामान्य ज्ञान, ग्राम्य विकास)",
+            "viral_subtext": "राजस्व परिषद 8,000+ पद",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "UP राजस्व लेखपाल एवं चकबंदी लेखपाल"
+          },
+          {
+            "id": 6740,
+            "name": "ग्राम विकास अधिकारी (VDO) व ग्राम पंचायत अधिकारी",
+            "eligibility": "12वीं + CCC कंप्यूटर + PET स्कोर",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "3+ लाख",
+            "exam_pattern": "150 प्रश्न • 300 अंक • नेगेटिव 1/2",
+            "viral_subtext": "पंचायती राज विभाग",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "ग्राम विकास अधिकारी"
+          },
+          {
+            "id": 6746,
+            "name": "कनिष्ठ सहायक / जूनियर क्लर्क (Junior Assistant)",
+            "eligibility": "12वीं + CCC + हिंदी/अंग्रेजी टाइपिंग + PET",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "1.8 लाख",
+            "exam_pattern": "100 अंक लिखित + टाइपिंग टेस्ट",
+            "viral_subtext": "सचिवालय व विभिन्न सरकारी विभाग",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "कनिष्ठ सहायक / जूनियर क्लर्क"
+          },
+          {
+            "id": 6744,
+            "name": "UPSSSC कनिष्ठ अभियंता (Junior Engineer - JE)",
+            "eligibility": "इंजीनियरिंग में 3-वर्षीय डिप्लोमा + PET",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "80,000",
+            "exam_pattern": "Paper-1 (सामान्य) + Paper-2 (तकनीकी)",
+            "viral_subtext": "PWD, सिंचाई व ग्रामीण अभियंत्रण",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "UPSSSC कनिष्ठ अभियंता"
+          },
+          {
+            "id": 6760,
+            "name": "गन्ना पर्यवेक्षक (Sugarcane Supervisor)",
+            "eligibility": "B.Sc (कृषि) + CCC + PET",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "40,000",
+            "exam_pattern": "लिखित परीक्षा (100 प्रश्न)",
+            "viral_subtext": "गन्ना विकास एवं चीनी उद्योग",
+            "status": "verified",
+            "priority": 6,
+            "is_active": true,
+            "short_name": "गन्ना पर्यवेक्षक"
+          },
+          {
+            "id": 6728,
+            "name": "कृषि प्राविधिक सहायक (AGTA)",
+            "eligibility": "B.Sc (Agriculture/Horticulture/Forestry) + PET",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "50,000",
+            "exam_pattern": "100 प्रश्न • 100 अंक",
+            "viral_subtext": "कृषि विभाग 3,446 पद",
+            "status": "verified",
+            "priority": 7,
+            "is_active": true,
+            "short_name": "कृषि प्राविधिक सहायक"
+          },
+          {
+            "id": 6743,
+            "name": "अनुदेशक भर्ती (ITI Instructor)",
+            "eligibility": "10वीं + ITI/Diploma + CITS + PET",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "30,000",
+            "exam_pattern": "100 प्रश्न लिखित परीक्षा",
+            "viral_subtext": "व्यवसायिक शिक्षा विभाग",
+            "status": "verified",
+            "priority": 8,
+            "is_active": true,
+            "short_name": "अनुदेशक भर्ती"
+          },
+          {
+            "id": 6761,
+            "name": "सप्लाई इंस्पेक्टर एवं अपर निजी सचिव",
+            "eligibility": "स्नातक + PET स्कोर",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "1+ लाख",
+            "exam_pattern": "100 प्रश्न लिखित परीक्षा",
+            "viral_subtext": "खाद्य एवं रसद विभाग",
+            "status": "verified",
+            "priority": 9,
+            "is_active": true,
+            "short_name": "सप्लाई इंस्पेक्टर एवं अपर निजी सचिव"
+          },
+          {
+            "id": 6752,
+            "name": "मुख्य सेविका भर्ती (Mukhya Sevika)",
+            "eligibility": "स्नातक (समाजशास्त्र / गृह विज्ञान) + PET",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "60,000",
+            "exam_pattern": "100 प्रश्न • 100 अंक",
+            "viral_subtext": "महिला कल्याण विभाग",
+            "status": "verified",
+            "priority": 10,
+            "is_active": true,
+            "short_name": "मुख्य सेविका भर्ती"
+          }
+        ],
+        "priority": 2,
+        "is_active": true,
+        "viral_names": [
+          "PET",
+          "राजस्व लेखपाल",
+          "VDO"
+        ]
+      },
+      {
+        "board_id": "uppsc",
+        "name": "UPPSC (उत्तर प्रदेश लोक सेवा आयोग)",
+        "short_name": "UPPSC",
+        "icon": "⚖️",
+        "official_portal": "https://uppsc.up.nic.in",
+        "viral_preview": "PCS • RO/ARO • LT Grade • स्टाफ नर्स",
+        "exams": [
+          {
+            "id": 6755,
+            "name": "UPPSC सम्मिलित राज्य / प्रवर अधीनस्थ सेवा (PCS) 2026",
+            "eligibility": "स्नातक",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "6+ लाख",
+            "exam_pattern": "Prelims (GS 200 + CSAT 200) + Mains (8 Papers 1500) + Interview (100)",
+            "viral_subtext": "UP की सर्वोच्च प्रशासनिक सेवा (SDM, DSP, BDO)",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "UPPSC सम्मिलित राज्य / प्रवर अधीनस्थ सेवा"
+          },
+          {
+            "id": 6757,
+            "name": "समीक्षा अधिकारी / सहायक समीक्षा अधिकारी (RO / ARO)",
+            "eligibility": "स्नातक + 'O' Level (ARO हेतु)",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "10.5+ लाख",
+            "exam_pattern": "Prelims (GS 140 + Hindi 60) + Mains (400 अंक)",
+            "viral_subtext": "सचिवालय एवं लोक सेवा आयोग",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "समीक्षा अधिकारी / सहायक समीक्षा अधिकारी"
+          },
+          {
+            "id": 6756,
+            "name": "UP न्यायिक सेवा सिविल जज (Junior Division - PCS-J)",
+            "eligibility": "विधि स्नातक (LLB)",
+            "age_limit": "22-35 वर्ष",
+            "applicant_scale": "70,000",
+            "exam_pattern": "Prelims + Mains (Written 5 Papers) + Interview",
+            "viral_subtext": "न्यायिक सेवा अधिकारी संवर्ग",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "UP न्यायिक सेवा सिविल जज"
+          },
+          {
+            "id": 6751,
+            "name": "सहायक अध्यापक एलटी ग्रेड (LT Grade Teacher)",
+            "eligibility": "स्नातक + B.Ed (संबंधित विषय)",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "4+ लाख",
+            "exam_pattern": "लिखित परीक्षा (GS 30 + संबंधित विषय 120)",
+            "viral_subtext": "राजकीय इंटर कॉलेज (सभी 14 विषय)",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "सहायक अध्यापक एलटी ग्रेड"
+          },
+          {
+            "id": 6748,
+            "name": "प्रवक्ता राजकीय इंटर कॉलेज (GIC Lecturer)",
+            "eligibility": "स्नातकोत्तर (PG)",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "3+ लाख",
+            "exam_pattern": "Prelims (लिखित 300) + Mains (पारंपरिक 400)",
+            "viral_subtext": "राजकीय विद्यालय (सभी 16 विषय)",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "प्रवक्ता राजकीय इंटर कॉलेज"
+          },
+          {
+            "id": 6749,
+            "name": "पॉलिटेक्निक व्याख्याता एवं प्रधानाचार्य भर्ती",
+            "eligibility": "B.Tech (प्रथम श्रेणी) / M.Tech",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "80,000",
+            "exam_pattern": "Paper-1 (375) + Paper-2 (375) + Interview (100)",
+            "viral_subtext": "प्राविधिक शिक्षा विभाग",
+            "status": "verified",
+            "priority": 6,
+            "is_active": true,
+            "short_name": "पॉलिटेक्निक व्याख्याता एवं प्रधानाचार्य भर्ती"
+          },
+          {
+            "id": 6759,
+            "name": "स्टाफ नर्स / नर्सिंग ऑफिसर (पुरुष एवं महिला)",
+            "eligibility": "B.Sc (Nursing) / GNM + पंजीकरण",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "90,000",
+            "exam_pattern": "प्रारंभिक + मुख्य परीक्षा",
+            "viral_subtext": "चिकित्सा शिक्षा एवं प्रशिक्षण",
+            "status": "verified",
+            "priority": 7,
+            "is_active": true,
+            "short_name": "स्टाफ नर्स / नर्सिंग ऑफिसर"
+          }
+        ],
+        "priority": 3,
+        "is_active": true,
+        "viral_names": [
+          "PCS",
+          "RO/ARO",
+          "LT Grade"
+        ]
+      },
+      {
+        "board_id": "up_teaching",
+        "name": "UP शिक्षा सेवा चयन आयोग (UPESSC)",
+        "short_name": "UP Teaching",
+        "icon": "📖",
+        "official_portal": "https://upseb.org",
+        "viral_preview": "Super TET • UPTET • TGT • PGT",
+        "exams": [
+          {
+            "id": 2008,
+            "name": "UP सुपर टीईटी (प्राथमिक शिक्षक सीधी भर्ती)",
+            "eligibility": "स्नातक + D.El.Ed / BTC + UPTET/CTET",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "12+ लाख",
+            "exam_pattern": "150 प्रश्न • 150 अंक (14 विषय) • कटऑफ आधारित",
+            "viral_subtext": "परिषदीय प्राथमिक विद्यालय सहायक अध्यापक",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "UP सुपर टीईटी"
+          },
+          {
+            "id": 2009,
+            "name": "UPTET उत्तर प्रदेश शिक्षक पात्रता परीक्षा",
+            "eligibility": "D.El.Ed / B.Ed",
+            "age_limit": "कोई सीमा नहीं",
+            "applicant_scale": "18+ लाख",
+            "exam_pattern": "Paper-1 (कक्षा 1-5) व Paper-2 (कक्षा 6-8)",
+            "viral_subtext": "राज्य पात्रता परीक्षा",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "UPTET उत्तर प्रदेश शिक्षक पात्रता परीक्षा"
+          },
+          {
+            "id": 6750,
+            "name": "UPSESSB प्रशिक्षित स्नातक शिक्षक (TGT)",
+            "eligibility": "स्नातक + B.Ed",
+            "age_limit": "21 वर्ष से ऊपर",
+            "applicant_scale": "8+ लाख",
+            "exam_pattern": "125 प्रश्न • 500 अंक • नेगेटिव नहीं",
+            "viral_subtext": "सहायता प्राप्त विद्यालय (सभी 16 विषय)",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "UPSESSB प्रशिक्षित स्नातक शिक्षक"
+          },
+          {
+            "id": 6754,
+            "name": "UPSESSB प्रवक्ता संवर्ग (PGT)",
+            "eligibility": "स्नातकोत्तर (PG)",
+            "age_limit": "21 वर्ष से ऊपर",
+            "applicant_scale": "4+ लाख",
+            "exam_pattern": "लिखित परीक्षा (425 अंक) + साक्षात्कार (50 अंक) + विशेष योग्यता",
+            "viral_subtext": "इंटर कॉलेज प्रवक्ता (सभी 23 विषय)",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "UPSESSB प्रवक्ता संवर्ग"
+          },
+          {
+            "id": 6739,
+            "name": "जूनियर एडेड हाईस्कूल सहायक अध्यापक व प्रधानाध्यापक",
+            "eligibility": "स्नातक + B.Ed/BTC + जूनियर TET",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "3.5 लाख",
+            "exam_pattern": "सामान्य ज्ञान (50) + संबंधित विषय (100)",
+            "viral_subtext": "सहायता प्राप्त जूनियर हाईस्कूल",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "जूनियर एडेड हाईस्कूल सहायक अध्यापक व प्रधानाध्यापक"
+          }
+        ],
+        "priority": 4,
+        "is_active": true,
+        "viral_names": [
+          "Super TET",
+          "UPTET",
+          "TGT"
+        ]
+      }
+    ],
+    "total_exams": 27,
+    "id": "uttar_pradesh",
+    "priority": 4,
+    "viral_names": [
+      "UP पुलिस",
+      "PET",
+      "लेखपाल"
+    ]
+  },
+  {
+    "category_id": "bihar",
+    "name": "बिहार (Bihar State)",
+    "icon": "🌾",
+    "sub_preview": "BPSC 70वीं • शिक्षक TRE • BSSC इंटर • सिपाही 21K",
+    "boards": [
+      {
+        "board_id": "bpsc",
+        "name": "BPSC (बिहार लोक सेवा आयोग)",
+        "short_name": "BPSC",
+        "icon": "⚖️",
+        "official_portal": "https://bpsc.bih.nic.in",
+        "viral_preview": "70वीं/71वीं CCE • TRE 4.0 शिक्षक • हेडमास्टर • CDPO",
+        "exams": [
+          {
+            "id": 3001,
+            "name": "BPSC संयुक्त प्रतियोगी परीक्षा (CCE 70वीं/71वीं)",
+            "eligibility": "स्नातक",
+            "age_limit": "20/22-37 वर्ष",
+            "applicant_scale": "5.5+ लाख",
+            "exam_pattern": "Prelims (150 प्रश्न • नेगेटिव 1/3) + Mains (900) + Interview (120)",
+            "viral_subtext": "बिहार प्रशासनिक व पुलिस सेवा (SDM, DSP)",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "BPSC संयुक्त प्रतियोगी परीक्षा"
+          },
+          {
+            "id": 3002,
+            "name": "BPSC शिक्षक भर्ती परीक्षा (TRE 4.0 / प्राथमिक, माध्यमिक, उच्च माध्यमिक)",
+            "eligibility": "D.El.Ed / B.Ed + CTET/STET",
+            "age_limit": "18/21-37 वर्ष",
+            "applicant_scale": "8+ लाख",
+            "exam_pattern": "भाषा (30) + सामान्य अध्ययन (40) + संबंधित विषय (80) = 150 प्रश्न",
+            "viral_subtext": "शिक्षा विभाग 80,000+ शिक्षक पद",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "BPSC शिक्षक भर्ती परीक्षा"
+          },
+          {
+            "id": 3003,
+            "name": "BPSC प्रधान शिक्षक एवं प्रधानाध्यापक भर्ती",
+            "eligibility": "स्नातक/D.El.Ed/B.Ed + शिक्षक अनुभव",
+            "age_limit": "31-47 वर्ष",
+            "applicant_scale": "1.5 लाख",
+            "exam_pattern": "सामान्य अध्ययन (75) + D.El.Ed/B.Ed विषय (75)",
+            "viral_subtext": "प्राथमिक व माध्यमिक विद्यालय 40,000+ पद",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "BPSC प्रधान शिक्षक एवं प्रधानाध्यापक भर्ती"
+          },
+          {
+            "id": 3004,
+            "name": "BPSC बाल विकास परियोजना पदाधिकारी (CDPO)",
+            "eligibility": "स्नातक",
+            "age_limit": "21-37 वर्ष",
+            "applicant_scale": "1.8 लाख",
+            "exam_pattern": "Prelims (150) + Mains (GS + ऐच्छिक) + Interview",
+            "viral_subtext": "समाज कल्याण विभाग",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "BPSC बाल विकास परियोजना पदाधिकारी"
+          },
+          {
+            "id": 3005,
+            "name": "BPSC सहायक अभियंता (AE - Civil, Mech, Electrical)",
+            "eligibility": "इंजीनियरिंग में B.E / B.Tech",
+            "age_limit": "21-37 वर्ष",
+            "applicant_scale": "60,000",
+            "exam_pattern": "सामान्य अंग्रेजी, हिंदी, सामान्य अध्ययन व इंजीनियरिंग पेपर्स",
+            "viral_subtext": "सड़क, भवन निर्माण एवं जल संसाधन",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "BPSC सहायक अभियंता"
+          }
+        ],
+        "priority": 1,
+        "is_active": true,
+        "viral_names": [
+          "70वीं/71वीं CCE",
+          "TRE 4.0 शिक्षक",
+          "हेडमास्टर"
+        ]
+      },
+      {
+        "board_id": "bssc",
+        "name": "BSSC (बिहार कर्मचारी चयन आयोग)",
+        "short_name": "BSSC",
+        "icon": "🏛️",
+        "official_portal": "https://bssc.bihar.gov.in",
+        "viral_preview": "CGL-4 • इंटर स्तरीय (12,199 पद) • परिचारी",
+        "exams": [
+          {
+            "id": 3006,
+            "name": "BSSC द्वितीय इंटर स्तरीय संयुक्त प्रतियोगिता परीक्षा 2026",
+            "eligibility": "12वीं उत्तीर्ण",
+            "age_limit": "18-37 वर्ष",
+            "applicant_scale": "25+ लाख",
+            "exam_pattern": "150 प्रश्न • 600 अंक (सामान्य अध्ययन, सामान्य विज्ञान/गणित, रीज़निंग) • नेगेटिव 1 अंक",
+            "viral_subtext": "राजस्व कर्मचारी, पंचायत सचिव 12,199 पद",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "BSSC द्वितीय इंटर स्तरीय संयुक्त प्रतियोगिता परीक्षा 2026"
+          },
+          {
+            "id": 3007,
+            "name": "BSSC चतुर्थ स्नातक स्तरीय परीक्षा (CGL-4)",
+            "eligibility": "स्नातक",
+            "age_limit": "21-37 वर्ष",
+            "applicant_scale": "7+ लाख",
+            "exam_pattern": "प्रारंभिक (150 प्रश्न) + मुख्य परीक्षा",
+            "viral_subtext": "सचिवालय सहायक, अंकेक्षक, योजना सहायक",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "BSSC चतुर्थ स्नातक स्तरीय परीक्षा"
+          },
+          {
+            "id": 3008,
+            "name": "BSSC कार्यालय परिचारी / ग्रुप-D सीधी भर्ती",
+            "eligibility": "10वीं पास",
+            "age_limit": "18-37 वर्ष",
+            "applicant_scale": "15+ लाख",
+            "exam_pattern": "लिखित वस्तुनिष्ठ परीक्षा (100 प्रश्न)",
+            "viral_subtext": "विभिन्न सरकारी विभाग 30,000+ पद",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "BSSC कार्यालय परिचारी / ग्रुप-D सीधी भर्ती"
+          },
+          {
+            "id": 3009,
+            "name": "BSSC स्टेनोग्राफर एवं अनुदेशक आशुलेखक",
+            "eligibility": "12वीं + आशुलिपि (80 शब्द/मिनट) + टाइपिंग",
+            "age_limit": "18-37 वर्ष",
+            "applicant_scale": "70,000",
+            "exam_pattern": "लिखित परीक्षा + आशुलिपि व टाइपिंग टेस्ट",
+            "viral_subtext": "विभागीय आशुलिपिक",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "BSSC स्टेनोग्राफर एवं अनुदेशक आशुलेखक"
+          }
+        ],
+        "priority": 2,
+        "is_active": true,
+        "viral_names": [
+          "CGL-4",
+          "इंटर स्तरीय (12,199 पद)",
+          "परिचारी"
+        ]
+      },
+      {
+        "board_id": "bihar_police",
+        "name": "CSBC एवं BPSSC (बिहार पुलिस भर्ती परिषद)",
+        "short_name": "Bihar Police",
+        "icon": "👮",
+        "official_portal": "https://csbc.bih.nic.in",
+        "viral_preview": "कांस्टेबल (21,391 पद) • दारोगा (SI) • उत्पाद सिपाही",
+        "exams": [
+          {
+            "id": 3010,
+            "name": "CSBC बिहार पुलिस सिपाही (कांस्टेबल) भर्ती",
+            "eligibility": "12वीं पास",
+            "age_limit": "18-25 वर्ष",
+            "applicant_scale": "18+ लाख",
+            "exam_pattern": "लिखित परीक्षा (100 प्रश्न • 100 अंक) + फिजिकल (PET 100 अंक - मेरिट आधारित)",
+            "viral_subtext": "21,391 सिपाही पद • मेरिट दौड़ व गोला फेंक पर",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "CSBC बिहार पुलिस सिपाही"
+          },
+          {
+            "id": 3011,
+            "name": "BPSSC पुलिस अवर निरीक्षक (दारोगा / Sub Inspector)",
+            "eligibility": "स्नातक",
+            "age_limit": "20-37 वर्ष",
+            "applicant_scale": "6.5+ लाख",
+            "exam_pattern": "प्रारंभिक (100 प्रश्न 200 अंक) + मुख्य (Paper-1 हिंदी + Paper-2 GS) + PET",
+            "viral_subtext": "बिहार पुलिस दारोगा संवर्ग",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "BPSSC पुलिस अवर निरीक्षक"
+          },
+          {
+            "id": 3012,
+            "name": "CSBC मद्यनिषेध एवं उत्पाद सिपाही भर्ती",
+            "eligibility": "12वीं पास",
+            "age_limit": "18-25 वर्ष",
+            "applicant_scale": "4+ लाख",
+            "exam_pattern": "100 प्रश्न लिखित + शारीरिक दक्षता",
+            "viral_subtext": "मद्यनिषेध, उत्पाद एवं निबंधन विभाग",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "CSBC मद्यनिषेध एवं उत्पाद सिपाही भर्ती"
+          },
+          {
+            "id": 3013,
+            "name": "बिहार फायरमैन एवं जेल वार्डर भर्ती",
+            "eligibility": "12वीं पास",
+            "age_limit": "18-25 वर्ष",
+            "applicant_scale": "5+ लाख",
+            "exam_pattern": "लिखित परीक्षा (100 अंक) + PET",
+            "viral_subtext": "अग्निशमन व कारागार सेवा",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "बिहार फायरमैन एवं जेल वार्डर भर्ती"
+          }
+        ],
+        "priority": 3,
+        "is_active": true,
+        "viral_names": [
+          "कांस्टेबल (21,391 पद)",
+          "दारोगा (SI)",
+          "उत्पाद सिपाही"
+        ]
+      },
+      {
+        "board_id": "bihar_misc",
+        "name": "बिहार STET, उच्च न्यायालय एवं तकनीकी सेवा",
+        "short_name": "High Court & STET",
+        "icon": "📜",
+        "official_portal": "https://patnahighcourt.gov.in",
+        "viral_preview": "STET • पटना हाई कोर्ट असिस्टेंट • BTSC JE",
+        "exams": [
+          {
+            "id": 3014,
+            "name": "बिहार STET माध्यमिक शिक्षक पात्रता परीक्षा",
+            "eligibility": "स्नातक/PG + B.Ed",
+            "age_limit": "21-37 वर्ष",
+            "applicant_scale": "4.5 लाख",
+            "exam_pattern": "Paper-1 (माध्यमिक 150 अंक) व Paper-2 (उच्च माध्यमिक 150 अंक)",
+            "viral_subtext": "BSEB द्वारा आयोजित राज्य पात्रता",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "बिहार STET माध्यमिक शिक्षक पात्रता परीक्षा"
+          },
+          {
+            "id": 3015,
+            "name": "पटना उच्च न्यायालय सहायक (Assistant / PA)",
+            "eligibility": "स्नातक + कंप्यूटर सर्टिफिकेट + टाइपिंग",
+            "age_limit": "18-37 वर्ष",
+            "applicant_scale": "2.5 लाख",
+            "exam_pattern": "Preliminary (100) + Written Mains + CPT + Interview",
+            "viral_subtext": "हाई कोर्ट ग्रुप-B राजपत्रित पद",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "पटना उच्च न्यायालय सहायक"
+          },
+          {
+            "id": 3016,
+            "name": "पटना हाई कोर्ट स्टेनोग्राफर भर्ती",
+            "eligibility": "12वीं + आशुलिपि + टाइपिंग",
+            "age_limit": "18-37 वर्ष",
+            "applicant_scale": "40,000",
+            "exam_pattern": "लिखित + अंग्रेजी/हिंदी आशुलिपि टेस्ट",
+            "viral_subtext": "आशुलिपिक संवर्ग",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "पटना हाई कोर्ट स्टेनोग्राफर भर्ती"
+          },
+          {
+            "id": 3017,
+            "name": "BTSC कनिष्ठ अभियंता (JE - Civil, Mech, Elect)",
+            "eligibility": "इंजीनियरिंग में 3-वर्षीय डिप्लोमा",
+            "age_limit": "18-37 वर्ष",
+            "applicant_scale": "50,000",
+            "exam_pattern": "लिखित CBT परीक्षा (तकनीकी + गैर-तकनीकी)",
+            "viral_subtext": "बिहार तकनीकी सेवा आयोग",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "BTSC कनिष्ठ अभियंता"
+          },
+          {
+            "id": 3018,
+            "name": "BTSC ANM एवं स्टाफ नर्स सीधी भर्ती",
+            "eligibility": "ANM / GNM कोर्स + निबंधन",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "70,000",
+            "exam_pattern": "लिखित CBT परीक्षा (100 अंक)",
+            "viral_subtext": "स्वास्थ्य विभाग 10,709 पद",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "BTSC ANM एवं स्टाफ नर्स सीधी भर्ती"
+          }
+        ],
+        "priority": 4,
+        "is_active": true,
+        "viral_names": [
+          "STET",
+          "पटना हाई कोर्ट असिस्टेंट",
+          "BTSC JE"
+        ]
+      }
+    ],
+    "total_exams": 18,
+    "id": "bihar",
+    "priority": 5,
+    "viral_names": [
+      "BPSC 70वीं",
+      "शिक्षक TRE",
+      "BSSC इंटर"
+    ]
+  },
+  {
+    "category_id": "delhi",
+    "name": "दिल्ली (Delhi NCT)",
+    "icon": "🏛️",
+    "sub_preview": "DSSSB शिक्षक • LDC • दिल्ली पुलिस कांस्टेबल व SI",
+    "boards": [
+      {
+        "board_id": "dsssb",
+        "name": "DSSSB (दिल्ली अधीनस्थ सेवा चयन बोर्ड)",
+        "short_name": "DSSSB",
+        "icon": "🏛️",
+        "official_portal": "https://dsssb.delhi.gov.in",
+        "viral_preview": "PRT • TGT • PGT • DASSH ग्रेड-II • LDC",
+        "exams": [
+          {
+            "id": 4001,
+            "name": "DSSSB शिक्षक भर्ती (PRT / TGT / PGT / स्पेशल एजुकेटर)",
+            "eligibility": "B.Ed/D.El.Ed + CTET (PRT/TGT हेतु)",
+            "age_limit": "30/32 वर्ष",
+            "applicant_scale": "5+ लाख",
+            "exam_pattern": "Tier-1 (सामान्य 100 + संबंधित शिक्षण विषय 100) = 200 अंक • नेगेटिव 0.25",
+            "viral_subtext": "दिल्ली नगर निगम (MCD) व DOE विद्यालय",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "DSSSB शिक्षक भर्ती"
+          },
+          {
+            "id": 4002,
+            "name": "DSSSB कनिष्ठ सचिवालय सहायक (LDC) व जूनियर असिस्टेंट",
+            "eligibility": "12वीं पास + टाइपिंग (35 wpm)",
+            "age_limit": "18-27 वर्ष",
+            "applicant_scale": "4+ लाख",
+            "exam_pattern": "One Tier (200 प्रश्न • 200 अंक) + स्किल टेस्ट",
+            "viral_subtext": "दिल्ली सरकार के विभिन्न विभाग",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "DSSSB कनिष्ठ सचिवालय सहायक"
+          },
+          {
+            "id": 4003,
+            "name": "DSSSB दास ग्रेड-II (DASS Grade-II) व सहायक",
+            "eligibility": "स्नातक",
+            "age_limit": "20-30 वर्ष",
+            "applicant_scale": "2.5 लाख",
+            "exam_pattern": "Tier-1 + Tier-2 (विस्तृत डिस्क्रिप्टिव)",
+            "viral_subtext": "दिल्ली प्रशासनिक सेवा संवर्ग",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "DSSSB दास ग्रेड-II"
+          },
+          {
+            "id": 4004,
+            "name": "DSSSB नर्सिंग ऑफिसर एवं फार्मासिस्ट",
+            "eligibility": "B.Sc Nursing / D.Pharma",
+            "age_limit": "18-32 वर्ष",
+            "applicant_scale": "80,000",
+            "exam_pattern": "One Tier CBT (तकनीकी 100 + सामान्य 100)",
+            "viral_subtext": "दिल्ली स्वास्थ्य विभाग",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "DSSSB नर्सिंग ऑफिसर एवं फार्मासिस्ट"
+          }
+        ],
+        "priority": 1,
+        "is_active": true,
+        "viral_names": [
+          "PRT",
+          "TGT",
+          "PGT"
+        ]
+      },
+      {
+        "board_id": "delhi_police",
+        "name": "दिल्ली पुलिस मुख्यालय (SSC द्वारा आयोजित)",
+        "short_name": "Delhi Police",
+        "icon": "👮",
+        "official_portal": "https://delhipolice.gov.in",
+        "viral_preview": "कांस्टेबल कार्यकारी • हेड कांस्टेबल (AWO/TPO) • चालक",
+        "exams": [
+          {
+            "id": 4005,
+            "name": "दिल्ली पुलिस कांस्टेबल (कार्यकारी - पुरुष एवं महिला)",
+            "eligibility": "12वीं पास + LMV ड्राइविंग लाइसेंस (पुरुष हेतु)",
+            "age_limit": "18-25 वर्ष",
+            "applicant_scale": "30+ लाख",
+            "exam_pattern": "CBT (100 प्रश्न • 100 अंक • रीज़निंग, GK, मैथ्स, कंप्यूटर) + PE&MT",
+            "viral_subtext": "SSC द्वारा आयोजित • केंद्रीय वेतनमान",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "दिल्ली पुलिस कांस्टेबल"
+          },
+          {
+            "id": 4006,
+            "name": "दिल्ली पुलिस हेड कांस्टेबल (मंत्रालयी / Ministerial)",
+            "eligibility": "12वीं पास + कंप्यूटर टाइपिंग",
+            "age_limit": "18-25 वर्ष",
+            "applicant_scale": "8+ लाख",
+            "exam_pattern": "CBT (100 अंक) + टाइपिंग टेस्ट (25 अंक) + कंप्यूटर फॉर्मेटिंग",
+            "viral_subtext": "ऑफिस संवर्ग सिपाही",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "दिल्ली पुलिस हेड कांस्टेबल"
+          },
+          {
+            "id": 4007,
+            "name": "दिल्ली पुलिस हेड कांस्टेबल (AWO / TPO - वायरलेस ऑपरेटर)",
+            "eligibility": "12वीं (विज्ञान एवं गणित)",
+            "age_limit": "18-27 वर्ष",
+            "applicant_scale": "4+ लाख",
+            "exam_pattern": "CBT लिखित परीक्षा + ट्रेड टेस्ट + टाइपिंग",
+            "viral_subtext": "दूरसंचार विंग",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "दिल्ली पुलिस हेड कांस्टेबल"
+          },
+          {
+            "id": 4008,
+            "name": "दिल्ली पुलिस चालक भर्ती (Driver)",
+            "eligibility": "10वीं/12वीं + भारी मोटर वाहन (HMV) लाइसेंस",
+            "age_limit": "21-30 वर्ष",
+            "applicant_scale": "3+ लाख",
+            "exam_pattern": "लिखित CBT (100 अंक) + ट्रेड ड्राइविंग टेस्ट (150 अंक)",
+            "viral_subtext": "ड्राइवर संवर्ग",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "दिल्ली पुलिस चालक भर्ती"
+          }
+        ],
+        "priority": 2,
+        "is_active": true,
+        "viral_names": [
+          "कांस्टेबल कार्यकारी",
+          "हेड कांस्टेबल (AWO/TPO)",
+          "चालक"
+        ]
+      }
+    ],
+    "total_exams": 8,
+    "id": "delhi",
+    "priority": 6,
+    "viral_names": [
+      "DSSSB शिक्षक",
+      "LDC",
+      "दिल्ली पुलिस कांस्टेबल व SI"
+    ]
+  },
+  {
+    "category_id": "madhya_pradesh",
+    "name": "मध्य प्रदेश (Madhya Pradesh)",
+    "icon": "🌳",
+    "sub_preview": "MPPSC राज्य सेवा • MP पुलिस • पटवारी • प्राथमिक शिक्षक",
+    "boards": [
+      {
+        "board_id": "mpesb",
+        "name": "MPESB (व्यापम / कर्मचारी चयन मंडल)",
+        "short_name": "MPESB (व्यापम)",
+        "icon": "🏛️",
+        "official_portal": "https://esb.mp.gov.in",
+        "viral_preview": "MP पुलिस आरक्षक • पटवारी • शिक्षक वर्ग-1, 2, 3 • वनरक्षक",
+        "exams": [
+          {
+            "id": 4101,
+            "name": "MP पुलिस आरक्षक (कांस्टेबल GD एवं रेडियो)",
+            "eligibility": "10वीं/12वीं पास",
+            "age_limit": "18-36 वर्ष",
+            "applicant_scale": "9+ लाख",
+            "exam_pattern": "ऑनलाइन CBT (100 अंक) + फिजिकल (PET - 100 अंक मेरिट आधारित)",
+            "viral_subtext": "7,411+ आरक्षक पद",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "MP पुलिस आरक्षक"
+          },
+          {
+            "id": 4102,
+            "name": "MP पटवारी एवं समूह-2 (उप समूह-4) संयुक्त परीक्षा",
+            "eligibility": "स्नातक + CPCT प्रमाणपत्र",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "12+ लाख",
+            "exam_pattern": "200 प्रश्न • 200 अंक (8 विषय)",
+            "viral_subtext": "राजस्व एवं अन्य विभाग 9,000+ पद",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "MP पटवारी एवं समूह-2"
+          },
+          {
+            "id": 4103,
+            "name": "MP शिक्षक पात्रता परीक्षा (वर्ग-1, वर्ग-2, वर्ग-3)",
+            "eligibility": "D.El.Ed / B.Ed / PG",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "7+ लाख",
+            "exam_pattern": "150 प्रश्न • 150 अंक (पात्रता + चयन परीक्षा)",
+            "viral_subtext": "स्कूल शिक्षा एवं जनजातीय कार्य विभाग",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "MP शिक्षक पात्रता परीक्षा"
+          },
+          {
+            "id": 4104,
+            "name": "MP वनरक्षक (Forest Guard) एवं क्षेत्र रक्षक",
+            "eligibility": "10वीं पास",
+            "age_limit": "18-36 वर्ष",
+            "applicant_scale": "8+ लाख",
+            "exam_pattern": "100 प्रश्न लिखित परीक्षा (सामान्य ज्ञान, गणित, विज्ञान, हिंदी, अंग्रेजी)",
+            "viral_subtext": "वन विभाग सीधी भर्ती",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "MP वनरक्षक"
+          },
+          {
+            "id": 4105,
+            "name": "MP जेल प्रहरी सीधी भर्ती (Jail Prahari)",
+            "eligibility": "10वीं पास",
+            "age_limit": "18-36 वर्ष",
+            "applicant_scale": "5+ लाख",
+            "exam_pattern": "100 प्रश्न ऑनलाइन परीक्षा + फिजिकल",
+            "viral_subtext": "जेल मुख्यालय",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "MP जेल प्रहरी सीधी भर्ती"
+          },
+          {
+            "id": 4106,
+            "name": "MP उप अभियंता (Sub Engineer - Civil, Elect, Mech)",
+            "eligibility": "इंजीनियरिंग डिप्लोमा / डिग्री",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "75,000",
+            "exam_pattern": "100 तकनीकी + 100 गैर-तकनीकी = 200 अंक",
+            "viral_subtext": "PWD, WRD व नगरीय प्रशासन",
+            "status": "verified",
+            "priority": 6,
+            "is_active": true,
+            "short_name": "MP उप अभियंता"
+          }
+        ],
+        "priority": 1,
+        "is_active": true,
+        "viral_names": [
+          "MP पुलिस आरक्षक",
+          "पटवारी",
+          "शिक्षक वर्ग-1, 2, 3"
+        ]
+      },
+      {
+        "board_id": "mppsc",
+        "name": "MPPSC (मध्य प्रदेश लोक सेवा आयोग)",
+        "short_name": "MPPSC",
+        "icon": "⚖️",
+        "official_portal": "https://mppsc.mp.gov.in",
+        "viral_preview": "राज्य सेवा (State Service) • राज्य वन सेवा • सहायक प्राध्यापक",
+        "exams": [
+          {
+            "id": 4107,
+            "name": "MPPSC राज्य सेवा परीक्षा (State Service Exam 2026)",
+            "eligibility": "स्नातक",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "3.5 लाख",
+            "exam_pattern": "Prelims (GS 200 + CSAT 200) + Mains (6 Papers 1400) + Interview (185)",
+            "viral_subtext": "MP की शीर्ष प्रशासनिक सेवा (Deputy Collector, DSP)",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "MPPSC राज्य सेवा परीक्षा"
+          },
+          {
+            "id": 4108,
+            "name": "MPPSC राज्य वन सेवा परीक्षा (Forest Service)",
+            "eligibility": "विज्ञान / इंजीनियरिंग में स्नातक",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "1.2 लाख",
+            "exam_pattern": "Prelims + Mains (Written) + Physical",
+            "viral_subtext": "सहायक वन संरक्षक (ACF) एवं रेंजर",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "MPPSC राज्य वन सेवा परीक्षा"
+          },
+          {
+            "id": 4109,
+            "name": "MPPSC सहायक प्राध्यापक भर्ती (Assistant Professor)",
+            "eligibility": "PG (55%) + NET / SLET / Ph.D",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "60,000",
+            "exam_pattern": "Paper-1 (MP GK 100) + Paper-2 (Subject 200) + Interview",
+            "viral_subtext": "उच्च शिक्षा विभाग (सभी 36 विषय)",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "MPPSC सहायक प्राध्यापक भर्ती"
+          }
+        ],
+        "priority": 2,
+        "is_active": true,
+        "viral_names": [
+          "राज्य सेवा (State Service)",
+          "राज्य वन सेवा",
+          "सहायक प्राध्यापक"
+        ]
+      }
+    ],
+    "total_exams": 9,
+    "id": "madhya_pradesh",
+    "priority": 7,
+    "viral_names": [
+      "MPPSC राज्य सेवा",
+      "MP पुलिस",
+      "पटवारी"
+    ]
+  },
+  {
+    "category_id": "haryana",
+    "name": "हरियाणा (Haryana State)",
+    "icon": "🌾",
+    "sub_preview": "HSSC CET ग्रुप C व D • हरियाणा पुलिस • HPSC HCS",
+    "boards": [
+      {
+        "board_id": "hssc",
+        "name": "HSSC (हरियाणा कर्मचारी चयन आयोग)",
+        "short_name": "HSSC",
+        "icon": "🏛️",
+        "official_portal": "https://hssc.gov.in",
+        "viral_preview": "CET ग्रुप C • CET ग्रुप D • हरियाणा पुलिस सिपाही",
+        "exams": [
+          {
+            "id": 4201,
+            "name": "हरियाणा CET ग्रुप-C (स्नातक एवं 12वीं स्तर)",
+            "eligibility": "12वीं / स्नातक",
+            "age_limit": "18-42 वर्ष",
+            "applicant_scale": "11+ लाख",
+            "exam_pattern": "100 प्रश्न • 97.5 अंक (हरियाणा GK 25% अनिवार्य) • 2.5 सामाजिक-आर्थिक अंक",
+            "viral_subtext": "पटवारी, क्लर्क, ग्राम सचिव आदि 32,000 पद",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "हरियाणा CET ग्रुप-C"
+          },
+          {
+            "id": 4202,
+            "name": "हरियाणा CET ग्रुप-D (Common Eligibility Test)",
+            "eligibility": "10वीं पास (हिंदी/संस्कृत अनिवार्य)",
+            "age_limit": "18-42 वर्ष",
+            "applicant_scale": "13+ लाख",
+            "exam_pattern": "100 प्रश्न लिखित परीक्षा (बिना इंटरव्यू सीधी भर्ती)",
+            "viral_subtext": "ग्रुप D चतुर्थ श्रेणी 13,500+ पद",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "हरियाणा CET ग्रुप-D"
+          },
+          {
+            "id": 4203,
+            "name": "हरियाणा पुलिस पुरुष एवं महिला सिपाही (Constable GD)",
+            "eligibility": "12वीं पास + CET ग्रुप C क्वालिफाइड",
+            "age_limit": "18-25 वर्ष",
+            "applicant_scale": "2.5 लाख",
+            "exam_pattern": "PMT/PST + ज्ञान परीक्षण (100 प्रश्न • 94.5 अंक)",
+            "viral_subtext": "6,000 पुलिस कांस्टेबल पद",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "हरियाणा पुलिस पुरुष एवं महिला सिपाही"
+          },
+          {
+            "id": 4204,
+            "name": "हरियाणा पुलिस उपनिरीक्षक (SI)",
+            "eligibility": "स्नातक",
+            "age_limit": "21-27 वर्ष",
+            "applicant_scale": "1.8 लाख",
+            "exam_pattern": "लिखित परीक्षा (80 अंक) + फिजिकल + अनुभव/अतिरिक्त अंक",
+            "viral_subtext": "दारोगा भर्ती",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "हरियाणा पुलिस उपनिरीक्षक"
+          }
+        ],
+        "priority": 1,
+        "is_active": true,
+        "viral_names": [
+          "CET ग्रुप C",
+          "CET ग्रुप D",
+          "हरियाणा पुलिस सिपाही"
+        ]
+      },
+      {
+        "board_id": "hpsc",
+        "name": "HPSC (हरियाणा लोक सेवा आयोग)",
+        "short_name": "HPSC",
+        "icon": "⚖️",
+        "official_portal": "https://hpsc.gov.in",
+        "viral_preview": "HCS (कार्यकारी शाखा) • PGT भर्ती • सहायक प्रोफेसर",
+        "exams": [
+          {
+            "id": 4205,
+            "name": "HPSC हरियाणा सिविल सेवा (HCS & Allied Services)",
+            "eligibility": "स्नातक",
+            "age_limit": "18-42 वर्ष",
+            "applicant_scale": "1.5 लाख",
+            "exam_pattern": "Prelims (200 अंक) + Mains (4 Papers 600 अंक) + Interview (75 अंक)",
+            "viral_subtext": "हरियाणा की सर्वोच्च प्रशासनिक सेवा (SDM, DSP, ETO)",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "HPSC हरियाणा सिविल सेवा"
+          },
+          {
+            "id": 4206,
+            "name": "HPSC स्नातकोत्तर शिक्षक भर्ती (PGT Teacher)",
+            "eligibility": "PG (50%) + B.Ed + HTET Level-3",
+            "age_limit": "18-42 वर्ष",
+            "applicant_scale": "1+ लाख",
+            "exam_pattern": "स्क्रीनिंग टेस्ट + विषय ज्ञान परीक्षण (Subject Knowledge Test 87.5%) + इंटरव्यू (12.5%)",
+            "viral_subtext": "मेवात एवं शेष हरियाणा संवर्ग",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "HPSC स्नातकोत्तर शिक्षक भर्ती"
+          }
+        ],
+        "priority": 2,
+        "is_active": true,
+        "viral_names": [
+          "HCS (कार्यकारी शाखा)",
+          "PGT भर्ती",
+          "सहायक प्रोफेसर"
+        ]
+      }
+    ],
+    "total_exams": 6,
+    "id": "haryana",
+    "priority": 8,
+    "viral_names": [
+      "HSSC CET ग्रुप C व D",
+      "हरियाणा पुलिस",
+      "HPSC HCS"
+    ]
+  },
+  {
+    "category_id": "central_teaching",
+    "name": "केंद्रीय शिक्षण एवं UGC NET",
+    "icon": "🎓",
+    "sub_preview": "CTET • UGC NET • KVS शिक्षक • NVS • EMRS",
+    "boards": [
+      {
+        "board_id": "nta_ugc_cbse",
+        "name": "केंद्रीय माध्यमिक शिक्षा बोर्ड एवं NTA",
+        "short_name": "CTET & UGC NET",
+        "icon": "🎓",
+        "official_portal": "https://ctet.nic.in",
+        "viral_preview": "CTET • UGC NET (सभी विषय) • CSIR NET",
+        "exams": [
+          {
+            "id": 6001,
+            "name": "CTET केंद्रीय शिक्षक पात्रता परीक्षा (Paper-1 व 2)",
+            "eligibility": "D.El.Ed / B.Ed",
+            "age_limit": "कोई सीमा नहीं",
+            "applicant_scale": "28+ लाख",
+            "exam_pattern": "150 प्रश्न • 150 अंक • ओएमआर / CBT",
+            "viral_subtext": "KVS, NVS, DSSSB, केंद्रीय विद्यालयों हेतु अनिवार्य",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "CTET केंद्रीय शिक्षक पात्रता परीक्षा"
+          },
+          {
+            "id": 6002,
+            "name": "UGC NET / JRF संयुक्त राष्ट्रीय पात्रता परीक्षा 2026",
+            "eligibility": "मास्टर डिग्री (55% अंक)",
+            "age_limit": "JRF: 30 वर्ष, NET: कोई सीमा नहीं",
+            "applicant_scale": "9+ लाख",
+            "exam_pattern": "Paper-1 (शिक्षण अभिक्षमता 100 अंक) + Paper-2 (संबंधित विषय 200 अंक)",
+            "viral_subtext": "कॉलेज असिस्टेंट प्रोफेसर एवं PhD प्रवेश (सभी 83 विषय)",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "UGC NET / JRF संयुक्त राष्ट्रीय पात्रता परीक्षा 2026"
+          },
+          {
+            "id": 6003,
+            "name": "CSIR UGC NET (विज्ञान संवर्ग JRF व लेक्चररशिप)",
+            "eligibility": "M.Sc / B.Tech (विज्ञान विषय)",
+            "age_limit": "28 वर्ष (JRF)",
+            "applicant_scale": "2.2 लाख",
+            "exam_pattern": "CBT (भाग-A सामान्य + भाग-B/C विषय विशिष्ट 200 अंक)",
+            "viral_subtext": "रसायन, भौतिकी, गणित, लाइफ साइंसेज",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "CSIR UGC NET"
+          }
+        ],
+        "priority": 1,
+        "is_active": true,
+        "viral_names": [
+          "CTET",
+          "UGC NET (सभी विषय)",
+          "CSIR NET"
+        ]
+      },
+      {
+        "board_id": "kvs_nvs",
+        "name": "केंद्रीय एवं नवोदय विद्यालय संगठन (KVS & NVS)",
+        "short_name": "KVS & NVS",
+        "icon": "🏫",
+        "official_portal": "https://kvsangathan.nic.in",
+        "viral_preview": "KVS PRT • TGT • PGT • NVS • EMRS",
+        "exams": [
+          {
+            "id": 6004,
+            "name": "KVS प्राथमिक शिक्षक भर्ती (PRT - Primary Teacher)",
+            "eligibility": "12वीं (50%) + D.El.Ed + CTET Paper-1",
+            "age_limit": "30 वर्ष",
+            "applicant_scale": "6+ लाख",
+            "exam_pattern": "180 प्रश्न • 180 अंक CBT + साक्षात्कार व डेमो टीचिंग (60 अंक)",
+            "viral_subtext": "केंद्रीय विद्यालय प्राथमिक शिक्षक 6,414 पद",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "KVS प्राथमिक शिक्षक भर्ती"
+          },
+          {
+            "id": 6005,
+            "name": "KVS प्रशिक्षित स्नातक शिक्षक (TGT - सभी विषय)",
+            "eligibility": "स्नातक + B.Ed + CTET Paper-2",
+            "age_limit": "35 वर्ष",
+            "applicant_scale": "4+ लाख",
+            "exam_pattern": "180 प्रश्न CBT + इंटरव्यू (60 अंक)",
+            "viral_subtext": "कक्षा 6 से 10 के शिक्षक (3,176 पद)",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "KVS प्रशिक्षित स्नातक शिक्षक"
+          },
+          {
+            "id": 6006,
+            "name": "KVS स्नातकोत्तर शिक्षक भर्ती (PGT - सभी विषय)",
+            "eligibility": "PG (50%) + B.Ed",
+            "age_limit": "40 वर्ष",
+            "applicant_scale": "2.5 लाख",
+            "exam_pattern": "180 प्रश्न CBT + इंटरव्यू",
+            "viral_subtext": "कक्षा 11-12 के व्याख्याता",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "KVS स्नातकोत्तर शिक्षक भर्ती"
+          },
+          {
+            "id": 6007,
+            "name": "NVS एवं EMRS एकलव्य विद्यालय शिक्षक भर्ती",
+            "eligibility": "D.El.Ed / B.Ed + CTET",
+            "age_limit": "35/40 वर्ष",
+            "applicant_scale": "5+ लाख",
+            "exam_pattern": "लिखित CBT परीक्षा + भाषा योग्यता",
+            "viral_subtext": "जनजातीय एवं नवोदय आवासीय विद्यालय 10,000+ पद",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "NVS एवं EMRS एकलव्य विद्यालय शिक्षक भर्ती"
+          }
+        ],
+        "priority": 2,
+        "is_active": true,
+        "viral_names": [
+          "KVS PRT",
+          "TGT",
+          "PGT"
+        ]
+      }
+    ],
+    "total_exams": 7,
+    "id": "central_teaching",
+    "priority": 9,
+    "viral_names": [
+      "CTET",
+      "UGC NET",
+      "KVS शिक्षक"
+    ]
+  },
+  {
+    "category_id": "engineering_psu",
+    "name": "इंजीनियरिंग एवं महारत्न PSUs",
+    "icon": "⚙️",
+    "sub_preview": "GATE • ISRO • DRDO • BARC • IOCL • ONGC",
+    "boards": [
+      {
+        "board_id": "psu_all",
+        "name": "केंद्रीय अनुसंधान एवं महारत्न / नवरत्न PSUs",
+        "short_name": "PSUs & Research",
+        "icon": "⚙️",
+        "official_portal": "https://gate2026.iitkgp.ac.in",
+        "viral_preview": "GATE • ISRO • DRDO • BARC • IOCL • BHEL",
+        "exams": [
+          {
+            "id": 6101,
+            "name": "GATE 2026 (ग्रेजुएट एप्टीट्यूड टेस्ट इन इंजीनियरिंग)",
+            "eligibility": "B.E / B.Tech / M.Sc",
+            "age_limit": "कोई सीमा नहीं",
+            "applicant_scale": "8.5+ लाख",
+            "exam_pattern": "100 अंक ऑनलाइन CBT (सामान्य योग्यता 15 + विषय ज्ञान 85)",
+            "viral_subtext": "PSU भर्ती (IOCL, ONGC, NTPC, BHEL) एवं M.Tech",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "GATE 2026"
+          },
+          {
+            "id": 6102,
+            "name": "ISRO वैज्ञानिक / अभियंता (Scientist/Engineer 'SC')",
+            "eligibility": "B.E / B.Tech (65% अंक)",
+            "age_limit": "28 वर्ष",
+            "applicant_scale": "1.2 लाख",
+            "exam_pattern": "लिखित परीक्षा (80 प्रश्न) + साक्षात्कार",
+            "viral_subtext": "भारतीय अंतरिक्ष अनुसंधान संगठन (ISRO)",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "ISRO वैज्ञानिक / अभियंता"
+          },
+          {
+            "id": 6103,
+            "name": "DRDO वैज्ञानिक 'B' एवं CEPTAM तकनीकी भर्ती",
+            "eligibility": "B.Tech (GATE स्कोर) / ITI / Diploma (CEPTAM)",
+            "age_limit": "28 वर्ष",
+            "applicant_scale": "2.5 लाख",
+            "exam_pattern": "Tier-1 (स्क्रीनिंग) + Tier-2 (ट्रेड/विषय टेस्ट)",
+            "viral_subtext": "रक्षा अनुसंधान एवं विकास संगठन",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "DRDO वैज्ञानिक 'B' एवं CEPTAM तकनीकी भर्ती"
+          },
+          {
+            "id": 6104,
+            "name": "BARC वैज्ञानिक अधिकारी (OCES / DGFS) व वजीफाग्राही",
+            "eligibility": "B.Tech / B.Sc / ITI / Diploma",
+            "age_limit": "26 वर्ष",
+            "applicant_scale": "1.8 लाख",
+            "exam_pattern": "ऑनलाइन परीक्षा (100 प्रश्न) + साक्षात्कार",
+            "viral_subtext": "भाभा परमाणु अनुसंधान केंद्र",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "BARC वैज्ञानिक अधिकारी"
+          },
+          {
+            "id": 6105,
+            "name": "महारत्न PSU मैनेजमेंट ट्रेनी भर्ती (Coal India, SAIL, GAIL)",
+            "eligibility": "B.Tech / MBA / CA / ICWA",
+            "age_limit": "30 वर्ष",
+            "applicant_scale": "2+ लाख",
+            "exam_pattern": "ऑनलाइन CBT (200 अंक) + जीडी व इंटरव्यू",
+            "viral_subtext": "केंद्रीय सार्वजनिक उपक्रम एग्जीक्यूटिव पद",
+            "status": "verified",
+            "priority": 5,
+            "is_active": true,
+            "short_name": "महारत्न PSU मैनेजमेंट ट्रेनी भर्ती"
+          }
+        ],
+        "priority": 1,
+        "is_active": true,
+        "viral_names": [
+          "GATE",
+          "ISRO",
+          "DRDO"
+        ]
+      }
+    ],
+    "total_exams": 5,
+    "id": "engineering_psu",
+    "priority": 10,
+    "viral_names": [
+      "GATE",
+      "ISRO",
+      "DRDO"
+    ]
+  },
+  {
+    "category_id": "medical_nursing",
+    "name": "मेडिकल, नर्सिंग एवं स्वास्थ्य सेवाएं",
+    "icon": "🏥",
+    "sub_preview": "AIIMS NORCET • ESIC नर्सिंग • RRB स्टाफ नर्स • CHO",
+    "boards": [
+      {
+        "board_id": "medical_all",
+        "name": "AIIMS, ESIC एवं केंद्रीय स्वास्थ्य विभाग",
+        "short_name": "AIIMS & Health",
+        "icon": "🏥",
+        "official_portal": "https://aiimsexams.ac.in",
+        "viral_preview": "AIIMS NORCET • ESIC • CHO • फार्मासिस्ट",
+        "exams": [
+          {
+            "id": 6201,
+            "name": "AIIMS NORCET (नर्सिंग ऑफिसर भर्ती परीक्षा 2026)",
+            "eligibility": "B.Sc (Nursing) / GNM + 2 वर्ष का अनुभव",
+            "age_limit": "18-30 वर्ष",
+            "applicant_scale": "1.8 लाख",
+            "exam_pattern": "Stage-1 Prelims (100 प्रश्न) + Stage-2 Mains (100 क्लीनिकल प्रश्न)",
+            "viral_subtext": "देश के सभी AIIMS में नर्सिंग ऑफिसर 4,000+ पद",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "AIIMS NORCET"
+          },
+          {
+            "id": 6202,
+            "name": "ESIC नर्सिंग ऑफिसर एवं पैरामेडिकल सीधी भर्ती",
+            "eligibility": "GNM / B.Sc Nursing / फार्मेसी डिप्लोमा",
+            "age_limit": "18-37 वर्ष",
+            "applicant_scale": "2+ लाख",
+            "exam_pattern": "लिखित CBT (100 नर्सिंग/तकनीकी + 25 सामान्य अंक)",
+            "viral_subtext": "कर्मचारी राज्य बीमा निगम 2,000+ पद",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "ESIC नर्सिंग ऑफिसर एवं पैरामेडिकल सीधी भर्ती"
+          },
+          {
+            "id": 6203,
+            "name": "राष्ट्रीय स्वास्थ्य मिशन (NHM CHO - कम्युनिटी हेल्थ ऑफिसर)",
+            "eligibility": "B.Sc (Nursing) + CCH प्रमाणपत्र",
+            "age_limit": "21-40 वर्ष",
+            "applicant_scale": "1.5 लाख",
+            "exam_pattern": "ऑनलाइन CBT (100 प्रश्न)",
+            "viral_subtext": "स्वास्थ्य एवं कल्याण केंद्र 5,000+ पद",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "राष्ट्रीय स्वास्थ्य मिशन"
+          },
+          {
+            "id": 6204,
+            "name": "केंद्रीय व राज्य फार्मासिस्ट एवं लैब तकनीशियन",
+            "eligibility": "D.Pharma / B.Pharma / DMLT + रजिस्ट्रेशन",
+            "age_limit": "18-40 वर्ष",
+            "applicant_scale": "1+ लाख",
+            "exam_pattern": "लिखित परीक्षा (फार्माकोलॉजी व सामान्य ज्ञान)",
+            "viral_subtext": "अस्पताल व स्वास्थ्य केंद्र",
+            "status": "verified",
+            "priority": 4,
+            "is_active": true,
+            "short_name": "केंद्रीय व राज्य फार्मासिस्ट एवं लैब तकनीशियन"
+          }
+        ],
+        "priority": 1,
+        "is_active": true,
+        "viral_names": [
+          "AIIMS NORCET",
+          "ESIC",
+          "CHO"
+        ]
+      }
+    ],
+    "total_exams": 4,
+    "id": "medical_nursing",
+    "priority": 11,
+    "viral_names": [
+      "AIIMS NORCET",
+      "ESIC नर्सिंग",
+      "RRB स्टाफ नर्स"
+    ]
+  },
+  {
+    "category_id": "maharashtra",
+    "name": "महाराष्ट्र (Maharashtra State)",
+    "icon": "🚩",
+    "sub_preview": "MPSC राज्यसेवा • तलाठी • महाराष्ट्र पोलीस • सरळसेवा",
+    "boards": [
+      {
+        "board_id": "mpsc",
+        "name": "MPSC (महाराष्ट्र लोक सेवा आयोग)",
+        "short_name": "MPSC",
+        "icon": "⚖️",
+        "official_portal": "https://mpsc.gov.in",
+        "viral_preview": "राज्यसेवा (Civil Services) • गट-ब (PSI/STI) • गट-क",
+        "exams": [
+          {
+            "id": 7001,
+            "name": "MPSC राज्यसेवा संयुक्त पूर्व व मुख्य परीक्षा 2026",
+            "eligibility": "पदवीधर (Graduate)",
+            "age_limit": "19-38 वर्ष",
+            "applicant_scale": "4.5 लाख",
+            "exam_pattern": "पूर्व परीक्षा (400 गुण) + मुख्य परीक्षा (वर्णनात्मक 1750 गुण) + मुलाखत",
+            "viral_subtext": "उपजिल्हाधिकारी, DySP, तहसीलदार",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "MPSC राज्यसेवा संयुक्त पूर्व व मुख्य परीक्षा 2026"
+          },
+          {
+            "id": 7002,
+            "name": "MPSC अराजपत्रित गट-ब (PSI, STI, ASO) संयुक्त परीक्षा",
+            "eligibility": "पदवीधर",
+            "age_limit": "19-38 वर्ष",
+            "applicant_scale": "5+ लाख",
+            "exam_pattern": "संयुक्त पूर्व (100 गुण) + मुख्य (400 गुण) + शारीरिक चाचणी (PSI)",
+            "viral_subtext": "पोलीस उपनिरीक्षक व विक्रीकर निरीक्षक",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "MPSC अराजपत्रित गट-ब"
+          },
+          {
+            "id": 7003,
+            "name": "MPSC गट-क (Group-C क्लर्क-टायपिस्ट, कर सहायक)",
+            "eligibility": "पदवीधर + टायपिंग प्रमाणपत्र",
+            "age_limit": "19-38 वर्ष",
+            "applicant_scale": "6+ लाख",
+            "exam_pattern": "पूर्व परीक्षा (100 गुण) + मुख्य + कौशल्य चाचणी",
+            "viral_subtext": "मंत्रालय व प्रशासकीय विभाग",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "MPSC गट-क"
+          }
+        ],
+        "priority": 1,
+        "is_active": true,
+        "viral_names": [
+          "राज्यसेवा (Civil Services)",
+          "गट-ब (PSI/STI)",
+          "गट-क"
+        ]
+      },
+      {
+        "board_id": "mah_police_revenue",
+        "name": "महाराष्ट्र पोलीस व महसूल विभाग (सरळसेवा)",
+        "short_name": "Police & तलाठी",
+        "icon": "👮",
+        "official_portal": "https://mahapolice.gov.in",
+        "viral_preview": "पोलीस शिपाई (17,471 पदे) • तलाठी भरती",
+        "exams": [
+          {
+            "id": 7004,
+            "name": "महाराष्ट्र पोलीस शिपाई (कांस्टेबल व चालक)",
+            "eligibility": "12वी उत्तीर्ण",
+            "age_limit": "18-28 वर्ष",
+            "applicant_scale": "18+ लाख",
+            "exam_pattern": "शारीरिक चाचणी (50 गुण - ग्राउंड) + लेखी परीक्षा (100 गुण)",
+            "viral_subtext": "17,471 पोलीस शिपाई पदे",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "महाराष्ट्र पोलीस शिपाई"
+          },
+          {
+            "id": 7005,
+            "name": "महाराष्ट्र तलाठी भरती (तलाठी सीधी सेवा)",
+            "eligibility": "पदवीधर + MS-CIT संगणक",
+            "age_limit": "19-38 वर्ष",
+            "applicant_scale": "10+ लाख",
+            "exam_pattern": "TCS/IBPS द्वारे 100 प्रश्न • 200 गुण ऑनलाइन CBT",
+            "viral_subtext": "महसूल विभाग 4,644 पदे",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "महाराष्ट्र तलाठी भरती"
+          },
+          {
+            "id": 7006,
+            "name": "जिल्हा परिषद (ZP भरती - आरोग्य सेवक, ग्रामसेवक)",
+            "eligibility": "10वी/12वी/पदवी",
+            "age_limit": "18-38 वर्ष",
+            "applicant_scale": "8+ लाख",
+            "exam_pattern": "ऑनलाइन CBT (100 प्रश्न • 200 गुण)",
+            "viral_subtext": "ग्रामीण विकास विभाग",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "जिल्हा परिषद"
+          }
+        ],
+        "priority": 2,
+        "is_active": true,
+        "viral_names": [
+          "पोलीस शिपाई (17,471 पदे)",
+          "तलाठी भरती"
+        ]
+      }
+    ],
+    "total_exams": 6,
+    "id": "maharashtra",
+    "priority": 12,
+    "viral_names": [
+      "MPSC राज्यसेवा",
+      "तलाठी",
+      "महाराष्ट्र पोलीस"
+    ]
+  },
+  {
+    "category_id": "gujarat",
+    "name": "गुजरात (Gujarat State)",
+    "icon": "🦁",
+    "sub_preview": "CCE क्लास-3 • GPSC • गुजरात पोलीस • तलाटी",
+    "boards": [
+      {
+        "board_id": "gsssb",
+        "name": "GSSSB (ગુજરાત ગૌણ સેવા પસંદગી મંડળ)",
+        "short_name": "GSSSB CCE",
+        "icon": "🏛️",
+        "official_portal": "https://gsssb.gujarat.gov.in",
+        "viral_preview": "CCE ગ્રુપ-A व B (જુનિયર ક્લાર્ક, હેડ ક્લાર્ક) • તલાટી",
+        "exams": [
+          {
+            "id": 7101,
+            "name": "ગુજરાત CCE સંયુક્ત સ્પર્ધાત્મક પરીક્ષા (Group A & B 2026)",
+            "eligibility": "સ્નાતક (Graduate)",
+            "age_limit": "20-35 वर्ष",
+            "applicant_scale": "5+ लाख",
+            "exam_pattern": "Prelims CBRT (100 ગુણ) + Mains (ગ્રુપ-A વર્ણનાત્મક / ગ્રુપ-B MCQ)",
+            "viral_subtext": "જુનિયર ક્લાર્ક, હેડ ક્લાર્ક, ઓફિસ આસિસ્ટન્ટ 5,554 પદો",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "ગુજરાત CCE સંયુક્ત સ્પર્ધાત્મક પરીક્ષા"
+          },
+          {
+            "id": 7102,
+            "name": "ગુજરાત પોલીસ કોન્સ્ટેબલ (LRD) व સબ-ઇન્સ્પેક્ટર (PSI)",
+            "eligibility": "12 પાસ (કોન્સ્ટેબલ) / સ્નાતક (PSI)",
+            "age_limit": "18-33 वर्ष",
+            "applicant_scale": "9+ लाख",
+            "exam_pattern": "શારીરિક કસોટી (દોડ) + લેખિત ઓબ્જેક્ટિવ પરીક્ષા (200 ગુણ)",
+            "viral_subtext": "પોલીસ દળમાં 12,472 સીધી ભરતી",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "ગુજરાત પોલીસ કોન્સ્ટેબલ"
+          },
+          {
+            "id": 7103,
+            "name": "તલાટી કમ મંત્રી (ગ્રામ પંચાયત સેક્રેટરી)",
+            "eligibility": "12 પાસ / સ્નાતક",
+            "age_limit": "18-34 वर्ष",
+            "applicant_scale": "16+ लाख",
+            "exam_pattern": "ઓબ્જેક્ટિવ લેખિત કસોટી (100 ગુણ)",
+            "viral_subtext": "પંચાયત વિભાગ",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "તલાટી કમ મંત્રી"
+          }
+        ],
+        "priority": 1,
+        "is_active": true,
+        "viral_names": [
+          "CCE ગ્રુપ-A व B (જુનિયર ક્લાર્ક, હેડ ક્લાર્ક)",
+          "તલાટી"
+        ]
+      },
+      {
+        "board_id": "gpsc",
+        "name": "GPSC (ગુજરાત જાહેર સેવા આયોગ)",
+        "short_name": "GPSC",
+        "icon": "⚖️",
+        "official_portal": "https://gpsc.gujarat.gov.in",
+        "viral_preview": "GPSC ક્લાસ-1/2 • નાયબ મામલતદાર • STI",
+        "exams": [
+          {
+            "id": 7104,
+            "name": "GPSC ક્લાસ-1 અને ક્લાસ-2 સંયુક્ત વહીવટી સેવા",
+            "eligibility": "સ્નાતક",
+            "age_limit": "20-36 वर्ष",
+            "applicant_scale": "2.5 लाख",
+            "exam_pattern": "પ્રાથમિક (400 ગુણ) + મુખ્ય લેખિત (900 ગુણ) + રૂબરૂ મુલાકાત (100)",
+            "viral_subtext": "ડેપ્યુટી કલેક્ટર, DySP, જિલ્લા રજિસ્ટ્રાર",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "GPSC ક્લાસ-1 અને ક્લાસ-2 સંયુક્ત વહીવટી સેવા"
+          },
+          {
+            "id": 7105,
+            "name": "નાયબ મામલતદાર અને ડેપ્યુટી સેક્શન ઓફિસર (DySO)",
+            "eligibility": "સ્નાતક",
+            "age_limit": "20-35 वर्ष",
+            "applicant_scale": "3+ लाख",
+            "exam_pattern": "Prelims (200) + Mains (400 ગુણ)",
+            "viral_subtext": "સચિવાલય વ મહેસૂલ કેડર",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "નાયબ મામલતદાર અને ડેપ્યુટી સેક્શન ઓફિસર"
+          }
+        ],
+        "priority": 2,
+        "is_active": true,
+        "viral_names": [
+          "GPSC ક્લાસ-1/2",
+          "નાયબ મામલતદાર",
+          "STI"
+        ]
+      }
+    ],
+    "total_exams": 5,
+    "id": "gujarat",
+    "priority": 13,
+    "viral_names": [
+      "CCE क्लास-3",
+      "GPSC",
+      "गुजरात पोलीस"
+    ]
+  },
+  {
+    "category_id": "jharkhand",
+    "name": "झारखंड (Jharkhand State)",
+    "icon": "🏹",
+    "sub_preview": "JSSC CGL • उत्पाद सिपाही • झारखंड पुलिस • JPSC",
+    "boards": [
+      {
+        "board_id": "jssc",
+        "name": "JSSC (झारखंड कर्मचारी चयन आयोग)",
+        "short_name": "JSSC",
+        "icon": "🏛️",
+        "official_portal": "https://jssc.nic.in",
+        "viral_preview": "JSSC CGL • उत्पाद सिपाही • पुलिस आरक्षी",
+        "exams": [
+          {
+            "id": 7201,
+            "name": "JSSC संयुक्त स्नातक स्तरीय परीक्षा (JGGLCCE / CGL)",
+            "eligibility": "स्नातक",
+            "age_limit": "21-35 वर्ष",
+            "applicant_scale": "6.5+ लाख",
+            "exam_pattern": "Paper-1 (भाषा ज्ञान) + Paper-2 (क्षेत्रीय/जनजातीय भाषा) + Paper-3 (सामान्य ज्ञान) = ओएमआर",
+            "viral_subtext": "सहायक प्रशाखा पदाधिकारी, कनीय सचिवालय सहायक",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "JSSC संयुक्त स्नातक स्तरीय परीक्षा"
+          },
+          {
+            "id": 7202,
+            "name": "झारखंड पुलिस आरक्षी (कांस्टेबल) भर्ती",
+            "eligibility": "10वीं पास",
+            "age_limit": "18-25 वर्ष",
+            "applicant_scale": "15+ लाख",
+            "exam_pattern": "शारीरिक दक्षता (10 KM दौड़ पुरुष) + मेडिकल + लिखित परीक्षा (2 पेपर्स)",
+            "viral_subtext": "जिला पुलिस बल 4,919 पद",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "झारखंड पुलिस आरक्षी"
+          },
+          {
+            "id": 7203,
+            "name": "झारखंड उत्पाद सिपाही (Excise Constable)",
+            "eligibility": "10वीं पास",
+            "age_limit": "18-25 वर्ष",
+            "applicant_scale": "5+ लाख",
+            "exam_pattern": "शारीरिक माप एवं दौड़ + लिखित परीक्षा",
+            "viral_subtext": "उत्पाद एवं मद्यनिषेध विभाग",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "झारखंड उत्पाद सिपाही"
+          }
+        ],
+        "priority": 1,
+        "is_active": true,
+        "viral_names": [
+          "JSSC CGL",
+          "उत्पाद सिपाही",
+          "पुलिस आरक्षी"
+        ]
+      },
+      {
+        "board_id": "jpsc",
+        "name": "JPSC (झारखंड लोक सेवा आयोग)",
+        "short_name": "JPSC",
+        "icon": "⚖️",
+        "official_portal": "https://jpsc.gov.in",
+        "viral_preview": "संयुक्त सिविल सेवा (CCE) • CDPO • शिक्षक",
+        "exams": [
+          {
+            "id": 7204,
+            "name": "JPSC संयुक्त सिविल सेवा प्रतियोगिता परीक्षा 2026",
+            "eligibility": "स्नातक",
+            "age_limit": "21-35 वर्ष",
+            "applicant_scale": "3+ लाख",
+            "exam_pattern": "Prelims (Paper-1 GS + Paper-2 झारखंड GS = 400 अंक) + Mains (1050 अंक) + Interview (100)",
+            "viral_subtext": "झारखंड प्रशासनिक व पुलिस सेवा",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "JPSC संयुक्त सिविल सेवा प्रतियोगिता परीक्षा 2026"
+          }
+        ],
+        "priority": 2,
+        "is_active": true,
+        "viral_names": [
+          "संयुक्त सिविल सेवा (CCE)",
+          "CDPO",
+          "शिक्षक"
+        ]
+      }
+    ],
+    "total_exams": 4,
+    "id": "jharkhand",
+    "priority": 14,
+    "viral_names": [
+      "JSSC CGL",
+      "उत्पाद सिपाही",
+      "झारखंड पुलिस"
+    ]
+  },
+  {
+    "category_id": "uttarakhand",
+    "name": "उत्तराखंड (Uttarakhand State)",
+    "icon": "🏔️",
+    "sub_preview": "UKSSSC VDO • पटवारी • बंदीरक्षक • UKPSC PCS",
+    "boards": [
+      {
+        "board_id": "uksssc",
+        "name": "UKSSSC (उत्तराखंड अधीनस्थ सेवा चयन आयोग)",
+        "short_name": "UKSSSC",
+        "icon": "🏛️",
+        "official_portal": "https://sssc.uk.gov.in",
+        "viral_preview": "VDO • स्नातक स्तरीय • वन आरक्षी • कनिष्ठ सहायक",
+        "exams": [
+          {
+            "id": 7301,
+            "name": "UKSSSC स्नातक स्तरीय परीक्षा (VDO, VPDO)",
+            "eligibility": "स्नातक + CCC प्रमाणपत्र",
+            "age_limit": "21-42 वर्ष",
+            "applicant_scale": "2.5 लाख",
+            "exam_pattern": "100 प्रश्न • 100 अंक (सामान्य हिंदी 20, उत्तराखंड GK 40, सामान्य ज्ञान 40)",
+            "viral_subtext": "ग्राम विकास अधिकारी एवं सहायक समाज कल्याण",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "UKSSSC स्नातक स्तरीय परीक्षा"
+          },
+          {
+            "id": 7302,
+            "name": "उत्तराखंड पुलिस आरक्षी एवं पीएसी / IRB सिपाही",
+            "eligibility": "12वीं पास",
+            "age_limit": "18-22 वर्ष",
+            "applicant_scale": "2+ लाख",
+            "exam_pattern": "शारीरिक मानक/दक्षता (100 अंक) + लिखित परीक्षा (100 अंक)",
+            "viral_subtext": "उत्तराखंड नागरिक पुलिस",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "उत्तराखंड पुलिस आरक्षी एवं पीएसी / IRB सिपाही"
+          },
+          {
+            "id": 7303,
+            "name": "UKSSSC कनिष्ठ सहायक एवं आशुलिपिक",
+            "eligibility": "12वीं पास + टाइपिंग (4000 key depression)",
+            "age_limit": "18-42 वर्ष",
+            "applicant_scale": "1.8 लाख",
+            "exam_pattern": "100 प्रश्न लिखित + कंप्यूटर टाइपिंग",
+            "viral_subtext": "कलेक्ट्रेट व जिला न्यायालय",
+            "status": "verified",
+            "priority": 3,
+            "is_active": true,
+            "short_name": "UKSSSC कनिष्ठ सहायक एवं आशुलिपिक"
+          }
+        ],
+        "priority": 1,
+        "is_active": true,
+        "viral_names": [
+          "VDO",
+          "स्नातक स्तरीय",
+          "वन आरक्षी"
+        ]
+      },
+      {
+        "board_id": "ukpsc",
+        "name": "UKPSC (उत्तराखंड लोक सेवा आयोग हरिद्वार)",
+        "short_name": "UKPSC",
+        "icon": "⚖️",
+        "official_portal": "https://psc.uk.gov.in",
+        "viral_preview": "सम्मिलित राज्य सिविल सेवा (PCS) • RO/ARO • पटवारी/लेखपाल",
+        "exams": [
+          {
+            "id": 7304,
+            "name": "UKPSC सम्मिलित राज्य सिविल/प्रवर अधीनस्थ सेवा (PCS)",
+            "eligibility": "स्नातक",
+            "age_limit": "21-42 वर्ष",
+            "applicant_scale": "1.5 लाख",
+            "exam_pattern": "Prelims (300 अंक) + Mains (7 Papers 1500 अंक) + Interview (150 अंक)",
+            "viral_subtext": "उत्तराखंड की सर्वोच्च प्रशासनिक सेवा",
+            "status": "verified",
+            "priority": 1,
+            "is_active": true,
+            "short_name": "UKPSC सम्मिलित राज्य सिविल/प्रवर अधीनस्थ सेवा"
+          },
+          {
+            "id": 7305,
+            "name": "राजस्व उपनिरीक्षक (पटवारी एवं लेखपाल भर्ती)",
+            "eligibility": "स्नातक",
+            "age_limit": "21-28/35 वर्ष",
+            "applicant_scale": "1.8 लाख",
+            "exam_pattern": "100 प्रश्न लिखित + शारीरिक माप व दौड़",
+            "viral_subtext": "राजस्व विभाग 563 पद",
+            "status": "verified",
+            "priority": 2,
+            "is_active": true,
+            "short_name": "राजस्व उपनिरीक्षक"
+          }
+        ],
+        "priority": 2,
+        "is_active": true,
+        "viral_names": [
+          "सम्मिलित राज्य सिविल सेवा (PCS)",
+          "RO/ARO",
+          "पटवारी/लेखपाल"
+        ]
+      }
+    ],
+    "total_exams": 5,
+    "id": "uttarakhand",
+    "priority": 15,
+    "viral_names": [
+      "UKSSSC VDO",
+      "पटवारी",
+      "बंदीरक्षक"
+    ]
+  }
+]

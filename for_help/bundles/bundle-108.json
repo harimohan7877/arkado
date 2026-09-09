@@ -1,0 +1,284 @@
+{
+  "bundle_id": "bundle-108",
+  "bundle_num": 108,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Central Schools - DAV Schools",
+  "total_exams": 45,
+  "boards_included": [
+    "Central Schools - DAV Schools"
+  ],
+  "exams": [
+    {
+      "sl": 5204,
+      "id": 1790,
+      "name": "DAV Schools TGT Social Science",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5205,
+      "id": 1789,
+      "name": "DAV Schools TGT Science",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5206,
+      "id": 1788,
+      "name": "DAV Schools TGT Sanskrit",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5207,
+      "id": 1787,
+      "name": "DAV Schools TGT PGT Physical Education",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5208,
+      "id": 1786,
+      "name": "DAV Schools TGT PGT Mathematics",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5209,
+      "id": 1785,
+      "name": "DAV Schools TGT PGT Hindi",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5210,
+      "id": 1784,
+      "name": "DAV Schools TGT PGT English",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5211,
+      "id": 1783,
+      "name": "DAV Schools TGT PGT Computer Science",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5212,
+      "id": 1782,
+      "name": "DAV Schools TGT Music",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5213,
+      "id": 1781,
+      "name": "DAV Schools TGT Hindi",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5214,
+      "id": 1780,
+      "name": "DAV Schools TGT Dance",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5215,
+      "id": 1779,
+      "name": "DAV Schools PRT Social Science",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5216,
+      "id": 1778,
+      "name": "DAV Schools PRT Science",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5217,
+      "id": 1777,
+      "name": "DAV Schools PRT Sanskrit",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5218,
+      "id": 1776,
+      "name": "DAV Schools PRT Physical Education",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5219,
+      "id": 1775,
+      "name": "DAV Schools PRT Music",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5220,
+      "id": 1774,
+      "name": "DAV Schools PRT Mathematics",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5221,
+      "id": 1773,
+      "name": "DAV Schools PRT Hindi",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5222,
+      "id": 1772,
+      "name": "DAV Schools PRT English",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5223,
+      "id": 1771,
+      "name": "DAV Schools PRT Dance",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5224,
+      "id": 1770,
+      "name": "DAV Schools PRT Computer Science",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5225,
+      "id": 1769,
+      "name": "DAV Schools PGT Sociology",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5226,
+      "id": 1768,
+      "name": "DAV Schools PGT Psychology",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5227,
+      "id": 1767,
+      "name": "DAV Schools PGT Political Science",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5228,
+      "id": 1766,
+      "name": "DAV Schools PGT Physics",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5229,
+      "id": 1765,
+      "name": "DAV Schools PGT Home Science",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5230,
+      "id": 1764,
+      "name": "DAV Schools PGT History",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5231,
+      "id": 1763,
+      "name": "DAV Schools PGT Geography",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5232,
+      "id": 1762,
+      "name": "DAV Schools PGT Economics",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5233,
+      "id": 1761,
+      "name": "DAV Schools PGT Commerce",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5234,
+      "id": 1760,
+      "name": "DAV Schools PGT Chemistry",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5235,
+      "id": 1759,
+      "name": "DAV Schools PGT Biology",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5236,
+      "id": 1758,
+      "name": "DAV Schools Nursery Teacher",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5237,
+      "id": 1757,
+      "name": "DAV Schools Nurse",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5238,
+      "id": 1756,
+      "name": "DAV Schools Library Assistant",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5239,
+      "id": 1755,
+      "name": "DAV Schools Librarian Grade II",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5240,
+      "id": 1754,
+      "name": "DAV Schools LDC Administration",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5241,
+      "id": 1753,
+      "name": "DAV Schools Lab Assistant Physics",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5242,
+      "id": 1752,
+      "name": "DAV Schools Lab Assistant Computer Science",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5243,
+      "id": 1751,
+      "name": "DAV Schools Lab Assistant Chemistry",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5244,
+      "id": 1750,
+      "name": "DAV Schools Lab Assistant Biology",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5245,
+      "id": 1749,
+      "name": "DAV Schools Counsellor",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5246,
+      "id": 1748,
+      "name": "DAV School LDC Accounts",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5247,
+      "id": 1747,
+      "name": "DAV School Front Office Assistant and Receptionist",
+      "group": "Central Schools - DAV Schools Exams"
+    },
+    {
+      "sl": 5248,
+      "id": 1746,
+      "name": "DAV School Assistant and UDC",
+      "group": "Central Schools - DAV Schools Exams"
+    }
+  ]
+}

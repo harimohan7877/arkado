@@ -1,0 +1,45 @@
+{
+  "bundle_id": "bundle-012",
+  "bundle_num": 12,
+  "category_id": "bihar",
+  "category_name": "बिहार",
+  "category_icon": "🟡",
+  "title": "बिहार — BSSC (बिहार कर्मचारी चयन आयोग)",
+  "total_exams": 3,
+  "boards_included": [
+    "BSSC"
+  ],
+  "official_portal": "https://bssc.bihar.gov.in",
+  "exams": [
+    {
+      "id": 3006,
+      "name": "BSSC द्वितीय इंटर स्तरीय संयुक्त प्रतियोगी परीक्षा (10+2)",
+      "eligibility": "12वीं उत्तीर्ण",
+      "age_limit": "18-37 वर्ष",
+      "applicant_scale": "25+ लाख",
+      "exam_pattern": "150 प्रश्न • 600 अंक (GK 50, सामान्य विज्ञान व गणित 50, रीजनिंग 50)",
+      "viral_subtext": "राजस्व कर्मचारी, पंचायत सचिव, LDC 12,199 पद",
+      "status": "verified"
+    },
+    {
+      "id": 3007,
+      "name": "BSSC तृतीय व चतुर्थ स्नातक स्तरीय (CGL)",
+      "eligibility": "स्नातक",
+      "age_limit": "21-37 वर्ष",
+      "applicant_scale": "9+ लाख",
+      "exam_pattern": "Prelims (150) + Mains (Paper-1 Hindi 100, Paper-2 GS 150)",
+      "viral_subtext": "सचिवालय सहायक, योजना सहायक, अंकेक्षक",
+      "status": "verified"
+    },
+    {
+      "id": 3008,
+      "name": "BSSC कार्यालय परिचारी भर्ती (Group D / Peon)",
+      "eligibility": "10वीं पास",
+      "age_limit": "18-37 वर्ष",
+      "applicant_scale": "15+ लाख",
+      "exam_pattern": "लिखित परीक्षा (100 प्रश्न)",
+      "viral_subtext": "विभिन्न सरकारी विभाग 40,000+ संभावित पद",
+      "status": "verified"
+    }
+  ]
+}

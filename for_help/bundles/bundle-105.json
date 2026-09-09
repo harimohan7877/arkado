@@ -1,0 +1,314 @@
+{
+  "bundle_id": "bundle-105",
+  "bundle_num": 105,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Himachal Pradesh General Govt",
+  "total_exams": 50,
+  "boards_included": [
+    "Himachal Pradesh General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 4301,
+      "id": 2693,
+      "name": "HPSSSB Shastri",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4302,
+      "id": 2692,
+      "name": "HPSSSB Lab Assistant",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4303,
+      "id": 2691,
+      "name": "HPSSSB JOA",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4304,
+      "id": 2690,
+      "name": "HPSSSB JE",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4305,
+      "id": 2689,
+      "name": "HPSSSB Computer Operator",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4308,
+      "id": 2686,
+      "name": "HPSSC Clerk",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4309,
+      "id": 2685,
+      "name": "HPSEB Junior T Mate",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4310,
+      "id": 2684,
+      "name": "HPSCB Junior Clerk",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4311,
+      "id": 2683,
+      "name": "HPSCB Assistant Manager",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4394,
+      "id": 2600,
+      "name": "HPPSC Veterinary Officer",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4395,
+      "id": 2599,
+      "name": "HPPSC RFO",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4408,
+      "id": 2586,
+      "name": "HPPSC Naib Tehsildar",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4411,
+      "id": 2583,
+      "name": "HPPSC Inspector",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4412,
+      "id": 2582,
+      "name": "HPPSC HDO",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4413,
+      "id": 2581,
+      "name": "HPPSC Conductor",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4414,
+      "id": 2580,
+      "name": "HPPSC Clerk",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4415,
+      "id": 2579,
+      "name": "HPPSC BDO",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4416,
+      "id": 2578,
+      "name": "HPPSC AMO",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4417,
+      "id": 2577,
+      "name": "HPPSC AE",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4418,
+      "id": 2576,
+      "name": "HPPSC ADO",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4419,
+      "id": 2575,
+      "name": "HPPSC Administrative CCE",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4420,
+      "id": 2574,
+      "name": "HPPSC ADA",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4421,
+      "id": 2573,
+      "name": "HPPSC",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4450,
+      "id": 2544,
+      "name": "HP SET Tourism Administration and Management",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4451,
+      "id": 2543,
+      "name": "HP SET Sociology",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4452,
+      "id": 2542,
+      "name": "HP SET Sanskrit",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4453,
+      "id": 2541,
+      "name": "HP SET Public Administration",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4454,
+      "id": 2540,
+      "name": "HP SET Psychology",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4455,
+      "id": 2539,
+      "name": "HP SET Political Science",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4456,
+      "id": 2538,
+      "name": "HP SET Physical Sciences",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4458,
+      "id": 2536,
+      "name": "HP SET Music",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4459,
+      "id": 2535,
+      "name": "HP SET Mathematical Sciences",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4460,
+      "id": 2534,
+      "name": "HP SET Mass Communication and Journalism",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4461,
+      "id": 2533,
+      "name": "HP SET Life Sciences",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4462,
+      "id": 2532,
+      "name": "HP SET History",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4463,
+      "id": 2531,
+      "name": "HP SET Hindi",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4464,
+      "id": 2530,
+      "name": "HP SET Geography",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4465,
+      "id": 2529,
+      "name": "HP SET Environment Sciences",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4466,
+      "id": 2528,
+      "name": "HP SET English",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4468,
+      "id": 2526,
+      "name": "HP SET Economics",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4469,
+      "id": 2525,
+      "name": "HP SET Computer Science and Applications",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4470,
+      "id": 2524,
+      "name": "HP SET Commerce",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4471,
+      "id": 2523,
+      "name": "HP SET Chemical Science",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4472,
+      "id": 2522,
+      "name": "HP SET",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4474,
+      "id": 2520,
+      "name": "HP Postal Circle GDS",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4477,
+      "id": 2517,
+      "name": "HP Patwari",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4479,
+      "id": 2515,
+      "name": "HP Home Guards",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4495,
+      "id": 2499,
+      "name": "Himachal Pradesh General Knowledge Hindi",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 4824,
+      "id": 2170,
+      "name": "FCI HP Watchman",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "sl": 5111,
+      "id": 1883,
+      "name": "District Solan Class 4",
+      "group": "Himachal Pradesh General Government Exams"
+    }
+  ]
+}

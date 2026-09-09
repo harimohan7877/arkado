@@ -1,0 +1,358 @@
+{
+  "bundle_number": 76,
+  "bundle_id": "raw_bundle_076",
+  "range": "3751 - 3800",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3751,
+      "group_sl": 5628,
+      "exam_id": 1366,
+      "name": "Chemistry Sectional Test in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "global_sl": 3752,
+      "group_sl": 5630,
+      "exam_id": 1364,
+      "name": "Chemistry Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "global_sl": 3753,
+      "group_sl": 6074,
+      "exam_id": 920,
+      "name": "Biology Sectional Test in Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "global_sl": 3754,
+      "group_sl": 6077,
+      "exam_id": 917,
+      "name": "Biology Hindi",
+      "group": "General Subjects - Hindi & Vernacular Languages"
+    },
+    {
+      "global_sl": 3755,
+      "group_sl": 1155,
+      "exam_id": 5839,
+      "name": "Symbiosis SET",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3756,
+      "group_sl": 1341,
+      "exam_id": 5653,
+      "name": "SET General Paper 1 Hindi",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3757,
+      "group_sl": 1342,
+      "exam_id": 5652,
+      "name": "SET General Paper 1",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3758,
+      "group_sl": 1343,
+      "exam_id": 5651,
+      "name": "SET Exam Sociology",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3759,
+      "group_sl": 1344,
+      "exam_id": 5650,
+      "name": "SET Exam Social Work",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3760,
+      "group_sl": 1345,
+      "exam_id": 5649,
+      "name": "SET Exam Sanskrit Paper 2",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3761,
+      "group_sl": 1346,
+      "exam_id": 5648,
+      "name": "SET Exam Public Administration (Paper 2)",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3762,
+      "group_sl": 1347,
+      "exam_id": 5647,
+      "name": "SET Exam Political Science (Paper 2)",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3763,
+      "group_sl": 1348,
+      "exam_id": 5646,
+      "name": "SET Exam Physical Science",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3764,
+      "group_sl": 1349,
+      "exam_id": 5645,
+      "name": "SET Exam Physical Education",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3765,
+      "group_sl": 1350,
+      "exam_id": 5644,
+      "name": "SET Exam Philosophy",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3766,
+      "group_sl": 1351,
+      "exam_id": 5643,
+      "name": "SET Exam Management (Paper 2)",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3767,
+      "group_sl": 1352,
+      "exam_id": 5642,
+      "name": "SET Exam Life Science Paper 2",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3768,
+      "group_sl": 1353,
+      "exam_id": 5641,
+      "name": "SET Exam Library & Information Science Paper 2",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3769,
+      "group_sl": 1354,
+      "exam_id": 5640,
+      "name": "SET Exam Law (Paper 2)",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3770,
+      "group_sl": 1355,
+      "exam_id": 5639,
+      "name": "SET Exam Journalism & Mass Communication Paper 2",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3771,
+      "group_sl": 1356,
+      "exam_id": 5638,
+      "name": "SET Exam Home Science",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3772,
+      "group_sl": 1357,
+      "exam_id": 5637,
+      "name": "SET Exam History",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3773,
+      "group_sl": 1358,
+      "exam_id": 5636,
+      "name": "SET Exam Hindi Paper 2",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3774,
+      "group_sl": 1359,
+      "exam_id": 5635,
+      "name": "SET Exam Geography",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3775,
+      "group_sl": 1360,
+      "exam_id": 5634,
+      "name": "SET Exam Forensic Science",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3776,
+      "group_sl": 1361,
+      "exam_id": 5633,
+      "name": "SET Exam Environmental Science Paper 2",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3777,
+      "group_sl": 1362,
+      "exam_id": 5632,
+      "name": "SET Exam English",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3778,
+      "group_sl": 1363,
+      "exam_id": 5631,
+      "name": "SET Exam Electronic Science Paper 2",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3779,
+      "group_sl": 1364,
+      "exam_id": 5630,
+      "name": "SET Exam Education",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3780,
+      "group_sl": 1365,
+      "exam_id": 5629,
+      "name": "SET Exam Economics",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3781,
+      "group_sl": 1366,
+      "exam_id": 5628,
+      "name": "SET Exam Defence & Strategic Studies (Paper 2)",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3782,
+      "group_sl": 1367,
+      "exam_id": 5627,
+      "name": "SET Exam Computer Science Paper 2",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3783,
+      "group_sl": 1368,
+      "exam_id": 5626,
+      "name": "SET Exam Commerce",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3784,
+      "group_sl": 1369,
+      "exam_id": 5625,
+      "name": "SET Exam Chemical Science Paper 2",
+      "group": "National Academics - State Eligibility Test (SET) Exams"
+    },
+    {
+      "global_sl": 3785,
+      "group_sl": 3704,
+      "exam_id": 3290,
+      "name": "JKSSB Veterinary Pharmacist",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3786,
+      "group_sl": 3705,
+      "exam_id": 3289,
+      "name": "JKSSB Technician Grade 2 Theatre Group",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3787,
+      "group_sl": 3706,
+      "exam_id": 3288,
+      "name": "JKSSB Technician Grade 2 Medical Group",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3788,
+      "group_sl": 3707,
+      "exam_id": 3287,
+      "name": "JKSSB Technician Grade 2",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3789,
+      "group_sl": 3708,
+      "exam_id": 3286,
+      "name": "JKSSB Teacher",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3790,
+      "group_sl": 3709,
+      "exam_id": 3285,
+      "name": "JKSSB Stock Assistant",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3791,
+      "group_sl": 3710,
+      "exam_id": 3284,
+      "name": "JKSSB Staff Nurse",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3792,
+      "group_sl": 3711,
+      "exam_id": 3283,
+      "name": "JKSSB SI Telecom",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3793,
+      "group_sl": 3712,
+      "exam_id": 3282,
+      "name": "JKSSB SI",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3794,
+      "group_sl": 3713,
+      "exam_id": 3281,
+      "name": "JKSSB Patwari",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3795,
+      "group_sl": 3714,
+      "exam_id": 3280,
+      "name": "JKSSB Para Medical Staff",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3796,
+      "group_sl": 3715,
+      "exam_id": 3279,
+      "name": "JKSSB Panchayat Secretary",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3797,
+      "group_sl": 3716,
+      "exam_id": 3278,
+      "name": "JKSSB Nursing Administration",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3798,
+      "group_sl": 3717,
+      "exam_id": 3277,
+      "name": "JKSSB Naib Tehsildar",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3799,
+      "group_sl": 3718,
+      "exam_id": 3276,
+      "name": "JKSSB Junior Supervisor",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "global_sl": 3800,
+      "group_sl": 3719,
+      "exam_id": 3275,
+      "name": "JKSSB Junior Stenographer",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    }
+  ]
+}

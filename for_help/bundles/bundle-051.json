@@ -1,0 +1,44 @@
+{
+  "bundle_id": "bundle-051",
+  "bundle_num": 51,
+  "category_id": "defence",
+  "category_name": "डिफेंस एवं सेनाएं",
+  "category_icon": "🛡️",
+  "title": "डिफेंस एवं सेनाएं — Defence & Security - Central Armed Police Forces (CAPF) (Part 2/2)",
+  "total_exams": 5,
+  "boards_included": [
+    "Defence & Security - Central Armed Police Forces (CAPF)"
+  ],
+  "exams": [
+    {
+      "sl": 5929,
+      "id": 1065,
+      "name": "BSF Constable, ASI",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5930,
+      "id": 1064,
+      "name": "BSF Constable Tradesman",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5931,
+      "id": 1063,
+      "name": "BSF Constable GD",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5932,
+      "id": 1062,
+      "name": "BSF Assistant Commandant",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5933,
+      "id": 1061,
+      "name": "BSF ASI Stenographer",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    }
+  ]
+}

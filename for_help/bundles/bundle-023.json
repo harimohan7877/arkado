@@ -1,0 +1,65 @@
+{
+  "bundle_id": "bundle-023",
+  "bundle_num": 23,
+  "category_id": "national-central",
+  "category_name": "अखिल भारतीय / राष्ट्रीय",
+  "category_icon": "🇮🇳",
+  "title": "अखिल भारतीय / राष्ट्रीय — बैंकिंग भर्ती बोर्ड (IBPS & SBI)",
+  "total_exams": 5,
+  "boards_included": [
+    "Banking"
+  ],
+  "official_portal": "https://ibps.in",
+  "exams": [
+    {
+      "id": 5030,
+      "name": "SBI प्रोबेशनरी ऑफिसर (SBI PO)",
+      "eligibility": "स्नातक",
+      "age_limit": "21-30 वर्ष",
+      "applicant_scale": "10+ लाख",
+      "exam_pattern": "Prelims (100) + Mains (250) + GD/Interview (50)",
+      "viral_subtext": "देश का सबसे प्रतिष्ठित बैंक PO",
+      "status": "verified"
+    },
+    {
+      "id": 5031,
+      "name": "SBI जूनियर एसोसिएट (SBI Clerk)",
+      "eligibility": "स्नातक",
+      "age_limit": "20-28 वर्ष",
+      "applicant_scale": "15+ लाख",
+      "exam_pattern": "Prelims (100) + Mains (200 अंक)",
+      "viral_subtext": "भारतीय स्टेट बैंक क्लर्क भर्ती 8,773 पद",
+      "status": "verified"
+    },
+    {
+      "id": 5032,
+      "name": "IBPS PO (राष्ट्रीयकृत बैंक प्रोबेशनरी ऑफिसर)",
+      "eligibility": "स्नातक",
+      "age_limit": "20-30 वर्ष",
+      "applicant_scale": "7+ लाख",
+      "exam_pattern": "Prelims + Mains + Interview",
+      "viral_subtext": "PNB, BoB, Canara 11 राष्ट्रीयकृत बैंक",
+      "status": "verified"
+    },
+    {
+      "id": 5033,
+      "name": "IBPS Clerk (राष्ट्रीयकृत बैंक क्लर्क)",
+      "eligibility": "स्नातक",
+      "age_limit": "20-28 वर्ष",
+      "applicant_scale": "8+ लाख",
+      "exam_pattern": "Prelims + Mains",
+      "viral_subtext": "6,000+ क्लर्क पद",
+      "status": "verified"
+    },
+    {
+      "id": 5034,
+      "name": "IBPS RRB ग्रामीण बैंक (Officer Scale-I व Office Assistant)",
+      "eligibility": "स्नातक",
+      "age_limit": "18-30 वर्ष",
+      "applicant_scale": "9+ लाख",
+      "exam_pattern": "Prelims + Mains",
+      "viral_subtext": "क्षेत्रीय ग्रामीण बैंक 10,000+ पद",
+      "status": "verified"
+    }
+  ]
+}

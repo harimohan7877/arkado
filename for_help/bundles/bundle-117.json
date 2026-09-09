@@ -1,0 +1,448 @@
+{
+  "bundle_id": "bundle-117",
+  "bundle_num": 117,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Assam General Govt • General Subjects - English Language & Grammar • Central Schools - AWES",
+  "total_exams": 72,
+  "boards_included": [
+    "Assam General Govt",
+    "General Subjects - English Language & Grammar",
+    "Central Schools - AWES"
+  ],
+  "exams": [
+    {
+      "sl": 1749,
+      "id": 5245,
+      "name": "RMSA Assam Computer Instructor",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 2106,
+      "id": 4888,
+      "name": "PNRD Assam GRS",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 2107,
+      "id": 4887,
+      "name": "PNRD Assam Gram Panchayat Secretary",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 2108,
+      "id": 4886,
+      "name": "PNRD Assam Extension Officer",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 2109,
+      "id": 4885,
+      "name": "PNRD Assam Computer Assistant",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 2110,
+      "id": 4884,
+      "name": "PNRD Assam Accredited Engineer",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 3971,
+      "id": 3023,
+      "name": "IOCL Assam Nursing",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 4940,
+      "id": 2054,
+      "name": "DTE Assam JA",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 5106,
+      "id": 1888,
+      "name": "DME Assam Grade IV",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 5110,
+      "id": 1884,
+      "name": "DLRS Assam Land Records Assistant",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 5114,
+      "id": 1880,
+      "name": "DHT Assam Grade 4",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 5123,
+      "id": 1871,
+      "name": "DHS Assam Grade 3",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 5896,
+      "id": 1098,
+      "name": "BTR",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 6462,
+      "id": 532,
+      "name": "ATMA Assam Block Assistant Manager",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 6464,
+      "id": 530,
+      "name": "ATEPFO Junior Assistant",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 6478,
+      "id": 516,
+      "name": "Assam SLET",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 6479,
+      "id": 515,
+      "name": "Assam Secretariat JAA",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 6480,
+      "id": 514,
+      "name": "Assam Secretariat Computer Operator",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 6481,
+      "id": 513,
+      "name": "Assam Rifles Tradesman and Technical",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 6483,
+      "id": 511,
+      "name": "Assam Rifles Group B and C",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 6484,
+      "id": 510,
+      "name": "Assam Rifles GD, Clerk",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 6485,
+      "id": 509,
+      "name": "Assam PWD Junior & Assistant Engineer",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 6486,
+      "id": 508,
+      "name": "Assam PWD Graduate Engineer",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 6487,
+      "id": 507,
+      "name": "Assam Postal Circle GDS",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "sl": 1795,
+      "id": 5199,
+      "name": "Reasoning in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 1953,
+      "id": 5041,
+      "name": "Punjabi Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 2383,
+      "id": 4611,
+      "name": "Odia Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 3200,
+      "id": 3794,
+      "name": "Marathi Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 3216,
+      "id": 3778,
+      "name": "Malayalam Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 3589,
+      "id": 3405,
+      "name": "Kannada Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 4493,
+      "id": 2501,
+      "name": "Hindi Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 4540,
+      "id": 2454,
+      "name": "Gujarati Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 4723,
+      "id": 2271,
+      "name": "General English Sectional Test",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 4724,
+      "id": 2270,
+      "name": "General English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 4778,
+      "id": 2216,
+      "name": "FREE Quiz Quantitative Aptitude in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 4780,
+      "id": 2214,
+      "name": "FREE Quiz Physics in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 4783,
+      "id": 2211,
+      "name": "FREE Quiz General Science in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 4784,
+      "id": 2210,
+      "name": "FREE Quiz English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 4786,
+      "id": 2208,
+      "name": "FREE Quiz Computer Knowledge in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 4788,
+      "id": 2206,
+      "name": "FREE Quiz Chemistry in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 4790,
+      "id": 2204,
+      "name": "FREE Quiz Biology in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 4792,
+      "id": 2202,
+      "name": "FREE Quiz - Reasoning in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 4794,
+      "id": 2200,
+      "name": "FREE Quiz - General Knowledge in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 4873,
+      "id": 2121,
+      "name": "English Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 5540,
+      "id": 1454,
+      "name": "Computer Science in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 5631,
+      "id": 1363,
+      "name": "Chemistry English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 6076,
+      "id": 918,
+      "name": "Biology in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 6474,
+      "id": 520,
+      "name": "Assamese Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "sl": 6436,
+      "id": 558,
+      "name": "AWES TGT Social Science",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6437,
+      "id": 557,
+      "name": "AWES TGT Science",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6438,
+      "id": 556,
+      "name": "AWES TGT Sanskrit",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6439,
+      "id": 555,
+      "name": "AWES TGT PGT PRT",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6440,
+      "id": 554,
+      "name": "AWES PRT",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6441,
+      "id": 553,
+      "name": "AWES PGT TGT Psychology",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6442,
+      "id": 552,
+      "name": "AWES PGT TGT Political Science",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6443,
+      "id": 551,
+      "name": "AWES PGT TGT Physics",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6444,
+      "id": 550,
+      "name": "AWES PGT TGT Physical Education",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6445,
+      "id": 549,
+      "name": "AWES PGT TGT Mathematics",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6446,
+      "id": 548,
+      "name": "AWES PGT TGT Home Science",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6447,
+      "id": 547,
+      "name": "AWES PGT TGT History",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6448,
+      "id": 546,
+      "name": "AWES PGT TGT Hindi",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6449,
+      "id": 545,
+      "name": "AWES PGT TGT Geography",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6450,
+      "id": 544,
+      "name": "AWES PGT TGT English",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6451,
+      "id": 543,
+      "name": "AWES PGT TGT Economics",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6452,
+      "id": 542,
+      "name": "AWES PGT TGT Computer Science",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6453,
+      "id": 541,
+      "name": "AWES PGT TGT Commerce",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6454,
+      "id": 540,
+      "name": "AWES PGT TGT Chemistry",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6455,
+      "id": 539,
+      "name": "AWES PGT TGT Biology",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6456,
+      "id": 538,
+      "name": "AWES PGT Informatics Practices",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6457,
+      "id": 537,
+      "name": "AWES PGT Fine Arts",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6458,
+      "id": 536,
+      "name": "AWES PGT Business Studies",
+      "group": "Central Schools - AWES Exams"
+    },
+    {
+      "sl": 6459,
+      "id": 535,
+      "name": "AWES PGT Biotechnology",
+      "group": "Central Schools - AWES Exams"
+    }
+  ]
+}

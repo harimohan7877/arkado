@@ -1,0 +1,358 @@
+{
+  "bundle_number": 24,
+  "bundle_id": "raw_bundle_024",
+  "range": "1151 - 1200",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1151,
+      "group_sl": 1888,
+      "exam_id": 5106,
+      "name": "Rajasthan General Knowledge",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1152,
+      "group_sl": 1892,
+      "exam_id": 5102,
+      "name": "Rajasthan DLSA",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1153,
+      "group_sl": 1893,
+      "exam_id": 5101,
+      "name": "Rajasthan Current Affairs",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1154,
+      "group_sl": 1897,
+      "exam_id": 5097,
+      "name": "Rajasthan Computer Sanganak",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1155,
+      "group_sl": 1898,
+      "exam_id": 5096,
+      "name": "Rajasthan Computer Instructor",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1156,
+      "group_sl": 1900,
+      "exam_id": 5094,
+      "name": "Rajasthan BSTC",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1157,
+      "group_sl": 1901,
+      "exam_id": 5093,
+      "name": "Rajasthan BPED",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1158,
+      "group_sl": 3281,
+      "exam_id": 3713,
+      "name": "LSG Rajasthan Senior Draftsman",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1159,
+      "group_sl": 3700,
+      "exam_id": 3294,
+      "name": "JMRC Station Controller",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1160,
+      "group_sl": 3701,
+      "exam_id": 3293,
+      "name": "JMRC Junior Accountant",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1161,
+      "group_sl": 3702,
+      "exam_id": 3292,
+      "name": "JMRC JE",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1162,
+      "group_sl": 4289,
+      "exam_id": 2705,
+      "name": "HRRL Junior Executive",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1163,
+      "group_sl": 4290,
+      "exam_id": 2704,
+      "name": "HRRL Engineer Chemical",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1164,
+      "group_sl": 4291,
+      "exam_id": 2703,
+      "name": "HRRL Engineer",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1165,
+      "group_sl": 4813,
+      "exam_id": 2181,
+      "name": "FCI Rajasthan Watchman",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1166,
+      "group_sl": 675,
+      "exam_id": 6319,
+      "name": "UGC NET Yoga Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1167,
+      "group_sl": 676,
+      "exam_id": 6318,
+      "name": "UGC NET Yoga",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1168,
+      "group_sl": 677,
+      "exam_id": 6317,
+      "name": "UGC NET Womens Studies",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1169,
+      "group_sl": 678,
+      "exam_id": 6316,
+      "name": "UGC NET Visual Art Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1170,
+      "group_sl": 679,
+      "exam_id": 6315,
+      "name": "UGC NET Visual Art",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1171,
+      "group_sl": 680,
+      "exam_id": 6314,
+      "name": "UGC NET Vidhi Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1172,
+      "group_sl": 681,
+      "exam_id": 6313,
+      "name": "UGC NET Urdu",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1173,
+      "group_sl": 682,
+      "exam_id": 6312,
+      "name": "UGC NET Tribal and Regional Language",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1174,
+      "group_sl": 683,
+      "exam_id": 6311,
+      "name": "UGC NET Tourism Administration & Management",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1175,
+      "group_sl": 684,
+      "exam_id": 6310,
+      "name": "UGC NET Telugu",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1176,
+      "group_sl": 685,
+      "exam_id": 6309,
+      "name": "UGC NET Teaching Aptitude",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1177,
+      "group_sl": 686,
+      "exam_id": 6308,
+      "name": "UGC NET Tamil",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1178,
+      "group_sl": 687,
+      "exam_id": 6307,
+      "name": "UGC NET Statistics",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1179,
+      "group_sl": 688,
+      "exam_id": 6306,
+      "name": "UGC NET Sociology Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1180,
+      "group_sl": 689,
+      "exam_id": 6305,
+      "name": "UGC NET Sociology",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1181,
+      "group_sl": 690,
+      "exam_id": 6304,
+      "name": "UGC NET Social Work Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1182,
+      "group_sl": 691,
+      "exam_id": 6303,
+      "name": "UGC NET Social Work",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1183,
+      "group_sl": 692,
+      "exam_id": 6302,
+      "name": "UGC NET Social Medicine & Community Health",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1184,
+      "group_sl": 693,
+      "exam_id": 6301,
+      "name": "UGC NET Sanskrit Traditional Subject",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1185,
+      "group_sl": 694,
+      "exam_id": 6300,
+      "name": "UGC NET Sanskrit",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1186,
+      "group_sl": 695,
+      "exam_id": 6299,
+      "name": "UGC NET Sangeet Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1187,
+      "group_sl": 696,
+      "exam_id": 6298,
+      "name": "UGC NET Rajasthani",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1188,
+      "group_sl": 697,
+      "exam_id": 6297,
+      "name": "UGC NET Punjabi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1189,
+      "group_sl": 698,
+      "exam_id": 6296,
+      "name": "UGC NET Public Administration Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1190,
+      "group_sl": 699,
+      "exam_id": 6295,
+      "name": "UGC NET Public Administration",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1191,
+      "group_sl": 700,
+      "exam_id": 6294,
+      "name": "UGC NET Psychology Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1192,
+      "group_sl": 701,
+      "exam_id": 6293,
+      "name": "UGC NET Psychology",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1193,
+      "group_sl": 702,
+      "exam_id": 6292,
+      "name": "UGC NET Prakrit",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1194,
+      "group_sl": 703,
+      "exam_id": 6291,
+      "name": "UGC NET Population Studies",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1195,
+      "group_sl": 704,
+      "exam_id": 6290,
+      "name": "UGC NET Political Science Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1196,
+      "group_sl": 705,
+      "exam_id": 6289,
+      "name": "UGC NET Political Science",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1197,
+      "group_sl": 706,
+      "exam_id": 6288,
+      "name": "UGC NET Physical Education Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1198,
+      "group_sl": 707,
+      "exam_id": 6287,
+      "name": "UGC NET Physical Education",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1199,
+      "group_sl": 708,
+      "exam_id": 6286,
+      "name": "UGC NET Philosophy Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1200,
+      "group_sl": 709,
+      "exam_id": 6285,
+      "name": "UGC NET Philosophy",
+      "group": "National Academics - UGC NET Exams"
+    }
+  ]
+}

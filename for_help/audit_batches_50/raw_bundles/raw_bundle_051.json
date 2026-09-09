@@ -1,0 +1,358 @@
+{
+  "bundle_number": 51,
+  "bundle_id": "raw_bundle_051",
+  "range": "2501 - 2550",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 2501,
+      "group_sl": 4317,
+      "exam_id": 2677,
+      "name": "HPSC PGT Music",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2502,
+      "group_sl": 4318,
+      "exam_id": 2676,
+      "name": "HPSC PGT Mathematics",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2503,
+      "group_sl": 4319,
+      "exam_id": 2675,
+      "name": "HPSC PGT Home Science",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2504,
+      "group_sl": 4320,
+      "exam_id": 2674,
+      "name": "HPSC PGT History",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2505,
+      "group_sl": 4321,
+      "exam_id": 2673,
+      "name": "HPSC PGT Hindi",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2506,
+      "group_sl": 4322,
+      "exam_id": 2672,
+      "name": "HPSC PGT Geography",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2507,
+      "group_sl": 4323,
+      "exam_id": 2671,
+      "name": "HPSC PGT Fine Arts",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2508,
+      "group_sl": 4324,
+      "exam_id": 2670,
+      "name": "HPSC PGT English",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2509,
+      "group_sl": 4325,
+      "exam_id": 2669,
+      "name": "HPSC PGT Economics",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2510,
+      "group_sl": 4326,
+      "exam_id": 2668,
+      "name": "HPSC PGT Computer Science",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2511,
+      "group_sl": 4327,
+      "exam_id": 2667,
+      "name": "HPSC PGT Commerce",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2512,
+      "group_sl": 4328,
+      "exam_id": 2666,
+      "name": "HPSC PGT Chemistry",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2513,
+      "group_sl": 4329,
+      "exam_id": 2665,
+      "name": "HPSC PGT Biology",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2514,
+      "group_sl": 4335,
+      "exam_id": 2659,
+      "name": "HPSC Assistant Professor Zoology",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2515,
+      "group_sl": 4336,
+      "exam_id": 2658,
+      "name": "HPSC Assistant Professor Sociology",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2516,
+      "group_sl": 4337,
+      "exam_id": 2657,
+      "name": "HPSC Assistant Professor Sanskrit",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2517,
+      "group_sl": 4338,
+      "exam_id": 2656,
+      "name": "HPSC Assistant Professor Psychology",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2518,
+      "group_sl": 4339,
+      "exam_id": 2655,
+      "name": "HPSC Assistant Professor Political Science",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2519,
+      "group_sl": 4340,
+      "exam_id": 2654,
+      "name": "HPSC Assistant Professor Physics",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2520,
+      "group_sl": 4341,
+      "exam_id": 2653,
+      "name": "HPSC Assistant Professor Physical Education",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2521,
+      "group_sl": 4342,
+      "exam_id": 2652,
+      "name": "HPSC Assistant Professor Mathematics",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2522,
+      "group_sl": 4343,
+      "exam_id": 2651,
+      "name": "HPSC Assistant Professor Home Science",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2523,
+      "group_sl": 4344,
+      "exam_id": 2650,
+      "name": "HPSC Assistant Professor History",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2524,
+      "group_sl": 4345,
+      "exam_id": 2649,
+      "name": "HPSC Assistant Professor Hindi",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2525,
+      "group_sl": 4346,
+      "exam_id": 2648,
+      "name": "HPSC Assistant Professor Geography",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2526,
+      "group_sl": 4347,
+      "exam_id": 2647,
+      "name": "HPSC Assistant Professor English",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2527,
+      "group_sl": 4348,
+      "exam_id": 2646,
+      "name": "HPSC Assistant Professor Economics",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2528,
+      "group_sl": 4349,
+      "exam_id": 2645,
+      "name": "HPSC Assistant Professor Defence and Strategic Studies",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2529,
+      "group_sl": 4350,
+      "exam_id": 2644,
+      "name": "HPSC Assistant Professor Computer Science",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2530,
+      "group_sl": 4351,
+      "exam_id": 2643,
+      "name": "HPSC Assistant Professor Commerce",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2531,
+      "group_sl": 4352,
+      "exam_id": 2642,
+      "name": "HPSC Assistant Professor Chemistry",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2532,
+      "group_sl": 4353,
+      "exam_id": 2641,
+      "name": "HPSC Assistant Professor Botany",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2533,
+      "group_sl": 4354,
+      "exam_id": 2640,
+      "name": "HPSC Assistant Professor Biotechnology",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2534,
+      "group_sl": 4514,
+      "exam_id": 2480,
+      "name": "Haryana SET Education",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2535,
+      "group_sl": 5026,
+      "exam_id": 1968,
+      "name": "DSE Haryana PGT Psychology",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2536,
+      "group_sl": 5027,
+      "exam_id": 1967,
+      "name": "DSE Haryana PGT Physical Education",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2537,
+      "group_sl": 5028,
+      "exam_id": 1966,
+      "name": "DSE Haryana PGT History",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2538,
+      "group_sl": 5029,
+      "exam_id": 1965,
+      "name": "DSE Haryana PGT Computer Science",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2539,
+      "group_sl": 5030,
+      "exam_id": 1964,
+      "name": "DSE Haryana PGT Chemistry",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2540,
+      "group_sl": 5031,
+      "exam_id": 1963,
+      "name": "DSE Haryana PGT Biology",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2541,
+      "group_sl": 5032,
+      "exam_id": 1962,
+      "name": "DSE Haryana PGT (Sociology)",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2542,
+      "group_sl": 5033,
+      "exam_id": 1961,
+      "name": "DSE Haryana PGT (Sanskrit)",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2543,
+      "group_sl": 5034,
+      "exam_id": 1960,
+      "name": "DSE Haryana PGT (Political Science)",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2544,
+      "group_sl": 5035,
+      "exam_id": 1959,
+      "name": "DSE Haryana PGT (Physics)",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2545,
+      "group_sl": 5036,
+      "exam_id": 1958,
+      "name": "DSE Haryana PGT (Music)",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2546,
+      "group_sl": 5037,
+      "exam_id": 1957,
+      "name": "DSE Haryana PGT (Mathematics)",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2547,
+      "group_sl": 5038,
+      "exam_id": 1956,
+      "name": "DSE Haryana PGT (Home Science)",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2548,
+      "group_sl": 5039,
+      "exam_id": 1955,
+      "name": "DSE Haryana PGT (Hindi)",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2549,
+      "group_sl": 5040,
+      "exam_id": 1954,
+      "name": "DSE Haryana PGT (Geography)",
+      "group": "Haryana Teaching & School Exams"
+    },
+    {
+      "global_sl": 2550,
+      "group_sl": 5041,
+      "exam_id": 1953,
+      "name": "DSE Haryana PGT (English)",
+      "group": "Haryana Teaching & School Exams"
+    }
+  ]
+}

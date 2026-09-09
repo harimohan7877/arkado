@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-050",
+  "bundle_num": 50,
+  "category_id": "defence",
+  "category_name": "डिफेंस एवं सेनाएं",
+  "category_icon": "🛡️",
+  "title": "डिफेंस एवं सेनाएं — Defence & Security - Central Armed Police Forces (CAPF) (Part 1/2)",
+  "total_exams": 60,
+  "boards_included": [
+    "Defence & Security - Central Armed Police Forces (CAPF)"
+  ],
+  "exams": [
+    {
+      "sl": 289,
+      "id": 6705,
+      "name": "UPSC CISF AC (EXE) LDCE",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 291,
+      "id": 6703,
+      "name": "UPSC CAPF AC",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 1223,
+      "id": 5771,
+      "name": "SSB SI",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 1224,
+      "id": 5770,
+      "name": "SSB Paramedical Head Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 1225,
+      "id": 5769,
+      "name": "SSB Paramedical Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 1251,
+      "id": 5743,
+      "name": "SSB Head Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 1252,
+      "id": 5742,
+      "name": "SSB GD Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 1253,
+      "id": 5741,
+      "name": "SSB Constable Tradesman",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 1254,
+      "id": 5740,
+      "name": "SSB Assistant Commandant",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 1255,
+      "id": 5739,
+      "name": "SSB ASI Stenographer",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3875,
+      "id": 3119,
+      "name": "ITBP Telecommunication SI",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3876,
+      "id": 3118,
+      "name": "ITBP Telecommunication Head Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3877,
+      "id": 3117,
+      "name": "ITBP Police SI",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3878,
+      "id": 3116,
+      "name": "ITBP MO",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3879,
+      "id": 3115,
+      "name": "ITBP Head Constable Motor Mechanic",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3880,
+      "id": 3114,
+      "name": "ITBP Head Constable Midwife",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3881,
+      "id": 3113,
+      "name": "ITBP Head Constable Education, Stress Counselor",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3882,
+      "id": 3112,
+      "name": "ITBP Head Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3883,
+      "id": 3111,
+      "name": "ITBP GD Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3884,
+      "id": 3110,
+      "name": "ITBP Constable Tradesman",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3885,
+      "id": 3109,
+      "name": "ITBP Constable Telecom",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3886,
+      "id": 3108,
+      "name": "ITBP Constable Pioneer",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3887,
+      "id": 3107,
+      "name": "ITBP Constable Motor Mechanic",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3888,
+      "id": 3106,
+      "name": "ITBP Constable Kitchen Services",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3889,
+      "id": 3105,
+      "name": "ITBP Constable Driver",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3890,
+      "id": 3104,
+      "name": "ITBP Constable Animal Transport",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3891,
+      "id": 3103,
+      "name": "ITBP Assistant Surgeon",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3892,
+      "id": 3102,
+      "name": "ITBP Assistant Commandant Telecom",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 3893,
+      "id": 3101,
+      "name": "ITBP ASI Stenographer",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 4017,
+      "id": 2977,
+      "name": "Indian Coast Guard Yantrik",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 4018,
+      "id": 2976,
+      "name": "Indian Coast Guard Navik GD",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 4019,
+      "id": 2975,
+      "name": "Indian Coast Guard Navik DB",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 4020,
+      "id": 2974,
+      "name": "Indian Coast Guard Assistant Commandant Mechanical",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 4021,
+      "id": 2973,
+      "name": "Indian Coast Guard Assistant Commandant Electrical",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 4022,
+      "id": 2972,
+      "name": "Indian Coast Guard Assistant Commandant",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5522,
+      "id": 1472,
+      "name": "CRPF SI",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5523,
+      "id": 1471,
+      "name": "CRPF Paramedical Staff",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5524,
+      "id": 1470,
+      "name": "CRPF Head Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5525,
+      "id": 1469,
+      "name": "CRPF HCM",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5526,
+      "id": 1468,
+      "name": "CRPF GD Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5527,
+      "id": 1467,
+      "name": "CRPF Constable Tradesman",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5528,
+      "id": 1466,
+      "name": "CRPF Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5529,
+      "id": 1465,
+      "name": "CRPF ASI Stenographer",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5530,
+      "id": 1464,
+      "name": "CRPF AC",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5585,
+      "id": 1409,
+      "name": "CISF LDCE",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5586,
+      "id": 1408,
+      "name": "CISF Head Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5587,
+      "id": 1407,
+      "name": "CISF GD Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5588,
+      "id": 1406,
+      "name": "CISF Fireman Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5589,
+      "id": 1405,
+      "name": "CISF Constable, SI",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5590,
+      "id": 1404,
+      "name": "CISF Constable Tradesmen",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5591,
+      "id": 1403,
+      "name": "CISF Constable Driver",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5592,
+      "id": 1402,
+      "name": "CISF ASI Stenographer",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5593,
+      "id": 1401,
+      "name": "CISF ASI",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5810,
+      "id": 1184,
+      "name": "CAPF HC and ASI",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5923,
+      "id": 1071,
+      "name": "BSF SI, HC & Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5924,
+      "id": 1070,
+      "name": "BSF Pilot",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5925,
+      "id": 1069,
+      "name": "BSF Head Constable RO, RM",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5926,
+      "id": 1068,
+      "name": "BSF Head Constable",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5927,
+      "id": 1067,
+      "name": "BSF Group C",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    },
+    {
+      "sl": 5928,
+      "id": 1066,
+      "name": "BSF Group B",
+      "group": "Defence & Security - Central Armed Police Forces (CAPF) Exams"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "bundle_id": "bundle-059",
+  "bundle_num": 59,
+  "category_id": "teaching",
+  "category_name": "केंद्रीय शिक्षण",
+  "category_icon": "📚",
+  "title": "केंद्रीय शिक्षण — National Academics - Other Central Academic & School (Part 3/3)",
+  "total_exams": 6,
+  "boards_included": [
+    "National Academics - Other Central Academic & School"
+  ],
+  "exams": [
+    {
+      "sl": 6467,
+      "id": 527,
+      "name": "Assistant Professor Political Science",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6468,
+      "id": 526,
+      "name": "Assistant Professor History",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6469,
+      "id": 525,
+      "name": "Assistant Professor Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6470,
+      "id": 524,
+      "name": "Assistant Professor Geography",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6471,
+      "id": 523,
+      "name": "Assistant Professor English",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 6472,
+      "id": 522,
+      "name": "Assistant Professor Economics",
+      "group": "National Academics - Other Central Academic & School Exams"
+    }
+  ]
+}

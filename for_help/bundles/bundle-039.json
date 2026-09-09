@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-039",
+  "bundle_num": 39,
+  "category_id": "upsc-civil",
+  "category_name": "UPSC सिविल सेवा",
+  "category_icon": "⚖️",
+  "title": "UPSC सिविल सेवा — Central Govt - General Civil Services (Part 1/3)",
+  "total_exams": 60,
+  "boards_included": [
+    "Central Govt - General Civil Services"
+  ],
+  "exams": [
+    {
+      "sl": 11,
+      "id": 6983,
+      "name": "WII Research Biologist",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 271,
+      "id": 6723,
+      "name": "UPSC Specialist Grade 3",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 272,
+      "id": 6722,
+      "name": "UPSC Science and Technology",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 273,
+      "id": 6721,
+      "name": "UPSC Principal",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 274,
+      "id": 6720,
+      "name": "UPSC Physical and Indian Geography",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 275,
+      "id": 6719,
+      "name": "UPSC Medical Officer",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 276,
+      "id": 6718,
+      "name": "UPSC Indian Polity",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 277,
+      "id": 6717,
+      "name": "UPSC IFS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 283,
+      "id": 6711,
+      "name": "UPSC Environment and Ecology",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 284,
+      "id": 6710,
+      "name": "UPSC Economics and Social Development",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 285,
+      "id": 6709,
+      "name": "UPSC Deputy Director",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 286,
+      "id": 6708,
+      "name": "UPSC CSAT",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 287,
+      "id": 6707,
+      "name": "UPSC Combined Geo Scientist",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 288,
+      "id": 6706,
+      "name": "UPSC CMS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 290,
+      "id": 6704,
+      "name": "UPSC CGPDTM Examiner",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 292,
+      "id": 6702,
+      "name": "UPSC Assistant Public Prosecutor",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 294,
+      "id": 6700,
+      "name": "UPSC Assistant Director",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 295,
+      "id": 6699,
+      "name": "UPSC Art and Culture",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 296,
+      "id": 6698,
+      "name": "UPSC AE",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 889,
+      "id": 6105,
+      "name": "TRIFED Assistant Manager",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 1373,
+      "id": 5621,
+      "name": "Secunderabad Cantonment Board AE",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 1374,
+      "id": 5620,
+      "name": "Secretariat Administration Department (SAD) Recruitment",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 1450,
+      "id": 5544,
+      "name": "SAI Performance Analyst",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 1451,
+      "id": 5543,
+      "name": "SAI Assistant Coach Wrestling",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 1452,
+      "id": 5542,
+      "name": "SAI Assistant Coach Shooting",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 1453,
+      "id": 5541,
+      "name": "SAI Assistant Coach Boxing",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 1454,
+      "id": 5540,
+      "name": "SAI Assistant Coach Athletics",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 1455,
+      "id": 5539,
+      "name": "SAI Assistant Coach",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 1468,
+      "id": 5526,
+      "name": "Rubber Board Field Officer",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 1822,
+      "id": 5172,
+      "name": "Rajya Sabha Assistant Legislative",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 2077,
+      "id": 4917,
+      "name": "Prasar Bharati Technical Interns",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 2078,
+      "id": 4916,
+      "name": "Prasar Bharati MTS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 2352,
+      "id": 4642,
+      "name": "OFB Group C",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 2353,
+      "id": 4641,
+      "name": "OFB Group B",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 2400,
+      "id": 4594,
+      "name": "NYKS Assistant, LDC & Stenographer",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 2444,
+      "id": 4550,
+      "name": "NTRO Technician A",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 2445,
+      "id": 4549,
+      "name": "NTRO Technical Assistant Electronics",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 2446,
+      "id": 4548,
+      "name": "NTRO Technical Assistant Computer Science",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 2447,
+      "id": 4547,
+      "name": "NTRO Scientist B",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 2448,
+      "id": 4546,
+      "name": "NTRO Aviator",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 2510,
+      "id": 4484,
+      "name": "North East Postal Circle GDS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3072,
+      "id": 3922,
+      "name": "MOD Tradesman Mate",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3090,
+      "id": 3904,
+      "name": "Ministry of Defence LDC",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3091,
+      "id": 3903,
+      "name": "Ministry of Defence Group C",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3144,
+      "id": 3850,
+      "name": "MGNREGA JTA",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3147,
+      "id": 3847,
+      "name": "MES Supervisor",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3148,
+      "id": 3846,
+      "name": "MES Storekeeper",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3149,
+      "id": 3845,
+      "name": "MES MTS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3150,
+      "id": 3844,
+      "name": "MES Mate",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3151,
+      "id": 3843,
+      "name": "MES Draughtsman",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3152,
+      "id": 3842,
+      "name": "MES Architect Cadre",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3177,
+      "id": 3817,
+      "name": "MCEME Group C",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3284,
+      "id": 3710,
+      "name": "Lok Sabha Secretariat Junior Clerk",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3398,
+      "id": 3596,
+      "name": "KVIC Group B & C",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3399,
+      "id": 3595,
+      "name": "KVIC Executive Group B",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3855,
+      "id": 3139,
+      "name": "JCI Junior Inspector",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 3856,
+      "id": 3138,
+      "name": "JCI Junior Assistant",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4068,
+      "id": 2926,
+      "name": "India Post Staff Car Driver",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4069,
+      "id": 2925,
+      "name": "India Post Office MTS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "sl": 4070,
+      "id": 2924,
+      "name": "India Post Office GDS",
+      "group": "Central Govt - General Civil Services Exams"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "bundle_number": 65,
+  "bundle_id": "raw_bundle_065",
+  "range": "3201 - 3250",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3201,
+      "group_sl": 1498,
+      "exam_id": 5496,
+      "name": "RSSB Teaching Associate Agricultural Economics",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3202,
+      "group_sl": 1499,
+      "exam_id": 5495,
+      "name": "RSSB Teaching Associate ABST",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3203,
+      "group_sl": 1500,
+      "exam_id": 5494,
+      "name": "RSSB Platoon Commander",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3204,
+      "group_sl": 1501,
+      "exam_id": 5493,
+      "name": "RSSB PHED Support Engineer Mechanical",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3205,
+      "group_sl": 1502,
+      "exam_id": 5492,
+      "name": "RSSB PHED Support Engineer IT Expert",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3206,
+      "group_sl": 1503,
+      "exam_id": 5491,
+      "name": "RSSB PHED Support Engineer Electrical",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3207,
+      "group_sl": 1504,
+      "exam_id": 5490,
+      "name": "RSSB PHED Support Engineer Civil",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3208,
+      "group_sl": 1505,
+      "exam_id": 5489,
+      "name": "RSSB PHED Support Engineer Chemist",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3209,
+      "group_sl": 1506,
+      "exam_id": 5488,
+      "name": "RSSB Mahila Supervisor",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3210,
+      "group_sl": 1507,
+      "exam_id": 5487,
+      "name": "RSSB LDC",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3211,
+      "group_sl": 1508,
+      "exam_id": 5486,
+      "name": "RSSB Lab Attendant",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3212,
+      "group_sl": 1509,
+      "exam_id": 5485,
+      "name": "RSSB Junior Lab Assistant",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3213,
+      "group_sl": 1510,
+      "exam_id": 5484,
+      "name": "RSSB Junior Assistant",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3214,
+      "group_sl": 1511,
+      "exam_id": 5483,
+      "name": "RSSB Jamadar",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3215,
+      "group_sl": 1512,
+      "exam_id": 5482,
+      "name": "RSSB Forester",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3216,
+      "group_sl": 1513,
+      "exam_id": 5481,
+      "name": "RSSB Ayush Officer",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3217,
+      "group_sl": 1514,
+      "exam_id": 5480,
+      "name": "RSSB Agriculture Supervisor",
+      "group": "Rajasthan RSSB Exams"
+    },
+    {
+      "global_sl": 3218,
+      "group_sl": 3095,
+      "exam_id": 3899,
+      "name": "MILMA Plant Assistant",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3219,
+      "group_sl": 3491,
+      "exam_id": 3503,
+      "name": "KMML Junior Operator Trainee",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3220,
+      "group_sl": 3496,
+      "exam_id": 3498,
+      "name": "KLEE LLM",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3221,
+      "group_sl": 3497,
+      "exam_id": 3497,
+      "name": "KLEE LLB Exam",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3222,
+      "group_sl": 3498,
+      "exam_id": 3496,
+      "name": "KLEE LLB",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3223,
+      "group_sl": 3511,
+      "exam_id": 3483,
+      "name": "Kerala SET Zoology",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3224,
+      "group_sl": 3512,
+      "exam_id": 3482,
+      "name": "Kerala SET Statistics",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3225,
+      "group_sl": 3513,
+      "exam_id": 3481,
+      "name": "Kerala SET Sociology",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3226,
+      "group_sl": 3514,
+      "exam_id": 3480,
+      "name": "Kerala SET Social Work",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3227,
+      "group_sl": 3515,
+      "exam_id": 3479,
+      "name": "Kerala SET Sanskrit",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3228,
+      "group_sl": 3516,
+      "exam_id": 3478,
+      "name": "Kerala SET Psychology",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3229,
+      "group_sl": 3517,
+      "exam_id": 3477,
+      "name": "Kerala SET Political Science",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3230,
+      "group_sl": 3518,
+      "exam_id": 3476,
+      "name": "Kerala SET Physics",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3231,
+      "group_sl": 3519,
+      "exam_id": 3475,
+      "name": "Kerala SET Philosophy",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3232,
+      "group_sl": 3520,
+      "exam_id": 3474,
+      "name": "Kerala SET Paper 1",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3233,
+      "group_sl": 3521,
+      "exam_id": 3473,
+      "name": "Kerala SET Mathematics",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3234,
+      "group_sl": 3522,
+      "exam_id": 3472,
+      "name": "Kerala SET Journalism",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3235,
+      "group_sl": 3523,
+      "exam_id": 3471,
+      "name": "Kerala SET Home Science",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3236,
+      "group_sl": 3524,
+      "exam_id": 3470,
+      "name": "Kerala SET History",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3237,
+      "group_sl": 3525,
+      "exam_id": 3469,
+      "name": "Kerala SET Hindi",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3238,
+      "group_sl": 3526,
+      "exam_id": 3468,
+      "name": "Kerala SET Geology",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3239,
+      "group_sl": 3527,
+      "exam_id": 3467,
+      "name": "Kerala SET Geography",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3240,
+      "group_sl": 3528,
+      "exam_id": 3466,
+      "name": "Kerala SET English",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3241,
+      "group_sl": 3529,
+      "exam_id": 3465,
+      "name": "Kerala SET Economics",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3242,
+      "group_sl": 3530,
+      "exam_id": 3464,
+      "name": "Kerala SET Commerce",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3243,
+      "group_sl": 3531,
+      "exam_id": 3463,
+      "name": "Kerala SET Chemistry",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3244,
+      "group_sl": 3532,
+      "exam_id": 3462,
+      "name": "Kerala SET Botany",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3245,
+      "group_sl": 3533,
+      "exam_id": 3461,
+      "name": "Kerala SET Biotechnology",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3246,
+      "group_sl": 3534,
+      "exam_id": 3460,
+      "name": "Kerala SET Anthropology",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3247,
+      "group_sl": 3538,
+      "exam_id": 3456,
+      "name": "Kerala Post Office GDS",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3248,
+      "group_sl": 3542,
+      "exam_id": 3452,
+      "name": "Kerala HC Sweeper",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3249,
+      "group_sl": 3543,
+      "exam_id": 3451,
+      "name": "Kerala General Knowledge",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "global_sl": 3250,
+      "group_sl": 3545,
+      "exam_id": 3449,
+      "name": "KELTRON Engineer",
+      "group": "Kerala General Government Exams"
+    }
+  ]
+}

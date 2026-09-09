@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-071",
+  "bundle_num": 71,
+  "category_id": "engineering-psu",
+  "category_name": "इंजीनियरिंग & PSU",
+  "category_icon": "⚙️",
+  "title": "इंजीनियरिंग & PSU — Engineering & PSU - Central PSUs & Corporate (Part 1/3)",
+  "total_exams": 60,
+  "boards_included": [
+    "Engineering & PSU - Central PSUs & Corporate"
+  ],
+  "exams": [
+    {
+      "sl": 171,
+      "id": 6823,
+      "name": "VITEEE",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 770,
+      "id": 6224,
+      "name": "UCSL Diploma Engineering Trainee",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 919,
+      "id": 6075,
+      "name": "Trade Apprentice Welder, electronics & Communication Trade",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 920,
+      "id": 6074,
+      "name": "Trade Apprentice Fitter Trade",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 921,
+      "id": 6073,
+      "name": "Trade Apprentice Electrician Trade in Hindi",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 922,
+      "id": 6072,
+      "name": "Trade Apprentice Electrical Trade in Hindi",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 923,
+      "id": 6071,
+      "name": "Trade Apprentice Electrical in English",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 924,
+      "id": 6070,
+      "name": "Trade Apprentice Automobiles Trade",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1140,
+      "id": 5854,
+      "name": "TCS NQT",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1261,
+      "id": 5733,
+      "name": "SRMJEEE",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1309,
+      "id": 5685,
+      "name": "SITEEE",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1392,
+      "id": 5602,
+      "name": "SCL Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1400,
+      "id": 5594,
+      "name": "SCI Personal Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1402,
+      "id": 5592,
+      "name": "SCI Executive",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1404,
+      "id": 5590,
+      "name": "SCI Assistant Manager",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1456,
+      "id": 5538,
+      "name": "RWF Trade Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1574,
+      "id": 5420,
+      "name": "RRCAT Trade Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1575,
+      "id": 5419,
+      "name": "RRCAT Stipendiary Trainee",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1748,
+      "id": 5246,
+      "name": "Robotics Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1811,
+      "id": 5183,
+      "name": "RCF Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1941,
+      "id": 5053,
+      "name": "Railtel Deputy Manager",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1942,
+      "id": 5052,
+      "name": "RailTel Assistant Supervisor Account",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 1943,
+      "id": 5051,
+      "name": "Railtel Assistant Manager",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2126,
+      "id": 4868,
+      "name": "Plant Operator",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2191,
+      "id": 4803,
+      "name": "Pawan Hans Trainee Technician",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2323,
+      "id": 4671,
+      "name": "OPAL Executive & Non-Executive",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2402,
+      "id": 4592,
+      "name": "NWDA LDC",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2458,
+      "id": 4536,
+      "name": "NTC Security Supervisor",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2472,
+      "id": 4522,
+      "name": "NSCL Trainee Marketing",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2473,
+      "id": 4521,
+      "name": "NSCL MT",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2477,
+      "id": 4517,
+      "name": "NRL GET",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2545,
+      "id": 4449,
+      "name": "NITCON JE",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2550,
+      "id": 4444,
+      "name": "NIRT Technical Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2576,
+      "id": 4418,
+      "name": "NIB Laboratory Technician",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2643,
+      "id": 4351,
+      "name": "NGRI Technical Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2644,
+      "id": 4350,
+      "name": "NGEL Engineer Mechanical",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2646,
+      "id": 4348,
+      "name": "NGEL Engineer Electrical",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2647,
+      "id": 4347,
+      "name": "NGEL Engineer Civil",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2648,
+      "id": 4346,
+      "name": "NGEL Deputy General Manager and Assistant Manager",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2713,
+      "id": 4281,
+      "name": "NEEPCO Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2733,
+      "id": 4261,
+      "name": "NCHMCT JEE",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2734,
+      "id": 4260,
+      "name": "NCESS Project Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 2765,
+      "id": 4229,
+      "name": "NAL Technical Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3164,
+      "id": 3830,
+      "name": "Mechanical Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3277,
+      "id": 3717,
+      "name": "LSSSSB Technical Statistical Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3279,
+      "id": 3715,
+      "name": "LSSSSB Technical JSA",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3280,
+      "id": 3714,
+      "name": "LSSSSB Non Technical",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3328,
+      "id": 3666,
+      "name": "Lab Technician",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3590,
+      "id": 3404,
+      "name": "Kandla Port Trust Apprentice Recruitment",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3844,
+      "id": 3150,
+      "name": "JEE Physics in Hindi",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3845,
+      "id": 3149,
+      "name": "JEE Physics in English",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3846,
+      "id": 3148,
+      "name": "JEE Mains & Advanced Mathematics in Hindi",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3847,
+      "id": 3147,
+      "name": "JEE Mains & Advanced Mathematics in English",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3848,
+      "id": 3146,
+      "name": "JEE Mains & Advanced Chemistry in Hindi",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3849,
+      "id": 3145,
+      "name": "JEE Mains & Advanced Chemistry in English",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3850,
+      "id": 3144,
+      "name": "JEE Main in Hindi",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3851,
+      "id": 3143,
+      "name": "JEE Main",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3852,
+      "id": 3142,
+      "name": "JEE Advanced",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3853,
+      "id": 3141,
+      "name": "JEE Advance in Hindi",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3925,
+      "id": 3069,
+      "name": "IRCON Works Engineer",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    }
+  ]
+}

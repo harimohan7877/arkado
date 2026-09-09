@@ -1,0 +1,470 @@
+{
+  "bundle_id": "bundle-037",
+  "bundle_num": 37,
+  "category_id": "ssc",
+  "category_name": "SSC आयोग",
+  "category_icon": "🏛️",
+  "title": "SSC आयोग — Odisha OSSSC • Staff Selection Commission - SSC Stenographer • Staff Selection Commission - SSC JE",
+  "total_exams": 75,
+  "boards_included": [
+    "Odisha OSSSC",
+    "Staff Selection Commission - SSC Stenographer",
+    "Staff Selection Commission - SSC JE",
+    "Staff Selection Commission - SSC Selection Post & Scientific Assistant",
+    "Staff Selection Commission - SSC MTS & Havaldar",
+    "Odisha OSSC",
+    "Staff Selection Commission - SSC Other"
+  ],
+  "exams": [
+    {
+      "sl": 2228,
+      "id": 4766,
+      "name": "OSSC Welfare Extension Officer",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2229,
+      "id": 4765,
+      "name": "OSSC Vital Statistics Assistant",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2230,
+      "id": 4764,
+      "name": "OSSC Traffic Constable",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2231,
+      "id": 4763,
+      "name": "OSSC Station Officer",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2232,
+      "id": 4762,
+      "name": "OSSC Staff Nurse",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2233,
+      "id": 4761,
+      "name": "OSSC SI",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2234,
+      "id": 4760,
+      "name": "OSSC SCEW",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2235,
+      "id": 4759,
+      "name": "OSSC Laboratory Assistant",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2236,
+      "id": 4758,
+      "name": "OSSC Junior Mining Officer",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2237,
+      "id": 4757,
+      "name": "OSSC Junior Librarian",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2238,
+      "id": 4756,
+      "name": "OSSC Junior Fisheries Technical Assistant",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2239,
+      "id": 4755,
+      "name": "OSSC Junior Assistant",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2240,
+      "id": 4754,
+      "name": "OSSC JE",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2241,
+      "id": 4753,
+      "name": "OSSC IPO",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2242,
+      "id": 4752,
+      "name": "OSSC Inspector of Supplies",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2243,
+      "id": 4751,
+      "name": "OSSC Excise Sub Inspector",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2244,
+      "id": 4750,
+      "name": "OSSC District Culture Officer",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2245,
+      "id": 4749,
+      "name": "OSSC CHSL",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2246,
+      "id": 4748,
+      "name": "OSSC CGL Librarian",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2247,
+      "id": 4747,
+      "name": "OSSC CGL Laboratory Assistant",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2248,
+      "id": 4746,
+      "name": "OSSC CGL Assistant Embankment Inspector",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2249,
+      "id": 4745,
+      "name": "OSSC CGL",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2250,
+      "id": 4744,
+      "name": "OSSC BSSO",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2251,
+      "id": 4743,
+      "name": "OSSC Ayush Assistant Homeopathic",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2252,
+      "id": 4742,
+      "name": "OSSC Ayush Assistant Ayurvedic",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2253,
+      "id": 4741,
+      "name": "OSSC Ayush Assistant",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2254,
+      "id": 4740,
+      "name": "OSSC Auditor",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2255,
+      "id": 4739,
+      "name": "OSSC ATO",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 2256,
+      "id": 4738,
+      "name": "OSSC Accountant",
+      "group": "Odisha OSSC Exams"
+    },
+    {
+      "sl": 1187,
+      "id": 5807,
+      "name": "SSC SR Medical Attendant",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 1188,
+      "id": 5806,
+      "name": "SSC SI, ASI",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 1195,
+      "id": 5799,
+      "name": "SSC Pharmacist",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 1196,
+      "id": 5798,
+      "name": "SSC Nursing Officer",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 1197,
+      "id": 5797,
+      "name": "SSC Northen Region Group B & C",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 1199,
+      "id": 5795,
+      "name": "SSC Mathematics in English",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 1200,
+      "id": 5794,
+      "name": "SSC Ladakh Non Gazetted",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 1201,
+      "id": 5793,
+      "name": "SSC KKR DEO",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 1207,
+      "id": 5787,
+      "name": "SSC General Intelligence & Reasoning in Hindi",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 1209,
+      "id": 5785,
+      "name": "SSC Forest Guard Department",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 1210,
+      "id": 5784,
+      "name": "SSC English",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 1211,
+      "id": 5783,
+      "name": "SSC Delhi Police SI",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 1212,
+      "id": 5782,
+      "name": "SSC CR Junior Conservation Assistant",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 1218,
+      "id": 5776,
+      "name": "SSC CET",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 1219,
+      "id": 5775,
+      "name": "SSC CBI SI",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 3995,
+      "id": 2999,
+      "name": "Indian Navy SSC Officer",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 4035,
+      "id": 2959,
+      "name": "Indian Army SSC Technical",
+      "group": "Staff Selection Commission - SSC Other Exams"
+    },
+    {
+      "sl": 2212,
+      "id": 4782,
+      "name": "OSSSC Village Agriculture Worker",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2213,
+      "id": 4781,
+      "name": "OSSSC SFS",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2214,
+      "id": 4780,
+      "name": "OSSSC RI",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2215,
+      "id": 4779,
+      "name": "OSSSC Radiographer",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2216,
+      "id": 4778,
+      "name": "OSSSC Pharmacist",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2217,
+      "id": 4777,
+      "name": "OSSSC PEO",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2218,
+      "id": 4776,
+      "name": "OSSSC Nursing Officer",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2219,
+      "id": 4775,
+      "name": "OSSSC MPHW",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2220,
+      "id": 4774,
+      "name": "OSSSC Livestock Inspector",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2221,
+      "id": 4773,
+      "name": "OSSSC Laboratory Technician",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2222,
+      "id": 4772,
+      "name": "OSSSC Junior Clerk",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2223,
+      "id": 4771,
+      "name": "OSSSC Junior Assistant",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2224,
+      "id": 4770,
+      "name": "OSSSC Forester",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2225,
+      "id": 4769,
+      "name": "OSSSC Forest Guard",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2226,
+      "id": 4768,
+      "name": "OSSSC Excise Constable",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 2227,
+      "id": 4767,
+      "name": "OSSSC CRE",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "sl": 1189,
+      "id": 5805,
+      "name": "SSC Selection Post Phase 13",
+      "group": "Staff Selection Commission - SSC Selection Post & Scientific Assistant Exams"
+    },
+    {
+      "sl": 1190,
+      "id": 5804,
+      "name": "SSC Selection Post Phase 11",
+      "group": "Staff Selection Commission - SSC Selection Post & Scientific Assistant Exams"
+    },
+    {
+      "sl": 1191,
+      "id": 5803,
+      "name": "SSC Scientific Assistant IMD",
+      "group": "Staff Selection Commission - SSC Selection Post & Scientific Assistant Exams"
+    },
+    {
+      "sl": 1192,
+      "id": 5802,
+      "name": "SSC Scientific Assistant",
+      "group": "Staff Selection Commission - SSC Selection Post & Scientific Assistant Exams"
+    },
+    {
+      "sl": 1193,
+      "id": 5801,
+      "name": "SSC Phase 7",
+      "group": "Staff Selection Commission - SSC Selection Post & Scientific Assistant Exams"
+    },
+    {
+      "sl": 1194,
+      "id": 5800,
+      "name": "SSC Phase 14",
+      "group": "Staff Selection Commission - SSC Selection Post & Scientific Assistant Exams"
+    },
+    {
+      "sl": 1203,
+      "id": 5791,
+      "name": "SSC JE Mechanical Engineer",
+      "group": "Staff Selection Commission - SSC JE Exams"
+    },
+    {
+      "sl": 1204,
+      "id": 5790,
+      "name": "SSC JE Electrical Engineering",
+      "group": "Staff Selection Commission - SSC JE Exams"
+    },
+    {
+      "sl": 1205,
+      "id": 5789,
+      "name": "SSC JE Civil Engineering",
+      "group": "Staff Selection Commission - SSC JE Exams"
+    },
+    {
+      "sl": 1185,
+      "id": 5809,
+      "name": "SSC Stenographer in Hindi",
+      "group": "Staff Selection Commission - SSC Stenographer Exams"
+    },
+    {
+      "sl": 1186,
+      "id": 5808,
+      "name": "SSC Stenographer",
+      "group": "Staff Selection Commission - SSC Stenographer Exams"
+    },
+    {
+      "sl": 1198,
+      "id": 5796,
+      "name": "SSC MTS",
+      "group": "Staff Selection Commission - SSC MTS & Havaldar Exams"
+    },
+    {
+      "sl": 1206,
+      "id": 5788,
+      "name": "SSC Havaldar",
+      "group": "Staff Selection Commission - SSC MTS & Havaldar Exams"
+    }
+  ]
+}

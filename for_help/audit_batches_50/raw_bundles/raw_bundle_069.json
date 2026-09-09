@@ -1,0 +1,358 @@
+{
+  "bundle_number": 69,
+  "bundle_id": "raw_bundle_069",
+  "range": "3401 - 3450",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3401,
+      "group_sl": 3746,
+      "exam_id": 3248,
+      "name": "JK SET Tourism Administration & Management",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3402,
+      "group_sl": 3747,
+      "exam_id": 3247,
+      "name": "JK SET Sociology",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3403,
+      "group_sl": 3748,
+      "exam_id": 3246,
+      "name": "JK SET Social Work",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3404,
+      "group_sl": 3749,
+      "exam_id": 3245,
+      "name": "JK SET Sanskrit",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3405,
+      "group_sl": 3750,
+      "exam_id": 3244,
+      "name": "JK SET Public Administration",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3406,
+      "group_sl": 3751,
+      "exam_id": 3243,
+      "name": "JK SET Psychology",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3407,
+      "group_sl": 3752,
+      "exam_id": 3242,
+      "name": "JK SET Political Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3408,
+      "group_sl": 3753,
+      "exam_id": 3241,
+      "name": "JK SET Physical Sciences",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3409,
+      "group_sl": 3755,
+      "exam_id": 3239,
+      "name": "JK SET Philosophy",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3410,
+      "group_sl": 3756,
+      "exam_id": 3238,
+      "name": "JK SET Paper 1",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3411,
+      "group_sl": 3757,
+      "exam_id": 3237,
+      "name": "JK SET Music",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3412,
+      "group_sl": 3758,
+      "exam_id": 3236,
+      "name": "JK SET Mathematical Sciences",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3413,
+      "group_sl": 3759,
+      "exam_id": 3235,
+      "name": "JK SET Mass Communication & Journalism",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3414,
+      "group_sl": 3760,
+      "exam_id": 3234,
+      "name": "JK SET Management",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3415,
+      "group_sl": 3761,
+      "exam_id": 3233,
+      "name": "JK SET Linguistics",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3416,
+      "group_sl": 3762,
+      "exam_id": 3232,
+      "name": "JK SET Life Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3417,
+      "group_sl": 3763,
+      "exam_id": 3231,
+      "name": "JK SET Library & Information Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3418,
+      "group_sl": 3764,
+      "exam_id": 3230,
+      "name": "JK SET Law",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3419,
+      "group_sl": 3765,
+      "exam_id": 3229,
+      "name": "JK SET Home Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3420,
+      "group_sl": 3766,
+      "exam_id": 3228,
+      "name": "JK SET History",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3421,
+      "group_sl": 3767,
+      "exam_id": 3227,
+      "name": "JK SET Hindi",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3422,
+      "group_sl": 3768,
+      "exam_id": 3226,
+      "name": "JK SET Geography",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3423,
+      "group_sl": 3769,
+      "exam_id": 3225,
+      "name": "JK SET Environmental Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3424,
+      "group_sl": 3770,
+      "exam_id": 3224,
+      "name": "JK SET English",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3425,
+      "group_sl": 3771,
+      "exam_id": 3223,
+      "name": "JK SET Electronic Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3426,
+      "group_sl": 3773,
+      "exam_id": 3221,
+      "name": "JK SET Economics",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3427,
+      "group_sl": 3774,
+      "exam_id": 3220,
+      "name": "JK SET Computer Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3428,
+      "group_sl": 3775,
+      "exam_id": 3219,
+      "name": "JK SET Commerce",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3429,
+      "group_sl": 3776,
+      "exam_id": 3218,
+      "name": "JK SET Chemical Science",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3430,
+      "group_sl": 3777,
+      "exam_id": 3217,
+      "name": "JK SET Anthropology",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3431,
+      "group_sl": 3778,
+      "exam_id": 3216,
+      "name": "JK Postal Circle GDS",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3432,
+      "group_sl": 3782,
+      "exam_id": 3212,
+      "name": "JK ICDS State, District Block Coordinator",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3433,
+      "group_sl": 3784,
+      "exam_id": 3210,
+      "name": "JK HC Junior Assistant & Steno Typist",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3434,
+      "group_sl": 3862,
+      "exam_id": 3132,
+      "name": "Jammu Kashmir General Knowledge",
+      "group": "Jammu & Kashmir General Government Exams"
+    },
+    {
+      "global_sl": 3435,
+      "group_sl": 2,
+      "exam_id": 6992,
+      "name": "ZP Balasore GRS",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3436,
+      "group_sl": 1232,
+      "exam_id": 5762,
+      "name": "SSB Odisha Librarian",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3437,
+      "group_sl": 1250,
+      "exam_id": 5744,
+      "name": "SSB Odisha Junior Assistant",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3438,
+      "group_sl": 2204,
+      "exam_id": 4790,
+      "name": "OSWC Assistant Superintendent and Warehouse Assistant",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3439,
+      "group_sl": 2257,
+      "exam_id": 4737,
+      "name": "OSPCB Junior Laboratory Assistant",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3440,
+      "group_sl": 2258,
+      "exam_id": 4736,
+      "name": "OSPCB Junior Assistant",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3441,
+      "group_sl": 2259,
+      "exam_id": 4735,
+      "name": "OSPCB Junior Accountant",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3442,
+      "group_sl": 2260,
+      "exam_id": 4734,
+      "name": "OSPCB Assistant Environmental Scientist",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3443,
+      "group_sl": 2261,
+      "exam_id": 4733,
+      "name": "OSPCB Assistant Environmental Engineer",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3444,
+      "group_sl": 2287,
+      "exam_id": 4707,
+      "name": "OPSC OMAS",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3445,
+      "group_sl": 2290,
+      "exam_id": 4704,
+      "name": "OPSC IMO",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3446,
+      "group_sl": 2292,
+      "exam_id": 4702,
+      "name": "OPSC Geologist",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3447,
+      "group_sl": 2293,
+      "exam_id": 4701,
+      "name": "OPSC Drugs Inspector",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3448,
+      "group_sl": 2295,
+      "exam_id": 4699,
+      "name": "OPSC Civil Services",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3449,
+      "group_sl": 2297,
+      "exam_id": 4697,
+      "name": "OPSC Assistant Soil Conservation Officer",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3450,
+      "group_sl": 2312,
+      "exam_id": 4682,
+      "name": "OPSC Assistant Industries Officer",
+      "group": "Odisha General Government Exams"
+    }
+  ]
+}

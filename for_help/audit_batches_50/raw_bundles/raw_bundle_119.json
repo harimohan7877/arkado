@@ -1,0 +1,358 @@
+{
+  "bundle_number": 119,
+  "bundle_id": "raw_bundle_119",
+  "range": "5901 - 5950",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5901,
+      "group_sl": 4473,
+      "exam_id": 2521,
+      "name": "HP Postman Mail Guard",
+      "group": "Himachal Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 5902,
+      "group_sl": 4475,
+      "exam_id": 2519,
+      "name": "HP Police SI",
+      "group": "Himachal Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 5903,
+      "group_sl": 4476,
+      "exam_id": 2518,
+      "name": "HP Police Constable",
+      "group": "Himachal Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 5904,
+      "group_sl": 4478,
+      "exam_id": 2516,
+      "name": "HP Jail Warder",
+      "group": "Himachal Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 5905,
+      "group_sl": 4482,
+      "exam_id": 2512,
+      "name": "HP Forest Guard",
+      "group": "Himachal Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 5906,
+      "group_sl": 4803,
+      "exam_id": 2191,
+      "name": "Federal Bank PO",
+      "group": "Banking & Finance - Federal Exams"
+    },
+    {
+      "global_sl": 5907,
+      "group_sl": 4804,
+      "exam_id": 2190,
+      "name": "Federal Bank Officer",
+      "group": "Banking & Finance - Federal Exams"
+    },
+    {
+      "global_sl": 5908,
+      "group_sl": 4805,
+      "exam_id": 2189,
+      "name": "Federal Bank Office Assistant",
+      "group": "Banking & Finance - Federal Exams"
+    },
+    {
+      "global_sl": 5909,
+      "group_sl": 4806,
+      "exam_id": 2188,
+      "name": "Federal Bank Clerk",
+      "group": "Banking & Finance - Federal Exams"
+    },
+    {
+      "global_sl": 5910,
+      "group_sl": 4807,
+      "exam_id": 2187,
+      "name": "Federal Bank Associate Officers",
+      "group": "Banking & Finance - Federal Exams"
+    },
+    {
+      "global_sl": 5911,
+      "group_sl": 5120,
+      "exam_id": 1874,
+      "name": "DHS CG Medical Officer",
+      "group": "Chhattisgarh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5912,
+      "group_sl": 5659,
+      "exam_id": 1335,
+      "name": "CGPSC Senior Resident Doctor",
+      "group": "Chhattisgarh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5913,
+      "group_sl": 5663,
+      "exam_id": 1331,
+      "name": "CGPSC Medical Specialist",
+      "group": "Chhattisgarh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5914,
+      "group_sl": 5665,
+      "exam_id": 1329,
+      "name": "CGPSC Insurance Medical Officer",
+      "group": "Chhattisgarh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5915,
+      "group_sl": 5693,
+      "exam_id": 1301,
+      "name": "CGMSC Drug Data Entry Operator",
+      "group": "Chhattisgarh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5916,
+      "group_sl": 6060,
+      "exam_id": 934,
+      "name": "BMC JE SE Architecture",
+      "group": "Maharashtra BMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5917,
+      "group_sl": 6061,
+      "exam_id": 933,
+      "name": "BMC JE Electrical",
+      "group": "Maharashtra BMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5918,
+      "group_sl": 6062,
+      "exam_id": 932,
+      "name": "BMC JE Civil",
+      "group": "Maharashtra BMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5919,
+      "group_sl": 6063,
+      "exam_id": 931,
+      "name": "BMC JE",
+      "group": "Maharashtra BMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5920,
+      "group_sl": 6064,
+      "exam_id": 930,
+      "name": "BMC Fireman",
+      "group": "Maharashtra BMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5921,
+      "group_sl": 6281,
+      "exam_id": 713,
+      "name": "BFUHS Technician",
+      "group": "Punjab BFUHS Exams"
+    },
+    {
+      "global_sl": 5922,
+      "group_sl": 6282,
+      "exam_id": 712,
+      "name": "BFUHS Staff Nurse",
+      "group": "Punjab BFUHS Exams"
+    },
+    {
+      "global_sl": 5923,
+      "group_sl": 6283,
+      "exam_id": 711,
+      "name": "BFUHS MPHW",
+      "group": "Punjab BFUHS Exams"
+    },
+    {
+      "global_sl": 5924,
+      "group_sl": 6284,
+      "exam_id": 710,
+      "name": "BFUHS Medical Officer",
+      "group": "Punjab BFUHS Exams"
+    },
+    {
+      "global_sl": 5925,
+      "group_sl": 6285,
+      "exam_id": 709,
+      "name": "BFUHS Assistant Professor",
+      "group": "Punjab BFUHS Exams"
+    },
+    {
+      "global_sl": 5926,
+      "group_sl": 829,
+      "exam_id": 6165,
+      "name": "TSPSC Excise SI",
+      "group": "Telangana Police & Security Exams"
+    },
+    {
+      "global_sl": 5927,
+      "group_sl": 1117,
+      "exam_id": 5877,
+      "name": "Telangana Police SI",
+      "group": "Telangana Police & Security Exams"
+    },
+    {
+      "global_sl": 5928,
+      "group_sl": 1118,
+      "exam_id": 5876,
+      "name": "Telangana Police Constable",
+      "group": "Telangana Police & Security Exams"
+    },
+    {
+      "global_sl": 5929,
+      "group_sl": 1119,
+      "exam_id": 5875,
+      "name": "Telangana Police APP",
+      "group": "Telangana Police & Security Exams"
+    },
+    {
+      "global_sl": 5930,
+      "group_sl": 942,
+      "exam_id": 6052,
+      "name": "TNSRLM Sivaganga Community Bank Coordinator",
+      "group": "Tamil Nadu Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5931,
+      "group_sl": 1067,
+      "exam_id": 5927,
+      "name": "TN Cooperative Bank Assistant",
+      "group": "Tamil Nadu Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5932,
+      "group_sl": 2201,
+      "exam_id": 4793,
+      "name": "Pallavan Grama Bank",
+      "group": "Tamil Nadu Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5933,
+      "group_sl": 5143,
+      "exam_id": 1851,
+      "name": "Dharmapuri Cooperative Bank Assistant",
+      "group": "Tamil Nadu Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5934,
+      "group_sl": 1331,
+      "exam_id": 5663,
+      "name": "SGPGIMS Stenographer",
+      "group": "Uttar Pradesh SGPGIMS Exams"
+    },
+    {
+      "global_sl": 5935,
+      "group_sl": 1332,
+      "exam_id": 5662,
+      "name": "SGPGIMS Senior Resident 2026",
+      "group": "Uttar Pradesh SGPGIMS Exams"
+    },
+    {
+      "global_sl": 5936,
+      "group_sl": 1333,
+      "exam_id": 5661,
+      "name": "SGPGIMS Lucknow Group C Technician Dialysis",
+      "group": "Uttar Pradesh SGPGIMS Exams"
+    },
+    {
+      "global_sl": 5937,
+      "group_sl": 1334,
+      "exam_id": 5660,
+      "name": "SGPGIMS Faculty",
+      "group": "Uttar Pradesh SGPGIMS Exams"
+    },
+    {
+      "global_sl": 5938,
+      "group_sl": 1604,
+      "exam_id": 5390,
+      "name": "RRB NTPC Under Graduate Level",
+      "group": "National Railways - RRB NTPC Exams"
+    },
+    {
+      "global_sl": 5939,
+      "group_sl": 1605,
+      "exam_id": 5389,
+      "name": "RRB NTPC Senior Clerk Cum Typist",
+      "group": "National Railways - RRB NTPC Exams"
+    },
+    {
+      "global_sl": 5940,
+      "group_sl": 1606,
+      "exam_id": 5388,
+      "name": "RRB NTPC Paramedical Staff",
+      "group": "National Railways - RRB NTPC Exams"
+    },
+    {
+      "global_sl": 5941,
+      "group_sl": 1607,
+      "exam_id": 5387,
+      "name": "RRB NTPC",
+      "group": "National Railways - RRB NTPC Exams"
+    },
+    {
+      "global_sl": 5942,
+      "group_sl": 1801,
+      "exam_id": 5193,
+      "name": "RCUES AP Junior Assistant",
+      "group": "Andhra Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 5943,
+      "group_sl": 2752,
+      "exam_id": 4242,
+      "name": "Naval Dockyard Visakhapatnam Apprentice",
+      "group": "Andhra Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 5944,
+      "group_sl": 4830,
+      "exam_id": 2164,
+      "name": "FCI Andhra Pradesh Watchman",
+      "group": "Andhra Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 5945,
+      "group_sl": 5749,
+      "exam_id": 1245,
+      "name": "CFW AP MLHP",
+      "group": "Andhra Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 5946,
+      "group_sl": 2008,
+      "exam_id": 4986,
+      "name": "Punjab Haryana High Court Stenographer",
+      "group": "Haryana High Court & Court Exams"
+    },
+    {
+      "global_sl": 5947,
+      "group_sl": 3587,
+      "exam_id": 3407,
+      "name": "Karnal Court Clerk",
+      "group": "Haryana High Court & Court Exams"
+    },
+    {
+      "global_sl": 5948,
+      "group_sl": 4334,
+      "exam_id": 2660,
+      "name": "HPSC Civil Judge",
+      "group": "Haryana High Court & Court Exams"
+    },
+    {
+      "global_sl": 5949,
+      "group_sl": 4538,
+      "exam_id": 2456,
+      "name": "Gurugram District Court Clerk",
+      "group": "Haryana High Court & Court Exams"
+    },
+    {
+      "global_sl": 5950,
+      "group_sl": 2093,
+      "exam_id": 4901,
+      "name": "PPSC Civil Judge",
+      "group": "Punjab High Court & Court Exams"
+    }
+  ]
+}

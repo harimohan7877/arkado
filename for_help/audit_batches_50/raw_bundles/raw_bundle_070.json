@@ -1,0 +1,358 @@
+{
+  "bundle_number": 70,
+  "bundle_id": "raw_bundle_070",
+  "range": "3451 - 3500",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3451,
+      "group_sl": 2313,
+      "exam_id": 4681,
+      "name": "OPSC Assistant Director Law",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3452,
+      "group_sl": 2314,
+      "exam_id": 4680,
+      "name": "OPSC ASO",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3453,
+      "group_sl": 2315,
+      "exam_id": 4679,
+      "name": "OPSC APP",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3454,
+      "group_sl": 2316,
+      "exam_id": 4678,
+      "name": "OPSC AMO",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3455,
+      "group_sl": 2317,
+      "exam_id": 4677,
+      "name": "OPSC AHO",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3456,
+      "group_sl": 2318,
+      "exam_id": 4676,
+      "name": "OPSC AFO",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3457,
+      "group_sl": 2319,
+      "exam_id": 4675,
+      "name": "OPSC AEE Mechanical",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3458,
+      "group_sl": 2320,
+      "exam_id": 4674,
+      "name": "OPSC AEE Civil",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3459,
+      "group_sl": 2321,
+      "exam_id": 4673,
+      "name": "OPSC AAO",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3460,
+      "group_sl": 2322,
+      "exam_id": 4672,
+      "name": "OPSC AAE",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3461,
+      "group_sl": 2331,
+      "exam_id": 4663,
+      "name": "OMC Junior Accountant",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3462,
+      "group_sl": 2332,
+      "exam_id": 4662,
+      "name": "OMC JE",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3463,
+      "group_sl": 2333,
+      "exam_id": 4661,
+      "name": "OMC Electrician",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3464,
+      "group_sl": 2346,
+      "exam_id": 4648,
+      "name": "OHPC Mechanical Trainee",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3465,
+      "group_sl": 2347,
+      "exam_id": 4647,
+      "name": "OHPC Management Trainee",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3466,
+      "group_sl": 2348,
+      "exam_id": 4646,
+      "name": "OHPC Electrical Trainee",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3467,
+      "group_sl": 2349,
+      "exam_id": 4645,
+      "name": "OHPC Diploma Engineer Trainee",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3468,
+      "group_sl": 2361,
+      "exam_id": 4633,
+      "name": "Odisha SET",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3469,
+      "group_sl": 2363,
+      "exam_id": 4631,
+      "name": "Odisha Postal Circle GDS",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3470,
+      "group_sl": 2377,
+      "exam_id": 4617,
+      "name": "Odisha Livelihoods Mission",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3471,
+      "group_sl": 2382,
+      "exam_id": 4612,
+      "name": "Odisha General Knowledge",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3472,
+      "group_sl": 2389,
+      "exam_id": 4605,
+      "name": "OAVS Principal",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3473,
+      "group_sl": 2743,
+      "exam_id": 4251,
+      "name": "NBCFDM Odisha",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3474,
+      "group_sl": 4815,
+      "exam_id": 2179,
+      "name": "FCI Odisha Watchman",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "global_sl": 3475,
+      "group_sl": 1111,
+      "exam_id": 5883,
+      "name": "Territorial Army Soldier GD",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3476,
+      "group_sl": 1112,
+      "exam_id": 5882,
+      "name": "Territorial Army Officer",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3477,
+      "group_sl": 1152,
+      "exam_id": 5842,
+      "name": "TA Army Bharti Clerk",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3478,
+      "group_sl": 1435,
+      "exam_id": 5559,
+      "name": "Sainik School Admission Class VI",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3479,
+      "group_sl": 1436,
+      "exam_id": 5558,
+      "name": "Sainik School Admission Class IX",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3480,
+      "group_sl": 1820,
+      "exam_id": 5174,
+      "name": "Rashtriya Military School Admission",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3481,
+      "group_sl": 3098,
+      "exam_id": 3896,
+      "name": "Military Engineering Services",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3482,
+      "group_sl": 4032,
+      "exam_id": 2962,
+      "name": "Indian Army Vehicle Mechanic",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3483,
+      "group_sl": 4033,
+      "exam_id": 2961,
+      "name": "Indian Army Tradesman Mate",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3484,
+      "group_sl": 4034,
+      "exam_id": 2960,
+      "name": "Indian Army TES",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3485,
+      "group_sl": 4036,
+      "exam_id": 2958,
+      "name": "Indian Army Soldier GD",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3486,
+      "group_sl": 4037,
+      "exam_id": 2957,
+      "name": "Indian Army OTA",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3487,
+      "group_sl": 4038,
+      "exam_id": 2956,
+      "name": "Indian Army Nursing Assistant",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3488,
+      "group_sl": 4039,
+      "exam_id": 2955,
+      "name": "Indian Army MNS",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3489,
+      "group_sl": 4040,
+      "exam_id": 2954,
+      "name": "Indian Army Lower Division Clerk",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3490,
+      "group_sl": 4041,
+      "exam_id": 2953,
+      "name": "Indian Army JCO Catering",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3491,
+      "group_sl": 4042,
+      "exam_id": 2952,
+      "name": "Indian Army JCO",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3492,
+      "group_sl": 4043,
+      "exam_id": 2951,
+      "name": "Indian Army Infantry School Group C",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3493,
+      "group_sl": 4044,
+      "exam_id": 2950,
+      "name": "Indian Army Havildar SAC",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3494,
+      "group_sl": 4045,
+      "exam_id": 2949,
+      "name": "Indian Army Graduate Engineer",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3495,
+      "group_sl": 4046,
+      "exam_id": 2948,
+      "name": "Indian Army Fitter, Tin and Copper Smith",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3496,
+      "group_sl": 4047,
+      "exam_id": 2947,
+      "name": "Indian Army Fireman",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3497,
+      "group_sl": 4048,
+      "exam_id": 2946,
+      "name": "Indian Army Female Soldier GD",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3498,
+      "group_sl": 4049,
+      "exam_id": 2945,
+      "name": "Indian Army Electrician and Telecom Mechanic",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3499,
+      "group_sl": 4050,
+      "exam_id": 2944,
+      "name": "Indian Army Education Havildar Science",
+      "group": "Defence & Security - Indian Army Exams"
+    },
+    {
+      "global_sl": 3500,
+      "group_sl": 4051,
+      "exam_id": 2943,
+      "name": "Indian Army Education Havildar IT",
+      "group": "Defence & Security - Indian Army Exams"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "bundle_id": "bundle-015",
+  "bundle_num": 15,
+  "category_id": "delhi-nct",
+  "category_name": "दिल्ली",
+  "category_icon": "🔵",
+  "title": "दिल्ली — DSSSB (दिल्ली अधीनस्थ सेवा चयन बोर्ड)",
+  "total_exams": 4,
+  "boards_included": [
+    "DSSSB"
+  ],
+  "official_portal": "https://dsssb.delhi.gov.in",
+  "exams": [
+    {
+      "id": 4001,
+      "name": "DSSSB सहायक प्राथमिक शिक्षक (PRT / Nursery)",
+      "eligibility": "12वीं (50%) + D.El.Ed / B.El.Ed + CTET",
+      "age_limit": "30 वर्ष",
+      "applicant_scale": "3.5 लाख",
+      "exam_pattern": "भाग-A सामान्य (100) + भाग-B शिक्षण विधि (100) = 200 प्रश्न",
+      "viral_subtext": "MCD एवं शिक्षा निदेशालय दिल्ली",
+      "status": "verified"
+    },
+    {
+      "id": 4002,
+      "name": "DSSSB प्रशिक्षित स्नातक शिक्षक (TGT - सभी विषय)",
+      "eligibility": "स्नातक + B.Ed + CTET Paper-2",
+      "age_limit": "30-32 वर्ष",
+      "applicant_scale": "4+ लाख",
+      "exam_pattern": "One Tier (200 प्रश्न: खंड-A सामान्य 100, खंड-B विषय 100)",
+      "viral_subtext": "दिल्ली सरकारी स्कूल शिक्षक (Math, Sci, Hindi, Eng)",
+      "status": "verified"
+    },
+    {
+      "id": 4003,
+      "name": "DSSSB कनिष्ठ सहायक / जूनियर क्लर्क (LDC)",
+      "eligibility": "12वीं पास + कंप्यूटर टाइपिंग",
+      "age_limit": "18-27 वर्ष",
+      "applicant_scale": "3+ लाख",
+      "exam_pattern": "One Tier (200 प्रश्न) + टाइपिंग",
+      "viral_subtext": "दिल्ली सरकार के विभिन्न विभाग",
+      "status": "verified"
+    },
+    {
+      "id": 4004,
+      "name": "DSSSB DASS Grade-II एवं Grade-IV",
+      "eligibility": "स्नातक",
+      "age_limit": "20-30 वर्ष",
+      "applicant_scale": "2.5 लाख",
+      "exam_pattern": "Tier-1 + Tier-2 परीक्षा",
+      "viral_subtext": "सचिवालय प्रशासनिक सेवा संवर्ग",
+      "status": "verified"
+    }
+  ]
+}

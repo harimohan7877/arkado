@@ -1,0 +1,358 @@
+{
+  "bundle_number": 42,
+  "bundle_id": "raw_bundle_042",
+  "range": "2051 - 2100",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 2051,
+      "group_sl": 1656,
+      "exam_id": 5338,
+      "name": "RPSC School Lecturer Home Science",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2052,
+      "group_sl": 1657,
+      "exam_id": 5337,
+      "name": "RPSC School Lecturer History",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2053,
+      "group_sl": 1658,
+      "exam_id": 5336,
+      "name": "RPSC School Lecturer Hindi",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2054,
+      "group_sl": 1659,
+      "exam_id": 5335,
+      "name": "RPSC School Lecturer Geography",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2055,
+      "group_sl": 1660,
+      "exam_id": 5334,
+      "name": "RPSC School Lecturer English",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2056,
+      "group_sl": 1661,
+      "exam_id": 5333,
+      "name": "RPSC School Lecturer Economics",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2057,
+      "group_sl": 1662,
+      "exam_id": 5332,
+      "name": "RPSC School Lecturer Drawing",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2058,
+      "group_sl": 1663,
+      "exam_id": 5331,
+      "name": "RPSC School Lecturer Commerce",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2059,
+      "group_sl": 1664,
+      "exam_id": 5330,
+      "name": "RPSC School Lecturer Chemistry",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2060,
+      "group_sl": 1665,
+      "exam_id": 5329,
+      "name": "RPSC School Lecturer Biology",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2061,
+      "group_sl": 1666,
+      "exam_id": 5328,
+      "name": "RPSC School Lecturer",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2062,
+      "group_sl": 1685,
+      "exam_id": 5309,
+      "name": "RPSC College Lecturer Paper 3",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2063,
+      "group_sl": 1686,
+      "exam_id": 5308,
+      "name": "RPSC Assistant Professor Zoology",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2064,
+      "group_sl": 1687,
+      "exam_id": 5307,
+      "name": "RPSC Assistant Professor Sociology",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2065,
+      "group_sl": 1688,
+      "exam_id": 5306,
+      "name": "RPSC Assistant Professor Sanskrit",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2066,
+      "group_sl": 1689,
+      "exam_id": 5305,
+      "name": "RPSC Assistant Professor Radiodiagnosis",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2067,
+      "group_sl": 1690,
+      "exam_id": 5304,
+      "name": "RPSC Assistant Professor Public Administration",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2068,
+      "group_sl": 1691,
+      "exam_id": 5303,
+      "name": "RPSC Assistant Professor Psychology",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2069,
+      "group_sl": 1692,
+      "exam_id": 5302,
+      "name": "RPSC Assistant Professor Political Science",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2070,
+      "group_sl": 1693,
+      "exam_id": 5301,
+      "name": "RPSC Assistant Professor Physics",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2071,
+      "group_sl": 1694,
+      "exam_id": 5300,
+      "name": "RPSC Assistant Professor Philosophy",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2072,
+      "group_sl": 1695,
+      "exam_id": 5299,
+      "name": "RPSC Assistant Professor Pediatrics",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2073,
+      "group_sl": 1696,
+      "exam_id": 5298,
+      "name": "RPSC Assistant Professor Orthopedics",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2074,
+      "group_sl": 1697,
+      "exam_id": 5297,
+      "name": "RPSC Assistant Professor Maths",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2075,
+      "group_sl": 1698,
+      "exam_id": 5296,
+      "name": "RPSC Assistant Professor Law",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2076,
+      "group_sl": 1699,
+      "exam_id": 5295,
+      "name": "RPSC Assistant Professor Home Science",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2077,
+      "group_sl": 1700,
+      "exam_id": 5294,
+      "name": "RPSC Assistant Professor History",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2078,
+      "group_sl": 1701,
+      "exam_id": 5293,
+      "name": "RPSC Assistant Professor Hindi",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2079,
+      "group_sl": 1702,
+      "exam_id": 5292,
+      "name": "RPSC Assistant Professor Gynecology and Obstetrics",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2080,
+      "group_sl": 1703,
+      "exam_id": 5291,
+      "name": "RPSC Assistant Professor Geography",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2081,
+      "group_sl": 1704,
+      "exam_id": 5290,
+      "name": "RPSC Assistant Professor General Surgery",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2082,
+      "group_sl": 1705,
+      "exam_id": 5289,
+      "name": "RPSC Assistant Professor General Studies of Rajasthan",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2083,
+      "group_sl": 1706,
+      "exam_id": 5288,
+      "name": "RPSC Assistant Professor General Medicine",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2084,
+      "group_sl": 1707,
+      "exam_id": 5287,
+      "name": "RPSC Assistant Professor English",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2085,
+      "group_sl": 1708,
+      "exam_id": 5286,
+      "name": "RPSC Assistant Professor Economics",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2086,
+      "group_sl": 1709,
+      "exam_id": 5285,
+      "name": "RPSC Assistant Professor Chemistry",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2087,
+      "group_sl": 1710,
+      "exam_id": 5284,
+      "name": "RPSC Assistant Professor Business Administration",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2088,
+      "group_sl": 1711,
+      "exam_id": 5283,
+      "name": "RPSC Assistant Professor Botany",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2089,
+      "group_sl": 1712,
+      "exam_id": 5282,
+      "name": "RPSC Assistant Professor Anesthesia",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2090,
+      "group_sl": 1713,
+      "exam_id": 5281,
+      "name": "RPSC Assistant Professor ABST",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2091,
+      "group_sl": 1727,
+      "exam_id": 5267,
+      "name": "RPSC 2nd Grade Teacher Social Science",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2092,
+      "group_sl": 1728,
+      "exam_id": 5266,
+      "name": "RPSC 2nd Grade Teacher Science",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2093,
+      "group_sl": 1729,
+      "exam_id": 5265,
+      "name": "RPSC 2nd Grade Teacher Sanskrit",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2094,
+      "group_sl": 1730,
+      "exam_id": 5264,
+      "name": "RPSC 2nd Grade Teacher Paper 1",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2095,
+      "group_sl": 1731,
+      "exam_id": 5263,
+      "name": "RPSC 2nd Grade Teacher Mathematics",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2096,
+      "group_sl": 1732,
+      "exam_id": 5262,
+      "name": "RPSC 2nd Grade Teacher Hindi",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2097,
+      "group_sl": 1733,
+      "exam_id": 5261,
+      "name": "RPSC 2nd Grade Teacher English",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2098,
+      "group_sl": 1734,
+      "exam_id": 5260,
+      "name": "RPSC 2nd Grade Teacher",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2099,
+      "group_sl": 1736,
+      "exam_id": 5258,
+      "name": "RPSC 1st Grade Special Teacher Sociology",
+      "group": "Rajasthan Teaching & School Exams"
+    },
+    {
+      "global_sl": 2100,
+      "group_sl": 1737,
+      "exam_id": 5257,
+      "name": "RPSC 1st Grade Special Teacher Political Science",
+      "group": "Rajasthan Teaching & School Exams"
+    }
+  ]
+}

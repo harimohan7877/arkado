@@ -1,0 +1,358 @@
+{
+  "bundle_number": 32,
+  "bundle_id": "raw_bundle_032",
+  "range": "1551 - 1600",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1551,
+      "group_sl": 2987,
+      "exam_id": 4007,
+      "name": "MP SET Sociology",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1552,
+      "group_sl": 2988,
+      "exam_id": 4006,
+      "name": "MP SET Sanskrit Traditional Subject",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1553,
+      "group_sl": 2989,
+      "exam_id": 4005,
+      "name": "MP SET Sanskrit",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1554,
+      "group_sl": 2990,
+      "exam_id": 4004,
+      "name": "MP SET Psychology",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1555,
+      "group_sl": 2991,
+      "exam_id": 4003,
+      "name": "MP SET Political Science",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1556,
+      "group_sl": 2992,
+      "exam_id": 4002,
+      "name": "MP SET Physical Science",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1557,
+      "group_sl": 2994,
+      "exam_id": 4000,
+      "name": "MP SET Philosophy",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1558,
+      "group_sl": 2995,
+      "exam_id": 3999,
+      "name": "MP SET Performing Arts",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1559,
+      "group_sl": 2996,
+      "exam_id": 3998,
+      "name": "MP SET Paper 1",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1560,
+      "group_sl": 2997,
+      "exam_id": 3997,
+      "name": "MP SET Music",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1561,
+      "group_sl": 2998,
+      "exam_id": 3996,
+      "name": "MP SET Mathematical Science",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1562,
+      "group_sl": 2999,
+      "exam_id": 3995,
+      "name": "MP SET Marathi",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1563,
+      "group_sl": 3000,
+      "exam_id": 3994,
+      "name": "MP SET Management",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1564,
+      "group_sl": 3001,
+      "exam_id": 3993,
+      "name": "MP SET Life Sciences",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1565,
+      "group_sl": 3002,
+      "exam_id": 3992,
+      "name": "MP SET Library and Information Science",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1566,
+      "group_sl": 3003,
+      "exam_id": 3991,
+      "name": "MP SET Law",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1567,
+      "group_sl": 3004,
+      "exam_id": 3990,
+      "name": "MP SET Home Science",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1568,
+      "group_sl": 3005,
+      "exam_id": 3989,
+      "name": "MP SET History",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1569,
+      "group_sl": 3006,
+      "exam_id": 3988,
+      "name": "MP SET Hindi",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1570,
+      "group_sl": 3007,
+      "exam_id": 3987,
+      "name": "MP SET Geography",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1571,
+      "group_sl": 3008,
+      "exam_id": 3986,
+      "name": "MP SET English",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1572,
+      "group_sl": 3009,
+      "exam_id": 3985,
+      "name": "MP SET Economics",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1573,
+      "group_sl": 3010,
+      "exam_id": 3984,
+      "name": "MP SET Earth, Atmospheric, Ocean and Planetary Science",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1574,
+      "group_sl": 3011,
+      "exam_id": 3983,
+      "name": "MP SET Defence and Strategic Studies",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1575,
+      "group_sl": 3012,
+      "exam_id": 3982,
+      "name": "MP SET Criminology",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1576,
+      "group_sl": 3013,
+      "exam_id": 3981,
+      "name": "MP SET Computer Science and Applications",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1577,
+      "group_sl": 3014,
+      "exam_id": 3980,
+      "name": "MP SET Commerce",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1578,
+      "group_sl": 3015,
+      "exam_id": 3979,
+      "name": "MP SET Chemical Science",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1579,
+      "group_sl": 3016,
+      "exam_id": 3978,
+      "name": "MP Samvida Shikshak Social Science",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1580,
+      "group_sl": 3017,
+      "exam_id": 3977,
+      "name": "MP Samvida Shikshak Science",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1581,
+      "group_sl": 3018,
+      "exam_id": 3976,
+      "name": "MP Samvida Shikshak Sanskrit",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1582,
+      "group_sl": 3019,
+      "exam_id": 3975,
+      "name": "MP Samvida Shikshak Mathematics",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1583,
+      "group_sl": 3020,
+      "exam_id": 3974,
+      "name": "MP RHEO",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1584,
+      "group_sl": 3021,
+      "exam_id": 3973,
+      "name": "MP RAEO",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1585,
+      "group_sl": 3022,
+      "exam_id": 3972,
+      "name": "MP PVFT",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1586,
+      "group_sl": 3023,
+      "exam_id": 3971,
+      "name": "MP Post Office MTS",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1587,
+      "group_sl": 3024,
+      "exam_id": 3970,
+      "name": "MP Post Office GDS",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1588,
+      "group_sl": 3030,
+      "exam_id": 3964,
+      "name": "MP Lekhpal",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1589,
+      "group_sl": 3051,
+      "exam_id": 3943,
+      "name": "MP HC Personal Assistant",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1590,
+      "group_sl": 3052,
+      "exam_id": 3942,
+      "name": "MP HC JJA",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1591,
+      "group_sl": 3054,
+      "exam_id": 3940,
+      "name": "MP HC Assistant Grade 3",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1592,
+      "group_sl": 3055,
+      "exam_id": 3939,
+      "name": "MP General Knowledge Hindi",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1593,
+      "group_sl": 3056,
+      "exam_id": 3938,
+      "name": "MP General Knowledge English",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1594,
+      "group_sl": 3057,
+      "exam_id": 3937,
+      "name": "MP FSL Laboratory Technician",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1595,
+      "group_sl": 3059,
+      "exam_id": 3935,
+      "name": "MP FSL Laboratory Assistant",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1596,
+      "group_sl": 3060,
+      "exam_id": 3934,
+      "name": "MP Female Supervisor",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1597,
+      "group_sl": 3062,
+      "exam_id": 3932,
+      "name": "MP DAHET",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1598,
+      "group_sl": 3201,
+      "exam_id": 3793,
+      "name": "MAPIT AEGM",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1599,
+      "group_sl": 3273,
+      "exam_id": 3721,
+      "name": "Madhya Pradesh Current Affairs",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1600,
+      "group_sl": 4816,
+      "exam_id": 2178,
+      "name": "FCI MP Watchman",
+      "group": "Madhya Pradesh General Government Exams"
+    }
+  ]
+}

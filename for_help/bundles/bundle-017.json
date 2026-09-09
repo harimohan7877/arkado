@@ -1,0 +1,55 @@
+{
+  "bundle_id": "bundle-017",
+  "bundle_num": 17,
+  "category_id": "madhya-pradesh",
+  "category_name": "मध्य प्रदेश",
+  "category_icon": "🟣",
+  "title": "मध्य प्रदेश — MPESB (व्यापम / कर्मचारी चयन मंडल भोपाल)",
+  "total_exams": 4,
+  "boards_included": [
+    "MP Vyapam"
+  ],
+  "official_portal": "https://esb.mp.gov.in",
+  "exams": [
+    {
+      "id": 4020,
+      "name": "MP पुलिस आरक्षक (GD / रेडियो ऑपरेटर)",
+      "eligibility": "10वीं / 12वीं पास",
+      "age_limit": "18-36 वर्ष",
+      "applicant_scale": "8+ लाख",
+      "exam_pattern": "लिखित परीक्षा (100 अंक) + PPT शारीरिक दक्षता (100 अंक मेरिट)",
+      "viral_subtext": "7,411 आरक्षक सीधी भर्ती",
+      "status": "verified"
+    },
+    {
+      "id": 4021,
+      "name": "MP पटवारी एवं समूह-2 उपसमूह-4 संयुक्त भर्ती",
+      "eligibility": "स्नातक + CPCT कंप्यूटर स्कोर",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "9+ लाख",
+      "exam_pattern": "200 प्रश्न (सामान्य ज्ञान, हिंदी, अंग्रेजी, गणित, रीजनिंग, प्रबंधन)",
+      "viral_subtext": "राजस्व विभाग 9,000+ पद",
+      "status": "verified"
+    },
+    {
+      "id": 4022,
+      "name": "MP प्राथमिक शिक्षक पात्रता परीक्षा (वर्ग-3)",
+      "eligibility": "12वीं (50%) + D.El.Ed",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "6+ लाख",
+      "exam_pattern": "150 प्रश्न • 150 अंक (बाल विकास, भाषा 1, भाषा 2, गणित, पर्यावरण)",
+      "viral_subtext": "स्कूल शिक्षा विभाग प्राथमिक शिक्षक",
+      "status": "verified"
+    },
+    {
+      "id": 4023,
+      "name": "MP वनरक्षक एवं क्षेत्ररक्षक / जेल प्रहरी",
+      "eligibility": "10वीं पास",
+      "age_limit": "18-36 वर्ष",
+      "applicant_scale": "7+ लाख",
+      "exam_pattern": "लिखित परीक्षा (100 अंक) + 25 किमी पैदल चाल",
+      "viral_subtext": "वन विभाग व जेल विभाग 2,112 पद",
+      "status": "verified"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "bundle_number": 8,
+  "bundle_id": "raw_bundle_008",
+  "range": "351 - 400",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 351,
+      "group_sl": 2323,
+      "exam_id": 4671,
+      "name": "OPAL Executive & Non-Executive",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 352,
+      "group_sl": 2402,
+      "exam_id": 4592,
+      "name": "NWDA LDC",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 353,
+      "group_sl": 2458,
+      "exam_id": 4536,
+      "name": "NTC Security Supervisor",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 354,
+      "group_sl": 2472,
+      "exam_id": 4522,
+      "name": "NSCL Trainee Marketing",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 355,
+      "group_sl": 2473,
+      "exam_id": 4521,
+      "name": "NSCL MT",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 356,
+      "group_sl": 2477,
+      "exam_id": 4517,
+      "name": "NRL GET",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 357,
+      "group_sl": 2545,
+      "exam_id": 4449,
+      "name": "NITCON JE",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 358,
+      "group_sl": 2550,
+      "exam_id": 4444,
+      "name": "NIRT Technical Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 359,
+      "group_sl": 2576,
+      "exam_id": 4418,
+      "name": "NIB Laboratory Technician",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 360,
+      "group_sl": 2643,
+      "exam_id": 4351,
+      "name": "NGRI Technical Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 361,
+      "group_sl": 2644,
+      "exam_id": 4350,
+      "name": "NGEL Engineer Mechanical",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 362,
+      "group_sl": 2646,
+      "exam_id": 4348,
+      "name": "NGEL Engineer Electrical",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 363,
+      "group_sl": 2647,
+      "exam_id": 4347,
+      "name": "NGEL Engineer Civil",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 364,
+      "group_sl": 2648,
+      "exam_id": 4346,
+      "name": "NGEL Deputy General Manager and Assistant Manager",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 365,
+      "group_sl": 2713,
+      "exam_id": 4281,
+      "name": "NEEPCO Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 366,
+      "group_sl": 2733,
+      "exam_id": 4261,
+      "name": "NCHMCT JEE",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 367,
+      "group_sl": 2734,
+      "exam_id": 4260,
+      "name": "NCESS Project Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 368,
+      "group_sl": 2765,
+      "exam_id": 4229,
+      "name": "NAL Technical Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 369,
+      "group_sl": 3164,
+      "exam_id": 3830,
+      "name": "Mechanical Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 370,
+      "group_sl": 3277,
+      "exam_id": 3717,
+      "name": "LSSSSB Technical Statistical Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 371,
+      "group_sl": 3279,
+      "exam_id": 3715,
+      "name": "LSSSSB Technical JSA",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 372,
+      "group_sl": 3280,
+      "exam_id": 3714,
+      "name": "LSSSSB Non Technical",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 373,
+      "group_sl": 3328,
+      "exam_id": 3666,
+      "name": "Lab Technician",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 374,
+      "group_sl": 3590,
+      "exam_id": 3404,
+      "name": "Kandla Port Trust Apprentice Recruitment",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 375,
+      "group_sl": 3844,
+      "exam_id": 3150,
+      "name": "JEE Physics in Hindi",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 376,
+      "group_sl": 3845,
+      "exam_id": 3149,
+      "name": "JEE Physics in English",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 377,
+      "group_sl": 3846,
+      "exam_id": 3148,
+      "name": "JEE Mains & Advanced Mathematics in Hindi",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 378,
+      "group_sl": 3847,
+      "exam_id": 3147,
+      "name": "JEE Mains & Advanced Mathematics in English",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 379,
+      "group_sl": 3848,
+      "exam_id": 3146,
+      "name": "JEE Mains & Advanced Chemistry in Hindi",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 380,
+      "group_sl": 3849,
+      "exam_id": 3145,
+      "name": "JEE Mains & Advanced Chemistry in English",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 381,
+      "group_sl": 3850,
+      "exam_id": 3144,
+      "name": "JEE Main in Hindi",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 382,
+      "group_sl": 3851,
+      "exam_id": 3143,
+      "name": "JEE Main",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 383,
+      "group_sl": 3852,
+      "exam_id": 3142,
+      "name": "JEE Advanced",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 384,
+      "group_sl": 3853,
+      "exam_id": 3141,
+      "name": "JEE Advance in Hindi",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 385,
+      "group_sl": 3925,
+      "exam_id": 3069,
+      "name": "IRCON Works Engineer",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 386,
+      "group_sl": 3928,
+      "exam_id": 3066,
+      "name": "IPRC Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 387,
+      "group_sl": 3938,
+      "exam_id": 3056,
+      "name": "IPA Executive Engineer Civil",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 388,
+      "group_sl": 3939,
+      "exam_id": 3055,
+      "name": "IPA Assistant Executive Engineer",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 389,
+      "group_sl": 3992,
+      "exam_id": 3002,
+      "name": "Indian Ordnance Factory Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 390,
+      "group_sl": 4067,
+      "exam_id": 2927,
+      "name": "India Seeds Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 391,
+      "group_sl": 4081,
+      "exam_id": 2913,
+      "name": "IIT Roorkee Group B & C",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 392,
+      "group_sl": 4083,
+      "exam_id": 2911,
+      "name": "IIT Mandi Junior Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 393,
+      "group_sl": 4084,
+      "exam_id": 2910,
+      "name": "IIT Madras Junior Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 394,
+      "group_sl": 4085,
+      "exam_id": 2909,
+      "name": "IIT Kharagpur Junior Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 395,
+      "group_sl": 4088,
+      "exam_id": 2906,
+      "name": "IIT JAM Physics",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 396,
+      "group_sl": 4089,
+      "exam_id": 2905,
+      "name": "IIT JAM Mathematics",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 397,
+      "group_sl": 4090,
+      "exam_id": 2904,
+      "name": "IIT JAM Mathematical Statistics",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 398,
+      "group_sl": 4091,
+      "exam_id": 2903,
+      "name": "IIT JAM Geology",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 399,
+      "group_sl": 4092,
+      "exam_id": 2902,
+      "name": "IIT JAM Economics",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 400,
+      "group_sl": 4093,
+      "exam_id": 2901,
+      "name": "IIT JAM Chemistry",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    }
+  ]
+}

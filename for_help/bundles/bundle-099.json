@@ -1,0 +1,26 @@
+{
+  "bundle_id": "bundle-099",
+  "bundle_num": 99,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Tamil Nadu General Govt (Part 2/2)",
+  "total_exams": 2,
+  "boards_included": [
+    "Tamil Nadu General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 1150,
+      "id": 5844,
+      "name": "Tamil Nadu General Knowledge",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 6257,
+      "id": 737,
+      "name": "BHEL Tiruchirappalli Trade Apprentice",
+      "group": "Tamil Nadu General Government Exams"
+    }
+  ]
+}

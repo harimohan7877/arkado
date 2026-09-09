@@ -1,0 +1,358 @@
+{
+  "bundle_number": 38,
+  "bundle_id": "raw_bundle_038",
+  "range": "1851 - 1900",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1851,
+      "group_sl": 2688,
+      "exam_id": 4306,
+      "name": "NEET Physics in English",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1852,
+      "group_sl": 2709,
+      "exam_id": 4285,
+      "name": "NEET MDS",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1853,
+      "group_sl": 2710,
+      "exam_id": 4284,
+      "name": "NEET in English",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1854,
+      "group_sl": 2711,
+      "exam_id": 4283,
+      "name": "NEET Chemistry in English",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1855,
+      "group_sl": 2712,
+      "exam_id": 4282,
+      "name": "NEET Botany",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1856,
+      "group_sl": 2739,
+      "exam_id": 4255,
+      "name": "NBEMS Senior Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1857,
+      "group_sl": 2740,
+      "exam_id": 4254,
+      "name": "NBEMS Junior Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1858,
+      "group_sl": 2741,
+      "exam_id": 4253,
+      "name": "NBE Junior Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1859,
+      "group_sl": 2840,
+      "exam_id": 4154,
+      "name": "MPPTCL Line Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1860,
+      "group_sl": 3159,
+      "exam_id": 3835,
+      "name": "Medical Termination of Pregnancy MTP Act",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1861,
+      "group_sl": 3309,
+      "exam_id": 3685,
+      "name": "LHMC Senior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1862,
+      "group_sl": 3311,
+      "exam_id": 3683,
+      "name": "LHMC Junior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1863,
+      "group_sl": 3788,
+      "exam_id": 3206,
+      "name": "JIPMER Senior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1864,
+      "group_sl": 3791,
+      "exam_id": 3203,
+      "name": "JIPMER LDC",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1865,
+      "group_sl": 3792,
+      "exam_id": 3202,
+      "name": "JIPMER",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1866,
+      "group_sl": 3858,
+      "exam_id": 3136,
+      "name": "JCECEB CHO",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1867,
+      "group_sl": 3950,
+      "exam_id": 3044,
+      "name": "IOCL Pipeline Technical Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1868,
+      "group_sl": 3959,
+      "exam_id": 3035,
+      "name": "IOCL Junior Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1869,
+      "group_sl": 4080,
+      "exam_id": 2914,
+      "name": "ILBS Junior Executive Nurse",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1870,
+      "group_sl": 4114,
+      "exam_id": 2880,
+      "name": "IGIMS Sister Grade 2",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1871,
+      "group_sl": 4133,
+      "exam_id": 2861,
+      "name": "ICMR Scientist B Non Medical",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1872,
+      "group_sl": 4134,
+      "exam_id": 2860,
+      "name": "ICMR NIV Technician",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1873,
+      "group_sl": 4135,
+      "exam_id": 2859,
+      "name": "ICMR NIV Technical Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1874,
+      "group_sl": 4136,
+      "exam_id": 2858,
+      "name": "ICMR JRF",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1875,
+      "group_sl": 4137,
+      "exam_id": 2857,
+      "name": "ICMR Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1876,
+      "group_sl": 4293,
+      "exam_id": 2701,
+      "name": "HQ Southern Command Health Inspector",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1877,
+      "group_sl": 4705,
+      "exam_id": 2289,
+      "name": "Geriatric Nurse",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1878,
+      "group_sl": 4707,
+      "exam_id": 2287,
+      "name": "General Surgery",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1879,
+      "group_sl": 4712,
+      "exam_id": 2282,
+      "name": "General Medicine",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1880,
+      "group_sl": 4770,
+      "exam_id": 2224,
+      "name": "FSSAI Technical Officer",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1881,
+      "group_sl": 4771,
+      "exam_id": 2223,
+      "name": "FSSAI Director, Manager",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1882,
+      "group_sl": 4772,
+      "exam_id": 2222,
+      "name": "FSSAI CFSO",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1883,
+      "group_sl": 4773,
+      "exam_id": 2221,
+      "name": "FSSAI Assistant Manager",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1884,
+      "group_sl": 4774,
+      "exam_id": 2220,
+      "name": "FSSAI Administrative Officer",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1885,
+      "group_sl": 4797,
+      "exam_id": 2197,
+      "name": "Food Safety Officer",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1886,
+      "group_sl": 4798,
+      "exam_id": 2196,
+      "name": "FMGE",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1887,
+      "group_sl": 4901,
+      "exam_id": 2093,
+      "name": "Emergency Room Nurse",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1888,
+      "group_sl": 5090,
+      "exam_id": 1904,
+      "name": "DMLT",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1889,
+      "group_sl": 5152,
+      "exam_id": 1842,
+      "name": "DFSL Scientific Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1890,
+      "group_sl": 5546,
+      "exam_id": 1448,
+      "name": "Community Health Officer",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1891,
+      "group_sl": 5547,
+      "exam_id": 1447,
+      "name": "Community Health Nurse",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1892,
+      "group_sl": 5559,
+      "exam_id": 1435,
+      "name": "CNET",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1893,
+      "group_sl": 5612,
+      "exam_id": 1382,
+      "name": "CIL Medical Professionals",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1894,
+      "group_sl": 5694,
+      "exam_id": 1300,
+      "name": "CGHS Medical Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1895,
+      "group_sl": 5766,
+      "exam_id": 1228,
+      "name": "CDSCO Bench Chemist",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1896,
+      "group_sl": 5809,
+      "exam_id": 1185,
+      "name": "Cardiac Care Nurse",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1897,
+      "group_sl": 5984,
+      "exam_id": 1010,
+      "name": "BPSMV Clerk Lab Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1898,
+      "group_sl": 6018,
+      "exam_id": 976,
+      "name": "BPRD Lab Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1899,
+      "group_sl": 1138,
+      "exam_id": 5856,
+      "name": "TDCCB Staff Assistant & Assistant Manager",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1900,
+      "group_sl": 1183,
+      "exam_id": 5811,
+      "name": "SSLR Karnataka Licensed Surveyors",
+      "group": "Karnataka General Government Exams"
+    }
+  ]
+}

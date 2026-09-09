@@ -1,0 +1,358 @@
+{
+  "bundle_number": 16,
+  "bundle_id": "raw_bundle_016",
+  "range": "751 - 800",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 751,
+      "group_sl": 1374,
+      "exam_id": 5620,
+      "name": "Secretariat Administration Department (SAD) Recruitment",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 752,
+      "group_sl": 1450,
+      "exam_id": 5544,
+      "name": "SAI Performance Analyst",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 753,
+      "group_sl": 1451,
+      "exam_id": 5543,
+      "name": "SAI Assistant Coach Wrestling",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 754,
+      "group_sl": 1452,
+      "exam_id": 5542,
+      "name": "SAI Assistant Coach Shooting",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 755,
+      "group_sl": 1453,
+      "exam_id": 5541,
+      "name": "SAI Assistant Coach Boxing",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 756,
+      "group_sl": 1454,
+      "exam_id": 5540,
+      "name": "SAI Assistant Coach Athletics",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 757,
+      "group_sl": 1455,
+      "exam_id": 5539,
+      "name": "SAI Assistant Coach",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 758,
+      "group_sl": 1468,
+      "exam_id": 5526,
+      "name": "Rubber Board Field Officer",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 759,
+      "group_sl": 1822,
+      "exam_id": 5172,
+      "name": "Rajya Sabha Assistant Legislative",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 760,
+      "group_sl": 2077,
+      "exam_id": 4917,
+      "name": "Prasar Bharati Technical Interns",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 761,
+      "group_sl": 2078,
+      "exam_id": 4916,
+      "name": "Prasar Bharati MTS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 762,
+      "group_sl": 2352,
+      "exam_id": 4642,
+      "name": "OFB Group C",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 763,
+      "group_sl": 2353,
+      "exam_id": 4641,
+      "name": "OFB Group B",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 764,
+      "group_sl": 2400,
+      "exam_id": 4594,
+      "name": "NYKS Assistant, LDC & Stenographer",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 765,
+      "group_sl": 2444,
+      "exam_id": 4550,
+      "name": "NTRO Technician A",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 766,
+      "group_sl": 2445,
+      "exam_id": 4549,
+      "name": "NTRO Technical Assistant Electronics",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 767,
+      "group_sl": 2446,
+      "exam_id": 4548,
+      "name": "NTRO Technical Assistant Computer Science",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 768,
+      "group_sl": 2447,
+      "exam_id": 4547,
+      "name": "NTRO Scientist B",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 769,
+      "group_sl": 2448,
+      "exam_id": 4546,
+      "name": "NTRO Aviator",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 770,
+      "group_sl": 2510,
+      "exam_id": 4484,
+      "name": "North East Postal Circle GDS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 771,
+      "group_sl": 3072,
+      "exam_id": 3922,
+      "name": "MOD Tradesman Mate",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 772,
+      "group_sl": 3090,
+      "exam_id": 3904,
+      "name": "Ministry of Defence LDC",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 773,
+      "group_sl": 3091,
+      "exam_id": 3903,
+      "name": "Ministry of Defence Group C",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 774,
+      "group_sl": 3144,
+      "exam_id": 3850,
+      "name": "MGNREGA JTA",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 775,
+      "group_sl": 3147,
+      "exam_id": 3847,
+      "name": "MES Supervisor",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 776,
+      "group_sl": 3148,
+      "exam_id": 3846,
+      "name": "MES Storekeeper",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 777,
+      "group_sl": 3149,
+      "exam_id": 3845,
+      "name": "MES MTS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 778,
+      "group_sl": 3150,
+      "exam_id": 3844,
+      "name": "MES Mate",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 779,
+      "group_sl": 3151,
+      "exam_id": 3843,
+      "name": "MES Draughtsman",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 780,
+      "group_sl": 3152,
+      "exam_id": 3842,
+      "name": "MES Architect Cadre",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 781,
+      "group_sl": 3177,
+      "exam_id": 3817,
+      "name": "MCEME Group C",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 782,
+      "group_sl": 3284,
+      "exam_id": 3710,
+      "name": "Lok Sabha Secretariat Junior Clerk",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 783,
+      "group_sl": 3398,
+      "exam_id": 3596,
+      "name": "KVIC Group B & C",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 784,
+      "group_sl": 3399,
+      "exam_id": 3595,
+      "name": "KVIC Executive Group B",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 785,
+      "group_sl": 3855,
+      "exam_id": 3139,
+      "name": "JCI Junior Inspector",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 786,
+      "group_sl": 3856,
+      "exam_id": 3138,
+      "name": "JCI Junior Assistant",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 787,
+      "group_sl": 4068,
+      "exam_id": 2926,
+      "name": "India Post Staff Car Driver",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 788,
+      "group_sl": 4069,
+      "exam_id": 2925,
+      "name": "India Post Office MTS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 789,
+      "group_sl": 4070,
+      "exam_id": 2924,
+      "name": "India Post Office GDS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 790,
+      "group_sl": 4071,
+      "exam_id": 2923,
+      "name": "India Post Office AAO",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 791,
+      "group_sl": 4073,
+      "exam_id": 2921,
+      "name": "Income Tax Recruitment",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 792,
+      "group_sl": 4140,
+      "exam_id": 2854,
+      "name": "ICFRE Technical Assistant",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 793,
+      "group_sl": 4141,
+      "exam_id": 2853,
+      "name": "ICFRE Scientist B",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 794,
+      "group_sl": 4142,
+      "exam_id": 2852,
+      "name": "ICFRE Forest Conservator",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 795,
+      "group_sl": 4294,
+      "exam_id": 2700,
+      "name": "HQ Northern Command Group C",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 796,
+      "group_sl": 4810,
+      "exam_id": 2184,
+      "name": "FCI Watchman Class IV",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 797,
+      "group_sl": 4812,
+      "exam_id": 2182,
+      "name": "FCI Steno Grade II",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 798,
+      "group_sl": 4817,
+      "exam_id": 2177,
+      "name": "FCI Manager Technical",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 799,
+      "group_sl": 4818,
+      "exam_id": 2176,
+      "name": "FCI Manager Movement",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 800,
+      "group_sl": 4819,
+      "exam_id": 2175,
+      "name": "FCI Manager General, Depot",
+      "group": "Central Govt - General Civil Services Exams"
+    }
+  ]
+}

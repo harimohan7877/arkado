@@ -1,0 +1,480 @@
+{
+  "bundle_id": "bundle-123",
+  "bundle_num": 123,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Maharashtra BMC Municipal Corporation • Himachal Pradesh Police & Security • Maharashtra PCMC Municipal Corporation",
+  "total_exams": 75,
+  "boards_included": [
+    "Maharashtra BMC Municipal Corporation",
+    "Himachal Pradesh Police & Security",
+    "Maharashtra PCMC Municipal Corporation",
+    "Andhra Pradesh General Govt",
+    "Maharashtra NMMC Municipal Corporation",
+    "Kerala Police & Security",
+    "Himachal Pradesh HPU",
+    "Mizoram PSC",
+    "Punjab BFUHS",
+    "General Subjects - IT & Advanced Tech",
+    "Telangana Police & Security",
+    "Punjab High Court & Court",
+    "Punjab PSPCL",
+    "Maharashtra PMC Municipal Corporation",
+    "Maharashtra NMC Municipal Corporation",
+    "Himachal Pradesh HPCET Entrance",
+    "Gujarat Transport & Roadways"
+  ],
+  "exams": [
+    {
+      "sl": 2067,
+      "id": 4927,
+      "name": "PSPCL Revenue Accountant",
+      "group": "Punjab PSPCL Exams"
+    },
+    {
+      "sl": 2068,
+      "id": 4926,
+      "name": "PSPCL LDC",
+      "group": "Punjab PSPCL Exams"
+    },
+    {
+      "sl": 2069,
+      "id": 4925,
+      "name": "PSPCL JE Electrical",
+      "group": "Punjab PSPCL Exams"
+    },
+    {
+      "sl": 2070,
+      "id": 4924,
+      "name": "PSPCL JE Civil",
+      "group": "Punjab PSPCL Exams"
+    },
+    {
+      "sl": 2071,
+      "id": 4923,
+      "name": "PSPCL Assistant Lineman",
+      "group": "Punjab PSPCL Exams"
+    },
+    {
+      "sl": 2516,
+      "id": 4478,
+      "name": "NMMC Ward Boy",
+      "group": "Maharashtra NMMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2520,
+      "id": 4474,
+      "name": "NMMC JE",
+      "group": "Maharashtra NMMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2521,
+      "id": 4473,
+      "name": "NMMC Clerk Typist",
+      "group": "Maharashtra NMMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2522,
+      "id": 4472,
+      "name": "NMMC Ayah",
+      "group": "Maharashtra NMMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2524,
+      "id": 4470,
+      "name": "NMMC Accounts Clerk",
+      "group": "Maharashtra NMMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 3081,
+      "id": 3913,
+      "name": "Mizoram PSC UDC",
+      "group": "Mizoram PSC Exams"
+    },
+    {
+      "sl": 3082,
+      "id": 3912,
+      "name": "Mizoram PSC Nursing Officer",
+      "group": "Mizoram PSC Exams"
+    },
+    {
+      "sl": 3083,
+      "id": 3911,
+      "name": "Mizoram PSC Junior Engineer",
+      "group": "Mizoram PSC Exams"
+    },
+    {
+      "sl": 3084,
+      "id": 3910,
+      "name": "Mizoram PSC Headmaster",
+      "group": "Mizoram PSC Exams"
+    },
+    {
+      "sl": 3085,
+      "id": 3909,
+      "name": "Mizoram PSC Assistant Grade, UDC",
+      "group": "Mizoram PSC Exams"
+    },
+    {
+      "sl": 3274,
+      "id": 3720,
+      "name": "Machine Learning",
+      "group": "General Subjects - IT & Advanced Tech"
+    },
+    {
+      "sl": 3295,
+      "id": 3699,
+      "name": "Linguistics",
+      "group": "General Subjects - IT & Advanced Tech"
+    },
+    {
+      "sl": 3979,
+      "id": 3015,
+      "name": "Information Technology",
+      "group": "General Subjects - IT & Advanced Tech"
+    },
+    {
+      "sl": 5250,
+      "id": 1744,
+      "name": "Data Analytics",
+      "group": "General Subjects - IT & Advanced Tech"
+    },
+    {
+      "sl": 5253,
+      "id": 1741,
+      "name": "Cyber Security",
+      "group": "General Subjects - IT & Advanced Tech"
+    },
+    {
+      "sl": 4473,
+      "id": 2521,
+      "name": "HP Postman Mail Guard",
+      "group": "Himachal Pradesh Police & Security Exams"
+    },
+    {
+      "sl": 4475,
+      "id": 2519,
+      "name": "HP Police SI",
+      "group": "Himachal Pradesh Police & Security Exams"
+    },
+    {
+      "sl": 4476,
+      "id": 2518,
+      "name": "HP Police Constable",
+      "group": "Himachal Pradesh Police & Security Exams"
+    },
+    {
+      "sl": 4478,
+      "id": 2516,
+      "name": "HP Jail Warder",
+      "group": "Himachal Pradesh Police & Security Exams"
+    },
+    {
+      "sl": 4482,
+      "id": 2512,
+      "name": "HP Forest Guard",
+      "group": "Himachal Pradesh Police & Security Exams"
+    },
+    {
+      "sl": 6060,
+      "id": 934,
+      "name": "BMC JE SE Architecture",
+      "group": "Maharashtra BMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 6061,
+      "id": 933,
+      "name": "BMC JE Electrical",
+      "group": "Maharashtra BMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 6062,
+      "id": 932,
+      "name": "BMC JE Civil",
+      "group": "Maharashtra BMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 6063,
+      "id": 931,
+      "name": "BMC JE",
+      "group": "Maharashtra BMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 6064,
+      "id": 930,
+      "name": "BMC Fireman",
+      "group": "Maharashtra BMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 6281,
+      "id": 713,
+      "name": "BFUHS Technician",
+      "group": "Punjab BFUHS Exams"
+    },
+    {
+      "sl": 6282,
+      "id": 712,
+      "name": "BFUHS Staff Nurse",
+      "group": "Punjab BFUHS Exams"
+    },
+    {
+      "sl": 6283,
+      "id": 711,
+      "name": "BFUHS MPHW",
+      "group": "Punjab BFUHS Exams"
+    },
+    {
+      "sl": 6284,
+      "id": 710,
+      "name": "BFUHS Medical Officer",
+      "group": "Punjab BFUHS Exams"
+    },
+    {
+      "sl": 6285,
+      "id": 709,
+      "name": "BFUHS Assistant Professor",
+      "group": "Punjab BFUHS Exams"
+    },
+    {
+      "sl": 829,
+      "id": 6165,
+      "name": "TSPSC Excise SI",
+      "group": "Telangana Police & Security Exams"
+    },
+    {
+      "sl": 1117,
+      "id": 5877,
+      "name": "Telangana Police SI",
+      "group": "Telangana Police & Security Exams"
+    },
+    {
+      "sl": 1118,
+      "id": 5876,
+      "name": "Telangana Police Constable",
+      "group": "Telangana Police & Security Exams"
+    },
+    {
+      "sl": 1119,
+      "id": 5875,
+      "name": "Telangana Police APP",
+      "group": "Telangana Police & Security Exams"
+    },
+    {
+      "sl": 1801,
+      "id": 5193,
+      "name": "RCUES AP Junior Assistant",
+      "group": "Andhra Pradesh General Government Exams"
+    },
+    {
+      "sl": 2752,
+      "id": 4242,
+      "name": "Naval Dockyard Visakhapatnam Apprentice",
+      "group": "Andhra Pradesh General Government Exams"
+    },
+    {
+      "sl": 4830,
+      "id": 2164,
+      "name": "FCI Andhra Pradesh Watchman",
+      "group": "Andhra Pradesh General Government Exams"
+    },
+    {
+      "sl": 5749,
+      "id": 1245,
+      "name": "CFW AP MLHP",
+      "group": "Andhra Pradesh General Government Exams"
+    },
+    {
+      "sl": 2093,
+      "id": 4901,
+      "name": "PPSC Civil Judge",
+      "group": "Punjab High Court & Court Exams"
+    },
+    {
+      "sl": 3275,
+      "id": 3719,
+      "name": "Ludhiana District Court Clerk",
+      "group": "Punjab High Court & Court Exams"
+    },
+    {
+      "sl": 3276,
+      "id": 3718,
+      "name": "Ludhiana Court Clerk",
+      "group": "Punjab High Court & Court Exams"
+    },
+    {
+      "sl": 6357,
+      "id": 637,
+      "name": "Bathinda District Court Clerk",
+      "group": "Punjab High Court & Court Exams"
+    },
+    {
+      "sl": 2120,
+      "id": 4874,
+      "name": "PMC Management Trainee",
+      "group": "Maharashtra PMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2121,
+      "id": 4873,
+      "name": "PMC Lab Technician",
+      "group": "Maharashtra PMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2122,
+      "id": 4872,
+      "name": "PMC JE",
+      "group": "Maharashtra PMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2123,
+      "id": 4871,
+      "name": "PMC Apprentice",
+      "group": "Maharashtra PMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2186,
+      "id": 4808,
+      "name": "PCMC Group B, C JE",
+      "group": "Maharashtra PCMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2187,
+      "id": 4807,
+      "name": "PCMC Group B, C Clerk",
+      "group": "Maharashtra PCMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2188,
+      "id": 4806,
+      "name": "PCMC Group B, C",
+      "group": "Maharashtra PCMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2189,
+      "id": 4805,
+      "name": "PCMC Computer Operator",
+      "group": "Maharashtra PCMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2533,
+      "id": 4461,
+      "name": "NMC Junior Engineer",
+      "group": "Maharashtra NMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2534,
+      "id": 4460,
+      "name": "NMC Fireman",
+      "group": "Maharashtra NMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2535,
+      "id": 4459,
+      "name": "NMC Assistant Junior Engineer",
+      "group": "Maharashtra NMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 2536,
+      "id": 4458,
+      "name": "NMC Assistant Engineer",
+      "group": "Maharashtra NMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 3406,
+      "id": 3588,
+      "name": "KSRTC Security Guard",
+      "group": "Kerala Police & Security Exams"
+    },
+    {
+      "sl": 3537,
+      "id": 3457,
+      "name": "Kerala Postal Circle Postman Mail Guard",
+      "group": "Kerala Police & Security Exams"
+    },
+    {
+      "sl": 3539,
+      "id": 3455,
+      "name": "Kerala Police Constable",
+      "group": "Kerala Police & Security Exams"
+    },
+    {
+      "sl": 3561,
+      "id": 3433,
+      "name": "KDRB Peon, Strongroom Guard",
+      "group": "Kerala Police & Security Exams"
+    },
+    {
+      "sl": 4295,
+      "id": 2699,
+      "name": "HPU Clerk",
+      "group": "Himachal Pradesh HPU Exams"
+    },
+    {
+      "sl": 4296,
+      "id": 2698,
+      "name": "HPU AE Mechanical",
+      "group": "Himachal Pradesh HPU Exams"
+    },
+    {
+      "sl": 4297,
+      "id": 2697,
+      "name": "HPU AE Electrical",
+      "group": "Himachal Pradesh HPU Exams"
+    },
+    {
+      "sl": 4298,
+      "id": 2696,
+      "name": "HPU AE Civil",
+      "group": "Himachal Pradesh HPU Exams"
+    },
+    {
+      "sl": 4436,
+      "id": 2558,
+      "name": "HPCET MSc Physics",
+      "group": "Himachal Pradesh HPCET Entrance Exams"
+    },
+    {
+      "sl": 4437,
+      "id": 2557,
+      "name": "HPCET MSc Environmental Sciences",
+      "group": "Himachal Pradesh HPCET Entrance Exams"
+    },
+    {
+      "sl": 4438,
+      "id": 2556,
+      "name": "HPCET MCA and MBA",
+      "group": "Himachal Pradesh HPCET Entrance Exams"
+    },
+    {
+      "sl": 4439,
+      "id": 2555,
+      "name": "HPCET BSc",
+      "group": "Himachal Pradesh HPCET Entrance Exams"
+    },
+    {
+      "sl": 4605,
+      "id": 2389,
+      "name": "GSRTC Traffic Controller",
+      "group": "Gujarat Transport & Roadways Exams"
+    },
+    {
+      "sl": 4606,
+      "id": 2388,
+      "name": "GSRTC Helper",
+      "group": "Gujarat Transport & Roadways Exams"
+    },
+    {
+      "sl": 4607,
+      "id": 2387,
+      "name": "GSRTC Driver",
+      "group": "Gujarat Transport & Roadways Exams"
+    },
+    {
+      "sl": 4608,
+      "id": 2386,
+      "name": "GSRTC Conductor",
+      "group": "Gujarat Transport & Roadways Exams"
+    }
+  ]
+}

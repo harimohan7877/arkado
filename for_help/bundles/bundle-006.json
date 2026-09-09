@@ -1,0 +1,65 @@
+{
+  "bundle_id": "bundle-006",
+  "bundle_num": 6,
+  "category_id": "rajasthan",
+  "category_name": "राजस्थान",
+  "category_icon": "🚩",
+  "title": "राजस्थान — ऊर्जा विभाग एवं अन्य राज्य निगम",
+  "total_exams": 5,
+  "boards_included": [
+    "RVUNL & निगम"
+  ],
+  "official_portal": "https://energy.rajasthan.gov.in",
+  "exams": [
+    {
+      "id": 5530,
+      "name": "RVUNL कनिष्ठ अभियंता (JEN - Civil, Elect, Mech)",
+      "eligibility": "B.Tech / Diploma",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "80,000",
+      "exam_pattern": "CBT (भाग-A तकनीकी 60 + भाग-B सामान्य ज्ञान 40)",
+      "viral_subtext": "पावर कंपनियां (RVUNL, RVPNL, JVVNL)",
+      "status": "verified"
+    },
+    {
+      "id": 5531,
+      "name": "RVUNL कनिष्ठ सहायक व कमर्शियल असिस्टेंट-II",
+      "eligibility": "स्नातक + RSCIT",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "1.5 लाख",
+      "exam_pattern": "लिखित परीक्षा + कंप्यूटर टाइपिंग टेस्ट",
+      "viral_subtext": "विद्युत वितरण निगम",
+      "status": "verified"
+    },
+    {
+      "id": 3400,
+      "name": "JVVNL टेक्निकल हेल्पर सीधी भर्ती",
+      "eligibility": "10वीं + ITI (इलेक्ट्रीशियन/लाइनमैन)",
+      "age_limit": "18-28 वर्ष",
+      "applicant_scale": "1.8 लाख",
+      "exam_pattern": "प्री + मेन्स CBT परीक्षा",
+      "viral_subtext": "बिजली वितरण निगम",
+      "status": "verified"
+    },
+    {
+      "id": 5227,
+      "name": "RIICO कनिष्ठ सहायक एवं आशुलिपिक",
+      "eligibility": "12वीं + कंप्यूटर / आशुलिपि",
+      "age_limit": "18-40 वर्ष",
+      "applicant_scale": "50,000",
+      "exam_pattern": "लिखित परीक्षा + स्किल टेस्ट",
+      "viral_subtext": "औद्योगिक विकास निगम",
+      "status": "verified"
+    },
+    {
+      "id": 5138,
+      "name": "Rajasthan SET (राज्य पात्रता परीक्षा - सभी विषय)",
+      "eligibility": "मास्टर डिग्री (55%)",
+      "age_limit": "कोई ऊपरी आयु सीमा नहीं",
+      "applicant_scale": "1.2 लाख",
+      "exam_pattern": "Paper-1 (शिक्षण अभिक्षमता 100) + Paper-2 (विषय 200)",
+      "viral_subtext": "GGTU बांसवाड़ा द्वारा आयोजित",
+      "status": "verified"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "bundle_number": 13,
+  "bundle_id": "raw_bundle_013",
+  "range": "601 - 650",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 601,
+      "group_sl": 561,
+      "exam_id": 6433,
+      "name": "UP B.ED JEE Agriculture",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 602,
+      "group_sl": 562,
+      "exam_id": 6432,
+      "name": "UP B.Ed",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 603,
+      "group_sl": 563,
+      "exam_id": 6431,
+      "name": "UP Assistant Teacher",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 604,
+      "group_sl": 173,
+      "exam_id": 6821,
+      "name": "Vishva Bharti Kaushal Vikas Mission Centre Coordinator",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 605,
+      "group_sl": 293,
+      "exam_id": 6701,
+      "name": "UPSC Assistant Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 606,
+      "group_sl": 1099,
+      "exam_id": 5895,
+      "name": "TGT Vigyan (Science) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 607,
+      "group_sl": 1100,
+      "exam_id": 5894,
+      "name": "TGT Social Science",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 608,
+      "group_sl": 1101,
+      "exam_id": 5893,
+      "name": "TGT Science",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 609,
+      "group_sl": 1102,
+      "exam_id": 5892,
+      "name": "TGT Samajik Vigyan (Social Science) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 610,
+      "group_sl": 1103,
+      "exam_id": 5891,
+      "name": "TGT English",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 611,
+      "group_sl": 1107,
+      "exam_id": 5887,
+      "name": "TET Social Studies & Science Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 612,
+      "group_sl": 1108,
+      "exam_id": 5886,
+      "name": "TET Social Studies & Science",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 613,
+      "group_sl": 1109,
+      "exam_id": 5885,
+      "name": "TET Mathematics and Science in Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 614,
+      "group_sl": 1110,
+      "exam_id": 5884,
+      "name": "TET Mathematics and Science",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 615,
+      "group_sl": 1135,
+      "exam_id": 5859,
+      "name": "Teaching Methodology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 616,
+      "group_sl": 1136,
+      "exam_id": 5858,
+      "name": "Teaching Aptitude and Attitude Test",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 617,
+      "group_sl": 1137,
+      "exam_id": 5857,
+      "name": "Teaching Aptitude & Attitude Test",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 618,
+      "group_sl": 1162,
+      "exam_id": 5832,
+      "name": "Super TET Paper 2 Social Studies",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 619,
+      "group_sl": 1163,
+      "exam_id": 5831,
+      "name": "Super TET Paper 2",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 620,
+      "group_sl": 1164,
+      "exam_id": 5830,
+      "name": "Super TET",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 621,
+      "group_sl": 1167,
+      "exam_id": 5827,
+      "name": "STET Social Science & Pedagogy",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 622,
+      "group_sl": 1168,
+      "exam_id": 5826,
+      "name": "STET Science & Pedagogy",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 623,
+      "group_sl": 1169,
+      "exam_id": 5825,
+      "name": "STET Sanskrit",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 624,
+      "group_sl": 1170,
+      "exam_id": 5824,
+      "name": "STET Mathematics & Pedagogy",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 625,
+      "group_sl": 1171,
+      "exam_id": 5823,
+      "name": "STET Hindi Language & Pedagogy",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 626,
+      "group_sl": 1172,
+      "exam_id": 5822,
+      "name": "STET Environmental Studies & Pedagogy",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 627,
+      "group_sl": 1173,
+      "exam_id": 5821,
+      "name": "STET English Language & Pedagogy",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 628,
+      "group_sl": 1174,
+      "exam_id": 5820,
+      "name": "STET Child Development & Pedagogy",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 629,
+      "group_sl": 1220,
+      "exam_id": 5774,
+      "name": "SSB Silvassa TGT PGT Physics",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 630,
+      "group_sl": 1221,
+      "exam_id": 5773,
+      "name": "SSB Silvassa TGT PGT Mathematics",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 631,
+      "group_sl": 1222,
+      "exam_id": 5772,
+      "name": "SSB Silvassa TGT PGT",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 632,
+      "group_sl": 2124,
+      "exam_id": 4870,
+      "name": "PM Yasasvi Scholarship Class 9",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 633,
+      "group_sl": 2125,
+      "exam_id": 4869,
+      "name": "PM Yasasvi Scholarship",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 634,
+      "group_sl": 2140,
+      "exam_id": 4854,
+      "name": "PGT Vanijya (Commerce) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 635,
+      "group_sl": 2141,
+      "exam_id": 4853,
+      "name": "PGT Vanijya (Commerce)",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 636,
+      "group_sl": 2142,
+      "exam_id": 4852,
+      "name": "PGT TGT Biotechnology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 637,
+      "group_sl": 2143,
+      "exam_id": 4851,
+      "name": "PGT Sociology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 638,
+      "group_sl": 2144,
+      "exam_id": 4850,
+      "name": "PGT Samajsastra Sociology Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 639,
+      "group_sl": 2145,
+      "exam_id": 4849,
+      "name": "PGT Rashayan Vigyan (Chemistry) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 640,
+      "group_sl": 2146,
+      "exam_id": 4848,
+      "name": "PGT Rashayan Vigyan (Chemistry)",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 641,
+      "group_sl": 2147,
+      "exam_id": 4847,
+      "name": "PGT Mathematics",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 642,
+      "group_sl": 2148,
+      "exam_id": 4846,
+      "name": "PGT Jeev Vigyan (Biology) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 643,
+      "group_sl": 2149,
+      "exam_id": 4845,
+      "name": "PGT Jeev Vigyan (Biology)",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 644,
+      "group_sl": 2150,
+      "exam_id": 4844,
+      "name": "PGT Itihaas (History) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 645,
+      "group_sl": 2151,
+      "exam_id": 4843,
+      "name": "PGT History",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 646,
+      "group_sl": 2152,
+      "exam_id": 4842,
+      "name": "PGT Grah Vigyan (Home Science) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 647,
+      "group_sl": 2153,
+      "exam_id": 4841,
+      "name": "PGT Grah Vigyan (Home Science)",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 648,
+      "group_sl": 2154,
+      "exam_id": 4840,
+      "name": "PGT Ganit (Mathematics) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 649,
+      "group_sl": 2155,
+      "exam_id": 4839,
+      "name": "PGT Bhugol (Geography) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 650,
+      "group_sl": 2156,
+      "exam_id": 4838,
+      "name": "PGT Bhugol (Geography)",
+      "group": "National Academics - Other Central Academic & School Exams"
+    }
+  ]
+}

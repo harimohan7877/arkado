@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-035",
+  "bundle_num": 35,
+  "category_id": "ssc",
+  "category_name": "SSC आयोग",
+  "category_icon": "🏛️",
+  "title": "SSC आयोग — Jharkhand JSSC (Part 1/2)",
+  "total_exams": 60,
+  "boards_included": [
+    "Jharkhand JSSC"
+  ],
+  "exams": [
+    {
+      "sl": 3599,
+      "id": 3395,
+      "name": "JSSC TGT Teacher Sociology",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3600,
+      "id": 3394,
+      "name": "JSSC TGT Teacher Political Science",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3601,
+      "id": 3393,
+      "name": "JSSC TGT Teacher Physics",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3602,
+      "id": 3392,
+      "name": "JSSC TGT Teacher Paper 1 and 2",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3603,
+      "id": 3391,
+      "name": "JSSC TGT Teacher Mathematics",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3604,
+      "id": 3390,
+      "name": "JSSC TGT Teacher History",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3605,
+      "id": 3389,
+      "name": "JSSC TGT Teacher Hindi",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3606,
+      "id": 3388,
+      "name": "JSSC TGT Teacher Geography",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3607,
+      "id": 3387,
+      "name": "JSSC TGT Teacher Economics",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3608,
+      "id": 3386,
+      "name": "JSSC TGT Teacher Chemistry",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3609,
+      "id": 3385,
+      "name": "JSSC TGT Teacher Biology",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3610,
+      "id": 3384,
+      "name": "JSSC TGT Teacher Accountancy",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3611,
+      "id": 3383,
+      "name": "JSSC TGT Paper 3",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3612,
+      "id": 3382,
+      "name": "JSSC Stenographer",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3613,
+      "id": 3381,
+      "name": "JSSC Special Teacher JIGTSEATCCE Paper 2",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3614,
+      "id": 3380,
+      "name": "JSSC Special Teacher JIGTSEATCCE Paper 1",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3615,
+      "id": 3379,
+      "name": "JSSC Special Teacher JIGTSEATCCE Intermediate Level Paper 3",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3616,
+      "id": 3378,
+      "name": "JSSC Special Teacher JIGTSEATCCE Graduate Level Social Science",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3617,
+      "id": 3377,
+      "name": "JSSC Special Teacher JIGTSEATCCE Graduate Level Paper 3",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3618,
+      "id": 3376,
+      "name": "JSSC Special Teacher JIGTSEATCCE Graduate Level Mathematics and Science",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3619,
+      "id": 3375,
+      "name": "JSSC Special Teacher JIGTSEATCCE Graduate Level Language Teacher Sanskrit",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3620,
+      "id": 3374,
+      "name": "JSSC Special Teacher JIGTSEATCCE Graduate Level Language Teacher Hindi",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3621,
+      "id": 3373,
+      "name": "JSSC Special Teacher JIGTSEATCCE Graduate Level Language Teacher English",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3622,
+      "id": 3372,
+      "name": "JSSC Special Teacher JIGTSEATCCE Graduate Level Commerce",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3623,
+      "id": 3371,
+      "name": "JSSC Special Branch Constable",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3624,
+      "id": 3370,
+      "name": "JSSC Secondary Teacher Sociology",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3625,
+      "id": 3369,
+      "name": "JSSC Secondary Teacher Psychology",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3626,
+      "id": 3368,
+      "name": "JSSC Secondary Teacher Political Science",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3627,
+      "id": 3367,
+      "name": "JSSC Secondary Teacher Philosophy",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3628,
+      "id": 3366,
+      "name": "JSSC Secondary Teacher Home Science",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3629,
+      "id": 3365,
+      "name": "JSSC Secondary Teacher Geology",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3630,
+      "id": 3364,
+      "name": "JSSC Secondary Teacher Cyber Security and Data Science",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3631,
+      "id": 3363,
+      "name": "JSSC Secondary Teacher Computer Science",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3632,
+      "id": 3362,
+      "name": "JSSC Secondary Teacher Artificial Intelligence and Coding",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3633,
+      "id": 3361,
+      "name": "JSSC Secondary Teacher Applied English",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3634,
+      "id": 3360,
+      "name": "JSSC Secondary Teacher Anthropology",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3635,
+      "id": 3359,
+      "name": "JSSC Secondary Special Education Teacher",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3636,
+      "id": 3358,
+      "name": "JSSC Scientific Assistant",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3637,
+      "id": 3357,
+      "name": "JSSC Primary Teacher",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3638,
+      "id": 3356,
+      "name": "JSSC Police SI",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3639,
+      "id": 3355,
+      "name": "JSSC PGT Teacher Sanskrit",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3640,
+      "id": 3354,
+      "name": "JSSC PGT Teacher Physics",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3641,
+      "id": 3353,
+      "name": "JSSC PGT Teacher Paper 1",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3642,
+      "id": 3352,
+      "name": "JSSC PGT Teacher Mathematics",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3643,
+      "id": 3351,
+      "name": "JSSC PGT Teacher History",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3644,
+      "id": 3350,
+      "name": "JSSC PGT Teacher Hindi",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3645,
+      "id": 3349,
+      "name": "JSSC PGT Teacher Geography",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3646,
+      "id": 3348,
+      "name": "JSSC PGT Teacher English",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3647,
+      "id": 3347,
+      "name": "JSSC PGT Teacher Economics",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3648,
+      "id": 3346,
+      "name": "JSSC PGT Teacher Commerce",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3649,
+      "id": 3345,
+      "name": "JSSC PGT Teacher Chemistry",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3650,
+      "id": 3344,
+      "name": "JSSC PGT Teacher Biology",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3651,
+      "id": 3343,
+      "name": "JSSC Paramedical JJPSCCE ANM",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3652,
+      "id": 3342,
+      "name": "JSSC LDC",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3653,
+      "id": 3341,
+      "name": "JSSC Lady Supervisor",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3654,
+      "id": 3340,
+      "name": "JSSC Lab Assistant Physics",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3655,
+      "id": 3339,
+      "name": "JSSC Lab Assistant Paper 1",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3656,
+      "id": 3338,
+      "name": "JSSC Lab Assistant Chemistry",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3657,
+      "id": 3337,
+      "name": "JSSC Lab Assistant Biology",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3658,
+      "id": 3336,
+      "name": "JSSC JTGLCCE Inspector",
+      "group": "Jharkhand JSSC Exams"
+    }
+  ]
+}

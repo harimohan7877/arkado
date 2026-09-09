@@ -1,0 +1,358 @@
+{
+  "bundle_number": 57,
+  "bundle_id": "raw_bundle_057",
+  "range": "2801 - 2850",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 2801,
+      "group_sl": 1541,
+      "exam_id": 5453,
+      "name": "RSMSSB NHM Block Program Officer",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2802,
+      "group_sl": 1542,
+      "exam_id": 5452,
+      "name": "RSMSSB NHM Bio Medical Engineer",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2803,
+      "group_sl": 1543,
+      "exam_id": 5451,
+      "name": "RSMSSB NHM Audiologist",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2804,
+      "group_sl": 1544,
+      "exam_id": 5450,
+      "name": "RSMSSB NHM Accounts Assistant",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2805,
+      "group_sl": 1545,
+      "exam_id": 5449,
+      "name": "RSMSSB MVSI",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2806,
+      "group_sl": 1546,
+      "exam_id": 5448,
+      "name": "RSMSSB Mine Foreman",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2807,
+      "group_sl": 1547,
+      "exam_id": 5447,
+      "name": "RSMSSB Lab Assistant Home Science",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2808,
+      "group_sl": 1548,
+      "exam_id": 5446,
+      "name": "RSMSSB Lab Assistant Geography",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2809,
+      "group_sl": 1549,
+      "exam_id": 5445,
+      "name": "RSMSSB Lab Assistant",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2810,
+      "group_sl": 1550,
+      "exam_id": 5444,
+      "name": "RSMSSB Junior Technical Assistant",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2811,
+      "group_sl": 1551,
+      "exam_id": 5443,
+      "name": "RSMSSB Junior Scientific Assistant",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2812,
+      "group_sl": 1552,
+      "exam_id": 5442,
+      "name": "RSMSSB Junior Instructor",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2813,
+      "group_sl": 1553,
+      "exam_id": 5441,
+      "name": "RSMSSB Junior Accountant",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2814,
+      "group_sl": 1554,
+      "exam_id": 5440,
+      "name": "RSMSSB JE Mechanical",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2815,
+      "group_sl": 1555,
+      "exam_id": 5439,
+      "name": "RSMSSB JE Electrical",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2816,
+      "group_sl": 1556,
+      "exam_id": 5438,
+      "name": "RSMSSB JE Civil",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2817,
+      "group_sl": 1557,
+      "exam_id": 5437,
+      "name": "RSMSSB JE Agriculture",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2818,
+      "group_sl": 1558,
+      "exam_id": 5436,
+      "name": "RSMSSB Investigator",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2819,
+      "group_sl": 1559,
+      "exam_id": 5435,
+      "name": "RSMSSB Information Assistant",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2820,
+      "group_sl": 1560,
+      "exam_id": 5434,
+      "name": "RSMSSB Hostel Superintendent",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2821,
+      "group_sl": 1561,
+      "exam_id": 5433,
+      "name": "RSMSSB Grade 4",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2822,
+      "group_sl": 1562,
+      "exam_id": 5432,
+      "name": "RSMSSB GNM",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2823,
+      "group_sl": 1563,
+      "exam_id": 5431,
+      "name": "RSMSSB Fireman, AFO",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2824,
+      "group_sl": 1564,
+      "exam_id": 5430,
+      "name": "RSMSSB Driver",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2825,
+      "group_sl": 1565,
+      "exam_id": 5429,
+      "name": "RSMSSB Conductor",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2826,
+      "group_sl": 1566,
+      "exam_id": 5428,
+      "name": "RSMSSB APRO",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2827,
+      "group_sl": 1567,
+      "exam_id": 5427,
+      "name": "RSMSSB ANM",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2828,
+      "group_sl": 1568,
+      "exam_id": 5426,
+      "name": "RSMSSB Animal Attendant",
+      "group": "Rajasthan RSMSSB Exams"
+    },
+    {
+      "global_sl": 2829,
+      "group_sl": 4146,
+      "exam_id": 2848,
+      "name": "ICDS Kaimur Anganwadi Worker",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2830,
+      "group_sl": 4148,
+      "exam_id": 2846,
+      "name": "ICDS Bihar Lady Supervisor",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2831,
+      "group_sl": 4149,
+      "exam_id": 2845,
+      "name": "ICDS Bihar Anganwadi Worker & Assistant",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2832,
+      "group_sl": 4150,
+      "exam_id": 2844,
+      "name": "ICDS Bihar Anganwadi Sevika, Sahayika",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2833,
+      "group_sl": 5935,
+      "exam_id": 1059,
+      "name": "BSEB Sakshamta Pariksha Secondary School Teacher Social Science",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2834,
+      "group_sl": 5936,
+      "exam_id": 1058,
+      "name": "BSEB Sakshamta Pariksha Secondary School Teacher Science",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2835,
+      "group_sl": 5937,
+      "exam_id": 1057,
+      "name": "BSEB Sakshamta Pariksha Secondary School Teacher Sanskrit",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2836,
+      "group_sl": 5938,
+      "exam_id": 1056,
+      "name": "BSEB Sakshamta Pariksha Secondary School Teacher Mathematics",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2837,
+      "group_sl": 5939,
+      "exam_id": 1055,
+      "name": "BSEB Sakshamta Pariksha Secondary School Teacher Hindi",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2838,
+      "group_sl": 5940,
+      "exam_id": 1054,
+      "name": "BSEB Sakshamta Pariksha Secondary School Teacher English",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2839,
+      "group_sl": 5941,
+      "exam_id": 1053,
+      "name": "BSEB Sakshamta Pariksha Secondary School Teacher Economics",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2840,
+      "group_sl": 5942,
+      "exam_id": 1052,
+      "name": "BSEB Sakshamta Pariksha Primary Teacher",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2841,
+      "group_sl": 5944,
+      "exam_id": 1050,
+      "name": "BSEB Sakshamta Pariksha Middle School Teacher Social Science",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2842,
+      "group_sl": 5945,
+      "exam_id": 1049,
+      "name": "BSEB Sakshamta Pariksha Middle School Teacher Sanskrit",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2843,
+      "group_sl": 5946,
+      "exam_id": 1048,
+      "name": "BSEB Sakshamta Pariksha Middle School Teacher Maths, Science",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2844,
+      "group_sl": 5947,
+      "exam_id": 1047,
+      "name": "BSEB Sakshamta Pariksha Middle School Teacher Hindi",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2845,
+      "group_sl": 5948,
+      "exam_id": 1046,
+      "name": "BSEB Sakshamta Pariksha Middle School Teacher English",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2846,
+      "group_sl": 5987,
+      "exam_id": 1007,
+      "name": "BPSC Teacher General Studies",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2847,
+      "group_sl": 5990,
+      "exam_id": 1004,
+      "name": "BPSC Special School Teacher",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2848,
+      "group_sl": 5991,
+      "exam_id": 1003,
+      "name": "BPSC Primary Teacher",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2849,
+      "group_sl": 5994,
+      "exam_id": 1000,
+      "name": "BPSC Middle School Teacher Social Science",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2850,
+      "group_sl": 5995,
+      "exam_id": 999,
+      "name": "BPSC Middle School Teacher Maths & Science",
+      "group": "Bihar Teaching & School Exams"
+    }
+  ]
+}

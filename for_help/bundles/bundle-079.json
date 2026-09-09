@@ -1,0 +1,473 @@
+{
+  "bundle_id": "bundle-079",
+  "bundle_num": 79,
+  "category_id": "engineering-psu",
+  "category_name": "इंजीनियरिंग & PSU",
+  "category_icon": "⚙️",
+  "title": "इंजीनियरिंग & PSU — Engineering & PSU - NHPC • Engineering & PSU - RITES • Engineering & PSU - NFL",
+  "total_exams": 74,
+  "boards_included": [
+    "Engineering & PSU - NHPC",
+    "Engineering & PSU - RITES",
+    "Engineering & PSU - NFL",
+    "Engineering & PSU - NALCO",
+    "Engineering & PSU - MIDHANI",
+    "Engineering & PSU - OIL",
+    "Engineering & PSU - CWC",
+    "Engineering & PSU - ONGC",
+    "Engineering & PSU - Telecom Sector",
+    "Engineering & PSU - SAMEER",
+    "Engineering & PSU - MRPL",
+    "Engineering & PSU - SPMCIL",
+    "Engineering & PSU - SJVN",
+    "Engineering & PSU - HCL",
+    "Engineering & PSU - BDL",
+    "Engineering & PSU - HAL"
+  ],
+  "exams": [
+    {
+      "sl": 1301,
+      "id": 5693,
+      "name": "SJVN Workman Trainee",
+      "group": "Engineering & PSU - SJVN Exams"
+    },
+    {
+      "sl": 1302,
+      "id": 5692,
+      "name": "SJVN Junior Field Engineer Mechanical",
+      "group": "Engineering & PSU - SJVN Exams"
+    },
+    {
+      "sl": 1303,
+      "id": 5691,
+      "name": "SJVN Junior Field Engineer Electrical",
+      "group": "Engineering & PSU - SJVN Exams"
+    },
+    {
+      "sl": 1304,
+      "id": 5690,
+      "name": "SJVN Junior Field Engineer Civil",
+      "group": "Engineering & PSU - SJVN Exams"
+    },
+    {
+      "sl": 1306,
+      "id": 5688,
+      "name": "SJVN Executive Trainee",
+      "group": "Engineering & PSU - SJVN Exams"
+    },
+    {
+      "sl": 1307,
+      "id": 5687,
+      "name": "SJVN Apprentice",
+      "group": "Engineering & PSU - SJVN Exams"
+    },
+    {
+      "sl": 2596,
+      "id": 4398,
+      "name": "NHPC Trainee Engineer",
+      "group": "Engineering & PSU - NHPC Exams"
+    },
+    {
+      "sl": 2597,
+      "id": 4397,
+      "name": "NHPC Trade Apprentice",
+      "group": "Engineering & PSU - NHPC Exams"
+    },
+    {
+      "sl": 2598,
+      "id": 4396,
+      "name": "NHPC JE Mechanical",
+      "group": "Engineering & PSU - NHPC Exams"
+    },
+    {
+      "sl": 2599,
+      "id": 4395,
+      "name": "NHPC JE Electronics & Communication",
+      "group": "Engineering & PSU - NHPC Exams"
+    },
+    {
+      "sl": 2600,
+      "id": 4394,
+      "name": "NHPC JE Electrical",
+      "group": "Engineering & PSU - NHPC Exams"
+    },
+    {
+      "sl": 2601,
+      "id": 4393,
+      "name": "NHPC JE Civil",
+      "group": "Engineering & PSU - NHPC Exams"
+    },
+    {
+      "sl": 4501,
+      "id": 2493,
+      "name": "HCL Workmen Electrician",
+      "group": "Engineering & PSU - HCL Exams"
+    },
+    {
+      "sl": 4502,
+      "id": 2492,
+      "name": "HCL Workmen Electrical",
+      "group": "Engineering & PSU - HCL Exams"
+    },
+    {
+      "sl": 4503,
+      "id": 2491,
+      "name": "HCL Trade Apprentice",
+      "group": "Engineering & PSU - HCL Exams"
+    },
+    {
+      "sl": 4504,
+      "id": 2490,
+      "name": "HCL Supervisory",
+      "group": "Engineering & PSU - HCL Exams"
+    },
+    {
+      "sl": 4505,
+      "id": 2489,
+      "name": "HCL Junior Manager",
+      "group": "Engineering & PSU - HCL Exams"
+    },
+    {
+      "sl": 4506,
+      "id": 2488,
+      "name": "HCL Assistant Foreman",
+      "group": "Engineering & PSU - HCL Exams"
+    },
+    {
+      "sl": 4531,
+      "id": 2463,
+      "name": "HAL Trade Apprentice",
+      "group": "Engineering & PSU - HAL Exams"
+    },
+    {
+      "sl": 4532,
+      "id": 2462,
+      "name": "HAL Technician",
+      "group": "Engineering & PSU - HAL Exams"
+    },
+    {
+      "sl": 4533,
+      "id": 2461,
+      "name": "HAL Operator",
+      "group": "Engineering & PSU - HAL Exams"
+    },
+    {
+      "sl": 4535,
+      "id": 2459,
+      "name": "HAL ITI Apprentice",
+      "group": "Engineering & PSU - HAL Exams"
+    },
+    {
+      "sl": 4536,
+      "id": 2458,
+      "name": "HAL Diploma Technician",
+      "group": "Engineering & PSU - HAL Exams"
+    },
+    {
+      "sl": 4537,
+      "id": 2457,
+      "name": "HAL Design Trainee",
+      "group": "Engineering & PSU - HAL Exams"
+    },
+    {
+      "sl": 6341,
+      "id": 653,
+      "name": "BDL Trainee Engineer Mechanical",
+      "group": "Engineering & PSU - BDL Exams"
+    },
+    {
+      "sl": 6342,
+      "id": 652,
+      "name": "BDL Trainee Engineer Electronics",
+      "group": "Engineering & PSU - BDL Exams"
+    },
+    {
+      "sl": 6343,
+      "id": 651,
+      "name": "BDL Trainee Diploma Assistant Mechanical",
+      "group": "Engineering & PSU - BDL Exams"
+    },
+    {
+      "sl": 6344,
+      "id": 650,
+      "name": "BDL Trainee Diploma Assistant Electronics",
+      "group": "Engineering & PSU - BDL Exams"
+    },
+    {
+      "sl": 6345,
+      "id": 649,
+      "name": "BDL Project Engineer",
+      "group": "Engineering & PSU - BDL Exams"
+    },
+    {
+      "sl": 6346,
+      "id": 648,
+      "name": "BDL MT",
+      "group": "Engineering & PSU - BDL Exams"
+    },
+    {
+      "sl": 1757,
+      "id": 5237,
+      "name": "RITES Senior Technical Assistant",
+      "group": "Engineering & PSU - RITES Exams"
+    },
+    {
+      "sl": 1758,
+      "id": 5236,
+      "name": "RITES Mechanical Engineer",
+      "group": "Engineering & PSU - RITES Exams"
+    },
+    {
+      "sl": 1759,
+      "id": 5235,
+      "name": "RITES Manager Civil",
+      "group": "Engineering & PSU - RITES Exams"
+    },
+    {
+      "sl": 1760,
+      "id": 5234,
+      "name": "RITES Assistant Manager",
+      "group": "Engineering & PSU - RITES Exams"
+    },
+    {
+      "sl": 1761,
+      "id": 5233,
+      "name": "RITES Assistant Human Resources",
+      "group": "Engineering & PSU - RITES Exams"
+    },
+    {
+      "sl": 2324,
+      "id": 4670,
+      "name": "ONGC Non Executive",
+      "group": "Engineering & PSU - ONGC Exams"
+    },
+    {
+      "sl": 2326,
+      "id": 4668,
+      "name": "ONGC Graduate and Technician Apprentice",
+      "group": "Engineering & PSU - ONGC Exams"
+    },
+    {
+      "sl": 2327,
+      "id": 4667,
+      "name": "ONGC Executive",
+      "group": "Engineering & PSU - ONGC Exams"
+    },
+    {
+      "sl": 2328,
+      "id": 4666,
+      "name": "ONGC Assistant Technician",
+      "group": "Engineering & PSU - ONGC Exams"
+    },
+    {
+      "sl": 2329,
+      "id": 4665,
+      "name": "ONGC AEE",
+      "group": "Engineering & PSU - ONGC Exams"
+    },
+    {
+      "sl": 2665,
+      "id": 4329,
+      "name": "NFL MT",
+      "group": "Engineering & PSU - NFL Exams"
+    },
+    {
+      "sl": 2666,
+      "id": 4328,
+      "name": "NFL Manager, Officer",
+      "group": "Engineering & PSU - NFL Exams"
+    },
+    {
+      "sl": 2667,
+      "id": 4327,
+      "name": "NFL JE Assistant Production",
+      "group": "Engineering & PSU - NFL Exams"
+    },
+    {
+      "sl": 2668,
+      "id": 4326,
+      "name": "NFL JE Assistant Instrumentation",
+      "group": "Engineering & PSU - NFL Exams"
+    },
+    {
+      "sl": 2669,
+      "id": 4325,
+      "name": "NFL Field Representative",
+      "group": "Engineering & PSU - NFL Exams"
+    },
+    {
+      "sl": 2759,
+      "id": 4235,
+      "name": "NALCO Technician",
+      "group": "Engineering & PSU - NALCO Exams"
+    },
+    {
+      "sl": 2760,
+      "id": 4234,
+      "name": "NALCO SUPT JOT Operator & Operator Grade 3",
+      "group": "Engineering & PSU - NALCO Exams"
+    },
+    {
+      "sl": 2761,
+      "id": 4233,
+      "name": "NALCO SUPT JOT Electrical",
+      "group": "Engineering & PSU - NALCO Exams"
+    },
+    {
+      "sl": 2763,
+      "id": 4231,
+      "name": "NALCO Manager Chemical",
+      "group": "Engineering & PSU - NALCO Exams"
+    },
+    {
+      "sl": 2764,
+      "id": 4230,
+      "name": "NALCO GET",
+      "group": "Engineering & PSU - NALCO Exams"
+    },
+    {
+      "sl": 2336,
+      "id": 4658,
+      "name": "OIL Senior Officer",
+      "group": "Engineering & PSU - OIL Exams"
+    },
+    {
+      "sl": 2337,
+      "id": 4657,
+      "name": "OIL Junior Office Assistant",
+      "group": "Engineering & PSU - OIL Exams"
+    },
+    {
+      "sl": 2338,
+      "id": 4656,
+      "name": "OIL Junior Assistant",
+      "group": "Engineering & PSU - OIL Exams"
+    },
+    {
+      "sl": 2340,
+      "id": 4654,
+      "name": "OIL India Grade 7",
+      "group": "Engineering & PSU - OIL Exams"
+    },
+    {
+      "sl": 5259,
+      "id": 1735,
+      "name": "CWC Superintendent",
+      "group": "Engineering & PSU - CWC Exams"
+    },
+    {
+      "sl": 5260,
+      "id": 1734,
+      "name": "CWC Skilled Work Assistant & OBC Recruitment",
+      "group": "Engineering & PSU - CWC Exams"
+    },
+    {
+      "sl": 5262,
+      "id": 1732,
+      "name": "CWC JTA",
+      "group": "Engineering & PSU - CWC Exams"
+    },
+    {
+      "sl": 5263,
+      "id": 1731,
+      "name": "CWC AE",
+      "group": "Engineering & PSU - CWC Exams"
+    },
+    {
+      "sl": 5917,
+      "id": 1077,
+      "name": "BSNL Senior Executive Trainee",
+      "group": "Engineering & PSU - Telecom Sector Exams"
+    },
+    {
+      "sl": 5919,
+      "id": 1075,
+      "name": "BSNL JTO",
+      "group": "Engineering & PSU - Telecom Sector Exams"
+    },
+    {
+      "sl": 5920,
+      "id": 1074,
+      "name": "BSNL JE",
+      "group": "Engineering & PSU - Telecom Sector Exams"
+    },
+    {
+      "sl": 5921,
+      "id": 1073,
+      "name": "BSNL JAO",
+      "group": "Engineering & PSU - Telecom Sector Exams"
+    },
+    {
+      "sl": 1269,
+      "id": 5725,
+      "name": "SPMCIL Supervisor",
+      "group": "Engineering & PSU - SPMCIL Exams"
+    },
+    {
+      "sl": 1270,
+      "id": 5724,
+      "name": "SPMCIL Junior Technician",
+      "group": "Engineering & PSU - SPMCIL Exams"
+    },
+    {
+      "sl": 1271,
+      "id": 5723,
+      "name": "SPMCIL Assistant Manager",
+      "group": "Engineering & PSU - SPMCIL Exams"
+    },
+    {
+      "sl": 1430,
+      "id": 5564,
+      "name": "SAMEER Project Technical Assistant",
+      "group": "Engineering & PSU - SAMEER Exams"
+    },
+    {
+      "sl": 1431,
+      "id": 5563,
+      "name": "SAMEER Project Scientific Assistant",
+      "group": "Engineering & PSU - SAMEER Exams"
+    },
+    {
+      "sl": 1432,
+      "id": 5562,
+      "name": "SAMEER Project Engineer",
+      "group": "Engineering & PSU - SAMEER Exams"
+    },
+    {
+      "sl": 2806,
+      "id": 4188,
+      "name": "MRPL Technical Assistant Trainee",
+      "group": "Engineering & PSU - MRPL Exams"
+    },
+    {
+      "sl": 2807,
+      "id": 4187,
+      "name": "MRPL Graduate Apprentice Trainee",
+      "group": "Engineering & PSU - MRPL Exams"
+    },
+    {
+      "sl": 2808,
+      "id": 4186,
+      "name": "MRPL Graduate Apprentice",
+      "group": "Engineering & PSU - MRPL Exams"
+    },
+    {
+      "sl": 3099,
+      "id": 3895,
+      "name": "MIDHANI Non Executive",
+      "group": "Engineering & PSU - MIDHANI Exams"
+    },
+    {
+      "sl": 3100,
+      "id": 3894,
+      "name": "MIDHANI MT",
+      "group": "Engineering & PSU - MIDHANI Exams"
+    },
+    {
+      "sl": 3101,
+      "id": 3893,
+      "name": "MIDHANI Apprentice",
+      "group": "Engineering & PSU - MIDHANI Exams"
+    }
+  ]
+}

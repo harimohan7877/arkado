@@ -1,0 +1,339 @@
+{
+  "bundle_id": "bundle-066",
+  "bundle_num": 66,
+  "category_id": "teaching",
+  "category_name": "केंद्रीय शिक्षण",
+  "category_icon": "📚",
+  "title": "केंद्रीय शिक्षण — West Bengal Teaching & School • Telangana Teaching & School",
+  "total_exams": 54,
+  "boards_included": [
+    "West Bengal Teaching & School",
+    "Telangana Teaching & School"
+  ],
+  "exams": [
+    {
+      "sl": 34,
+      "id": 6960,
+      "name": "WBSSC Special Education Teacher",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 35,
+      "id": 6959,
+      "name": "WBSSC SLST Secondary Assistant Teacher Physical Science",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 36,
+      "id": 6958,
+      "name": "WBSSC SLST Secondary Assistant Teacher Life Science",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 37,
+      "id": 6957,
+      "name": "WBSSC SLST Secondary Assistant Teacher History",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 38,
+      "id": 6956,
+      "name": "WBSSC SLST Secondary Assistant Teacher Geography",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 39,
+      "id": 6955,
+      "name": "WBSSC SLST Secondary Assistant Teacher English",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 40,
+      "id": 6954,
+      "name": "WBSSC SLST Secondary Assistant Teacher Bengali",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 41,
+      "id": 6953,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Sociology",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 42,
+      "id": 6952,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Sanskrit",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 43,
+      "id": 6951,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Political Science",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 44,
+      "id": 6950,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Physics",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 45,
+      "id": 6949,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Philosophy",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 46,
+      "id": 6948,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Nutrition",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 47,
+      "id": 6947,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Environment Studies",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 48,
+      "id": 6946,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Education",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 49,
+      "id": 6945,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Economics",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 50,
+      "id": 6944,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Computer Science",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 51,
+      "id": 6943,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Computer Application",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 52,
+      "id": 6942,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Commerce",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 53,
+      "id": 6941,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Chemistry",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 54,
+      "id": 6940,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Biological Science",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 55,
+      "id": 6939,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Bengali",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 56,
+      "id": 6938,
+      "name": "WBSSC SLST Higher Secondary Assistant Teacher Agronomy",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 72,
+      "id": 6922,
+      "name": "WBPSC Sub Inspector of School",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 77,
+      "id": 6917,
+      "name": "WBPSC Lecturer",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 87,
+      "id": 6907,
+      "name": "WBPSC Assistant Professor",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 125,
+      "id": 6869,
+      "name": "WB SET Physical Education",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 131,
+      "id": 6863,
+      "name": "WB SET Education",
+      "group": "West Bengal Teaching & School Exams"
+    },
+    {
+      "sl": 801,
+      "id": 6193,
+      "name": "TSPSC Polytechnic Lecturer Mechanical",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 802,
+      "id": 6192,
+      "name": "TSPSC Polytechnic Lecturer Electronics",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 803,
+      "id": 6191,
+      "name": "TSPSC Polytechnic Lecturer Electrical",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 804,
+      "id": 6190,
+      "name": "TSPSC Polytechnic Lecturer Civil",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 811,
+      "id": 6183,
+      "name": "TSPSC Junior Lecturer Physics",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 812,
+      "id": 6182,
+      "name": "TSPSC Junior Lecturer Mathematics",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 813,
+      "id": 6181,
+      "name": "TSPSC Junior Lecturer History",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 814,
+      "id": 6180,
+      "name": "TSPSC Junior Lecturer English",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 815,
+      "id": 6179,
+      "name": "TSPSC Junior Lecturer Economics",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 816,
+      "id": 6178,
+      "name": "TSPSC Junior Lecturer Commerce",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 817,
+      "id": 6177,
+      "name": "TSPSC Junior Lecturer Chemistry",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 818,
+      "id": 6176,
+      "name": "TSPSC Junior Lecturer Botany",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 819,
+      "id": 6175,
+      "name": "TSPSC Junior Lecturer",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 857,
+      "id": 6137,
+      "name": "TS SET Physical Education",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 870,
+      "id": 6124,
+      "name": "TS SET Education",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 890,
+      "id": 6104,
+      "name": "TREIRB Junior Lecturer Zoology",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 891,
+      "id": 6103,
+      "name": "TREIRB Junior Lecturer Physics",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 892,
+      "id": 6102,
+      "name": "TREIRB Junior Lecturer Mathematics",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 893,
+      "id": 6101,
+      "name": "TREIRB Junior Lecturer History",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 894,
+      "id": 6100,
+      "name": "TREIRB Junior Lecturer Hindi",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 895,
+      "id": 6099,
+      "name": "TREIRB Junior Lecturer English",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 896,
+      "id": 6098,
+      "name": "TREIRB Junior Lecturer Economics",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 897,
+      "id": 6097,
+      "name": "TREIRB Junior Lecturer Commerce",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 898,
+      "id": 6096,
+      "name": "TREIRB Junior Lecturer Chemistry",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 899,
+      "id": 6095,
+      "name": "TREIRB Junior Lecturer Botany",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "sl": 1113,
+      "id": 5881,
+      "name": "Telangana SSA MIS Coordinator",
+      "group": "Telangana Teaching & School Exams"
+    }
+  ]
+}

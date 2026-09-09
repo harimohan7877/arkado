@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-100",
+  "bundle_num": 100,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Tamil Nadu TRB (Part 1/1)",
+  "total_exams": 60,
+  "boards_included": [
+    "Tamil Nadu TRB"
+  ],
+  "exams": [
+    {
+      "sl": 901,
+      "id": 6093,
+      "name": "TRB Tripura Physical Education Teacher",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 902,
+      "id": 6092,
+      "name": "TRB Tripura PGT Statistics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 903,
+      "id": 6091,
+      "name": "TRB Tripura PGT Sociology",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 904,
+      "id": 6090,
+      "name": "TRB Tripura PGT Sanskrit",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 905,
+      "id": 6089,
+      "name": "TRB Tripura PGT Psychology",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 906,
+      "id": 6088,
+      "name": "TRB Tripura PGT Political Science",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 907,
+      "id": 6087,
+      "name": "TRB Tripura PGT Physics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 908,
+      "id": 6086,
+      "name": "TRB Tripura PGT Philosophy",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 909,
+      "id": 6085,
+      "name": "TRB Tripura PGT Geography",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 910,
+      "id": 6084,
+      "name": "TRB Tripura PGT English",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 911,
+      "id": 6083,
+      "name": "TRB Tripura PGT Education",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 912,
+      "id": 6082,
+      "name": "TRB Tripura PGT Economics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 913,
+      "id": 6081,
+      "name": "TRB Tripura PGT Commerce",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 914,
+      "id": 6080,
+      "name": "TRB Tripura PGT Chemistry",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 915,
+      "id": 6079,
+      "name": "TRB Tripura PGT Biology",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 916,
+      "id": 6078,
+      "name": "TRB TN Computer Instructor",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 917,
+      "id": 6077,
+      "name": "TRB Tamilnadu Assistant Professor Exam",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 991,
+      "id": 6003,
+      "name": "TN TRB Special Teacher",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 992,
+      "id": 6002,
+      "name": "TN TRB Polytechnic Lecturer EEE",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 993,
+      "id": 6001,
+      "name": "TN TRB PG Assistant Zoology",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 994,
+      "id": 6000,
+      "name": "TN TRB PG Assistant Tamil",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 995,
+      "id": 5999,
+      "name": "TN TRB PG Assistant Physics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 996,
+      "id": 5998,
+      "name": "TN TRB PG Assistant Mathematics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 997,
+      "id": 5997,
+      "name": "TN TRB PG Assistant History",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 998,
+      "id": 5996,
+      "name": "TN TRB PG Assistant Geography",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 999,
+      "id": 5995,
+      "name": "TN TRB PG Assistant English",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1000,
+      "id": 5994,
+      "name": "TN TRB PG Assistant Economics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1001,
+      "id": 5993,
+      "name": "TN TRB PG Assistant Commerce",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1002,
+      "id": 5992,
+      "name": "TN TRB PG Assistant Chemistry",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1003,
+      "id": 5991,
+      "name": "TN TRB PG Assistant Botany",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1004,
+      "id": 5990,
+      "name": "TN TRB ME",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1005,
+      "id": 5989,
+      "name": "TN TRB Lecturers ECE",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1006,
+      "id": 5988,
+      "name": "TN TRB Lecturers CSE",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1007,
+      "id": 5987,
+      "name": "TN TRB Graduate Teacher Zoology",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1008,
+      "id": 5986,
+      "name": "TN TRB Graduate Teacher Physics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1009,
+      "id": 5985,
+      "name": "TN TRB Graduate Teacher Maths",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1010,
+      "id": 5984,
+      "name": "TN TRB Graduate Teacher History",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1011,
+      "id": 5983,
+      "name": "TN TRB Graduate Teacher Geography",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1012,
+      "id": 5982,
+      "name": "TN TRB Graduate Teacher English",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1013,
+      "id": 5981,
+      "name": "TN TRB Graduate Teacher Chemistry",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1014,
+      "id": 5980,
+      "name": "TN TRB Graduate Teacher Botany",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1015,
+      "id": 5979,
+      "name": "TN TRB EE",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1016,
+      "id": 5978,
+      "name": "TN TRB BEO",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1017,
+      "id": 5977,
+      "name": "TN TRB Assistant Professor Zoology",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1018,
+      "id": 5976,
+      "name": "TN TRB Assistant Professor Statistics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1019,
+      "id": 5975,
+      "name": "TN TRB Assistant Professor Political Science",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1020,
+      "id": 5974,
+      "name": "TN TRB Assistant Professor Physics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1021,
+      "id": 5973,
+      "name": "TN TRB Assistant Professor Mathematics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1022,
+      "id": 5972,
+      "name": "TN TRB Assistant Professor Home Science",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1023,
+      "id": 5971,
+      "name": "TN TRB Assistant Professor History",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1024,
+      "id": 5970,
+      "name": "TN TRB Assistant Professor Geography",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1025,
+      "id": 5969,
+      "name": "TN TRB Assistant Professor English",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1026,
+      "id": 5968,
+      "name": "TN TRB Assistant Professor Education",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1027,
+      "id": 5967,
+      "name": "TN TRB Assistant Professor Economics",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1028,
+      "id": 5966,
+      "name": "TN TRB Assistant Professor Computer Science",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1029,
+      "id": 5965,
+      "name": "TN TRB Assistant Professor Commerce",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1030,
+      "id": 5964,
+      "name": "TN TRB Assistant Professor Chemistry",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1031,
+      "id": 5963,
+      "name": "TN TRB Assistant Professor Botany",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1032,
+      "id": 5962,
+      "name": "TN TRB Assistant Professor Biochemistry",
+      "group": "Tamil Nadu TRB Exams"
+    },
+    {
+      "sl": 1033,
+      "id": 5961,
+      "name": "TN TRB Assistant Professor",
+      "group": "Tamil Nadu TRB Exams"
+    }
+  ]
+}

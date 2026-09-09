@@ -1,0 +1,358 @@
+{
+  "bundle_number": 126,
+  "bundle_id": "raw_bundle_126",
+  "range": "6251 - 6300",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 6251,
+      "group_sl": 934,
+      "exam_id": 6060,
+      "name": "TPSC Assistant Professor",
+      "group": "Tripura Teaching & School Exams"
+    },
+    {
+      "global_sl": 6252,
+      "group_sl": 929,
+      "exam_id": 6065,
+      "name": "TPSC Medical Officer Dental",
+      "group": "Tripura Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6253,
+      "group_sl": 931,
+      "exam_id": 6063,
+      "name": "TPSC Junior Medical Officer",
+      "group": "Tripura Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6254,
+      "group_sl": 943,
+      "exam_id": 6051,
+      "name": "TNRD Village Panchayat Secretary",
+      "group": "Tamil Nadu Teaching & School Exams"
+    },
+    {
+      "global_sl": 6255,
+      "group_sl": 1047,
+      "exam_id": 5947,
+      "name": "TN SET Education",
+      "group": "Tamil Nadu Teaching & School Exams"
+    },
+    {
+      "global_sl": 6256,
+      "group_sl": 987,
+      "exam_id": 6007,
+      "name": "TNAU Junior Assistant cum Typist",
+      "group": "Tamil Nadu TNAU Exams"
+    },
+    {
+      "global_sl": 6257,
+      "group_sl": 988,
+      "exam_id": 6006,
+      "name": "TNAU AAO",
+      "group": "Tamil Nadu TNAU Exams"
+    },
+    {
+      "global_sl": 6258,
+      "group_sl": 1074,
+      "exam_id": 5920,
+      "name": "TMB SCSE",
+      "group": "Banking & Finance - TMB Exams"
+    },
+    {
+      "global_sl": 6259,
+      "group_sl": 1075,
+      "exam_id": 5919,
+      "name": "TMB Bank Clerk",
+      "group": "Banking & Finance - TMB Exams"
+    },
+    {
+      "global_sl": 6260,
+      "group_sl": 1104,
+      "exam_id": 5890,
+      "name": "TGSRTC Traffic Supervisor Trainee",
+      "group": "Telangana Transport & Roadways Exams"
+    },
+    {
+      "global_sl": 6261,
+      "group_sl": 1105,
+      "exam_id": 5889,
+      "name": "TGSRTC Mechanical Supervisor Trainee",
+      "group": "Telangana Transport & Roadways Exams"
+    },
+    {
+      "global_sl": 6262,
+      "group_sl": 1114,
+      "exam_id": 5880,
+      "name": "Telangana PSC VRO",
+      "group": "Telangana PSC Exams"
+    },
+    {
+      "global_sl": 6263,
+      "group_sl": 1115,
+      "exam_id": 5879,
+      "name": "Telangana PSC VRA",
+      "group": "Telangana PSC Exams"
+    },
+    {
+      "global_sl": 6264,
+      "group_sl": 1156,
+      "exam_id": 5838,
+      "name": "Surat Municipal Corporation Sweeper",
+      "group": "Gujarat Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6265,
+      "group_sl": 1157,
+      "exam_id": 5837,
+      "name": "Surat Municipal Apprentice",
+      "group": "Gujarat Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6266,
+      "group_sl": 1185,
+      "exam_id": 5809,
+      "name": "SSC Stenographer in Hindi",
+      "group": "Staff Selection Commission - SSC Stenographer Exams"
+    },
+    {
+      "global_sl": 6267,
+      "group_sl": 1186,
+      "exam_id": 5808,
+      "name": "SSC Stenographer",
+      "group": "Staff Selection Commission - SSC Stenographer Exams"
+    },
+    {
+      "global_sl": 6268,
+      "group_sl": 1198,
+      "exam_id": 5796,
+      "name": "SSC MTS",
+      "group": "Staff Selection Commission - SSC MTS & Havaldar Exams"
+    },
+    {
+      "global_sl": 6269,
+      "group_sl": 1206,
+      "exam_id": 5788,
+      "name": "SSC Havaldar",
+      "group": "Staff Selection Commission - SSC MTS & Havaldar Exams"
+    },
+    {
+      "global_sl": 6270,
+      "group_sl": 1214,
+      "exam_id": 5780,
+      "name": "SSC CHSL in Hindi",
+      "group": "Staff Selection Commission - SSC CHSL Exams"
+    },
+    {
+      "global_sl": 6271,
+      "group_sl": 1215,
+      "exam_id": 5779,
+      "name": "SSC CHSL",
+      "group": "Staff Selection Commission - SSC CHSL Exams"
+    },
+    {
+      "global_sl": 6272,
+      "group_sl": 1216,
+      "exam_id": 5778,
+      "name": "SSC CGL AAO",
+      "group": "Staff Selection Commission - SSC CGL Exams"
+    },
+    {
+      "global_sl": 6273,
+      "group_sl": 1217,
+      "exam_id": 5777,
+      "name": "SSC CGL",
+      "group": "Staff Selection Commission - SSC CGL Exams"
+    },
+    {
+      "global_sl": 6274,
+      "group_sl": 1317,
+      "exam_id": 5677,
+      "name": "Sikkim PSC Veterinary Officer",
+      "group": "Sikkim PSC Exams"
+    },
+    {
+      "global_sl": 6275,
+      "group_sl": 1318,
+      "exam_id": 5676,
+      "name": "Sikkim PSC Accounts Clerk & Junior Store Keeper",
+      "group": "Sikkim PSC Exams"
+    },
+    {
+      "global_sl": 6276,
+      "group_sl": 1424,
+      "exam_id": 5570,
+      "name": "Saraswat Bank Junior Officer",
+      "group": "Banking & Finance - Saraswat Exams"
+    },
+    {
+      "global_sl": 6277,
+      "group_sl": 1425,
+      "exam_id": 5569,
+      "name": "Saraswat Bank BDO",
+      "group": "Banking & Finance - Saraswat Exams"
+    },
+    {
+      "global_sl": 6278,
+      "group_sl": 1466,
+      "exam_id": 5528,
+      "name": "RUHS MO",
+      "group": "Rajasthan RUHS Exams"
+    },
+    {
+      "global_sl": 6279,
+      "group_sl": 1467,
+      "exam_id": 5527,
+      "name": "RUHS BSc Nursing",
+      "group": "Rajasthan RUHS Exams"
+    },
+    {
+      "global_sl": 6280,
+      "group_sl": 2027,
+      "exam_id": 4967,
+      "name": "Puducherry Home Guard",
+      "group": "Puducherry Police & Security Exams"
+    },
+    {
+      "global_sl": 6281,
+      "group_sl": 2103,
+      "exam_id": 4891,
+      "name": "Pondicherry Police Constable",
+      "group": "Puducherry Police & Security Exams"
+    },
+    {
+      "global_sl": 6282,
+      "group_sl": 2138,
+      "exam_id": 4856,
+      "name": "PGVCL Vidyut Sahayak",
+      "group": "Gujarat PGVCL Exams"
+    },
+    {
+      "global_sl": 6283,
+      "group_sl": 2139,
+      "exam_id": 4855,
+      "name": "PGVCL JE",
+      "group": "Gujarat PGVCL Exams"
+    },
+    {
+      "global_sl": 6284,
+      "group_sl": 2339,
+      "exam_id": 4655,
+      "name": "Oil India Grade III",
+      "group": "Engineering & PSU - Oil India Exams"
+    },
+    {
+      "global_sl": 6285,
+      "group_sl": 2341,
+      "exam_id": 4653,
+      "name": "Oil India Assistant Technician",
+      "group": "Engineering & PSU - Oil India Exams"
+    },
+    {
+      "global_sl": 6286,
+      "group_sl": 2350,
+      "exam_id": 4644,
+      "name": "OFDC LDA",
+      "group": "Odisha Forest Department Exams"
+    },
+    {
+      "global_sl": 6287,
+      "group_sl": 2351,
+      "exam_id": 4643,
+      "name": "OFDC Field Assistant",
+      "group": "Odisha Forest Department Exams"
+    },
+    {
+      "global_sl": 6288,
+      "group_sl": 2461,
+      "exam_id": 4533,
+      "name": "NTA GAT B",
+      "group": "National Academics - NTA Exams"
+    },
+    {
+      "global_sl": 6289,
+      "group_sl": 2468,
+      "exam_id": 4526,
+      "name": "NTA CET",
+      "group": "National Academics - NTA Exams"
+    },
+    {
+      "global_sl": 6290,
+      "group_sl": 2481,
+      "exam_id": 4513,
+      "name": "NRHM AP Staff Nurse",
+      "group": "Andhra Pradesh National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6291,
+      "group_sl": 2636,
+      "exam_id": 4358,
+      "name": "NHM AP MLHP",
+      "group": "Andhra Pradesh National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6292,
+      "group_sl": 2486,
+      "exam_id": 4508,
+      "name": "NPSC Assistant Professor",
+      "group": "Nagaland Teaching & School Exams"
+    },
+    {
+      "global_sl": 6293,
+      "group_sl": 2770,
+      "exam_id": 4224,
+      "name": "Nagaland University Professor",
+      "group": "Nagaland Teaching & School Exams"
+    },
+    {
+      "global_sl": 6294,
+      "group_sl": 2547,
+      "exam_id": 4447,
+      "name": "NIT Trichy Non Teaching",
+      "group": "National Academics - NIT Non-Teaching Exams"
+    },
+    {
+      "global_sl": 6295,
+      "group_sl": 2548,
+      "exam_id": 4446,
+      "name": "NIT Trichy Assistant Professor",
+      "group": "National Academics - NIT Non-Teaching Exams"
+    },
+    {
+      "global_sl": 6296,
+      "group_sl": 2605,
+      "exam_id": 4389,
+      "name": "NHM Tripura HMIS Assistant",
+      "group": "Tripura National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6297,
+      "group_sl": 2606,
+      "exam_id": 4388,
+      "name": "NHM Tripura CHO",
+      "group": "Tripura National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6298,
+      "group_sl": 2623,
+      "exam_id": 4371,
+      "name": "NHM Karnataka MLHP",
+      "group": "Karnataka National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6299,
+      "group_sl": 2624,
+      "exam_id": 4370,
+      "name": "NHM Karnataka CHO",
+      "group": "Karnataka National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6300,
+      "group_sl": 2640,
+      "exam_id": 4354,
+      "name": "NHAI Stenographer",
+      "group": "Engineering & PSU - NHAI Exams"
+    }
+  ]
+}

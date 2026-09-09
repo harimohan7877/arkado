@@ -1,0 +1,491 @@
+{
+  "bundle_id": "bundle-048",
+  "bundle_num": 48,
+  "category_id": "banking",
+  "category_name": "बैंकिंग एवं वित्त",
+  "category_icon": "🏦",
+  "title": "बैंकिंग एवं वित्त — Banking & Finance - Dhanlaxmi • Banking & Finance - Exim • Banking & Finance - BRBNMPL",
+  "total_exams": 75,
+  "boards_included": [
+    "Banking & Finance - Dhanlaxmi",
+    "Banking & Finance - Exim",
+    "Banking & Finance - BRBNMPL",
+    "Banking & Finance - Saraswat",
+    "Odisha Cooperative Bank",
+    "Banking & Finance - REPCO",
+    "Banking & Finance - IPPB",
+    "Banking & Finance - NABARD",
+    "Sikkim Cooperative Bank",
+    "Kerala Cooperative Bank",
+    "Jammu & Kashmir Cooperative Bank",
+    "Banking & Finance - Dena",
+    "Banking & Finance - CBI",
+    "Banking & Finance - BOB",
+    "Gujarat Cooperative Bank",
+    "Banking & Finance - EXIM",
+    "Banking & Finance - UCO",
+    "Telangana Cooperative Bank",
+    "Banking & Finance - Canara",
+    "Banking & Finance - Nainital",
+    "Banking & Finance - UBI",
+    "Tamil Nadu Cooperative Bank",
+    "Banking & Finance - Catholic Syrian",
+    "Uttarakhand Cooperative Bank",
+    "Banking & Finance - Federal",
+    "Banking & Finance - KVB",
+    "Banking & Finance - Cooperative Banks",
+    "Banking & Finance - TMB"
+  ],
+  "exams": [
+    {
+      "sl": 197,
+      "id": 6797,
+      "name": "Utkal Cooperative Bank JAA",
+      "group": "Odisha Cooperative Bank Exams"
+    },
+    {
+      "sl": 2263,
+      "id": 4731,
+      "name": "OSCB System Manager",
+      "group": "Odisha Cooperative Bank Exams"
+    },
+    {
+      "sl": 2264,
+      "id": 4730,
+      "name": "OSCB Junior Manager",
+      "group": "Odisha Cooperative Bank Exams"
+    },
+    {
+      "sl": 2265,
+      "id": 4729,
+      "name": "OSCB DGM",
+      "group": "Odisha Cooperative Bank Exams"
+    },
+    {
+      "sl": 2266,
+      "id": 4728,
+      "name": "OSCB Banking Assistant",
+      "group": "Odisha Cooperative Bank Exams"
+    },
+    {
+      "sl": 771,
+      "id": 6223,
+      "name": "UCO Bank SO Software Developer",
+      "group": "Banking & Finance - UCO Exams"
+    },
+    {
+      "sl": 772,
+      "id": 6222,
+      "name": "UCO Bank SO",
+      "group": "Banking & Finance - UCO Exams"
+    },
+    {
+      "sl": 773,
+      "id": 6221,
+      "name": "UCO Bank LBO",
+      "group": "Banking & Finance - UCO Exams"
+    },
+    {
+      "sl": 774,
+      "id": 6220,
+      "name": "UCO Bank Generalist Officer Trade Finance Officer",
+      "group": "Banking & Finance - UCO Exams"
+    },
+    {
+      "sl": 775,
+      "id": 6219,
+      "name": "UCO Bank Apprentice",
+      "group": "Banking & Finance - UCO Exams"
+    },
+    {
+      "sl": 782,
+      "id": 6212,
+      "name": "UBI Credit Officer",
+      "group": "Banking & Finance - UBI Exams"
+    },
+    {
+      "sl": 783,
+      "id": 6211,
+      "name": "UBI Bank SO IT",
+      "group": "Banking & Finance - UBI Exams"
+    },
+    {
+      "sl": 784,
+      "id": 6210,
+      "name": "UBI Bank SO",
+      "group": "Banking & Finance - UBI Exams"
+    },
+    {
+      "sl": 785,
+      "id": 6209,
+      "name": "UBI Armed Guard",
+      "group": "Banking & Finance - UBI Exams"
+    },
+    {
+      "sl": 786,
+      "id": 6208,
+      "name": "UBI Apprentice",
+      "group": "Banking & Finance - UBI Exams"
+    },
+    {
+      "sl": 2776,
+      "id": 4218,
+      "name": "NABARD Office Attendant",
+      "group": "Banking & Finance - NABARD Exams"
+    },
+    {
+      "sl": 2777,
+      "id": 4217,
+      "name": "NABARD Grade B",
+      "group": "Banking & Finance - NABARD Exams"
+    },
+    {
+      "sl": 2778,
+      "id": 4216,
+      "name": "Nabard Grade A Officer",
+      "group": "Banking & Finance - NABARD Exams"
+    },
+    {
+      "sl": 2779,
+      "id": 4215,
+      "name": "NABARD Development Assistant",
+      "group": "Banking & Finance - NABARD Exams"
+    },
+    {
+      "sl": 2780,
+      "id": 4214,
+      "name": "NABARD Assistant Manager",
+      "group": "Banking & Finance - NABARD Exams"
+    },
+    {
+      "sl": 3743,
+      "id": 3251,
+      "name": "JKPSC Assistant Registrar Cooperative Societies",
+      "group": "Jammu & Kashmir Cooperative Bank Exams"
+    },
+    {
+      "sl": 3785,
+      "id": 3209,
+      "name": "JK Bank Office Assistant",
+      "group": "Jammu & Kashmir Cooperative Bank Exams"
+    },
+    {
+      "sl": 3786,
+      "id": 3208,
+      "name": "JK Bank Banking Associate",
+      "group": "Jammu & Kashmir Cooperative Bank Exams"
+    },
+    {
+      "sl": 3787,
+      "id": 3207,
+      "name": "JK Bank Apprentice",
+      "group": "Jammu & Kashmir Cooperative Bank Exams"
+    },
+    {
+      "sl": 3863,
+      "id": 3131,
+      "name": "Jammu and Kashmir Bank PO",
+      "group": "Jammu & Kashmir Cooperative Bank Exams"
+    },
+    {
+      "sl": 4803,
+      "id": 2191,
+      "name": "Federal Bank PO",
+      "group": "Banking & Finance - Federal Exams"
+    },
+    {
+      "sl": 4804,
+      "id": 2190,
+      "name": "Federal Bank Officer",
+      "group": "Banking & Finance - Federal Exams"
+    },
+    {
+      "sl": 4805,
+      "id": 2189,
+      "name": "Federal Bank Office Assistant",
+      "group": "Banking & Finance - Federal Exams"
+    },
+    {
+      "sl": 4806,
+      "id": 2188,
+      "name": "Federal Bank Clerk",
+      "group": "Banking & Finance - Federal Exams"
+    },
+    {
+      "sl": 4807,
+      "id": 2187,
+      "name": "Federal Bank Associate Officers",
+      "group": "Banking & Finance - Federal Exams"
+    },
+    {
+      "sl": 942,
+      "id": 6052,
+      "name": "TNSRLM Sivaganga Community Bank Coordinator",
+      "group": "Tamil Nadu Cooperative Bank Exams"
+    },
+    {
+      "sl": 1067,
+      "id": 5927,
+      "name": "TN Cooperative Bank Assistant",
+      "group": "Tamil Nadu Cooperative Bank Exams"
+    },
+    {
+      "sl": 2201,
+      "id": 4793,
+      "name": "Pallavan Grama Bank",
+      "group": "Tamil Nadu Cooperative Bank Exams"
+    },
+    {
+      "sl": 5143,
+      "id": 1851,
+      "name": "Dharmapuri Cooperative Bank Assistant",
+      "group": "Tamil Nadu Cooperative Bank Exams"
+    },
+    {
+      "sl": 2766,
+      "id": 4228,
+      "name": "Nainital Bank SO",
+      "group": "Banking & Finance - Nainital Exams"
+    },
+    {
+      "sl": 2767,
+      "id": 4227,
+      "name": "Nainital Bank PO",
+      "group": "Banking & Finance - Nainital Exams"
+    },
+    {
+      "sl": 2768,
+      "id": 4226,
+      "name": "Nainital Bank MT",
+      "group": "Banking & Finance - Nainital Exams"
+    },
+    {
+      "sl": 2769,
+      "id": 4225,
+      "name": "Nainital Bank Clerk",
+      "group": "Banking & Finance - Nainital Exams"
+    },
+    {
+      "sl": 3930,
+      "id": 3064,
+      "name": "IPPB SO",
+      "group": "Banking & Finance - IPPB Exams"
+    },
+    {
+      "sl": 3931,
+      "id": 3063,
+      "name": "IPPB Recruitment",
+      "group": "Banking & Finance - IPPB Exams"
+    },
+    {
+      "sl": 3932,
+      "id": 3062,
+      "name": "IPPB GDS",
+      "group": "Banking & Finance - IPPB Exams"
+    },
+    {
+      "sl": 3933,
+      "id": 3061,
+      "name": "IPPB Executive",
+      "group": "Banking & Finance - IPPB Exams"
+    },
+    {
+      "sl": 6047,
+      "id": 947,
+      "name": "BOB SO Manager Trade Finance Operations",
+      "group": "Banking & Finance - BOB Exams"
+    },
+    {
+      "sl": 6048,
+      "id": 946,
+      "name": "BOB SO Manager Forex Acquisition & Relationship",
+      "group": "Banking & Finance - BOB Exams"
+    },
+    {
+      "sl": 6049,
+      "id": 945,
+      "name": "BOB Senior Relationship Manager",
+      "group": "Banking & Finance - BOB Exams"
+    },
+    {
+      "sl": 6050,
+      "id": 944,
+      "name": "BOB IT Manager Server Administrator",
+      "group": "Banking & Finance - BOB Exams"
+    },
+    {
+      "sl": 5536,
+      "id": 1458,
+      "name": "Cooperative Management",
+      "group": "Banking & Finance - Cooperative Banks Exams"
+    },
+    {
+      "sl": 5537,
+      "id": 1457,
+      "name": "Cooperative Credit & Banking",
+      "group": "Banking & Finance - Cooperative Banks Exams"
+    },
+    {
+      "sl": 5538,
+      "id": 1456,
+      "name": "Cooperative Accounting",
+      "group": "Banking & Finance - Cooperative Banks Exams"
+    },
+    {
+      "sl": 5977,
+      "id": 1017,
+      "name": "BRBNMPL Process Assistant Grade I",
+      "group": "Banking & Finance - BRBNMPL Exams"
+    },
+    {
+      "sl": 5978,
+      "id": 1016,
+      "name": "BRBNMPL Industrial Workman",
+      "group": "Banking & Finance - BRBNMPL Exams"
+    },
+    {
+      "sl": 5979,
+      "id": 1015,
+      "name": "BRBNMPL Deputy Manager",
+      "group": "Banking & Finance - BRBNMPL Exams"
+    },
+    {
+      "sl": 843,
+      "id": 6151,
+      "name": "TSCAB Staff Assistant and Manager",
+      "group": "Telangana Cooperative Bank Exams"
+    },
+    {
+      "sl": 844,
+      "id": 6150,
+      "name": "TSCAB Staff Assistant",
+      "group": "Telangana Cooperative Bank Exams"
+    },
+    {
+      "sl": 1074,
+      "id": 5920,
+      "name": "TMB SCSE",
+      "group": "Banking & Finance - TMB Exams"
+    },
+    {
+      "sl": 1075,
+      "id": 5919,
+      "name": "TMB Bank Clerk",
+      "group": "Banking & Finance - TMB Exams"
+    },
+    {
+      "sl": 1424,
+      "id": 5570,
+      "name": "Saraswat Bank Junior Officer",
+      "group": "Banking & Finance - Saraswat Exams"
+    },
+    {
+      "sl": 1425,
+      "id": 5569,
+      "name": "Saraswat Bank BDO",
+      "group": "Banking & Finance - Saraswat Exams"
+    },
+    {
+      "sl": 2789,
+      "id": 4205,
+      "name": "MUC Bank Clerical Trainee",
+      "group": "Gujarat Cooperative Bank Exams"
+    },
+    {
+      "sl": 3861,
+      "id": 3133,
+      "name": "Jamnagar DCC Bank",
+      "group": "Gujarat Cooperative Bank Exams"
+    },
+    {
+      "sl": 4839,
+      "id": 2155,
+      "name": "Exim Bank MT",
+      "group": "Banking & Finance - Exim Exams"
+    },
+    {
+      "sl": 4840,
+      "id": 2154,
+      "name": "Exim Bank AO",
+      "group": "Banking & Finance - Exim Exams"
+    },
+    {
+      "sl": 5804,
+      "id": 1190,
+      "name": "CBI Manager",
+      "group": "Banking & Finance - CBI Exams"
+    },
+    {
+      "sl": 5805,
+      "id": 1189,
+      "name": "CBI Apprentice",
+      "group": "Banking & Finance - CBI Exams"
+    },
+    {
+      "sl": 5812,
+      "id": 1182,
+      "name": "Canara Bank SO",
+      "group": "Banking & Finance - Canara Exams"
+    },
+    {
+      "sl": 5813,
+      "id": 1181,
+      "name": "Canara Bank PO",
+      "group": "Banking & Finance - Canara Exams"
+    },
+    {
+      "sl": 193,
+      "id": 6801,
+      "name": "Uttarakhand Cooperative Bank Clerk",
+      "group": "Uttarakhand Cooperative Bank Exams"
+    },
+    {
+      "sl": 1178,
+      "id": 5816,
+      "name": "State Bank of Sikkim Assistant Manager",
+      "group": "Sikkim Cooperative Bank Exams"
+    },
+    {
+      "sl": 1774,
+      "id": 5220,
+      "name": "REPCO Bank Clerk",
+      "group": "Banking & Finance - REPCO Exams"
+    },
+    {
+      "sl": 3400,
+      "id": 3594,
+      "name": "KVB Probationary Officer",
+      "group": "Banking & Finance - KVB Exams"
+    },
+    {
+      "sl": 3450,
+      "id": 3544,
+      "name": "KSCB Junior Clerk",
+      "group": "Kerala Cooperative Bank Exams"
+    },
+    {
+      "sl": 4838,
+      "id": 2156,
+      "name": "EXIM Bank Officer",
+      "group": "Banking & Finance - EXIM Exams"
+    },
+    {
+      "sl": 5144,
+      "id": 1850,
+      "name": "Dhanlaxmi Bank Junior Officer",
+      "group": "Banking & Finance - Dhanlaxmi Exams"
+    },
+    {
+      "sl": 5160,
+      "id": 1834,
+      "name": "Dena Bank PO",
+      "group": "Banking & Finance - Dena Exams"
+    },
+    {
+      "sl": 5807,
+      "id": 1187,
+      "name": "Catholic Syrian Bank",
+      "group": "Banking & Finance - Catholic Syrian Exams"
+    }
+  ]
+}

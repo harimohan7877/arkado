@@ -1,0 +1,358 @@
+{
+  "bundle_number": 98,
+  "bundle_id": "raw_bundle_098",
+  "range": "4851 - 4900",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4851,
+      "group_sl": 4457,
+      "exam_id": 2537,
+      "name": "HP SET Physical Education",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4852,
+      "group_sl": 4467,
+      "exam_id": 2527,
+      "name": "HP SET Education",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4853,
+      "group_sl": 6238,
+      "exam_id": 756,
+      "name": "BHU UET Agriculture",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4854,
+      "group_sl": 6240,
+      "exam_id": 754,
+      "name": "BHU Nursing Officer",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4855,
+      "group_sl": 6241,
+      "exam_id": 753,
+      "name": "BHU Non Teaching",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4856,
+      "group_sl": 6242,
+      "exam_id": 752,
+      "name": "BHU Junior Clerk",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4857,
+      "group_sl": 6243,
+      "exam_id": 751,
+      "name": "BHU CHS SET Class XI Maths",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4858,
+      "group_sl": 6244,
+      "exam_id": 750,
+      "name": "BHU CHS SET Class XI Biology",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4859,
+      "group_sl": 6245,
+      "exam_id": 749,
+      "name": "BHU CHS SET Class VI",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4860,
+      "group_sl": 6246,
+      "exam_id": 748,
+      "name": "BHU CHS SET Class IX",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4861,
+      "group_sl": 6247,
+      "exam_id": 747,
+      "name": "BHU BLAT",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4862,
+      "group_sl": 6248,
+      "exam_id": 746,
+      "name": "BHU B.Ed Science Group",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4863,
+      "group_sl": 6249,
+      "exam_id": 745,
+      "name": "BHU B.Ed Sanskrit Group",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4864,
+      "group_sl": 6250,
+      "exam_id": 744,
+      "name": "BHU B.Ed Mathematics Group",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4865,
+      "group_sl": 6251,
+      "exam_id": 743,
+      "name": "BHU B.Ed Humanities and Social Science Group",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4866,
+      "group_sl": 6252,
+      "exam_id": 742,
+      "name": "BHU B.Ed English Group",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4867,
+      "group_sl": 6253,
+      "exam_id": 741,
+      "name": "BHU B.Ed (Hindi Group)",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4868,
+      "group_sl": 6254,
+      "exam_id": 740,
+      "name": "BHU Assistant Professor",
+      "group": "Uttar Pradesh BHU Exams"
+    },
+    {
+      "global_sl": 4869,
+      "group_sl": 164,
+      "exam_id": 6830,
+      "name": "VMC Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4870,
+      "group_sl": 165,
+      "exam_id": 6829,
+      "name": "VMC Public Health Worker & Health Worker",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4871,
+      "group_sl": 1286,
+      "exam_id": 5708,
+      "name": "SMC Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4872,
+      "group_sl": 1287,
+      "exam_id": 5707,
+      "name": "SMC Medical Officer",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4873,
+      "group_sl": 1290,
+      "exam_id": 5704,
+      "name": "SMC Junior Pharmacist",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4874,
+      "group_sl": 4544,
+      "exam_id": 2450,
+      "name": "Gujarat Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4875,
+      "group_sl": 4654,
+      "exam_id": 2340,
+      "name": "GPSC Medical Officer",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4876,
+      "group_sl": 4655,
+      "exam_id": 2339,
+      "name": "GPSC Insurance Medical Officer",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4877,
+      "group_sl": 4689,
+      "exam_id": 2305,
+      "name": "GMC Udhampur Junior Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4878,
+      "group_sl": 4690,
+      "exam_id": 2304,
+      "name": "GMC Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4879,
+      "group_sl": 4691,
+      "exam_id": 2303,
+      "name": "GMC Shivpuri Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4880,
+      "group_sl": 4692,
+      "exam_id": 2302,
+      "name": "GMC Handwara Junior Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4881,
+      "group_sl": 4693,
+      "exam_id": 2301,
+      "name": "GMC Female Health Worker & MPHW",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4882,
+      "group_sl": 4694,
+      "exam_id": 2300,
+      "name": "GMC Chhindwara Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4883,
+      "group_sl": 5142,
+      "exam_id": 1852,
+      "name": "DHFW Gujarat Staff Nurse",
+      "group": "Gujarat Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4884,
+      "group_sl": 239,
+      "exam_id": 6755,
+      "name": "UPSSSC Pharmacist Ayurvedic",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4885,
+      "group_sl": 240,
+      "exam_id": 6754,
+      "name": "UPSSSC Pharmacist",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4886,
+      "group_sl": 252,
+      "exam_id": 6742,
+      "name": "UPSSSC Health Worker",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4887,
+      "group_sl": 301,
+      "exam_id": 6693,
+      "name": "UPPSC Veterinary Medical Officer",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4888,
+      "group_sl": 303,
+      "exam_id": 6691,
+      "name": "UPPSC Staff Nurse Ayurveda",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4889,
+      "group_sl": 304,
+      "exam_id": 6690,
+      "name": "UPPSC Staff Nurse",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4890,
+      "group_sl": 318,
+      "exam_id": 6676,
+      "name": "UPPSC Medical Officer Unani",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4891,
+      "group_sl": 319,
+      "exam_id": 6675,
+      "name": "UPPSC Medical Officer Allopathic",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4892,
+      "group_sl": 320,
+      "exam_id": 6674,
+      "name": "UPPSC Medical Officer",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4893,
+      "group_sl": 349,
+      "exam_id": 6645,
+      "name": "UPPSC Homoeopathic Medical Officer",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4894,
+      "group_sl": 382,
+      "exam_id": 6612,
+      "name": "UPPSC Dental Surgeon",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4895,
+      "group_sl": 431,
+      "exam_id": 6563,
+      "name": "UPMSCL Junior Pharmacist",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4896,
+      "group_sl": 500,
+      "exam_id": 6494,
+      "name": "UP Pharmacist",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4897,
+      "group_sl": 542,
+      "exam_id": 6452,
+      "name": "UP Health Department",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4898,
+      "group_sl": 6239,
+      "exam_id": 755,
+      "name": "BHU Staff Nurse",
+      "group": "Uttar Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 4899,
+      "group_sl": 788,
+      "exam_id": 6206,
+      "name": "TTADC Sub Zonal Development Officer",
+      "group": "Tripura General Government Exams"
+    },
+    {
+      "global_sl": 4900,
+      "group_sl": 878,
+      "exam_id": 6116,
+      "name": "TRLM Cluster Coordinator",
+      "group": "Tripura General Government Exams"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "bundle_id": "bundle-022",
+  "bundle_num": 22,
+  "category_id": "national-central",
+  "category_name": "अखिल भारतीय / राष्ट्रीय",
+  "category_icon": "🇮🇳",
+  "title": "अखिल भारतीय / राष्ट्रीय — UPSC (संघ लोक सेवा आयोग)",
+  "total_exams": 4,
+  "boards_included": [
+    "UPSC"
+  ],
+  "official_portal": "https://upsc.gov.in",
+  "exams": [
+    {
+      "id": 5020,
+      "name": "सिविल सेवा परीक्षा (CSE - IAS / IPS / IFS)",
+      "eligibility": "स्नातक",
+      "age_limit": "21-32 वर्ष",
+      "applicant_scale": "11+ लाख",
+      "exam_pattern": "Prelims (GS+CSAT) + Mains (9 पेपर्स) + Personality Test",
+      "viral_subtext": "देश की सर्वोच्च प्रशासनिक सेवा",
+      "status": "verified"
+    },
+    {
+      "id": 5021,
+      "name": "NDA एवं NA (राष्ट्रीय रक्षा अकादमी)",
+      "eligibility": "12वीं (Math/Phys/Arts)",
+      "age_limit": "16.5-19.5 वर्ष",
+      "applicant_scale": "8+ लाख",
+      "exam_pattern": "गणित (300) + GAT (600) + SSB इंटरव्यू",
+      "viral_subtext": "सेना, नौसेना, वायुसेना में सीधे लेफ्टिनेंट",
+      "status": "verified"
+    },
+    {
+      "id": 5022,
+      "name": "CDS (कंबाइंड डिफेंस सर्विसेज परीक्षा)",
+      "eligibility": "स्नातक / इंजीनियरिंग",
+      "age_limit": "19-25 वर्ष",
+      "applicant_scale": "5+ लाख",
+      "exam_pattern": "English, GK, Elementary Maths (IMA/INA) + SSB",
+      "viral_subtext": "IMA देहरादून, OTA चेन्नई, AFA",
+      "status": "verified"
+    },
+    {
+      "id": 5023,
+      "name": "CAPF असिस्टेंट कमांडेंट (AC)",
+      "eligibility": "स्नातक",
+      "age_limit": "20-25 वर्ष",
+      "applicant_scale": "3+ लाख",
+      "exam_pattern": "Paper-1 (GS/Ability 250) + Paper-2 (Essay 200) + Interview",
+      "viral_subtext": "BSF, CRPF, CISF, ITBP में क्लास-1 राजपत्रित अफसर",
+      "status": "verified"
+    }
+  ]
+}

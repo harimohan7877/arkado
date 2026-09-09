@@ -1,0 +1,35 @@
+{
+  "bundle_id": "bundle-032",
+  "bundle_num": 32,
+  "category_id": "other-states",
+  "category_name": "अन्य राज्य",
+  "category_icon": "🦁",
+  "title": "अन्य राज्य — उत्तराखंड (UKSSSC & UKPSC)",
+  "total_exams": 2,
+  "boards_included": [
+    "Uttarakhand"
+  ],
+  "official_portal": "https://ukpsc.gov.in",
+  "exams": [
+    {
+      "id": 7040,
+      "name": "उत्तराखंड पुलिस आरक्षी (कांस्टेबल सीधी भर्ती)",
+      "eligibility": "12वीं पास",
+      "age_limit": "18-22 वर्ष",
+      "applicant_scale": "2.5 लाख",
+      "exam_pattern": "शारीरिक माप-दक्षता (100) + लिखित परीक्षा (100 अंक)",
+      "viral_subtext": "2,000 सिपाही पद",
+      "status": "verified"
+    },
+    {
+      "id": 7041,
+      "name": "उत्तराखंड राजस्व उपनिरीक्षक (पटवारी / लेखपाल)",
+      "eligibility": "स्नातक",
+      "age_limit": "21-28/35 वर्ष",
+      "applicant_scale": "1.5 लाख",
+      "exam_pattern": "100 प्रश्न (हिंदी 20, GK 40, उत्तराखंड विशेष 40)",
+      "viral_subtext": "राजस्व विभाग",
+      "status": "verified"
+    }
+  ]
+}

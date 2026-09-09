@@ -1,0 +1,45 @@
+{
+  "bundle_id": "bundle-019",
+  "bundle_num": 19,
+  "category_id": "haryana",
+  "category_name": "हरियाणा",
+  "category_icon": "🟠",
+  "title": "हरियाणा — HSSC (हरियाणा कर्मचारी चयन आयोग)",
+  "total_exams": 3,
+  "boards_included": [
+    "HSSC"
+  ],
+  "official_portal": "https://hssc.gov.in",
+  "exams": [
+    {
+      "id": 4010,
+      "name": "हरियाणा CET Group-C संयुक्त पात्रता परीक्षा",
+      "eligibility": "12वीं / स्नातक",
+      "age_limit": "18-42 वर्ष",
+      "applicant_scale": "11+ लाख",
+      "exam_pattern": "100 प्रश्न • 95 अंक लिखित + 5 सामाजिक-आर्थिक अंक",
+      "viral_subtext": "क्लर्क, पटवारी, ग्राम सचिव 32,000 पद",
+      "status": "verified"
+    },
+    {
+      "id": 4011,
+      "name": "हरियाणा CET Group-D भर्ती परीक्षा",
+      "eligibility": "10वीं पास",
+      "age_limit": "18-42 वर्ष",
+      "applicant_scale": "13+ लाख",
+      "exam_pattern": "95 अंक लिखित परीक्षा (हरियाणा GK 25% अनिवार्य)",
+      "viral_subtext": "चतुर्थ श्रेणी कर्मचारी 13,657 पद",
+      "status": "verified"
+    },
+    {
+      "id": 4012,
+      "name": "हरियाणा पुलिस कांस्टेबल (पुरुष / महिला सिपाही)",
+      "eligibility": "12वीं पास + CET Group C उत्तीर्ण",
+      "age_limit": "18-25 वर्ष",
+      "applicant_scale": "2+ लाख",
+      "exam_pattern": "PMT/PST दौड़ + नॉलेज टेस्ट (100 प्रश्न)",
+      "viral_subtext": "6,000 सिपाही सीधी भर्ती",
+      "status": "verified"
+    }
+  ]
+}

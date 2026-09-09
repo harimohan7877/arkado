@@ -1,0 +1,98 @@
+{
+  "bundle_id": "bundle-091",
+  "bundle_num": 91,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Uttarakhand General Govt (Part 2/2)",
+  "total_exams": 14,
+  "boards_included": [
+    "Uttarakhand General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 635,
+      "id": 6359,
+      "name": "UKPSC JE",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 637,
+      "id": 6357,
+      "name": "UKPSC Horticulture Supervisor",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 638,
+      "id": 6356,
+      "name": "UKPSC FRO",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 639,
+      "id": 6355,
+      "name": "UKPSC Executive Officer",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 640,
+      "id": 6354,
+      "name": "UKPSC Environmental Supervisor",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 642,
+      "id": 6352,
+      "name": "UKPSC Assistant Review Officer",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 656,
+      "id": 6338,
+      "name": "UKPSC APO",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 657,
+      "id": 6337,
+      "name": "UKPSC AE",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 658,
+      "id": 6336,
+      "name": "UKPSC Administrative Services",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 659,
+      "id": 6335,
+      "name": "UKPSC AAO",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 780,
+      "id": 6214,
+      "name": "UBTER JEEP",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 781,
+      "id": 6213,
+      "name": "UBTER Group D",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 4776,
+      "id": 2218,
+      "name": "FRI Dehradun MTS",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 6329,
+      "id": 665,
+      "name": "BEG Centre Roorkee Group B & C",
+      "group": "Uttarakhand General Government Exams"
+    }
+  ]
+}

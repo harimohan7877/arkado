@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-094",
+  "bundle_num": 94,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Telangana General Govt (Part 1/2)",
+  "total_exams": 60,
+  "boards_included": [
+    "Telangana General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 789,
+      "id": 6205,
+      "name": "TSWDCW Extension Officer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 790,
+      "id": 6204,
+      "name": "TSTRANSCO Junior Lineman",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 791,
+      "id": 6203,
+      "name": "TSTRANSCO JPO",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 792,
+      "id": 6202,
+      "name": "TSTRANSCO AE",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 793,
+      "id": 6201,
+      "name": "TSSPDCL Sub Engineer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 794,
+      "id": 6200,
+      "name": "TSSPDCL JLM",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 795,
+      "id": 6199,
+      "name": "TSSPDCL JACO",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 796,
+      "id": 6198,
+      "name": "TSSPDCL AE",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 799,
+      "id": 6195,
+      "name": "TSPSC Senior Accountant",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 800,
+      "id": 6194,
+      "name": "TSPSC Revenue Dept. Deputy Surveyor",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 805,
+      "id": 6189,
+      "name": "TSPSC Physical Director",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 807,
+      "id": 6187,
+      "name": "TSPSC Manager",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 808,
+      "id": 6186,
+      "name": "TSPSC Librarian",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 809,
+      "id": 6185,
+      "name": "TSPSC Lab Technician",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 810,
+      "id": 6184,
+      "name": "TSPSC Junior Stenographer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 820,
+      "id": 6174,
+      "name": "TSPSC Junior Assistant",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 821,
+      "id": 6173,
+      "name": "TSPSC JTO Mechanical",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 822,
+      "id": 6172,
+      "name": "TSPSC JTO Civil",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 823,
+      "id": 6171,
+      "name": "TSPSC Group 4",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 824,
+      "id": 6170,
+      "name": "TSPSC Group 2",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 825,
+      "id": 6169,
+      "name": "TSPSC Group 1",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 826,
+      "id": 6168,
+      "name": "TSPSC FSO",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 828,
+      "id": 6166,
+      "name": "TSPSC Extension Officer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 830,
+      "id": 6164,
+      "name": "TSPSC Divisional Accounts Officer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 831,
+      "id": 6163,
+      "name": "TSPSC Deputy Surveyor",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 832,
+      "id": 6162,
+      "name": "TSPSC AMVI",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 833,
+      "id": 6161,
+      "name": "TSPSC Agriculture Officer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 834,
+      "id": 6160,
+      "name": "TSPSC AEE Mechanical",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 835,
+      "id": 6159,
+      "name": "TSPSC AEE Electrical",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 836,
+      "id": 6158,
+      "name": "TSPSC AEE Civil",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 837,
+      "id": 6157,
+      "name": "TSNPDCL Sub Engineer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 838,
+      "id": 6156,
+      "name": "TSNPDCL Junior Assistant",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 839,
+      "id": 6155,
+      "name": "TSGENCO AE Mechanical",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 840,
+      "id": 6154,
+      "name": "TSGENCO AE Electronics",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 841,
+      "id": 6153,
+      "name": "TSGENCO AE Electrical",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 842,
+      "id": 6152,
+      "name": "TSGENCO AE Civil",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 851,
+      "id": 6143,
+      "name": "TS SET Sociology",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 852,
+      "id": 6142,
+      "name": "TS SET Sanskrit",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 853,
+      "id": 6141,
+      "name": "TS SET Public Administration",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 854,
+      "id": 6140,
+      "name": "TS SET Psychology",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 855,
+      "id": 6139,
+      "name": "TS SET Political Science",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 856,
+      "id": 6138,
+      "name": "TS SET Physical Science",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 858,
+      "id": 6136,
+      "name": "TS SET Philosophy",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 859,
+      "id": 6135,
+      "name": "TS SET Paper 1",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 860,
+      "id": 6134,
+      "name": "TS SET Linguistics",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 861,
+      "id": 6133,
+      "name": "TS SET Life Sciences",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 862,
+      "id": 6132,
+      "name": "TS SET Library and Information Science",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 863,
+      "id": 6131,
+      "name": "TS SET Law",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 864,
+      "id": 6130,
+      "name": "TS SET Journalism, Mass Communication",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 865,
+      "id": 6129,
+      "name": "TS SET History",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 866,
+      "id": 6128,
+      "name": "TS SET Hindi",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 867,
+      "id": 6127,
+      "name": "TS SET Geography",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 868,
+      "id": 6126,
+      "name": "TS SET Environmental Studies",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 869,
+      "id": 6125,
+      "name": "TS SET English",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 871,
+      "id": 6123,
+      "name": "TS SET Economics",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 872,
+      "id": 6122,
+      "name": "TS SET Earth Science",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 873,
+      "id": 6121,
+      "name": "TS SET Computer Science",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 874,
+      "id": 6120,
+      "name": "TS SET Commerce",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 875,
+      "id": 6119,
+      "name": "TS LAWCET",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "sl": 877,
+      "id": 6117,
+      "name": "TS EAMCET Engineering",
+      "group": "Telangana General Government Exams"
+    }
+  ]
+}

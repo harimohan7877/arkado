@@ -1,0 +1,345 @@
+{
+  "bundle_id": "bundle-115",
+  "bundle_num": 115,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Punjab PSSSB • Gujarat GSSSB",
+  "total_exams": 55,
+  "boards_included": [
+    "Punjab PSSSB",
+    "Gujarat GSSSB"
+  ],
+  "exams": [
+    {
+      "sl": 2039,
+      "id": 4955,
+      "name": "PSSSB Welfare Officer",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2040,
+      "id": 4954,
+      "name": "PSSSB Veterinary Inspector",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2041,
+      "id": 4953,
+      "name": "PSSSB VDO",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2042,
+      "id": 4952,
+      "name": "PSSSB Treasury Officer",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2043,
+      "id": 4951,
+      "name": "PSSSB Technical Assistant",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2044,
+      "id": 4950,
+      "name": "PSSSB Supervisor",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2045,
+      "id": 4949,
+      "name": "PSSSB Storekeeper",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2046,
+      "id": 4948,
+      "name": "PSSSB Steno Typist",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2047,
+      "id": 4947,
+      "name": "PSSSB Senior Industrial Promotion Officer",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2048,
+      "id": 4946,
+      "name": "PSSSB Senior Assistant",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2049,
+      "id": 4945,
+      "name": "PSSSB School Librarian",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2050,
+      "id": 4944,
+      "name": "PSSSB Legal Clerk",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2051,
+      "id": 4943,
+      "name": "PSSSB Junior Technician",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2052,
+      "id": 4942,
+      "name": "PSSSB Junior Draftsman",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2053,
+      "id": 4941,
+      "name": "PSSSB Junior Auditor",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2054,
+      "id": 4940,
+      "name": "PSSSB JE",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2055,
+      "id": 4939,
+      "name": "PSSSB Jail Warder",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2056,
+      "id": 4938,
+      "name": "PSSSB Inspector Audit",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2057,
+      "id": 4937,
+      "name": "PSSSB Hostel Superintendent",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2058,
+      "id": 4936,
+      "name": "PSSSB Horticulture Supervisor",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2059,
+      "id": 4935,
+      "name": "PSSSB Group D",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2060,
+      "id": 4934,
+      "name": "PSSSB Forest Guard",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2061,
+      "id": 4933,
+      "name": "PSSSB Fishery Officer",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2062,
+      "id": 4932,
+      "name": "PSSSB Excise and Taxation Inspector",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2063,
+      "id": 4931,
+      "name": "PSSSB Dairy Development Inspector",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2064,
+      "id": 4930,
+      "name": "PSSSB Clerk",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2065,
+      "id": 4929,
+      "name": "PSSSB BLEO",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 2066,
+      "id": 4928,
+      "name": "PSSSB ADA",
+      "group": "Punjab PSSSB Exams"
+    },
+    {
+      "sl": 4567,
+      "id": 2427,
+      "name": "GSSSB X Ray Technician",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4568,
+      "id": 2426,
+      "name": "GSSSB Work Assistant",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4569,
+      "id": 2425,
+      "name": "GSSSB Surveyor",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4570,
+      "id": 2424,
+      "name": "GSSSB Supervisor Instructor Mechanical",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4571,
+      "id": 2423,
+      "name": "GSSSB Supervisor Instructor Electrical",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4572,
+      "id": 2422,
+      "name": "GSSSB Supervisor Instructor Computer",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4573,
+      "id": 2421,
+      "name": "GSSSB Supervisor Instructor Automobile",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4574,
+      "id": 2420,
+      "name": "GSSSB Supervisor Instructor",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4575,
+      "id": 2419,
+      "name": "GSSSB Staff Nurse",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4576,
+      "id": 2418,
+      "name": "GSSSB Revenue Talati",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4577,
+      "id": 2417,
+      "name": "GSSSB Police SI",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4578,
+      "id": 2416,
+      "name": "GSSSB Planning Assistant",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4579,
+      "id": 2415,
+      "name": "GSSSB Physiotherapist",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4580,
+      "id": 2414,
+      "name": "GSSSB Pharmacist",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4581,
+      "id": 2413,
+      "name": "GSSSB Operation Theatre Assistant",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4582,
+      "id": 2412,
+      "name": "GSSSB Municipal Sanitary Inspector",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4583,
+      "id": 2411,
+      "name": "GSSSB Municipal Engineer",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4584,
+      "id": 2410,
+      "name": "GSSSB MPHW",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4585,
+      "id": 2409,
+      "name": "GSSSB Mines Supervisor",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4586,
+      "id": 2408,
+      "name": "GSSSB Laboratory Assistant",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4587,
+      "id": 2407,
+      "name": "GSSSB Junior Pharmacist",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4588,
+      "id": 2406,
+      "name": "GSSSB Fireman",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4589,
+      "id": 2405,
+      "name": "GSSSB Draftsman",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4590,
+      "id": 2404,
+      "name": "GSSSB Clerk",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4591,
+      "id": 2403,
+      "name": "GSSSB CCE",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4592,
+      "id": 2402,
+      "name": "GSSSB ATDO",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "sl": 4593,
+      "id": 2401,
+      "name": "GSSSB AAE",
+      "group": "Gujarat GSSSB Exams"
+    }
+  ]
+}

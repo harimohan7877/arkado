@@ -1,0 +1,358 @@
+{
+  "bundle_number": 124,
+  "bundle_id": "raw_bundle_124",
+  "range": "6151 - 6200",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 6151,
+      "group_sl": 3161,
+      "exam_id": 3833,
+      "name": "MECL Technician",
+      "group": "Engineering & PSU - MECL Exams"
+    },
+    {
+      "global_sl": 6152,
+      "group_sl": 3162,
+      "exam_id": 3832,
+      "name": "MECL Mechanic cum Operator",
+      "group": "Engineering & PSU - MECL Exams"
+    },
+    {
+      "global_sl": 6153,
+      "group_sl": 3163,
+      "exam_id": 3831,
+      "name": "MECL Assistant",
+      "group": "Engineering & PSU - MECL Exams"
+    },
+    {
+      "global_sl": 6154,
+      "group_sl": 3292,
+      "exam_id": 3702,
+      "name": "LMRC Station Controller, Train Operator",
+      "group": "Delhi LMRC Metro Exams"
+    },
+    {
+      "global_sl": 6155,
+      "group_sl": 3293,
+      "exam_id": 3701,
+      "name": "LMRC Junior Engineer",
+      "group": "Delhi LMRC Metro Exams"
+    },
+    {
+      "global_sl": 6156,
+      "group_sl": 3294,
+      "exam_id": 3700,
+      "name": "LMRC Assistant Manager",
+      "group": "Delhi LMRC Metro Exams"
+    },
+    {
+      "global_sl": 6157,
+      "group_sl": 3402,
+      "exam_id": 3592,
+      "name": "KTET Social Science",
+      "group": "Kerala KTET Exams"
+    },
+    {
+      "global_sl": 6158,
+      "group_sl": 3403,
+      "exam_id": 3591,
+      "name": "KTET Maths and Science",
+      "group": "Kerala KTET Exams"
+    },
+    {
+      "global_sl": 6159,
+      "group_sl": 3404,
+      "exam_id": 3590,
+      "name": "KTET",
+      "group": "Kerala KTET Exams"
+    },
+    {
+      "global_sl": 6160,
+      "group_sl": 3563,
+      "exam_id": 3431,
+      "name": "KDMC JE",
+      "group": "Maharashtra KDMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6161,
+      "group_sl": 3564,
+      "exam_id": 3430,
+      "name": "KDMC Fireman",
+      "group": "Maharashtra KDMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6162,
+      "group_sl": 3565,
+      "exam_id": 3429,
+      "name": "KDMC Clerk Typist",
+      "group": "Maharashtra KDMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6163,
+      "group_sl": 3575,
+      "exam_id": 3419,
+      "name": "Karnataka High Court Typist",
+      "group": "Karnataka High Court & Court Exams"
+    },
+    {
+      "global_sl": 6164,
+      "group_sl": 3576,
+      "exam_id": 3418,
+      "name": "Karnataka High Court SDA",
+      "group": "Karnataka High Court & Court Exams"
+    },
+    {
+      "global_sl": 6165,
+      "group_sl": 3578,
+      "exam_id": 3416,
+      "name": "Karnataka HC Civil Judge",
+      "group": "Karnataka High Court & Court Exams"
+    },
+    {
+      "global_sl": 6166,
+      "group_sl": 3596,
+      "exam_id": 3398,
+      "name": "JTET Social Studies",
+      "group": "Jharkhand TET Exams"
+    },
+    {
+      "global_sl": 6167,
+      "group_sl": 3597,
+      "exam_id": 3397,
+      "name": "JTET Maths and Science",
+      "group": "Jharkhand TET Exams"
+    },
+    {
+      "global_sl": 6168,
+      "group_sl": 3795,
+      "exam_id": 3199,
+      "name": "Jharkhand TET Paper 1",
+      "group": "Jharkhand TET Exams"
+    },
+    {
+      "global_sl": 6169,
+      "group_sl": 3691,
+      "exam_id": 3303,
+      "name": "JPSC Assistant Professor",
+      "group": "Jharkhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 6170,
+      "group_sl": 3831,
+      "exam_id": 3163,
+      "name": "Jharkhand Eligibility Test Education",
+      "group": "Jharkhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 6171,
+      "group_sl": 3839,
+      "exam_id": 3155,
+      "name": "Jharkhand B.Ed",
+      "group": "Jharkhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 6172,
+      "group_sl": 3696,
+      "exam_id": 3298,
+      "name": "JNU Non Teaching",
+      "group": "National Academics - JNU Non-Teaching Exams"
+    },
+    {
+      "global_sl": 6173,
+      "group_sl": 3697,
+      "exam_id": 3297,
+      "name": "JNU CEEB",
+      "group": "National Academics - JNU Non-Teaching Exams"
+    },
+    {
+      "global_sl": 6174,
+      "group_sl": 3698,
+      "exam_id": 3296,
+      "name": "JNU Associate Professor",
+      "group": "National Academics - JNU Non-Teaching Exams"
+    },
+    {
+      "global_sl": 6175,
+      "group_sl": 3779,
+      "exam_id": 3215,
+      "name": "JK Police Constable Telecommunication",
+      "group": "Jammu & Kashmir Police & Security Exams"
+    },
+    {
+      "global_sl": 6176,
+      "group_sl": 3780,
+      "exam_id": 3214,
+      "name": "JK Police Constable Armed",
+      "group": "Jammu & Kashmir Police & Security Exams"
+    },
+    {
+      "global_sl": 6177,
+      "group_sl": 3781,
+      "exam_id": 3213,
+      "name": "JK Police Constable",
+      "group": "Jammu & Kashmir Police & Security Exams"
+    },
+    {
+      "global_sl": 6178,
+      "group_sl": 3921,
+      "exam_id": 3073,
+      "name": "IREL Tradesman Trainee",
+      "group": "Engineering & PSU - IREL Exams"
+    },
+    {
+      "global_sl": 6179,
+      "group_sl": 3922,
+      "exam_id": 3072,
+      "name": "IREL Graduate Trainee",
+      "group": "Engineering & PSU - IREL Exams"
+    },
+    {
+      "global_sl": 6180,
+      "group_sl": 3923,
+      "exam_id": 3071,
+      "name": "IREL Diploma Trainee",
+      "group": "Engineering & PSU - IREL Exams"
+    },
+    {
+      "global_sl": 6181,
+      "group_sl": 4120,
+      "exam_id": 2874,
+      "name": "IFFCO Graduate Engineer Apprentice",
+      "group": "Engineering & PSU - IFFCO Exams"
+    },
+    {
+      "global_sl": 6182,
+      "group_sl": 4121,
+      "exam_id": 2873,
+      "name": "IFFCO GET",
+      "group": "Engineering & PSU - IFFCO Exams"
+    },
+    {
+      "global_sl": 6183,
+      "group_sl": 4122,
+      "exam_id": 2872,
+      "name": "IFFCO AGT",
+      "group": "Engineering & PSU - IFFCO Exams"
+    },
+    {
+      "global_sl": 6184,
+      "group_sl": 4214,
+      "exam_id": 2780,
+      "name": "HURL Trainee Engineer Chemical",
+      "group": "Engineering & PSU - HURL Exams"
+    },
+    {
+      "global_sl": 6185,
+      "group_sl": 4215,
+      "exam_id": 2779,
+      "name": "HURL Non Executive",
+      "group": "Engineering & PSU - HURL Exams"
+    },
+    {
+      "global_sl": 6186,
+      "group_sl": 4216,
+      "exam_id": 2778,
+      "name": "HURL Junior Engineer Assistant",
+      "group": "Engineering & PSU - HURL Exams"
+    },
+    {
+      "global_sl": 6187,
+      "group_sl": 4284,
+      "exam_id": 2710,
+      "name": "HSL Project Officer",
+      "group": "Engineering & PSU - HSL Exams"
+    },
+    {
+      "global_sl": 6188,
+      "group_sl": 4285,
+      "exam_id": 2709,
+      "name": "HSL Junior Supervisor",
+      "group": "Engineering & PSU - HSL Exams"
+    },
+    {
+      "global_sl": 6189,
+      "group_sl": 4286,
+      "exam_id": 2708,
+      "name": "HSL Designer",
+      "group": "Engineering & PSU - HSL Exams"
+    },
+    {
+      "global_sl": 6190,
+      "group_sl": 4498,
+      "exam_id": 2496,
+      "name": "HEC Graduate Trainee",
+      "group": "Engineering & PSU - HEC Exams"
+    },
+    {
+      "global_sl": 6191,
+      "group_sl": 4499,
+      "exam_id": 2495,
+      "name": "HEC Diploma Engineer Trainee",
+      "group": "Engineering & PSU - HEC Exams"
+    },
+    {
+      "global_sl": 6192,
+      "group_sl": 4500,
+      "exam_id": 2494,
+      "name": "HEC Apprentice",
+      "group": "Engineering & PSU - HEC Exams"
+    },
+    {
+      "global_sl": 6193,
+      "group_sl": 4519,
+      "exam_id": 2475,
+      "name": "Haryana Police SI",
+      "group": "Haryana Police & Security Exams"
+    },
+    {
+      "global_sl": 6194,
+      "group_sl": 4520,
+      "exam_id": 2474,
+      "name": "Haryana Police Constable",
+      "group": "Haryana Police & Security Exams"
+    },
+    {
+      "global_sl": 6195,
+      "group_sl": 4523,
+      "exam_id": 2471,
+      "name": "Haryana Home Guard",
+      "group": "Haryana Police & Security Exams"
+    },
+    {
+      "global_sl": 6196,
+      "group_sl": 4541,
+      "exam_id": 2453,
+      "name": "Gujarat TET Social Studies",
+      "group": "Gujarat TET Exams"
+    },
+    {
+      "global_sl": 6197,
+      "group_sl": 4542,
+      "exam_id": 2452,
+      "name": "Gujarat TET Paper 1",
+      "group": "Gujarat TET Exams"
+    },
+    {
+      "global_sl": 6198,
+      "group_sl": 4543,
+      "exam_id": 2451,
+      "name": "Gujarat TET Mathematics, Science",
+      "group": "Gujarat TET Exams"
+    },
+    {
+      "global_sl": 6199,
+      "group_sl": 4673,
+      "exam_id": 2321,
+      "name": "Goa Police SI",
+      "group": "Goa Police & Security Exams"
+    },
+    {
+      "global_sl": 6200,
+      "group_sl": 4677,
+      "exam_id": 2317,
+      "name": "Goa HRDC Trainee- Security Supervisors and Guard (Multi skilled)",
+      "group": "Goa Police & Security Exams"
+    }
+  ]
+}

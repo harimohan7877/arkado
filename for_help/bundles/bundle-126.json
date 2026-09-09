@@ -1,0 +1,476 @@
+{
+  "bundle_id": "bundle-126",
+  "bundle_num": 126,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Uttarakhand Forest Department • Meghalaya General Govt • Maharashtra TET",
+  "total_exams": 67,
+  "boards_included": [
+    "Uttarakhand Forest Department",
+    "Meghalaya General Govt",
+    "Maharashtra TET",
+    "General Subjects - Reasoning",
+    "National - Metro Rail",
+    "Tamil Nadu Forest Department",
+    "Odisha TET",
+    "Chhattisgarh Entrance",
+    "Gujarat GETCO",
+    "Gujarat SAU",
+    "General Subjects - Mathematics",
+    "Himachal Pradesh Transport & Roadways",
+    "Vocational Trades - Other ITI & Trades",
+    "Chhattisgarh CSPGCL",
+    "Uttarakhand UPCL",
+    "Karnataka Transport & Roadways",
+    "West Bengal MSCWB",
+    "Manipur High Court & Court",
+    "Karnataka HESCOM",
+    "Gujarat SDAU",
+    "Chhattisgarh Forest Department",
+    "Tamil Nadu CMRL Metro",
+    "Sikkim Police & Security",
+    "Odisha Entrance",
+    "Karnataka Power & Electricity",
+    "Uttarakhand UJVNL",
+    "Chandigarh Police & Security",
+    "Sikkim High Court & Court",
+    "Vocational Trades - Fitter",
+    "Jharkhand IIT",
+    "Gujarat DGVCL",
+    "Himachal Pradesh High Court & Court",
+    "Gujarat GMRCL Metro",
+    "Manipur Transport & Roadways",
+    "Karnataka PSC",
+    "Mizoram Police & Security",
+    "Maharashtra Forest Department",
+    "Kerala High Court & Court",
+    "Telangana GHMC Municipal Corporation",
+    "Uttarakhand Transport & Roadways",
+    "Jammu & Kashmir Power & Electricity",
+    "West Bengal DLSC",
+    "Goa IIT",
+    "Jammu & Kashmir High Court & Court",
+    "Jharkhand Police & Security",
+    "Uttarakhand High Court & Court",
+    "Telangana TVVP",
+    "Tamil Nadu Transport & Roadways",
+    "Karnataka GESCOM",
+    "Telangana Forest Department",
+    "Maharashtra NMRCL Metro",
+    "Telangana NIT",
+    "Maharashtra MMRCL Metro",
+    "Jharkhand Forest Department",
+    "Chandigarh Municipal Corporation",
+    "Chhattisgarh CSPDCL",
+    "Jharkhand High Court & Court",
+    "Karnataka NIT",
+    "Tamil Nadu Municipal Corporation",
+    "Gujarat MGVCL",
+    "Goa PSC"
+  ],
+  "exams": [
+    {
+      "sl": 3799,
+      "id": 3195,
+      "name": "Jharkhand Police Group D",
+      "group": "Jharkhand Police & Security Exams"
+    },
+    {
+      "sl": 3801,
+      "id": 3193,
+      "name": "Jharkhand Home Guard",
+      "group": "Jharkhand Police & Security Exams"
+    },
+    {
+      "sl": 4095,
+      "id": 2899,
+      "name": "IIT ISM Dhanbad Junior Superintendent",
+      "group": "Jharkhand IIT Exams"
+    },
+    {
+      "sl": 4097,
+      "id": 2897,
+      "name": "IIT Dhanbad Junior Assistant",
+      "group": "Jharkhand IIT Exams"
+    },
+    {
+      "sl": 4287,
+      "id": 2707,
+      "name": "HRTC TMA",
+      "group": "Himachal Pradesh Transport & Roadways Exams"
+    },
+    {
+      "sl": 4288,
+      "id": 2706,
+      "name": "HRTC Conductor",
+      "group": "Himachal Pradesh Transport & Roadways Exams"
+    },
+    {
+      "sl": 4480,
+      "id": 2514,
+      "name": "HP High Court Stenographer",
+      "group": "Himachal Pradesh High Court & Court Exams"
+    },
+    {
+      "sl": 4481,
+      "id": 2513,
+      "name": "HP High Court Clerk",
+      "group": "Himachal Pradesh High Court & Court Exams"
+    },
+    {
+      "sl": 5467,
+      "id": 1527,
+      "name": "CSPDCL Apprentice",
+      "group": "Chhattisgarh CSPDCL Exams"
+    },
+    {
+      "sl": 5468,
+      "id": 1526,
+      "name": "CSPDCL AE",
+      "group": "Chhattisgarh CSPDCL Exams"
+    },
+    {
+      "sl": 5645,
+      "id": 1349,
+      "name": "Chandigarh Police Constable",
+      "group": "Chandigarh Police & Security Exams"
+    },
+    {
+      "sl": 5646,
+      "id": 1348,
+      "name": "Chandigarh Police ASI",
+      "group": "Chandigarh Police & Security Exams"
+    },
+    {
+      "sl": 198,
+      "id": 6796,
+      "name": "UTC Conductor",
+      "group": "Uttarakhand Transport & Roadways Exams"
+    },
+    {
+      "sl": 467,
+      "id": 6527,
+      "name": "UPCL AE",
+      "group": "Uttarakhand UPCL Exams"
+    },
+    {
+      "sl": 583,
+      "id": 6411,
+      "name": "UKSSSC Forest Inspector",
+      "group": "Uttarakhand Forest Department Exams"
+    },
+    {
+      "sl": 641,
+      "id": 6353,
+      "name": "UKPSC Civil Judge",
+      "group": "Uttarakhand High Court & Court Exams"
+    },
+    {
+      "sl": 668,
+      "id": 6326,
+      "name": "UJVNL AE",
+      "group": "Uttarakhand UJVNL Exams"
+    },
+    {
+      "sl": 787,
+      "id": 6207,
+      "name": "TVVP Civil Assistant Surgeon",
+      "group": "Telangana TVVP Exams"
+    },
+    {
+      "sl": 827,
+      "id": 6167,
+      "name": "TSPSC Forest Department",
+      "group": "Telangana Forest Department Exams"
+    },
+    {
+      "sl": 941,
+      "id": 6053,
+      "name": "TNSTC Driver",
+      "group": "Tamil Nadu Transport & Roadways Exams"
+    },
+    {
+      "sl": 976,
+      "id": 6018,
+      "name": "TNPSC Assistant Conservator",
+      "group": "Tamil Nadu Forest Department Exams"
+    },
+    {
+      "sl": 1319,
+      "id": 5675,
+      "name": "Sikkim Police GD Constable",
+      "group": "Sikkim Police & Security Exams"
+    },
+    {
+      "sl": 1320,
+      "id": 5674,
+      "name": "Sikkim Judicial Academy",
+      "group": "Sikkim High Court & Court Exams"
+    },
+    {
+      "sl": 1388,
+      "id": 5606,
+      "name": "SDAU Junior Clerk",
+      "group": "Gujarat SDAU Exams"
+    },
+    {
+      "sl": 1423,
+      "id": 5571,
+      "name": "SAU Agricultural Assistant",
+      "group": "Gujarat SAU Exams"
+    },
+    {
+      "sl": 1792,
+      "id": 5202,
+      "name": "Reasoning Sectional Test",
+      "group": "General Subjects - Reasoning"
+    },
+    {
+      "sl": 2354,
+      "id": 4640,
+      "name": "Odisha TET",
+      "group": "Odisha TET Exams"
+    },
+    {
+      "sl": 2397,
+      "id": 4597,
+      "name": "OAVS PET",
+      "group": "Odisha Entrance Exams"
+    },
+    {
+      "sl": 2401,
+      "id": 4593,
+      "name": "NWKRTC Driver Grade III",
+      "group": "Karnataka Transport & Roadways Exams"
+    },
+    {
+      "sl": 2514,
+      "id": 4480,
+      "name": "NMRCL JE, SO, Technician",
+      "group": "Maharashtra NMRCL Metro Exams"
+    },
+    {
+      "sl": 2546,
+      "id": 4448,
+      "name": "NIT Warangal Technician",
+      "group": "Telangana NIT Exams"
+    },
+    {
+      "sl": 2549,
+      "id": 4445,
+      "name": "NIT Karnataka Non Teaching Staff",
+      "group": "Karnataka NIT Exams"
+    },
+    {
+      "sl": 2800,
+      "id": 4194,
+      "name": "MSCWB Junior Assistant",
+      "group": "West Bengal MSCWB Exams"
+    },
+    {
+      "sl": 2825,
+      "id": 4169,
+      "name": "MPSC Forest Ranger",
+      "group": "Maharashtra Forest Department Exams"
+    },
+    {
+      "sl": 3080,
+      "id": 3914,
+      "name": "MMRCL Technician",
+      "group": "Maharashtra MMRCL Metro Exams"
+    },
+    {
+      "sl": 3086,
+      "id": 3908,
+      "name": "Mizoram Police Constable",
+      "group": "Mizoram Police & Security Exams"
+    },
+    {
+      "sl": 3143,
+      "id": 3851,
+      "name": "MGVCL Vidyut Sahayak",
+      "group": "Gujarat MGVCL Exams"
+    },
+    {
+      "sl": 3158,
+      "id": 3836,
+      "name": "Meghalaya General Knowledge",
+      "group": "Meghalaya General Government Exams"
+    },
+    {
+      "sl": 3192,
+      "id": 3802,
+      "name": "Mathematics",
+      "group": "General Subjects - Mathematics"
+    },
+    {
+      "sl": 3202,
+      "id": 3792,
+      "name": "Manipur Transport Department",
+      "group": "Manipur Transport & Roadways Exams"
+    },
+    {
+      "sl": 3206,
+      "id": 3788,
+      "name": "Manipur High Court LDA",
+      "group": "Manipur High Court & Court Exams"
+    },
+    {
+      "sl": 3259,
+      "id": 3735,
+      "name": "MAHA TET",
+      "group": "Maharashtra TET Exams"
+    },
+    {
+      "sl": 3456,
+      "id": 3538,
+      "name": "KPTCL Junior Power Man",
+      "group": "Karnataka Power & Electricity Exams"
+    },
+    {
+      "sl": 3489,
+      "id": 3505,
+      "name": "Kochi Metro Rail",
+      "group": "National - Metro Rail Exams"
+    },
+    {
+      "sl": 3541,
+      "id": 3453,
+      "name": "Kerala High Court Assistant",
+      "group": "Kerala High Court & Court Exams"
+    },
+    {
+      "sl": 3572,
+      "id": 3422,
+      "name": "Karnataka PSC KAS",
+      "group": "Karnataka PSC Exams"
+    },
+    {
+      "sl": 3686,
+      "id": 3308,
+      "name": "JPSC Forest Range Officer",
+      "group": "Jharkhand Forest Department Exams"
+    },
+    {
+      "sl": 3783,
+      "id": 3211,
+      "name": "JK High Court Divisional District Cadre",
+      "group": "Jammu & Kashmir High Court & Court Exams"
+    },
+    {
+      "sl": 3802,
+      "id": 3192,
+      "name": "Jharkhand High Court District Judge",
+      "group": "Jharkhand High Court & Court Exams"
+    },
+    {
+      "sl": 3872,
+      "id": 3122,
+      "name": "J&K State Power Development Corporation Ltd. (JEGAS) Recruitment",
+      "group": "Jammu & Kashmir Power & Electricity Exams"
+    },
+    {
+      "sl": 4096,
+      "id": 2898,
+      "name": "IIT Goa Non Teaching Staff",
+      "group": "Goa IIT Exams"
+    },
+    {
+      "sl": 4497,
+      "id": 2497,
+      "name": "HESCOM Apprentice",
+      "group": "Karnataka HESCOM Exams"
+    },
+    {
+      "sl": 4672,
+      "id": 2322,
+      "name": "Goa PSC Assistant Professor",
+      "group": "Goa PSC Exams"
+    },
+    {
+      "sl": 4684,
+      "id": 2310,
+      "name": "GMRCL Station Controller",
+      "group": "Gujarat GMRCL Metro Exams"
+    },
+    {
+      "sl": 4702,
+      "id": 2292,
+      "name": "GHMC Technical Work Inspector",
+      "group": "Telangana GHMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 4703,
+      "id": 2291,
+      "name": "GETCO JE",
+      "group": "Gujarat GETCO Exams"
+    },
+    {
+      "sl": 4704,
+      "id": 2290,
+      "name": "GESCOM Apprentice",
+      "group": "Karnataka GESCOM Exams"
+    },
+    {
+      "sl": 4800,
+      "id": 2194,
+      "name": "Fitter",
+      "group": "Vocational Trades - Fitter"
+    },
+    {
+      "sl": 5108,
+      "id": 1886,
+      "name": "DLSC Executive Assistant",
+      "group": "West Bengal DLSC Exams"
+    },
+    {
+      "sl": 5145,
+      "id": 1849,
+      "name": "DGVCL Vidyut Sahayak",
+      "group": "Gujarat DGVCL Exams"
+    },
+    {
+      "sl": 5466,
+      "id": 1528,
+      "name": "CSPGCL Apprentice",
+      "group": "Chhattisgarh CSPGCL Exams"
+    },
+    {
+      "sl": 5560,
+      "id": 1434,
+      "name": "CMRL Junior Engineer",
+      "group": "Tamil Nadu CMRL Metro Exams"
+    },
+    {
+      "sl": 5627,
+      "id": 1367,
+      "name": "Chennai Corporation Assistant Engineer",
+      "group": "Tamil Nadu Municipal Corporation Exams"
+    },
+    {
+      "sl": 5647,
+      "id": 1347,
+      "name": "Chandigarh Municipal Corporation Sweeper",
+      "group": "Chandigarh Municipal Corporation Exams"
+    },
+    {
+      "sl": 5667,
+      "id": 1327,
+      "name": "CGPSC Forest Ranger",
+      "group": "Chhattisgarh Forest Department Exams"
+    },
+    {
+      "sl": 5744,
+      "id": 1250,
+      "name": "CG PET",
+      "group": "Chhattisgarh Entrance Exams"
+    },
+    {
+      "sl": 6432,
+      "id": 562,
+      "name": "B.Sc Agriculture",
+      "group": "Vocational Trades - Other ITI & Trades"
+    }
+  ]
+}

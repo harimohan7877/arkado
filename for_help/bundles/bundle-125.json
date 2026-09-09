@@ -1,0 +1,496 @@
+{
+  "bundle_id": "bundle-125",
+  "bundle_num": 125,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Telangana Transport & Roadways • Mizoram General Govt • Maharashtra MCGM Municipal Corporation",
+  "total_exams": 75,
+  "boards_included": [
+    "Telangana Transport & Roadways",
+    "Mizoram General Govt",
+    "Maharashtra MCGM Municipal Corporation",
+    "Jammu & Kashmir Police & Security",
+    "Gujarat PGVCL",
+    "Tamil Nadu TNAU",
+    "Manipur Power & Electricity",
+    "Gujarat VMC Municipal Corporation",
+    "General Subjects - School Education & Classes",
+    "Kerala PSC",
+    "Tripura High Court & Court",
+    "Assam TET",
+    "Kerala Transport & Roadways",
+    "Vocational Trades - Electrician",
+    "Gujarat TET",
+    "West Bengal WBSHFWS",
+    "Maharashtra CSMC Municipal Corporation",
+    "Odisha Forest Department",
+    "Chhattisgarh TET",
+    "West Bengal High Court & Court",
+    "Sikkim PSC",
+    "Chhattisgarh CGPEB",
+    "Puducherry Police & Security",
+    "West Bengal TET",
+    "Goa Police & Security",
+    "Manipur PSC",
+    "Maharashtra Metro Rail",
+    "Meghalaya Police & Security",
+    "Gujarat Municipal Corporation",
+    "Gujarat UGVCL",
+    "Telangana PSC",
+    "Goa Power & Electricity",
+    "Nagaland Police & Security"
+  ],
+  "exams": [
+    {
+      "sl": 3779,
+      "id": 3215,
+      "name": "JK Police Constable Telecommunication",
+      "group": "Jammu & Kashmir Police & Security Exams"
+    },
+    {
+      "sl": 3780,
+      "id": 3214,
+      "name": "JK Police Constable Armed",
+      "group": "Jammu & Kashmir Police & Security Exams"
+    },
+    {
+      "sl": 3781,
+      "id": 3213,
+      "name": "JK Police Constable",
+      "group": "Jammu & Kashmir Police & Security Exams"
+    },
+    {
+      "sl": 4541,
+      "id": 2453,
+      "name": "Gujarat TET Social Studies",
+      "group": "Gujarat TET Exams"
+    },
+    {
+      "sl": 4542,
+      "id": 2452,
+      "name": "Gujarat TET Paper 1",
+      "group": "Gujarat TET Exams"
+    },
+    {
+      "sl": 4543,
+      "id": 2451,
+      "name": "Gujarat TET Mathematics, Science",
+      "group": "Gujarat TET Exams"
+    },
+    {
+      "sl": 4673,
+      "id": 2321,
+      "name": "Goa Police SI",
+      "group": "Goa Police & Security Exams"
+    },
+    {
+      "sl": 4677,
+      "id": 2317,
+      "name": "Goa HRDC Trainee- Security Supervisors and Guard (Multi skilled)",
+      "group": "Goa Police & Security Exams"
+    },
+    {
+      "sl": 4678,
+      "id": 2316,
+      "name": "Goa Home Guard",
+      "group": "Goa Police & Security Exams"
+    },
+    {
+      "sl": 4680,
+      "id": 2314,
+      "name": "Goa Electricity Line Helper",
+      "group": "Goa Power & Electricity Exams"
+    },
+    {
+      "sl": 4681,
+      "id": 2313,
+      "name": "Goa Electricity LDC",
+      "group": "Goa Power & Electricity Exams"
+    },
+    {
+      "sl": 4682,
+      "id": 2312,
+      "name": "Goa Electricity ALM",
+      "group": "Goa Power & Electricity Exams"
+    },
+    {
+      "sl": 5469,
+      "id": 1525,
+      "name": "CSMC JE",
+      "group": "Maharashtra CSMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 5470,
+      "id": 1524,
+      "name": "CSMC Fireman",
+      "group": "Maharashtra CSMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 5471,
+      "id": 1523,
+      "name": "CSMC Civil Engineering Assistant",
+      "group": "Maharashtra CSMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 5576,
+      "id": 1418,
+      "name": "Class 9 Mathematics",
+      "group": "General Subjects - School Education & Classes"
+    },
+    {
+      "sl": 5577,
+      "id": 1417,
+      "name": "Class 6 Mathematics",
+      "group": "General Subjects - School Education & Classes"
+    },
+    {
+      "sl": 5581,
+      "id": 1413,
+      "name": "Class 10 Mathematics",
+      "group": "General Subjects - School Education & Classes"
+    },
+    {
+      "sl": 5690,
+      "id": 1304,
+      "name": "CGPEB Pharmacist Grade 3",
+      "group": "Chhattisgarh CGPEB Exams"
+    },
+    {
+      "sl": 5691,
+      "id": 1303,
+      "name": "CGPEB Hostel Superintendent",
+      "group": "Chhattisgarh CGPEB Exams"
+    },
+    {
+      "sl": 5692,
+      "id": 1302,
+      "name": "CGPEB DEO",
+      "group": "Chhattisgarh CGPEB Exams"
+    },
+    {
+      "sl": 5716,
+      "id": 1278,
+      "name": "CG TET Social Studies Paper 2",
+      "group": "Chhattisgarh TET Exams"
+    },
+    {
+      "sl": 5717,
+      "id": 1277,
+      "name": "CG TET Paper 1",
+      "group": "Chhattisgarh TET Exams"
+    },
+    {
+      "sl": 5718,
+      "id": 1276,
+      "name": "CG TET Maths & Science",
+      "group": "Chhattisgarh TET Exams"
+    },
+    {
+      "sl": 6475,
+      "id": 519,
+      "name": "Assam TET Social Studies",
+      "group": "Assam TET Exams"
+    },
+    {
+      "sl": 6476,
+      "id": 518,
+      "name": "Assam TET Paper 1",
+      "group": "Assam TET Exams"
+    },
+    {
+      "sl": 6477,
+      "id": 517,
+      "name": "Assam TET Mathematics & Science",
+      "group": "Assam TET Exams"
+    },
+    {
+      "sl": 59,
+      "id": 6935,
+      "name": "WBSHFWS Pharmacist",
+      "group": "West Bengal WBSHFWS Exams"
+    },
+    {
+      "sl": 60,
+      "id": 6934,
+      "name": "WBSHFWS CHO",
+      "group": "West Bengal WBSHFWS Exams"
+    },
+    {
+      "sl": 80,
+      "id": 6914,
+      "name": "WBPSC Judicial Service",
+      "group": "West Bengal High Court & Court Exams"
+    },
+    {
+      "sl": 5814,
+      "id": 1180,
+      "name": "Calcutta High Court Group D",
+      "group": "West Bengal High Court & Court Exams"
+    },
+    {
+      "sl": 121,
+      "id": 6873,
+      "name": "WB TET Paper 1",
+      "group": "West Bengal TET Exams"
+    },
+    {
+      "sl": 122,
+      "id": 6872,
+      "name": "WB TET",
+      "group": "West Bengal TET Exams"
+    },
+    {
+      "sl": 166,
+      "id": 6828,
+      "name": "VMC Junior Clerk",
+      "group": "Gujarat VMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 167,
+      "id": 6827,
+      "name": "VMC Apprentice",
+      "group": "Gujarat VMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 673,
+      "id": 6321,
+      "name": "UGVCL Vidyut Sahayak",
+      "group": "Gujarat UGVCL Exams"
+    },
+    {
+      "sl": 674,
+      "id": 6320,
+      "name": "UGVCL Assistant Manager",
+      "group": "Gujarat UGVCL Exams"
+    },
+    {
+      "sl": 885,
+      "id": 6109,
+      "name": "Tripura High Court LDC",
+      "group": "Tripura High Court & Court Exams"
+    },
+    {
+      "sl": 2508,
+      "id": 4486,
+      "name": "North Tripura District Court Group D",
+      "group": "Tripura High Court & Court Exams"
+    },
+    {
+      "sl": 987,
+      "id": 6007,
+      "name": "TNAU Junior Assistant cum Typist",
+      "group": "Tamil Nadu TNAU Exams"
+    },
+    {
+      "sl": 988,
+      "id": 6006,
+      "name": "TNAU AAO",
+      "group": "Tamil Nadu TNAU Exams"
+    },
+    {
+      "sl": 1104,
+      "id": 5890,
+      "name": "TGSRTC Traffic Supervisor Trainee",
+      "group": "Telangana Transport & Roadways Exams"
+    },
+    {
+      "sl": 1105,
+      "id": 5889,
+      "name": "TGSRTC Mechanical Supervisor Trainee",
+      "group": "Telangana Transport & Roadways Exams"
+    },
+    {
+      "sl": 1114,
+      "id": 5880,
+      "name": "Telangana PSC VRO",
+      "group": "Telangana PSC Exams"
+    },
+    {
+      "sl": 1115,
+      "id": 5879,
+      "name": "Telangana PSC VRA",
+      "group": "Telangana PSC Exams"
+    },
+    {
+      "sl": 1156,
+      "id": 5838,
+      "name": "Surat Municipal Corporation Sweeper",
+      "group": "Gujarat Municipal Corporation Exams"
+    },
+    {
+      "sl": 1157,
+      "id": 5837,
+      "name": "Surat Municipal Apprentice",
+      "group": "Gujarat Municipal Corporation Exams"
+    },
+    {
+      "sl": 1317,
+      "id": 5677,
+      "name": "Sikkim PSC Veterinary Officer",
+      "group": "Sikkim PSC Exams"
+    },
+    {
+      "sl": 1318,
+      "id": 5676,
+      "name": "Sikkim PSC Accounts Clerk & Junior Store Keeper",
+      "group": "Sikkim PSC Exams"
+    },
+    {
+      "sl": 2027,
+      "id": 4967,
+      "name": "Puducherry Home Guard",
+      "group": "Puducherry Police & Security Exams"
+    },
+    {
+      "sl": 2103,
+      "id": 4891,
+      "name": "Pondicherry Police Constable",
+      "group": "Puducherry Police & Security Exams"
+    },
+    {
+      "sl": 2138,
+      "id": 4856,
+      "name": "PGVCL Vidyut Sahayak",
+      "group": "Gujarat PGVCL Exams"
+    },
+    {
+      "sl": 2139,
+      "id": 4855,
+      "name": "PGVCL JE",
+      "group": "Gujarat PGVCL Exams"
+    },
+    {
+      "sl": 2350,
+      "id": 4644,
+      "name": "OFDC LDA",
+      "group": "Odisha Forest Department Exams"
+    },
+    {
+      "sl": 2351,
+      "id": 4643,
+      "name": "OFDC Field Assistant",
+      "group": "Odisha Forest Department Exams"
+    },
+    {
+      "sl": 2771,
+      "id": 4223,
+      "name": "Nagaland Police SI",
+      "group": "Nagaland Police & Security Exams"
+    },
+    {
+      "sl": 2772,
+      "id": 4222,
+      "name": "Nagaland Police Constable",
+      "group": "Nagaland Police & Security Exams"
+    },
+    {
+      "sl": 2795,
+      "id": 4199,
+      "name": "MSRLS Project Manager",
+      "group": "Mizoram General Government Exams"
+    },
+    {
+      "sl": 3089,
+      "id": 3905,
+      "name": "Mizoram General Knowledge",
+      "group": "Mizoram General Government Exams"
+    },
+    {
+      "sl": 2798,
+      "id": 4196,
+      "name": "MSPDCL Group D",
+      "group": "Manipur Power & Electricity Exams"
+    },
+    {
+      "sl": 2799,
+      "id": 4195,
+      "name": "MSPDCL Computer Operator",
+      "group": "Manipur Power & Electricity Exams"
+    },
+    {
+      "sl": 3156,
+      "id": 3838,
+      "name": "Meghalaya Police SI",
+      "group": "Meghalaya Police & Security Exams"
+    },
+    {
+      "sl": 3157,
+      "id": 3837,
+      "name": "Meghalaya Police Constable",
+      "group": "Meghalaya Police & Security Exams"
+    },
+    {
+      "sl": 3167,
+      "id": 3827,
+      "name": "MDL Rigger & Electrician",
+      "group": "Vocational Trades - Electrician"
+    },
+    {
+      "sl": 4905,
+      "id": 2089,
+      "name": "Electrician",
+      "group": "Vocational Trades - Electrician"
+    },
+    {
+      "sl": 3173,
+      "id": 3821,
+      "name": "MCGM Sub Engineer",
+      "group": "Maharashtra MCGM Municipal Corporation Exams"
+    },
+    {
+      "sl": 3176,
+      "id": 3818,
+      "name": "MCGM Apprentice",
+      "group": "Maharashtra MCGM Municipal Corporation Exams"
+    },
+    {
+      "sl": 3203,
+      "id": 3791,
+      "name": "Manipur PSC Assistant Professor",
+      "group": "Manipur PSC Exams"
+    },
+    {
+      "sl": 3204,
+      "id": 3790,
+      "name": "Manipur PSC Assistant Engineer, Manager",
+      "group": "Manipur PSC Exams"
+    },
+    {
+      "sl": 3261,
+      "id": 3733,
+      "name": "Maha Metro Technician",
+      "group": "Maharashtra Metro Rail Exams"
+    },
+    {
+      "sl": 3262,
+      "id": 3732,
+      "name": "Maha Metro JE",
+      "group": "Maharashtra Metro Rail Exams"
+    },
+    {
+      "sl": 3405,
+      "id": 3589,
+      "name": "KSRTC Technical Assistant",
+      "group": "Kerala Transport & Roadways Exams"
+    },
+    {
+      "sl": 3407,
+      "id": 3587,
+      "name": "KSRTC Driver, Conductor",
+      "group": "Kerala Transport & Roadways Exams"
+    },
+    {
+      "sl": 3535,
+      "id": 3459,
+      "name": "Kerala PSC Staff Nurse",
+      "group": "Kerala PSC Exams"
+    },
+    {
+      "sl": 3536,
+      "id": 3458,
+      "name": "Kerala PSC Beat Forest Officer",
+      "group": "Kerala PSC Exams"
+    }
+  ]
+}

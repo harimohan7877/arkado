@@ -1,0 +1,358 @@
+{
+  "bundle_number": 7,
+  "bundle_id": "raw_bundle_007",
+  "range": "301 - 350",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 301,
+      "group_sl": 6184,
+      "exam_id": 810,
+      "name": "Bihar Jeevika Community Coordinator",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 302,
+      "group_sl": 6185,
+      "exam_id": 809,
+      "name": "Bihar Jeevika Block IT Executive",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 303,
+      "group_sl": 6186,
+      "exam_id": 808,
+      "name": "Bihar Jeevika Accountant",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 304,
+      "group_sl": 6187,
+      "exam_id": 807,
+      "name": "Bihar ITI CAT",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 305,
+      "group_sl": 6213,
+      "exam_id": 781,
+      "name": "Bihar Gram Panchayat",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 306,
+      "group_sl": 6214,
+      "exam_id": 780,
+      "name": "Bihar General Knowledge in Hindi",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 307,
+      "group_sl": 6215,
+      "exam_id": 779,
+      "name": "Bihar General Knowledge",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 308,
+      "group_sl": 6216,
+      "exam_id": 778,
+      "name": "Bihar FSO",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 309,
+      "group_sl": 6219,
+      "exam_id": 775,
+      "name": "Bihar Driver",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 310,
+      "group_sl": 6220,
+      "exam_id": 774,
+      "name": "Bihar DLRS kannoongo",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 311,
+      "group_sl": 6221,
+      "exam_id": 773,
+      "name": "Bihar DLRS Clerk",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 312,
+      "group_sl": 6222,
+      "exam_id": 772,
+      "name": "Bihar DLRS ASO",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 313,
+      "group_sl": 6224,
+      "exam_id": 770,
+      "name": "Bihar Current Affairs",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 314,
+      "group_sl": 6226,
+      "exam_id": 768,
+      "name": "Bihar COMFED Junior Technician",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 315,
+      "group_sl": 6227,
+      "exam_id": 767,
+      "name": "Bihar Civil Service",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 316,
+      "group_sl": 6232,
+      "exam_id": 762,
+      "name": "Bihar BTSC Nursing Tutor",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 317,
+      "group_sl": 6233,
+      "exam_id": 761,
+      "name": "Bihar BHO",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 318,
+      "group_sl": 6237,
+      "exam_id": 757,
+      "name": "Bihar Amin",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 319,
+      "group_sl": 6348,
+      "exam_id": 646,
+      "name": "BCECEB City Manager",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 320,
+      "group_sl": 6349,
+      "exam_id": 645,
+      "name": "BCECE Physics",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 321,
+      "group_sl": 6350,
+      "exam_id": 644,
+      "name": "BCECE Mathematics",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 322,
+      "group_sl": 6351,
+      "exam_id": 643,
+      "name": "BCECE Chemistry",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 323,
+      "group_sl": 6352,
+      "exam_id": 642,
+      "name": "BCECE Biology",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 324,
+      "group_sl": 6353,
+      "exam_id": 641,
+      "name": "BCECE Agriculture",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 325,
+      "group_sl": 6354,
+      "exam_id": 640,
+      "name": "BCECE",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 326,
+      "group_sl": 171,
+      "exam_id": 6823,
+      "name": "VITEEE",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 327,
+      "group_sl": 770,
+      "exam_id": 6224,
+      "name": "UCSL Diploma Engineering Trainee",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 328,
+      "group_sl": 919,
+      "exam_id": 6075,
+      "name": "Trade Apprentice Welder, electronics & Communication Trade",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 329,
+      "group_sl": 920,
+      "exam_id": 6074,
+      "name": "Trade Apprentice Fitter Trade",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 330,
+      "group_sl": 921,
+      "exam_id": 6073,
+      "name": "Trade Apprentice Electrician Trade in Hindi",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 331,
+      "group_sl": 922,
+      "exam_id": 6072,
+      "name": "Trade Apprentice Electrical Trade in Hindi",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 332,
+      "group_sl": 923,
+      "exam_id": 6071,
+      "name": "Trade Apprentice Electrical in English",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 333,
+      "group_sl": 924,
+      "exam_id": 6070,
+      "name": "Trade Apprentice Automobiles Trade",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 334,
+      "group_sl": 1140,
+      "exam_id": 5854,
+      "name": "TCS NQT",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 335,
+      "group_sl": 1261,
+      "exam_id": 5733,
+      "name": "SRMJEEE",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 336,
+      "group_sl": 1309,
+      "exam_id": 5685,
+      "name": "SITEEE",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 337,
+      "group_sl": 1392,
+      "exam_id": 5602,
+      "name": "SCL Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 338,
+      "group_sl": 1400,
+      "exam_id": 5594,
+      "name": "SCI Personal Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 339,
+      "group_sl": 1402,
+      "exam_id": 5592,
+      "name": "SCI Executive",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 340,
+      "group_sl": 1404,
+      "exam_id": 5590,
+      "name": "SCI Assistant Manager",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 341,
+      "group_sl": 1456,
+      "exam_id": 5538,
+      "name": "RWF Trade Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 342,
+      "group_sl": 1574,
+      "exam_id": 5420,
+      "name": "RRCAT Trade Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 343,
+      "group_sl": 1575,
+      "exam_id": 5419,
+      "name": "RRCAT Stipendiary Trainee",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 344,
+      "group_sl": 1748,
+      "exam_id": 5246,
+      "name": "Robotics Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 345,
+      "group_sl": 1811,
+      "exam_id": 5183,
+      "name": "RCF Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 346,
+      "group_sl": 1941,
+      "exam_id": 5053,
+      "name": "Railtel Deputy Manager",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 347,
+      "group_sl": 1942,
+      "exam_id": 5052,
+      "name": "RailTel Assistant Supervisor Account",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 348,
+      "group_sl": 1943,
+      "exam_id": 5051,
+      "name": "Railtel Assistant Manager",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 349,
+      "group_sl": 2126,
+      "exam_id": 4868,
+      "name": "Plant Operator",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 350,
+      "group_sl": 2191,
+      "exam_id": 4803,
+      "name": "Pawan Hans Trainee Technician",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    }
+  ]
+}

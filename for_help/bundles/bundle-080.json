@@ -1,0 +1,428 @@
+{
+  "bundle_id": "bundle-080",
+  "bundle_num": 80,
+  "category_id": "engineering-psu",
+  "category_name": "इंजीनियरिंग & PSU",
+  "category_icon": "⚙️",
+  "title": "इंजीनियरिंग & PSU — Engineering & PSU - Balmer Lawrie • Engineering & PSU - KRIBHCO • Engineering & PSU - CRIS",
+  "total_exams": 63,
+  "boards_included": [
+    "Engineering & PSU - Balmer Lawrie",
+    "Engineering & PSU - KRIBHCO",
+    "Engineering & PSU - CRIS",
+    "Engineering & PSU - IREL",
+    "Engineering & PSU - HSL",
+    "Engineering & PSU - TMC",
+    "Engineering & PSU - IFFCO",
+    "Engineering & PSU - DVC",
+    "Engineering & PSU - CDOT",
+    "Engineering & PSU - MFL",
+    "Engineering & PSU - IPR",
+    "Engineering & PSU - BVFCL",
+    "Engineering & PSU - CIPET",
+    "Engineering & PSU - CDAC",
+    "Engineering & PSU - NHIDCL",
+    "Engineering & PSU - WAPCOS",
+    "Engineering & PSU - Mazagon Dock",
+    "Engineering & PSU - ITI Limited",
+    "Engineering & PSU - NHAI",
+    "Engineering & PSU - MDL",
+    "Engineering & PSU - VECC",
+    "Engineering & PSU - HURL",
+    "Engineering & PSU - DCIL",
+    "Engineering & PSU - JNNSM",
+    "Engineering & PSU - CPCL",
+    "Engineering & PSU - HWB",
+    "Engineering & PSU - INCOIS",
+    "Engineering & PSU - FSI",
+    "Engineering & PSU - NFC",
+    "Engineering & PSU - MOIL",
+    "Engineering & PSU - FACT",
+    "Engineering & PSU - MECL",
+    "Engineering & PSU - EESL",
+    "Engineering & PSU - NBCC",
+    "Engineering & PSU - GRSE",
+    "Engineering & PSU - HEC",
+    "Engineering & PSU - Oil India"
+  ],
+  "exams": [
+    {
+      "sl": 3161,
+      "id": 3833,
+      "name": "MECL Technician",
+      "group": "Engineering & PSU - MECL Exams"
+    },
+    {
+      "sl": 3162,
+      "id": 3832,
+      "name": "MECL Mechanic cum Operator",
+      "group": "Engineering & PSU - MECL Exams"
+    },
+    {
+      "sl": 3163,
+      "id": 3831,
+      "name": "MECL Assistant",
+      "group": "Engineering & PSU - MECL Exams"
+    },
+    {
+      "sl": 3921,
+      "id": 3073,
+      "name": "IREL Tradesman Trainee",
+      "group": "Engineering & PSU - IREL Exams"
+    },
+    {
+      "sl": 3922,
+      "id": 3072,
+      "name": "IREL Graduate Trainee",
+      "group": "Engineering & PSU - IREL Exams"
+    },
+    {
+      "sl": 3923,
+      "id": 3071,
+      "name": "IREL Diploma Trainee",
+      "group": "Engineering & PSU - IREL Exams"
+    },
+    {
+      "sl": 4120,
+      "id": 2874,
+      "name": "IFFCO Graduate Engineer Apprentice",
+      "group": "Engineering & PSU - IFFCO Exams"
+    },
+    {
+      "sl": 4121,
+      "id": 2873,
+      "name": "IFFCO GET",
+      "group": "Engineering & PSU - IFFCO Exams"
+    },
+    {
+      "sl": 4122,
+      "id": 2872,
+      "name": "IFFCO AGT",
+      "group": "Engineering & PSU - IFFCO Exams"
+    },
+    {
+      "sl": 4214,
+      "id": 2780,
+      "name": "HURL Trainee Engineer Chemical",
+      "group": "Engineering & PSU - HURL Exams"
+    },
+    {
+      "sl": 4215,
+      "id": 2779,
+      "name": "HURL Non Executive",
+      "group": "Engineering & PSU - HURL Exams"
+    },
+    {
+      "sl": 4216,
+      "id": 2778,
+      "name": "HURL Junior Engineer Assistant",
+      "group": "Engineering & PSU - HURL Exams"
+    },
+    {
+      "sl": 4284,
+      "id": 2710,
+      "name": "HSL Project Officer",
+      "group": "Engineering & PSU - HSL Exams"
+    },
+    {
+      "sl": 4285,
+      "id": 2709,
+      "name": "HSL Junior Supervisor",
+      "group": "Engineering & PSU - HSL Exams"
+    },
+    {
+      "sl": 4286,
+      "id": 2708,
+      "name": "HSL Designer",
+      "group": "Engineering & PSU - HSL Exams"
+    },
+    {
+      "sl": 4498,
+      "id": 2496,
+      "name": "HEC Graduate Trainee",
+      "group": "Engineering & PSU - HEC Exams"
+    },
+    {
+      "sl": 4499,
+      "id": 2495,
+      "name": "HEC Diploma Engineer Trainee",
+      "group": "Engineering & PSU - HEC Exams"
+    },
+    {
+      "sl": 4500,
+      "id": 2494,
+      "name": "HEC Apprentice",
+      "group": "Engineering & PSU - HEC Exams"
+    },
+    {
+      "sl": 4931,
+      "id": 2063,
+      "name": "DVC JE Mechanical",
+      "group": "Engineering & PSU - DVC Exams"
+    },
+    {
+      "sl": 4932,
+      "id": 2062,
+      "name": "DVC JE Electrical",
+      "group": "Engineering & PSU - DVC Exams"
+    },
+    {
+      "sl": 4933,
+      "id": 2061,
+      "name": "DVC JE Civil",
+      "group": "Engineering & PSU - DVC Exams"
+    },
+    {
+      "sl": 5771,
+      "id": 1223,
+      "name": "CDAC Project Engineer Exam",
+      "group": "Engineering & PSU - CDAC Exams"
+    },
+    {
+      "sl": 5772,
+      "id": 1222,
+      "name": "CDAC Project Engineer",
+      "group": "Engineering & PSU - CDAC Exams"
+    },
+    {
+      "sl": 5776,
+      "id": 1218,
+      "name": "CDAC Design Engineer",
+      "group": "Engineering & PSU - CDAC Exams"
+    },
+    {
+      "sl": 148,
+      "id": 6846,
+      "name": "WAPCOS Limited Engineer",
+      "group": "Engineering & PSU - WAPCOS Exams"
+    },
+    {
+      "sl": 149,
+      "id": 6845,
+      "name": "WAPCOS JE",
+      "group": "Engineering & PSU - WAPCOS Exams"
+    },
+    {
+      "sl": 2339,
+      "id": 4655,
+      "name": "Oil India Grade III",
+      "group": "Engineering & PSU - Oil India Exams"
+    },
+    {
+      "sl": 2341,
+      "id": 4653,
+      "name": "Oil India Assistant Technician",
+      "group": "Engineering & PSU - Oil India Exams"
+    },
+    {
+      "sl": 2640,
+      "id": 4354,
+      "name": "NHAI Stenographer",
+      "group": "Engineering & PSU - NHAI Exams"
+    },
+    {
+      "sl": 2641,
+      "id": 4353,
+      "name": "NHAI Deputy Manager",
+      "group": "Engineering & PSU - NHAI Exams"
+    },
+    {
+      "sl": 2672,
+      "id": 4322,
+      "name": "NFC Stipendiary Trainee",
+      "group": "Engineering & PSU - NFC Exams"
+    },
+    {
+      "sl": 2674,
+      "id": 4320,
+      "name": "NFC Chemical Plant Operator",
+      "group": "Engineering & PSU - NFC Exams"
+    },
+    {
+      "sl": 2746,
+      "id": 4248,
+      "name": "NBCC Site Engineer",
+      "group": "Engineering & PSU - NBCC Exams"
+    },
+    {
+      "sl": 2747,
+      "id": 4247,
+      "name": "NBCC JE",
+      "group": "Engineering & PSU - NBCC Exams"
+    },
+    {
+      "sl": 3069,
+      "id": 3925,
+      "name": "MOIL Mine Mate",
+      "group": "Engineering & PSU - MOIL Exams"
+    },
+    {
+      "sl": 3070,
+      "id": 3924,
+      "name": "MOIL Graduate Trainee",
+      "group": "Engineering & PSU - MOIL Exams"
+    },
+    {
+      "sl": 3145,
+      "id": 3849,
+      "name": "MFL Technical Assistant Trainee Operations",
+      "group": "Engineering & PSU - MFL Exams"
+    },
+    {
+      "sl": 3146,
+      "id": 3848,
+      "name": "MFL Technical Assistant Trainee",
+      "group": "Engineering & PSU - MFL Exams"
+    },
+    {
+      "sl": 3165,
+      "id": 3829,
+      "name": "MDL Trade Apprentice",
+      "group": "Engineering & PSU - MDL Exams"
+    },
+    {
+      "sl": 3166,
+      "id": 3828,
+      "name": "MDL Technical Staff & Operator",
+      "group": "Engineering & PSU - MDL Exams"
+    },
+    {
+      "sl": 3179,
+      "id": 3815,
+      "name": "Mazagon Dock Rigger & Electrician",
+      "group": "Engineering & PSU - Mazagon Dock Exams"
+    },
+    {
+      "sl": 3180,
+      "id": 3814,
+      "name": "Mazagon Dock Non Executive",
+      "group": "Engineering & PSU - Mazagon Dock Exams"
+    },
+    {
+      "sl": 4835,
+      "id": 2159,
+      "name": "FACT Trade Apprentice",
+      "group": "Engineering & PSU - FACT Exams"
+    },
+    {
+      "sl": 4836,
+      "id": 2158,
+      "name": "FACT Technician",
+      "group": "Engineering & PSU - FACT Exams"
+    },
+    {
+      "sl": 179,
+      "id": 6815,
+      "name": "VECC Stipendiary Trainee",
+      "group": "Engineering & PSU - VECC Exams"
+    },
+    {
+      "sl": 1071,
+      "id": 5923,
+      "name": "TMC JE",
+      "group": "Engineering & PSU - TMC Exams"
+    },
+    {
+      "sl": 2637,
+      "id": 4357,
+      "name": "NHIDCL Deputy Manager",
+      "group": "Engineering & PSU - NHIDCL Exams"
+    },
+    {
+      "sl": 3451,
+      "id": 3543,
+      "name": "KRIBHCO Field Representative Trainee",
+      "group": "Engineering & PSU - KRIBHCO Exams"
+    },
+    {
+      "sl": 3699,
+      "id": 3295,
+      "name": "JNNSM Surya Mitra and Helper",
+      "group": "Engineering & PSU - JNNSM Exams"
+    },
+    {
+      "sl": 3874,
+      "id": 3120,
+      "name": "ITI Limited Diploma Engineer",
+      "group": "Engineering & PSU - ITI Limited Exams"
+    },
+    {
+      "sl": 3929,
+      "id": 3065,
+      "name": "IPR MTS",
+      "group": "Engineering & PSU - IPR Exams"
+    },
+    {
+      "sl": 4075,
+      "id": 2919,
+      "name": "INCOIS Project Scientist",
+      "group": "Engineering & PSU - INCOIS Exams"
+    },
+    {
+      "sl": 4212,
+      "id": 2782,
+      "name": "HWB Stipendiary Trainee",
+      "group": "Engineering & PSU - HWB Exams"
+    },
+    {
+      "sl": 4642,
+      "id": 2352,
+      "name": "GRSE Trade Apprentice",
+      "group": "Engineering & PSU - GRSE Exams"
+    },
+    {
+      "sl": 4775,
+      "id": 2219,
+      "name": "FSI Technical Associate",
+      "group": "Engineering & PSU - FSI Exams"
+    },
+    {
+      "sl": 4908,
+      "id": 2086,
+      "name": "EESL Engineer, AE",
+      "group": "Engineering & PSU - EESL Exams"
+    },
+    {
+      "sl": 5194,
+      "id": 1800,
+      "name": "DCIL Dredge Cadets",
+      "group": "Engineering & PSU - DCIL Exams"
+    },
+    {
+      "sl": 5532,
+      "id": 1462,
+      "name": "CRIS JE",
+      "group": "Engineering & PSU - CRIS Exams"
+    },
+    {
+      "sl": 5535,
+      "id": 1459,
+      "name": "CPCL JEA",
+      "group": "Engineering & PSU - CPCL Exams"
+    },
+    {
+      "sl": 5594,
+      "id": 1400,
+      "name": "CIPET Technical Assistant",
+      "group": "Engineering & PSU - CIPET Exams"
+    },
+    {
+      "sl": 5769,
+      "id": 1225,
+      "name": "CDOT Technician",
+      "group": "Engineering & PSU - CDOT Exams"
+    },
+    {
+      "sl": 5846,
+      "id": 1148,
+      "name": "BVFCL Executive Trainee",
+      "group": "Engineering & PSU - BVFCL Exams"
+    },
+    {
+      "sl": 6430,
+      "id": 564,
+      "name": "Balmer Lawrie Supervisor Trainee",
+      "group": "Engineering & PSU - Balmer Lawrie Exams"
+    }
+  ]
+}

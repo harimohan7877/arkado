@@ -1,0 +1,358 @@
+{
+  "bundle_number": 123,
+  "bundle_id": "raw_bundle_123",
+  "range": "6101 - 6150",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 6101,
+      "group_sl": 1755,
+      "exam_id": 5239,
+      "name": "RMC Junior Clerk",
+      "group": "Gujarat RMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6102,
+      "group_sl": 1756,
+      "exam_id": 5238,
+      "name": "RMC Driver Operator",
+      "group": "Gujarat RMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6103,
+      "group_sl": 1828,
+      "exam_id": 5166,
+      "name": "Rajasthan TET Social Studies Paper 2",
+      "group": "Rajasthan TET Exams"
+    },
+    {
+      "global_sl": 6104,
+      "group_sl": 1829,
+      "exam_id": 5165,
+      "name": "Rajasthan TET Paper 1",
+      "group": "Rajasthan TET Exams"
+    },
+    {
+      "global_sl": 6105,
+      "group_sl": 1830,
+      "exam_id": 5164,
+      "name": "Rajasthan TET Maths & Science Paper 2",
+      "group": "Rajasthan TET Exams"
+    },
+    {
+      "global_sl": 6106,
+      "group_sl": 1894,
+      "exam_id": 5100,
+      "name": "Rajasthan Cooperative Bank Manager",
+      "group": "Rajasthan Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 6107,
+      "group_sl": 1895,
+      "exam_id": 5099,
+      "name": "Rajasthan Cooperative Bank Clerk",
+      "group": "Rajasthan Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 6108,
+      "group_sl": 1896,
+      "exam_id": 5098,
+      "name": "Rajasthan Cooperative Bank Banking Assistant",
+      "group": "Rajasthan Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 6109,
+      "group_sl": 1989,
+      "exam_id": 5005,
+      "name": "Punjab NHM Staff Nurse",
+      "group": "Punjab National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6110,
+      "group_sl": 2609,
+      "exam_id": 4385,
+      "name": "NHM Punjab Computer Operator",
+      "group": "Punjab National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6111,
+      "group_sl": 2610,
+      "exam_id": 4384,
+      "name": "NHM Punjab CHO",
+      "group": "Punjab National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6112,
+      "group_sl": 2028,
+      "exam_id": 4966,
+      "name": "Puducherry General Knowledge",
+      "group": "Puducherry General Government Exams"
+    },
+    {
+      "global_sl": 6113,
+      "group_sl": 5125,
+      "exam_id": 1869,
+      "name": "DHFWS Puducherry Theatre Assistant",
+      "group": "Puducherry General Government Exams"
+    },
+    {
+      "global_sl": 6114,
+      "group_sl": 5127,
+      "exam_id": 1867,
+      "name": "DHFWS Puducherry Health Assistant",
+      "group": "Puducherry General Government Exams"
+    },
+    {
+      "global_sl": 6115,
+      "group_sl": 2073,
+      "exam_id": 4921,
+      "name": "PS TET Social Studies & Social Science",
+      "group": "Punjab TET Exams"
+    },
+    {
+      "global_sl": 6116,
+      "group_sl": 2074,
+      "exam_id": 4920,
+      "name": "PS TET Paper 1",
+      "group": "Punjab TET Exams"
+    },
+    {
+      "global_sl": 6117,
+      "group_sl": 2075,
+      "exam_id": 4919,
+      "name": "PS TET Mathematics and Science",
+      "group": "Punjab TET Exams"
+    },
+    {
+      "global_sl": 6118,
+      "group_sl": 2270,
+      "exam_id": 4724,
+      "name": "OPTCL Office Assistant",
+      "group": "Odisha Power & Electricity Exams"
+    },
+    {
+      "global_sl": 6119,
+      "group_sl": 2271,
+      "exam_id": 4723,
+      "name": "OPTCL JOMT",
+      "group": "Odisha Power & Electricity Exams"
+    },
+    {
+      "global_sl": 6120,
+      "group_sl": 2272,
+      "exam_id": 4722,
+      "name": "OPTCL JMT",
+      "group": "Odisha Power & Electricity Exams"
+    },
+    {
+      "global_sl": 6121,
+      "group_sl": 2478,
+      "exam_id": 4516,
+      "name": "NRHM Rajasthan Laboratory Assistant",
+      "group": "Rajasthan National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6122,
+      "group_sl": 2607,
+      "exam_id": 4387,
+      "name": "NHM Rajasthan MO",
+      "group": "Rajasthan National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6123,
+      "group_sl": 2608,
+      "exam_id": 4386,
+      "name": "NHM Rajasthan CHO",
+      "group": "Rajasthan National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6124,
+      "group_sl": 2479,
+      "exam_id": 4515,
+      "name": "NRHM Haryana MO",
+      "group": "Haryana National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6125,
+      "group_sl": 2627,
+      "exam_id": 4367,
+      "name": "NHM Haryana Staff Nurse",
+      "group": "Haryana National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6126,
+      "group_sl": 2628,
+      "exam_id": 4366,
+      "name": "NHM Haryana CHO",
+      "group": "Haryana National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6127,
+      "group_sl": 2480,
+      "exam_id": 4514,
+      "name": "NRHM Assam Medical Officer",
+      "group": "Assam National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6128,
+      "group_sl": 2634,
+      "exam_id": 4360,
+      "name": "NHM Assam MO",
+      "group": "Assam National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6129,
+      "group_sl": 2635,
+      "exam_id": 4359,
+      "name": "NHM Assam CHO",
+      "group": "Assam National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 6130,
+      "group_sl": 2485,
+      "exam_id": 4509,
+      "name": "NPSC CTS",
+      "group": "Nagaland General Government Exams"
+    },
+    {
+      "global_sl": 6131,
+      "group_sl": 2487,
+      "exam_id": 4507,
+      "name": "NPSC",
+      "group": "Nagaland General Government Exams"
+    },
+    {
+      "global_sl": 6132,
+      "group_sl": 2773,
+      "exam_id": 4221,
+      "name": "Nagaland General Knowledge",
+      "group": "Nagaland General Government Exams"
+    },
+    {
+      "global_sl": 6133,
+      "group_sl": 2560,
+      "exam_id": 4434,
+      "name": "NIFT Junior Assistant",
+      "group": "National Academics - NIFT Exams"
+    },
+    {
+      "global_sl": 6134,
+      "group_sl": 2561,
+      "exam_id": 4433,
+      "name": "NIFT Assistant Professor",
+      "group": "National Academics - NIFT Exams"
+    },
+    {
+      "global_sl": 6135,
+      "group_sl": 2562,
+      "exam_id": 4432,
+      "name": "NIFT",
+      "group": "National Academics - NIFT Exams"
+    },
+    {
+      "global_sl": 6136,
+      "group_sl": 2806,
+      "exam_id": 4188,
+      "name": "MRPL Technical Assistant Trainee",
+      "group": "Engineering & PSU - MRPL Exams"
+    },
+    {
+      "global_sl": 6137,
+      "group_sl": 2807,
+      "exam_id": 4187,
+      "name": "MRPL Graduate Apprentice Trainee",
+      "group": "Engineering & PSU - MRPL Exams"
+    },
+    {
+      "global_sl": 6138,
+      "group_sl": 2808,
+      "exam_id": 4186,
+      "name": "MRPL Graduate Apprentice",
+      "group": "Engineering & PSU - MRPL Exams"
+    },
+    {
+      "global_sl": 6139,
+      "group_sl": 2902,
+      "exam_id": 4092,
+      "name": "MPPEB Middle School Teacher",
+      "group": "Madhya Pradesh MPPEB Exams"
+    },
+    {
+      "global_sl": 6140,
+      "group_sl": 2903,
+      "exam_id": 4091,
+      "name": "MPPEB LDC, Stenographer",
+      "group": "Madhya Pradesh MPPEB Exams"
+    },
+    {
+      "global_sl": 6141,
+      "group_sl": 2904,
+      "exam_id": 4090,
+      "name": "MPPEB Group 5",
+      "group": "Madhya Pradesh MPPEB Exams"
+    },
+    {
+      "global_sl": 6142,
+      "group_sl": 3073,
+      "exam_id": 3921,
+      "name": "MNNIT Junior Assistant & Technician",
+      "group": "Uttar Pradesh MNNIT Exams"
+    },
+    {
+      "global_sl": 6143,
+      "group_sl": 3074,
+      "exam_id": 3920,
+      "name": "MNNIT Assistant Professor",
+      "group": "Uttar Pradesh MNNIT Exams"
+    },
+    {
+      "global_sl": 6144,
+      "group_sl": 3075,
+      "exam_id": 3919,
+      "name": "MNNIT Allahabad Faculty",
+      "group": "Uttar Pradesh MNNIT Exams"
+    },
+    {
+      "global_sl": 6145,
+      "group_sl": 3099,
+      "exam_id": 3895,
+      "name": "MIDHANI Non Executive",
+      "group": "Engineering & PSU - MIDHANI Exams"
+    },
+    {
+      "global_sl": 6146,
+      "group_sl": 3100,
+      "exam_id": 3894,
+      "name": "MIDHANI MT",
+      "group": "Engineering & PSU - MIDHANI Exams"
+    },
+    {
+      "global_sl": 6147,
+      "group_sl": 3101,
+      "exam_id": 3893,
+      "name": "MIDHANI Apprentice",
+      "group": "Engineering & PSU - MIDHANI Exams"
+    },
+    {
+      "global_sl": 6148,
+      "group_sl": 3153,
+      "exam_id": 3841,
+      "name": "Meghalaya PSC MO, Health Officer",
+      "group": "Meghalaya PSC Exams"
+    },
+    {
+      "global_sl": 6149,
+      "group_sl": 3154,
+      "exam_id": 3840,
+      "name": "Meghalaya PSC LDA",
+      "group": "Meghalaya PSC Exams"
+    },
+    {
+      "global_sl": 6150,
+      "group_sl": 3155,
+      "exam_id": 3839,
+      "name": "Meghalaya PSC AE",
+      "group": "Meghalaya PSC Exams"
+    }
+  ]
+}

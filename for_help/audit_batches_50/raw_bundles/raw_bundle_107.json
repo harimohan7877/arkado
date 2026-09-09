@@ -1,0 +1,358 @@
+{
+  "bundle_number": 107,
+  "bundle_id": "raw_bundle_107",
+  "range": "5301 - 5350",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5301,
+      "group_sl": 4446,
+      "exam_id": 2548,
+      "name": "HP TET Sanskrit",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5302,
+      "group_sl": 4447,
+      "exam_id": 2547,
+      "name": "HP TET Punjabi",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5303,
+      "group_sl": 4448,
+      "exam_id": 2546,
+      "name": "HP TET JBT",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5304,
+      "group_sl": 4449,
+      "exam_id": 2545,
+      "name": "HP TET Hindi",
+      "group": "Himachal Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5305,
+      "group_sl": 4546,
+      "exam_id": 2448,
+      "name": "Gujarat Police SI Wireless",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "global_sl": 5306,
+      "group_sl": 4547,
+      "exam_id": 2447,
+      "name": "Gujarat Police SI Technical Operator",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "global_sl": 5307,
+      "group_sl": 4548,
+      "exam_id": 2446,
+      "name": "Gujarat Police SI Motor Transport",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "global_sl": 5308,
+      "group_sl": 4549,
+      "exam_id": 2445,
+      "name": "Gujarat Police SI",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "global_sl": 5309,
+      "group_sl": 4550,
+      "exam_id": 2444,
+      "name": "Gujarat Police Head Constable Driver Mechanic",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "global_sl": 5310,
+      "group_sl": 4551,
+      "exam_id": 2443,
+      "name": "Gujarat Police Constable",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "global_sl": 5311,
+      "group_sl": 4552,
+      "exam_id": 2442,
+      "name": "Gujarat Police ASI",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "global_sl": 5312,
+      "group_sl": 4564,
+      "exam_id": 2430,
+      "name": "Gujarat Forest Guard",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "global_sl": 5313,
+      "group_sl": 4599,
+      "exam_id": 2395,
+      "name": "GSSC Police Constable Driver",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "global_sl": 5314,
+      "group_sl": 4600,
+      "exam_id": 2394,
+      "name": "GSSC Police Constable",
+      "group": "Gujarat Police & Security Exams"
+    },
+    {
+      "global_sl": 5315,
+      "group_sl": 4643,
+      "exam_id": 2351,
+      "name": "GPSSB Village Panchayat Secretary",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "global_sl": 5316,
+      "group_sl": 4644,
+      "exam_id": 2350,
+      "name": "GPSSB Pashudhan Nirikshak",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "global_sl": 5317,
+      "group_sl": 4645,
+      "exam_id": 2349,
+      "name": "GPSSB Mukhya Sevika",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "global_sl": 5318,
+      "group_sl": 4646,
+      "exam_id": 2348,
+      "name": "GPSSB MPHW",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "global_sl": 5319,
+      "group_sl": 4647,
+      "exam_id": 2347,
+      "name": "GPSSB Laboratory Technician",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "global_sl": 5320,
+      "group_sl": 4648,
+      "exam_id": 2346,
+      "name": "GPSSB Junior Pharmacist",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "global_sl": 5321,
+      "group_sl": 4649,
+      "exam_id": 2345,
+      "name": "GPSSB Junior Clerk",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "global_sl": 5322,
+      "group_sl": 4650,
+      "exam_id": 2344,
+      "name": "GPSSB Gram Sevak",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "global_sl": 5323,
+      "group_sl": 4651,
+      "exam_id": 2343,
+      "name": "GPSSB FHW",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "global_sl": 5324,
+      "group_sl": 4652,
+      "exam_id": 2342,
+      "name": "GPSSB Additional Assistant Engineer",
+      "group": "Gujarat GPSSB Exams"
+    },
+    {
+      "global_sl": 5325,
+      "group_sl": 5777,
+      "exam_id": 1217,
+      "name": "CCRH Research Officer",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "global_sl": 5326,
+      "group_sl": 5778,
+      "exam_id": 1216,
+      "name": "CCRH Medical Laboratory Technologist",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "global_sl": 5327,
+      "group_sl": 5779,
+      "exam_id": 1215,
+      "name": "CCRH LDC",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "global_sl": 5328,
+      "group_sl": 5780,
+      "exam_id": 1214,
+      "name": "CCRAS UDC",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "global_sl": 5329,
+      "group_sl": 5781,
+      "exam_id": 1213,
+      "name": "CCRAS Stenographer Grade II",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "global_sl": 5330,
+      "group_sl": 5783,
+      "exam_id": 1211,
+      "name": "CCRAS Research Officer",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "global_sl": 5331,
+      "group_sl": 5785,
+      "exam_id": 1209,
+      "name": "CCRAS MTS",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "global_sl": 5332,
+      "group_sl": 5786,
+      "exam_id": 1208,
+      "name": "CCRAS Medical Laboratory Technologist",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "global_sl": 5333,
+      "group_sl": 5787,
+      "exam_id": 1207,
+      "name": "CCRAS LDC",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "global_sl": 5334,
+      "group_sl": 6434,
+      "exam_id": 560,
+      "name": "Ayurveda Exam",
+      "group": "Medical & Nursing - AYUSH Exams"
+    },
+    {
+      "global_sl": 5335,
+      "group_sl": 5900,
+      "exam_id": 1094,
+      "name": "BSSC Welfare Organiser and LDC",
+      "group": "Bihar BSSC Exams"
+    },
+    {
+      "global_sl": 5336,
+      "group_sl": 5901,
+      "exam_id": 1093,
+      "name": "BSSC Stenographer",
+      "group": "Bihar BSSC Exams"
+    },
+    {
+      "global_sl": 5337,
+      "group_sl": 5902,
+      "exam_id": 1092,
+      "name": "BSSC Sports Trainer",
+      "group": "Bihar BSSC Exams"
+    },
+    {
+      "global_sl": 5338,
+      "group_sl": 5903,
+      "exam_id": 1091,
+      "name": "BSSC Office Attendant",
+      "group": "Bihar BSSC Exams"
+    },
+    {
+      "global_sl": 5339,
+      "group_sl": 5904,
+      "exam_id": 1090,
+      "name": "BSSC Mines Inspector",
+      "group": "Bihar BSSC Exams"
+    },
+    {
+      "global_sl": 5340,
+      "group_sl": 5905,
+      "exam_id": 1089,
+      "name": "BSSC Laboratory Assistant",
+      "group": "Bihar BSSC Exams"
+    },
+    {
+      "global_sl": 5341,
+      "group_sl": 5906,
+      "exam_id": 1088,
+      "name": "BSSC Inter Level",
+      "group": "Bihar BSSC Exams"
+    },
+    {
+      "global_sl": 5342,
+      "group_sl": 5907,
+      "exam_id": 1087,
+      "name": "BSSC Field Assistant",
+      "group": "Bihar BSSC Exams"
+    },
+    {
+      "global_sl": 5343,
+      "group_sl": 5908,
+      "exam_id": 1086,
+      "name": "BSSC Circle Inspector",
+      "group": "Bihar BSSC Exams"
+    },
+    {
+      "global_sl": 5344,
+      "group_sl": 5909,
+      "exam_id": 1085,
+      "name": "BSSC CGL",
+      "group": "Bihar BSSC Exams"
+    },
+    {
+      "global_sl": 5345,
+      "group_sl": 6297,
+      "exam_id": 697,
+      "name": "BEML Operator Welder",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "global_sl": 5346,
+      "group_sl": 6298,
+      "exam_id": 696,
+      "name": "BEML Operator Turner",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "global_sl": 5347,
+      "group_sl": 6299,
+      "exam_id": 695,
+      "name": "BEML Operator Machinist",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "global_sl": 5348,
+      "group_sl": 6300,
+      "exam_id": 694,
+      "name": "BEML Operator Fitter",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "global_sl": 5349,
+      "group_sl": 6301,
+      "exam_id": 693,
+      "name": "BEML Operator Electrician",
+      "group": "Engineering & PSU - BEML Exams"
+    },
+    {
+      "global_sl": 5350,
+      "group_sl": 6302,
+      "exam_id": 692,
+      "name": "BEML MT",
+      "group": "Engineering & PSU - BEML Exams"
+    }
+  ]
+}

@@ -1,0 +1,401 @@
+{
+  "bundle_id": "bundle-046",
+  "bundle_num": 46,
+  "category_id": "banking",
+  "category_name": "बैंकिंग एवं वित्त",
+  "category_icon": "🏦",
+  "title": "बैंकिंग एवं वित्त — Banking & Finance - SBI • Banking & Finance - IBPS PO & Clerk • Banking & Finance - Professional Finance Certifications",
+  "total_exams": 64,
+  "boards_included": [
+    "Banking & Finance - SBI",
+    "Banking & Finance - IBPS PO & Clerk",
+    "Banking & Finance - Professional Finance Certifications",
+    "Banking & Finance - ESIC & EPFO"
+  ],
+  "exams": [
+    {
+      "sl": 281,
+      "id": 6713,
+      "name": "UPSC EPFO APFC",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 282,
+      "id": 6712,
+      "name": "UPSC EPFO AO EO",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4842,
+      "id": 2152,
+      "name": "ESIC UDC",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4843,
+      "id": 2151,
+      "name": "ESIC Stenographer",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4844,
+      "id": 2150,
+      "name": "ESIC Staff Nurse",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4845,
+      "id": 2149,
+      "name": "ESIC SSO",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4846,
+      "id": 2148,
+      "name": "ESIC Specialist Grade 2",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4847,
+      "id": 2147,
+      "name": "ESIC Security Officer",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4848,
+      "id": 2146,
+      "name": "ESIC Paramedical",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4849,
+      "id": 2145,
+      "name": "ESIC Nursing Officer",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4850,
+      "id": 2144,
+      "name": "ESIC MTS",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4852,
+      "id": 2142,
+      "name": "ESIC IMO",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4861,
+      "id": 2133,
+      "name": "EPFO Stenographer",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4862,
+      "id": 2132,
+      "name": "EPFO SSA",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4863,
+      "id": 2131,
+      "name": "EPFO Section Supervisor",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4864,
+      "id": 2130,
+      "name": "EPFO LDC and JSA",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 4865,
+      "id": 2129,
+      "name": "EPFO Assistant",
+      "group": "Banking & Finance - ESIC & EPFO Exams"
+    },
+    {
+      "sl": 3865,
+      "id": 3129,
+      "name": "JAIIB Retail Banking and Wealth Management",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 3866,
+      "id": 3128,
+      "name": "JAIIB Principles & Practices of Banking",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 3867,
+      "id": 3127,
+      "name": "JAIIB Indian Economy and Indian Financial System",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 3868,
+      "id": 3126,
+      "name": "JAIIB Accounting and Finance for Bankers",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 4202,
+      "id": 2792,
+      "name": "IBBI Officer Grade A",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 5512,
+      "id": 1482,
+      "name": "CSEET",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 5574,
+      "id": 1420,
+      "name": "CMA Foundation",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 5817,
+      "id": 1177,
+      "name": "CAIIB Retail Banking in India",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 5818,
+      "id": 1176,
+      "name": "CAIIB Elective Paper Rural Banking",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 5819,
+      "id": 1175,
+      "name": "CAIIB Elective Paper Risk Management",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 5820,
+      "id": 1174,
+      "name": "CAIIB Elective Paper Information Technology",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 5821,
+      "id": 1173,
+      "name": "CAIIB Elective Paper Human Resource Management",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 5822,
+      "id": 1172,
+      "name": "CAIIB Elective Paper Central Banking",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 5823,
+      "id": 1171,
+      "name": "CAIIB Banking Regulations and Business Laws",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 5824,
+      "id": 1170,
+      "name": "CAIIB Bank Financial Management",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 5825,
+      "id": 1169,
+      "name": "CAIIB Advanced Bank Management",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 5826,
+      "id": 1168,
+      "name": "CAIIB Advance Business and Financial Management",
+      "group": "Banking & Finance - Professional Finance Certifications"
+    },
+    {
+      "sl": 1408,
+      "id": 5586,
+      "name": "SBI Special Management Executive",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 1409,
+      "id": 5585,
+      "name": "SBI SO Engineer Fire",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 1410,
+      "id": 5584,
+      "name": "SBI SO Engineer Electrical",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 1411,
+      "id": 5583,
+      "name": "SBI SO Engineer Civil",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 1412,
+      "id": 5582,
+      "name": "SBI SO",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 1413,
+      "id": 5581,
+      "name": "SBI SCO",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 1414,
+      "id": 5580,
+      "name": "SBI PO Quantitative Aptitude",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 1415,
+      "id": 5579,
+      "name": "SBI PO",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 1416,
+      "id": 5578,
+      "name": "SBI Pharmacist",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 1417,
+      "id": 5577,
+      "name": "SBI Life Insurance Advisor",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 1418,
+      "id": 5576,
+      "name": "SBI Deputy Manager",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 1419,
+      "id": 5575,
+      "name": "SBI Clerk in Hindi",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 1420,
+      "id": 5574,
+      "name": "SBI Clerk",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 1421,
+      "id": 5573,
+      "name": "SBI CBO",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 1422,
+      "id": 5572,
+      "name": "SBI Apprentice",
+      "group": "Banking & Finance - SBI Exams"
+    },
+    {
+      "sl": 4174,
+      "id": 2820,
+      "name": "IBPS SO Rajbhasha Adhikari",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "sl": 4175,
+      "id": 2819,
+      "name": "IBPS SO Prelims For IT Officer, Agriculture Officer, Marketing Officer, HR Officer",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "sl": 4176,
+      "id": 2818,
+      "name": "IBPS SO Preliminary For Rajbhasha Adhikari, Law Officer",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "sl": 4177,
+      "id": 2817,
+      "name": "IBPS SO Marketing Officer",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "sl": 4178,
+      "id": 2816,
+      "name": "IBPS SO Law Officer",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "sl": 4179,
+      "id": 2815,
+      "name": "IBPS SO IT Officer",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "sl": 4180,
+      "id": 2814,
+      "name": "IBPS SO HR Officer",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "sl": 4181,
+      "id": 2813,
+      "name": "IBPS SO Hindi",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "sl": 4182,
+      "id": 2812,
+      "name": "IBPS SO AFO",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "sl": 4183,
+      "id": 2811,
+      "name": "IBPS SO",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "sl": 4196,
+      "id": 2798,
+      "name": "IBPS PO Hindi",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "sl": 4197,
+      "id": 2797,
+      "name": "IBPS PO",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "sl": 4198,
+      "id": 2796,
+      "name": "IBPS Deputy Manager",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "sl": 4200,
+      "id": 2794,
+      "name": "IBPS Clerk Hindi",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    },
+    {
+      "sl": 4201,
+      "id": 2793,
+      "name": "IBPS Clerk",
+      "group": "Banking & Finance - IBPS PO & Clerk Exams"
+    }
+  ]
+}

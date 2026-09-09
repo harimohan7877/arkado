@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-096",
+  "bundle_num": 96,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Central Schools - KVS (Part 1/2)",
+  "total_exams": 60,
+  "boards_included": [
+    "Central Schools - KVS"
+  ],
+  "exams": [
+    {
+      "sl": 3329,
+      "id": 3665,
+      "name": "KVS Vice Principal",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3330,
+      "id": 3664,
+      "name": "KVS TGT Work Experience",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3331,
+      "id": 3663,
+      "name": "KVS TGT Special Educator",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3332,
+      "id": 3662,
+      "name": "KVS TGT Social Studies",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3333,
+      "id": 3661,
+      "name": "KVS TGT Science",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3334,
+      "id": 3660,
+      "name": "KVS TGT Sanskrit",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3335,
+      "id": 3659,
+      "name": "KVS TGT Physical, Health Education",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3336,
+      "id": 3658,
+      "name": "KVS TGT Mathematics",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3337,
+      "id": 3657,
+      "name": "KVS TGT Hindi",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3338,
+      "id": 3656,
+      "name": "KVS TGT English",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3339,
+      "id": 3655,
+      "name": "KVS TGT Art Education",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3340,
+      "id": 3654,
+      "name": "KVS Stenographer",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3341,
+      "id": 3653,
+      "name": "KVS SSA",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3342,
+      "id": 3652,
+      "name": "KVS Section Officer",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3343,
+      "id": 3651,
+      "name": "KVS PRT Special Educator",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3344,
+      "id": 3650,
+      "name": "KVS PRT Science",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3345,
+      "id": 3649,
+      "name": "KVS PRT Mathematics",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3346,
+      "id": 3648,
+      "name": "KVS PRT Hindi",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3347,
+      "id": 3647,
+      "name": "KVS PRT Environmental Science",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3348,
+      "id": 3646,
+      "name": "KVS PRT English",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3349,
+      "id": 3645,
+      "name": "KVS PRT",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3350,
+      "id": 3644,
+      "name": "KVS Principal",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3351,
+      "id": 3643,
+      "name": "KVS Primary Teacher Music",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3352,
+      "id": 3642,
+      "name": "KVS PGT Physics",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3353,
+      "id": 3641,
+      "name": "KVS PGT Mathematics",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3354,
+      "id": 3640,
+      "name": "KVS PGT History",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3355,
+      "id": 3639,
+      "name": "KVS PGT Hindi",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3356,
+      "id": 3638,
+      "name": "KVS PGT Geography",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3357,
+      "id": 3637,
+      "name": "KVS PGT English",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3358,
+      "id": 3636,
+      "name": "KVS PGT Economics",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3359,
+      "id": 3635,
+      "name": "KVS PGT Computer Science",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3360,
+      "id": 3634,
+      "name": "KVS PGT Commerce",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3361,
+      "id": 3633,
+      "name": "KVS PGT Chemistry",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3362,
+      "id": 3632,
+      "name": "KVS PGT Biotechnology",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3363,
+      "id": 3631,
+      "name": "KVS PGT Biology",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3364,
+      "id": 3630,
+      "name": "KVS Perspectives on Education and Leadership",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3365,
+      "id": 3629,
+      "name": "KVS Librarian",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3366,
+      "id": 3628,
+      "name": "KVS LDE LDCE Vice Principal",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3367,
+      "id": 3627,
+      "name": "KVS LDE LDCE TGT Social Studies",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3368,
+      "id": 3626,
+      "name": "KVS LDE LDCE TGT Science",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3369,
+      "id": 3625,
+      "name": "KVS LDE LDCE TGT Maths",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3370,
+      "id": 3624,
+      "name": "KVS LDE LDCE TGT Hindi",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3371,
+      "id": 3623,
+      "name": "KVS LDE LDCE TGT English",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3372,
+      "id": 3622,
+      "name": "KVS LDE LDCE SSA",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3373,
+      "id": 3621,
+      "name": "KVS LDE LDCE Section Officer",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3374,
+      "id": 3620,
+      "name": "KVS LDE LDCE Principal",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3375,
+      "id": 3619,
+      "name": "KVS LDE LDCE PGT Physics",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3376,
+      "id": 3618,
+      "name": "KVS LDE LDCE PGT Maths",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3377,
+      "id": 3617,
+      "name": "KVS LDE LDCE PGT History",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3378,
+      "id": 3616,
+      "name": "KVS LDE LDCE PGT Hindi",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3379,
+      "id": 3615,
+      "name": "KVS LDE LDCE PGT Geography",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3380,
+      "id": 3614,
+      "name": "KVS LDE LDCE PGT English",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3381,
+      "id": 3613,
+      "name": "KVS LDE LDCE PGT Economics",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3382,
+      "id": 3612,
+      "name": "KVS LDE LDCE PGT Chemistry",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3383,
+      "id": 3611,
+      "name": "KVS LDE LDCE PGT Biology",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3384,
+      "id": 3610,
+      "name": "KVS LDE LDCE JSA",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3385,
+      "id": 3609,
+      "name": "KVS LDE LDCE Head Master",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3386,
+      "id": 3608,
+      "name": "KVS LDE LDCE Finance Officer",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3387,
+      "id": 3607,
+      "name": "KVS LDE LDCE ASO",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3388,
+      "id": 3606,
+      "name": "KVS Junior Translator",
+      "group": "Central Schools - KVS Exams"
+    }
+  ]
+}

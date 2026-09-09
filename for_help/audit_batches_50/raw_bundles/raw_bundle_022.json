@@ -1,0 +1,358 @@
+{
+  "bundle_number": 22,
+  "bundle_id": "raw_bundle_022",
+  "range": "1051 - 1100",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1051,
+      "group_sl": 4190,
+      "exam_id": 2804,
+      "name": "IBPS RRB Officer Scale II CA",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1052,
+      "group_sl": 4191,
+      "exam_id": 2803,
+      "name": "IBPS RRB Officer Scale II Agriculture",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1053,
+      "group_sl": 4192,
+      "exam_id": 2802,
+      "name": "IBPS RRB Officer Scale II",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1054,
+      "group_sl": 4193,
+      "exam_id": 2801,
+      "name": "IBPS RRB Officer Scale 1",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1055,
+      "group_sl": 4194,
+      "exam_id": 2800,
+      "name": "IBPS RRB GBO",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1056,
+      "group_sl": 4195,
+      "exam_id": 2799,
+      "name": "IBPS RRB Clerk",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1057,
+      "group_sl": 4199,
+      "exam_id": 2795,
+      "name": "IBPS CRP RRB Clerk",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1058,
+      "group_sl": 4911,
+      "exam_id": 2083,
+      "name": "ECR Junior Clerk",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1059,
+      "group_sl": 4925,
+      "exam_id": 2069,
+      "name": "East Coast Railway Goods Guard",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1060,
+      "group_sl": 4927,
+      "exam_id": 2067,
+      "name": "East Central Railway Gateman",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1061,
+      "group_sl": 5753,
+      "exam_id": 1241,
+      "name": "Central Railway JTBS",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1062,
+      "group_sl": 5754,
+      "exam_id": 1240,
+      "name": "Central Railway Clerk",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1063,
+      "group_sl": 1515,
+      "exam_id": 5479,
+      "name": "RSPCB JSO JEE",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1064,
+      "group_sl": 1570,
+      "exam_id": 5424,
+      "name": "RS-CIT Exam",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1065,
+      "group_sl": 1644,
+      "exam_id": 5350,
+      "name": "RPVT",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1066,
+      "group_sl": 1645,
+      "exam_id": 5349,
+      "name": "RPSC Veterinary Officer",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1067,
+      "group_sl": 1646,
+      "exam_id": 5348,
+      "name": "RPSC Statistical Officer",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1068,
+      "group_sl": 1647,
+      "exam_id": 5347,
+      "name": "RPSC Senior Scientific Officer",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1069,
+      "group_sl": 1667,
+      "exam_id": 5327,
+      "name": "RPSC RO EO",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1070,
+      "group_sl": 1668,
+      "exam_id": 5326,
+      "name": "RPSC Research Assistant",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1071,
+      "group_sl": 1669,
+      "exam_id": 5325,
+      "name": "RPSC RAS",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1072,
+      "group_sl": 1670,
+      "exam_id": 5324,
+      "name": "RPSC PTI",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1073,
+      "group_sl": 1671,
+      "exam_id": 5323,
+      "name": "RPSC Protection Officer",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1074,
+      "group_sl": 1672,
+      "exam_id": 5322,
+      "name": "RPSC Programmer",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1075,
+      "group_sl": 1673,
+      "exam_id": 5321,
+      "name": "RPSC Librarian",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1076,
+      "group_sl": 1674,
+      "exam_id": 5320,
+      "name": "RPSC Junior Chemist",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1077,
+      "group_sl": 1675,
+      "exam_id": 5319,
+      "name": "RPSC JLO Evidence Act Paper 3",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1078,
+      "group_sl": 1676,
+      "exam_id": 5318,
+      "name": "RPSC JLO English and Hindi Paper 4",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1079,
+      "group_sl": 1677,
+      "exam_id": 5317,
+      "name": "RPSC JLO Constitution of India Paper 1",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1080,
+      "group_sl": 1678,
+      "exam_id": 5316,
+      "name": "RPSC JLO Civil Procedure Code Paper 2",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1081,
+      "group_sl": 1679,
+      "exam_id": 5315,
+      "name": "RPSC JLO",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1082,
+      "group_sl": 1680,
+      "exam_id": 5314,
+      "name": "RPSC Headmaster",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1083,
+      "group_sl": 1681,
+      "exam_id": 5313,
+      "name": "RPSC Group Instructor",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1084,
+      "group_sl": 1682,
+      "exam_id": 5312,
+      "name": "RPSC Grade 2",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1085,
+      "group_sl": 1683,
+      "exam_id": 5311,
+      "name": "RPSC FSO",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1086,
+      "group_sl": 1684,
+      "exam_id": 5310,
+      "name": "RPSC Deputy Jailor",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1087,
+      "group_sl": 1714,
+      "exam_id": 5280,
+      "name": "RPSC Assistant Electrical Inspector",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1088,
+      "group_sl": 1715,
+      "exam_id": 5279,
+      "name": "RPSC Assistant Director",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1089,
+      "group_sl": 1716,
+      "exam_id": 5278,
+      "name": "RPSC ASO",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1090,
+      "group_sl": 1717,
+      "exam_id": 5277,
+      "name": "RPSC ARO & AARO",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1091,
+      "group_sl": 1718,
+      "exam_id": 5276,
+      "name": "RPSC APO",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1092,
+      "group_sl": 1719,
+      "exam_id": 5275,
+      "name": "RPSC Agriculture Officer",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1093,
+      "group_sl": 1720,
+      "exam_id": 5274,
+      "name": "RPSC AE Mechanical",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1094,
+      "group_sl": 1721,
+      "exam_id": 5273,
+      "name": "RPSC AE Electrical",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1095,
+      "group_sl": 1722,
+      "exam_id": 5272,
+      "name": "RPSC AE Agriculture",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1096,
+      "group_sl": 1723,
+      "exam_id": 5271,
+      "name": "RPSC AE",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1097,
+      "group_sl": 1724,
+      "exam_id": 5270,
+      "name": "RPSC ACF FRO",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1098,
+      "group_sl": 1725,
+      "exam_id": 5269,
+      "name": "RPSC AAO",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1099,
+      "group_sl": 1726,
+      "exam_id": 5268,
+      "name": "RPSC AAE",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1100,
+      "group_sl": 1735,
+      "exam_id": 5259,
+      "name": "RPSC 2nd Grade Clerk",
+      "group": "Rajasthan General Government Exams"
+    }
+  ]
+}

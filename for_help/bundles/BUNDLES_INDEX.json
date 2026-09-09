@@ -1,0 +1,521 @@
+{
+  "metadata": {
+    "title": "सरकारी साथी — सत्यापित परीक्षा बंडल्स (100% शुद्ध)",
+    "total_bundles": 32,
+    "total_exams": 146,
+    "status": "ऑडिट पूर्ण एवं सत्यापित"
+  },
+  "bundles": [
+    {
+      "bundle_id": "bundle-001",
+      "bundle_num": 1,
+      "category_id": "rajasthan",
+      "category_name": "राजस्थान",
+      "category_icon": "🚩",
+      "title": "राजस्थान — RSMSSB (राजस्थान कर्मचारी चयन बोर्ड)",
+      "total_exams": 18,
+      "boards_included": [
+        "RSMSSB"
+      ],
+      "sample_exams": [
+        "राजस्थान CET (12वीं स्तर) 2026",
+        "राजस्थान CET (स्नातक स्तर) 2026"
+      ]
+    },
+    {
+      "bundle_id": "bundle-002",
+      "bundle_num": 2,
+      "category_id": "rajasthan",
+      "category_name": "राजस्थान",
+      "category_icon": "🚩",
+      "title": "राजस्थान — RPSC (राजस्थान लोक सेवा आयोग)",
+      "total_exams": 13,
+      "boards_included": [
+        "RPSC"
+      ],
+      "sample_exams": [
+        "RAS / RTS संयुक्त प्रतियोगी परीक्षा 2026",
+        "स्कूल व्याख्याता / प्राध्यापक (1st Grade Teacher)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-003",
+      "bundle_num": 3,
+      "category_id": "rajasthan",
+      "category_name": "राजस्थान",
+      "category_icon": "🚩",
+      "title": "राजस्थान — राजस्थान पुलिस भर्ती प्रकोष्ठ",
+      "total_exams": 5,
+      "boards_included": [
+        "Police"
+      ],
+      "sample_exams": [
+        "पुलिस कांस्टेबल (सामान्य ड्यूटी / GD)",
+        "पुलिस कांस्टेबल (चालक / Driver)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-004",
+      "bundle_num": 4,
+      "category_id": "rajasthan",
+      "category_name": "राजस्थान",
+      "category_icon": "🚩",
+      "title": "राजस्थान — माध्यमिक शिक्षा बोर्ड (REET)",
+      "total_exams": 2,
+      "boards_included": [
+        "REET"
+      ],
+      "sample_exams": [
+        "REET पात्रता परीक्षा - लेवल-1 (कक्षा 1-5)",
+        "REET पात्रता परीक्षा - लेवल-2 (कक्षा 6-8)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-005",
+      "bundle_num": 5,
+      "category_id": "rajasthan",
+      "category_name": "राजस्थान",
+      "category_icon": "🚩",
+      "title": "राजस्थान — राजस्थान उच्च न्यायालय (RHC जोधपुर)",
+      "total_exams": 4,
+      "boards_included": [
+        "High Court"
+      ],
+      "sample_exams": [
+        "हाई कोर्ट कनिष्ठ न्यायिक सहायक (JJA) व क्लर्क Grade-II",
+        "हाई कोर्ट स्टेनोग्राफर भर्ती (हिंदी व अंग्रेजी)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-006",
+      "bundle_num": 6,
+      "category_id": "rajasthan",
+      "category_name": "राजस्थान",
+      "category_icon": "🚩",
+      "title": "राजस्थान — ऊर्जा विभाग एवं अन्य राज्य निगम",
+      "total_exams": 5,
+      "boards_included": [
+        "RVUNL & निगम"
+      ],
+      "sample_exams": [
+        "RVUNL कनिष्ठ अभियंता (JEN - Civil, Elect, Mech)",
+        "RVUNL कनिष्ठ सहायक व कमर्शियल असिस्टेंट-II"
+      ]
+    },
+    {
+      "bundle_id": "bundle-007",
+      "bundle_num": 7,
+      "category_id": "uttar-pradesh",
+      "category_name": "उत्तर प्रदेश",
+      "category_icon": "🟢",
+      "title": "उत्तर प्रदेश — UPPBPB (पुलिस भर्ती एवं प्रोन्नति बोर्ड)",
+      "total_exams": 5,
+      "boards_included": [
+        "UP Police"
+      ],
+      "sample_exams": [
+        "UP पुलिस कांस्टेबल भर्ती 2026",
+        "UP पुलिस उपनिरीक्षक (SI / दारोगा) भर्ती"
+      ]
+    },
+    {
+      "bundle_id": "bundle-008",
+      "bundle_num": 8,
+      "category_id": "uttar-pradesh",
+      "category_name": "उत्तर प्रदेश",
+      "category_icon": "🟢",
+      "title": "उत्तर प्रदेश — UPSSSC (अधीनस्थ सेवा चयन आयोग)",
+      "total_exams": 10,
+      "boards_included": [
+        "UPSSSC"
+      ],
+      "sample_exams": [
+        "UPSSSC PET 2026 (प्रारंभिक अर्हता परीक्षा)",
+        "UP राजस्व लेखपाल एवं चकबंदी लेखपाल"
+      ]
+    },
+    {
+      "bundle_id": "bundle-009",
+      "bundle_num": 9,
+      "category_id": "uttar-pradesh",
+      "category_name": "उत्तर प्रदेश",
+      "category_icon": "🟢",
+      "title": "उत्तर प्रदेश — UPPSC (उत्तर प्रदेश लोक सेवा आयोग)",
+      "total_exams": 7,
+      "boards_included": [
+        "UPPSC"
+      ],
+      "sample_exams": [
+        "सम्मिलित राज्य प्रवर अधीनस्थ सेवा (UP PCS)",
+        "समीक्षा अधिकारी (RO) एवं सहायक समीक्षा अधिकारी (ARO)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-010",
+      "bundle_num": 10,
+      "category_id": "uttar-pradesh",
+      "category_name": "उत्तर प्रदेश",
+      "category_icon": "🟢",
+      "title": "उत्तर प्रदेश — UP माध्यमिक एवं बेसिक शिक्षा बोर्ड",
+      "total_exams": 5,
+      "boards_included": [
+        "UP Shiksha"
+      ],
+      "sample_exams": [
+        "UP TGT शिक्षक भर्ती (प्रशिक्षित स्नातक)",
+        "UP PGT प्रवक्ता भर्ती (पोस्ट ग्रेजुएट टीचर)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-011",
+      "bundle_num": 11,
+      "category_id": "bihar",
+      "category_name": "बिहार",
+      "category_icon": "🟡",
+      "title": "बिहार — BPSC (बिहार लोक सेवा आयोग)",
+      "total_exams": 5,
+      "boards_included": [
+        "BPSC"
+      ],
+      "sample_exams": [
+        "बिहार BPSC शिक्षक भर्ती (TRE - कक्षा 1 से 12)",
+        "BPSC संयुक्त प्रतियोगी परीक्षा (CCE 70वीं/71वीं)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-012",
+      "bundle_num": 12,
+      "category_id": "bihar",
+      "category_name": "बिहार",
+      "category_icon": "🟡",
+      "title": "बिहार — BSSC (बिहार कर्मचारी चयन आयोग)",
+      "total_exams": 3,
+      "boards_included": [
+        "BSSC"
+      ],
+      "sample_exams": [
+        "BSSC द्वितीय इंटर स्तरीय संयुक्त प्रतियोगी परीक्षा (10+2)",
+        "BSSC तृतीय व चतुर्थ स्नातक स्तरीय (CGL)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-013",
+      "bundle_num": 13,
+      "category_id": "bihar",
+      "category_name": "बिहार",
+      "category_icon": "🟡",
+      "title": "बिहार — CSBC / BPSSC (बिहार पुलिस भर्ती पर्षद)",
+      "total_exams": 4,
+      "boards_included": [
+        "Bihar Police"
+      ],
+      "sample_exams": [
+        "बिहार पुलिस सिपाही भर्ती (CSBC Constable)",
+        "बिहार पुलिस दारोगा / सब-इंस्पेक्टर (BPSSC SI)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-014",
+      "bundle_num": 14,
+      "category_id": "bihar",
+      "category_name": "बिहार",
+      "category_icon": "🟡",
+      "title": "बिहार — बिहार विद्यालय परीक्षा समिति (STET / BTET)",
+      "total_exams": 2,
+      "boards_included": [
+        "BSEB STET"
+      ],
+      "sample_exams": [
+        "बिहार माध्यमिक शिक्षक पात्रता (STET Paper-1 - कक्षा 9-10)",
+        "बिहार उच्च माध्यमिक शिक्षक पात्रता (STET Paper-2 - कक्षा 11-12)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-015",
+      "bundle_num": 15,
+      "category_id": "delhi-nct",
+      "category_name": "दिल्ली",
+      "category_icon": "🔵",
+      "title": "दिल्ली — DSSSB (दिल्ली अधीनस्थ सेवा चयन बोर्ड)",
+      "total_exams": 4,
+      "boards_included": [
+        "DSSSB"
+      ],
+      "sample_exams": [
+        "DSSSB सहायक प्राथमिक शिक्षक (PRT / Nursery)",
+        "DSSSB प्रशिक्षित स्नातक शिक्षक (TGT - सभी विषय)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-016",
+      "bundle_num": 16,
+      "category_id": "delhi-nct",
+      "category_name": "दिल्ली",
+      "category_icon": "🔵",
+      "title": "दिल्ली — दिल्ली पुलिस भर्ती प्रकोष्ठ",
+      "total_exams": 2,
+      "boards_included": [
+        "Delhi Police"
+      ],
+      "sample_exams": [
+        "दिल्ली पुलिस कांस्टेबल (कार्यकारी - पुरुष/महिला)",
+        "दिल्ली पुलिस हेड कांस्टेबल (मिनिस्टीरियल / AWO/TPO)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-017",
+      "bundle_num": 17,
+      "category_id": "madhya-pradesh",
+      "category_name": "मध्य प्रदेश",
+      "category_icon": "🟣",
+      "title": "मध्य प्रदेश — MPESB (व्यापम / कर्मचारी चयन मंडल भोपाल)",
+      "total_exams": 4,
+      "boards_included": [
+        "MP Vyapam"
+      ],
+      "sample_exams": [
+        "MP पुलिस आरक्षक (GD / रेडियो ऑपरेटर)",
+        "MP पटवारी एवं समूह-2 उपसमूह-4 संयुक्त भर्ती"
+      ]
+    },
+    {
+      "bundle_id": "bundle-018",
+      "bundle_num": 18,
+      "category_id": "madhya-pradesh",
+      "category_name": "मध्य प्रदेश",
+      "category_icon": "🟣",
+      "title": "मध्य प्रदेश — MPPSC (मध्य प्रदेश लोक सेवा आयोग इंदौर)",
+      "total_exams": 1,
+      "boards_included": [
+        "MPPSC"
+      ],
+      "sample_exams": [
+        "MP राज्य सेवा परीक्षा (State Service Exam - PCS)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-019",
+      "bundle_num": 19,
+      "category_id": "haryana",
+      "category_name": "हरियाणा",
+      "category_icon": "🟠",
+      "title": "हरियाणा — HSSC (हरियाणा कर्मचारी चयन आयोग)",
+      "total_exams": 3,
+      "boards_included": [
+        "HSSC"
+      ],
+      "sample_exams": [
+        "हरियाणा CET Group-C संयुक्त पात्रता परीक्षा",
+        "हरियाणा CET Group-D भर्ती परीक्षा"
+      ]
+    },
+    {
+      "bundle_id": "bundle-020",
+      "bundle_num": 20,
+      "category_id": "national-central",
+      "category_name": "अखिल भारतीय / राष्ट्रीय",
+      "category_icon": "🇮🇳",
+      "title": "अखिल भारतीय / राष्ट्रीय — SSC (कर्मचारी चयन आयोग)",
+      "total_exams": 6,
+      "boards_included": [
+        "SSC"
+      ],
+      "sample_exams": [
+        "SSC CGL (कंबाइंड ग्रेजुएट लेवल) 2026",
+        "SSC CHSL (10+2 कंबाइंड हायर सेकेंडरी)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-021",
+      "bundle_num": 21,
+      "category_id": "national-central",
+      "category_name": "अखिल भारतीय / राष्ट्रीय",
+      "category_icon": "🇮🇳",
+      "title": "अखिल भारतीय / राष्ट्रीय — RRB (रेलवे भर्ती बोर्ड)",
+      "total_exams": 5,
+      "boards_included": [
+        "Railways"
+      ],
+      "sample_exams": [
+        "RRB NTPC (नॉन टेक्निकल ग्रेजुएट व 12th)",
+        "रेलवे ग्रुप D (Level-1 सीधी भर्ती)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-022",
+      "bundle_num": 22,
+      "category_id": "national-central",
+      "category_name": "अखिल भारतीय / राष्ट्रीय",
+      "category_icon": "🇮🇳",
+      "title": "अखिल भारतीय / राष्ट्रीय — UPSC (संघ लोक सेवा आयोग)",
+      "total_exams": 4,
+      "boards_included": [
+        "UPSC"
+      ],
+      "sample_exams": [
+        "सिविल सेवा परीक्षा (CSE - IAS / IPS / IFS)",
+        "NDA एवं NA (राष्ट्रीय रक्षा अकादमी)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-023",
+      "bundle_num": 23,
+      "category_id": "national-central",
+      "category_name": "अखिल भारतीय / राष्ट्रीय",
+      "category_icon": "🇮🇳",
+      "title": "अखिल भारतीय / राष्ट्रीय — बैंकिंग भर्ती बोर्ड (IBPS & SBI)",
+      "total_exams": 5,
+      "boards_included": [
+        "Banking"
+      ],
+      "sample_exams": [
+        "SBI प्रोबेशनरी ऑफिसर (SBI PO)",
+        "SBI जूनियर एसोसिएट (SBI Clerk)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-024",
+      "bundle_num": 24,
+      "category_id": "national-central",
+      "category_name": "अखिल भारतीय / राष्ट्रीय",
+      "category_icon": "🇮🇳",
+      "title": "अखिल भारतीय / राष्ट्रीय — तीनों सेनाएं (Armed Forces Recruitment)",
+      "total_exams": 3,
+      "boards_included": [
+        "Defence"
+      ],
+      "sample_exams": [
+        "इंडियन आर्मी अग्निवीर (GD / Clerk / Tech)",
+        "इंडियन एयरफोर्स अग्निवीर वायु"
+      ]
+    },
+    {
+      "bundle_id": "bundle-025",
+      "bundle_num": 25,
+      "category_id": "central-academics",
+      "category_name": "केंद्रीय शिक्षण & PSU",
+      "category_icon": "⚙️",
+      "title": "केंद्रीय शिक्षण & PSU — केंद्रीय शिक्षक एवं पात्रता आयोग",
+      "total_exams": 5,
+      "boards_included": [
+        "Central Teaching"
+      ],
+      "sample_exams": [
+        "CTET केंद्रीय शिक्षक पात्रता (Paper 1 & Paper 2)",
+        "UGC NET / JRF (सहायक प्रोफेसर पात्रता)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-026",
+      "bundle_num": 26,
+      "category_id": "central-academics",
+      "category_name": "केंद्रीय शिक्षण & PSU",
+      "category_icon": "⚙️",
+      "title": "केंद्रीय शिक्षण & PSU — केंद्रीय सार्वजनिक उपक्रम (PSU) एवं इंजीनियरिंग",
+      "total_exams": 4,
+      "boards_included": [
+        "PSU & Engg"
+      ],
+      "sample_exams": [
+        "GATE (ग्रेजुएट एप्टीट्यूड टेस्ट इन इंजीनियरिंग) 2026",
+        "ISRO वैज्ञानिक / इंजीनियर 'SC' (Scientist/Engineer)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-027",
+      "bundle_num": 27,
+      "category_id": "central-academics",
+      "category_name": "केंद्रीय शिक्षण & PSU",
+      "category_icon": "⚙️",
+      "title": "केंद्रीय शिक्षण & PSU — केंद्रीय मेडिकल एवं नर्सिंग संस्थान",
+      "total_exams": 2,
+      "boards_included": [
+        "Medical & Nursing"
+      ],
+      "sample_exams": [
+        "AIIMS NORCET (नर्सिंग ऑफिसर भर्ती परीक्षा)",
+        "ESIC नर्सिंग ऑफिसर एवं फार्मासिस्ट"
+      ]
+    },
+    {
+      "bundle_id": "bundle-028",
+      "bundle_num": 28,
+      "category_id": "other-states",
+      "category_name": "अन्य राज्य",
+      "category_icon": "🦁",
+      "title": "अन्य राज्य — महाराष्ट्र (MPSC & MahaPolice)",
+      "total_exams": 2,
+      "boards_included": [
+        "Maharashtra"
+      ],
+      "sample_exams": [
+        "महाराष्ट्र पोलीस शिपाई भरती (Maharashtra Police Constable)",
+        "MPSC अराजपत्रित गट-ब व गट-क संयुक्त परीक्षा (Combine)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-029",
+      "bundle_num": 29,
+      "category_id": "other-states",
+      "category_name": "अन्य राज्य",
+      "category_icon": "🦁",
+      "title": "अन्य राज्य — गुजरात (GSSSB & GPSC)",
+      "total_exams": 2,
+      "boards_included": [
+        "Gujarat"
+      ],
+      "sample_exams": [
+        "GSSSB संयुक्त प्रतियोगी परीक्षा (CCE Group A & B)",
+        "गुजरात पुलिस लोकरक्षक (LRD) व PSI भर्ती"
+      ]
+    },
+    {
+      "bundle_id": "bundle-030",
+      "bundle_num": 30,
+      "category_id": "other-states",
+      "category_name": "अन्य राज्य",
+      "category_icon": "🦁",
+      "title": "अन्य राज्य — पंजाब (PSSSB & Punjab Police)",
+      "total_exams": 2,
+      "boards_included": [
+        "Punjab"
+      ],
+      "sample_exams": [
+        "पंजाब पुलिस कांस्टेबल (District & Armed Police)",
+        "पंजाब राजस्व पटवारी सीधी भर्ती"
+      ]
+    },
+    {
+      "bundle_id": "bundle-031",
+      "bundle_num": 31,
+      "category_id": "other-states",
+      "category_name": "अन्य राज्य",
+      "category_icon": "🦁",
+      "title": "अन्य राज्य — झारखंड (JSSC & JPSC)",
+      "total_exams": 2,
+      "boards_included": [
+        "Jharkhand"
+      ],
+      "sample_exams": [
+        "JSSC सामान्य स्नातक संयुक्त परीक्षा (JGGLCCE CGL)",
+        "झारखंड आरक्षी प्रतियोगिता परीक्षा (JCCE कांस्टेबल)"
+      ]
+    },
+    {
+      "bundle_id": "bundle-032",
+      "bundle_num": 32,
+      "category_id": "other-states",
+      "category_name": "अन्य राज्य",
+      "category_icon": "🦁",
+      "title": "अन्य राज्य — उत्तराखंड (UKSSSC & UKPSC)",
+      "total_exams": 2,
+      "boards_included": [
+        "Uttarakhand"
+      ],
+      "sample_exams": [
+        "उत्तराखंड पुलिस आरक्षी (कांस्टेबल सीधी भर्ती)",
+        "उत्तराखंड राजस्व उपनिरीक्षक (पटवारी / लेखपाल)"
+      ]
+    }
+  ]
+}

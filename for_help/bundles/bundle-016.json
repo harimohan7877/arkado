@@ -1,0 +1,35 @@
+{
+  "bundle_id": "bundle-016",
+  "bundle_num": 16,
+  "category_id": "delhi-nct",
+  "category_name": "दिल्ली",
+  "category_icon": "🔵",
+  "title": "दिल्ली — दिल्ली पुलिस भर्ती प्रकोष्ठ",
+  "total_exams": 2,
+  "boards_included": [
+    "Delhi Police"
+  ],
+  "official_portal": "https://delhipolice.gov.in",
+  "exams": [
+    {
+      "id": 4005,
+      "name": "दिल्ली पुलिस कांस्टेबल (कार्यकारी - पुरुष/महिला)",
+      "eligibility": "12वीं पास (LMV ड्राइविंग लाइसेंस पुरुष हेतु)",
+      "age_limit": "18-25 वर्ष",
+      "applicant_scale": "32+ लाख",
+      "exam_pattern": "CBT (100 प्रश्न: रीजनिंग 25, GK 50, गणित 15, कंप्यूटर 10)",
+      "viral_subtext": "SSC द्वारा आयोजित • 7,547 पद",
+      "status": "verified"
+    },
+    {
+      "id": 4006,
+      "name": "दिल्ली पुलिस हेड कांस्टेबल (मिनिस्टीरियल / AWO/TPO)",
+      "eligibility": "12वीं (विज्ञान/गणित) + टाइपिंग",
+      "age_limit": "18-25 वर्ष",
+      "applicant_scale": "8+ लाख",
+      "exam_pattern": "CBT + शारीरिक माप + टाइपिंग टेस्ट",
+      "viral_subtext": "ऑफिस स्टाफ व वायरलेस ऑपरेटर",
+      "status": "verified"
+    }
+  ]
+}

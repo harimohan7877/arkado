@@ -1,0 +1,65 @@
+{
+  "bundle_id": "bundle-025",
+  "bundle_num": 25,
+  "category_id": "central-academics",
+  "category_name": "केंद्रीय शिक्षण & PSU",
+  "category_icon": "⚙️",
+  "title": "केंद्रीय शिक्षण & PSU — केंद्रीय शिक्षक एवं पात्रता आयोग",
+  "total_exams": 5,
+  "boards_included": [
+    "Central Teaching"
+  ],
+  "official_portal": "https://ctet.nic.in",
+  "exams": [
+    {
+      "id": 6001,
+      "name": "CTET केंद्रीय शिक्षक पात्रता (Paper 1 & Paper 2)",
+      "eligibility": "D.El.Ed / B.Ed",
+      "age_limit": "18+ वर्ष",
+      "applicant_scale": "28+ लाख",
+      "exam_pattern": "150 प्रश्न • 150 अंक • 150 मिनट",
+      "viral_subtext": "CBSE द्वारा वर्ष में दो बार आयोजित",
+      "status": "verified"
+    },
+    {
+      "id": 6002,
+      "name": "UGC NET / JRF (सहायक प्रोफेसर पात्रता)",
+      "eligibility": "मास्टर डिग्री (55%)",
+      "age_limit": "JRF हेतु 30 वर्ष, सहायक प्रोफेसर हेतु कोई सीमा नहीं",
+      "applicant_scale": "9+ लाख",
+      "exam_pattern": "Paper-1 (सामान्य शिक्षण 100) + Paper-2 (संबंधित विषय 200)",
+      "viral_subtext": "NTA द्वारा आयोजित (सभी 83 विषय)",
+      "status": "verified"
+    },
+    {
+      "id": 6003,
+      "name": "CSIR NET (विज्ञान संकाय JRF व लेक्चरशिप)",
+      "eligibility": "M.Sc / B.Tech / BS-MS",
+      "age_limit": "28 वर्ष (JRF)",
+      "applicant_scale": "2.5 लाख",
+      "exam_pattern": "भाग-A (जनरल एप्टीट्यूड 30) + भाग-B (विषय 70) + भाग-C (वैज्ञानिक समझ 100)",
+      "viral_subtext": "केमिकल, अर्थ, लाइफ, मैथ, फिजिकल साइंसेज",
+      "status": "verified"
+    },
+    {
+      "id": 6004,
+      "name": "KVS केंद्रीय विद्यालय संगठन (PRT, TGT, PGT)",
+      "eligibility": "D.El.Ed / B.Ed + CTET",
+      "age_limit": "30-40 वर्ष",
+      "applicant_scale": "12+ लाख",
+      "exam_pattern": "180 प्रश्न • 180 अंक CBT + इंटरव्यू",
+      "viral_subtext": "13,000+ शिक्षक भर्ती",
+      "status": "verified"
+    },
+    {
+      "id": 6005,
+      "name": "NVS नवोदय विद्यालय समिति (TGT, PGT व विविध शिक्षक)",
+      "eligibility": "स्नातक / PG + B.Ed",
+      "age_limit": "35-40 वर्ष",
+      "applicant_scale": "6+ लाख",
+      "exam_pattern": "150 प्रश्न CBT परीक्षा",
+      "viral_subtext": "आवासीय विद्यालय शिक्षक भर्ती",
+      "status": "verified"
+    }
+  ]
+}

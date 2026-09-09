@@ -1,0 +1,296 @@
+{
+  "bundle_id": "bundle-074",
+  "bundle_num": 74,
+  "category_id": "engineering-psu",
+  "category_name": "इंजीनियरिंग & PSU",
+  "category_icon": "⚙️",
+  "title": "इंजीनियरिंग & PSU — Engineering & PSU - Oil, Gas & Petroleum",
+  "total_exams": 47,
+  "boards_included": [
+    "Engineering & PSU - Oil, Gas & Petroleum"
+  ],
+  "exams": [
+    {
+      "sl": 3941,
+      "id": 3053,
+      "name": "IOCL Trade Apprentice",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3942,
+      "id": 3052,
+      "name": "IOCL Technician Apprentice",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3944,
+      "id": 3050,
+      "name": "IOCL Southern Region Junior Operator",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3945,
+      "id": 3049,
+      "name": "IOCL Retail Sales Associate",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3946,
+      "id": 3048,
+      "name": "IOCL Refineries Division Grade IV",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3947,
+      "id": 3047,
+      "name": "IOCL Pipelines Apprentice DEO",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3948,
+      "id": 3046,
+      "name": "IOCL Pipelines Apprentice (Trade Apprentice Account)",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3949,
+      "id": 3045,
+      "name": "IOCL Pipelines Apprentice",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3951,
+      "id": 3043,
+      "name": "IOCL Pipeline Engineering Assistant",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3952,
+      "id": 3042,
+      "name": "IOCL Paradip Apprentice",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3953,
+      "id": 3041,
+      "name": "IOCL Northern Region Apprentice",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3955,
+      "id": 3039,
+      "name": "IOCL Junior Quality Control Analyst",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3956,
+      "id": 3038,
+      "name": "IOCL Junior Operator Grade 1",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3957,
+      "id": 3037,
+      "name": "IOCL Junior Operator",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3958,
+      "id": 3036,
+      "name": "IOCL Junior Engineering Assistant Fire and Safety",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3960,
+      "id": 3034,
+      "name": "IOCL JEA",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3961,
+      "id": 3033,
+      "name": "IOCL JE Mechanical",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3962,
+      "id": 3032,
+      "name": "IOCL JE Instrumentation",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3963,
+      "id": 3031,
+      "name": "IOCL JE Electrical",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3964,
+      "id": 3030,
+      "name": "IOCL JE Chemical",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3965,
+      "id": 3029,
+      "name": "IOCL Haldia Junior Engineering Assistant",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3966,
+      "id": 3028,
+      "name": "IOCL Engineer",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3967,
+      "id": 3027,
+      "name": "IOCL Eastern Region Trade Apprentice (DEO)",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3969,
+      "id": 3025,
+      "name": "IOCL Eastern Region Trade Apprentice",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3970,
+      "id": 3024,
+      "name": "IOCL Boiler Operation Engineer",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 3972,
+      "id": 3022,
+      "name": "IOCL AQCO",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4422,
+      "id": 2572,
+      "name": "HPCL Project Engineer",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4423,
+      "id": 2571,
+      "name": "HPCL Operation Technician",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4424,
+      "id": 2570,
+      "name": "HPCL Officers",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4425,
+      "id": 2569,
+      "name": "HPCL Maintenance Technician",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4426,
+      "id": 2568,
+      "name": "HPCL Junior Executive Quality Control",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4427,
+      "id": 2567,
+      "name": "HPCL Junior Executive Mechanical",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4428,
+      "id": 2566,
+      "name": "HPCL Junior Executive Instrumentation",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4429,
+      "id": 2565,
+      "name": "HPCL Junior Executive Fire and Safety",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4430,
+      "id": 2564,
+      "name": "HPCL Junior Executive Electrical",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4431,
+      "id": 2563,
+      "name": "HPCL Junior Executive Civil",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4432,
+      "id": 2562,
+      "name": "HPCL Junior Executive Chemical",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4433,
+      "id": 2561,
+      "name": "HPCL Engineer",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4434,
+      "id": 2560,
+      "name": "HPCL Assistant Process Technician",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4763,
+      "id": 2231,
+      "name": "GAIL Senior Engineer, Officer",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4764,
+      "id": 2230,
+      "name": "GAIL Operator Chemical",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 4765,
+      "id": 2229,
+      "name": "GAIL Foreman",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 6028,
+      "id": 966,
+      "name": "BPCL Process Technician & Utility Operator",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 6029,
+      "id": 965,
+      "name": "BPCL Kochi Refinery General Workman",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 6031,
+      "id": 963,
+      "name": "BPCL Junior Executive",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 6032,
+      "id": 962,
+      "name": "BPCL Associate Executive Quality Assurance",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "sl": 6033,
+      "id": 961,
+      "name": "BPCL Apprentice",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    }
+  ]
+}

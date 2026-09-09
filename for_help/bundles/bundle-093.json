@@ -1,0 +1,86 @@
+{
+  "bundle_id": "bundle-093",
+  "bundle_num": 93,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Karnataka General Govt (Part 2/2)",
+  "total_exams": 12,
+  "boards_included": [
+    "Karnataka General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 3571,
+      "id": 3423,
+      "name": "Karnataka PWD JE",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "sl": 3574,
+      "id": 3420,
+      "name": "Karnataka Postal Circle GDS",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "sl": 3577,
+      "id": 3417,
+      "name": "Karnataka HC Group D",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "sl": 3579,
+      "id": 3415,
+      "name": "Karnataka GPT",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "sl": 3580,
+      "id": 3414,
+      "name": "Karnataka General Knowledge",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "sl": 3582,
+      "id": 3412,
+      "name": "Karnataka COMEDK",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "sl": 3586,
+      "id": 3408,
+      "name": "Karnataka AHVS Veterinary Officer",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "sl": 5842,
+      "id": 1152,
+      "name": "BWSSB Measure Reader",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "sl": 5843,
+      "id": 1151,
+      "name": "BWSSB Junior Engineer",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "sl": 5844,
+      "id": 1150,
+      "name": "BWSSB Junior Assistant",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "sl": 5845,
+      "id": 1149,
+      "name": "BWSSB Assistant Engineer",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "sl": 6054,
+      "id": 940,
+      "name": "BMTC Conductor",
+      "group": "Karnataka General Government Exams"
+    }
+  ]
+}

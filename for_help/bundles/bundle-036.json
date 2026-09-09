@@ -1,0 +1,110 @@
+{
+  "bundle_id": "bundle-036",
+  "bundle_num": 36,
+  "category_id": "ssc",
+  "category_name": "SSC आयोग",
+  "category_icon": "🏛️",
+  "title": "SSC आयोग — Jharkhand JSSC (Part 2/2)",
+  "total_exams": 16,
+  "boards_included": [
+    "Jharkhand JSSC"
+  ],
+  "exams": [
+    {
+      "sl": 3659,
+      "id": 3335,
+      "name": "JSSC JTGLCCE Fishery Extension Supervisor",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3660,
+      "id": 3334,
+      "name": "JSSC JTGLCCE Dairy Technical Officer",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3661,
+      "id": 3333,
+      "name": "JSSC JTGLCCE Block Statistical Supervisor, Auditor",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3662,
+      "id": 3332,
+      "name": "JSSC JIIOCE",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3663,
+      "id": 3331,
+      "name": "JSSC JE Mechanical",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3664,
+      "id": 3330,
+      "name": "JSSC JE Electrical",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3665,
+      "id": 3329,
+      "name": "JSSC JE Civil",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3666,
+      "id": 3328,
+      "name": "JSSC IRB Police Constable",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3667,
+      "id": 3327,
+      "name": "JSSC Grade A Nurse",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3668,
+      "id": 3326,
+      "name": "JSSC Excise Constable",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3669,
+      "id": 3325,
+      "name": "JSSC Constable",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3670,
+      "id": 3324,
+      "name": "JSSC Clerk",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3671,
+      "id": 3323,
+      "name": "JSSC CGL",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3672,
+      "id": 3322,
+      "name": "JSSC Assistant Jailor",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3673,
+      "id": 3321,
+      "name": "JSSC ANM",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "sl": 3674,
+      "id": 3320,
+      "name": "JSSC",
+      "group": "Jharkhand JSSC Exams"
+    }
+  ]
+}

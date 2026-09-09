@@ -1,0 +1,358 @@
+{
+  "bundle_number": 111,
+  "bundle_id": "raw_bundle_111",
+  "range": "5501 - 5550",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5501,
+      "group_sl": 5868,
+      "exam_id": 1126,
+      "name": "BTSC Pharmacist",
+      "group": "Bihar Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5502,
+      "group_sl": 5887,
+      "exam_id": 1107,
+      "name": "BTSC General Medical Officer",
+      "group": "Bihar Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5503,
+      "group_sl": 6081,
+      "exam_id": 913,
+      "name": "Bihar Vidhan Sabha Office Attendant",
+      "group": "Bihar Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5504,
+      "group_sl": 6148,
+      "exam_id": 846,
+      "name": "Bihar SHSB Staff Nurse",
+      "group": "Bihar Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5505,
+      "group_sl": 6235,
+      "exam_id": 759,
+      "name": "Bihar ANM",
+      "group": "Bihar Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5506,
+      "group_sl": 6331,
+      "exam_id": 663,
+      "name": "BECIL Unskilled Manpower, Skilled Manpower",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "global_sl": 5507,
+      "group_sl": 6332,
+      "exam_id": 662,
+      "name": "BECIL Surveyor",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "global_sl": 5508,
+      "group_sl": 6333,
+      "exam_id": 661,
+      "name": "BECIL Stenographer",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "global_sl": 5509,
+      "group_sl": 6336,
+      "exam_id": 658,
+      "name": "BECIL MTS",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "global_sl": 5510,
+      "group_sl": 6337,
+      "exam_id": 657,
+      "name": "BECIL Junior Engineer Maintainer",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "global_sl": 5511,
+      "group_sl": 6338,
+      "exam_id": 656,
+      "name": "BECIL Investigator",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "global_sl": 5512,
+      "group_sl": 6339,
+      "exam_id": 655,
+      "name": "BECIL Group B, C",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "global_sl": 5513,
+      "group_sl": 6340,
+      "exam_id": 654,
+      "name": "BECIL DEO",
+      "group": "Engineering & PSU - BECIL Exams"
+    },
+    {
+      "global_sl": 5514,
+      "group_sl": 777,
+      "exam_id": 6217,
+      "name": "UCIL Mining Mate",
+      "group": "Engineering & PSU - Mining Sector Exams"
+    },
+    {
+      "global_sl": 5515,
+      "group_sl": 1440,
+      "exam_id": 5554,
+      "name": "SAIL RMD Mining Mate",
+      "group": "Engineering & PSU - Mining Sector Exams"
+    },
+    {
+      "global_sl": 5516,
+      "group_sl": 2762,
+      "exam_id": 4232,
+      "name": "NALCO Mining Mate",
+      "group": "Engineering & PSU - Mining Sector Exams"
+    },
+    {
+      "global_sl": 5517,
+      "group_sl": 3093,
+      "exam_id": 3901,
+      "name": "Mining Engineering",
+      "group": "Engineering & PSU - Mining Sector Exams"
+    },
+    {
+      "global_sl": 5518,
+      "group_sl": 3094,
+      "exam_id": 3900,
+      "name": "Mines Inspector",
+      "group": "Engineering & PSU - Mining Sector Exams"
+    },
+    {
+      "global_sl": 5519,
+      "group_sl": 4737,
+      "exam_id": 2257,
+      "name": "GATE Mining Engineering",
+      "group": "Engineering & PSU - Mining Sector Exams"
+    },
+    {
+      "global_sl": 5520,
+      "group_sl": 4913,
+      "exam_id": 2081,
+      "name": "ECL Mining Sirdar",
+      "group": "Engineering & PSU - Mining Sector Exams"
+    },
+    {
+      "global_sl": 5521,
+      "group_sl": 1257,
+      "exam_id": 5737,
+      "name": "SSA Gujarat DEO, Block Coordinator",
+      "group": "Gujarat Teaching & School Exams"
+    },
+    {
+      "global_sl": 5522,
+      "group_sl": 4147,
+      "exam_id": 2847,
+      "name": "ICDS Gujarat Anganwadi Supervisor",
+      "group": "Gujarat Teaching & School Exams"
+    },
+    {
+      "global_sl": 5523,
+      "group_sl": 4598,
+      "exam_id": 2396,
+      "name": "GSSC Primary School Teacher",
+      "group": "Gujarat Teaching & School Exams"
+    },
+    {
+      "global_sl": 5524,
+      "group_sl": 4619,
+      "exam_id": 2375,
+      "name": "GSET Physical Education",
+      "group": "Gujarat Teaching & School Exams"
+    },
+    {
+      "global_sl": 5525,
+      "group_sl": 4631,
+      "exam_id": 2363,
+      "name": "GSET Education",
+      "group": "Gujarat Teaching & School Exams"
+    },
+    {
+      "global_sl": 5526,
+      "group_sl": 4665,
+      "exam_id": 2329,
+      "name": "GPSC Associate Professor",
+      "group": "Gujarat Teaching & School Exams"
+    },
+    {
+      "global_sl": 5527,
+      "group_sl": 4666,
+      "exam_id": 2328,
+      "name": "GPSC Assistant Professor",
+      "group": "Gujarat Teaching & School Exams"
+    },
+    {
+      "global_sl": 5528,
+      "group_sl": 1310,
+      "exam_id": 5684,
+      "name": "SIRD Manipur SO",
+      "group": "Manipur General Government Exams"
+    },
+    {
+      "global_sl": 5529,
+      "group_sl": 2134,
+      "exam_id": 4860,
+      "name": "PHED Manipur LDC Junior Supervisor",
+      "group": "Manipur General Government Exams"
+    },
+    {
+      "global_sl": 5530,
+      "group_sl": 3207,
+      "exam_id": 3787,
+      "name": "Manipur HC Stenographer",
+      "group": "Manipur General Government Exams"
+    },
+    {
+      "global_sl": 5531,
+      "group_sl": 3209,
+      "exam_id": 3785,
+      "name": "Manipur General Knowledge",
+      "group": "Manipur General Government Exams"
+    },
+    {
+      "global_sl": 5532,
+      "group_sl": 4768,
+      "exam_id": 2226,
+      "name": "GAD Manipur Stenographer Grade 3",
+      "group": "Manipur General Government Exams"
+    },
+    {
+      "global_sl": 5533,
+      "group_sl": 4769,
+      "exam_id": 2225,
+      "name": "GAD Manipur Group D",
+      "group": "Manipur General Government Exams"
+    },
+    {
+      "global_sl": 5534,
+      "group_sl": 5112,
+      "exam_id": 1882,
+      "name": "Directorate of Agriculture Manipur LDC",
+      "group": "Manipur General Government Exams"
+    },
+    {
+      "global_sl": 5535,
+      "group_sl": 1322,
+      "exam_id": 5672,
+      "name": "SIDBI Assistant Manager",
+      "group": "Banking & Finance - SIDBI & IDBI Exams"
+    },
+    {
+      "global_sl": 5536,
+      "group_sl": 4125,
+      "exam_id": 2869,
+      "name": "IDBI Junior Assistant Manager AAO",
+      "group": "Banking & Finance - SIDBI & IDBI Exams"
+    },
+    {
+      "global_sl": 5537,
+      "group_sl": 4126,
+      "exam_id": 2868,
+      "name": "IDBI Junior Assistant Manager",
+      "group": "Banking & Finance - SIDBI & IDBI Exams"
+    },
+    {
+      "global_sl": 5538,
+      "group_sl": 4127,
+      "exam_id": 2867,
+      "name": "IDBI Bank SO",
+      "group": "Banking & Finance - SIDBI & IDBI Exams"
+    },
+    {
+      "global_sl": 5539,
+      "group_sl": 4128,
+      "exam_id": 2866,
+      "name": "IDBI Bank SCO",
+      "group": "Banking & Finance - SIDBI & IDBI Exams"
+    },
+    {
+      "global_sl": 5540,
+      "group_sl": 4129,
+      "exam_id": 2865,
+      "name": "IDBI Bank Executive",
+      "group": "Banking & Finance - SIDBI & IDBI Exams"
+    },
+    {
+      "global_sl": 5541,
+      "group_sl": 4130,
+      "exam_id": 2864,
+      "name": "IDBI Bank Assistant Manager",
+      "group": "Banking & Finance - SIDBI & IDBI Exams"
+    },
+    {
+      "global_sl": 5542,
+      "group_sl": 1387,
+      "exam_id": 5607,
+      "name": "SDCC Bank Junior Clerk",
+      "group": "Karnataka Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5543,
+      "group_sl": 1405,
+      "exam_id": 5589,
+      "name": "SCDCC Bank Second Division Clerk",
+      "group": "Karnataka Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5544,
+      "group_sl": 3416,
+      "exam_id": 3578,
+      "name": "KSFC Deputy Manager",
+      "group": "Karnataka Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5545,
+      "group_sl": 3583,
+      "exam_id": 3411,
+      "name": "Karnataka Bank PO",
+      "group": "Karnataka Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5546,
+      "group_sl": 3584,
+      "exam_id": 3410,
+      "name": "Karnataka Bank Clerk",
+      "group": "Karnataka Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5547,
+      "group_sl": 3585,
+      "exam_id": 3409,
+      "name": "Karnataka Apex Bank Banking Assistant",
+      "group": "Karnataka Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5548,
+      "group_sl": 6307,
+      "exam_id": 687,
+      "name": "Bellary DCC Bank SDA",
+      "group": "Karnataka Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5549,
+      "group_sl": 1433,
+      "exam_id": 5561,
+      "name": "Sambalpur District Court Junior Clerk Copyist",
+      "group": "Odisha High Court & Court Exams"
+    },
+    {
+      "global_sl": 5550,
+      "group_sl": 1952,
+      "exam_id": 5042,
+      "name": "Puri District Court Junior Clerk Copyist",
+      "group": "Odisha High Court & Court Exams"
+    }
+  ]
+}

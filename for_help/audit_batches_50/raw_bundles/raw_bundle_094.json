@@ -1,0 +1,358 @@
+{
+  "bundle_number": 94,
+  "bundle_id": "raw_bundle_094",
+  "range": "4651 - 4700",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4651,
+      "group_sl": 4,
+      "exam_id": 6990,
+      "name": "YDCC Junior Clerk",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4652,
+      "group_sl": 1076,
+      "exam_id": 5918,
+      "name": "TJSB Sahakari Bank Trainee Officer",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4653,
+      "group_sl": 1098,
+      "exam_id": 5896,
+      "name": "Thane DCC Bank Junior Clerk, Peon",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4654,
+      "group_sl": 1311,
+      "exam_id": 5683,
+      "name": "Sindhudurg DCCB Clerk",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4655,
+      "group_sl": 1429,
+      "exam_id": 5565,
+      "name": "Sangli DCC Junior Assistant",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4656,
+      "group_sl": 1951,
+      "exam_id": 5043,
+      "name": "Pusad Urban Cooperative Bank",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4657,
+      "group_sl": 2022,
+      "exam_id": 4972,
+      "name": "Pune Peoples Cooperative Bank Clerk",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4658,
+      "group_sl": 2184,
+      "exam_id": 4810,
+      "name": "PDCC Bank Sipahi, Driver",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4659,
+      "group_sl": 2185,
+      "exam_id": 4809,
+      "name": "PDCC Bank Clerk",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4660,
+      "group_sl": 3215,
+      "exam_id": 3779,
+      "name": "Malegaon Merchants Cooperative Bank Clerk",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4661,
+      "group_sl": 3314,
+      "exam_id": 3680,
+      "name": "LDCC Bank Peon",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4662,
+      "group_sl": 3315,
+      "exam_id": 3679,
+      "name": "LDCC Bank Clerk",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4663,
+      "group_sl": 3854,
+      "exam_id": 3140,
+      "name": "JDCC Bank Clerk",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4664,
+      "group_sl": 6390,
+      "exam_id": 604,
+      "name": "Bank of Maharashtra Sub Staff",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4665,
+      "group_sl": 6391,
+      "exam_id": 603,
+      "name": "Bank of Maharashtra SO Senior Manager",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4666,
+      "group_sl": 6392,
+      "exam_id": 602,
+      "name": "Bank of Maharashtra SO",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4667,
+      "group_sl": 6393,
+      "exam_id": 601,
+      "name": "Bank of Maharashtra Generalist Officer",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4668,
+      "group_sl": 6394,
+      "exam_id": 600,
+      "name": "Bank of Maharashtra Credit Officer",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 4669,
+      "group_sl": 255,
+      "exam_id": 6739,
+      "name": "UPSSSC Forest Guard",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4670,
+      "group_sl": 257,
+      "exam_id": 6737,
+      "name": "UPSSSC Excise Constable",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4671,
+      "group_sl": 258,
+      "exam_id": 6736,
+      "name": "UPSSSC Enforcement Constable",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4672,
+      "group_sl": 488,
+      "exam_id": 6506,
+      "name": "UP Police Workshop Staff",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4673,
+      "group_sl": 489,
+      "exam_id": 6505,
+      "name": "UP Police Special Security Force",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4674,
+      "group_sl": 490,
+      "exam_id": 6504,
+      "name": "UP Police SI Confidential",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4675,
+      "group_sl": 491,
+      "exam_id": 6503,
+      "name": "UP Police SI",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4676,
+      "group_sl": 492,
+      "exam_id": 6502,
+      "name": "UP Police Jail Warder",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4677,
+      "group_sl": 493,
+      "exam_id": 6501,
+      "name": "UP Police Head Operator",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4678,
+      "group_sl": 494,
+      "exam_id": 6500,
+      "name": "UP Police Fireman",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4679,
+      "group_sl": 495,
+      "exam_id": 6499,
+      "name": "UP Police Constable Civil",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4680,
+      "group_sl": 496,
+      "exam_id": 6498,
+      "name": "UP Police Constable",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4681,
+      "group_sl": 497,
+      "exam_id": 6497,
+      "name": "UP Police Computer Operator",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4682,
+      "group_sl": 498,
+      "exam_id": 6496,
+      "name": "UP Police Assistant Operator",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4683,
+      "group_sl": 499,
+      "exam_id": 6495,
+      "name": "UP Police ASI",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4684,
+      "group_sl": 524,
+      "exam_id": 6470,
+      "name": "UP PAC Constable",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4685,
+      "group_sl": 540,
+      "exam_id": 6454,
+      "name": "UP Jail Nigam Computer Operator",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4686,
+      "group_sl": 541,
+      "exam_id": 6453,
+      "name": "UP Home Guard",
+      "group": "Uttar Pradesh Police & Security Exams"
+    },
+    {
+      "global_sl": 4687,
+      "group_sl": 5472,
+      "exam_id": 1522,
+      "name": "CSL Workmen Welder Cum Fitter Welder Gas and Electric",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4688,
+      "group_sl": 5473,
+      "exam_id": 1521,
+      "name": "CSL Workmen Welder Cum Fitter Mechanic Diesel",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4689,
+      "group_sl": 5474,
+      "exam_id": 1520,
+      "name": "CSL Workmen Welder Cum Fitter",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4690,
+      "group_sl": 5475,
+      "exam_id": 1519,
+      "name": "CSL Workmen Sheet Metal Worker",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4691,
+      "group_sl": 5476,
+      "exam_id": 1518,
+      "name": "CSL Workmen Plumber",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4692,
+      "group_sl": 5477,
+      "exam_id": 1517,
+      "name": "CSL Workmen Instrument Mechanic",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4693,
+      "group_sl": 5478,
+      "exam_id": 1516,
+      "name": "CSL Workmen Fitter Electrical",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4694,
+      "group_sl": 5479,
+      "exam_id": 1515,
+      "name": "CSL Workmen Electronic Mechanic",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4695,
+      "group_sl": 5480,
+      "exam_id": 1514,
+      "name": "CSL Workmen",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4696,
+      "group_sl": 5481,
+      "exam_id": 1513,
+      "name": "CSL Trade Apprentice",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4697,
+      "group_sl": 5482,
+      "exam_id": 1512,
+      "name": "CSL Ship Draftsman Trainee",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4698,
+      "group_sl": 5483,
+      "exam_id": 1511,
+      "name": "CSL Safety Assistant",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4699,
+      "group_sl": 5484,
+      "exam_id": 1510,
+      "name": "CSL Rigger Trainee",
+      "group": "Engineering & PSU - CSL Exams"
+    },
+    {
+      "global_sl": 4700,
+      "group_sl": 5485,
+      "exam_id": 1509,
+      "name": "CSL Project Assistant",
+      "group": "Engineering & PSU - CSL Exams"
+    }
+  ]
+}

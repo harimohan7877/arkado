@@ -1,0 +1,350 @@
+{
+  "bundle_id": "bundle-103",
+  "bundle_num": 103,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Gujarat General Govt",
+  "total_exams": 56,
+  "boards_included": [
+    "Gujarat General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 3568,
+      "id": 3426,
+      "name": "KCG Consultant",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4074,
+      "id": 2920,
+      "name": "Income Tax Gujarat Sports Quota",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4486,
+      "id": 2508,
+      "name": "HNGU Junior Clerk, Typist",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4539,
+      "id": 2455,
+      "name": "GUJCET",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4545,
+      "id": 2449,
+      "name": "Gujarat Postal Circle GDS",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4559,
+      "id": 2435,
+      "name": "Gujarat HC Peon",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4560,
+      "id": 2434,
+      "name": "Gujarat HC Legal Assistant",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4561,
+      "id": 2433,
+      "name": "Gujarat HC Deputy Section Officer",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4562,
+      "id": 2432,
+      "name": "Gujarat HC Computer Operator",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4563,
+      "id": 2431,
+      "name": "Gujarat General Knowledge",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4565,
+      "id": 2429,
+      "name": "Gujarat Current Affairs",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4594,
+      "id": 2400,
+      "name": "GSSC Warden",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4595,
+      "id": 2399,
+      "name": "GSSC Village Panchayat Secretary",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4596,
+      "id": 2398,
+      "name": "GSSC Talathi",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4597,
+      "id": 2397,
+      "name": "GSSC Round Forester",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4601,
+      "id": 2393,
+      "name": "GSSC Laboratory Technician",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4602,
+      "id": 2392,
+      "name": "GSSC Laboratory Assistant",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4603,
+      "id": 2391,
+      "name": "GSSC Investigator",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4604,
+      "id": 2390,
+      "name": "GSSC Accounts Clerk",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4609,
+      "id": 2385,
+      "name": "GSLDC Junior Clerk",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4613,
+      "id": 2381,
+      "name": "GSET Sociology",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4614,
+      "id": 2380,
+      "name": "GSET Social Work",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4615,
+      "id": 2379,
+      "name": "GSET Sanskrit",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4616,
+      "id": 2378,
+      "name": "GSET Psychology",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4617,
+      "id": 2377,
+      "name": "GSET Political Science",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4618,
+      "id": 2376,
+      "name": "GSET Physical Science",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4620,
+      "id": 2374,
+      "name": "GSET Philosophy",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4621,
+      "id": 2373,
+      "name": "GSET Paper 1",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4622,
+      "id": 2372,
+      "name": "GSET Mathematical Sciences",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4623,
+      "id": 2371,
+      "name": "GSET Management",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4624,
+      "id": 2370,
+      "name": "GSET Life Sciences",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4625,
+      "id": 2369,
+      "name": "GSET Law",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4626,
+      "id": 2368,
+      "name": "GSET Home Science",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4627,
+      "id": 2367,
+      "name": "GSET History",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4628,
+      "id": 2366,
+      "name": "GSET Hindi",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4629,
+      "id": 2365,
+      "name": "GSET Geography",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4630,
+      "id": 2364,
+      "name": "GSET English",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4632,
+      "id": 2362,
+      "name": "GSET Economics",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4633,
+      "id": 2361,
+      "name": "GSET Earth Science",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4634,
+      "id": 2360,
+      "name": "GSET Computer Science",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4635,
+      "id": 2359,
+      "name": "GSET Commerce",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4636,
+      "id": 2358,
+      "name": "GSET Chemical Science",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4641,
+      "id": 2353,
+      "name": "GSCSCL Manager & Senior Assistant",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4653,
+      "id": 2341,
+      "name": "GPSC STI",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4656,
+      "id": 2338,
+      "name": "GPSC Horticulture Officer",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4657,
+      "id": 2337,
+      "name": "GPSC GWSSB AE",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4658,
+      "id": 2336,
+      "name": "GPSC Goa",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4659,
+      "id": 2335,
+      "name": "GPSC Executive Engineer",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4660,
+      "id": 2334,
+      "name": "GPSC Engineering Services",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4661,
+      "id": 2333,
+      "name": "GPSC DYSO",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4662,
+      "id": 2332,
+      "name": "GPSC District Malaria Officer",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4663,
+      "id": 2331,
+      "name": "GPSC Deputy Executive Engineer",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4664,
+      "id": 2330,
+      "name": "GPSC Civil Service",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4667,
+      "id": 2327,
+      "name": "GPSC ACF RFO",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4669,
+      "id": 2325,
+      "name": "GPCB Senior Scientific Assistant",
+      "group": "Gujarat General Government Exams"
+    },
+    {
+      "sl": 4683,
+      "id": 2311,
+      "name": "GMRDS Royalty Inspector",
+      "group": "Gujarat General Government Exams"
+    }
+  ]
+}

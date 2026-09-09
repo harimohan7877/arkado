@@ -1,0 +1,358 @@
+{
+  "bundle_number": 58,
+  "bundle_id": "raw_bundle_058",
+  "range": "2851 - 2900",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 2851,
+      "group_sl": 5996,
+      "exam_id": 998,
+      "name": "BPSC Middle School Teacher Hindi",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2852,
+      "group_sl": 5997,
+      "exam_id": 997,
+      "name": "BPSC Middle School Teacher English",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2853,
+      "group_sl": 5998,
+      "exam_id": 996,
+      "name": "BPSC Lecturer",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2854,
+      "group_sl": 6000,
+      "exam_id": 994,
+      "name": "BPSC Head Teacher",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2855,
+      "group_sl": 6009,
+      "exam_id": 985,
+      "name": "BPSC Assistant Professor",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2856,
+      "group_sl": 6119,
+      "exam_id": 875,
+      "name": "Bihar Special School Teacher Social Studies",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2857,
+      "group_sl": 6120,
+      "exam_id": 874,
+      "name": "Bihar Special School Teacher Maths & Science",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2858,
+      "group_sl": 6128,
+      "exam_id": 866,
+      "name": "Bihar SLET Physical Education",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2859,
+      "group_sl": 6141,
+      "exam_id": 853,
+      "name": "Bihar SLET Education",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2860,
+      "group_sl": 6152,
+      "exam_id": 842,
+      "name": "Bihar Secondary School Teacher Social Science",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2861,
+      "group_sl": 6153,
+      "exam_id": 841,
+      "name": "Bihar Secondary School Teacher Science",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2862,
+      "group_sl": 6154,
+      "exam_id": 840,
+      "name": "Bihar Secondary School Teacher Sanskrit",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2863,
+      "group_sl": 6155,
+      "exam_id": 839,
+      "name": "Bihar Secondary School Teacher Mathematics",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2864,
+      "group_sl": 6156,
+      "exam_id": 838,
+      "name": "Bihar Secondary School Teacher Hindi",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2865,
+      "group_sl": 6157,
+      "exam_id": 837,
+      "name": "Bihar Secondary School Teacher English",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2866,
+      "group_sl": 6199,
+      "exam_id": 795,
+      "name": "Bihar Higher Secondary School Teacher Zoology",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2867,
+      "group_sl": 6200,
+      "exam_id": 794,
+      "name": "Bihar Higher Secondary School Teacher Sociology",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2868,
+      "group_sl": 6201,
+      "exam_id": 793,
+      "name": "Bihar Higher Secondary School Teacher Political Science",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2869,
+      "group_sl": 6202,
+      "exam_id": 792,
+      "name": "Bihar Higher Secondary School Teacher Physics",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2870,
+      "group_sl": 6203,
+      "exam_id": 791,
+      "name": "Bihar Higher Secondary School Teacher Philosophy",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2871,
+      "group_sl": 6204,
+      "exam_id": 790,
+      "name": "Bihar Higher Secondary School Teacher Music",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2872,
+      "group_sl": 6205,
+      "exam_id": 789,
+      "name": "Bihar Higher Secondary School Teacher Mathematics",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2873,
+      "group_sl": 6206,
+      "exam_id": 788,
+      "name": "Bihar Higher Secondary School Teacher Home Science",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2874,
+      "group_sl": 6207,
+      "exam_id": 787,
+      "name": "Bihar Higher Secondary School Teacher History",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2875,
+      "group_sl": 6208,
+      "exam_id": 786,
+      "name": "Bihar Higher Secondary School Teacher Geography",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2876,
+      "group_sl": 6209,
+      "exam_id": 785,
+      "name": "Bihar Higher Secondary School Teacher Economics",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2877,
+      "group_sl": 6210,
+      "exam_id": 784,
+      "name": "Bihar Higher Secondary School Teacher Chemistry",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2878,
+      "group_sl": 6211,
+      "exam_id": 783,
+      "name": "Bihar Higher Secondary School Teacher Botany",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2879,
+      "group_sl": 6223,
+      "exam_id": 771,
+      "name": "Bihar DELED",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2880,
+      "group_sl": 6234,
+      "exam_id": 760,
+      "name": "Bihar B.ED CET",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2881,
+      "group_sl": 6236,
+      "exam_id": 758,
+      "name": "Bihar Anganwadi Supervisor",
+      "group": "Bihar Teaching & School Exams"
+    },
+    {
+      "global_sl": 2882,
+      "group_sl": 22,
+      "exam_id": 6972,
+      "name": "WCL Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2883,
+      "group_sl": 158,
+      "exam_id": 6836,
+      "name": "VMMC Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2884,
+      "group_sl": 159,
+      "exam_id": 6835,
+      "name": "VMMC SJH Senior Resident Surgery",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2885,
+      "group_sl": 160,
+      "exam_id": 6834,
+      "name": "VMMC SJH Senior Resident Medicine",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2886,
+      "group_sl": 161,
+      "exam_id": 6833,
+      "name": "VMMC SJH Senior Resident Anaesthesia",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2887,
+      "group_sl": 1179,
+      "exam_id": 5815,
+      "name": "Staff Nurse in Hindi",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2888,
+      "group_sl": 1180,
+      "exam_id": 5814,
+      "name": "Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2889,
+      "group_sl": 1299,
+      "exam_id": 5695,
+      "name": "SKIMS Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2890,
+      "group_sl": 1753,
+      "exam_id": 5241,
+      "name": "RML Nursing Officer",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2891,
+      "group_sl": 1762,
+      "exam_id": 5232,
+      "name": "RIMS Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2892,
+      "group_sl": 2330,
+      "exam_id": 4664,
+      "name": "Oncology Nursing",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2893,
+      "group_sl": 2439,
+      "exam_id": 4555,
+      "name": "Nursing Officer Exam",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2894,
+      "group_sl": 2440,
+      "exam_id": 4554,
+      "name": "Nursing Aptitude",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2895,
+      "group_sl": 2556,
+      "exam_id": 4438,
+      "name": "NIMHANS Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2896,
+      "group_sl": 2611,
+      "exam_id": 4383,
+      "name": "NHM Naharlagun Nursing Officer",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2897,
+      "group_sl": 2680,
+      "exam_id": 4314,
+      "name": "Neonatal Intensive Care Unit NICU Nursing",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2898,
+      "group_sl": 2681,
+      "exam_id": 4313,
+      "name": "NEIGRIHMS Nursing Officer",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2899,
+      "group_sl": 3112,
+      "exam_id": 3882,
+      "name": "MHSRB Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "global_sl": 2900,
+      "group_sl": 3310,
+      "exam_id": 3684,
+      "name": "LHMC Nursing Attendant",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    }
+  ]
+}

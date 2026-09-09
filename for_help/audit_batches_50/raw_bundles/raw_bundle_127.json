@@ -1,0 +1,358 @@
+{
+  "bundle_number": 127,
+  "bundle_id": "raw_bundle_127",
+  "range": "6301 - 6350",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 6301,
+      "group_sl": 2641,
+      "exam_id": 4353,
+      "name": "NHAI Deputy Manager",
+      "group": "Engineering & PSU - NHAI Exams"
+    },
+    {
+      "global_sl": 6302,
+      "group_sl": 2672,
+      "exam_id": 4322,
+      "name": "NFC Stipendiary Trainee",
+      "group": "Engineering & PSU - NFC Exams"
+    },
+    {
+      "global_sl": 6303,
+      "group_sl": 2674,
+      "exam_id": 4320,
+      "name": "NFC Chemical Plant Operator",
+      "group": "Engineering & PSU - NFC Exams"
+    },
+    {
+      "global_sl": 6304,
+      "group_sl": 2718,
+      "exam_id": 4276,
+      "name": "NDA",
+      "group": "UPSC - NDA & CDS Exams"
+    },
+    {
+      "global_sl": 6305,
+      "group_sl": 5767,
+      "exam_id": 1227,
+      "name": "CDS",
+      "group": "UPSC - NDA & CDS Exams"
+    },
+    {
+      "global_sl": 6306,
+      "group_sl": 2735,
+      "exam_id": 4259,
+      "name": "NCERT Group C Storekeeper",
+      "group": "National Academics - NCERT Exams"
+    },
+    {
+      "global_sl": 6307,
+      "group_sl": 2736,
+      "exam_id": 4258,
+      "name": "NCERT Group C LDC",
+      "group": "National Academics - NCERT Exams"
+    },
+    {
+      "global_sl": 6308,
+      "group_sl": 2746,
+      "exam_id": 4248,
+      "name": "NBCC Site Engineer",
+      "group": "Engineering & PSU - NBCC Exams"
+    },
+    {
+      "global_sl": 6309,
+      "group_sl": 2747,
+      "exam_id": 4247,
+      "name": "NBCC JE",
+      "group": "Engineering & PSU - NBCC Exams"
+    },
+    {
+      "global_sl": 6310,
+      "group_sl": 2771,
+      "exam_id": 4223,
+      "name": "Nagaland Police SI",
+      "group": "Nagaland Police & Security Exams"
+    },
+    {
+      "global_sl": 6311,
+      "group_sl": 2772,
+      "exam_id": 4222,
+      "name": "Nagaland Police Constable",
+      "group": "Nagaland Police & Security Exams"
+    },
+    {
+      "global_sl": 6312,
+      "group_sl": 2789,
+      "exam_id": 4205,
+      "name": "MUC Bank Clerical Trainee",
+      "group": "Gujarat Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 6313,
+      "group_sl": 3861,
+      "exam_id": 3133,
+      "name": "Jamnagar DCC Bank",
+      "group": "Gujarat Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 6314,
+      "group_sl": 2795,
+      "exam_id": 4199,
+      "name": "MSRLS Project Manager",
+      "group": "Mizoram General Government Exams"
+    },
+    {
+      "global_sl": 6315,
+      "group_sl": 3089,
+      "exam_id": 3905,
+      "name": "Mizoram General Knowledge",
+      "group": "Mizoram General Government Exams"
+    },
+    {
+      "global_sl": 6316,
+      "group_sl": 2798,
+      "exam_id": 4196,
+      "name": "MSPDCL Group D",
+      "group": "Manipur Power & Electricity Exams"
+    },
+    {
+      "global_sl": 6317,
+      "group_sl": 2799,
+      "exam_id": 4195,
+      "name": "MSPDCL Computer Operator",
+      "group": "Manipur Power & Electricity Exams"
+    },
+    {
+      "global_sl": 6318,
+      "group_sl": 3069,
+      "exam_id": 3925,
+      "name": "MOIL Mine Mate",
+      "group": "Engineering & PSU - MOIL Exams"
+    },
+    {
+      "global_sl": 6319,
+      "group_sl": 3070,
+      "exam_id": 3924,
+      "name": "MOIL Graduate Trainee",
+      "group": "Engineering & PSU - MOIL Exams"
+    },
+    {
+      "global_sl": 6320,
+      "group_sl": 3145,
+      "exam_id": 3849,
+      "name": "MFL Technical Assistant Trainee Operations",
+      "group": "Engineering & PSU - MFL Exams"
+    },
+    {
+      "global_sl": 6321,
+      "group_sl": 3146,
+      "exam_id": 3848,
+      "name": "MFL Technical Assistant Trainee",
+      "group": "Engineering & PSU - MFL Exams"
+    },
+    {
+      "global_sl": 6322,
+      "group_sl": 3156,
+      "exam_id": 3838,
+      "name": "Meghalaya Police SI",
+      "group": "Meghalaya Police & Security Exams"
+    },
+    {
+      "global_sl": 6323,
+      "group_sl": 3157,
+      "exam_id": 3837,
+      "name": "Meghalaya Police Constable",
+      "group": "Meghalaya Police & Security Exams"
+    },
+    {
+      "global_sl": 6324,
+      "group_sl": 3165,
+      "exam_id": 3829,
+      "name": "MDL Trade Apprentice",
+      "group": "Engineering & PSU - MDL Exams"
+    },
+    {
+      "global_sl": 6325,
+      "group_sl": 3166,
+      "exam_id": 3828,
+      "name": "MDL Technical Staff & Operator",
+      "group": "Engineering & PSU - MDL Exams"
+    },
+    {
+      "global_sl": 6326,
+      "group_sl": 3167,
+      "exam_id": 3827,
+      "name": "MDL Rigger & Electrician",
+      "group": "Vocational Trades - Electrician"
+    },
+    {
+      "global_sl": 6327,
+      "group_sl": 4905,
+      "exam_id": 2089,
+      "name": "Electrician",
+      "group": "Vocational Trades - Electrician"
+    },
+    {
+      "global_sl": 6328,
+      "group_sl": 3173,
+      "exam_id": 3821,
+      "name": "MCGM Sub Engineer",
+      "group": "Maharashtra MCGM Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6329,
+      "group_sl": 3176,
+      "exam_id": 3818,
+      "name": "MCGM Apprentice",
+      "group": "Maharashtra MCGM Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6330,
+      "group_sl": 3179,
+      "exam_id": 3815,
+      "name": "Mazagon Dock Rigger & Electrician",
+      "group": "Engineering & PSU - Mazagon Dock Exams"
+    },
+    {
+      "global_sl": 6331,
+      "group_sl": 3180,
+      "exam_id": 3814,
+      "name": "Mazagon Dock Non Executive",
+      "group": "Engineering & PSU - Mazagon Dock Exams"
+    },
+    {
+      "global_sl": 6332,
+      "group_sl": 3203,
+      "exam_id": 3791,
+      "name": "Manipur PSC Assistant Professor",
+      "group": "Manipur PSC Exams"
+    },
+    {
+      "global_sl": 6333,
+      "group_sl": 3204,
+      "exam_id": 3790,
+      "name": "Manipur PSC Assistant Engineer, Manager",
+      "group": "Manipur PSC Exams"
+    },
+    {
+      "global_sl": 6334,
+      "group_sl": 3261,
+      "exam_id": 3733,
+      "name": "Maha Metro Technician",
+      "group": "Maharashtra Metro Rail Exams"
+    },
+    {
+      "global_sl": 6335,
+      "group_sl": 3262,
+      "exam_id": 3732,
+      "name": "Maha Metro JE",
+      "group": "Maharashtra Metro Rail Exams"
+    },
+    {
+      "global_sl": 6336,
+      "group_sl": 3405,
+      "exam_id": 3589,
+      "name": "KSRTC Technical Assistant",
+      "group": "Kerala Transport & Roadways Exams"
+    },
+    {
+      "global_sl": 6337,
+      "group_sl": 3407,
+      "exam_id": 3587,
+      "name": "KSRTC Driver, Conductor",
+      "group": "Kerala Transport & Roadways Exams"
+    },
+    {
+      "global_sl": 6338,
+      "group_sl": 3461,
+      "exam_id": 3533,
+      "name": "KPSC Office Attendant",
+      "group": "Karnataka Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6339,
+      "group_sl": 3478,
+      "exam_id": 3516,
+      "name": "KPSC Assistant Surgeon",
+      "group": "Karnataka Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6340,
+      "group_sl": 3535,
+      "exam_id": 3459,
+      "name": "Kerala PSC Staff Nurse",
+      "group": "Kerala PSC Exams"
+    },
+    {
+      "global_sl": 6341,
+      "group_sl": 3536,
+      "exam_id": 3458,
+      "name": "Kerala PSC Beat Forest Officer",
+      "group": "Kerala PSC Exams"
+    },
+    {
+      "global_sl": 6342,
+      "group_sl": 3799,
+      "exam_id": 3195,
+      "name": "Jharkhand Police Group D",
+      "group": "Jharkhand Police & Security Exams"
+    },
+    {
+      "global_sl": 6343,
+      "group_sl": 3801,
+      "exam_id": 3193,
+      "name": "Jharkhand Home Guard",
+      "group": "Jharkhand Police & Security Exams"
+    },
+    {
+      "global_sl": 6344,
+      "group_sl": 4095,
+      "exam_id": 2899,
+      "name": "IIT ISM Dhanbad Junior Superintendent",
+      "group": "Jharkhand IIT Exams"
+    },
+    {
+      "global_sl": 6345,
+      "group_sl": 4097,
+      "exam_id": 2897,
+      "name": "IIT Dhanbad Junior Assistant",
+      "group": "Jharkhand IIT Exams"
+    },
+    {
+      "global_sl": 6346,
+      "group_sl": 4287,
+      "exam_id": 2707,
+      "name": "HRTC TMA",
+      "group": "Himachal Pradesh Transport & Roadways Exams"
+    },
+    {
+      "global_sl": 6347,
+      "group_sl": 4288,
+      "exam_id": 2706,
+      "name": "HRTC Conductor",
+      "group": "Himachal Pradesh Transport & Roadways Exams"
+    },
+    {
+      "global_sl": 6348,
+      "group_sl": 4480,
+      "exam_id": 2514,
+      "name": "HP High Court Stenographer",
+      "group": "Himachal Pradesh High Court & Court Exams"
+    },
+    {
+      "global_sl": 6349,
+      "group_sl": 4481,
+      "exam_id": 2513,
+      "name": "HP High Court Clerk",
+      "group": "Himachal Pradesh High Court & Court Exams"
+    },
+    {
+      "global_sl": 6350,
+      "group_sl": 4484,
+      "exam_id": 2510,
+      "name": "Homeopathy",
+      "group": "Medical & Nursing - Alternative Medicine Exams"
+    }
+  ]
+}

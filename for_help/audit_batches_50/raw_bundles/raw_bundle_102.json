@@ -1,0 +1,358 @@
+{
+  "bundle_number": 102,
+  "bundle_id": "raw_bundle_102",
+  "range": "5051 - 5100",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5051,
+      "group_sl": 3267,
+      "exam_id": 3727,
+      "name": "Madras High Court Residential Assistant",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "global_sl": 5052,
+      "group_sl": 3268,
+      "exam_id": 3726,
+      "name": "Madras High Court Personal Assistant",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "global_sl": 5053,
+      "group_sl": 3269,
+      "exam_id": 3725,
+      "name": "Madras High Court Office Assistant",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "global_sl": 5054,
+      "group_sl": 3270,
+      "exam_id": 3724,
+      "name": "Madras High Court Junior Bailiff",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "global_sl": 5055,
+      "group_sl": 3271,
+      "exam_id": 3723,
+      "name": "Madras High Court Driver",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "global_sl": 5056,
+      "group_sl": 3272,
+      "exam_id": 3722,
+      "name": "Madras High Court Civil Judge",
+      "group": "Tamil Nadu High Court & Court Exams"
+    },
+    {
+      "global_sl": 5057,
+      "group_sl": 1184,
+      "exam_id": 5810,
+      "name": "SSF GD Constable",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "global_sl": 5058,
+      "group_sl": 1743,
+      "exam_id": 5251,
+      "name": "RPF SI",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "global_sl": 5059,
+      "group_sl": 1744,
+      "exam_id": 5250,
+      "name": "RPF Constable",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "global_sl": 5060,
+      "group_sl": 2267,
+      "exam_id": 4727,
+      "name": "OSAP IRB Constable",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "global_sl": 5061,
+      "group_sl": 2587,
+      "exam_id": 4407,
+      "name": "NIA SI",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "global_sl": 5062,
+      "group_sl": 2590,
+      "exam_id": 4404,
+      "name": "NIA Constable, ASI",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "global_sl": 5063,
+      "group_sl": 2595,
+      "exam_id": 4399,
+      "name": "NHRC Constable Inspector",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "global_sl": 5064,
+      "group_sl": 2678,
+      "exam_id": 4316,
+      "name": "NEPA Constable",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "global_sl": 5065,
+      "group_sl": 3325,
+      "exam_id": 3669,
+      "name": "Ladakh Police Constable",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "global_sl": 5066,
+      "group_sl": 3926,
+      "exam_id": 3068,
+      "name": "IRB Police Constable",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "global_sl": 5067,
+      "group_sl": 3927,
+      "exam_id": 3067,
+      "name": "IRB GD Constable",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "global_sl": 5068,
+      "group_sl": 4491,
+      "exam_id": 2503,
+      "name": "Hingoli Police Patil",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "global_sl": 5069,
+      "group_sl": 5078,
+      "exam_id": 1916,
+      "name": "DNH Police Constable & Sub Inspector",
+      "group": "Defence & Security - Central Police Exams"
+    },
+    {
+      "global_sl": 5070,
+      "group_sl": 2168,
+      "exam_id": 4826,
+      "name": "PGCIL Trainee Supervisor",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "global_sl": 5071,
+      "group_sl": 2169,
+      "exam_id": 4825,
+      "name": "PGCIL Junior Technician Trainee",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "global_sl": 5072,
+      "group_sl": 2170,
+      "exam_id": 4824,
+      "name": "PGCIL Junior Officer Trainee",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "global_sl": 5073,
+      "group_sl": 2171,
+      "exam_id": 4823,
+      "name": "PGCIL Junior Engineer (Electrical)",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "global_sl": 5074,
+      "group_sl": 2172,
+      "exam_id": 4822,
+      "name": "PGCIL Field Supervisor Electrical",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "global_sl": 5075,
+      "group_sl": 2173,
+      "exam_id": 4821,
+      "name": "PGCIL Field Supervisor ECE",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "global_sl": 5076,
+      "group_sl": 2174,
+      "exam_id": 4820,
+      "name": "PGCIL Field Supervisor Civil",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "global_sl": 5077,
+      "group_sl": 2175,
+      "exam_id": 4819,
+      "name": "PGCIL Field Engineer Civil",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "global_sl": 5078,
+      "group_sl": 2176,
+      "exam_id": 4818,
+      "name": "PGCIL Field Engineer",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "global_sl": 5079,
+      "group_sl": 2177,
+      "exam_id": 4817,
+      "name": "PGCIL Diploma Trainee",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "global_sl": 5080,
+      "group_sl": 2178,
+      "exam_id": 4816,
+      "name": "PGCIL Assistant Officer Trainee",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "global_sl": 5081,
+      "group_sl": 2179,
+      "exam_id": 4815,
+      "name": "PGCIL Assistant Engineer Trainee",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "global_sl": 5082,
+      "group_sl": 5533,
+      "exam_id": 1461,
+      "name": "CPRI Assistant Grade 2",
+      "group": "Engineering & PSU - Power Grid Exams"
+    },
+    {
+      "global_sl": 5083,
+      "group_sl": 2517,
+      "exam_id": 4477,
+      "name": "NMMC Staff Nurse",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5084,
+      "group_sl": 2518,
+      "exam_id": 4476,
+      "name": "NMMC Multipurpose Health Worker",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5085,
+      "group_sl": 2519,
+      "exam_id": 4475,
+      "name": "NMMC Medical Officer",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5086,
+      "group_sl": 2523,
+      "exam_id": 4471,
+      "name": "NMMC ANM",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5087,
+      "group_sl": 2820,
+      "exam_id": 4174,
+      "name": "MPSC Medical Officer",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5088,
+      "group_sl": 3174,
+      "exam_id": 3820,
+      "name": "MCGM Staff Nurse",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5089,
+      "group_sl": 3175,
+      "exam_id": 3819,
+      "name": "MCGM Medical Officer",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5090,
+      "group_sl": 3223,
+      "exam_id": 3771,
+      "name": "Maharashtra ZP Pharmacist",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5091,
+      "group_sl": 3242,
+      "exam_id": 3752,
+      "name": "Maharashtra Health Department MO",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5092,
+      "group_sl": 3562,
+      "exam_id": 3432,
+      "name": "KDMC Staff Nurse",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5093,
+      "group_sl": 5094,
+      "exam_id": 1900,
+      "name": "DMER Mumbai Staff Nurse",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5094,
+      "group_sl": 5096,
+      "exam_id": 1898,
+      "name": "DMER Mumbai Pharmacist",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5095,
+      "group_sl": 6059,
+      "exam_id": 935,
+      "name": "BMC Sagar Staff Nurse",
+      "group": "Maharashtra Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5096,
+      "group_sl": 2972,
+      "exam_id": 4022,
+      "name": "MP TET Social Studies",
+      "group": "Madhya Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5097,
+      "group_sl": 2973,
+      "exam_id": 4021,
+      "name": "MP TET Secondary Teacher Sports",
+      "group": "Madhya Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5098,
+      "group_sl": 2974,
+      "exam_id": 4020,
+      "name": "MP TET Secondary Teacher Social Science",
+      "group": "Madhya Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5099,
+      "group_sl": 2975,
+      "exam_id": 4019,
+      "name": "MP TET Secondary Teacher Science",
+      "group": "Madhya Pradesh TET Exams"
+    },
+    {
+      "global_sl": 5100,
+      "group_sl": 2976,
+      "exam_id": 4018,
+      "name": "MP TET Secondary Teacher Sanskrit",
+      "group": "Madhya Pradesh TET Exams"
+    }
+  ]
+}

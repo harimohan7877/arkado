@@ -1,0 +1,433 @@
+{
+  "bundle_id": "bundle-120",
+  "bundle_num": 120,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Karnataka Police & Security • Gujarat SMC Municipal Corporation • Maharashtra Power & Electricity",
+  "total_exams": 69,
+  "boards_included": [
+    "Karnataka Police & Security",
+    "Gujarat SMC Municipal Corporation",
+    "Maharashtra Power & Electricity",
+    "Telangana High Court & Court",
+    "Chandigarh General Govt",
+    "General Subjects - Computer Literacy"
+  ],
+  "exams": [
+    {
+      "sl": 3218,
+      "id": 3776,
+      "name": "MAHATRANSCO LDC",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "sl": 3219,
+      "id": 3775,
+      "name": "MAHATRANSCO Deputy Executive Engineer",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "sl": 3220,
+      "id": 3774,
+      "name": "MAHATRANSCO AE",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "sl": 3221,
+      "id": 3773,
+      "name": "MAHATRANSCO Additional Executive Engineer",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "sl": 3250,
+      "id": 3744,
+      "name": "MAHAGENCO Technician 3",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "sl": 3251,
+      "id": 3743,
+      "name": "MAHAGENCO LDC",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "sl": 3252,
+      "id": 3742,
+      "name": "MAHAGENCO Engineer",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "sl": 3253,
+      "id": 3741,
+      "name": "MAHADISCOM Vidyut Sahayak",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "sl": 3254,
+      "id": 3740,
+      "name": "MAHADISCOM Upkendra Sahayak",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "sl": 3255,
+      "id": 3739,
+      "name": "MAHADISCOM Manager",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "sl": 3256,
+      "id": 3738,
+      "name": "MAHADISCOM Graduate Engineer Trainee",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "sl": 3257,
+      "id": 3737,
+      "name": "MAHADISCOM Executive Engineer",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "sl": 3258,
+      "id": 3736,
+      "name": "MAHADISCOM Apprentice",
+      "group": "Maharashtra Power & Electricity Exams"
+    },
+    {
+      "sl": 1121,
+      "id": 5873,
+      "name": "Telangana High Court Typist",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "sl": 1122,
+      "id": 5872,
+      "name": "Telangana High Court Stenographer",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "sl": 1123,
+      "id": 5871,
+      "name": "Telangana High Court Process Server",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "sl": 1124,
+      "id": 5870,
+      "name": "Telangana High Court Office Subordinate",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "sl": 1125,
+      "id": 5869,
+      "name": "Telangana High Court Junior Assistant",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "sl": 1126,
+      "id": 5868,
+      "name": "Telangana High Court Field Assistant",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "sl": 1127,
+      "id": 5867,
+      "name": "Telangana High Court Examiner",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "sl": 1128,
+      "id": 5866,
+      "name": "Telangana High Court Copyist",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "sl": 1129,
+      "id": 5865,
+      "name": "Telangana HC Civil Judge",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "sl": 1132,
+      "id": 5862,
+      "name": "Telangana District Court Process Server",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "sl": 1133,
+      "id": 5861,
+      "name": "Telangana District Court Office Subordinate",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "sl": 1134,
+      "id": 5860,
+      "name": "Telangana District Court",
+      "group": "Telangana High Court & Court Exams"
+    },
+    {
+      "sl": 2166,
+      "id": 4828,
+      "name": "PGIMER Chandigarh Group B",
+      "group": "Chandigarh General Government Exams"
+    },
+    {
+      "sl": 3178,
+      "id": 3816,
+      "name": "MC Chandigarh Fireman",
+      "group": "Chandigarh General Government Exams"
+    },
+    {
+      "sl": 4077,
+      "id": 2917,
+      "name": "IMTECH Chandigarh Technician",
+      "group": "Chandigarh General Government Exams"
+    },
+    {
+      "sl": 4687,
+      "id": 2307,
+      "name": "GMCH Chandigarh Nursing Officer",
+      "group": "Chandigarh General Government Exams"
+    },
+    {
+      "sl": 5633,
+      "id": 1361,
+      "name": "CHB JE Electrical",
+      "group": "Chandigarh General Government Exams"
+    },
+    {
+      "sl": 5634,
+      "id": 1360,
+      "name": "CHB JE Civil",
+      "group": "Chandigarh General Government Exams"
+    },
+    {
+      "sl": 5635,
+      "id": 1359,
+      "name": "CHB Clerk",
+      "group": "Chandigarh General Government Exams"
+    },
+    {
+      "sl": 5648,
+      "id": 1346,
+      "name": "Chandigarh Junior Technician",
+      "group": "Chandigarh General Government Exams"
+    },
+    {
+      "sl": 5649,
+      "id": 1345,
+      "name": "Chandigarh JBT",
+      "group": "Chandigarh General Government Exams"
+    },
+    {
+      "sl": 5650,
+      "id": 1344,
+      "name": "Chandigarh HC Stenographer",
+      "group": "Chandigarh General Government Exams"
+    },
+    {
+      "sl": 5651,
+      "id": 1343,
+      "name": "Chandigarh General Knowledge",
+      "group": "Chandigarh General Government Exams"
+    },
+    {
+      "sl": 5652,
+      "id": 1342,
+      "name": "Chandigarh Administration JE",
+      "group": "Chandigarh General Government Exams"
+    },
+    {
+      "sl": 3408,
+      "id": 3586,
+      "name": "KSP Warder, Jailor",
+      "group": "Karnataka Police & Security Exams"
+    },
+    {
+      "sl": 3409,
+      "id": 3585,
+      "name": "KSP Sub Inspector",
+      "group": "Karnataka Police & Security Exams"
+    },
+    {
+      "sl": 3410,
+      "id": 3584,
+      "name": "KSP SRPC",
+      "group": "Karnataka Police & Security Exams"
+    },
+    {
+      "sl": 3411,
+      "id": 3583,
+      "name": "KSP Scientific Officer",
+      "group": "Karnataka Police & Security Exams"
+    },
+    {
+      "sl": 3412,
+      "id": 3582,
+      "name": "KSP Police Constable",
+      "group": "Karnataka Police & Security Exams"
+    },
+    {
+      "sl": 3413,
+      "id": 3581,
+      "name": "KSP Civil Police Constable",
+      "group": "Karnataka Police & Security Exams"
+    },
+    {
+      "sl": 3414,
+      "id": 3580,
+      "name": "KSP Armed Police Constable",
+      "group": "Karnataka Police & Security Exams"
+    },
+    {
+      "sl": 3415,
+      "id": 3579,
+      "name": "KSFES Fireman",
+      "group": "Karnataka Police & Security Exams"
+    },
+    {
+      "sl": 3474,
+      "id": 3520,
+      "name": "KPSC Excise SI",
+      "group": "Karnataka Police & Security Exams"
+    },
+    {
+      "sl": 3476,
+      "id": 3518,
+      "name": "KPSC Civil Police Officer",
+      "group": "Karnataka Police & Security Exams"
+    },
+    {
+      "sl": 3573,
+      "id": 3421,
+      "name": "Karnataka Prisons Department Jailor & Warder",
+      "group": "Karnataka Police & Security Exams"
+    },
+    {
+      "sl": 3581,
+      "id": 3413,
+      "name": "Karnataka Forest Guard",
+      "group": "Karnataka Police & Security Exams"
+    },
+    {
+      "sl": 120,
+      "id": 6874,
+      "name": "WBAIC Computer Operator",
+      "group": "General Subjects - Computer Literacy"
+    },
+    {
+      "sl": 1151,
+      "id": 5843,
+      "name": "Tally Test and Certification New",
+      "group": "General Subjects - Computer Literacy"
+    },
+    {
+      "sl": 2202,
+      "id": 4792,
+      "name": "PAIC Computer Operator",
+      "group": "General Subjects - Computer Literacy"
+    },
+    {
+      "sl": 3873,
+      "id": 3121,
+      "name": "IURDP Clerk & Computer Operator",
+      "group": "General Subjects - Computer Literacy"
+    },
+    {
+      "sl": 4696,
+      "id": 2298,
+      "name": "GLPC Computer Operator",
+      "group": "General Subjects - Computer Literacy"
+    },
+    {
+      "sl": 5541,
+      "id": 1453,
+      "name": "Computer Science",
+      "group": "General Subjects - Computer Literacy"
+    },
+    {
+      "sl": 5543,
+      "id": 1451,
+      "name": "Computer Knowledge Sectional Test",
+      "group": "General Subjects - Computer Literacy"
+    },
+    {
+      "sl": 5545,
+      "id": 1449,
+      "name": "Computer Knowledge",
+      "group": "General Subjects - Computer Literacy"
+    },
+    {
+      "sl": 5797,
+      "id": 1197,
+      "name": "CCC",
+      "group": "General Subjects - Computer Literacy"
+    },
+    {
+      "sl": 6358,
+      "id": 636,
+      "name": "Basic Computer Skills",
+      "group": "General Subjects - Computer Literacy"
+    },
+    {
+      "sl": 1285,
+      "id": 5709,
+      "name": "SMC Technical Assistant",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 1288,
+      "id": 5706,
+      "name": "SMC Maintenance Assistant",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 1289,
+      "id": 5705,
+      "name": "SMC Laboratory Technician",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 1291,
+      "id": 5703,
+      "name": "SMC Fitter",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 1292,
+      "id": 5702,
+      "name": "SMC Driver",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 1293,
+      "id": 5701,
+      "name": "SMC Deputy Town Planner",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 1294,
+      "id": 5700,
+      "name": "SMC Clerk",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 1295,
+      "id": 5699,
+      "name": "SMC Assistant Town Planner",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 1296,
+      "id": 5698,
+      "name": "SMC Assistant Engineer Electrical",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    },
+    {
+      "sl": 1297,
+      "id": 5697,
+      "name": "SMC Assistant Engineer Civil",
+      "group": "Gujarat SMC Municipal Corporation Exams"
+    }
+  ]
+}

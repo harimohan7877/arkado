@@ -1,0 +1,358 @@
+{
+  "bundle_number": 31,
+  "bundle_id": "raw_bundle_031",
+  "range": "1501 - 1550",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1501,
+      "group_sl": 2373,
+      "exam_id": 4621,
+      "name": "Odisha LTR Teacher TGT Arts",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1502,
+      "group_sl": 2374,
+      "exam_id": 4620,
+      "name": "Odisha LTR Teacher Sanskrit Teacher",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1503,
+      "group_sl": 2375,
+      "exam_id": 4619,
+      "name": "Odisha LTR Teacher PET",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1504,
+      "group_sl": 2376,
+      "exam_id": 4618,
+      "name": "Odisha LTR Teacher Hindi Teacher",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1505,
+      "group_sl": 2378,
+      "exam_id": 4616,
+      "name": "Odisha Junior Teacher Science",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1506,
+      "group_sl": 2379,
+      "exam_id": 4615,
+      "name": "Odisha Junior Teacher Arts",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1507,
+      "group_sl": 2380,
+      "exam_id": 4614,
+      "name": "Odisha Junior Primary Teacher",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1508,
+      "group_sl": 2385,
+      "exam_id": 4609,
+      "name": "OAVS TGT Social Studies",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1509,
+      "group_sl": 2386,
+      "exam_id": 4608,
+      "name": "OAVS TGT Science",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1510,
+      "group_sl": 2387,
+      "exam_id": 4607,
+      "name": "OAVS TGT Mathematics",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1511,
+      "group_sl": 2388,
+      "exam_id": 4606,
+      "name": "OAVS TGT English",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1512,
+      "group_sl": 2390,
+      "exam_id": 4604,
+      "name": "OAVS PGT Physics",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1513,
+      "group_sl": 2391,
+      "exam_id": 4603,
+      "name": "OAVS PGT Mathematics",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1514,
+      "group_sl": 2392,
+      "exam_id": 4602,
+      "name": "OAVS PGT English",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1515,
+      "group_sl": 2393,
+      "exam_id": 4601,
+      "name": "OAVS PGT Computer Science",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1516,
+      "group_sl": 2394,
+      "exam_id": 4600,
+      "name": "OAVS PGT Commerce",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1517,
+      "group_sl": 2395,
+      "exam_id": 4599,
+      "name": "OAVS PGT Chemistry",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1518,
+      "group_sl": 2396,
+      "exam_id": 4598,
+      "name": "OAVS PGT Biology",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1519,
+      "group_sl": 2398,
+      "exam_id": 4596,
+      "name": "OAVS Art Teacher",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1520,
+      "group_sl": 5021,
+      "exam_id": 1973,
+      "name": "DSE Odisha TGT Teacher Science",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1521,
+      "group_sl": 5022,
+      "exam_id": 1972,
+      "name": "DSE Odisha TGT Teacher Arts",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1522,
+      "group_sl": 5023,
+      "exam_id": 1971,
+      "name": "DSE Odisha Teacher Physical Education",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1523,
+      "group_sl": 5024,
+      "exam_id": 1970,
+      "name": "DSE Odisha Teacher (Sanskrit)",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1524,
+      "group_sl": 5025,
+      "exam_id": 1969,
+      "name": "DSE Odisha Teacher (Hindi)",
+      "group": "Odisha Teaching & School Exams"
+    },
+    {
+      "global_sl": 1525,
+      "group_sl": 21,
+      "exam_id": 6973,
+      "name": "WCR Jabalpur Apprentice",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1526,
+      "group_sl": 1263,
+      "exam_id": 5731,
+      "name": "SQAE Jabalpur Technician",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1527,
+      "group_sl": 2810,
+      "exam_id": 4184,
+      "name": "MPTRANSCO AE and JE",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1528,
+      "group_sl": 2841,
+      "exam_id": 4153,
+      "name": "MPPSC VAS",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1529,
+      "group_sl": 2844,
+      "exam_id": 4150,
+      "name": "MPPSC Taxation Assistant",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1530,
+      "group_sl": 2846,
+      "exam_id": 4148,
+      "name": "MPPSC Sports Officer",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1531,
+      "group_sl": 2847,
+      "exam_id": 4147,
+      "name": "MPPSC Scientific Officer",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1532,
+      "group_sl": 2848,
+      "exam_id": 4146,
+      "name": "MPPSC Principal",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1533,
+      "group_sl": 2850,
+      "exam_id": 4144,
+      "name": "MPPSC Librarian",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1534,
+      "group_sl": 2853,
+      "exam_id": 4141,
+      "name": "MPPSC FSO",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1535,
+      "group_sl": 2856,
+      "exam_id": 4138,
+      "name": "MPPSC Assistant Town Planner",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1536,
+      "group_sl": 2857,
+      "exam_id": 4137,
+      "name": "MPPSC Assistant Registrar",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1537,
+      "group_sl": 2875,
+      "exam_id": 4119,
+      "name": "MPPSC Assistant Manager",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1538,
+      "group_sl": 2876,
+      "exam_id": 4118,
+      "name": "MPPSC Assistant Director",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1539,
+      "group_sl": 2877,
+      "exam_id": 4117,
+      "name": "MPPSC AE Civil",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1540,
+      "group_sl": 2878,
+      "exam_id": 4116,
+      "name": "MPPSC AE Agriculture",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1541,
+      "group_sl": 2879,
+      "exam_id": 4115,
+      "name": "MPPSC ADPO",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1542,
+      "group_sl": 2880,
+      "exam_id": 4114,
+      "name": "MPPSC",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1543,
+      "group_sl": 2896,
+      "exam_id": 4098,
+      "name": "MPPGCL Trade Apprentice",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1544,
+      "group_sl": 2898,
+      "exam_id": 4096,
+      "name": "MPPGCL Plant Assistant",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1545,
+      "group_sl": 2899,
+      "exam_id": 4095,
+      "name": "MPPGCL Office Assistant",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1546,
+      "group_sl": 2900,
+      "exam_id": 4094,
+      "name": "MPPGCL JE",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1547,
+      "group_sl": 2901,
+      "exam_id": 4093,
+      "name": "MPPGCL AE",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1548,
+      "group_sl": 2905,
+      "exam_id": 4089,
+      "name": "MPPCB Assistant Engineer Environment",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1549,
+      "group_sl": 2985,
+      "exam_id": 4009,
+      "name": "MP SET Yoga",
+      "group": "Madhya Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1550,
+      "group_sl": 2986,
+      "exam_id": 4008,
+      "name": "MP SET Visual Arts",
+      "group": "Madhya Pradesh General Government Exams"
+    }
+  ]
+}

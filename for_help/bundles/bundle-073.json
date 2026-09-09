@@ -1,0 +1,128 @@
+{
+  "bundle_id": "bundle-073",
+  "bundle_num": 73,
+  "category_id": "engineering-psu",
+  "category_name": "इंजीनियरिंग & PSU",
+  "category_icon": "⚙️",
+  "title": "इंजीनियरिंग & PSU — Engineering & PSU - Central PSUs & Corporate (Part 3/3)",
+  "total_exams": 19,
+  "boards_included": [
+    "Engineering & PSU - Central PSUs & Corporate"
+  ],
+  "exams": [
+    {
+      "sl": 4922,
+      "id": 2072,
+      "name": "ECG Technician",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5044,
+      "id": 1950,
+      "name": "Driver Mechanical Transport",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5107,
+      "id": 1887,
+      "name": "DLW Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5139,
+      "id": 1855,
+      "name": "DHFWS Lab Technician",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5192,
+      "id": 1802,
+      "name": "DCSEM Scientific Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5265,
+      "id": 1729,
+      "name": "CVPP Trainee Engineer and Junior Engineer Recruitment",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5554,
+      "id": 1440,
+      "name": "Code of Civil Procedure",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5564,
+      "id": 1430,
+      "name": "CMERI Technician",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5583,
+      "id": 1411,
+      "name": "Civil Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5613,
+      "id": 1381,
+      "name": "CII IPAT",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5632,
+      "id": 1362,
+      "name": "Chemical Science",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5763,
+      "id": 1231,
+      "name": "CEL Assistant Manager",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5764,
+      "id": 1230,
+      "name": "CEIL Inspection Engineer",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5768,
+      "id": 1226,
+      "name": "CDRI Technical Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5788,
+      "id": 1206,
+      "name": "CCMB Technician Grade 2",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 5796,
+      "id": 1198,
+      "name": "CCI Junior Commercial Executive",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 6276,
+      "id": 718,
+      "name": "Bhartiya Aviation",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 6347,
+      "id": 647,
+      "name": "BCPL Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 6461,
+      "id": 533,
+      "name": "Automobile Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    }
+  ]
+}

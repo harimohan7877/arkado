@@ -1,0 +1,358 @@
+{
+  "bundle_number": 11,
+  "bundle_id": "raw_bundle_011",
+  "range": "501 - 550",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 501,
+      "group_sl": 344,
+      "exam_id": 6650,
+      "name": "UPPSC Lecturer Economics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 502,
+      "group_sl": 345,
+      "exam_id": 6649,
+      "name": "UPPSC Lecturer Commerce",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 503,
+      "group_sl": 346,
+      "exam_id": 6648,
+      "name": "UPPSC Lecturer Chemistry",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 504,
+      "group_sl": 347,
+      "exam_id": 6647,
+      "name": "UPPSC Lecturer Biology",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 505,
+      "group_sl": 350,
+      "exam_id": 6644,
+      "name": "UPPSC GIC Lecturer Sociology",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 506,
+      "group_sl": 351,
+      "exam_id": 6643,
+      "name": "UPPSC GIC Lecturer Sanskrit",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 507,
+      "group_sl": 352,
+      "exam_id": 6642,
+      "name": "UPPSC GIC Lecturer Physics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 508,
+      "group_sl": 353,
+      "exam_id": 6641,
+      "name": "UPPSC GIC Lecturer Mathematics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 509,
+      "group_sl": 354,
+      "exam_id": 6640,
+      "name": "UPPSC GIC Lecturer Home Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 510,
+      "group_sl": 355,
+      "exam_id": 6639,
+      "name": "UPPSC GIC Lecturer History",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 511,
+      "group_sl": 356,
+      "exam_id": 6638,
+      "name": "UPPSC GIC Lecturer Hindi",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 512,
+      "group_sl": 357,
+      "exam_id": 6637,
+      "name": "UPPSC GIC Lecturer Geography",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 513,
+      "group_sl": 358,
+      "exam_id": 6636,
+      "name": "UPPSC GIC Lecturer English",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 514,
+      "group_sl": 359,
+      "exam_id": 6635,
+      "name": "UPPSC GIC Lecturer Education",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 515,
+      "group_sl": 360,
+      "exam_id": 6634,
+      "name": "UPPSC GIC Lecturer Economics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 516,
+      "group_sl": 361,
+      "exam_id": 6633,
+      "name": "UPPSC GIC Lecturer Commerce",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 517,
+      "group_sl": 362,
+      "exam_id": 6632,
+      "name": "UPPSC GIC Lecturer Civics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 518,
+      "group_sl": 363,
+      "exam_id": 6631,
+      "name": "UPPSC GIC Lecturer Chemistry",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 519,
+      "group_sl": 364,
+      "exam_id": 6630,
+      "name": "UPPSC GIC Lecturer Biology",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 520,
+      "group_sl": 365,
+      "exam_id": 6629,
+      "name": "UPPSC GDC Assistant Professor Sociology",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 521,
+      "group_sl": 366,
+      "exam_id": 6628,
+      "name": "UPPSC GDC Assistant Professor Sanskrit",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 522,
+      "group_sl": 367,
+      "exam_id": 6627,
+      "name": "UPPSC GDC Assistant Professor Psychology",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 523,
+      "group_sl": 368,
+      "exam_id": 6626,
+      "name": "UPPSC GDC Assistant Professor Political Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 524,
+      "group_sl": 369,
+      "exam_id": 6625,
+      "name": "UPPSC GDC Assistant Professor Physics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 525,
+      "group_sl": 370,
+      "exam_id": 6624,
+      "name": "UPPSC GDC Assistant Professor Philosophy",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 526,
+      "group_sl": 371,
+      "exam_id": 6623,
+      "name": "UPPSC GDC Assistant Professor Mathematics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 527,
+      "group_sl": 372,
+      "exam_id": 6622,
+      "name": "UPPSC GDC Assistant Professor Home Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 528,
+      "group_sl": 373,
+      "exam_id": 6621,
+      "name": "UPPSC GDC Assistant Professor History",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 529,
+      "group_sl": 374,
+      "exam_id": 6620,
+      "name": "UPPSC GDC Assistant Professor Hindi",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 530,
+      "group_sl": 375,
+      "exam_id": 6619,
+      "name": "UPPSC GDC Assistant Professor Geography",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 531,
+      "group_sl": 376,
+      "exam_id": 6618,
+      "name": "UPPSC GDC Assistant Professor English",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 532,
+      "group_sl": 377,
+      "exam_id": 6617,
+      "name": "UPPSC GDC Assistant Professor Education",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 533,
+      "group_sl": 378,
+      "exam_id": 6616,
+      "name": "UPPSC GDC Assistant Professor Economics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 534,
+      "group_sl": 379,
+      "exam_id": 6615,
+      "name": "UPPSC GDC Assistant Professor Commerce",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 535,
+      "group_sl": 380,
+      "exam_id": 6614,
+      "name": "UPPSC GDC Assistant Professor Chemistry",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 536,
+      "group_sl": 386,
+      "exam_id": 6608,
+      "name": "UPPSC Assistant Professor Zoology",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 537,
+      "group_sl": 387,
+      "exam_id": 6607,
+      "name": "UPPSC Assistant Professor Sociology",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 538,
+      "group_sl": 388,
+      "exam_id": 6606,
+      "name": "UPPSC Assistant Professor Sanskrit",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 539,
+      "group_sl": 389,
+      "exam_id": 6605,
+      "name": "UPPSC Assistant Professor Psychology",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 540,
+      "group_sl": 390,
+      "exam_id": 6604,
+      "name": "UPPSC Assistant Professor Political Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 541,
+      "group_sl": 391,
+      "exam_id": 6603,
+      "name": "UPPSC Assistant Professor Physics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 542,
+      "group_sl": 392,
+      "exam_id": 6602,
+      "name": "UPPSC Assistant Professor Physical Education",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 543,
+      "group_sl": 393,
+      "exam_id": 6601,
+      "name": "UPPSC Assistant Professor Philosophy",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 544,
+      "group_sl": 394,
+      "exam_id": 6600,
+      "name": "UPPSC Assistant Professor Mathematics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 545,
+      "group_sl": 395,
+      "exam_id": 6599,
+      "name": "UPPSC Assistant Professor Home Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 546,
+      "group_sl": 396,
+      "exam_id": 6598,
+      "name": "UPPSC Assistant Professor History",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 547,
+      "group_sl": 397,
+      "exam_id": 6597,
+      "name": "UPPSC Assistant Professor Hindi",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 548,
+      "group_sl": 398,
+      "exam_id": 6596,
+      "name": "UPPSC Assistant Professor Geography",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 549,
+      "group_sl": 399,
+      "exam_id": 6595,
+      "name": "UPPSC Assistant Professor English",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 550,
+      "group_sl": 400,
+      "exam_id": 6594,
+      "name": "UPPSC Assistant Professor Economics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    }
+  ]
+}

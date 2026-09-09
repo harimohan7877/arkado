@@ -1,0 +1,35 @@
+{
+  "bundle_id": "bundle-030",
+  "bundle_num": 30,
+  "category_id": "other-states",
+  "category_name": "अन्य राज्य",
+  "category_icon": "🦁",
+  "title": "अन्य राज्य — पंजाब (PSSSB & Punjab Police)",
+  "total_exams": 2,
+  "boards_included": [
+    "Punjab"
+  ],
+  "official_portal": "https://sssb.punjab.gov.in",
+  "exams": [
+    {
+      "id": 7020,
+      "name": "पंजाब पुलिस कांस्टेबल (District & Armed Police)",
+      "eligibility": "10+2 (पंजाबी अनिवार्य)",
+      "age_limit": "18-28 वर्ष",
+      "applicant_scale": "3+ लाख",
+      "exam_pattern": "CBT Paper-1 (100) + Paper-2 पंजाबी क्वालिफाइंग + PST",
+      "viral_subtext": "1,746 कांस्टेबल पद",
+      "status": "verified"
+    },
+    {
+      "id": 7021,
+      "name": "पंजाब राजस्व पटवारी सीधी भर्ती",
+      "eligibility": "स्नातक + 120 घंटे ISO कंप्यूटर कोर्स",
+      "age_limit": "18-37 वर्ष",
+      "applicant_scale": "2+ लाख",
+      "exam_pattern": "100 प्रश्न • 100 अंक",
+      "viral_subtext": "राजस्व विभाग 710 पद",
+      "status": "verified"
+    }
+  ]
+}

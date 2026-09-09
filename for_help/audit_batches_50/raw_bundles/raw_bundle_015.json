@@ -1,0 +1,358 @@
+{
+  "bundle_number": 15,
+  "bundle_id": "raw_bundle_015",
+  "range": "701 - 750",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 701,
+      "group_sl": 5020,
+      "exam_id": 1974,
+      "name": "DSRVS ARDO",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 702,
+      "group_sl": 5079,
+      "exam_id": 1915,
+      "name": "DNH & Daman Upper Primary Teacher Social Science",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 703,
+      "group_sl": 5080,
+      "exam_id": 1914,
+      "name": "DNH & Daman Upper Primary Teacher Maths & Science",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 704,
+      "group_sl": 5081,
+      "exam_id": 1913,
+      "name": "DNH & Daman Upper Primary Teacher English",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 705,
+      "group_sl": 5082,
+      "exam_id": 1912,
+      "name": "DNH & Daman Primary Teacher",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 706,
+      "group_sl": 5266,
+      "exam_id": 1728,
+      "name": "CUSB Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 707,
+      "group_sl": 5269,
+      "exam_id": 1725,
+      "name": "CUK Assistant Professor & Associate Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 708,
+      "group_sl": 5270,
+      "exam_id": 1724,
+      "name": "CUHP Associate Professor, Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 709,
+      "group_sl": 5443,
+      "exam_id": 1551,
+      "name": "CUCET",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 710,
+      "group_sl": 5934,
+      "exam_id": 1060,
+      "name": "BSEH Aarohi School Teaching & Non Teaching",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 711,
+      "group_sl": 6052,
+      "exam_id": 942,
+      "name": "BOAT Junior Assistant",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 712,
+      "group_sl": 6286,
+      "exam_id": 708,
+      "name": "BET Pharmaceutical Biotechnology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 713,
+      "group_sl": 6287,
+      "exam_id": 707,
+      "name": "BET Neuroscience",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 714,
+      "group_sl": 6288,
+      "exam_id": 706,
+      "name": "BET Molecular and Human Genetics",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 715,
+      "group_sl": 6289,
+      "exam_id": 705,
+      "name": "BET Medical Biotechnology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 716,
+      "group_sl": 6290,
+      "exam_id": 704,
+      "name": "BET Marine Biotechnology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 717,
+      "group_sl": 6291,
+      "exam_id": 703,
+      "name": "BET M. Tech. Biotechnology, Biochemical Engineering",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 718,
+      "group_sl": 6292,
+      "exam_id": 702,
+      "name": "BET Environmental Biotechnology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 719,
+      "group_sl": 6293,
+      "exam_id": 701,
+      "name": "BET Bioinformatics & Computational Biology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 720,
+      "group_sl": 6294,
+      "exam_id": 700,
+      "name": "BET Animal Biotechnology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 721,
+      "group_sl": 6295,
+      "exam_id": 699,
+      "name": "BET Agricultural Biotechnology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 722,
+      "group_sl": 6465,
+      "exam_id": 529,
+      "name": "Assistant Professor Sociology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 723,
+      "group_sl": 6466,
+      "exam_id": 528,
+      "name": "Assistant Professor Sanskrit",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 724,
+      "group_sl": 6467,
+      "exam_id": 527,
+      "name": "Assistant Professor Political Science",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 725,
+      "group_sl": 6468,
+      "exam_id": 526,
+      "name": "Assistant Professor History",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 726,
+      "group_sl": 6469,
+      "exam_id": 525,
+      "name": "Assistant Professor Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 727,
+      "group_sl": 6470,
+      "exam_id": 524,
+      "name": "Assistant Professor Geography",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 728,
+      "group_sl": 6471,
+      "exam_id": 523,
+      "name": "Assistant Professor English",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 729,
+      "group_sl": 6472,
+      "exam_id": 522,
+      "name": "Assistant Professor Economics",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "global_sl": 730,
+      "group_sl": 11,
+      "exam_id": 6983,
+      "name": "WII Research Biologist",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 731,
+      "group_sl": 271,
+      "exam_id": 6723,
+      "name": "UPSC Specialist Grade 3",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 732,
+      "group_sl": 272,
+      "exam_id": 6722,
+      "name": "UPSC Science and Technology",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 733,
+      "group_sl": 273,
+      "exam_id": 6721,
+      "name": "UPSC Principal",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 734,
+      "group_sl": 274,
+      "exam_id": 6720,
+      "name": "UPSC Physical and Indian Geography",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 735,
+      "group_sl": 275,
+      "exam_id": 6719,
+      "name": "UPSC Medical Officer",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 736,
+      "group_sl": 276,
+      "exam_id": 6718,
+      "name": "UPSC Indian Polity",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 737,
+      "group_sl": 277,
+      "exam_id": 6717,
+      "name": "UPSC IFS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 738,
+      "group_sl": 283,
+      "exam_id": 6711,
+      "name": "UPSC Environment and Ecology",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 739,
+      "group_sl": 284,
+      "exam_id": 6710,
+      "name": "UPSC Economics and Social Development",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 740,
+      "group_sl": 285,
+      "exam_id": 6709,
+      "name": "UPSC Deputy Director",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 741,
+      "group_sl": 286,
+      "exam_id": 6708,
+      "name": "UPSC CSAT",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 742,
+      "group_sl": 287,
+      "exam_id": 6707,
+      "name": "UPSC Combined Geo Scientist",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 743,
+      "group_sl": 288,
+      "exam_id": 6706,
+      "name": "UPSC CMS",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 744,
+      "group_sl": 290,
+      "exam_id": 6704,
+      "name": "UPSC CGPDTM Examiner",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 745,
+      "group_sl": 292,
+      "exam_id": 6702,
+      "name": "UPSC Assistant Public Prosecutor",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 746,
+      "group_sl": 294,
+      "exam_id": 6700,
+      "name": "UPSC Assistant Director",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 747,
+      "group_sl": 295,
+      "exam_id": 6699,
+      "name": "UPSC Art and Culture",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 748,
+      "group_sl": 296,
+      "exam_id": 6698,
+      "name": "UPSC AE",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 749,
+      "group_sl": 889,
+      "exam_id": 6105,
+      "name": "TRIFED Assistant Manager",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 750,
+      "group_sl": 1373,
+      "exam_id": 5621,
+      "name": "Secunderabad Cantonment Board AE",
+      "group": "Central Govt - General Civil Services Exams"
+    }
+  ]
+}

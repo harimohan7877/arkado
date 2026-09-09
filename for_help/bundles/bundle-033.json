@@ -1,0 +1,272 @@
+{
+  "bundle_id": "bundle-033",
+  "bundle_num": 33,
+  "category_id": "railways",
+  "category_name": "रेलवे (RRB)",
+  "category_icon": "🚆",
+  "title": "रेलवे (RRB) — National Railways - General Railways (Part 2/2)",
+  "total_exams": 43,
+  "boards_included": [
+    "National Railways - General Railways"
+  ],
+  "exams": [
+    {
+      "sl": 1929,
+      "id": 5065,
+      "name": "Railway PGT Teacher Economics",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 1930,
+      "id": 5064,
+      "name": "Railway PGT Teacher Commerce",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 1931,
+      "id": 5063,
+      "name": "Railway PGT Teacher Chemistry",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 1932,
+      "id": 5062,
+      "name": "Railway PGT Teacher Biology",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 1934,
+      "id": 5060,
+      "name": "Railway Mathematics",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 1935,
+      "id": 5059,
+      "name": "Railway Interview Guide",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 1937,
+      "id": 5057,
+      "name": "Railway (RRB) Mathematics",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 1938,
+      "id": 5056,
+      "name": "Railway (RRB) General Science",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 1939,
+      "id": 5055,
+      "name": "Railway (RRB) General Knowledge",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 1940,
+      "id": 5054,
+      "name": "Railway (RRB) General Intelligence & Reasoning",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 2501,
+      "id": 4493,
+      "name": "Northern Railway Trackman",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 2502,
+      "id": 4492,
+      "name": "Northern Railway Stenographer",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 2503,
+      "id": 4491,
+      "name": "Northern Railway Nursing Staff",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 2504,
+      "id": 4490,
+      "name": "Northern Railway MTS",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 2505,
+      "id": 4489,
+      "name": "Northern Railway Goods Guard",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 2506,
+      "id": 4488,
+      "name": "Northern Railway ASM",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 2592,
+      "id": 4402,
+      "name": "NHSRCL Junior Technical Manager",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 2593,
+      "id": 4401,
+      "name": "NHSRCL Junior Manager",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 2594,
+      "id": 4400,
+      "name": "NHSRCL Assistant Manager Civil",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 2719,
+      "id": 4275,
+      "name": "NCRTC Maintenance Associate",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 2720,
+      "id": 4274,
+      "name": "NCRTC Junior Maintainer",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 2722,
+      "id": 4272,
+      "name": "NCR Commercial cum Ticket Clerk",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 3453,
+      "id": 3541,
+      "name": "KRCL Track Maintainer",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 3484,
+      "id": 3510,
+      "name": "Konkan Railway Station Master",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 3920,
+      "id": 3074,
+      "name": "IRFC Assistant and Assistant Manager",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4184,
+      "id": 2810,
+      "name": "IBPS RRB XI",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4185,
+      "id": 2809,
+      "name": "IBPS RRB PO",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4186,
+      "id": 2808,
+      "name": "IBPS RRB Officer Scale III",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4187,
+      "id": 2807,
+      "name": "IBPS RRB Officer Scale II Treasury Manager",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4188,
+      "id": 2806,
+      "name": "IBPS RRB Officer Scale II Marketing",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4189,
+      "id": 2805,
+      "name": "IBPS RRB Officer Scale II Law",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4190,
+      "id": 2804,
+      "name": "IBPS RRB Officer Scale II CA",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4191,
+      "id": 2803,
+      "name": "IBPS RRB Officer Scale II Agriculture",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4192,
+      "id": 2802,
+      "name": "IBPS RRB Officer Scale II",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4193,
+      "id": 2801,
+      "name": "IBPS RRB Officer Scale 1",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4194,
+      "id": 2800,
+      "name": "IBPS RRB GBO",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4195,
+      "id": 2799,
+      "name": "IBPS RRB Clerk",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4199,
+      "id": 2795,
+      "name": "IBPS CRP RRB Clerk",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4911,
+      "id": 2083,
+      "name": "ECR Junior Clerk",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4925,
+      "id": 2069,
+      "name": "East Coast Railway Goods Guard",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 4927,
+      "id": 2067,
+      "name": "East Central Railway Gateman",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 5753,
+      "id": 1241,
+      "name": "Central Railway JTBS",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "sl": 5754,
+      "id": 1240,
+      "name": "Central Railway Clerk",
+      "group": "National Railways - General Railways Exams"
+    }
+  ]
+}

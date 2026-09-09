@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-098",
+  "bundle_num": 98,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Tamil Nadu General Govt (Part 1/2)",
+  "total_exams": 60,
+  "boards_included": [
+    "Tamil Nadu General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 945,
+      "id": 6049,
+      "name": "TNPSC Technical Assistant Electrical",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 946,
+      "id": 6048,
+      "name": "TNPSC Technical Assistant Civil",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 947,
+      "id": 6047,
+      "name": "TNPSC Sub Inspector of Fisheries",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 948,
+      "id": 6046,
+      "name": "TNPSC Store Keeper",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 949,
+      "id": 6045,
+      "name": "TNPSC Stenographer, Typist",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 950,
+      "id": 6044,
+      "name": "TNPSC MVI",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 951,
+      "id": 6043,
+      "name": "TNPSC Junior Scientific Officer",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 952,
+      "id": 6042,
+      "name": "TNPSC Junior Planner",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 953,
+      "id": 6041,
+      "name": "TNPSC Junior Photographer",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 954,
+      "id": 6040,
+      "name": "TNPSC Junior Assistant",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 955,
+      "id": 6039,
+      "name": "TNPSC Group 4",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 956,
+      "id": 6038,
+      "name": "TNPSC Group 3",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 957,
+      "id": 6037,
+      "name": "TNPSC Group 2",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 958,
+      "id": 6036,
+      "name": "TNPSC Group 1",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 959,
+      "id": 6035,
+      "name": "TNPSC Field Surveyor, Draftsman",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 960,
+      "id": 6034,
+      "name": "TNPSC Field Assistant",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 961,
+      "id": 6033,
+      "name": "TNPSC Executive Officer Grade 4",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 962,
+      "id": 6032,
+      "name": "TNPSC Executive Officer Grade 3",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 963,
+      "id": 6031,
+      "name": "TNPSC CSSE",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 965,
+      "id": 6029,
+      "name": "TNPSC CES",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 966,
+      "id": 6028,
+      "name": "TNPSC CDPO",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 967,
+      "id": 6027,
+      "name": "TNPSC Block Health Statistician",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 968,
+      "id": 6026,
+      "name": "TNPSC Assistant Sthapathi",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 969,
+      "id": 6025,
+      "name": "TNPSC Assistant Statistical Investigator",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 970,
+      "id": 6024,
+      "name": "TNPSC Assistant Public Prosecutor",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 971,
+      "id": 6023,
+      "name": "TNPSC Assistant Jailor",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 972,
+      "id": 6022,
+      "name": "TNPSC Assistant Geologist",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 973,
+      "id": 6021,
+      "name": "TNPSC Assistant Engineer Civil",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 974,
+      "id": 6020,
+      "name": "TNPSC Assistant Engineer Agriculture",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 975,
+      "id": 6019,
+      "name": "TNPSC Assistant Director & CDPO",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 977,
+      "id": 6017,
+      "name": "TNPSC AHO",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 978,
+      "id": 6016,
+      "name": "TNPSC Accounts Officer",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 979,
+      "id": 6015,
+      "name": "TNPSC AAO",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 980,
+      "id": 6014,
+      "name": "TNPL Semi Skilled",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 981,
+      "id": 6013,
+      "name": "TNPL GET",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 982,
+      "id": 6012,
+      "name": "TNPCB AE",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 986,
+      "id": 6008,
+      "name": "TNCSC Assistant, AE",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 990,
+      "id": 6004,
+      "name": "TN Village Assistant",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1037,
+      "id": 5957,
+      "name": "TN SET Social Work",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1038,
+      "id": 5956,
+      "name": "TN SET Sanskrit",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1039,
+      "id": 5955,
+      "name": "TN SET Psychology",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1040,
+      "id": 5954,
+      "name": "TN SET Physical Science",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1041,
+      "id": 5953,
+      "name": "TN SET Paper 1",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1042,
+      "id": 5952,
+      "name": "TN SET Mathematics",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1043,
+      "id": 5951,
+      "name": "TN SET Management",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1044,
+      "id": 5950,
+      "name": "TN SET Law",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1045,
+      "id": 5949,
+      "name": "TN SET Geography",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1046,
+      "id": 5948,
+      "name": "TN SET English",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1048,
+      "id": 5946,
+      "name": "TN SET Economics",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1049,
+      "id": 5945,
+      "name": "TN SET Computer Science",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1050,
+      "id": 5944,
+      "name": "TN SET Commerce",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1051,
+      "id": 5943,
+      "name": "TN SET Chemical Science",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1052,
+      "id": 5942,
+      "name": "TN Postal Circle MTS",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1056,
+      "id": 5938,
+      "name": "TN MRB Junior Analyst",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1057,
+      "id": 5937,
+      "name": "TN MRB Health Inspector",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1058,
+      "id": 5936,
+      "name": "TN MRB FSO",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1065,
+      "id": 5929,
+      "name": "TN MRB AMO",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1066,
+      "id": 5928,
+      "name": "TN Labour Dept DEO",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1082,
+      "id": 5912,
+      "name": "Thoothukudi RDM Village Assistant",
+      "group": "Tamil Nadu General Government Exams"
+    },
+    {
+      "sl": 1142,
+      "id": 5852,
+      "name": "TANUVAS Technician",
+      "group": "Tamil Nadu General Government Exams"
+    }
+  ]
+}

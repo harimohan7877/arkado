@@ -1,0 +1,56 @@
+{
+  "bundle_id": "bundle-097",
+  "bundle_num": 97,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Central Schools - KVS (Part 2/2)",
+  "total_exams": 7,
+  "boards_included": [
+    "Central Schools - KVS"
+  ],
+  "exams": [
+    {
+      "sl": 3389,
+      "id": 3605,
+      "name": "KVS JSA",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3390,
+      "id": 3604,
+      "name": "KVS Head Master",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3391,
+      "id": 3603,
+      "name": "KVS Finance Officer",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3392,
+      "id": 3602,
+      "name": "KVS Deputy Commissioner",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3393,
+      "id": 3601,
+      "name": "KVS Assistant Section Officer",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3394,
+      "id": 3600,
+      "name": "KVS Assistant Commissioner",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "sl": 3395,
+      "id": 3599,
+      "name": "KVS Administrative Officer",
+      "group": "Central Schools - KVS Exams"
+    }
+  ]
+}

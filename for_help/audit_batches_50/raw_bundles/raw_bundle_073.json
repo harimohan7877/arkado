@@ -1,0 +1,358 @@
+{
+  "bundle_number": 73,
+  "bundle_id": "raw_bundle_073",
+  "range": "3601 - 3650",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3601,
+      "group_sl": 2420,
+      "exam_id": 4574,
+      "name": "NVS PGT History",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3602,
+      "group_sl": 2421,
+      "exam_id": 4573,
+      "name": "NVS PGT Hindi",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3603,
+      "group_sl": 2422,
+      "exam_id": 4572,
+      "name": "NVS PGT Geography",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3604,
+      "group_sl": 2423,
+      "exam_id": 4571,
+      "name": "NVS PGT English",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3605,
+      "group_sl": 2424,
+      "exam_id": 4570,
+      "name": "NVS PGT Economics",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3606,
+      "group_sl": 2425,
+      "exam_id": 4569,
+      "name": "NVS PGT Computer Science",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3607,
+      "group_sl": 2426,
+      "exam_id": 4568,
+      "name": "NVS PGT Commerce",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3608,
+      "group_sl": 2427,
+      "exam_id": 4567,
+      "name": "NVS PGT Chemistry",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3609,
+      "group_sl": 2428,
+      "exam_id": 4566,
+      "name": "NVS PGT Biology",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3610,
+      "group_sl": 2429,
+      "exam_id": 4565,
+      "name": "NVS MTS",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3611,
+      "group_sl": 2430,
+      "exam_id": 4564,
+      "name": "NVS Mess Helper",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3612,
+      "group_sl": 2431,
+      "exam_id": 4563,
+      "name": "NVS Librarian",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3613,
+      "group_sl": 2432,
+      "exam_id": 4562,
+      "name": "NVS Legal Assistant",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3614,
+      "group_sl": 2433,
+      "exam_id": 4561,
+      "name": "NVS LDC",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3615,
+      "group_sl": 2434,
+      "exam_id": 4560,
+      "name": "NVS Lab Attendant",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3616,
+      "group_sl": 2435,
+      "exam_id": 4559,
+      "name": "NVS JSA",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3617,
+      "group_sl": 2436,
+      "exam_id": 4558,
+      "name": "NVS Female Staff Nurse",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3618,
+      "group_sl": 2437,
+      "exam_id": 4557,
+      "name": "NVS Electrician Cum Plumber",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3619,
+      "group_sl": 2438,
+      "exam_id": 4556,
+      "name": "NVS Catering Supervisor",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "global_sl": 3620,
+      "group_sl": 2851,
+      "exam_id": 4143,
+      "name": "MPPSC Lecturer",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3621,
+      "group_sl": 2858,
+      "exam_id": 4136,
+      "name": "MPPSC Assistant Professor Zoology",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3622,
+      "group_sl": 2859,
+      "exam_id": 4135,
+      "name": "MPPSC Assistant Professor Sociology",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3623,
+      "group_sl": 2860,
+      "exam_id": 4134,
+      "name": "MPPSC Assistant Professor Psychology",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3624,
+      "group_sl": 2861,
+      "exam_id": 4133,
+      "name": "MPPSC Assistant Professor Political Science",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3625,
+      "group_sl": 2862,
+      "exam_id": 4132,
+      "name": "MPPSC Assistant Professor Physics",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3626,
+      "group_sl": 2863,
+      "exam_id": 4131,
+      "name": "MPPSC Assistant Professor Mathematics",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3627,
+      "group_sl": 2864,
+      "exam_id": 4130,
+      "name": "MPPSC Assistant Professor Law",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3628,
+      "group_sl": 2865,
+      "exam_id": 4129,
+      "name": "MPPSC Assistant Professor History",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3629,
+      "group_sl": 2866,
+      "exam_id": 4128,
+      "name": "MPPSC Assistant Professor Hindi",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3630,
+      "group_sl": 2867,
+      "exam_id": 4127,
+      "name": "MPPSC Assistant Professor Geography",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3631,
+      "group_sl": 2868,
+      "exam_id": 4126,
+      "name": "MPPSC Assistant Professor English",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3632,
+      "group_sl": 2869,
+      "exam_id": 4125,
+      "name": "MPPSC Assistant Professor Economics",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3633,
+      "group_sl": 2870,
+      "exam_id": 4124,
+      "name": "MPPSC Assistant Professor Computer Science",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3634,
+      "group_sl": 2871,
+      "exam_id": 4123,
+      "name": "MPPSC Assistant Professor Commerce",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3635,
+      "group_sl": 2872,
+      "exam_id": 4122,
+      "name": "MPPSC Assistant Professor Chemistry",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3636,
+      "group_sl": 2873,
+      "exam_id": 4121,
+      "name": "MPPSC Assistant Professor Botany",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3637,
+      "group_sl": 2874,
+      "exam_id": 4120,
+      "name": "MPPSC Assistant Professor",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3638,
+      "group_sl": 2993,
+      "exam_id": 4001,
+      "name": "MP SET Physical Education",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3639,
+      "group_sl": 3031,
+      "exam_id": 3963,
+      "name": "MP High School Teacher Sociology",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3640,
+      "group_sl": 3032,
+      "exam_id": 3962,
+      "name": "MP High School Teacher Sanskrit Language",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3641,
+      "group_sl": 3033,
+      "exam_id": 3961,
+      "name": "MP High School Teacher Political Science",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3642,
+      "group_sl": 3034,
+      "exam_id": 3960,
+      "name": "MP High School Teacher Physics",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3643,
+      "group_sl": 3035,
+      "exam_id": 3959,
+      "name": "MP High School Teacher Mathematics",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3644,
+      "group_sl": 3036,
+      "exam_id": 3958,
+      "name": "MP High School Teacher Home Science",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3645,
+      "group_sl": 3037,
+      "exam_id": 3957,
+      "name": "MP High School Teacher History",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3646,
+      "group_sl": 3038,
+      "exam_id": 3956,
+      "name": "MP High School Teacher Hindi Language",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3647,
+      "group_sl": 3039,
+      "exam_id": 3955,
+      "name": "MP High School Teacher Geography",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3648,
+      "group_sl": 3040,
+      "exam_id": 3954,
+      "name": "MP High School Teacher English Language",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3649,
+      "group_sl": 3041,
+      "exam_id": 3953,
+      "name": "MP High School Teacher Economics",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 3650,
+      "group_sl": 3042,
+      "exam_id": 3952,
+      "name": "MP High School Teacher Commerce",
+      "group": "Madhya Pradesh Teaching & School Exams"
+    }
+  ]
+}

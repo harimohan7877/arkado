@@ -1,0 +1,35 @@
+{
+  "bundle_id": "bundle-028",
+  "bundle_num": 28,
+  "category_id": "other-states",
+  "category_name": "अन्य राज्य",
+  "category_icon": "🦁",
+  "title": "अन्य राज्य — महाराष्ट्र (MPSC & MahaPolice)",
+  "total_exams": 2,
+  "boards_included": [
+    "Maharashtra"
+  ],
+  "official_portal": "https://mpsc.gov.in",
+  "exams": [
+    {
+      "id": 7001,
+      "name": "महाराष्ट्र पोलीस शिपाई भरती (Maharashtra Police Constable)",
+      "eligibility": "12वीं पास",
+      "age_limit": "18-28 वर्ष",
+      "applicant_scale": "17+ लाख",
+      "exam_pattern": "शारीरिक चाचणी (50 गुण) + लेखी परीक्षा (100 गुण)",
+      "viral_subtext": "17,471 पोलीस शिपाई पद",
+      "status": "verified"
+    },
+    {
+      "id": 7002,
+      "name": "MPSC अराजपत्रित गट-ब व गट-क संयुक्त परीक्षा (Combine)",
+      "eligibility": "पदवी (Graduation)",
+      "age_limit": "19-38 वर्ष",
+      "applicant_scale": "5+ लाख",
+      "exam_pattern": "पूर्व परीक्षा (100 गुण) + मुख्य परीक्षा (400 गुण)",
+      "viral_subtext": "PSI, STI, ASO, दुय्यम निबंधक पद",
+      "status": "verified"
+    }
+  ]
+}

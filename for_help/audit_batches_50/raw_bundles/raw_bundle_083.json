@@ -1,0 +1,358 @@
+{
+  "bundle_number": 83,
+  "bundle_id": "raw_bundle_083",
+  "range": "4101 - 4150",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4101,
+      "group_sl": 6406,
+      "exam_id": 588,
+      "name": "Bank of Baroda MSME Relationship",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4102,
+      "group_sl": 6407,
+      "exam_id": 587,
+      "name": "Bank of Baroda Manager Trade Finance Operations",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4103,
+      "group_sl": 6408,
+      "exam_id": 586,
+      "name": "Bank of Baroda Manager Sales",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4104,
+      "group_sl": 6409,
+      "exam_id": 585,
+      "name": "Bank of Baroda Manager Information Security",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4105,
+      "group_sl": 6410,
+      "exam_id": 584,
+      "name": "Bank of Baroda Manager Forex Acquisition and Relationship",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4106,
+      "group_sl": 6411,
+      "exam_id": 583,
+      "name": "Bank of Baroda Manager Credit Analyst",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4107,
+      "group_sl": 6412,
+      "exam_id": 582,
+      "name": "Bank of Baroda Manager",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4108,
+      "group_sl": 6413,
+      "exam_id": 581,
+      "name": "Bank of Baroda LBO",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4109,
+      "group_sl": 6414,
+      "exam_id": 580,
+      "name": "Bank of Baroda IT Senior Manager Developer",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4110,
+      "group_sl": 6415,
+      "exam_id": 579,
+      "name": "Bank of Baroda IT Senior Manager",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4111,
+      "group_sl": 6416,
+      "exam_id": 578,
+      "name": "Bank of Baroda IT Manager Storage Administrator and Backup",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4112,
+      "group_sl": 6417,
+      "exam_id": 577,
+      "name": "Bank of Baroda IT Manager Network Administrator",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4113,
+      "group_sl": 6418,
+      "exam_id": 576,
+      "name": "Bank of Baroda IT Manager Cloud Engineer",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4114,
+      "group_sl": 6419,
+      "exam_id": 575,
+      "name": "Bank of Baroda IT API Developer",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4115,
+      "group_sl": 6420,
+      "exam_id": 574,
+      "name": "Bank of Baroda IT AI Engineer",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4116,
+      "group_sl": 6421,
+      "exam_id": 573,
+      "name": "Bank of Baroda Fire Safety Officer",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4117,
+      "group_sl": 6422,
+      "exam_id": 572,
+      "name": "Bank of Baroda Assistant Manager MSME Sales",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4118,
+      "group_sl": 6423,
+      "exam_id": 571,
+      "name": "Bank of Baroda Apprentice",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4119,
+      "group_sl": 6424,
+      "exam_id": 570,
+      "name": "Bank of Baroda AO",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4120,
+      "group_sl": 6425,
+      "exam_id": 569,
+      "name": "Bank of Baroda Agriculture Marketing Officer",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4121,
+      "group_sl": 6426,
+      "exam_id": 568,
+      "name": "Bank of Baroda Agriculture Marketing Manager",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4122,
+      "group_sl": 801,
+      "exam_id": 6193,
+      "name": "TSPSC Polytechnic Lecturer Mechanical",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4123,
+      "group_sl": 802,
+      "exam_id": 6192,
+      "name": "TSPSC Polytechnic Lecturer Electronics",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4124,
+      "group_sl": 803,
+      "exam_id": 6191,
+      "name": "TSPSC Polytechnic Lecturer Electrical",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4125,
+      "group_sl": 804,
+      "exam_id": 6190,
+      "name": "TSPSC Polytechnic Lecturer Civil",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4126,
+      "group_sl": 811,
+      "exam_id": 6183,
+      "name": "TSPSC Junior Lecturer Physics",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4127,
+      "group_sl": 812,
+      "exam_id": 6182,
+      "name": "TSPSC Junior Lecturer Mathematics",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4128,
+      "group_sl": 813,
+      "exam_id": 6181,
+      "name": "TSPSC Junior Lecturer History",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4129,
+      "group_sl": 814,
+      "exam_id": 6180,
+      "name": "TSPSC Junior Lecturer English",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4130,
+      "group_sl": 815,
+      "exam_id": 6179,
+      "name": "TSPSC Junior Lecturer Economics",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4131,
+      "group_sl": 816,
+      "exam_id": 6178,
+      "name": "TSPSC Junior Lecturer Commerce",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4132,
+      "group_sl": 817,
+      "exam_id": 6177,
+      "name": "TSPSC Junior Lecturer Chemistry",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4133,
+      "group_sl": 818,
+      "exam_id": 6176,
+      "name": "TSPSC Junior Lecturer Botany",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4134,
+      "group_sl": 819,
+      "exam_id": 6175,
+      "name": "TSPSC Junior Lecturer",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4135,
+      "group_sl": 857,
+      "exam_id": 6137,
+      "name": "TS SET Physical Education",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4136,
+      "group_sl": 870,
+      "exam_id": 6124,
+      "name": "TS SET Education",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4137,
+      "group_sl": 890,
+      "exam_id": 6104,
+      "name": "TREIRB Junior Lecturer Zoology",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4138,
+      "group_sl": 891,
+      "exam_id": 6103,
+      "name": "TREIRB Junior Lecturer Physics",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4139,
+      "group_sl": 892,
+      "exam_id": 6102,
+      "name": "TREIRB Junior Lecturer Mathematics",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4140,
+      "group_sl": 893,
+      "exam_id": 6101,
+      "name": "TREIRB Junior Lecturer History",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4141,
+      "group_sl": 894,
+      "exam_id": 6100,
+      "name": "TREIRB Junior Lecturer Hindi",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4142,
+      "group_sl": 895,
+      "exam_id": 6099,
+      "name": "TREIRB Junior Lecturer English",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4143,
+      "group_sl": 896,
+      "exam_id": 6098,
+      "name": "TREIRB Junior Lecturer Economics",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4144,
+      "group_sl": 897,
+      "exam_id": 6097,
+      "name": "TREIRB Junior Lecturer Commerce",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4145,
+      "group_sl": 898,
+      "exam_id": 6096,
+      "name": "TREIRB Junior Lecturer Chemistry",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4146,
+      "group_sl": 899,
+      "exam_id": 6095,
+      "name": "TREIRB Junior Lecturer Botany",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4147,
+      "group_sl": 1113,
+      "exam_id": 5881,
+      "name": "Telangana SSA MIS Coordinator",
+      "group": "Telangana Teaching & School Exams"
+    },
+    {
+      "global_sl": 4148,
+      "group_sl": 1079,
+      "exam_id": 5915,
+      "name": "Tiruvannamalai District Court Office Assistant",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4149,
+      "group_sl": 1080,
+      "exam_id": 5914,
+      "name": "Tiruppur District Court",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    },
+    {
+      "global_sl": 4150,
+      "group_sl": 1165,
+      "exam_id": 5829,
+      "name": "Sundargarh District Court Junior Clerk Copyist",
+      "group": "Judiciary & Law - Court Clerk & Staff Exams"
+    }
+  ]
+}

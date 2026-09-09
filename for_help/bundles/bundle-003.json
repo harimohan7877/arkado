@@ -1,0 +1,65 @@
+{
+  "bundle_id": "bundle-003",
+  "bundle_num": 3,
+  "category_id": "rajasthan",
+  "category_name": "राजस्थान",
+  "category_icon": "🚩",
+  "title": "राजस्थान — राजस्थान पुलिस भर्ती प्रकोष्ठ",
+  "total_exams": 5,
+  "boards_included": [
+    "Police"
+  ],
+  "official_portal": "https://police.rajasthan.gov.in",
+  "exams": [
+    {
+      "id": 5127,
+      "name": "पुलिस कांस्टेबल (सामान्य ड्यूटी / GD)",
+      "eligibility": "12वीं पास + CET स्कोर",
+      "age_limit": "18-24 वर्ष",
+      "applicant_scale": "3+ लाख",
+      "exam_pattern": "CBT (150 प्रश्न) + 5 किमी दौड़",
+      "viral_subtext": "जिला पुलिस बल",
+      "status": "verified"
+    },
+    {
+      "id": 5112,
+      "name": "पुलिस कांस्टेबल (चालक / Driver)",
+      "eligibility": "12वीं + वैध ड्राइविंग लाइसेंस",
+      "age_limit": "18-27 वर्ष",
+      "applicant_scale": "50,000",
+      "exam_pattern": "लिखित परीक्षा + ड्राइविंग टेस्ट",
+      "viral_subtext": "पुलिस वाहन विंग",
+      "status": "verified"
+    },
+    {
+      "id": 5128,
+      "name": "पुलिस कांस्टेबल (दूरसंचार / Telecom)",
+      "eligibility": "12वीं (भौतिक विज्ञान व गणित)",
+      "age_limit": "18-24 वर्ष",
+      "applicant_scale": "60,000",
+      "exam_pattern": "लिखित परीक्षा + शारीरिक दक्षता",
+      "viral_subtext": "वायरलेस दूरसंचार विंग",
+      "status": "verified"
+    },
+    {
+      "id": 5121,
+      "name": "जेल प्रहरी सीधी भर्ती (Jail Prahari)",
+      "eligibility": "10वीं पास",
+      "age_limit": "18-26 वर्ष",
+      "applicant_scale": "4+ लाख",
+      "exam_pattern": "लिखित परीक्षा + शारीरिक परीक्षा",
+      "viral_subtext": "कारागार महानिदेशालय",
+      "status": "verified"
+    },
+    {
+      "id": 5118,
+      "name": "राजस्थान होमगार्ड स्वयंसेवक भर्ती",
+      "eligibility": "8वीं / 10वीं पास",
+      "age_limit": "18-35 वर्ष",
+      "applicant_scale": "2.5 लाख",
+      "exam_pattern": "PET शारीरिक माप-दक्षता + विशेष योग्यता अंक",
+      "viral_subtext": "गृह रक्षा विभाग",
+      "status": "verified"
+    }
+  ]
+}

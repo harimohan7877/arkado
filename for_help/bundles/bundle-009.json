@@ -1,0 +1,85 @@
+{
+  "bundle_id": "bundle-009",
+  "bundle_num": 9,
+  "category_id": "uttar-pradesh",
+  "category_name": "उत्तर प्रदेश",
+  "category_icon": "🟢",
+  "title": "उत्तर प्रदेश — UPPSC (उत्तर प्रदेश लोक सेवा आयोग)",
+  "total_exams": 7,
+  "boards_included": [
+    "UPPSC"
+  ],
+  "official_portal": "https://uppsc.up.nic.in",
+  "exams": [
+    {
+      "id": 6678,
+      "name": "सम्मिलित राज्य प्रवर अधीनस्थ सेवा (UP PCS)",
+      "eligibility": "स्नातक",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "6+ लाख",
+      "exam_pattern": "Prelims (GS+CSAT) + Mains (8 पेपर्स) + Interview",
+      "viral_subtext": "SDM, DSP, BDO आदि शीर्ष पद",
+      "status": "verified"
+    },
+    {
+      "id": 6689,
+      "name": "समीक्षा अधिकारी (RO) एवं सहायक समीक्षा अधिकारी (ARO)",
+      "eligibility": "स्नातक + 'O' Level (ARO हेतु)",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "10+ लाख",
+      "exam_pattern": "Prelims (GS 140 + Hindi 60) + Mains (400 अंक)",
+      "viral_subtext": "UP सचिवालय व UPPSC प्रयागराज 411 पद",
+      "status": "verified"
+    },
+    {
+      "id": 6673,
+      "name": "एलटी ग्रेड सहायक अध्यापक भर्ती (LT Grade Teacher)",
+      "eligibility": "स्नातक + B.Ed",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "6+ लाख",
+      "exam_pattern": "सामान्य अध्ययन (30) + संबंधित विषय (120)",
+      "viral_subtext": "राजकीय माध्यमिक विद्यालय (सभी 15 विषय)",
+      "status": "verified"
+    },
+    {
+      "id": 6644,
+      "name": "जीआईसी प्रवक्ता भर्ती (UPPSC GIC Lecturer)",
+      "eligibility": "स्नातकोत्तर (PG)",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "4+ लाख",
+      "exam_pattern": "प्रारंभिक (120 प्रश्न) + मुख्य परीक्षा (लिखित)",
+      "viral_subtext": "राजकीय इंटर कॉलेज (सभी 16 विषय)",
+      "status": "verified"
+    },
+    {
+      "id": 6688,
+      "name": "राजकीय पॉलिटेक्निक व्याख्याता भर्ती (Polytechnic Lecturer)",
+      "eligibility": "B.Tech / B.E / M.Tech (इंजीनियरिंग)",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "1.5 लाख",
+      "exam_pattern": "Paper-1 (375) + Paper-2 (375) + Interview (100)",
+      "viral_subtext": "प्राविधिक शिक्षा विभाग (सभी 12 ट्रेड्स)",
+      "status": "verified"
+    },
+    {
+      "id": 6629,
+      "name": "राजकीय डिग्री कॉलेज सहायक प्रोफेसर (GDC Asst Professor)",
+      "eligibility": "मास्टर डिग्री (55%) + NET / PhD",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "80,000",
+      "exam_pattern": "स्क्रीनिंग परीक्षा (150 प्रश्न) + साक्षात्कार",
+      "viral_subtext": "उच्च शिक्षा विभाग (सभी 20 विषय)",
+      "status": "verified"
+    },
+    {
+      "id": 2006,
+      "name": "खंड शिक्षा अधिकारी भर्ती (BEO - Block Education Officer)",
+      "eligibility": "स्नातक + B.Ed",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "4+ लाख",
+      "exam_pattern": "Prelims (GS 300 अंक) + Mains (400 अंक)",
+      "viral_subtext": "बेसिक शिक्षा विभाग क्लास-2 अफसर",
+      "status": "verified"
+    }
+  ]
+}

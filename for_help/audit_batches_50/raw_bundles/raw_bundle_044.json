@@ -1,0 +1,358 @@
+{
+  "bundle_number": 44,
+  "bundle_id": "raw_bundle_044",
+  "range": "2151 - 2200",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 2151,
+      "group_sl": 854,
+      "exam_id": 6140,
+      "name": "TS SET Psychology",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2152,
+      "group_sl": 855,
+      "exam_id": 6139,
+      "name": "TS SET Political Science",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2153,
+      "group_sl": 856,
+      "exam_id": 6138,
+      "name": "TS SET Physical Science",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2154,
+      "group_sl": 858,
+      "exam_id": 6136,
+      "name": "TS SET Philosophy",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2155,
+      "group_sl": 859,
+      "exam_id": 6135,
+      "name": "TS SET Paper 1",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2156,
+      "group_sl": 860,
+      "exam_id": 6134,
+      "name": "TS SET Linguistics",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2157,
+      "group_sl": 861,
+      "exam_id": 6133,
+      "name": "TS SET Life Sciences",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2158,
+      "group_sl": 862,
+      "exam_id": 6132,
+      "name": "TS SET Library and Information Science",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2159,
+      "group_sl": 863,
+      "exam_id": 6131,
+      "name": "TS SET Law",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2160,
+      "group_sl": 864,
+      "exam_id": 6130,
+      "name": "TS SET Journalism, Mass Communication",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2161,
+      "group_sl": 865,
+      "exam_id": 6129,
+      "name": "TS SET History",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2162,
+      "group_sl": 866,
+      "exam_id": 6128,
+      "name": "TS SET Hindi",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2163,
+      "group_sl": 867,
+      "exam_id": 6127,
+      "name": "TS SET Geography",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2164,
+      "group_sl": 868,
+      "exam_id": 6126,
+      "name": "TS SET Environmental Studies",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2165,
+      "group_sl": 869,
+      "exam_id": 6125,
+      "name": "TS SET English",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2166,
+      "group_sl": 871,
+      "exam_id": 6123,
+      "name": "TS SET Economics",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2167,
+      "group_sl": 872,
+      "exam_id": 6122,
+      "name": "TS SET Earth Science",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2168,
+      "group_sl": 873,
+      "exam_id": 6121,
+      "name": "TS SET Computer Science",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2169,
+      "group_sl": 874,
+      "exam_id": 6120,
+      "name": "TS SET Commerce",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2170,
+      "group_sl": 875,
+      "exam_id": 6119,
+      "name": "TS LAWCET",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2171,
+      "group_sl": 877,
+      "exam_id": 6117,
+      "name": "TS EAMCET Engineering",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2172,
+      "group_sl": 984,
+      "exam_id": 6010,
+      "name": "TNHB Assistant Engineer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2173,
+      "group_sl": 1106,
+      "exam_id": 5888,
+      "name": "TGPSC Assistant Scientist",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2174,
+      "group_sl": 1116,
+      "exam_id": 5878,
+      "name": "Telangana Post Office GDS",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2175,
+      "group_sl": 1120,
+      "exam_id": 5874,
+      "name": "Telangana Junior Panchayat Secretary",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2176,
+      "group_sl": 1130,
+      "exam_id": 5864,
+      "name": "Telangana General Knowledge",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2177,
+      "group_sl": 1131,
+      "exam_id": 5863,
+      "name": "Telangana Fisheries Officer",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2178,
+      "group_sl": 1406,
+      "exam_id": 5588,
+      "name": "SCCL Non Executive",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2179,
+      "group_sl": 1407,
+      "exam_id": 5587,
+      "name": "SCCL Junior Assistant",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2180,
+      "group_sl": 3111,
+      "exam_id": 3883,
+      "name": "MHSRB Telangana Lab Technician",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2181,
+      "group_sl": 4103,
+      "exam_id": 2891,
+      "name": "IIIT Hyderabad UGEE",
+      "group": "Telangana General Government Exams"
+    },
+    {
+      "global_sl": 2182,
+      "group_sl": 3329,
+      "exam_id": 3665,
+      "name": "KVS Vice Principal",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2183,
+      "group_sl": 3330,
+      "exam_id": 3664,
+      "name": "KVS TGT Work Experience",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2184,
+      "group_sl": 3331,
+      "exam_id": 3663,
+      "name": "KVS TGT Special Educator",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2185,
+      "group_sl": 3332,
+      "exam_id": 3662,
+      "name": "KVS TGT Social Studies",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2186,
+      "group_sl": 3333,
+      "exam_id": 3661,
+      "name": "KVS TGT Science",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2187,
+      "group_sl": 3334,
+      "exam_id": 3660,
+      "name": "KVS TGT Sanskrit",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2188,
+      "group_sl": 3335,
+      "exam_id": 3659,
+      "name": "KVS TGT Physical, Health Education",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2189,
+      "group_sl": 3336,
+      "exam_id": 3658,
+      "name": "KVS TGT Mathematics",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2190,
+      "group_sl": 3337,
+      "exam_id": 3657,
+      "name": "KVS TGT Hindi",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2191,
+      "group_sl": 3338,
+      "exam_id": 3656,
+      "name": "KVS TGT English",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2192,
+      "group_sl": 3339,
+      "exam_id": 3655,
+      "name": "KVS TGT Art Education",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2193,
+      "group_sl": 3340,
+      "exam_id": 3654,
+      "name": "KVS Stenographer",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2194,
+      "group_sl": 3341,
+      "exam_id": 3653,
+      "name": "KVS SSA",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2195,
+      "group_sl": 3342,
+      "exam_id": 3652,
+      "name": "KVS Section Officer",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2196,
+      "group_sl": 3343,
+      "exam_id": 3651,
+      "name": "KVS PRT Special Educator",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2197,
+      "group_sl": 3344,
+      "exam_id": 3650,
+      "name": "KVS PRT Science",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2198,
+      "group_sl": 3345,
+      "exam_id": 3649,
+      "name": "KVS PRT Mathematics",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2199,
+      "group_sl": 3346,
+      "exam_id": 3648,
+      "name": "KVS PRT Hindi",
+      "group": "Central Schools - KVS Exams"
+    },
+    {
+      "global_sl": 2200,
+      "group_sl": 3347,
+      "exam_id": 3647,
+      "name": "KVS PRT Environmental Science",
+      "group": "Central Schools - KVS Exams"
+    }
+  ]
+}

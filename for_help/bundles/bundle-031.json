@@ -1,0 +1,35 @@
+{
+  "bundle_id": "bundle-031",
+  "bundle_num": 31,
+  "category_id": "other-states",
+  "category_name": "अन्य राज्य",
+  "category_icon": "🦁",
+  "title": "अन्य राज्य — झारखंड (JSSC & JPSC)",
+  "total_exams": 2,
+  "boards_included": [
+    "Jharkhand"
+  ],
+  "official_portal": "https://jssc.nic.in",
+  "exams": [
+    {
+      "id": 7030,
+      "name": "JSSC सामान्य स्नातक संयुक्त परीक्षा (JGGLCCE CGL)",
+      "eligibility": "स्नातक",
+      "age_limit": "21-35 वर्ष",
+      "applicant_scale": "6.5+ लाख",
+      "exam_pattern": "3 पेपर्स (भाषा, क्षेत्रीय भाषा, सामान्य ज्ञान)",
+      "viral_subtext": "प्रखंड आपूर्ति पदाधिकारी, प्रशाखा पदाधिकारी 2,025 पद",
+      "status": "verified"
+    },
+    {
+      "id": 7031,
+      "name": "झारखंड आरक्षी प्रतियोगिता परीक्षा (JCCE कांस्टेबल)",
+      "eligibility": "10वीं पास",
+      "age_limit": "18-25 वर्ष",
+      "applicant_scale": "5+ लाख",
+      "exam_pattern": "शारीरिक माप-दक्षता + मेडिकल + लिखित परीक्षा",
+      "viral_subtext": "जिला पुलिस बल 4,919 पद",
+      "status": "verified"
+    }
+  ]
+}

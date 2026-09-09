@@ -1,0 +1,358 @@
+{
+  "bundle_number": 97,
+  "bundle_id": "raw_bundle_097",
+  "range": "4801 - 4850",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4801,
+      "group_sl": 147,
+      "exam_id": 6847,
+      "name": "WB Forest Guard",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4802,
+      "group_sl": 3486,
+      "exam_id": 3508,
+      "name": "Kolkata Police SI",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4803,
+      "group_sl": 3487,
+      "exam_id": 3507,
+      "name": "Kolkata Police Constable",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4804,
+      "group_sl": 3488,
+      "exam_id": 3506,
+      "name": "Kolkata Police Civic Volunteer",
+      "group": "West Bengal Police & Security Exams"
+    },
+    {
+      "global_sl": 4805,
+      "group_sl": 1776,
+      "exam_id": 5218,
+      "name": "REET Mains Upper School Teacher Social Science",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4806,
+      "group_sl": 1777,
+      "exam_id": 5217,
+      "name": "REET Mains Upper School Teacher Sanskrit",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4807,
+      "group_sl": 1778,
+      "exam_id": 5216,
+      "name": "REET Mains Upper School Teacher Maths, Science",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4808,
+      "group_sl": 1779,
+      "exam_id": 5215,
+      "name": "REET Mains Upper School Teacher Hindi",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4809,
+      "group_sl": 1780,
+      "exam_id": 5214,
+      "name": "REET Mains Upper School Teacher English",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4810,
+      "group_sl": 1781,
+      "exam_id": 5213,
+      "name": "REET Mains Primary School Teacher Sanskrit",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4811,
+      "group_sl": 1782,
+      "exam_id": 5212,
+      "name": "REET Mains Primary School Teacher",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4812,
+      "group_sl": 1783,
+      "exam_id": 5211,
+      "name": "REET Level 2 Social Science",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4813,
+      "group_sl": 1784,
+      "exam_id": 5210,
+      "name": "REET Level 2 Maths Science",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4814,
+      "group_sl": 1785,
+      "exam_id": 5209,
+      "name": "REET Level 2",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4815,
+      "group_sl": 1786,
+      "exam_id": 5208,
+      "name": "REET Level 1",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4816,
+      "group_sl": 1787,
+      "exam_id": 5207,
+      "name": "REET Language Sanskrit",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4817,
+      "group_sl": 1788,
+      "exam_id": 5206,
+      "name": "REET Language Hindi",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4818,
+      "group_sl": 1789,
+      "exam_id": 5205,
+      "name": "REET Language English",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4819,
+      "group_sl": 1790,
+      "exam_id": 5204,
+      "name": "REET Environmental Studies",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4820,
+      "group_sl": 1791,
+      "exam_id": 5203,
+      "name": "REET Child Development & Pedagogy",
+      "group": "Rajasthan REET Exams"
+    },
+    {
+      "global_sl": 4821,
+      "group_sl": 2212,
+      "exam_id": 4782,
+      "name": "OSSSC Village Agriculture Worker",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4822,
+      "group_sl": 2213,
+      "exam_id": 4781,
+      "name": "OSSSC SFS",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4823,
+      "group_sl": 2214,
+      "exam_id": 4780,
+      "name": "OSSSC RI",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4824,
+      "group_sl": 2215,
+      "exam_id": 4779,
+      "name": "OSSSC Radiographer",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4825,
+      "group_sl": 2216,
+      "exam_id": 4778,
+      "name": "OSSSC Pharmacist",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4826,
+      "group_sl": 2217,
+      "exam_id": 4777,
+      "name": "OSSSC PEO",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4827,
+      "group_sl": 2218,
+      "exam_id": 4776,
+      "name": "OSSSC Nursing Officer",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4828,
+      "group_sl": 2219,
+      "exam_id": 4775,
+      "name": "OSSSC MPHW",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4829,
+      "group_sl": 2220,
+      "exam_id": 4774,
+      "name": "OSSSC Livestock Inspector",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4830,
+      "group_sl": 2221,
+      "exam_id": 4773,
+      "name": "OSSSC Laboratory Technician",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4831,
+      "group_sl": 2222,
+      "exam_id": 4772,
+      "name": "OSSSC Junior Clerk",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4832,
+      "group_sl": 2223,
+      "exam_id": 4771,
+      "name": "OSSSC Junior Assistant",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4833,
+      "group_sl": 2224,
+      "exam_id": 4770,
+      "name": "OSSSC Forester",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4834,
+      "group_sl": 2225,
+      "exam_id": 4769,
+      "name": "OSSSC Forest Guard",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4835,
+      "group_sl": 2226,
+      "exam_id": 4768,
+      "name": "OSSSC Excise Constable",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4836,
+      "group_sl": 2227,
+      "exam_id": 4767,
+      "name": "OSSSC CRE",
+      "group": "Odisha OSSSC Exams"
+    },
+    {
+      "global_sl": 4837,
+      "group_sl": 4299,
+      "exam_id": 2695,
+      "name": "HPSSSB TGT",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4838,
+      "group_sl": 4306,
+      "exam_id": 2688,
+      "name": "HPSSC TGT, MLT",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4839,
+      "group_sl": 4397,
+      "exam_id": 2597,
+      "name": "HPPSC PGT Political Science",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4840,
+      "group_sl": 4398,
+      "exam_id": 2596,
+      "name": "HPPSC PGT Physics",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4841,
+      "group_sl": 4399,
+      "exam_id": 2595,
+      "name": "HPPSC PGT Paper 1",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4842,
+      "group_sl": 4400,
+      "exam_id": 2594,
+      "name": "HPPSC PGT Mathematics",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4843,
+      "group_sl": 4401,
+      "exam_id": 2593,
+      "name": "HPPSC PGT History",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4844,
+      "group_sl": 4402,
+      "exam_id": 2592,
+      "name": "HPPSC PGT Hindi",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4845,
+      "group_sl": 4403,
+      "exam_id": 2591,
+      "name": "HPPSC PGT English",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4846,
+      "group_sl": 4404,
+      "exam_id": 2590,
+      "name": "HPPSC PGT Economics",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4847,
+      "group_sl": 4405,
+      "exam_id": 2589,
+      "name": "HPPSC PGT Commerce",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4848,
+      "group_sl": 4406,
+      "exam_id": 2588,
+      "name": "HPPSC PGT Chemistry",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4849,
+      "group_sl": 4407,
+      "exam_id": 2587,
+      "name": "HPPSC PGT Biology",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 4850,
+      "group_sl": 4410,
+      "exam_id": 2584,
+      "name": "HPPSC Lecturer",
+      "group": "Himachal Pradesh Teaching & School Exams"
+    }
+  ]
+}

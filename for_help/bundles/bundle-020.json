@@ -1,0 +1,75 @@
+{
+  "bundle_id": "bundle-020",
+  "bundle_num": 20,
+  "category_id": "national-central",
+  "category_name": "अखिल भारतीय / राष्ट्रीय",
+  "category_icon": "🇮🇳",
+  "title": "अखिल भारतीय / राष्ट्रीय — SSC (कर्मचारी चयन आयोग)",
+  "total_exams": 6,
+  "boards_included": [
+    "SSC"
+  ],
+  "official_portal": "https://ssc.gov.in",
+  "exams": [
+    {
+      "id": 5001,
+      "name": "SSC CGL (कंबाइंड ग्रेजुएट लेवल) 2026",
+      "eligibility": "स्नातक",
+      "age_limit": "18-32 वर्ष",
+      "applicant_scale": "30+ लाख",
+      "exam_pattern": "Tier-1 (100 प्रश्न) + Tier-2 (गणित, रीजनिंग, अंग्रेजी, GS, कंप्यूटर)",
+      "viral_subtext": "Inspector, ASO, Tax Assistant आदि 17,000 पद",
+      "status": "verified"
+    },
+    {
+      "id": 5002,
+      "name": "SSC CHSL (10+2 कंबाइंड हायर सेकेंडरी)",
+      "eligibility": "12वीं पास",
+      "age_limit": "18-27 वर्ष",
+      "applicant_scale": "32+ लाख",
+      "exam_pattern": "Tier-1 + Tier-2 Skill Test",
+      "viral_subtext": "LDC, JSA, डेटा एंट्री ऑपरेटर (DEO)",
+      "status": "verified"
+    },
+    {
+      "id": 5003,
+      "name": "SSC GD कांस्टेबल (CAPFs, SSF व राइफलमैन)",
+      "eligibility": "10वीं पास",
+      "age_limit": "18-23 वर्ष",
+      "applicant_scale": "45+ लाख",
+      "exam_pattern": "80 प्रश्न • 160 अंक • 60 मिनट • CBT",
+      "viral_subtext": "BSF, CISF, CRPF, SSB, ITBP 40,000+ पद",
+      "status": "verified"
+    },
+    {
+      "id": 5004,
+      "name": "SSC MTS एवं हवलदार सीधी भर्ती",
+      "eligibility": "10वीं पास",
+      "age_limit": "18-25/27 वर्ष",
+      "applicant_scale": "40+ लाख",
+      "exam_pattern": "सत्र-1 (Maths/Reasoning) + सत्र-2 (GS/English)",
+      "viral_subtext": "केंद्रीय मंत्रालयों में मल्टी टास्किंग स्टाफ",
+      "status": "verified"
+    },
+    {
+      "id": 5005,
+      "name": "SSC CPO सब-इंस्पेक्टर (दिल्ली पुलिस व CAPF)",
+      "eligibility": "स्नातक",
+      "age_limit": "20-25 वर्ष",
+      "applicant_scale": "8+ लाख",
+      "exam_pattern": "Paper-1 (200 अंक) + PET/PST + Paper-2 (अंग्रेजी 200)",
+      "viral_subtext": "दिल्ली पुलिस SI व अर्धसैनिक सब-इंस्पेक्टर",
+      "status": "verified"
+    },
+    {
+      "id": 5006,
+      "name": "SSC स्टेनोग्राफर ग्रेड 'C' एवं 'D'",
+      "eligibility": "12वीं पास + आशुलिपि",
+      "age_limit": "18-30 वर्ष",
+      "applicant_scale": "5+ लाख",
+      "exam_pattern": "लिखित परीक्षा (200 प्रश्न) + डिक्टेशन टेस्ट",
+      "viral_subtext": "केंद्रीय मंत्रालयों में निजी सहायक",
+      "status": "verified"
+    }
+  ]
+}

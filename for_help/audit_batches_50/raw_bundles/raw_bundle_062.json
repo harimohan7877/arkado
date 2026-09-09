@@ -1,0 +1,358 @@
+{
+  "bundle_number": 62,
+  "bundle_id": "raw_bundle_062",
+  "range": "3051 - 3100",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 3051,
+      "group_sl": 617,
+      "exam_id": 6377,
+      "name": "UKPSC Polytechnic Lecturer Chemistry",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3052,
+      "group_sl": 618,
+      "exam_id": 6376,
+      "name": "UKPSC Polytechnic Lecturer",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3053,
+      "group_sl": 621,
+      "exam_id": 6373,
+      "name": "UKPSC Lecturer Sociology",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3054,
+      "group_sl": 622,
+      "exam_id": 6372,
+      "name": "UKPSC Lecturer Sanskrit",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3055,
+      "group_sl": 623,
+      "exam_id": 6371,
+      "name": "UKPSC Lecturer Physics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3056,
+      "group_sl": 624,
+      "exam_id": 6370,
+      "name": "UKPSC Lecturer Mathematics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3057,
+      "group_sl": 625,
+      "exam_id": 6369,
+      "name": "UKPSC Lecturer History",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3058,
+      "group_sl": 626,
+      "exam_id": 6368,
+      "name": "UKPSC Lecturer Hindi",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3059,
+      "group_sl": 627,
+      "exam_id": 6367,
+      "name": "UKPSC Lecturer Geography",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3060,
+      "group_sl": 628,
+      "exam_id": 6366,
+      "name": "UKPSC Lecturer English",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3061,
+      "group_sl": 629,
+      "exam_id": 6365,
+      "name": "UKPSC Lecturer Economics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3062,
+      "group_sl": 630,
+      "exam_id": 6364,
+      "name": "UKPSC Lecturer Civics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3063,
+      "group_sl": 631,
+      "exam_id": 6363,
+      "name": "UKPSC Lecturer Chemistry",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3064,
+      "group_sl": 632,
+      "exam_id": 6362,
+      "name": "UKPSC Lecturer Biology",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3065,
+      "group_sl": 633,
+      "exam_id": 6361,
+      "name": "UKPSC Lecturer",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3066,
+      "group_sl": 643,
+      "exam_id": 6351,
+      "name": "UKPSC Assistant Professor Sociology",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3067,
+      "group_sl": 644,
+      "exam_id": 6350,
+      "name": "UKPSC Assistant Professor Sanskrit",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3068,
+      "group_sl": 645,
+      "exam_id": 6349,
+      "name": "UKPSC Assistant Professor Physics",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3069,
+      "group_sl": 646,
+      "exam_id": 6348,
+      "name": "UKPSC Assistant Professor Hindi",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3070,
+      "group_sl": 647,
+      "exam_id": 6347,
+      "name": "UKPSC Assistant Professor Chemistry",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3071,
+      "group_sl": 648,
+      "exam_id": 6346,
+      "name": "UKPSC Assistant Professor (Political Science)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3072,
+      "group_sl": 649,
+      "exam_id": 6345,
+      "name": "UKPSC Assistant Professor (Mathematics)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3073,
+      "group_sl": 650,
+      "exam_id": 6344,
+      "name": "UKPSC Assistant Professor (Home Science)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3074,
+      "group_sl": 651,
+      "exam_id": 6343,
+      "name": "UKPSC Assistant Professor (History)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3075,
+      "group_sl": 652,
+      "exam_id": 6342,
+      "name": "UKPSC Assistant Professor (Geography)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3076,
+      "group_sl": 653,
+      "exam_id": 6341,
+      "name": "UKPSC Assistant Professor (English)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3077,
+      "group_sl": 654,
+      "exam_id": 6340,
+      "name": "UKPSC Assistant Professor (Economics)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3078,
+      "group_sl": 655,
+      "exam_id": 6339,
+      "name": "UKPSC Assistant Professor (Commerce)",
+      "group": "Uttarakhand Teaching & School Exams"
+    },
+    {
+      "global_sl": 3079,
+      "group_sl": 3941,
+      "exam_id": 3053,
+      "name": "IOCL Trade Apprentice",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3080,
+      "group_sl": 3942,
+      "exam_id": 3052,
+      "name": "IOCL Technician Apprentice",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3081,
+      "group_sl": 3944,
+      "exam_id": 3050,
+      "name": "IOCL Southern Region Junior Operator",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3082,
+      "group_sl": 3945,
+      "exam_id": 3049,
+      "name": "IOCL Retail Sales Associate",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3083,
+      "group_sl": 3946,
+      "exam_id": 3048,
+      "name": "IOCL Refineries Division Grade IV",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3084,
+      "group_sl": 3947,
+      "exam_id": 3047,
+      "name": "IOCL Pipelines Apprentice DEO",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3085,
+      "group_sl": 3948,
+      "exam_id": 3046,
+      "name": "IOCL Pipelines Apprentice (Trade Apprentice Account)",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3086,
+      "group_sl": 3949,
+      "exam_id": 3045,
+      "name": "IOCL Pipelines Apprentice",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3087,
+      "group_sl": 3951,
+      "exam_id": 3043,
+      "name": "IOCL Pipeline Engineering Assistant",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3088,
+      "group_sl": 3952,
+      "exam_id": 3042,
+      "name": "IOCL Paradip Apprentice",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3089,
+      "group_sl": 3953,
+      "exam_id": 3041,
+      "name": "IOCL Northern Region Apprentice",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3090,
+      "group_sl": 3955,
+      "exam_id": 3039,
+      "name": "IOCL Junior Quality Control Analyst",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3091,
+      "group_sl": 3956,
+      "exam_id": 3038,
+      "name": "IOCL Junior Operator Grade 1",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3092,
+      "group_sl": 3957,
+      "exam_id": 3037,
+      "name": "IOCL Junior Operator",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3093,
+      "group_sl": 3958,
+      "exam_id": 3036,
+      "name": "IOCL Junior Engineering Assistant Fire and Safety",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3094,
+      "group_sl": 3960,
+      "exam_id": 3034,
+      "name": "IOCL JEA",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3095,
+      "group_sl": 3961,
+      "exam_id": 3033,
+      "name": "IOCL JE Mechanical",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3096,
+      "group_sl": 3962,
+      "exam_id": 3032,
+      "name": "IOCL JE Instrumentation",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3097,
+      "group_sl": 3963,
+      "exam_id": 3031,
+      "name": "IOCL JE Electrical",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3098,
+      "group_sl": 3964,
+      "exam_id": 3030,
+      "name": "IOCL JE Chemical",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3099,
+      "group_sl": 3965,
+      "exam_id": 3029,
+      "name": "IOCL Haldia Junior Engineering Assistant",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    },
+    {
+      "global_sl": 3100,
+      "group_sl": 3966,
+      "exam_id": 3028,
+      "name": "IOCL Engineer",
+      "group": "Engineering & PSU - Oil, Gas & Petroleum Exams"
+    }
+  ]
+}

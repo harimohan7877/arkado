@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-090",
+  "bundle_num": 90,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Uttarakhand General Govt (Part 1/2)",
+  "total_exams": 60,
+  "boards_included": [
+    "Uttarakhand General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 187,
+      "id": 6807,
+      "name": "Uttarakhand Post Office GDS",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 189,
+      "id": 6805,
+      "name": "Uttarakhand Nursing Officer",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 191,
+      "id": 6803,
+      "name": "Uttarakhand General Knowledge in Hindi",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 192,
+      "id": 6802,
+      "name": "Uttarakhand General Knowledge",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 194,
+      "id": 6800,
+      "name": "Uttarakhand Assistant Accountant",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 199,
+      "id": 6795,
+      "name": "USET Visual Arts",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 200,
+      "id": 6794,
+      "name": "USET Sociology",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 201,
+      "id": 6793,
+      "name": "USET Sanskrit",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 202,
+      "id": 6792,
+      "name": "USET Psychology",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 203,
+      "id": 6791,
+      "name": "USET Political Science",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 204,
+      "id": 6790,
+      "name": "USET Physical Science",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 206,
+      "id": 6788,
+      "name": "USET Philosophy",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 207,
+      "id": 6787,
+      "name": "USET Paper 1",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 208,
+      "id": 6786,
+      "name": "USET Music",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 209,
+      "id": 6785,
+      "name": "USET Mathematical Science",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 210,
+      "id": 6784,
+      "name": "USET Management",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 211,
+      "id": 6783,
+      "name": "USET Life Science",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 212,
+      "id": 6782,
+      "name": "USET Library & Information Science",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 213,
+      "id": 6781,
+      "name": "USET Law",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 214,
+      "id": 6780,
+      "name": "USET Home Science",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 215,
+      "id": 6779,
+      "name": "USET History",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 216,
+      "id": 6778,
+      "name": "USET Hindi",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 217,
+      "id": 6777,
+      "name": "USET Geography",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 218,
+      "id": 6776,
+      "name": "USET Environmental Science",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 219,
+      "id": 6775,
+      "name": "USET English",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 221,
+      "id": 6773,
+      "name": "USET Economics",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 222,
+      "id": 6772,
+      "name": "USET Defense & Strategic Studies",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 223,
+      "id": 6771,
+      "name": "USET Computer Science & Application",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 224,
+      "id": 6770,
+      "name": "USET Commerce",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 225,
+      "id": 6769,
+      "name": "USET Chemical Science",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 567,
+      "id": 6427,
+      "name": "UKSSSC Workshop Instructor",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 568,
+      "id": 6426,
+      "name": "UKSSSC VDO",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 569,
+      "id": 6425,
+      "name": "UKSSSC Stenographer",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 571,
+      "id": 6423,
+      "name": "UKSSSC Scaler",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 572,
+      "id": 6422,
+      "name": "UKSSSC Pratiroop Sahayak",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 574,
+      "id": 6420,
+      "name": "UKSSSC Personal Assistant",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 575,
+      "id": 6419,
+      "name": "UKSSSC Patwari, Lekhpal",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 576,
+      "id": 6418,
+      "name": "UKSSSC Livestock Spreading Officer",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 577,
+      "id": 6417,
+      "name": "UKSSSC Livestock Extension Officer",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 578,
+      "id": 6416,
+      "name": "UKSSSC Junior Assistant",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 579,
+      "id": 6415,
+      "name": "UKSSSC JE",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 581,
+      "id": 6413,
+      "name": "UKSSSC Group C",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 582,
+      "id": 6412,
+      "name": "UKSSSC Garden Development Branch class-II Recruitment",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 585,
+      "id": 6409,
+      "name": "UKSSSC Fireman",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 586,
+      "id": 6408,
+      "name": "UKSSSC Environmental Supervisor",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 587,
+      "id": 6407,
+      "name": "UKSSSC Driver",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 588,
+      "id": 6406,
+      "name": "UKSSSC DEO",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 590,
+      "id": 6404,
+      "name": "UKSSSC Bandi Rakshak",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 601,
+      "id": 6393,
+      "name": "UKSSSC Assistant Storekeeper",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 602,
+      "id": 6392,
+      "name": "UKSSSC Assistant Food Processing Inspector",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 603,
+      "id": 6391,
+      "name": "UKSSSC Assistant Boring Technician",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 604,
+      "id": 6390,
+      "name": "UKSSSC ADO",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 605,
+      "id": 6389,
+      "name": "UKSSSC Accounts Clerk",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 606,
+      "id": 6388,
+      "name": "UKSSSC AAO",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 607,
+      "id": 6387,
+      "name": "UKPSC Upper PCS",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 608,
+      "id": 6386,
+      "name": "UKPSC RO ARO",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 609,
+      "id": 6385,
+      "name": "UKPSC Principal",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 619,
+      "id": 6375,
+      "name": "UKPSC Mines Inspector",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 620,
+      "id": 6374,
+      "name": "UKPSC Lower PCS",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "sl": 634,
+      "id": 6360,
+      "name": "UKPSC Junior Assistant",
+      "group": "Uttarakhand General Government Exams"
+    }
+  ]
+}

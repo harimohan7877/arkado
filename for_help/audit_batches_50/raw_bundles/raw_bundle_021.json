@@ -1,0 +1,358 @@
+{
+  "bundle_number": 21,
+  "bundle_id": "raw_bundle_021",
+  "range": "1001 - 1050",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1001,
+      "group_sl": 1909,
+      "exam_id": 5085,
+      "name": "Railway TGT Teacher PCB",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1002,
+      "group_sl": 1910,
+      "exam_id": 5084,
+      "name": "Railway TGT Teacher Maths",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1003,
+      "group_sl": 1911,
+      "exam_id": 5083,
+      "name": "Railway TGT Teacher History",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1004,
+      "group_sl": 1912,
+      "exam_id": 5082,
+      "name": "Railway TGT Teacher Hindi",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1005,
+      "group_sl": 1913,
+      "exam_id": 5081,
+      "name": "Railway TGT Teacher English",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1006,
+      "group_sl": 1914,
+      "exam_id": 5080,
+      "name": "Railway TGT Teacher Computer Science",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1007,
+      "group_sl": 1915,
+      "exam_id": 5079,
+      "name": "Railway TGT Teacher Arts",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1008,
+      "group_sl": 1916,
+      "exam_id": 5078,
+      "name": "Railway TC",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1009,
+      "group_sl": 1918,
+      "exam_id": 5076,
+      "name": "Railway Reasoning Hindi",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1010,
+      "group_sl": 1919,
+      "exam_id": 5075,
+      "name": "Railway Quantitative Aptitude & Numerical Ability",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1011,
+      "group_sl": 1920,
+      "exam_id": 5074,
+      "name": "Railway Primary Teacher Hindi",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1012,
+      "group_sl": 1921,
+      "exam_id": 5073,
+      "name": "Railway Primary Teacher English",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1013,
+      "group_sl": 1922,
+      "exam_id": 5072,
+      "name": "Railway PGT Teacher Political Science",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1014,
+      "group_sl": 1923,
+      "exam_id": 5071,
+      "name": "Railway PGT Teacher Physics",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1015,
+      "group_sl": 1924,
+      "exam_id": 5070,
+      "name": "Railway PGT Teacher Maths",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1016,
+      "group_sl": 1925,
+      "exam_id": 5069,
+      "name": "Railway PGT Teacher History",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1017,
+      "group_sl": 1926,
+      "exam_id": 5068,
+      "name": "Railway PGT Teacher Hindi",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1018,
+      "group_sl": 1927,
+      "exam_id": 5067,
+      "name": "Railway PGT Teacher Geography",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1019,
+      "group_sl": 1928,
+      "exam_id": 5066,
+      "name": "Railway PGT Teacher English",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1020,
+      "group_sl": 1929,
+      "exam_id": 5065,
+      "name": "Railway PGT Teacher Economics",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1021,
+      "group_sl": 1930,
+      "exam_id": 5064,
+      "name": "Railway PGT Teacher Commerce",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1022,
+      "group_sl": 1931,
+      "exam_id": 5063,
+      "name": "Railway PGT Teacher Chemistry",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1023,
+      "group_sl": 1932,
+      "exam_id": 5062,
+      "name": "Railway PGT Teacher Biology",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1024,
+      "group_sl": 1934,
+      "exam_id": 5060,
+      "name": "Railway Mathematics",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1025,
+      "group_sl": 1935,
+      "exam_id": 5059,
+      "name": "Railway Interview Guide",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1026,
+      "group_sl": 1937,
+      "exam_id": 5057,
+      "name": "Railway (RRB) Mathematics",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1027,
+      "group_sl": 1938,
+      "exam_id": 5056,
+      "name": "Railway (RRB) General Science",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1028,
+      "group_sl": 1939,
+      "exam_id": 5055,
+      "name": "Railway (RRB) General Knowledge",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1029,
+      "group_sl": 1940,
+      "exam_id": 5054,
+      "name": "Railway (RRB) General Intelligence & Reasoning",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1030,
+      "group_sl": 2501,
+      "exam_id": 4493,
+      "name": "Northern Railway Trackman",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1031,
+      "group_sl": 2502,
+      "exam_id": 4492,
+      "name": "Northern Railway Stenographer",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1032,
+      "group_sl": 2503,
+      "exam_id": 4491,
+      "name": "Northern Railway Nursing Staff",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1033,
+      "group_sl": 2504,
+      "exam_id": 4490,
+      "name": "Northern Railway MTS",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1034,
+      "group_sl": 2505,
+      "exam_id": 4489,
+      "name": "Northern Railway Goods Guard",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1035,
+      "group_sl": 2506,
+      "exam_id": 4488,
+      "name": "Northern Railway ASM",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1036,
+      "group_sl": 2592,
+      "exam_id": 4402,
+      "name": "NHSRCL Junior Technical Manager",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1037,
+      "group_sl": 2593,
+      "exam_id": 4401,
+      "name": "NHSRCL Junior Manager",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1038,
+      "group_sl": 2594,
+      "exam_id": 4400,
+      "name": "NHSRCL Assistant Manager Civil",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1039,
+      "group_sl": 2719,
+      "exam_id": 4275,
+      "name": "NCRTC Maintenance Associate",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1040,
+      "group_sl": 2720,
+      "exam_id": 4274,
+      "name": "NCRTC Junior Maintainer",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1041,
+      "group_sl": 2722,
+      "exam_id": 4272,
+      "name": "NCR Commercial cum Ticket Clerk",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1042,
+      "group_sl": 3453,
+      "exam_id": 3541,
+      "name": "KRCL Track Maintainer",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1043,
+      "group_sl": 3484,
+      "exam_id": 3510,
+      "name": "Konkan Railway Station Master",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1044,
+      "group_sl": 3920,
+      "exam_id": 3074,
+      "name": "IRFC Assistant and Assistant Manager",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1045,
+      "group_sl": 4184,
+      "exam_id": 2810,
+      "name": "IBPS RRB XI",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1046,
+      "group_sl": 4185,
+      "exam_id": 2809,
+      "name": "IBPS RRB PO",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1047,
+      "group_sl": 4186,
+      "exam_id": 2808,
+      "name": "IBPS RRB Officer Scale III",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1048,
+      "group_sl": 4187,
+      "exam_id": 2807,
+      "name": "IBPS RRB Officer Scale II Treasury Manager",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1049,
+      "group_sl": 4188,
+      "exam_id": 2806,
+      "name": "IBPS RRB Officer Scale II Marketing",
+      "group": "National Railways - General Railways Exams"
+    },
+    {
+      "global_sl": 1050,
+      "group_sl": 4189,
+      "exam_id": 2805,
+      "name": "IBPS RRB Officer Scale II Law",
+      "group": "National Railways - General Railways Exams"
+    }
+  ]
+}

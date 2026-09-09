@@ -1,0 +1,358 @@
+{
+  "bundle_number": 82,
+  "bundle_id": "raw_bundle_082",
+  "range": "4051 - 4100",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4051,
+      "group_sl": 4577,
+      "exam_id": 2417,
+      "name": "GSSSB Police SI",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4052,
+      "group_sl": 4578,
+      "exam_id": 2416,
+      "name": "GSSSB Planning Assistant",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4053,
+      "group_sl": 4579,
+      "exam_id": 2415,
+      "name": "GSSSB Physiotherapist",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4054,
+      "group_sl": 4580,
+      "exam_id": 2414,
+      "name": "GSSSB Pharmacist",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4055,
+      "group_sl": 4581,
+      "exam_id": 2413,
+      "name": "GSSSB Operation Theatre Assistant",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4056,
+      "group_sl": 4582,
+      "exam_id": 2412,
+      "name": "GSSSB Municipal Sanitary Inspector",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4057,
+      "group_sl": 4583,
+      "exam_id": 2411,
+      "name": "GSSSB Municipal Engineer",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4058,
+      "group_sl": 4584,
+      "exam_id": 2410,
+      "name": "GSSSB MPHW",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4059,
+      "group_sl": 4585,
+      "exam_id": 2409,
+      "name": "GSSSB Mines Supervisor",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4060,
+      "group_sl": 4586,
+      "exam_id": 2408,
+      "name": "GSSSB Laboratory Assistant",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4061,
+      "group_sl": 4587,
+      "exam_id": 2407,
+      "name": "GSSSB Junior Pharmacist",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4062,
+      "group_sl": 4588,
+      "exam_id": 2406,
+      "name": "GSSSB Fireman",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4063,
+      "group_sl": 4589,
+      "exam_id": 2405,
+      "name": "GSSSB Draftsman",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4064,
+      "group_sl": 4590,
+      "exam_id": 2404,
+      "name": "GSSSB Clerk",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4065,
+      "group_sl": 4591,
+      "exam_id": 2403,
+      "name": "GSSSB CCE",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4066,
+      "group_sl": 4592,
+      "exam_id": 2402,
+      "name": "GSSSB ATDO",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4067,
+      "group_sl": 4593,
+      "exam_id": 2401,
+      "name": "GSSSB AAE",
+      "group": "Gujarat GSSSB Exams"
+    },
+    {
+      "global_sl": 4068,
+      "group_sl": 4874,
+      "exam_id": 2120,
+      "name": "EMRS TGT Social Studies",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4069,
+      "group_sl": 4875,
+      "exam_id": 2119,
+      "name": "EMRS TGT Science",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4070,
+      "group_sl": 4876,
+      "exam_id": 2118,
+      "name": "EMRS TGT PET",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4071,
+      "group_sl": 4877,
+      "exam_id": 2117,
+      "name": "EMRS TGT Music",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4072,
+      "group_sl": 4878,
+      "exam_id": 2116,
+      "name": "EMRS TGT Mathematics",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4073,
+      "group_sl": 4879,
+      "exam_id": 2115,
+      "name": "EMRS TGT Librarian",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4074,
+      "group_sl": 4880,
+      "exam_id": 2114,
+      "name": "EMRS TGT Hindi",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4075,
+      "group_sl": 4881,
+      "exam_id": 2113,
+      "name": "EMRS TGT English",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4076,
+      "group_sl": 4882,
+      "exam_id": 2112,
+      "name": "EMRS TGT Computer Science",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4077,
+      "group_sl": 4883,
+      "exam_id": 2111,
+      "name": "EMRS TGT Art Teacher",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4078,
+      "group_sl": 4884,
+      "exam_id": 2110,
+      "name": "EMRS Principal",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4079,
+      "group_sl": 4885,
+      "exam_id": 2109,
+      "name": "EMRS PGT Physics",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4080,
+      "group_sl": 4886,
+      "exam_id": 2108,
+      "name": "EMRS PGT Mathematics",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4081,
+      "group_sl": 4887,
+      "exam_id": 2107,
+      "name": "EMRS PGT History",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4082,
+      "group_sl": 4888,
+      "exam_id": 2106,
+      "name": "EMRS PGT Hindi",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4083,
+      "group_sl": 4889,
+      "exam_id": 2105,
+      "name": "EMRS PGT Geography",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4084,
+      "group_sl": 4890,
+      "exam_id": 2104,
+      "name": "EMRS PGT English",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4085,
+      "group_sl": 4891,
+      "exam_id": 2103,
+      "name": "EMRS PGT Economics",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4086,
+      "group_sl": 4892,
+      "exam_id": 2102,
+      "name": "EMRS PGT Computer Science",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4087,
+      "group_sl": 4893,
+      "exam_id": 2101,
+      "name": "EMRS PGT Commerce",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4088,
+      "group_sl": 4894,
+      "exam_id": 2100,
+      "name": "EMRS PGT Chemistry",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4089,
+      "group_sl": 4895,
+      "exam_id": 2099,
+      "name": "EMRS PGT Biology",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4090,
+      "group_sl": 4896,
+      "exam_id": 2098,
+      "name": "EMRS Lab Attendant",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4091,
+      "group_sl": 4897,
+      "exam_id": 2097,
+      "name": "EMRS JSA",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4092,
+      "group_sl": 4898,
+      "exam_id": 2096,
+      "name": "EMRS Hostel Warden",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4093,
+      "group_sl": 4899,
+      "exam_id": 2095,
+      "name": "EMRS Female Staff Nurse",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4094,
+      "group_sl": 4900,
+      "exam_id": 2094,
+      "name": "EMRS Accountant",
+      "group": "Central Schools - EMRS Exams"
+    },
+    {
+      "global_sl": 4095,
+      "group_sl": 6400,
+      "exam_id": 594,
+      "name": "Bank of Baroda SO Manager Security",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4096,
+      "group_sl": 6401,
+      "exam_id": 593,
+      "name": "Bank of Baroda Senior Manager MSME Relationship",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4097,
+      "group_sl": 6402,
+      "exam_id": 592,
+      "name": "Bank of Baroda Senior Manager Credit Analyst",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4098,
+      "group_sl": 6403,
+      "exam_id": 591,
+      "name": "Bank of Baroda Senior Manager",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4099,
+      "group_sl": 6404,
+      "exam_id": 590,
+      "name": "Bank of Baroda PO",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "global_sl": 4100,
+      "group_sl": 6405,
+      "exam_id": 589,
+      "name": "Bank of Baroda Office Assistant",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    }
+  ]
+}

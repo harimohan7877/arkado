@@ -1,0 +1,358 @@
+{
+  "bundle_number": 39,
+  "bundle_id": "raw_bundle_039",
+  "range": "1901 - 1950",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1901,
+      "group_sl": 1798,
+      "exam_id": 5196,
+      "name": "RDPR Karnataka Technical Assistant",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1902,
+      "group_sl": 1799,
+      "exam_id": 5195,
+      "name": "RDPR Karnataka Consultant",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1903,
+      "group_sl": 3417,
+      "exam_id": 3577,
+      "name": "KSET Women Studies",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1904,
+      "group_sl": 3418,
+      "exam_id": 3576,
+      "name": "KSET Visual Art",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1905,
+      "group_sl": 3419,
+      "exam_id": 3575,
+      "name": "KSET Sociology",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1906,
+      "group_sl": 3420,
+      "exam_id": 3574,
+      "name": "KSET Social Work",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1907,
+      "group_sl": 3421,
+      "exam_id": 3573,
+      "name": "KSET Sanskrit",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1908,
+      "group_sl": 3422,
+      "exam_id": 3572,
+      "name": "KSET Public Administration",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1909,
+      "group_sl": 3423,
+      "exam_id": 3571,
+      "name": "KSET Psychology",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1910,
+      "group_sl": 3424,
+      "exam_id": 3570,
+      "name": "KSET Political Science",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1911,
+      "group_sl": 3425,
+      "exam_id": 3569,
+      "name": "KSET Physical Science",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1912,
+      "group_sl": 3427,
+      "exam_id": 3567,
+      "name": "KSET Philosophy",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1913,
+      "group_sl": 3428,
+      "exam_id": 3566,
+      "name": "KSET Paper 1",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1914,
+      "group_sl": 3429,
+      "exam_id": 3565,
+      "name": "KSET Mathematical Science",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1915,
+      "group_sl": 3430,
+      "exam_id": 3564,
+      "name": "KSET Mass Communication & Journalism",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1916,
+      "group_sl": 3431,
+      "exam_id": 3563,
+      "name": "KSET Management",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1917,
+      "group_sl": 3432,
+      "exam_id": 3562,
+      "name": "KSET Linguistics",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1918,
+      "group_sl": 3433,
+      "exam_id": 3561,
+      "name": "KSET Life Science",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1919,
+      "group_sl": 3434,
+      "exam_id": 3560,
+      "name": "KSET Library & Information Science",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1920,
+      "group_sl": 3435,
+      "exam_id": 3559,
+      "name": "KSET Law",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1921,
+      "group_sl": 3436,
+      "exam_id": 3558,
+      "name": "KSET Home Science",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1922,
+      "group_sl": 3437,
+      "exam_id": 3557,
+      "name": "KSET History",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1923,
+      "group_sl": 3438,
+      "exam_id": 3556,
+      "name": "KSET Hindi",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1924,
+      "group_sl": 3439,
+      "exam_id": 3555,
+      "name": "KSET Geography",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1925,
+      "group_sl": 3440,
+      "exam_id": 3554,
+      "name": "KSET Environmental Science",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1926,
+      "group_sl": 3441,
+      "exam_id": 3553,
+      "name": "KSET English",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1927,
+      "group_sl": 3442,
+      "exam_id": 3552,
+      "name": "KSET Electronic Science",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1928,
+      "group_sl": 3444,
+      "exam_id": 3550,
+      "name": "KSET Economics",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1929,
+      "group_sl": 3445,
+      "exam_id": 3549,
+      "name": "KSET Earth Science",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1930,
+      "group_sl": 3446,
+      "exam_id": 3548,
+      "name": "KSET Computer Science",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1931,
+      "group_sl": 3447,
+      "exam_id": 3547,
+      "name": "KSET Commerce",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1932,
+      "group_sl": 3448,
+      "exam_id": 3546,
+      "name": "KSET Chemical Science",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1933,
+      "group_sl": 3449,
+      "exam_id": 3545,
+      "name": "KSET Anthropology",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1934,
+      "group_sl": 3457,
+      "exam_id": 3537,
+      "name": "KPTCL Junior Assistant",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1935,
+      "group_sl": 3458,
+      "exam_id": 3536,
+      "name": "KPTCL JE",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1936,
+      "group_sl": 3459,
+      "exam_id": 3535,
+      "name": "KPTCL AE",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1937,
+      "group_sl": 3460,
+      "exam_id": 3534,
+      "name": "KPSC PDO",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1938,
+      "group_sl": 3463,
+      "exam_id": 3531,
+      "name": "KPSC LDC, Stenographer",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1939,
+      "group_sl": 3464,
+      "exam_id": 3530,
+      "name": "KPSC KAS",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1940,
+      "group_sl": 3465,
+      "exam_id": 3529,
+      "name": "KPSC Junior Lab Assistant",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1941,
+      "group_sl": 3466,
+      "exam_id": 3528,
+      "name": "KPSC JTO",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1942,
+      "group_sl": 3467,
+      "exam_id": 3527,
+      "name": "KPSC JE",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1943,
+      "group_sl": 3468,
+      "exam_id": 3526,
+      "name": "KPSC Industrial Extension Officer",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1944,
+      "group_sl": 3469,
+      "exam_id": 3525,
+      "name": "KPSC Head Master",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1945,
+      "group_sl": 3470,
+      "exam_id": 3524,
+      "name": "KPSC Group C",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1946,
+      "group_sl": 3471,
+      "exam_id": 3523,
+      "name": "KPSC Group B",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1947,
+      "group_sl": 3472,
+      "exam_id": 3522,
+      "name": "KPSC Group A",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1948,
+      "group_sl": 3473,
+      "exam_id": 3521,
+      "name": "KPSC FDA SDA",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1949,
+      "group_sl": 3475,
+      "exam_id": 3519,
+      "name": "KPSC Commercial Tax Inspector",
+      "group": "Karnataka General Government Exams"
+    },
+    {
+      "global_sl": 1950,
+      "group_sl": 3477,
+      "exam_id": 3517,
+      "name": "KPSC Assistant Town Planner",
+      "group": "Karnataka General Government Exams"
+    }
+  ]
+}

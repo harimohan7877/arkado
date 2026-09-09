@@ -1,0 +1,20 @@
+{
+  "bundle_id": "bundle-049",
+  "bundle_num": 49,
+  "category_id": "banking",
+  "category_name": "बैंकिंग एवं वित्त",
+  "category_icon": "🏦",
+  "title": "बैंकिंग एवं वित्त — Banking & Finance - Bandhan",
+  "total_exams": 1,
+  "boards_included": [
+    "Banking & Finance - Bandhan"
+  ],
+  "exams": [
+    {
+      "sl": 6429,
+      "id": 565,
+      "name": "Bandhan Bank Clerk",
+      "group": "Banking & Finance - Bandhan Exams"
+    }
+  ]
+}

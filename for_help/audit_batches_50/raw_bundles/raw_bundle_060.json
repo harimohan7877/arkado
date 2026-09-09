@@ -1,0 +1,358 @@
+{
+  "bundle_number": 60,
+  "bundle_id": "raw_bundle_060",
+  "range": "2951 - 3000",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 2951,
+      "group_sl": 4418,
+      "exam_id": 2576,
+      "name": "HPPSC ADO",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2952,
+      "group_sl": 4419,
+      "exam_id": 2575,
+      "name": "HPPSC Administrative CCE",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2953,
+      "group_sl": 4420,
+      "exam_id": 2574,
+      "name": "HPPSC ADA",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2954,
+      "group_sl": 4421,
+      "exam_id": 2573,
+      "name": "HPPSC",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2955,
+      "group_sl": 4450,
+      "exam_id": 2544,
+      "name": "HP SET Tourism Administration and Management",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2956,
+      "group_sl": 4451,
+      "exam_id": 2543,
+      "name": "HP SET Sociology",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2957,
+      "group_sl": 4452,
+      "exam_id": 2542,
+      "name": "HP SET Sanskrit",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2958,
+      "group_sl": 4453,
+      "exam_id": 2541,
+      "name": "HP SET Public Administration",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2959,
+      "group_sl": 4454,
+      "exam_id": 2540,
+      "name": "HP SET Psychology",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2960,
+      "group_sl": 4455,
+      "exam_id": 2539,
+      "name": "HP SET Political Science",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2961,
+      "group_sl": 4456,
+      "exam_id": 2538,
+      "name": "HP SET Physical Sciences",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2962,
+      "group_sl": 4458,
+      "exam_id": 2536,
+      "name": "HP SET Music",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2963,
+      "group_sl": 4459,
+      "exam_id": 2535,
+      "name": "HP SET Mathematical Sciences",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2964,
+      "group_sl": 4460,
+      "exam_id": 2534,
+      "name": "HP SET Mass Communication and Journalism",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2965,
+      "group_sl": 4461,
+      "exam_id": 2533,
+      "name": "HP SET Life Sciences",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2966,
+      "group_sl": 4462,
+      "exam_id": 2532,
+      "name": "HP SET History",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2967,
+      "group_sl": 4463,
+      "exam_id": 2531,
+      "name": "HP SET Hindi",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2968,
+      "group_sl": 4464,
+      "exam_id": 2530,
+      "name": "HP SET Geography",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2969,
+      "group_sl": 4465,
+      "exam_id": 2529,
+      "name": "HP SET Environment Sciences",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2970,
+      "group_sl": 4466,
+      "exam_id": 2528,
+      "name": "HP SET English",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2971,
+      "group_sl": 4468,
+      "exam_id": 2526,
+      "name": "HP SET Economics",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2972,
+      "group_sl": 4469,
+      "exam_id": 2525,
+      "name": "HP SET Computer Science and Applications",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2973,
+      "group_sl": 4470,
+      "exam_id": 2524,
+      "name": "HP SET Commerce",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2974,
+      "group_sl": 4471,
+      "exam_id": 2523,
+      "name": "HP SET Chemical Science",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2975,
+      "group_sl": 4472,
+      "exam_id": 2522,
+      "name": "HP SET",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2976,
+      "group_sl": 4474,
+      "exam_id": 2520,
+      "name": "HP Postal Circle GDS",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2977,
+      "group_sl": 4477,
+      "exam_id": 2517,
+      "name": "HP Patwari",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2978,
+      "group_sl": 4479,
+      "exam_id": 2515,
+      "name": "HP Home Guards",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2979,
+      "group_sl": 4495,
+      "exam_id": 2499,
+      "name": "Himachal Pradesh General Knowledge Hindi",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2980,
+      "group_sl": 4824,
+      "exam_id": 2170,
+      "name": "FCI HP Watchman",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2981,
+      "group_sl": 5111,
+      "exam_id": 1883,
+      "name": "District Solan Class 4",
+      "group": "Himachal Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 2982,
+      "group_sl": 10,
+      "exam_id": 6984,
+      "name": "Women Law",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2983,
+      "group_sl": 566,
+      "exam_id": 6428,
+      "name": "ULSAT",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2984,
+      "group_sl": 918,
+      "exam_id": 6076,
+      "name": "Transfer of Property Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2985,
+      "group_sl": 1083,
+      "exam_id": 5911,
+      "name": "The Transgender Persons Protection of Rights Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2986,
+      "group_sl": 1084,
+      "exam_id": 5910,
+      "name": "The Specific Relief Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2987,
+      "group_sl": 1085,
+      "exam_id": 5909,
+      "name": "The Prohibition of Child Marriage Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2988,
+      "group_sl": 1086,
+      "exam_id": 5908,
+      "name": "The Probation of Offenders Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2989,
+      "group_sl": 1087,
+      "exam_id": 5907,
+      "name": "The Limitation Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2990,
+      "group_sl": 1088,
+      "exam_id": 5906,
+      "name": "The Indian Trusts Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2991,
+      "group_sl": 1272,
+      "exam_id": 5722,
+      "name": "Special Marriage Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2992,
+      "group_sl": 1298,
+      "exam_id": 5696,
+      "name": "SLAT",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2993,
+      "group_sl": 1401,
+      "exam_id": 5593,
+      "name": "SCI Law Clerk cum Research Assistant",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2994,
+      "group_sl": 1434,
+      "exam_id": 5560,
+      "name": "Sale of Goods Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2995,
+      "group_sl": 1772,
+      "exam_id": 5222,
+      "name": "Right to Information RTI Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2996,
+      "group_sl": 1775,
+      "exam_id": 5219,
+      "name": "Registration Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2997,
+      "group_sl": 2076,
+      "exam_id": 4918,
+      "name": "Protection of Women from Domestic Violence Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2998,
+      "group_sl": 2100,
+      "exam_id": 4894,
+      "name": "Power of Attorney Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 2999,
+      "group_sl": 2101,
+      "exam_id": 4893,
+      "name": "POSH Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    },
+    {
+      "global_sl": 3000,
+      "group_sl": 2105,
+      "exam_id": 4889,
+      "name": "POCSO Act",
+      "group": "Judiciary & Law - General Legal & Judicial Exams"
+    }
+  ]
+}

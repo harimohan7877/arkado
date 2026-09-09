@@ -1,0 +1,358 @@
+{
+  "bundle_number": 117,
+  "bundle_id": "raw_bundle_117",
+  "range": "5801 - 5850",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5801,
+      "group_sl": 771,
+      "exam_id": 6223,
+      "name": "UCO Bank SO Software Developer",
+      "group": "Banking & Finance - UCO Exams"
+    },
+    {
+      "global_sl": 5802,
+      "group_sl": 772,
+      "exam_id": 6222,
+      "name": "UCO Bank SO",
+      "group": "Banking & Finance - UCO Exams"
+    },
+    {
+      "global_sl": 5803,
+      "group_sl": 773,
+      "exam_id": 6221,
+      "name": "UCO Bank LBO",
+      "group": "Banking & Finance - UCO Exams"
+    },
+    {
+      "global_sl": 5804,
+      "group_sl": 774,
+      "exam_id": 6220,
+      "name": "UCO Bank Generalist Officer Trade Finance Officer",
+      "group": "Banking & Finance - UCO Exams"
+    },
+    {
+      "global_sl": 5805,
+      "group_sl": 775,
+      "exam_id": 6219,
+      "name": "UCO Bank Apprentice",
+      "group": "Banking & Finance - UCO Exams"
+    },
+    {
+      "global_sl": 5806,
+      "group_sl": 782,
+      "exam_id": 6212,
+      "name": "UBI Credit Officer",
+      "group": "Banking & Finance - UBI Exams"
+    },
+    {
+      "global_sl": 5807,
+      "group_sl": 783,
+      "exam_id": 6211,
+      "name": "UBI Bank SO IT",
+      "group": "Banking & Finance - UBI Exams"
+    },
+    {
+      "global_sl": 5808,
+      "group_sl": 784,
+      "exam_id": 6210,
+      "name": "UBI Bank SO",
+      "group": "Banking & Finance - UBI Exams"
+    },
+    {
+      "global_sl": 5809,
+      "group_sl": 785,
+      "exam_id": 6209,
+      "name": "UBI Armed Guard",
+      "group": "Banking & Finance - UBI Exams"
+    },
+    {
+      "global_sl": 5810,
+      "group_sl": 786,
+      "exam_id": 6208,
+      "name": "UBI Apprentice",
+      "group": "Banking & Finance - UBI Exams"
+    },
+    {
+      "global_sl": 5811,
+      "group_sl": 797,
+      "exam_id": 6197,
+      "name": "TSPSC Veterinary Assistant Surgeon",
+      "group": "Telangana Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5812,
+      "group_sl": 798,
+      "exam_id": 6196,
+      "name": "TSPSC Staff Nurse",
+      "group": "Telangana Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5813,
+      "group_sl": 806,
+      "exam_id": 6188,
+      "name": "TSPSC Pharmacist",
+      "group": "Telangana Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5814,
+      "group_sl": 876,
+      "exam_id": 6118,
+      "name": "TS EAMCET Medical",
+      "group": "Telangana Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5815,
+      "group_sl": 3110,
+      "exam_id": 3884,
+      "name": "MHSRB Telangana Pharmacist",
+      "group": "Telangana Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5816,
+      "group_sl": 1078,
+      "exam_id": 5916,
+      "name": "Tis Hazari Courts JJA",
+      "group": "Delhi High Court & Court Exams"
+    },
+    {
+      "global_sl": 5817,
+      "group_sl": 5170,
+      "exam_id": 1824,
+      "name": "Delhi High Court JJA",
+      "group": "Delhi High Court & Court Exams"
+    },
+    {
+      "global_sl": 5818,
+      "group_sl": 5171,
+      "exam_id": 1823,
+      "name": "Delhi High Court HJS",
+      "group": "Delhi High Court & Court Exams"
+    },
+    {
+      "global_sl": 5819,
+      "group_sl": 5174,
+      "exam_id": 1820,
+      "name": "Delhi District Court Peon",
+      "group": "Delhi High Court & Court Exams"
+    },
+    {
+      "global_sl": 5820,
+      "group_sl": 5175,
+      "exam_id": 1819,
+      "name": "Delhi District Court PA",
+      "group": "Delhi High Court & Court Exams"
+    },
+    {
+      "global_sl": 5821,
+      "group_sl": 1265,
+      "exam_id": 5729,
+      "name": "SPSC Paramedical",
+      "group": "Sikkim General Government Exams"
+    },
+    {
+      "global_sl": 5822,
+      "group_sl": 1266,
+      "exam_id": 5728,
+      "name": "SPSC LDC",
+      "group": "Sikkim General Government Exams"
+    },
+    {
+      "global_sl": 5823,
+      "group_sl": 1267,
+      "exam_id": 5727,
+      "name": "SPSC GDMO",
+      "group": "Sikkim General Government Exams"
+    },
+    {
+      "global_sl": 5824,
+      "group_sl": 1268,
+      "exam_id": 5726,
+      "name": "SPSC Assistant Engineer",
+      "group": "Sikkim General Government Exams"
+    },
+    {
+      "global_sl": 5825,
+      "group_sl": 1321,
+      "exam_id": 5673,
+      "name": "Sikkim General Knowledge",
+      "group": "Sikkim General Government Exams"
+    },
+    {
+      "global_sl": 5826,
+      "group_sl": 1745,
+      "exam_id": 5249,
+      "name": "RPET Pharmacy",
+      "group": "Rajasthan Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5827,
+      "group_sl": 1868,
+      "exam_id": 5126,
+      "name": "Rajasthan Pharmacist",
+      "group": "Rajasthan Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5828,
+      "group_sl": 1891,
+      "exam_id": 5103,
+      "name": "Rajasthan Female Health Worker",
+      "group": "Rajasthan Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5829,
+      "group_sl": 1902,
+      "exam_id": 5092,
+      "name": "Rajasthan Assistant Radiographer",
+      "group": "Rajasthan Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5830,
+      "group_sl": 5091,
+      "exam_id": 1903,
+      "name": "DMHS Jaipur Nurse Grade 2",
+      "group": "Rajasthan Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5831,
+      "group_sl": 1757,
+      "exam_id": 5237,
+      "name": "RITES Senior Technical Assistant",
+      "group": "Engineering & PSU - RITES Exams"
+    },
+    {
+      "global_sl": 5832,
+      "group_sl": 1758,
+      "exam_id": 5236,
+      "name": "RITES Mechanical Engineer",
+      "group": "Engineering & PSU - RITES Exams"
+    },
+    {
+      "global_sl": 5833,
+      "group_sl": 1759,
+      "exam_id": 5235,
+      "name": "RITES Manager Civil",
+      "group": "Engineering & PSU - RITES Exams"
+    },
+    {
+      "global_sl": 5834,
+      "group_sl": 1760,
+      "exam_id": 5234,
+      "name": "RITES Assistant Manager",
+      "group": "Engineering & PSU - RITES Exams"
+    },
+    {
+      "global_sl": 5835,
+      "group_sl": 1761,
+      "exam_id": 5233,
+      "name": "RITES Assistant Human Resources",
+      "group": "Engineering & PSU - RITES Exams"
+    },
+    {
+      "global_sl": 5836,
+      "group_sl": 2067,
+      "exam_id": 4927,
+      "name": "PSPCL Revenue Accountant",
+      "group": "Punjab PSPCL Exams"
+    },
+    {
+      "global_sl": 5837,
+      "group_sl": 2068,
+      "exam_id": 4926,
+      "name": "PSPCL LDC",
+      "group": "Punjab PSPCL Exams"
+    },
+    {
+      "global_sl": 5838,
+      "group_sl": 2069,
+      "exam_id": 4925,
+      "name": "PSPCL JE Electrical",
+      "group": "Punjab PSPCL Exams"
+    },
+    {
+      "global_sl": 5839,
+      "group_sl": 2070,
+      "exam_id": 4924,
+      "name": "PSPCL JE Civil",
+      "group": "Punjab PSPCL Exams"
+    },
+    {
+      "global_sl": 5840,
+      "group_sl": 2071,
+      "exam_id": 4923,
+      "name": "PSPCL Assistant Lineman",
+      "group": "Punjab PSPCL Exams"
+    },
+    {
+      "global_sl": 5841,
+      "group_sl": 2273,
+      "exam_id": 4721,
+      "name": "OPSC Veterinary Assistant Surgeon",
+      "group": "Odisha Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5842,
+      "group_sl": 2288,
+      "exam_id": 4706,
+      "name": "OPSC Medical Officer",
+      "group": "Odisha Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5843,
+      "group_sl": 2291,
+      "exam_id": 4703,
+      "name": "OPSC Homeopathic Medical Officer",
+      "group": "Odisha Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5844,
+      "group_sl": 2294,
+      "exam_id": 4700,
+      "name": "OPSC Dental Surgeon",
+      "group": "Odisha Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5845,
+      "group_sl": 2299,
+      "exam_id": 4695,
+      "name": "OPSC Assistant Professor Pathology",
+      "group": "Odisha Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5846,
+      "group_sl": 2324,
+      "exam_id": 4670,
+      "name": "ONGC Non Executive",
+      "group": "Engineering & PSU - ONGC Exams"
+    },
+    {
+      "global_sl": 5847,
+      "group_sl": 2326,
+      "exam_id": 4668,
+      "name": "ONGC Graduate and Technician Apprentice",
+      "group": "Engineering & PSU - ONGC Exams"
+    },
+    {
+      "global_sl": 5848,
+      "group_sl": 2327,
+      "exam_id": 4667,
+      "name": "ONGC Executive",
+      "group": "Engineering & PSU - ONGC Exams"
+    },
+    {
+      "global_sl": 5849,
+      "group_sl": 2328,
+      "exam_id": 4666,
+      "name": "ONGC Assistant Technician",
+      "group": "Engineering & PSU - ONGC Exams"
+    },
+    {
+      "global_sl": 5850,
+      "group_sl": 2329,
+      "exam_id": 4665,
+      "name": "ONGC AEE",
+      "group": "Engineering & PSU - ONGC Exams"
+    }
+  ]
+}

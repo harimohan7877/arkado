@@ -1,0 +1,358 @@
+{
+  "bundle_number": 118,
+  "bundle_id": "raw_bundle_118",
+  "range": "5851 - 5900",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5851,
+      "group_sl": 2516,
+      "exam_id": 4478,
+      "name": "NMMC Ward Boy",
+      "group": "Maharashtra NMMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5852,
+      "group_sl": 2520,
+      "exam_id": 4474,
+      "name": "NMMC JE",
+      "group": "Maharashtra NMMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5853,
+      "group_sl": 2521,
+      "exam_id": 4473,
+      "name": "NMMC Clerk Typist",
+      "group": "Maharashtra NMMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5854,
+      "group_sl": 2522,
+      "exam_id": 4472,
+      "name": "NMMC Ayah",
+      "group": "Maharashtra NMMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5855,
+      "group_sl": 2524,
+      "exam_id": 4470,
+      "name": "NMMC Accounts Clerk",
+      "group": "Maharashtra NMMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5856,
+      "group_sl": 2665,
+      "exam_id": 4329,
+      "name": "NFL MT",
+      "group": "Engineering & PSU - NFL Exams"
+    },
+    {
+      "global_sl": 5857,
+      "group_sl": 2666,
+      "exam_id": 4328,
+      "name": "NFL Manager, Officer",
+      "group": "Engineering & PSU - NFL Exams"
+    },
+    {
+      "global_sl": 5858,
+      "group_sl": 2667,
+      "exam_id": 4327,
+      "name": "NFL JE Assistant Production",
+      "group": "Engineering & PSU - NFL Exams"
+    },
+    {
+      "global_sl": 5859,
+      "group_sl": 2668,
+      "exam_id": 4326,
+      "name": "NFL JE Assistant Instrumentation",
+      "group": "Engineering & PSU - NFL Exams"
+    },
+    {
+      "global_sl": 5860,
+      "group_sl": 2669,
+      "exam_id": 4325,
+      "name": "NFL Field Representative",
+      "group": "Engineering & PSU - NFL Exams"
+    },
+    {
+      "global_sl": 5861,
+      "group_sl": 2759,
+      "exam_id": 4235,
+      "name": "NALCO Technician",
+      "group": "Engineering & PSU - NALCO Exams"
+    },
+    {
+      "global_sl": 5862,
+      "group_sl": 2760,
+      "exam_id": 4234,
+      "name": "NALCO SUPT JOT Operator & Operator Grade 3",
+      "group": "Engineering & PSU - NALCO Exams"
+    },
+    {
+      "global_sl": 5863,
+      "group_sl": 2761,
+      "exam_id": 4233,
+      "name": "NALCO SUPT JOT Electrical",
+      "group": "Engineering & PSU - NALCO Exams"
+    },
+    {
+      "global_sl": 5864,
+      "group_sl": 2763,
+      "exam_id": 4231,
+      "name": "NALCO Manager Chemical",
+      "group": "Engineering & PSU - NALCO Exams"
+    },
+    {
+      "global_sl": 5865,
+      "group_sl": 2764,
+      "exam_id": 4230,
+      "name": "NALCO GET",
+      "group": "Engineering & PSU - NALCO Exams"
+    },
+    {
+      "global_sl": 5866,
+      "group_sl": 2776,
+      "exam_id": 4218,
+      "name": "NABARD Office Attendant",
+      "group": "Banking & Finance - NABARD Exams"
+    },
+    {
+      "global_sl": 5867,
+      "group_sl": 2777,
+      "exam_id": 4217,
+      "name": "NABARD Grade B",
+      "group": "Banking & Finance - NABARD Exams"
+    },
+    {
+      "global_sl": 5868,
+      "group_sl": 2778,
+      "exam_id": 4216,
+      "name": "Nabard Grade A Officer",
+      "group": "Banking & Finance - NABARD Exams"
+    },
+    {
+      "global_sl": 5869,
+      "group_sl": 2779,
+      "exam_id": 4215,
+      "name": "NABARD Development Assistant",
+      "group": "Banking & Finance - NABARD Exams"
+    },
+    {
+      "global_sl": 5870,
+      "group_sl": 2780,
+      "exam_id": 4214,
+      "name": "NABARD Assistant Manager",
+      "group": "Banking & Finance - NABARD Exams"
+    },
+    {
+      "global_sl": 5871,
+      "group_sl": 3063,
+      "exam_id": 3931,
+      "name": "MP Apex Bank Officer Financial Analyst",
+      "group": "Madhya Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5872,
+      "group_sl": 3064,
+      "exam_id": 3930,
+      "name": "MP Apex Bank Officer Computer Programmer",
+      "group": "Madhya Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5873,
+      "group_sl": 3065,
+      "exam_id": 3929,
+      "name": "MP Apex Bank Officer",
+      "group": "Madhya Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5874,
+      "group_sl": 3066,
+      "exam_id": 3928,
+      "name": "MP Apex Bank Computer Operator, Society Manager",
+      "group": "Madhya Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5875,
+      "group_sl": 3067,
+      "exam_id": 3927,
+      "name": "MP Apex Bank Banking Assistant",
+      "group": "Madhya Pradesh Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5876,
+      "group_sl": 3081,
+      "exam_id": 3913,
+      "name": "Mizoram PSC UDC",
+      "group": "Mizoram PSC Exams"
+    },
+    {
+      "global_sl": 5877,
+      "group_sl": 3082,
+      "exam_id": 3912,
+      "name": "Mizoram PSC Nursing Officer",
+      "group": "Mizoram PSC Exams"
+    },
+    {
+      "global_sl": 5878,
+      "group_sl": 3083,
+      "exam_id": 3911,
+      "name": "Mizoram PSC Junior Engineer",
+      "group": "Mizoram PSC Exams"
+    },
+    {
+      "global_sl": 5879,
+      "group_sl": 3084,
+      "exam_id": 3910,
+      "name": "Mizoram PSC Headmaster",
+      "group": "Mizoram PSC Exams"
+    },
+    {
+      "global_sl": 5880,
+      "group_sl": 3085,
+      "exam_id": 3909,
+      "name": "Mizoram PSC Assistant Grade, UDC",
+      "group": "Mizoram PSC Exams"
+    },
+    {
+      "global_sl": 5881,
+      "group_sl": 3274,
+      "exam_id": 3720,
+      "name": "Machine Learning",
+      "group": "General Subjects - IT & Advanced Tech"
+    },
+    {
+      "global_sl": 5882,
+      "group_sl": 3295,
+      "exam_id": 3699,
+      "name": "Linguistics",
+      "group": "General Subjects - IT & Advanced Tech"
+    },
+    {
+      "global_sl": 5883,
+      "group_sl": 3979,
+      "exam_id": 3015,
+      "name": "Information Technology",
+      "group": "General Subjects - IT & Advanced Tech"
+    },
+    {
+      "global_sl": 5884,
+      "group_sl": 5250,
+      "exam_id": 1744,
+      "name": "Data Analytics",
+      "group": "General Subjects - IT & Advanced Tech"
+    },
+    {
+      "global_sl": 5885,
+      "group_sl": 5253,
+      "exam_id": 1741,
+      "name": "Cyber Security",
+      "group": "General Subjects - IT & Advanced Tech"
+    },
+    {
+      "global_sl": 5886,
+      "group_sl": 3499,
+      "exam_id": 3495,
+      "name": "KIITEE MCA",
+      "group": "National Academics - KIITEE Exams"
+    },
+    {
+      "global_sl": 5887,
+      "group_sl": 3500,
+      "exam_id": 3494,
+      "name": "KIITEE MBA",
+      "group": "National Academics - KIITEE Exams"
+    },
+    {
+      "global_sl": 5888,
+      "group_sl": 3501,
+      "exam_id": 3493,
+      "name": "KIITEE BCA",
+      "group": "National Academics - KIITEE Exams"
+    },
+    {
+      "global_sl": 5889,
+      "group_sl": 3502,
+      "exam_id": 3492,
+      "name": "KIITEE B.Tech Lateral Entry",
+      "group": "National Academics - KIITEE Exams"
+    },
+    {
+      "global_sl": 5890,
+      "group_sl": 3503,
+      "exam_id": 3491,
+      "name": "KIITEE B.Tech",
+      "group": "National Academics - KIITEE Exams"
+    },
+    {
+      "global_sl": 5891,
+      "group_sl": 3743,
+      "exam_id": 3251,
+      "name": "JKPSC Assistant Registrar Cooperative Societies",
+      "group": "Jammu & Kashmir Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5892,
+      "group_sl": 3785,
+      "exam_id": 3209,
+      "name": "JK Bank Office Assistant",
+      "group": "Jammu & Kashmir Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5893,
+      "group_sl": 3786,
+      "exam_id": 3208,
+      "name": "JK Bank Banking Associate",
+      "group": "Jammu & Kashmir Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5894,
+      "group_sl": 3787,
+      "exam_id": 3207,
+      "name": "JK Bank Apprentice",
+      "group": "Jammu & Kashmir Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5895,
+      "group_sl": 3863,
+      "exam_id": 3131,
+      "name": "Jammu and Kashmir Bank PO",
+      "group": "Jammu & Kashmir Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 5896,
+      "group_sl": 4300,
+      "exam_id": 2694,
+      "name": "HPSSSB Staff Nurse",
+      "group": "Himachal Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5897,
+      "group_sl": 4307,
+      "exam_id": 2687,
+      "name": "HPSSC Staff Nurse, Conductor",
+      "group": "Himachal Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5898,
+      "group_sl": 4396,
+      "exam_id": 2598,
+      "name": "HPPSC Pharmacist",
+      "group": "Himachal Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5899,
+      "group_sl": 4409,
+      "exam_id": 2585,
+      "name": "HPPSC Medical Officer",
+      "group": "Himachal Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5900,
+      "group_sl": 4435,
+      "exam_id": 2559,
+      "name": "HPCET UG B Tech and B Pharmacy",
+      "group": "Himachal Pradesh Medical & Nursing Exams"
+    }
+  ]
+}

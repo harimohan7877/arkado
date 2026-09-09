@@ -1,0 +1,266 @@
+{
+  "bundle_id": "bundle-110",
+  "bundle_num": 110,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — General Subjects - Commerce, Accounts & Finance",
+  "total_exams": 42,
+  "boards_included": [
+    "General Subjects - Commerce, Accounts & Finance"
+  ],
+  "exams": [
+    {
+      "sl": 1094,
+      "id": 5900,
+      "name": "THDC Executive Finance",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 1305,
+      "id": 5689,
+      "name": "SJVN Executive Trainee Finance",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 1465,
+      "id": 5529,
+      "name": "RVPNL Junior Accountant",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 1569,
+      "id": 5425,
+      "name": "RSGSM Assistant Accounts Clerk",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 2099,
+      "id": 4895,
+      "name": "POWERGRID Officer Trainee Finance",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 2183,
+      "id": 4811,
+      "name": "PFRDA Grade A Finance",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 2262,
+      "id": 4732,
+      "name": "OSCSC SA cum DEO, Junior Accountant",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 2269,
+      "id": 4725,
+      "name": "Oriental Bank Of Commerce SO",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 2399,
+      "id": 4595,
+      "name": "NYKS MTS, Accounts Clerk",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 2496,
+      "id": 4498,
+      "name": "NPCIL Deputy Manager Finance and Accounts",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 2642,
+      "id": 4352,
+      "name": "NHAI Accountant",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 2645,
+      "id": 4349,
+      "name": "NGEL Engineer Finance",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 2671,
+      "id": 4323,
+      "name": "NFL Accounts Assistant",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 2732,
+      "id": 4262,
+      "name": "NCL Accountant",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 2881,
+      "id": 4113,
+      "name": "MPPMCL Chartered Accountant, Programmer",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 3452,
+      "id": 3542,
+      "name": "KRD Village Accountant",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 3857,
+      "id": 3137,
+      "name": "JCI Accountant",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 3968,
+      "id": 3026,
+      "name": "IOCL Eastern Region Trade Apprentice (Accountant)",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 3973,
+      "id": 3021,
+      "name": "IOCL Accountant, Technician",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 3987,
+      "id": 3007,
+      "name": "Indian Overseas Bank SO Manager and Senior Manager IS Audit",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 4023,
+      "id": 2971,
+      "name": "Indian Bank SO Manager Financial Analyst",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 4024,
+      "id": 2970,
+      "name": "Indian Bank SO Manager Finance",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 4801,
+      "id": 2193,
+      "name": "Finance",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 4820,
+      "id": 2174,
+      "name": "FCI Manager Accounts",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 4829,
+      "id": 2165,
+      "name": "FCI Assistant Grade 3 Accounts",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 4907,
+      "id": 2087,
+      "name": "EIL Junior Accountant",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 5264,
+      "id": 1730,
+      "name": "CWC Accountant",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 5520,
+      "id": 1474,
+      "name": "CS Executive Financial and Strategic Management",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 5549,
+      "id": 1445,
+      "name": "Commerce Useful for Competitive Examinations",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 5550,
+      "id": 1444,
+      "name": "Commerce Useful for Competitive Exam in Hindi",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 5578,
+      "id": 1416,
+      "name": "Class 12 Commerce Economics",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 5579,
+      "id": 1415,
+      "name": "Class 12 Commerce Business Studies",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 5580,
+      "id": 1414,
+      "name": "Class 12 Commerce Accountancy",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 5605,
+      "id": 1389,
+      "name": "CIL MT Finance",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 5653,
+      "id": 1341,
+      "name": "CGSRLM District Program Manager, Accountant cum MIS Assistant",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 5794,
+      "id": 1200,
+      "name": "CCL Accounts Clerk",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 6030,
+      "id": 964,
+      "name": "BPCL Junior Executive Accounts",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 6280,
+      "id": 714,
+      "name": "BGSYS Block Facilitator Accountant",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 6386,
+      "id": 608,
+      "name": "Banking & Financial Awareness (Hindi)",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 6387,
+      "id": 607,
+      "name": "Banking & Financial Awareness (English)",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 6398,
+      "id": 596,
+      "name": "Bank of India SO Finance",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    },
+    {
+      "sl": 6473,
+      "id": 521,
+      "name": "Assistant Accounts",
+      "group": "General Subjects - Commerce, Accounts & Finance"
+    }
+  ]
+}

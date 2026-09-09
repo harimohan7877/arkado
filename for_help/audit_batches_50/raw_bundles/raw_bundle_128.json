@@ -1,0 +1,358 @@
+{
+  "bundle_number": 128,
+  "bundle_id": "raw_bundle_128",
+  "range": "6351 - 6400",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 6351,
+      "group_sl": 6255,
+      "exam_id": 739,
+      "name": "BHMS Homeopathy",
+      "group": "Medical & Nursing - Alternative Medicine Exams"
+    },
+    {
+      "global_sl": 6352,
+      "group_sl": 4835,
+      "exam_id": 2159,
+      "name": "FACT Trade Apprentice",
+      "group": "Engineering & PSU - FACT Exams"
+    },
+    {
+      "global_sl": 6353,
+      "group_sl": 4836,
+      "exam_id": 2158,
+      "name": "FACT Technician",
+      "group": "Engineering & PSU - FACT Exams"
+    },
+    {
+      "global_sl": 6354,
+      "group_sl": 4839,
+      "exam_id": 2155,
+      "name": "Exim Bank MT",
+      "group": "Banking & Finance - Exim Exams"
+    },
+    {
+      "global_sl": 6355,
+      "group_sl": 4840,
+      "exam_id": 2154,
+      "name": "Exim Bank AO",
+      "group": "Banking & Finance - Exim Exams"
+    },
+    {
+      "global_sl": 6356,
+      "group_sl": 5115,
+      "exam_id": 1879,
+      "name": "DHS Meghalaya Staff Nurse",
+      "group": "Meghalaya Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6357,
+      "group_sl": 5116,
+      "exam_id": 1878,
+      "name": "DHS Meghalaya ANM",
+      "group": "Meghalaya Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6358,
+      "group_sl": 5126,
+      "exam_id": 1868,
+      "name": "DHFWS Puducherry Pharmacist",
+      "group": "Puducherry Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6359,
+      "group_sl": 5128,
+      "exam_id": 1866,
+      "name": "DHFWS Puducherry ANM",
+      "group": "Puducherry Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6360,
+      "group_sl": 5467,
+      "exam_id": 1527,
+      "name": "CSPDCL Apprentice",
+      "group": "Chhattisgarh CSPDCL Exams"
+    },
+    {
+      "global_sl": 6361,
+      "group_sl": 5468,
+      "exam_id": 1526,
+      "name": "CSPDCL AE",
+      "group": "Chhattisgarh CSPDCL Exams"
+    },
+    {
+      "global_sl": 6362,
+      "group_sl": 5645,
+      "exam_id": 1349,
+      "name": "Chandigarh Police Constable",
+      "group": "Chandigarh Police & Security Exams"
+    },
+    {
+      "global_sl": 6363,
+      "group_sl": 5646,
+      "exam_id": 1348,
+      "name": "Chandigarh Police ASI",
+      "group": "Chandigarh Police & Security Exams"
+    },
+    {
+      "global_sl": 6364,
+      "group_sl": 5750,
+      "exam_id": 1244,
+      "name": "CFW AP Civil Assistant Surgeon",
+      "group": "Andhra Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6365,
+      "group_sl": 5751,
+      "exam_id": 1243,
+      "name": "CFW AP ANM & MPHA",
+      "group": "Andhra Pradesh Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6366,
+      "group_sl": 5804,
+      "exam_id": 1190,
+      "name": "CBI Manager",
+      "group": "Banking & Finance - CBI Exams"
+    },
+    {
+      "global_sl": 6367,
+      "group_sl": 5805,
+      "exam_id": 1189,
+      "name": "CBI Apprentice",
+      "group": "Banking & Finance - CBI Exams"
+    },
+    {
+      "global_sl": 6368,
+      "group_sl": 5812,
+      "exam_id": 1182,
+      "name": "Canara Bank SO",
+      "group": "Banking & Finance - Canara Exams"
+    },
+    {
+      "global_sl": 6369,
+      "group_sl": 5813,
+      "exam_id": 1181,
+      "name": "Canara Bank PO",
+      "group": "Banking & Finance - Canara Exams"
+    },
+    {
+      "global_sl": 6370,
+      "group_sl": 179,
+      "exam_id": 6815,
+      "name": "VECC Stipendiary Trainee",
+      "group": "Engineering & PSU - VECC Exams"
+    },
+    {
+      "global_sl": 6371,
+      "group_sl": 193,
+      "exam_id": 6801,
+      "name": "Uttarakhand Cooperative Bank Clerk",
+      "group": "Uttarakhand Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 6372,
+      "group_sl": 198,
+      "exam_id": 6796,
+      "name": "UTC Conductor",
+      "group": "Uttarakhand Transport & Roadways Exams"
+    },
+    {
+      "global_sl": 6373,
+      "group_sl": 241,
+      "exam_id": 6753,
+      "name": "UPSSSC PET",
+      "group": "Uttar Pradesh Entrance Exams"
+    },
+    {
+      "global_sl": 6374,
+      "group_sl": 384,
+      "exam_id": 6610,
+      "name": "UPPSC Civil Judge",
+      "group": "Uttar Pradesh High Court & Court Exams"
+    },
+    {
+      "global_sl": 6375,
+      "group_sl": 467,
+      "exam_id": 6527,
+      "name": "UPCL AE",
+      "group": "Uttarakhand UPCL Exams"
+    },
+    {
+      "global_sl": 6376,
+      "group_sl": 483,
+      "exam_id": 6511,
+      "name": "UP TET Paper 1",
+      "group": "Uttar Pradesh TET Exams"
+    },
+    {
+      "global_sl": 6377,
+      "group_sl": 583,
+      "exam_id": 6411,
+      "name": "UKSSSC Forest Inspector",
+      "group": "Uttarakhand Forest Department Exams"
+    },
+    {
+      "global_sl": 6378,
+      "group_sl": 641,
+      "exam_id": 6353,
+      "name": "UKPSC Civil Judge",
+      "group": "Uttarakhand High Court & Court Exams"
+    },
+    {
+      "global_sl": 6379,
+      "group_sl": 668,
+      "exam_id": 6326,
+      "name": "UJVNL AE",
+      "group": "Uttarakhand UJVNL Exams"
+    },
+    {
+      "global_sl": 6380,
+      "group_sl": 787,
+      "exam_id": 6207,
+      "name": "TVVP Civil Assistant Surgeon",
+      "group": "Telangana TVVP Exams"
+    },
+    {
+      "global_sl": 6381,
+      "group_sl": 827,
+      "exam_id": 6167,
+      "name": "TSPSC Forest Department",
+      "group": "Telangana Forest Department Exams"
+    },
+    {
+      "global_sl": 6382,
+      "group_sl": 941,
+      "exam_id": 6053,
+      "name": "TNSTC Driver",
+      "group": "Tamil Nadu Transport & Roadways Exams"
+    },
+    {
+      "global_sl": 6383,
+      "group_sl": 976,
+      "exam_id": 6018,
+      "name": "TNPSC Assistant Conservator",
+      "group": "Tamil Nadu Forest Department Exams"
+    },
+    {
+      "global_sl": 6384,
+      "group_sl": 1071,
+      "exam_id": 5923,
+      "name": "TMC JE",
+      "group": "Engineering & PSU - TMC Exams"
+    },
+    {
+      "global_sl": 6385,
+      "group_sl": 1178,
+      "exam_id": 5816,
+      "name": "State Bank of Sikkim Assistant Manager",
+      "group": "Sikkim Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 6386,
+      "group_sl": 1202,
+      "exam_id": 5792,
+      "name": "SSC JHT",
+      "group": "Staff Selection Commission - SSC JHT Exams"
+    },
+    {
+      "global_sl": 6387,
+      "group_sl": 1208,
+      "exam_id": 5786,
+      "name": "SSC GD Constable",
+      "group": "Staff Selection Commission - SSC GD Constable Exams"
+    },
+    {
+      "global_sl": 6388,
+      "group_sl": 1213,
+      "exam_id": 5781,
+      "name": "SSC CPO SI",
+      "group": "Staff Selection Commission - SSC CPO Exams"
+    },
+    {
+      "global_sl": 6389,
+      "group_sl": 1264,
+      "exam_id": 5730,
+      "name": "SPSC Staff Nurse",
+      "group": "Sikkim Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6390,
+      "group_sl": 1319,
+      "exam_id": 5675,
+      "name": "Sikkim Police GD Constable",
+      "group": "Sikkim Police & Security Exams"
+    },
+    {
+      "global_sl": 6391,
+      "group_sl": 1320,
+      "exam_id": 5674,
+      "name": "Sikkim Judicial Academy",
+      "group": "Sikkim High Court & Court Exams"
+    },
+    {
+      "global_sl": 6392,
+      "group_sl": 1388,
+      "exam_id": 5606,
+      "name": "SDAU Junior Clerk",
+      "group": "Gujarat SDAU Exams"
+    },
+    {
+      "global_sl": 6393,
+      "group_sl": 1423,
+      "exam_id": 5571,
+      "name": "SAU Agricultural Assistant",
+      "group": "Gujarat SAU Exams"
+    },
+    {
+      "global_sl": 6394,
+      "group_sl": 1774,
+      "exam_id": 5220,
+      "name": "REPCO Bank Clerk",
+      "group": "Banking & Finance - REPCO Exams"
+    },
+    {
+      "global_sl": 6395,
+      "group_sl": 1792,
+      "exam_id": 5202,
+      "name": "Reasoning Sectional Test",
+      "group": "General Subjects - Reasoning"
+    },
+    {
+      "global_sl": 6396,
+      "group_sl": 1890,
+      "exam_id": 5104,
+      "name": "Rajasthan Financial Corporation Assistant Manager",
+      "group": "Rajasthan Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6397,
+      "group_sl": 1899,
+      "exam_id": 5095,
+      "name": "Rajasthan CET",
+      "group": "Rajasthan CET Entrance Exams"
+    },
+    {
+      "global_sl": 6398,
+      "group_sl": 1936,
+      "exam_id": 5058,
+      "name": "Railway Group D",
+      "group": "National Railways - RRB Group D Exams"
+    },
+    {
+      "global_sl": 6399,
+      "group_sl": 2354,
+      "exam_id": 4640,
+      "name": "Odisha TET",
+      "group": "Odisha TET Exams"
+    },
+    {
+      "global_sl": 6400,
+      "group_sl": 2397,
+      "exam_id": 4597,
+      "name": "OAVS PET",
+      "group": "Odisha Entrance Exams"
+    }
+  ]
+}

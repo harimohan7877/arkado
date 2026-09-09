@@ -1,0 +1,465 @@
+{
+  "bundle_id": "bundle-112",
+  "bundle_num": 112,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Central Schools - NVS • Odisha General Govt",
+  "total_exams": 75,
+  "boards_included": [
+    "Central Schools - NVS",
+    "Odisha General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 2,
+      "id": 6992,
+      "name": "ZP Balasore GRS",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 1232,
+      "id": 5762,
+      "name": "SSB Odisha Librarian",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 1250,
+      "id": 5744,
+      "name": "SSB Odisha Junior Assistant",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2204,
+      "id": 4790,
+      "name": "OSWC Assistant Superintendent and Warehouse Assistant",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2257,
+      "id": 4737,
+      "name": "OSPCB Junior Laboratory Assistant",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2258,
+      "id": 4736,
+      "name": "OSPCB Junior Assistant",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2259,
+      "id": 4735,
+      "name": "OSPCB Junior Accountant",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2260,
+      "id": 4734,
+      "name": "OSPCB Assistant Environmental Scientist",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2261,
+      "id": 4733,
+      "name": "OSPCB Assistant Environmental Engineer",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2287,
+      "id": 4707,
+      "name": "OPSC OMAS",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2290,
+      "id": 4704,
+      "name": "OPSC IMO",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2292,
+      "id": 4702,
+      "name": "OPSC Geologist",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2293,
+      "id": 4701,
+      "name": "OPSC Drugs Inspector",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2295,
+      "id": 4699,
+      "name": "OPSC Civil Services",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2297,
+      "id": 4697,
+      "name": "OPSC Assistant Soil Conservation Officer",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2312,
+      "id": 4682,
+      "name": "OPSC Assistant Industries Officer",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2313,
+      "id": 4681,
+      "name": "OPSC Assistant Director Law",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2314,
+      "id": 4680,
+      "name": "OPSC ASO",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2315,
+      "id": 4679,
+      "name": "OPSC APP",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2316,
+      "id": 4678,
+      "name": "OPSC AMO",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2317,
+      "id": 4677,
+      "name": "OPSC AHO",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2318,
+      "id": 4676,
+      "name": "OPSC AFO",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2319,
+      "id": 4675,
+      "name": "OPSC AEE Mechanical",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2320,
+      "id": 4674,
+      "name": "OPSC AEE Civil",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2321,
+      "id": 4673,
+      "name": "OPSC AAO",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2322,
+      "id": 4672,
+      "name": "OPSC AAE",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2331,
+      "id": 4663,
+      "name": "OMC Junior Accountant",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2332,
+      "id": 4662,
+      "name": "OMC JE",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2333,
+      "id": 4661,
+      "name": "OMC Electrician",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2346,
+      "id": 4648,
+      "name": "OHPC Mechanical Trainee",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2347,
+      "id": 4647,
+      "name": "OHPC Management Trainee",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2348,
+      "id": 4646,
+      "name": "OHPC Electrical Trainee",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2349,
+      "id": 4645,
+      "name": "OHPC Diploma Engineer Trainee",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2361,
+      "id": 4633,
+      "name": "Odisha SET",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2363,
+      "id": 4631,
+      "name": "Odisha Postal Circle GDS",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2377,
+      "id": 4617,
+      "name": "Odisha Livelihoods Mission",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2382,
+      "id": 4612,
+      "name": "Odisha General Knowledge",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2389,
+      "id": 4605,
+      "name": "OAVS Principal",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2743,
+      "id": 4251,
+      "name": "NBCFDM Odisha",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 4815,
+      "id": 2179,
+      "name": "FCI Odisha Watchman",
+      "group": "Odisha General Government Exams"
+    },
+    {
+      "sl": 2403,
+      "id": 4591,
+      "name": "NVS TGT Special Educator",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2404,
+      "id": 4590,
+      "name": "NVS TGT Social Studies",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2405,
+      "id": 4589,
+      "name": "NVS TGT Science",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2406,
+      "id": 4588,
+      "name": "NVS TGT Physical Education",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2407,
+      "id": 4587,
+      "name": "NVS TGT Music",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2408,
+      "id": 4586,
+      "name": "NVS TGT Mathematics",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2409,
+      "id": 4585,
+      "name": "NVS TGT Library",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2410,
+      "id": 4584,
+      "name": "NVS TGT Hindi",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2411,
+      "id": 4583,
+      "name": "NVS TGT English",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2412,
+      "id": 4582,
+      "name": "NVS TGT Computer Science",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2413,
+      "id": 4581,
+      "name": "NVS TGT Art",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2414,
+      "id": 4580,
+      "name": "NVS Stenographer",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2416,
+      "id": 4578,
+      "name": "NVS Principal",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2417,
+      "id": 4577,
+      "name": "NVS PGT Physics",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2418,
+      "id": 4576,
+      "name": "NVS PGT Physical Education",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2419,
+      "id": 4575,
+      "name": "NVS PGT Mathematics",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2420,
+      "id": 4574,
+      "name": "NVS PGT History",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2421,
+      "id": 4573,
+      "name": "NVS PGT Hindi",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2422,
+      "id": 4572,
+      "name": "NVS PGT Geography",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2423,
+      "id": 4571,
+      "name": "NVS PGT English",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2424,
+      "id": 4570,
+      "name": "NVS PGT Economics",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2425,
+      "id": 4569,
+      "name": "NVS PGT Computer Science",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2426,
+      "id": 4568,
+      "name": "NVS PGT Commerce",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2427,
+      "id": 4567,
+      "name": "NVS PGT Chemistry",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2428,
+      "id": 4566,
+      "name": "NVS PGT Biology",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2429,
+      "id": 4565,
+      "name": "NVS MTS",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2430,
+      "id": 4564,
+      "name": "NVS Mess Helper",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2431,
+      "id": 4563,
+      "name": "NVS Librarian",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2432,
+      "id": 4562,
+      "name": "NVS Legal Assistant",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2433,
+      "id": 4561,
+      "name": "NVS LDC",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2434,
+      "id": 4560,
+      "name": "NVS Lab Attendant",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2435,
+      "id": 4559,
+      "name": "NVS JSA",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2436,
+      "id": 4558,
+      "name": "NVS Female Staff Nurse",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2437,
+      "id": 4557,
+      "name": "NVS Electrician Cum Plumber",
+      "group": "Central Schools - NVS Exams"
+    },
+    {
+      "sl": 2438,
+      "id": 4556,
+      "name": "NVS Catering Supervisor",
+      "group": "Central Schools - NVS Exams"
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "bundle_id": "bundle-102",
+  "bundle_num": 102,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Jharkhand General Govt",
+  "total_exams": 57,
+  "boards_included": [
+    "Jharkhand General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 769,
+      "id": 6225,
+      "name": "UDHD Jharkhand JE",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 2744,
+      "id": 4250,
+      "name": "NBCFDM Jharkhand",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3675,
+      "id": 3319,
+      "name": "JSPLS Consultant",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3676,
+      "id": 3318,
+      "name": "JSLPS Field Thematic Coordinator",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3677,
+      "id": 3317,
+      "name": "JSLPS Block Project Officer",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3678,
+      "id": 3316,
+      "name": "JSACS Counsellor",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3681,
+      "id": 3313,
+      "name": "JRHMS Block Program Manager",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3682,
+      "id": 3312,
+      "name": "JPSC Specialist Doctor",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3685,
+      "id": 3309,
+      "name": "JPSC FSO",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3688,
+      "id": 3306,
+      "name": "JPSC Combined Civil Services",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3689,
+      "id": 3305,
+      "name": "JPSC CDPO",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3690,
+      "id": 3304,
+      "name": "JPSC Assistant Public Prosecutor",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3692,
+      "id": 3302,
+      "name": "JPSC Assistant Engineer",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3693,
+      "id": 3301,
+      "name": "JPSC ACF",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3796,
+      "id": 3198,
+      "name": "Jharkhand SET",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3797,
+      "id": 3197,
+      "name": "Jharkhand Postal Circle Postal Assistant",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3798,
+      "id": 3196,
+      "name": "Jharkhand Post Office GDS",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3800,
+      "id": 3194,
+      "name": "Jharkhand Kakshpal Pratiyogita Pariksha",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3803,
+      "id": 3191,
+      "name": "Jharkhand HC Stenographer",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3804,
+      "id": 3190,
+      "name": "Jharkhand GK in Hindi",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3805,
+      "id": 3189,
+      "name": "Jharkhand General Knowledge",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3806,
+      "id": 3188,
+      "name": "Jharkhand Eligibility Test Yoga",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3807,
+      "id": 3187,
+      "name": "Jharkhand Eligibility Test Sociology",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3808,
+      "id": 3186,
+      "name": "Jharkhand Eligibility Test Sanskrit",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3809,
+      "id": 3185,
+      "name": "Jharkhand Eligibility Test Public Administration",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3810,
+      "id": 3184,
+      "name": "Jharkhand Eligibility Test Psychology",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3811,
+      "id": 3183,
+      "name": "Jharkhand Eligibility Test Political Science",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3812,
+      "id": 3182,
+      "name": "Jharkhand Eligibility Test Physical Sciences",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3813,
+      "id": 3181,
+      "name": "Jharkhand Eligibility Test Philosophy",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3814,
+      "id": 3180,
+      "name": "Jharkhand Eligibility Test Performing Art",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3815,
+      "id": 3179,
+      "name": "Jharkhand Eligibility Test Paper 1",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3816,
+      "id": 3178,
+      "name": "Jharkhand Eligibility Test Oriya",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3817,
+      "id": 3177,
+      "name": "Jharkhand Eligibility Test Music",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3818,
+      "id": 3176,
+      "name": "Jharkhand Eligibility Test Museology and Conservation",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3819,
+      "id": 3175,
+      "name": "Jharkhand Eligibility Test Mathematical Sciences",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3820,
+      "id": 3174,
+      "name": "Jharkhand Eligibility Test Mass Communication and Journalism",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3821,
+      "id": 3173,
+      "name": "Jharkhand Eligibility Test Management",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3822,
+      "id": 3172,
+      "name": "Jharkhand Eligibility Test Life Sciences",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3823,
+      "id": 3171,
+      "name": "Jharkhand Eligibility Test Law",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3824,
+      "id": 3170,
+      "name": "Jharkhand Eligibility Test Labour and Social Welfare",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3825,
+      "id": 3169,
+      "name": "Jharkhand Eligibility Test Home Science",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3826,
+      "id": 3168,
+      "name": "Jharkhand Eligibility Test History",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3827,
+      "id": 3167,
+      "name": "Jharkhand Eligibility Test Hindi",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3828,
+      "id": 3166,
+      "name": "Jharkhand Eligibility Test Geography",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3829,
+      "id": 3165,
+      "name": "Jharkhand Eligibility Test Environmental Science",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3830,
+      "id": 3164,
+      "name": "Jharkhand Eligibility Test English",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3832,
+      "id": 3162,
+      "name": "Jharkhand Eligibility Test Economics",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3833,
+      "id": 3161,
+      "name": "Jharkhand Eligibility Test Earth, Atmospheric, Ocean and Planetary Sciences",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3834,
+      "id": 3160,
+      "name": "Jharkhand Eligibility Test Computer Science and Application",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3835,
+      "id": 3159,
+      "name": "Jharkhand Eligibility Test Commerce",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3836,
+      "id": 3158,
+      "name": "Jharkhand Eligibility Test Chemical Science",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3837,
+      "id": 3157,
+      "name": "Jharkhand Eligibility Test Bengali",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3838,
+      "id": 3156,
+      "name": "Jharkhand Eligibility Test Anthropology",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 3842,
+      "id": 3152,
+      "name": "JEPC Assistant Program Manager",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 5202,
+      "id": 1792,
+      "name": "DC Office Dumka Chowkidar",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 5595,
+      "id": 1399,
+      "name": "CIP Ranchi PG Entrance",
+      "group": "Jharkhand General Government Exams"
+    },
+    {
+      "sl": 5985,
+      "id": 1009,
+      "name": "BPSCL Assistant Manager BOE",
+      "group": "Jharkhand General Government Exams"
+    }
+  ]
+}

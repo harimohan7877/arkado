@@ -1,0 +1,358 @@
+{
+  "bundle_number": 26,
+  "bundle_id": "raw_bundle_026",
+  "range": "1251 - 1300",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1251,
+      "group_sl": 760,
+      "exam_id": 6234,
+      "name": "UGC NET Commerce",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1252,
+      "group_sl": 761,
+      "exam_id": 6233,
+      "name": "UGC NET Bengali",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1253,
+      "group_sl": 762,
+      "exam_id": 6232,
+      "name": "UGC NET Ayurveda Biology",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1254,
+      "group_sl": 763,
+      "exam_id": 6231,
+      "name": "UGC NET Assamese",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1255,
+      "group_sl": 764,
+      "exam_id": 6230,
+      "name": "UGC NET Archaeology Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1256,
+      "group_sl": 765,
+      "exam_id": 6229,
+      "name": "UGC NET Archaeology",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1257,
+      "group_sl": 766,
+      "exam_id": 6228,
+      "name": "UGC NET Arab Culture and Islamic Studies",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1258,
+      "group_sl": 767,
+      "exam_id": 6227,
+      "name": "UGC NET Anthropology",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1259,
+      "group_sl": 768,
+      "exam_id": 6226,
+      "name": "UGC NET Adult Education",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1260,
+      "group_sl": 2459,
+      "exam_id": 4535,
+      "name": "NTA UGC NET International and Area Studies",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1261,
+      "group_sl": 2460,
+      "exam_id": 4534,
+      "name": "NTA UGC NET Buddhist, Jaina, Gandhian and Peace Studies",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1262,
+      "group_sl": 4153,
+      "exam_id": 2841,
+      "name": "ICAR NET Agriculture Extension",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "global_sl": 1263,
+      "group_sl": 195,
+      "exam_id": 6799,
+      "name": "Uttar Pradesh Current Affairs",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1264,
+      "group_sl": 230,
+      "exam_id": 6764,
+      "name": "UPSSSC Yuva Kalyan Adhikari",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1265,
+      "group_sl": 231,
+      "exam_id": 6763,
+      "name": "UPSSSC UP Pollution Control Board",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1266,
+      "group_sl": 232,
+      "exam_id": 6762,
+      "name": "UPSSSC Tubewell Operator",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1267,
+      "group_sl": 233,
+      "exam_id": 6761,
+      "name": "UPSSSC Supply Inspector",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1268,
+      "group_sl": 234,
+      "exam_id": 6760,
+      "name": "UPSSSC Sugarcane Supervisor",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1269,
+      "group_sl": 235,
+      "exam_id": 6759,
+      "name": "UPSSSC Sub Engineer",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1270,
+      "group_sl": 236,
+      "exam_id": 6758,
+      "name": "UPSSSC Stenographer",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1271,
+      "group_sl": 238,
+      "exam_id": 6756,
+      "name": "UPSSSC Platoon Commander, Block Organizer",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1272,
+      "group_sl": 243,
+      "exam_id": 6751,
+      "name": "UPSSSC Marketing Inspector",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1273,
+      "group_sl": 244,
+      "exam_id": 6750,
+      "name": "UPSSSC Mandi Parishad Sachiv",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1274,
+      "group_sl": 245,
+      "exam_id": 6749,
+      "name": "UPSSSC Mandi Inspector",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1275,
+      "group_sl": 246,
+      "exam_id": 6748,
+      "name": "UPSSSC Lower PCS",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1276,
+      "group_sl": 247,
+      "exam_id": 6747,
+      "name": "UPSSSC Lekhpal",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1277,
+      "group_sl": 248,
+      "exam_id": 6746,
+      "name": "UPSSSC Junior Assistant",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1278,
+      "group_sl": 249,
+      "exam_id": 6745,
+      "name": "UPSSSC Junior Analyst Food",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1279,
+      "group_sl": 250,
+      "exam_id": 6744,
+      "name": "UPSSSC JE",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1280,
+      "group_sl": 251,
+      "exam_id": 6743,
+      "name": "UPSSSC ITI Instructor",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1281,
+      "group_sl": 253,
+      "exam_id": 6741,
+      "name": "UPSSSC Havaldar Instructor",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1282,
+      "group_sl": 254,
+      "exam_id": 6740,
+      "name": "UPSSSC Gram Panchayat Adhikari VDO",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1283,
+      "group_sl": 256,
+      "exam_id": 6738,
+      "name": "UPSSSC Fireman",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1284,
+      "group_sl": 259,
+      "exam_id": 6735,
+      "name": "UPSSSC Computer Operator",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1285,
+      "group_sl": 260,
+      "exam_id": 6734,
+      "name": "UPSSSC Chakbandi Lekhpal",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1286,
+      "group_sl": 261,
+      "exam_id": 6733,
+      "name": "UPSSSC Cane Supervisor",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1287,
+      "group_sl": 262,
+      "exam_id": 6732,
+      "name": "UPSSSC Auditor",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1288,
+      "group_sl": 263,
+      "exam_id": 6731,
+      "name": "UPSSSC Assistant Boring Technician",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1289,
+      "group_sl": 264,
+      "exam_id": 6730,
+      "name": "UPSSSC Assistant Accountant",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1290,
+      "group_sl": 265,
+      "exam_id": 6729,
+      "name": "UPSSSC ARO and ASO",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1291,
+      "group_sl": 266,
+      "exam_id": 6728,
+      "name": "UPSSSC Agriculture Technical Assistant",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1292,
+      "group_sl": 267,
+      "exam_id": 6727,
+      "name": "UPSRTC Samvida Conductor",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1293,
+      "group_sl": 268,
+      "exam_id": 6726,
+      "name": "UPSRLM Block Mission Manager",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1294,
+      "group_sl": 269,
+      "exam_id": 6725,
+      "name": "UPSIDC Assistant Engineer",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1295,
+      "group_sl": 270,
+      "exam_id": 6724,
+      "name": "UPSEE",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1296,
+      "group_sl": 297,
+      "exam_id": 6697,
+      "name": "UPRVUNL Technician Grade 2",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1297,
+      "group_sl": 298,
+      "exam_id": 6696,
+      "name": "UPRVUNL JE",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1298,
+      "group_sl": 299,
+      "exam_id": 6695,
+      "name": "UPRVUNL AE",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1299,
+      "group_sl": 300,
+      "exam_id": 6694,
+      "name": "UPPSC Veterinary Officer",
+      "group": "Uttar Pradesh General Government Exams"
+    },
+    {
+      "global_sl": 1300,
+      "group_sl": 305,
+      "exam_id": 6689,
+      "name": "UPPSC RO ARO",
+      "group": "Uttar Pradesh General Government Exams"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "bundle_number": 23,
+  "bundle_id": "raw_bundle_023",
+  "range": "1101 - 1150",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1101,
+      "group_sl": 1764,
+      "exam_id": 5230,
+      "name": "RIICO Stenographer",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1102,
+      "group_sl": 1765,
+      "exam_id": 5229,
+      "name": "RIICO Personal Assistant Grade II",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1103,
+      "group_sl": 1766,
+      "exam_id": 5228,
+      "name": "RIICO Junior Legal Officer",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1104,
+      "group_sl": 1767,
+      "exam_id": 5227,
+      "name": "RIICO Junior Assistant",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1105,
+      "group_sl": 1768,
+      "exam_id": 5226,
+      "name": "RIICO Draughtsman cum Tracer Civil",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1106,
+      "group_sl": 1769,
+      "exam_id": 5225,
+      "name": "RIICO Assistant Site Engineer Civil",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1107,
+      "group_sl": 1770,
+      "exam_id": 5224,
+      "name": "RIICO AAO Grade 2",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1108,
+      "group_sl": 1773,
+      "exam_id": 5221,
+      "name": "RGAVP Project Associate",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1109,
+      "group_sl": 1812,
+      "exam_id": 5182,
+      "name": "RCDF AM",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1110,
+      "group_sl": 1824,
+      "exam_id": 5170,
+      "name": "Rajasthan University Lab Assistant",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1111,
+      "group_sl": 1825,
+      "exam_id": 5169,
+      "name": "Rajasthan University JTA",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1112,
+      "group_sl": 1826,
+      "exam_id": 5168,
+      "name": "Rajasthan University Electrician",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1113,
+      "group_sl": 1827,
+      "exam_id": 5167,
+      "name": "Rajasthan University Clerk Grade 2",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1114,
+      "group_sl": 1831,
+      "exam_id": 5163,
+      "name": "Rajasthan SET Visual Arts",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1115,
+      "group_sl": 1832,
+      "exam_id": 5162,
+      "name": "Rajasthan SET Sociology",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1116,
+      "group_sl": 1833,
+      "exam_id": 5161,
+      "name": "Rajasthan SET Sanskrit",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1117,
+      "group_sl": 1834,
+      "exam_id": 5160,
+      "name": "Rajasthan SET Public Administration",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1118,
+      "group_sl": 1835,
+      "exam_id": 5159,
+      "name": "Rajasthan SET Psychology",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1119,
+      "group_sl": 1836,
+      "exam_id": 5158,
+      "name": "Rajasthan SET Political Science",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1120,
+      "group_sl": 1837,
+      "exam_id": 5157,
+      "name": "Rajasthan SET Physical Science",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1121,
+      "group_sl": 1839,
+      "exam_id": 5155,
+      "name": "Rajasthan SET Philosophy",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1122,
+      "group_sl": 1840,
+      "exam_id": 5154,
+      "name": "Rajasthan SET Music",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1123,
+      "group_sl": 1841,
+      "exam_id": 5153,
+      "name": "Rajasthan SET Mathematical Science",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1124,
+      "group_sl": 1842,
+      "exam_id": 5152,
+      "name": "Rajasthan SET Management",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1125,
+      "group_sl": 1843,
+      "exam_id": 5151,
+      "name": "Rajasthan SET Life Science",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1126,
+      "group_sl": 1844,
+      "exam_id": 5150,
+      "name": "Rajasthan SET Law",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1127,
+      "group_sl": 1845,
+      "exam_id": 5149,
+      "name": "Rajasthan SET Home Science",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1128,
+      "group_sl": 1846,
+      "exam_id": 5148,
+      "name": "Rajasthan SET History",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1129,
+      "group_sl": 1847,
+      "exam_id": 5147,
+      "name": "Rajasthan SET Hindi",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1130,
+      "group_sl": 1848,
+      "exam_id": 5146,
+      "name": "Rajasthan SET Geography",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1131,
+      "group_sl": 1849,
+      "exam_id": 5145,
+      "name": "Rajasthan SET Environmental Science",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1132,
+      "group_sl": 1850,
+      "exam_id": 5144,
+      "name": "Rajasthan SET English",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1133,
+      "group_sl": 1852,
+      "exam_id": 5142,
+      "name": "Rajasthan SET Economics",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1134,
+      "group_sl": 1853,
+      "exam_id": 5141,
+      "name": "Rajasthan SET Computer Science",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1135,
+      "group_sl": 1854,
+      "exam_id": 5140,
+      "name": "Rajasthan SET Commerce",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1136,
+      "group_sl": 1855,
+      "exam_id": 5139,
+      "name": "Rajasthan SET Chemical Science",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1137,
+      "group_sl": 1856,
+      "exam_id": 5138,
+      "name": "Rajasthan SET",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1138,
+      "group_sl": 1858,
+      "exam_id": 5136,
+      "name": "Rajasthan Safai Karmchari",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1139,
+      "group_sl": 1859,
+      "exam_id": 5135,
+      "name": "Rajasthan PTET",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1140,
+      "group_sl": 1861,
+      "exam_id": 5133,
+      "name": "Rajasthan Post Office MTS",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1141,
+      "group_sl": 1869,
+      "exam_id": 5125,
+      "name": "Rajasthan Patwari",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1142,
+      "group_sl": 1870,
+      "exam_id": 5124,
+      "name": "Rajasthan Nursing Officer",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1143,
+      "group_sl": 1871,
+      "exam_id": 5123,
+      "name": "Rajasthan Lab Technician",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1144,
+      "group_sl": 1872,
+      "exam_id": 5122,
+      "name": "Rajasthan JET Agriculture",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1145,
+      "group_sl": 1874,
+      "exam_id": 5120,
+      "name": "Rajasthan Informatics Assistant",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1146,
+      "group_sl": 1875,
+      "exam_id": 5119,
+      "name": "Rajasthan IDEED",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1147,
+      "group_sl": 1877,
+      "exam_id": 5117,
+      "name": "Rajasthan History",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1148,
+      "group_sl": 1885,
+      "exam_id": 5109,
+      "name": "Rajasthan HC Clerk",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1149,
+      "group_sl": 1886,
+      "exam_id": 5108,
+      "name": "Rajasthan Gram Sevak Bharti",
+      "group": "Rajasthan General Government Exams"
+    },
+    {
+      "global_sl": 1150,
+      "group_sl": 1887,
+      "exam_id": 5107,
+      "name": "Rajasthan GK in Hindi",
+      "group": "Rajasthan General Government Exams"
+    }
+  ]
+}

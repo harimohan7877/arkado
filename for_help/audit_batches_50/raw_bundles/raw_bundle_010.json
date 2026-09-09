@@ -1,0 +1,358 @@
+{
+  "bundle_number": 10,
+  "bundle_id": "raw_bundle_010",
+  "range": "451 - 500",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 451,
+      "group_sl": 5265,
+      "exam_id": 1729,
+      "name": "CVPP Trainee Engineer and Junior Engineer Recruitment",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 452,
+      "group_sl": 5554,
+      "exam_id": 1440,
+      "name": "Code of Civil Procedure",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 453,
+      "group_sl": 5564,
+      "exam_id": 1430,
+      "name": "CMERI Technician",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 454,
+      "group_sl": 5583,
+      "exam_id": 1411,
+      "name": "Civil Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 455,
+      "group_sl": 5613,
+      "exam_id": 1381,
+      "name": "CII IPAT",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 456,
+      "group_sl": 5632,
+      "exam_id": 1362,
+      "name": "Chemical Science",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 457,
+      "group_sl": 5763,
+      "exam_id": 1231,
+      "name": "CEL Assistant Manager",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 458,
+      "group_sl": 5764,
+      "exam_id": 1230,
+      "name": "CEIL Inspection Engineer",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 459,
+      "group_sl": 5768,
+      "exam_id": 1226,
+      "name": "CDRI Technical Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 460,
+      "group_sl": 5788,
+      "exam_id": 1206,
+      "name": "CCMB Technician Grade 2",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 461,
+      "group_sl": 5796,
+      "exam_id": 1198,
+      "name": "CCI Junior Commercial Executive",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 462,
+      "group_sl": 6276,
+      "exam_id": 718,
+      "name": "Bhartiya Aviation",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 463,
+      "group_sl": 6347,
+      "exam_id": 647,
+      "name": "BCPL Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 464,
+      "group_sl": 6461,
+      "exam_id": 533,
+      "name": "Automobile Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "global_sl": 465,
+      "group_sl": 237,
+      "exam_id": 6757,
+      "name": "UPSSSC Special Education Teacher",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 466,
+      "group_sl": 242,
+      "exam_id": 6752,
+      "name": "UPSSSC Mukhya Sevika",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 467,
+      "group_sl": 302,
+      "exam_id": 6692,
+      "name": "UPPSC Technical Education Principal",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 468,
+      "group_sl": 306,
+      "exam_id": 6688,
+      "name": "UPPSC Polytechnic Lecturer Physics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 469,
+      "group_sl": 307,
+      "exam_id": 6687,
+      "name": "UPPSC Polytechnic Lecturer Mechanical",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 470,
+      "group_sl": 308,
+      "exam_id": 6686,
+      "name": "UPPSC Polytechnic Lecturer Mathematics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 471,
+      "group_sl": 309,
+      "exam_id": 6685,
+      "name": "UPPSC Polytechnic Lecturer English",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 472,
+      "group_sl": 310,
+      "exam_id": 6684,
+      "name": "UPPSC Polytechnic Lecturer Electronics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 473,
+      "group_sl": 311,
+      "exam_id": 6683,
+      "name": "UPPSC Polytechnic Lecturer Electrical",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 474,
+      "group_sl": 312,
+      "exam_id": 6682,
+      "name": "UPPSC Polytechnic Lecturer Computer Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 475,
+      "group_sl": 313,
+      "exam_id": 6681,
+      "name": "UPPSC Polytechnic Lecturer Civil",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 476,
+      "group_sl": 314,
+      "exam_id": 6680,
+      "name": "UPPSC Polytechnic Lecturer Chemistry",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 477,
+      "group_sl": 315,
+      "exam_id": 6679,
+      "name": "UPPSC Polytechnic Lecturer Chemical",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 478,
+      "group_sl": 321,
+      "exam_id": 6673,
+      "name": "UPPSC LT Grade Assistant Teacher Social Studies",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 479,
+      "group_sl": 322,
+      "exam_id": 6672,
+      "name": "UPPSC LT Grade Assistant Teacher Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 480,
+      "group_sl": 323,
+      "exam_id": 6671,
+      "name": "UPPSC LT Grade Assistant Teacher Sanskrit",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 481,
+      "group_sl": 324,
+      "exam_id": 6670,
+      "name": "UPPSC LT Grade Assistant Teacher Physical Education",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 482,
+      "group_sl": 325,
+      "exam_id": 6669,
+      "name": "UPPSC LT Grade Assistant Teacher Music",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 483,
+      "group_sl": 326,
+      "exam_id": 6668,
+      "name": "UPPSC LT Grade Assistant Teacher Mathematics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 484,
+      "group_sl": 327,
+      "exam_id": 6667,
+      "name": "UPPSC LT Grade Assistant Teacher Home Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 485,
+      "group_sl": 328,
+      "exam_id": 6666,
+      "name": "UPPSC LT Grade Assistant Teacher Hindi",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 486,
+      "group_sl": 329,
+      "exam_id": 6665,
+      "name": "UPPSC LT Grade Assistant Teacher English",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 487,
+      "group_sl": 330,
+      "exam_id": 6664,
+      "name": "UPPSC LT Grade Assistant Teacher Computer",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 488,
+      "group_sl": 331,
+      "exam_id": 6663,
+      "name": "UPPSC LT Grade Assistant Teacher Commerce",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 489,
+      "group_sl": 332,
+      "exam_id": 6662,
+      "name": "UPPSC LT Grade Assistant Teacher Biology",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 490,
+      "group_sl": 333,
+      "exam_id": 6661,
+      "name": "UPPSC LT Grade Assistant Teacher Arts",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 491,
+      "group_sl": 334,
+      "exam_id": 6660,
+      "name": "UPPSC LT Grade Assistant Teacher Agriculture",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 492,
+      "group_sl": 335,
+      "exam_id": 6659,
+      "name": "UPPSC Lecturer Sociology",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 493,
+      "group_sl": 336,
+      "exam_id": 6658,
+      "name": "UPPSC Lecturer Sanskrit",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 494,
+      "group_sl": 337,
+      "exam_id": 6657,
+      "name": "UPPSC Lecturer Physics",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 495,
+      "group_sl": 338,
+      "exam_id": 6656,
+      "name": "UPPSC Lecturer Home Science",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 496,
+      "group_sl": 339,
+      "exam_id": 6655,
+      "name": "UPPSC Lecturer History",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 497,
+      "group_sl": 340,
+      "exam_id": 6654,
+      "name": "UPPSC Lecturer Hindi",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 498,
+      "group_sl": 341,
+      "exam_id": 6653,
+      "name": "UPPSC Lecturer Geography",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 499,
+      "group_sl": 342,
+      "exam_id": 6652,
+      "name": "UPPSC Lecturer English",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    },
+    {
+      "global_sl": 500,
+      "group_sl": 343,
+      "exam_id": 6651,
+      "name": "UPPSC Lecturer Education",
+      "group": "Uttar Pradesh Teaching & School Exams"
+    }
+  ]
+}

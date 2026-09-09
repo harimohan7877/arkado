@@ -1,0 +1,60 @@
+{
+  "bundle_id": "bundle-038",
+  "bundle_num": 38,
+  "category_id": "ssc",
+  "category_name": "SSC आयोग",
+  "category_icon": "🏛️",
+  "title": "SSC आयोग — Staff Selection Commission - SSC CGL • Staff Selection Commission - SSC GD Constable • Staff Selection Commission - SSC JHT",
+  "total_exams": 7,
+  "boards_included": [
+    "Staff Selection Commission - SSC CGL",
+    "Staff Selection Commission - SSC GD Constable",
+    "Staff Selection Commission - SSC JHT",
+    "Staff Selection Commission - SSC CPO",
+    "Staff Selection Commission - SSC CHSL"
+  ],
+  "exams": [
+    {
+      "sl": 1214,
+      "id": 5780,
+      "name": "SSC CHSL in Hindi",
+      "group": "Staff Selection Commission - SSC CHSL Exams"
+    },
+    {
+      "sl": 1215,
+      "id": 5779,
+      "name": "SSC CHSL",
+      "group": "Staff Selection Commission - SSC CHSL Exams"
+    },
+    {
+      "sl": 1216,
+      "id": 5778,
+      "name": "SSC CGL AAO",
+      "group": "Staff Selection Commission - SSC CGL Exams"
+    },
+    {
+      "sl": 1217,
+      "id": 5777,
+      "name": "SSC CGL",
+      "group": "Staff Selection Commission - SSC CGL Exams"
+    },
+    {
+      "sl": 1202,
+      "id": 5792,
+      "name": "SSC JHT",
+      "group": "Staff Selection Commission - SSC JHT Exams"
+    },
+    {
+      "sl": 1208,
+      "id": 5786,
+      "name": "SSC GD Constable",
+      "group": "Staff Selection Commission - SSC GD Constable Exams"
+    },
+    {
+      "sl": 1213,
+      "id": 5781,
+      "name": "SSC CPO SI",
+      "group": "Staff Selection Commission - SSC CPO Exams"
+    }
+  ]
+}

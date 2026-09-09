@@ -1,0 +1,309 @@
+{
+  "bundle_number": 130,
+  "bundle_id": "raw_bundle_130",
+  "range": "6451 - 6493",
+  "total_items": 43,
+  "items": [
+    {
+      "global_sl": 6451,
+      "group_sl": 4082,
+      "exam_id": 2912,
+      "name": "IIT Mandi Non Teaching",
+      "group": "National Academics - IIT Non-Teaching Exams"
+    },
+    {
+      "global_sl": 6452,
+      "group_sl": 4086,
+      "exam_id": 2908,
+      "name": "IIT Kanpur Junior Assistant",
+      "group": "Uttar Pradesh IIT Exams"
+    },
+    {
+      "global_sl": 6453,
+      "group_sl": 4087,
+      "exam_id": 2907,
+      "name": "IIT Jodhpur Non Teaching",
+      "group": "Rajasthan IIT Exams"
+    },
+    {
+      "global_sl": 6454,
+      "group_sl": 4096,
+      "exam_id": 2898,
+      "name": "IIT Goa Non Teaching Staff",
+      "group": "Goa IIT Exams"
+    },
+    {
+      "global_sl": 6455,
+      "group_sl": 4098,
+      "exam_id": 2896,
+      "name": "IIT Delhi Group A B C",
+      "group": "Delhi IIT Exams"
+    },
+    {
+      "global_sl": 6456,
+      "group_sl": 4099,
+      "exam_id": 2895,
+      "name": "IISER Junior Assistant",
+      "group": "National Academics - IISER Non-Teaching Exams"
+    },
+    {
+      "global_sl": 6457,
+      "group_sl": 4212,
+      "exam_id": 2782,
+      "name": "HWB Stipendiary Trainee",
+      "group": "Engineering & PSU - HWB Exams"
+    },
+    {
+      "global_sl": 6458,
+      "group_sl": 4497,
+      "exam_id": 2497,
+      "name": "HESCOM Apprentice",
+      "group": "Karnataka HESCOM Exams"
+    },
+    {
+      "global_sl": 6459,
+      "group_sl": 4530,
+      "exam_id": 2464,
+      "name": "HARCO Bank Clerk",
+      "group": "Haryana Cooperative Bank Exams"
+    },
+    {
+      "global_sl": 6460,
+      "group_sl": 4642,
+      "exam_id": 2352,
+      "name": "GRSE Trade Apprentice",
+      "group": "Engineering & PSU - GRSE Exams"
+    },
+    {
+      "global_sl": 6461,
+      "group_sl": 4672,
+      "exam_id": 2322,
+      "name": "Goa PSC Assistant Professor",
+      "group": "Goa PSC Exams"
+    },
+    {
+      "global_sl": 6462,
+      "group_sl": 4684,
+      "exam_id": 2310,
+      "name": "GMRCL Station Controller",
+      "group": "Gujarat GMRCL Metro Exams"
+    },
+    {
+      "global_sl": 6463,
+      "group_sl": 4702,
+      "exam_id": 2292,
+      "name": "GHMC Technical Work Inspector",
+      "group": "Telangana GHMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6464,
+      "group_sl": 4703,
+      "exam_id": 2291,
+      "name": "GETCO JE",
+      "group": "Gujarat GETCO Exams"
+    },
+    {
+      "global_sl": 6465,
+      "group_sl": 4704,
+      "exam_id": 2290,
+      "name": "GESCOM Apprentice",
+      "group": "Karnataka GESCOM Exams"
+    },
+    {
+      "global_sl": 6466,
+      "group_sl": 4775,
+      "exam_id": 2219,
+      "name": "FSI Technical Associate",
+      "group": "Engineering & PSU - FSI Exams"
+    },
+    {
+      "global_sl": 6467,
+      "group_sl": 4800,
+      "exam_id": 2194,
+      "name": "Fitter",
+      "group": "Vocational Trades - Fitter"
+    },
+    {
+      "global_sl": 6468,
+      "group_sl": 4838,
+      "exam_id": 2156,
+      "name": "EXIM Bank Officer",
+      "group": "Banking & Finance - EXIM Exams"
+    },
+    {
+      "global_sl": 6469,
+      "group_sl": 4908,
+      "exam_id": 2086,
+      "name": "EESL Engineer, AE",
+      "group": "Engineering & PSU - EESL Exams"
+    },
+    {
+      "global_sl": 6470,
+      "group_sl": 5108,
+      "exam_id": 1886,
+      "name": "DLSC Executive Assistant",
+      "group": "West Bengal DLSC Exams"
+    },
+    {
+      "global_sl": 6471,
+      "group_sl": 5144,
+      "exam_id": 1850,
+      "name": "Dhanlaxmi Bank Junior Officer",
+      "group": "Banking & Finance - Dhanlaxmi Exams"
+    },
+    {
+      "global_sl": 6472,
+      "group_sl": 5145,
+      "exam_id": 1849,
+      "name": "DGVCL Vidyut Sahayak",
+      "group": "Gujarat DGVCL Exams"
+    },
+    {
+      "global_sl": 6473,
+      "group_sl": 5160,
+      "exam_id": 1834,
+      "name": "Dena Bank PO",
+      "group": "Banking & Finance - Dena Exams"
+    },
+    {
+      "global_sl": 6474,
+      "group_sl": 5193,
+      "exam_id": 1801,
+      "name": "DCRUSTM Clerk DEO",
+      "group": "Haryana DCRUSTM Exams"
+    },
+    {
+      "global_sl": 6475,
+      "group_sl": 5194,
+      "exam_id": 1800,
+      "name": "DCIL Dredge Cadets",
+      "group": "Engineering & PSU - DCIL Exams"
+    },
+    {
+      "global_sl": 6476,
+      "group_sl": 5466,
+      "exam_id": 1528,
+      "name": "CSPGCL Apprentice",
+      "group": "Chhattisgarh CSPGCL Exams"
+    },
+    {
+      "global_sl": 6477,
+      "group_sl": 5532,
+      "exam_id": 1462,
+      "name": "CRIS JE",
+      "group": "Engineering & PSU - CRIS Exams"
+    },
+    {
+      "global_sl": 6478,
+      "group_sl": 5535,
+      "exam_id": 1459,
+      "name": "CPCL JEA",
+      "group": "Engineering & PSU - CPCL Exams"
+    },
+    {
+      "global_sl": 6479,
+      "group_sl": 5560,
+      "exam_id": 1434,
+      "name": "CMRL Junior Engineer",
+      "group": "Tamil Nadu CMRL Metro Exams"
+    },
+    {
+      "global_sl": 6480,
+      "group_sl": 5594,
+      "exam_id": 1400,
+      "name": "CIPET Technical Assistant",
+      "group": "Engineering & PSU - CIPET Exams"
+    },
+    {
+      "global_sl": 6481,
+      "group_sl": 5627,
+      "exam_id": 1367,
+      "name": "Chennai Corporation Assistant Engineer",
+      "group": "Tamil Nadu Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6482,
+      "group_sl": 5647,
+      "exam_id": 1347,
+      "name": "Chandigarh Municipal Corporation Sweeper",
+      "group": "Chandigarh Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 6483,
+      "group_sl": 5667,
+      "exam_id": 1327,
+      "name": "CGPSC Forest Ranger",
+      "group": "Chhattisgarh Forest Department Exams"
+    },
+    {
+      "global_sl": 6484,
+      "group_sl": 5744,
+      "exam_id": 1250,
+      "name": "CG PET",
+      "group": "Chhattisgarh Entrance Exams"
+    },
+    {
+      "global_sl": 6485,
+      "group_sl": 5769,
+      "exam_id": 1225,
+      "name": "CDOT Technician",
+      "group": "Engineering & PSU - CDOT Exams"
+    },
+    {
+      "global_sl": 6486,
+      "group_sl": 5807,
+      "exam_id": 1187,
+      "name": "Catholic Syrian Bank",
+      "group": "Banking & Finance - Catholic Syrian Exams"
+    },
+    {
+      "global_sl": 6487,
+      "group_sl": 5846,
+      "exam_id": 1148,
+      "name": "BVFCL Executive Trainee",
+      "group": "Engineering & PSU - BVFCL Exams"
+    },
+    {
+      "global_sl": 6488,
+      "group_sl": 5943,
+      "exam_id": 1051,
+      "name": "BSEB Sakshamta Pariksha PET",
+      "group": "Bihar Entrance Exams"
+    },
+    {
+      "global_sl": 6489,
+      "group_sl": 6066,
+      "exam_id": 928,
+      "name": "BITSAT (BITS Pilani)",
+      "group": "National Academics - BITSAT Exams"
+    },
+    {
+      "global_sl": 6490,
+      "group_sl": 6217,
+      "exam_id": 777,
+      "name": "Bihar Forest Range Officer",
+      "group": "Bihar Forest Department Exams"
+    },
+    {
+      "global_sl": 6491,
+      "group_sl": 6429,
+      "exam_id": 565,
+      "name": "Bandhan Bank Clerk",
+      "group": "Banking & Finance - Bandhan Exams"
+    },
+    {
+      "global_sl": 6492,
+      "group_sl": 6430,
+      "exam_id": 564,
+      "name": "Balmer Lawrie Supervisor Trainee",
+      "group": "Engineering & PSU - Balmer Lawrie Exams"
+    },
+    {
+      "global_sl": 6493,
+      "group_sl": 6432,
+      "exam_id": 562,
+      "name": "B.Sc Agriculture",
+      "group": "Vocational Trades - Other ITI & Trades"
+    }
+  ]
+}

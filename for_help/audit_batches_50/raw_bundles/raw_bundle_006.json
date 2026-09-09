@@ -1,0 +1,358 @@
+{
+  "bundle_number": 6,
+  "bundle_id": "raw_bundle_006",
+  "range": "251 - 300",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 251,
+      "group_sl": 6079,
+      "exam_id": 915,
+      "name": "Bihar Vikas Mission Exam",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 252,
+      "group_sl": 6082,
+      "exam_id": 912,
+      "name": "Bihar Vidhan Sabha DEO",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 253,
+      "group_sl": 6083,
+      "exam_id": 911,
+      "name": "Bihar Vidhan Sabha Assistant",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 254,
+      "group_sl": 6084,
+      "exam_id": 910,
+      "name": "Bihar Vidhan Sabha ASO",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 255,
+      "group_sl": 6085,
+      "exam_id": 909,
+      "name": "Bihar Vidhan Parishad ABO",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 256,
+      "group_sl": 6086,
+      "exam_id": 908,
+      "name": "Bihar Vidhan Parishad",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 257,
+      "group_sl": 6087,
+      "exam_id": 907,
+      "name": "Bihar UDHD JE",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 258,
+      "group_sl": 6116,
+      "exam_id": 878,
+      "name": "Bihar Statistical Officer",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 259,
+      "group_sl": 6121,
+      "exam_id": 873,
+      "name": "Bihar SLET Sociology",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 260,
+      "group_sl": 6122,
+      "exam_id": 872,
+      "name": "Bihar SLET Sanskrit",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 261,
+      "group_sl": 6123,
+      "exam_id": 871,
+      "name": "Bihar SLET Public Administration",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 262,
+      "group_sl": 6124,
+      "exam_id": 870,
+      "name": "Bihar SLET Psychology",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 263,
+      "group_sl": 6125,
+      "exam_id": 869,
+      "name": "Bihar SLET Population Studies",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 264,
+      "group_sl": 6126,
+      "exam_id": 868,
+      "name": "Bihar SLET Political Science",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 265,
+      "group_sl": 6127,
+      "exam_id": 867,
+      "name": "Bihar SLET Physical Science",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 266,
+      "group_sl": 6129,
+      "exam_id": 865,
+      "name": "Bihar SLET Philosophy",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 267,
+      "group_sl": 6130,
+      "exam_id": 864,
+      "name": "Bihar SLET Paper 1",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 268,
+      "group_sl": 6131,
+      "exam_id": 863,
+      "name": "Bihar SLET Mathematical Science",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 269,
+      "group_sl": 6132,
+      "exam_id": 862,
+      "name": "Bihar SLET Management",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 270,
+      "group_sl": 6133,
+      "exam_id": 861,
+      "name": "Bihar SLET Life Science",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 271,
+      "group_sl": 6134,
+      "exam_id": 860,
+      "name": "Bihar SLET Law",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 272,
+      "group_sl": 6135,
+      "exam_id": 859,
+      "name": "Bihar SLET Home Science",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 273,
+      "group_sl": 6136,
+      "exam_id": 858,
+      "name": "Bihar SLET History",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 274,
+      "group_sl": 6137,
+      "exam_id": 857,
+      "name": "Bihar SLET Hindi",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 275,
+      "group_sl": 6138,
+      "exam_id": 856,
+      "name": "Bihar SLET Geography",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 276,
+      "group_sl": 6139,
+      "exam_id": 855,
+      "name": "Bihar SLET Environmental Science",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 277,
+      "group_sl": 6140,
+      "exam_id": 854,
+      "name": "Bihar SLET English",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 278,
+      "group_sl": 6142,
+      "exam_id": 852,
+      "name": "Bihar SLET Economics",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 279,
+      "group_sl": 6143,
+      "exam_id": 851,
+      "name": "Bihar SLET Earth Science",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 280,
+      "group_sl": 6144,
+      "exam_id": 850,
+      "name": "Bihar SLET Computer Science",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 281,
+      "group_sl": 6145,
+      "exam_id": 849,
+      "name": "Bihar SLET Commerce",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 282,
+      "group_sl": 6146,
+      "exam_id": 848,
+      "name": "Bihar SLET Chemical Science",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 283,
+      "group_sl": 6147,
+      "exam_id": 847,
+      "name": "Bihar SHSB Supervisor",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 284,
+      "group_sl": 6149,
+      "exam_id": 845,
+      "name": "Bihar SHSB Counsellor",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 285,
+      "group_sl": 6150,
+      "exam_id": 844,
+      "name": "Bihar SHS Lab Technician",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 286,
+      "group_sl": 6151,
+      "exam_id": 843,
+      "name": "Bihar SHS Accountant",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 287,
+      "group_sl": 6158,
+      "exam_id": 836,
+      "name": "Bihar Sachivalaya Group D",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 288,
+      "group_sl": 6159,
+      "exam_id": 835,
+      "name": "Bihar Rural Development Account Assistant",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 289,
+      "group_sl": 6160,
+      "exam_id": 834,
+      "name": "Bihar Rajaswa Karamchari",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 290,
+      "group_sl": 6161,
+      "exam_id": 833,
+      "name": "Bihar Procurement Assistant",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 291,
+      "group_sl": 6162,
+      "exam_id": 832,
+      "name": "Bihar PRD Technical Assistant",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 292,
+      "group_sl": 6163,
+      "exam_id": 831,
+      "name": "Bihar Postal Circle GDS",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 293,
+      "group_sl": 6176,
+      "exam_id": 818,
+      "name": "Bihar Phed JE",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 294,
+      "group_sl": 6177,
+      "exam_id": 817,
+      "name": "Bihar Paramedical PMM",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 295,
+      "group_sl": 6178,
+      "exam_id": 816,
+      "name": "Bihar Paramedical",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 296,
+      "group_sl": 6179,
+      "exam_id": 815,
+      "name": "Bihar Panchayati Raj Accountant",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 297,
+      "group_sl": 6180,
+      "exam_id": 814,
+      "name": "Bihar Panchayat Sachiv",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 298,
+      "group_sl": 6181,
+      "exam_id": 813,
+      "name": "Bihar LDC",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 299,
+      "group_sl": 6182,
+      "exam_id": 812,
+      "name": "Bihar Jeevika Office Assistant",
+      "group": "Bihar General Government Exams"
+    },
+    {
+      "global_sl": 300,
+      "group_sl": 6183,
+      "exam_id": 811,
+      "name": "Bihar Jeevika Livelihood Specialist",
+      "group": "Bihar General Government Exams"
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "bundle_id": "bundle-114",
+  "bundle_num": 114,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Jammu & Kashmir JKSSB • General Subjects - Social Studies & Humanities",
+  "total_exams": 59,
+  "boards_included": [
+    "Jammu & Kashmir JKSSB",
+    "General Subjects - Social Studies & Humanities"
+  ],
+  "exams": [
+    {
+      "sl": 3704,
+      "id": 3290,
+      "name": "JKSSB Veterinary Pharmacist",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3705,
+      "id": 3289,
+      "name": "JKSSB Technician Grade 2 Theatre Group",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3706,
+      "id": 3288,
+      "name": "JKSSB Technician Grade 2 Medical Group",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3707,
+      "id": 3287,
+      "name": "JKSSB Technician Grade 2",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3708,
+      "id": 3286,
+      "name": "JKSSB Teacher",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3709,
+      "id": 3285,
+      "name": "JKSSB Stock Assistant",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3710,
+      "id": 3284,
+      "name": "JKSSB Staff Nurse",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3711,
+      "id": 3283,
+      "name": "JKSSB SI Telecom",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3712,
+      "id": 3282,
+      "name": "JKSSB SI",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3713,
+      "id": 3281,
+      "name": "JKSSB Patwari",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3714,
+      "id": 3280,
+      "name": "JKSSB Para Medical Staff",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3715,
+      "id": 3279,
+      "name": "JKSSB Panchayat Secretary",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3716,
+      "id": 3278,
+      "name": "JKSSB Nursing Administration",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3717,
+      "id": 3277,
+      "name": "JKSSB Naib Tehsildar",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3718,
+      "id": 3276,
+      "name": "JKSSB Junior Supervisor",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3719,
+      "id": 3275,
+      "name": "JKSSB Junior Stenographer",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3720,
+      "id": 3274,
+      "name": "JKSSB Junior Staff Nurse",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3721,
+      "id": 3273,
+      "name": "JKSSB Junior Assistant",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3722,
+      "id": 3272,
+      "name": "JKSSB JE Mechanical",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3723,
+      "id": 3271,
+      "name": "JKSSB JE Civil",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3724,
+      "id": 3270,
+      "name": "JKSSB JE",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3725,
+      "id": 3269,
+      "name": "JKSSB Fisheries Development Officer",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3726,
+      "id": 3268,
+      "name": "JKSSB Driver",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3727,
+      "id": 3267,
+      "name": "JKSSB Draftsman Civil",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3728,
+      "id": 3266,
+      "name": "JKSSB Class 4",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3729,
+      "id": 3265,
+      "name": "JKSSB Attendant General Cadre",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3730,
+      "id": 3264,
+      "name": "JKSSB Assistant Storekeeper",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3731,
+      "id": 3263,
+      "name": "JKSSB Assistant Handicrafts Training Officer",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3732,
+      "id": 3262,
+      "name": "JKSSB Assistant Compiler",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 3733,
+      "id": 3261,
+      "name": "JKSSB Account Assistant",
+      "group": "Jammu & Kashmir JKSSB Exams"
+    },
+    {
+      "sl": 7,
+      "id": 6987,
+      "name": "World History",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 8,
+      "id": 6986,
+      "name": "World Geography",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 9,
+      "id": 6985,
+      "name": "Women Studies",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 228,
+      "id": 6766,
+      "name": "UPTET Social Studies",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 1281,
+      "id": 5713,
+      "name": "Sociology",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 1282,
+      "id": 5712,
+      "name": "Social Work",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 1283,
+      "id": 5711,
+      "name": "Social Studies",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 1391,
+      "id": 5603,
+      "name": "Scouts and Guides Knowledge",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 1771,
+      "id": 5223,
+      "name": "Rights and Welfare of Senior Citizens",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 2030,
+      "id": 4964,
+      "name": "Public Administration",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 2031,
+      "id": 4963,
+      "name": "Psychology",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 2102,
+      "id": 4892,
+      "name": "Population Studies",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 2133,
+      "id": 4861,
+      "name": "Philosophy",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 2784,
+      "id": 4210,
+      "name": "Music",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 3974,
+      "id": 3020,
+      "name": "Interview Guide Dummy",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 3975,
+      "id": 3019,
+      "name": "International Organisations and Current International Affairs",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 3981,
+      "id": 3013,
+      "name": "Indian Polity & Constitution",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 4010,
+      "id": 2984,
+      "name": "Indian History",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 4011,
+      "id": 2983,
+      "name": "Indian Geography",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 4013,
+      "id": 2981,
+      "name": "Indian Culture",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 4015,
+      "id": 2979,
+      "name": "Indian Constitution and Polity",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 4016,
+      "id": 2978,
+      "name": "Indian Constitution",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 4490,
+      "id": 2504,
+      "name": "History",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 4706,
+      "id": 2288,
+      "name": "Geography",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 4867,
+      "id": 2127,
+      "name": "Environmental Studies",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 4912,
+      "id": 2082,
+      "name": "Economics",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 5177,
+      "id": 1817,
+      "name": "Defence and Strategic Studies",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 5584,
+      "id": 1410,
+      "name": "Civics",
+      "group": "General Subjects - Social Studies & Humanities"
+    },
+    {
+      "sl": 5618,
+      "id": 1376,
+      "name": "Child Development and Pedagogy",
+      "group": "General Subjects - Social Studies & Humanities"
+    }
+  ]
+}

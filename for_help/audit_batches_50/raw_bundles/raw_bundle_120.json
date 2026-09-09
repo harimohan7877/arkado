@@ -1,0 +1,358 @@
+{
+  "bundle_number": 120,
+  "bundle_id": "raw_bundle_120",
+  "range": "5951 - 6000",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 5951,
+      "group_sl": 3275,
+      "exam_id": 3719,
+      "name": "Ludhiana District Court Clerk",
+      "group": "Punjab High Court & Court Exams"
+    },
+    {
+      "global_sl": 5952,
+      "group_sl": 3276,
+      "exam_id": 3718,
+      "name": "Ludhiana Court Clerk",
+      "group": "Punjab High Court & Court Exams"
+    },
+    {
+      "global_sl": 5953,
+      "group_sl": 6357,
+      "exam_id": 637,
+      "name": "Bathinda District Court Clerk",
+      "group": "Punjab High Court & Court Exams"
+    },
+    {
+      "global_sl": 5954,
+      "group_sl": 2120,
+      "exam_id": 4874,
+      "name": "PMC Management Trainee",
+      "group": "Maharashtra PMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5955,
+      "group_sl": 2121,
+      "exam_id": 4873,
+      "name": "PMC Lab Technician",
+      "group": "Maharashtra PMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5956,
+      "group_sl": 2122,
+      "exam_id": 4872,
+      "name": "PMC JE",
+      "group": "Maharashtra PMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5957,
+      "group_sl": 2123,
+      "exam_id": 4871,
+      "name": "PMC Apprentice",
+      "group": "Maharashtra PMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5958,
+      "group_sl": 2163,
+      "exam_id": 4831,
+      "name": "PGIMS Rohtak Staff Nurse",
+      "group": "Haryana Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5959,
+      "group_sl": 4333,
+      "exam_id": 2661,
+      "name": "HPSC Dental Surgeon",
+      "group": "Haryana Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5960,
+      "group_sl": 4522,
+      "exam_id": 2472,
+      "name": "Haryana Medical Officer",
+      "group": "Haryana Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5961,
+      "group_sl": 5103,
+      "exam_id": 1891,
+      "name": "DMER Haryana Staff Nurse",
+      "group": "Haryana Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 5962,
+      "group_sl": 2186,
+      "exam_id": 4808,
+      "name": "PCMC Group B, C JE",
+      "group": "Maharashtra PCMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5963,
+      "group_sl": 2187,
+      "exam_id": 4807,
+      "name": "PCMC Group B, C Clerk",
+      "group": "Maharashtra PCMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5964,
+      "group_sl": 2188,
+      "exam_id": 4806,
+      "name": "PCMC Group B, C",
+      "group": "Maharashtra PCMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5965,
+      "group_sl": 2189,
+      "exam_id": 4805,
+      "name": "PCMC Computer Operator",
+      "group": "Maharashtra PCMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5966,
+      "group_sl": 2336,
+      "exam_id": 4658,
+      "name": "OIL Senior Officer",
+      "group": "Engineering & PSU - OIL Exams"
+    },
+    {
+      "global_sl": 5967,
+      "group_sl": 2337,
+      "exam_id": 4657,
+      "name": "OIL Junior Office Assistant",
+      "group": "Engineering & PSU - OIL Exams"
+    },
+    {
+      "global_sl": 5968,
+      "group_sl": 2338,
+      "exam_id": 4656,
+      "name": "OIL Junior Assistant",
+      "group": "Engineering & PSU - OIL Exams"
+    },
+    {
+      "global_sl": 5969,
+      "group_sl": 2340,
+      "exam_id": 4654,
+      "name": "OIL India Grade 7",
+      "group": "Engineering & PSU - OIL Exams"
+    },
+    {
+      "global_sl": 5970,
+      "group_sl": 2533,
+      "exam_id": 4461,
+      "name": "NMC Junior Engineer",
+      "group": "Maharashtra NMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5971,
+      "group_sl": 2534,
+      "exam_id": 4460,
+      "name": "NMC Fireman",
+      "group": "Maharashtra NMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5972,
+      "group_sl": 2535,
+      "exam_id": 4459,
+      "name": "NMC Assistant Junior Engineer",
+      "group": "Maharashtra NMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5973,
+      "group_sl": 2536,
+      "exam_id": 4458,
+      "name": "NMC Assistant Engineer",
+      "group": "Maharashtra NMC Municipal Corporation Exams"
+    },
+    {
+      "global_sl": 5974,
+      "group_sl": 2618,
+      "exam_id": 4376,
+      "name": "NHM Maharashtra Group D",
+      "group": "Maharashtra National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5975,
+      "group_sl": 2619,
+      "exam_id": 4375,
+      "name": "NHM Maharashtra Group C",
+      "group": "Maharashtra National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5976,
+      "group_sl": 2620,
+      "exam_id": 4374,
+      "name": "NHM Maharashtra CHP",
+      "group": "Maharashtra National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5977,
+      "group_sl": 2621,
+      "exam_id": 4373,
+      "name": "NHM Maharashtra CHO",
+      "group": "Maharashtra National Health Mission (NHM) Exams"
+    },
+    {
+      "global_sl": 5978,
+      "group_sl": 2766,
+      "exam_id": 4228,
+      "name": "Nainital Bank SO",
+      "group": "Banking & Finance - Nainital Exams"
+    },
+    {
+      "global_sl": 5979,
+      "group_sl": 2767,
+      "exam_id": 4227,
+      "name": "Nainital Bank PO",
+      "group": "Banking & Finance - Nainital Exams"
+    },
+    {
+      "global_sl": 5980,
+      "group_sl": 2768,
+      "exam_id": 4226,
+      "name": "Nainital Bank MT",
+      "group": "Banking & Finance - Nainital Exams"
+    },
+    {
+      "global_sl": 5981,
+      "group_sl": 2769,
+      "exam_id": 4225,
+      "name": "Nainital Bank Clerk",
+      "group": "Banking & Finance - Nainital Exams"
+    },
+    {
+      "global_sl": 5982,
+      "group_sl": 3205,
+      "exam_id": 3789,
+      "name": "Manipur Pre Primary Teacher",
+      "group": "Manipur Teaching & School Exams"
+    },
+    {
+      "global_sl": 5983,
+      "group_sl": 3208,
+      "exam_id": 3786,
+      "name": "Manipur Graduate Teacher",
+      "group": "Manipur Teaching & School Exams"
+    },
+    {
+      "global_sl": 5984,
+      "group_sl": 3210,
+      "exam_id": 3784,
+      "name": "Manipur Education MTS",
+      "group": "Manipur Teaching & School Exams"
+    },
+    {
+      "global_sl": 5985,
+      "group_sl": 3211,
+      "exam_id": 3783,
+      "name": "Manipur Education Department Lecturer",
+      "group": "Manipur Teaching & School Exams"
+    },
+    {
+      "global_sl": 5986,
+      "group_sl": 3406,
+      "exam_id": 3588,
+      "name": "KSRTC Security Guard",
+      "group": "Kerala Police & Security Exams"
+    },
+    {
+      "global_sl": 5987,
+      "group_sl": 3537,
+      "exam_id": 3457,
+      "name": "Kerala Postal Circle Postman Mail Guard",
+      "group": "Kerala Police & Security Exams"
+    },
+    {
+      "global_sl": 5988,
+      "group_sl": 3539,
+      "exam_id": 3455,
+      "name": "Kerala Police Constable",
+      "group": "Kerala Police & Security Exams"
+    },
+    {
+      "global_sl": 5989,
+      "group_sl": 3561,
+      "exam_id": 3433,
+      "name": "KDRB Peon, Strongroom Guard",
+      "group": "Kerala Police & Security Exams"
+    },
+    {
+      "global_sl": 5990,
+      "group_sl": 3930,
+      "exam_id": 3064,
+      "name": "IPPB SO",
+      "group": "Banking & Finance - IPPB Exams"
+    },
+    {
+      "global_sl": 5991,
+      "group_sl": 3931,
+      "exam_id": 3063,
+      "name": "IPPB Recruitment",
+      "group": "Banking & Finance - IPPB Exams"
+    },
+    {
+      "global_sl": 5992,
+      "group_sl": 3932,
+      "exam_id": 3062,
+      "name": "IPPB GDS",
+      "group": "Banking & Finance - IPPB Exams"
+    },
+    {
+      "global_sl": 5993,
+      "group_sl": 3933,
+      "exam_id": 3061,
+      "name": "IPPB Executive",
+      "group": "Banking & Finance - IPPB Exams"
+    },
+    {
+      "global_sl": 5994,
+      "group_sl": 4009,
+      "exam_id": 2985,
+      "name": "Indian History for Civil Services",
+      "group": "UPSC - Civil Services Exams (IAS/IFS)"
+    },
+    {
+      "global_sl": 5995,
+      "group_sl": 4208,
+      "exam_id": 2786,
+      "name": "IAS in Hindi",
+      "group": "UPSC - Civil Services Exams (IAS/IFS)"
+    },
+    {
+      "global_sl": 5996,
+      "group_sl": 4209,
+      "exam_id": 2785,
+      "name": "IAS General Knowledge Hindi",
+      "group": "UPSC - Civil Services Exams (IAS/IFS)"
+    },
+    {
+      "global_sl": 5997,
+      "group_sl": 4210,
+      "exam_id": 2784,
+      "name": "IAS",
+      "group": "UPSC - Civil Services Exams (IAS/IFS)"
+    },
+    {
+      "global_sl": 5998,
+      "group_sl": 4108,
+      "exam_id": 2886,
+      "name": "IGNOU Stenographer",
+      "group": "National Academics - IGNOU Exams"
+    },
+    {
+      "global_sl": 5999,
+      "group_sl": 4109,
+      "exam_id": 2885,
+      "name": "IGNOU MBA",
+      "group": "National Academics - IGNOU Exams"
+    },
+    {
+      "global_sl": 6000,
+      "group_sl": 4110,
+      "exam_id": 2884,
+      "name": "IGNOU Junior Assistant",
+      "group": "National Academics - IGNOU Exams"
+    }
+  ]
+}

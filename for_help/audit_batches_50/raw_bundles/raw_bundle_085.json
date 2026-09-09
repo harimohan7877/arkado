@@ -1,0 +1,358 @@
+{
+  "bundle_number": 85,
+  "bundle_id": "raw_bundle_085",
+  "range": "4201 - 4250",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4201,
+      "group_sl": 4219,
+      "exam_id": 2775,
+      "name": "HTET TGT Science",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4202,
+      "group_sl": 4220,
+      "exam_id": 2774,
+      "name": "HTET TGT Sanskrit",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4203,
+      "group_sl": 4221,
+      "exam_id": 2773,
+      "name": "HTET TGT Physical Education",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4204,
+      "group_sl": 4222,
+      "exam_id": 2772,
+      "name": "HTET TGT Mathematics",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4205,
+      "group_sl": 4223,
+      "exam_id": 2771,
+      "name": "HTET TGT Home Science",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4206,
+      "group_sl": 4224,
+      "exam_id": 2770,
+      "name": "HTET TGT Hindi",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4207,
+      "group_sl": 4225,
+      "exam_id": 2769,
+      "name": "HTET TGT English",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4208,
+      "group_sl": 4226,
+      "exam_id": 2768,
+      "name": "HTET TGT Arts",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4209,
+      "group_sl": 4227,
+      "exam_id": 2767,
+      "name": "HTET PRT",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4210,
+      "group_sl": 4228,
+      "exam_id": 2766,
+      "name": "HTET PGT Sociology",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4211,
+      "group_sl": 4229,
+      "exam_id": 2765,
+      "name": "HTET PGT Social Studies",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4212,
+      "group_sl": 4230,
+      "exam_id": 2764,
+      "name": "HTET PGT Science",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4213,
+      "group_sl": 4231,
+      "exam_id": 2763,
+      "name": "HTET PGT Sanskrit",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4214,
+      "group_sl": 4232,
+      "exam_id": 2762,
+      "name": "HTET PGT Physics",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4215,
+      "group_sl": 4233,
+      "exam_id": 2761,
+      "name": "HTET PGT Physical Education",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4216,
+      "group_sl": 4234,
+      "exam_id": 2760,
+      "name": "HTET PGT Mathematics",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4217,
+      "group_sl": 4235,
+      "exam_id": 2759,
+      "name": "HTET PGT Home Science",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4218,
+      "group_sl": 4236,
+      "exam_id": 2758,
+      "name": "HTET PGT History",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4219,
+      "group_sl": 4237,
+      "exam_id": 2757,
+      "name": "HTET PGT Hindi",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4220,
+      "group_sl": 4238,
+      "exam_id": 2756,
+      "name": "HTET PGT Geography",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4221,
+      "group_sl": 4239,
+      "exam_id": 2755,
+      "name": "HTET PGT English",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4222,
+      "group_sl": 4240,
+      "exam_id": 2754,
+      "name": "HTET PGT Economics",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4223,
+      "group_sl": 4241,
+      "exam_id": 2753,
+      "name": "HTET PGT Computer Science",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4224,
+      "group_sl": 4242,
+      "exam_id": 2752,
+      "name": "HTET PGT Commerce",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4225,
+      "group_sl": 4243,
+      "exam_id": 2751,
+      "name": "HTET PGT Chemistry",
+      "group": "Haryana HTET Exams"
+    },
+    {
+      "global_sl": 4226,
+      "group_sl": 150,
+      "exam_id": 6844,
+      "name": "VSSC Technician B",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4227,
+      "group_sl": 151,
+      "exam_id": 6843,
+      "name": "VSSC Technician Apprentice",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4228,
+      "group_sl": 152,
+      "exam_id": 6842,
+      "name": "VSSC Technical Assistant",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4229,
+      "group_sl": 153,
+      "exam_id": 6841,
+      "name": "VSSC Scientist Engineer",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4230,
+      "group_sl": 3894,
+      "exam_id": 3100,
+      "name": "ISRO Trade Apprentice",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4231,
+      "group_sl": 3895,
+      "exam_id": 3099,
+      "name": "ISRO Technician B Electrician",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4232,
+      "group_sl": 3896,
+      "exam_id": 3098,
+      "name": "ISRO Stenographer",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4233,
+      "group_sl": 3897,
+      "exam_id": 3097,
+      "name": "ISRO SDSC SHAR Technician B",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4234,
+      "group_sl": 3898,
+      "exam_id": 3096,
+      "name": "ISRO SDSC SHAR Technical Assistant",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4235,
+      "group_sl": 3899,
+      "exam_id": 3095,
+      "name": "ISRO SDSC SHAR Scientist Engineer",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4236,
+      "group_sl": 3900,
+      "exam_id": 3094,
+      "name": "ISRO Scientist Mechanical",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4237,
+      "group_sl": 3901,
+      "exam_id": 3093,
+      "name": "ISRO Scientist Electronics",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4238,
+      "group_sl": 3902,
+      "exam_id": 3092,
+      "name": "ISRO Scientist EE",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4239,
+      "group_sl": 3903,
+      "exam_id": 3091,
+      "name": "ISRO Scientist Computer Science",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4240,
+      "group_sl": 3904,
+      "exam_id": 3090,
+      "name": "ISRO Scientist CE (Civil Engineering)",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4241,
+      "group_sl": 3905,
+      "exam_id": 3089,
+      "name": "ISRO SAC Technician B",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4242,
+      "group_sl": 3906,
+      "exam_id": 3088,
+      "name": "ISRO NRSC Junior Research Fellow Exam",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4243,
+      "group_sl": 3907,
+      "exam_id": 3087,
+      "name": "ISRO LPSC Technical Assistant",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4244,
+      "group_sl": 3908,
+      "exam_id": 3086,
+      "name": "ISRO JPA",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4245,
+      "group_sl": 3909,
+      "exam_id": 3085,
+      "name": "ISRO ICRB Scientist Engineer",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4246,
+      "group_sl": 3910,
+      "exam_id": 3084,
+      "name": "ISRO HSFC Technician B",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4247,
+      "group_sl": 3911,
+      "exam_id": 3083,
+      "name": "ISRO HSFC Technical Assistant",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4248,
+      "group_sl": 3912,
+      "exam_id": 3082,
+      "name": "ISRO Draughtsman",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4249,
+      "group_sl": 3913,
+      "exam_id": 3081,
+      "name": "ISRO Computer Science",
+      "group": "Engineering & PSU - ISRO Exams"
+    },
+    {
+      "global_sl": 4250,
+      "group_sl": 3914,
+      "exam_id": 3080,
+      "name": "ISRO Assistant, UDC",
+      "group": "Engineering & PSU - ISRO Exams"
+    }
+  ]
+}

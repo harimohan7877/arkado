@@ -1,0 +1,358 @@
+{
+  "bundle_number": 87,
+  "bundle_id": "raw_bundle_087",
+  "range": "4301 - 4350",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4301,
+      "group_sl": 1749,
+      "exam_id": 5245,
+      "name": "RMSA Assam Computer Instructor",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4302,
+      "group_sl": 2106,
+      "exam_id": 4888,
+      "name": "PNRD Assam GRS",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4303,
+      "group_sl": 2107,
+      "exam_id": 4887,
+      "name": "PNRD Assam Gram Panchayat Secretary",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4304,
+      "group_sl": 2108,
+      "exam_id": 4886,
+      "name": "PNRD Assam Extension Officer",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4305,
+      "group_sl": 2109,
+      "exam_id": 4885,
+      "name": "PNRD Assam Computer Assistant",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4306,
+      "group_sl": 2110,
+      "exam_id": 4884,
+      "name": "PNRD Assam Accredited Engineer",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4307,
+      "group_sl": 3971,
+      "exam_id": 3023,
+      "name": "IOCL Assam Nursing",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4308,
+      "group_sl": 4940,
+      "exam_id": 2054,
+      "name": "DTE Assam JA",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4309,
+      "group_sl": 5106,
+      "exam_id": 1888,
+      "name": "DME Assam Grade IV",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4310,
+      "group_sl": 5110,
+      "exam_id": 1884,
+      "name": "DLRS Assam Land Records Assistant",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4311,
+      "group_sl": 5114,
+      "exam_id": 1880,
+      "name": "DHT Assam Grade 4",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4312,
+      "group_sl": 5123,
+      "exam_id": 1871,
+      "name": "DHS Assam Grade 3",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4313,
+      "group_sl": 5896,
+      "exam_id": 1098,
+      "name": "BTR",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4314,
+      "group_sl": 6462,
+      "exam_id": 532,
+      "name": "ATMA Assam Block Assistant Manager",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4315,
+      "group_sl": 6464,
+      "exam_id": 530,
+      "name": "ATEPFO Junior Assistant",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4316,
+      "group_sl": 6478,
+      "exam_id": 516,
+      "name": "Assam SLET",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4317,
+      "group_sl": 6479,
+      "exam_id": 515,
+      "name": "Assam Secretariat JAA",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4318,
+      "group_sl": 6480,
+      "exam_id": 514,
+      "name": "Assam Secretariat Computer Operator",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4319,
+      "group_sl": 6481,
+      "exam_id": 513,
+      "name": "Assam Rifles Tradesman and Technical",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4320,
+      "group_sl": 6483,
+      "exam_id": 511,
+      "name": "Assam Rifles Group B and C",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4321,
+      "group_sl": 6484,
+      "exam_id": 510,
+      "name": "Assam Rifles GD, Clerk",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4322,
+      "group_sl": 6485,
+      "exam_id": 509,
+      "name": "Assam PWD Junior & Assistant Engineer",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4323,
+      "group_sl": 6486,
+      "exam_id": 508,
+      "name": "Assam PWD Graduate Engineer",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4324,
+      "group_sl": 6487,
+      "exam_id": 507,
+      "name": "Assam Postal Circle GDS",
+      "group": "Assam General Government Exams"
+    },
+    {
+      "global_sl": 4325,
+      "group_sl": 1795,
+      "exam_id": 5199,
+      "name": "Reasoning in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4326,
+      "group_sl": 1953,
+      "exam_id": 5041,
+      "name": "Punjabi Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4327,
+      "group_sl": 2383,
+      "exam_id": 4611,
+      "name": "Odia Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4328,
+      "group_sl": 3200,
+      "exam_id": 3794,
+      "name": "Marathi Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4329,
+      "group_sl": 3216,
+      "exam_id": 3778,
+      "name": "Malayalam Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4330,
+      "group_sl": 3589,
+      "exam_id": 3405,
+      "name": "Kannada Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4331,
+      "group_sl": 4493,
+      "exam_id": 2501,
+      "name": "Hindi Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4332,
+      "group_sl": 4540,
+      "exam_id": 2454,
+      "name": "Gujarati Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4333,
+      "group_sl": 4723,
+      "exam_id": 2271,
+      "name": "General English Sectional Test",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4334,
+      "group_sl": 4724,
+      "exam_id": 2270,
+      "name": "General English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4335,
+      "group_sl": 4778,
+      "exam_id": 2216,
+      "name": "FREE Quiz Quantitative Aptitude in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4336,
+      "group_sl": 4780,
+      "exam_id": 2214,
+      "name": "FREE Quiz Physics in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4337,
+      "group_sl": 4783,
+      "exam_id": 2211,
+      "name": "FREE Quiz General Science in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4338,
+      "group_sl": 4784,
+      "exam_id": 2210,
+      "name": "FREE Quiz English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4339,
+      "group_sl": 4786,
+      "exam_id": 2208,
+      "name": "FREE Quiz Computer Knowledge in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4340,
+      "group_sl": 4788,
+      "exam_id": 2206,
+      "name": "FREE Quiz Chemistry in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4341,
+      "group_sl": 4790,
+      "exam_id": 2204,
+      "name": "FREE Quiz Biology in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4342,
+      "group_sl": 4792,
+      "exam_id": 2202,
+      "name": "FREE Quiz - Reasoning in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4343,
+      "group_sl": 4794,
+      "exam_id": 2200,
+      "name": "FREE Quiz - General Knowledge in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4344,
+      "group_sl": 4873,
+      "exam_id": 2121,
+      "name": "English Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4345,
+      "group_sl": 5540,
+      "exam_id": 1454,
+      "name": "Computer Science in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4346,
+      "group_sl": 5631,
+      "exam_id": 1363,
+      "name": "Chemistry English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4347,
+      "group_sl": 6076,
+      "exam_id": 918,
+      "name": "Biology in English",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4348,
+      "group_sl": 6474,
+      "exam_id": 520,
+      "name": "Assamese Grammar",
+      "group": "General Subjects - English Language & Grammar"
+    },
+    {
+      "global_sl": 4349,
+      "group_sl": 6361,
+      "exam_id": 633,
+      "name": "BARC Work Assistant",
+      "group": "Engineering & PSU - BARC Exams"
+    },
+    {
+      "global_sl": 4350,
+      "group_sl": 6362,
+      "exam_id": 632,
+      "name": "BARC UDC",
+      "group": "Engineering & PSU - BARC Exams"
+    }
+  ]
+}

@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-060",
+  "bundle_num": 60,
+  "category_id": "teaching",
+  "category_name": "केंद्रीय शिक्षण",
+  "category_icon": "📚",
+  "title": "केंद्रीय शिक्षण — National Academics - UGC NET (Part 1/2)",
+  "total_exams": 60,
+  "boards_included": [
+    "National Academics - UGC NET"
+  ],
+  "exams": [
+    {
+      "sl": 675,
+      "id": 6319,
+      "name": "UGC NET Yoga Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 676,
+      "id": 6318,
+      "name": "UGC NET Yoga",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 677,
+      "id": 6317,
+      "name": "UGC NET Womens Studies",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 678,
+      "id": 6316,
+      "name": "UGC NET Visual Art Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 679,
+      "id": 6315,
+      "name": "UGC NET Visual Art",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 680,
+      "id": 6314,
+      "name": "UGC NET Vidhi Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 681,
+      "id": 6313,
+      "name": "UGC NET Urdu",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 682,
+      "id": 6312,
+      "name": "UGC NET Tribal and Regional Language",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 683,
+      "id": 6311,
+      "name": "UGC NET Tourism Administration & Management",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 684,
+      "id": 6310,
+      "name": "UGC NET Telugu",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 685,
+      "id": 6309,
+      "name": "UGC NET Teaching Aptitude",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 686,
+      "id": 6308,
+      "name": "UGC NET Tamil",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 687,
+      "id": 6307,
+      "name": "UGC NET Statistics",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 688,
+      "id": 6306,
+      "name": "UGC NET Sociology Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 689,
+      "id": 6305,
+      "name": "UGC NET Sociology",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 690,
+      "id": 6304,
+      "name": "UGC NET Social Work Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 691,
+      "id": 6303,
+      "name": "UGC NET Social Work",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 692,
+      "id": 6302,
+      "name": "UGC NET Social Medicine & Community Health",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 693,
+      "id": 6301,
+      "name": "UGC NET Sanskrit Traditional Subject",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 694,
+      "id": 6300,
+      "name": "UGC NET Sanskrit",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 695,
+      "id": 6299,
+      "name": "UGC NET Sangeet Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 696,
+      "id": 6298,
+      "name": "UGC NET Rajasthani",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 697,
+      "id": 6297,
+      "name": "UGC NET Punjabi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 698,
+      "id": 6296,
+      "name": "UGC NET Public Administration Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 699,
+      "id": 6295,
+      "name": "UGC NET Public Administration",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 700,
+      "id": 6294,
+      "name": "UGC NET Psychology Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 701,
+      "id": 6293,
+      "name": "UGC NET Psychology",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 702,
+      "id": 6292,
+      "name": "UGC NET Prakrit",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 703,
+      "id": 6291,
+      "name": "UGC NET Population Studies",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 704,
+      "id": 6290,
+      "name": "UGC NET Political Science Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 705,
+      "id": 6289,
+      "name": "UGC NET Political Science",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 706,
+      "id": 6288,
+      "name": "UGC NET Physical Education Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 707,
+      "id": 6287,
+      "name": "UGC NET Physical Education",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 708,
+      "id": 6286,
+      "name": "UGC NET Philosophy Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 709,
+      "id": 6285,
+      "name": "UGC NET Philosophy",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 710,
+      "id": 6284,
+      "name": "UGC NET Performing Arts Dance, Drama, Theatre",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 711,
+      "id": 6283,
+      "name": "UGC NET Paper 1",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 712,
+      "id": 6282,
+      "name": "UGC NET Odia",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 713,
+      "id": 6281,
+      "name": "UGC NET Museology and Conservation",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 714,
+      "id": 6280,
+      "name": "UGC NET Mass Communication and Journalism Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 715,
+      "id": 6279,
+      "name": "UGC NET Mass Communication and Journalism",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 716,
+      "id": 6278,
+      "name": "UGC NET Marathi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 717,
+      "id": 6277,
+      "name": "UGC NET Manipuri",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 718,
+      "id": 6276,
+      "name": "UGC NET Management Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 719,
+      "id": 6275,
+      "name": "UGC NET Management",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 720,
+      "id": 6274,
+      "name": "UGC NET Malayalam",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 721,
+      "id": 6273,
+      "name": "UGC NET Linguistics",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 722,
+      "id": 6272,
+      "name": "UGC NET Library Science",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 723,
+      "id": 6271,
+      "name": "UGC NET Library and Information Science Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 724,
+      "id": 6270,
+      "name": "UGC NET Law",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 725,
+      "id": 6269,
+      "name": "UGC NET Labour Welfare and Industrial Relations",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 726,
+      "id": 6268,
+      "name": "UGC NET Kannada",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 727,
+      "id": 6267,
+      "name": "UGC NET Indian Knowledge System",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 728,
+      "id": 6266,
+      "name": "UGC NET Indian Culture",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 729,
+      "id": 6265,
+      "name": "UGC NET Human Science Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 730,
+      "id": 6264,
+      "name": "UGC NET Human Rights & Duties",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 731,
+      "id": 6263,
+      "name": "UGC NET HRM & Labour Welfare",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 732,
+      "id": 6262,
+      "name": "UGC NET Home Science Hindi",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 733,
+      "id": 6261,
+      "name": "UGC NET Home Science",
+      "group": "National Academics - UGC NET Exams"
+    },
+    {
+      "sl": 734,
+      "id": 6260,
+      "name": "UGC NET History Hindi",
+      "group": "National Academics - UGC NET Exams"
+    }
+  ]
+}

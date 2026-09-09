@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-072",
+  "bundle_num": 72,
+  "category_id": "engineering-psu",
+  "category_name": "इंजीनियरिंग & PSU",
+  "category_icon": "⚙️",
+  "title": "इंजीनियरिंग & PSU — Engineering & PSU - Central PSUs & Corporate (Part 2/3)",
+  "total_exams": 60,
+  "boards_included": [
+    "Engineering & PSU - Central PSUs & Corporate"
+  ],
+  "exams": [
+    {
+      "sl": 3928,
+      "id": 3066,
+      "name": "IPRC Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3938,
+      "id": 3056,
+      "name": "IPA Executive Engineer Civil",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3939,
+      "id": 3055,
+      "name": "IPA Assistant Executive Engineer",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 3992,
+      "id": 3002,
+      "name": "Indian Ordnance Factory Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4067,
+      "id": 2927,
+      "name": "India Seeds Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4081,
+      "id": 2913,
+      "name": "IIT Roorkee Group B & C",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4083,
+      "id": 2911,
+      "name": "IIT Mandi Junior Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4084,
+      "id": 2910,
+      "name": "IIT Madras Junior Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4085,
+      "id": 2909,
+      "name": "IIT Kharagpur Junior Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4088,
+      "id": 2906,
+      "name": "IIT JAM Physics",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4089,
+      "id": 2905,
+      "name": "IIT JAM Mathematics",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4090,
+      "id": 2904,
+      "name": "IIT JAM Mathematical Statistics",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4091,
+      "id": 2903,
+      "name": "IIT JAM Geology",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4092,
+      "id": 2902,
+      "name": "IIT JAM Economics",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4093,
+      "id": 2901,
+      "name": "IIT JAM Chemistry",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4094,
+      "id": 2900,
+      "name": "IIT JAM Biotechnology",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4113,
+      "id": 2881,
+      "name": "IGM Junior Technician",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4115,
+      "id": 2879,
+      "name": "IGI Aviation CSA",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4116,
+      "id": 2878,
+      "name": "IGI Aviation",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4117,
+      "id": 2877,
+      "name": "IGCAR Stipendiary Trainee",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4131,
+      "id": 2863,
+      "name": "ICSIL MTS",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4132,
+      "id": 2862,
+      "name": "ICSIL IT Assistant",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4143,
+      "id": 2851,
+      "name": "ICF Apprentice",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4213,
+      "id": 2781,
+      "name": "HVF Junior Technician",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4488,
+      "id": 2506,
+      "name": "HLL HITES",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4668,
+      "id": 2326,
+      "name": "GPNL Animal Husbandry Worker",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4731,
+      "id": 2263,
+      "name": "GATE Textile Engineering and Fibre Science",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4732,
+      "id": 2262,
+      "name": "GATE Statistics",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4733,
+      "id": 2261,
+      "name": "GATE Production and Industrial Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4734,
+      "id": 2260,
+      "name": "GATE Physics",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4735,
+      "id": 2259,
+      "name": "GATE Petroleum Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4738,
+      "id": 2256,
+      "name": "GATE Metallurgical Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4739,
+      "id": 2255,
+      "name": "GATE Mechanical Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4740,
+      "id": 2254,
+      "name": "GATE Mathematics",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4741,
+      "id": 2253,
+      "name": "GATE Life Science",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4742,
+      "id": 2252,
+      "name": "GATE Instrumentation Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4743,
+      "id": 2251,
+      "name": "GATE Geomatics Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4744,
+      "id": 2250,
+      "name": "GATE Geology and Geophysics",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4745,
+      "id": 2249,
+      "name": "GATE General Aptitude & Engineering Mathematics",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4746,
+      "id": 2248,
+      "name": "GATE General Aptitude",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4747,
+      "id": 2247,
+      "name": "GATE Environmental Science and Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4748,
+      "id": 2246,
+      "name": "GATE Engineering Mathematics",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4749,
+      "id": 2245,
+      "name": "GATE Electrical Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4750,
+      "id": 2244,
+      "name": "GATE Ecology and Evolution",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4751,
+      "id": 2243,
+      "name": "GATE ECE",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4752,
+      "id": 2242,
+      "name": "GATE Data Science & Artificial Intelligence",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4753,
+      "id": 2241,
+      "name": "GATE Computer Science",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4754,
+      "id": 2240,
+      "name": "GATE Civil Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4755,
+      "id": 2239,
+      "name": "GATE Chemistry",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4756,
+      "id": 2238,
+      "name": "GATE Chemical Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4757,
+      "id": 2237,
+      "name": "GATE Biotechnology Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4758,
+      "id": 2236,
+      "name": "GATE Biomedical Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4759,
+      "id": 2235,
+      "name": "GATE Architecture and Planning",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4760,
+      "id": 2234,
+      "name": "GATE Agricultural Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4761,
+      "id": 2233,
+      "name": "GATE Aerospace Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4799,
+      "id": 2195,
+      "name": "FLAT Trade Apprentice Exam",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4808,
+      "id": 2186,
+      "name": "FCRI Trainee Engineer Graduate and Diploma Mechanical",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4809,
+      "id": 2185,
+      "name": "FCRI Trainee Engineer Graduate and Diploma Instrumentation",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4903,
+      "id": 2091,
+      "name": "eLitmus",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    },
+    {
+      "sl": 4906,
+      "id": 2088,
+      "name": "Electrical Engineering",
+      "group": "Engineering & PSU - Central PSUs & Corporate Exams"
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "bundle_number": 122,
+  "bundle_id": "raw_bundle_122",
+  "range": "6051 - 6100",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 6051,
+      "group_sl": 6048,
+      "exam_id": 946,
+      "name": "BOB SO Manager Forex Acquisition & Relationship",
+      "group": "Banking & Finance - BOB Exams"
+    },
+    {
+      "global_sl": 6052,
+      "group_sl": 6049,
+      "exam_id": 945,
+      "name": "BOB Senior Relationship Manager",
+      "group": "Banking & Finance - BOB Exams"
+    },
+    {
+      "global_sl": 6053,
+      "group_sl": 6050,
+      "exam_id": 944,
+      "name": "BOB IT Manager Server Administrator",
+      "group": "Banking & Finance - BOB Exams"
+    },
+    {
+      "global_sl": 6054,
+      "group_sl": 6055,
+      "exam_id": 939,
+      "name": "BMRCL Station Controller",
+      "group": "Karnataka BMRCL Metro Exams"
+    },
+    {
+      "global_sl": 6055,
+      "group_sl": 6056,
+      "exam_id": 938,
+      "name": "BMRCL Section Engineer",
+      "group": "Karnataka BMRCL Metro Exams"
+    },
+    {
+      "global_sl": 6056,
+      "group_sl": 6057,
+      "exam_id": 937,
+      "name": "BMRCL Maintainer",
+      "group": "Karnataka BMRCL Metro Exams"
+    },
+    {
+      "global_sl": 6057,
+      "group_sl": 6058,
+      "exam_id": 936,
+      "name": "BMRCL JE",
+      "group": "Karnataka BMRCL Metro Exams"
+    },
+    {
+      "global_sl": 6058,
+      "group_sl": 155,
+      "exam_id": 6839,
+      "name": "VNMKV Peon",
+      "group": "Maharashtra VNMKV Exams"
+    },
+    {
+      "global_sl": 6059,
+      "group_sl": 156,
+      "exam_id": 6838,
+      "name": "VNMKV Junior Clerk",
+      "group": "Maharashtra VNMKV Exams"
+    },
+    {
+      "global_sl": 6060,
+      "group_sl": 157,
+      "exam_id": 6837,
+      "name": "VNMKV Agricultural Assistant",
+      "group": "Maharashtra VNMKV Exams"
+    },
+    {
+      "global_sl": 6061,
+      "group_sl": 184,
+      "exam_id": 6810,
+      "name": "Uttarakhand TET Social Studies",
+      "group": "Uttarakhand TET Exams"
+    },
+    {
+      "global_sl": 6062,
+      "group_sl": 185,
+      "exam_id": 6809,
+      "name": "Uttarakhand TET Paper 1",
+      "group": "Uttarakhand TET Exams"
+    },
+    {
+      "global_sl": 6063,
+      "group_sl": 186,
+      "exam_id": 6808,
+      "name": "Uttarakhand TET Mathematics & Science",
+      "group": "Uttarakhand TET Exams"
+    },
+    {
+      "global_sl": 6064,
+      "group_sl": 229,
+      "exam_id": 6765,
+      "name": "UPTET Maths and Science",
+      "group": "General Subjects - Quantitative Aptitude"
+    },
+    {
+      "global_sl": 6065,
+      "group_sl": 1946,
+      "exam_id": 5048,
+      "name": "Quantitative Aptitude Sectional Test",
+      "group": "General Subjects - Quantitative Aptitude"
+    },
+    {
+      "global_sl": 6066,
+      "group_sl": 1948,
+      "exam_id": 5046,
+      "name": "Quantitative Aptitude and Numerical Ability",
+      "group": "General Subjects - Quantitative Aptitude"
+    },
+    {
+      "global_sl": 6067,
+      "group_sl": 611,
+      "exam_id": 6383,
+      "name": "UKPSC Polytechnic Lecturer Pharmacy",
+      "group": "Uttarakhand Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6068,
+      "group_sl": 779,
+      "exam_id": 6215,
+      "name": "UBTER Staff Nurse",
+      "group": "Uttarakhand Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6069,
+      "group_sl": 4841,
+      "exam_id": 2153,
+      "name": "ESIC UK Staff Nurse Pharmacist",
+      "group": "Uttarakhand Medical & Nursing Exams"
+    },
+    {
+      "global_sl": 6070,
+      "group_sl": 848,
+      "exam_id": 6146,
+      "name": "TS TET Social Studies",
+      "group": "Telangana TET Exams"
+    },
+    {
+      "global_sl": 6071,
+      "group_sl": 849,
+      "exam_id": 6145,
+      "name": "TS TET Paper 1",
+      "group": "Telangana TET Exams"
+    },
+    {
+      "global_sl": 6072,
+      "group_sl": 850,
+      "exam_id": 6144,
+      "name": "TS TET Mathematics & Science",
+      "group": "Telangana TET Exams"
+    },
+    {
+      "global_sl": 6073,
+      "group_sl": 879,
+      "exam_id": 6115,
+      "name": "Tripura TET Social Studies",
+      "group": "Tripura TET Exams"
+    },
+    {
+      "global_sl": 6074,
+      "group_sl": 880,
+      "exam_id": 6114,
+      "name": "Tripura TET Paper 1",
+      "group": "Tripura TET Exams"
+    },
+    {
+      "global_sl": 6075,
+      "group_sl": 881,
+      "exam_id": 6113,
+      "name": "Tripura TET Mathematics & Science",
+      "group": "Tripura TET Exams"
+    },
+    {
+      "global_sl": 6076,
+      "group_sl": 882,
+      "exam_id": 6112,
+      "name": "Tripura Police Riflemen",
+      "group": "Tripura Police & Security Exams"
+    },
+    {
+      "global_sl": 6077,
+      "group_sl": 883,
+      "exam_id": 6111,
+      "name": "Tripura Police Constable",
+      "group": "Tripura Police & Security Exams"
+    },
+    {
+      "global_sl": 6078,
+      "group_sl": 888,
+      "exam_id": 6106,
+      "name": "Tripura Forest Guard",
+      "group": "Tripura Police & Security Exams"
+    },
+    {
+      "global_sl": 6079,
+      "group_sl": 1034,
+      "exam_id": 5960,
+      "name": "TN TET Social Studies",
+      "group": "Tamil Nadu TET Exams"
+    },
+    {
+      "global_sl": 6080,
+      "group_sl": 1035,
+      "exam_id": 5959,
+      "name": "TN TET Paper 1",
+      "group": "Tamil Nadu TET Exams"
+    },
+    {
+      "global_sl": 6081,
+      "group_sl": 1036,
+      "exam_id": 5958,
+      "name": "TN TET Mathematics and Science",
+      "group": "Tamil Nadu TET Exams"
+    },
+    {
+      "global_sl": 6082,
+      "group_sl": 1203,
+      "exam_id": 5791,
+      "name": "SSC JE Mechanical Engineer",
+      "group": "Staff Selection Commission - SSC JE Exams"
+    },
+    {
+      "global_sl": 6083,
+      "group_sl": 1204,
+      "exam_id": 5790,
+      "name": "SSC JE Electrical Engineering",
+      "group": "Staff Selection Commission - SSC JE Exams"
+    },
+    {
+      "global_sl": 6084,
+      "group_sl": 1205,
+      "exam_id": 5789,
+      "name": "SSC JE Civil Engineering",
+      "group": "Staff Selection Commission - SSC JE Exams"
+    },
+    {
+      "global_sl": 6085,
+      "group_sl": 1260,
+      "exam_id": 5734,
+      "name": "SSA Assam CRCC",
+      "group": "Assam Teaching & School Exams"
+    },
+    {
+      "global_sl": 6086,
+      "group_sl": 5178,
+      "exam_id": 1816,
+      "name": "DEE Assam Teacher",
+      "group": "Assam Teaching & School Exams"
+    },
+    {
+      "global_sl": 6087,
+      "group_sl": 5179,
+      "exam_id": 1815,
+      "name": "DEE Assam Assistant Teacher",
+      "group": "Assam Teaching & School Exams"
+    },
+    {
+      "global_sl": 6088,
+      "group_sl": 1269,
+      "exam_id": 5725,
+      "name": "SPMCIL Supervisor",
+      "group": "Engineering & PSU - SPMCIL Exams"
+    },
+    {
+      "global_sl": 6089,
+      "group_sl": 1270,
+      "exam_id": 5724,
+      "name": "SPMCIL Junior Technician",
+      "group": "Engineering & PSU - SPMCIL Exams"
+    },
+    {
+      "global_sl": 6090,
+      "group_sl": 1271,
+      "exam_id": 5723,
+      "name": "SPMCIL Assistant Manager",
+      "group": "Engineering & PSU - SPMCIL Exams"
+    },
+    {
+      "global_sl": 6091,
+      "group_sl": 1314,
+      "exam_id": 5680,
+      "name": "Sikkim TET Social Studies",
+      "group": "Sikkim TET Exams"
+    },
+    {
+      "global_sl": 6092,
+      "group_sl": 1315,
+      "exam_id": 5679,
+      "name": "Sikkim TET Paper 1",
+      "group": "Sikkim TET Exams"
+    },
+    {
+      "global_sl": 6093,
+      "group_sl": 1316,
+      "exam_id": 5678,
+      "name": "Sikkim TET Maths and Science",
+      "group": "Sikkim TET Exams"
+    },
+    {
+      "global_sl": 6094,
+      "group_sl": 1430,
+      "exam_id": 5564,
+      "name": "SAMEER Project Technical Assistant",
+      "group": "Engineering & PSU - SAMEER Exams"
+    },
+    {
+      "global_sl": 6095,
+      "group_sl": 1431,
+      "exam_id": 5563,
+      "name": "SAMEER Project Scientific Assistant",
+      "group": "Engineering & PSU - SAMEER Exams"
+    },
+    {
+      "global_sl": 6096,
+      "group_sl": 1432,
+      "exam_id": 5562,
+      "name": "SAMEER Project Engineer",
+      "group": "Engineering & PSU - SAMEER Exams"
+    },
+    {
+      "global_sl": 6097,
+      "group_sl": 1571,
+      "exam_id": 5423,
+      "name": "RRVUNL JE Mechanical",
+      "group": "Rajasthan RRVUNL Exams"
+    },
+    {
+      "global_sl": 6098,
+      "group_sl": 1572,
+      "exam_id": 5422,
+      "name": "RRVUNL JE Electrical",
+      "group": "Rajasthan RRVUNL Exams"
+    },
+    {
+      "global_sl": 6099,
+      "group_sl": 1573,
+      "exam_id": 5421,
+      "name": "RRVUNL JE Control & Instrumentation, Communication",
+      "group": "Rajasthan RRVUNL Exams"
+    },
+    {
+      "global_sl": 6100,
+      "group_sl": 1754,
+      "exam_id": 5240,
+      "name": "RMC Sub Officer",
+      "group": "Gujarat RMC Municipal Corporation Exams"
+    }
+  ]
+}

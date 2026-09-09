@@ -1,0 +1,376 @@
+{
+  "bundle_id": "bundle-068",
+  "bundle_num": 68,
+  "category_id": "teaching",
+  "category_name": "केंद्रीय शिक्षण",
+  "category_icon": "📚",
+  "title": "केंद्रीय शिक्षण — National Academics - ICAR • Chhattisgarh Teaching & School • Karnataka Teaching & School",
+  "total_exams": 60,
+  "boards_included": [
+    "National Academics - ICAR",
+    "Chhattisgarh Teaching & School",
+    "Karnataka Teaching & School"
+  ],
+  "exams": [
+    {
+      "sl": 26,
+      "id": 6968,
+      "name": "WCD Mysuru Anganwadi Worker & Helper",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 27,
+      "id": 6967,
+      "name": "WCD Kolar Anganwadi Helper",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 28,
+      "id": 6966,
+      "name": "WCD Karnataka Anganwadi",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 31,
+      "id": 6963,
+      "name": "WCD Davanagere Anganwadi Helper",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 32,
+      "id": 6962,
+      "name": "WCD Chikkaballapur Anganwadi Helper",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 1372,
+      "id": 5622,
+      "name": "SED Karnataka Primary Guest Teacher",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3426,
+      "id": 3568,
+      "name": "KSET Physical Education",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3443,
+      "id": 3551,
+      "name": "KSET Education",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3462,
+      "id": 3532,
+      "name": "KPSC Lecturer",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3479,
+      "id": 3515,
+      "name": "KPSC Assistant Professor",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3549,
+      "id": 3445,
+      "name": "KEA Assistant Professor Management",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3550,
+      "id": 3444,
+      "name": "KEA Assistant Professor Economics",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3551,
+      "id": 3443,
+      "name": "KEA Assistant Professor Computer Science",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3552,
+      "id": 3442,
+      "name": "KEA Assistant Professor Commerce",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3553,
+      "id": 3441,
+      "name": "KEA Assistant Professor (Sociology)",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3554,
+      "id": 3440,
+      "name": "KEA Assistant Professor (Political Science)",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3555,
+      "id": 3439,
+      "name": "KEA Assistant Professor (Physics)",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3556,
+      "id": 3438,
+      "name": "KEA Assistant Professor (Mathematics)",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3557,
+      "id": 3437,
+      "name": "KEA Assistant Professor (History)",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3558,
+      "id": 3436,
+      "name": "KEA Assistant Professor (English)",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 3559,
+      "id": 3435,
+      "name": "KEA Assistant Professor (Chemistry)",
+      "group": "Karnataka Teaching & School Exams"
+    },
+    {
+      "sl": 4151,
+      "id": 2843,
+      "name": "ICAR PG Horticulture",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4152,
+      "id": 2842,
+      "name": "ICAR PG Dairy Science",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4154,
+      "id": 2840,
+      "name": "ICAR JRF Entomology and Nematology",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4155,
+      "id": 2839,
+      "name": "ICAR IARI Technician",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4156,
+      "id": 2838,
+      "name": "ICAR IARI Assistant",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4157,
+      "id": 2837,
+      "name": "ICAR Home Science",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4158,
+      "id": 2836,
+      "name": "ICAR Forestry, Agroforestry & Silviculture",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4159,
+      "id": 2835,
+      "name": "ICAR Fisheries Science",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4160,
+      "id": 2834,
+      "name": "ICAR AIEEA UG PCM",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4161,
+      "id": 2833,
+      "name": "ICAR AIEEA UG PCB",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4162,
+      "id": 2832,
+      "name": "ICAR AIEEA UG PCA",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4163,
+      "id": 2831,
+      "name": "ICAR AIEEA PG Social Science",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4164,
+      "id": 2830,
+      "name": "ICAR AIEEA PG Plant Science",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4165,
+      "id": 2829,
+      "name": "ICAR AIEEA PG Plant Biotechnology",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4166,
+      "id": 2828,
+      "name": "ICAR AIEEA PG Physical Science",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4167,
+      "id": 2827,
+      "name": "ICAR AIEEA Food Science and Technology",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4168,
+      "id": 2826,
+      "name": "ICAR Agriculture Statistics",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4169,
+      "id": 2825,
+      "name": "ICAR Agriculture Science",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4170,
+      "id": 2824,
+      "name": "ICAR Agriculture Economics",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 4171,
+      "id": 2823,
+      "name": "ICAR Agri Business Management",
+      "group": "National Academics - ICAR Exams"
+    },
+    {
+      "sl": 5669,
+      "id": 1325,
+      "name": "CGPSC Assistant Professor Physics",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5670,
+      "id": 1324,
+      "name": "CGPSC Assistant Professor Mathematics",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5671,
+      "id": 1323,
+      "name": "CGPSC Assistant Professor Law",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5672,
+      "id": 1322,
+      "name": "CGPSC Assistant Professor History",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5673,
+      "id": 1321,
+      "name": "CGPSC Assistant Professor Hindi",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5674,
+      "id": 1320,
+      "name": "CGPSC Assistant Professor Geography",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5675,
+      "id": 1319,
+      "name": "CGPSC Assistant Professor English",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5676,
+      "id": 1318,
+      "name": "CGPSC Assistant Professor Computer Science",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5677,
+      "id": 1317,
+      "name": "CGPSC Assistant Professor Commerce",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5678,
+      "id": 1316,
+      "name": "CGPSC Assistant Professor Chemistry",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5679,
+      "id": 1315,
+      "name": "CGPSC Assistant Professor Botany",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5680,
+      "id": 1314,
+      "name": "CGPSC Assistant Professor (Zoology)",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5681,
+      "id": 1313,
+      "name": "CGPSC Assistant Professor (Social Studies)",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5682,
+      "id": 1312,
+      "name": "CGPSC Assistant Professor (Sanskrit)",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5683,
+      "id": 1311,
+      "name": "CGPSC Assistant Professor (Psychology)",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5684,
+      "id": 1310,
+      "name": "CGPSC Assistant Professor (Home Science)",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5685,
+      "id": 1309,
+      "name": "CGPSC Assistant Professor (Economics)",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5724,
+      "id": 1270,
+      "name": "CG SET Physical Education",
+      "group": "Chhattisgarh Teaching & School Exams"
+    },
+    {
+      "sl": 5738,
+      "id": 1256,
+      "name": "CG Pre DElEd",
+      "group": "Chhattisgarh Teaching & School Exams"
+    }
+  ]
+}

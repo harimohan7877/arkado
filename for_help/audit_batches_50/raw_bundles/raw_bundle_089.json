@@ -1,0 +1,358 @@
+{
+  "bundle_number": 89,
+  "bundle_id": "raw_bundle_089",
+  "range": "4401 - 4450",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 4401,
+      "group_sl": 1175,
+      "exam_id": 5819,
+      "name": "Statistics",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4402,
+      "group_sl": 1176,
+      "exam_id": 5818,
+      "name": "Static GK",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4403,
+      "group_sl": 1949,
+      "exam_id": 5045,
+      "name": "Python",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4404,
+      "group_sl": 2132,
+      "exam_id": 4862,
+      "name": "Physical Education",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4405,
+      "group_sl": 3196,
+      "exam_id": 3798,
+      "name": "Mass Communication",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4406,
+      "group_sl": 3322,
+      "exam_id": 3672,
+      "name": "Lakshadweep General Knowledge",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4407,
+      "group_sl": 3326,
+      "exam_id": 3668,
+      "name": "Ladakh GK",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4408,
+      "group_sl": 3982,
+      "exam_id": 3012,
+      "name": "Indian Penal Code",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4409,
+      "group_sl": 4715,
+      "exam_id": 2279,
+      "name": "General Knowledge Sectional Test",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4410,
+      "group_sl": 4720,
+      "exam_id": 2274,
+      "name": "General Knowledge",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4411,
+      "group_sl": 4909,
+      "exam_id": 2085,
+      "name": "Education",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4412,
+      "group_sl": 5251,
+      "exam_id": 1743,
+      "name": "Daman & Diu General Knowledge",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4413,
+      "group_sl": 5252,
+      "exam_id": 1742,
+      "name": "Dadra and Nagar Haveli General Knowledge",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4414,
+      "group_sl": 5268,
+      "exam_id": 1726,
+      "name": "Current Affairs",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4415,
+      "group_sl": 5553,
+      "exam_id": 1441,
+      "name": "Code of Criminal Procedure",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4416,
+      "group_sl": 6277,
+      "exam_id": 717,
+      "name": "Bharatiya Sakshya Adhiniyam",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4417,
+      "group_sl": 6278,
+      "exam_id": 716,
+      "name": "Bharatiya Nyaya Sanhita",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4418,
+      "group_sl": 6279,
+      "exam_id": 715,
+      "name": "Bharatiya Nagarik Suraksha Sanhita",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4419,
+      "group_sl": 6460,
+      "exam_id": 534,
+      "name": "Aviation Knowledge",
+      "group": "General Subjects - General Knowledge & Miscellaneous Studies"
+    },
+    {
+      "global_sl": 4420,
+      "group_sl": 1390,
+      "exam_id": 5604,
+      "name": "SCR Junior Engineer",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4421,
+      "group_sl": 1576,
+      "exam_id": 5418,
+      "name": "RRC WR Junior Engineer",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4422,
+      "group_sl": 1588,
+      "exam_id": 5406,
+      "name": "RRC GDCE JE Electrical",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4423,
+      "group_sl": 1615,
+      "exam_id": 5379,
+      "name": "RRB Junior Engineer Works",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4424,
+      "group_sl": 1616,
+      "exam_id": 5378,
+      "name": "RRB Junior Engineer Signal and Telecommunications",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4425,
+      "group_sl": 1617,
+      "exam_id": 5377,
+      "name": "RRB Junior Engineer P Way",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4426,
+      "group_sl": 1618,
+      "exam_id": 5376,
+      "name": "RRB Junior Engineer Mechanical Workshop",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4427,
+      "group_sl": 1619,
+      "exam_id": 5375,
+      "name": "RRB Junior Engineer Electrical TRS",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4428,
+      "group_sl": 1620,
+      "exam_id": 5374,
+      "name": "RRB Junior Engineer Electrical TRD",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4429,
+      "group_sl": 1621,
+      "exam_id": 5373,
+      "name": "RRB Junior Engineer Diesel Mechanical",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4430,
+      "group_sl": 1622,
+      "exam_id": 5372,
+      "name": "RRB Junior Engineer Diesel Electrical",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4431,
+      "group_sl": 1623,
+      "exam_id": 5371,
+      "name": "RRB Junior Engineer Carriage and Wagon",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4432,
+      "group_sl": 1624,
+      "exam_id": 5370,
+      "name": "RRB JE Track Machine",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4433,
+      "group_sl": 1625,
+      "exam_id": 5369,
+      "name": "RRB JE Production Technology",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4434,
+      "group_sl": 1626,
+      "exam_id": 5368,
+      "name": "RRB JE Mechanical",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4435,
+      "group_sl": 1627,
+      "exam_id": 5367,
+      "name": "RRB JE Electronics Telecommunication",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4436,
+      "group_sl": 1628,
+      "exam_id": 5366,
+      "name": "RRB JE Electrical",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4437,
+      "group_sl": 1629,
+      "exam_id": 5365,
+      "name": "RRB JE Depot Material Superintendent",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4438,
+      "group_sl": 1630,
+      "exam_id": 5364,
+      "name": "RRB JE Civil",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4439,
+      "group_sl": 1631,
+      "exam_id": 5363,
+      "name": "RRB JE Chemical and Metallurgical Assistant",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4440,
+      "group_sl": 1632,
+      "exam_id": 5362,
+      "name": "RRB JE",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4441,
+      "group_sl": 2721,
+      "exam_id": 4273,
+      "name": "NCRTC JE",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4442,
+      "group_sl": 3455,
+      "exam_id": 3539,
+      "name": "KRCL JE",
+      "group": "National Railways - RRB JE Exams"
+    },
+    {
+      "global_sl": 4443,
+      "group_sl": 14,
+      "exam_id": 6980,
+      "name": "Western Naval Command Chargeman",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4444,
+      "group_sl": 2749,
+      "exam_id": 4245,
+      "name": "Naval Ship Repair Yard Tradesman",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4445,
+      "group_sl": 2750,
+      "exam_id": 4244,
+      "name": "Naval Ship Repair Yard Karwar Apprentice",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4446,
+      "group_sl": 2751,
+      "exam_id": 4243,
+      "name": "Naval Ship Repair Yard Apprentice",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4447,
+      "group_sl": 3980,
+      "exam_id": 3014,
+      "name": "INET",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4448,
+      "group_sl": 3993,
+      "exam_id": 3001,
+      "name": "Indian Navy Tradesman Skilled Apprentice",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4449,
+      "group_sl": 3994,
+      "exam_id": 3000,
+      "name": "Indian Navy Tradesman Mate",
+      "group": "Defence & Security - Indian Navy Exams"
+    },
+    {
+      "global_sl": 4450,
+      "group_sl": 3996,
+      "exam_id": 2998,
+      "name": "Indian Navy Senior Draughtsman",
+      "group": "Defence & Security - Indian Navy Exams"
+    }
+  ]
+}

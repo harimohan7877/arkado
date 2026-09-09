@@ -1,0 +1,436 @@
+{
+  "bundle_id": "bundle-045",
+  "bundle_num": 45,
+  "category_id": "banking",
+  "category_name": "बैंकिंग एवं वित्त",
+  "category_icon": "🏦",
+  "title": "बैंकिंग एवं वित्त — Maharashtra Cooperative Bank • Banking & Finance - Insurance • Banking & Finance - Bank of Baroda",
+  "total_exams": 70,
+  "boards_included": [
+    "Maharashtra Cooperative Bank",
+    "Banking & Finance - Insurance",
+    "Banking & Finance - Bank of Baroda"
+  ],
+  "exams": [
+    {
+      "sl": 6400,
+      "id": 594,
+      "name": "Bank of Baroda SO Manager Security",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6401,
+      "id": 593,
+      "name": "Bank of Baroda Senior Manager MSME Relationship",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6402,
+      "id": 592,
+      "name": "Bank of Baroda Senior Manager Credit Analyst",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6403,
+      "id": 591,
+      "name": "Bank of Baroda Senior Manager",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6404,
+      "id": 590,
+      "name": "Bank of Baroda PO",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6405,
+      "id": 589,
+      "name": "Bank of Baroda Office Assistant",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6406,
+      "id": 588,
+      "name": "Bank of Baroda MSME Relationship",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6407,
+      "id": 587,
+      "name": "Bank of Baroda Manager Trade Finance Operations",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6408,
+      "id": 586,
+      "name": "Bank of Baroda Manager Sales",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6409,
+      "id": 585,
+      "name": "Bank of Baroda Manager Information Security",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6410,
+      "id": 584,
+      "name": "Bank of Baroda Manager Forex Acquisition and Relationship",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6411,
+      "id": 583,
+      "name": "Bank of Baroda Manager Credit Analyst",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6412,
+      "id": 582,
+      "name": "Bank of Baroda Manager",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6413,
+      "id": 581,
+      "name": "Bank of Baroda LBO",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6414,
+      "id": 580,
+      "name": "Bank of Baroda IT Senior Manager Developer",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6415,
+      "id": 579,
+      "name": "Bank of Baroda IT Senior Manager",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6416,
+      "id": 578,
+      "name": "Bank of Baroda IT Manager Storage Administrator and Backup",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6417,
+      "id": 577,
+      "name": "Bank of Baroda IT Manager Network Administrator",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6418,
+      "id": 576,
+      "name": "Bank of Baroda IT Manager Cloud Engineer",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6419,
+      "id": 575,
+      "name": "Bank of Baroda IT API Developer",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6420,
+      "id": 574,
+      "name": "Bank of Baroda IT AI Engineer",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6421,
+      "id": 573,
+      "name": "Bank of Baroda Fire Safety Officer",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6422,
+      "id": 572,
+      "name": "Bank of Baroda Assistant Manager MSME Sales",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6423,
+      "id": 571,
+      "name": "Bank of Baroda Apprentice",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6424,
+      "id": 570,
+      "name": "Bank of Baroda AO",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6425,
+      "id": 569,
+      "name": "Bank of Baroda Agriculture Marketing Officer",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 6426,
+      "id": 568,
+      "name": "Bank of Baroda Agriculture Marketing Manager",
+      "group": "Banking & Finance - Bank of Baroda Exams"
+    },
+    {
+      "sl": 669,
+      "id": 6325,
+      "name": "UIIC Assistant",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 670,
+      "id": 6324,
+      "name": "UIIC AO",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2342,
+      "id": 4652,
+      "name": "OICL Assistant",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2343,
+      "id": 4651,
+      "name": "OICL AO Accounts",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2344,
+      "id": 4650,
+      "name": "OICL AO",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2345,
+      "id": 4649,
+      "name": "OICL Administrative Officer Generalist",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2570,
+      "id": 4424,
+      "name": "NICL Assistant",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2571,
+      "id": 4423,
+      "name": "NICL AO Specialist Legal",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2572,
+      "id": 4422,
+      "name": "NICL AO Specialist Information Technology",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2573,
+      "id": 4421,
+      "name": "NICL AO Specialist Finance",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2574,
+      "id": 4420,
+      "name": "NICL AO Specialist Automobile Engineers",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2575,
+      "id": 4419,
+      "name": "NICL AO",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2577,
+      "id": 4417,
+      "name": "NIACL Assistant",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2578,
+      "id": 4416,
+      "name": "NIACL Apprentice",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2579,
+      "id": 4415,
+      "name": "NIACL AO Risk Engineers",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2580,
+      "id": 4414,
+      "name": "NIACL AO Legal Specialists",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2581,
+      "id": 4413,
+      "name": "NIACL AO IT Specialists",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2582,
+      "id": 4412,
+      "name": "NIACL AO Health",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2583,
+      "id": 4411,
+      "name": "NIACL AO Business Analysts",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2584,
+      "id": 4410,
+      "name": "NIACL AO Automobile Engineers",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2585,
+      "id": 4409,
+      "name": "NIACL AO Accounts",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 2586,
+      "id": 4408,
+      "name": "NIACL AO",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 3924,
+      "id": 3070,
+      "name": "IRDAI Assistant Manager",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 3978,
+      "id": 3016,
+      "name": "Insurance Exams",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 4701,
+      "id": 2293,
+      "name": "GIC Assistant Manager",
+      "group": "Banking & Finance - Insurance Exams"
+    },
+    {
+      "sl": 4,
+      "id": 6990,
+      "name": "YDCC Junior Clerk",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 1076,
+      "id": 5918,
+      "name": "TJSB Sahakari Bank Trainee Officer",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 1098,
+      "id": 5896,
+      "name": "Thane DCC Bank Junior Clerk, Peon",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 1311,
+      "id": 5683,
+      "name": "Sindhudurg DCCB Clerk",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 1429,
+      "id": 5565,
+      "name": "Sangli DCC Junior Assistant",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 1951,
+      "id": 5043,
+      "name": "Pusad Urban Cooperative Bank",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 2022,
+      "id": 4972,
+      "name": "Pune Peoples Cooperative Bank Clerk",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 2184,
+      "id": 4810,
+      "name": "PDCC Bank Sipahi, Driver",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 2185,
+      "id": 4809,
+      "name": "PDCC Bank Clerk",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 3215,
+      "id": 3779,
+      "name": "Malegaon Merchants Cooperative Bank Clerk",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 3314,
+      "id": 3680,
+      "name": "LDCC Bank Peon",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 3315,
+      "id": 3679,
+      "name": "LDCC Bank Clerk",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 3854,
+      "id": 3140,
+      "name": "JDCC Bank Clerk",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 6390,
+      "id": 604,
+      "name": "Bank of Maharashtra Sub Staff",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 6391,
+      "id": 603,
+      "name": "Bank of Maharashtra SO Senior Manager",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 6392,
+      "id": 602,
+      "name": "Bank of Maharashtra SO",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 6393,
+      "id": 601,
+      "name": "Bank of Maharashtra Generalist Officer",
+      "group": "Maharashtra Cooperative Bank Exams"
+    },
+    {
+      "sl": 6394,
+      "id": 600,
+      "name": "Bank of Maharashtra Credit Officer",
+      "group": "Maharashtra Cooperative Bank Exams"
+    }
+  ]
+}

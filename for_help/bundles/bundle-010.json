@@ -1,0 +1,65 @@
+{
+  "bundle_id": "bundle-010",
+  "bundle_num": 10,
+  "category_id": "uttar-pradesh",
+  "category_name": "उत्तर प्रदेश",
+  "category_icon": "🟢",
+  "title": "उत्तर प्रदेश — UP माध्यमिक एवं बेसिक शिक्षा बोर्ड",
+  "total_exams": 5,
+  "boards_included": [
+    "UP Shiksha"
+  ],
+  "official_portal": "https://updeled.gov.in",
+  "exams": [
+    {
+      "id": 6522,
+      "name": "UP TGT शिक्षक भर्ती (प्रशिक्षित स्नातक)",
+      "eligibility": "संबंधित विषय में स्नातक + B.Ed",
+      "age_limit": "21-60 वर्ष",
+      "applicant_scale": "8+ लाख",
+      "exam_pattern": "125 प्रश्न • 500 अंक • 2 घंटे",
+      "viral_subtext": "अशासकीय सहायता प्राप्त विद्यालय (सभी 14 विषय)",
+      "status": "verified"
+    },
+    {
+      "id": 6493,
+      "name": "UP PGT प्रवक्ता भर्ती (पोस्ट ग्रेजुएट टीचर)",
+      "eligibility": "संबंधित विषय में स्नातकोत्तर (PG)",
+      "age_limit": "21-60 वर्ष",
+      "applicant_scale": "4.5 लाख",
+      "exam_pattern": "लिखित परीक्षा (425) + साक्षात्कार (50) + विशेष योग्यता (25)",
+      "viral_subtext": "इंटर कॉलेज प्रवक्ता (सभी 23 विषय)",
+      "status": "verified"
+    },
+    {
+      "id": 2007,
+      "name": "UP प्राथमिक सुपर टेट (Super TET / सहायक अध्यापक)",
+      "eligibility": "स्नातक + D.El.Ed / B.Ed + UPTET/CTET",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "10+ लाख",
+      "exam_pattern": "150 प्रश्न • 150 अंक (14 खंड)",
+      "viral_subtext": "बेसिक शिक्षा परिषद 69,000+ प्राथमिक शिक्षक",
+      "status": "verified"
+    },
+    {
+      "id": 2008,
+      "name": "UPTET पात्रता परीक्षा (Paper 1 & Paper 2)",
+      "eligibility": "D.El.Ed / B.Ed",
+      "age_limit": "18+ वर्ष",
+      "applicant_scale": "15+ लाख",
+      "exam_pattern": "150 प्रश्न • 150 अंक • 150 मिनट",
+      "viral_subtext": "उत्तर प्रदेश शिक्षक पात्रता परीक्षा",
+      "status": "verified"
+    },
+    {
+      "id": 6455,
+      "name": "UP जूनियर एडेड हाईस्कूल सहायक अध्यापक व प्रधानाध्यापक",
+      "eligibility": "स्नातक + B.Ed / D.El.Ed + जूनियर TET",
+      "age_limit": "21-40 वर्ष",
+      "applicant_scale": "3+ लाख",
+      "exam_pattern": "सामान्य ज्ञान (50) + संबंधित विषय (100)",
+      "viral_subtext": "जूनियर हाईस्कूल शिक्षक",
+      "status": "verified"
+    }
+  ]
+}

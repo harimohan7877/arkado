@@ -1,0 +1,358 @@
+{
+  "bundle_number": 18,
+  "bundle_id": "raw_bundle_018",
+  "range": "851 - 900",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 851,
+      "group_sl": 6072,
+      "exam_id": 922,
+      "name": "BIS ASO",
+      "group": "Central Govt - General Civil Services Exams"
+    },
+    {
+      "global_sl": 852,
+      "group_sl": 163,
+      "exam_id": 6831,
+      "name": "VMGMC Solapur Group D",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 853,
+      "group_sl": 1139,
+      "exam_id": 5855,
+      "name": "TDC Maharashtra Watchman",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 854,
+      "group_sl": 2023,
+      "exam_id": 4971,
+      "name": "Pune DPT JE",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 855,
+      "group_sl": 2024,
+      "exam_id": 4970,
+      "name": "Pune Customs Group C",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 856,
+      "group_sl": 2025,
+      "exam_id": 4969,
+      "name": "Pune Cantonment Board Junior Clerk",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 857,
+      "group_sl": 2715,
+      "exam_id": 4279,
+      "name": "NDY Mumbai Tradesman",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 858,
+      "group_sl": 2716,
+      "exam_id": 4278,
+      "name": "NDA Pune Group C MTS",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 859,
+      "group_sl": 2717,
+      "exam_id": 4277,
+      "name": "NDA Pune Group C LDC",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 860,
+      "group_sl": 2753,
+      "exam_id": 4241,
+      "name": "Naval Dockyard Mumbai MTS",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 861,
+      "group_sl": 2754,
+      "exam_id": 4240,
+      "name": "Naval Dockyard Mumbai Chargeman",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 862,
+      "group_sl": 2755,
+      "exam_id": 4239,
+      "name": "Naval Dockyard Mumbai Apprentice",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 863,
+      "group_sl": 2786,
+      "exam_id": 4208,
+      "name": "Mumbai Customs",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 864,
+      "group_sl": 2790,
+      "exam_id": 4204,
+      "name": "MSWC Assistant, Storekeeper",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 865,
+      "group_sl": 2792,
+      "exam_id": 4202,
+      "name": "MSSC MTS",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 866,
+      "group_sl": 2796,
+      "exam_id": 4198,
+      "name": "MSRLM Block Manager",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 867,
+      "group_sl": 2797,
+      "exam_id": 4197,
+      "name": "MSRLM Admin Assistant, DEO",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 868,
+      "group_sl": 2812,
+      "exam_id": 4182,
+      "name": "MPSC Tax Assistant",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 869,
+      "group_sl": 2813,
+      "exam_id": 4181,
+      "name": "MPSC Sub Register",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 870,
+      "group_sl": 2814,
+      "exam_id": 4180,
+      "name": "MPSC STI",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 871,
+      "group_sl": 2815,
+      "exam_id": 4179,
+      "name": "MPSC Stenographer",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 872,
+      "group_sl": 2816,
+      "exam_id": 4178,
+      "name": "MPSC Section Officer",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 873,
+      "group_sl": 2817,
+      "exam_id": 4177,
+      "name": "MPSC RTO",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 874,
+      "group_sl": 2818,
+      "exam_id": 4176,
+      "name": "MPSC Rajyaseva",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 875,
+      "group_sl": 2822,
+      "exam_id": 4172,
+      "name": "MPSC LDO",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 876,
+      "group_sl": 2823,
+      "exam_id": 4171,
+      "name": "MPSC Industry Inspector",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 877,
+      "group_sl": 2824,
+      "exam_id": 4170,
+      "name": "MPSC Group C",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 878,
+      "group_sl": 2826,
+      "exam_id": 4168,
+      "name": "MPSC Excise Sub Inspector",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 879,
+      "group_sl": 2827,
+      "exam_id": 4167,
+      "name": "MPSC Engineering Service",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 880,
+      "group_sl": 2828,
+      "exam_id": 4166,
+      "name": "MPSC Clerk Typist",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 881,
+      "group_sl": 2829,
+      "exam_id": 4165,
+      "name": "MPSC Civil Services",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 882,
+      "group_sl": 2831,
+      "exam_id": 4163,
+      "name": "MPSC Child Development Officer",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 883,
+      "group_sl": 2834,
+      "exam_id": 4160,
+      "name": "MPSC Assistant Commissioner",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 884,
+      "group_sl": 2835,
+      "exam_id": 4159,
+      "name": "MPSC ASO",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 885,
+      "group_sl": 2836,
+      "exam_id": 4158,
+      "name": "MPSC AO",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 886,
+      "group_sl": 2837,
+      "exam_id": 4157,
+      "name": "MPSC AMVI",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 887,
+      "group_sl": 2838,
+      "exam_id": 4156,
+      "name": "MPSC AE",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 888,
+      "group_sl": 2839,
+      "exam_id": 4155,
+      "name": "MPSC Administrative Officer",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 889,
+      "group_sl": 3087,
+      "exam_id": 3907,
+      "name": "Mizoram MPSC",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 890,
+      "group_sl": 3102,
+      "exam_id": 3892,
+      "name": "MIDC JE",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 891,
+      "group_sl": 3103,
+      "exam_id": 3891,
+      "name": "MIDC Fireman",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 892,
+      "group_sl": 3104,
+      "exam_id": 3890,
+      "name": "MIDC AE Civil",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 893,
+      "group_sl": 3105,
+      "exam_id": 3889,
+      "name": "MIDC AE",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 894,
+      "group_sl": 3113,
+      "exam_id": 3881,
+      "name": "MHSC Junior Clerk",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 895,
+      "group_sl": 3117,
+      "exam_id": 3877,
+      "name": "MHADA Junior Clerk",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 896,
+      "group_sl": 3118,
+      "exam_id": 3876,
+      "name": "MH SET Sociology",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 897,
+      "group_sl": 3119,
+      "exam_id": 3875,
+      "name": "MH SET Social Work",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 898,
+      "group_sl": 3120,
+      "exam_id": 3874,
+      "name": "MH SET Public Administration",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 899,
+      "group_sl": 3121,
+      "exam_id": 3873,
+      "name": "MH SET Psychology",
+      "group": "Maharashtra General Government Exams"
+    },
+    {
+      "global_sl": 900,
+      "group_sl": 3122,
+      "exam_id": 3872,
+      "name": "MH SET Political Science",
+      "group": "Maharashtra General Government Exams"
+    }
+  ]
+}

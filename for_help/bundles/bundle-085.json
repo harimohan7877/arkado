@@ -1,0 +1,401 @@
+{
+  "bundle_id": "bundle-085",
+  "bundle_num": 85,
+  "category_id": "medical-health",
+  "category_name": "मेडिकल & नर्सिंग",
+  "category_icon": "🩺",
+  "title": "मेडिकल & नर्सिंग — Chandigarh Medical & Nursing • Karnataka Medical & Nursing • Andhra Pradesh Medical & Nursing",
+  "total_exams": 60,
+  "boards_included": [
+    "Chandigarh Medical & Nursing",
+    "Karnataka Medical & Nursing",
+    "Andhra Pradesh Medical & Nursing",
+    "Jharkhand National Health Mission (NHM)",
+    "Chhattisgarh National Health Mission (NHM)",
+    "Sikkim Medical & Nursing",
+    "Goa Medical & Nursing",
+    "Puducherry Medical & Nursing",
+    "Maharashtra National Health Mission (NHM)",
+    "Himachal Pradesh Medical & Nursing",
+    "Kerala Medical & Nursing",
+    "Tripura National Health Mission (NHM)",
+    "Karnataka National Health Mission (NHM)",
+    "Chhattisgarh Medical & Nursing",
+    "Kerala National Health Mission (NHM)",
+    "Tripura Medical & Nursing",
+    "Chandigarh National Health Mission (NHM)",
+    "Uttarakhand National Health Mission (NHM)",
+    "Assam Medical & Nursing",
+    "Jammu & Kashmir Medical & Nursing",
+    "Assam National Health Mission (NHM)",
+    "Jammu & Kashmir National Health Mission (NHM)",
+    "Medical & Nursing - Alternative Medicine",
+    "Punjab Medical & Nursing",
+    "Uttarakhand Medical & Nursing",
+    "Andhra Pradesh National Health Mission (NHM)",
+    "Punjab National Health Mission (NHM)",
+    "Meghalaya Medical & Nursing"
+  ],
+  "exams": [
+    {
+      "sl": 4300,
+      "id": 2694,
+      "name": "HPSSSB Staff Nurse",
+      "group": "Himachal Pradesh Medical & Nursing Exams"
+    },
+    {
+      "sl": 4307,
+      "id": 2687,
+      "name": "HPSSC Staff Nurse, Conductor",
+      "group": "Himachal Pradesh Medical & Nursing Exams"
+    },
+    {
+      "sl": 4396,
+      "id": 2598,
+      "name": "HPPSC Pharmacist",
+      "group": "Himachal Pradesh Medical & Nursing Exams"
+    },
+    {
+      "sl": 4409,
+      "id": 2585,
+      "name": "HPPSC Medical Officer",
+      "group": "Himachal Pradesh Medical & Nursing Exams"
+    },
+    {
+      "sl": 4435,
+      "id": 2559,
+      "name": "HPCET UG B Tech and B Pharmacy",
+      "group": "Himachal Pradesh Medical & Nursing Exams"
+    },
+    {
+      "sl": 5120,
+      "id": 1874,
+      "name": "DHS CG Medical Officer",
+      "group": "Chhattisgarh Medical & Nursing Exams"
+    },
+    {
+      "sl": 5659,
+      "id": 1335,
+      "name": "CGPSC Senior Resident Doctor",
+      "group": "Chhattisgarh Medical & Nursing Exams"
+    },
+    {
+      "sl": 5663,
+      "id": 1331,
+      "name": "CGPSC Medical Specialist",
+      "group": "Chhattisgarh Medical & Nursing Exams"
+    },
+    {
+      "sl": 5665,
+      "id": 1329,
+      "name": "CGPSC Insurance Medical Officer",
+      "group": "Chhattisgarh Medical & Nursing Exams"
+    },
+    {
+      "sl": 5693,
+      "id": 1301,
+      "name": "CGMSC Drug Data Entry Operator",
+      "group": "Chhattisgarh Medical & Nursing Exams"
+    },
+    {
+      "sl": 2618,
+      "id": 4376,
+      "name": "NHM Maharashtra Group D",
+      "group": "Maharashtra National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2619,
+      "id": 4375,
+      "name": "NHM Maharashtra Group C",
+      "group": "Maharashtra National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2620,
+      "id": 4374,
+      "name": "NHM Maharashtra CHP",
+      "group": "Maharashtra National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2621,
+      "id": 4373,
+      "name": "NHM Maharashtra CHO",
+      "group": "Maharashtra National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 4685,
+      "id": 2309,
+      "name": "GMCH Chandigarh Staff Nurse",
+      "group": "Chandigarh Medical & Nursing Exams"
+    },
+    {
+      "sl": 4686,
+      "id": 2308,
+      "name": "GMCH Chandigarh Senior Resident",
+      "group": "Chandigarh Medical & Nursing Exams"
+    },
+    {
+      "sl": 5104,
+      "id": 1890,
+      "name": "DMER Chandigarh Staff Nurse",
+      "group": "Chandigarh Medical & Nursing Exams"
+    },
+    {
+      "sl": 5637,
+      "id": 1357,
+      "name": "Chandigarh TGT Science Non Medical",
+      "group": "Chandigarh Medical & Nursing Exams"
+    },
+    {
+      "sl": 4688,
+      "id": 2306,
+      "name": "GMCH Assam Staff Nurse",
+      "group": "Assam Medical & Nursing Exams"
+    },
+    {
+      "sl": 5105,
+      "id": 1889,
+      "name": "DME Assam Staff Nurse",
+      "group": "Assam Medical & Nursing Exams"
+    },
+    {
+      "sl": 5121,
+      "id": 1873,
+      "name": "DHS Assam Staff Nurse Critical Care",
+      "group": "Assam Medical & Nursing Exams"
+    },
+    {
+      "sl": 5122,
+      "id": 1872,
+      "name": "DHS Assam Staff Nurse",
+      "group": "Assam Medical & Nursing Exams"
+    },
+    {
+      "sl": 611,
+      "id": 6383,
+      "name": "UKPSC Polytechnic Lecturer Pharmacy",
+      "group": "Uttarakhand Medical & Nursing Exams"
+    },
+    {
+      "sl": 779,
+      "id": 6215,
+      "name": "UBTER Staff Nurse",
+      "group": "Uttarakhand Medical & Nursing Exams"
+    },
+    {
+      "sl": 4841,
+      "id": 2153,
+      "name": "ESIC UK Staff Nurse Pharmacist",
+      "group": "Uttarakhand Medical & Nursing Exams"
+    },
+    {
+      "sl": 1989,
+      "id": 5005,
+      "name": "Punjab NHM Staff Nurse",
+      "group": "Punjab National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2609,
+      "id": 4385,
+      "name": "NHM Punjab Computer Operator",
+      "group": "Punjab National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2610,
+      "id": 4384,
+      "name": "NHM Punjab CHO",
+      "group": "Punjab National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2480,
+      "id": 4514,
+      "name": "NRHM Assam Medical Officer",
+      "group": "Assam National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2634,
+      "id": 4360,
+      "name": "NHM Assam MO",
+      "group": "Assam National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2635,
+      "id": 4359,
+      "name": "NHM Assam CHO",
+      "group": "Assam National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 929,
+      "id": 6065,
+      "name": "TPSC Medical Officer Dental",
+      "group": "Tripura Medical & Nursing Exams"
+    },
+    {
+      "sl": 931,
+      "id": 6063,
+      "name": "TPSC Junior Medical Officer",
+      "group": "Tripura Medical & Nursing Exams"
+    },
+    {
+      "sl": 2481,
+      "id": 4513,
+      "name": "NRHM AP Staff Nurse",
+      "group": "Andhra Pradesh National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2636,
+      "id": 4358,
+      "name": "NHM AP MLHP",
+      "group": "Andhra Pradesh National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2605,
+      "id": 4389,
+      "name": "NHM Tripura HMIS Assistant",
+      "group": "Tripura National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2606,
+      "id": 4388,
+      "name": "NHM Tripura CHO",
+      "group": "Tripura National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2623,
+      "id": 4371,
+      "name": "NHM Karnataka MLHP",
+      "group": "Karnataka National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2624,
+      "id": 4370,
+      "name": "NHM Karnataka CHO",
+      "group": "Karnataka National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 3461,
+      "id": 3533,
+      "name": "KPSC Office Attendant",
+      "group": "Karnataka Medical & Nursing Exams"
+    },
+    {
+      "sl": 3478,
+      "id": 3516,
+      "name": "KPSC Assistant Surgeon",
+      "group": "Karnataka Medical & Nursing Exams"
+    },
+    {
+      "sl": 4484,
+      "id": 2510,
+      "name": "Homeopathy",
+      "group": "Medical & Nursing - Alternative Medicine Exams"
+    },
+    {
+      "sl": 6255,
+      "id": 739,
+      "name": "BHMS Homeopathy",
+      "group": "Medical & Nursing - Alternative Medicine Exams"
+    },
+    {
+      "sl": 5115,
+      "id": 1879,
+      "name": "DHS Meghalaya Staff Nurse",
+      "group": "Meghalaya Medical & Nursing Exams"
+    },
+    {
+      "sl": 5116,
+      "id": 1878,
+      "name": "DHS Meghalaya ANM",
+      "group": "Meghalaya Medical & Nursing Exams"
+    },
+    {
+      "sl": 5126,
+      "id": 1868,
+      "name": "DHFWS Puducherry Pharmacist",
+      "group": "Puducherry Medical & Nursing Exams"
+    },
+    {
+      "sl": 5128,
+      "id": 1866,
+      "name": "DHFWS Puducherry ANM",
+      "group": "Puducherry Medical & Nursing Exams"
+    },
+    {
+      "sl": 5750,
+      "id": 1244,
+      "name": "CFW AP Civil Assistant Surgeon",
+      "group": "Andhra Pradesh Medical & Nursing Exams"
+    },
+    {
+      "sl": 5751,
+      "id": 1243,
+      "name": "CFW AP ANM & MPHA",
+      "group": "Andhra Pradesh Medical & Nursing Exams"
+    },
+    {
+      "sl": 1264,
+      "id": 5730,
+      "name": "SPSC Staff Nurse",
+      "group": "Sikkim Medical & Nursing Exams"
+    },
+    {
+      "sl": 2602,
+      "id": 4392,
+      "name": "NHM Uttarakhand CHO",
+      "group": "Uttarakhand National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2622,
+      "id": 4372,
+      "name": "NHM Kerala Staff Nurse",
+      "group": "Kerala National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2625,
+      "id": 4369,
+      "name": "NHM JK Medical Officer",
+      "group": "Jammu & Kashmir National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2626,
+      "id": 4368,
+      "name": "NHM Jharkhand ANM",
+      "group": "Jharkhand National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2630,
+      "id": 4364,
+      "name": "NHM Chhattisgarh CHO",
+      "group": "Chhattisgarh National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 2631,
+      "id": 4363,
+      "name": "NHM Chandigarh CHO",
+      "group": "Chandigarh National Health Mission (NHM) Exams"
+    },
+    {
+      "sl": 3097,
+      "id": 3897,
+      "name": "Military Hospital Jalandhar Cantt",
+      "group": "Punjab Medical & Nursing Exams"
+    },
+    {
+      "sl": 3540,
+      "id": 3454,
+      "name": "Kerala High Court Office Attendant",
+      "group": "Kerala Medical & Nursing Exams"
+    },
+    {
+      "sl": 3734,
+      "id": 3260,
+      "name": "JKPSC Veterinary Assistant Surgeon",
+      "group": "Jammu & Kashmir Medical & Nursing Exams"
+    },
+    {
+      "sl": 3937,
+      "id": 3057,
+      "name": "IPHB Goa Attendant",
+      "group": "Goa Medical & Nursing Exams"
+    }
+  ]
+}

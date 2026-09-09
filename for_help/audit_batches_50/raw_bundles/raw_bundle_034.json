@@ -1,0 +1,358 @@
+{
+  "bundle_number": 34,
+  "bundle_id": "raw_bundle_034",
+  "range": "1651 - 1700",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1651,
+      "group_sl": 3647,
+      "exam_id": 3347,
+      "name": "JSSC PGT Teacher Economics",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1652,
+      "group_sl": 3648,
+      "exam_id": 3346,
+      "name": "JSSC PGT Teacher Commerce",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1653,
+      "group_sl": 3649,
+      "exam_id": 3345,
+      "name": "JSSC PGT Teacher Chemistry",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1654,
+      "group_sl": 3650,
+      "exam_id": 3344,
+      "name": "JSSC PGT Teacher Biology",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1655,
+      "group_sl": 3651,
+      "exam_id": 3343,
+      "name": "JSSC Paramedical JJPSCCE ANM",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1656,
+      "group_sl": 3652,
+      "exam_id": 3342,
+      "name": "JSSC LDC",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1657,
+      "group_sl": 3653,
+      "exam_id": 3341,
+      "name": "JSSC Lady Supervisor",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1658,
+      "group_sl": 3654,
+      "exam_id": 3340,
+      "name": "JSSC Lab Assistant Physics",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1659,
+      "group_sl": 3655,
+      "exam_id": 3339,
+      "name": "JSSC Lab Assistant Paper 1",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1660,
+      "group_sl": 3656,
+      "exam_id": 3338,
+      "name": "JSSC Lab Assistant Chemistry",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1661,
+      "group_sl": 3657,
+      "exam_id": 3337,
+      "name": "JSSC Lab Assistant Biology",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1662,
+      "group_sl": 3658,
+      "exam_id": 3336,
+      "name": "JSSC JTGLCCE Inspector",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1663,
+      "group_sl": 3659,
+      "exam_id": 3335,
+      "name": "JSSC JTGLCCE Fishery Extension Supervisor",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1664,
+      "group_sl": 3660,
+      "exam_id": 3334,
+      "name": "JSSC JTGLCCE Dairy Technical Officer",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1665,
+      "group_sl": 3661,
+      "exam_id": 3333,
+      "name": "JSSC JTGLCCE Block Statistical Supervisor, Auditor",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1666,
+      "group_sl": 3662,
+      "exam_id": 3332,
+      "name": "JSSC JIIOCE",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1667,
+      "group_sl": 3663,
+      "exam_id": 3331,
+      "name": "JSSC JE Mechanical",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1668,
+      "group_sl": 3664,
+      "exam_id": 3330,
+      "name": "JSSC JE Electrical",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1669,
+      "group_sl": 3665,
+      "exam_id": 3329,
+      "name": "JSSC JE Civil",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1670,
+      "group_sl": 3666,
+      "exam_id": 3328,
+      "name": "JSSC IRB Police Constable",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1671,
+      "group_sl": 3667,
+      "exam_id": 3327,
+      "name": "JSSC Grade A Nurse",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1672,
+      "group_sl": 3668,
+      "exam_id": 3326,
+      "name": "JSSC Excise Constable",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1673,
+      "group_sl": 3669,
+      "exam_id": 3325,
+      "name": "JSSC Constable",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1674,
+      "group_sl": 3670,
+      "exam_id": 3324,
+      "name": "JSSC Clerk",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1675,
+      "group_sl": 3671,
+      "exam_id": 3323,
+      "name": "JSSC CGL",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1676,
+      "group_sl": 3672,
+      "exam_id": 3322,
+      "name": "JSSC Assistant Jailor",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1677,
+      "group_sl": 3673,
+      "exam_id": 3321,
+      "name": "JSSC ANM",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1678,
+      "group_sl": 3674,
+      "exam_id": 3320,
+      "name": "JSSC",
+      "group": "Jharkhand JSSC Exams"
+    },
+    {
+      "global_sl": 1679,
+      "group_sl": 15,
+      "exam_id": 6979,
+      "name": "West Bengal Post Office MTS",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1680,
+      "group_sl": 16,
+      "exam_id": 6978,
+      "name": "West Bengal General Knowledge",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1681,
+      "group_sl": 18,
+      "exam_id": 6976,
+      "name": "WEBCSC Clerk",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1682,
+      "group_sl": 33,
+      "exam_id": 6961,
+      "name": "WBTET",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1683,
+      "group_sl": 57,
+      "exam_id": 6937,
+      "name": "WBSSC Headmaster & Headmistresses",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1684,
+      "group_sl": 58,
+      "exam_id": 6936,
+      "name": "WBSSC Group C and D",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1685,
+      "group_sl": 61,
+      "exam_id": 6933,
+      "name": "WBSETCL Office Executive",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1686,
+      "group_sl": 62,
+      "exam_id": 6932,
+      "name": "WBSETCL JE",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1687,
+      "group_sl": 63,
+      "exam_id": 6931,
+      "name": "WBSETCL Assistant Engineer Electrical",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1688,
+      "group_sl": 64,
+      "exam_id": 6930,
+      "name": "WBSETCL Assistant Engineer Civil",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1689,
+      "group_sl": 65,
+      "exam_id": 6929,
+      "name": "WBSEDCL Office Executive",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1690,
+      "group_sl": 66,
+      "exam_id": 6928,
+      "name": "WBSEDCL JE",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1691,
+      "group_sl": 67,
+      "exam_id": 6927,
+      "name": "WBSEDCL Assistant Manager",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1692,
+      "group_sl": 68,
+      "exam_id": 6926,
+      "name": "WBSEDCL AE",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1693,
+      "group_sl": 69,
+      "exam_id": 6925,
+      "name": "WBSBCL Assistant Depot Manager",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1694,
+      "group_sl": 70,
+      "exam_id": 6924,
+      "name": "WBPSC Workshop Instructor",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1695,
+      "group_sl": 71,
+      "exam_id": 6923,
+      "name": "WBPSC Supervisor",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1696,
+      "group_sl": 74,
+      "exam_id": 6920,
+      "name": "WBPSC MVI",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1697,
+      "group_sl": 75,
+      "exam_id": 6919,
+      "name": "WBPSC Miscellaneous",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1698,
+      "group_sl": 78,
+      "exam_id": 6916,
+      "name": "WBPSC LDA",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1699,
+      "group_sl": 79,
+      "exam_id": 6915,
+      "name": "WBPSC Laboratory Assistant",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1700,
+      "group_sl": 81,
+      "exam_id": 6913,
+      "name": "WBPSC JE",
+      "group": "West Bengal General Government Exams"
+    }
+  ]
+}

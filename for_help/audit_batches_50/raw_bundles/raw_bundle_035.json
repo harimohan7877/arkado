@@ -1,0 +1,358 @@
+{
+  "bundle_number": 35,
+  "bundle_id": "raw_bundle_035",
+  "range": "1701 - 1750",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1701,
+      "group_sl": 83,
+      "exam_id": 6911,
+      "name": "WBPSC Fishery Extension Officer",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1702,
+      "group_sl": 84,
+      "exam_id": 6910,
+      "name": "WBPSC Fire Operator",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1703,
+      "group_sl": 85,
+      "exam_id": 6909,
+      "name": "WBPSC Clerkship",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1704,
+      "group_sl": 86,
+      "exam_id": 6908,
+      "name": "WBPSC Audit, Accounts Service",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1705,
+      "group_sl": 88,
+      "exam_id": 6906,
+      "name": "WBPSC Assistant Director",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1706,
+      "group_sl": 89,
+      "exam_id": 6905,
+      "name": "WBPSC AE",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1707,
+      "group_sl": 91,
+      "exam_id": 6903,
+      "name": "WBPDCL Sub Assistant Engineer",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1708,
+      "group_sl": 92,
+      "exam_id": 6902,
+      "name": "WBPDCL Operator Technician Fitter",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1709,
+      "group_sl": 93,
+      "exam_id": 6901,
+      "name": "WBPDCL Operator Technician Electrician",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1710,
+      "group_sl": 94,
+      "exam_id": 6900,
+      "name": "WBPDCL Operation and Maintenance Supervisor",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1711,
+      "group_sl": 95,
+      "exam_id": 6899,
+      "name": "WBPDCL Office Executive",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1712,
+      "group_sl": 96,
+      "exam_id": 6898,
+      "name": "WBPDCL Chemist",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1713,
+      "group_sl": 97,
+      "exam_id": 6897,
+      "name": "WBPDCL Assistant Manager Mechanical",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1714,
+      "group_sl": 98,
+      "exam_id": 6896,
+      "name": "WBPDCL Assistant Manager IT",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1715,
+      "group_sl": 99,
+      "exam_id": 6895,
+      "name": "WBPDCL Assistant Manager Instrumentation",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1716,
+      "group_sl": 100,
+      "exam_id": 6894,
+      "name": "WBPDCL Assistant Manager HR",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1717,
+      "group_sl": 101,
+      "exam_id": 6893,
+      "name": "WBPDCL Assistant Manager Electrical",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1718,
+      "group_sl": 102,
+      "exam_id": 6892,
+      "name": "WBPDCL Assistant Manager Civil",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1719,
+      "group_sl": 103,
+      "exam_id": 6891,
+      "name": "WBMSC Sub Assistant Engineer",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1720,
+      "group_sl": 104,
+      "exam_id": 6890,
+      "name": "WBMSC Conservancy Mazdoor",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1721,
+      "group_sl": 105,
+      "exam_id": 6889,
+      "name": "WBMSC Assistant Engineer Mechanical",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1722,
+      "group_sl": 106,
+      "exam_id": 6888,
+      "name": "WBMSC Assistant Engineer Electrical",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1723,
+      "group_sl": 107,
+      "exam_id": 6887,
+      "name": "WBMSC Assistant Engineer Civil",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1724,
+      "group_sl": 108,
+      "exam_id": 6886,
+      "name": "WBJEE JENPAS UG",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1725,
+      "group_sl": 109,
+      "exam_id": 6885,
+      "name": "WBJEE",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1726,
+      "group_sl": 110,
+      "exam_id": 6884,
+      "name": "WBHRB Tutor Demonstrator",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1727,
+      "group_sl": 115,
+      "exam_id": 6879,
+      "name": "WBHRB Facility Manager",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1728,
+      "group_sl": 116,
+      "exam_id": 6878,
+      "name": "WBHRB Driver",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1729,
+      "group_sl": 118,
+      "exam_id": 6876,
+      "name": "WBCSC Group C",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1730,
+      "group_sl": 119,
+      "exam_id": 6875,
+      "name": "WBCSC Clerk",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1731,
+      "group_sl": 123,
+      "exam_id": 6871,
+      "name": "WB SET Political Science",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1732,
+      "group_sl": 124,
+      "exam_id": 6870,
+      "name": "WB SET Physical Science",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1733,
+      "group_sl": 126,
+      "exam_id": 6868,
+      "name": "WB SET Philosophy",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1734,
+      "group_sl": 127,
+      "exam_id": 6867,
+      "name": "WB SET Paper 1",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1735,
+      "group_sl": 128,
+      "exam_id": 6866,
+      "name": "WB SET Law",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1736,
+      "group_sl": 129,
+      "exam_id": 6865,
+      "name": "WB SET History",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1737,
+      "group_sl": 130,
+      "exam_id": 6864,
+      "name": "WB SET Geography",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1738,
+      "group_sl": 132,
+      "exam_id": 6862,
+      "name": "WB SET Economics",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1739,
+      "group_sl": 133,
+      "exam_id": 6861,
+      "name": "WB SET Commerce",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1740,
+      "group_sl": 134,
+      "exam_id": 6860,
+      "name": "WB SET Chemical Science",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1741,
+      "group_sl": 136,
+      "exam_id": 6858,
+      "name": "WB Post Office GDS",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1742,
+      "group_sl": 146,
+      "exam_id": 6848,
+      "name": "WB Gram Panchayat Karmee",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1743,
+      "group_sl": 1445,
+      "exam_id": 5549,
+      "name": "SAIL Kolkata Executive, Non Executive",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1744,
+      "group_sl": 2190,
+      "exam_id": 4804,
+      "name": "PBSSD BLS",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1745,
+      "group_sl": 2742,
+      "exam_id": 4252,
+      "name": "NBCFDM West Bengal",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1746,
+      "group_sl": 5089,
+      "exam_id": 1905,
+      "name": "DMMU and DRDC Purba Bardhaman Community Auditor",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1747,
+      "group_sl": 5136,
+      "exam_id": 1858,
+      "name": "DHFWS Nadia Laboratory Technician",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1748,
+      "group_sl": 5137,
+      "exam_id": 1857,
+      "name": "DHFWS Nadia Community Health Assistant",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1749,
+      "group_sl": 5815,
+      "exam_id": 1179,
+      "name": "Calcutta HC LDA",
+      "group": "West Bengal General Government Exams"
+    },
+    {
+      "global_sl": 1750,
+      "group_sl": 5816,
+      "exam_id": 1178,
+      "name": "Calcutta HC DEO",
+      "group": "West Bengal General Government Exams"
+    }
+  ]
+}

@@ -1,0 +1,411 @@
+{
+  "bundle_id": "bundle-083",
+  "bundle_num": 83,
+  "category_id": "medical-health",
+  "category_name": "मेडिकल & नर्सिंग",
+  "category_icon": "🩺",
+  "title": "मेडिकल & नर्सिंग — West Bengal Medical & Nursing • Medical & Nursing - Nursing & Staff Nurse",
+  "total_exams": 66,
+  "boards_included": [
+    "West Bengal Medical & Nursing",
+    "Medical & Nursing - Nursing & Staff Nurse"
+  ],
+  "exams": [
+    {
+      "sl": 22,
+      "id": 6972,
+      "name": "WCL Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 158,
+      "id": 6836,
+      "name": "VMMC Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 159,
+      "id": 6835,
+      "name": "VMMC SJH Senior Resident Surgery",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 160,
+      "id": 6834,
+      "name": "VMMC SJH Senior Resident Medicine",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 161,
+      "id": 6833,
+      "name": "VMMC SJH Senior Resident Anaesthesia",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 1179,
+      "id": 5815,
+      "name": "Staff Nurse in Hindi",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 1180,
+      "id": 5814,
+      "name": "Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 1299,
+      "id": 5695,
+      "name": "SKIMS Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 1753,
+      "id": 5241,
+      "name": "RML Nursing Officer",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 1762,
+      "id": 5232,
+      "name": "RIMS Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 2330,
+      "id": 4664,
+      "name": "Oncology Nursing",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 2439,
+      "id": 4555,
+      "name": "Nursing Officer Exam",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 2440,
+      "id": 4554,
+      "name": "Nursing Aptitude",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 2556,
+      "id": 4438,
+      "name": "NIMHANS Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 2611,
+      "id": 4383,
+      "name": "NHM Naharlagun Nursing Officer",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 2680,
+      "id": 4314,
+      "name": "Neonatal Intensive Care Unit NICU Nursing",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 2681,
+      "id": 4313,
+      "name": "NEIGRIHMS Nursing Officer",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 3112,
+      "id": 3882,
+      "name": "MHSRB Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 3310,
+      "id": 3684,
+      "name": "LHMC Nursing Attendant",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 3312,
+      "id": 3682,
+      "name": "LGBRIMH Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 3492,
+      "id": 3502,
+      "name": "KMC Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 3588,
+      "id": 3406,
+      "name": "KARHFW Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 3598,
+      "id": 3396,
+      "name": "JSSHS Nursing Officer",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 3789,
+      "id": 3205,
+      "name": "JIPMER Nursing Officer",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 3790,
+      "id": 3204,
+      "name": "JIPMER Nursing",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 3859,
+      "id": 3135,
+      "name": "JCECEB BSc Nursing Entrance",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 3935,
+      "id": 3059,
+      "name": "IPHB Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 4112,
+      "id": 2882,
+      "name": "IGMCRI Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 4796,
+      "id": 2198,
+      "name": "Forensic Nursing",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5129,
+      "id": 1865,
+      "name": "DHFWS North 24 Parganas Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5141,
+      "id": 1853,
+      "name": "DHFWS Bhiwani Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5531,
+      "id": 1463,
+      "name": "Critical Care Nursing",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5563,
+      "id": 1431,
+      "name": "CMHO Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5616,
+      "id": 1378,
+      "name": "Child Health Nursing",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5782,
+      "id": 1212,
+      "name": "CCRAS Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5950,
+      "id": 1044,
+      "name": "Bsc Nursing Pharmacology 1 and 2",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5951,
+      "id": 1043,
+      "name": "Bsc Nursing Pathology 1, 2 and Genetics",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5952,
+      "id": 1042,
+      "name": "Bsc Nursing Health Nursing 1 and 2",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5953,
+      "id": 1041,
+      "name": "BSc Nursing Foundation 2",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5954,
+      "id": 1040,
+      "name": "BSc Nursing Foundation 1",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5955,
+      "id": 1039,
+      "name": "Bsc Nursing Applied Sociology",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5956,
+      "id": 1038,
+      "name": "Bsc Nursing Applied Psychology",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5957,
+      "id": 1037,
+      "name": "Bsc Nursing Applied Physiology",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5958,
+      "id": 1036,
+      "name": "Bsc Nursing Applied Nutrition and Dietetics",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5959,
+      "id": 1035,
+      "name": "Bsc Nursing Applied Microbiology and Infection Control and Safety",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5960,
+      "id": 1034,
+      "name": "Bsc Nursing Applied Biochemistry",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5961,
+      "id": 1033,
+      "name": "Bsc Nursing Applied Anatomy",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 5962,
+      "id": 1032,
+      "name": "BSC Nursing",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 6334,
+      "id": 660,
+      "name": "BECIL Staff Nurse",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 6335,
+      "id": 659,
+      "name": "BECIL Public Health Nurse, ANM",
+      "group": "Medical & Nursing - Nursing & Staff Nurse Exams"
+    },
+    {
+      "sl": 73,
+      "id": 6921,
+      "name": "WBPSC Pharmacist Grade 3",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 76,
+      "id": 6918,
+      "name": "WBPSC Medical Technologist",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 111,
+      "id": 6883,
+      "name": "WBHRB Staff Nurse",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 112,
+      "id": 6882,
+      "name": "WBHRB Pharmacist Grade 3",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 113,
+      "id": 6881,
+      "name": "WBHRB Medical Technologist",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 114,
+      "id": 6880,
+      "name": "WBHRB Medical Officer",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 117,
+      "id": 6877,
+      "name": "WBHRB Block Medical Officer, Librarian",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 5124,
+      "id": 1870,
+      "name": "DHFWS Purba Bardhaman CHO",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 5130,
+      "id": 1864,
+      "name": "DHFWS Nadia Staff Nurse",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 5131,
+      "id": 1863,
+      "name": "DHFWS Nadia Specialist Medical Officer Paediatrics Polyclinic",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 5132,
+      "id": 1862,
+      "name": "DHFWS Nadia Specialist Medical Officer Ophthalmology Polyclinic",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 5133,
+      "id": 1861,
+      "name": "DHFWS Nadia Specialist Medical Officer Medicine Polyclinic",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 5134,
+      "id": 1860,
+      "name": "DHFWS Nadia Specialist Medical Officer Gynaecology and Obstetrics Polyclinic",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 5135,
+      "id": 1859,
+      "name": "DHFWS Nadia Medical Officer",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 5138,
+      "id": 1856,
+      "name": "DHFWS Nadia CHO",
+      "group": "West Bengal Medical & Nursing Exams"
+    },
+    {
+      "sl": 5562,
+      "id": 1432,
+      "name": "CMOH Murshidabad CHO Nurse",
+      "group": "West Bengal Medical & Nursing Exams"
+    }
+  ]
+}

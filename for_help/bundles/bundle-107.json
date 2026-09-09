@@ -1,0 +1,284 @@
+{
+  "bundle_id": "bundle-107",
+  "bundle_num": 107,
+  "category_id": "other-states",
+  "category_name": "अन्य सभी राज्य",
+  "category_icon": "🇮🇳",
+  "title": "अन्य सभी राज्य — Kerala General Govt",
+  "total_exams": 45,
+  "boards_included": [
+    "Kerala General Govt"
+  ],
+  "exams": [
+    {
+      "sl": 3095,
+      "id": 3899,
+      "name": "MILMA Plant Assistant",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3491,
+      "id": 3503,
+      "name": "KMML Junior Operator Trainee",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3496,
+      "id": 3498,
+      "name": "KLEE LLM",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3497,
+      "id": 3497,
+      "name": "KLEE LLB Exam",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3498,
+      "id": 3496,
+      "name": "KLEE LLB",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3511,
+      "id": 3483,
+      "name": "Kerala SET Zoology",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3512,
+      "id": 3482,
+      "name": "Kerala SET Statistics",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3513,
+      "id": 3481,
+      "name": "Kerala SET Sociology",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3514,
+      "id": 3480,
+      "name": "Kerala SET Social Work",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3515,
+      "id": 3479,
+      "name": "Kerala SET Sanskrit",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3516,
+      "id": 3478,
+      "name": "Kerala SET Psychology",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3517,
+      "id": 3477,
+      "name": "Kerala SET Political Science",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3518,
+      "id": 3476,
+      "name": "Kerala SET Physics",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3519,
+      "id": 3475,
+      "name": "Kerala SET Philosophy",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3520,
+      "id": 3474,
+      "name": "Kerala SET Paper 1",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3521,
+      "id": 3473,
+      "name": "Kerala SET Mathematics",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3522,
+      "id": 3472,
+      "name": "Kerala SET Journalism",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3523,
+      "id": 3471,
+      "name": "Kerala SET Home Science",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3524,
+      "id": 3470,
+      "name": "Kerala SET History",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3525,
+      "id": 3469,
+      "name": "Kerala SET Hindi",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3526,
+      "id": 3468,
+      "name": "Kerala SET Geology",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3527,
+      "id": 3467,
+      "name": "Kerala SET Geography",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3528,
+      "id": 3466,
+      "name": "Kerala SET English",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3529,
+      "id": 3465,
+      "name": "Kerala SET Economics",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3530,
+      "id": 3464,
+      "name": "Kerala SET Commerce",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3531,
+      "id": 3463,
+      "name": "Kerala SET Chemistry",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3532,
+      "id": 3462,
+      "name": "Kerala SET Botany",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3533,
+      "id": 3461,
+      "name": "Kerala SET Biotechnology",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3534,
+      "id": 3460,
+      "name": "Kerala SET Anthropology",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3538,
+      "id": 3456,
+      "name": "Kerala Post Office GDS",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3542,
+      "id": 3452,
+      "name": "Kerala HC Sweeper",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3543,
+      "id": 3451,
+      "name": "Kerala General Knowledge",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3545,
+      "id": 3449,
+      "name": "KELTRON Engineer",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 3546,
+      "id": 3448,
+      "name": "KEAM",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 4822,
+      "id": 2172,
+      "name": "FCI Kerala Watchman",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 5513,
+      "id": 1481,
+      "name": "CSEB Kerala Junior Clerk",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 5555,
+      "id": 1439,
+      "name": "Cochin Shipyard Outfit Assistant",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 5565,
+      "id": 1429,
+      "name": "CMD LSGD Kerala Mechanical Engineer",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 5566,
+      "id": 1428,
+      "name": "CMD LSGD Kerala Environmental Engineer",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 5567,
+      "id": 1427,
+      "name": "CMD LSGD Kerala Electrical Engineer",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 5568,
+      "id": 1426,
+      "name": "CMD DSSSC Kerala Soil Testing Laboratories Research Assistant",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 5569,
+      "id": 1425,
+      "name": "CMD DSSSC Kerala GIS Experts",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 5570,
+      "id": 1424,
+      "name": "CMD DSSSC Kerala Field Offices Soil Survey Officer",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 5571,
+      "id": 1423,
+      "name": "CMD DSSSC Kerala Field Offices and Soil Testing Laboratories Lascar",
+      "group": "Kerala General Government Exams"
+    },
+    {
+      "sl": 5572,
+      "id": 1422,
+      "name": "CMD DSSSC Kerala Field Offices and Soil Testing Laboratories Field Assistant",
+      "group": "Kerala General Government Exams"
+    }
+  ]
+}

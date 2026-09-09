@@ -1,0 +1,358 @@
+{
+  "bundle_number": 37,
+  "bundle_id": "raw_bundle_037",
+  "range": "1801 - 1850",
+  "total_items": 50,
+  "items": [
+    {
+      "global_sl": 1801,
+      "group_sl": 601,
+      "exam_id": 6393,
+      "name": "UKSSSC Assistant Storekeeper",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1802,
+      "group_sl": 602,
+      "exam_id": 6392,
+      "name": "UKSSSC Assistant Food Processing Inspector",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1803,
+      "group_sl": 603,
+      "exam_id": 6391,
+      "name": "UKSSSC Assistant Boring Technician",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1804,
+      "group_sl": 604,
+      "exam_id": 6390,
+      "name": "UKSSSC ADO",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1805,
+      "group_sl": 605,
+      "exam_id": 6389,
+      "name": "UKSSSC Accounts Clerk",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1806,
+      "group_sl": 606,
+      "exam_id": 6388,
+      "name": "UKSSSC AAO",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1807,
+      "group_sl": 607,
+      "exam_id": 6387,
+      "name": "UKPSC Upper PCS",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1808,
+      "group_sl": 608,
+      "exam_id": 6386,
+      "name": "UKPSC RO ARO",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1809,
+      "group_sl": 609,
+      "exam_id": 6385,
+      "name": "UKPSC Principal",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1810,
+      "group_sl": 619,
+      "exam_id": 6375,
+      "name": "UKPSC Mines Inspector",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1811,
+      "group_sl": 620,
+      "exam_id": 6374,
+      "name": "UKPSC Lower PCS",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1812,
+      "group_sl": 634,
+      "exam_id": 6360,
+      "name": "UKPSC Junior Assistant",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1813,
+      "group_sl": 635,
+      "exam_id": 6359,
+      "name": "UKPSC JE",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1814,
+      "group_sl": 637,
+      "exam_id": 6357,
+      "name": "UKPSC Horticulture Supervisor",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1815,
+      "group_sl": 638,
+      "exam_id": 6356,
+      "name": "UKPSC FRO",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1816,
+      "group_sl": 639,
+      "exam_id": 6355,
+      "name": "UKPSC Executive Officer",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1817,
+      "group_sl": 640,
+      "exam_id": 6354,
+      "name": "UKPSC Environmental Supervisor",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1818,
+      "group_sl": 642,
+      "exam_id": 6352,
+      "name": "UKPSC Assistant Review Officer",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1819,
+      "group_sl": 656,
+      "exam_id": 6338,
+      "name": "UKPSC APO",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1820,
+      "group_sl": 657,
+      "exam_id": 6337,
+      "name": "UKPSC AE",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1821,
+      "group_sl": 658,
+      "exam_id": 6336,
+      "name": "UKPSC Administrative Services",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1822,
+      "group_sl": 659,
+      "exam_id": 6335,
+      "name": "UKPSC AAO",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1823,
+      "group_sl": 780,
+      "exam_id": 6214,
+      "name": "UBTER JEEP",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1824,
+      "group_sl": 781,
+      "exam_id": 6213,
+      "name": "UBTER Group D",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1825,
+      "group_sl": 4776,
+      "exam_id": 2218,
+      "name": "FRI Dehradun MTS",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1826,
+      "group_sl": 6329,
+      "exam_id": 665,
+      "name": "BEG Centre Roorkee Group B & C",
+      "group": "Uttarakhand General Government Exams"
+    },
+    {
+      "global_sl": 1827,
+      "group_sl": 162,
+      "exam_id": 6832,
+      "name": "VMMC Junior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1828,
+      "group_sl": 180,
+      "exam_id": 6814,
+      "name": "VCRC Technician",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1829,
+      "group_sl": 181,
+      "exam_id": 6813,
+      "name": "VCRC Technical Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1830,
+      "group_sl": 983,
+      "exam_id": 6011,
+      "name": "TNMRB Assistant Surgeon Speciality",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1831,
+      "group_sl": 1069,
+      "exam_id": 5925,
+      "name": "TMC Senior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1832,
+      "group_sl": 1070,
+      "exam_id": 5924,
+      "name": "TMC Nurse A",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1833,
+      "group_sl": 1072,
+      "exam_id": 5922,
+      "name": "TMC Female Nurse",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1834,
+      "group_sl": 1073,
+      "exam_id": 5921,
+      "name": "TMC Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1835,
+      "group_sl": 1300,
+      "exam_id": 5694,
+      "name": "SKIMS Lab Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1836,
+      "group_sl": 1442,
+      "exam_id": 5552,
+      "name": "SAIL Medical Officer",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1837,
+      "group_sl": 1443,
+      "exam_id": 5551,
+      "name": "SAIL Medical Executive & Paramedical Staff",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1838,
+      "group_sl": 1752,
+      "exam_id": 5242,
+      "name": "RMLH Junior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1839,
+      "group_sl": 1944,
+      "exam_id": 5050,
+      "name": "Radiodiagnosis",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1840,
+      "group_sl": 2019,
+      "exam_id": 4975,
+      "name": "PUNEZP Health Worker",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1841,
+      "group_sl": 2164,
+      "exam_id": 4830,
+      "name": "PGIMER Senior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1842,
+      "group_sl": 2165,
+      "exam_id": 4829,
+      "name": "PGIMER Junior Resident",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1843,
+      "group_sl": 2325,
+      "exam_id": 4669,
+      "name": "ONGC Medical Officer",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1844,
+      "group_sl": 2530,
+      "exam_id": 4464,
+      "name": "NMDC Field Attendant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1845,
+      "group_sl": 2557,
+      "exam_id": 4437,
+      "name": "NIMHANS Junior Secretarial Assistant",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1846,
+      "group_sl": 2559,
+      "exam_id": 4435,
+      "name": "NIHFW Group B, C, D",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1847,
+      "group_sl": 2629,
+      "exam_id": 4365,
+      "name": "NHM CHO",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1848,
+      "group_sl": 2670,
+      "exam_id": 4324,
+      "name": "NFL Attendant Mechanical Fitter",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1849,
+      "group_sl": 2673,
+      "exam_id": 4321,
+      "name": "NFC Nurse A",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    },
+    {
+      "global_sl": 1850,
+      "group_sl": 2682,
+      "exam_id": 4312,
+      "name": "NEET Zoology",
+      "group": "Medical & Nursing - Other Central Medical & Health Exams"
+    }
+  ]
+}

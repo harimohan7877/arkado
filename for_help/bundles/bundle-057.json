@@ -1,0 +1,374 @@
+{
+  "bundle_id": "bundle-057",
+  "bundle_num": 57,
+  "category_id": "teaching",
+  "category_name": "केंद्रीय शिक्षण",
+  "category_icon": "📚",
+  "title": "केंद्रीय शिक्षण — National Academics - Other Central Academic & School (Part 1/3)",
+  "total_exams": 60,
+  "boards_included": [
+    "National Academics - Other Central Academic & School"
+  ],
+  "exams": [
+    {
+      "sl": 173,
+      "id": 6821,
+      "name": "Vishva Bharti Kaushal Vikas Mission Centre Coordinator",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 293,
+      "id": 6701,
+      "name": "UPSC Assistant Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1099,
+      "id": 5895,
+      "name": "TGT Vigyan (Science) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1100,
+      "id": 5894,
+      "name": "TGT Social Science",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1101,
+      "id": 5893,
+      "name": "TGT Science",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1102,
+      "id": 5892,
+      "name": "TGT Samajik Vigyan (Social Science) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1103,
+      "id": 5891,
+      "name": "TGT English",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1107,
+      "id": 5887,
+      "name": "TET Social Studies & Science Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1108,
+      "id": 5886,
+      "name": "TET Social Studies & Science",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1109,
+      "id": 5885,
+      "name": "TET Mathematics and Science in Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1110,
+      "id": 5884,
+      "name": "TET Mathematics and Science",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1135,
+      "id": 5859,
+      "name": "Teaching Methodology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1136,
+      "id": 5858,
+      "name": "Teaching Aptitude and Attitude Test",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1137,
+      "id": 5857,
+      "name": "Teaching Aptitude & Attitude Test",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1162,
+      "id": 5832,
+      "name": "Super TET Paper 2 Social Studies",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1163,
+      "id": 5831,
+      "name": "Super TET Paper 2",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1164,
+      "id": 5830,
+      "name": "Super TET",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1167,
+      "id": 5827,
+      "name": "STET Social Science & Pedagogy",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1168,
+      "id": 5826,
+      "name": "STET Science & Pedagogy",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1169,
+      "id": 5825,
+      "name": "STET Sanskrit",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1170,
+      "id": 5824,
+      "name": "STET Mathematics & Pedagogy",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1171,
+      "id": 5823,
+      "name": "STET Hindi Language & Pedagogy",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1172,
+      "id": 5822,
+      "name": "STET Environmental Studies & Pedagogy",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1173,
+      "id": 5821,
+      "name": "STET English Language & Pedagogy",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1174,
+      "id": 5820,
+      "name": "STET Child Development & Pedagogy",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1220,
+      "id": 5774,
+      "name": "SSB Silvassa TGT PGT Physics",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1221,
+      "id": 5773,
+      "name": "SSB Silvassa TGT PGT Mathematics",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 1222,
+      "id": 5772,
+      "name": "SSB Silvassa TGT PGT",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2124,
+      "id": 4870,
+      "name": "PM Yasasvi Scholarship Class 9",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2125,
+      "id": 4869,
+      "name": "PM Yasasvi Scholarship",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2140,
+      "id": 4854,
+      "name": "PGT Vanijya (Commerce) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2141,
+      "id": 4853,
+      "name": "PGT Vanijya (Commerce)",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2142,
+      "id": 4852,
+      "name": "PGT TGT Biotechnology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2143,
+      "id": 4851,
+      "name": "PGT Sociology",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2144,
+      "id": 4850,
+      "name": "PGT Samajsastra Sociology Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2145,
+      "id": 4849,
+      "name": "PGT Rashayan Vigyan (Chemistry) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2146,
+      "id": 4848,
+      "name": "PGT Rashayan Vigyan (Chemistry)",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2147,
+      "id": 4847,
+      "name": "PGT Mathematics",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2148,
+      "id": 4846,
+      "name": "PGT Jeev Vigyan (Biology) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2149,
+      "id": 4845,
+      "name": "PGT Jeev Vigyan (Biology)",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2150,
+      "id": 4844,
+      "name": "PGT Itihaas (History) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2151,
+      "id": 4843,
+      "name": "PGT History",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2152,
+      "id": 4842,
+      "name": "PGT Grah Vigyan (Home Science) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2153,
+      "id": 4841,
+      "name": "PGT Grah Vigyan (Home Science)",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2154,
+      "id": 4840,
+      "name": "PGT Ganit (Mathematics) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2155,
+      "id": 4839,
+      "name": "PGT Bhugol (Geography) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2156,
+      "id": 4838,
+      "name": "PGT Bhugol (Geography)",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2157,
+      "id": 4837,
+      "name": "PGT Bhotik Vigyan (Physics) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2158,
+      "id": 4836,
+      "name": "PGT Bhotik Vigyan (Physics)",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2159,
+      "id": 4835,
+      "name": "PGT Arts Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2160,
+      "id": 4834,
+      "name": "PGT Arts",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2161,
+      "id": 4833,
+      "name": "PGT Arthashastra Economics",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2162,
+      "id": 4832,
+      "name": "PGT Arthashastra (Economics) Hindi",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2180,
+      "id": 4814,
+      "name": "PG Dental Entrance Exam",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2203,
+      "id": 4791,
+      "name": "OUAT Assistant Professor",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2443,
+      "id": 4551,
+      "name": "NTSE",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2469,
+      "id": 4525,
+      "name": "NSIT Non Teaching",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2475,
+      "id": 4519,
+      "name": "NRRMS Computer Assistant",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2476,
+      "id": 4518,
+      "name": "NRRMS",
+      "group": "National Academics - Other Central Academic & School Exams"
+    },
+    {
+      "sl": 2482,
+      "id": 4512,
+      "name": "NRDRM",
+      "group": "National Academics - Other Central Academic & School Exams"
+    }
+  ]
+}

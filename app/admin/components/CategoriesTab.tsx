@@ -95,8 +95,9 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
         cache: "no-store",
       });
       if (!res.ok) throw new Error("Failed to load categories");
-      const data: CategoryItem[] = await res.json();
-      const sorted = (data || []).sort((a, b) => a.priority - b.priority);
+      const data = await res.json();
+      const list = Array.isArray(data) ? data : [];
+      const sorted = list.sort((a: any, b: any) => (a.priority || 0) - (b.priority || 0));
       setCategories(sorted);
     } catch (err: any) {
       showToast(err.message || "श्रेणियां लोड करने में त्रुटि", "error");

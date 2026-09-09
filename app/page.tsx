@@ -46,8 +46,10 @@ export default function HomePage() {
 
 
   const filteredCourses = useMemo(() => {
-    const selectedCatObj = categories.find((c) => c.id === selectedCategory);
-    return allCourses.filter((course) => {
+    const cats = Array.isArray(categories) ? categories : [];
+    const crs = Array.isArray(allCourses) ? allCourses : [];
+    const selectedCatObj = cats.find((c) => c.id === selectedCategory);
+    return crs.filter((course) => {
       const matchesCategory =
         selectedCategory === "all" ||
         course.exam_id === selectedCategory ||
@@ -58,14 +60,14 @@ export default function HomePage() {
         !q ||
         course.title.toLowerCase().includes(q) ||
         course.short_description.toLowerCase().includes(q) ||
-        course.subjects.some((s) => s.toLowerCase().includes(q));
+        (Array.isArray(course.subjects) && course.subjects.some((s) => s.toLowerCase().includes(q)));
       return matchesCategory && matchesSearch;
     });
   }, [allCourses, selectedCategory, searchQuery, categories]);
 
-  const featuredDeals = useMemo(() => apiFeatured, [apiFeatured]);
-  const newArrivals = useMemo(() => apiNewArrivals, [apiNewArrivals]);
-  const latestProducts = useMemo(() => allCourses.slice(0, 10), [allCourses]);
+  const featuredDeals = useMemo(() => (Array.isArray(apiFeatured) ? apiFeatured : []), [apiFeatured]);
+  const newArrivals = useMemo(() => (Array.isArray(apiNewArrivals) ? apiNewArrivals : []), [apiNewArrivals]);
+  const latestProducts = useMemo(() => (Array.isArray(allCourses) ? allCourses.slice(0, 10) : []), [allCourses]);
 
   const handleBuyNow = (course: Course) => {
     setCart([course]);
@@ -80,19 +82,6 @@ export default function HomePage() {
   const handleRemoveFromCart = (id: string) => {
     setCart((prev) => prev.filter((item) => item.id !== id));
   };
-
-  if (categoriesLoading || sliderLoading || coursesLoading) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <Navbar cartCount={0} onCartClick={() => {}} />
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center flex-1">
-          <div className="w-12 h-12 rounded-full border-4 border-stone-200 border-t-amber-600 animate-spin mx-auto" />
-          <p className="text-stone-500 mt-4 text-sm">Loading store...</p>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
 
   const featuredTitle = settings?.homepage?.featured_section_title || "Featured Bundles";
   const hotDealsTitle = settings?.homepage?.hot_deals_title || "Today's Hot Deals";

@@ -104,16 +104,22 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
 
     if (adminRow) {
       if (key === "categories" && adminRow.claude_key && (adminRow.claude_key.startsWith("[") || adminRow.claude_key.startsWith("{"))) {
-        return JSON.parse(adminRow.claude_key) as T;
+        const parsed = JSON.parse(adminRow.claude_key);
+        if (Array.isArray(defaultValue) && !Array.isArray(parsed)) return defaultValue;
+        return parsed as T;
       }
       if (key === "featured_exams" && adminRow.openai_key && (adminRow.openai_key.startsWith("[") || adminRow.openai_key.startsWith("{"))) {
-        return JSON.parse(adminRow.openai_key) as T;
+        const parsed = JSON.parse(adminRow.openai_key);
+        return parsed as T;
       }
       if (key === "courses" && adminRow.openrouter_key && (adminRow.openrouter_key.startsWith("[") || adminRow.openrouter_key.startsWith("{"))) {
-        return JSON.parse(adminRow.openrouter_key) as T;
+        const parsed = JSON.parse(adminRow.openrouter_key);
+        if (Array.isArray(defaultValue) && !Array.isArray(parsed)) return defaultValue;
+        return parsed as T;
       }
       if (key === "settings" && adminRow.gemini_key && adminRow.gemini_key.startsWith("{")) {
-        return JSON.parse(adminRow.gemini_key) as T;
+        const parsed = JSON.parse(adminRow.gemini_key);
+        return parsed as T;
       }
     }
   } catch (err) {
@@ -126,7 +132,9 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
     try {
       if (existsSync(p)) {
         const raw = await readFile(p, "utf-8");
-        return JSON.parse(raw) as T;
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(defaultValue) && !Array.isArray(parsed)) return defaultValue;
+        return parsed as T;
       }
     } catch {}
   }

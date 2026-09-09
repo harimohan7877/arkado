@@ -30,8 +30,10 @@ export default function AdminLoginForm() {
 
       if (res.ok) {
         const data = await res.json();
-        document.cookie = `arkado-admin-verified=${data.token}; path=/; max-age=86400; SameSite=Lax; secure`;
+        const isSecure = typeof window !== "undefined" && window.location.protocol === "https:";
+        document.cookie = `arkado-admin-verified=${data.token}; path=/; max-age=86400; SameSite=Lax${isSecure ? "; Secure" : ""}`;
         sessionStorage.setItem("arkado-admin-verified", data.token);
+        localStorage.setItem("arkado-admin-verified", data.token);
         router.push(redirect);
         router.refresh();
       } else {

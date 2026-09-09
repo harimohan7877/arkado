@@ -109,11 +109,15 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
         fetch(`/api/admin/courses?t=${Date.now()}`, { headers: getAuthHeaders(), cache: "no-store" }),
         fetch(`/api/admin/exams?t=${Date.now()}`, { headers: getAuthHeaders(), cache: "no-store" }),
       ]);
-      if (coursesRes.ok) setCourses(await coursesRes.json());
+      if (coursesRes.ok) {
+        const cData = await coursesRes.json();
+        setCourses(Array.isArray(cData) ? cData : []);
+      }
       if (examsRes.ok) {
-        const examsData: any[] = await examsRes.json();
+        const examsData = await examsRes.json();
+        const list = Array.isArray(examsData) ? examsData : [];
         setExams(
-          examsData.map((e) => ({
+          list.map((e: any) => ({
             id: e.id,
             name: e.name,
             short_name: e.short_name || e.name,

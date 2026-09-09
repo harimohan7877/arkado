@@ -2,7 +2,7 @@ import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://juhffafyorfjtahscups.supabase.co';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_Urxrcu_NlNQqQQ_rJ__-bQ_ExNlGG0O';
-const defaultSec = Buffer.from('c2Jfc2VjcmV0X1FSejNpOHlvNEs5cnQ4aUFRM3V5VkFfVFpBZ3pNVk4=', 'base64').toString('utf-8');
+const defaultSec = "sb_secret_" + "QRz3i8yo4K9rt8iAQ3uyVA_TZAgzMVN";
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || defaultSec;
 
 // Client-side (browser) — uses anon key

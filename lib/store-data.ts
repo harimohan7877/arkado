@@ -4,7 +4,7 @@ import { join, dirname } from "path";
 import { supabaseAdmin } from "@/lib/supabase";
 
 function getCandidatePaths(localFilePath: string): string[] {
-  const norm = localFilePath.replace(/\/g, "/");
+  const norm = localFilePath.replaceAll("\\", "/");
   return [join(process.cwd(), norm)];
 }
 

@@ -8,7 +8,7 @@ export function useCategories(scope: "public" | "all" = "public") {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`/api/categories?scope=${scope}`)
+    fetch(`/api/categories?scope=${scope}&t=${Date.now()}`, { cache: "no-store" })
       .then(res => res.json())
       .then(data => { setCategories(data); setLoading(false); })
       .catch(() => setLoading(false));

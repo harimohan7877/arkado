@@ -134,9 +134,6 @@ export default function Footer() {
             <Link href="/exams" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
               All Exams
             </Link>
-            <Link href="/admin" className="block text-xs text-amber-300 hover:text-amber-200 transition py-0.5">
-              Admin Panel
-            </Link>
             <Link href="/#deals" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
               {homepage.hot_deals_title || "Today's Hot Deals"}
             </Link>

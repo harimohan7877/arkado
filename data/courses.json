@@ -2,7 +2,7 @@
   {
     "id": "rajasthan-cet-2026-bundle",
     "slug": "rajasthan-cet",
-    "title": "Rajasthan CET 2026 - Complete Selection Kit",
+    "title": "Rajasthan CET (12वीं स्तर) 2026 - Complete Selection Kit",
     "exam_board": "RSMSSB",
     "category": "rajasthan",
     "category_label": "राजस्थान स्पेशल",
@@ -67,11 +67,87 @@
     "slider_tagline": "सलेक्शन का पक्का साथी — 80% विशेष छूट",
     "sample_pdf_url": "https://drive.google.com",
     "drive_url": "https://drive.google.com",
-    "is_active": false,
-    "is_featured": false,
+    "is_active": true,
+    "is_featured": true,
     "featured_priority": 1,
-    "is_new_arrival": false,
-    "new_arrival_priority": 1
+    "is_new_arrival": true,
+    "new_arrival_priority": 1,
+    "exam_id": "1001"
+  },
+  {
+    "id": "rajasthan-cet-grad-2026-bundle",
+    "slug": "rajasthan-cet-grad",
+    "title": "Rajasthan CET (स्नातक स्तर) 2026 - Complete Selection Kit",
+    "exam_board": "RSMSSB",
+    "category": "rajasthan",
+    "category_label": "राजस्थान स्पेशल",
+    "badge": "Notes + MCQs + Mock Tests",
+    "short_description": "स्नातक (Graduation) स्तर भर्ती हेतु 2026 नए सिलेबस पर आधारित सम्पूर्ण थ्योरी नोट्स, 3500+ MCQs और 5 फुल मॉक टेस्ट।",
+    "original_price": 999,
+    "price": 199,
+    "discount_percent": 80,
+    "rating": 4.9,
+    "rating_count": "4,120+ छात्र",
+    "highlights": [
+      "सम्पूर्ण राजस्थान GK (इतिहास, कला-संस्कृति, भूगोल, राजव्यवस्था)",
+      "3000+ विषयवार महत्वपूर्ण प्रश्नोत्तर व्याख्या सहित (MCQs)",
+      "5 फुल लेंथ मॉक टेस्ट पेपर्स (ओरिजिनल परीक्षा पैटर्न पर)"
+    ],
+    "subjects": [
+      "राजस्थान का इतिहास एवं कला-संस्कृति",
+      "राजस्थान का भूगोल एवं अर्थव्यवस्था",
+      "दैनिक विज्ञान (Everyday Science)",
+      "तार्किक विवेचन एवं मानसिक योग्यता (Reasoning)",
+      "सामान्य हिन्दी एवं General English",
+      "कंप्यूटर ज्ञान (Computer Awareness)",
+      "समसामयिक घटनाएं (Current Affairs)"
+    ],
+    "syllabus_preview": [
+      {
+        "subject": "राजस्थान का इतिहास, कला एवं संस्कृति",
+        "chapters": [
+          "प्रागैतिहासिक स्थल व प्रमुख सभ्यताएं",
+          "प्रमुख राजवंश व उनकी प्रशासनिक व्यवस्था",
+          "स्थापत्य कला - किले, महल व स्मारक",
+          "मेले, त्योहार, लोकगीत एवं लोकनृत्य",
+          "संत, लोकदेवता एवं लोकदेवियां",
+          "हस्तशिल्प, चित्रकलाएं एवं बोलियां"
+        ]
+      },
+      {
+        "subject": "राजस्थान का भूगोल व नए 50 जिले",
+        "chapters": [
+          "भौतिक स्वरूप एवं जलवायु प्रदेश",
+          "अपवाह तंत्र, नदियां एवं झीलें",
+          "वन, वन्यजीव एवं जैव विविधता",
+          "खनिज संसाधन एवं ऊर्जा के स्रोत",
+          "कृषि, प्रमुख फसलें एवं सिंचाई परियोजनाएं"
+        ]
+      },
+      {
+        "subject": "दैनिक विज्ञान एवं कंप्यूटर ज्ञान",
+        "chapters": [
+          "भौतिक एवं रासायनिक परिवर्तन",
+          "मानव रोग, पोषण एवं स्वास्थ्य",
+          "MS Office (Word, Excel, PPT) शॉर्टकट कीज",
+          "RAM, ROM, हार्डवेयर व सॉफ्टवेयर"
+        ]
+      }
+    ],
+    "pages_count": "1,450+ Pages",
+    "format": "Printable PDF",
+    "language": "हिन्दी (Hindi)",
+    "cover_image": "/images/bundles/cet_bundle_3d.jpg",
+    "show_in_slider": true,
+    "slider_tagline": "सलेक्शन का पक्का साथी — 80% विशेष छूट",
+    "sample_pdf_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com",
+    "is_active": true,
+    "is_featured": true,
+    "featured_priority": 2,
+    "is_new_arrival": true,
+    "new_arrival_priority": 2,
+    "exam_id": "1002"
   },
   {
     "id": "rajasthan-patwari-2026-bundle",
@@ -127,11 +203,12 @@
     "slider_tagline": "नए 50 जिलों के अनुसार पूर्णतः अपडेटेड नोट्स",
     "sample_pdf_url": "https://drive.google.com",
     "drive_url": "https://drive.google.com",
-    "is_active": false,
+    "is_active": true,
     "is_featured": false,
     "featured_priority": 2,
     "is_new_arrival": false,
-    "new_arrival_priority": 2
+    "new_arrival_priority": 2,
+    "exam_id": "5125"
   },
   {
     "id": "rajasthan-police-constable-bundle",
@@ -184,11 +261,12 @@
     "slider_tagline": "वर्दी का सपना होगा साकार — मात्र ₹149 में",
     "sample_pdf_url": "https://drive.google.com",
     "drive_url": "https://drive.google.com",
-    "is_active": false,
+    "is_active": true,
     "is_featured": false,
     "featured_priority": 3,
     "is_new_arrival": false,
-    "new_arrival_priority": 3
+    "new_arrival_priority": 3,
+    "exam_id": "5426"
   },
   {
     "id": "ssc-all-in-one-brahmastra-bundle",
@@ -243,11 +321,12 @@
     "slider_tagline": "TCS पैटर्न पर आधारित 5000+ MCQs व फॉर्मूला बुक",
     "sample_pdf_url": "https://drive.google.com",
     "drive_url": "https://drive.google.com",
-    "is_active": false,
+    "is_active": true,
     "is_featured": false,
     "featured_priority": 4,
     "is_new_arrival": false,
-    "new_arrival_priority": 4
+    "new_arrival_priority": 4,
+    "exam_id": "ssc-cgl"
   },
   {
     "id": "rajasthan-reet-teaching-bundle",
@@ -282,11 +361,12 @@
     "slider_tagline": "NCERT + RBSE का संपूर्ण निचोड़",
     "sample_pdf_url": "https://drive.google.com",
     "drive_url": "https://drive.google.com",
-    "is_active": false,
+    "is_active": true,
     "is_featured": false,
     "featured_priority": 5,
     "is_new_arrival": false,
-    "new_arrival_priority": 5
+    "new_arrival_priority": 5,
+    "exam_id": "5097"
   },
   {
     "id": "rajasthan-ldc-junior-accountant-bundle",
@@ -322,10 +402,11 @@
     "slider_tagline": "हिंदी और इंग्लिश में 100/100 स्कोरिंग स्ट्रेटेजी",
     "sample_pdf_url": "https://drive.google.com",
     "drive_url": "https://drive.google.com",
-    "is_active": false,
+    "is_active": true,
     "is_featured": false,
     "featured_priority": 6,
     "is_new_arrival": false,
-    "new_arrival_priority": 6
+    "new_arrival_priority": 6,
+    "exam_id": "5487"
   }
 ]

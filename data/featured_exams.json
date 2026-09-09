@@ -1,4 +1,42 @@
 {
-  "featured_exams": [],
-  "new_arrivals": []
+  "featured_exams": [
+    {
+      "id": "1001",
+      "name": "राजस्थान CET (12वीं स्तर) 2026",
+      "short_name": "राजस्थान CET",
+      "logo_url": "",
+      "board_name": "RSMSSB",
+      "category_name": "राजस्थान (Rajasthan State)",
+      "priority": 1
+    },
+    {
+      "id": "1002",
+      "name": "राजस्थान CET (स्नातक स्तर) 2026",
+      "short_name": "राजस्थान CET (स्नातक स्तर)",
+      "logo_url": "",
+      "board_name": "RSMSSB",
+      "category_name": "राजस्थान (Rajasthan State)",
+      "priority": 2
+    }
+  ],
+  "new_arrivals": [
+    {
+      "id": "1001",
+      "name": "राजस्थान CET (12वीं स्तर) 2026",
+      "short_name": "राजस्थान CET",
+      "logo_url": "",
+      "board_name": "RSMSSB",
+      "category_name": "राजस्थान (Rajasthan State)",
+      "priority": 1
+    },
+    {
+      "id": "1002",
+      "name": "राजस्थान CET (स्नातक स्तर) 2026",
+      "short_name": "राजस्थान CET (स्नातक स्तर)",
+      "logo_url": "",
+      "board_name": "RSMSSB",
+      "category_name": "राजस्थान (Rajasthan State)",
+      "priority": 2
+    }
+  ]
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { CourseBundle } from "@/lib/courses";
 import { getExamLabel } from "@/lib/exam-labels";
 import {
@@ -71,12 +72,12 @@ export default function CourseCard({
           </span>
         </div>
 
-        <h3
-          onClick={() => onOpenSample(course)}
+        <Link
+          href={`/course/${course.slug || course.id}`}
           className="font-bold text-sm text-stone-900 leading-snug cursor-pointer hover:text-amber-700 transition line-clamp-2 min-h-[40px]"
         >
           {course.title}
-        </h3>
+        </Link>
 
         <div className="flex items-center gap-1.5 text-[11px] text-stone-500 font-medium">
           <FileTextIcon size={11} />

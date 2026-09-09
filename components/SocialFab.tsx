@@ -42,7 +42,7 @@ export default function SocialFab() {
       .catch(() => {});
   }, []);
 
-  const isAdminRoute = pathname?.startsWith("/admin") ?? false;
+  const isAdminRoute = pathname?.includes("admin") ?? false;
 
   if (isAdminRoute) return null;
 

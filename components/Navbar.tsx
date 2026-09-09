@@ -260,12 +260,6 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
               All Exams
             </Link>
             <Link
-              href="/admin"
-              className="h-11 px-3 flex items-center text-sm font-semibold text-amber-800 hover:text-amber-950 transition"
-            >
-              Admin
-            </Link>
-            <Link
               href="/#new"
               className="h-11 px-3 flex items-center text-sm font-semibold text-stone-700 hover:text-amber-700 transition"
             >
@@ -403,13 +397,6 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
                 className="block px-3 py-2.5 rounded-md font-semibold text-stone-700 hover:bg-stone-100"
               >
                 All Categories
-              </Link>
-              <Link
-                href="/admin"
-                onClick={() => setShowMobileMenu(false)}
-                className="block px-3 py-2.5 rounded-md font-semibold text-amber-800 hover:bg-amber-50"
-              >
-                Admin Panel
               </Link>
               <Link
                 href="/#deals"

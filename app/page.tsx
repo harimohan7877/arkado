@@ -287,7 +287,7 @@ export default function HomePage() {
         {/* DEALS SECTION */}
         <section id="deals" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <FeaturedGrid
-            title={`🔥 ${hotDealsTitle}`}
+            title={`🌟 ${featuredTitle}`}
             courses={featuredDeals}
             onBuyNow={handleBuyNow}
             onOpenSample={handleOpenSample}
@@ -297,38 +297,72 @@ export default function HomePage() {
         {/* NEW ARRIVALS — list style */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-end justify-between mb-4">
-            <h2 className="section-title">{newArrivalsTitle}</h2>
+            <h2 className="section-title">✨ {newArrivalsTitle}</h2>
             <Link href="/exams" className="text-sm font-bold text-amber-700 hover:text-amber-800">View All →</Link>
           </div>
           <div className="card-base divide-y divide-stone-100">
             {newArrivals.map((course) => (
-              <button
+              <div
                 key={course.id}
-                onClick={() => handleOpenSample(course)}
-                className="w-full flex items-center gap-4 p-3.5 hover:bg-stone-50 transition text-left cursor-pointer"
+                className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 hover:bg-stone-50 transition"
               >
-                <div className="relative w-14 h-16 rounded-md overflow-hidden bg-stone-100 shrink-0">
-                  <Image
-                    src={course.cover_image}
-                    alt={course.title}
-                    fill
-                    className="object-cover"
-                    sizes="56px"
-                  />
-                  <span className="absolute top-0 left-0 bg-amber-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-br-md">
-                    {course.discount_percent}%
-                  </span>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="font-bold text-sm text-stone-900 line-clamp-2">
-                    {course.title}
-                  </p>
-                  <div className="flex items-baseline gap-2 mt-1">
-                    <span className="text-sm font-black text-stone-900">₹{course.price}</span>
-                    <span className="text-xs text-stone-400 line-through">₹{course.original_price}</span>
+                <div className="flex items-center gap-4 min-w-0 flex-1">
+                  <Link
+                    href={`/course/${course.slug || course.id}`}
+                    className="relative w-16 h-20 rounded-lg overflow-hidden bg-stone-100 shrink-0 border border-stone-200"
+                  >
+                    <Image
+                      src={course.cover_image}
+                      alt={course.title}
+                      fill
+                      className="object-cover"
+                      sizes="64px"
+                    />
+                    <span className="absolute top-0 left-0 bg-amber-600 text-white text-[9px] font-black px-1.5 py-0.5 rounded-br-md">
+                      {course.discount_percent}%
+                    </span>
+                  </Link>
+                  <div className="flex-1 min-w-0">
+                    <Link
+                      href={`/course/${course.slug || course.id}`}
+                      className="font-bold text-sm text-stone-900 line-clamp-2 hover:text-amber-700 transition"
+                    >
+                      {course.title}
+                    </Link>
+                    <p className="text-xs text-stone-500 line-clamp-1 mt-0.5">
+                      {course.short_description}
+                    </p>
+                    <div className="flex items-baseline gap-2 mt-1">
+                      <span className="text-base font-black text-stone-900">₹{course.price}</span>
+                      <span className="text-xs text-stone-400 line-through">₹{course.original_price}</span>
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                        {course.badge || "Complete Kit"}
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </button>
+
+                <div className="flex items-center gap-2 w-full sm:w-auto shrink-0 justify-end">
+                  <button
+                    onClick={() => handleOpenSample(course)}
+                    className="px-3 py-2 rounded-xl border border-stone-300 hover:border-stone-400 text-stone-700 text-xs font-bold transition"
+                  >
+                    View Sample
+                  </button>
+                  <button
+                    onClick={() => handleBuyNow(course)}
+                    className="btn-primary py-2 px-4 text-xs font-bold shadow-xs"
+                  >
+                    Buy Now ₹{course.price}
+                  </button>
+                  <Link
+                    href={`/course/${course.slug || course.id}`}
+                    className="px-3 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-bold transition"
+                  >
+                    Details →
+                  </Link>
+                </div>
+              </div>
             ))}
           </div>
         </section>

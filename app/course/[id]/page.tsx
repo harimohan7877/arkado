@@ -1,43 +1,136 @@
 "use client";
 
-import { use, useState } from "react";
+import { use, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getCourseBySlug, getAllCourses, CourseBundle } from "@/lib/courses";
+import { getCourseBySlug, CourseBundle } from "@/lib/courses";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
 
 interface PageProps {
-  params: Promise<{ id: string }>;
+  params: Promise<{ id: string }> | { id: string };
 }
 
 export default function CourseDetailPage({ params }: PageProps) {
-  const resolvedParams = use(params);
-  const coursePromise = getCourseBySlug(resolvedParams.id);
-  const allCoursesPromise = getAllCourses();
-  
-  const course = use(coursePromise) as CourseBundle | undefined;
-  const allCourses = use(allCoursesPromise) as CourseBundle[];
+  const resolvedParams = "then" in params ? use(params) : params;
+  const courseId = resolvedParams.id;
 
+  const [course, setCourse] = useState<CourseBundle | null>(null);
+  const [loading, setLoading] = useState(true);
   const [cart, setCart] = useState<CourseBundle[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  useEffect(() => {
+    async function loadCourseOrExam() {
+      setLoading(true);
+      try {
+        // 1. Try to find static course first
+        const foundCourse = await getCourseBySlug(courseId);
+        if (foundCourse) {
+          setCourse(foundCourse);
+          setLoading(false);
+          return;
+        }
+
+        // 2. If not found in static courses, look up the exam by ID
+        const res = await fetch(`/api/exams?include_inactive=true&limit=200`);
+        if (res.ok) {
+          const data = await res.json();
+          const examList: any[] = Array.isArray(data) ? data : data.exams || [];
+          const matchedExam = examList.find(
+            (e) => e.id === courseId || e.slug === courseId || e.name.toLowerCase().includes(courseId.toLowerCase())
+          );
+
+          if (matchedExam) {
+            const isCet = (matchedExam.name || "").includes("CET");
+            const synth: CourseBundle = {
+              id: matchedExam.id,
+              exam_id: matchedExam.id,
+              title: `${matchedExam.name} - Complete Selection Kit`,
+              slug: matchedExam.id,
+              badge: "Complete Selection Kit",
+              short_description:
+                matchedExam.viral_subtext ||
+                `${matchedExam.name} हेतु 2026 नए सिलेबस पर आधारित सम्पूर्ण हस्तलिखित थ्योरी नोट्स, 3000+ MCQs और फुल मॉक टेस्ट पेपर्स।`,
+              original_price: 999,
+              price: 199,
+              discount_percent: 80,
+              highlights: [
+                "सम्पूर्ण विषयवार हस्तलिखित थ्योरी नोट्स",
+                "3000+ विषयवार महत्वपूर्ण प्रश्नोत्तर (MCQs) व्याख्या सहित",
+                "5 फुल लेंथ मॉडल टेस्ट पेपर्स (ओरिजिनल परीक्षा पैटर्न पर)",
+                "प्रिंट हेतु तैयार A4 साइज PDF फॉर्मेट",
+              ],
+              subjects: [
+                "राजस्थान का इतिहास, कला एवं संस्कृति",
+                "राजस्थान का भूगोल व नए जिले",
+                "दैनिक विज्ञान एवं कंप्यूटर ज्ञान",
+                "तार्किक विवेचन एवं सामान्य हिन्दी",
+              ],
+              syllabus_preview: [],
+              pages_count: "1,250+ Pages",
+              format: "Printable PDF",
+              language: "हिन्दी (Hindi)",
+              cover_image:
+                matchedExam.logo_url ||
+                (isCet ? "/images/bundles/cet_bundle_3d.jpg" : "/images/bundles/patwari_bundle_3d.jpg"),
+              show_in_slider: false,
+              slider_tagline: "सलेक्शन का पक्का साथी — 80% विशेष छूट",
+              sample_pdf_url: matchedExam.notes_link || "https://drive.google.com",
+              drive_url: matchedExam.notes_link || "https://drive.google.com",
+              rating: 4.9,
+              rating_count: "3,850+ छात्र",
+              is_active: true,
+              priority: 1,
+              created_at: new Date().toISOString(),
+              updated_at: new Date().toISOString(),
+            };
+            setCourse(synth);
+            setLoading(false);
+            return;
+          }
+        }
+      } catch (err) {
+        console.error("Error loading course/exam:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    if (courseId) {
+      loadCourseOrExam();
+    }
+  }, [courseId]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-neutral-50 flex flex-col justify-between">
+        <Navbar cartCount={0} onCartClick={() => {}} />
+        <div className="max-w-xl mx-auto px-4 py-32 text-center flex-1">
+          <div className="w-12 h-12 rounded-full border-4 border-stone-200 border-t-amber-600 animate-spin mx-auto" />
+          <p className="text-stone-500 mt-4 text-sm font-medium">Loading selection kit...</p>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   if (!course) {
     return (
       <div className="min-h-screen bg-neutral-50 flex flex-col justify-between">
         <Navbar cartCount={cart.length} onCartClick={() => setIsCartOpen(true)} />
-        <div className="max-w-xl mx-auto px-4 py-20 text-center">
+        <div className="max-w-xl mx-auto px-4 py-20 text-center flex-1">
           <div className="text-4xl mb-4">🔍</div>
-          <h1 className="text-xl font-bold text-neutral-900">Course Not Found</h1>
+          <h1 className="text-xl font-bold text-neutral-900">Course / Exam Not Found</h1>
           <p className="text-xs text-neutral-500 mt-2">
-            Sorry, this course bundle is not available or the link has changed.
+            Sorry, this study kit is not available or the link has changed.
           </p>
           <Link
-            href="/"
-            className="inline-block mt-6 px-6 py-2.5 rounded-full bg-neutral-900 text-white font-bold text-xs"
+            href="/exams"
+            className="inline-block mt-6 px-6 py-2.5 rounded-full bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow-xs"
           >
-            ← View All Courses
+            ← Browse All Exams &amp; Categories
           </Link>
         </div>
         <Footer />
@@ -56,13 +149,15 @@ export default function CourseDetailPage({ params }: PageProps) {
     <div className="min-h-screen bg-neutral-50 flex flex-col justify-between font-sans">
       <Navbar cartCount={cart.length} onCartClick={() => setIsCartOpen(true)} />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full">
-        <nav className="flex items-center gap-2 text-xs text-neutral-500 mb-6">
-          <Link href="/" className="hover:text-neutral-900 transition">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full flex-1">
+        <nav className="flex items-center gap-2 text-xs text-neutral-500 mb-6 flex-wrap">
+          <Link href="/" className="hover:text-neutral-900 transition font-medium">
             Home
           </Link>
           <span>/</span>
-          <span className="text-neutral-800 font-semibold">{examBoard}</span>
+          <Link href="/exams" className="hover:text-neutral-900 transition font-medium">
+            Exams
+          </Link>
           <span>/</span>
           <span className="text-neutral-400 truncate max-w-[200px] sm:max-w-none">
             {course.title}
@@ -73,10 +168,10 @@ export default function CourseDetailPage({ params }: PageProps) {
           <div className="lg:col-span-8 space-y-8">
             <div className="bg-white p-6 sm:p-8 rounded-3xl border border-neutral-200 shadow-xs space-y-4">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs font-bold text-stone-600 bg-stone-100 px-3 py-1 rounded-full uppercase">
-                  {examBoard}
+                <span className="text-xs font-bold text-amber-800 bg-amber-50 px-3 py-1 rounded-full uppercase border border-amber-200">
+                  Verified Exam Kit
                 </span>
-                <span className="text-xs font-bold text-stone-500 bg-stone-50 px-3 py-1 rounded-full border border-stone-200">
+                <span className="text-xs font-bold text-stone-600 bg-stone-100 px-3 py-1 rounded-full">
                   {course.badge}
                 </span>
               </div>
@@ -85,25 +180,25 @@ export default function CourseDetailPage({ params }: PageProps) {
                 {course.title}
               </h1>
 
-              <p className="text-sm text-neutral-500 leading-relaxed">
+              <p className="text-sm text-neutral-600 leading-relaxed">
                 {course.short_description}
               </p>
 
-              <div className="pt-2 flex flex-wrap items-center gap-2 text-xs text-neutral-500 font-medium">
+              <div className="pt-2 flex flex-wrap items-center gap-2 text-xs text-neutral-600 font-medium">
                 <span className="bg-stone-100 px-3 py-1.5 rounded-xl flex items-center gap-1.5">
                   📄 {course.pages_count}
                 </span>
                 <span className="bg-stone-100 px-3 py-1.5 rounded-xl flex items-center gap-1.5">
                   🌐 {course.language}
                 </span>
-                <span className="bg-stone-100 px-3 py-1.5 rounded-xl flex items-center gap-1.5">
+                <span className="bg-stone-100 px-3 py-1.5 rounded-xl flex items-center gap-1.5 font-bold text-emerald-700">
                   ⚡ {course.format}
                 </span>
               </div>
             </div>
 
             <div className="bg-white p-6 sm:p-8 rounded-3xl border border-neutral-200 shadow-xs space-y-4">
-              <h3 className="text-base font-bold text-neutral-600 flex items-center gap-2">
+              <h3 className="text-base font-bold text-neutral-800 flex items-center gap-2">
                 <span>🎯</span> Key Highlights
               </h3>
               <div className="grid grid-cols-1 gap-2.5">
@@ -112,10 +207,10 @@ export default function CourseDetailPage({ params }: PageProps) {
                     key={i}
                     className="py-2.5 flex items-start gap-3 border-b border-neutral-100 last:border-0"
                   >
-                    <span className="w-5 h-5 rounded-full bg-stone-100 text-stone-500 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                    <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
                       ✓
                     </span>
-                    <span className="text-xs sm:text-sm text-neutral-600">
+                    <span className="text-xs sm:text-sm text-neutral-700 font-medium">
                       {hl}
                     </span>
                   </div>
@@ -125,13 +220,13 @@ export default function CourseDetailPage({ params }: PageProps) {
 
             <div className="bg-white p-6 sm:p-8 rounded-3xl border border-neutral-200 shadow-xs space-y-4">
               <h3 className="text-lg font-black text-neutral-900 flex items-center gap-2">
-                <span>📚</span> Complete Syllabus
+                <span>📚</span> Covered Subjects &amp; Syllabus
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 {course.subjects.map((sub, idx) => (
                   <div
                     key={idx}
-                    className="p-3 bg-neutral-50 rounded-xl border border-neutral-200 flex items-center gap-2.5 text-xs font-semibold text-neutral-700"
+                    className="p-3 bg-neutral-50 rounded-xl border border-neutral-200 flex items-center gap-2.5 text-xs font-semibold text-neutral-800"
                   >
                     <span className="text-amber-500 font-bold">▶</span>
                     <span>{sub}</span>
@@ -140,16 +235,16 @@ export default function CourseDetailPage({ params }: PageProps) {
               </div>
             </div>
 
-            <div className="bg-neutral-100 border border-neutral-200 p-6 sm:p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 p-6 sm:p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="space-y-1 text-center sm:text-left">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-500 bg-white px-2.5 py-0.5 rounded-full border border-neutral-300">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full">
                   Free Preview
                 </span>
                 <h4 className="text-lg font-bold text-neutral-900">
                   Sample PDF Notes
                 </h4>
-                <p className="text-xs text-neutral-500">
-                  Check handwriting quality before buying.
+                <p className="text-xs text-neutral-600">
+                  Check note quality, handwriting and exam pattern analysis before purchasing.
                 </p>
               </div>
 
@@ -157,7 +252,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                 href={course.sample_pdf_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 rounded-full bg-neutral-900 hover:bg-neutral-800 text-white font-bold text-xs transition shadow-md whitespace-nowrap"
+                className="px-6 py-3 rounded-xl bg-stone-900 hover:bg-stone-800 text-white font-bold text-xs transition shadow-md whitespace-nowrap"
               >
                 📄 Open Sample PDF ↗
               </a>
@@ -166,7 +261,7 @@ export default function CourseDetailPage({ params }: PageProps) {
 
           <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-4">
             <div className="bg-white p-6 rounded-3xl border border-neutral-200 shadow-lg space-y-6">
-              <div className="relative w-full h-48 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200">
+              <div className="relative w-full h-52 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200">
                 <Image
                   src={course.cover_image}
                   alt={course.title}
@@ -174,7 +269,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                   className="object-cover"
                 />
                 <div className="absolute top-3 left-3 bg-neutral-900/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-md">
-                  {examBoard}
+                  {examBoard || "RSMSSB"}
                 </div>
               </div>
 
@@ -186,12 +281,12 @@ export default function CourseDetailPage({ params }: PageProps) {
                   <span className="text-lg text-neutral-400 line-through">
                     ₹{course.original_price}
                   </span>
-                  <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">
+                  <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
                     {course.discount_percent}% OFF
                   </span>
                 </div>
                 <p className="text-[11px] text-neutral-500 mt-1">
-                  One-time fee • Lifetime bundle access
+                  One-time payment • Instant WhatsApp &amp; Gmail PDF access
                 </p>
               </div>
 
@@ -206,7 +301,7 @@ export default function CourseDetailPage({ params }: PageProps) {
 
                 <a
                   href={`https://wa.me/917852004401?text=${encodeURIComponent(
-                    `Hi! I have a question about ${course.title}.`
+                    `Hi! I want to purchase the study kit for ${course.title}.`
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -218,16 +313,16 @@ export default function CourseDetailPage({ params }: PageProps) {
 
               <div className="pt-4 border-t border-neutral-100 space-y-2 text-xs text-neutral-500">
                 <div className="flex items-center gap-2">
-                  <span className="text-neutral-400 font-bold">✓</span>
+                  <span className="text-emerald-600 font-bold">✓</span>
                   <span>Direct Google Drive PDF Download</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-neutral-400 font-bold">✓</span>
-                  <span>WhatsApp or Gmail Delivery</span>
+                  <span className="text-emerald-600 font-bold">✓</span>
+                  <span>Instant WhatsApp or Gmail Delivery</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-neutral-400 font-bold">✓</span>
-                  <span>100% Secure UPI (0% Extra Charges)</span>
+                  <span className="text-emerald-600 font-bold">✓</span>
+                  <span>100% Secure UPI with UTR Verification</span>
                 </div>
               </div>
             </div>

@@ -341,15 +341,26 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
               {filteredExams.map((exam) => {
                 const examLogo = exam.logo_url || category.logo_url;
+                const matchedCourse = courses.find(
+                  (c) =>
+                    c.exam_id === exam.id ||
+                    c.id === exam.id ||
+                    c.slug === exam.id ||
+                    (c.title && exam.name && c.title.toLowerCase().includes(exam.name.toLowerCase().split(" ")[0]))
+                );
+                const examHref = `/course/${matchedCourse?.slug || matchedCourse?.id || exam.id}`;
 
                 return (
                   <div
                     key={exam.id}
-                    className="bg-white rounded-2xl border border-stone-200 hover:border-amber-300 p-4 transition-all hover:shadow-md flex flex-col justify-between group"
+                    className="bg-white rounded-2xl border border-stone-200 hover:border-amber-400 p-4 transition-all hover:shadow-md flex flex-col justify-between group"
                   >
                     <div className="space-y-3">
                       <div className="flex items-start gap-3">
-                        <div className="relative w-12 h-12 rounded-xl bg-stone-50 border border-stone-200 shrink-0 p-1 flex items-center justify-center overflow-hidden">
+                        <Link
+                          href={examHref}
+                          className="relative w-12 h-12 rounded-xl bg-stone-50 border border-stone-200 shrink-0 p-1 flex items-center justify-center overflow-hidden group-hover:border-amber-300 transition"
+                        >
                           {examLogo ? (
                             <Image
                               src={examLogo}
@@ -361,12 +372,15 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
                           ) : (
                             <span className="text-xl">📋</span>
                           )}
-                        </div>
+                        </Link>
 
                         <div className="flex-1 min-w-0">
-                          <h3 className="text-xs font-bold text-stone-900 line-clamp-2 leading-snug group-hover:text-amber-700 transition">
+                          <Link
+                            href={examHref}
+                            className="text-xs font-bold text-stone-900 line-clamp-2 leading-snug group-hover:text-amber-700 transition block"
+                          >
                             {exam.name}
-                          </h3>
+                          </Link>
                           <p className="text-[10px] text-stone-500 mt-0.5 truncate">
                             {exam.board || category.name}
                           </p>
@@ -374,15 +388,9 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
                       </div>
 
                       <div className="flex items-center gap-1.5 flex-wrap">
-                        {exam.is_active ? (
-                          <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100">
-                            ● Live Bundle Ready
-                          </span>
-                        ) : (
-                          <span className="text-[10px] font-medium text-stone-500 bg-stone-100 px-2 py-0.5 rounded-md">
-                            Kit in Preparation
-                          </span>
-                        )}
+                        <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100">
+                          ● Selection Kit Available • ₹199
+                        </span>
                         {exam.status && (
                           <span className="text-[10px] text-stone-400 capitalize">
                             • {exam.status}
@@ -391,26 +399,23 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
                       </div>
                     </div>
 
-                    <div className="pt-3 mt-3 border-t border-stone-100 flex items-center justify-between">
-                      {exam.is_active ? (
-                        <Link
-                          href={`/#courses`}
-                          className="text-xs font-bold text-amber-700 hover:text-amber-900 flex items-center gap-1"
-                        >
-                          View Study Kit →
-                        </Link>
-                      ) : (
-                        <a
-                          href={`https://wa.me/917852004401?text=${encodeURIComponent(
-                            `Hello, I am preparing for ${exam.name} (${category.name}). When will the study kit notes be available?`
-                          )}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 flex items-center gap-1"
-                        >
-                          Enquire via WhatsApp →
-                        </a>
-                      )}
+                    <div className="pt-3 mt-3 border-t border-stone-100 flex items-center justify-between gap-2">
+                      <Link
+                        href={examHref}
+                        className="btn-primary py-1.5 px-3 text-xs font-bold flex items-center gap-1 shadow-xs"
+                      >
+                        Study Kit &amp; Buy →
+                      </Link>
+                      <a
+                        href={`https://wa.me/917852004401?text=${encodeURIComponent(
+                          `Hello, I want study material for ${exam.name} (${category.name}).`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 flex items-center gap-1"
+                      >
+                        WhatsApp 💬
+                      </a>
                     </div>
                   </div>
                 );

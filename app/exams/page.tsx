@@ -348,40 +348,40 @@ export default function AllExamsPage() {
                             {exams.map((exam) => {
                               const examLogo = exam.logo_url || cat.logo_url;
                               return (
-                                <div
+                                <Link
                                   key={exam.id}
-                                  className="bg-white p-3 rounded-xl border border-stone-200 hover:border-amber-300 transition flex items-center gap-3 group"
+                                  href={`/course/${exam.id}`}
+                                  className="bg-white p-3 rounded-xl border border-stone-200 hover:border-amber-400 hover:shadow-xs transition flex items-center justify-between gap-3 group cursor-pointer"
                                 >
-                                  <div className="relative w-9 h-9 rounded-lg bg-stone-50 border border-stone-200 shrink-0 p-1 flex items-center justify-center overflow-hidden">
-                                    {examLogo ? (
-                                      <Image
-                                        src={examLogo}
-                                        alt={exam.name}
-                                        width={32}
-                                        height={32}
-                                        className="object-contain max-h-full max-w-full"
-                                      />
-                                    ) : (
-                                      <span className="text-sm">📋</span>
-                                    )}
-                                  </div>
-                                  <div className="flex-1 min-w-0">
-                                    <p className="text-xs font-bold text-stone-900 truncate group-hover:text-amber-700">
-                                      {exam.name}
-                                    </p>
-                                    <div className="flex items-center gap-1.5 mt-0.5">
-                                      {exam.is_active ? (
-                                        <span className="text-[9px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">
-                                          ● Live Bundle
-                                        </span>
+                                  <div className="flex items-center gap-3 min-w-0 flex-1">
+                                    <div className="relative w-9 h-9 rounded-lg bg-stone-50 border border-stone-200 shrink-0 p-1 flex items-center justify-center overflow-hidden group-hover:border-amber-300">
+                                      {examLogo ? (
+                                        <Image
+                                          src={examLogo}
+                                          alt={exam.name}
+                                          width={32}
+                                          height={32}
+                                          className="object-contain max-h-full max-w-full"
+                                        />
                                       ) : (
-                                        <span className="text-[9px] font-medium text-stone-500 bg-stone-100 px-1.5 py-0.5 rounded">
-                                          Kit In Preparation
-                                        </span>
+                                        <span className="text-sm">📋</span>
                                       )}
                                     </div>
+                                    <div className="flex-1 min-w-0">
+                                      <p className="text-xs font-bold text-stone-900 truncate group-hover:text-amber-700">
+                                        {exam.name}
+                                      </p>
+                                      <div className="flex items-center gap-1.5 mt-0.5">
+                                        <span className="text-[9px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">
+                                          ● Selection Kit • ₹199
+                                        </span>
+                                      </div>
+                                    </div>
                                   </div>
-                                </div>
+                                  <span className="text-xs font-bold text-amber-700 group-hover:text-amber-900 shrink-0">
+                                    Buy →
+                                  </span>
+                                </Link>
                               );
                             })}
                           </div>

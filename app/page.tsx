@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCategories, useSliderCourses, useCourses, useSettings } from "@/lib/store-hooks";
@@ -29,6 +29,21 @@ export default function HomePage() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedCourseForSample, setSelectedCourseForSample] = useState<Course | null>(null);
   const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
+  const [apiFeatured, setApiFeatured] = useState<Course[]>([]);
+  const [apiNewArrivals, setApiNewArrivals] = useState<Course[]>([]);
+
+  useEffect(() => {
+    fetch("/api/courses?featured=true")
+      .then((res) => res.json())
+      .then((data) => setApiFeatured(Array.isArray(data) ? data : []))
+      .catch(() => setApiFeatured([]));
+
+    fetch("/api/courses?new_arrivals=true")
+      .then((res) => res.json())
+      .then((data) => setApiNewArrivals(Array.isArray(data) ? data : []))
+      .catch(() => setApiNewArrivals([]));
+  }, []);
+
 
   const filteredCourses = useMemo(() => {
     const selectedCatObj = categories.find((c) => c.id === selectedCategory);
@@ -48,11 +63,8 @@ export default function HomePage() {
     });
   }, [allCourses, selectedCategory, searchQuery, categories]);
 
-  const featuredDeals = useMemo(
-    () => [...allCourses].sort((a, b) => b.discount_percent - a.discount_percent).slice(0, 10),
-    [allCourses]
-  );
-  const newArrivals = useMemo(() => allCourses.slice(0, 6), [allCourses]);
+  const featuredDeals = useMemo(() => apiFeatured, [apiFeatured]);
+  const newArrivals = useMemo(() => apiNewArrivals, [apiNewArrivals]);
   const latestProducts = useMemo(() => allCourses.slice(0, 10), [allCourses]);
 
   const handleBuyNow = (course: Course) => {

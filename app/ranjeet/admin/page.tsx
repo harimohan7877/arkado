@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import CategoriesTab from "@/app/admin/components/CategoriesTab";
+import FeaturedTab from "@/app/admin/components/FeaturedTab";
 import ExamsTab from "@/app/admin/components/ExamsTab";
 import CoursesTab from "@/app/admin/components/CoursesTab";
 import OrdersTab from "@/app/admin/components/OrdersTab";
@@ -39,6 +40,7 @@ interface Stats {
 const NAV_ITEMS = [
   { id: "dashboard", label: "डैशबोर्ड (Overview)", short: "Home" },
   { id: "categories", label: "श्रेणियाँ (Categories)", short: "Categories" },
+  { id: "featured", label: "🌟 फीचर्ड एवं न्यू अराइवल्स", short: "Featured" },
   { id: "exams", label: "परीक्षाएं (Exams)", short: "Exams" },
   { id: "courses", label: "कोर्सेस व नोट्स (Notes)", short: "Courses" },
   { id: "orders", label: "ऑर्डर्स व पेमेंट्स (Orders)", short: "Orders" },
@@ -408,6 +410,7 @@ export default function RanjeetAdminDashboard() {
           )}
 
           {activeTab === "categories" && <CategoriesTab getAuthHeaders={getAuthHeaders} />}
+        {activeTab === "featured" && <FeaturedTab getAuthHeaders={getAuthHeaders} />}
           {activeTab === "exams" && <ExamsTab getAuthHeaders={getAuthHeaders} />}
           {activeTab === "courses" && <CoursesTab getAuthHeaders={getAuthHeaders} />}
           {activeTab === "orders" && (

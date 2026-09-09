@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-import { Exam, Category } from "@/lib/store-types";
 import { getStoreData } from "@/lib/store-data";
 
 export const dynamic = "force-dynamic";
@@ -10,30 +9,50 @@ export async function GET(req: Request) {
   const category = searchParams.get("category");
   const q = searchParams.get("q")?.toLowerCase().trim();
   const includeInactive = searchParams.get("include_inactive") === "true" || searchParams.get("all") === "true";
-  const scope = searchParams.get("scope") || "public";
-  const page = parseInt(searchParams.get("page") || "1", 10);
-  const limit = parseInt(searchParams.get("limit") || "100", 10);
 
   try {
-    let exams = await getStoreData<Exam[]>("exams", "data/exams-new.json", []);
-
-    if (scope === "public") {
-      const cats = await getStoreData<Category[]>("categories", "data/categories.json", []);
-      const rajCat = cats.find((c) =>
-        c.state_or_group && c.state_or_group.toLowerCase() === "rajasthan"
-      );
-      if (rajCat && rajCat.exam_ids) {
-        const rajExamIds = new Set(rajCat.exam_ids);
-        exams = exams.filter((e) => rajExamIds.has(e.id));
-      }
-    }
+    const categories = await getStoreData<any[]>("categories", "data/categories.json", []);
+    let exams: any[] = [];
 
     if (category) {
-      exams = exams.filter((e) => e.category_id === category);
-    }
+      const cat = categories.find((c: any) => c.id === category);
+      if (cat) {
+        if (!includeInactive && !cat.is_active) {
+          return NextResponse.json([]);
+        }
 
-    if (!includeInactive && !category) {
-      exams = exams.filter((e) => e.is_active);
+        for (const b of cat.boards || []) {
+          if (!includeInactive && !b.is_active) continue;
+
+          for (const e of b.exams || []) {
+            if (!includeInactive && !e.is_active) continue;
+            exams.push({
+              ...e,
+              category_id: cat.id,
+              category_name: cat.name,
+              board: b.short_name || b.name,
+              board_id: b.board_id,
+            });
+          }
+        }
+      }
+    } else {
+      for (const cat of categories) {
+        if (!includeInactive && !cat.is_active) continue;
+        for (const b of cat.boards || []) {
+          if (!includeInactive && !b.is_active) continue;
+          for (const e of b.exams || []) {
+            if (!includeInactive && !e.is_active) continue;
+            exams.push({
+              ...e,
+              category_id: cat.id,
+              category_name: cat.name,
+              board: b.short_name || b.name,
+              board_id: b.board_id,
+            });
+          }
+        }
+      }
     }
 
     if (q) {
@@ -44,15 +63,8 @@ export async function GET(req: Request) {
       );
     }
 
-    const total = exams.length;
-    const startIndex = (page - 1) * limit;
-    const paginated = limit > 0 ? exams.slice(startIndex, startIndex + limit) : exams;
-
-    return NextResponse.json(paginated, {
-      headers: {
-        "x-total-count": String(total),
-      },
-    });
+    exams.sort((a, b) => (a.priority || 0) - (b.priority || 0));
+    return NextResponse.json(exams);
   } catch {
     return NextResponse.json([]);
   }

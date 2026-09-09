@@ -265,48 +265,48 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
   const handleToggleStatus = (targetId: string, currentLevel: DrillLevel) => {
     if (currentLevel === "categories") {
       const updated = categories.map((cat) => {
-        if ((cat.id || (cat as any).category_id) === targetId) {
+        if (cat.id === targetId) {
           const nextActive = !cat.is_active;
           return { ...cat, is_active: nextActive };
         }
         return cat;
       });
       persistCategories(updated, "श्रेणी की दृश्यता (On/Off) अपडेट की गई");
-      if (currentCategory && (currentCategory.id || (currentCategory as any).category_id) === targetId) {
-        setCurrentCategory(updated.find((c) => (c.id || (c as any).category_id) === targetId) || null);
+      if (currentCategory && currentCategory.id === targetId) {
+        setCurrentCategory(updated.find((c) => c.id === targetId) || null);
       }
     } else if (currentLevel === "boards" && currentCategory) {
       let catActive = currentCategory.is_active;
 
       const updatedBoards = (currentCategory.boards || []).map((b) => {
-        if ((b.board_id || b.id) === targetId) {
+        if (b.board_id === targetId) {
           const nextActive = !b.is_active;
-          if (nextActive) catActive = true; // Auto-activate parent category
+          if (nextActive) catActive = true;
           return { ...b, is_active: nextActive };
         }
         return b;
       });
 
       const updatedCategories = categories.map((cat) =>
-        (cat.id || (cat as any).category_id) === (currentCategory.id || (currentCategory as any).category_id)
+        cat.id === currentCategory.id
           ? { ...cat, is_active: catActive, boards: updatedBoards }
           : cat
       );
       setCurrentCategory({ ...currentCategory, is_active: catActive, boards: updatedBoards });
       persistCategories(updatedCategories, "भर्ती बोर्ड की दृश्यता (On/Off) अपडेट की गई");
-      if (currentBoard && (currentBoard.board_id || currentBoard.id) === targetId) {
-        setCurrentBoard(updatedBoards.find((b) => (b.board_id || b.id) === targetId) || null);
+      if (currentBoard && currentBoard.board_id === targetId) {
+        setCurrentBoard(updatedBoards.find((b) => b.board_id === targetId) || null);
       }
     } else if (currentLevel === "exams" && currentCategory && currentBoard) {
       let catActive = currentCategory.is_active;
       let boardActive = currentBoard.is_active;
 
       const updatedExams = (currentBoard.exams || []).map((e) => {
-        if ((e.id || (e as any).exam_id) === targetId) {
+        if (e.id === targetId) {
           const nextActive = !e.is_active;
           if (nextActive) {
-            catActive = true;   // Auto-activate parent category
-            boardActive = true; // Auto-activate parent board
+            catActive = true;
+            boardActive = true;
           }
           return { ...e, is_active: nextActive };
         }
@@ -314,12 +314,12 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
       });
 
       const updatedBoards = (currentCategory.boards || []).map((b) =>
-        (b.board_id || b.id) === (currentBoard.board_id || currentBoard.id)
+        b.board_id === currentBoard.board_id
           ? { ...b, is_active: boardActive, exams: updatedExams }
           : b
       );
       const updatedCategories = categories.map((cat) =>
-        (cat.id || (cat as any).category_id) === (currentCategory.id || (currentCategory as any).category_id)
+        cat.id === currentCategory.id
           ? { ...cat, is_active: catActive, boards: updatedBoards }
           : cat
       );

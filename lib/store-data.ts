@@ -4,17 +4,8 @@ import { join, dirname } from "path";
 import { supabaseAdmin } from "@/lib/supabase";
 
 function getCandidatePaths(localFilePath: string): string[] {
-  const norm = localFilePath.replace(/\\/g, "/");
-  const cwd = process.cwd().replace(/\\/g, "/");
-  const candidates: string[] = [
-    join(process.cwd(), norm),
-    join("C:\\Users\\harimohan sharma\\Documents\\Arkado\\sarkari-sathi", norm),
-    join("C:\\Users\\harimohan sharma\\Documents\\GitHub\\SARKARI_SATHI", norm),
-  ];
-  if (!cwd.endsWith("sarkari-sathi")) {
-    candidates.push(join(process.cwd(), "sarkari-sathi", norm));
-  }
-  return [...new Set(candidates)];
+  const norm = localFilePath.replace(/\/g, "/");
+  return [join(process.cwd(), norm)];
 }
 
 export async function saveUploadedFile(file: File, folder: string = "logos", customName?: string): Promise<string> {

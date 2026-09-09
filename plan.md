@@ -1,161 +1,80 @@
-# 🏛️ सरकारी साथी (Sarkari Saathi) - UI/UX Redesign Specifications (Updated with Custom API Key & Mobile-First Design)
+# 🏛️ सरकारी साथी — मास्टर आर्किटेक्चर एवं डेवलपमेंट प्लान (2026)
 
-यह दस्तावेज़ **सरकारी साथी** पोर्टल के UI/UX को 2026 के सर्वश्रेष्ठ प्रोजेक्ट्स के अनुसार आधुनिक, आकर्षक, सुपर-मोबाइल-फ्रेंडली (Mobile-First) और व्यावसायिक (professional) बनाने के लिए एक विस्तृत तकनीकी विनिर्देश (Technical Specifications) प्रदान करता है।
-
-इसमें उपयोगकर्ता द्वारा अनुरोधित **"Custom API Key"** सिस्टम को पुनः स्थापित करने और लेआउट को **अत्यंत मोबाइल-फ्रेंडली** बनाने के निर्देश शामिल हैं।
+यह दस्तावेज़ वेबसाइट को पूरी तरह डेटा-ड्रिवन (Data-Driven), सुपर-फास्ट, और एडमिन पैनल से 100% कस्टमाइज़ेबल बनाने का आधिकारिक रोडमैप है।
 
 ---
 
-## 🎨 1. Global Design System (`app/globals.css`)
+## 🎯 1. मुख्य विज़न: 5-स्तरीय पदानुक्रम (5-Level Hierarchy)
 
-`app/globals.css` को 2026 की आधुनिक डिज़ाइन प्रवृत्तियों (Teal/Indigo gradients, Glassmorphism, Premium Shadows) के अनुसार अपडेट करें:
+छात्रों को बिना किसी भटकाव के सीधे उनकी परीक्षा तक पहुँचाने के लिए 5-स्तरीय सुव्यवस्थित संरचना:
 
-### 🌈 Color System (HSL Colors)
-```css
-:root {
-  /* HSL Colors for smooth transitions */
-  --primary-navy: hsl(222, 47%, 12%);      /* Deep Rich Navy */
-  --primary-royal: hsl(217, 91%, 60%);     /* Electric Blue */
-  --accent-saffron: hsl(24, 100%, 50%);    /* Glowing Saffron */
-  --accent-saffron-hover: hsl(24, 100%, 43%);
-  --accent-saffron-light: hsl(24, 100%, 97%);
-  
-  --success-green: hsl(142, 70%, 29%);     /* Tiranga Green */
-  --success-green-light: hsl(142, 70%, 95%);
-  
-  /* Slate/Blue Greys instead of plain grey */
-  --bg-app: hsl(210, 40%, 98%);
-  --bg-card: hsl(0, 0%, 100%);
-  --bg-input: hsl(210, 40%, 96%);
-  
-  /* Borders and Shadows */
-  --border-glass: rgba(255, 255, 255, 0.4);
-  --border-card: hsl(214, 32%, 91%);
-  --shadow-premium: 0 10px 30px -10px rgba(15, 43, 91, 0.08), 0 1px 3px rgba(15, 43, 91, 0.02);
-}
+```mermaid
+flowchart TD
+    L1["1. Category (All India vs State-wise)"] --> L2["2. Sub-Category / State (Rajasthan, UP, Central...)"]
+    L2 --> L3["3. Board / Commission (RSMSSB, RPSC, SSC, UPSC...)"]
+    L3 --> L4["4. Exam (Rajasthan CET 12th, Patwar, Police, CGL...)"]
+    L4 --> L5["5. Study Material Hub (Notes, 120-Q Mock Test, MCQs, B&W PDF)"]
 ```
 
-### 🔤 Typography & Imports
-* Google Fonts से **Outfit** (संख्याओं और अंग्रेजी पाठ के लिए) तथा **Noto Sans Devanagari** (स्वच्छ हिंदी लेआउट के लिए) इम्पोर्ट करें:
-  ```css
-  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;900&display=swap');
-  ```
-
-### 📱 Mobile-First Responsive Rules
-* **Touch Targets**: मोबाइल पर सभी बटन कम से कम `48px` (h-12) ऊंचे होने चाहिए ताकि आसानी से टैप किया जा सके।
-* **Responsive Layout**: डेस्कटॉप पर `max-w-7xl` और ग्रिड लेआउट, लेकिन मोबाइल पर यह एक प्रीमियम सिंगल-कॉलम नेटिव ऐप जैसा दिखना चाहिए।
-* मोबाइल पर नीचे सुरक्षित क्षेत्र पैडिंग (`pb-safe`) और फ्लोटिंग बॉटम शीट का उपयोग करें।
-
----
-
-## 🏛️ 2. Home / Landing Page (`app/page.tsx`)
-
-होमपेज को मोबाइल-फर्स्ट और व्यावसायिक सरकारी जॉब पोर्टल के रूप में रिडिज़ाइन करें।
-
-### 🌟 Hero & Quick Search
-* **Hero Title**: *"🏛️ सरकारी साथी"* (Devanagari Bold, Saffron-to-Navy gradient text).
-* **Subtitle**: *"राजस्थान सरकारी भर्ती पोर्टल - आपकी योग्यता, सही नौकरी"*
-* **Integrated Search**: मोबाइल पर थम्ब-रीच (thumb-reach) के दायरे में एक सुंदर सर्च बार:
-  `[ 🔍 परीक्षा या बोर्ड खोजें... ] ➡️ [खोजें]`
-
-### 📊 Live Statistics Cards
-* 3 ग्रिड कार्ड्स (मोबाइल पर हॉरिजॉन्टल स्क्रॉल होने योग्य):
-  1. **सक्रिय भर्तियां**: "15+ लाइव भर्तियां" (सॉफ्ट ग्रीन पल्स एनीमेशन के साथ)।
-  2. **सत्यापित बोर्ड्स**: "RPSC, RSMSSB, Police" (सत्यापित शील्ड आइकन)।
-  3. **तैयारी सामग्री**: "50+ मुफ्त वीडियो और PYQs"।
-
-### 📋 step-by-step Eligibility Wizard
-पूरे फॉर्म को एक साथ दिखाने के बजाय 3-चरणों वाले विज़ार्ड (Step-by-Step Wizard) में विभाजित करें:
-1. **चरण 1: व्यक्तिगत विवरण** (`step === 1`):
-   * नाम (Name), शहर (City), लिंग (Gender - Male/Female बटन्स), आयु (Age - Input)।
-2. **चरण 2: शैक्षणिक योग्यता** (`step === 2`):
-   * शिक्षा स्तर (Education Dropdown), श्रेणी (Category Dropdown - General/EWS/OBC/SC/ST)।
-3. **चरण 3: अतिरिक्त प्रमाणपत्र** (`step === 3`):
-   * RS-CIT, CET Graduate Level, CET Senior Secondary Level (आकर्षक चेकबॉक्स कार्ड्स)।
-* **Wizard Navigation Buttons**: `[🔙 पीछे]` और `[आगे बढ़ें ➡️ / 🔍 योग्य भर्तियाँ खोजें]`.
-
-### 🏷️ Category Pills Quick Select
-* यूजर फॉर्म भरने से पहले भी सीधे ब्राउज़ कर सके:
-  * `[🎓 स्नातक पास]` `[💼 12वीं पास]` `[💻 कम्प्यूटर जॉब्स]` `[📋 CET आवश्यक]`
+### स्तरवार विवरण:
+1. **Level 1: Category (मुख्य श्रेणी):**
+   - राष्ट्रीय स्तर (All India / Central Govt Exams)
+   - राज्य स्तरीय भर्तियां (State-wise Exams: राजस्थान, उत्तर प्रदेश, बिहार आदि)
+2. **Level 2: Sub-Category / राज्य या संवर्ग:**
+   - यदि राज्य चुना ➡️ राजस्थान, उत्तर प्रदेश, मध्य प्रदेश आदि।
+   - यदि All India चुना ➡️ Central Government, Banking, Defence, Railways आदि।
+3. **Level 3: Board / भर्ती आयोग:**
+   - राजस्थान में ➡️ **RSMSSB** (कर्मचारी चयन बोर्ड), **RPSC** (लोक सेवा आयोग), **Rajasthan Police**, **High Court**।
+   - All India में ➡️ **SSC**, **UPSC**, **NTA**, **RRB**।
+4. **Level 4: Exam (विशिष्ट परीक्षा):**
+   - जैसे RSMSSB के अंतर्गत ➡️ **राजस्थान CET (12वीं स्तर)**, **CET (Graduate)**, **पटवारी**, **VDO**, **LDC**।
+5. **Level 5: Study Material Hub (परीक्षा सामग्री):**
+   - परीक्षा कार्ड पर क्लिक करते ही 4 स्पष्ट विकल्प:
+     - 📘 **क्लास नोट्स (Class Notes)** — 100% पाठ्यक्रम सटीक, टू-द-पॉइंट
+     - 🎯 **ऑनलाइन लाइव मॉक टेस्ट (Live Mock Test)** — 120 प्रश्न, 120 मिनट टाइमर, 5-ऑप्शन OMR प्रारूप
+     - 📄 **वस्तुनिष्ठ प्रश्न बैंक (MCQ Bank)** — अभ्यास हेतु विस्तृत व्याख्या सहित
+     - 🖨️ **ऑफलाइन प्रिंट पेपर (B&W PDF)** — लेजर/ज़ेरॉक्स प्रिंट अनुकूल, अंत में 6-कॉलम उत्तरमाला
+     - 📑 **सिलेबस व पिछले साल के पेपर (Official Syllabus & PYQs)**
 
 ---
 
-## 🔍 3. Results Page (`app/results/page.tsx`)
+## 🧹 2. वेबसाइट क्लीन-अप एवं जीरो-फ्लिकर आर्किटेक्चर (Clean Slate)
 
-परिणामों को एक इंटरेक्टिव डैशबोर्ड के रूप में प्रस्तुत करें।
-
-### 🖥️ Desktop Layout (Split-Screen)
-* **Left Pane (30% width - Sticky Sidebar)**:
-  * **"त्वरित बदलाव (Quick Adjust)"** फ़ॉर्म ताकि यूजर परिणाम देखते-देखते अपनी योग्यता बदल सके।
-* **Right Pane (70% width)**:
-  * योग्य परीक्षाओं का ग्रिड (`grid-cols-1` मोबाइल पर, `md:grid-cols-2` डेस्कटॉप पर)।
-
-### 💳 Mobile-First Premium Exam Cards
-* **Left Border Indicator**: कार्ड के बाईं ओर 6px चौड़ी कलर-कोडेड पट्टी (सक्रिय के लिए ग्रीन, आगामी के लिए सैफरॉन, समाप्त के लिए रेड)।
-* **Apply Countdown**: `last_date` के आधार पर एक क्लीन प्रोग्रेस बार:
-  * *"आवेदन बंद होने में 5 दिन शेष"* (लाल रंग का हल्का प्रोग्रेस बार)।
-* **Interactive Button**: *"💬 चैट करें और तैयारी शुरू करें"* (हल्के सैफरॉन ग्रेडिएंट के साथ)।
+- ✅ **डमी डेटा का पूर्ण निष्कासन:** 518 डमी कैटेगरीज और 6,527 डमी एग्ज़ाम्स को हटाकर सुरक्षित बैकअप (`data/backup_dummy_data/`) में सुरक्षित कर दिया गया है।
+- ✅ **वेबसाइट खाली व तेज़:** अब वेबसाइट पर कोई टूटा हुआ लोगो या फर्जी एग्ज़ाम नहीं दिखेगा।
+- ✅ **शून्य लेआउट शिफ्ट (Zero Layout Shift):** डेटा लोड होने के दौरान केवल स्मूथ 'Shimmer Skeleton Loader' दिखेगा, कोई हार्डकोडेड डेटा नहीं चमकेगा।
+- ✅ **सर्वर-साइड रेंडरिंग (SSR / Cached Fetch):** डेटाबेस से डेटा सीधा सर्वर पर लोड होगा जिससे गूगल Core Web Vitals स्कोर 95+ रहेगा।
 
 ---
 
-## 🤖 4. AI Chat & Detail Workspace (`app/exam/[id]/page.tsx`)
+## ⚙️ 3. एडमिन पैनल नियंत्रण एवं कस्टमाइजेशन (100% Admin Control)
 
-यह ऐप का सबसे महत्वपूर्ण पेज है। इसे एक संपूर्ण मोबाइल-फ्रेंडली स्टडी वर्कस्पेस में बदलें।
+वेबसाइट को कोड में छुए बिना एडमिन पैनल से पूर्णतया संचालित करने की प्रणाली:
 
-### 🖥️ Dual-Pane Layout (Desktop)
-* **Left Column (60% width) - Interactive AI Chat**:
-  * चैट बबल्स:
-    * **User Bubble**: `bg-gradient-to-r from-primary-navy to-primary-royal text-white rounded-2xl rounded-br-none`.
-    * **AI Bubble**: `bg-white border border-slate-200 text-slate-800 rounded-2xl rounded-bl-none shadow-sm`.
-* **Right Column (40% width) - Study Companion Pane**:
-  * इसमें सुंदर टैब्स होंगे: `[📋 विवरण (Overview)]` `[📚 पाठ्यक्रम (Syllabus)]` `[📝 पुराने पेपर (PYQ)]` `[📄 दस्तावेज़]` `[🔗 लिंक]`
-  * **लाभ**: यूजर बिना चैट बंद किए दाईं ओर सिलेबस देख सकता है।
+### A. 1-क्लिक मास्टर JSON अपलोड (Bulk Import System)
+- एडमिन पैनल में `📥 Master JSON Import` बटन।
+- एक ही JSON फ़ाइल से नए राज्य, बोर्ड, परीक्षाएं और उनके नोट्स/पीडीएफ लिंक्स 1 सेकंड में अपलोड।
 
-### 📱 Mobile UI Layout & Floating Bottom Sheet
-* मोबाइल पर डिफ़ॉल्ट रूप से AI चैट फुल-स्क्रीन दिखेगी।
-* सबसे नीचे एक सुंदर **"Exam Study Material ⬆️"** स्लाइडर या बॉटम शीट (bottom sheet) होगी, जिसे स्वाइप अप करके पूरी जानकारी (Syllabus, PYQ, Links) दाईं ओर की तरह देखी जा सकेगी।
+### B. डायनामिक विजिबिलिटी नियंत्रण (Visibility Toggles)
+प्रत्येक एग्ज़ाम व मटेरियल के सामने ऑन/ऑफ स्विच:
+- `is_active` (वेबसाइट पर दिखाना है या छुपाना है)
+- `show_in_featured` (होमपेज फीचर्ड में रखें या नहीं)
+- `show_live_test` (लाइव टेस्ट सक्रिय करें या नहीं)
+- `show_printable_pdf` (B&W पीडीएफ डाउनलोड उपलब्ध कराएं या नहीं)
 
-### 🔑 Custom API Key System (पुनः स्थापित करें)
-* **Trigger Button**: चैट विंडो के हेडर में "Online" संकेतक के दाईं ओर एक `🔑 API Settings` बटन जोड़ें।
-* **Key Input Modal**: जब यूजर इस बटन पर क्लिक करे, तो `showCustomKeyModal` को `true` करें और एक सुंदर मोडल दिखाएं जिसमें:
-  * **प्रदाता (Provider) चयन**: Google Gemini, OpenAI, OpenRouter, Groq, Nvidia.
-  * **API Key इनपुट**: प्रदाता के अनुसार चाबी डालने का स्थान।
-  * **सहायता निर्देश (Help Links)**: प्रत्येक प्रदाता के लिए मुफ्त API Key बनाने का लिंक (जैसे Google AI Studio)।
-* **Bypass Limit Logic**:
-  * स्थानीय रूप से `localStorage.setItem("custom_user_keys")` में चाबियां सहेजें।
-  * `sendMessage()` में, स्थानीय रूप से सहेजी गई कस्टम चाबी को लोड करें। यदि कस्टम चाबी मौजूद है, तो **दैनिक 5 मुफ्त संदेश की सीमा को बायपास (bypass)** करें और असीमित चैट की अनुमति दें।
-  * `MessageCounter` घटक में `isCustomKeyActive={hasCustomKey}` पास करें ताकि यह प्रदर्शित हो सके: *"🔑 आपकी Custom API Key सक्रिय है (असीमित AI चैट)"*।
+### C. SEO एवं मेटा टैग्स प्रबंधन (Dynamic SEO per Exam)
+एडमिन पैनल में प्रत्येक परीक्षा और कैटेगरी के लिए समर्पित SEO इनपुट:
+- **Meta Title** (सर्च इंजन में दिखने वाला सटीक शीर्षक - Max 60 Chars)
+- **Meta Description** (गूगल सर्च रिजल्ट में नीचे दिखने वाला विवरण - Max 160 Chars)
+- **Meta Keywords** (प्रमुख खोज कीवर्ड्स)
+- **OG Image URL** (व्हाट्सएप/फेसबुक पर शेयर करने पर दिखने वाला बैनर)
+- **Canonical URL** (सर्च इंजन रैंकिंग इंडेक्सिंग हेतु)
 
 ---
 
-## 📊 5. Dashboard (`app/dashboard/page.tsx`)
+## 📋 4. कार्यान्वयन रोडमैप (Next Execution Steps)
 
-डैशबोर्ड को छात्र के निजी तैयारी केंद्र (Personal Study Hub) के रूप में डिज़ाइन करें।
-
-### 💍 Circular Limit Tracker
-* AI उपयोग को दर्शाने के लिए एक सुंदर गोलाकार SVG प्रोग्रेस रिंग (Circular progress chart) बनाएं जो फ्री कोटा का प्रदर्शन करे।
-
-### ⏳ Saved Exams Timeline
-* सेव किए गए परीक्षाओं के आवेदन पत्र जमा करने की अंतिम तारीखों को एक सुंदर वर्टिकल टाइमलाइन (Vertical Timeline) के रूप में दिखाएं।
-
----
-
-## 🔐 6. Auth Page (`app/auth/page.tsx`)
-
-### 📱 Autogrow OTP Fields
-* 6-अंकीय ओटीपी इनपुट को सिंगल टेक्स्ट बॉक्स के बजाय 6 अलग-अलग डिब्बों में विभाजित करें।
-* जैसे ही उपयोगकर्ता एक अंक लिखे, फ़ोकस स्वचालित रूप से अगले इनपुट पर चला जाना चाहिए (`input.nextSibling.focus()`)।
-* ओटीपी भेजने के बाद एक रीसेंड टाइमर (Resend Timer) दिखाएं: *"0:59 सेकंड में दोबारा भेजें"*.
-
----
-
-## 🛠️ Claude Code के लिए कार्यान्वयन निर्देश (Implementation Sequence)
-
-Claude Code को नीचे दिए गए क्रम में फाइलों को संशोधित करने का निर्देश दें:
-1. **`app/globals.css`** ➡️ नए वेरिएबल्स, आउटफिट/देवनागरी फॉन्ट इम्पोर्ट और रेस्पॉन्सिव ग्रिड बेस सेट करें।
-2. **`app/page.tsx`** ➡️ हीरो सर्च, लाइव स्टैट्स और 3-स्टेप एलिजिबिलिटी विज़ार्ड बनाएं।
-3. **`app/results/page.tsx`** ➡️ डेस्कटॉप स्प्लिट-स्क्रीन लेआउट, प्रोग्रेस बार वाले एग्जाम कार्ड्स और टैब्ड कोर्स लिस्ट लागू करें।
-4. **`app/exam/[id]/page.tsx`** ➡️ डुअल-पैनल वर्कस्पेस, मोबाइल बॉटम शीट, **Custom API Key Modal और सहेजने की लॉजिक** जोड़ें।
-5. **`app/dashboard/page.tsx`** ➡️ सर्कुलर प्रोग्रेस बार और आगामी परीक्षाओं की डेडलाइन टाइमलाइन जोड़ें।
-6. **`app/auth/page.tsx`** ➡️ 6-डिजिट ऑटो-फोकस ओटीपी बक्से और सुंदर साइड-पैनल लेआउट लगाएं।
-7. **`components/MessageCounter.tsx`** ➡️ `isCustomKeyActive` के अनुसार असीमित चैट का संकेत प्रदर्शित करें।
+1. **कदम 1 (पूर्ण ✅):** डमी डेटा हटाकर वेबसाइट को क्लीन करना व प्लान को सुव्यवस्थित करना।
+2. **कदम 2:** 5-स्तरीय पदानुक्रम (Category ➡️ State ➡️ Board ➡️ Exam ➡️ Material) का डेटाबेस/स्टोर स्कीमा तय करना।
+3. **कदम 3:** एडमिन पैनल में 'Master JSON Upload' और 'SEO Fields' जोड़ना।
+4. **कदम 4:** तैयार राजस्थान CET (12th Level) की 10 इकाइयों (1200 MCQs, 10 B&W PDFs) को इस नए सिस्टम में पहली आधिकारिक परीक्षा के रूप में लाइव करना।

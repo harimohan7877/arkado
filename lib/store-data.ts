@@ -5,45 +5,67 @@ import { supabaseAdmin } from "@/lib/supabase";
 
 function getCandidatePaths(localFilePath: string): string[] {
   const norm = localFilePath.replace(/\\/g, "/");
+  const cwd = process.cwd().replace(/\\/g, "/");
   const candidates: string[] = [
     join(process.cwd(), norm),
-    join(process.cwd(), "sarkari-sathi", norm),
     join("C:\\Users\\harimohan sharma\\Documents\\Arkado\\sarkari-sathi", norm),
     join("C:\\Users\\harimohan sharma\\Documents\\GitHub\\SARKARI_SATHI", norm),
   ];
+  if (!cwd.endsWith("sarkari-sathi")) {
+    candidates.push(join(process.cwd(), "sarkari-sathi", norm));
+  }
   return [...new Set(candidates)];
 }
 
-export async function getStoreData<T>(key: string, localFilePath: string, defaultValue: T): Promise<T> {
-  // 1. Try Supabase store_data table
+export async function saveUploadedFile(file: File, folder: string = "logos", customName?: string): Promise<string> {
   try {
-    const { data, error } = await supabaseAdmin
-      .from("store_data")
-      .select("data")
-      .eq("key", key)
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+    const ext = file.name ? file.name.split(".").pop() || "png" : "png";
+    const fileName = `${customName || Date.now()}.${ext}`;
+    const relativePath = `uploads/${folder}/${fileName}`;
+
+    const candidates = getCandidatePaths(`public/${relativePath}`);
+    for (const p of candidates) {
+      try {
+        const dir = dirname(p);
+        await mkdir(dir, { recursive: true });
+        await writeFile(p, buffer);
+      } catch {}
+    }
+
+    return `/${relativePath}`;
+  } catch (err) {
+    console.error("[store-data] Upload error:", err);
+    return "";
+  }
+}
+
+export async function getStoreData<T>(key: string, localFilePath: string, defaultValue: T): Promise<T> {
+  // 1. Check Supabase admin_settings text columns (GUARANTEED TO PERSIST ON VERCEL & CLOUD)
+  try {
+    const { data: adminRow } = await supabaseAdmin
+      .from("admin_settings")
+      .select("id, gemini_key, claude_key, openai_key")
+      .limit(1)
       .maybeSingle();
 
-    if (!error && data?.data) {
-      return data.data as T;
-    }
-  } catch {}
-
-  // 2. For settings, try Supabase admin_settings.gemini_key
-  if (key === "settings") {
-    try {
-      const { data, error } = await supabaseAdmin
-        .from("admin_settings")
-        .select("gemini_key")
-        .limit(1)
-        .maybeSingle();
-
-      if (!error && data?.gemini_key && data.gemini_key.startsWith("{")) {
-        return JSON.parse(data.gemini_key) as T;
+    if (adminRow) {
+      if (key === "categories" && adminRow.claude_key && (adminRow.claude_key.startsWith("[") || adminRow.claude_key.startsWith("{"))) {
+        return JSON.parse(adminRow.claude_key) as T;
       }
-    } catch {}
+      if (key === "featured_exams" && adminRow.openai_key && (adminRow.openai_key.startsWith("[") || adminRow.openai_key.startsWith("{"))) {
+        return JSON.parse(adminRow.openai_key) as T;
+      }
+      if (key === "settings" && adminRow.gemini_key && adminRow.gemini_key.startsWith("{")) {
+        return JSON.parse(adminRow.gemini_key) as T;
+      }
+    }
+  } catch (err) {
+    console.warn(`[store-data] Supabase read error for key=${key}:`, err);
   }
 
-  // 3. Fallback to candidate local JSON files
+  // 2. Fallback to candidate local JSON files
   const candidates = getCandidatePaths(localFilePath);
   for (const p of candidates) {
     try {
@@ -58,38 +80,37 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
 }
 
 export async function setStoreData<T>(key: string, localFilePath: string, data: T): Promise<void> {
-  // 1. Save to Supabase store_data table
-  try {
-    await supabaseAdmin
-      .from("store_data")
-      .upsert({ key, data, updated_at: new Date().toISOString() });
-  } catch {}
-
-  // 2. For settings, persist to Supabase admin_settings row
-  if (key === "settings") {
-    try {
-      const jsonString = JSON.stringify(data);
-      const { data: existing } = await supabaseAdmin
-        .from("admin_settings")
-        .select("id")
-        .limit(1)
-        .maybeSingle();
-
-      if (existing?.id) {
-        await supabaseAdmin
-          .from("admin_settings")
-          .update({ gemini_key: jsonString, updated_at: new Date().toISOString() })
-          .eq("id", existing.id);
-      }
-    } catch (err) {
-      console.error("Error saving settings to admin_settings:", err);
-    }
-  }
-
-  // 3. Write to all candidate paths with recursive directory creation
-  const candidates = getCandidatePaths(localFilePath);
   const jsonContent = JSON.stringify(data, null, 2);
 
+  // 1. Persist directly to Supabase admin_settings (Persists across ALL Vercel deployments & restarts)
+  try {
+    const { data: existing } = await supabaseAdmin
+      .from("admin_settings")
+      .select("id")
+      .limit(1)
+      .maybeSingle();
+
+    if (existing?.id) {
+      const updatePayload: Record<string, any> = { updated_at: new Date().toISOString() };
+      if (key === "categories") {
+        updatePayload.claude_key = jsonContent;
+      } else if (key === "featured_exams") {
+        updatePayload.openai_key = jsonContent;
+      } else if (key === "settings") {
+        updatePayload.gemini_key = jsonContent;
+      }
+
+      await supabaseAdmin
+        .from("admin_settings")
+        .update(updatePayload)
+        .eq("id", existing.id);
+    }
+  } catch (err) {
+    console.error(`[store-data] Supabase save error for key=${key}:`, err);
+  }
+
+  // 2. Write to local candidate paths (for local development and git sync)
+  const candidates = getCandidatePaths(localFilePath);
   for (const p of candidates) {
     try {
       const dir = dirname(p);
@@ -97,28 +118,4 @@ export async function setStoreData<T>(key: string, localFilePath: string, data: 
       await writeFile(p, jsonContent, "utf-8");
     } catch {}
   }
-}
-
-export async function saveUploadedFile(file: File, subDir: string, safeName: string): Promise<string> {
-  const bytes = await file.arrayBuffer();
-  const buffer = Buffer.from(bytes);
-  const ext = file.name.split(".").pop() || "png";
-  const fileName = `${safeName}.${ext}`;
-
-  const candidateDirs = [
-    join(process.cwd(), "public", subDir),
-    join(process.cwd(), "sarkari-sathi", "public", subDir),
-    join("C:\\Users\\harimohan sharma\\Documents\\Arkado\\sarkari-sathi", "public", subDir),
-  ];
-
-  for (const d of candidateDirs) {
-    try {
-      await mkdir(d, { recursive: true });
-      await writeFile(join(d, fileName), buffer);
-      return `/${subDir}/${fileName}`;
-    } catch {}
-  }
-
-  const mime = file.type || "image/png";
-  return `data:${mime};base64,${buffer.toString("base64")}`;
 }

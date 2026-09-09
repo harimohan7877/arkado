@@ -265,67 +265,70 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
   const handleToggleStatus = (targetId: string, currentLevel: DrillLevel) => {
     if (currentLevel === "categories") {
       const updated = categories.map((cat) => {
-        if (cat.id === targetId) {
+        if ((cat.id || (cat as any).category_id) === targetId) {
           const nextActive = !cat.is_active;
           return { ...cat, is_active: nextActive };
         }
         return cat;
       });
       persistCategories(updated, "श्रेणी की दृश्यता (On/Off) अपडेट की गई");
-      if (currentCategory && currentCategory.id === targetId) {
-        setCurrentCategory(updated.find((c) => c.id === targetId) || null);
+      if (currentCategory && (currentCategory.id || (currentCategory as any).category_id) === targetId) {
+        setCurrentCategory(updated.find((c) => (c.id || (c as any).category_id) === targetId) || null);
       }
     } else if (currentLevel === "boards" && currentCategory) {
-      if (!currentCategory.is_active) {
-        showToast("मूल श्रेणी बंद है! पहले मुख्य श्रेणी को चालू (ON) करें।", "warning");
-        return;
-      }
+      let catActive = currentCategory.is_active;
 
       const updatedBoards = (currentCategory.boards || []).map((b) => {
-        if (b.board_id === targetId) {
-          return { ...b, is_active: !b.is_active };
+        if ((b.board_id || b.id) === targetId) {
+          const nextActive = !b.is_active;
+          if (nextActive) catActive = true; // Auto-activate parent category
+          return { ...b, is_active: nextActive };
         }
         return b;
       });
 
       const updatedCategories = categories.map((cat) =>
-        cat.id === currentCategory.id ? { ...cat, boards: updatedBoards } : cat
+        (cat.id || (cat as any).category_id) === (currentCategory.id || (currentCategory as any).category_id)
+          ? { ...cat, is_active: catActive, boards: updatedBoards }
+          : cat
       );
-      setCurrentCategory({ ...currentCategory, boards: updatedBoards });
+      setCurrentCategory({ ...currentCategory, is_active: catActive, boards: updatedBoards });
       persistCategories(updatedCategories, "भर्ती बोर्ड की दृश्यता (On/Off) अपडेट की गई");
-      if (currentBoard && currentBoard.board_id === targetId) {
-        setCurrentBoard(updatedBoards.find((b) => b.board_id === targetId) || null);
+      if (currentBoard && (currentBoard.board_id || currentBoard.id) === targetId) {
+        setCurrentBoard(updatedBoards.find((b) => (b.board_id || b.id) === targetId) || null);
       }
     } else if (currentLevel === "exams" && currentCategory && currentBoard) {
-      if (!currentCategory.is_active) {
-        showToast("मूल श्रेणी बंद है! पहले मुख्य श्रेणी को चालू करें।", "warning");
-        return;
-      }
-      if (!currentBoard.is_active) {
-        showToast("मूल भर्ती बोर्ड बंद है! पहले बोर्ड को चालू करें।", "warning");
-        return;
-      }
+      let catActive = currentCategory.is_active;
+      let boardActive = currentBoard.is_active;
 
       const updatedExams = (currentBoard.exams || []).map((e) => {
-        if (e.id === targetId) {
-          return { ...e, is_active: !e.is_active };
+        if ((e.id || (e as any).exam_id) === targetId) {
+          const nextActive = !e.is_active;
+          if (nextActive) {
+            catActive = true;   // Auto-activate parent category
+            boardActive = true; // Auto-activate parent board
+          }
+          return { ...e, is_active: nextActive };
         }
         return e;
       });
 
       const updatedBoards = (currentCategory.boards || []).map((b) =>
-        b.board_id === currentBoard.board_id ? { ...b, exams: updatedExams } : b
+        (b.board_id || b.id) === (currentBoard.board_id || currentBoard.id)
+          ? { ...b, is_active: boardActive, exams: updatedExams }
+          : b
       );
       const updatedCategories = categories.map((cat) =>
-        cat.id === currentCategory.id ? { ...cat, boards: updatedBoards } : cat
+        (cat.id || (cat as any).category_id) === (currentCategory.id || (currentCategory as any).category_id)
+          ? { ...cat, is_active: catActive, boards: updatedBoards }
+          : cat
       );
-      setCurrentBoard({ ...currentBoard, exams: updatedExams });
-      setCurrentCategory({ ...currentCategory, boards: updatedBoards });
+      setCurrentBoard({ ...currentBoard, is_active: boardActive, exams: updatedExams });
+      setCurrentCategory({ ...currentCategory, is_active: catActive, boards: updatedBoards });
       persistCategories(updatedCategories, "परीक्षा की दृश्यता (On/Off) अपडेट की गई");
     }
   };
 
-  // -------------------------------------------------------------
   // 🧭 DRILLDOWN NAVIGATION (Category -> Board -> Exam)
   // -------------------------------------------------------------
   const drillIntoCategory = (cat: CategoryItem) => {
@@ -808,18 +811,16 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                       <div className="inline-flex flex-col items-center">
                         <button
                           onClick={() => handleToggleStatus(board.board_id, "boards")}
-                          disabled={!currentCategory?.is_active || saving}
+                          disabled={saving}
                           className={`relative inline-flex h-6 w-11 shrink-0 rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
-                            !currentCategory?.is_active
-                              ? "bg-stone-200 opacity-50 cursor-not-allowed"
-                              : board.is_active
+                            board.is_active
                               ? "bg-emerald-600 cursor-pointer"
                               : "bg-stone-300 cursor-pointer"
                           }`}
                         >
                           <span
                             className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
-                              board.is_active && currentCategory?.is_active ? "translate-x-5" : "translate-x-0"
+                              board.is_active ? "translate-x-5" : "translate-x-0"
                             }`}
                           />
                         </button>
@@ -912,20 +913,16 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                       <div className="inline-flex flex-col items-center">
                         <button
                           onClick={() => handleToggleStatus(exam.id, "exams")}
-                          disabled={!currentCategory?.is_active || !currentBoard?.is_active || saving}
+                          disabled={saving}
                           className={`relative inline-flex h-6 w-11 shrink-0 rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
-                            !currentCategory?.is_active || !currentBoard?.is_active
-                              ? "bg-stone-200 opacity-50 cursor-not-allowed"
-                              : exam.is_active
+                            exam.is_active
                               ? "bg-emerald-600 cursor-pointer"
                               : "bg-stone-300 cursor-pointer"
                           }`}
                         >
                           <span
                             className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
-                              exam.is_active && currentCategory?.is_active && currentBoard?.is_active
-                                ? "translate-x-5"
-                                : "translate-x-0"
+                              exam.is_active ? "translate-x-5" : "translate-x-0"
                             }`}
                           />
                         </button>

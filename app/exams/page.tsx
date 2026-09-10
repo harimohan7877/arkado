@@ -21,6 +21,8 @@ export default function AllExamsPage() {
   const [categoryExams, setCategoryExams] = useState<Record<string, Exam[]>>({});
   const [loadingExams, setLoadingExams] = useState<Record<string, boolean>>({});
   const [visibleCount, setVisibleCount] = useState(24);
+  const [failedCatImages, setFailedCatImages] = useState<Record<string, boolean>>({});
+  const [failedExamImages, setFailedExamImages] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     fetch("/api/categories?scope=public")
@@ -272,12 +274,14 @@ export default function AllExamsPage() {
                     <div className="p-5 space-y-4">
                       <div className="flex items-start gap-3.5">
                         <div className="relative w-14 h-14 rounded-xl bg-stone-50 border border-stone-200 shrink-0 p-1 flex items-center justify-center overflow-hidden">
-                          {cat.logo_url ? (
+                          {cat.logo_url && !failedCatImages[cat.id] ? (
                             <Image
                               src={cat.logo_url}
                               alt={cat.name}
                               width={52}
                               height={52}
+                              unoptimized
+                              onError={() => setFailedCatImages((prev) => ({ ...prev, [cat.id]: true }))}
                               className="object-contain max-h-full max-w-full rounded-lg"
                             />
                           ) : (
@@ -346,7 +350,7 @@ export default function AllExamsPage() {
                         ) : exams.length > 0 ? (
                           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 max-h-96 overflow-y-auto pr-1">
                             {exams.map((exam) => {
-                              const examLogo = exam.logo_url || cat.logo_url;
+                              const examLogo = exam.logo_url;
                               return (
                                 <Link
                                   key={exam.id}
@@ -355,12 +359,14 @@ export default function AllExamsPage() {
                                 >
                                   <div className="flex items-center gap-3 min-w-0 flex-1">
                                     <div className="relative w-9 h-9 rounded-lg bg-stone-50 border border-stone-200 shrink-0 p-1 flex items-center justify-center overflow-hidden group-hover:border-amber-300">
-                                      {examLogo ? (
+                                      {examLogo && !failedExamImages[exam.id] ? (
                                         <Image
                                           src={examLogo}
                                           alt={exam.name}
                                           width={32}
                                           height={32}
+                                          unoptimized
+                                          onError={() => setFailedExamImages((prev) => ({ ...prev, [exam.id]: true }))}
                                           className="object-contain max-h-full max-w-full"
                                         />
                                       ) : (

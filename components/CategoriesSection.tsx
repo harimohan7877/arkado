@@ -16,6 +16,7 @@ interface CategoriesSectionProps {
 export default function CategoriesSection({ categories, title }: CategoriesSectionProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [settings, setSettings] = useState<Settings | null>(null);
+  const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     fetch("/api/settings")
@@ -91,12 +92,14 @@ export default function CategoriesSection({ categories, title }: CategoriesSecti
               className="group flex flex-col items-center p-3 rounded-2xl text-center transition-all cursor-pointer border bg-white border-stone-200 hover:border-amber-400 hover:shadow-md hover:-translate-y-0.5"
             >
               <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-stone-50 border-2 border-stone-100 group-hover:border-amber-300 transition-all mb-2 flex items-center justify-center p-1">
-                {cat.logo_url ? (
+                {cat.logo_url && !failedImages[cat.id] ? (
                   <Image
                     src={cat.logo_url}
                     alt={cat.name}
                     width={72}
                     height={72}
+                    unoptimized
+                    onError={() => setFailedImages((prev) => ({ ...prev, [cat.id]: true }))}
                     className="object-contain max-h-full max-w-full rounded-full"
                   />
                 ) : (

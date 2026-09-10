@@ -32,6 +32,8 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedCourseForSample, setSelectedCourseForSample] = useState<Course | null>(null);
   const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
+  const [failedCatImage, setFailedCatImage] = useState(false);
+  const [failedExamImages, setFailedExamImages] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     const loadCategoryData = async () => {
@@ -169,12 +171,14 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-2">
               <div className="flex items-start gap-4">
                 <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-stone-50 border-2 border-stone-100 shrink-0 p-1.5 flex items-center justify-center overflow-hidden shadow-xs">
-                  {category.logo_url ? (
+                  {category.logo_url && !failedCatImage ? (
                     <Image
                       src={category.logo_url}
                       alt={category.name}
                       width={70}
                       height={70}
+                      unoptimized
+                      onError={() => setFailedCatImage(true)}
                       className="object-contain max-h-full max-w-full rounded-xl"
                     />
                   ) : (
@@ -340,7 +344,7 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
               {filteredExams.map((exam) => {
-                const examLogo = exam.logo_url || category.logo_url;
+                const examLogo = exam.logo_url;
                 const matchedCourse = courses.find(
                   (c) =>
                     c.exam_id === exam.id ||
@@ -361,12 +365,14 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
                           href={examHref}
                           className="relative w-12 h-12 rounded-xl bg-stone-50 border border-stone-200 shrink-0 p-1 flex items-center justify-center overflow-hidden group-hover:border-amber-300 transition"
                         >
-                          {examLogo ? (
+                          {examLogo && !failedExamImages[exam.id] ? (
                             <Image
                               src={examLogo}
                               alt={exam.name}
                               width={44}
                               height={44}
+                              unoptimized
+                              onError={() => setFailedExamImages((prev) => ({ ...prev, [exam.id]: true }))}
                               className="object-contain max-h-full max-w-full rounded-lg"
                             />
                           ) : (

@@ -160,7 +160,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
       setUploadingImage(true);
       const formData = new FormData();
       formData.append("file", file);
-      formData.append("folder", editLevel === "exams" ? "exams" : "logos");
+      formData.append("folder", editLevel === "exams" ? "exams" : editLevel === "boards" ? "boards" : "categories");
 
       const res = await fetch("/api/admin/upload", {
         method: "POST",

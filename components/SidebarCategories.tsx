@@ -13,6 +13,7 @@ interface SidebarCategoriesProps {
 export default function SidebarCategories({ activeCategory }: SidebarCategoriesProps) {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
+  const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     fetch("/api/categories?scope=public")
@@ -56,12 +57,14 @@ export default function SidebarCategories({ activeCategory }: SidebarCategoriesP
             >
               <span className="flex items-center gap-2.5 min-w-0 flex-1">
                 <span className="w-7 h-7 rounded-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0 border border-stone-200 p-0.5">
-                  {cat.logo_url ? (
+                  {cat.logo_url && !failedImages[cat.id] ? (
                     <Image
                       src={cat.logo_url}
                       alt={cat.name}
                       width={28}
                       height={28}
+                      unoptimized
+                      onError={() => setFailedImages((prev) => ({ ...prev, [cat.id]: true }))}
                       className="object-contain w-full h-full rounded-full"
                     />
                   ) : (

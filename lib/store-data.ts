@@ -77,24 +77,51 @@ export async function saveUploadedFile(file: File, folder: string = "logos", cus
       .replace(/[^a-zA-Z0-9_-]/g, "_");
 
     const fileName = `${cleanBaseName}.${ext}`;
-    const relativePath = `uploads/${folder}/${fileName}`;
+    const storagePath = `${folder}/${fileName}`;
 
-    // On Vercel / serverless, filesystem is read-only. If image is <= 1.5MB, return Data URI
-    // so it works 100% reliably and never 404s or gets lost on Vercel redeploys!
-    if (outputBuffer.length <= 1.5 * 1024 * 1024) {
-      const dataUri = `data:${mimeType};base64,${outputBuffer.toString("base64")}`;
-      // Also attempt to write to disk if writable (e.g. localhost)
-      try {
-        const candidates = getCandidatePaths(`public/${relativePath}`);
-        for (const p of candidates) {
-          const dir = dirname(p);
-          await mkdir(dir, { recursive: true });
-          await writeFile(p, outputBuffer);
+    // 1. Primary: Upload to Supabase Storage (Public bucket 'arkado-uploads')
+    // Gives permanent, high-speed CDN URL that never 404s or disappears on Vercel deployments
+    try {
+      const { data: uploadData, error: uploadErr } = await supabaseAdmin.storage
+        .from("arkado-uploads")
+        .upload(storagePath, outputBuffer, {
+          contentType: mimeType,
+          upsert: true,
+        });
+
+      if (!uploadErr && uploadData?.path) {
+        const { data: publicUrlData } = supabaseAdmin.storage
+          .from("arkado-uploads")
+          .getPublicUrl(storagePath);
+
+        if (publicUrlData?.publicUrl) {
+          // Also try writing to local disk for local dev
+          try {
+            const relativePath = `uploads/${folder}/${fileName}`;
+            const candidates = getCandidatePaths(`public/${relativePath}`);
+            for (const p of candidates) {
+              const dir = dirname(p);
+              await mkdir(dir, { recursive: true });
+              await writeFile(p, outputBuffer);
+            }
+          } catch {}
+
+          return publicUrlData.publicUrl;
         }
-      } catch {}
-      return dataUri;
+      } else if (uploadErr) {
+        console.warn("[saveUploadedFile] Supabase storage upload warning:", uploadErr.message);
+      }
+    } catch (sbStorageErr) {
+      console.warn("[saveUploadedFile] Supabase storage exception:", sbStorageErr);
     }
 
+    // 2. Secondary: Fallback to Data URI for images <= 2MB so it ALWAYS displays without 404
+    if (outputBuffer.length <= 2 * 1024 * 1024) {
+      return `data:${mimeType};base64,${outputBuffer.toString("base64")}`;
+    }
+
+    // 3. Local disk write for development
+    const relativePath = `uploads/${folder}/${fileName}`;
     const candidates = getCandidatePaths(`public/${relativePath}`);
     for (const p of candidates) {
       try {

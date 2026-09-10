@@ -15,92 +15,98 @@ function writeCategories(data: unknown[]) {
 
 // GET: Supports progressive/lazy loading by category_id and board_id
 export async function GET(req: NextRequest) {
-  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  try {
+    if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const { searchParams } = new URL(req.url);
-  const categoryId = searchParams.get("category_id");
-  const boardId = searchParams.get("board_id");
-  const summaryOnly = searchParams.get("summary") === "true";
+    const { searchParams } = new URL(req.url);
+    const categoryId = searchParams.get("category_id");
+    const boardId = searchParams.get("board_id");
+    const summaryOnly = searchParams.get("summary") === "true";
 
-  const allCategories = await readCategories();
+    const rawCategories = await readCategories();
+    const allCategories = Array.isArray(rawCategories) ? rawCategories : [];
 
-  // 1. If board_id specified, return exams of that board
-  if (categoryId && boardId) {
-    const cat = allCategories.find((c: any) => c.id === categoryId || c.category_id === categoryId);
-    if (!cat) return NextResponse.json({ error: "Category not found" }, { status: 404 });
-    const board = (cat.boards || []).find((b: any) => b.board_id === boardId || b.id === boardId);
-    if (!board) return NextResponse.json({ error: "Board not found" }, { status: 404 });
-    return NextResponse.json({
-      board: {
-        board_id: board.board_id || board.id,
-        name: board.name,
-        short_name: board.short_name,
-        icon: board.icon,
-        logo_url: board.logo_url,
-        priority: board.priority,
-        is_active: board.is_active,
-        viral_preview: board.viral_preview,
-        viral_names: board.viral_names || [],
-        official_portal: board.official_portal
-      },
-      exams: board.exams || []
-    });
+    // 1. If board_id specified, return exams of that board
+    if (categoryId && boardId) {
+      const cat = allCategories.find((c: any) => c.id === categoryId || c.category_id === categoryId);
+      if (!cat) return NextResponse.json({ error: "Category not found" }, { status: 404 });
+      const board = (cat.boards || []).find((b: any) => b.board_id === boardId || b.id === boardId);
+      if (!board) return NextResponse.json({ error: "Board not found" }, { status: 404 });
+      return NextResponse.json({
+        board: {
+          board_id: board.board_id || board.id,
+          name: board.name,
+          short_name: board.short_name,
+          icon: board.icon,
+          logo_url: board.logo_url,
+          priority: board.priority,
+          is_active: board.is_active,
+          viral_preview: board.viral_preview,
+          viral_names: board.viral_names || [],
+          official_portal: board.official_portal
+        },
+        exams: board.exams || []
+      });
+    }
+
+    // 2. If category_id specified, return boards of that category
+    if (categoryId) {
+      const cat = allCategories.find((c: any) => c.id === categoryId || c.category_id === categoryId);
+      if (!cat) return NextResponse.json({ error: "Category not found" }, { status: 404 });
+      return NextResponse.json({
+        category: {
+          id: cat.id || cat.category_id,
+          name: cat.name,
+          name_hi: cat.name_hi,
+          icon: cat.icon,
+          logo_url: cat.logo_url,
+          priority: cat.priority,
+          is_active: cat.is_active,
+          sub_preview: cat.sub_preview,
+          viral_names: cat.viral_names || [],
+          description: cat.description
+        },
+        boards: (cat.boards || []).map((b: any) => ({
+          board_id: b.board_id || b.id,
+          name: b.name,
+          short_name: b.short_name,
+          icon: b.icon,
+          logo_url: b.logo_url,
+          priority: b.priority,
+          is_active: b.is_active,
+          viral_preview: b.viral_preview,
+          viral_names: b.viral_names || [],
+          official_portal: b.official_portal,
+          total_exams: (b.exams || []).length
+        }))
+      });
+    }
+
+    // 3. Summary only: returns lightweight categories list without loading nested boards/exams
+    if (summaryOnly) {
+      const summaries = allCategories.map((c: any) => ({
+        id: c.id || c.category_id,
+        name: c.name,
+        name_hi: c.name_hi,
+        icon: c.icon,
+        logo_url: c.logo_url,
+        priority: c.priority,
+        is_active: c.is_active,
+        sub_preview: c.sub_preview,
+        viral_names: c.viral_names || [],
+        description: c.description,
+        total_boards: (c.boards || []).length,
+        total_exams: (c.boards || []).reduce((acc: number, b: any) => acc + (b.exams || []).length, 0)
+      }));
+      return NextResponse.json(summaries);
+    }
+
+    // 4. Default: return all categories
+    return NextResponse.json(allCategories);
+  } catch (err: any) {
+    console.error("[admin/categories] GET error:", err);
+    return NextResponse.json({ error: err?.message || "Failed to load categories" }, { status: 500 });
   }
-
-  // 2. If category_id specified, return boards of that category
-  if (categoryId) {
-    const cat = allCategories.find((c: any) => c.id === categoryId || c.category_id === categoryId);
-    if (!cat) return NextResponse.json({ error: "Category not found" }, { status: 404 });
-    return NextResponse.json({
-      category: {
-        id: cat.id || cat.category_id,
-        name: cat.name,
-        name_hi: cat.name_hi,
-        icon: cat.icon,
-        logo_url: cat.logo_url,
-        priority: cat.priority,
-        is_active: cat.is_active,
-        sub_preview: cat.sub_preview,
-        viral_names: cat.viral_names || [],
-        description: cat.description
-      },
-      boards: (cat.boards || []).map((b: any) => ({
-        board_id: b.board_id || b.id,
-        name: b.name,
-        short_name: b.short_name,
-        icon: b.icon,
-        logo_url: b.logo_url,
-        priority: b.priority,
-        is_active: b.is_active,
-        viral_preview: b.viral_preview,
-        viral_names: b.viral_names || [],
-        official_portal: b.official_portal,
-        total_exams: (b.exams || []).length
-      }))
-    });
-  }
-
-  // 3. Summary only: returns lightweight categories list without loading nested boards/exams
-  if (summaryOnly) {
-    const summaries = allCategories.map((c: any) => ({
-      id: c.id || c.category_id,
-      name: c.name,
-      name_hi: c.name_hi,
-      icon: c.icon,
-      logo_url: c.logo_url,
-      priority: c.priority,
-      is_active: c.is_active,
-      sub_preview: c.sub_preview,
-      viral_names: c.viral_names || [],
-      description: c.description,
-      total_boards: (c.boards || []).length,
-      total_exams: (c.boards || []).reduce((acc: number, b: any) => acc + (b.exams || []).length, 0)
-    }));
-    return NextResponse.json(summaries);
-  }
-
-  // 4. Default: return all categories
-  return NextResponse.json(allCategories);
 }
 
 // PUT: Bulk update or tree update

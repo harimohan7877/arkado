@@ -90,13 +90,17 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
   const fetchCategories = async () => {
     try {
       setLoading(true);
+      const authHeaders = typeof getAuthHeaders === "function" ? getAuthHeaders() : {};
       const res = await fetch(`/api/admin/categories?t=${Date.now()}`, {
-        headers: getAuthHeaders(),
+        headers: authHeaders,
         cache: "no-store",
       });
-      if (!res.ok) throw new Error("Failed to load categories");
+      if (!res.ok) {
+        const errJson = await res.json().catch(() => ({}));
+        throw new Error(errJson.error || `कैटेगरी लोड नहीं हो सकीं (Status: ${res.status})`);
+      }
       const data: CategoryItem[] = await res.json();
-      const sorted = (data || []).sort((a, b) => a.priority - b.priority);
+      const sorted = (Array.isArray(data) ? data : []).sort((a, b) => (a.priority || 0) - (b.priority || 0));
       setCategories(sorted);
     } catch (err: any) {
       showToast(err.message || "श्रेणियां लोड करने में त्रुटि", "error");
@@ -114,10 +118,11 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
       // Immediately update local state for instant UI response
       setCategories(updatedList);
 
+      const authHeaders = typeof getAuthHeaders === "function" ? getAuthHeaders() : {};
       const res = await fetch(`/api/admin/categories?t=${Date.now()}`, {
         method: "PUT",
         headers: {
-          ...getAuthHeaders(),
+          ...authHeaders,
           "Content-Type": "application/json",
         },
         cache: "no-store",

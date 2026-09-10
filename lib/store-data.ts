@@ -1,4 +1,3 @@
-import sharp from "sharp";
 import { readFile, writeFile, mkdir } from "fs/promises";
 import { existsSync } from "fs";
 import { join, dirname } from "path";
@@ -44,10 +43,13 @@ export async function saveUploadedFile(file: File, folder: string = "logos", cus
     const buffer = Buffer.from(bytes);
 
     let outputBuffer: Buffer = buffer;
-    let ext = "webp";
+    let ext = file.name ? file.name.split(".").pop()?.toLowerCase() || "png" : "png";
+    let mimeType = file.type || `image/${ext}`;
 
     try {
-      // Always convert to WebP format for optimal site performance, minimal bandwidth and instant load times
+      // Dynamic import so sharp never breaks module evaluation on Linux / Vercel Serverless
+      const sharpModule = await import("sharp");
+      const sharp = sharpModule.default || sharpModule;
       outputBuffer = await sharp(buffer)
         .rotate() // Automatically orient based on EXIF (fixes camera rotation from smartphones)
         .resize({
@@ -55,15 +57,17 @@ export async function saveUploadedFile(file: File, folder: string = "logos", cus
           height: 1920,
           fit: "inside",
           withoutEnlargement: true,
-        }) // Resize huge DSLR/4K phone images down to max 1920px while preserving aspect ratio
+        }) // Resize huge images down to max 1920px while preserving aspect ratio
         .webp({
           quality: 82, // Optimal visual quality vs byte size
           effort: 4,
         })
         .toBuffer();
+      ext = "webp";
+      mimeType = "image/webp";
     } catch (sharpErr) {
       console.warn("[saveUploadedFile] Sharp WebP conversion fallback, using original buffer:", sharpErr);
-      ext = file.name ? file.name.split(".").pop() || "png" : "png";
+      ext = file.name ? file.name.split(".").pop()?.toLowerCase() || "png" : "png";
       outputBuffer = buffer;
     }
 
@@ -74,6 +78,22 @@ export async function saveUploadedFile(file: File, folder: string = "logos", cus
 
     const fileName = `${cleanBaseName}.${ext}`;
     const relativePath = `uploads/${folder}/${fileName}`;
+
+    // On Vercel / serverless, filesystem is read-only. If image is <= 1.5MB, return Data URI
+    // so it works 100% reliably and never 404s or gets lost on Vercel redeploys!
+    if (outputBuffer.length <= 1.5 * 1024 * 1024) {
+      const dataUri = `data:${mimeType};base64,${outputBuffer.toString("base64")}`;
+      // Also attempt to write to disk if writable (e.g. localhost)
+      try {
+        const candidates = getCandidatePaths(`public/${relativePath}`);
+        for (const p of candidates) {
+          const dir = dirname(p);
+          await mkdir(dir, { recursive: true });
+          await writeFile(p, outputBuffer);
+        }
+      } catch {}
+      return dataUri;
+    }
 
     const candidates = getCandidatePaths(`public/${relativePath}`);
     for (const p of candidates) {

@@ -21,17 +21,26 @@ export function verifyAdminSession(req: NextRequest): boolean {
     return true;
   }
 
-  // 1. Check Bearer / Passcode in Authorization header
-  const authHeader = req.headers.get("authorization") || "";
-  const token = authHeader.replace(/^Bearer\s+/i, "").trim();
-  if (token && VALID_PASSCODES.includes(token)) {
-    return true;
+  // 1. Check Bearer / Passcode in Authorization or x-admin-passcode header
+  const authHeader = req.headers.get("authorization") || req.headers.get("x-admin-passcode") || "";
+  const token = authHeader.replace(/^Bearer\s+/i, "").replace(/^["']|["']$/g, "").trim();
+  if (token) {
+    try {
+      const decodedToken = decodeURIComponent(token);
+      if (VALID_PASSCODES.includes(token) || VALID_PASSCODES.includes(decodedToken)) {
+        return true;
+      }
+    } catch {
+      if (VALID_PASSCODES.includes(token)) return true;
+    }
   }
 
   // 2. Check arkado-admin-verified or sarkari-saathi-admin-verified cookie
-  const cookie =
+  const rawCookie =
     req.cookies.get("arkado-admin-verified")?.value ||
-    req.cookies.get("sarkari-saathi-admin-verified")?.value;
+    req.cookies.get("sarkari-saathi-admin-verified")?.value ||
+    "";
+  const cookie = rawCookie.replace(/^["']|["']$/g, "").trim();
   if (cookie) {
     try {
       const decoded = decodeURIComponent(cookie);

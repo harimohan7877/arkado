@@ -35,5 +35,16 @@ export const EXAM_LABELS: Record<string, string> = {
 };
 
 export function getExamLabel(examId: string): string {
-  return EXAM_LABELS[examId] || examId;
+  if (!examId) return "Exam Kit";
+  if (EXAM_LABELS[examId]) return EXAM_LABELS[examId];
+
+  // If it's a slug, format nicely e.g. "rajasthan-police" -> "Rajasthan Police"
+  const formatted = examId
+    .replace(/^exam[-_]/i, "")
+    .split(/[-_]/)
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+
+  return formatted || examId;
 }

@@ -34,6 +34,11 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
   const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
   const [failedCatImage, setFailedCatImage] = useState(false);
   const [failedExamImages, setFailedExamImages] = useState<Record<string, boolean>>({});
+  const [settings, setSettings] = useState<any>(null);
+
+  useEffect(() => {
+    fetch("/api/settings").then(r => r.json()).then(setSettings).catch(() => {});
+  }, []);
 
   useEffect(() => {
     const loadCategoryData = async () => {
@@ -217,7 +222,7 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
                   ← All Categories
                 </Link>
                 <a
-                  href="https://wa.me/917852004401"
+                  href={settings?.social?.whatsapp_url || `https://wa.me/${(settings?.contact?.whatsapp_number || settings?.whatsapp_support_number || "917852004401").replace(/\D/g, "")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-xs"

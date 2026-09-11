@@ -20,6 +20,15 @@ export default function CourseDetailPage({ params }: PageProps) {
   const [loading, setLoading] = useState(true);
   const [cart, setCart] = useState<CourseBundle[]>([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [settings, setSettings] = useState<any>(null);
+  const [coverImageFailed, setCoverImageFailed] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/settings")
+      .then((r) => r.json())
+      .then(setSettings)
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     async function loadCourseOrExam() {
@@ -72,7 +81,7 @@ export default function CourseDetailPage({ params }: PageProps) {
               pages_count: "1,250+ Pages",
               format: "Printable PDF",
               language: "हिन्दी (Hindi)",
-              cover_image: matchedExam.logo_url || "/images/bundles/cet_bundle_3d.jpg",
+              cover_image: matchedExam.logo_url || "",
               show_in_slider: false,
               slider_tagline: "",
               sample_pdf_url: matchedExam.notes_link || "https://drive.google.com",
@@ -259,13 +268,26 @@ export default function CourseDetailPage({ params }: PageProps) {
 
           <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-4">
             <div className="bg-white p-6 rounded-3xl border border-neutral-200 shadow-lg space-y-6">
-              <div className="relative w-full h-52 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200">
-                <Image
-                  src={course.cover_image}
-                  alt={course.title}
-                  fill
-                  className="object-cover"
-                />
+              <div className="relative w-full h-52 rounded-2xl overflow-hidden bg-gradient-to-br from-amber-700 via-stone-800 to-stone-900 border border-neutral-200 flex items-center justify-center p-4">
+                {course.cover_image && !coverImageFailed ? (
+                  <Image
+                    src={course.cover_image}
+                    alt={course.title}
+                    fill
+                    onError={() => setCoverImageFailed(true)}
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="text-center text-white space-y-2">
+                    <span className="text-4xl">📚</span>
+                    <h3 className="font-extrabold text-sm line-clamp-2 px-2 text-amber-200">
+                      {course.title}
+                    </h3>
+                    <span className="inline-block text-[10px] font-bold uppercase bg-amber-600 text-white px-2.5 py-0.5 rounded-full">
+                      Arkado Selection Kit
+                    </span>
+                  </div>
+                )}
                 <div className="absolute top-3 left-3 bg-neutral-900/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-md">
                   {examBoard || "RSMSSB"}
                 </div>
@@ -284,7 +306,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                   </span>
                 </div>
                 <p className="text-[11px] text-neutral-500 mt-1">
-                  One-time payment • Instant WhatsApp &amp; Gmail PDF access
+                  {settings?.course_page?.instant_delivery_badge || "One-time payment • Instant WhatsApp & Gmail PDF access"}
                 </p>
               </div>
 
@@ -298,7 +320,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                 </button>
 
                 <a
-                  href={`https://wa.me/917852004401?text=${encodeURIComponent(
+                  href={`https://wa.me/${(settings?.contact?.whatsapp_number || settings?.whatsapp_support_number || "917852004401").replace(/\D/g, "")}?text=${encodeURIComponent(
                     `Hi! I want to purchase the study kit for ${course.title}.`
                   )}`}
                   target="_blank"
@@ -310,18 +332,19 @@ export default function CourseDetailPage({ params }: PageProps) {
               </div>
 
               <div className="pt-4 border-t border-neutral-100 space-y-2 text-xs text-neutral-500">
-                <div className="flex items-center gap-2">
-                  <span className="text-emerald-600 font-bold">✓</span>
-                  <span>Direct Google Drive PDF Download</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-emerald-600 font-bold">✓</span>
-                  <span>Instant WhatsApp or Gmail Delivery</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="text-emerald-600 font-bold">✓</span>
-                  <span>100% Secure UPI with UTR Verification</span>
-                </div>
+                {(settings?.course_page?.guarantees && settings.course_page.guarantees.length > 0
+                  ? settings.course_page.guarantees
+                  : [
+                      "Direct Google Drive PDF Download",
+                      "Instant WhatsApp or Gmail Delivery",
+                      "100% Secure UPI with UTR Verification"
+                    ]
+                ).map((g: string, idx: number) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    <span className="text-emerald-600 font-bold">✓</span>
+                    <span>{g}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

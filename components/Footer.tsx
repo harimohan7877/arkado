@@ -107,14 +107,16 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-2 pt-1">
               {[
-                { name: "X", path: "M18 6 6 18 M6 6l12 12" },
-                { name: "in", path: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z M2 9h4v12H2z M4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" },
-                { name: "ig", path: "M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z M17.5 6.5h.01" },
-                { name: "fb", path: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" },
+                { name: "WhatsApp", url: whatsappUrl, path: "M12 2a10 10 0 0 0-8.7 15l-1.3 4.8 5-1.3A10 10 0 1 0 12 2z" },
+                { name: "Instagram", url: instagramUrl, path: "M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z M17.5 6.5h.01" },
+                { name: "Facebook", url: facebookUrl, path: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" },
+                { name: "Gmail", url: gmailUrl, path: "m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7 M2 4h20v16H2z" },
               ].map((s) => (
                 <a
                   key={s.name}
-                  href="#"
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-8 h-8 rounded-md bg-stone-800 hover:bg-amber-600 text-stone-400 hover:text-white flex items-center justify-center transition"
                   aria-label={s.name}
                 >
@@ -151,7 +153,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          {/* Other */}
+          {/* Company & Policies */}
           <div className="space-y-2">
             <h4 className="text-white font-bold uppercase tracking-wider text-xs">
               Company
@@ -162,13 +164,13 @@ export default function Footer() {
             <Link href="/contact" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
               Contact
             </Link>
-            <Link href="#" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
+            <Link href="/refund" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
               Refund Policy
             </Link>
-            <Link href="#" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
+            <Link href="/privacy" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
               Privacy Policy
             </Link>
-            <Link href="#" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
+            <Link href="/terms" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
               Terms of Service
             </Link>
           </div>
@@ -180,11 +182,11 @@ export default function Footer() {
             </h4>
             <div className="space-y-1.5 text-xs text-stone-400">
               <a
-                href="tel:+917852004401"
+                href={`tel:${(settings?.contact?.phone || "+91 7852004401").replace(/\s+/g, "")}`}
                 className="flex items-center gap-2 hover:text-amber-400 transition"
               >
                 <PhoneIcon size={12} className="text-amber-500" />
-                +91 7852004401
+                {settings?.contact?.phone || "+91 7852004401"}
               </a>
               <a
                 href={whatsappUrl}
@@ -196,15 +198,15 @@ export default function Footer() {
                 WhatsApp Chat
               </a>
               <a
-                href="mailto:support@arkado.in"
+                href={`mailto:${settings?.contact?.email || settings?.gmail_support_email || "support@arkado.in"}`}
                 className="flex items-center gap-2 hover:text-amber-400 transition"
               >
                 <MailIcon size={12} className="text-amber-500" />
-                support@arkado.in
+                {settings?.contact?.email || settings?.gmail_support_email || "support@arkado.in"}
               </a>
               <div className="flex items-start gap-2 pt-1">
                 <MapPinIcon size={12} className="text-amber-500 mt-0.5 shrink-0" />
-                <span>Sardarshahar, Churu, Rajasthan</span>
+                <span>{settings?.contact?.address || "Sardarshahar, Churu, Rajasthan"}</span>
               </div>
             </div>
 

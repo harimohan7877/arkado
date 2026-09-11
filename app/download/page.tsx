@@ -1,17 +1,29 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Settings } from "@/lib/store-types";
 
 function DownloadContent() {
   const searchParams = useSearchParams();
   const orderId = searchParams.get("orderId") || searchParams.get("order_id") || "ARK-2026-LIVE";
   const courseTitle = searchParams.get("course") || "प्रतियोगी परीक्षा नोट्स बंडल";
   const mode = searchParams.get("mode") || "whatsapp";
-  const phone = searchParams.get("phone") || "7852004401";
+
+  const [settings, setSettings] = useState<Settings | null>(null);
+
+  useEffect(() => {
+    fetch("/api/settings")
+      .then((r) => r.json())
+      .then(setSettings)
+      .catch(() => {});
+  }, []);
+
+  const supportNumber = settings?.contact?.whatsapp_number || settings?.whatsapp_support_number || "917852004401";
+  const displayPhone = settings?.contact?.phone || "+91 7852004401";
 
   const waMessage = `नमस्ते! मैंने Arkado से नोट्स बंडल का ऑर्डर किया है।\n\nOrder ID: ${orderId}\nकृपया मुझे notes की लिंक भेजें।`;
 
@@ -45,7 +57,7 @@ function DownloadContent() {
               नीचे दिए गए बटन पर क्लिक करके सीधे हमारे WhatsApp नंबर पर अपना Order ID भेजें। आपको तुरंत notes की प्राइवेट लिंक शेयर कर दी जाएगी।
             </p>
             <a
-              href={`https://wa.me/917852004401?text=${encodeURIComponent(waMessage)}`}
+              href={`https://wa.me/${supportNumber.replace(/\D/g, "")}?text=${encodeURIComponent(waMessage)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-4 px-6 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm rounded-2xl transition shadow-md flex items-center justify-center gap-2 cursor-pointer"
@@ -78,12 +90,12 @@ function DownloadContent() {
           ← होमपेज पर जाएं
         </Link>
         <a
-          href="https://wa.me/917852004401"
+          href={`https://wa.me/${supportNumber.replace(/\D/g, "")}`}
           target="_blank"
           rel="noopener noreferrer"
           className="w-full sm:w-auto px-6 py-3 rounded-full bg-stone-900 text-white font-bold text-xs hover:bg-stone-800 transition"
         >
-          हेल्पलाइन सपोर्ट (7852004401)
+          हेल्पलाइन सपोर्ट ({displayPhone})
         </a>
       </div>
     </div>

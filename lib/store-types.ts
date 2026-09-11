@@ -116,6 +116,53 @@ export interface Settings {
     newsletter_subtitle?: string;
     newsletter_placeholder?: string;
     newsletter_button_text?: string;
+    promo_banner?: {
+      enabled?: boolean;
+      title?: string;
+      subtitle?: string;
+      bullets?: string[];
+    };
+    trust_features?: {
+      title: string;
+      desc: string;
+      icon: string;
+    }[];
+    faqs?: {
+      question: string;
+      answer: string;
+    }[];
+  };
+  contact?: {
+    phone?: string;
+    whatsapp_number?: string;
+    email?: string;
+    address?: string;
+    support_hours?: string;
+  };
+  order_messages?: {
+    whatsapp_order_template?: string;
+    whatsapp_after_payment_template?: string;
+    gmail_subject?: string;
+    gmail_body?: string;
+  };
+  trending_searches?: string[];
+  policies?: {
+    refund_policy?: string;
+    privacy_policy?: string;
+    terms_of_service?: string;
+  };
+  about?: {
+    title?: string;
+    subtitle?: string;
+    story?: string;
+    founder_name?: string;
+    founder_location?: string;
+    experience_years?: string;
+    highlights?: string[];
+  };
+  course_page?: {
+    instant_delivery_badge?: string;
+    guarantees?: string[];
   };
   social?: {
     whatsapp_url?: string;

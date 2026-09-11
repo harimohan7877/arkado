@@ -188,47 +188,51 @@ export default function HomePage() {
           />
         </section>
 
-        {/* CATEGORIES BANNER - light version (no dark box) */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-amber-50 border border-amber-200 p-6 sm:p-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-              <div>
-                <h3 className="text-2xl sm:text-3xl font-black text-stone-900 leading-tight">
-                  Crack Any Exam with Deep-Level Analysis
-                </h3>
-                <p className="text-sm text-stone-700 mt-2">
-                  Premium pattern-decoded notes for{" "}
-                    <span className="font-extrabold text-amber-700">Rajasthan Exams</span>
-                </p>
-                <div className="grid grid-cols-2 gap-2 mt-5">
-                  {[
-                    "Last 5 Years Pattern Decoded",
-                    "Topic-Weightage Analysis",
-                    "3000-5000+ Topic MCQs",
-                    "Free Sample PDF",
-                    "Printable A4 Format",
-                    "Instant Delivery"
-                  ].map((t) => (
-                    <div
-                      key={t}
-                      className="flex items-center gap-2 text-sm font-semibold text-stone-700"
-                    >
-                      <span className="w-5 h-5 rounded bg-amber-600 text-white flex items-center justify-center shrink-0">
-                        <CheckIcon size={11} />
-                      </span>
-                      {t}
-                    </div>
-                  ))}
+        {/* CATEGORIES BANNER - dynamic from settings */}
+        {settings?.homepage?.promo_banner?.enabled !== false && (
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div className="rounded-2xl overflow-hidden bg-gradient-to-br from-amber-50 via-orange-50 to-amber-50 border border-amber-200 p-6 sm:p-10">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-black text-stone-900 leading-tight">
+                    {settings?.homepage?.promo_banner?.title || "Crack Any Exam with Deep-Level Analysis"}
+                  </h3>
+                  <p className="text-sm text-stone-700 mt-2 font-medium">
+                    {settings?.homepage?.promo_banner?.subtitle || "Premium pattern-decoded notes for Rajasthan & All-India Exams"}
+                  </p>
+                  <div className="grid grid-cols-2 gap-2 mt-5">
+                    {(settings?.homepage?.promo_banner?.bullets && settings.homepage.promo_banner.bullets.length > 0
+                      ? settings.homepage.promo_banner.bullets
+                      : [
+                          "Last 5 Years Pattern Decoded",
+                          "Topic-Weightage Analysis",
+                          "3000-5000+ Topic MCQs",
+                          "Free Sample PDF",
+                          "Printable A4 Format",
+                          "Instant Delivery"
+                        ]
+                    ).map((t) => (
+                      <div
+                        key={t}
+                        className="flex items-center gap-2 text-sm font-semibold text-stone-700"
+                      >
+                        <span className="w-5 h-5 rounded bg-amber-600 text-white flex items-center justify-center shrink-0">
+                          <CheckIcon size={11} />
+                        </span>
+                        {t}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div className="hidden lg:flex justify-center">
-                <div className="w-44 h-44 rounded-full bg-amber-600/10 flex items-center justify-center">
-                  <SparklesIcon size={56} className="text-amber-600" />
+                <div className="hidden lg:flex justify-center">
+                  <div className="w-44 h-44 rounded-full bg-amber-600/10 flex items-center justify-center">
+                    <SparklesIcon size={56} className="text-amber-600" />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* CATEGORIES SECTION (with logo) */}
         <section id="categories" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -369,30 +373,33 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-4xl mx-auto">
-              {[
-                {
-                  q: "How do I get my notes after payment?",
-                  a: "After UPI payment, enter the 12-digit UTR. We'll send instant access to your WhatsApp or Gmail within 5-15 minutes.",
-                },
-                {
-                  q: "Can I print the PDFs?",
-                  a: "Yes. All notes are print-ready A4 format. Print at any cyber cafe or e-mitra.",
-                },
-                {
-                  q: "What is the difference vs. handwritten notes?",
-                  a: "These are deep-level analysis notes: pattern-decoded, weightage-tagged, toppers' approach. Not a copy of textbooks.",
-                },
-                {
-                  q: "Need help?",
-                  a: "WhatsApp 7852004401 — our team responds quickly.",
-                },
-              ].map((f) => (
+              {(settings?.homepage?.faqs && settings.homepage.faqs.length > 0
+                ? settings.homepage.faqs
+                : [
+                    {
+                      question: "How do I get my notes after payment?",
+                      answer: "After UPI payment, enter the 12-digit UTR. We'll send instant access to your WhatsApp or Gmail within 5-15 minutes.",
+                    },
+                    {
+                      question: "Can I print the PDFs?",
+                      answer: "Yes. All notes are print-ready A4 format. Print at any cyber cafe or e-mitra.",
+                    },
+                    {
+                      question: "What is the difference vs. handwritten notes?",
+                      answer: "These are deep-level analysis notes: pattern-decoded, weightage-tagged, toppers' approach. Not a copy of textbooks.",
+                    },
+                    {
+                      question: "Need help?",
+                      answer: `WhatsApp ${settings?.contact?.whatsapp_number || "7852004401"} — our team responds quickly.`,
+                    },
+                  ]
+              ).map((f) => (
                 <div
-                  key={f.q}
+                  key={f.question}
                   className="p-4 rounded-lg bg-stone-50 border border-stone-200 space-y-1.5"
                 >
-                  <h4 className="font-bold text-sm text-stone-900">{f.q}</h4>
-                  <p className="text-xs text-stone-600 leading-relaxed">{f.a}</p>
+                  <h4 className="font-bold text-sm text-stone-900">{f.question}</h4>
+                  <p className="text-xs text-stone-600 leading-relaxed">{f.answer}</p>
                 </div>
               ))}
             </div>

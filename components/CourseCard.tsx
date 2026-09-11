@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { CourseBundle } from "@/lib/courses";
@@ -23,6 +24,7 @@ export default function CourseCard({
   onBuyNow,
   onOpenSample,
 }: CourseCardProps) {
+  const [imgError, setImgError] = useState(false);
   const examLabel = getExamLabel(course.exam_id);
   const rating = course.rating || 4.9;
 
@@ -40,16 +42,29 @@ export default function CourseCard({
           {course.discount_percent}% OFF
         </span>
 
-        {/* Book cover - fills full frame cleanly */}
-        <div className="relative w-full h-full overflow-hidden transition-transform duration-300 group-hover:scale-105">
-          <Image
-            src={course.cover_image}
-            alt={course.title}
-            fill
-            className="object-cover object-center"
-            sizes="(max-width: 640px) 50vw, 280px"
-          />
-        </div>
+        {/* Book cover - fills full frame cleanly or shows styled fallback */}
+        {course.cover_image && !imgError ? (
+          <div className="relative w-full h-full overflow-hidden transition-transform duration-300 group-hover:scale-105">
+            <Image
+              src={course.cover_image}
+              alt={course.title}
+              fill
+              onError={() => setImgError(true)}
+              className="object-cover object-center"
+              sizes="(max-width: 640px) 50vw, 280px"
+            />
+          </div>
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-amber-700 via-stone-800 to-stone-900 flex flex-col items-center justify-center p-3 text-center text-white">
+            <span className="text-3xl mb-1">📚</span>
+            <span className="text-[9px] uppercase tracking-wider font-extrabold text-amber-300 bg-black/40 px-2 py-0.5 rounded">
+              {examLabel}
+            </span>
+            <p className="text-[11px] font-bold line-clamp-2 mt-2 px-1 text-stone-100">
+              {course.title}
+            </p>
+          </div>
+        )}
 
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/20 transition flex items-center justify-center opacity-0 group-hover:opacity-100">

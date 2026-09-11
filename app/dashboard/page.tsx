@@ -25,6 +25,11 @@ export default function DashboardPage() {
   const [user, setUser] = useState<{ id: string; email?: string; user_metadata?: Record<string, unknown> } | null>(null);
   const [orders, setOrders] = useState<OrderItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const [settings, setSettings] = useState<any>(null);
+
+  useEffect(() => {
+    fetch("/api/settings").then((r) => r.json()).then(setSettings).catch(() => {});
+  }, []);
 
   useEffect(() => {
     async function loadUserData() {
@@ -172,10 +177,12 @@ export default function DashboardPage() {
               <p className="text-xs font-mono font-bold text-stone-500 uppercase tracking-wider">
                 सहायता (Support)
               </p>
-              <p className="text-sm font-bold text-stone-900 mt-1">7852004401</p>
+              <p className="text-sm font-bold text-stone-900 mt-1">
+                {settings?.contact?.phone || "7852004401"}
+              </p>
             </div>
             <a
-              href="https://wa.me/917852004401"
+              href={settings?.social?.whatsapp_url || `https://wa.me/${(settings?.contact?.whatsapp_number || "917852004401").replace(/\D/g, "")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-bold rounded-lg border border-emerald-200 transition"

@@ -47,6 +47,7 @@ next-env.d.ts
  
 # Backup dummy data
 data/backup_dummy_data/
+scratch/
 
 # Local controller scripts & tools (never pushed to GitHub)
 controller/

@@ -31,6 +31,7 @@ export default function HeroSlider({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [settings, setSettings] = useState<Settings | null>(null);
+  const [failedSlideImages, setFailedSlideImages] = useState<Record<string, boolean>>({});
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
@@ -181,14 +182,29 @@ export default function HeroSlider({
             >
               <div className="absolute -inset-4 bg-amber-500/20 rounded-2xl blur-xl group-hover:bg-amber-500/35 transition" />
               <div className="relative w-48 h-60 sm:w-56 sm:h-72 lg:w-64 lg:h-80 rounded-xl overflow-hidden shadow-xl border border-stone-200/80 transition-transform duration-300 group-hover:scale-105 bg-white">
-                <Image
-                  src={currentSlide.cover_image}
-                  alt={currentSlide.title}
-                  fill
-                  priority
-                  className="object-cover"
-                  sizes="(max-width: 640px) 192px, 256px"
-                />
+                {currentSlide.cover_image && !failedSlideImages[currentSlide.id] ? (
+                  <Image
+                    src={currentSlide.cover_image}
+                    alt={currentSlide.title}
+                    fill
+                    priority
+                    onError={() =>
+                      setFailedSlideImages((prev) => ({ ...prev, [currentSlide.id]: true }))
+                    }
+                    className="object-cover"
+                    sizes="(max-width: 640px) 192px, 256px"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-amber-700 via-stone-800 to-stone-900 flex flex-col items-center justify-center p-4 text-center text-white">
+                    <span className="text-4xl mb-2">📚</span>
+                    <span className="text-[10px] uppercase tracking-wider font-extrabold text-amber-300 bg-black/40 px-2.5 py-0.5 rounded-full">
+                      {examLabel}
+                    </span>
+                    <p className="text-xs font-bold line-clamp-3 mt-2 px-2 text-stone-100">
+                      {currentSlide.title}
+                    </p>
+                  </div>
+                )}
                 <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-stone-950 via-stone-950/70 to-transparent flex items-center justify-between text-[11px] font-bold text-white">
                   <span className="flex items-center gap-1.5">
                     <FileTextIcon size={11} />

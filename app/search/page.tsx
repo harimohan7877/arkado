@@ -140,15 +140,7 @@ function SearchPageInner() {
         onRemoveItem={(id) => setCart((p) => p.filter((i) => i.id !== id))}
       />
 
-      <a
-        href="https://wa.me/917852004401"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="whatsapp-fab"
-        aria-label="WhatsApp us"
-      >
-        <WhatsappIcon size={26} />
-      </a>
+
 
       <Footer />
     </div>

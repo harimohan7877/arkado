@@ -81,56 +81,80 @@
     "exam_board": "RSMSSB",
     "category": "rajasthan",
     "category_label": "राजस्थान स्पेशल",
-    "badge": "Notes + MCQs + Mock Tests",
-    "short_description": "स्नातक (Graduation) स्तर भर्ती हेतु 2026 नए सिलेबस पर आधारित सम्पूर्ण थ्योरी नोट्स, 3500+ MCQs और 5 फुल मॉक टेस्ट।",
-    "original_price": 999,
-    "price": 199,
-    "discount_percent": 80,
+    "badge": "Only for 3 Days",
+    "short_description": "Rajasthan CET स्नातक स्तर 2026 — 11 Subjects के केवल महत्वपूर्ण Topics के आसान Notes, 3300 MCQs, Mock Tests व PYQ Papers (Only for 3 Days).",
+    "original_price": 4000,
+    "price": 149,
+    "discount_percent": 96,
     "rating": 4.9,
     "rating_count": "4,120+ छात्र",
     "highlights": [
-      "सम्पूर्ण राजस्थान GK (इतिहास, कला-संस्कृति, भूगोल, राजव्यवस्था)",
-      "3000+ विषयवार महत्वपूर्ण प्रश्नोत्तर व्याख्या सहित (MCQs)",
-      "5 फुल लेंथ मॉक टेस्ट पेपर्स (ओरिजिनल परीक्षा पैटर्न पर)"
+      "11 Subjects के केवल महत्वपूर्ण Topics के आसान Notes",
+      "3,300 MCQs — 1,650 + 1,650",
+      "PYQ के गहन विश्लेषण पर आधारित MCQs",
+      "2 Master Books — Complete Notes + 1,650 MCQs",
+      "11 Subject-wise Mock Tests + 10 Full Syllabus Mock Tests",
+      "HTML Online Mock Tests — 120 मिनट, 2 अंक/प्रश्न, 1/3 Negative Marking और Auto Result",
+      "Printable Mock Tests — Print करके स्वयं Test देने की सुविधा + Answer Key",
+      "Previous Year Papers — अभ्यास के लिए"
     ],
     "subjects": [
-      "राजस्थान का इतिहास एवं कला-संस्कृति",
-      "राजस्थान का भूगोल एवं अर्थव्यवस्था",
-      "दैनिक विज्ञान (Everyday Science)",
-      "तार्किक विवेचन एवं मानसिक योग्यता (Reasoning)",
-      "सामान्य हिन्दी एवं General English",
-      "कंप्यूटर ज्ञान (Computer Awareness)",
-      "समसामयिक घटनाएं (Current Affairs)"
+      "Master Book 1 — Complete Important Notes",
+      "Master Book 2 — 1,650 MCQs",
+      "3,300 MCQs का पूरा अभ्यास सेट",
+      "11 Subject-wise Mock Tests",
+      "10 Full Syllabus Mock Tests",
+      "HTML Online Mock Tests",
+      "Printable Mock Tests",
+      "Answer Keys",
+      "Previous Year Papers"
     ],
     "syllabus_preview": [
       {
-        "subject": "राजस्थान का इतिहास, कला एवं संस्कृति",
+        "subject": "Section 1 — महत्वपूर्ण टॉपिक्स",
         "chapters": [
-          "प्रागैतिहासिक स्थल व प्रमुख सभ्यताएं",
-          "प्रमुख राजवंश व उनकी प्रशासनिक व्यवस्था",
-          "स्थापत्य कला - किले, महल व स्मारक",
-          "मेले, त्योहार, लोकगीत एवं लोकनृत्य",
-          "संत, लोकदेवता एवं लोकदेवियां",
-          "हस्तशिल्प, चित्रकलाएं एवं बोलियां"
+          "केवल परीक्षा में उपयोगी टॉपिक्स",
+          "आसान एवं संक्षिप्त Notes",
+          "Quick Revision",
+          "महत्वपूर्ण तथ्य"
         ]
       },
       {
-        "subject": "राजस्थान का भूगोल व नए 50 जिले",
+        "subject": "Section 2 — MCQ अभ्यास",
         "chapters": [
-          "भौतिक स्वरूप एवं जलवायु प्रदेश",
-          "अपवाह तंत्र, नदियां एवं झीलें",
-          "वन, वन्यजीव एवं जैव विविधता",
-          "खनिज संसाधन एवं ऊर्जा के स्रोत",
-          "कृषि, प्रमुख फसलें एवं सिंचाई परियोजनाएं"
+          "PYQ आधारित प्रश्न",
+          "गहन विश्लेषण से तैयार प्रश्न",
+          "1,650 + 1,650 MCQs",
+          "अभ्यास के लिए महत्वपूर्ण प्रश्न"
         ]
       },
       {
-        "subject": "दैनिक विज्ञान एवं कंप्यूटर ज्ञान",
+        "subject": "Section 3 — Mock Test",
         "chapters": [
-          "भौतिक एवं रासायनिक परिवर्तन",
-          "मानव रोग, पोषण एवं स्वास्थ्य",
-          "MS Office (Word, Excel, PPT) शॉर्टकट कीज",
-          "RAM, ROM, हार्डवेयर व सॉफ्टवेयर"
+          "11 Subject-wise Tests",
+          "10 Full Syllabus Tests",
+          "120 मिनट का समय",
+          "2 अंक प्रति प्रश्न",
+          "1/3 Negative Marking",
+          "गलत या खाली प्रश्न पर 1/3 कटौती",
+          "Submit के बाद स्वतः परिणाम"
+        ]
+      },
+      {
+        "subject": "Section 4 — Printable Test",
+        "chapters": [
+          "Print करके Test देने की सुविधा",
+          "Subject-wise Tests",
+          "Full Syllabus Tests",
+          "अंत में Answer Key"
+        ]
+      },
+      {
+        "subject": "Section 5 — Previous Papers",
+        "chapters": [
+          "Previous Year Papers",
+          "प्रश्नों का गहन विश्लेषण",
+          "परीक्षा की तैयारी के लिए उपयोगी प्रश्न"
         ]
       }
     ],
@@ -139,7 +163,7 @@
     "language": "हिन्दी (Hindi)",
     "cover_image": "/images/bundles/cet_bundle_3d.jpg",
     "show_in_slider": true,
-    "slider_tagline": "सलेक्शन का पक्का साथी — 80% विशेष छूट",
+    "slider_tagline": "Only for 3 Days — 96% विशेष छूट (₹149)",
     "sample_pdf_url": "https://drive.google.com",
     "drive_url": "https://drive.google.com",
     "is_active": true,

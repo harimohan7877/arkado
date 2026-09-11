@@ -150,16 +150,29 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
   };
 
   const selectPresetCover = (url: string) => {
-    setFormData({ ...formData, cover_image: url });
+    if (formData.cover_image === url) {
+      // Toggle off if already selected
+      setFormData((prev) => ({ ...prev, cover_image: "" }));
+      setCoverFile(null);
+      setCoverPreview(null);
+    } else {
+      setFormData((prev) => ({ ...prev, cover_image: url }));
+      setCoverFile(null);
+      setCoverPreview(url);
+    }
+  };
+
+  const removeCoverImage = () => {
+    setFormData((prev) => ({ ...prev, cover_image: "" }));
     setCoverFile(null);
-    setCoverPreview(url);
+    setCoverPreview(null);
   };
 
   // Open modal for NEW course
   const openCreateModal = () => {
     setEditingCourse(null);
     const initialExam = exams[0];
-    const defaultCover = initialExam?.logo_url || PRESET_COVERS[0];
+    const defaultCover = initialExam?.logo_url || "";
 
     setFormData({
       exam_id: initialExam?.id || "",
@@ -203,7 +216,7 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
       priority: courses.length + 1,
     });
     setCoverFile(null);
-    setCoverPreview(defaultCover);
+    setCoverPreview(defaultCover || null);
     setActiveTab("basic");
     setShowModal(true);
   };
@@ -217,7 +230,7 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
       subjects: course.subjects?.length ? course.subjects : [`${course.title} संपूर्ण सिलेबस`, "MCQs & PYQs"],
     });
     setCoverFile(null);
-    setCoverPreview(course.cover_image || PRESET_COVERS[0]);
+    setCoverPreview(course.cover_image || null);
     setActiveTab("basic");
     setShowModal(true);
   };
@@ -233,7 +246,7 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
       title: `${selected.name} - Complete Selection Kit`,
       slug: `exam-${selected.id}`,
       short_description: `${selected.name} (${selected.board || "Exam"}) हेतु 2026 नए सिलेबस पर आधारित सम्पूर्ण हस्तलिखित थ्योरी नोट्स, 3000+ MCQs और फुल मॉक टेस्ट पेपर्स।`,
-      cover_image: selected.logo_url || prev.cover_image || PRESET_COVERS[0],
+      cover_image: selected.logo_url || prev.cover_image || "",
       subjects: [
         `${selected.name} थ्योरी नोट्स एवं संपूर्ण सिलेबस`,
         "विषयवार वस्तुनिष्ठ प्रश्नोत्तर (MCQs)",
@@ -1086,50 +1099,163 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
                     </p>
                   </div>
 
-                  {/* Cover Image Upload & Presets */}
-                  <div>
-                    <label className="block text-xs font-bold text-stone-700 mb-2">कवर फोटो (Cover Image)</label>
-                    <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-3">
-                      {PRESET_COVERS.map((url) => (
+                  {/* Cover Image Upload & Customization */}
+                  <div className="space-y-3 p-4 bg-stone-50 rounded-2xl border border-stone-200">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div>
+                        <label className="block text-xs font-bold text-stone-900">कवर फोटो (Cover Image)</label>
+                        <p className="text-[11px] text-stone-500">
+                          कोर्स कार्ड व डिटेल्स पेज पर दिखने वाली फोटो। खाली रखने पर ऑटो-ग्रेडिएंट कार्ड दिखेगा।
+                        </p>
+                      </div>
+                      {(coverPreview || formData.cover_image) && (
                         <button
                           type="button"
-                          key={url}
-                          onClick={() => selectPresetCover(url)}
-                          className={`relative aspect-[4/3] rounded-lg overflow-hidden border-2 transition cursor-pointer ${
-                            formData.cover_image === url ? "border-amber-600 ring-2 ring-amber-200" : "border-stone-200"
-                          }`}
+                          onClick={removeCoverImage}
+                          className="text-xs font-bold text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 border border-red-200 px-3 py-1.5 rounded-xl transition flex items-center gap-1 cursor-pointer shadow-xs"
                         >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={url} alt="" className="object-cover w-full h-full" />
-                          {formData.cover_image === url && (
-                            <div className="absolute inset-0 bg-amber-600/40 flex items-center justify-center text-white text-lg font-bold">
-                              ✓
-                            </div>
-                          )}
+                          🗑️ फोटो हटाएं (Remove Image)
                         </button>
-                      ))}
-
-                      <label className="relative aspect-[4/3] rounded-lg border-2 border-dashed border-stone-300 hover:border-amber-500 flex flex-col items-center justify-center cursor-pointer bg-stone-50 p-2 text-center">
-                        <input
-                          type="file"
-                          accept="image/*"
-                          onChange={handleCoverChange}
-                          className="absolute inset-0 opacity-0 cursor-pointer"
-                        />
-                        <span className="text-stone-500 text-[10px] font-bold">कस्टम फोटो अपलोड करें</span>
-                      </label>
+                      )}
                     </div>
 
-                    {coverPreview && (
-                      <div className="flex items-center gap-3 p-2 bg-stone-50 rounded-xl border border-stone-200">
+                    {/* Active Preview */}
+                    {coverPreview ? (
+                      <div className="flex items-center gap-3 p-3 bg-white rounded-xl border border-stone-200 shadow-xs">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={coverPreview} alt="" className="w-16 h-20 rounded-lg object-cover border border-stone-200" />
-                        <div>
-                          <p className="text-xs font-bold text-stone-800">चयनित कवर फोटो</p>
-                          <p className="text-[10px] text-stone-500">यह फोटो वेबसाइट पर बंडल कार्ड में दिखेगी</p>
+                        <img
+                          src={coverPreview}
+                          alt="Cover Preview"
+                          className="w-16 h-20 rounded-lg object-cover border border-stone-200 shrink-0"
+                          onError={(e) => {
+                            (e.target as HTMLElement).style.display = "none";
+                          }}
+                        />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs font-bold text-stone-800">चयनित कवर फोटो (Active)</p>
+                          <p className="text-[10px] text-stone-500 truncate max-w-xs">
+                            {formData.cover_image || "डिवाइस से कस्टम फाइल अपलोड की गई"}
+                          </p>
+                          <div className="flex items-center gap-2 mt-1.5">
+                            <button
+                              type="button"
+                              onClick={removeCoverImage}
+                              className="text-[11px] font-bold text-red-600 hover:text-red-800 cursor-pointer underline"
+                            >
+                              ✕ इसे हटाएं (No Photo)
+                            </button>
+                          </div>
                         </div>
                       </div>
+                    ) : (
+                      <div className="p-3 bg-amber-50/70 rounded-xl border border-amber-200 text-[11px] text-amber-900 flex items-center gap-2">
+                        <span>✨</span>
+                        <span>
+                          वर्तमान में कोई फोटो नहीं चुनी गई है — वेबसाइट पर आकर्षक <strong>ऑटोमैटिक ग्रेडिएंट कार्ड</strong> दिखेगा (कोई ब्रोकन इमेज नहीं)।
+                        </span>
+                      </div>
                     )}
+
+                    {/* Custom Upload or Custom URL */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                      <div>
+                        <label className="block text-[11px] font-bold text-stone-600 mb-1">
+                          1. डिवाइस से कस्टम फोटो अपलोड करें:
+                        </label>
+                        <label className="relative flex items-center justify-center gap-2 px-3 py-2 rounded-xl border border-dashed border-stone-300 hover:border-amber-500 bg-white cursor-pointer text-xs font-bold text-stone-700 hover:text-amber-700 transition">
+                          <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleCoverChange}
+                            className="absolute inset-0 opacity-0 cursor-pointer"
+                          />
+                          <span>📁 फोटो चुनें (PNG / JPG / WEBP)</span>
+                        </label>
+                      </div>
+
+                      <div>
+                        <label className="block text-[11px] font-bold text-stone-600 mb-1">
+                          2. या इमेज URL टाइप / पेस्ट करें:
+                        </label>
+                        <div className="flex gap-1.5">
+                          <input
+                            type="text"
+                            value={formData.cover_image || ""}
+                            onChange={(e) => {
+                              const val = e.target.value;
+                              setFormData({ ...formData, cover_image: val });
+                              setCoverFile(null);
+                              setCoverPreview(val || null);
+                            }}
+                            placeholder="https://... या /images/..."
+                            className="w-full px-3 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-xs font-mono"
+                          />
+                          {formData.cover_image && (
+                            <button
+                              type="button"
+                              onClick={removeCoverImage}
+                              className="px-2.5 py-1 text-xs text-stone-500 hover:text-red-600 bg-white border border-stone-200 rounded-xl"
+                            >
+                              ✕
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Exam Logo shortcut if exam has a logo */}
+                    {(() => {
+                      const examObj = exams.find((e) => e.id === formData.exam_id);
+                      if (examObj?.logo_url && formData.cover_image !== examObj.logo_url) {
+                        return (
+                          <div className="pt-1">
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setFormData({ ...formData, cover_image: examObj.logo_url || "" });
+                                setCoverFile(null);
+                                setCoverPreview(examObj.logo_url || null);
+                              }}
+                              className="text-[11px] font-bold text-amber-700 hover:text-amber-800 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-3 py-1.5 rounded-lg transition cursor-pointer flex items-center gap-1.5"
+                            >
+                              <span>📋</span>
+                              <span>परीक्षा का लोगो उपयोग करें ({examObj.name})</span>
+                            </button>
+                          </div>
+                        );
+                      }
+                      return null;
+                    })()}
+
+                    {/* Optional 3D Presets */}
+                    <div className="pt-2 border-t border-stone-200">
+                      <p className="text-[11px] font-bold text-stone-600 mb-2">
+                        3. सैंपल 3D मॉकअप्स (वैकल्पिक टेम्पलेट्स — क्लिक करके चुनें या हटाएं):
+                      </p>
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                        {PRESET_COVERS.map((url) => {
+                          const isSelected = formData.cover_image === url;
+                          return (
+                            <button
+                              type="button"
+                              key={url}
+                              onClick={() => selectPresetCover(url)}
+                              className={`relative aspect-[4/3] rounded-lg overflow-hidden border-2 transition cursor-pointer ${
+                                isSelected ? "border-amber-600 ring-2 ring-amber-200" : "border-stone-200 hover:border-stone-300"
+                              }`}
+                            >
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img src={url} alt="" className="object-cover w-full h-full" />
+                              {isSelected && (
+                                <div className="absolute inset-0 bg-amber-600/40 flex items-center justify-center text-white text-xs font-bold">
+                                  ✓ चुना गया
+                                </div>
+                              )}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
                   </div>
                 </div>
               )}

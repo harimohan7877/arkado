@@ -7,6 +7,7 @@ interface Settings {
   merchant_name: string;
   whatsapp_support_number: string;
   gmail_support_email?: string;
+  custom_qr_url?: string;
   site_name: string;
   site_tagline: string;
   currency: string;
@@ -52,6 +53,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
     merchant_name: "Arkado",
     whatsapp_support_number: "917852004401",
     gmail_support_email: "support@arkado.in",
+    custom_qr_url: "",
     site_name: "Arkado",
     site_tagline: "Deep-Level Exam Analysis & Pattern-Based Premium Notes",
     currency: "INR",
@@ -240,7 +242,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
           </div>
 
           <div>
-            <label className="block text-xs font-bold text-stone-600 mb-1">WhatsApp Support Number</label>
+            <label className="block text-xs font-bold text-stone-600 mb-1">WhatsApp Support / Order Number *</label>
             <div className="flex gap-2">
               <input
                 type="text"
@@ -257,6 +259,9 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
                 Copy
               </button>
             </div>
+            <p className="text-[11px] text-stone-500 mt-1 font-devanagari">
+              वेबसाइट से सभी नए ऑर्डर्स के WhatsApp संदेश तुरंत इसी नंबर पर प्राप्त होंगे। (देश कोड के साथ लिखें: जैसे 917852004401)
+            </p>
           </div>
 
           <div>
@@ -270,16 +275,41 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
             />
           </div>
 
+          <div>
+            <label className="block text-xs font-bold text-stone-600 mb-1">
+              Custom QR Code Image URL (वैकल्पिक / Optional)
+            </label>
+            <input
+              type="text"
+              value={settings.custom_qr_url || ""}
+              onChange={(e) => handleChange("custom_qr_url", e.target.value)}
+              className={inputCls}
+              placeholder="https://... या /images/my-qr.png (खाली रखने पर UPI ID से ऑटोमैटिक QR बनेगा)"
+            />
+            <p className="text-[11px] text-stone-500 mt-1 font-devanagari">
+              अगर आप PhonePe / Paytm / GPay का अपना खुद का QR कोड फोटो लगाना चाहते हैं तो उसका लिंक डालें, अन्यथा खाली छोड़ दें।
+            </p>
+          </div>
+
           <div className="bg-stone-50 border border-stone-200 rounded-xl p-4 space-y-3">
-            <h4 className="font-bold text-stone-900 text-sm">Live QR Code</h4>
+            <div className="flex items-center justify-between">
+              <h4 className="font-bold text-stone-900 text-sm font-devanagari">Live QR Code Preview</h4>
+              <span className="text-[10px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">
+                {settings.custom_qr_url && settings.custom_qr_url.trim().length > 5 ? "Custom QR Image" : "Dynamic UPI QR"}
+              </span>
+            </div>
             <div className="flex justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(
-                  `upi://pay?pa=${settings.upi_id}&pn=${encodeURIComponent(settings.merchant_name)}&am=1&cu=INR&tn=Test`
-                )}`}
+                src={
+                  settings.custom_qr_url && settings.custom_qr_url.trim().length > 5
+                    ? settings.custom_qr_url.trim()
+                    : `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(
+                        `upi://pay?pa=${settings.upi_id}&pn=${encodeURIComponent(settings.merchant_name)}&am=1&cu=INR&tn=Test`
+                      )}`
+                }
                 alt="UPI QR"
-                className="w-44 h-44 rounded-xl bg-white p-2 border border-stone-200"
+                className="w-44 h-44 rounded-xl bg-white p-2 border border-stone-200 object-contain"
               />
             </div>
           </div>

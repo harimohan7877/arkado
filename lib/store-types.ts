@@ -91,6 +91,7 @@ export interface Settings {
   merchant_name: string;
   whatsapp_support_number: string;
   gmail_support_email?: string;
+  custom_qr_url?: string;
   site_name: string;
   site_tagline: string;
   currency: string;

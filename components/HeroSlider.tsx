@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { CourseBundle } from "@/lib/courses";
 import { getExamLabel } from "@/lib/exam-labels";
 import { Settings } from "@/lib/store-types";
@@ -20,7 +21,7 @@ import {
 interface HeroSliderProps {
   courses: CourseBundle[];
   onBuyNow: (course: CourseBundle) => void;
-  onOpenSample: (course: CourseBundle) => void;
+  onOpenSample?: (course: CourseBundle) => void;
 }
 
 export default function HeroSlider({
@@ -56,6 +57,7 @@ export default function HeroSlider({
 
   const currentSlide = slides[currentIndex];
   const examLabel = getExamLabel(currentSlide.exam_id);
+  const currentSlideHref = `/course/${currentSlide.slug || currentSlide.id}`;
 
   const handlePrev = () =>
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
@@ -108,9 +110,11 @@ export default function HeroSlider({
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-stone-950 leading-tight">
-              {customHeadline && currentIndex === 0 ? customHeadline : currentSlide.title}
-            </h1>
+            <Link href={currentSlideHref} className="block group">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-stone-950 leading-tight group-hover:text-amber-700 transition">
+                {customHeadline && currentIndex === 0 ? customHeadline : currentSlide.title}
+              </h1>
+            </Link>
 
             <p className="text-stone-600 text-sm max-w-xl leading-relaxed">
               {currentSlide.short_description}
@@ -149,13 +153,13 @@ export default function HeroSlider({
                   <ShoppingBagIcon size={15} />
                   <span>Buy Now</span>
                 </button>
-                <button
-                  onClick={() => onOpenSample(currentSlide)}
+                <Link
+                  href={currentSlideHref}
                   className="px-4 py-2.5 rounded-lg border border-stone-300 bg-white hover:bg-stone-50 text-stone-800 text-sm font-bold flex items-center gap-1.5 transition shadow-2xs cursor-pointer"
                 >
                   <EyeIcon size={14} />
-                  <span className="hidden sm:inline">Sample & Syllabus</span>
-                </button>
+                  <span className="hidden sm:inline">Details & Sample</span>
+                </Link>
               </div>
             </div>
 
@@ -174,11 +178,10 @@ export default function HeroSlider({
 
           {/* Cover column */}
           <div className="lg:col-span-5 flex justify-center items-center">
-            <button
-              type="button"
-              onClick={() => onOpenSample(currentSlide)}
-              className="relative group cursor-pointer"
-              aria-label="View sample"
+            <Link
+              href={currentSlideHref}
+              className="relative group cursor-pointer block"
+              aria-label={`View details for ${currentSlide.title}`}
             >
               <div className="absolute -inset-4 bg-amber-500/20 rounded-2xl blur-xl group-hover:bg-amber-500/35 transition" />
               <div className="relative w-48 h-60 sm:w-56 sm:h-72 lg:w-64 lg:h-80 rounded-xl overflow-hidden shadow-xl border border-stone-200/80 transition-transform duration-300 group-hover:scale-105 bg-white">
@@ -215,7 +218,7 @@ export default function HeroSlider({
                   </span>
                 </div>
               </div>
-            </button>
+            </Link>
           </div>
         </div>
 

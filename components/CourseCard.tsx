@@ -16,7 +16,7 @@ import {
 interface CourseCardProps {
   course: CourseBundle;
   onBuyNow: (course: CourseBundle) => void;
-  onOpenSample: (course: CourseBundle) => void;
+  onOpenSample?: (course: CourseBundle) => void;
 }
 
 export default function CourseCard({
@@ -27,15 +27,15 @@ export default function CourseCard({
   const [imgError, setImgError] = useState(false);
   const examLabel = getExamLabel(course.exam_id);
   const rating = course.rating || 4.9;
+  const courseHref = `/course/${course.slug || course.id}`;
 
   return (
     <article className="card-base flex flex-col h-full overflow-hidden bg-white group">
-      {/* Cover */}
-      <button
-        type="button"
-        onClick={() => onOpenSample(course)}
+      {/* Cover Link to Main Page */}
+      <Link
+        href={courseHref}
         className="relative w-full aspect-[4/5] bg-stone-100 overflow-hidden cursor-pointer block"
-        aria-label={`View sample for ${course.title}`}
+        aria-label={`View details for ${course.title}`}
       >
         {/* Discount ribbon */}
         <span className="discount-ribbon z-10">
@@ -70,10 +70,10 @@ export default function CourseCard({
         <div className="absolute inset-0 bg-stone-900/0 group-hover:bg-stone-900/20 transition flex items-center justify-center opacity-0 group-hover:opacity-100">
           <span className="bg-white text-stone-900 text-xs font-bold px-3 py-2 rounded-md flex items-center gap-1.5 shadow-lg">
             <EyeIcon size={14} />
-            View Sample
+            View Course Details
           </span>
         </div>
-      </button>
+      </Link>
 
       {/* Body */}
       <div className="p-3.5 flex-1 flex flex-col gap-2">

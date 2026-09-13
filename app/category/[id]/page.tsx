@@ -25,7 +25,6 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
-  const [statusFilter, setStatusFilter] = useState<"all" | "active" | "inactive">("all");
 
   // Cart & Sample states
   const [cart, setCart] = useState<Course[]>([]);
@@ -52,11 +51,13 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
           if (matched) setCategory(matched);
         }
 
-        // 2. Fetch exams in this category (including inactive)
-        const examsRes = await fetch(`/api/exams?category=${categoryId}&include_inactive=true&limit=200`);
+        // 2. Fetch exams in this category (only active exams)
+        const examsRes = await fetch(`/api/exams?category=${categoryId}&limit=200`);
         if (examsRes.ok) {
           const examsData = await examsRes.json();
-          const list = Array.isArray(examsData) ? examsData : examsData.exams || [];
+          const list = (Array.isArray(examsData) ? examsData : examsData.exams || []).filter(
+            (e: Exam) => e.is_active !== false
+          );
           setExams(list);
         }
 
@@ -76,9 +77,10 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
     if (categoryId) loadCategoryData();
   }, [categoryId]);
 
-  // Filtered exams
+  // Filtered exams (strictly active only)
   const filteredExams = useMemo(() => {
     return exams.filter((exam) => {
+      if (exam.is_active === false) return false;
       const q = searchQuery.toLowerCase().trim();
       const matchesSearch =
         !q ||
@@ -86,14 +88,9 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
         (exam.short_name && exam.short_name.toLowerCase().includes(q)) ||
         (exam.board && exam.board.toLowerCase().includes(q));
 
-      if (!matchesSearch) return false;
-
-      if (statusFilter === "active") return exam.is_active;
-      if (statusFilter === "inactive") return !exam.is_active;
-
-      return true;
+      return matchesSearch;
     });
-  }, [exams, searchQuery, statusFilter]);
+  }, [exams, searchQuery]);
 
   // Find courses matching this category or its exams
   const matchedCourses = useMemo(() => {
@@ -295,33 +292,11 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
                 )}
               </div>
 
-              <div className="flex items-center bg-stone-200/70 p-0.5 rounded-xl text-xs font-semibold">
-                <button
-                  onClick={() => setStatusFilter("all")}
-                  className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
-                    statusFilter === "all" ? "bg-white text-stone-900 shadow-xs font-bold" : "text-stone-600"
-                  }`}
-                >
-                  All ({exams.length})
-                </button>
-                {activeCount > 0 && (
-                  <button
-                    onClick={() => setStatusFilter("active")}
-                    className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
-                      statusFilter === "active" ? "bg-white text-emerald-800 shadow-xs font-bold" : "text-stone-600"
-                    }`}
-                  >
-                    Live ({activeCount})
-                  </button>
-                )}
-                <button
-                  onClick={() => setStatusFilter("inactive")}
-                  className={`px-3 py-1.5 rounded-lg transition cursor-pointer ${
-                    statusFilter === "inactive" ? "bg-white text-stone-900 shadow-xs font-bold" : "text-stone-600"
-                  }`}
-                >
-                  Upcoming ({exams.length - activeCount})
-                </button>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-xl shadow-2xs flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  {filteredExams.length} Active Exams
+                </span>
               </div>
             </div>
           </div>
@@ -334,16 +309,15 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
               </div>
               <h3 className="text-sm font-bold text-stone-800">No exams match your filter</h3>
               <p className="text-xs text-stone-500">
-                Try clearing your search query or switching filters.
+                Try clearing your search query.
               </p>
               <button
                 onClick={() => {
                   setSearchQuery("");
-                  setStatusFilter("all");
                 }}
                 className="text-xs text-amber-700 font-bold hover:underline"
               >
-                Reset filters
+                Reset search
               </button>
             </div>
           ) : (

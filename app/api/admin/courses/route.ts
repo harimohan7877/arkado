@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
 import { getStoreData, setStoreData, saveUploadedFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
+import { writeFile, mkdir } from "fs/promises";
+import { join } from "path";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -101,6 +103,8 @@ export async function GET(req: NextRequest) {
           new_arrival_priority: 1,
           sample_pdf_url: exam.notes_link || "https://drive.google.com",
           drive_url: exam.notes_link || "https://drive.google.com",
+          demo_html_mock_enabled: false,
+          demo_html_mock_url: "",
           rating: 4.9,
           rating_count: "3,500+ छात्र",
           is_active: true,
@@ -125,6 +129,7 @@ export async function POST(req: NextRequest) {
     const contentType = req.headers.get("content-type") || "";
     let data: any = {};
     let coverFile: File | null = null;
+    let mockHtmlFile: File | null = null;
 
     if (contentType.includes("application/json")) {
       data = await req.json();
@@ -133,9 +138,11 @@ export async function POST(req: NextRequest) {
       for (const [key, value] of formData.entries()) {
         if (key === "cover") {
           coverFile = value as File;
+        } else if (key === "mock_html_file") {
+          mockHtmlFile = value as File;
         } else if (["highlights", "subjects", "syllabus_preview"].includes(key)) {
           data[key] = JSON.parse(value.toString() || "[]");
-        } else if (["is_active", "show_in_slider", "is_featured", "is_new_arrival"].includes(key)) {
+        } else if (["is_active", "show_in_slider", "is_featured", "is_new_arrival", "demo_html_mock_enabled"].includes(key)) {
           data[key] = value === "true";
         } else if (
           ["original_price", "price", "discount_percent", "rating", "priority", "featured_priority", "new_arrival_priority"].includes(
@@ -162,6 +169,22 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "Invalid file type. Please upload an image." }, { status: 400 });
       }
       coverImage = await saveUploadedFile(coverFile, "images/bundles", id);
+    }
+
+    // Handle optional HTML mock test demo file upload
+    if (mockHtmlFile && mockHtmlFile.size > 0) {
+      try {
+        const bytes = await mockHtmlFile.arrayBuffer();
+        const buffer = Buffer.from(bytes);
+        const mockTestsDir = join(process.cwd(), "public", "mock-tests");
+        await mkdir(mockTestsDir, { recursive: true });
+        const safeName = `${id.replace(/[^a-zA-Z0-9_-]/g, "_")}.html`;
+        const filePath = join(mockTestsDir, safeName);
+        await writeFile(filePath, buffer);
+        data.demo_html_mock_url = `/mock-tests/${safeName}`;
+      } catch (uploadErr) {
+        console.error("[POST courses] HTML mock upload error:", uploadErr);
+      }
     }
 
     const originalPrice = Number(data.original_price || 999);
@@ -194,6 +217,8 @@ export async function POST(req: NextRequest) {
       new_arrival_priority: Number(data.new_arrival_priority || 1),
       sample_pdf_url: data.sample_pdf_url || "https://drive.google.com",
       drive_url: data.drive_url || "https://drive.google.com",
+      demo_html_mock_enabled: Boolean(data.demo_html_mock_enabled),
+      demo_html_mock_url: data.demo_html_mock_url || "",
       rating: Number(data.rating || 4.9),
       rating_count: data.rating_count || "2,500+ छात्र",
       is_active: data.is_active !== false,

@@ -55,6 +55,8 @@ export interface Course {
   slider_tagline: string;
   sample_pdf_url: string;
   drive_url: string;
+  demo_html_mock_enabled?: boolean;
+  demo_html_mock_url?: string;
   rating: number;
   rating_count: string;
   is_active: boolean;

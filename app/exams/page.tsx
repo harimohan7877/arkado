@@ -38,10 +38,12 @@ export default function AllExamsPage() {
     if (categoryExams[catId] || loadingExams[catId]) return;
     setLoadingExams((prev) => ({ ...prev, [catId]: true }));
     try {
-      const res = await fetch(`/api/exams?category=${catId}&include_inactive=true&limit=100`);
+      const res = await fetch(`/api/exams?category=${catId}&limit=100`);
       if (res.ok) {
         const data = await res.json();
-        const exams = Array.isArray(data) ? data : data.exams || [];
+        const exams = (Array.isArray(data) ? data : data.exams || []).filter(
+          (e: Exam) => e.is_active !== false
+        );
         setCategoryExams((prev) => ({ ...prev, [catId]: exams }));
       }
     } catch (err) {
@@ -335,10 +337,10 @@ export default function AllExamsPage() {
                       <div className="bg-stone-50/70 border-t border-amber-100 p-5 space-y-4 anim-slide-down">
                         <div className="flex items-center justify-between">
                           <h4 className="text-xs font-bold text-stone-800 uppercase tracking-wider">
-                            Exams in this Category ({count})
+                            Exams in this Category ({exams.length})
                           </h4>
-                          <span className="text-[11px] text-stone-500">
-                            {exams.filter(e => e.is_active).length} live kits available
+                          <span className="text-[11px] text-emerald-700 font-semibold">
+                            ● {exams.length} active exams available
                           </span>
                         </div>
 

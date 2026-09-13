@@ -166,6 +166,8 @@
     "slider_tagline": "Only for 3 Days — 96% विशेष छूट (₹149)",
     "sample_pdf_url": "https://drive.google.com",
     "drive_url": "https://drive.google.com",
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/cet-graduation-mock-test.html",
     "is_active": true,
     "is_featured": true,
     "featured_priority": 2,

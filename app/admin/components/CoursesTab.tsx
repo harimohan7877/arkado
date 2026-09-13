@@ -23,6 +23,8 @@ interface Course {
   slider_tagline: string;
   sample_pdf_url: string;
   drive_url: string;
+  demo_html_mock_enabled?: boolean;
+  demo_html_mock_url?: string;
   rating: number;
   rating_count: string;
   is_active: boolean;
@@ -81,6 +83,8 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
     new_arrival_priority: 1,
     sample_pdf_url: "https://drive.google.com",
     drive_url: "https://drive.google.com",
+    demo_html_mock_enabled: false,
+    demo_html_mock_url: "",
     rating: 4.9,
     rating_count: "3,500+ छात्र",
     is_active: true,
@@ -89,6 +93,7 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
 
   const [coverFile, setCoverFile] = useState<File | null>(null);
   const [coverPreview, setCoverPreview] = useState<string | null>(null);
+  const [mockHtmlFile, setMockHtmlFile] = useState<File | null>(null);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const [activeTab, setActiveTab] = useState<"basic" | "content" | "delivery">("basic");
@@ -210,12 +215,15 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
       new_arrival_priority: 1,
       sample_pdf_url: "https://drive.google.com",
       drive_url: "https://drive.google.com",
+      demo_html_mock_enabled: false,
+      demo_html_mock_url: "",
       rating: 4.9,
       rating_count: "3,500+ छात्र",
       is_active: true,
       priority: courses.length + 1,
     });
     setCoverFile(null);
+    setMockHtmlFile(null);
     setCoverPreview(defaultCover || null);
     setActiveTab("basic");
     setShowModal(true);
@@ -226,10 +234,13 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
     setEditingCourse(course);
     setFormData({
       ...course,
+      demo_html_mock_enabled: course.demo_html_mock_enabled ?? false,
+      demo_html_mock_url: course.demo_html_mock_url || "",
       highlights: course.highlights?.length ? course.highlights : ["सम्पूर्ण हस्तलिखित थ्योरी नोट्स", "3000+ MCQs", "5 फुल मॉक टेस्ट"],
       subjects: course.subjects?.length ? course.subjects : [`${course.title} संपूर्ण सिलेबस`, "MCQs & PYQs"],
     });
     setCoverFile(null);
+    setMockHtmlFile(null);
     setCoverPreview(course.cover_image || null);
     setActiveTab("basic");
     setShowModal(true);
@@ -264,6 +275,7 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
     setShowModal(false);
     setEditingCourse(null);
     setCoverFile(null);
+    setMockHtmlFile(null);
     setCoverPreview(null);
   };
 
@@ -281,6 +293,7 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
         }
       });
       if (coverFile) fd.append("cover", coverFile);
+      if (mockHtmlFile) fd.append("mock_html_file", mockHtmlFile);
 
       // If editing an existing course or auto-synced exam
       const targetId = editingCourse ? editingCourse.id : (formData.slug || `course-${Date.now()}`);
@@ -1097,6 +1110,83 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
                     <p className="text-[10px] text-stone-400 mt-1">
                       छात्र खरीदने से पहले इस लिंक से फ्री में 10-15 पेज सैंपल देख सकते हैं।
                     </p>
+                  </div>
+
+                  {/* Interactive HTML Mock Test Demo Toggle & Setup */}
+                  <div className="p-4 bg-gradient-to-r from-amber-500/10 via-amber-600/5 to-transparent rounded-2xl border border-amber-300/80 space-y-3">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-2.5">
+                        <span className="text-xl">⚡</span>
+                        <div>
+                          <h4 className="text-xs font-black text-stone-900">
+                            ऑनलाइन HTML मॉक टेस्ट डेमो (Interactive Mock Test Demo)
+                          </h4>
+                          <p className="text-[11px] text-stone-600">
+                            120-मिनट टाइमर, नेगेटिव मार्किंग और ऑटो-रिजल्ट वाला लाइव टेस्ट इंजन
+                          </p>
+                        </div>
+                      </div>
+                      <label className="flex items-center gap-2 cursor-pointer shrink-0">
+                        <input
+                          type="checkbox"
+                          checked={formData.demo_html_mock_enabled || false}
+                          onChange={(e) => setFormData({ ...formData, demo_html_mock_enabled: e.target.checked })}
+                          className="w-4 h-4 rounded text-amber-600"
+                        />
+                        <span className={`text-xs font-black ${formData.demo_html_mock_enabled ? "text-emerald-700" : "text-stone-500"}`}>
+                          {formData.demo_html_mock_enabled ? "चालू (ON)" : "बंद (OFF)"}
+                        </span>
+                      </label>
+                    </div>
+
+                    {formData.demo_html_mock_enabled ? (
+                      <div className="pt-2 space-y-3 border-t border-amber-200">
+                        <div>
+                          <label className="block text-[11px] font-bold text-stone-700 mb-1">
+                            🌐 डेमो मॉक टेस्ट लिंक / URL (Direct URL):
+                          </label>
+                          <input
+                            type="text"
+                            value={formData.demo_html_mock_url || ""}
+                            onChange={(e) => setFormData({ ...formData, demo_html_mock_url: e.target.value })}
+                            placeholder="उदा. /mock-tests/cet-graduation-mock-test.html या https://..."
+                            className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-xs font-mono"
+                          />
+                          <p className="text-[10px] text-stone-500 mt-1">
+                            यह लिंक कोर्स पेज पर <strong>&quot;मुफ्त ऑनलाइन मॉक टेस्ट दें&quot;</strong> बटन में खुलेगा।
+                          </p>
+                        </div>
+
+                        <div>
+                          <label className="block text-[11px] font-bold text-stone-700 mb-1">
+                            📁 या कंप्यूटर से HTML टेस्ट फाइल अपलोड करें (.html):
+                          </label>
+                          <label className="flex items-center gap-2 px-3 py-2 rounded-xl border border-dashed border-stone-300 hover:border-amber-500 bg-white cursor-pointer text-xs font-bold text-stone-700 hover:text-amber-700 transition">
+                            <input
+                              type="file"
+                              accept=".html,.htm"
+                              onChange={(e) => {
+                                const f = e.target.files?.[0];
+                                if (f) {
+                                  setMockHtmlFile(f);
+                                  const safeId = (formData.id || formData.slug || "mock-test").replace(/[^a-zA-Z0-9_-]/g, "_");
+                                  setFormData({
+                                    ...formData,
+                                    demo_html_mock_url: `/mock-tests/${safeId}.html`,
+                                  });
+                                }
+                              }}
+                              className="hidden"
+                            />
+                            <span>📄 {mockHtmlFile ? `चयनित फाइल: ${mockHtmlFile.name}` : "HTML फाइल चुनें (.html)"}</span>
+                          </label>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="text-[11px] text-stone-500 italic bg-white/70 p-2 rounded-lg border border-stone-200">
+                        ℹ️ यह फीचर वर्तमान में बंद (OFF) है। कोर्स पेज पर मॉक टेस्ट का बॉक्स दिखाई नहीं देगा।
+                      </div>
+                    )}
                   </div>
 
                   {/* Cover Image Upload & Customization */}

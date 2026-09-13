@@ -7,6 +7,8 @@ import { getCourseBySlug, CourseBundle } from "@/lib/courses";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CartDrawer from "@/components/CartDrawer";
+import CourseCard from "@/components/CourseCard";
+import { Category } from "@/lib/store-types";
 
 interface PageProps {
   params: Promise<{ id: string }> | { id: string };
@@ -22,13 +24,43 @@ export default function CourseDetailPage({ params }: PageProps) {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [settings, setSettings] = useState<any>(null);
   const [coverImageFailed, setCoverImageFailed] = useState(false);
+  const [relatedCourses, setRelatedCourses] = useState<CourseBundle[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
 
   useEffect(() => {
     fetch("/api/settings")
       .then((r) => r.json())
       .then(setSettings)
       .catch(() => {});
-  }, []);
+
+    // Fetch related active courses for recommendations
+    fetch("/api/courses")
+      .then((r) => r.json())
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setRelatedCourses(
+            data.filter(
+              (c: any) =>
+                c.is_active &&
+                c.id !== courseId &&
+                c.slug !== courseId &&
+                c.exam_id !== courseId
+            )
+          );
+        }
+      })
+      .catch(() => {});
+
+    // Fetch categories for bottom discovery strip
+    fetch("/api/categories?scope=public")
+      .then((r) => r.json())
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setCategories(data);
+        }
+      })
+      .catch(() => {});
+  }, [courseId]);
 
   useEffect(() => {
     async function loadCourseOrExam() {
@@ -264,6 +296,38 @@ export default function CourseDetailPage({ params }: PageProps) {
                 📄 Open Sample PDF ↗
               </a>
             </div>
+
+            {/* INTERACTIVE HTML MOCK TEST DEMO CARD */}
+            {course.demo_html_mock_enabled && course.demo_html_mock_url && (
+              <div className="bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 border border-emerald-200 p-6 sm:p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
+                <div className="space-y-1 text-center sm:text-left">
+                  <div className="flex items-center gap-2 justify-center sm:justify-start">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full border border-emerald-300">
+                      ⚡ Free Interactive Mock Test Demo
+                    </span>
+                    <span className="text-[10px] font-extrabold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full">
+                      120 Min • Auto Result
+                    </span>
+                  </div>
+                  <h4 className="text-lg sm:text-xl font-black text-stone-900 mt-1">
+                    🎯 ऑनलाइन HTML मॉक टेस्ट डेमो (Live Exam Engine)
+                  </h4>
+                  <p className="text-xs text-stone-600 leading-relaxed">
+                    परीक्षा जैसे हूबहू टाइमर, नेगेटिव मार्किंग (1/3) और ऑटो-रिजल्ट के साथ निःशुल्क टेस्ट देकर देखें।
+                  </p>
+                </div>
+
+                <a
+                  href={course.demo_html_mock_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs transition shadow-md whitespace-nowrap flex items-center gap-2 cursor-pointer hover:scale-102 active:scale-98"
+                >
+                  <span>▶ स्टार्ट फ्री मॉक टेस्ट</span>
+                  <span>↗</span>
+                </a>
+              </div>
+            )}
           </div>
 
           <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-4">
@@ -349,6 +413,91 @@ export default function CourseDetailPage({ params }: PageProps) {
             </div>
           </div>
         </div>
+
+        {/* RELATED SELECTION KITS (FLIPKART / AMAZON STYLE) */}
+        {relatedCourses.length > 0 && (
+          <section className="mt-14 pt-10 border-t border-stone-200 space-y-5">
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                  <h2 className="text-xl sm:text-2xl font-black text-stone-900">
+                    अन्य प्रमुख परीक्षाएं व स्टडी किट्स (Other Popular Selection Kits)
+                  </h2>
+                </div>
+                <p className="text-xs text-stone-500 mt-1">
+                  छात्रों द्वारा सबसे ज्यादा पसंद किए जाने वाले अन्य परीक्षा नोट्स व मॉक टेस्ट बंडल्स
+                </p>
+              </div>
+              <Link
+                href="/exams"
+                className="text-xs font-bold text-amber-700 hover:text-amber-800 flex items-center gap-1"
+              >
+                सभी परीक्षाएं देखें ({relatedCourses.length + 1}) →
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
+              {relatedCourses.slice(0, 5).map((relCourse) => (
+                <CourseCard
+                  key={relCourse.id}
+                  course={relCourse}
+                  onBuyNow={handleBuyNow}
+                />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* EXPLORE ALL CATEGORIES (FLIPKART / AMAZON STYLE) */}
+        {categories.length > 0 && (
+          <section className="mt-14 pt-10 border-t border-stone-200 space-y-5">
+            <div className="flex items-center justify-between flex-wrap gap-2">
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                  <h2 className="text-xl sm:text-2xl font-black text-stone-900">
+                    अन्य प्रमुख श्रेणियां एक्सप्लोर करें (Explore Categories)
+                  </h2>
+                </div>
+                <p className="text-xs text-stone-500 mt-1">
+                  राजस्थान, सेंट्रल, एसएससी, पुलिस व शिक्षक भर्ती परीक्षाओं के नोट्स देखें
+                </p>
+              </div>
+              <Link
+                href="/exams"
+                className="text-xs font-bold text-amber-700 hover:text-amber-800 flex items-center gap-1"
+              >
+                सभी श्रेणियां ({categories.length}) →
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+              {categories.slice(0, 12).map((cat) => (
+                <Link
+                  key={cat.id}
+                  href={`/category/${cat.id}`}
+                  className="p-3.5 bg-white rounded-2xl border border-stone-200 hover:border-amber-400 hover:shadow-md transition text-center flex flex-col items-center group"
+                >
+                  <div className="w-14 h-14 rounded-full bg-stone-50 border border-stone-100 flex items-center justify-center mb-2 group-hover:scale-105 transition overflow-hidden p-1">
+                    {cat.logo_url ? (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img src={cat.logo_url} alt={cat.name} className="w-full h-full object-contain rounded-full" />
+                    ) : (
+                      <span className="text-2xl">{cat.icon || "📚"}</span>
+                    )}
+                  </div>
+                  <h3 className="text-xs font-bold text-stone-900 group-hover:text-amber-700 transition line-clamp-2">
+                    {cat.name}
+                  </h3>
+                  <span className="text-[10px] text-stone-500 mt-0.5">
+                    {cat.exam_count || cat.exam_ids?.length || 0} Exams
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
       </main>
 
       <Footer />

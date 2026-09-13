@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
 import { getStoreData, setStoreData, saveUploadedFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
+import { writeFile, mkdir } from "fs/promises";
+import { join } from "path";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -40,6 +42,7 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
   updates.updated_at = new Date().toISOString();
 
   let coverFile: File | null = null;
+  let mockHtmlFile: File | null = null;
 
   if (contentType.includes("application/json")) {
     const json = await req.json();
@@ -49,9 +52,11 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     for (const [key, value] of formData.entries()) {
       if (key === "cover") {
         coverFile = value as File;
+      } else if (key === "mock_html_file") {
+        mockHtmlFile = value as File;
       } else if (["highlights", "subjects", "syllabus_preview"].includes(key)) {
         updates[key] = JSON.parse(value.toString() || "[]");
-      } else if (["is_active", "show_in_slider", "is_featured", "is_new_arrival"].includes(key)) {
+      } else if (["is_active", "show_in_slider", "is_featured", "is_new_arrival", "demo_html_mock_enabled"].includes(key)) {
         updates[key] = value === "true";
       } else if (
         ["original_price", "price", "discount_percent", "rating", "priority", "featured_priority", "new_arrival_priority"].includes(
@@ -65,6 +70,8 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     }
   }
 
+  const safeId = id.replace(/[^a-z0-9_-]/gi, "");
+
   if (coverFile && coverFile.size > 0) {
     if (coverFile.size > MAX_IMAGE_SIZE) {
       return NextResponse.json({ error: "File too large. Max 10MB allowed." }, { status: 400 });
@@ -72,8 +79,23 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     if (!isAllowedImageType(coverFile.type, coverFile.name)) {
       return NextResponse.json({ error: "Invalid file type. Please upload an image." }, { status: 400 });
     }
-    const safeId = id.replace(/[^a-z0-9_-]/gi, "");
     updates.cover_image = await saveUploadedFile(coverFile, "images/bundles", safeId);
+  }
+
+  // Handle optional HTML mock test demo file upload
+  if (mockHtmlFile && mockHtmlFile.size > 0) {
+    try {
+      const bytes = await mockHtmlFile.arrayBuffer();
+      const buffer = Buffer.from(bytes);
+      const mockTestsDir = join(process.cwd(), "public", "mock-tests");
+      await mkdir(mockTestsDir, { recursive: true });
+      const safeName = `${safeId}.html`;
+      const filePath = join(mockTestsDir, safeName);
+      await writeFile(filePath, buffer);
+      updates.demo_html_mock_url = `/mock-tests/${safeName}`;
+    } catch (uploadErr) {
+      console.error("[PUT courses] HTML mock upload error:", uploadErr);
+    }
   }
 
   if (updates.original_price && updates.price) {

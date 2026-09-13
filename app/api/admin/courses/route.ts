@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
-import { getStoreData, setStoreData, saveUploadedFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
+import { getStoreData, setStoreData, saveUploadedFile, saveUploadedHtmlFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
 import { writeFile, mkdir } from "fs/promises";
 import { join } from "path";
 
@@ -171,19 +171,12 @@ export async function POST(req: NextRequest) {
       coverImage = await saveUploadedFile(coverFile, "images/bundles", id);
     }
 
-    // Handle optional HTML mock test demo file upload
+    // Handle optional HTML mock test demo file upload (saves to permanent Supabase Cloud Storage & disk)
     if (mockHtmlFile && mockHtmlFile.size > 0) {
-      try {
-        const bytes = await mockHtmlFile.arrayBuffer();
-        const buffer = Buffer.from(bytes);
-        const mockTestsDir = join(process.cwd(), "public", "mock-tests");
-        await mkdir(mockTestsDir, { recursive: true });
-        const safeName = `${id.replace(/[^a-zA-Z0-9_-]/g, "_")}.html`;
-        const filePath = join(mockTestsDir, safeName);
-        await writeFile(filePath, buffer);
-        data.demo_html_mock_url = `/mock-tests/${safeName}`;
-      } catch (uploadErr) {
-        console.error("[POST courses] HTML mock upload error:", uploadErr);
+      const safeName = id.replace(/[^a-zA-Z0-9_-]/g, "_");
+      const uploadedHtmlUrl = await saveUploadedHtmlFile(mockHtmlFile, safeName);
+      if (uploadedHtmlUrl) {
+        data.demo_html_mock_url = uploadedHtmlUrl;
       }
     }
 

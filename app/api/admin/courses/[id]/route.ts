@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
-import { getStoreData, setStoreData, saveUploadedFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
+import { getStoreData, setStoreData, saveUploadedFile, saveUploadedHtmlFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
 import { writeFile, mkdir } from "fs/promises";
 import { join } from "path";
 
@@ -82,19 +82,11 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     updates.cover_image = await saveUploadedFile(coverFile, "images/bundles", safeId);
   }
 
-  // Handle optional HTML mock test demo file upload
+  // Handle optional HTML mock test demo file upload (saves to permanent Supabase Cloud Storage & disk)
   if (mockHtmlFile && mockHtmlFile.size > 0) {
-    try {
-      const bytes = await mockHtmlFile.arrayBuffer();
-      const buffer = Buffer.from(bytes);
-      const mockTestsDir = join(process.cwd(), "public", "mock-tests");
-      await mkdir(mockTestsDir, { recursive: true });
-      const safeName = `${safeId}.html`;
-      const filePath = join(mockTestsDir, safeName);
-      await writeFile(filePath, buffer);
-      updates.demo_html_mock_url = `/mock-tests/${safeName}`;
-    } catch (uploadErr) {
-      console.error("[PUT courses] HTML mock upload error:", uploadErr);
+    const uploadedHtmlUrl = await saveUploadedHtmlFile(mockHtmlFile, safeId);
+    if (uploadedHtmlUrl) {
+      updates.demo_html_mock_url = uploadedHtmlUrl;
     }
   }
 

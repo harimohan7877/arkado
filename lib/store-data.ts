@@ -140,6 +140,73 @@ export async function saveUploadedFile(file: File, folder: string = "logos", cus
   }
 }
 
+export async function saveUploadedHtmlFile(file: File, customName?: string): Promise<string> {
+  try {
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+
+    const cleanBaseName = (customName || `mock_test_${Date.now()}_${Math.random().toString(36).substring(2, 6)}`)
+      .replace(/\.[^/.]+$/, "")
+      .replace(/[^a-zA-Z0-9_-]/g, "_");
+
+    const fileName = `${cleanBaseName}.html`;
+    const storagePath = `mock-tests/${fileName}`;
+
+    // 1. Primary: Upload to Supabase Storage (Public bucket 'arkado-uploads')
+    try {
+      const { data: uploadData, error: uploadErr } = await supabaseAdmin.storage
+        .from("arkado-uploads")
+        .upload(storagePath, buffer, {
+          contentType: "text/html; charset=utf-8",
+          upsert: true,
+        });
+
+      if (!uploadErr && uploadData?.path) {
+        const { data: publicUrlData } = supabaseAdmin.storage
+          .from("arkado-uploads")
+          .getPublicUrl(storagePath);
+
+        if (publicUrlData?.publicUrl) {
+          // Also try writing to local disk for local dev
+          try {
+            const relativePath = `mock-tests/${fileName}`;
+            const candidates = getCandidatePaths(`public/${relativePath}`);
+            for (const p of candidates) {
+              const dir = dirname(p);
+              await mkdir(dir, { recursive: true });
+              await writeFile(p, buffer);
+            }
+          } catch {}
+
+          return publicUrlData.publicUrl;
+        }
+      } else if (uploadErr) {
+        console.warn("[saveUploadedHtmlFile] Supabase storage warning:", uploadErr.message);
+      }
+    } catch (sbErr) {
+      console.warn("[saveUploadedHtmlFile] Supabase storage exception:", sbErr);
+    }
+
+    // 2. Fallback: Local disk write for development
+    try {
+      const relativePath = `mock-tests/${fileName}`;
+      const candidates = getCandidatePaths(`public/${relativePath}`);
+      for (const p of candidates) {
+        const dir = dirname(p);
+        await mkdir(dir, { recursive: true });
+        await writeFile(p, buffer);
+      }
+    } catch (writeErr) {
+      console.error("[saveUploadedHtmlFile] Local write error:", writeErr);
+    }
+
+    return `/mock-tests/${fileName}`;
+  } catch (err) {
+    console.error("[saveUploadedHtmlFile] Upload error:", err);
+    return "";
+  }
+}
+
 export async function getStoreData<T>(key: string, localFilePath: string, defaultValue: T): Promise<T> {
   // 1. Check Supabase admin_settings text columns (GUARANTEED TO PERSIST ON VERCEL & CLOUD)
   try {

@@ -178,7 +178,7 @@ export async function saveUploadedHtmlFile(file: File, customName?: string): Pro
             }
           } catch {}
 
-          return publicUrlData.publicUrl;
+          return `/mock-tests/${fileName}`;
         }
       } else if (uploadErr) {
         console.warn("[saveUploadedHtmlFile] Supabase storage warning:", uploadErr.message);

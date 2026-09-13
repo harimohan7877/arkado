@@ -317,15 +317,24 @@ export default function CourseDetailPage({ params }: PageProps) {
                   </p>
                 </div>
 
-                <a
-                  href={course.demo_html_mock_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs transition shadow-md whitespace-nowrap flex items-center gap-2 cursor-pointer hover:scale-102 active:scale-98"
-                >
-                  <span>▶ स्टार्ट फ्री मॉक टेस्ट</span>
-                  <span>↗</span>
-                </a>
+                {(() => {
+                  let mockHref = course.demo_html_mock_url || "#";
+                  if (mockHref.includes("/storage/v1/object/public/arkado-uploads/mock-tests/")) {
+                    const fname = mockHref.split("/mock-tests/")[1];
+                    if (fname) mockHref = `/mock-tests/${fname}`;
+                  }
+                  return (
+                    <a
+                      href={mockHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs transition shadow-md whitespace-nowrap flex items-center gap-2 cursor-pointer hover:scale-102 active:scale-98"
+                    >
+                      <span>▶ स्टार्ट फ्री मॉक टेस्ट</span>
+                      <span>↗</span>
+                    </a>
+                  );
+                })()}
               </div>
             )}
           </div>

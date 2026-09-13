@@ -21,21 +21,21 @@ export default function AuthPromptModal({ onClose, reason }: AuthPromptModalProp
   }, []);
 
   const titles: Record<string, string> = {
-    message_limit: isLoggedIn ? "अनलिमिटेड एक्सेस" : "5 सवाल हो गए!",
-    study_material: isLoggedIn ? "प्रीमियम अनलॉक करें" : "Study Material देखें",
-    save_exam: isLoggedIn ? "प्रीमियम अनलॉक करें" : "Exam Save करें",
+    message_limit: isLoggedIn ? "Unlimited Access" : "Daily Limit Reached!",
+    study_material: isLoggedIn ? "Unlock Premium" : "View Study Material",
+    save_exam: isLoggedIn ? "Unlock Premium" : "Save Exam",
   };
 
   const subtitles: Record<string, string> = {
     message_limit: isLoggedIn
-      ? "सभी स्टडी मटेरियल व अनलिमिटेड चैट अनलॉक करें"
-      : "Login करें और 5 और FREE सवाल पाएं",
+      ? "Unlock all study materials & unlimited AI queries"
+      : "Log in to get more free questions",
     study_material: isLoggedIn
-      ? "सिलेबस और PYQ देखने के लिए प्रीमियम अनलॉक करें"
-      : "Login करें और पूरा Study Material पाएं",
+      ? "Unlock premium to access complete syllabus & PYQs"
+      : "Log in to view full study materials",
     save_exam: isLoggedIn
-      ? "भर्तियों को सेव करने के लिए प्रीमियम अनलॉक करें"
-      : "Login करें और Exams Save करें",
+      ? "Unlock premium to save exams to your dashboard"
+      : "Log in to bookmark & save exams",
   };
 
   function handleLogin() {
@@ -65,23 +65,23 @@ export default function AuthPromptModal({ onClose, reason }: AuthPromptModalProp
             <SparklesIcon size={18} />
           </div>
           <div>
-            <h2 className="text-base font-bold font-devanagari">{titles[reason]}</h2>
-            <p className="text-xs text-slate-300 font-devanagari mt-0.5">{subtitles[reason]}</p>
+            <h2 className="text-base font-bold">{titles[reason]}</h2>
+            <p className="text-xs text-slate-300 mt-0.5">{subtitles[reason]}</p>
           </div>
         </div>
 
         <div className="p-5">
           <ul className="space-y-2 mb-5">
             {[
-              "अनलिमिटेड AI चैट",
-              "पूरा विस्तृत Syllabus (पाठ्यक्रम)",
+              "Unlimited AI Queries",
+              "Comprehensive Syllabus Coverage",
               "Previous Year Papers (PYQs)",
-              "सभी भर्तियों के सटीक दिशा-निर्देश",
-              "भर्तियों को डैशबोर्ड में सेव करें",
+              "Official Exam & Notification Alerts",
+              "Save & Track Exams in Dashboard",
             ].map((item, i) => (
               <li
                 key={i}
-                className="flex items-center gap-2 text-sm text-slate-700 font-devanagari"
+                className="flex items-center gap-2 text-sm text-slate-700"
               >
                 <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
                   <CheckIcon size={12} />
@@ -94,24 +94,24 @@ export default function AuthPromptModal({ onClose, reason }: AuthPromptModalProp
           {!isLoggedIn && (
             <button
               onClick={handleLogin}
-              className="btn-outline w-full h-11 mb-2 font-devanagari"
+              className="btn-outline w-full h-11 mb-2 font-bold text-xs uppercase tracking-wider"
             >
-              Login / Sign Up करें
+              Log In / Sign Up
             </button>
           )}
 
           <button
             onClick={handlePayment}
-            className="btn-primary w-full h-11 font-devanagari"
+            className="btn-primary w-full h-11 font-bold text-xs uppercase tracking-wider"
           >
-            ₹30 में Premium एक्टिवेट करें
+            Activate Premium at ₹30
           </button>
 
           <button
             onClick={onClose}
-            className="w-full text-center text-sm text-slate-400 hover:text-slate-600 cursor-pointer mt-3 font-devanagari"
+            className="w-full text-center text-sm text-slate-400 hover:text-slate-600 cursor-pointer mt-3"
           >
-            बाद में
+            Maybe Later
           </button>
         </div>
 

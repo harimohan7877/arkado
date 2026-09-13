@@ -310,10 +310,10 @@ export default function CourseDetailPage({ params }: PageProps) {
                     </span>
                   </div>
                   <h4 className="text-lg sm:text-xl font-black text-stone-900 mt-1">
-                    🎯 ऑनलाइन HTML मॉक टेस्ट डेमो (Live Exam Engine)
+                    🎯 Interactive Online Mock Test Demo
                   </h4>
                   <p className="text-xs text-stone-600 leading-relaxed">
-                    परीक्षा जैसे हूबहू टाइमर, नेगेटिव मार्किंग (1/3) और ऑटो-रिजल्ट के साथ निःशुल्क टेस्ट देकर देखें।
+                    Experience the real exam engine with 120-min timer, 1/3 negative marking &amp; instant score.
                   </p>
                 </div>
 
@@ -330,7 +330,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                       rel="noopener noreferrer"
                       className="px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs transition shadow-md whitespace-nowrap flex items-center gap-2 cursor-pointer hover:scale-102 active:scale-98"
                     >
-                      <span>▶ स्टार्ट फ्री मॉक टेस्ट</span>
+                      <span>▶ Start Free Mock Test</span>
                       <span>↗</span>
                     </a>
                   );
@@ -431,18 +431,18 @@ export default function CourseDetailPage({ params }: PageProps) {
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
                   <h2 className="text-xl sm:text-2xl font-black text-stone-900">
-                    अन्य प्रमुख परीक्षाएं व स्टडी किट्स (Other Popular Selection Kits)
+                    Other Popular Selection Kits
                   </h2>
                 </div>
                 <p className="text-xs text-stone-500 mt-1">
-                  छात्रों द्वारा सबसे ज्यादा पसंद किए जाने वाले अन्य परीक्षा नोट्स व मॉक टेस्ट बंडल्स
+                  Top-rated study notes &amp; test bundles for candidates
                 </p>
               </div>
               <Link
                 href="/exams"
                 className="text-xs font-bold text-amber-700 hover:text-amber-800 flex items-center gap-1"
               >
-                सभी परीक्षाएं देखें ({relatedCourses.length + 1}) →
+                View All Exams ({relatedCourses.length + 1}) →
               </Link>
             </div>
 
@@ -466,18 +466,18 @@ export default function CourseDetailPage({ params }: PageProps) {
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
                   <h2 className="text-xl sm:text-2xl font-black text-stone-900">
-                    अन्य प्रमुख श्रेणियां एक्सप्लोर करें (Explore Categories)
+                    Explore Exam Categories
                   </h2>
                 </div>
                 <p className="text-xs text-stone-500 mt-1">
-                  राजस्थान, सेंट्रल, एसएससी, पुलिस व शिक्षक भर्ती परीक्षाओं के नोट्स देखें
+                  Browse notes for State, Central, SSC, Police &amp; Teaching exams
                 </p>
               </div>
               <Link
                 href="/exams"
                 className="text-xs font-bold text-amber-700 hover:text-amber-800 flex items-center gap-1"
               >
-                सभी श्रेणियां ({categories.length}) →
+                View All Categories ({categories.length}) →
               </Link>
             </div>
 

@@ -159,7 +159,7 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
                     {user.email?.split("@")[0]}
                   </span>
                   <span className="text-[9px] text-emerald-700 font-bold block">
-                    डैशबोर्ड (Active)
+                    Dashboard
                   </span>
                 </div>
               </Link>
@@ -170,7 +170,7 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
                 aria-label="Account"
               >
                 <UserIcon size={20} />
-                <span className="text-[10px] font-bold mt-0.5 hidden sm:block">लॉगिन (Account)</span>
+                <span className="text-[10px] font-bold mt-0.5 hidden sm:block">Log In / Account</span>
               </Link>
             )}
 

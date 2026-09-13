@@ -97,7 +97,7 @@ export default function SidebarCategories({ activeCategory }: SidebarCategoriesP
       <div className="mt-3 mx-2 p-3 rounded-md bg-amber-50 border border-amber-100">
         <p className="text-xs font-bold text-amber-800">🎯 Need help?</p>
         <p className="text-[11px] text-amber-700 mt-1 leading-relaxed">
-          WhatsApp पर expert से बात करें — तुरंत PDF लिंक पाएं।
+          Chat with an exam counselor on WhatsApp to get instant PDF links.
         </p>
         <a
           href="https://wa.me/917852004401"

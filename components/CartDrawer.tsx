@@ -133,15 +133,15 @@ export default function CartDrawer({
     setErrorMsg("");
 
     if (!name.trim()) {
-      setErrorMsg("कृपया अपना पूरा नाम भरें।");
+      setErrorMsg("Please enter your full name.");
       return;
     }
     if (deliveryMode === "whatsapp" && !phone.trim()) {
-      setErrorMsg("कृपया अपना WhatsApp मोबाइल नंबर दर्ज करें।");
+      setErrorMsg("Please enter your WhatsApp mobile number.");
       return;
     }
     if (deliveryMode === "gmail" && !email.trim()) {
-      setErrorMsg("कृपया अपना Gmail पता दर्ज करें।");
+      setErrorMsg("Please enter your Gmail address.");
       return;
     }
 
@@ -166,7 +166,7 @@ export default function CartDrawer({
 
       const data = await res.json();
       if (!res.ok || data.error) {
-        throw new Error(data.error || "ऑर्डर सबमिट नहीं हो सका");
+        throw new Error(data.error || "Order could not be submitted");
       }
 
       const orderId = data.order?.order_id || data.order_id || `ARK-${Date.now().toString().slice(-6)}`;
@@ -206,7 +206,7 @@ export default function CartDrawer({
       }
     } catch (err: any) {
       console.error("Order error:", err);
-      setErrorMsg(err.message || "कुछ गलत हुआ। कृपया WhatsApp पर संपर्क करें।");
+      setErrorMsg(err.message || "Something went wrong. Please contact support on WhatsApp.");
     } finally {
       setIsSubmitting(false);
     }
@@ -237,14 +237,14 @@ export default function CartDrawer({
                   <CartIcon size={14} />
                 </span>
                 <h2 className="font-extrabold text-slate-900 text-base">
-                  {step === "cart" && "आपकी कार्ट"}
-                  {step === "pay" && "भुगतान करें"}
-                  {step === "success" && "ऑर्डर सफल!"}
+                  {step === "cart" && "Your Cart"}
+                  {step === "pay" && "Payment / Checkout"}
+                  {step === "success" && "Order Confirmed!"}
                 </h2>
               </div>
               {step !== "success" && (
-                <p className="text-[11px] text-slate-500 mt-1 font-devanagari">
-                  {cartItems.length} कोर्स • कुल: ₹{subtotal}
+                <p className="text-[11px] text-slate-500 mt-1">
+                  {cartItems.length} {cartItems.length === 1 ? "Course" : "Courses"} • Total: ₹{subtotal}
                 </p>
               )}
             </div>
@@ -307,9 +307,9 @@ export default function CartDrawer({
                   <div className="w-14 h-14 rounded-full bg-slate-100 text-slate-400 mx-auto flex items-center justify-center mb-3">
                     <CartIcon size={22} />
                   </div>
-                  <h3 className="font-bold text-slate-800">कार्ट खाली है</h3>
-                  <p className="text-xs text-slate-500 mt-1 font-devanagari">
-                    अपनी पसंद का कोर्स बंडल चुनें।
+                  <h3 className="font-bold text-slate-800">Your cart is empty</h3>
+                  <p className="text-xs text-slate-500 mt-1">
+                    Choose your preferred course bundle to continue.
                   </p>
                 </div>
               ) : (
@@ -359,7 +359,7 @@ export default function CartDrawer({
 
                   {savings > 0 && (
                     <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-md text-xs text-emerald-800 font-semibold flex items-center justify-between">
-                      <span className="font-devanagari">आपकी कुल छूट:</span>
+                      <span className="font-medium">Total Savings:</span>
                       <span className="font-black">₹{savings}</span>
                     </div>
                   )}
@@ -418,13 +418,13 @@ export default function CartDrawer({
               {/* Order Form */}
               <form id="upi-order-form" onSubmit={handleOrderSubmit} className="space-y-3">
                 <div>
-                  <label className="block text-xs font-bold text-slate-800 mb-1 font-devanagari">
-                    आपका पूरा नाम *
+                  <label className="block text-xs font-bold text-slate-800 mb-1">
+                    Full Name *
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="राहुल शर्मा"
+                    placeholder="e.g. Rahul Sharma"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="w-full px-3 py-2.5 rounded-md border border-slate-300 text-sm focus:outline-none focus:border-amber-700"
@@ -432,8 +432,8 @@ export default function CartDrawer({
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-800 mb-1.5 font-devanagari">
-                    डिलीवरी मोड *
+                  <label className="block text-xs font-bold text-slate-800 mb-1.5">
+                    Delivery Mode *
                   </label>
                   <div className="grid grid-cols-2 gap-2">
                     <button
@@ -476,8 +476,8 @@ export default function CartDrawer({
 
                 {deliveryMode === "whatsapp" ? (
                   <div>
-                    <label className="block text-xs font-bold text-slate-800 mb-1 font-devanagari">
-                      WhatsApp नंबर *
+                    <label className="block text-xs font-bold text-slate-800 mb-1">
+                      WhatsApp Number *
                     </label>
                     <input
                       type="tel"
@@ -490,8 +490,8 @@ export default function CartDrawer({
                   </div>
                 ) : (
                   <div>
-                    <label className="block text-xs font-bold text-slate-800 mb-1 font-devanagari">
-                      Gmail एड्रेस *
+                    <label className="block text-xs font-bold text-slate-800 mb-1">
+                      Gmail Address *
                     </label>
                     <input
                       type="email"
@@ -506,16 +506,16 @@ export default function CartDrawer({
 
                 <div>
                   <div className="flex items-center justify-between mb-1">
-                    <label className="block text-xs font-bold text-slate-800 font-devanagari">
+                    <label className="block text-xs font-bold text-slate-800">
                       UPI Ref / UTR No.
                     </label>
-                    <span className="text-[10px] text-slate-400 font-medium font-devanagari">
-                      (वैकल्पिक / Optional)
+                    <span className="text-[10px] text-slate-400 font-medium">
+                      (Optional)
                     </span>
                   </div>
                   <input
                     type="text"
-                    placeholder="12-अंकों का UPI UTR या Ref No."
+                    placeholder="12-digit UPI UTR or Ref No."
                     value={utr}
                     onChange={(e) => setUtr(e.target.value)}
                     className="w-full px-3 py-2.5 rounded-md border border-slate-300 text-sm font-mono focus:outline-none focus:border-amber-700"
@@ -526,8 +526,8 @@ export default function CartDrawer({
                 <div className="pt-2 pb-1 space-y-2">
                   <div className="relative flex py-1.5 items-center">
                     <div className="flex-grow border-t border-slate-200"></div>
-                    <span className="flex-shrink mx-2 text-[10px] font-extrabold text-slate-500 font-devanagari bg-slate-100 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                      या बिना फॉर्म भरे सीधे ऑर्डर करें
+                    <span className="flex-shrink mx-2 text-[10px] font-extrabold text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+                      Or Order Directly Without Form
                     </span>
                     <div className="flex-grow border-t border-slate-200"></div>
                   </div>
@@ -545,7 +545,7 @@ export default function CartDrawer({
                       className="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition shadow-xs"
                     >
                       <WhatsappIcon size={15} />
-                      <span>WhatsApp ऑर्डर</span>
+                      <span>WhatsApp Order</span>
                     </a>
 
                     <a
@@ -561,7 +561,7 @@ export default function CartDrawer({
                       className="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold transition shadow-xs"
                     >
                       <span>✉️</span>
-                      <span>Gmail ऑर्डर</span>
+                      <span>Gmail Order</span>
                     </a>
                   </div>
                 </div>
@@ -577,13 +577,13 @@ export default function CartDrawer({
                   ) : (
                     <>
                       <CheckIcon size={16} />
-                      मैंने भुगतान कर दिया
+                      I Have Paid
                     </>
                   )}
                 </button>
 
-                <p className="text-[10px] text-slate-500 text-center font-devanagari">
-                  ₹{subtotal} UPI से pay करें, फिर ऊपर बटन दबाएं
+                <p className="text-[10px] text-slate-500 text-center">
+                  Pay ₹{subtotal} via UPI, then click the button above
                 </p>
               </form>
             </div>
@@ -599,27 +599,27 @@ export default function CartDrawer({
                 <span className="text-[11px] font-mono font-bold bg-slate-100 text-slate-700 px-2.5 py-1 rounded-full">
                   Order ID: {createdOrder.order_id}
                 </span>
-                <h3 className="text-lg font-black text-slate-900 mt-2 font-devanagari">
-                  धन्यवाद {createdOrder.name}!
+                <h3 className="text-lg font-black text-slate-900 mt-2">
+                  Thank You, {createdOrder.name}!
                 </h3>
-                <p className="text-xs text-slate-600 font-devanagari">
-                  आपका ऑर्डर दर्ज हो गया।
+                <p className="text-xs text-slate-600">
+                  Your order has been recorded successfully.
                 </p>
               </div>
 
               <div className="p-3.5 bg-slate-50 rounded-lg border border-slate-200 text-left text-xs space-y-1.5">
                 <div className="flex justify-between">
-                  <span className="text-slate-500">कोर्स:</span>
+                  <span className="text-slate-500">Course:</span>
                   <span className="font-bold text-slate-800 line-clamp-1 text-right ml-2">
                     {createdOrder.course_title}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">राशि:</span>
+                  <span className="text-slate-500">Amount:</span>
                   <span className="font-bold text-slate-900">₹{createdOrder.amount}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">डिलीवरी:</span>
+                  <span className="text-slate-500">Delivery:</span>
                   <span className="font-bold text-emerald-700 uppercase text-[11px]">
                     {createdOrder.delivery_mode}
                   </span>
@@ -628,15 +628,14 @@ export default function CartDrawer({
 
               {/* Admin verification notice */}
               <div className="p-4 bg-amber-50 border border-amber-200 rounded-xl text-left">
-                <h4 className="font-bold text-amber-900 text-sm font-devanagari mb-1">
-                  ⏳ Admin से verify होगा
+                <h4 className="font-bold text-amber-900 text-sm mb-1">
+                  ⏳ Verification in Progress
                 </h4>
-                <p className="text-xs text-amber-800 font-devanagari">
-                  आपका भुगतान manually verify किया जाएगा। 1-2 घंटे में आपको{" "}
+                <p className="text-xs text-amber-800">
+                  Your payment will be verified shortly. Within 1-2 hours, you will receive the Google Drive access link on{" "}
                   {createdOrder.delivery_mode === "whatsapp"
-                    ? `WhatsApp पर ${createdOrder.phone} नंबर पर`
-                    : `Email ${createdOrder.email} पर`}
-                  Drive link मिलेगा।
+                    ? `WhatsApp (${createdOrder.phone})`
+                    : `Email (${createdOrder.email})`}.
                 </p>
               </div>
 
@@ -658,7 +657,7 @@ export default function CartDrawer({
                 className="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm transition-all shadow-md flex items-center justify-center gap-2"
               >
                 <WhatsappIcon size={18} />
-                <span>WhatsApp पर ऑर्डर विवरण भेजें</span>
+                <span>Send Order Details on WhatsApp</span>
               </a>
 
               <button
@@ -666,14 +665,14 @@ export default function CartDrawer({
                 className="btn-primary w-full"
               >
                 <DownloadIcon size={14} />
-                <span>Download Page देखें →</span>
+                <span>View Download Page →</span>
               </button>
 
               <button
                 onClick={onClose}
                 className="w-full py-2 rounded-md border border-slate-300 text-slate-700 text-xs font-semibold hover:bg-slate-100 transition cursor-pointer"
               >
-                विंडो बंद करें
+                Close Window
               </button>
             </div>
           )}
@@ -683,8 +682,8 @@ export default function CartDrawer({
         {cartItems.length > 0 && step !== "success" && (
           <div className="p-4 border-t border-slate-200 bg-white shrink-0">
             <div className="flex items-baseline justify-between mb-3">
-              <span className="text-sm text-slate-600 font-medium font-devanagari">
-                कुल राशि:
+              <span className="text-sm text-slate-600 font-medium">
+                Total Amount:
               </span>
               <span className="text-2xl font-black text-slate-900">₹{subtotal}</span>
             </div>
@@ -692,7 +691,7 @@ export default function CartDrawer({
             {step === "cart" ? (
               <button onClick={handleCheckoutClick} className="btn-primary w-full">
                 <ShoppingBagIcon size={14} />
-                <span>Checkout करें</span>
+                <span>Proceed to Checkout</span>
               </button>
             ) : (
               <div className="flex gap-2">

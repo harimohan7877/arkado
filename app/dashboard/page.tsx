@@ -75,7 +75,7 @@ export default function DashboardPage() {
     return (
       <div className="min-h-screen bg-[#fcfcf9] flex flex-col items-center justify-center p-6 font-sans">
         <div className="w-10 h-10 border-3 border-amber-600/30 border-t-amber-600 rounded-full animate-spin mb-4" />
-        <p className="text-xs font-mono font-bold text-stone-600">डैशबोर्ड लोड हो रहा है...</p>
+        <p className="text-xs font-mono font-bold text-stone-600">Loading dashboard...</p>
       </div>
     );
   }
@@ -113,13 +113,13 @@ export default function DashboardPage() {
               href="/exams"
               className="text-xs font-bold text-stone-700 hover:text-amber-800 px-3 py-1.5 rounded-lg hover:bg-stone-100 transition hidden sm:inline-block"
             >
-              सभी नोट्स (All Exams)
+              All Exams & Notes
             </Link>
             <button
               onClick={handleLogout}
               className="text-xs font-bold text-stone-600 hover:text-red-700 px-3.5 py-1.5 rounded-lg border border-stone-300 hover:border-red-300 hover:bg-red-50/50 transition cursor-pointer"
             >
-              लॉग आउट (Logout)
+              Log Out
             </button>
           </div>
         </div>
@@ -133,10 +133,10 @@ export default function DashboardPage() {
             <div>
               <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 text-[11px] font-mono font-bold mb-3 border border-amber-400/30">
                 <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                सक्रिय छात्र खाता (Active Account)
+                Active Student Account
               </div>
               <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                नमस्ते, {userName}! 🙏
+                Welcome, {userName}! 👋
               </h1>
               <p className="text-sm text-stone-300 mt-1 font-mono">
                 {user?.email}
@@ -148,7 +148,7 @@ export default function DashboardPage() {
                 href="/exams"
                 className="px-5 py-2.5 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition shadow-md"
               >
-                + नई अध्ययन सामग्री देखें
+                + Explore Study Materials
               </Link>
             </div>
           </div>
@@ -158,24 +158,24 @@ export default function DashboardPage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="bg-white p-5 rounded-xl border border-stone-200/80 shadow-xs">
             <p className="text-xs font-mono font-bold text-stone-500 uppercase tracking-wider">
-              कुल ऑर्डर्स (Orders)
+              Total Orders
             </p>
             <p className="text-2xl font-bold text-stone-900 mt-1">{orders.length}</p>
           </div>
 
           <div className="bg-white p-5 rounded-xl border border-stone-200/80 shadow-xs">
             <p className="text-xs font-mono font-bold text-stone-500 uppercase tracking-wider">
-              डाउनलोड्स (Downloads)
+              Downloads
             </p>
             <p className="text-2xl font-bold text-emerald-700 mt-1">
-              {orders.filter((o) => o.drive_url).length} सक्रिय
+              {orders.filter((o) => o.drive_url).length} Active
             </p>
           </div>
 
           <div className="bg-white p-5 rounded-xl border border-stone-200/80 shadow-xs flex items-center justify-between">
             <div>
               <p className="text-xs font-mono font-bold text-stone-500 uppercase tracking-wider">
-                सहायता (Support)
+                Support
               </p>
               <p className="text-sm font-bold text-stone-900 mt-1">
                 {settings?.contact?.phone || "7852004401"}
@@ -197,14 +197,14 @@ export default function DashboardPage() {
           <div className="p-6 border-b border-stone-100 flex items-center justify-between">
             <div>
               <h2 className="text-lg font-bold text-stone-900">
-                📚 मेरे खरीदे गए नोट्स व PDF (My Downloads)
+                📚 My Purchased Notes & Downloads
               </h2>
               <p className="text-xs text-stone-500 mt-0.5">
-                यहाँ आपकी सभी खरीदी गई अध्ययन सामग्री व Google Drive डाउनलोड लिंक मिलेंगे
+                All your study bundles and Google Drive download links appear here
               </p>
             </div>
             <span className="text-xs font-mono font-bold text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
-              {orders.length} आइटम
+              {orders.length} {orders.length === 1 ? "Item" : "Items"}
             </span>
           </div>
 
@@ -213,16 +213,16 @@ export default function DashboardPage() {
             <div className="p-12 text-center">
               <div className="text-4xl mb-3">📖</div>
               <h3 className="text-base font-bold text-stone-800 mb-1">
-                अभी तक कोई नोट्स नहीं खरीदे गए हैं
+                No study notes purchased yet
               </h3>
               <p className="text-xs text-stone-500 max-w-md mx-auto mb-6">
-                CET, Patwari, Police Constable, REET और अन्य परीक्षाओं के सर्वश्रेष्ठ हैंडराइटन नोट्स और PYQ तुरंत प्राप्त करें।
+                Get instant access to top-rated handwritten notes, complete syllabus coverage, and PYQ mock tests for competitive exams.
               </p>
               <Link
                 href="/exams"
                 className="inline-block px-6 py-3 bg-stone-900 hover:bg-black text-white text-xs font-bold uppercase tracking-wider rounded-xl shadow-md transition"
               >
-                सभी नोट्स व टेस्ट देखें (Browse Notes) →
+                Browse Notes & Test Bundles →
               </Link>
             </div>
           ) : (
@@ -239,14 +239,14 @@ export default function DashboardPage() {
                         {order.order_id}
                       </span>
                       <span className="text-xs text-stone-400 font-mono">
-                        {new Date(order.created_at).toLocaleDateString("hi-IN")}
+                        {new Date(order.created_at).toLocaleDateString("en-IN")}
                       </span>
                     </div>
                     <h4 className="text-base font-bold text-stone-900">
                       {order.course_title || order.course_id}
                     </h4>
                     <p className="text-xs text-stone-500">
-                      राशि: <strong className="text-stone-800">₹{order.amount}</strong> • डिलीवरी: {order.phone ? `WhatsApp (${order.phone})` : order.email}
+                      Amount: <strong className="text-stone-800">₹{order.amount}</strong> • Delivery: {order.phone ? `WhatsApp (${order.phone})` : order.email}
                     </p>
                   </div>
 
@@ -258,12 +258,12 @@ export default function DashboardPage() {
                         rel="noopener noreferrer"
                         className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-xs transition flex items-center gap-1.5"
                       >
-                        <span>📥 PDF डाउनलोड लिंक खोलें</span>
+                        <span>📥 Open PDF Download Link</span>
                         <span>↗</span>
                       </a>
                     ) : (
                       <span className="text-xs font-medium text-amber-700 bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-200">
-                        ⏳ 1-2 घंटे में लिंक जारी होगा
+                        ⏳ Access link will be shared within 1-2 hours
                       </span>
                     )}
                   </div>

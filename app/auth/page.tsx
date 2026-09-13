@@ -82,9 +82,9 @@ export default function AuthPage() {
 
       if (error) {
         if (error.message.includes("Invalid login credentials")) {
-          throw new Error("ईमेल या पासवर्ड गलत है। यदि आपने Google से अकाउंट बनाया है तो ऊपर Google बटन दबाएँ।");
+          throw new Error("Invalid email or password. If you signed up with Google, please click the Google button above.");
         } else if (error.message.includes("Email not confirmed")) {
-          throw new Error("कृपया अपने ईमेल पर आए कन्फर्मेशन लिंक पर क्लिक करें या Google से लॉगिन करें।");
+          throw new Error("Please check your email for the confirmation link or log in with Google.");
         }
         throw error;
       }
@@ -94,7 +94,7 @@ export default function AuthPage() {
       }
     } catch (err: unknown) {
       console.error("Password login error:", err);
-      const msg = err instanceof Error ? err.message : "लॉगिन असफल रहा। कृपया पुनः प्रयास करें।";
+      const msg = err instanceof Error ? err.message : "Login failed. Please try again.";
       setErrorMessage(msg);
     } finally {
       setLoading(false);
@@ -106,7 +106,7 @@ export default function AuthPage() {
     e.preventDefault();
     if (!email || !password) return;
     if (password.length < 6) {
-      setErrorMessage("पासवर्ड कम से कम 6 अक्षरों का होना चाहिए।");
+      setErrorMessage("Password must be at least 6 characters long.");
       return;
     }
 
@@ -128,7 +128,7 @@ export default function AuthPage() {
 
       if (error) {
         if (error.message.includes("User already registered")) {
-          throw new Error("यह ईमेल पहले से रजिस्टर्ड है। कृपया 'Log In' टैब से लॉगिन करें।");
+          throw new Error("This email is already registered. Please log in using the 'Log In' tab.");
         }
         throw error;
       }
@@ -136,12 +136,12 @@ export default function AuthPage() {
       if (data?.session) {
         completeAuth(data.session);
       } else {
-        setSuccessMessage("खाता सफलतापूर्वक बन गया! कृपया लॉगिन करें।");
+        setSuccessMessage("Account created successfully! Please log in.");
         setMode("login");
       }
     } catch (err: unknown) {
       console.error("Signup error:", err);
-      const msg = err instanceof Error ? err.message : "अकाउंट बनाने में समस्या आई। पुनः प्रयास करें।";
+      const msg = err instanceof Error ? err.message : "Error creating account. Please try again.";
       setErrorMessage(msg);
     } finally {
       setLoading(false);
@@ -157,10 +157,10 @@ export default function AuthPage() {
           className="flex items-center gap-1.5 text-xs text-stone-600 hover:text-stone-900 font-semibold uppercase tracking-wider font-mono transition"
         >
           <span>←</span>
-          <span>होमपेज (Home)</span>
+          <span>Home</span>
         </Link>
         <span className="text-[11px] font-mono text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
-          🔒 सुरक्षित छात्र पोर्टल
+          🔒 Student Portal
         </span>
       </div>
 
@@ -180,10 +180,10 @@ export default function AuthPage() {
             />
           </Link>
           <h1 className="text-xl font-bold text-stone-900 tracking-tight">
-            {mode === "login" ? "अपने अकाउंट में लॉगिन करें" : "नया Arkado अकाउंट बनाएँ"}
+            {mode === "login" ? "Log in to your account" : "Create your Arkado account"}
           </h1>
           <p className="text-xs text-stone-500 mt-1.5 font-medium">
-            अपने खरीदे गए नोट्स, सिलेबस व PDF डाउनलोड्स एक्सेस करें
+            Access your purchased study notes, syllabus & PDF downloads
           </p>
         </div>
 
@@ -202,7 +202,7 @@ export default function AuthPage() {
                 : "text-stone-500 hover:text-stone-800"
             }`}
           >
-            लॉग इन (Log In)
+            Log In
           </button>
           <button
             type="button"
@@ -217,7 +217,7 @@ export default function AuthPage() {
                 : "text-stone-500 hover:text-stone-800"
             }`}
           >
-            नया खाता (Sign Up)
+            Sign Up
           </button>
         </div>
 
@@ -246,7 +246,7 @@ export default function AuthPage() {
             {googleLoading ? (
               <>
                 <span className="w-4 h-4 border-2 border-stone-300 border-t-stone-700 rounded-full animate-spin" />
-                <span>Google से कनेक्ट हो रहा है...</span>
+                <span>Connecting to Google...</span>
               </>
             ) : (
               <>
@@ -256,7 +256,7 @@ export default function AuthPage() {
                   <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
                   <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                 </svg>
-                <span>Google से लॉगिन करें (Continue with Google)</span>
+                <span>Continue with Google</span>
               </>
             )}
           </button>
@@ -265,7 +265,7 @@ export default function AuthPage() {
           <div className="flex items-center gap-3 my-6">
             <div className="flex-1 h-px bg-stone-200" />
             <span className="text-[10px] text-stone-400 font-mono uppercase tracking-wider">
-              या ईमेल व पासवर्ड से
+              or with email & password
             </span>
             <div className="flex-1 h-px bg-stone-200" />
           </div>
@@ -275,7 +275,7 @@ export default function AuthPage() {
             <form onSubmit={handlePasswordLogin} className="space-y-4">
               <div>
                 <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
-                  ईमेल एड्रेस (Email)
+                  Email Address
                 </label>
                 <input
                   type="email"
@@ -289,7 +289,7 @@ export default function AuthPage() {
 
               <div>
                 <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
-                  पासवर्ड (Password)
+                  Password
                 </label>
                 <div className="relative">
                   <input
@@ -305,7 +305,7 @@ export default function AuthPage() {
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-3 text-xs text-stone-400 hover:text-stone-700 cursor-pointer"
                   >
-                    {showPassword ? "छिपाएँ" : "देखें"}
+                    {showPassword ? "Hide" : "Show"}
                   </button>
                 </div>
               </div>
@@ -318,10 +318,10 @@ export default function AuthPage() {
                 {loading ? (
                   <>
                     <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
-                    <span>लॉगिन हो रहा है...</span>
+                    <span>Logging in...</span>
                   </>
                 ) : (
-                  <span>लॉग इन करें (Log In) →</span>
+                  <span>Log In →</span>
                 )}
               </button>
             </form>
@@ -332,12 +332,12 @@ export default function AuthPage() {
             <form onSubmit={handlePasswordSignUp} className="space-y-4">
               <div>
                 <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
-                  आपका नाम (Full Name)
+                  Full Name
                 </label>
                 <input
                   type="text"
                   required
-                  placeholder="उदा. राहुल शर्मा"
+                  placeholder="e.g. Rahul Sharma"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full h-11 px-3.5 text-xs bg-stone-50 border border-stone-200 rounded-xl focus:bg-white focus:border-amber-600 outline-none transition"
@@ -346,7 +346,7 @@ export default function AuthPage() {
 
               <div>
                 <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
-                  ईमेल एड्रेस (Email)
+                  Email Address
                 </label>
                 <input
                   type="email"
@@ -360,14 +360,14 @@ export default function AuthPage() {
 
               <div>
                 <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
-                  पासवर्ड बनाएँ (Password - कम से कम 6 अक्षर)
+                  Create Password (min. 6 characters)
                 </label>
                 <div className="relative">
                   <input
                     type={showPassword ? "text" : "password"}
                     required
                     minLength={6}
-                    placeholder="कम से कम 6 अक्षर"
+                    placeholder="At least 6 characters"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full h-11 px-3.5 pr-10 text-xs bg-stone-50 border border-stone-200 rounded-xl focus:bg-white focus:border-amber-600 outline-none transition"
@@ -377,7 +377,7 @@ export default function AuthPage() {
                     onClick={() => setShowPassword(!showPassword)}
                     className="absolute right-3 top-3 text-xs text-stone-400 hover:text-stone-700 cursor-pointer"
                   >
-                    {showPassword ? "छिपाएँ" : "देखें"}
+                    {showPassword ? "Hide" : "Show"}
                   </button>
                 </div>
               </div>
@@ -390,10 +390,10 @@ export default function AuthPage() {
                 {loading ? (
                   <>
                     <span className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
-                    <span>खाता बन रहा है...</span>
+                    <span>Creating account...</span>
                   </>
                 ) : (
-                  <span>नया खाता बनाएँ (Sign Up) →</span>
+                  <span>Create Account →</span>
                 )}
               </button>
             </form>
@@ -403,7 +403,7 @@ export default function AuthPage() {
         {/* Card Footer */}
         <div className="bg-stone-50/80 p-4 border-t border-stone-100 text-center">
           <p className="text-[11px] text-stone-500 font-medium">
-            मदद चाहिए? WhatsApp सहायता:{" "}
+            Need help? WhatsApp Support:{" "}
             <a
               href="https://wa.me/917852004401"
               target="_blank"
@@ -420,15 +420,15 @@ export default function AuthPage() {
       <div className="max-w-md w-full mx-auto grid grid-cols-3 gap-2 text-center text-stone-500 font-medium text-[10px] py-4">
         <div className="p-2 bg-white rounded-lg border border-stone-200/60 shadow-xs">
           <p className="text-sm mb-1">⚡</p>
-          <p>तुरंत PDF एक्सेस</p>
+          <p>Instant PDF Access</p>
         </div>
         <div className="p-2 bg-white rounded-lg border border-stone-200/60 shadow-xs">
           <p className="text-sm mb-1">📱</p>
-          <p>सभी फोन/लैपटॉप पर</p>
+          <p>Mobile & Laptop Friendly</p>
         </div>
         <div className="p-2 bg-white rounded-lg border border-stone-200/60 shadow-xs">
           <p className="text-sm mb-1">🔒</p>
-          <p>100% सुरक्षित डेटा</p>
+          <p>100% Secure Access</p>
         </div>
       </div>
     </div>

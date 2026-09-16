@@ -15,6 +15,8 @@ import CategoriesSection from "@/components/CategoriesSection";
 import SidebarCategories from "@/components/SidebarCategories";
 import TrustStrip from "@/components/TrustStrip";
 import FeaturedGrid from "@/components/FeaturedGrid";
+import CourseCardSkeleton from "@/components/skeletons/CourseCardSkeleton";
+import CourseListRowSkeleton from "@/components/skeletons/CourseListRowSkeleton";
 import { SearchIcon, CloseIcon, SparklesIcon, CheckIcon } from "@/components/icons";
 
 export default function HomePage() {
@@ -31,17 +33,21 @@ export default function HomePage() {
   const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
   const [apiFeatured, setApiFeatured] = useState<Course[]>([]);
   const [apiNewArrivals, setApiNewArrivals] = useState<Course[]>([]);
+  const [featuredLoading, setFeaturedLoading] = useState(true);
+  const [newArrivalsLoading, setNewArrivalsLoading] = useState(true);
 
   useEffect(() => {
     fetch("/api/courses?featured=true")
       .then((res) => res.json())
       .then((data) => setApiFeatured(Array.isArray(data) ? data : []))
-      .catch(() => setApiFeatured([]));
+      .catch(() => setApiFeatured([]))
+      .finally(() => setFeaturedLoading(false));
 
     fetch("/api/courses?new_arrivals=true")
       .then((res) => res.json())
       .then((data) => setApiNewArrivals(Array.isArray(data) ? data : []))
-      .catch(() => setApiNewArrivals([]));
+      .catch(() => setApiNewArrivals([]))
+      .finally(() => setNewArrivalsLoading(false));
   }, []);
 
 
@@ -109,6 +115,7 @@ export default function HomePage() {
               <div className="lg:col-span-9">
                 <HeroSlider
                   courses={sliderCourses}
+                  loading={sliderLoading}
                   onBuyNow={handleBuyNow}
                   onOpenSample={handleOpenSample}
                 />
@@ -182,6 +189,7 @@ export default function HomePage() {
           <FeaturedGrid
             title={featuredTitle}
             courses={latestProducts}
+            loading={coursesLoading}
             onBuyNow={handleBuyNow}
             onOpenSample={handleOpenSample}
             viewAllHref="/exams"
@@ -246,7 +254,13 @@ export default function HomePage() {
 
         {/* PRODUCT GRID */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          {filteredCourses.length === 0 ? (
+          {coursesLoading ? (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+              {Array.from({ length: 10 }).map((_, i) => (
+                <CourseCardSkeleton key={i} />
+              ))}
+            </div>
+          ) : filteredCourses.length === 0 ? (
             <div className="text-center py-16 card-base">
               <div className="w-14 h-14 rounded-full bg-stone-100 text-stone-400 mx-auto flex items-center justify-center mb-3">
                 <SearchIcon size={22} />
@@ -282,6 +296,7 @@ export default function HomePage() {
           <FeaturedGrid
             title={`🌟 ${featuredTitle}`}
             courses={featuredDeals}
+            loading={featuredLoading}
             onBuyNow={handleBuyNow}
             onOpenSample={handleOpenSample}
           />
@@ -294,7 +309,12 @@ export default function HomePage() {
             <Link href="/exams" className="text-sm font-bold text-amber-700 hover:text-amber-800">View All →</Link>
           </div>
           <div className="card-base divide-y divide-stone-100">
-            {newArrivals.map((course) => (
+            {newArrivalsLoading ? (
+              Array.from({ length: 3 }).map((_, i) => (
+                <CourseListRowSkeleton key={i} />
+              ))
+            ) : (
+              newArrivals.map((course) => (
               <div
                 key={course.id}
                 className="w-full flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 hover:bg-stone-50 transition"
@@ -356,7 +376,8 @@ export default function HomePage() {
                   </Link>
                 </div>
               </div>
-            ))}
+              ))
+            )}
           </div>
         </section>
 

@@ -17,17 +17,20 @@ import {
   FileTextIcon,
   CheckIcon,
 } from "@/components/icons";
+import HeroSliderSkeleton from "./skeletons/HeroSliderSkeleton";
 
 interface HeroSliderProps {
   courses: CourseBundle[];
   onBuyNow: (course: CourseBundle) => void;
   onOpenSample?: (course: CourseBundle) => void;
+  loading?: boolean;
 }
 
 export default function HeroSlider({
   courses,
   onBuyNow,
   onOpenSample,
+  loading = false,
 }: HeroSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -43,6 +46,8 @@ export default function HeroSlider({
       .catch(() => {});
   }, []);
 
+  if (loading) return <HeroSliderSkeleton />;
+
   const slides = courses.length > 0 ? courses : [];
 
   useEffect(() => {
@@ -53,7 +58,7 @@ export default function HeroSlider({
     return () => clearInterval(interval);
   }, [slides.length, isPaused]);
 
-  if (slides.length === 0) return null;
+  if (slides.length === 0) return <HeroSliderSkeleton />;
 
   const currentSlide = slides[currentIndex];
   const examLabel = getExamLabel(currentSlide.exam_id);

@@ -207,86 +207,33 @@ export async function saveUploadedHtmlFile(file: File, customName?: string): Pro
   }
 }
 
-interface CacheEntry<T> {
-  data: T;
-  timestamp: number;
-}
-
-const STORE_CACHE_TTL_MS = 60 * 1000; // 60 seconds server RAM cache
-const storeMemoryCache = new Map<string, CacheEntry<any>>();
-let inFlightAdminRowPromise: Promise<any> | null = null;
-
-export function invalidateStoreCache(key?: string) {
-  if (key) {
-    storeMemoryCache.delete(key);
-  } else {
-    storeMemoryCache.clear();
-  }
-}
-
 export async function getStoreData<T>(key: string, localFilePath: string, defaultValue: T): Promise<T> {
-  const now = Date.now();
-
-  // 0. Check in-memory RAM cache first (0ms instant response)
-  const cached = storeMemoryCache.get(key);
-  if (cached && now - cached.timestamp < STORE_CACHE_TTL_MS) {
-    return cached.data as T;
-  }
-
   // 1. Check Supabase admin_settings text columns (GUARANTEED TO PERSIST ON VERCEL & CLOUD)
   try {
-    if (!inFlightAdminRowPromise) {
-      inFlightAdminRowPromise = (async () => {
-        try {
-          const { data, error } = await supabaseAdmin
-            .from("admin_settings")
-            .select("id, gemini_key, claude_key, openai_key, openrouter_key")
-            .limit(1)
-            .maybeSingle();
-
-          if (error) {
-            console.warn("[store-data] Supabase select error:", error.message);
-            return null;
-          }
-          return data;
-        } catch (err) {
-          console.warn("[store-data] Supabase query exception:", err);
-          return null;
-        } finally {
-          inFlightAdminRowPromise = null;
-        }
-      })();
-    }
-
-    const adminRow = await inFlightAdminRowPromise;
+    const { data: adminRow } = await supabaseAdmin
+      .from("admin_settings")
+      .select("id, gemini_key, claude_key, openai_key, openrouter_key")
+      .limit(1)
+      .maybeSingle();
 
     if (adminRow) {
-      // Populate cache for all keys at once so parallel calls don't query again
-      if (adminRow.claude_key && (adminRow.claude_key.startsWith("[") || adminRow.claude_key.startsWith("{"))) {
-        try {
-          storeMemoryCache.set("categories", { data: JSON.parse(adminRow.claude_key), timestamp: now });
-        } catch {}
+      if (key === "categories" && adminRow.claude_key && (adminRow.claude_key.startsWith("[") || adminRow.claude_key.startsWith("{"))) {
+        const parsed = JSON.parse(adminRow.claude_key);
+        if (Array.isArray(defaultValue) && !Array.isArray(parsed)) return defaultValue;
+        return parsed as T;
       }
-      if (adminRow.openai_key && (adminRow.openai_key.startsWith("[") || adminRow.openai_key.startsWith("{"))) {
-        try {
-          storeMemoryCache.set("featured_exams", { data: JSON.parse(adminRow.openai_key), timestamp: now });
-        } catch {}
+      if (key === "featured_exams" && adminRow.openai_key && (adminRow.openai_key.startsWith("[") || adminRow.openai_key.startsWith("{"))) {
+        const parsed = JSON.parse(adminRow.openai_key);
+        return parsed as T;
       }
-      if (adminRow.openrouter_key && (adminRow.openrouter_key.startsWith("[") || adminRow.openrouter_key.startsWith("{"))) {
-        try {
-          storeMemoryCache.set("courses", { data: JSON.parse(adminRow.openrouter_key), timestamp: now });
-        } catch {}
+      if (key === "courses" && adminRow.openrouter_key && (adminRow.openrouter_key.startsWith("[") || adminRow.openrouter_key.startsWith("{"))) {
+        const parsed = JSON.parse(adminRow.openrouter_key);
+        if (Array.isArray(defaultValue) && !Array.isArray(parsed)) return defaultValue;
+        return parsed as T;
       }
-      if (adminRow.gemini_key && adminRow.gemini_key.startsWith("{")) {
-        try {
-          storeMemoryCache.set("settings", { data: JSON.parse(adminRow.gemini_key), timestamp: now });
-        } catch {}
-      }
-
-      const freshCached = storeMemoryCache.get(key);
-      if (freshCached) {
-        if (Array.isArray(defaultValue) && !Array.isArray(freshCached.data)) return defaultValue;
-        return freshCached.data as T;
+      if (key === "settings" && adminRow.gemini_key && adminRow.gemini_key.startsWith("{")) {
+        const parsed = JSON.parse(adminRow.gemini_key);
+        return parsed as T;
       }
     }
   } catch (err) {
@@ -301,7 +248,6 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
         const raw = await readFile(p, "utf-8");
         const parsed = JSON.parse(raw);
         if (Array.isArray(defaultValue) && !Array.isArray(parsed)) return defaultValue;
-        storeMemoryCache.set(key, { data: parsed, timestamp: now });
         return parsed as T;
       }
     } catch {}
@@ -312,9 +258,6 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
 
 export async function setStoreData<T>(key: string, localFilePath: string, data: T): Promise<void> {
   const jsonContent = JSON.stringify(data, null, 2);
-
-  // Update server in-memory cache immediately
-  storeMemoryCache.set(key, { data, timestamp: Date.now() });
 
   // 1. Persist directly to Supabase admin_settings (Persists across ALL Vercel deployments & restarts)
   try {

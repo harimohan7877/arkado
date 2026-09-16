@@ -246,7 +246,24 @@ export default function HomePage() {
 
         {/* PRODUCT GRID */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          {filteredCourses.length === 0 ? (
+          {coursesLoading ? (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+              {[...Array(5)].map((_, i) => (
+                <div key={i} className="card-base flex flex-col h-full overflow-hidden bg-white animate-pulse">
+                  <div className="relative w-full aspect-[4/5] bg-stone-200" />
+                  <div className="p-3 space-y-2">
+                    <div className="h-3 w-16 bg-stone-200 rounded" />
+                    <div className="h-4 w-full bg-stone-200 rounded" />
+                    <div className="h-4 w-3/4 bg-stone-200 rounded" />
+                    <div className="pt-2 flex justify-between items-center border-t border-stone-100">
+                      <div className="h-4 w-12 bg-stone-200 rounded" />
+                      <div className="h-7 w-16 bg-stone-200 rounded-lg" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : filteredCourses.length === 0 ? (
             <div className="text-center py-16 card-base">
               <div className="w-14 h-14 rounded-full bg-stone-100 text-stone-400 mx-auto flex items-center justify-center mb-3">
                 <SearchIcon size={22} />

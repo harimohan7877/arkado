@@ -207,7 +207,20 @@ export async function saveUploadedHtmlFile(file: File, customName?: string): Pro
   }
 }
 
+interface CacheEntry {
+  data: any;
+  timestamp: number;
+}
+
+const SERVER_STORE_CACHE: Record<string, CacheEntry> = {};
+const CACHE_TTL_MS = 60 * 1000; // 60 seconds
+
 export async function getStoreData<T>(key: string, localFilePath: string, defaultValue: T): Promise<T> {
+  const cached = SERVER_STORE_CACHE[key];
+  if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
+    return cached.data as T;
+  }
+
   // 1. Check Supabase admin_settings text columns (GUARANTEED TO PERSIST ON VERCEL & CLOUD)
   try {
     const { data: adminRow } = await supabaseAdmin
@@ -220,19 +233,23 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
       if (key === "categories" && adminRow.claude_key && (adminRow.claude_key.startsWith("[") || adminRow.claude_key.startsWith("{"))) {
         const parsed = JSON.parse(adminRow.claude_key);
         if (Array.isArray(defaultValue) && !Array.isArray(parsed)) return defaultValue;
+        SERVER_STORE_CACHE[key] = { data: parsed, timestamp: Date.now() };
         return parsed as T;
       }
       if (key === "featured_exams" && adminRow.openai_key && (adminRow.openai_key.startsWith("[") || adminRow.openai_key.startsWith("{"))) {
         const parsed = JSON.parse(adminRow.openai_key);
+        SERVER_STORE_CACHE[key] = { data: parsed, timestamp: Date.now() };
         return parsed as T;
       }
       if (key === "courses" && adminRow.openrouter_key && (adminRow.openrouter_key.startsWith("[") || adminRow.openrouter_key.startsWith("{"))) {
         const parsed = JSON.parse(adminRow.openrouter_key);
         if (Array.isArray(defaultValue) && !Array.isArray(parsed)) return defaultValue;
+        SERVER_STORE_CACHE[key] = { data: parsed, timestamp: Date.now() };
         return parsed as T;
       }
       if (key === "settings" && adminRow.gemini_key && adminRow.gemini_key.startsWith("{")) {
         const parsed = JSON.parse(adminRow.gemini_key);
+        SERVER_STORE_CACHE[key] = { data: parsed, timestamp: Date.now() };
         return parsed as T;
       }
     }
@@ -248,6 +265,7 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
         const raw = await readFile(p, "utf-8");
         const parsed = JSON.parse(raw);
         if (Array.isArray(defaultValue) && !Array.isArray(parsed)) return defaultValue;
+        SERVER_STORE_CACHE[key] = { data: parsed, timestamp: Date.now() };
         return parsed as T;
       }
     } catch {}
@@ -257,6 +275,7 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
 }
 
 export async function setStoreData<T>(key: string, localFilePath: string, data: T): Promise<void> {
+  delete SERVER_STORE_CACHE[key];
   const jsonContent = JSON.stringify(data, null, 2);
 
   // 1. Persist directly to Supabase admin_settings (Persists across ALL Vercel deployments & restarts)

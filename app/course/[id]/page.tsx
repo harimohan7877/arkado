@@ -146,10 +146,42 @@ export default function CourseDetailPage({ params }: PageProps) {
     return (
       <div className="min-h-screen bg-neutral-50 flex flex-col justify-between">
         <Navbar cartCount={0} onCartClick={() => {}} />
-        <div className="max-w-xl mx-auto px-4 py-32 text-center flex-1">
-          <div className="w-12 h-12 rounded-full border-4 border-stone-200 border-t-amber-600 animate-spin mx-auto" />
-          <p className="text-stone-500 mt-4 text-sm font-medium">Loading selection kit...</p>
-        </div>
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full animate-pulse space-y-6">
+          {/* Breadcrumb */}
+          <div className="h-4 w-48 bg-stone-200 rounded" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Left: Book Cover Skeleton */}
+            <div className="lg:col-span-5 aspect-[4/5] bg-stone-200 rounded-2xl w-full" />
+
+            {/* Right: Info Skeleton */}
+            <div className="lg:col-span-7 space-y-4">
+              <div className="h-6 w-32 bg-stone-200 rounded-full" />
+              <div className="space-y-2">
+                <div className="h-8 w-4/5 bg-stone-200 rounded-lg" />
+                <div className="h-8 w-3/5 bg-stone-200 rounded-lg" />
+              </div>
+              <div className="h-4 w-full bg-stone-200/70 rounded" />
+              <div className="h-4 w-2/3 bg-stone-200/70 rounded" />
+
+              {/* Price card */}
+              <div className="p-6 rounded-2xl bg-white border border-stone-200 space-y-4">
+                <div className="h-8 w-36 bg-stone-200 rounded-lg" />
+                <div className="flex gap-3">
+                  <div className="h-11 flex-1 bg-stone-200 rounded-xl" />
+                  <div className="h-11 w-32 bg-stone-200 rounded-xl" />
+                </div>
+              </div>
+
+              {/* Features skeleton */}
+              <div className="space-y-2 pt-2">
+                {[...Array(4)].map((_, i) => (
+                  <div key={i} className="h-4 w-5/6 bg-stone-200/60 rounded" />
+                ))}
+              </div>
+            </div>
+          </div>
+        </main>
         <Footer />
       </div>
     );

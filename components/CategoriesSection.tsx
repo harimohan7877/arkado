@@ -44,9 +44,12 @@ export default function CategoriesSection({ categories, title }: CategoriesSecti
   const sectionTitle = title || settings?.homepage?.categories_section_title || "Browse Top Categories";
 
   const cardStyle = settings?.homepage?.category_card_style || {};
-  const logoSize = cardStyle.logo_size || 80;
+  const logoSize = cardStyle.logo_size || 96;
   const logoShape = cardStyle.logo_shape || "circle";
-  const containerPadding = cardStyle.container_padding !== undefined ? cardStyle.container_padding : 4;
+  const containerPadding = cardStyle.container_padding !== undefined ? cardStyle.container_padding : 0;
+  const showInnerBorder = cardStyle.show_inner_border === true;
+  const showCardBorder = cardStyle.show_card_border !== false;
+  const textGap = cardStyle.text_gap !== undefined ? cardStyle.text_gap : 6;
   const textPosition = cardStyle.text_position || "below";
   const textSize = cardStyle.text_size || "xs";
   const showExamCount = cardStyle.show_exam_count !== false;
@@ -124,9 +127,13 @@ export default function CategoriesSection({ categories, title }: CategoriesSecti
                 width: `${logoSize}px`,
                 height: `${logoSize}px`,
                 padding: `${containerPadding}px`,
+                marginBottom: textPosition === "below" ? `${textGap}px` : undefined,
+                marginTop: textPosition === "above" ? `${textGap}px` : undefined,
               }}
-              className={`relative overflow-hidden bg-stone-50 border-2 border-stone-100 group-hover:border-amber-300 transition-all flex items-center justify-center ${shapeClass} ${
-                textPosition === "above" ? "mt-2" : "mb-2"
+              className={`relative overflow-hidden transition-all flex items-center justify-center shrink-0 ${shapeClass} ${
+                showInnerBorder
+                  ? "bg-stone-50 border-2 border-stone-100 group-hover:border-amber-300"
+                  : "bg-transparent border-0"
               }`}
             >
               {cat.logo_url && !failedImages[cat.id] ? (
@@ -137,10 +144,13 @@ export default function CategoriesSection({ categories, title }: CategoriesSecti
                   height={logoSize}
                   unoptimized
                   onError={() => setFailedImages((prev) => ({ ...prev, [cat.id]: true }))}
-                  className={`object-contain max-h-full max-w-full ${shapeClass}`}
+                  className={`w-full h-full object-contain ${shapeClass}`}
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center text-3xl">
+                <div
+                  className="w-full h-full flex items-center justify-center"
+                  style={{ fontSize: `${Math.max(20, Math.floor(logoSize * 0.45))}px` }}
+                >
                   {cat.icon || "🏛️"}
                 </div>
               )}
@@ -151,7 +161,11 @@ export default function CategoriesSection({ categories, title }: CategoriesSecti
             <Link
               key={cat.id}
               href={`/category/${cat.id}`}
-              className={`group flex flex-col items-center p-3 text-center transition-all cursor-pointer border bg-white border-stone-200 hover:border-amber-400 hover:shadow-md hover:-translate-y-0.5 ${cardBorderRadius}`}
+              className={`group flex flex-col items-center p-3 text-center transition-all cursor-pointer bg-white ${
+                showCardBorder
+                  ? "border border-stone-200 hover:border-amber-400 hover:shadow-md"
+                  : "border-0 shadow-xs hover:shadow-md bg-stone-50/70 hover:bg-white"
+              } hover:-translate-y-0.5 ${cardBorderRadius}`}
             >
               {textPosition === "above" ? (
                 <>

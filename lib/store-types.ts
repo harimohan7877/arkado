@@ -116,9 +116,12 @@ export interface Settings {
     new_arrivals_title?: string;
     categories_section_title?: string;
     category_card_style?: {
-      logo_size?: number; // e.g. 40 to 140, default 80
+      logo_size?: number; // e.g. 40 to 220, default 100
       logo_shape?: "circle" | "square" | "rounded-xl" | "rounded-2xl"; // default "circle"
-      container_padding?: number; // e.g. 0 to 16, default 4
+      container_padding?: number; // e.g. 0 to 20, default 0
+      show_inner_border?: boolean; // default false (no inner border/ring around logo)
+      show_card_border?: boolean; // default true (whether outer card has border or borderless)
+      text_gap?: number; // e.g. 0 to 32px spacing between logo and text
       container_bg?: string; // e.g. "bg-stone-50" or custom
       text_position?: "below" | "above"; // default "below"
       text_size?: "xs" | "sm" | "base"; // default "xs"

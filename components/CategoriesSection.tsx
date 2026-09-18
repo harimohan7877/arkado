@@ -43,6 +43,24 @@ export default function CategoriesSection({ categories, title }: CategoriesSecti
 
   const sectionTitle = title || settings?.homepage?.categories_section_title || "Browse Top Categories";
 
+  const cardStyle = settings?.homepage?.category_card_style || {};
+  const logoSize = cardStyle.logo_size || 80;
+  const logoShape = cardStyle.logo_shape || "circle";
+  const containerPadding = cardStyle.container_padding !== undefined ? cardStyle.container_padding : 4;
+  const textPosition = cardStyle.text_position || "below";
+  const textSize = cardStyle.text_size || "xs";
+  const showExamCount = cardStyle.show_exam_count !== false;
+  const cardBorderRadius = cardStyle.card_border_radius || "rounded-2xl";
+
+  const shapeClass =
+    logoShape === "square"
+      ? "rounded-none"
+      : logoShape === "rounded-xl"
+      ? "rounded-xl"
+      : logoShape === "rounded-2xl"
+      ? "rounded-2xl"
+      : "rounded-full";
+
   return (
     <section className="space-y-4">
       <div className="flex items-center justify-between flex-wrap gap-3">
@@ -85,35 +103,67 @@ export default function CategoriesSection({ categories, title }: CategoriesSecti
         {visibleCategories.map((cat) => {
           const count = cat.exam_count || cat.exam_ids?.length || 0;
 
+          const textBlock = (
+            <div className="flex flex-col items-center">
+              <p className={`font-bold leading-tight line-clamp-2 text-stone-800 group-hover:text-amber-700 transition ${
+                textSize === "sm" ? "text-sm" : textSize === "base" ? "text-base" : "text-xs"
+              }`}>
+                {cat.name}
+              </p>
+              {showExamCount && (
+                <span className="text-[10px] mt-1 font-semibold px-2 py-0.5 rounded-full bg-stone-100 text-stone-600 group-hover:bg-amber-50 group-hover:text-amber-800 transition">
+                  {count} {count === 1 ? "exam" : "exams"} →
+                </span>
+              )}
+            </div>
+          );
+
+          const logoBlock = (
+            <div
+              style={{
+                width: `${logoSize}px`,
+                height: `${logoSize}px`,
+                padding: `${containerPadding}px`,
+              }}
+              className={`relative overflow-hidden bg-stone-50 border-2 border-stone-100 group-hover:border-amber-300 transition-all flex items-center justify-center ${shapeClass} ${
+                textPosition === "above" ? "mt-2" : "mb-2"
+              }`}
+            >
+              {cat.logo_url && !failedImages[cat.id] ? (
+                <Image
+                  src={cat.logo_url}
+                  alt={cat.name}
+                  width={logoSize}
+                  height={logoSize}
+                  unoptimized
+                  onError={() => setFailedImages((prev) => ({ ...prev, [cat.id]: true }))}
+                  className={`object-contain max-h-full max-w-full ${shapeClass}`}
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center text-3xl">
+                  {cat.icon || "🏛️"}
+                </div>
+              )}
+            </div>
+          );
+
           return (
             <Link
               key={cat.id}
               href={`/category/${cat.id}`}
-              className="group flex flex-col items-center p-3 rounded-2xl text-center transition-all cursor-pointer border bg-white border-stone-200 hover:border-amber-400 hover:shadow-md hover:-translate-y-0.5"
+              className={`group flex flex-col items-center p-3 text-center transition-all cursor-pointer border bg-white border-stone-200 hover:border-amber-400 hover:shadow-md hover:-translate-y-0.5 ${cardBorderRadius}`}
             >
-              <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden bg-stone-50 border-2 border-stone-100 group-hover:border-amber-300 transition-all mb-2 flex items-center justify-center p-1">
-                {cat.logo_url && !failedImages[cat.id] ? (
-                  <Image
-                    src={cat.logo_url}
-                    alt={cat.name}
-                    width={72}
-                    height={72}
-                    unoptimized
-                    onError={() => setFailedImages((prev) => ({ ...prev, [cat.id]: true }))}
-                    className="object-contain max-h-full max-w-full rounded-full"
-                  />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center text-2xl sm:text-3xl">
-                    {cat.icon || "🏛️"}
-                  </div>
-                )}
-              </div>
-              <p className="text-xs font-bold leading-tight line-clamp-2 text-stone-800 group-hover:text-amber-700 transition">
-                {cat.name}
-              </p>
-              <span className="text-[10px] mt-1 font-semibold px-2 py-0.5 rounded-full bg-stone-100 text-stone-600 group-hover:bg-amber-50 group-hover:text-amber-800 transition">
-                {count} {count === 1 ? "exam" : "exams"} →
-              </span>
+              {textPosition === "above" ? (
+                <>
+                  {textBlock}
+                  {logoBlock}
+                </>
+              ) : (
+                <>
+                  {logoBlock}
+                  {textBlock}
+                </>
+              )}
             </Link>
           );
         })}

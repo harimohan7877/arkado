@@ -41,57 +41,6 @@ interface FeaturedStore {
   new_arrivals?: FeaturedExamConfig[];
 }
 
-function buildDynamicCourseForExam(exam: any, type?: "featured" | "new_arrival") {
-  const priority = exam.priority || 1;
-  const boardName = exam.board_name || exam.board || "Exam Board";
-  const catName = exam.category_name || "General";
-
-  return {
-    id: `bundle-exam-${exam.id}`,
-    exam_id: exam.id,
-    title: `${exam.name} - Complete Selection Kit`,
-    slug: exam.slug || `exam-${exam.id}`,
-    badge: "Complete Selection Kit",
-    short_description:
-      exam.viral_subtext ||
-      `${exam.name} (${boardName}) हेतु 2026 नए सिलेबस पर आधारित सम्पूर्ण हस्तलिखित थ्योरी नोट्स, 3000+ MCQs और फुल मॉक टेस्ट पेपर्स।`,
-    original_price: 999,
-    price: 199,
-    discount_percent: 80,
-    highlights: [
-      "सम्पूर्ण विषयवार हस्तलिखित थ्योरी नोट्स",
-      "3000+ विषयवार वस्तुनिष्ठ प्रश्नोत्तर (MCQs) व्याख्या सहित",
-      "5 फुल लेंथ मॉडल टेस्ट पेपर्स (ओरिजिनल परीक्षा पैटर्न पर)",
-      "प्रिंट हेतु तैयार A4 साइज PDF फॉर्मेट",
-    ],
-    subjects: [
-      `${exam.name} थ्योरी नोट्स एवं संपूर्ण सिलेबस`,
-      "विषयवार वस्तुनिष्ठ प्रश्नोत्तर (MCQs)",
-      "पिछले वर्षों के हल प्रश्न-पत्र (PYQs)",
-      "मॉडल टेस्ट पेपर्स एवं अभ्यास प्रश्न",
-    ],
-    syllabus_preview: [],
-    pages_count: "1,250+ Pages",
-    format: "Printable PDF",
-    language: "हिन्दी (Hindi)",
-    cover_image: exam.logo_url || "/images/bundles/cet_bundle_3d.jpg",
-    show_in_slider: true,
-    slider_tagline: "सलेक्शन का पक्का साथी — 80% विशेष छूट",
-    sample_pdf_url: exam.notes_link || "https://drive.google.com",
-    drive_url: exam.notes_link || "https://drive.google.com",
-    rating: 4.9,
-    rating_count: "3,850+ छात्र",
-    is_active: true,
-    is_featured: type === "featured",
-    featured_priority: priority,
-    is_new_arrival: type === "new_arrival",
-    new_arrival_priority: priority,
-    priority: priority,
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString(),
-  };
-}
-
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const exam = searchParams.get("exam");
@@ -102,34 +51,7 @@ export async function GET(req: Request) {
 
   try {
     const customCourses = await getStoreData<any[]>("courses", "data/courses-new.json", []);
-    const categories = await getStoreData<CategoryRecord[]>("categories", "data/categories.json", []);
-
-    // Extract all active exams from categories
-    const activeExams: any[] = [];
-    for (const c of categories) {
-      for (const b of c.boards || []) {
-        for (const e of b.exams || []) {
-          if (includeInactive || e.is_active) {
-            activeExams.push({
-              ...e,
-              board_name: b.short_name || b.name,
-              category_name: c.name,
-              category_id: c.id,
-            });
-          }
-        }
-      }
-    }
-
-    // Combine custom courses and active exams
     const allMergedCourses: any[] = [...customCourses];
-    const coveredExamIds = new Set(customCourses.map((c: any) => c.exam_id).filter(Boolean));
-
-    for (const actExam of activeExams) {
-      if (!coveredExamIds.has(actExam.id)) {
-        allMergedCourses.push(buildDynamicCourseForExam(actExam));
-      }
-    }
 
     // Read featured configuration from admin panel
     const featuredConfig = await getStoreData<FeaturedStore>("featured_exams", "data/featured_exams.json", {
@@ -148,10 +70,10 @@ export async function GET(req: Request) {
             c.exam_id === featExam.id ||
             c.id === featExam.id ||
             c.slug === featExam.id ||
-            (featExam.name && c.title.toLowerCase().includes(featExam.name.toLowerCase().split(" ")[0]))
+            (featExam.name && c.title?.toLowerCase().includes(featExam.name.toLowerCase().split(" ")[0]))
         );
 
-        if (matched) {
+        if (matched && !usedIds.has(matched.id)) {
           result.push({
             ...matched,
             is_active: true,
@@ -159,10 +81,6 @@ export async function GET(req: Request) {
             featured_priority: featExam.priority || result.length + 1,
           });
           usedIds.add(matched.id);
-        } else {
-          const syn = buildDynamicCourseForExam(featExam, "featured");
-          result.push(syn);
-          usedIds.add(syn.id);
         }
       }
 
@@ -192,10 +110,10 @@ export async function GET(req: Request) {
             c.exam_id === arrExam.id ||
             c.id === arrExam.id ||
             c.slug === arrExam.id ||
-            (arrExam.name && c.title.toLowerCase().includes(arrExam.name.toLowerCase().split(" ")[0]))
+            (arrExam.name && c.title?.toLowerCase().includes(arrExam.name.toLowerCase().split(" ")[0]))
         );
 
-        if (matched) {
+        if (matched && !usedIds.has(matched.id)) {
           result.push({
             ...matched,
             is_active: true,
@@ -203,10 +121,6 @@ export async function GET(req: Request) {
             new_arrival_priority: arrExam.priority || result.length + 1,
           });
           usedIds.add(matched.id);
-        } else {
-          const syn = buildDynamicCourseForExam(arrExam, "new_arrival");
-          result.push(syn);
-          usedIds.add(syn.id);
         }
       }
 

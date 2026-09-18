@@ -115,6 +115,16 @@ export interface Settings {
     hot_deals_title?: string;
     new_arrivals_title?: string;
     categories_section_title?: string;
+    category_card_style?: {
+      logo_size?: number; // e.g. 40 to 140, default 80
+      logo_shape?: "circle" | "square" | "rounded-xl" | "rounded-2xl"; // default "circle"
+      container_padding?: number; // e.g. 0 to 16, default 4
+      container_bg?: string; // e.g. "bg-stone-50" or custom
+      text_position?: "below" | "above"; // default "below"
+      text_size?: "xs" | "sm" | "base"; // default "xs"
+      show_exam_count?: boolean; // default true
+      card_border_radius?: "rounded-xl" | "rounded-2xl" | "rounded-3xl" | "rounded-none"; // default "rounded-2xl"
+    };
     newsletter_title?: string;
     newsletter_subtitle?: string;
     newsletter_placeholder?: string;

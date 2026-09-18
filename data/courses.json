@@ -62,7 +62,7 @@
     "pages_count": "1,450+ Pages",
     "format": "Printable PDF",
     "language": "हिन्दी (Hindi)",
-    "cover_image": "/images/bundles/cet_bundle_3d.jpg",
+    "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/rajasthan-cet-2026-bundle.png",
     "show_in_slider": true,
     "slider_tagline": "सलेक्शन का पक्का साथी — 80% विशेष छूट",
     "sample_pdf_url": "https://drive.google.com",
@@ -72,7 +72,10 @@
     "featured_priority": 1,
     "is_new_arrival": true,
     "new_arrival_priority": 1,
-    "exam_id": "1001"
+    "exam_id": "1001",
+    "updated_at": "2026-09-18T04:01:33.958Z",
+    "demo_html_mock_enabled": false,
+    "demo_html_mock_url": ""
   },
   {
     "id": "rajasthan-cet-grad-2026-bundle",
@@ -161,7 +164,7 @@
     "pages_count": "1,450+ Pages",
     "format": "Printable PDF",
     "language": "हिन्दी (Hindi)",
-    "cover_image": "/images/bundles/cet_bundle_3d.jpg",
+    "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/rajasthan-cet-grad-2026-bundle.png",
     "show_in_slider": true,
     "slider_tagline": "Only for 3 Days — 96% विशेष छूट (₹149)",
     "sample_pdf_url": "https://drive.google.com",
@@ -173,266 +176,365 @@
     "featured_priority": 2,
     "is_new_arrival": true,
     "new_arrival_priority": 2,
-    "exam_id": "1002"
+    "exam_id": "1002",
+    "updated_at": "2026-09-18T04:02:18.901Z"
   },
   {
-    "id": "rajasthan-patwari-2026-bundle",
-    "slug": "rajasthan-patwari",
-    "title": "Rajasthan Patwari 2026 - ब्रह्मास्त्र सिलेक्शन किट",
-    "exam_board": "RSMSSB",
-    "category": "rajasthan",
-    "category_label": "राजस्थान स्पेशल",
-    "badge": "Complete Exam Pack",
-    "short_description": "पटवारी भर्ती के नए सिलेबस पर आधारित संपूर्ण हस्तलिखित नोट्स, गणित-रीजनिंग ट्रिक्स और प्रीवियस ईयर पेपर्स।",
-    "original_price": 899,
-    "price": 199,
-    "discount_percent": 78,
-    "rating": 4.9,
-    "rating_count": "2,840+ छात्र",
-    "highlights": [
-      "नए 50 जिलों के अनुसार अपडेटेड राजस्थान GK नोट्स",
-      "गणित एवं रीजनिंग के शॉर्टकट ट्रिक्स व 1500+ अभ्यास प्रश्न",
-      "पिछले 10 वर्षों के हल सहित प्रश्न-पत्र (PYQs)"
-    ],
-    "subjects": [
-      "General Science, History, Polity & Geography of India",
-      "राजस्थान का भूगोल, इतिहास, संस्कृति एवं राजव्यवस्था",
-      "सामान्य हिन्दी एवं English Grammar",
-      "Mental ability & Reasoning, Basic Numerical efficiency",
-      "Basic Computer Awareness"
-    ],
-    "syllabus_preview": [
-      {
-        "subject": "गणित एवं रीजनिंग ट्रिक्स",
-        "chapters": [
-          "प्रतिशत, लाभ-हानि एवं बट्टा",
-          "सरल एवं चक्रवृद्धि ब्याज",
-          "औसत, अनुपात एवं समानुपात",
-          "रक्त संबंध, दिशा ज्ञान एवं कोडिंग-डिकोडिंग"
-        ]
-      },
-      {
-        "subject": "सामान्य हिन्दी व्याकरण",
-        "chapters": [
-          "संधि, समास, उपसर्ग एवं प्रत्यय",
-          "विलोम, पर्यायवाची एवं अनेकार्थक शब्द",
-          "वाक्य शुद्धि एवं शब्द शुद्धि",
-          "मुहावरे एवं लोकोक्तियां"
-        ]
-      }
-    ],
-    "pages_count": "1,200+ Pages",
-    "format": "Printable PDF",
-    "language": "हिन्दी (Hindi)",
-    "cover_image": "/images/bundles/patwari_bundle_3d.jpg",
-    "show_in_slider": true,
-    "slider_tagline": "नए 50 जिलों के अनुसार पूर्णतः अपडेटेड नोट्स",
-    "sample_pdf_url": "https://drive.google.com",
-    "drive_url": "https://drive.google.com",
-    "is_active": true,
-    "is_featured": false,
-    "featured_priority": 2,
-    "is_new_arrival": false,
-    "new_arrival_priority": 2,
-    "exam_id": "5125"
-  },
-  {
-    "id": "rajasthan-police-constable-bundle",
-    "slug": "rajasthan-police-constable",
-    "title": "Rajasthan Police Constable 2026 - वर्दी बैच बंडल",
-    "exam_board": "Police & Security",
-    "category": "police",
-    "category_label": "पुलिस & डिफेंस",
-    "badge": "Bestseller Kit",
-    "short_description": "कांस्टेबल एवं SI भर्ती के लिए विशेष महिला एवं बाल अपराध, कंप्यूटर और राजस्थान GK का संपूर्ण पैकेज।",
-    "original_price": 799,
-    "price": 149,
-    "discount_percent": 81,
-    "rating": 4.8,
-    "rating_count": "3,410+ छात्र",
-    "highlights": [
-      "कंप्यूटर सामान्य ज्ञान + महिला एवं बाल सुरक्षा कानून विशेष नोट्स",
-      "2500+ अति महत्वपूर्ण वस्तुनिष्ठ प्रश्नोत्तर",
-      "8 मॉडल टेस्ट पेपर्स ओएमआर शीट फॉर्मेट में"
-    ],
-    "subjects": [
-      "विवेचना एवं तार्किक योग्यता तथा कंप्यूटर का सामान्य ज्ञान",
-      "सामान्य ज्ञान, सामान्य विज्ञान, सामाजिक विज्ञान एवं समसामयिक विषय",
-      "महिलाओं एवं बच्चों के प्रति अपराध व कानूनी प्रावधान",
-      "राजस्थान के इतिहास, कला, संस्कृति, भूगोल, राजनीति एवं आर्थिक स्थिति"
-    ],
-    "syllabus_preview": [
-      {
-        "subject": "कंप्यूटर सामान्य ज्ञान (Special Weightage)",
-        "chapters": [
-          "कंप्यूटर का परिचय व आर्किटेक्चर",
-          "इनपुट/आउटपुट डिवाइसेस व मेमोरी",
-          "MS-Office एवं इंटरनेट साइबर सिक्योरिटी"
-        ]
-      },
-      {
-        "subject": "महिलाओं व बच्चों के प्रति अपराध व कानूनी प्रावधान",
-        "chapters": [
-          "POCSO Act, दहेज प्रतिषेध अधिनियम",
-          "घरेलू हिंसा से संरक्षण अधिनियम",
-          "कार्यस्थल पर महिलाओं का लैंगिक उत्पीड़न निवारण"
-        ]
-      }
-    ],
-    "pages_count": "980+ Pages",
-    "format": "Printable PDF",
-    "language": "हिन्दी (Hindi)",
-    "cover_image": "/images/bundles/police_bundle_3d.jpg",
-    "show_in_slider": true,
-    "slider_tagline": "वर्दी का सपना होगा साकार — मात्र ₹149 में",
-    "sample_pdf_url": "https://drive.google.com",
-    "drive_url": "https://drive.google.com",
-    "is_active": true,
-    "is_featured": false,
-    "featured_priority": 3,
-    "is_new_arrival": false,
-    "new_arrival_priority": 3,
-    "exam_id": "5426"
-  },
-  {
-    "id": "ssc-all-in-one-brahmastra-bundle",
-    "slug": "ssc-brahmastra-pack",
-    "title": "SSC & All-India 2026 - ऑल-इन-वन ब्रह्मास्त्र बंडल",
-    "exam_board": "SSC / Railways",
+    "id": "ssc-cgl-maths-1000-mcq-book",
+    "slug": "ssc-cgl-maths-1000-mcq-book",
+    "title": "SSC CGL 2026 : Quantitative Aptitude (गणित) 1,000 MCQs Practice Book",
+    "exam_board": "Staff Selection Commission (SSC)",
     "category": "ssc",
-    "category_label": "SSC & रेलवे",
-    "badge": "All-India Special",
-    "short_description": "SSC GD, CGL, CHSL, MTS और Railway NTPC/Group D के लिए 5000+ TCS पैटर्न MCQs, मैथ फॉर्मूला शीट व स्टेटिक GK।",
-    "original_price": 1299,
-    "price": 249,
-    "discount_percent": 81,
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "1,000 MCQs Book",
+    "short_description": "SSC CGL 2026 परीक्षा हेतु Quantitative Aptitude (अंकगणित एवं एडवांस मैथ्स) के 1,000 TCS पैटर्न आधारित बहुविकल्पीय प्रश्न (MCQs) विस्तृत हल एवं शॉर्ट ट्रिक्स सहित।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
     "rating": 4.9,
-    "rating_count": "5,190+ छात्र",
+    "rating_count": "1,480+ छात्र",
     "highlights": [
-      "5000+ TCS न्यू पैटर्न MCQs विस्तृत व्याख्या सहित",
-      "Maths Quick Revision Formula Pocket Book",
-      "संपूर्ण स्टेटिक GK (Dance, Art, Festivals, Rivers, National Parks)"
+      "1,000 TCS न्यू पैटर्न MCQs स्टेप-बाय-स्टेप विस्तृत हल सहित",
+      "Arithmetic (अंकगणित) + Advance Maths (Algebra, Geometry, Trigonometry, Mensuration)",
+      "प्रिंटेबल A4 2-कॉलम लेआउट",
+      "विगत 5 वर्षों (2020-2025) के CGL, CHSL व CPO प्रश्नों का टॉपिकवार विश्लेषण"
     ],
     "subjects": [
-      "Quantitative Aptitude (Arithmetic + Advance Maths)",
-      "General Intelligence & Reasoning",
-      "General Awareness & Static GK (TCS Pattern)",
-      "English Language & Comprehension"
+      "Number System, HCF & LCM, Simplification",
+      "Percentage, Profit & Loss, Discount",
+      "Ratio & Proportion, Mixture & Allegation, Partnership",
+      "Time & Work, Pipes & Cisterns",
+      "Speed, Time & Distance, Trains, Boats & Streams",
+      "Simple & Compound Interest",
+      "Algebra, Polynomials & Linear Equations",
+      "Geometry (Triangles, Circles, Quadrilaterals)",
+      "Trigonometry, Heights & Distances",
+      "Mensuration 2D & 3D (Area & Volume)",
+      "Data Interpretation (Bar, Pie, Line, Table Charts)"
     ],
     "syllabus_preview": [
       {
-        "subject": "Statically Proven TCS Static GK",
+        "subject": "अंकगणित (Arithmetic Mathematics)",
         "chapters": [
-          "Classical & Folk Dances of India",
-          "Indian Festivals & Fairs",
-          "National Parks, Biosphere Reserves & Ramsar Sites",
-          "UNESCO World Heritage Sites & Monuments"
+          "संख्या पद्धति, घातांक एवं सरलीकरण (Number System & Simplification)",
+          "प्रतिशत, लाभ-हानि एवं बट्टा (Percentage & Profit-Loss)",
+          "अनुपात, समानुपात एवं मिश्रण (Ratio & Mixture Allegation)",
+          "समय, कार्य, पाइप एवं टंकी (Time, Work & Pipes)",
+          "साधारण एवं चक्रवृद्धि ब्याज (Simple & Compound Interest)",
+          "चाल, समय, दूरी एवं नाव-धारा (Speed, Distance & Boats)"
         ]
       },
       {
-        "subject": "Maths & Arithmetic Short Tricks",
+        "subject": "एडवांस गणित (Advance Mathematics)",
         "chapters": [
-          "Percentage & Ratio Proportion",
-          "Time & Work, Pipes & Cisterns",
-          "Geometry & Mensuration 2D/3D Tricks",
-          "Data Interpretation (DI) sets"
+          "बीजगणित एवं सर्वसमिकाएं (Algebra & Identities)",
+          "ज्यामिति - रेखाएं, कोण एवं त्रिभुज (Geometry & Triangles)",
+          "वृत्त, स्पर्श रेखाएं एवं चतुर्भुज (Circles & Quadrilaterals)",
+          "त्रिकोणमिति एवं ऊंचाई-दूरी (Trigonometry & Heights)",
+          "क्षेत्रमिति 2D व 3D (Mensuration Surface & Volumes)",
+          "समंकों की व्याख्या (Data Interpretation - DI Sets)"
         ]
       }
     ],
-    "pages_count": "1,850+ Pages",
+    "pages_count": "320+ Pages",
     "format": "Printable PDF",
-    "language": "Bilingual (Hindi + English)",
-    "cover_image": "/images/bundles/ssc_bundle_3d.jpg",
-    "show_in_slider": true,
-    "slider_tagline": "TCS पैटर्न पर आधारित 5000+ MCQs व फॉर्मूला बुक",
+    "language": "द्विभाषी (Hindi + English)",
+    "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/ssc-cgl-maths-1000-mcq-book.png",
+    "show_in_slider": false,
+    "slider_tagline": "मैथ्स 1,000 TCS MCQs बुक — मात्र ₹49",
     "sample_pdf_url": "https://drive.google.com",
     "drive_url": "https://drive.google.com",
     "is_active": true,
-    "is_featured": false,
+    "is_featured": true,
+    "featured_priority": 1,
+    "is_new_arrival": true,
+    "new_arrival_priority": 1,
+    "exam_id": "5001",
+    "updated_at": "2026-09-18T04:41:56.880Z",
+    "demo_html_mock_enabled": false,
+    "demo_html_mock_url": ""
+  },
+  {
+    "id": "ssc-cgl-reasoning-1000-mcq-book",
+    "slug": "ssc-cgl-reasoning-1000-mcq-book",
+    "title": "SSC CGL 2026 : Reasoning & Mental Ability (तर्कशक्ति) 1,000 MCQs Practice Book",
+    "exam_board": "Staff Selection Commission (SSC)",
+    "category": "ssc",
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "1,000 MCQs Book",
+    "short_description": "SSC CGL 2026 हेतु General Intelligence & Reasoning (भाषिक एवं गैर-भाषिक तर्कशक्ति) के 1,000 उच्चस्तरीय प्रश्न व्याख्या, ट्रिक्स एवं स्पष्ट डायग्राम सहित।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
+    "rating": 4.9,
+    "rating_count": "1,320+ छात्र",
+    "highlights": [
+      "1,000 भाषिक (Verbal) एवं गैर-भाषिक (Non-Verbal) तर्कशक्ति प्रश्नोत्तर",
+      "Syllogism, Coding-Decoding, Blood Relations & Seating Arrangement के ट्रिकी सवाल",
+      "Cube, Dice, Paper Cutting व Mirror Image के उच्च-गुणवत्ता स्पष्ट आरेख (Diagrams)",
+      "Tier-1 में 50 में से 50 स्कोर पक्का करने हेतु क्विक लॉजिकल अप्रोच"
+    ],
+    "subjects": [
+      "Analogy & Classification (Number, Word, Letter)",
+      "Coding-Decoding & Alphabet/Number Series",
+      "Blood Relations (Coded & Direct)",
+      "Direction & Distance Test",
+      "Syllogism & Logical Venn Diagrams",
+      "Mathematical Operations & Missing Character",
+      "Ranking, Order & Seating Arrangement",
+      "Cube, Cuboid & Dice Problems",
+      "Counting of Figures (Triangles, Squares, Rectangles)",
+      "Paper Folding, Paper Cutting & Embedded Figures",
+      "Mirror & Water Images, Figure Series Completion"
+    ],
+    "syllabus_preview": [
+      {
+        "subject": "भाषिक तर्कशक्ति (Verbal Reasoning)",
+        "chapters": [
+          "सादृश्यता एवं वर्गीकरण (Analogy & Classification)",
+          "कोडिंग-डिकोडिंग एवं शृंखला परीक्षण (Coding & Series)",
+          "रक्त संबंध एवं दिशा ज्ञान परीक्षण (Blood Relations & Directions)",
+          "न्याय निगमन एवं कथन-निष्कर्ष (Syllogism & Logical Deduction)",
+          "बैठक व्यवस्था एवं क्रम परीक्षण (Seating Arrangement & Ranking)"
+        ]
+      },
+      {
+        "subject": "चित्रात्मक तर्कशक्ति (Non-Verbal Reasoning)",
+        "chapters": [
+          "घन, पासा एवं खुला पासा (Cube, Cuboid & Open Dice)",
+          "आकृतियों की गणना (Counting of Geometric Figures)",
+          "कागज मोड़ना एवं काटना (Paper Folding & Cutting)",
+          "दर्पण एवं जल प्रतिबिम्ब (Mirror & Water Images)",
+          "सन्निहित आकृतियां एवं पैटर्न पूर्ति (Embedded Figures & Completion)"
+        ]
+      }
+    ],
+    "pages_count": "290+ Pages",
+    "format": "Printable PDF",
+    "language": "द्विभाषी (Hindi + English)",
+    "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/ssc-cgl-reasoning-1000-mcq-book.png",
+    "show_in_slider": false,
+    "slider_tagline": "रीज़निंग 1,000 MCQs प्रैक्टिस बुक — मात्र ₹49",
+    "sample_pdf_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com",
+    "is_active": true,
+    "is_featured": true,
+    "featured_priority": 2,
+    "is_new_arrival": true,
+    "new_arrival_priority": 2,
+    "exam_id": "5001",
+    "updated_at": "2026-09-18T04:43:24.476Z",
+    "demo_html_mock_enabled": false,
+    "demo_html_mock_url": ""
+  },
+  {
+    "id": "ssc-cgl-gk-1000-mcq-book",
+    "slug": "ssc-cgl-gk-1000-mcq-book",
+    "title": "SSC CGL 2026 : General Awareness (सामान्य ज्ञान) 1,000 MCQs Practice Book",
+    "exam_board": "Staff Selection Commission (SSC)",
+    "category": "ssc",
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "1,000 MCQs Book",
+    "short_description": "SSC CGL 2026 हेतु सामान्य अध्ययन (इतिहास, राजव्यवस्था, भूगोल, अर्थव्यवस्था, सामान्य विज्ञान व स्टेटिक GK) के 1,000 NCERT एवं TCS पैटर्न आधारित प्रश्नोत्तर।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
+    "rating": 4.8,
+    "rating_count": "1,650+ छात्र",
+    "highlights": [
+      "1,000 NCERT एवं TCS विगत वर्षों पर आधारित अति-महत्वपूर्ण प्रश्नोत्तर",
+      "TCS स्पेशल स्टेटिक GK: शास्त्रीय नृत्य, घराने, लोक कला, उत्सव, राष्ट्रीय उद्यान",
+      "भारतीय संविधान (अनुच्छेद, संशोधन), आधुनिक भारत का इतिहास, भूगोल व अर्थव्यवस्था",
+      "प्रत्येक प्रश्न के साथ प्रासंगिक एक्स्ट्रा फैक्ट्स (स्मार्ट 4-इन-1 रिवीजन)"
+    ],
+    "subjects": [
+      "Indian History (Ancient, Medieval & Modern Freedom Struggle)",
+      "Indian Polity & Constitution (Articles, Parts, Schedules, Amendments)",
+      "Physical, Indian & World Geography",
+      "Indian Economy & 5-Year Plans, Budget Basics",
+      "General Science (Physics, Chemistry, Biology Concepts)",
+      "Static GK (Art, Culture, Dance, Music, Festivals, Awards, Sports)",
+      "Ecology, Environment & Biosphere Reserves"
+    ],
+    "syllabus_preview": [
+      {
+        "subject": "स्टेटिक सामान्य ज्ञान (TCS Trend Static GK)",
+        "chapters": [
+          "भारत के शास्त्रीय एवं लोक नृत्य, घराने (Dances & Musical Gharanas)",
+          "प्रमुख त्योहार, मेले एवं संगीत वाद्ययंत्र (Fairs, Festivals & Instruments)",
+          "राष्ट्रीय उद्यान, वन्यजीव अभयारण्य एवं रामसर स्थल (Sanctuaries & Parks)",
+          "यूनेस्को धरोहर स्थल एवं प्रमुख ऐतिहासिक स्मारक (Heritage Sites & Forts)",
+          "प्रमुख खेल, ट्रॉफियां, कप एवं स्टेडियम (Sports & Awards)"
+        ]
+      },
+      {
+        "subject": "कोर सामान्य अध्ययन (Core General Studies)",
+        "chapters": [
+          "भारतीय संविधान, मौलिक अधिकार एवं महत्वपूर्ण अनुच्छेद (Polity & Constitution)",
+          "भारतीय राष्ट्रीय स्वतंत्रता आंदोलन 1857-1947 (Modern Indian History)",
+          "भारत का भौतिक भूगोल, नदियां एवं अपवाह तंत्र (Physical Geography & Rivers)",
+          "दैनिक विज्ञान (Physics, Chemistry & Biology Life Science)",
+          "भारतीय अर्थव्यवस्था के प्रमुख सूचकांक व नीतियां (Economy Fundamentals)"
+        ]
+      }
+    ],
+    "pages_count": "280+ Pages",
+    "format": "Printable PDF",
+    "language": "द्विभाषी (Hindi + English)",
+    "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/ssc-cgl-gk-1000-mcq-book.png",
+    "show_in_slider": false,
+    "slider_tagline": "जीके/जीएस 1,000 TCS MCQs बुक — मात्र ₹49",
+    "sample_pdf_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com",
+    "is_active": true,
+    "is_featured": true,
+    "featured_priority": 3,
+    "is_new_arrival": true,
+    "new_arrival_priority": 3,
+    "exam_id": "5001",
+    "updated_at": "2026-09-18T04:44:02.424Z",
+    "demo_html_mock_enabled": false,
+    "demo_html_mock_url": ""
+  },
+  {
+    "id": "ssc-cgl-english-1000-mcq-book",
+    "slug": "ssc-cgl-english-1000-mcq-book",
+    "title": "SSC CGL 2026 : English Comprehension (अंग्रेजी) 1,000 MCQs Practice Book",
+    "exam_board": "Staff Selection Commission (SSC)",
+    "category": "ssc",
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "1,000 MCQs Book",
+    "short_description": "SSC CGL 2026 हेतु English Language & Comprehension (Grammar, Vocabulary, Reading & Cloze Test) के 1,000 प्रामाणिक प्रश्न नियम व उदाहरण सहित।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
+    "rating": 4.9,
+    "rating_count": "1,390+ छात्र",
+    "highlights": [
+      "1,000 ग्रामर रूल्स, वोकैबुलरी एवं रीडिंग कॉम्प्रिहेंशन आधारित टीसीएस प्रश्न",
+      "Error Spotting, Sentence Improvement, Active-Passive, Direct-Indirect",
+      "Synonyms, Antonyms, One Word Substitution, Idioms & Phrases (बार-बार पूछे जाने वाले)",
+      "Cloze Test एवं Reading Comprehension को 100% सटीकता से हल करने की तकनीक"
+    ],
+    "subjects": [
+      "Spotting Errors (Tenses, Subject-Verb Agreement, Prepositions)",
+      "Sentence Improvement & Phrase Replacement",
+      "Active & Passive Voice Transformation",
+      "Direct & Indirect Speech (Narration)",
+      "Synonyms & Antonyms (High Frequency Words)",
+      "One Word Substitution (SSC Repeated PYQs)",
+      "Idioms & Phrases with Meanings & Usage",
+      "Spelling Correction / Misspelt Words",
+      "Para Jumbles / Sentence Rearrangement (PQRS)",
+      "Cloze Test Passages with Options",
+      "Reading Comprehension (Passage Based Questions)"
+    ],
+    "syllabus_preview": [
+      {
+        "subject": "Grammar & Sentence Structures",
+        "chapters": [
+          "Subject-Verb Agreement, Tenses & Conditionals",
+          "Prepositions, Articles, Conjunctions & Modifiers",
+          "Error Spotting & Sentence Improvement Techniques",
+          "Active & Passive Voice Rules & Practice",
+          "Direct & Indirect Speech (Narration Rules)"
+        ]
+      },
+      {
+        "subject": "Vocabulary & Reading Skills",
+        "chapters": [
+          "Most Repeated Synonyms & Antonyms with Root Words",
+          "One Word Substitutions (Categorized by Themes)",
+          "High-Frequency Idioms, Phrases & Phrasal Verbs",
+          "Para Jumbles (Sentence Rearrangement Tricks)",
+          "Cloze Test & Reading Comprehension Strategies"
+        ]
+      }
+    ],
+    "pages_count": "310+ Pages",
+    "format": "Printable PDF",
+    "language": "English with Hindi Explanations",
+    "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/ssc-cgl-english-1000-mcq-book.png",
+    "show_in_slider": false,
+    "slider_tagline": "इंग्लिश 1,000 MCQs प्रैक्टिस बुक — मात्र ₹49",
+    "sample_pdf_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com",
+    "is_active": true,
+    "is_featured": true,
     "featured_priority": 4,
-    "is_new_arrival": false,
+    "is_new_arrival": true,
     "new_arrival_priority": 4,
-    "exam_id": "ssc-cgl"
+    "exam_id": "5001",
+    "updated_at": "2026-09-18T04:44:45.341Z",
+    "demo_html_mock_enabled": false,
+    "demo_html_mock_url": ""
   },
   {
-    "id": "rajasthan-reet-teaching-bundle",
-    "slug": "rajasthan-reet-teaching",
-    "title": "REET / 3rd Grade शिक्षक भर्ती 2026 - संपूर्ण पैकेज",
-    "exam_board": "Teaching & School",
-    "category": "teaching",
-    "category_label": "शिक्षक भर्ती",
-    "badge": "All-in-One Pack",
-    "short_description": "REET लेवल-1 एवं लेवल-2 (SST/Maths-Science) के लिए शिक्षण विधियां, मनोविज्ञान और विषयवार नोट्स।",
-    "original_price": 1199,
-    "price": 249,
-    "discount_percent": 79,
-    "rating": 4.8,
-    "rating_count": "1,920+ छात्र",
+    "id": "ssc-cgl-5-full-mock-tests-bundle",
+    "slug": "ssc-cgl-5-full-mock-tests-bundle",
+    "title": "SSC CGL 2026 : 5 Full-Length Tier-1 Simulation Mock Tests Bundle",
+    "exam_board": "Staff Selection Commission (SSC)",
+    "category": "ssc",
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "5 Full Mocks (500 Qs)",
+    "short_description": "SSC CGL 2026 Tier-1 परीक्षा की वास्तविक तैयारी हेतु 5 फुल-लेंथ सिमुलेशन टेस्ट पेपर्स (500 प्रश्न • 1000 अंक), OMR शीट एवं विस्तृत व्याख्या सहित।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
+    "rating": 4.9,
+    "rating_count": "1,890+ छात्र",
     "highlights": [
-      "बाल विकास एवं शिक्षा शास्त्र (Psychology) के आसान फ्लोचार्ट नोट्स",
-      "शिक्षण विधियां (Teaching Methods) एवं 2000+ वस्तुनिष्ठ प्रश्न",
-      "NCERT एवं RBSE पुस्तकों का निचोड़ सार संग्रह"
+      "5 फुल लेंथ सिमुलेशन टेस्ट पेपर्स (प्रत्येक में 100 प्रश्न • 200 अंक • 60 मिनट)",
+      "चारों विषयों का सटीक अनुपात: 25 Maths, 25 Reasoning, 25 English, 25 GK",
+      "घर पर रियल परीक्षा जैसा अनुभव देने हेतु प्रिंटेबल OMR प्रैक्टिस शीट्स",
+      "प्रत्येक प्रश्न का 100% विस्तृत हल, शॉर्टकट ट्रिक्स एवं कट-ऑफ एनालिसिस"
     ],
     "subjects": [
-      "बाल विकास एवं शिक्षण विधियां (Child Psychology)",
-      "भाषा-I (हिन्दी/संस्कृत/अंग्रेजी)",
-      "भाषा-II (हिन्दी/संस्कृत/अंग्रेजी)",
-      "गणित एवं पर्यावरण अध्ययन / सामाजिक अध्ययन (SST)"
+      "Full Mock Test 01 : Complete Tier-1 Simulation Paper (100 Qs / 200 Marks)",
+      "Full Mock Test 02 : Complete Tier-1 Simulation Paper (100 Qs / 200 Marks)",
+      "Full Mock Test 03 : Complete Tier-1 Simulation Paper (100 Qs / 200 Marks)",
+      "Full Mock Test 04 : Complete Tier-1 Simulation Paper (100 Qs / 200 Marks)",
+      "Full Mock Test 05 : Complete Tier-1 Simulation Paper (100 Qs / 200 Marks)",
+      "Standard A4 Printable OMR Practice Answer Sheets",
+      "Detailed Explanations, Step Solutions & Scoring Key"
     ],
-    "pages_count": "1,600+ Pages",
-    "format": "Printable PDF",
-    "language": "हिन्दी (Hindi)",
-    "cover_image": "/images/bundles/cet_bundle_3d.jpg",
-    "show_in_slider": false,
-    "slider_tagline": "NCERT + RBSE का संपूर्ण निचोड़",
+    "syllabus_preview": [
+      {
+        "subject": "Tier-1 सिमुलेशन टेस्ट पेपर्स (Exact Exam Pattern)",
+        "chapters": [
+          "SSC CGL Tier-1 Full Mock Test 01 (100 प्रश्न • 200 अंक)",
+          "SSC CGL Tier-1 Full Mock Test 02 (100 प्रश्न • 200 अंक)",
+          "SSC CGL Tier-1 Full Mock Test 03 (100 प्रश्न • 200 अंक)",
+          "SSC CGL Tier-1 Full Mock Test 04 (100 प्रश्न • 200 अंक)",
+          "SSC CGL Tier-1 Full Mock Test 05 (100 प्रश्न • 200 अंक)"
+        ]
+      },
+      {
+        "subject": "विस्तृत हल, OMR शीट्स व कट-ऑफ रणनीति",
+        "chapters": [
+          "A4 साइज प्रिंटेबल स्टैंडर्ड OMR रिस्पांस शीट्स (5 सेट्स)",
+          "मैथ्स एवं रीज़निंग के विस्तृत स्टेप-बाय-स्टेप शॉर्ट ट्रिक्स हल",
+          "इंग्लिश व सामान्य ज्ञान की व्याख्यात्मक उत्तर कुंजी",
+          "टाइम मैनेजमेंट रणनीति, विषयवार नेगेटिव मार्किंग व अपेक्षित कट-ऑफ गाइड"
+        ]
+      }
+    ],
+    "pages_count": "180+ Pages",
+    "format": "Printable PDF + OMR Sheets",
+    "language": "द्विभाषी (Hindi + English)",
+    "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/ssc-cgl-5-full-mock-tests-bundle.png",
+    "show_in_slider": true,
+    "slider_tagline": "SSC CGL 2026 : 5 फुल सिमुलेशन टेस्ट्स — मात्र ₹49!",
     "sample_pdf_url": "https://drive.google.com",
     "drive_url": "https://drive.google.com",
     "is_active": true,
-    "is_featured": false,
+    "is_featured": true,
     "featured_priority": 5,
-    "is_new_arrival": false,
+    "is_new_arrival": true,
     "new_arrival_priority": 5,
-    "exam_id": "5097"
-  },
-  {
-    "id": "rajasthan-ldc-junior-accountant-bundle",
-    "slug": "rajasthan-ldc-clerk",
-    "title": "RSMSSB LDC / Clerk Grade-II 2026 - स्कोर बूस्टर बंडल",
-    "exam_board": "RSMSSB",
-    "category": "rajasthan",
-    "category_label": "राजस्थान स्पेशल",
-    "badge": "High Scoring Pack",
-    "short_description": "LDC और कनिष्ठ सहायक के पेपर-1 (GK, Maths, Science) और पेपर-2 (Hindi, English) के सम्पूर्ण नोट्स।",
-    "original_price": 899,
-    "price": 199,
-    "discount_percent": 78,
-    "rating": 4.8,
-    "rating_count": "1,450+ छात्र",
-    "highlights": [
-      "सामान्य हिन्दी एवं General English व्याकरण के संपूर्ण नियम व अभ्यास",
-      "दैनिक विज्ञान और गणित के फॉर्मूला नोट्स व ट्रिक्स",
-      "5 फुल लेंथ प्रैक्टिस सेट्स विस्तृत व्याख्या सहित"
-    ],
-    "subjects": [
-      "सामान्य ज्ञान (General Knowledge) व राजस्थान GK",
-      "दैनिक विज्ञान (Everyday Science)",
-      "गणित (Mathematics)",
-      "सामान्य हिन्दी (General Hindi)",
-      "General English"
-    ],
-    "pages_count": "1,150+ Pages",
-    "format": "Printable PDF",
-    "language": "हिन्दी (Hindi)",
-    "cover_image": "/images/bundles/patwari_bundle_3d.jpg",
-    "show_in_slider": false,
-    "slider_tagline": "हिंदी और इंग्लिश में 100/100 स्कोरिंग स्ट्रेटेजी",
-    "sample_pdf_url": "https://drive.google.com",
-    "drive_url": "https://drive.google.com",
-    "is_active": true,
-    "is_featured": false,
-    "featured_priority": 6,
-    "is_new_arrival": false,
-    "new_arrival_priority": 6,
-    "exam_id": "5487"
+    "exam_id": "5001",
+    "updated_at": "2026-09-18T04:45:47.146Z",
+    "demo_html_mock_enabled": false,
+    "demo_html_mock_url": ""
   }
 ]

@@ -826,7 +826,7 @@
     "logo_url": "",
     "color": "bg-amber-600",
     "priority": 2,
-    "is_active": false,
+    "is_active": true,
     "sub_preview": "CGL • CHSL • MTS • GD कांस्टेबल • CPO SI",
     "viral_names": [
       "CGL",
@@ -852,7 +852,7 @@
         "icon": "🏛️",
         "logo_url": "",
         "priority": 1,
-        "is_active": false,
+        "is_active": true,
         "viral_preview": "CGL • CHSL • GD • MTS • CPO",
         "viral_names": [
           "CGL",
@@ -865,15 +865,16 @@
             "id": "5001",
             "name": "SSC CGL (संयुक्त स्नातक स्तरीय परीक्षा 2026)",
             "short_name": "SSC CGL",
-            "logo_url": "",
+            "logo_url": "/images/bundles/01_ssc_math_1000mcq_book.png",
             "priority": 1,
-            "is_active": false,
+            "is_active": true,
             "eligibility": "स्नातक",
             "age_limit": "18-32 वर्ष",
             "applicant_scale": "28+ लाख",
             "exam_pattern": "Tier-1 (200 अंक CBT) + Tier-2 (Paper-1 मैथ्स, रीज़निंग, इंग्लिश, GS, कंप्यूटर + टाइपिंग)",
             "viral_subtext": "केंद्रीय मंत्रालयों में ASO, इंस्पेक्टर, ITI, टैक्स असिस्टेंट 17,000+ पद",
-            "notes_link": ""
+            "notes_link": "",
+            "slug": "ssc-cgl"
           },
           {
             "id": "5002",

@@ -100,13 +100,6 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
   const [search, setSearch] = useState("");
   const [filterType, setFilterType] = useState<"all" | "custom" | "synced">("all");
 
-  const PRESET_COVERS = [
-    "/images/bundles/cet_bundle_3d.jpg",
-    "/images/bundles/patwari_bundle_3d.jpg",
-    "/images/bundles/police_bundle_3d.jpg",
-    "/images/bundles/ssc_bundle_3d.jpg",
-  ];
-
   const fetchData = async () => {
     try {
       setLoading(true);
@@ -1316,36 +1309,6 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
                       }
                       return null;
                     })()}
-
-                    {/* Optional 3D Presets */}
-                    <div className="pt-2 border-t border-stone-200">
-                      <p className="text-[11px] font-bold text-stone-600 mb-2">
-                        3. सैंपल 3D मॉकअप्स (वैकल्पिक टेम्पलेट्स — क्लिक करके चुनें या हटाएं):
-                      </p>
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                        {PRESET_COVERS.map((url) => {
-                          const isSelected = formData.cover_image === url;
-                          return (
-                            <button
-                              type="button"
-                              key={url}
-                              onClick={() => selectPresetCover(url)}
-                              className={`relative aspect-[4/3] rounded-lg overflow-hidden border-2 transition cursor-pointer ${
-                                isSelected ? "border-amber-600 ring-2 ring-amber-200" : "border-stone-200 hover:border-stone-300"
-                              }`}
-                            >
-                              {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img src={url} alt="" className="object-cover w-full h-full" />
-                              {isSelected && (
-                                <div className="absolute inset-0 bg-amber-600/40 flex items-center justify-center text-white text-xs font-bold">
-                                  ✓ चुना गया
-                                </div>
-                              )}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
                   </div>
                 </div>
               )}

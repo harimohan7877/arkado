@@ -99,6 +99,20 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
     is_active: true,
   });
 
+  // Category Card & Logo Customizer Modal State
+  const [showCardStyleModal, setShowCardStyleModal] = useState(false);
+  const [savingCardStyle, setSavingCardStyle] = useState(false);
+  const [settings, setSettings] = useState<any>(null);
+  const [cardStyle, setCardStyle] = useState({
+    logo_size: 84,
+    logo_shape: "circle" as "circle" | "rounded-xl" | "rounded-2xl" | "square",
+    container_padding: 4,
+    text_position: "below" as "above" | "below",
+    text_size: "xs" as "xs" | "sm" | "base",
+    show_exam_count: true,
+    card_border_radius: "rounded-2xl" as "rounded-xl" | "rounded-2xl" | "rounded-3xl",
+  });
+
   // Show toast utility
   const showToast = (text: string, type: "success" | "warning" | "error" = "success") => {
     setToastMsg({ text, type });
@@ -106,12 +120,75 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
   };
 
   // -------------------------------------------------------------
-  // INITIAL PROGRESSIVE LOAD (Categories + Courses/Kits)
+  // INITIAL PROGRESSIVE LOAD (Categories + Courses/Kits + Settings)
   // -------------------------------------------------------------
   useEffect(() => {
     fetchCategories();
     fetchCourses();
+    fetchSettings();
   }, []);
+
+  const fetchSettings = async () => {
+    try {
+      const authHeaders = typeof getAuthHeaders === "function" ? getAuthHeaders() : {};
+      const res = await fetch(`/api/admin/settings?t=${Date.now()}`, {
+        headers: authHeaders,
+        cache: "no-store",
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setSettings(data);
+        if (data?.homepage?.category_card_style) {
+          const s = data.homepage.category_card_style;
+          setCardStyle({
+            logo_size: s.logo_size ?? 84,
+            logo_shape: s.logo_shape ?? "circle",
+            container_padding: s.container_padding ?? 4,
+            text_position: s.text_position ?? "below",
+            text_size: s.text_size ?? "xs",
+            show_exam_count: s.show_exam_count !== false,
+            card_border_radius: s.card_border_radius ?? "rounded-2xl",
+          });
+        }
+      }
+    } catch (err) {
+      console.error("Failed to load settings:", err);
+    }
+  };
+
+  const handleSaveCardStyle = async () => {
+    try {
+      setSavingCardStyle(true);
+      const authHeaders = typeof getAuthHeaders === "function" ? getAuthHeaders() : {};
+      const updatedHomepage = {
+        ...(settings?.homepage || {}),
+        category_card_style: cardStyle,
+      };
+      const res = await fetch("/api/admin/settings", {
+        method: "POST",
+        headers: {
+          ...authHeaders,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          homepage: updatedHomepage,
+        }),
+      });
+
+      if (!res.ok) {
+        const errJson = await res.json().catch(() => ({}));
+        throw new Error(errJson.error || "सेटिंग्स सुरक्षित करने में विफल");
+      }
+      const data = await res.json();
+      setSettings(data);
+      showToast("श्रेणी कार्ड व लोगो स्टाइल सफलतापूर्वक अपडेट हो गया!", "success");
+      setShowCardStyleModal(false);
+    } catch (err: any) {
+      showToast(err.message || "स्टाइल सेव करने में त्रुटि", "error");
+    } finally {
+      setSavingCardStyle(false);
+    }
+  };
 
   const fetchCourses = async () => {
     try {
@@ -449,7 +526,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
       pages_count: "320+ Pages",
       format: "Printable PDF",
       language: "हिन्दी (Hindi)",
-      cover_image: currentExam.logo_url || "/images/bundles/ssc_bundle_3d.jpg",
+      cover_image: currentExam.logo_url || "",
       sample_pdf_url: "https://drive.google.com",
       drive_url: "https://drive.google.com",
       is_active: true,
@@ -926,7 +1003,19 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
               <span>⬅️</span>
               <span>{level === "exams" ? "बोर्ड्स पर वापस" : "श्रेणियों पर वापस"}</span>
             </button>
-          ) : null}
+          ) : (
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setShowCardStyleModal(true)}
+                className="text-xs font-bold bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 px-3.5 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5 shadow-2xs"
+                title="वेबसाइट के होमपेज पर श्रेणी कार्ड व लोगो का साइज, आकार और टेक्स्ट कस्टमाइज़ करें"
+              >
+                <span>🎨</span>
+                <span>कार्ड व लोगो कस्टमाइज़ करें</span>
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Table Content */}
@@ -1882,37 +1971,8 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                   )}
                 </div>
 
-                {/* Preset Cover Selector */}
-                <div>
-                  <span className="text-[10px] font-bold text-stone-500 block mb-1">
-                    पहले से तैयार 3D बंडल कवर्स में से चुनें:
-                  </span>
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                    {[
-                      { name: "SSC 3D", url: "/images/bundles/ssc_bundle_3d.jpg" },
-                      { name: "CET 3D", url: "/images/bundles/cet_bundle_3d.jpg" },
-                      { name: "Patwari 3D", url: "/images/bundles/patwari_bundle_3d.jpg" },
-                      { name: "Police 3D", url: "/images/bundles/police_bundle_3d.jpg" },
-                    ].map((preset) => (
-                      <button
-                        type="button"
-                        key={preset.url}
-                        onClick={() => setKitFormData({ ...kitFormData, cover_image: preset.url })}
-                        className={`p-1.5 rounded-lg border text-left transition flex items-center gap-2 cursor-pointer ${
-                          kitFormData.cover_image === preset.url
-                            ? "bg-emerald-50 border-emerald-500 text-emerald-800"
-                            : "bg-white border-stone-200 text-stone-700 hover:border-stone-300"
-                        }`}
-                      >
-                        <img src={preset.url} alt="" className="w-7 h-7 rounded object-cover" />
-                        <span className="text-[10px] font-bold truncate">{preset.name}</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Or Custom Upload */}
-                <div className="flex items-center gap-2 pt-1">
+                {/* Custom Upload or Exam Logo */}
+                <div className="flex flex-wrap items-center gap-2 pt-1">
                   <input
                     type="file"
                     ref={kitFileInputRef}
@@ -1924,16 +1984,25 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                     type="button"
                     onClick={() => kitFileInputRef.current?.click()}
                     disabled={uploadingKitImage}
-                    className="text-xs font-bold px-3 py-1.5 bg-white border border-stone-300 hover:bg-stone-50 text-stone-700 rounded-lg cursor-pointer transition shadow-2xs"
+                    className="px-3 py-1.5 rounded-lg border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-800 text-xs font-bold transition flex items-center gap-1.5 cursor-pointer disabled:opacity-50"
                   >
-                    {uploadingKitImage ? "अपलोड हो रहा है..." : "📤 कंप्यूटर से इमेज अपलोड करें"}
+                    📁 {uploadingKitImage ? "अपलोड हो रहा है..." : "कंप्यूटर से नई इमेज अपलोड करें"}
                   </button>
+                  {currentExam?.logo_url && (
+                    <button
+                      type="button"
+                      onClick={() => setKitFormData({ ...kitFormData, cover_image: currentExam.logo_url || "" })}
+                      className="px-2.5 py-1.5 rounded-lg border border-stone-200 bg-stone-50 hover:bg-stone-100 text-stone-700 text-xs font-medium transition cursor-pointer"
+                    >
+                      🏛️ परीक्षा लोगो लगाएं
+                    </button>
+                  )}
                   <input
                     type="text"
                     placeholder="या इमेज URL पेस्ट करें (/images/...)"
                     value={kitFormData.cover_image || ""}
                     onChange={(e) => setKitFormData({ ...kitFormData, cover_image: e.target.value })}
-                    className="flex-1 text-xs bg-white border border-stone-200 rounded-lg px-2.5 py-1.5 text-stone-900 outline-none focus:border-emerald-500"
+                    className="flex-1 min-w-[200px] text-xs bg-white border border-stone-200 rounded-lg px-2.5 py-1.5 text-stone-900 outline-none focus:border-emerald-500"
                   />
                 </div>
               </div>
@@ -1970,6 +2039,442 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================= */}
+      {/* 🎨 CATEGORY CARD & LOGO STYLING CUSTOMIZER MODAL          */}
+      {/* ========================================================= */}
+      {showCardStyleModal && (
+        <div className="fixed inset-0 z-50 bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-white border border-stone-200 rounded-3xl shadow-2xl max-w-4xl w-full p-6 space-y-6 my-8 animate-in fade-in zoom-in-95 duration-150">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between border-b border-stone-200 pb-4">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl shadow-inner">
+                  🎨
+                </div>
+                <div>
+                  <h3 className="font-extrabold text-base text-stone-900">
+                    होमपेज श्रेणी कार्ड व लोगो कस्टमाइज़र (Category Cards & Logo Style)
+                  </h3>
+                  <p className="text-xs text-stone-500">
+                    होमपेज पर दिखने वाले श्रेणी (Category) कार्ड्स का लोगो साइज, आकार, पैडिंग व टेक्स्ट पोजीशन रियल-टाइम बदलें
+                  </p>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowCardStyleModal(false)}
+                className="w-9 h-9 flex items-center justify-center rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-500 hover:text-stone-800 transition cursor-pointer text-base font-bold"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Split layout: Controls on Left, Live Preview on Right */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+              {/* LEFT COLUMN: Controls (7 cols) */}
+              <div className="lg:col-span-7 space-y-4">
+                {/* 1. Logo Size Slider */}
+                <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-4 space-y-2.5">
+                  <div className="flex items-center justify-between">
+                    <label className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
+                      <span>📏 लोगो का आकार (Logo Size)</span>
+                    </label>
+                    <span className="text-xs font-mono font-extrabold bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full border border-amber-300">
+                      {cardStyle.logo_size}px
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min="40"
+                    max="140"
+                    step="2"
+                    value={cardStyle.logo_size}
+                    onChange={(e) =>
+                      setCardStyle((prev) => ({ ...prev, logo_size: Number(e.target.value) }))
+                    }
+                    className="w-full accent-amber-600 cursor-pointer h-2 bg-stone-200 rounded-lg"
+                  />
+                  <div className="flex items-center justify-between text-[11px] text-stone-400">
+                    <span>छोटा (40px)</span>
+                    <span>डिफ़ॉल्ट (84px)</span>
+                    <span>बड़ा (140px)</span>
+                  </div>
+                  {/* Quick Preset Buttons */}
+                  <div className="flex items-center gap-2 pt-1">
+                    {[
+                      { label: "छोटा (56px)", size: 56 },
+                      { label: "मध्यम (84px)", size: 84 },
+                      { label: "बड़ा (100px)", size: 100 },
+                      { label: "विशाल (120px)", size: 120 },
+                    ].map((preset) => (
+                      <button
+                        key={preset.size}
+                        type="button"
+                        onClick={() =>
+                          setCardStyle((prev) => ({ ...prev, logo_size: preset.size }))
+                        }
+                        className={`text-[11px] font-bold px-2.5 py-1 rounded-lg border transition cursor-pointer ${
+                          cardStyle.logo_size === preset.size
+                            ? "bg-amber-600 text-white border-amber-600 shadow-xs"
+                            : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
+                        }`}
+                      >
+                        {preset.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 2. Logo Shape Selector */}
+                <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-4 space-y-2.5">
+                  <label className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
+                    <span>🔷 लोगो का कट/आकार (Logo Shape)</span>
+                  </label>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    {[
+                      { id: "circle", label: "⭕ गोल (Circle)", sub: "rounded-full" },
+                      { id: "rounded-2xl", label: "🔲 राउंडेड 2XL", sub: "rounded-2xl" },
+                      { id: "rounded-xl", label: "◽ राउंडेड XL", sub: "rounded-xl" },
+                      { id: "square", label: "⬛ चौकोर (Square)", sub: "rounded-none" },
+                    ].map((shape) => (
+                      <button
+                        key={shape.id}
+                        type="button"
+                        onClick={() =>
+                          setCardStyle((prev) => ({ ...prev, logo_shape: shape.id as any }))
+                        }
+                        className={`p-2.5 rounded-xl border text-center transition cursor-pointer flex flex-col items-center gap-1 ${
+                          cardStyle.logo_shape === shape.id
+                            ? "bg-amber-50 border-amber-500 ring-2 ring-amber-500/20 text-amber-950 font-extrabold"
+                            : "bg-white border-stone-200 text-stone-700 hover:bg-stone-100 font-medium"
+                        }`}
+                      >
+                        <span className="text-xs">{shape.label}</span>
+                        <span className="text-[10px] text-stone-400 font-mono">{shape.sub}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 3. Inner Container Padding */}
+                <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-4 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <label className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
+                      <span>🔳 लोगो कंटेनर इनर पैडिंग (Padding)</span>
+                    </label>
+                    <span className="text-xs font-mono font-extrabold bg-stone-200 text-stone-800 px-2 py-0.5 rounded-md">
+                      {cardStyle.container_padding}px
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="16"
+                    step="1"
+                    value={cardStyle.container_padding}
+                    onChange={(e) =>
+                      setCardStyle((prev) => ({ ...prev, container_padding: Number(e.target.value) }))
+                    }
+                    className="w-full accent-amber-600 cursor-pointer h-2 bg-stone-200 rounded-lg"
+                  />
+                  <div className="flex items-center justify-between text-[11px] text-stone-400">
+                    <span>0px (इमेज पूरी फैलेगी)</span>
+                    <span>4px (हल्की जगह)</span>
+                    <span>16px (अधिक जगह)</span>
+                  </div>
+                </div>
+
+                {/* 4. Text Position & Text Size Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  {/* Text Position */}
+                  <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-3.5 space-y-2">
+                    <label className="text-xs font-bold text-stone-800">
+                      📝 टेक्स्ट की स्थिति (Text Position)
+                    </label>
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        { id: "below", label: "⬇️ नीचे (Below)" },
+                        { id: "above", label: "⬆️ ऊपर (Above)" },
+                      ].map((pos) => (
+                        <button
+                          key={pos.id}
+                          type="button"
+                          onClick={() =>
+                            setCardStyle((prev) => ({ ...prev, text_position: pos.id as any }))
+                          }
+                          className={`text-xs py-2 px-2 rounded-xl border font-bold transition cursor-pointer text-center ${
+                            cardStyle.text_position === pos.id
+                              ? "bg-amber-600 text-white border-amber-600 shadow-xs"
+                              : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
+                          }`}
+                        >
+                          {pos.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Text Size */}
+                  <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-3.5 space-y-2">
+                    <label className="text-xs font-bold text-stone-800">
+                      🔤 टेक्स्ट का आकार (Text Size)
+                    </label>
+                    <div className="grid grid-cols-3 gap-1.5">
+                      {[
+                        { id: "xs", label: "छोटा (XS)" },
+                        { id: "sm", label: "मध्यम (SM)" },
+                        { id: "base", label: "बड़ा (Base)" },
+                      ].map((ts) => (
+                        <button
+                          key={ts.id}
+                          type="button"
+                          onClick={() =>
+                            setCardStyle((prev) => ({ ...prev, text_size: ts.id as any }))
+                          }
+                          className={`text-xs py-2 px-1 rounded-xl border font-bold transition cursor-pointer text-center ${
+                            cardStyle.text_size === ts.id
+                              ? "bg-amber-600 text-white border-amber-600 shadow-xs"
+                              : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
+                          }`}
+                        >
+                          {ts.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* 5. Exam Count Badge & Card Radius */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  {/* Exam Count Badge */}
+                  <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-3.5 space-y-2">
+                    <label className="text-xs font-bold text-stone-800">
+                      🏷️ परीक्षा संख्या बैज (Exam Badge)
+                    </label>
+                    <div className="grid grid-cols-2 gap-2">
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setCardStyle((prev) => ({ ...prev, show_exam_count: true }))
+                        }
+                        className={`text-xs py-2 px-2 rounded-xl border font-bold transition cursor-pointer text-center ${
+                          cardStyle.show_exam_count
+                            ? "bg-emerald-600 text-white border-emerald-600 shadow-xs"
+                            : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
+                        }`}
+                      >
+                        ✓ दिखाएं
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setCardStyle((prev) => ({ ...prev, show_exam_count: false }))
+                        }
+                        className={`text-xs py-2 px-2 rounded-xl border font-bold transition cursor-pointer text-center ${
+                          !cardStyle.show_exam_count
+                            ? "bg-rose-600 text-white border-rose-600 shadow-xs"
+                            : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
+                        }`}
+                      >
+                        ✕ छुपाएं
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Card Border Radius */}
+                  <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-3.5 space-y-2">
+                    <label className="text-xs font-bold text-stone-800">
+                      📐 कार्ड के कोने (Card Radius)
+                    </label>
+                    <div className="grid grid-cols-3 gap-1.5">
+                      {[
+                        { id: "rounded-xl", label: "XL" },
+                        { id: "rounded-2xl", label: "2XL" },
+                        { id: "rounded-3xl", label: "3XL" },
+                      ].map((cr) => (
+                        <button
+                          key={cr.id}
+                          type="button"
+                          onClick={() =>
+                            setCardStyle((prev) => ({ ...prev, card_border_radius: cr.id as any }))
+                          }
+                          className={`text-xs py-2 px-1 rounded-xl border font-bold transition cursor-pointer text-center ${
+                            cardStyle.card_border_radius === cr.id
+                              ? "bg-amber-600 text-white border-amber-600 shadow-xs"
+                              : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
+                          }`}
+                        >
+                          {cr.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* RIGHT COLUMN: Live Interactive Preview (5 cols) */}
+              <div className="lg:col-span-5 flex flex-col">
+                <div className="bg-stone-900 text-stone-100 rounded-3xl p-5 flex-1 flex flex-col justify-between border border-stone-800 shadow-xl space-y-4">
+                  <div>
+                    <div className="flex items-center justify-between border-b border-stone-800 pb-3 mb-4">
+                      <div className="flex items-center gap-2">
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                        <span className="text-xs font-bold tracking-wider uppercase text-emerald-400">
+                          लाइव होमपेज प्रिव्यू (Live Preview)
+                        </span>
+                      </div>
+                      <span className="text-[10px] text-stone-400 font-mono">
+                        {cardStyle.logo_size}px • {cardStyle.logo_shape}
+                      </span>
+                    </div>
+
+                    <p className="text-xs text-stone-400 mb-4">
+                      होमपेज पर यूज़र को यह कार्ड्स बिल्कुल ऐसे ही दिखाई देंगे:
+                    </p>
+
+                    {/* Preview Cards Grid */}
+                    <div className="grid grid-cols-2 gap-3.5">
+                      {(categories.length > 0 ? categories.slice(0, 2) : [
+                        { id: "raj", name: "राजस्थान भर्ती परीक्षाएं", icon: "🚩", logo_url: "", boards: [1, 2, 3] },
+                        { id: "ssc", name: "SSC परीक्षाएं", icon: "🏛️", logo_url: "", boards: [1, 2] },
+                      ]).map((cat) => {
+                        const previewShapeClass =
+                          cardStyle.logo_shape === "square"
+                            ? "rounded-none"
+                            : cardStyle.logo_shape === "rounded-xl"
+                            ? "rounded-xl"
+                            : cardStyle.logo_shape === "rounded-2xl"
+                            ? "rounded-2xl"
+                            : "rounded-full";
+
+                        const previewTextClass =
+                          cardStyle.text_size === "base"
+                            ? "text-sm font-extrabold"
+                            : cardStyle.text_size === "sm"
+                            ? "text-xs font-bold"
+                            : "text-[11px] font-bold";
+
+                        const examsCount =
+                          (cat.boards || []).reduce((acc: number, b: any) => acc + ((b.exams || []).length || 1), 0) || 4;
+
+                        return (
+                          <div
+                            key={cat.id}
+                            className={`bg-white text-stone-900 border border-stone-200 p-3.5 shadow-md flex flex-col items-center text-center transition-all ${
+                              cardStyle.card_border_radius || "rounded-2xl"
+                            }`}
+                          >
+                            {/* Text above logo if configured */}
+                            {cardStyle.text_position === "above" && (
+                              <div className="mb-2 text-center">
+                                <p className={`${previewTextClass} line-clamp-1`}>{cat.name}</p>
+                                {cardStyle.show_exam_count && (
+                                  <span className="text-[9px] font-bold text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded-full mt-0.5 inline-block">
+                                    {examsCount}+ Exams
+                                  </span>
+                                )}
+                              </div>
+                            )}
+
+                            {/* Logo / Badge */}
+                            <div
+                              style={{
+                                width: `${cardStyle.logo_size}px`,
+                                height: `${cardStyle.logo_size}px`,
+                                padding: `${cardStyle.container_padding}px`,
+                              }}
+                              className={`bg-amber-50 border border-amber-200/80 flex items-center justify-center shrink-0 shadow-xs overflow-hidden transition-all ${previewShapeClass}`}
+                            >
+                              {cat.logo_url ? (
+                                <img
+                                  src={cat.logo_url}
+                                  alt={cat.name}
+                                  className={`w-full h-full object-cover transition-all ${previewShapeClass}`}
+                                />
+                              ) : (
+                                <span style={{ fontSize: `${Math.max(20, Math.floor(cardStyle.logo_size * 0.45))}px` }}>
+                                  {cat.icon || "📁"}
+                                </span>
+                              )}
+                            </div>
+
+                            {/* Text below logo if configured */}
+                            {cardStyle.text_position !== "above" && (
+                              <div className="mt-2.5 text-center">
+                                <p className={`${previewTextClass} line-clamp-1`}>{cat.name}</p>
+                                {cardStyle.show_exam_count && (
+                                  <span className="text-[9px] font-bold text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded-full mt-0.5 inline-block">
+                                    {examsCount}+ Exams
+                                  </span>
+                                )}
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Quick Tip Box */}
+                  <div className="bg-stone-800/80 border border-stone-700/60 rounded-2xl p-3 text-[11px] text-stone-300">
+                    💡 <span className="font-bold text-amber-300">सलाह:</span> यदि आपके लोगो में चारों ओर किनारा या टेक्स्ट है, तो आकार <span className="font-mono text-white">84px से 100px</span> और कट <span className="font-mono text-white">🔲 राउंडेड 2XL</span> सबसे आकर्षक दिखता है।
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="pt-4 border-t border-stone-200 flex flex-wrap items-center justify-between gap-3">
+              <button
+                type="button"
+                onClick={() =>
+                  setCardStyle({
+                    logo_size: 84,
+                    logo_shape: "circle",
+                    container_padding: 4,
+                    text_position: "below",
+                    text_size: "xs",
+                    show_exam_count: true,
+                    card_border_radius: "rounded-2xl",
+                  })
+                }
+                className="text-xs font-bold text-stone-500 hover:text-stone-800 hover:bg-stone-100 px-3 py-2 rounded-xl transition cursor-pointer"
+              >
+                🔄 डिफ़ॉल्ट रीसेट करें (Reset Default)
+              </button>
+
+              <div className="flex items-center gap-2.5">
+                <button
+                  type="button"
+                  onClick={() => setShowCardStyleModal(false)}
+                  className="text-xs font-bold px-4 py-2 rounded-xl text-stone-600 hover:bg-stone-100 transition cursor-pointer"
+                >
+                  रद्द करें
+                </button>
+                <button
+                  type="button"
+                  onClick={handleSaveCardStyle}
+                  disabled={savingCardStyle}
+                  className="text-xs font-bold px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white shadow-sm transition cursor-pointer flex items-center gap-2 disabled:opacity-50"
+                >
+                  {savingCardStyle ? (
+                    <>
+                      <div className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      <span>सुरक्षित हो रहा है...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>💾</span>
+                      <span>स्टाइल सुरक्षित करें (Save Style)</span>
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       )}

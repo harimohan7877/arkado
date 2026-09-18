@@ -42,81 +42,7 @@ export async function GET(req: NextRequest) {
 
   try {
     const courses = await readCourses();
-    const categories = await getStoreData<CategoryRecord[]>("categories", "data/categories.json", []);
-
-    // Extract all active exams from the exam section
-    const activeExams: any[] = [];
-    for (const c of categories) {
-      for (const b of c.boards || []) {
-        for (const e of b.exams || []) {
-          if (e.is_active) {
-            activeExams.push({
-              ...e,
-              board_name: b.short_name || b.name,
-              category_name: c.name,
-            });
-          }
-        }
-      }
-    }
-
-    // Combine: Keep custom courses, and for any active exam that doesn't have a custom course, auto-sync it!
-    const combined: any[] = [...courses];
-    const coveredExamIds = new Set(courses.map((c: any) => c.exam_id).filter(Boolean));
-
-    for (const exam of activeExams) {
-      if (!coveredExamIds.has(exam.id)) {
-        combined.push({
-          id: `exam-${exam.id}`,
-          exam_id: exam.id,
-          title: `${exam.name} - Complete Selection Kit`,
-          slug: `exam-${exam.id}`,
-          badge: "Selection Kit",
-          short_description:
-            exam.viral_subtext ||
-            `${exam.name} (${exam.board_name}) हेतु 2026 नए सिलेबस पर आधारित सम्पूर्ण हस्तलिखित थ्योरी नोट्स, 3000+ MCQs और फुल मॉक टेस्ट।`,
-          original_price: 999,
-          price: 199,
-          discount_percent: 80,
-          highlights: [
-            "सम्पूर्ण विषयवार हस्तलिखित थ्योरी नोट्स",
-            "3000+ विषयवार वस्तुनिष्ठ प्रश्नोत्तर (MCQs) व्याख्या सहित",
-            "5 फुल लेंथ मॉडल टेस्ट पेपर्स (ओरिजिनल परीक्षा पैटर्न पर)",
-            "प्रिंट हेतु तैयार A4 साइज PDF फॉर्मेट",
-          ],
-          subjects: [
-            `${exam.name} थ्योरी नोट्स एवं संपूर्ण सिलेबस`,
-            "विषयवार वस्तुनिष्ठ प्रश्नोत्तर (MCQs)",
-            "पिछले वर्षों के हल प्रश्न-पत्र (PYQs)",
-            "मॉडल टेस्ट पेपर्स एवं अभ्यास प्रश्न",
-          ],
-          syllabus_preview: [],
-          pages_count: "1,250+ Pages",
-          format: "Printable PDF",
-          language: "हिन्दी (Hindi)",
-          cover_image: exam.logo_url || "/images/bundles/cet_bundle_3d.jpg",
-          show_in_slider: false,
-          slider_tagline: "",
-          is_featured: false,
-          featured_priority: 1,
-          is_new_arrival: false,
-          new_arrival_priority: 1,
-          sample_pdf_url: exam.notes_link || "https://drive.google.com",
-          drive_url: exam.notes_link || "https://drive.google.com",
-          demo_html_mock_enabled: false,
-          demo_html_mock_url: "",
-          rating: 4.9,
-          rating_count: "3,500+ छात्र",
-          is_active: true,
-          is_auto_synced: true,
-          priority: exam.priority || combined.length + 1,
-          created_at: new Date().toISOString(),
-          updated_at: new Date().toISOString(),
-        });
-      }
-    }
-
-    return NextResponse.json(combined);
+    return NextResponse.json(courses);
   } catch (err: any) {
     return NextResponse.json({ error: err.message || "Failed to load courses" }, { status: 500 });
   }
@@ -138,14 +64,51 @@ export async function POST(req: NextRequest) {
       for (const [key, value] of formData.entries()) {
         if (key === "cover") {
           coverFile = value as File;
-        } else if (key === "mock_html_file") {
+        } else if (key === "mock_html") {
           mockHtmlFile = value as File;
-        } else if (["highlights", "subjects", "syllabus_preview"].includes(key)) {
-          data[key] = JSON.parse(value.toString() || "[]");
-        } else if (["is_active", "show_in_slider", "is_featured", "is_new_arrival", "demo_html_mock_enabled"].includes(key)) {
-          data[key] = value === "true";
         } else if (
-          ["original_price", "price", "discount_percent", "rating", "priority", "featured_priority", "new_arrival_priority"].includes(
+          [
+            "price",
+            "original_price",
+            "priority",
+            "featured_priority",
+            "new_arrival_priority",
+            "rating",
+          ].includes(key)
+        ) {
+          data[key] = Number(value);
+        } else if (
+          [
+            "show_in_slider",
+            "is_featured",
+            "is_new_arrival",
+            "is_active",
+            "demo_html_mock_enabled",
+          ].includes(key)
+        ) {
+          data[key] = value === "true" || value === "1";
+        } else if (
+          [
+            "highlights",
+            "subjects",
+            "syllabus_preview",
+            "learning_outcomes",
+            "target_audience",
+          ].includes(key)
+        ) {
+          try {
+            data[key] = JSON.parse(value.toString());
+          } catch {
+            data[key] = value.toString();
+          }
+        } else if (
+          [
+            "price",
+            "original_price",
+            "priority",
+            "featured_priority",
+            "new_arrival_priority",
+          ].includes(
             key
           )
         ) {
@@ -160,7 +123,7 @@ export async function POST(req: NextRequest) {
     const slug = data.slug || data.title?.toLowerCase().replace(/\s+/g, "-") || `course-${Date.now()}`;
     const id = data.id || slug;
 
-    let coverImage = data.cover_image || "/images/bundles/cet_bundle_3d.webp";
+    let coverImage = data.cover_image || "";
     if (coverFile && coverFile.size > 0) {
       if (coverFile.size > MAX_IMAGE_SIZE) {
         return NextResponse.json({ error: "File too large. Max 10MB allowed." }, { status: 400 });
@@ -220,8 +183,8 @@ export async function POST(req: NextRequest) {
       updated_at: new Date().toISOString(),
     };
 
-    // If course with same id or exam_id exists, update it, else append
-    const existingIndex = courses.findIndex((c) => c.id === id || (c.exam_id && c.exam_id === newCourse.exam_id));
+    // Update if course with same exact id exists, else append
+    const existingIndex = courses.findIndex((c) => c.id === id);
     if (existingIndex >= 0) {
       courses[existingIndex] = { ...courses[existingIndex], ...newCourse };
     } else {

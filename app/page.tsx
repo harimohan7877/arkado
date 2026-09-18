@@ -241,6 +241,7 @@ export default function HomePage() {
             selectedCategory={selectedCategory}
             onSelectCategory={setSelectedCategory}
             title={categoriesTitle}
+            initialSettings={settings}
           />
         </section>
 

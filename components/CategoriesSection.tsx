@@ -11,15 +11,22 @@ interface CategoriesSectionProps {
   selectedCategory?: string;
   onSelectCategory?: (catId: string) => void;
   title?: string;
+  initialSettings?: Settings | null;
 }
 
-export default function CategoriesSection({ categories, title }: CategoriesSectionProps) {
+export default function CategoriesSection({ categories, title, initialSettings }: CategoriesSectionProps) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [settings, setSettings] = useState<Settings | null>(null);
+  const [settings, setSettings] = useState<Settings | null>(initialSettings || null);
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
-    fetch("/api/settings")
+    if (initialSettings) {
+      setSettings(initialSettings);
+    }
+  }, [initialSettings]);
+
+  useEffect(() => {
+    fetch(`/api/settings?t=${Date.now()}`, { cache: "no-store" })
       .then(r => r.json())
       .then(setSettings)
       .catch(() => {});
@@ -44,12 +51,16 @@ export default function CategoriesSection({ categories, title }: CategoriesSecti
   const sectionTitle = title || settings?.homepage?.categories_section_title || "Browse Top Categories";
 
   const cardStyle = settings?.homepage?.category_card_style || {};
-  const logoSize = cardStyle.logo_size || 96;
+  const logoSize = cardStyle.logo_size || 110;
   const logoShape = cardStyle.logo_shape || "circle";
   const containerPadding = cardStyle.container_padding !== undefined ? cardStyle.container_padding : 0;
   const showInnerBorder = cardStyle.show_inner_border === true;
-  const showCardBorder = cardStyle.show_card_border !== false;
+  const showCardBorder = cardStyle.show_card_border === true;
+  const cardGap = cardStyle.card_gap !== undefined ? cardStyle.card_gap : 10;
+  const cardPadding = cardStyle.card_padding !== undefined ? cardStyle.card_padding : 8;
   const textGap = cardStyle.text_gap !== undefined ? cardStyle.text_gap : 6;
+  const cardShadow = cardStyle.card_shadow || "sm";
+  const cardBgStyle = cardStyle.card_bg_style || "white";
   const textPosition = cardStyle.text_position || "below";
   const textSize = cardStyle.text_size || "xs";
   const showExamCount = cardStyle.show_exam_count !== false;
@@ -63,6 +74,22 @@ export default function CategoriesSection({ categories, title }: CategoriesSecti
       : logoShape === "rounded-2xl"
       ? "rounded-2xl"
       : "rounded-full";
+
+  const bgClass =
+    cardBgStyle === "stone"
+      ? "bg-stone-50 hover:bg-white"
+      : cardBgStyle === "glass"
+      ? "bg-white/80 backdrop-blur-xs hover:bg-white"
+      : "bg-white";
+
+  const shadowStyle =
+    cardShadow === "none"
+      ? "none"
+      : cardShadow === "md"
+      ? "0 4px 14px -2px rgba(28,25,23,0.08)"
+      : cardShadow === "lg"
+      ? "0 10px 25px -3px rgba(28,25,23,0.12)"
+      : "0 1px 3px rgba(0,0,0,0.05)";
 
   return (
     <section className="space-y-4">
@@ -102,7 +129,10 @@ export default function CategoriesSection({ categories, title }: CategoriesSecti
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+      <div
+        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
+        style={{ gap: `${cardGap}px` }}
+      >
         {visibleCategories.map((cat) => {
           const count = cat.exam_count || cat.exam_ids?.length || 0;
 
@@ -126,14 +156,24 @@ export default function CategoriesSection({ categories, title }: CategoriesSecti
               style={{
                 width: `${logoSize}px`,
                 height: `${logoSize}px`,
+                maxWidth: "100%",
+                maxHeight: `${logoSize}px`,
+                aspectRatio: "1 / 1",
                 padding: `${containerPadding}px`,
                 marginBottom: textPosition === "below" ? `${textGap}px` : undefined,
                 marginTop: textPosition === "above" ? `${textGap}px` : undefined,
+                border: showInnerBorder ? "1px solid #fef3c7" : "none",
+                borderWidth: showInnerBorder ? "1px" : "0px",
+                borderStyle: showInnerBorder ? "solid" : "none",
+                borderColor: showInnerBorder ? "#fef3c7" : "transparent",
+                outline: "none",
+                boxShadow: showInnerBorder ? undefined : "none",
+                background: showInnerBorder ? "#fffbeb" : "transparent",
               }}
               className={`relative overflow-hidden transition-all flex items-center justify-center shrink-0 ${shapeClass} ${
                 showInnerBorder
-                  ? "bg-stone-50 border-2 border-stone-100 group-hover:border-amber-300"
-                  : "bg-transparent border-0"
+                  ? "border border-amber-200/80 group-hover:border-amber-400"
+                  : ""
               }`}
             >
               {cat.logo_url && !failedImages[cat.id] ? (
@@ -161,10 +201,22 @@ export default function CategoriesSection({ categories, title }: CategoriesSecti
             <Link
               key={cat.id}
               href={`/category/${cat.id}`}
-              className={`group flex flex-col items-center p-3 text-center transition-all cursor-pointer bg-white ${
+              style={{
+                padding: `${cardPadding}px`,
+                border: showCardBorder ? "1px solid #e7e5e4" : "none",
+                borderWidth: showCardBorder ? "1px" : "0px",
+                borderStyle: showCardBorder ? "solid" : "none",
+                borderColor: showCardBorder ? "#e7e5e4" : "transparent",
+                outline: "none",
+                boxShadow: showCardBorder ? undefined : shadowStyle,
+                WebkitTapHighlightColor: "transparent",
+              }}
+              className={`group flex flex-col items-center text-center transition-all cursor-pointer ${bgClass} ${
                 showCardBorder
                   ? "border border-stone-200 hover:border-amber-400 hover:shadow-md"
-                  : "border-0 shadow-xs hover:shadow-md bg-stone-50/70 hover:bg-white"
+                  : cardShadow === "none"
+                  ? "hover:bg-stone-100/60"
+                  : "hover:shadow-md"
               } hover:-translate-y-0.5 ${cardBorderRadius}`}
             >
               {textPosition === "above" ? (

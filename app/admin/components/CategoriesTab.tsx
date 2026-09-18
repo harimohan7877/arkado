@@ -102,14 +102,19 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
   // Category Card & Logo Customizer Modal State
   const [showCardStyleModal, setShowCardStyleModal] = useState(false);
   const [savingCardStyle, setSavingCardStyle] = useState(false);
+  const [previewDevice, setPreviewDevice] = useState<"desktop" | "mobile">("mobile");
   const [settings, setSettings] = useState<any>(null);
   const [cardStyle, setCardStyle] = useState({
-    logo_size: 100,
+    logo_size: 110,
     logo_shape: "circle" as "circle" | "rounded-xl" | "rounded-2xl" | "square",
     container_padding: 0,
     show_inner_border: false,
-    show_card_border: true,
+    show_card_border: false,
+    card_gap: 10,
+    card_padding: 8,
     text_gap: 6,
+    card_shadow: "sm" as "none" | "sm" | "md" | "lg",
+    card_bg_style: "white" as "white" | "stone" | "glass",
     text_position: "below" as "above" | "below",
     text_size: "xs" as "xs" | "sm" | "base",
     show_exam_count: true,
@@ -144,12 +149,16 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
         if (data?.homepage?.category_card_style) {
           const s = data.homepage.category_card_style;
           setCardStyle({
-            logo_size: s.logo_size ?? 100,
+            logo_size: s.logo_size ?? 110,
             logo_shape: s.logo_shape ?? "circle",
             container_padding: s.container_padding ?? 0,
             show_inner_border: s.show_inner_border === true,
-            show_card_border: s.show_card_border !== false,
+            show_card_border: s.show_card_border === true,
+            card_gap: s.card_gap ?? 10,
+            card_padding: s.card_padding ?? 8,
             text_gap: s.text_gap ?? 6,
+            card_shadow: s.card_shadow ?? "sm",
+            card_bg_style: s.card_bg_style ?? "white",
             text_position: s.text_position ?? "below",
             text_size: s.text_size ?? "xs",
             show_exam_count: s.show_exam_count !== false,
@@ -2082,14 +2091,14 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
             {/* Split layout: Controls on Left, Live Preview on Right */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
               {/* LEFT COLUMN: Controls (7 cols) */}
-              <div className="lg:col-span-7 space-y-4">
-                {/* 1. Logo Size Slider */}
+              <div className="lg:col-span-7 space-y-4 max-h-[75vh] overflow-y-auto pr-1">
+                {/* 1. Logo Size Slider (Expanded to 300px) */}
                 <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-4 space-y-2.5">
                   <div className="flex items-center justify-between">
                     <label className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
                       <span>📏 लोगो का आकार (Logo Size)</span>
                       <span className="text-[10px] text-emerald-700 bg-emerald-100 font-bold px-1.5 py-0.5 rounded">
-                        असीमित साइज (40px - 220px)
+                        असीमित साइज (40px - 300px)
                       </span>
                     </label>
                     <span className="text-xs font-mono font-extrabold bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full border border-amber-300">
@@ -2099,7 +2108,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                   <input
                     type="range"
                     min="40"
-                    max="220"
+                    max="300"
                     step="2"
                     value={cardStyle.logo_size}
                     onChange={(e) =>
@@ -2107,11 +2116,12 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                     }
                     className="w-full accent-amber-600 cursor-pointer h-2 bg-stone-200 rounded-lg"
                   />
-                  <div className="flex items-center justify-between text-[11px] text-stone-400">
+                  <div className="flex items-center justify-between text-[10px] text-stone-400">
                     <span>छोटा (40px)</span>
-                    <span>मध्यम (100px)</span>
-                    <span>विशाल (160px)</span>
-                    <span>मैक्स (220px)</span>
+                    <span>मध्यम (110px)</span>
+                    <span>बड़ा (180px)</span>
+                    <span>जंबो (240px)</span>
+                    <span>मैक्स (300px)</span>
                   </div>
                   {/* Quick Preset Buttons */}
                   <div className="flex flex-wrap items-center gap-1.5 pt-1">
@@ -2122,7 +2132,9 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                       { label: "120px", size: 120 },
                       { label: "150px", size: 150 },
                       { label: "180px", size: 180 },
-                      { label: "200px", size: 200 },
+                      { label: "220px", size: 220 },
+                      { label: "260px", size: 260 },
+                      { label: "300px (Max)", size: 300 },
                     ].map((preset) => (
                       <button
                         key={preset.size}
@@ -2142,7 +2154,115 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                   </div>
                 </div>
 
-                {/* 2. Double Border & Frame Controls (User Specific Request) */}
+                {/* 2. Category-to-Category Distance / Gap Slider (User Request) */}
+                <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-4 space-y-2.5">
+                  <div className="flex items-center justify-between">
+                    <label className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
+                      <span>↔️ एक श्रेणी से दूसरी श्रेणी की दूरी (Category Card Gap)</span>
+                    </label>
+                    <span className="text-xs font-mono font-extrabold bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full border border-amber-300">
+                      {cardStyle.card_gap}px
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min="4"
+                    max="32"
+                    step="1"
+                    value={cardStyle.card_gap}
+                    onChange={(e) =>
+                      setCardStyle((prev) => ({ ...prev, card_gap: Number(e.target.value) }))
+                    }
+                    className="w-full accent-amber-600 cursor-pointer h-2 bg-stone-200 rounded-lg"
+                  />
+                  <div className="flex items-center justify-between text-[10px] text-stone-400">
+                    <span>सटा हुआ (4px)</span>
+                    <span>नजदीक (8px)</span>
+                    <span>डिफ़ॉल्ट (10px)</span>
+                    <span>खुला (16px)</span>
+                    <span>अधिक दूरी (24px+)</span>
+                  </div>
+                  {/* Gap Quick Presets */}
+                  <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                    {[
+                      { label: "4px (सटा हुआ)", gap: 4 },
+                      { label: "8px (नजदीक)", gap: 8 },
+                      { label: "10px (डिफ़ॉल्ट)", gap: 10 },
+                      { label: "14px (खुला)", gap: 14 },
+                      { label: "20px (दूर)", gap: 20 },
+                      { label: "28px (अत्यधिक दूरी)", gap: 28 },
+                    ].map((gp) => (
+                      <button
+                        key={gp.gap}
+                        type="button"
+                        onClick={() => setCardStyle((prev) => ({ ...prev, card_gap: gp.gap }))}
+                        className={`text-[11px] font-bold px-2.5 py-1 rounded-lg border transition cursor-pointer ${
+                          cardStyle.card_gap === gp.gap
+                            ? "bg-amber-600 text-white border-amber-600 shadow-xs"
+                            : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
+                        }`}
+                      >
+                        {gp.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* 3. Card Inner Padding Slider */}
+                <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-4 space-y-2.5">
+                  <div className="flex items-center justify-between">
+                    <label className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
+                      <span>📦 कार्ड की आंतरिक पैडिंग (Card Inner Padding)</span>
+                    </label>
+                    <span className="text-xs font-mono font-extrabold bg-stone-200 text-stone-800 px-2.5 py-0.5 rounded-md">
+                      {cardStyle.card_padding}px
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min="2"
+                    max="24"
+                    step="1"
+                    value={cardStyle.card_padding}
+                    onChange={(e) =>
+                      setCardStyle((prev) => ({ ...prev, card_padding: Number(e.target.value) }))
+                    }
+                    className="w-full accent-amber-600 cursor-pointer h-2 bg-stone-200 rounded-lg"
+                  />
+                  <div className="flex items-center justify-between text-[10px] text-stone-400">
+                    <span>कम पैडिंग / बड़ा लोगो (4px)</span>
+                    <span>संतुलित (8px)</span>
+                    <span>मध्यम (12px)</span>
+                    <span>बड़ी पैडिंग (18px)</span>
+                  </div>
+                  {/* Padding Quick Presets */}
+                  <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                    {[
+                      { label: "4px (लोगो सबसे बड़ा दिखेगा)", pad: 4 },
+                      { label: "8px (डिफ़ॉल्ट)", pad: 8 },
+                      { label: "12px (मध्यम)", pad: 12 },
+                      { label: "16px (खुला)", pad: 16 },
+                    ].map((cp) => (
+                      <button
+                        key={cp.pad}
+                        type="button"
+                        onClick={() => setCardStyle((prev) => ({ ...prev, card_padding: cp.pad }))}
+                        className={`text-[11px] font-bold px-2.5 py-1 rounded-lg border transition cursor-pointer ${
+                          cardStyle.card_padding === cp.pad
+                            ? "bg-amber-600 text-white border-amber-600 shadow-xs"
+                            : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
+                        }`}
+                      >
+                        {cp.label}
+                      </button>
+                    ))}
+                  </div>
+                  <p className="text-[10px] text-stone-500">
+                    *मोबाइल पर 4px से 8px पैडिंग रखने पर लोगो पूरे कार्ड में बड़ा और बिना कटे दिखता है।
+                  </p>
+                </div>
+
+                {/* 4. Double Border Controls */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   {/* Inner Logo Border / Ring */}
                   <div className="bg-amber-50/60 border border-amber-200/80 rounded-2xl p-3.5 space-y-2">
@@ -2165,7 +2285,6 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                             ? "bg-emerald-600 text-white border-emerald-600 shadow-xs"
                             : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
                         }`}
-                        title="लोगो के चारों ओर कोई अतिरिक्त पीला या ग्रे डिब्बा नहीं रहेगा, केवल आपका लोगो खुलकर दिखेगा"
                       >
                         🚫 बॉर्डर-रहित (Clean)
                       </button>
@@ -2180,11 +2299,11 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                             : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
                         }`}
                       >
-                        🔲 बॉर्डर रिंग दिखाएं
+                        🔲 बॉर्डर रिंग ऑन
                       </button>
                     </div>
                     <p className="text-[10px] text-stone-500">
-                      *बॉर्डर-रहित चुनने पर डबल-बॉर्डर हट जाता है और लोगो बड़ा दिखता है।
+                      *बॉर्डर-रहित चुनने पर अतिरिक्त घेरा हट जाता है और लोगो साफ दिखता है।
                     </p>
                   </div>
 
@@ -2202,6 +2321,19 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                       <button
                         type="button"
                         onClick={() =>
+                          setCardStyle((prev) => ({ ...prev, show_card_border: false }))
+                        }
+                        className={`text-xs py-2 px-1.5 rounded-xl border font-bold transition cursor-pointer text-center ${
+                          !cardStyle.show_card_border
+                            ? "bg-emerald-600 text-white border-emerald-600 shadow-xs"
+                            : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
+                        }`}
+                      >
+                        🚫 पूरा बॉर्डर-लेस
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() =>
                           setCardStyle((prev) => ({ ...prev, show_card_border: true }))
                         }
                         className={`text-xs py-2 px-1.5 rounded-xl border font-bold transition cursor-pointer text-center ${
@@ -2212,28 +2344,76 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                       >
                         ✓ कार्ड बॉर्डर ऑन
                       </button>
-                      <button
-                        type="button"
-                        onClick={() =>
-                          setCardStyle((prev) => ({ ...prev, show_card_border: false }))
-                        }
-                        className={`text-xs py-2 px-1.5 rounded-xl border font-bold transition cursor-pointer text-center ${
-                          !cardStyle.show_card_border
-                            ? "bg-emerald-600 text-white border-emerald-600 shadow-xs"
-                            : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
-                        }`}
-                        title="कार्ड का बाहरी बॉर्डर भी हट जाएगा, केवल हल्की आधुनिक शैडो दिखेगी"
-                      >
-                        🚫 पूरा बॉर्डर-लेस
-                      </button>
                     </div>
                     <p className="text-[10px] text-stone-500">
-                      *पूरा बॉर्डर-लेस करने पर कार्ड बिना लाइन के मॉडर्न शैडो में दिखता है।
+                      *मोबाइल और PC दोनों पर बिना किसी बॉर्डर लाइन के आधुनिक लुक मिलेगा।
                     </p>
                   </div>
                 </div>
 
-                {/* 3. Distance / Gap between Logo & Text */}
+                {/* 5. Card Shadow & Background Styles */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  {/* Shadow Style */}
+                  <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-3.5 space-y-2">
+                    <label className="text-xs font-bold text-stone-800">
+                      🌟 कार्ड की शैडो (Shadow & Float)
+                    </label>
+                    <div className="grid grid-cols-2 gap-1.5">
+                      {[
+                        { id: "none", label: "🚫 फ्लैट (0 शैडो)" },
+                        { id: "sm", label: "हल्की (Soft)" },
+                        { id: "md", label: "मध्यम (Float)" },
+                        { id: "lg", label: "3D (Pop)" },
+                      ].map((sh) => (
+                        <button
+                          key={sh.id}
+                          type="button"
+                          onClick={() =>
+                            setCardStyle((prev) => ({ ...prev, card_shadow: sh.id as any }))
+                          }
+                          className={`text-xs py-1.5 px-2 rounded-xl border font-bold transition cursor-pointer text-center ${
+                            cardStyle.card_shadow === sh.id
+                              ? "bg-amber-600 text-white border-amber-600 shadow-xs"
+                              : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
+                          }`}
+                        >
+                          {sh.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Card Background */}
+                  <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-3.5 space-y-2">
+                    <label className="text-xs font-bold text-stone-800">
+                      🎨 कार्ड बैकग्राउंड (Card Background)
+                    </label>
+                    <div className="grid grid-cols-3 gap-1.5">
+                      {[
+                        { id: "white", label: "सफ़ेद" },
+                        { id: "stone", label: "स्टोन" },
+                        { id: "glass", label: "ग्लास" },
+                      ].map((bg) => (
+                        <button
+                          key={bg.id}
+                          type="button"
+                          onClick={() =>
+                            setCardStyle((prev) => ({ ...prev, card_bg_style: bg.id as any }))
+                          }
+                          className={`text-xs py-1.5 px-1 rounded-xl border font-bold transition cursor-pointer text-center ${
+                            cardStyle.card_bg_style === bg.id
+                              ? "bg-amber-600 text-white border-amber-600 shadow-xs"
+                              : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
+                          }`}
+                        >
+                          {bg.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* 6. Distance / Gap between Logo & Text */}
                 <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-4 space-y-2.5">
                   <div className="flex items-center justify-between">
                     <label className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
@@ -2246,7 +2426,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                   <input
                     type="range"
                     min="0"
-                    max="32"
+                    max="28"
                     step="1"
                     value={cardStyle.text_gap}
                     onChange={(e) =>
@@ -2254,38 +2434,16 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                     }
                     className="w-full accent-amber-600 cursor-pointer h-2 bg-stone-200 rounded-lg"
                   />
-                  <div className="flex items-center justify-between text-[11px] text-stone-400">
+                  <div className="flex items-center justify-between text-[10px] text-stone-400">
                     <span>सटा हुआ (0px)</span>
                     <span>नजदीक (4px)</span>
-                    <span>सामान्य (8px)</span>
-                    <span>अधिक दूरी (16px+)</span>
-                  </div>
-                  {/* Gap Quick Presets */}
-                  <div className="flex items-center gap-2 pt-1">
-                    {[
-                      { label: "0px (चिपका हुआ)", gap: 0 },
-                      { label: "4px (नजदीक)", gap: 4 },
-                      { label: "8px (डिफ़ॉल्ट)", gap: 8 },
-                      { label: "14px (खुला)", gap: 14 },
-                      { label: "20px (अधिक दूर)", gap: 20 },
-                    ].map((gp) => (
-                      <button
-                        key={gp.gap}
-                        type="button"
-                        onClick={() => setCardStyle((prev) => ({ ...prev, text_gap: gp.gap }))}
-                        className={`text-[11px] font-bold px-2 py-1 rounded-lg border transition cursor-pointer ${
-                          cardStyle.text_gap === gp.gap
-                            ? "bg-amber-600 text-white border-amber-600 shadow-xs"
-                            : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
-                        }`}
-                      >
-                        {gp.label}
-                      </button>
-                    ))}
+                    <span>सामान्य (6px)</span>
+                    <span>खुला (12px)</span>
+                    <span>अधिक दूरी (20px+)</span>
                   </div>
                 </div>
 
-                {/* 4. Logo Shape Selector */}
+                {/* 7. Logo Shape Selector */}
                 <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-4 space-y-2.5">
                   <label className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
                     <span>🔷 लोगो का कट/आकार (Logo Shape)</span>
@@ -2316,7 +2474,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                   </div>
                 </div>
 
-                {/* 5. Inner Container Padding */}
+                {/* 8. Inner Container Padding */}
                 <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-4 space-y-2">
                   <div className="flex items-center justify-between">
                     <label className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
@@ -2340,15 +2498,15 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                     }
                     className="w-full accent-amber-600 cursor-pointer h-2 bg-stone-200 rounded-lg"
                   />
-                  <div className="flex items-center justify-between text-[11px] text-stone-400">
+                  <div className="flex items-center justify-between text-[10px] text-stone-400">
                     <span>0px (इमेज पूरी फैलेगी - अनुशंसित)</span>
                     <span>4px</span>
-                    <span>12px</span>
-                    <span>20px</span>
+                    <span>10px</span>
+                    <span>18px</span>
                   </div>
                 </div>
 
-                {/* 6. Text Position & Text Size Grid */}
+                {/* 9. Text Position & Text Size Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   {/* Text Position */}
                   <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-3.5 space-y-2">
@@ -2408,7 +2566,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                   </div>
                 </div>
 
-                {/* 7. Exam Count Badge & Card Radius */}
+                {/* 10. Exam Count Badge & Card Radius */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   {/* Exam Count Badge */}
                   <div className="bg-stone-50/80 border border-stone-200/80 rounded-2xl p-3.5 space-y-2">
@@ -2480,118 +2638,192 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
               <div className="lg:col-span-5 flex flex-col">
                 <div className="bg-stone-900 text-stone-100 rounded-3xl p-5 flex-1 flex flex-col justify-between border border-stone-800 shadow-xl space-y-4">
                   <div>
-                    <div className="flex items-center justify-between border-b border-stone-800 pb-3 mb-4">
-                      <div className="flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                        <span className="text-xs font-bold tracking-wider uppercase text-emerald-400">
-                          लाइव होमपेज प्रिव्यू (Live Preview)
+                    {/* Header + Device Toggle */}
+                    <div className="flex flex-col gap-2.5 border-b border-stone-800 pb-3 mb-4">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                          <span className="text-xs font-bold tracking-wider uppercase text-emerald-400">
+                            लाइव प्रिव्यू (Live Preview)
+                          </span>
+                        </div>
+                        <span className="text-[10px] text-stone-400 font-mono">
+                          {cardStyle.logo_size}px • Gap: {cardStyle.card_gap}px
                         </span>
                       </div>
-                      <span className="text-[10px] text-stone-400 font-mono">
-                        {cardStyle.logo_size}px • {cardStyle.show_inner_border ? "Bordered" : "Borderless"}
-                      </span>
+
+                      {/* Device Switcher */}
+                      <div className="flex items-center justify-center p-1 bg-stone-800/80 rounded-xl border border-stone-700/60 gap-1">
+                        <button
+                          type="button"
+                          onClick={() => setPreviewDevice("mobile")}
+                          className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg text-xs font-bold transition cursor-pointer ${
+                            previewDevice === "mobile"
+                              ? "bg-amber-600 text-white shadow-xs"
+                              : "text-stone-400 hover:text-stone-200"
+                          }`}
+                        >
+                          <span>📱</span>
+                          <span>मोबाइल व्यू (2-Col)</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setPreviewDevice("desktop")}
+                          className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-lg text-xs font-bold transition cursor-pointer ${
+                            previewDevice === "desktop"
+                              ? "bg-amber-600 text-white shadow-xs"
+                              : "text-stone-400 hover:text-stone-200"
+                          }`}
+                        >
+                          <span>🖥️</span>
+                          <span>डेस्कटॉप व्यू</span>
+                        </button>
+                      </div>
                     </div>
 
-                    <p className="text-xs text-stone-400 mb-4">
-                      होमपेज पर यूज़र को यह कार्ड्स बिल्कुल ऐसे ही दिखाई देंगे:
+                    <p className="text-[11px] text-stone-400 mb-3 text-center">
+                      {previewDevice === "mobile"
+                        ? "📱 मोबाइल स्क्रीन (Real Smartphone Screen) पर ऐसा दिखेगा:"
+                        : "🖥️ लैपटॉप / पीसी स्क्रीन पर ऐसा दिखेगा:"}
                     </p>
 
-                    {/* Preview Cards Grid */}
-                    <div className="grid grid-cols-2 gap-3.5">
-                      {(categories.length > 0 ? categories.slice(0, 2) : [
-                        { id: "rajasthan", name: "राजस्थान (Rajasthan State)", icon: "🚩", logo_url: "/images/categories/rajasthan_category_logo.jpg", boards: [1, 2, 3] },
-                        { id: "ssc", name: "कर्मचारी चयन आयोग (SSC National)", icon: "🏛️", logo_url: "/images/categories/ssc_category_logo.jpg", boards: [1, 2] },
-                      ]).map((cat) => {
-                        const previewShapeClass =
-                          cardStyle.logo_shape === "square"
-                            ? "rounded-none"
-                            : cardStyle.logo_shape === "rounded-xl"
-                            ? "rounded-xl"
-                            : cardStyle.logo_shape === "rounded-2xl"
-                            ? "rounded-2xl"
-                            : "rounded-full";
+                    {/* Simulated Device Container */}
+                    <div
+                      className={
+                        previewDevice === "mobile"
+                          ? "max-w-[340px] mx-auto bg-stone-950 p-3 rounded-[28px] border-4 border-stone-700 shadow-2xl transition-all"
+                          : "w-full bg-stone-950/60 p-3 rounded-2xl border border-stone-800 transition-all"
+                      }
+                    >
+                      {/* Mobile Notch Indicator */}
+                      {previewDevice === "mobile" && (
+                        <div className="w-16 h-1 bg-stone-700 rounded-full mx-auto mb-3" />
+                      )}
 
-                        const previewTextClass =
-                          cardStyle.text_size === "base"
-                            ? "text-sm font-extrabold"
-                            : cardStyle.text_size === "sm"
-                            ? "text-xs font-bold"
-                            : "text-[11px] font-bold";
+                      {/* Preview Cards Grid */}
+                      <div
+                        className={previewDevice === "mobile" ? "grid grid-cols-2" : "grid grid-cols-3"}
+                        style={{ gap: `${cardStyle.card_gap}px` }}
+                      >
+                        {(categories.length > 0 ? categories.slice(0, previewDevice === "mobile" ? 2 : 3) : [
+                          { id: "rajasthan", name: "राजस्थान (Rajasthan State)", icon: "🚩", logo_url: "/images/categories/rajasthan_category_logo.jpg", boards: [1, 2, 3] },
+                          { id: "ssc", name: "कर्मचारी चयन आयोग (SSC)", icon: "🏛️", logo_url: "/images/categories/ssc_category_logo.jpg", boards: [1, 2] },
+                          { id: "railway", name: "भारतीय रेलवे (RRB)", icon: "🚂", logo_url: "", boards: [1] },
+                        ]).slice(0, previewDevice === "mobile" ? 2 : 3).map((cat) => {
+                          const previewShapeClass =
+                            cardStyle.logo_shape === "square"
+                              ? "rounded-none"
+                              : cardStyle.logo_shape === "rounded-xl"
+                              ? "rounded-xl"
+                              : cardStyle.logo_shape === "rounded-2xl"
+                              ? "rounded-2xl"
+                              : "rounded-full";
 
-                        const examsCount =
-                          (cat.boards || []).reduce((acc: number, b: any) => acc + ((b.exams || []).length || 1), 0) || 3;
+                          const previewTextClass =
+                            cardStyle.text_size === "base"
+                              ? "text-sm font-extrabold"
+                              : cardStyle.text_size === "sm"
+                              ? "text-xs font-bold"
+                              : "text-[11px] font-bold";
 
-                        return (
-                          <div
-                            key={cat.id}
-                            className={`bg-white text-stone-900 p-3.5 transition-all flex flex-col items-center text-center ${
-                              cardStyle.show_card_border
-                                ? "border border-stone-200 shadow-sm"
-                                : "border-0 shadow-lg bg-stone-50/80"
-                            } ${cardStyle.card_border_radius || "rounded-2xl"}`}
-                          >
-                            {/* Text above logo if configured */}
-                            {cardStyle.text_position === "above" && (
+                          const examsCount =
+                            (cat.boards || []).reduce((acc: number, b: any) => acc + ((b.exams || []).length || 1), 0) || 3;
+
+                          const bgClass =
+                            cardStyle.card_bg_style === "stone"
+                              ? "bg-stone-50"
+                              : cardStyle.card_bg_style === "glass"
+                              ? "bg-white/90 backdrop-blur-xs"
+                              : "bg-white";
+
+                          const shadowStyle =
+                            cardStyle.card_shadow === "none"
+                              ? "none"
+                              : cardStyle.card_shadow === "md"
+                              ? "0 4px 14px -2px rgba(28,25,23,0.12)"
+                              : cardStyle.card_shadow === "lg"
+                              ? "0 10px 25px -3px rgba(28,25,23,0.18)"
+                              : "0 1px 3px rgba(0,0,0,0.06)";
+
+                          return (
+                            <div
+                              key={cat.id}
+                              style={{
+                                padding: `${cardStyle.card_padding}px`,
+                                border: cardStyle.show_card_border ? "1px solid #e7e5e4" : "none",
+                                borderWidth: cardStyle.show_card_border ? "1px" : "0px",
+                                outline: "none",
+                                boxShadow: cardStyle.show_card_border ? undefined : shadowStyle,
+                              }}
+                              className={`${bgClass} text-stone-900 transition-all flex flex-col items-center text-center ${cardStyle.card_border_radius || "rounded-2xl"}`}
+                            >
+                              {/* Text above logo if configured */}
+                              {cardStyle.text_position === "above" && (
+                                <div
+                                  style={{ marginBottom: `${cardStyle.text_gap}px` }}
+                                  className="text-center w-full"
+                                >
+                                  <p className={`${previewTextClass} line-clamp-1`}>{cat.name}</p>
+                                  {cardStyle.show_exam_count && (
+                                    <span className="text-[9px] font-bold text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded-full mt-0.5 inline-block">
+                                      {examsCount}+ Exams
+                                    </span>
+                                  )}
+                                </div>
+                              )}
+
+                              {/* Logo / Badge */}
                               <div
-                                style={{ marginBottom: `${cardStyle.text_gap}px` }}
-                                className="text-center"
+                                style={{
+                                  width: `${cardStyle.logo_size}px`,
+                                  height: `${cardStyle.logo_size}px`,
+                                  maxWidth: "100%",
+                                  maxHeight: `${cardStyle.logo_size}px`,
+                                  aspectRatio: "1 / 1",
+                                  padding: `${cardStyle.container_padding}px`,
+                                  marginBottom: cardStyle.text_position !== "above" ? `${cardStyle.text_gap}px` : undefined,
+                                  border: cardStyle.show_inner_border ? "1px solid #fef3c7" : "none",
+                                  borderWidth: cardStyle.show_inner_border ? "1px" : "0px",
+                                  outline: "none",
+                                  boxShadow: cardStyle.show_inner_border ? undefined : "none",
+                                  background: cardStyle.show_inner_border ? "#fffbeb" : "transparent",
+                                }}
+                                className={`flex items-center justify-center shrink-0 overflow-hidden transition-all ${previewShapeClass}`}
                               >
-                                <p className={`${previewTextClass} line-clamp-1`}>{cat.name}</p>
-                                {cardStyle.show_exam_count && (
-                                  <span className="text-[9px] font-bold text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded-full mt-0.5 inline-block">
-                                    {examsCount}+ Exams
+                                {cat.logo_url ? (
+                                  <img
+                                    src={cat.logo_url}
+                                    alt={cat.name}
+                                    className={`w-full h-full object-contain transition-all ${previewShapeClass}`}
+                                  />
+                                ) : (
+                                  <span style={{ fontSize: `${Math.max(18, Math.floor(cardStyle.logo_size * 0.45))}px` }}>
+                                    {cat.icon || "📁"}
                                   </span>
                                 )}
                               </div>
-                            )}
 
-                            {/* Logo / Badge */}
-                            <div
-                              style={{
-                                width: `${cardStyle.logo_size}px`,
-                                height: `${cardStyle.logo_size}px`,
-                                padding: `${cardStyle.container_padding}px`,
-                                marginBottom: cardStyle.text_position !== "above" ? `${cardStyle.text_gap}px` : undefined,
-                              }}
-                              className={`flex items-center justify-center shrink-0 overflow-hidden transition-all ${previewShapeClass} ${
-                                cardStyle.show_inner_border
-                                  ? "bg-amber-50 border border-amber-200/80 shadow-xs"
-                                  : "bg-transparent border-0 shadow-none"
-                              }`}
-                            >
-                              {cat.logo_url ? (
-                                <img
-                                  src={cat.logo_url}
-                                  alt={cat.name}
-                                  className={`w-full h-full object-contain transition-all ${previewShapeClass}`}
-                                />
-                              ) : (
-                                <span style={{ fontSize: `${Math.max(20, Math.floor(cardStyle.logo_size * 0.45))}px` }}>
-                                  {cat.icon || "📁"}
-                                </span>
+                              {/* Text below logo if configured */}
+                              {cardStyle.text_position !== "above" && (
+                                <div className="text-center w-full">
+                                  <p className={`${previewTextClass} line-clamp-1`}>{cat.name}</p>
+                                  {cardStyle.show_exam_count && (
+                                    <span className="text-[9px] font-bold text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded-full mt-0.5 inline-block">
+                                      {examsCount}+ Exams
+                                    </span>
+                                  )}
+                                </div>
                               )}
                             </div>
-
-                            {/* Text below logo if configured */}
-                            {cardStyle.text_position !== "above" && (
-                              <div className="text-center">
-                                <p className={`${previewTextClass} line-clamp-1`}>{cat.name}</p>
-                                {cardStyle.show_exam_count && (
-                                  <span className="text-[9px] font-bold text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded-full mt-0.5 inline-block">
-                                    {examsCount}+ Exams
-                                  </span>
-                                )}
-                              </div>
-                            )}
-                          </div>
-                        );
-                      })}
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
 
                   {/* Quick Tip Box */}
                   <div className="bg-stone-800/80 border border-stone-700/60 rounded-2xl p-3 text-[11px] text-stone-300">
-                    💡 <span className="font-bold text-amber-300">सलाह:</span> <span className="text-white font-bold">🚫 बॉर्डर-रहित</span> चुनने पर लोगो के चारों ओर का अतिरिक्त घेरा/डिब्बा हट जाता है और लोगो स्क्रीन पर बहुत बड़ा और आकर्षक दिखाई देता है।
+                    💡 <span className="font-bold text-amber-300">सलाह:</span> <span className="text-white font-bold">🚫 पूरा बॉर्डर-लेस</span> चुनने पर मोबाइल और PC दोनों पर कार्ड बिना किसी लाइन के मॉडर्न लुक में दिखेगा। पैडिंग 4px-8px रखने पर मोबाइल पर लोगो बहुत बड़ा दिखेगा!
                   </div>
                 </div>
               </div>
@@ -2603,12 +2835,16 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                 type="button"
                 onClick={() =>
                   setCardStyle({
-                    logo_size: 100,
+                    logo_size: 110,
                     logo_shape: "circle",
                     container_padding: 0,
                     show_inner_border: false,
-                    show_card_border: true,
+                    show_card_border: false,
+                    card_gap: 10,
+                    card_padding: 8,
                     text_gap: 6,
+                    card_shadow: "sm",
+                    card_bg_style: "white",
                     text_position: "below",
                     text_size: "xs",
                     show_exam_count: true,

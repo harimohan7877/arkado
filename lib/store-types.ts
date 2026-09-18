@@ -19,6 +19,7 @@ export interface Exam {
   category_id: string;
   name: string;
   short_name: string;
+  slug?: string;
   board: string;
   logo_url?: string; // custom exam logo uploaded by admin
   description: string;

@@ -52,11 +52,13 @@ interface CategoriesTabProps {
   getAuthHeaders: () => Record<string, string>;
 }
 
-type DrillLevel = "categories" | "boards" | "exams";
+type DrillLevel = "categories" | "boards" | "exams" | "kits";
 
 export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
   const [categories, setCategories] = useState<CategoryItem[]>([]);
+  const [courses, setCourses] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadingCourses, setLoadingCourses] = useState(false);
   const [saving, setSaving] = useState(false);
   const [toastMsg, setToastMsg] = useState<{ text: string; type: "success" | "warning" | "error" } | null>(null);
 
@@ -64,15 +66,38 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
   const [level, setLevel] = useState<DrillLevel>("categories");
   const [currentCategory, setCurrentCategory] = useState<CategoryItem | null>(null);
   const [currentBoard, setCurrentBoard] = useState<BoardItem | null>(null);
+  const [currentExam, setCurrentExam] = useState<ExamItem | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [, startTransition] = useTransition();
 
-  // Edit Modal State
+  // Edit Modal State (Category, Board, Exam)
   const [showEditModal, setShowEditModal] = useState(false);
   const [editLevel, setEditLevel] = useState<DrillLevel>("categories");
   const [editFormData, setEditFormData] = useState<any>({});
   const [uploadingImage, setUploadingImage] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Kit / Book Management Modal State
+  const [showKitModal, setShowKitModal] = useState(false);
+  const [editingKitId, setEditingKitId] = useState<string | null>(null);
+  const [savingKit, setSavingKit] = useState(false);
+  const [uploadingKitImage, setUploadingKitImage] = useState(false);
+  const kitFileInputRef = useRef<HTMLInputElement>(null);
+  const [kitFormData, setKitFormData] = useState<any>({
+    title: "",
+    badge: "1000 MCQs",
+    short_description: "",
+    original_price: 499,
+    price: 99,
+    discount_percent: 80,
+    pages_count: "320+ Pages",
+    format: "Printable PDF",
+    language: "हिन्दी (Hindi)",
+    cover_image: "",
+    sample_pdf_url: "https://drive.google.com",
+    drive_url: "https://drive.google.com",
+    is_active: true,
+  });
 
   // Show toast utility
   const showToast = (text: string, type: "success" | "warning" | "error" = "success") => {
@@ -81,11 +106,31 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
   };
 
   // -------------------------------------------------------------
-  // INITIAL PROGRESSIVE LOAD (Cache-Busting Enabled)
+  // INITIAL PROGRESSIVE LOAD (Categories + Courses/Kits)
   // -------------------------------------------------------------
   useEffect(() => {
     fetchCategories();
+    fetchCourses();
   }, []);
+
+  const fetchCourses = async () => {
+    try {
+      setLoadingCourses(true);
+      const authHeaders = typeof getAuthHeaders === "function" ? getAuthHeaders() : {};
+      const res = await fetch(`/api/admin/courses?t=${Date.now()}`, {
+        headers: authHeaders,
+        cache: "no-store",
+      });
+      if (res.ok) {
+        const data = await res.json();
+        setCourses(Array.isArray(data) ? data : []);
+      }
+    } catch (err) {
+      console.error("Failed to load courses for exam kits:", err);
+    } finally {
+      setLoadingCourses(false);
+    }
+  };
 
   const fetchCategories = async () => {
     try {
@@ -358,6 +403,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
       setLevel("categories");
       setCurrentCategory(null);
       setCurrentBoard(null);
+      setCurrentExam(null);
       setSearchQuery("");
     });
   };
@@ -366,8 +412,206 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
     startTransition(() => {
       setLevel("boards");
       setCurrentBoard(null);
+      setCurrentExam(null);
       setSearchQuery("");
     });
+  };
+
+  const drillIntoExam = (exam: ExamItem) => {
+    startTransition(() => {
+      setCurrentExam(exam);
+      setLevel("kits");
+      setSearchQuery("");
+    });
+  };
+
+  const jumpToExams = () => {
+    startTransition(() => {
+      setLevel("exams");
+      setCurrentExam(null);
+      setSearchQuery("");
+    });
+  };
+
+  // -------------------------------------------------------------
+  // 📚 KIT / BOOK MANAGEMENT HANDLERS (Level 4)
+  // -------------------------------------------------------------
+  const openCreateKitModal = () => {
+    if (!currentExam) return;
+    setEditingKitId(null);
+    setKitFormData({
+      title: `${currentExam.short_name || currentExam.name} - 1000+ MCQs Book`,
+      badge: "1000 MCQs",
+      short_description: `${currentExam.name} हेतु नए परीक्षा पैटर्न पर आधारित 1000+ महत्वपूर्ण वस्तुनिष्ठ प्रश्नोत्तर (MCQs) व्याख्या सहित।`,
+      original_price: 499,
+      price: 99,
+      discount_percent: 80,
+      pages_count: "320+ Pages",
+      format: "Printable PDF",
+      language: "हिन्दी (Hindi)",
+      cover_image: currentExam.logo_url || "/images/bundles/ssc_bundle_3d.jpg",
+      sample_pdf_url: "https://drive.google.com",
+      drive_url: "https://drive.google.com",
+      is_active: true,
+      highlights: [
+        "1000+ विषयवार वस्तुनिष्ठ प्रश्नोत्तर (MCQs) व्याख्या सहित",
+        "विगत वर्षों के पैटर्न पर आधारित महत्वपूर्ण प्रश्न",
+        "प्रिंट हेतु तैयार A4 साइज साफ-सुथरी PDF",
+      ],
+    });
+    setShowKitModal(true);
+  };
+
+  const openEditKitModal = (kit: any) => {
+    setEditingKitId(kit.id);
+    setKitFormData({
+      ...kit,
+      original_price: kit.original_price || 499,
+      price: kit.price || 99,
+      discount_percent: kit.discount_percent || 80,
+      badge: kit.badge || "1000 MCQs",
+      sample_pdf_url: kit.sample_pdf_url || "https://drive.google.com",
+      drive_url: kit.drive_url || "https://drive.google.com",
+      highlights: Array.isArray(kit.highlights) ? kit.highlights : [],
+    });
+    setShowKitModal(true);
+  };
+
+  const handleSaveKit = async (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    if (!currentExam) return;
+    setSavingKit(true);
+    try {
+      const isEdit = !!editingKitId;
+      const url = isEdit ? `/api/admin/courses/${editingKitId}` : "/api/admin/courses";
+      const method = isEdit ? "PUT" : "POST";
+
+      const orig = Number(kitFormData.original_price || 499);
+      const prc = Number(kitFormData.price || 99);
+      const disc = orig > 0 ? Math.round(((orig - prc) / orig) * 100) : 0;
+
+      const baseSlug = (kitFormData.title || "kit")
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+      const slug = isEdit && kitFormData.slug ? kitFormData.slug : `${baseSlug}-${Date.now().toString().slice(-4)}`;
+
+      const payload = {
+        ...kitFormData,
+        exam_id: currentExam.id,
+        original_price: orig,
+        price: prc,
+        discount_percent: disc,
+        slug,
+      };
+
+      const authHeaders = typeof getAuthHeaders === "function" ? getAuthHeaders() : {};
+      const res = await fetch(url, {
+        method,
+        headers: {
+          ...authHeaders,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || "Failed to save kit");
+      }
+
+      showToast(isEdit ? "किट सफलतापूर्वक अपडेट हो गई!" : "नई किट सफलतापूर्वक जुड़ गई!", "success");
+      setShowKitModal(false);
+      fetchCourses();
+    } catch (err: any) {
+      showToast(err.message || "किट सुरक्षित करने में त्रुटि", "error");
+    } finally {
+      setSavingKit(false);
+    }
+  };
+
+  const handleDeleteKit = async (kitId: string) => {
+    if (!confirm("क्या आप वाकई इस किट/बुक को हटाना चाहते हैं?")) return;
+    try {
+      const authHeaders = typeof getAuthHeaders === "function" ? getAuthHeaders() : {};
+      const res = await fetch(`/api/admin/courses/${kitId}`, {
+        method: "DELETE",
+        headers: authHeaders,
+      });
+      if (res.ok) {
+        showToast("किट सफलतापूर्वक हटा दी गई", "success");
+        fetchCourses();
+      } else {
+        throw new Error("Delete failed");
+      }
+    } catch (err: any) {
+      showToast(err.message || "डिलीट करने में त्रुटि", "error");
+    }
+  };
+
+  const handleToggleKitActive = async (kit: any) => {
+    try {
+      const authHeaders = typeof getAuthHeaders === "function" ? getAuthHeaders() : {};
+      const res = await fetch(`/api/admin/courses/${kit.id}`, {
+        method: "PUT",
+        headers: {
+          ...authHeaders,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ is_active: !kit.is_active }),
+      });
+      if (res.ok) {
+        showToast(kit.is_active ? "किट बंद (OFF) कर दी गई" : "किट लाइव (ON) कर दी गई!", "success");
+        fetchCourses();
+      }
+    } catch {
+      showToast("स्टेटस बदलने में त्रुटि", "error");
+    }
+  };
+
+  const handleKitImageFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.size > 3 * 1024 * 1024) {
+      showToast("इमेज 3MB से कम होनी चाहिए!", "warning");
+      return;
+    }
+
+    try {
+      setUploadingKitImage(true);
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("folder", "bundles");
+
+      const authHeaders = typeof getAuthHeaders === "function" ? getAuthHeaders() : {};
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        headers: {
+          Authorization: authHeaders.Authorization || "99502521387877489932hhh@@@",
+        },
+        body: formData,
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        if (data.url) {
+          setKitFormData((prev: any) => ({ ...prev, cover_image: data.url }));
+          showToast("कवर इमेज सफलतापूर्वक अपलोड हुई!", "success");
+          return;
+        }
+      }
+      throw new Error("Upload fallback");
+    } catch {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setKitFormData((prev: any) => ({ ...prev, cover_image: reader.result as string }));
+        showToast("इमेज लोड हो गई!", "success");
+      };
+      reader.readAsDataURL(file);
+    } finally {
+      setUploadingKitImage(false);
+    }
   };
 
   // -------------------------------------------------------------
@@ -503,6 +747,21 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
     );
   }, [currentBoard, searchQuery]);
 
+  const visibleKits = useMemo(() => {
+    if (!currentExam) return [];
+    const list = courses.filter(
+      (c) => c.exam_id === currentExam.id || c.id === currentExam.id || c.id === `exam-${currentExam.id}`
+    );
+    if (!searchQuery) return list;
+    const q = searchQuery.toLowerCase();
+    return list.filter(
+      (k) =>
+        k.title?.toLowerCase().includes(q) ||
+        k.badge?.toLowerCase().includes(q) ||
+        k.short_description?.toLowerCase().includes(q)
+    );
+  }, [courses, currentExam, searchQuery]);
+
   if (loading) {
     return (
       <div className="py-20 text-center text-stone-400 bg-white rounded-2xl border border-stone-200">
@@ -565,10 +824,27 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
           {currentBoard && (
             <>
               <span className="text-stone-300">›</span>
-              <span className="text-amber-700 font-extrabold flex items-center gap-1.5">
+              <button
+                onClick={jumpToExams}
+                className={`flex items-center gap-1.5 transition-colors cursor-pointer ${
+                  level === "exams" ? "text-amber-700 font-extrabold" : "text-stone-500 hover:text-stone-900"
+                }`}
+              >
                 <span>{currentBoard.icon || "🏛️"} {currentBoard.short_name}</span>
                 <span className="text-xs bg-stone-100 text-stone-700 px-2 py-0.5 rounded-full font-mono">
                   {(currentBoard.exams || []).length} परीक्षाएं
+                </span>
+              </button>
+            </>
+          )}
+
+          {currentExam && (
+            <>
+              <span className="text-stone-300">›</span>
+              <span className="text-amber-700 font-extrabold flex items-center gap-1.5">
+                <span>🎯 {currentExam.short_name || currentExam.name}</span>
+                <span className="text-xs bg-amber-100 text-amber-900 border border-amber-300 px-2 py-0.5 rounded-full font-mono">
+                  {visibleKits.length} किट्स
                 </span>
               </span>
             </>
@@ -584,7 +860,9 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                 ? "श्रेणी खोजें..."
                 : level === "boards"
                 ? "भर्ती बोर्ड खोजें..."
-                : "परीक्षा खोजें..."
+                : level === "exams"
+                ? "परीक्षा खोजें..."
+                : "किट या बुक खोजें..."
             }
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -613,15 +891,34 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
               {level === "categories" && "स्तर 1: श्रेणियाँ (Categories)"}
               {level === "boards" && `स्तर 2: ${currentCategory?.name} के भर्ती बोर्ड / आयोग`}
               {level === "exams" && `स्तर 3: ${currentBoard?.name} की सरकारी परीक्षाएं`}
+              {level === "kits" && `स्तर 4: ${currentExam?.name} की स्टडी किट्स व बुक्स (Kits & Books)`}
             </h3>
             <p className="text-xs text-stone-500 mt-0.5">
               {level === "categories" && "नाम पर क्लिक करके अंदर के भर्ती बोर्ड देखें • नंबर बदलने पर बाकी स्वतः आगे खिसक जाएंगे"}
               {level === "boards" && "बोर्ड पर क्लिक करके अंदर की परीक्षाएं देखें • मूल श्रेणी बंद होने पर बोर्ड स्वतः निष्क्रिय रहेगा"}
-              {level === "exams" && "चौकोर लोगो वाली वास्तविक परीक्षाएं • ऑन/ऑफ दृश्यता नियंत्रित करें"}
+              {level === "exams" && "परीक्षा पर क्लिक करके अंदर की बुक्स व किट्स देखें • ऑन/ऑफ दृश्यता नियंत्रित करें"}
+              {level === "kits" && "प्रत्येक 1000 MCQs बुक या सम्पूर्ण किट को अलग-अलग जोड़ें, ऑन/ऑफ करें एवं मूल्य निर्धारित करें"}
             </p>
           </div>
 
-          {level !== "categories" && (
+          {level === "kits" ? (
+            <div className="flex items-center gap-2">
+              <button
+                onClick={openCreateKitModal}
+                className="text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-3.5 py-1.5 rounded-lg transition-colors cursor-pointer flex items-center gap-1.5 shadow-xs"
+              >
+                <span>➕</span>
+                <span>नई किट / बुक जोड़ें</span>
+              </button>
+              <button
+                onClick={jumpToExams}
+                className="text-xs font-bold bg-white border border-stone-200 px-3.5 py-1.5 rounded-lg text-stone-700 hover:bg-stone-50 transition-colors cursor-pointer flex items-center gap-1.5 shadow-2xs"
+              >
+                <span>⬅️</span>
+                <span>परीक्षाओं पर वापस</span>
+              </button>
+            </div>
+          ) : level !== "categories" ? (
             <button
               onClick={level === "exams" ? jumpToBoards : jumpToCategories}
               className="text-xs font-bold bg-white border border-stone-200 px-3.5 py-1.5 rounded-lg text-stone-700 hover:bg-stone-50 transition-colors cursor-pointer flex items-center gap-1.5 shadow-2xs"
@@ -629,7 +926,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
               <span>⬅️</span>
               <span>{level === "exams" ? "बोर्ड्स पर वापस" : "श्रेणियों पर वापस"}</span>
             </button>
-          )}
+          ) : null}
         </div>
 
         {/* Table Content */}
@@ -637,10 +934,21 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
           <table className="w-full text-left text-xs">
             <thead>
               <tr className="bg-stone-100/70 border-b border-stone-200 text-stone-600 font-bold uppercase tracking-wider text-[11px]">
-                <th className="py-3 px-4 w-[45%]">1. नाम (क्लिक करने पर अंदर जाएं)</th>
-                <th className="py-3 px-4 w-[18%]">2. क्रम संख्या (Auto-Shift)</th>
-                <th className="py-3 px-4 w-[18%] text-center">3. स्थिति (On / Off)</th>
-                <th className="py-3 px-4 w-[19%] text-right">4. संपादन (Action)</th>
+                {level === "kits" ? (
+                  <>
+                    <th className="py-3 px-4 w-[45%]">1. किट / बुक का नाम व विवरण</th>
+                    <th className="py-3 px-4 w-[20%]">2. मूल्य व छूट (Price)</th>
+                    <th className="py-3 px-4 w-[15%] text-center">3. स्थिति (On / Off)</th>
+                    <th className="py-3 px-4 w-[20%] text-right">4. संपादन व डिलीट</th>
+                  </>
+                ) : (
+                  <>
+                    <th className="py-3 px-4 w-[45%]">1. नाम (क्लिक करने पर अंदर जाएं)</th>
+                    <th className="py-3 px-4 w-[18%]">2. क्रम संख्या (Auto-Shift)</th>
+                    <th className="py-3 px-4 w-[18%] text-center">3. स्थिति (On / Off)</th>
+                    <th className="py-3 px-4 w-[19%] text-right">4. संपादन (Action)</th>
+                  </>
+                )}
               </tr>
             </thead>
             <tbody className="divide-y divide-stone-100">
@@ -861,10 +1169,14 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
               {level === "exams" &&
                 visibleExams.map((exam) => (
                   <tr key={exam.id} className="hover:bg-amber-50/40 transition-colors">
-                    {/* 1. Exam Name with SQUARE LOGO (चौकोर लोगो) */}
+                    {/* 1. Exam Name with SQUARE LOGO (चौकोर लोगो) - CLICKABLE DRILLDOWN */}
                     <td className="py-3.5 px-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-11 h-11 rounded-xl bg-stone-900 border border-stone-700 flex items-center justify-center text-white shrink-0 aspect-square shadow-sm p-1 overflow-hidden">
+                      <div
+                        onClick={() => drillIntoExam(exam)}
+                        className="flex items-center gap-3 cursor-pointer select-none group"
+                        title="क्लिक करके इस परीक्षा की बुक्स व किट्स देखें / जोड़ें"
+                      >
+                        <div className="w-11 h-11 rounded-xl bg-stone-900 border border-stone-700 flex items-center justify-center text-white shrink-0 aspect-square shadow-sm p-1 overflow-hidden group-hover:border-amber-400 transition-colors">
                           {exam.logo_url ? (
                             <img src={exam.logo_url} alt="" className="w-full h-full rounded-lg object-contain" />
                           ) : (
@@ -874,8 +1186,31 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                           )}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="font-extrabold text-stone-900 text-sm truncate">{exam.name}</div>
+                          <div className="flex items-center gap-2">
+                            <span className="font-extrabold text-stone-900 group-hover:text-amber-700 transition-colors text-sm truncate">
+                              {exam.name}
+                            </span>
+                            <span className="text-[10px] text-stone-400 group-hover:translate-x-1 transition-transform">
+                              ›
+                            </span>
+                          </div>
                           <div className="flex items-center gap-2 mt-0.5 flex-wrap">
+                            {(() => {
+                              const count = courses.filter(
+                                (c) => c.exam_id === exam.id || c.id === exam.id || c.id === `exam-${exam.id}`
+                              ).length;
+                              return (
+                                <span
+                                  className={`text-[10px] font-bold px-2 py-0.5 rounded-md flex items-center gap-1 transition-colors ${
+                                    count > 0
+                                      ? "bg-amber-100 text-amber-900 border border-amber-300 group-hover:bg-amber-200"
+                                      : "bg-stone-100 text-stone-500 border border-stone-200"
+                                  }`}
+                                >
+                                  📦 {count} {count === 1 ? "किट / बुक" : "किट्स / बुक्स"} ›
+                                </span>
+                              );
+                            })()}
                             {exam.eligibility && (
                               <span className="text-[10px] text-stone-600 bg-stone-100 px-1.5 py-0.2 rounded font-medium">
                                 {exam.eligibility}
@@ -944,15 +1279,161 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                       </div>
                     </td>
 
-                    {/* 4. Exam Edit Action */}
+                    {/* 4. Exam Actions (Drill to Kits + Edit) */}
                     <td className="py-3.5 px-4 text-right">
-                      <button
-                        onClick={() => openEditModal(exam, "exams")}
-                        className="inline-flex items-center gap-1 text-xs font-bold text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer"
-                      >
-                        <span>✏️</span>
-                        <span>एडिट</span>
-                      </button>
+                      <div className="flex items-center justify-end gap-1.5">
+                        <button
+                          onClick={() => drillIntoExam(exam)}
+                          className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer"
+                          title="इस परीक्षा की बुक्स व किट्स मैनेज करें"
+                        >
+                          <span>📦</span>
+                          <span>किट्स</span>
+                        </button>
+                        <button
+                          onClick={() => openEditModal(exam, "exams")}
+                          className="inline-flex items-center gap-1 text-xs font-bold text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer"
+                        >
+                          <span>✏️</span>
+                          <span>एडिट</span>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+
+              {/* ------------------------------------------------------------- */}
+              {/* LEVEL 4: KITS / BOOKS ROW RENDERING                          */}
+              {/* ------------------------------------------------------------- */}
+              {level === "kits" && visibleKits.length === 0 && (
+                <tr>
+                  <td colSpan={4} className="py-14 text-center px-4">
+                    <div className="w-14 h-14 bg-amber-50 border border-amber-200 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-3 shadow-2xs">
+                      📚
+                    </div>
+                    <h4 className="text-sm font-extrabold text-stone-800">
+                      इस परीक्षा में अभी कोई बुक या किट नहीं जुड़ी है
+                    </h4>
+                    <p className="text-xs text-stone-500 mt-1 max-w-sm mx-auto leading-relaxed">
+                      आप इस परीक्षा के लिए अलग-अलग विषयवार 1000 MCQs बुक्स (जैसे: गणित, रीजनिंग, इंग्लिश, सामान्य अध्ययन) या सम्पूर्ण सलेक्शन किट जोड़ सकते हैं।
+                    </p>
+                    <button
+                      onClick={openCreateKitModal}
+                      className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl shadow-xs cursor-pointer transition-colors"
+                    >
+                      <span>➕</span>
+                      <span>पहली किट / 1000 MCQs बुक जोड़ें</span>
+                    </button>
+                  </td>
+                </tr>
+              )}
+
+              {level === "kits" &&
+                visibleKits.map((kit) => (
+                  <tr key={kit.id} className="hover:bg-amber-50/40 transition-colors">
+                    {/* 1. Kit Details */}
+                    <td className="py-3.5 px-4">
+                      <div className="flex items-center gap-3">
+                        <div className="w-12 h-14 rounded-lg bg-stone-900 border border-stone-700 shrink-0 overflow-hidden shadow-xs flex items-center justify-center p-0.5">
+                          {kit.cover_image ? (
+                            <img src={kit.cover_image} alt="" className="w-full h-full object-cover rounded-md" />
+                          ) : (
+                            <span className="text-xl">📖</span>
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="font-extrabold text-stone-900 text-sm truncate max-w-md">
+                              {kit.title}
+                            </span>
+                            <span className="text-[10px] font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full shrink-0 border border-emerald-300">
+                              {kit.badge || "Study Kit"}
+                            </span>
+                          </div>
+                          <p className="text-[11px] text-stone-500 truncate mt-0.5 max-w-md">
+                            {kit.short_description || "नए परीक्षा पैटर्न पर आधारित हस्तलिखित नोट्स व MCQs"}
+                          </p>
+                          <div className="flex items-center gap-2 mt-1 text-[10px] text-stone-400 flex-wrap">
+                            <span className="bg-stone-100 text-stone-600 px-1.5 py-0.2 rounded font-medium">
+                              📄 {kit.pages_count || "Printable PDF"}
+                            </span>
+                            <span>•</span>
+                            <span className={kit.drive_url ? "text-emerald-600 font-medium" : "text-amber-600 font-medium"}>
+                              {kit.drive_url ? "✓ Drive लिंक सेट है" : "⚠️ Drive लिंक नहीं है"}
+                            </span>
+                            {kit.sample_pdf_url && (
+                              <>
+                                <span>•</span>
+                                <a
+                                  href={kit.sample_pdf_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-amber-700 hover:underline font-medium"
+                                >
+                                  नमूना PDF देखें ↗
+                                </a>
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+
+                    {/* 2. Price & Discount */}
+                    <td className="py-3.5 px-4">
+                      <div className="font-mono">
+                        <span className="text-sm font-black text-stone-900">₹{kit.price}</span>
+                        <del className="text-xs text-stone-400 ml-1.5">₹{kit.original_price}</del>
+                        <div className="text-[10px] font-bold text-emerald-700 mt-0.5">
+                          {kit.discount_percent || (kit.original_price ? Math.round(((kit.original_price - kit.price) / kit.original_price) * 100) : 0)}% छूट
+                        </div>
+                      </div>
+                    </td>
+
+                    {/* 3. On/Off Switch */}
+                    <td className="py-3.5 px-4 text-center">
+                      <div className="inline-flex flex-col items-center">
+                        <button
+                          onClick={() => handleToggleKitActive(kit)}
+                          className={`relative inline-flex h-6 w-11 shrink-0 rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none cursor-pointer ${
+                            kit.is_active ? "bg-emerald-600" : "bg-stone-300"
+                          }`}
+                          title={kit.is_active ? "लाइव चालू (क्लिक करके बंद करें)" : "छुपा हुआ (क्लिक करके चालू करें)"}
+                        >
+                          <span
+                            className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
+                              kit.is_active ? "translate-x-5" : "translate-x-0"
+                            }`}
+                          />
+                        </button>
+                        <div className="text-[10px] font-bold mt-0.5">
+                          {kit.is_active ? (
+                            <span className="text-emerald-700">लाइव (ON)</span>
+                          ) : (
+                            <span className="text-stone-400">बंद (OFF)</span>
+                          )}
+                        </div>
+                      </div>
+                    </td>
+
+                    {/* 4. Edit / Delete Actions */}
+                    <td className="py-3.5 px-4 text-right">
+                      <div className="flex items-center justify-end gap-1.5">
+                        <button
+                          onClick={() => openEditKitModal(kit)}
+                          className="inline-flex items-center gap-1 text-xs font-bold text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer"
+                        >
+                          <span>✏️</span>
+                          <span>एडिट</span>
+                        </button>
+                        <button
+                          onClick={() => handleDeleteKit(kit.id)}
+                          className="inline-flex items-center gap-1 text-xs font-bold text-rose-700 bg-rose-50 hover:bg-rose-100 border border-rose-200 px-2.5 py-1.5 rounded-lg transition-colors cursor-pointer"
+                          title="इस किट को डिलीट करें"
+                        >
+                          <span>🗑️</span>
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -1221,6 +1702,274 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                 {saving ? "सुरक्षित हो रहा है..." : "💾 सुरक्षित करें (Save)"}
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================= */}
+      {/* 📚 KIT / BOOK MODAL (CREATE & EDIT)                       */}
+      {/* ========================================================= */}
+      {showKitModal && (
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-white border border-stone-200 rounded-2xl max-w-2xl w-full shadow-2xl overflow-hidden my-8">
+            {/* Modal Header */}
+            <div className="p-4 sm:p-5 border-b border-stone-200 bg-stone-50 flex items-center justify-between">
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full">
+                  {editingKitId ? "किट / बुक संपादन (Edit Kit)" : "नई किट / बुक जोड़ें (Add Kit / Book)"}
+                </span>
+                <h3 className="text-sm font-extrabold text-stone-900 mt-1 truncate max-w-md">
+                  🎯 {currentExam?.name}
+                </h3>
+              </div>
+              <button
+                onClick={() => setShowKitModal(false)}
+                className="text-stone-400 hover:text-stone-700 text-base font-bold w-8 h-8 rounded-lg flex items-center justify-center cursor-pointer"
+              >
+                ✕
+              </button>
+            </div>
+
+            {/* Modal Form */}
+            <form onSubmit={handleSaveKit} className="p-5 sm:p-6 space-y-4 max-h-[75vh] overflow-y-auto">
+              {/* 1. Title */}
+              <div>
+                <label className="block text-xs font-bold text-stone-700 mb-1">
+                  किट / बुक का शीर्षक (Book / Kit Title) *
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="उदा. SSC CGL सामान्य गणित (Maths) 1000+ MCQs Book"
+                  value={kitFormData.title || ""}
+                  onChange={(e) => setKitFormData({ ...kitFormData, title: e.target.value })}
+                  className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-emerald-500 focus:bg-white"
+                />
+              </div>
+
+              {/* 2. Badge & Language */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                    बैज / टैग (Badge Label)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="उदा. 1000 MCQs, Complete Kit, Handwritten Notes"
+                    value={kitFormData.badge || ""}
+                    onChange={(e) => setKitFormData({ ...kitFormData, badge: e.target.value })}
+                    className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-emerald-500 focus:bg-white"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                    भाषा (Language)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="हिन्दी (Hindi)"
+                    value={kitFormData.language || "हिन्दी (Hindi)"}
+                    onChange={(e) => setKitFormData({ ...kitFormData, language: e.target.value })}
+                    className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-emerald-500 focus:bg-white"
+                  />
+                </div>
+              </div>
+
+              {/* 3. Pricing */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div>
+                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                    विक्रय मूल्य (Offer Price ₹) *
+                  </label>
+                  <input
+                    type="number"
+                    min="1"
+                    required
+                    value={kitFormData.price || 99}
+                    onChange={(e) => setKitFormData({ ...kitFormData, price: Number(e.target.value) })}
+                    className="w-full text-xs font-mono font-bold bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-emerald-500 focus:bg-white"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                    असली मूल्य (Original Price ₹)
+                  </label>
+                  <input
+                    type="number"
+                    min="1"
+                    value={kitFormData.original_price || 499}
+                    onChange={(e) => setKitFormData({ ...kitFormData, original_price: Number(e.target.value) })}
+                    className="w-full text-xs font-mono bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-emerald-500 focus:bg-white"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                    पेज संख्या (Pages Count)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="320+ Pages"
+                    value={kitFormData.pages_count || ""}
+                    onChange={(e) => setKitFormData({ ...kitFormData, pages_count: e.target.value })}
+                    className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-emerald-500 focus:bg-white"
+                  />
+                </div>
+              </div>
+
+              {/* 4. Short Description */}
+              <div>
+                <label className="block text-xs font-bold text-stone-700 mb-1">
+                  संक्षिप्त विवरण (Short Description)
+                </label>
+                <textarea
+                  rows={2}
+                  placeholder="इस किट की मुख्य विशेषताएं या सारांश..."
+                  value={kitFormData.short_description || ""}
+                  onChange={(e) => setKitFormData({ ...kitFormData, short_description: e.target.value })}
+                  className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-emerald-500 focus:bg-white resize-none"
+                />
+              </div>
+
+              {/* 5. Google Drive URLs (Download & Sample Preview) */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                    Google Drive लिंक (सशुल्क डाउनलोड लिंक) *
+                  </label>
+                  <input
+                    type="url"
+                    placeholder="https://drive.google.com/..."
+                    value={kitFormData.drive_url || ""}
+                    onChange={(e) => setKitFormData({ ...kitFormData, drive_url: e.target.value })}
+                    className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-emerald-500 focus:bg-white"
+                  />
+                  <span className="text-[10px] text-stone-400">भुगतान के बाद छात्र को यह लिंक मिलता है।</span>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-stone-700 mb-1">
+                    सैंपल PDF लिंक (Sample Demo Link)
+                  </label>
+                  <input
+                    type="url"
+                    placeholder="https://drive.google.com/..."
+                    value={kitFormData.sample_pdf_url || ""}
+                    onChange={(e) => setKitFormData({ ...kitFormData, sample_pdf_url: e.target.value })}
+                    className="w-full text-xs bg-stone-50 border border-stone-200 rounded-xl px-3 py-2 text-stone-900 outline-none focus:border-emerald-500 focus:bg-white"
+                  />
+                  <span className="text-[10px] text-stone-400">छात्र खरीदने से पहले डेमो देख सकते हैं।</span>
+                </div>
+              </div>
+
+              {/* 6. Cover Image & Presets */}
+              <div className="p-3.5 bg-stone-50 border border-stone-200 rounded-xl space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <label className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
+                    <span>🖼️</span>
+                    <span>कवर इमेज (Cover Image)</span>
+                  </label>
+                  {kitFormData.cover_image && (
+                    <button
+                      type="button"
+                      onClick={() => setKitFormData({ ...kitFormData, cover_image: "" })}
+                      className="text-[11px] text-rose-600 hover:underline font-bold"
+                    >
+                      हटाएं (Remove)
+                    </button>
+                  )}
+                </div>
+
+                {/* Preset Cover Selector */}
+                <div>
+                  <span className="text-[10px] font-bold text-stone-500 block mb-1">
+                    पहले से तैयार 3D बंडल कवर्स में से चुनें:
+                  </span>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    {[
+                      { name: "SSC 3D", url: "/images/bundles/ssc_bundle_3d.jpg" },
+                      { name: "CET 3D", url: "/images/bundles/cet_bundle_3d.jpg" },
+                      { name: "Patwari 3D", url: "/images/bundles/patwari_bundle_3d.jpg" },
+                      { name: "Police 3D", url: "/images/bundles/police_bundle_3d.jpg" },
+                    ].map((preset) => (
+                      <button
+                        type="button"
+                        key={preset.url}
+                        onClick={() => setKitFormData({ ...kitFormData, cover_image: preset.url })}
+                        className={`p-1.5 rounded-lg border text-left transition flex items-center gap-2 cursor-pointer ${
+                          kitFormData.cover_image === preset.url
+                            ? "bg-emerald-50 border-emerald-500 text-emerald-800"
+                            : "bg-white border-stone-200 text-stone-700 hover:border-stone-300"
+                        }`}
+                      >
+                        <img src={preset.url} alt="" className="w-7 h-7 rounded object-cover" />
+                        <span className="text-[10px] font-bold truncate">{preset.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Or Custom Upload */}
+                <div className="flex items-center gap-2 pt-1">
+                  <input
+                    type="file"
+                    ref={kitFileInputRef}
+                    onChange={handleKitImageFileChange}
+                    accept="image/jpeg,image/png,image/webp,image/gif"
+                    className="hidden"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => kitFileInputRef.current?.click()}
+                    disabled={uploadingKitImage}
+                    className="text-xs font-bold px-3 py-1.5 bg-white border border-stone-300 hover:bg-stone-50 text-stone-700 rounded-lg cursor-pointer transition shadow-2xs"
+                  >
+                    {uploadingKitImage ? "अपलोड हो रहा है..." : "📤 कंप्यूटर से इमेज अपलोड करें"}
+                  </button>
+                  <input
+                    type="text"
+                    placeholder="या इमेज URL पेस्ट करें (/images/...)"
+                    value={kitFormData.cover_image || ""}
+                    onChange={(e) => setKitFormData({ ...kitFormData, cover_image: e.target.value })}
+                    className="flex-1 text-xs bg-white border border-stone-200 rounded-lg px-2.5 py-1.5 text-stone-900 outline-none focus:border-emerald-500"
+                  />
+                </div>
+              </div>
+
+              {/* 7. Active Status Checkbox */}
+              <div className="flex items-center gap-2.5 p-3 bg-emerald-50/60 border border-emerald-200 rounded-xl">
+                <input
+                  type="checkbox"
+                  id="kitActiveCheck"
+                  checked={kitFormData.is_active !== false}
+                  onChange={(e) => setKitFormData({ ...kitFormData, is_active: e.target.checked })}
+                  className="w-4 h-4 text-emerald-600 rounded border-stone-300 cursor-pointer"
+                />
+                <label htmlFor="kitActiveCheck" className="text-xs font-bold text-emerald-900 cursor-pointer">
+                  यह किट / बुक तुरंत वेबसाइट पर लाइव (ON) रखें
+                </label>
+              </div>
+
+              {/* Modal Footer */}
+              <div className="pt-3 border-t border-stone-200 flex items-center justify-end gap-2.5">
+                <button
+                  type="button"
+                  onClick={() => setShowKitModal(false)}
+                  className="text-xs font-bold px-4 py-2 rounded-xl text-stone-600 hover:bg-stone-200 transition-colors cursor-pointer"
+                >
+                  रद्द करें
+                </button>
+                <button
+                  type="submit"
+                  disabled={savingKit || uploadingKitImage}
+                  className="text-xs font-bold px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs transition-colors cursor-pointer flex items-center gap-1.5"
+                >
+                  {savingKit ? "सुरक्षित हो रहा है..." : "💾 किट सुरक्षित करें (Save Kit)"}
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}

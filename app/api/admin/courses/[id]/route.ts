@@ -36,7 +36,10 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
   const { id } = await params;
   const contentType = req.headers.get("content-type") || "";
   const courses = await readCourses();
-  let idx = courses.findIndex((c) => c.id === id || c.exam_id === id || (id.startsWith("exam-") && c.exam_id === id.replace("exam-", "")));
+  let idx = courses.findIndex((c) => c.id === id);
+  if (idx < 0) {
+    idx = courses.findIndex((c) => (id.startsWith("exam-") && c.exam_id === id.replace("exam-", "")) || c.exam_id === id);
+  }
 
   let updates: Record<string, unknown> = idx >= 0 ? { ...courses[idx] } : { id };
   updates.updated_at = new Date().toISOString();
@@ -113,7 +116,10 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ i
   if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const { id } = await params;
   const courses = await readCourses();
-  const filtered = courses.filter((c) => c.id !== id && c.exam_id !== id && `exam-${c.exam_id}` !== id);
+  let filtered = courses.filter((c) => c.id !== id);
+  if (filtered.length === courses.length) {
+    filtered = courses.filter((c) => c.id !== id && c.slug !== id && `exam-${c.exam_id}` !== id);
+  }
   await writeCourses(filtered);
   return NextResponse.json({ success: true });
 }

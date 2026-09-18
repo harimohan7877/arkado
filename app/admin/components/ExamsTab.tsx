@@ -20,46 +20,58 @@ interface ExamsTabProps {
 
 export default function ExamsTab({ getAuthHeaders }: ExamsTabProps) {
   const [activeExams, setActiveExams] = useState<ActiveExam[]>([]);
+  const [courses, setCourses] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    loadActiveExams();
+    loadActiveExamsAndCourses();
   }, []);
 
-  const loadActiveExams = async () => {
+  const loadActiveExamsAndCourses = async () => {
     try {
       setLoading(true);
-      const res = await fetch(`/api/admin/categories?t=${Date.now()}`, {
-        headers: getAuthHeaders(),
-        cache: "no-store",
-      });
-      if (!res.ok) throw new Error("Failed to load");
-      const categories = await res.json();
+      const [catsRes, coursesRes] = await Promise.all([
+        fetch(`/api/admin/categories?t=${Date.now()}`, {
+          headers: getAuthHeaders(),
+          cache: "no-store",
+        }),
+        fetch(`/api/admin/courses?t=${Date.now()}`, {
+          headers: getAuthHeaders(),
+          cache: "no-store",
+        }),
+      ]);
 
-      const list: ActiveExam[] = [];
-      if (Array.isArray(categories)) {
-        for (const c of categories) {
-          for (const b of c.boards || []) {
-            for (const e of b.exams || []) {
-              // ONLY include exams that are ACTIVE / created!
-              if (e.is_active) {
-                list.push({
-                  id: e.id,
-                  name: e.name,
-                  short_name: e.short_name || e.name,
-                  logo_url: e.logo_url || "",
-                  board_name: b.short_name || b.name,
-                  category_name: c.name,
-                  eligibility: e.eligibility,
-                  exam_pattern: e.exam_pattern,
-                  is_active: true,
-                });
+      if (catsRes.ok) {
+        const categories = await catsRes.json();
+        const list: ActiveExam[] = [];
+        if (Array.isArray(categories)) {
+          for (const c of categories) {
+            for (const b of c.boards || []) {
+              for (const e of b.exams || []) {
+                if (e.is_active) {
+                  list.push({
+                    id: e.id,
+                    name: e.name,
+                    short_name: e.short_name || e.name,
+                    logo_url: e.logo_url || "",
+                    board_name: b.short_name || b.name,
+                    category_name: c.name,
+                    eligibility: e.eligibility,
+                    exam_pattern: e.exam_pattern,
+                    is_active: true,
+                  });
+                }
               }
             }
           }
         }
+        setActiveExams(list);
       }
-      setActiveExams(list);
+
+      if (coursesRes.ok) {
+        const cData = await coursesRes.json();
+        setCourses(Array.isArray(cData) ? cData : []);
+      }
     } catch {
       setActiveExams([]);
     } finally {
@@ -119,6 +131,7 @@ export default function ExamsTab({ getAuthHeaders }: ExamsTabProps) {
                   <th className="py-3 px-4">बोर्ड / आयोग</th>
                   <th className="py-3 px-4">श्रेणी</th>
                   <th className="py-3 px-4">योग्यता / पैटर्न</th>
+                  <th className="py-3 px-4 text-center">स्टडी किट्स (Kits)</th>
                   <th className="py-3 px-4 text-center">स्थिति</th>
                 </tr>
               </thead>
@@ -143,6 +156,24 @@ export default function ExamsTab({ getAuthHeaders }: ExamsTabProps) {
                     <td className="py-3 px-4 text-stone-500">{exam.category_name}</td>
                     <td className="py-3 px-4 text-stone-500">
                       {exam.eligibility || exam.exam_pattern || "—"}
+                    </td>
+                    <td className="py-3 px-4 text-center">
+                      {(() => {
+                        const examKits = courses.filter(
+                          (c) => c.exam_id === exam.id || c.id === exam.id || c.id === `exam-${exam.id}`
+                        );
+                        return (
+                          <span
+                            className={`inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full border ${
+                              examKits.length > 0
+                                ? "bg-amber-50 text-amber-900 border-amber-200"
+                                : "bg-stone-50 text-stone-500 border-stone-200"
+                            }`}
+                          >
+                            📦 {examKits.length} {examKits.length === 1 ? "किट" : "किट्स"}
+                          </span>
+                        );
+                      })()}
                     </td>
                     <td className="py-3 px-4 text-center">
                       <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">

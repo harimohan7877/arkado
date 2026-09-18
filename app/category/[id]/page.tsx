@@ -350,14 +350,18 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
               {filteredExams.map((exam) => {
                 const examLogo = exam.logo_url;
-                const matchedCourse = courses.find(
+                const examKits = courses.filter(
                   (c) =>
-                    c.exam_id === exam.id ||
-                    c.id === exam.id ||
-                    c.slug === exam.id ||
-                    (c.title && exam.name && c.title.toLowerCase().includes(exam.name.toLowerCase().split(" ")[0]))
+                    (c.exam_id === exam.id || c.id === exam.id || c.slug === exam.id || c.id === `bundle-exam-${exam.id}`) &&
+                    c.is_active !== false
                 );
-                const examHref = `/course/${matchedCourse?.slug || matchedCourse?.id || exam.id}`;
+                const hasMultipleKits = examKits.length > 1;
+                const matchedCourse = examKits[0] || courses.find(
+                  (c) => (c.title && exam.name && c.title.toLowerCase().includes(exam.name.toLowerCase().split(" ")[0]))
+                );
+                const examHref = hasMultipleKits
+                  ? `/course/${exam.slug || exam.id}`
+                  : `/course/${matchedCourse?.slug || matchedCourse?.id || exam.id}`;
 
                 return (
                   <div
@@ -399,9 +403,15 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
                       </div>
 
                       <div className="flex items-center gap-1.5 flex-wrap">
-                        <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100">
-                          ● Selection Kit Available • ₹199
-                        </span>
+                        {hasMultipleKits ? (
+                          <span className="text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
+                            ● {examKits.length} Study Kits &amp; Books • from ₹{Math.min(...examKits.map((k) => k.price || 99))}
+                          </span>
+                        ) : (
+                          <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100">
+                            ● Selection Kit Available • ₹{matchedCourse?.price || 199}
+                          </span>
+                        )}
                         {exam.status && (
                           <span className="text-[10px] text-stone-400 capitalize">
                             • {exam.status}
@@ -415,7 +425,7 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
                         href={examHref}
                         className="btn-primary py-1.5 px-3 text-xs font-bold flex items-center gap-1 shadow-xs"
                       >
-                        Study Kit &amp; Buy →
+                        {hasMultipleKits ? `Browse ${examKits.length} Kits & Books →` : "Study Kit & Buy →"}
                       </Link>
                       <a
                         href={`https://wa.me/917852004401?text=${encodeURIComponent(

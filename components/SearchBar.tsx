@@ -163,14 +163,14 @@ export default function SearchBar({
         onSubmit={handleSubmit}
         action="/search"
         method="GET"
-        className="relative flex items-center w-full bg-stone-50/90 hover:bg-white focus-within:bg-white border border-stone-300 focus-within:border-amber-600 focus-within:ring-2 focus-within:ring-amber-500/20 rounded-xl transition-all duration-200 shadow-2xs group"
+        className="relative flex items-center w-full h-[46px] bg-white border border-stone-300 hover:border-stone-400 focus-within:border-amber-600 focus-within:ring-4 focus-within:ring-amber-500/15 rounded-full transition-all duration-200 shadow-2xs group pl-4 pr-1.5"
       >
         {/* Left Search Icon */}
-        <span className="pl-3.5 pr-1 text-stone-400 group-focus-within:text-amber-700 shrink-0 transition-colors pointer-events-none">
+        <span className="text-stone-400 group-focus-within:text-amber-600 shrink-0 transition-colors pointer-events-none mr-2.5">
           <SearchIcon size={18} />
         </span>
 
-        {/* Search Input Field */}
+        {/* Search Input Field (Zero inner outline/border) */}
         <input
           ref={inputRef}
           name="q"
@@ -187,7 +187,8 @@ export default function SearchBar({
             setIsOpen(true);
           }}
           onKeyDown={handleKeyDown}
-          className="flex-1 bg-transparent border-0 px-2.5 py-2 sm:py-2.5 text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:ring-0 w-full font-medium"
+          className="no-focus-ring flex-1 bg-transparent border-0 outline-none focus:outline-none focus-visible:outline-none text-sm text-stone-900 placeholder:text-stone-400 w-full font-medium py-2"
+          style={{ outline: "none", boxShadow: "none", border: "none" }}
         />
 
         {/* Clear Button (appears when text exists) */}
@@ -198,17 +199,17 @@ export default function SearchBar({
               setQuery("");
               inputRef.current?.focus();
             }}
-            className="p-1 mr-1 text-stone-400 hover:text-stone-600 rounded-full hover:bg-stone-200/60 transition cursor-pointer shrink-0"
+            className="p-1 mr-1 text-stone-400 hover:text-stone-700 rounded-full hover:bg-stone-100 transition cursor-pointer shrink-0"
             title="Clear search"
           >
             <CloseIcon size={14} />
           </button>
         )}
 
-        {/* Right Search Button (Integrated cleanly inside capsule) */}
+        {/* Right Search Button (Smooth matching pill embedded inside capsule) */}
         <button
           type="submit"
-          className="mr-1.5 px-3 sm:px-4 py-1.5 bg-stone-900 hover:bg-amber-700 text-white rounded-lg text-xs font-bold transition flex items-center gap-1.5 shadow-2xs shrink-0 cursor-pointer"
+          className="h-8 px-4 bg-stone-900 hover:bg-amber-700 text-white rounded-full text-xs font-bold transition-all flex items-center gap-1.5 shrink-0 shadow-2xs cursor-pointer"
           aria-label="Search"
         >
           <SearchIcon size={13} />

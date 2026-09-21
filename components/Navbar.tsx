@@ -7,6 +7,7 @@ import { Category } from "@/lib/store-types";
 import { Settings } from "@/lib/store-types";
 import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import { supabase } from "@/lib/supabase";
+import SearchBar from "@/components/SearchBar";
 import {
   SearchIcon,
   CloseIcon,
@@ -111,27 +112,9 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
           </Link>
 
           {/* Search bar (desktop) */}
-          <form
-            action="/search"
-            method="GET"
-            className="hidden md:flex flex-1 max-w-2xl mx-2 lg:mx-auto"
-          >
-            <div className="relative flex w-full">
-              <input
-                name="q"
-                type="text"
-                placeholder="Search exam (CET, Patwari, Police, SSC, UPSC, Banking)..."
-                className="flex-1 px-4 py-2.5 rounded-l-lg border border-stone-300 text-sm placeholder:text-stone-400 focus:outline-none focus:border-amber-600 focus:ring-1 focus:ring-amber-600"
-              />
-              <button
-                type="submit"
-                className="px-5 bg-stone-800 hover:bg-stone-900 text-white rounded-r-lg flex items-center justify-center transition cursor-pointer"
-                aria-label="Search"
-              >
-                <SearchIcon size={18} />
-              </button>
-            </div>
-          </form>
+          <div className="hidden md:flex flex-1 max-w-2xl mx-2 lg:mx-auto">
+            <SearchBar trendingSearches={settings?.trending_searches} />
+          </div>
 
           {/* Right actions */}
           <div className="flex items-center gap-1 sm:gap-2 ml-auto shrink-0">
@@ -272,49 +255,23 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
 
       {/* Mobile search overlay */}
       {showSearch && (
-        <div className="fixed inset-0 z-[70] bg-white anim-fade-in-up md:hidden">
-          <div className="p-4 flex items-center gap-2 border-b border-stone-200">
-            <form action="/search" method="GET" className="flex-1 flex">
-              <input
-                name="q"
-                type="text"
+        <div className="fixed inset-0 z-[70] bg-white anim-fade-in-up md:hidden flex flex-col">
+          <div className="p-3 flex items-center gap-2 border-b border-stone-200">
+            <div className="flex-1">
+              <SearchBar
                 autoFocus
-                placeholder="Search exam..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="flex-1 px-4 py-2.5 rounded-l-lg border border-stone-300 text-sm focus:outline-none focus:border-amber-600"
+                onSelectResult={() => setShowSearch(false)}
+                trendingSearches={settings?.trending_searches}
+                placeholder="परीक्षा या कोर्स खोजें..."
               />
-              <button
-                type="submit"
-                className="px-4 bg-stone-800 text-white rounded-r-lg"
-              >
-                <SearchIcon size={18} />
-              </button>
-            </form>
+            </div>
             <button
               onClick={() => setShowSearch(false)}
-              className="w-9 h-9 rounded-md hover:bg-stone-100 flex items-center justify-center cursor-pointer"
+              className="w-10 h-10 rounded-xl hover:bg-stone-100 flex items-center justify-center text-stone-600 cursor-pointer shrink-0"
               aria-label="Close search"
             >
               <CloseIcon size={20} />
             </button>
-          </div>
-          <div className="p-4 space-y-2 text-sm text-stone-600">
-            <p className="font-semibold text-stone-500 uppercase text-xs mb-2">Trending searches</p>
-            {(settings?.trending_searches && settings.trending_searches.length > 0
-              ? settings.trending_searches
-              : ["CET 2026", "Patwari", "REET Level 1", "Police Constable", "SSC CGL", "Banking", "UPSC CSE"]
-            ).map((q) => (
-                <Link
-                  key={q}
-                  href={`/search?q=${encodeURIComponent(q)}`}
-                  onClick={() => setShowSearch(false)}
-                  className="block py-2 border-b border-stone-100 hover:text-amber-700"
-                >
-                  {q}
-                </Link>
-              )
-            )}
           </div>
         </div>
       )}

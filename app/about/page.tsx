@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Settings } from "@/lib/store-types";
+import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import { ShieldIcon, ZapIcon, DownloadIcon, MessageSquareIcon, WhatsappIcon, CheckCircleIcon, BarChartIcon } from "@/components/icons";
 
 export default function AboutPage() {
@@ -29,7 +30,7 @@ export default function AboutPage() {
     "PYQ-tagged MCQs with step-by-step reasoning",
     "Instant digital delivery — typically 5-15 minutes",
     "Direct UPI payment (PhonePe / Paytm) — 0% extra fees",
-    `WhatsApp expert support — ${settings?.contact?.whatsapp_number || "7852004401"}`,
+    `WhatsApp expert support — ${settings?.contact?.whatsapp_number || DEFAULT_SETTINGS.whatsapp_support_number}`,
     "Printable A4 PDFs — print at any cyber cafe"
   ];
 
@@ -37,7 +38,7 @@ export default function AboutPage() {
 
   const whatsappUrl =
     settings?.social?.whatsapp_url ||
-    `https://wa.me/${settings?.contact?.whatsapp_number || "917852004401"}`;
+    `https://wa.me/${getCleanWhatsAppNumber(settings)}`;
 
   return (
     <div className="min-h-screen flex flex-col bg-white">

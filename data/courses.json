@@ -251,8 +251,8 @@
     "new_arrival_priority": 1,
     "exam_id": "5001",
     "updated_at": "2026-09-18T04:41:56.880Z",
-    "demo_html_mock_enabled": false,
-    "demo_html_mock_url": ""
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-cgl-maths-demo-test.html"
   },
   {
     "id": "ssc-cgl-reasoning-1000-mcq-book",
@@ -324,8 +324,8 @@
     "new_arrival_priority": 2,
     "exam_id": "5001",
     "updated_at": "2026-09-18T04:43:24.476Z",
-    "demo_html_mock_enabled": false,
-    "demo_html_mock_url": ""
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-cgl-reasoning-demo-test.html"
   },
   {
     "id": "ssc-cgl-gk-1000-mcq-book",
@@ -393,8 +393,8 @@
     "new_arrival_priority": 3,
     "exam_id": "5001",
     "updated_at": "2026-09-18T04:44:02.424Z",
-    "demo_html_mock_enabled": false,
-    "demo_html_mock_url": ""
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-cgl-gk-demo-test.html"
   },
   {
     "id": "ssc-cgl-english-1000-mcq-book",
@@ -466,8 +466,8 @@
     "new_arrival_priority": 4,
     "exam_id": "5001",
     "updated_at": "2026-09-18T04:44:45.341Z",
-    "demo_html_mock_enabled": false,
-    "demo_html_mock_url": ""
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-cgl-english-demo-test.html"
   },
   {
     "id": "ssc-cgl-5-full-mock-tests-bundle",
@@ -534,7 +534,7 @@
     "new_arrival_priority": 5,
     "exam_id": "5001",
     "updated_at": "2026-09-18T04:45:47.146Z",
-    "demo_html_mock_enabled": false,
-    "demo_html_mock_url": ""
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-cgl-tier1-full-mock-demo.html"
   }
 ]

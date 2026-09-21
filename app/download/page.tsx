@@ -6,6 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Settings } from "@/lib/store-types";
+import { DEFAULT_SETTINGS } from "@/lib/default-settings";
 
 function DownloadContent() {
   const searchParams = useSearchParams();
@@ -22,8 +23,8 @@ function DownloadContent() {
       .catch(() => {});
   }, []);
 
-  const supportNumber = settings?.contact?.whatsapp_number || settings?.whatsapp_support_number || "917852004401";
-  const displayPhone = settings?.contact?.phone || "+91 7852004401";
+  const supportNumber = settings?.contact?.whatsapp_number || settings?.whatsapp_support_number || DEFAULT_SETTINGS.whatsapp_support_number;
+  const displayPhone = settings?.contact?.phone || DEFAULT_SETTINGS.contact.phone;
 
   const waMessage = `नमस्ते! मैंने Arkado से नोट्स बंडल का ऑर्डर किया है।\n\nOrder ID: ${orderId}\nकृपया मुझे notes की लिंक भेजें।`;
 

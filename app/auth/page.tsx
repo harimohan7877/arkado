@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
+import { DEFAULT_SETTINGS } from "@/lib/default-settings";
 
 export default function AuthPage() {
   const router = useRouter();
@@ -405,12 +406,12 @@ export default function AuthPage() {
           <p className="text-[11px] text-stone-500 font-medium">
             Need help? WhatsApp Support:{" "}
             <a
-              href="https://wa.me/917852004401"
+              href={DEFAULT_SETTINGS.social.whatsapp_url}
               target="_blank"
               rel="noopener noreferrer"
               className="text-emerald-700 font-bold hover:underline"
             >
-              7852004401
+              {DEFAULT_SETTINGS.whatsapp_support_number}
             </a>
           </p>
         </div>

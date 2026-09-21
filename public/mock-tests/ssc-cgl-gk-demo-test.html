@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSC CGL 2026 : General Awareness (GK/GS) Demo Test | Online Mock Test Demo | Arkado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style>
+    :root {
+      --primary: #d97706;
+      --primary-dark: #b45309;
+      --stone-900: #1c1917;
+      --stone-800: #292524;
+      --stone-700: #44403c;
+      --stone-100: #f5f5f4;
+      --stone-50: #fafaf9;
+      --border: #e7e5e4;
+      --success: #16a34a;
+      --danger: #dc2626;
+      --info: #0284c7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
+      background: #f8fafc;
+      color: var(--stone-900);
+      line-height: 1.5;
+    }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 20px;
+    }
+    .brand-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--stone-900);
+    }
+    .brand-sub {
+      font-size: 11px;
+      color: #78716c;
+    }
+    .timer-card {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      padding: 6px 16px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 15px;
+      color: #92400e;
+    }
+    .section-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 24px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+    }
+    .sec-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      font-size: 12px;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .sec-btn.active {
+      background: #1e3a8a;
+      color: white;
+      border-color: #1e3a8a;
+    }
+    .main-container {
+      max-width: 1280px;
+      margin: 18px auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 20px;
+    }
+    @media (max-width: 900px) {
+      .main-container { grid-template-columns: 1fr; }
+    }
+    .test-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+    }
+    .q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+    .q-num {
+      font-size: 14px;
+      font-weight: 800;
+      color: #b45309;
+      background: #fef3c7;
+      padding: 4px 12px;
+      border-radius: 8px;
+    }
+    .q-marks {
+      font-size: 12px;
+      color: #78716c;
+      font-weight: 600;
+    }
+    .q-text {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.6;
+      margin-bottom: 22px;
+      color: var(--stone-900);
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .opt-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-size: 14.5px;
+      background: #ffffff;
+    }
+    .opt-label:hover {
+      border-color: #f59e0b;
+      background: #fffbeb;
+    }
+    .opt-label.selected {
+      border-color: #d97706;
+      background: #fef3c7;
+      font-weight: 700;
+      color: #92400e;
+    }
+    .opt-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #f5f5f4;
+      border: 1px solid #d6d3d1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .opt-label.selected .opt-badge {
+      background: #d97706;
+      color: white;
+      border-color: #d97706;
+    }
+    .btn-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+    }
+    .btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s;
+    }
+    .btn-prev { background: #f5f5f4; color: #44403c; border: 1px solid #d6d3d1; }
+    .btn-next { background: #d97706; color: #ffffff; }
+    .btn-next:hover { background: #b45309; }
+    .btn-clear { background: transparent; color: #dc2626; border: 1px solid #fecaca; }
+    .btn-clear:hover { background: #fee2e2; }
+    .btn-review { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
+    .btn-submit { background: #16a34a; color: white; padding: 10px 22px; font-weight: 800; }
+    .btn-submit:hover { background: #15803d; }
+
+    /* Palette */
+    .palette-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      height: fit-content;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+    }
+    .palette-title {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--stone-900);
+    }
+    .palette-legend {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      font-size: 11px;
+      margin-bottom: 14px;
+      color: #64748b;
+    }
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 4px; }
+    .grid-palette {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      margin-bottom: 16px;
+      max-height: 380px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .p-btn {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #f5f5f4;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.1s;
+    }
+    .p-btn.active { outline: 2.5px solid #d97706; outline-offset: 1px; }
+    .p-btn.answered { background: #16a34a; color: white; border-color: #16a34a; }
+    .p-btn.unanswered { background: #ef4444; color: white; border-color: #ef4444; }
+    .p-btn.reviewed { background: #8b5cf6; color: white; border-color: #8b5cf6; }
+
+    /* Result Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal.show { display: flex; }
+    .modal-card {
+      background: white;
+      max-width: 650px;
+      width: 100%;
+      border-radius: 20px;
+      padding: 28px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    }
+    .score-circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #fef3c7;
+      border: 4px solid #d97706;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 16px auto;
+      color: #92400e;
+      font-weight: 900;
+    }
+    .sol-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-logo">A</div>
+      <div>
+        <div class="brand-title">SSC CGL 2026 : General Awareness (GK/GS) Demo Test</div>
+        <div class="brand-sub">★ Arkado Online CBT Practice • SSC CGL 2026 ★</div>
+      </div>
+    </div>
+    <div class="timer-card">
+      <span>⏱️</span>
+      <span id="time-left">15:00</span>
+    </div>
+  </header>
+
+  
+
+  <div class="main-container">
+    <div class="test-box">
+      <div class="q-header">
+        <div class="q-num" id="q-number">प्रश्न 1 / 25</div>
+        <div class="q-marks" id="q-section-topic">अंक: +2.00 | नेगेटिव: -0.50</div>
+      </div>
+
+      <div class="q-text" id="q-text">प्रश्न लोड हो रहा है...</div>
+
+      <div class="options" id="opt-container">
+        <!-- Options rendered dynamically -->
+      </div>
+
+      <div class="btn-row">
+        <div>
+          <button class="btn btn-prev" id="btn-prev" onclick="prevQ()">← पिछला</button>
+          <button class="btn btn-next" id="btn-next" onclick="nextQ()">अगला →</button>
+        </div>
+        <div>
+          <button class="btn btn-clear" onclick="clearChoice()">चयन हटाएं</button>
+          <button class="btn btn-review" onclick="toggleReview()">पुनरावलोकन (Review)</button>
+          <button class="btn btn-submit" onclick="confirmSubmit()">सबमिट टेस्ट ✔</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette Sidebar -->
+    <div class="palette-box">
+      <div class="palette-title">प्रश्न पैलेट (Question Palette)</div>
+      <div class="palette-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#16a34a;"></div> उत्तर दिया</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ef4444;"></div> अनुत्तरित</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6;"></div> मार्क फॉर रिव्यू</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f5f5f4; border:1px solid #ccc;"></div> नहीं देखा</div>
+      </div>
+      <div class="grid-palette" id="palette-grid">
+        <!-- Palette buttons rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Result Modal -->
+  <div class="modal" id="result-modal">
+    <div class="modal-card">
+      <h2 style="font-size: 20px; font-weight: 800; text-align: center; color: var(--stone-900);">
+        📊 टेस्ट परिणाम एवं स्कोरकार्ड (Scorecard)
+      </h2>
+      
+      <div class="score-circle">
+        <span style="font-size: 24px;" id="res-score">0</span>
+        <span style="font-size: 10px; font-weight: 700; color: #78350f;">अंक / 50</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; margin-bottom: 20px;">
+        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 10px;">
+          <div style="font-size: 18px; font-weight: 800; color: #16a34a;" id="res-correct">0</div>
+          <div style="font-size: 11px; color: #15803d; font-weight: 600;">सही उत्तर (+2)</div>
+        </div>
+        <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 10px;">
+          <div style="font-size: 18px; font-weight: 800; color: #dc2626;" id="res-wrong">0</div>
+          <div style="font-size: 11px; color: #b91c1c; font-weight: 600;">गलत (-0.50)</div>
+        </div>
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px;">
+          <div style="font-size: 18px; font-weight: 800; color: #475569;" id="res-unattempted">0</div>
+          <div style="font-size: 11px; color: #64748b; font-weight: 600;">अनुत्तरित (0)</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 12px; color: #1e3a8a;">
+        📝 सभी प्रश्नों का विस्तृत हल एवं उत्तर कुंजी (Solution Review):
+      </h3>
+      <div id="solution-list" style="max-height: 320px; overflow-y: auto; padding-right: 4px;">
+        <!-- Solutions generated here -->
+      </div>
+
+      <div style="margin-top: 20px; text-align: center;">
+        <button class="btn btn-next" style="padding: 12px 28px;" onclick="restartTest()">🔄 पुनः टेस्ट दें (Re-attempt)</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const questionsData = [{"question": "पेरिस ओलंपिक 2024 (33वें ग्रीष्मकालीन ओलंपिक) में भारत ने कुल कितने पदक जीते?", "options": {"A": "8 पदक", "B": "7 पदक", "C": "6 पदक (1 रजत और 5 कांस्य)", "D": "5 पदक"}, "correct_option": "C", "explanation": "भारत ने पेरिस 2024 में 1 रजत (नीरज चोपड़ा) और 5 कांस्य पदक सहित कुल 6 पदक जीतकर 71वां स्थान हासिल किया। अतः सही उत्तर विकल्प (C) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 में भारत के लिए एकमात्र रजत पदक (Silver Medal) किस एथलीट ने जीता?", "options": {"A": "अमन सहरावत", "B": "नीरज चोपड़ा (भाला फेंक / Javelin Throw)", "C": "स्वप्निल कुसाले", "D": "मनु भाकर"}, "correct_option": "B", "explanation": "नीeraj चोपड़ा ने 89.45 मीटर के सर्वश्रेष्ठ थ्रो के साथ पुरुषों की भाला फेंक स्पर्धा में लगातार दूसरा ओलंपिक पदक (रजत) जीता। अतः सही उत्तर विकल्प (B) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 में पुरुषों की भाला फेंक स्पर्धा में 92.97 मीटर का नया ओलंपिक रिकॉर्ड बनाकर स्वर्ण पदक किसने जीता?", "options": {"A": "अरशद नदीम (पाकिस्तान)", "B": "जैकब वाडलेजच", "C": "एंडरसन पीटर्स", "D": "नीरज चोपड़ा"}, "correct_option": "A", "explanation": "पाकिस्तान के अरशद नदीम ने 92.97 मीटर का थ्रो कर नया ओलंपिक रिकॉर्ड बनाया और स्वर्ण पदक जीता। अतः सही उत्तर विकल्प (A) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "स्वतंत्र भारत के इतिहास में एक ही ओलंपिक में दो पदक जीतने वाली पहली भारतीय एथलीट कौन बनीं?", "options": {"A": "साइना नेहवाल", "B": "पी.वी. सिंधु", "C": "मनु भाकर (Manu Bhaker)", "D": "कर्णम मल्लेश्वरी"}, "correct_option": "C", "explanation": "मनु भाकर ने महिलाओं की 10 मीटर एयर पिस्टल और 10 मीटर एयर पिस्टल मिक्स्ड टीम दोनों में कांस्य पदक जीता। अतः सही उत्तर विकल्प (C) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "मनु भाकर ने पेरिस 2024 में 10 मीटर एयर पिस्टल मिक्स्ड टीम स्पर्धा में किसके साथ मिलकर कांस्य पदक जीता?", "options": {"A": "अभिषेक वर्मा", "B": "सौरभ चौधरी", "C": "विजय कुमार", "D": "सरबजोत सिंह (Sarabjot Singh)"}, "correct_option": "D", "explanation": "मनु भाकर और सरबजोत सिंह की जोड़ी ने दक्षिण कोरिया को 16-10 से हराकर निशानेबाजी में मिक्स्ड टीम कांस्य पदक जीता। अतः सही उत्तर विकल्प (D) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 में पुरुषों की 50 मीटर राइफल 3-पोजिशंस स्पर्धा में कांस्य पदक जीतकर इतिहास रचने वाले निशानेबाज कौन हैं?", "options": {"A": "ऐश्वर्य प्रताप सिंह तोमर", "B": "स्वप्निल कुसाले (Swapnil Kusale)", "C": "गगन नारंग", "D": "अभिनव बिंद्रा"}, "correct_option": "B", "explanation": "स्वप्निल कुसाले ओलंपिक इतिहास में 50 मीटर राइफल 3-पोजिशंस स्पर्धा में पदक जीतने वाले पहले भारतीय बने। अतः सही उत्तर विकल्प (B) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 में भारतीय पुरुष हॉकी टीम ने किस देश को 2-1 से हराकर लगातार दूसरा कांस्य पदक जीता?", "options": {"A": "नीदरलैंड्स", "B": "स्पेन (Spain)", "C": "ग्रेट ब्रिटेन", "D": "जर्मनी"}, "correct_option": "B", "explanation": "कप्तान हरमनप्रीत सिंह के दो गोलों की मदद से भारत ने स्पेन को 2-1 से हराकर कांस्य पदक जीता। अतः सही उत्तर विकल्प (B) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 के बाद किस महान भारतीय हॉकी गोलकीपर ने अंतरराष्ट्रीय हॉकी से संन्यास की घोषणा की?", "options": {"A": "पी.आर. श्रीजेश (P.R. Sreejesh)", "B": "मनप्रीत सिंह", "C": "कृष्ण पाठक", "D": "हरमनप्रीत सिंह"}, "correct_option": "A", "explanation": "भारतीय हॉकी की 'दीवार' कहे जाने वाले पी.आर. श्रीजेश ने टोक्यो 2020 और पेरिस 2024 दोनों में कांस्य पदक जीतकर संन्यास लिया। अतः सही उत्तर विकल्प (A) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 में पुरुषों की 57 किग्रा फ्रीस्टाइल कुश्ती में कांस्य पदक जीतकर 21 वर्ष की आयु में भारत के सबसे युवा ओलंपिक पदक विजेता कौन बने?", "options": {"A": "बजरंग पुनिया", "B": "अमन सहरावत (Aman Sehrawat)", "C": "रवि दहिया", "D": "सुशील कुमार"}, "correct_option": "B", "explanation": "अमन सहरावत ने प्यूर्टो रिको के डेरियन क्रूज़ को 13-5 से हराकर भारत का कुश्ती में गौरव बढ़ाया। अतः सही उत्तर विकल्प (B) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 के उद्घाटन समारोह में भारतीय दल के ध्वजवाहक (Flag Bearers) कौन थे?", "options": {"A": "मनु भाकर और नीरज चोपड़ा", "B": "पी.वी. सिंधु और शरत कमल", "C": "नीरज चोपड़ा और मैरी कॉम", "D": "मनप्रीत सिंह और मीराबाई चानू"}, "correct_option": "B", "explanation": "टेबल टेनिस दिग्गज अचंता शरत कमल और दो बार की ओलंपिक पदक विजेता बैडमिंटन खिलाड़ी पी.वी. सिंधु उद्घाटन ध्वजवाहक थे। अतः सही उत्तर विकल्प (B) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 के समापन समारोह में भारत के संयुक्त ध्वजवाहक कौन थे?", "options": {"A": "अमन सहरावत और लवलीना", "B": "मनु भाकर और पी.आर. श्रीजेश", "C": "नीरज चोपड़ा और विनेश फोगाट", "D": "शरत कमल और पी.वी. सिंधु"}, "correct_option": "B", "explanation": "दो कांस्य विजेता मनु भाकर और संन्यास लेने वाले महान गोलकीपर पी.आर. श्रीजेश समापन समारोह में ध्वजवाहक रहे। अतः सही उत्तर विकल्प (B) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 का आधिकारिक शुभंकर (Mascot) क्या था?", "options": {"A": "बिंग ड्वेन ड्वेन", "B": "विनीसियस", "C": "मिराइतोवा", "D": "ओलंपिक फ्रीज (Olympic Phryge - फ्रीजियन कैप)"}, "correct_option": "D", "explanation": "फ्रांसीसी क्रांति में स्वतंत्रता की प्रतीक लाल रंग की फ्रीजियन टोपी पर आधारित 'ओलंपिक फ्रीज' शुभंकर था। अतः सही उत्तर विकल्प (D) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "ओलंपिक इतिहास में पहली बार किसी स्टेडियम के बाहर नदी पर उद्घाटन समारोह किस नदी पर आयोजित हुआ?", "options": {"A": "राइन नदी", "B": "डेन्यूब नदी", "C": "टेम्स नदी", "D": "सीन नदी (River Seine - पेरिस)"}, "correct_option": "D", "explanation": "पेरिस 2024 का उद्घाटन समारोह सीन नदी पर 85 नावों में एथलीटों की परेड के साथ आयोजित किया गया। अतः सही उत्तर विकल्प (D) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 में 40 स्वर्ण, 44 रजत और 42 कांस्य (कुल 126 पदक) के साथ पदक तालिका में शीर्ष स्थान पर कौन सा देश रहा?", "options": {"A": "फ्रांस", "B": "संयुक्त राज्य अमेरिका (USA)", "C": "जापान", "D": "चीन (40 स्वर्ण, कुल 91)"}, "correct_option": "B", "explanation": "अमेरिका और चीन दोनों ने 40-40 स्वर्ण जीते, किंतु अधिक रजत पदक (44 बनाम 27) के कारण अमेरिका शीर्ष पर रहा। अतः सही उत्तर विकल्प (B) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 में महिलाओं की 50 किग्रा कुश्ती के फाइनल में 100 ग्राम अधिक वजन पाए जाने के कारण किसे दुर्भाग्यपूर्ण अयोग्य घोषित किया गया?", "options": {"A": "विनेश फोगाट (Vinesh Phogat)", "B": "अंतिम पंघाल", "C": "साक्षी मलिक", "D": "अंशु मलिक"}, "correct_option": "A", "explanation": "विनेश फोगाट ओलंपिक फाइनल में पहुंचने वाली पहली भारतीय महिला पहलवान बनी थीं, किंतु अधिक वजन के कारण वे बाहर हो गईं। अतः सही उत्तर विकल्प (A) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस 2024 में पहली बार ओलंपिक में शामिल किया गया नया नृत्य-खेल (Dance Sport) कौन सा था?", "options": {"A": "ब्रेकिंग / ब्रेकडांसिंग (Breaking)", "B": "स्पोर्ट क्लाइम्बिंग", "C": "सर्फिंग", "D": "स्केटबोर्डिंग"}, "correct_option": "A", "explanation": "हिप-हॉप संस्कृति पर आधारित ब्रेकिंग को पेरिस ओलंपिक में पहली बार शामिल किया गया था। अतः सही उत्तर विकल्प (A) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "आगामी 34वें ग्रीष्मकालीन ओलंपिक खेल 2028 में किस शहर में आयोजित किए जाएंगे?", "options": {"A": "दोहा (कतर)", "B": "ब्रिस्बेन (ऑस्ट्रेलिया)", "C": "मैड्रिड (स्पेन)", "D": "लॉस एंजिल्स (Los Angeles, USA)"}, "correct_option": "D", "explanation": "लॉस एंजिल्स 2028 में 128 वर्षों बाद क्रिकेट (T20 प्रारूप) की ओलंपिक में ऐतिहासिक वापसी होगी। अतः सही उत्तर विकल्प (D) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "35वें ग्रीष्मकालीन ओलंपिक खेल 2032 की मेजबानी किस शहर को सौंपी गई है?", "options": {"A": "लंदन", "B": "सियोल", "C": "टोक्यो", "D": "ब्रिस्बेन (Brisbane, ऑस्ट्रेलिया)"}, "correct_option": "D", "explanation": "2032 के ओलंपिक खेल ऑस्ट्रेलिया के ब्रिस्बेन शहर में आयोजित होंगे। अतः सही उत्तर विकल्प (D) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 में भारत की युवा निशानेबाज माहेश्वरी चौहान और अनंतजीत सिंह नरूका किस स्पर्धा में कांस्य पदक से मात्र एक अंक से चूक गए?", "options": {"A": "10 मीटर राइफल", "B": "ट्रैप मिक्स्ड टीम", "C": "25 मीटर पिस्टल", "D": "स्किट मिक्स्ड टीम (Skeet Mixed Team)"}, "correct_option": "D", "explanation": "स्किट मिक्स्ड टीम शूटऑफ में भारतीय जोड़ी चीन से 43-44 से हारकर चौथे स्थान पर रही। अतः सही उत्तर विकल्प (D) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 में भारतीय भारोत्तोलक मीराबाई चानू (महिलाओं की 49 किग्रा) किस स्थान पर रहीं?", "options": {"A": "छठे स्थान पर", "B": "पांचवें स्थान पर", "C": "कांस्य पदक", "D": "चौथे स्थान पर (मात्र 1 किग्रा से कांस्य चूका)"}, "correct_option": "D", "explanation": "टोक्यो की रजत पदक विजेता मीराबाई चानू ने कुल 199 किग्रा उठाकर चौथा स्थान प्राप्त किया। अतः सही उत्तर विकल्प (D) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस 2024 में पुरुषों की एकल बैडमिंटन स्पर्धा के सेमीफाइनल में पहुंचने वाले पहले भारतीय पुरुष शटलर कौन बने?", "options": {"A": "किदांबी श्रीकांत", "B": "एच.एस. प्रणय", "C": "लक्ष्य सेन (Lakshya Sen)", "D": "सात्विकसाईराज"}, "correct_option": "C", "explanation": "लक्ष्य सेन सेमीफाइनल में विक्टर एक्सेलसन से हारे और कांस्य पदक मैच में मलेशिया के ली जी जिया से हारकर चौथे रहे। अतः सही उत्तर विकल्प (C) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस 2024 में तीरंदाजी की मिक्स्ड टीम स्पर्धा में अंकिता भकत और धीरज बोम्मदेवरा किस स्थान पर रहे?", "options": {"A": "चौथे स्थान पर (ओलंपिक तीरंदाजी में भारत का सर्वश्रेष्ठ प्रदर्शन)", "B": "कांस्य पदक जीता", "C": "आठवें स्थान पर", "D": "क्वार्टर फाइनल में हारे"}, "correct_option": "A", "explanation": "अंकिता और धीरज की जोड़ी ओलंपिक तीरंदाजी इतिहास में कांस्य पदक मैच तक पहुंचने वाली पहली भारतीय जोड़ी बनी। अतः सही उत्तर विकल्प (A) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 में तैराकी में 4 स्वर्ण पदक जीतकर 'पेरिस का राजा' कहलाने वाले फ्रांसीसी तैराक कौन हैं?", "options": {"A": "माइकल फेल्प्स", "B": "लियोन मार्चंड (Léon Marchand)", "C": "एडम पीटी", "D": "कालेब ड्रेसेल"}, "correct_option": "B", "explanation": "लियोन मार्चंड ने चार व्यक्तिगत स्वर्ण पदक और चारों में नया ओलंपिक रिकॉर्ड बनाकर सनसनी मचाई। अतः सही उत्तर विकल्प (B) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस ओलंपिक 2024 में पुरुषों की 100 मीटर दौड़ में 9.79 सेकंड के साथ स्वर्ण पदक किसने जीता?", "options": {"A": "मार्सेल जैकब्स", "B": "फ्रेड केर्ली", "C": "नोआ लायल्स (Noah Lyles - USA)", "D": "किशेन थॉम्पसन (जमैका)"}, "correct_option": "C", "explanation": "अमेरिका के नोआ लायल्स ने मात्र 0.005 सेकंड के अंतर से किशेन थॉम्पसन को पछाड़कर स्वर्ण जीता। अतः सही उत्तर विकल्प (C) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "पेरिस 2024 में पुरुषों की टेनिस एकल स्पर्धा में स्वर्ण पदक जीतकर 'करियर गोल्डन स्लैम' पूरा करने वाले खिलाड़ी कौन बने?", "options": {"A": "राफेल नडाल", "B": "नोवाक जोकोविच (Novak Djokovic - सर्बिया)", "C": "दानिल मेदवेदेव", "D": "कार्लोस अल्काराज"}, "correct_option": "B", "explanation": "जोकोविच ने फाइनल में कार्लोस अल्काराज को हराकर अपने शानदार करियर में ओलंपिक स्वर्ण भी जोड़ लिया। अतः सही उत्तर विकल्प (B) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}];
+    let currentIdx = 0;
+    const userAnswers = new Array(questionsData.length).fill(null);
+    const markedForReview = new Array(questionsData.length).fill(false);
+    const visitedQuestions = new Array(questionsData.length).fill(false);
+    visitedQuestions[0] = true;
+
+    // Timer
+    let totalSeconds = 900;
+    const timerElem = document.getElementById("time-left");
+    const timerInterval = setInterval(() => {
+      if (totalSeconds <= 0) {
+        clearInterval(timerInterval);
+        confirmSubmit(true);
+        return;
+      }
+      totalSeconds--;
+      const m = Math.floor(totalSeconds / 60);
+      const s = totalSeconds % 60;
+      timerElem.textContent = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+    }, 1000);
+
+    function initPalette() {
+      const grid = document.getElementById("palette-grid");
+      grid.innerHTML = "";
+      questionsData.forEach((_, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "p-btn" + (idx === 0 ? " active" : "");
+        btn.id = `p-btn-${idx}`;
+        btn.textContent = idx + 1;
+        btn.onclick = () => jumpToQ(idx);
+        grid.appendChild(btn);
+      });
+    }
+
+    function updatePaletteBtn(idx) {
+      const btn = document.getElementById(`p-btn-${idx}`);
+      if (!btn) return;
+      btn.className = "p-btn";
+      if (idx === currentIdx) btn.classList.add("active");
+      if (markedForReview[idx]) {
+        btn.classList.add("reviewed");
+      } else if (userAnswers[idx] !== null) {
+        btn.classList.add("answered");
+      } else if (visitedQuestions[idx]) {
+        btn.classList.add("unanswered");
+      }
+    }
+
+    function renderQuestion() {
+      visitedQuestions[currentIdx] = true;
+      const q = questionsData[currentIdx];
+      document.getElementById("q-number").textContent = `प्रश्न ${currentIdx + 1} / ${questionsData.length}`;
+      document.getElementById("q-section-topic").textContent = `${q.topic_name || q.subject || ''} • (+2.00 / -0.50)`;
+      const diagHtml = q.diagram_svg ? `<div style="text-align:center; margin:10px 0;">${q.diagram_svg}</div>` : '';
+      document.getElementById("q-text").innerHTML = q.question + diagHtml;
+
+      const optCont = document.getElementById("opt-container");
+      optCont.innerHTML = "";
+      ['A', 'B', 'C', 'D'].forEach(opt => {
+        if (!q.options || !q.options[opt]) return;
+        const div = document.createElement("div");
+        const isSel = userAnswers[currentIdx] === opt;
+        div.className = "opt-label" + (isSel ? " selected" : "");
+        div.innerHTML = `<span class="opt-badge">${opt}</span> <span>${q.options[opt]}</span>`;
+        div.onclick = () => selectOpt(opt);
+        optCont.appendChild(div);
+      });
+
+      document.getElementById("btn-prev").disabled = currentIdx === 0;
+      document.getElementById("btn-next").textContent = currentIdx === questionsData.length - 1 ? "समीक्षा करें →" : "अगला →";
+
+      for (let i = 0; i < questionsData.length; i++) updatePaletteBtn(i);
+
+      if (window.renderMathInElement) {
+        renderMathInElement(document.getElementById("q-text"), {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});
+        renderMathInElement(optCont, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});
+      }
+    }
+
+    function selectOpt(opt) {
+      userAnswers[currentIdx] = opt;
+      renderQuestion();
+    }
+
+    function clearChoice() {
+      userAnswers[currentIdx] = null;
+      renderQuestion();
+    }
+
+    function toggleReview() {
+      markedForReview[currentIdx] = !markedForReview[currentIdx];
+      updatePaletteBtn(currentIdx);
+    }
+
+    function nextQ() {
+      if (currentIdx < questionsData.length - 1) {
+        currentIdx++;
+        renderQuestion();
+      } else {
+        confirmSubmit();
+      }
+    }
+
+    function prevQ() {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderQuestion();
+      }
+    }
+
+    function jumpToQ(idx) {
+      currentIdx = idx;
+      renderQuestion();
+    }
+
+    function confirmSubmit(auto = false) {
+      if (!auto) {
+        const answered = userAnswers.filter(a => a !== null).length;
+        if (!confirm(`आपने ${questionsData.length} में से ${answered} प्रश्नों के उत्तर दिए हैं। क्या आप टेस्ट सबमिट करना चाहते हैं?`)) return;
+      }
+      clearInterval(timerInterval);
+
+      let correct = 0, wrong = 0, unattempted = 0;
+      const solList = document.getElementById("solution-list");
+      solList.innerHTML = "";
+
+      questionsData.forEach((q, i) => {
+        const userA = userAnswers[i];
+        const isRight = userA === q.correct_option;
+        if (userA === null) unattempted++;
+        else if (isRight) correct++;
+        else wrong++;
+
+        const solDiv = document.createElement("div");
+        solDiv.className = "sol-card";
+        const statusColor = isRight ? "#16a34a" : userA ? "#dc2626" : "#64748b";
+        const statusText = isRight ? "✓ सही उत्तर" : userA ? "✗ गलत उत्तर" : "○ प्रयास नहीं किया";
+        const solDiag = q.diagram_svg ? `<div style="text-align:center; margin:8px 0;">${q.diagram_svg}</div>` : '';
+
+        solDiv.innerHTML = `
+          <div style="font-weight:700; margin-bottom:6px; color:#1e293b;">
+            Q.${i+1}. ${q.question}
+          </div>
+          ${solDiag}
+          <div style="display:flex; gap:12px; font-size:12px; margin-bottom:6px;">
+            <span>आपका उत्तर: <strong>${userA || '—'}</strong></span>
+            <span style="color:${statusColor}; font-weight:800;">(${statusText})</span>
+            <span style="color:#16a34a; font-weight:800;">सही विकल्प: (${q.correct_option})</span>
+          </div>
+          <div style="background:#f0fdf4; border-left:3px solid #16a34a; padding:6px 10px; border-radius:4px; font-size:12px; color:#14532d;">
+            <strong>व्याख्या:</strong> ${q.explanation || 'व्याख्या उपलब्ध नहीं है'}
+          </div>
+        `;
+        solList.appendChild(solDiv);
+      });
+
+      const score = (correct * 2) - (wrong * 0.50);
+      document.getElementById("res-score").textContent = score.toFixed(2);
+      document.getElementById("res-correct").textContent = correct;
+      document.getElementById("res-wrong").textContent = wrong;
+      document.getElementById("res-unattempted").textContent = unattempted;
+
+      document.getElementById("result-modal").classList.add("show");
+    }
+
+    function restartTest() {
+      window.location.reload();
+    }
+
+    // Section Switching (for 100 Qs mock)
+    function switchSection(startIdx) {
+      jumpToQ(startIdx);
+      const btns = document.querySelectorAll(".sec-btn");
+      btns.forEach(b => b.classList.remove("active"));
+      if (event && event.target) event.target.classList.add("active");
+    }
+
+    initPalette();
+    renderQuestion();
+  </script>
+</body>
+</html>

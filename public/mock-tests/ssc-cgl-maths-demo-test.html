@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSC CGL 2026 : Quantitative Aptitude (गणित) Demo Test | Online Mock Test Demo | Arkado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style>
+    :root {
+      --primary: #d97706;
+      --primary-dark: #b45309;
+      --stone-900: #1c1917;
+      --stone-800: #292524;
+      --stone-700: #44403c;
+      --stone-100: #f5f5f4;
+      --stone-50: #fafaf9;
+      --border: #e7e5e4;
+      --success: #16a34a;
+      --danger: #dc2626;
+      --info: #0284c7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
+      background: #f8fafc;
+      color: var(--stone-900);
+      line-height: 1.5;
+    }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 20px;
+    }
+    .brand-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--stone-900);
+    }
+    .brand-sub {
+      font-size: 11px;
+      color: #78716c;
+    }
+    .timer-card {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      padding: 6px 16px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 15px;
+      color: #92400e;
+    }
+    .section-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 24px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+    }
+    .sec-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      font-size: 12px;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .sec-btn.active {
+      background: #1e3a8a;
+      color: white;
+      border-color: #1e3a8a;
+    }
+    .main-container {
+      max-width: 1280px;
+      margin: 18px auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 20px;
+    }
+    @media (max-width: 900px) {
+      .main-container { grid-template-columns: 1fr; }
+    }
+    .test-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+    }
+    .q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+    .q-num {
+      font-size: 14px;
+      font-weight: 800;
+      color: #b45309;
+      background: #fef3c7;
+      padding: 4px 12px;
+      border-radius: 8px;
+    }
+    .q-marks {
+      font-size: 12px;
+      color: #78716c;
+      font-weight: 600;
+    }
+    .q-text {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.6;
+      margin-bottom: 22px;
+      color: var(--stone-900);
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .opt-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-size: 14.5px;
+      background: #ffffff;
+    }
+    .opt-label:hover {
+      border-color: #f59e0b;
+      background: #fffbeb;
+    }
+    .opt-label.selected {
+      border-color: #d97706;
+      background: #fef3c7;
+      font-weight: 700;
+      color: #92400e;
+    }
+    .opt-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #f5f5f4;
+      border: 1px solid #d6d3d1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .opt-label.selected .opt-badge {
+      background: #d97706;
+      color: white;
+      border-color: #d97706;
+    }
+    .btn-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+    }
+    .btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s;
+    }
+    .btn-prev { background: #f5f5f4; color: #44403c; border: 1px solid #d6d3d1; }
+    .btn-next { background: #d97706; color: #ffffff; }
+    .btn-next:hover { background: #b45309; }
+    .btn-clear { background: transparent; color: #dc2626; border: 1px solid #fecaca; }
+    .btn-clear:hover { background: #fee2e2; }
+    .btn-review { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
+    .btn-submit { background: #16a34a; color: white; padding: 10px 22px; font-weight: 800; }
+    .btn-submit:hover { background: #15803d; }
+
+    /* Palette */
+    .palette-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      height: fit-content;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+    }
+    .palette-title {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--stone-900);
+    }
+    .palette-legend {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      font-size: 11px;
+      margin-bottom: 14px;
+      color: #64748b;
+    }
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 4px; }
+    .grid-palette {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      margin-bottom: 16px;
+      max-height: 380px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .p-btn {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #f5f5f4;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.1s;
+    }
+    .p-btn.active { outline: 2.5px solid #d97706; outline-offset: 1px; }
+    .p-btn.answered { background: #16a34a; color: white; border-color: #16a34a; }
+    .p-btn.unanswered { background: #ef4444; color: white; border-color: #ef4444; }
+    .p-btn.reviewed { background: #8b5cf6; color: white; border-color: #8b5cf6; }
+
+    /* Result Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal.show { display: flex; }
+    .modal-card {
+      background: white;
+      max-width: 650px;
+      width: 100%;
+      border-radius: 20px;
+      padding: 28px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    }
+    .score-circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #fef3c7;
+      border: 4px solid #d97706;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 16px auto;
+      color: #92400e;
+      font-weight: 900;
+    }
+    .sol-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-logo">A</div>
+      <div>
+        <div class="brand-title">SSC CGL 2026 : Quantitative Aptitude (गणित) Demo Test</div>
+        <div class="brand-sub">★ Arkado Online CBT Practice • SSC CGL 2026 ★</div>
+      </div>
+    </div>
+    <div class="timer-card">
+      <span>⏱️</span>
+      <span id="time-left">25:00</span>
+    </div>
+  </header>
+
+  
+
+  <div class="main-container">
+    <div class="test-box">
+      <div class="q-header">
+        <div class="q-num" id="q-number">प्रश्न 1 / 25</div>
+        <div class="q-marks" id="q-section-topic">अंक: +2.00 | नेगेटिव: -0.50</div>
+      </div>
+
+      <div class="q-text" id="q-text">प्रश्न लोड हो रहा है...</div>
+
+      <div class="options" id="opt-container">
+        <!-- Options rendered dynamically -->
+      </div>
+
+      <div class="btn-row">
+        <div>
+          <button class="btn btn-prev" id="btn-prev" onclick="prevQ()">← पिछला</button>
+          <button class="btn btn-next" id="btn-next" onclick="nextQ()">अगला →</button>
+        </div>
+        <div>
+          <button class="btn btn-clear" onclick="clearChoice()">चयन हटाएं</button>
+          <button class="btn btn-review" onclick="toggleReview()">पुनरावलोकन (Review)</button>
+          <button class="btn btn-submit" onclick="confirmSubmit()">सबमिट टेस्ट ✔</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette Sidebar -->
+    <div class="palette-box">
+      <div class="palette-title">प्रश्न पैलेट (Question Palette)</div>
+      <div class="palette-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#16a34a;"></div> उत्तर दिया</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ef4444;"></div> अनुत्तरित</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6;"></div> मार्क फॉर रिव्यू</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f5f5f4; border:1px solid #ccc;"></div> नहीं देखा</div>
+      </div>
+      <div class="grid-palette" id="palette-grid">
+        <!-- Palette buttons rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Result Modal -->
+  <div class="modal" id="result-modal">
+    <div class="modal-card">
+      <h2 style="font-size: 20px; font-weight: 800; text-align: center; color: var(--stone-900);">
+        📊 टेस्ट परिणाम एवं स्कोरकार्ड (Scorecard)
+      </h2>
+      
+      <div class="score-circle">
+        <span style="font-size: 24px;" id="res-score">0</span>
+        <span style="font-size: 10px; font-weight: 700; color: #78350f;">अंक / 50</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; margin-bottom: 20px;">
+        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 10px;">
+          <div style="font-size: 18px; font-weight: 800; color: #16a34a;" id="res-correct">0</div>
+          <div style="font-size: 11px; color: #15803d; font-weight: 600;">सही उत्तर (+2)</div>
+        </div>
+        <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 10px;">
+          <div style="font-size: 18px; font-weight: 800; color: #dc2626;" id="res-wrong">0</div>
+          <div style="font-size: 11px; color: #b91c1c; font-weight: 600;">गलत (-0.50)</div>
+        </div>
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px;">
+          <div style="font-size: 18px; font-weight: 800; color: #475569;" id="res-unattempted">0</div>
+          <div style="font-size: 11px; color: #64748b; font-weight: 600;">अनुत्तरित (0)</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 12px; color: #1e3a8a;">
+        📝 सभी प्रश्नों का विस्तृत हल एवं उत्तर कुंजी (Solution Review):
+      </h3>
+      <div id="solution-list" style="max-height: 320px; overflow-y: auto; padding-right: 4px;">
+        <!-- Solutions generated here -->
+      </div>
+
+      <div style="margin-top: 20px; text-align: center;">
+        <button class="btn btn-next" style="padding: 12px 28px;" onclick="restartTest()">🔄 पुनः टेस्ट दें (Re-attempt)</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const questionsData = [{"question": "त्रिभुज ABC का अंतःकेंद्र I है। यदि ∠BAC = 30° हो, तो ∠BIC का सटीक मान कितने अंश होगा?", "options": {"A": "135°", "B": "120°", "C": "105°", "D": "90°"}, "correct_option": "C", "explanation": "अंतःकेंद्र पर बना कोण सूत्र: ∠BIC = 90° + (∠A / 2) = 90° + (30° / 2) = 90° + 15° = 105°। अतः सही उत्तर 105° है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"210\" height=\"130\" viewBox=\"0 0 210 130\" style=\"background:#FFFDF7; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Triangle ABC -->\n        <polygon points=\"105,18 25,105 185,105\" fill=\"#EFF6FF\" stroke=\"#1E3A8A\" stroke-width=\"2\"/>\n        <!-- Incenter Point I -->\n        <circle cx=\"105\" cy=\"78\" r=\"4\" fill=\"#DC2626\"/>\n        <text x=\"105\" y=\"70\" font-size=\"10\" font-weight=\"bold\" fill=\"#DC2626\" text-anchor=\"middle\">I</text>\n        \n        <!-- Lines from B and C to I -->\n        <line x1=\"25\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        <line x1=\"185\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        \n        <!-- Vertex Labels -->\n        <text x=\"105\" y=\"12\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\" text-anchor=\"middle\">A (30°)</text>\n        <text x=\"15\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">B</text>\n        <text x=\"190\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">C</text>\n        \n        <!-- Angle BIC badge -->\n        <rect x=\"75\" y=\"85\" width=\"60\" height=\"18\" fill=\"#FEF3C7\" stroke=\"#B45309\" rx=\"4\"/>\n        <text x=\"105\" y=\"98\" font-size=\"9\" font-weight=\"bold\" fill=\"#92400E\" text-anchor=\"middle\">∠BIC = 105°</text>\n      </svg>\n    </div>\n    "}, {"question": "त्रिभुज ABC का अंतःकेंद्र I है। यदि ∠BAC = 40° हो, तो ∠BIC का सटीक मान कितने अंश होगा?", "options": {"A": "140°", "B": "110°", "C": "95°", "D": "125°"}, "correct_option": "B", "explanation": "अंतःकेंद्र पर बना कोण सूत्र: ∠BIC = 90° + (∠A / 2) = 90° + (40° / 2) = 90° + 20° = 110°। अतः सही उत्तर 110° है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"210\" height=\"130\" viewBox=\"0 0 210 130\" style=\"background:#FFFDF7; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Triangle ABC -->\n        <polygon points=\"105,18 25,105 185,105\" fill=\"#EFF6FF\" stroke=\"#1E3A8A\" stroke-width=\"2\"/>\n        <!-- Incenter Point I -->\n        <circle cx=\"105\" cy=\"78\" r=\"4\" fill=\"#DC2626\"/>\n        <text x=\"105\" y=\"70\" font-size=\"10\" font-weight=\"bold\" fill=\"#DC2626\" text-anchor=\"middle\">I</text>\n        \n        <!-- Lines from B and C to I -->\n        <line x1=\"25\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        <line x1=\"185\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        \n        <!-- Vertex Labels -->\n        <text x=\"105\" y=\"12\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\" text-anchor=\"middle\">A (40°)</text>\n        <text x=\"15\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">B</text>\n        <text x=\"190\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">C</text>\n        \n        <!-- Angle BIC badge -->\n        <rect x=\"75\" y=\"85\" width=\"60\" height=\"18\" fill=\"#FEF3C7\" stroke=\"#B45309\" rx=\"4\"/>\n        <text x=\"105\" y=\"98\" font-size=\"9\" font-weight=\"bold\" fill=\"#92400E\" text-anchor=\"middle\">∠BIC = 110°</text>\n      </svg>\n    </div>\n    "}, {"question": "त्रिभुज ABC का अंतःकेंद्र I है। यदि ∠BAC = 50° हो, तो ∠BIC का सटीक मान कितने अंश होगा?", "options": {"A": "115°", "B": "145°", "C": "100°", "D": "130°"}, "correct_option": "A", "explanation": "अंतःकेंद्र पर बना कोण सूत्र: ∠BIC = 90° + (∠A / 2) = 90° + (50° / 2) = 90° + 25° = 115°। अतः सही उत्तर 115° है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"210\" height=\"130\" viewBox=\"0 0 210 130\" style=\"background:#FFFDF7; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Triangle ABC -->\n        <polygon points=\"105,18 25,105 185,105\" fill=\"#EFF6FF\" stroke=\"#1E3A8A\" stroke-width=\"2\"/>\n        <!-- Incenter Point I -->\n        <circle cx=\"105\" cy=\"78\" r=\"4\" fill=\"#DC2626\"/>\n        <text x=\"105\" y=\"70\" font-size=\"10\" font-weight=\"bold\" fill=\"#DC2626\" text-anchor=\"middle\">I</text>\n        \n        <!-- Lines from B and C to I -->\n        <line x1=\"25\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        <line x1=\"185\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        \n        <!-- Vertex Labels -->\n        <text x=\"105\" y=\"12\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\" text-anchor=\"middle\">A (50°)</text>\n        <text x=\"15\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">B</text>\n        <text x=\"190\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">C</text>\n        \n        <!-- Angle BIC badge -->\n        <rect x=\"75\" y=\"85\" width=\"60\" height=\"18\" fill=\"#FEF3C7\" stroke=\"#B45309\" rx=\"4\"/>\n        <text x=\"105\" y=\"98\" font-size=\"9\" font-weight=\"bold\" fill=\"#92400E\" text-anchor=\"middle\">∠BIC = 115°</text>\n      </svg>\n    </div>\n    "}, {"question": "त्रिभुज ABC का अंतःकेंद्र I है। यदि ∠BAC = 60° हो, तो ∠BIC का सटीक मान कितने अंश होगा?", "options": {"A": "105°", "B": "135°", "C": "120°", "D": "150°"}, "correct_option": "C", "explanation": "अंतःकेंद्र पर बना कोण सूत्र: ∠BIC = 90° + (∠A / 2) = 90° + (60° / 2) = 90° + 30° = 120°। अतः सही उत्तर 120° है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"210\" height=\"130\" viewBox=\"0 0 210 130\" style=\"background:#FFFDF7; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Triangle ABC -->\n        <polygon points=\"105,18 25,105 185,105\" fill=\"#EFF6FF\" stroke=\"#1E3A8A\" stroke-width=\"2\"/>\n        <!-- Incenter Point I -->\n        <circle cx=\"105\" cy=\"78\" r=\"4\" fill=\"#DC2626\"/>\n        <text x=\"105\" y=\"70\" font-size=\"10\" font-weight=\"bold\" fill=\"#DC2626\" text-anchor=\"middle\">I</text>\n        \n        <!-- Lines from B and C to I -->\n        <line x1=\"25\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        <line x1=\"185\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        \n        <!-- Vertex Labels -->\n        <text x=\"105\" y=\"12\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\" text-anchor=\"middle\">A (60°)</text>\n        <text x=\"15\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">B</text>\n        <text x=\"190\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">C</text>\n        \n        <!-- Angle BIC badge -->\n        <rect x=\"75\" y=\"85\" width=\"60\" height=\"18\" fill=\"#FEF3C7\" stroke=\"#B45309\" rx=\"4\"/>\n        <text x=\"105\" y=\"98\" font-size=\"9\" font-weight=\"bold\" fill=\"#92400E\" text-anchor=\"middle\">∠BIC = 120°</text>\n      </svg>\n    </div>\n    "}, {"question": "त्रिभुज ABC का अंतःकेंद्र I है। यदि ∠BAC = 70° हो, तो ∠BIC का सटीक मान कितने अंश होगा?", "options": {"A": "110°", "B": "140°", "C": "155°", "D": "125°"}, "correct_option": "D", "explanation": "अंतःकेंद्र पर बना कोण सूत्र: ∠BIC = 90° + (∠A / 2) = 90° + (70° / 2) = 90° + 35° = 125°। अतः सही उत्तर 125° है। अतः सही उत्तर विकल्प (D) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"210\" height=\"130\" viewBox=\"0 0 210 130\" style=\"background:#FFFDF7; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Triangle ABC -->\n        <polygon points=\"105,18 25,105 185,105\" fill=\"#EFF6FF\" stroke=\"#1E3A8A\" stroke-width=\"2\"/>\n        <!-- Incenter Point I -->\n        <circle cx=\"105\" cy=\"78\" r=\"4\" fill=\"#DC2626\"/>\n        <text x=\"105\" y=\"70\" font-size=\"10\" font-weight=\"bold\" fill=\"#DC2626\" text-anchor=\"middle\">I</text>\n        \n        <!-- Lines from B and C to I -->\n        <line x1=\"25\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        <line x1=\"185\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        \n        <!-- Vertex Labels -->\n        <text x=\"105\" y=\"12\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\" text-anchor=\"middle\">A (70°)</text>\n        <text x=\"15\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">B</text>\n        <text x=\"190\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">C</text>\n        \n        <!-- Angle BIC badge -->\n        <rect x=\"75\" y=\"85\" width=\"60\" height=\"18\" fill=\"#FEF3C7\" stroke=\"#B45309\" rx=\"4\"/>\n        <text x=\"105\" y=\"98\" font-size=\"9\" font-weight=\"bold\" fill=\"#92400E\" text-anchor=\"middle\">∠BIC = 125°</text>\n      </svg>\n    </div>\n    "}, {"question": "त्रिभुज ABC का अंतःकेंद्र I है। यदि ∠BAC = 80° हो, तो ∠BIC का सटीक मान कितने अंश होगा?", "options": {"A": "160°", "B": "130°", "C": "115°", "D": "145°"}, "correct_option": "B", "explanation": "अंतःकेंद्र पर बना कोण सूत्र: ∠BIC = 90° + (∠A / 2) = 90° + (80° / 2) = 90° + 40° = 130°। अतः सही उत्तर 130° है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"210\" height=\"130\" viewBox=\"0 0 210 130\" style=\"background:#FFFDF7; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Triangle ABC -->\n        <polygon points=\"105,18 25,105 185,105\" fill=\"#EFF6FF\" stroke=\"#1E3A8A\" stroke-width=\"2\"/>\n        <!-- Incenter Point I -->\n        <circle cx=\"105\" cy=\"78\" r=\"4\" fill=\"#DC2626\"/>\n        <text x=\"105\" y=\"70\" font-size=\"10\" font-weight=\"bold\" fill=\"#DC2626\" text-anchor=\"middle\">I</text>\n        \n        <!-- Lines from B and C to I -->\n        <line x1=\"25\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        <line x1=\"185\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        \n        <!-- Vertex Labels -->\n        <text x=\"105\" y=\"12\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\" text-anchor=\"middle\">A (80°)</text>\n        <text x=\"15\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">B</text>\n        <text x=\"190\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">C</text>\n        \n        <!-- Angle BIC badge -->\n        <rect x=\"75\" y=\"85\" width=\"60\" height=\"18\" fill=\"#FEF3C7\" stroke=\"#B45309\" rx=\"4\"/>\n        <text x=\"105\" y=\"98\" font-size=\"9\" font-weight=\"bold\" fill=\"#92400E\" text-anchor=\"middle\">∠BIC = 130°</text>\n      </svg>\n    </div>\n    "}, {"question": "त्रिभुज ABC का अंतःकेंद्र I है। यदि ∠BAC = 54° हो, तो ∠BIC का सटीक मान कितने अंश होगा?", "options": {"A": "102°", "B": "117°", "C": "147°", "D": "132°"}, "correct_option": "B", "explanation": "अंतःकेंद्र पर बना कोण सूत्र: ∠BIC = 90° + (∠A / 2) = 90° + (54° / 2) = 90° + 27° = 117°। अतः सही उत्तर 117° है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"210\" height=\"130\" viewBox=\"0 0 210 130\" style=\"background:#FFFDF7; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Triangle ABC -->\n        <polygon points=\"105,18 25,105 185,105\" fill=\"#EFF6FF\" stroke=\"#1E3A8A\" stroke-width=\"2\"/>\n        <!-- Incenter Point I -->\n        <circle cx=\"105\" cy=\"78\" r=\"4\" fill=\"#DC2626\"/>\n        <text x=\"105\" y=\"70\" font-size=\"10\" font-weight=\"bold\" fill=\"#DC2626\" text-anchor=\"middle\">I</text>\n        \n        <!-- Lines from B and C to I -->\n        <line x1=\"25\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        <line x1=\"185\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        \n        <!-- Vertex Labels -->\n        <text x=\"105\" y=\"12\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\" text-anchor=\"middle\">A (54°)</text>\n        <text x=\"15\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">B</text>\n        <text x=\"190\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">C</text>\n        \n        <!-- Angle BIC badge -->\n        <rect x=\"75\" y=\"85\" width=\"60\" height=\"18\" fill=\"#FEF3C7\" stroke=\"#B45309\" rx=\"4\"/>\n        <text x=\"105\" y=\"98\" font-size=\"9\" font-weight=\"bold\" fill=\"#92400E\" text-anchor=\"middle\">∠BIC = 117°</text>\n      </svg>\n    </div>\n    "}, {"question": "त्रिभुज ABC का अंतःकेंद्र I है। यदि ∠BAC = 68° हो, तो ∠BIC का सटीक मान कितने अंश होगा?", "options": {"A": "124°", "B": "139°", "C": "154°", "D": "109°"}, "correct_option": "A", "explanation": "अंतःकेंद्र पर बना कोण सूत्र: ∠BIC = 90° + (∠A / 2) = 90° + (68° / 2) = 90° + 34° = 124°। अतः सही उत्तर 124° है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"210\" height=\"130\" viewBox=\"0 0 210 130\" style=\"background:#FFFDF7; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Triangle ABC -->\n        <polygon points=\"105,18 25,105 185,105\" fill=\"#EFF6FF\" stroke=\"#1E3A8A\" stroke-width=\"2\"/>\n        <!-- Incenter Point I -->\n        <circle cx=\"105\" cy=\"78\" r=\"4\" fill=\"#DC2626\"/>\n        <text x=\"105\" y=\"70\" font-size=\"10\" font-weight=\"bold\" fill=\"#DC2626\" text-anchor=\"middle\">I</text>\n        \n        <!-- Lines from B and C to I -->\n        <line x1=\"25\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        <line x1=\"185\" y1=\"105\" x2=\"105\" y2=\"78\" stroke=\"#DC2626\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\"/>\n        \n        <!-- Vertex Labels -->\n        <text x=\"105\" y=\"12\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\" text-anchor=\"middle\">A (68°)</text>\n        <text x=\"15\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">B</text>\n        <text x=\"190\" y=\"115\" font-size=\"11\" font-weight=\"bold\" fill=\"#1E293B\">C</text>\n        \n        <!-- Angle BIC badge -->\n        <rect x=\"75\" y=\"85\" width=\"60\" height=\"18\" fill=\"#FEF3C7\" stroke=\"#B45309\" rx=\"4\"/>\n        <text x=\"105\" y=\"98\" font-size=\"9\" font-weight=\"bold\" fill=\"#92400E\" text-anchor=\"middle\">∠BIC = 124°</text>\n      </svg>\n    </div>\n    "}, {"question": "त्रिभुज ABC का परिकेंद्र O है। यदि ∠BAC = 25° हो, तो केंद्र पर बना कोण ∠BOC ज्ञात कीजिए।", "options": {"A": "90°", "B": "50°", "C": "70°", "D": "30°"}, "correct_option": "B", "explanation": "वृत्त के चाप द्वारा केंद्र पर बना कोण परिधि पर बने कोण का दोगुना होता है। अतः परिकेंद्र O पर: ∠BOC = 2 × ∠A = 2 × 25° = 50°। अतः सही उत्तर 50° है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC का परिकेंद्र O है। यदि ∠BAC = 35° हो, तो केंद्र पर बना कोण ∠BOC ज्ञात कीजिए।", "options": {"A": "50°", "B": "110°", "C": "90°", "D": "70°"}, "correct_option": "D", "explanation": "वृत्त के चाप द्वारा केंद्र पर बना कोण परिधि पर बने कोण का दोगुना होता है। अतः परिकेंद्र O पर: ∠BOC = 2 × ∠A = 2 × 35° = 70°। अतः सही उत्तर 70° है। अतः सही उत्तर विकल्प (D) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC का परिकेंद्र O है। यदि ∠BAC = 45° हो, तो केंद्र पर बना कोण ∠BOC ज्ञात कीजिए।", "options": {"A": "130°", "B": "70°", "C": "110°", "D": "90°"}, "correct_option": "D", "explanation": "वृत्त के चाप द्वारा केंद्र पर बना कोण परिधि पर बने कोण का दोगुना होता है। अतः परिकेंद्र O पर: ∠BOC = 2 × ∠A = 2 × 45° = 90°। अतः सही उत्तर 90° है। अतः सही उत्तर विकल्प (D) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC का परिकेंद्र O है। यदि ∠BAC = 55° हो, तो केंद्र पर बना कोण ∠BOC ज्ञात कीजिए।", "options": {"A": "150°", "B": "110°", "C": "90°", "D": "130°"}, "correct_option": "B", "explanation": "वृत्त के चाप द्वारा केंद्र पर बना कोण परिधि पर बने कोण का दोगुना होता है। अतः परिकेंद्र O पर: ∠BOC = 2 × ∠A = 2 × 55° = 110°। अतः सही उत्तर 110° है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC का परिकेंद्र O है। यदि ∠BAC = 65° हो, तो केंद्र पर बना कोण ∠BOC ज्ञात कीजिए।", "options": {"A": "130°", "B": "150°", "C": "110°", "D": "170°"}, "correct_option": "A", "explanation": "वृत्त के चाप द्वारा केंद्र पर बना कोण परिधि पर बने कोण का दोगुना होता है। अतः परिकेंद्र O पर: ∠BOC = 2 × ∠A = 2 × 65° = 130°। अतः सही उत्तर 130° है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC का परिकेंद्र O है। यदि ∠BAC = 75° हो, तो केंद्र पर बना कोण ∠BOC ज्ञात कीजिए।", "options": {"A": "150°", "B": "190°", "C": "130°", "D": "170°"}, "correct_option": "A", "explanation": "वृत्त के चाप द्वारा केंद्र पर बना कोण परिधि पर बने कोण का दोगुना होता है। अतः परिकेंद्र O पर: ∠BOC = 2 × ∠A = 2 × 75° = 150°। अतः सही उत्तर 150° है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC का परिकेंद्र O है। यदि ∠BAC = 42° हो, तो केंद्र पर बना कोण ∠BOC ज्ञात कीजिए।", "options": {"A": "124°", "B": "104°", "C": "64°", "D": "84°"}, "correct_option": "D", "explanation": "वृत्त के चाप द्वारा केंद्र पर बना कोण परिधि पर बने कोण का दोगुना होता है। अतः परिकेंद्र O पर: ∠BOC = 2 × ∠A = 2 × 42° = 84°। अतः सही उत्तर 84° है। अतः सही उत्तर विकल्प (D) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC का परिकेंद्र O है। यदि ∠BAC = 52° हो, तो केंद्र पर बना कोण ∠BOC ज्ञात कीजिए।", "options": {"A": "124°", "B": "144°", "C": "84°", "D": "104°"}, "correct_option": "D", "explanation": "वृत्त के चाप द्वारा केंद्र पर बना कोण परिधि पर बने कोण का दोगुना होता है। अतः परिकेंद्र O पर: ∠BOC = 2 × ∠A = 2 × 52° = 104°। अतः सही उत्तर 104° है। अतः सही उत्तर विकल्प (D) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC का परिकेंद्र O है। यदि ∠BAC = 62° हो, तो केंद्र पर बना कोण ∠BOC ज्ञात कीजिए।", "options": {"A": "104°", "B": "144°", "C": "164°", "D": "124°"}, "correct_option": "D", "explanation": "वृत्त के चाप द्वारा केंद्र पर बना कोण परिधि पर बने कोण का दोगुना होता है। अतः परिकेंद्र O पर: ∠BOC = 2 × ∠A = 2 × 62° = 124°। अतः सही उत्तर 124° है। अतः सही उत्तर विकल्प (D) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC का परिकेंद्र O है। यदि ∠BAC = 72° हो, तो केंद्र पर बना कोण ∠BOC ज्ञात कीजिए।", "options": {"A": "184°", "B": "124°", "C": "164°", "D": "144°"}, "correct_option": "D", "explanation": "वृत्त के चाप द्वारा केंद्र पर बना कोण परिधि पर बने कोण का दोगुना होता है। अतः परिकेंद्र O पर: ∠BOC = 2 × ∠A = 2 × 72° = 144°। अतः सही उत्तर 144° है। अतः सही उत्तर विकल्प (D) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC में मध्यिका AD की लंबाई 12 सेमी है और G त्रिभुज का केंद्रक (Centroid) है। रेखाखंड AG की लंबाई कितनी होगी?", "options": {"A": "4 सेमी", "B": "10 सेमी", "C": "8 सेमी", "D": "6 सेमी"}, "correct_option": "C", "explanation": "त्रिभुज का केंद्रक (Centroid) प्रत्येक मध्यिका को शीर्ष से आधार की ओर 2 : 1 के अनुपात में विभाजित करता है। अतः AG = (2/3) × AD = (2/3) × 12 = 8 सेमी (तथा GD = 4 सेमी)। अतः सही उत्तर 8 सेमी है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC में मध्यिका AD की लंबाई 15 सेमी है और G त्रिभुज का केंद्रक (Centroid) है। रेखाखंड AG की लंबाई कितनी होगी?", "options": {"A": "10 सेमी", "B": "12 सेमी", "C": "5 सेमी", "D": "7 सेमी"}, "correct_option": "A", "explanation": "त्रिभुज का केंद्रक (Centroid) प्रत्येक मध्यिका को शीर्ष से आधार की ओर 2 : 1 के अनुपात में विभाजित करता है। अतः AG = (2/3) × AD = (2/3) × 15 = 10 सेमी (तथा GD = 5 सेमी)। अतः सही उत्तर 10 सेमी है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC में मध्यिका AD की लंबाई 18 सेमी है और G त्रिभुज का केंद्रक (Centroid) है। रेखाखंड AG की लंबाई कितनी होगी?", "options": {"A": "12 सेमी", "B": "14 सेमी", "C": "9 सेमी", "D": "6 सेमी"}, "correct_option": "A", "explanation": "त्रिभुज का केंद्रक (Centroid) प्रत्येक मध्यिका को शीर्ष से आधार की ओर 2 : 1 के अनुपात में विभाजित करता है। अतः AG = (2/3) × AD = (2/3) × 18 = 12 सेमी (तथा GD = 6 सेमी)। अतः सही उत्तर 12 सेमी है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC में मध्यिका AD की लंबाई 21 सेमी है और G त्रिभुज का केंद्रक (Centroid) है। रेखाखंड AG की लंबाई कितनी होगी?", "options": {"A": "7 सेमी", "B": "14 सेमी", "C": "16 सेमी", "D": "10 सेमी"}, "correct_option": "B", "explanation": "त्रिभुज का केंद्रक (Centroid) प्रत्येक मध्यिका को शीर्ष से आधार की ओर 2 : 1 के अनुपात में विभाजित करता है। अतः AG = (2/3) × AD = (2/3) × 21 = 14 सेमी (तथा GD = 7 सेमी)। अतः सही उत्तर 14 सेमी है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC में मध्यिका AD की लंबाई 24 सेमी है और G त्रिभुज का केंद्रक (Centroid) है। रेखाखंड AG की लंबाई कितनी होगी?", "options": {"A": "8 सेमी", "B": "16 सेमी", "C": "12 सेमी", "D": "18 सेमी"}, "correct_option": "B", "explanation": "त्रिभुज का केंद्रक (Centroid) प्रत्येक मध्यिका को शीर्ष से आधार की ओर 2 : 1 के अनुपात में विभाजित करता है। अतः AG = (2/3) × AD = (2/3) × 24 = 16 सेमी (तथा GD = 8 सेमी)। अतः सही उत्तर 16 सेमी है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC में मध्यिका AD की लंबाई 27 सेमी है और G त्रिभुज का केंद्रक (Centroid) है। रेखाखंड AG की लंबाई कितनी होगी?", "options": {"A": "20 सेमी", "B": "18 सेमी", "C": "9 सेमी", "D": "13 सेमी"}, "correct_option": "B", "explanation": "त्रिभुज का केंद्रक (Centroid) प्रत्येक मध्यिका को शीर्ष से आधार की ओर 2 : 1 के अनुपात में विभाजित करता है। अतः AG = (2/3) × AD = (2/3) × 27 = 18 सेमी (तथा GD = 9 सेमी)। अतः सही उत्तर 18 सेमी है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "त्रिभुज ABC में मध्यिका AD की लंबाई 30 सेमी है और G त्रिभुज का केंद्रक (Centroid) है। रेखाखंड AG की लंबाई कितनी होगी?", "options": {"A": "10 सेमी", "B": "15 सेमी", "C": "20 सेमी", "D": "22 सेमी"}, "correct_option": "C", "explanation": "त्रिभुज का केंद्रक (Centroid) प्रत्येक मध्यिका को शीर्ष से आधार की ओर 2 : 1 के अनुपात में विभाजित करता है। अतः AG = (2/3) × AD = (2/3) × 30 = 20 सेमी (तथा GD = 10 सेमी)। अतः सही उत्तर 20 सेमी है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}];
+    let currentIdx = 0;
+    const userAnswers = new Array(questionsData.length).fill(null);
+    const markedForReview = new Array(questionsData.length).fill(false);
+    const visitedQuestions = new Array(questionsData.length).fill(false);
+    visitedQuestions[0] = true;
+
+    // Timer
+    let totalSeconds = 1500;
+    const timerElem = document.getElementById("time-left");
+    const timerInterval = setInterval(() => {
+      if (totalSeconds <= 0) {
+        clearInterval(timerInterval);
+        confirmSubmit(true);
+        return;
+      }
+      totalSeconds--;
+      const m = Math.floor(totalSeconds / 60);
+      const s = totalSeconds % 60;
+      timerElem.textContent = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+    }, 1000);
+
+    function initPalette() {
+      const grid = document.getElementById("palette-grid");
+      grid.innerHTML = "";
+      questionsData.forEach((_, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "p-btn" + (idx === 0 ? " active" : "");
+        btn.id = `p-btn-${idx}`;
+        btn.textContent = idx + 1;
+        btn.onclick = () => jumpToQ(idx);
+        grid.appendChild(btn);
+      });
+    }
+
+    function updatePaletteBtn(idx) {
+      const btn = document.getElementById(`p-btn-${idx}`);
+      if (!btn) return;
+      btn.className = "p-btn";
+      if (idx === currentIdx) btn.classList.add("active");
+      if (markedForReview[idx]) {
+        btn.classList.add("reviewed");
+      } else if (userAnswers[idx] !== null) {
+        btn.classList.add("answered");
+      } else if (visitedQuestions[idx]) {
+        btn.classList.add("unanswered");
+      }
+    }
+
+    function renderQuestion() {
+      visitedQuestions[currentIdx] = true;
+      const q = questionsData[currentIdx];
+      document.getElementById("q-number").textContent = `प्रश्न ${currentIdx + 1} / ${questionsData.length}`;
+      document.getElementById("q-section-topic").textContent = `${q.topic_name || q.subject || ''} • (+2.00 / -0.50)`;
+      const diagHtml = q.diagram_svg ? `<div style="text-align:center; margin:10px 0;">${q.diagram_svg}</div>` : '';
+      document.getElementById("q-text").innerHTML = q.question + diagHtml;
+
+      const optCont = document.getElementById("opt-container");
+      optCont.innerHTML = "";
+      ['A', 'B', 'C', 'D'].forEach(opt => {
+        if (!q.options || !q.options[opt]) return;
+        const div = document.createElement("div");
+        const isSel = userAnswers[currentIdx] === opt;
+        div.className = "opt-label" + (isSel ? " selected" : "");
+        div.innerHTML = `<span class="opt-badge">${opt}</span> <span>${q.options[opt]}</span>`;
+        div.onclick = () => selectOpt(opt);
+        optCont.appendChild(div);
+      });
+
+      document.getElementById("btn-prev").disabled = currentIdx === 0;
+      document.getElementById("btn-next").textContent = currentIdx === questionsData.length - 1 ? "समीक्षा करें →" : "अगला →";
+
+      for (let i = 0; i < questionsData.length; i++) updatePaletteBtn(i);
+
+      if (window.renderMathInElement) {
+        renderMathInElement(document.getElementById("q-text"), {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});
+        renderMathInElement(optCont, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});
+      }
+    }
+
+    function selectOpt(opt) {
+      userAnswers[currentIdx] = opt;
+      renderQuestion();
+    }
+
+    function clearChoice() {
+      userAnswers[currentIdx] = null;
+      renderQuestion();
+    }
+
+    function toggleReview() {
+      markedForReview[currentIdx] = !markedForReview[currentIdx];
+      updatePaletteBtn(currentIdx);
+    }
+
+    function nextQ() {
+      if (currentIdx < questionsData.length - 1) {
+        currentIdx++;
+        renderQuestion();
+      } else {
+        confirmSubmit();
+      }
+    }
+
+    function prevQ() {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderQuestion();
+      }
+    }
+
+    function jumpToQ(idx) {
+      currentIdx = idx;
+      renderQuestion();
+    }
+
+    function confirmSubmit(auto = false) {
+      if (!auto) {
+        const answered = userAnswers.filter(a => a !== null).length;
+        if (!confirm(`आपने ${questionsData.length} में से ${answered} प्रश्नों के उत्तर दिए हैं। क्या आप टेस्ट सबमिट करना चाहते हैं?`)) return;
+      }
+      clearInterval(timerInterval);
+
+      let correct = 0, wrong = 0, unattempted = 0;
+      const solList = document.getElementById("solution-list");
+      solList.innerHTML = "";
+
+      questionsData.forEach((q, i) => {
+        const userA = userAnswers[i];
+        const isRight = userA === q.correct_option;
+        if (userA === null) unattempted++;
+        else if (isRight) correct++;
+        else wrong++;
+
+        const solDiv = document.createElement("div");
+        solDiv.className = "sol-card";
+        const statusColor = isRight ? "#16a34a" : userA ? "#dc2626" : "#64748b";
+        const statusText = isRight ? "✓ सही उत्तर" : userA ? "✗ गलत उत्तर" : "○ प्रयास नहीं किया";
+        const solDiag = q.diagram_svg ? `<div style="text-align:center; margin:8px 0;">${q.diagram_svg}</div>` : '';
+
+        solDiv.innerHTML = `
+          <div style="font-weight:700; margin-bottom:6px; color:#1e293b;">
+            Q.${i+1}. ${q.question}
+          </div>
+          ${solDiag}
+          <div style="display:flex; gap:12px; font-size:12px; margin-bottom:6px;">
+            <span>आपका उत्तर: <strong>${userA || '—'}</strong></span>
+            <span style="color:${statusColor}; font-weight:800;">(${statusText})</span>
+            <span style="color:#16a34a; font-weight:800;">सही विकल्प: (${q.correct_option})</span>
+          </div>
+          <div style="background:#f0fdf4; border-left:3px solid #16a34a; padding:6px 10px; border-radius:4px; font-size:12px; color:#14532d;">
+            <strong>व्याख्या:</strong> ${q.explanation || 'व्याख्या उपलब्ध नहीं है'}
+          </div>
+        `;
+        solList.appendChild(solDiv);
+      });
+
+      const score = (correct * 2) - (wrong * 0.50);
+      document.getElementById("res-score").textContent = score.toFixed(2);
+      document.getElementById("res-correct").textContent = correct;
+      document.getElementById("res-wrong").textContent = wrong;
+      document.getElementById("res-unattempted").textContent = unattempted;
+
+      document.getElementById("result-modal").classList.add("show");
+    }
+
+    function restartTest() {
+      window.location.reload();
+    }
+
+    // Section Switching (for 100 Qs mock)
+    function switchSection(startIdx) {
+      jumpToQ(startIdx);
+      const btns = document.querySelectorAll(".sec-btn");
+      btns.forEach(b => b.classList.remove("active"));
+      if (event && event.target) event.target.classList.add("active");
+    }
+
+    initPalette();
+    renderQuestion();
+  </script>
+</body>
+</html>

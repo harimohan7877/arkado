@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Settings } from "@/lib/store-types";
+import { DEFAULT_SETTINGS } from "@/lib/default-settings";
 import { PhoneIcon, MailIcon, MapPinIcon, WhatsappIcon, ClockIcon } from "@/components/icons";
 
 export default function ContactPage() {
@@ -16,12 +17,12 @@ export default function ContactPage() {
       .catch(() => {});
   }, []);
 
-  const phone = settings?.contact?.phone || "+91 7852004401";
-  const email = settings?.contact?.email || settings?.gmail_support_email || "support@arkado.in";
-  const whatsappNumber = settings?.contact?.whatsapp_number || settings?.whatsapp_support_number || "917852004401";
+  const phone = settings?.contact?.phone || DEFAULT_SETTINGS.contact.phone;
+  const email = settings?.contact?.email || settings?.gmail_support_email || DEFAULT_SETTINGS.contact.email;
+  const whatsappNumber = settings?.contact?.whatsapp_number || settings?.whatsapp_support_number || DEFAULT_SETTINGS.whatsapp_support_number;
   const whatsappUrl = settings?.social?.whatsapp_url || `https://wa.me/${whatsappNumber}`;
-  const address = settings?.contact?.address || "Ward No 14, Sardarshahar, Churu, Rajasthan - 331403";
-  const supportHours = settings?.contact?.support_hours || "10:00 AM - 9:00 PM (All 7 Days)";
+  const address = settings?.contact?.address || DEFAULT_SETTINGS.contact.address;
+  const supportHours = settings?.contact?.support_hours || DEFAULT_SETTINGS.contact.support_hours;
 
   return (
     <div className="min-h-screen flex flex-col bg-white">

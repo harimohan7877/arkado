@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { supabase } from "@/lib/supabase";
+import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 
 interface OrderItem {
   order_id: string;
@@ -178,11 +179,11 @@ export default function DashboardPage() {
                 Support
               </p>
               <p className="text-sm font-bold text-stone-900 mt-1">
-                {settings?.contact?.phone || "7852004401"}
+                {settings?.contact?.phone || DEFAULT_SETTINGS.contact.phone}
               </p>
             </div>
             <a
-              href={settings?.social?.whatsapp_url || `https://wa.me/${(settings?.contact?.whatsapp_number || "917852004401").replace(/\D/g, "")}`}
+              href={settings?.social?.whatsapp_url || `https://wa.me/${getCleanWhatsAppNumber(settings)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-bold rounded-lg border border-emerald-200 transition"

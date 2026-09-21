@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Settings } from "@/lib/store-types";
+import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import { FileTextIcon, PhoneIcon, WhatsappIcon } from "@/components/icons";
 
-export default function TermsOfServicePage() {
+export default function TermsPage() {
   const [settings, setSettings] = useState<Settings | null>(null);
 
   useEffect(() => {
@@ -20,10 +21,10 @@ export default function TermsOfServicePage() {
     settings?.policies?.terms_of_service ||
     "Arkado वेबसाइट का उपयोग करके आप निम्नलिखित शर्तों से सहमत होते हैं:\n1. इस प्लेटफ़ॉर्म पर उपलब्ध सभी अध्ययन सामग्री, प्रश्न बैंक और नोट्स केवल आपके व्यक्तिगत अध्ययन के लिए हैं।\n2. किसी भी सामग्री को पुनः बेचना, वाणिज्यिक उपयोग करना या सार्वजनिक रूप से इंटरनेट पर साझा करना कॉपीराइट कानून के तहत सख्त वर्जित है।\n3. भुगतान के पश्चात डिजिटल सामग्री का लिंक आपके पंजीकृत WhatsApp या ईमेल पर भेजा जाता है।\n4. किसी भी कानूनी विवाद के लिए क्षेत्राधिकार सरदारशहर (चूरू, राजस्थान) रहेगा।";
 
-  const phone = settings?.contact?.phone || "+91 7852004401";
+  const phone = settings?.contact?.phone || DEFAULT_SETTINGS.contact.phone;
   const whatsappUrl =
     settings?.social?.whatsapp_url ||
-    `https://wa.me/${settings?.contact?.whatsapp_number || "917852004401"}`;
+    `https://wa.me/${getCleanWhatsAppNumber(settings)}`;
 
   return (
     <div className="min-h-screen flex flex-col bg-white font-sans">

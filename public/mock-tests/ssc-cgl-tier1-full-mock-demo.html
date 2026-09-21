@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSC CGL 2026 Tier-1 : Complete 100-Question Simulation Mock Test | Online Mock Test Demo | Arkado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style>
+    :root {
+      --primary: #d97706;
+      --primary-dark: #b45309;
+      --stone-900: #1c1917;
+      --stone-800: #292524;
+      --stone-700: #44403c;
+      --stone-100: #f5f5f4;
+      --stone-50: #fafaf9;
+      --border: #e7e5e4;
+      --success: #16a34a;
+      --danger: #dc2626;
+      --info: #0284c7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
+      background: #f8fafc;
+      color: var(--stone-900);
+      line-height: 1.5;
+    }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 20px;
+    }
+    .brand-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--stone-900);
+    }
+    .brand-sub {
+      font-size: 11px;
+      color: #78716c;
+    }
+    .timer-card {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      padding: 6px 16px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 15px;
+      color: #92400e;
+    }
+    .section-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 24px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+    }
+    .sec-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      font-size: 12px;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .sec-btn.active {
+      background: #1e3a8a;
+      color: white;
+      border-color: #1e3a8a;
+    }
+    .main-container {
+      max-width: 1280px;
+      margin: 18px auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 20px;
+    }
+    @media (max-width: 900px) {
+      .main-container { grid-template-columns: 1fr; }
+    }
+    .test-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+    }
+    .q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+    .q-num {
+      font-size: 14px;
+      font-weight: 800;
+      color: #b45309;
+      background: #fef3c7;
+      padding: 4px 12px;
+      border-radius: 8px;
+    }
+    .q-marks {
+      font-size: 12px;
+      color: #78716c;
+      font-weight: 600;
+    }
+    .q-text {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.6;
+      margin-bottom: 22px;
+      color: var(--stone-900);
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .opt-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-size: 14.5px;
+      background: #ffffff;
+    }
+    .opt-label:hover {
+      border-color: #f59e0b;
+      background: #fffbeb;
+    }
+    .opt-label.selected {
+      border-color: #d97706;
+      background: #fef3c7;
+      font-weight: 700;
+      color: #92400e;
+    }
+    .opt-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #f5f5f4;
+      border: 1px solid #d6d3d1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .opt-label.selected .opt-badge {
+      background: #d97706;
+      color: white;
+      border-color: #d97706;
+    }
+    .btn-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+    }
+    .btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s;
+    }
+    .btn-prev { background: #f5f5f4; color: #44403c; border: 1px solid #d6d3d1; }
+    .btn-next { background: #d97706; color: #ffffff; }
+    .btn-next:hover { background: #b45309; }
+    .btn-clear { background: transparent; color: #dc2626; border: 1px solid #fecaca; }
+    .btn-clear:hover { background: #fee2e2; }
+    .btn-review { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
+    .btn-submit { background: #16a34a; color: white; padding: 10px 22px; font-weight: 800; }
+    .btn-submit:hover { background: #15803d; }
+
+    /* Palette */
+    .palette-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      height: fit-content;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+    }
+    .palette-title {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--stone-900);
+    }
+    .palette-legend {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      font-size: 11px;
+      margin-bottom: 14px;
+      color: #64748b;
+    }
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 4px; }
+    .grid-palette {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      margin-bottom: 16px;
+      max-height: 380px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .p-btn {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #f5f5f4;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.1s;
+    }
+    .p-btn.active { outline: 2.5px solid #d97706; outline-offset: 1px; }
+    .p-btn.answered { background: #16a34a; color: white; border-color: #16a34a; }
+    .p-btn.unanswered { background: #ef4444; color: white; border-color: #ef4444; }
+    .p-btn.reviewed { background: #8b5cf6; color: white; border-color: #8b5cf6; }
+
+    /* Result Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal.show { display: flex; }
+    .modal-card {
+      background: white;
+      max-width: 650px;
+      width: 100%;
+      border-radius: 20px;
+      padding: 28px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    }
+    .score-circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #fef3c7;
+      border: 4px solid #d97706;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 16px auto;
+      color: #92400e;
+      font-weight: 900;
+    }
+    .sol-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-logo">A</div>
+      <div>
+        <div class="brand-title">SSC CGL 2026 Tier-1 : Complete 100-Question Simulation Mock Test</div>
+        <div class="brand-sub">★ Arkado Online CBT Practice • SSC CGL 2026 ★</div>
+      </div>
+    </div>
+    <div class="timer-card">
+      <span>⏱️</span>
+      <span id="time-left">60:00</span>
+    </div>
+  </header>
+
+  
+        <div class="section-nav">
+          <button class="sec-btn active" onclick="switchSection(0)">🧠 भाग A: रीजनिंग (Q.1-25)</button>
+          <button class="sec-btn" onclick="switchSection(25)">🌍 भाग B: सामान्य ज्ञान (Q.26-50)</button>
+          <button class="sec-btn" onclick="switchSection(50)">📐 भाग C: गणित (Q.51-75)</button>
+          <button class="sec-btn" onclick="switchSection(75)">📖 भाग D: अंग्रेजी (Q.76-100)</button>
+        </div>
+        
+
+  <div class="main-container">
+    <div class="test-box">
+      <div class="q-header">
+        <div class="q-num" id="q-number">प्रश्न 1 / 100</div>
+        <div class="q-marks" id="q-section-topic">अंक: +2.00 | नेगेटिव: -0.50</div>
+      </div>
+
+      <div class="q-text" id="q-text">प्रश्न लोड हो रहा है...</div>
+
+      <div class="options" id="opt-container">
+        <!-- Options rendered dynamically -->
+      </div>
+
+      <div class="btn-row">
+        <div>
+          <button class="btn btn-prev" id="btn-prev" onclick="prevQ()">← पिछला</button>
+          <button class="btn btn-next" id="btn-next" onclick="nextQ()">अगला →</button>
+        </div>
+        <div>
+          <button class="btn btn-clear" onclick="clearChoice()">चयन हटाएं</button>
+          <button class="btn btn-review" onclick="toggleReview()">पुनरावलोकन (Review)</button>
+          <button class="btn btn-submit" onclick="confirmSubmit()">सबमिट टेस्ट ✔</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette Sidebar -->
+    <div class="palette-box">
+      <div class="palette-title">प्रश्न पैलेट (Question Palette)</div>
+      <div class="palette-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#16a34a;"></div> उत्तर दिया</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ef4444;"></div> अनुत्तरित</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6;"></div> मार्क फॉर रिव्यू</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f5f5f4; border:1px solid #ccc;"></div> नहीं देखा</div>
+      </div>
+      <div class="grid-palette" id="palette-grid">
+        <!-- Palette buttons rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Result Modal -->
+  <div class="modal" id="result-modal">
+    <div class="modal-card">
+      <h2 style="font-size: 20px; font-weight: 800; text-align: center; color: var(--stone-900);">
+        📊 टेस्ट परिणाम एवं स्कोरकार्ड (Scorecard)
+      </h2>
+      
+      <div class="score-circle">
+        <span style="font-size: 24px;" id="res-score">0</span>
+        <span style="font-size: 10px; font-weight: 700; color: #78350f;">अंक / 200</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; margin-bottom: 20px;">
+        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 10px;">
+          <div style="font-size: 18px; font-weight: 800; color: #16a34a;" id="res-correct">0</div>
+          <div style="font-size: 11px; color: #15803d; font-weight: 600;">सही उत्तर (+2)</div>
+        </div>
+        <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 10px;">
+          <div style="font-size: 18px; font-weight: 800; color: #dc2626;" id="res-wrong">0</div>
+          <div style="font-size: 11px; color: #b91c1c; font-weight: 600;">गलत (-0.50)</div>
+        </div>
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px;">
+          <div style="font-size: 18px; font-weight: 800; color: #475569;" id="res-unattempted">0</div>
+          <div style="font-size: 11px; color: #64748b; font-weight: 600;">अनुत्तरित (0)</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 12px; color: #1e3a8a;">
+        📝 सभी प्रश्नों का विस्तृत हल एवं उत्तर कुंजी (Solution Review):
+      </h3>
+      <div id="solution-list" style="max-height: 320px; overflow-y: auto; padding-right: 4px;">
+        <!-- Solutions generated here -->
+      </div>
+
+      <div style="margin-top: 20px; text-align: center;">
+        <button class="btn btn-next" style="padding: 12px 28px;" onclick="restartTest()">🔄 पुनः टेस्ट दें (Re-attempt)</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const questionsData = [{"question": "एक निश्चित कूट भाषा में:\n'trees give shade' को 'wo ku re'\n'give sweet honey' को 're bo ti'\n'trees are green' को 'wo fa na' लिखा जाता है।\nउसी कूट भाषा में शब्द 'shade' का कोड क्या होगा?", "options": {"A": "wo", "B": "ku", "C": "re", "D": "bo"}, "correct_option": "B", "explanation": "तार्किक विश्लेषण: 'trees' = 'wo', 'give' = 're'। अतः 'shade' = 'ku'। अतः सही उत्तर विकल्प (B) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कोड भाषा में यदि 'SUN' को '54' लिखा जाता है, तो इस भाषा में शब्द का संख्यात्मक मान क्या दर्शाता है?", "options": {"A": "64", "B": "59", "C": "54", "D": "50"}, "correct_option": "C", "explanation": "तर्क: शब्द के प्रत्येक वर्ण के स्थानीय मान का कुल योग = 54। अतः सही उत्तर विकल्प (C) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "किसी सांकेतिक भाषा में यदि 'CHEVRON' को 'AFCTPML' लिखा जाता है, तो उसी भाषा में 'STRIPES' को क्या लिखा जाएगा?", "options": {"A": "RSQHODR", "B": "PQOFMBP", "C": "QRPGNCX", "D": "QRPGNCQ"}, "correct_option": "D", "explanation": "तर्क: प्रत्येक अक्षर के स्थानीय मान में -2 का नियमित विस्थापन किया गया है। अतः 'STRIPES' का कूट 'QRPGNCQ' है। अतः सही उत्तर विकल्प (D) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'CINEMA' को 'XRMVNZ' लिखा जाता है, तो उसी कूट भाषा में 'THEATR' को किस प्रकार लिखा जाएगा?", "options": {"A": "GSVZGI", "B": "GSVZGA", "C": "UIFBUS", "D": "HTWAHJ"}, "correct_option": "A", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'THEATR' का कूट 'GSVZGI' होगा। अतः सही उत्तर विकल्प (A) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "दिए गए विकल्पों में से वह संख्या चुनिए जो प्रश्नवाचक चिह्न (?) के स्थान पर आएगी:\n\n**(3, 12, 48) :: (4, 16, ?)**", "options": {"A": "64", "B": "72", "C": "68", "D": "60"}, "correct_option": "A", "explanation": "तर्क: प्रत्येक पद में ×4 की वृद्धि है। 16 × 4 = 64। अतः सही उत्तर विकल्प (A) है।", "topic_name": "सादृश्यता एवं वर्गीकरण (Analogy & Classification)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "उस विकल्प का चयन कीजिए जो तीसरे पद से उसी प्रकार संबंधित है जिस प्रकार दूसरा पद पहले पद से संबंधित है:\n\n**स्फिग्मोमैनोमीटर : रक्तचाप :: लैक्टोमीटर : ?**", "options": {"A": "दूध की शुद्धता", "B": "अम्लता", "C": "जल स्तर", "D": "शर्करा"}, "correct_option": "A", "explanation": "स्फिग्मोमैनोमीटर रक्तचाप मापता है, जबकि लैक्टोमीटर दूध की आपेक्षिक शुद्धता मापता है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "सादृश्यता एवं वर्गीकरण (Analogy & Classification)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "दी गई अक्षर सादृश्यता में प्रश्नवाचक चिह्न (?) के स्थान पर आने वाले उपयुक्त पद का चयन कीजिए:\n\n**JQK : KPL :: LOM : ?**", "options": {"A": "MNN", "B": "NMM", "C": "MLN", "D": "NLM"}, "correct_option": "A", "explanation": "तर्क: J-Q-K, K-P-L, L-O-M, अगला पद M-N-N। अतः सही उत्तर विकल्प (A) है।", "topic_name": "सादृश्यता एवं वर्गीकरण (Analogy & Classification)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "दी गई अक्षर सादृश्यता में प्रश्नवाचक चिह्न (?) के स्थान पर आने वाले उपयुक्त पद का चयन कीजिए:\n\n**G : 343 :: H : ?**", "options": {"A": "520", "B": "512", "C": "484", "D": "500"}, "correct_option": "B", "explanation": "तर्क: G = 7³ = 343; H = 8³ = 512। अतः सही उत्तर विकल्प (B) है।", "topic_name": "सादृश्यता एवं वर्गीकरण (Analogy & Classification)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "अक्षरों का कौन सा समूह दी गई अक्षर श्रृंखला में रिक्त स्थानों पर क्रमिक रूप से रखने पर श्रृंखला को पूर्ण करेगा?\n\n**s t u _ s t _ w s _ u w _ t u w**", "options": {"A": "w t v s", "B": "w v t s", "C": "v w t s", "D": "s t u v"}, "correct_option": "B", "explanation": "पैटर्न 's t u w' का आवधिक रूप है। रिक्त स्थान: w, v, t, s। अतः सही उत्तर विकल्प (B) है।", "topic_name": "संख्या एवं अक्षर श्रृंखला (Series)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "निम्नलिखित संख्या श्रृंखला में प्रश्नवाचक चिह्न (?) के स्थान पर कौन सी संख्या आएगी?\n\n**12, 18, 15, 21, 18, ?**", "options": {"A": "25", "B": "22", "C": "24", "D": "23"}, "correct_option": "C", "explanation": "तर्क: +6, -3, +6, -3, +6। अतः 18 + 6 = 24। अतः सही उत्तर विकल्प (C) है।", "topic_name": "संख्या एवं अक्षर श्रृंखला (Series)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "निम्नलिखित संख्या श्रृंखला में प्रश्नवाचक चिह्न (?) के स्थान पर कौन सी संख्या आएगी?\n\n**343, 512, 729, 1000, 1331, ?**", "options": {"A": "1728", "B": "1700", "C": "1720", "D": "1750"}, "correct_option": "A", "explanation": "तर्क: 7³, 8³, 9³, 10³, 11³, 12³ = 1728। अतः सही उत्तर विकल्प (A) है।", "topic_name": "संख्या एवं अक्षर श्रृंखला (Series)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक वर्गाकार कागज को बाएँ से दाएँ मोड़ा जाता है, फिर ऊपर से नीचे मोड़ा जाता है (कुल 4 परतें)। निचले दाएँ कोने पर एक वृत्ताकार छेद काटा जाता है।\n\nकागज को पुनः पूरी तरह खोलने पर वह कैसा दिखाई देगा?", "options": {"A": "कागज के केवल निचले भाग में 4 वृत्त दिखेंगे।", "B": "कागज खोलने पर केंद्र में कुल 4 सममित वृत्ताकार छिद्र दिखाई देंगे।", "C": "कागज के 4 बाहरी कोनों पर 4 वृत्त दिखेंगे।", "D": "कागज पर केवल 2 वृत्त दिखेंगे।"}, "correct_option": "B", "explanation": "निचला दायाँ कोना मुड़े हुए कागज के केंद्र का प्रतिनिधित्व करता है। अतः चारों परतें खुलने पर केंद्र के चारों ओर 4 वृत्त बनेंगे। अतः सही उत्तर विकल्प (B) है।", "topic_name": "अभाषिक तर्कशक्ति (Non-Verbal Reasoning)", "subject": "General Intelligence & Reasoning", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"90\" viewBox=\"0 0 220 90\" style=\"background:#FFFDF7; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Step 1: Full Sheet -->\n        <rect x=\"12\" y=\"15\" width=\"45\" height=\"45\" fill=\"#FFFFFF\" stroke=\"#475569\" stroke-width=\"1.5\"/>\n        <line x1=\"34.5\" y1=\"15\" x2=\"34.5\" y2=\"60\" stroke=\"#DC2626\" stroke-width=\"1.2\" stroke-dasharray=\"3,3\"/>\n        <path d=\"M 45 35 Q 35 25 25 35\" fill=\"none\" stroke=\"#DC2626\" stroke-width=\"1.2\" marker-end=\"url(#arrow)\"/>\n        <text x=\"34.5\" y=\"74\" font-size=\"8\" font-weight=\"bold\" fill=\"#64748B\" text-anchor=\"middle\">पद 1</text>\n        \n        <text x=\"70\" y=\"42\" font-size=\"14\" fill=\"#94A3B8\">→</text>\n        \n        <!-- Step 2: Half Folded -->\n        <rect x=\"85\" y=\"15\" width=\"22.5\" height=\"45\" fill=\"#FEF3C7\" stroke=\"#475569\" stroke-width=\"1.5\"/>\n        <line x1=\"85\" y1=\"37.5\" x2=\"107.5\" y2=\"37.5\" stroke=\"#DC2626\" stroke-width=\"1.2\" stroke-dasharray=\"3,3\"/>\n        <text x=\"96\" y=\"74\" font-size=\"8\" font-weight=\"bold\" fill=\"#64748B\" text-anchor=\"middle\">पद 2</text>\n        \n        <text x=\"125\" y=\"42\" font-size=\"14\" fill=\"#94A3B8\">→</text>\n        \n        <!-- Step 3: Quarter with Cut -->\n        <rect x=\"145\" y=\"37.5\" width=\"45\" height=\"22.5\" fill=\"#FDE68A\" stroke=\"#475569\" stroke-width=\"1.5\"/>\n        <circle cx=\"180\" cy=\"45\" r=\"5\" fill=\"#DC2626\"/>\n        <text x=\"167.5\" y=\"74\" font-size=\"8\" font-weight=\"bold\" fill=\"#64748B\" text-anchor=\"middle\">कट (पद 3)</text>\n      </svg>\n    </div>\n    "}, {"question": "दी गई मुख्य संरचना (द्विशाखित दिशा संजाल) में बिना घूर्णन की अनुमति के (Rotation NOT allowed) निम्नलिखित में से कौन सी आकृति पूर्णतः अंतर्निहित (Embedded) है?\n\nलक्ष्य आकृति: **अंग्रेजी अक्षर 'Y' जिसके ऊपरी दोनों सिरों पर तीर हैं**", "options": {"A": "तीर नीचे के तने पर हैं।", "B": "दी गई मुख्य आकृति के ऊपरी भाग में ऊर्ध्वाधर तने से निकले दोनों 45° के तीर ('Y') बिना किसी बदलाव के समाहित हैं।", "C": "'Y' उल्टा बना है।", "D": "केवल एक शाखा पर तीर है।"}, "correct_option": "B", "explanation": "ऊपरी दिशा संजाल में 'Y' का ऊर्ध्वाधर आधार और दोनों ऊपरी तीरांकित शाखाएं सटीक उपस्थित हैं। अतः सही उत्तर विकल्प (B) है।", "topic_name": "अभाषिक तर्कशक्ति (Non-Verbal Reasoning)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक वर्गाकार ग्रिड में एक छायांकित ब्लॉक प्रत्येक पद में 1 कदम दाएँ खिसकता है, पंक्ति समाप्त होने पर अगली पंक्ति के प्रारंभ में आ जाता है:\n\nश्रृंखला के अगले पद (5वें पद) में सही अभिविन्यास क्या होगा?", "options": {"A": "5वें पद में छायांकित ब्लॉक दूसरी पंक्ति के पहले स्तंभ में स्थित होगा।", "B": "ब्लॉक तीसरे स्तंभ में रहेगा।", "C": "ब्लॉक ग्रिड के केंद्र में रहेगा।", "D": "ब्लॉक पहली पंक्ति के अंतिम स्तंभ में रहेगा।"}, "correct_option": "A", "explanation": "4 स्तंभों की पहली पंक्ति पूरी होने के बाद 5वाँ चरण दूसरी पंक्ति के प्रथम स्थान पर पहुंचता है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "अभाषिक तर्कशक्ति (Non-Verbal Reasoning)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक समषट्भुज में एक आंतरिक विकर्ण रेखा प्रत्येक पद में 60° वामावर्त (Anticlockwise) घूमती है:\n\nश्रृंखला के अगले पद (5वें पद) में सही अभिविन्यास क्या होगा?", "options": {"A": "6 चरणों के बाद 7वें पद में विकर्ण रेखा अपनी प्रारंभिक स्थिति में वापस आ जाएगी।", "B": "विकर्ण रेखा लुप्त हो जाएगी।", "C": "विकर्ण रेखा 90° पर होगी।", "D": "विकर्ण रेखा 120° पर होगी।"}, "correct_option": "A", "explanation": "समषट्भुज में 60° के 6 घूर्णनों से 360° की पूर्ण पुनरावृत्ति होती है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "अभाषिक तर्कशक्ति (Non-Verbal Reasoning)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "दी गई जानकारी का विश्लेषण कर प्रश्न का उत्तर दीजिए:\n\nएक परीक्षा में 65% छात्र गणित में और 60% छात्र अंग्रेजी में उत्तीर्ण हुए। यदि 40% छात्र दोनों विषयों में उत्तीर्ण हुए, तो दोनों विषयों में अनुत्तीर्ण छात्रों का प्रतिशत क्या है?", "options": {"A": "10%", "B": "20%", "C": "15%", "D": "25%"}, "correct_option": "C", "explanation": "कम से कम एक में उत्तीर्ण = 65 + 60 - 40 = 85%। दोनों में अनुत्तीर्ण = 100 - 85 = 15%। अतः सही उत्तर विकल्प (C) है।", "topic_name": "न्याय वाक्य एवं वेन आरेख (Syllogism & Venn Diagram)", "subject": "General Intelligence & Reasoning", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"110\" viewBox=\"0 0 220 110\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Circle A -->\n        <circle cx=\"80\" cy=\"55\" r=\"42\" fill=\"#3B82F6\" fill-opacity=\"0.2\" stroke=\"#2563EB\" stroke-width=\"2\"/>\n        <!-- Circle B -->\n        <circle cx=\"140\" cy=\"55\" r=\"42\" fill=\"#10B981\" fill-opacity=\"0.2\" stroke=\"#059669\" stroke-width=\"2\"/>\n        \n        <!-- Labels -->\n        <text x=\"60\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#1E40AF\">गणित (45)</text>\n        <text x=\"160\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#065F46\">विज्ञान (40)</text>\n        \n        <!-- Values -->\n        <text x=\"60\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#1E3A8A\" text-anchor=\"middle\">25</text>\n        <text x=\"110\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#991B1B\" text-anchor=\"middle\">20</text>\n        <text x=\"160\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#065F46\" text-anchor=\"middle\">20</text>\n      </svg>\n    </div>\n    "}, {"question": "निम्नलिखित तीन वर्गों के बीच के संबंध को सर्वोत्तम रूप से दर्शाने वाले वेन आरेख (Venn Diagram) का चयन कीजिए:\n\n**न्यायाधीश, चोर, अपराधी**", "options": {"A": "सभी चोर अपराधी होते हैं जबकि न्यायाधीश पूर्णतः पृथक एवं स्वतंत्र है", "B": "न्यायाधीश के अंदर चोर", "C": "तीनों अलग", "D": "तीनों जुड़े हुए"}, "correct_option": "A", "explanation": "चोर ⊂ अपराधी, न्यायाधीश स्वतंत्र न्यायपालिका का अंग है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "न्याय वाक्य एवं वेन आरेख (Syllogism & Venn Diagram)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "दिए गए कथनों और निष्कर्षों को ध्यानपूर्वक पढ़िए। यह मानते हुए कि कथनों में दी गई जानकारी सत्य है (भले ही वह सामान्यतः ज्ञात तथ्यों से भिन्न प्रतीत होती हो), निर्णय लीजिए कि कौन सा निष्कर्ष तार्किक रूप से अनुसरण करता है:\n\nकथन:\n1. कुछ अंगूर खट्टे हैं।\n2. सभी खट्टे फल हैं।\n\nनिष्कर्ष:\nI. कुछ अंगूर फल हैं।\nII. कोई अंगूर फल नहीं है।", "options": {"A": "दोनों", "B": "केवल II", "C": "केवल निष्कर्ष I अनुसरण करता है", "D": "कोई नहीं"}, "correct_option": "C", "explanation": "अंगूर का कुछ भाग फल में शामिल है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "न्याय वाक्य एवं वेन आरेख (Syllogism & Venn Diagram)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "दिए गए गणितीय समीकरण में यदि '÷' और '+' को आपस में बदला जाए, तो व्यंजक का सही मान क्या होगा?\n\n**36 ÷ 6 + 14 - 5 × 2 = ?**", "options": {"A": "26", "B": "28", "C": "30", "D": "24"}, "correct_option": "A", "explanation": "BODMAS नियम से हल करने पर अभीष्ट मान 26 प्राप्त होता है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "गणितीय संक्रियाएं (Mathematical Operations)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "दिए गए व्यंजक में यदि 5 और 3 को आपस में बदला जाए, तो निम्नलिखित में से सही मान का चयन कीजिए:\n\n**25 ÷ 5 + 14 - 3 × 4 = ?**", "options": {"A": "15", "B": "11", "C": "17", "D": "13"}, "correct_option": "D", "explanation": "BODMAS नियम के अनुसार हल करने पर अभीष्ट मान प्राप्त होता है। अतः सही उत्तर विकल्प (D) है।", "topic_name": "गणितीय संक्रियाएं (Mathematical Operations)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "दिए गए शब्दों को अंग्रेजी शब्दकोश (English Dictionary) के वर्णानुक्रम में व्यवस्थित कीजिए:\n\n1. Tablet\n2. Tactful\n3. Tailor\n4. Talented\n5. Tally", "options": {"A": "1-2-3-4-5", "B": "2-1-4-3-5", "C": "3-2-1-5-4", "D": "5-4-3-2-1"}, "correct_option": "A", "explanation": "Tablet (1) -> Tactful (2) -> Tailor (3) -> Talented (4) -> Tally (5) = 1-2-3-4-5। अतः सही उत्तर विकल्प (A) है।", "topic_name": "शब्दकोश एवं तार्किक क्रम (Dictionary & Logical Order)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "दिए गए शब्दों को अंग्रेजी शब्दकोश (English Dictionary) के वर्णानुक्रम में व्यवस्थित कीजिए:\n\n1. Sacred\n2. Saddle\n3. Safari\n4. Saffron\n5. Sagacity", "options": {"A": "5-4-3-2-1", "B": "1-2-3-4-5", "C": "3-2-1-5-4", "D": "2-1-4-3-5"}, "correct_option": "B", "explanation": "Sacred (1) -> Saddle (2) -> Safari (3) -> Saffron (4) -> Sagacity (5) = 1-2-3-4-5। अतः सही उत्तर विकल्प (B) है।", "topic_name": "शब्दकोश एवं तार्किक क्रम (Dictionary & Logical Order)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "यदि 'X - Y' का अर्थ 'X, Y का भाई है'; 'X + Y' का अर्थ 'X, Y की माता है'; 'X × Y' का अर्थ 'X, Y का पिता है'।\n\nव्यंजक 'D × E - F + G' में D का G से क्या संबंध है?", "options": {"A": "मामा (Maternal Uncle)", "B": "पिता (Father)", "C": "दादा (Grandfather)", "D": "नाना (Maternal Grandfather)"}, "correct_option": "D", "explanation": "F, G की माता है; E उसका भाई (मामा) है और D उनका पिता (नाना) है। अतः सही उत्तर विकल्प (D) है।", "topic_name": "रक्त संबंध (Blood Relation)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "सूर्यास्त के समय एक खंभे की परछाई रीता के ठीक दायीं ओर पड़ रही थी। रीता का मुख किस दिशा में था?", "options": {"A": "पूर्व (East)", "B": "पश्चिम (West)", "C": "उत्तर (North)", "D": "दक्षिण (South)"}, "correct_option": "D", "explanation": "सूर्यास्त में परछाई पूर्व में बनती है। रीता के दायीं ओर पूर्व है, अतः रीता दक्षिण दिशा की ओर देख रही है। अतः सही उत्तर विकल्प (D) है।", "topic_name": "दिशा एवं दूरी (Direction & Distance)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक 3 सेमी भुजा वाले रंगे घन में (n = 3) रंगहीन छोटे घनों की संख्या क्या होगी?", "options": {"A": "0", "B": "2", "C": "4", "D": "1"}, "correct_option": "D", "explanation": "सूत्र = (n - 2)³ = (3 - 2)³ = 1³ = 1 घन। अतः सही उत्तर विकल्प (D) है।", "topic_name": "पासा एवं घन (Dice & Cube)", "subject": "General Intelligence & Reasoning", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"115\" viewBox=\"0 0 220 115\" style=\"background:#FFFDF7; border:1px solid #E2E8F0; border-radius:8px;\">\n        \n    <g>\n      <!-- Top Face -->\n      <polygon points=\"57.5,27.0 87.25,44.0 57.5,61.0 27.75,44.0\" fill=\"#FEF3C7\" stroke=\"#B45309\" stroke-width=\"1.275\"/>\n      <text x=\"57.5\" y=\"46.55\" font-size=\"11\" font-weight=\"bold\" fill=\"#78350F\" text-anchor=\"middle\" dominant-baseline=\"middle\">3</text>\n      <!-- Left Face -->\n      <polygon points=\"27.75,44.0 57.5,61.0 57.5,95.0 27.75,78.0\" fill=\"#FDE68A\" stroke=\"#B45309\" stroke-width=\"1.275\"/>\n      <text x=\"42.2\" y=\"72.05\" font-size=\"11\" font-weight=\"bold\" fill=\"#78350F\" text-anchor=\"middle\" dominant-baseline=\"middle\">2</text>\n      <!-- Right Face -->\n      <polygon points=\"57.5,61.0 87.25,44.0 87.25,78.0 57.5,95.0\" fill=\"#FCD34D\" stroke=\"#B45309\" stroke-width=\"1.275\"/>\n      <text x=\"72.8\" y=\"72.05\" font-size=\"11\" font-weight=\"bold\" fill=\"#78350F\" text-anchor=\"middle\" dominant-baseline=\"middle\">3</text>\n    </g>\n    \n        <text x=\"58\" y=\"105\" font-size=\"10\" font-weight=\"bold\" fill=\"#475569\" text-anchor=\"middle\">[स्थिति I]</text>\n        \n    <g>\n      <!-- Top Face -->\n      <polygon points=\"167.5,27.0 197.25,44.0 167.5,61.0 137.75,44.0\" fill=\"#FEF3C7\" stroke=\"#B45309\" stroke-width=\"1.275\"/>\n      <text x=\"167.5\" y=\"46.55\" font-size=\"11\" font-weight=\"bold\" fill=\"#78350F\" text-anchor=\"middle\" dominant-baseline=\"middle\">3</text>\n      <!-- Left Face -->\n      <polygon points=\"137.75,44.0 167.5,61.0 167.5,95.0 137.75,78.0\" fill=\"#FDE68A\" stroke=\"#B45309\" stroke-width=\"1.275\"/>\n      <text x=\"152.2\" y=\"72.05\" font-size=\"11\" font-weight=\"bold\" fill=\"#78350F\" text-anchor=\"middle\" dominant-baseline=\"middle\">5</text>\n      <!-- Right Face -->\n      <polygon points=\"167.5,61.0 197.25,44.0 197.25,78.0 167.5,95.0\" fill=\"#FCD34D\" stroke=\"#B45309\" stroke-width=\"1.275\"/>\n      <text x=\"182.8\" y=\"72.05\" font-size=\"11\" font-weight=\"bold\" fill=\"#78350F\" text-anchor=\"middle\" dominant-baseline=\"middle\">6</text>\n    </g>\n    \n        <text x=\"168\" y=\"105\" font-size=\"10\" font-weight=\"bold\" fill=\"#475569\" text-anchor=\"middle\">[स्थिति II]</text>\n      </svg>\n    </div>\n    "}, {"question": "कोपा अमेरिका 2024 (Copa America) का खिताब अर्जेंटीना ने कोलंबिया को 1-0 से हराकर रिकॉर्ड कितनी बार जीता?", "options": {"A": "15वीं बार", "B": "16वीं बार (रिकॉर्ड 16th Title)", "C": "17वीं बार", "D": "14वीं बार"}, "correct_option": "B", "explanation": "लियोनेल मेस्सी की कप्तानी में अर्जेंटीना ने उरुग्वे (15 बार) का रिकॉर्ड तोड़कर 16वीं बार खिताब जीता। अतः सही उत्तर विकल्प (B) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "नई कर व्यवस्था (New Tax Regime) के तहत वेतनभोगी कर्मचारियों के लिए मानक कटौती (Standard Deduction) को ₹50,000 से बढ़ाकर कितना कर दिया गया?", "options": {"A": "₹60,000", "B": "₹75,000", "C": "₹1,00,000", "D": "₹70,000"}, "correct_option": "B", "explanation": "वेतनभोगियों को राहत देते हुए मानक कटौती ₹75,000 और पारिवारिक पेंशन कटौती ₹15,000 से बढ़ाकर ₹25,000 की गई। अतः सही उत्तर विकल्प (B) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "ग्लोबल हंगर इंडेक्स 2024 (Global Hunger Index 2024) में 127 देशों की सूची में भारत को किस स्थान पर रखा गया?", "options": {"A": "94वें स्थान पर", "B": "107वें स्थान पर", "C": "105वें स्थान पर (स्कोर: 27.3 - गंभीर श्रेणी)", "D": "111वें स्थान पर"}, "correct_option": "C", "explanation": "कंसर्न वर्ल्डवाइड और वेल्थुंगरहिल्फे की रिपोर्ट में भारत का बाल वेस्टिंग (कम वजन) 18.7% बताया गया जो चिंताजनक है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "उत्तरी अटलांटिक संधि संगठन (नाटो - NATO) की 75वीं वर्षगांठ शिखर बैठक जुलाई 2024 में किस शहर में आयोजित हुई?", "options": {"A": "वाशिंगटन, डी.सी. (USA)", "B": "ब्रुसेल्स", "C": "विल्नियस", "D": "मैड्रिड"}, "correct_option": "A", "explanation": "1949 में नाटो संधि पर हस्ताक्षर के 75 वर्ष पूरे होने पर वाशिंगटन में बैठक हुई। मार्च 2024 में स्वीडन नाटो का 32वां सदस्य बना। अतः सही उत्तर विकल्प (A) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "मिस यूनिवर्स 2024 प्रतियोगिता में भारत का प्रतिनिधित्व करने वाली मिस यूनिवर्स इंडिया 2024 कौन बनीं?", "options": {"A": "रिया सिंघा (Rhea Singha - गुजरात)", "B": "हरनाज़ संधू", "C": "दिविता राय", "D": "श्वेता शारदा"}, "correct_option": "A", "explanation": "19 वर्षीय रिया सिंघा ने जयपुर में मिस यूनिवर्स इंडिया 2024 का ताज जीता। अतः सही उत्तर विकल्प (A) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "कृषि क्षेत्र में कीटनाशकों और तरल उर्वरकों (Nano Urea) के छिड़काव हेतु 15,000 महिला SHGs को ड्रोन उपलब्ध कराने वाली योजना कौन सी है?", "options": {"A": "कृषि सखी", "B": "महिला शक्ति ड्रोन", "C": "उड़ान दीदी", "D": "नमो ड्रोन दीदी योजना (Namo Drone Didi Scheme)"}, "correct_option": "D", "explanation": "केंद्र सरकार 80% लागत (अधिकतम ₹8 लाख) वहन करती है और महिलाओं को प्रमाणित ड्रोन पायलट प्रशिक्षण दिया जाता है। अतः सही उत्तर विकल्प (D) है।", "topic_name": "समसामयिक घटनाएं (Current Affairs 2024-2025)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "ग्वालियर घराने के सुविख्यात गायक पंडित ओंकारनाथ ठाकुर ने 1947 में स्वतंत्रता दिवस पर कौन सा अमर गान गाया था?", "options": {"A": "वैष्णव जन तो", "B": "वंदे मातरम् (राग काफी में संपूर्ण)", "C": "जन गण मन", "D": "सारे जहां से अच्छा"}, "correct_option": "B", "explanation": "पंडित ओंकारनाथ ठाकुर ने संसद भवन में स्वतंत्रता की पूर्व संध्या पर राग काफी में शुद्ध वंदे मातरम् प्रस्तुत किया था। अतः सही उत्तर विकल्प (B) है।", "topic_name": "स्टैटिक जीके और कला-संस्कृति (Static GK & Culture)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "तमिलनाडु के महाबलीपुरम (मामल्लापुरम) में 8वीं सदी का प्रसिद्ध 'तटीय मंदिर' (Shore Temple) किस पल्लव राजा ने बनवाया था?", "options": {"A": "नरसिंहवर्मन द्वितीय 'राजसिंह'", "B": "महेंद्रवर्मन प्रथम", "C": "नंदीवर्मन", "D": "नरसिंहवर्मन प्रथम 'महामल्ल'"}, "correct_option": "A", "explanation": "बंगाल की खाड़ी के तट पर ग्रेनाइट से बना यह मंदिर द्रविड़ शैली के प्रारंभिक संरचनात्मक मंदिरों में से एक है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "स्टैटिक जीके और कला-संस्कृति (Static GK & Culture)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "अंडमान और निकोबार के निकोबारी आदिवासियों द्वारा सूअर उत्सव (Ossuary Feast) के दौरान किया जाने वाला पारंपरिक नृत्य कौन सा है?", "options": {"A": "ग्रेट अंडमानी नृत्य", "B": "जारवा नृत्य", "C": "ओंगे नृत्य", "D": "निकोबारी नृत्य (Nicobari Dance)"}, "correct_option": "D", "explanation": "निकोबारी नृत्य में आदिवासी पूर्णिमा की रात में पारंपरिक नारियल के पत्तों के वस्त्र पहनकर समूह में झूमते हैं। अतः सही उत्तर विकल्प (D) है।", "topic_name": "स्टैटिक जीके और कला-संस्कृति (Static GK & Culture)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "मणिपुरी नृत्य को देश-विदेश में ख्याति दिलाने वाली प्रसिद्ध 'झावेरी बहनें' (Jhaveri Sisters) कौन हैं?", "options": {"A": "ललिता, सरोजा, गीता और मालती", "B": "चित्रा, देवकी, अनुराधा और भारती", "C": "शोभना, यामिनी, राधा और पद्मा", "D": "नयना, सुवर्णा, रंजना और दर्शना झावेरी"}, "correct_option": "D", "explanation": "झावेरी बहनों ने गुरु विपिन सिंह के मार्गदर्शन में मणिपुरी नृत्य को भारत के प्रमुख सांस्कृतिक केंद्रों में स्थापित किया। अतः सही उत्तर विकल्प (D) है।", "topic_name": "स्टैटिक जीके और कला-संस्कृति (Static GK & Culture)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "आधुनिक आवर्त सारणी (Modern Periodic Table) का प्रतिपादन 1913 में किस वैज्ञानिक ने किया था?", "options": {"A": "डोबेराइनर", "B": "हेनरी मोजले (Henry Moseley)", "C": "दिमित्री मेंडेलीव", "D": "न्यूलैंड्स"}, "correct_option": "B", "explanation": "मोजले ने तत्वों को उनके बढ़ते 'परमाणु क्रमांक' (Atomic Number) के क्रम में व्यवस्थित किया। अतः सही उत्तर विकल्प (B) है।", "topic_name": "सामान्य विज्ञान (General Science - Physics, Chemistry, Biology)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "मानव शरीर में पित्त रस (Bile Juice) में कौन सा पाचक एंजाइम पाया जाता है?", "options": {"A": "लाइपेस", "B": "पेप्सिन", "C": "कोई पाचक एंजाइम नहीं होता", "D": "ट्रिप्सिन"}, "correct_option": "C", "explanation": "पित्त रस में कोई पाचक एंजाइम नहीं होता; इसमें केवल पित्त लवण (बिलीरुबिन, बिलीवर्डीन) होते हैं जो वसा का इमल्सीकरण करते हैं। अतः सही उत्तर विकल्प (C) है।", "topic_name": "सामान्य विज्ञान (General Science - Physics, Chemistry, Biology)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "दाब (Pressure) का SI मात्रक क्या है जो 1 न्यूटन प्रति वर्ग मीटर के बराबर होता है?", "options": {"A": "जूल", "B": "पास्कल (Pascal / $N/m^2$)", "C": "बार", "D": "टॉर"}, "correct_option": "B", "explanation": "ब्लेज पास्कल के सम्मान में दाब का SI मात्रक पास्कल ($Pa$) रखा गया है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "सामान्य विज्ञान (General Science - Physics, Chemistry, Biology)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "बेकिंग सोडा (खाने का सोडा) का रासायनिक नाम और सूत्र क्या है?", "options": {"A": "सोडियम कार्बोनेट", "B": "सोडियम बाइकार्बोनेट ($NaHCO_3$)", "C": "कैल्शियम कार्बोनेट", "D": "सोडियम हाइड्रॉक्साइड"}, "correct_option": "B", "explanation": "सोडियम हाइड्रोजन कार्बोनेट को गर्म करने पर कार्बन डाइऑक्साइड निकलती है जिससे केक और ब्रेड फूलते हैं। अतः सही उत्तर विकल्प (B) है।", "topic_name": "सामान्य विज्ञान (General Science - Physics, Chemistry, Biology)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "नर्मदा नदी के तट पर सम्राट हर्षवर्धन को दक्षिण अभियान के दौरान किस चालुक्य राजा ने पराजित किया था?", "options": {"A": "पुलकेशिन द्वितीय (Pulakeshin II)", "B": "कीर्तिवर्मन", "C": "नरसिंहवर्मन प्रथम", "D": "विक्रमादित्य प्रथम"}, "correct_option": "A", "explanation": "चालुक्य नरेश पुलकेशिन द्वितीय के दरबारी कवि रविकीर्ति द्वारा रचित ऐहोल प्रशस्ति (Aihole Inscription) में हर्ष की पराजय का उल्लेख है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "भारतीय इतिहास (Indian History - Ancient, Medieval, Modern)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "13 अप्रैल 1919 को बैसाखी के दिन पंजाब के अमृतसर में 'जलियांवाला बाग हत्याकांड' का आदेश किस अंग्रेज अधिकारी ने दिया था?", "options": {"A": "माइकल ओ'डायर", "B": "जनरल रेजिनाल्ड डायर (General Dyer)", "C": "लॉर्ड चेम्सफोर्ड", "D": "कर्नल स्लीमैन"}, "correct_option": "B", "explanation": "डॉ. सैफुद्दीन किचलू और डॉ. सत्यपाल की गिरफ्तारी के विरोध में शांतिपूर्ण सभा पर जनरल डायर ने निहत्थे लोगों पर अंधाधुंध गोलियां चलवाईं। अतः सही उत्तर विकल्प (B) है।", "topic_name": "भारतीय इतिहास (Indian History - Ancient, Medieval, Modern)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "सिखों के नौवें गुरु, गुरु तेग बहादुर जी को 1675 में दिल्ली के चांदनी चौक पर किस मुगल शासक ने शहीद करवाया था?", "options": {"A": "शाहजहाँ", "B": "औरंगजेब", "C": "अकबर", "D": "जहाँगीर"}, "correct_option": "B", "explanation": "कश्मीरी पंडितों के धर्म की रक्षा हेतु बलिदान देने वाले गुरु तेग बहादुर जी को औरंगजेब के आदेश पर शहीद किया गया जहाँ आज शीशगंज गुरुद्वारा है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "भारतीय इतिहास (Indian History - Ancient, Medieval, Modern)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "संसद के दोनों सदनों की संयुक्त बैठक (Joint Sitting) की अध्यक्षता कौन करता है?", "options": {"A": "उपराष्ट्रपति (राज्यसभा सभापति)", "B": "प्रधानमंत्री", "C": "लोकसभा का अध्यक्ष (Speaker)", "D": "राष्ट्रपति"}, "correct_option": "C", "explanation": "अनुच्छेद 108 के तहत संयुक्त बैठक राष्ट्रपति बुलाता है, लेकिन अनुच्छेद 118(4) के तहत अध्यक्षता लोकसभा अध्यक्ष करता है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "भारतीय राजव्यवस्था एवं संविधान (Indian Polity & Constitution)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "शहरी स्थानीय निकायों (नगर पालिकाओं) को संवैधानिक दर्जा किस संशोधन द्वारा दिया गया?", "options": {"A": "65वां संविधान संशोधन 1990", "B": "91वां संविधान संशोधन 2003", "C": "73वां संविधान संशोधन 1992", "D": "74वां संविधान संशोधन 1992"}, "correct_option": "D", "explanation": "74वें संशोधन द्वारा संविधान में भाग IX-A और 12वीं अनुसूची (18 विषय) जोड़ी गई। अतः सही उत्तर विकल्प (D) है।", "topic_name": "भारतीय राजव्यवस्था एवं संविधान (Indian Polity & Constitution)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "2011 की जनगणना का आधिकारिक आदर्श वाक्य (Motto) क्या था?", "options": {"A": "सशक्त भारत, समृद्ध भारत", "B": "जनगणना से जन कल्याण", "C": "एक कदम विकास की ओर", "D": "हमारी जनगणना, हमारा भविष्य (Our Census, Our Future)"}, "correct_option": "D", "explanation": "2011 की जनगणना का नारा था: 'हमारी जनगणना, हमारा भविष्य'। अतः सही उत्तर विकल्प (D) है।", "topic_name": "भारत एवं विश्व का भूगोल तथा जनगणना (Geography & Census 2011)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "2011 की जनगणना के अनुसार भारत में कुल कितने प्रशासनिक जिले शामिल किए गए थे?", "options": {"A": "712 जिले", "B": "593 जिले", "C": "640 जिले", "D": "680 जिले"}, "correct_option": "C", "explanation": "2001 में 593 जिलों की तुलना में 2011 की जनगणना 640 जिलों, 5924 उप-जिलों और 7935 कस्बों में संपन्न हुई थी। अतः सही उत्तर विकल्प (C) है।", "topic_name": "भारत एवं विश्व का भूगोल तथा जनगणना (Geography & Census 2011)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "भारत में विदेशी मुद्रा प्रबंधन को विनियमित करने वाला अधिनियम 'फेमा' (FEMA) किस वर्ष लागू हुआ?", "options": {"A": "2005", "B": "1991", "C": "1973 (FERA)", "D": "2000 (FEMA 1999 अधिनियम)"}, "correct_option": "D", "explanation": "कठोर विदेशी मुद्रा विनियमन अधिनियम (FERA 1973) को निरस्त कर अधिक उदार विदेशी मुद्रा प्रबंधन अधिनियम (FEMA 1999) को 1 जून 2000 से लागू किया गया। अतः सही उत्तर विकल्प (D) है।", "topic_name": "भारतीय अर्थव्यवस्था (Indian Economy)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "किसी देश में आय अथवा धन के वितरण में असमानता (Inequality) को दर्शाने वाले वक्र को क्या कहा जाता है?", "options": {"A": "लॉरेंज वक्र (Lorenz Curve)", "B": "फिलिप्स वक्र", "C": "एंजेल वक्र", "D": "लाफर वक्र"}, "correct_option": "A", "explanation": "मैक्स ओ. लॉरेंज द्वारा 1905 में विकसित लॉरेंज वक्र जनसंख्या के संचयी प्रतिशत और उनकी आय के संचयी प्रतिशत के बीच असमानता को दर्शाता है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "भारतीय अर्थव्यवस्था (Indian Economy)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "कंप्यूटर उपयोगकर्ता की फाइलों को एन्क्रिप्ट कर बंधक बना लेने और उन्हें अनलॉक करने के लिए फिरौती (Ransom) मांगने वाला मैलवेयर क्या है?", "options": {"A": "की-लॉगर", "B": "ट्रोजन", "C": "रैनसमवेयर (Ransomware)", "D": "स्पायवेयर"}, "correct_option": "C", "explanation": "WannaCry और Petya रैनसमवेयर के प्रसिद्ध उदाहरण हैं जो क्रिप्टोकरेंसी में फिरौती की मांग करते हैं। अतः सही उत्तर विकल्प (C) है।", "topic_name": "कंप्यूटर ज्ञान एवं विविध (Computer Knowledge & Miscellany)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "अगले निष्पादित होने वाले निर्देश का मेमोरी पता (Memory Address) रखने वाले CPU रजिस्टर को क्या कहते हैं?", "options": {"A": "इंस्ट्रक्शन रजिस्टर", "B": "डेटा रजिस्टर", "C": "प्रोग्राम काउंटर (Program Counter - PC)", "D": "एक्यूमलेटर"}, "correct_option": "C", "explanation": "प्रोग्राम काउंटर CPU द्वारा निष्पादित किए जाने वाले अनुक्रमिक निर्देशों के पते को ट्रैक करता है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "कंप्यूटर ज्ञान एवं विविध (Computer Knowledge & Miscellany)", "subject": "General Awareness (सामान्य जागरूकता)", "diagram_svg": ""}, {"question": "त्रिभुज ABC में कोण A का आंतरिक समद्विभाजक (Angle Bisector) AD भुजा BC को बिंदु D पर मिलता है। यदि AB = 20 सेमी, AC = 25 सेमी तथा BD = 12 सेमी हों, तो भुजा BC की कुल लंबाई क्या होगी?", "options": {"A": "32 सेमी", "B": "27 सेमी", "C": "30 सेमी", "D": "25 सेमी"}, "correct_option": "B", "explanation": "आंतरिक कोण समद्विभाजक प्रमेय के अनुसार: AB / AC = BD / CD ⇒ 20 / 25 = 12 / CD ⇒ CD = (25 × 12) / 20 = 15 सेमी। अतः पूरी भुजा BC = BD + CD = 12 + 15 = 27 सेमी। अतः सही उत्तर 27 सेमी है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "दो समरूप त्रिभुज ΔABC तथा ΔDEF हैं जिनके क्षेत्रफल क्रमशः 48 सेमी² और 75 सेमी² हैं। यदि ΔABC की भुजा AB = 16 सेमी हो, तो ΔDEF की संगत भुजा DE की लंबाई ज्ञात कीजिए।", "options": {"A": "22 सेमी", "B": "24 सेमी", "C": "18 सेमी", "D": "20 सेमी"}, "correct_option": "D", "explanation": "समरूप त्रिभुजों के क्षेत्रफलों का अनुपात उनकी संगत भुजाओं के वर्गों के अनुपात के बराबर होता है: Area(ΔABC) / Area(ΔDEF) = (AB / DE)² ⇒ 48 / 75 = (4² / 5²) ⇒ AB / DE = 4 / 5। चूँकि AB = 16 सेमी, अतः DE = 20 सेमी। अतः सही उत्तर 20 सेमी है। अतः सही उत्तर विकल्प (D) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "दो वृत्तों के केंद्रों के बीच की दूरी 20 सेमी है तथा उनकी त्रिज्याएँ क्रमशः 16 सेमी और 4 सेमी हैं। उनकी उभयनिष्ठ अनुस्पर्श रेखा (Direct Common Tangent) की अभीष्ट लंबाई क्या होगी?", "options": {"A": "13 सेमी", "B": "20 सेमी", "C": "16 सेमी", "D": "18 सेमी"}, "correct_option": "C", "explanation": "उभयनिष्ठ अनुस्पर्श रेखा की लंबाई DCT = √(d² - (r₁ - r₂)²) = √(20² - (16 - 4)²) = √(400 - 144) = √(256) = 16 सेमी। अतः सही उत्तर 16 सेमी है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "ज्यामिति (Geometry)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"115\" viewBox=\"0 0 220 115\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Circle -->\n        <circle cx=\"145\" cy=\"58\" r=\"36\" fill=\"#EFF6FF\" stroke=\"#1E3A8A\" stroke-width=\"1.8\"/>\n        <!-- Center O -->\n        <circle cx=\"145\" cy=\"58\" r=\"2.5\" fill=\"#1E3A8A\"/>\n        <text x=\"145\" y=\"52\" font-size=\"9\" fill=\"#1E3A8A\">O</text>\n        \n        <!-- External Point P -->\n        <circle cx=\"25\" cy=\"70\" r=\"3.5\" fill=\"#DC2626\"/>\n        <text x=\"15\" y=\"74\" font-size=\"11\" font-weight=\"bold\" fill=\"#DC2626\">P</text>\n        \n        <!-- Tangent Line PT -->\n        <line x1=\"25\" y1=\"70\" x2=\"145\" y2=\"22\" stroke=\"#DC2626\" stroke-width=\"1.8\"/>\n        <circle cx=\"145\" cy=\"22\" r=\"3\" fill=\"#DC2626\"/>\n        <text x=\"145\" y=\"16\" font-size=\"10\" font-weight=\"bold\" fill=\"#DC2626\" text-anchor=\"middle\">T (PT=6 सेमी)</text>\n        \n        <!-- Secant Line PAB -->\n        <line x1=\"25\" y1=\"70\" x2=\"181\" y2=\"58\" stroke=\"#1E3A8A\" stroke-width=\"1.5\"/>\n        <circle cx=\"109\" cy=\"63\" r=\"3\" fill=\"#1E3A8A\"/>\n        <text x=\"105\" y=\"77\" font-size=\"9\" font-weight=\"bold\" fill=\"#1E3A8A\">A (4)</text>\n        <circle cx=\"181\" cy=\"58\" r=\"3\" fill=\"#1E3A8A\"/>\n        <text x=\"185\" y=\"72\" font-size=\"9\" font-weight=\"bold\" fill=\"#1E3A8A\">B (AB=5)</text>\n      </svg>\n    </div>\n    "}, {"question": "एक 20 सेमी त्रिज्या वाले धातु के बड़े ठोस गोले को पिघलाकर 2 सेमी त्रिज्या वाली कितनी छोटी ठोस गोलियां बनाई जा सकती हैं?", "options": {"A": "1000", "B": "2000", "C": "500", "D": "1018"}, "correct_option": "A", "explanation": "धातु का कुल आयतन नियत रहता है। छोटी गोलियों की संख्या N = (बड़े गोले का आयतन) / (एक छोटी गोली का आयतन) = ((4/3)πR³) / ((4/3)πr³) = (R / r)³ = (20 / 2)³ = 10³ = 1000। अतः सही उत्तर 1000 है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "क्षेत्रमिति (Mensuration 2D & 3D)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "एक लंबवृत्तीय शंकु (Right Circular Cone) के आधार की त्रिज्या 14 सेमी और ऊँचाई 24 सेमी है। शंकु की तिर्यक ऊँचाई (Slant Height) तथा आयतन ज्ञात कीजिए। (π = 22/7)", "options": {"A": "तिर्यक ऊँचाई = 25 सेमी, आयतन = 2464 सेमी³", "B": "तिर्यक ऊँचाई = 26 सेमी, आयतन = 4928 सेमी³", "C": "तिर्यक ऊँचाई = 26 सेमी, आयतन = 5078 सेमी³", "D": "तिर्यक ऊँचाई = 28 सेमी, आयतन = 4928 सेमी³"}, "correct_option": "B", "explanation": "तिर्यक ऊँचाई l = √(r² + h²) = √(14² + 24²) = √(196 + 576) = √(676) = 26 सेमी। शंकु का आयतन = (1/3)πr²h = (1/3) × (22/7) × 14² × 24 = 4928 सेमी³। अतः सही उत्तर तिर्यक ऊँचाई = 26 सेमी, आयतन = 4928 सेमी³ है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "क्षेत्रमिति (Mensuration 2D & 3D)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "द्विघात समीकरण $x² - 13x + 40 = 0$ के मूलों (Roots) का योगफल तथा गुणनफल क्रमशः क्या होंगे?", "options": {"A": "योग = 13, गुणनफल = 40", "B": "योग = 40, गुणनफल = 13", "C": "योग = -13, गुणनफल = 40", "D": "योग = 13, गुणनफल = -40"}, "correct_option": "A", "explanation": "समीकरण ax² + bx + c = 0 के लिए मूलों का योग (α + β) = -b/a = -(-13)/1 = 13 तथा मूलों का गुणनफल (αβ) = c/a = 40/1 = 40 (वास्तविक मूल: 5 और 8)। अतः सही उत्तर योग = 13, गुणनफल = 40 है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "बीजगणित (Algebra)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "यदि $a = 14$, $b = -8$, तथा $c = -6$ हों, तो व्यंजक $(a³ + b³ + c³)$ का सटीक मान ज्ञात कीजिए।", "options": {"A": "1008", "B": "2016", "C": "1866", "D": "2136"}, "correct_option": "B", "explanation": "चूँकि a + b + c = 14 + (-8) + (-6) = 0 है। हम जानते हैं कि जब a + b + c = 0 हो, तो a³ + b³ + c³ = 3abc होता है। अतः a³ + b³ + c³ = 3 × (14) × (-8) × (-6) = 2016। अतः सही उत्तर 2016 है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "बीजगणित (Algebra)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "व्यंजक (259)¹⁴⁸ का इकाई का अंक क्या होगा?", "options": {"A": "1", "B": "3", "C": "6", "D": "8"}, "correct_option": "A", "explanation": "आधार 9 की घात 148 एक सम संख्या है। 9 की सम घात का इकाई अंक सदैव 1 होता है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "संख्या पद्धति (Number System)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "संख्या 432x5, 3 से विभाज्य है लेकिन 9 से नहीं। x का न्यूनतम मान क्या होगा?", "options": {"A": "2", "B": "4", "C": "1", "D": "0"}, "correct_option": "C", "explanation": "अंकों का योग 14+x। x = 1 रखने पर योग 15 होता है जो 3 से विभाज्य है किंतु 9 से नहीं। अतः सही उत्तर विकल्प (C) है।", "topic_name": "संख्या पद्धति (Number System)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "भूमि के एक बिंदु से एक गुब्बारे का उन्नयन कोण 60° है। यदि गुब्बारा 60 मीटर की ऊँचाई पर उड़ रहा हो, तो प्रेक्षक से गुब्बारे की सीधी दूरी क्या होगी?", "options": {"A": "60√3 मीटर", "B": "120 मीटर", "C": "40√3 मीटर", "D": "30√3 मीटर"}, "correct_option": "C", "explanation": "तर्क: sin 60° = 60 / दूरी ⇒ √3/2 = 60 / दूरी ⇒ दूरी = 120 / √3 = 40√3 मीटर। अतः सही उत्तर 40√3 मीटर है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "त्रिकोणमिति एवं ऊँचाई-दूरी (Trigonometry & Heights)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"200\" height=\"115\" viewBox=\"0 0 200 115\" style=\"background:#FFFDF7; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Right Triangle ABC -->\n        <polygon points=\"35,15 35,95 165,95\" fill=\"#FEF3C7\" fill-opacity=\"0.3\" stroke=\"#B45309\" stroke-width=\"2\"/>\n        \n        <!-- Vertical Tower AB -->\n        <line x1=\"35\" y1=\"15\" x2=\"35\" y2=\"95\" stroke=\"#B45309\" stroke-width=\"3\"/>\n        <text x=\"18\" y=\"55\" font-size=\"9\" font-weight=\"bold\" fill=\"#B45309\">h=30m</text>\n        <text x=\"35\" y=\"10\" font-size=\"10\" font-weight=\"bold\" fill=\"#1E293B\" text-anchor=\"middle\">A (शीर्ष)</text>\n        \n        <!-- Base BC -->\n        <text x=\"30\" y=\"108\" font-size=\"10\" font-weight=\"bold\" fill=\"#1E293B\">B</text>\n        <text x=\"100\" y=\"108\" font-size=\"9\" font-weight=\"bold\" fill=\"#475569\" text-anchor=\"middle\">d=30m</text>\n        <text x=\"170\" y=\"108\" font-size=\"10\" font-weight=\"bold\" fill=\"#1E293B\">C (बिंदु)</text>\n        \n        <!-- Angle of elevation at C -->\n        <path d=\"M 145 95 A 20 20 0 0 0 152 86\" fill=\"none\" stroke=\"#DC2626\" stroke-width=\"1.5\"/>\n        <text x=\"145\" y=\"88\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#DC2626\">60°</text>\n      </svg>\n    </div>\n    "}, {"question": "व्यंजक (sin θ / (1 + cos θ)) + ((1 + cos θ) / sin θ) किसके बराबर है?", "options": {"A": "2 cosec θ", "B": "2 cos θ", "C": "2 sec θ", "D": "2 sin θ"}, "correct_option": "A", "explanation": "तर्क: (sin² θ + (1 + cos θ)²) / (sin θ(1 + cos θ)) = (1 + 2 cos θ + cos² θ + sin² θ) / (sin θ(1 + cos θ)) = 2(1 + cos θ)/(sin θ(1 + cos θ)) = 2/sin θ = 2 cosec θ। अतः सही उत्तर 2 cosec θ है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "त्रिकोणमिति एवं ऊँचाई-दूरी (Trigonometry & Heights)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"200\" height=\"115\" viewBox=\"0 0 200 115\" style=\"background:#FFFDF7; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Right Triangle ABC -->\n        <polygon points=\"35,15 35,95 165,95\" fill=\"#FEF3C7\" fill-opacity=\"0.3\" stroke=\"#B45309\" stroke-width=\"2\"/>\n        \n        <!-- Vertical Tower AB -->\n        <line x1=\"35\" y1=\"15\" x2=\"35\" y2=\"95\" stroke=\"#B45309\" stroke-width=\"3\"/>\n        <text x=\"18\" y=\"55\" font-size=\"9\" font-weight=\"bold\" fill=\"#B45309\">h=30m</text>\n        <text x=\"35\" y=\"10\" font-size=\"10\" font-weight=\"bold\" fill=\"#1E293B\" text-anchor=\"middle\">A (शीर्ष)</text>\n        \n        <!-- Base BC -->\n        <text x=\"30\" y=\"108\" font-size=\"10\" font-weight=\"bold\" fill=\"#1E293B\">B</text>\n        <text x=\"100\" y=\"108\" font-size=\"9\" font-weight=\"bold\" fill=\"#475569\" text-anchor=\"middle\">d=30m</text>\n        <text x=\"170\" y=\"108\" font-size=\"10\" font-weight=\"bold\" fill=\"#1E293B\">C (बिंदु)</text>\n        \n        <!-- Angle of elevation at C -->\n        <path d=\"M 145 95 A 20 20 0 0 0 152 86\" fill=\"none\" stroke=\"#DC2626\" stroke-width=\"1.5\"/>\n        <text x=\"145\" y=\"88\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#DC2626\">45°</text>\n      </svg>\n    </div>\n    "}, {"question": "पेट्रोल के भाव में 30% की कमी होने पर, एक उपभोक्ता अपने उपभोग में कितने प्रतिशत की वृद्धि कर सकता है जिससे उसका पेट्रोल पर खर्च पहले जितना ही रहे?", "options": {"A": "50.86%", "B": "42.86%", "C": "39.86%", "D": "47.86%"}, "correct_option": "B", "explanation": "तर्क: वृद्धि % = (30 / 70) × 100 = 42.86%। अतः सही उत्तर 42.86% है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "प्रतिशत, लाभ-हानि एवं छूट (Percentage, Profit & Loss, Discount)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "एक चुनाव में दो प्रत्याशी रोहित और सुरेश चुनाव लड़ते हैं। कुल डाले गए मतों में से रोहित ने 60% मत प्राप्त किए और वह सुरेश को 6400 मतों के अंतर से पराजित करता है। चुनाव में डाले गए कुल मतों की संख्या क्या थी?", "options": {"A": "32000", "B": "37000", "C": "34000", "D": "30000"}, "correct_option": "A", "explanation": "रोहित के मत = 60%, सुरेश के मत = 40%। जीत का अंतर = 60% - 40% = 20%। 20% = 6400 ⇒ 100% कुल मत = (6400 × 100) / 20 = 32000। अतः सही उत्तर 32000 है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "प्रतिशत, लाभ-हानि एवं छूट (Percentage, Profit & Loss, Discount)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "किसी वस्तु पर दी जाने वाली 30% और 40% की दो क्रमिक छूटों (Successive Discounts) के समतुल्य एकल छूट (Single Equivalent Discount) का प्रतिशत क्या होगा?", "options": {"A": "43.50%", "B": "54.00%", "C": "58%", "D": "62.00%"}, "correct_option": "C", "explanation": "तर्क: 30 + 40 - 12 = 58%। अतः सही उत्तर 58% है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "प्रतिशत, लाभ-हानि एवं छूट (Percentage, Profit & Loss, Discount)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "राजेश और कमलेश किसी कार्य को क्रमशः 18 और 24 दिनों में कर सकते हैं। दोनों एक साथ कार्य प्रारंभ करते हैं, किंतु कार्य समाप्त होने से 3 दिन पहले कमलेश कार्य छोड़ देता है। संपूर्ण कार्य को पूरा होने में कुल कितना समय लगा?", "options": {"A": "14.57 दिन", "B": "16.20 दिन", "C": "11.57 दिन", "D": "8.57 दिन"}, "correct_option": "C", "explanation": "तर्क: कुल कार्य 72। A = 4, B = 3। 72 + 3(3) = 81 / 7 = 11.57 दिन। अतः सही उत्तर 11.57 दिन है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "समय और कार्य एवं नल-टंकी (Time & Work, Pipes & Cisterns)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "मनोज किसी कार्य को 10 दिनों में पूरा कर सकता है और आलोक उसी कार्य को 20 दिनों में कर सकता है। यदि वे एकांतर दिनों (Alternate Days) में कार्य करें और कार्य की शुरुआत मनोज द्वारा की जाए, तो संपूर्ण कार्य कितने दिनों में समाप्त होगा?", "options": {"A": "13 दिन", "B": "16.90 दिन", "C": "15.00 दिन", "D": "11.00 दिन"}, "correct_option": "A", "explanation": "तर्क: कुल कार्य = 20। A = 2, B = 1। 2 दिन में 3 इकाई। 6 चक्र (12 दिन) में 18 इकाई। शेष 2 इकाई A करेगा 1 दिन में = 13 दिन। अतः सही उत्तर 13 दिन है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "समय और कार्य एवं नल-टंकी (Time & Work, Pipes & Cisterns)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "100 मीटर की दौड़ में A, B को 10 मीटर से हराता है तथा B, C को 10 मीटर से। A, C को कितने मीटर से हराएगा?", "options": {"A": "15 मीटर", "B": "20 मीटर", "C": "19 मीटर", "D": "18 मीटर"}, "correct_option": "C", "explanation": "तर्क: A = 100 ⇒ B = 90। B = 100 ⇒ C = 90। C = 90 × 0.90 = 81। 100 - 81 = 19 मीटर। अतः सही उत्तर 19 मीटर है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "चाल, समय, दूरी, रेलगाड़ी, नाव-धारा एवं दौड़ (Speed, Distance, Trains, Boats & Races)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "100 मीटर की दौड़ में A, B को 20 मीटर की शुरुआत (Head Start) देता है, फिर भी A 5 सेकंड से जीत जाता है। यदि A की चाल 5 मी/से हो, तो B की चाल क्या होगी?", "options": {"A": "3.5 मी/से", "B": "3.2 मी/से", "C": "3 मी/से", "D": "4 मी/से"}, "correct_option": "B", "explanation": "तर्क: A का समय = 100 / 5 = 20 सेकंड। B का समय = 20 + 5 = 25 सेकंड। B ने दूरी तय की = 80 मीटर। B की चाल = 80 / 25 = 3.2 मी/से। अतः सही उत्तर 3.2 मी/से है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "चाल, समय, दूरी, रेलगाड़ी, नाव-धारा एवं दौड़ (Speed, Distance, Trains, Boats & Races)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "4 और 9 का मध्यानुपाती (Mean Proportional) क्या होगा?", "options": {"A": "7", "B": "6.5", "C": "6", "D": "5"}, "correct_option": "C", "explanation": "तर्क: मध्यानुपाती b = √(ac) = √(4 × 9) = √36 = 6। अतः सही उत्तर 6 है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "अनुपात, साझेदारी एवं औसत (Ratio, Partnership & Average)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "एक थैले में ₹1, 50 पैसे तथा 25 पैसे के सिक्के 4 : 6 : 8 के अनुपात में रखे हैं। यदि थैले में कुल धनराशि ₹270 हो, तो थैले में 50 पैसे के सिक्कों की कुल संख्या क्या होगी?", "options": {"A": "180", "B": "160", "C": "200", "D": "360"}, "correct_option": "A", "explanation": "तर्क: मूल्य = 4 + 3 + 2 = 9 इकाई = ₹270 ⇒ 1 इकाई = 30। 50 पैसे के सिक्के = 6 × 30 = 180। अतः सही उत्तर 180 है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "अनुपात, साझेदारी एवं औसत (Ratio, Partnership & Average)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "एक धनराशि CI की निश्चित दर से 2 वर्ष में ₹4,500 तथा 4 वर्ष में ₹6,750 हो जाती है। वह धनराशि क्या है?", "options": {"A": "₹3,200", "B": "₹3,500", "C": "₹3,000", "D": "₹2,800"}, "correct_option": "C", "explanation": "तर्क: P = A₁² / A₂ = (4500 × 4500) / 6750 = ₹3,000। अतः सही उत्तर ₹3,000 है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "साधारण एवं चक्रवृद्धि ब्याज (Simple & Compound Interest)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "एक व्यापारी ₹15 प्रति किग्रा और ₹20 प्रति किग्रा के चावल को किस अनुपात में मिलाकर ₹18 प्रति किग्रा की दर से बेचे?", "options": {"A": "1 : 2", "B": "2 : 3", "C": "4 : 3", "D": "3 : 2"}, "correct_option": "B", "explanation": "तर्क: (20 - 18) : (18 - 15) = 2 : 3। अतः सही उत्तर 2 : 3 है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "मिश्रण एवं पृथक्करण (Mixture & Alligation)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": ""}, {"question": "तालिका 5 विभिन्न ऑटोमोबाइल कंपनियों (A, B, C, D, E) द्वारा वर्ष 2020 से 2023 के दौरान कारों के उत्पादन (हजारों में) को दर्शाती है:\n\n| कंपनी | 2020 | 2021 | 2022 | 2023 |\n|:---:|:---:|:---:|:---:|:---:|\n| A | 45 | 52 | 60 | 65 |\n| B | 35 | 42 | 48 | 55 |\n| C | 50 | 55 | 58 | 62 |\n| D | 40 | 46 | 54 | 60 |\n| E | 30 | 38 | 45 | 52 |\n\n**प्रश्न:** वर्ष 2022 में कंपनी E का उत्पादन, उसी वर्ष सभी कंपनियों के कुल उत्पादन का लगभग कितने प्रतिशत था?", "options": {"A": "20.00%", "B": "16.98%", "C": "18.50%", "D": "15.20%"}, "correct_option": "B", "explanation": "तर्क: 2022 में कुल = 265 हजार। E = 45 हजार। प्रतिशत = (45 / 265) × 100 ≈ 16.98%। अतः सही उत्तर 16.98% है। अतः सही उत्तर विकल्प (B) है।", "topic_name": "आंकड़ों का विश्लेषण (Data Interpretation - DI)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"120\" viewBox=\"0 0 220 120\" style=\"background:#FFFFFF; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Title -->\n        <text x=\"110\" y=\"12\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#1E293B\" text-anchor=\"middle\">कंपनी उत्पादन 2023 (हज़ार)</text>\n        <!-- Axes -->\n        <line x1=\"30\" y1=\"90\" x2=\"210\" y2=\"90\" stroke=\"#CBD5E1\" stroke-width=\"1.5\"/>\n        <line x1=\"30\" y1=\"18\" x2=\"30\" y2=\"90\" stroke=\"#CBD5E1\" stroke-width=\"1.5\"/>\n        \n        <rect x=\"35\" y=\"53\" width=\"22\" height=\"37\" fill=\"#3B82F6\" rx=\"3\"/>\n        <text x=\"46.0\" y=\"49\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#3B82F6\" text-anchor=\"middle\">45</text>\n        <text x=\"46.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">A</text>\n        \n        <rect x=\"71\" y=\"39\" width=\"22\" height=\"51\" fill=\"#10B981\" rx=\"3\"/>\n        <text x=\"82.0\" y=\"35\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#10B981\" text-anchor=\"middle\">62</text>\n        <text x=\"82.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">B</text>\n        \n        <rect x=\"107\" y=\"25\" width=\"22\" height=\"65\" fill=\"#F59E0B\" rx=\"3\"/>\n        <text x=\"118.0\" y=\"21\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#F59E0B\" text-anchor=\"middle\">78</text>\n        <text x=\"118.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">C</text>\n        \n        <rect x=\"143\" y=\"45\" width=\"22\" height=\"45\" fill=\"#EF4444\" rx=\"3\"/>\n        <text x=\"154.0\" y=\"41\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#EF4444\" text-anchor=\"middle\">55</text>\n        <text x=\"154.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">D</text>\n        \n        <rect x=\"179\" y=\"15\" width=\"22\" height=\"75\" fill=\"#8B5CF6\" rx=\"3\"/>\n        <text x=\"190.0\" y=\"11\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#8B5CF6\" text-anchor=\"middle\">90</text>\n        <text x=\"190.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">E</text>\n        \n      </svg>\n    </div>\n    "}, {"question": "तालिका एक बहुराष्ट्रीय संगठन के 5 विभिन्न विभागों में कार्यरत पुरुष एवं महिला कर्मचारियों की संख्या को दर्शाती है:\n\n| विभाग (Department) | पुरुष कर्मचारी (Male) | महिला कर्मचारी (Female) | कुल कर्मचारी (Total) |\n|:---:|:---:|:---:|:---:|\n| मानव संसाधन (HR) | 45 | 55 | 100 |\n| आईटी (IT) | 180 | 120 | 300 |\n| विपणन (Sales) | 120 | 80 | 200 |\n| उत्पादन (Production) | 250 | 50 | 300 |\n| वित्त (Finance) | 65 | 35 | 100 |\n\n**प्रश्न:** मानव संसाधन (HR) और विपणन (Sales) में मिलाकर कुल कर्मचारियों की संख्या कितनी है?", "options": {"A": "320", "B": "280", "C": "300", "D": "350"}, "correct_option": "C", "explanation": "तर्क: HR (100) + Sales (200) = 300 कर्मचारी। अतः सही उत्तर 300 है। अतः सही उत्तर विकल्प (C) है।", "topic_name": "आंकड़ों का विश्लेषण (Data Interpretation - DI)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"120\" viewBox=\"0 0 220 120\" style=\"background:#FFFFFF; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Title -->\n        <text x=\"110\" y=\"12\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#1E293B\" text-anchor=\"middle\">कंपनी उत्पादन 2023 (हज़ार)</text>\n        <!-- Axes -->\n        <line x1=\"30\" y1=\"90\" x2=\"210\" y2=\"90\" stroke=\"#CBD5E1\" stroke-width=\"1.5\"/>\n        <line x1=\"30\" y1=\"18\" x2=\"30\" y2=\"90\" stroke=\"#CBD5E1\" stroke-width=\"1.5\"/>\n        \n        <rect x=\"35\" y=\"53\" width=\"22\" height=\"37\" fill=\"#3B82F6\" rx=\"3\"/>\n        <text x=\"46.0\" y=\"49\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#3B82F6\" text-anchor=\"middle\">45</text>\n        <text x=\"46.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">A</text>\n        \n        <rect x=\"71\" y=\"39\" width=\"22\" height=\"51\" fill=\"#10B981\" rx=\"3\"/>\n        <text x=\"82.0\" y=\"35\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#10B981\" text-anchor=\"middle\">62</text>\n        <text x=\"82.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">B</text>\n        \n        <rect x=\"107\" y=\"25\" width=\"22\" height=\"65\" fill=\"#F59E0B\" rx=\"3\"/>\n        <text x=\"118.0\" y=\"21\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#F59E0B\" text-anchor=\"middle\">78</text>\n        <text x=\"118.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">C</text>\n        \n        <rect x=\"143\" y=\"45\" width=\"22\" height=\"45\" fill=\"#EF4444\" rx=\"3\"/>\n        <text x=\"154.0\" y=\"41\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#EF4444\" text-anchor=\"middle\">55</text>\n        <text x=\"154.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">D</text>\n        \n        <rect x=\"179\" y=\"15\" width=\"22\" height=\"75\" fill=\"#8B5CF6\" rx=\"3\"/>\n        <text x=\"190.0\" y=\"11\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#8B5CF6\" text-anchor=\"middle\">90</text>\n        <text x=\"190.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">E</text>\n        \n      </svg>\n    </div>\n    "}, {"question": "निम्नलिखित तालिका 5 विद्यार्थियों द्वारा 4 विभिन्न विषयों (प्रत्येक विषय पूर्णांक 100) में प्राप्त अंकों को दर्शाती है:\n\n| विद्यार्थी | गणित (Maths) | अंग्रेजी (English) | तर्कशक्ति (Reasoning) | सामान्य अध्ययन (GS) |\n|:---:|:---:|:---:|:---:|:---:|\n| पूजा | 92 | 84 | 96 | 78 |\n| राहुल | 88 | 76 | 90 | 82 |\n| नेहा | 95 | 88 | 94 | 85 |\n| अमित | 78 | 72 | 84 | 76 |\n| प्रिया | 85 | 90 | 88 | 81 |\n\n**प्रश्न:** किस विद्यार्थी ने चारों विषयों में मिलाकर न्यूनतम कुल अंक प्राप्त किए?", "options": {"A": "अमित", "B": "पूजा", "C": "राहुल", "D": "प्रिया"}, "correct_option": "A", "explanation": "तर्क: कुल योग: पूजा = 350, राहुल = 336, नेहा = 362, अमित = 310, प्रिया = 344। न्यूनतम अंक अमित (310) के हैं। अतः सही उत्तर अमित है। अतः सही उत्तर विकल्प (A) है।", "topic_name": "आंकड़ों का विश्लेषण (Data Interpretation - DI)", "subject": "Quantitative Aptitude (गणितीय अभिरुचि)", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"120\" viewBox=\"0 0 220 120\" style=\"background:#FFFFFF; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Title -->\n        <text x=\"110\" y=\"12\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#1E293B\" text-anchor=\"middle\">कंपनी उत्पादन 2023 (हज़ार)</text>\n        <!-- Axes -->\n        <line x1=\"30\" y1=\"90\" x2=\"210\" y2=\"90\" stroke=\"#CBD5E1\" stroke-width=\"1.5\"/>\n        <line x1=\"30\" y1=\"18\" x2=\"30\" y2=\"90\" stroke=\"#CBD5E1\" stroke-width=\"1.5\"/>\n        \n        <rect x=\"35\" y=\"53\" width=\"22\" height=\"37\" fill=\"#3B82F6\" rx=\"3\"/>\n        <text x=\"46.0\" y=\"49\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#3B82F6\" text-anchor=\"middle\">45</text>\n        <text x=\"46.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">A</text>\n        \n        <rect x=\"71\" y=\"39\" width=\"22\" height=\"51\" fill=\"#10B981\" rx=\"3\"/>\n        <text x=\"82.0\" y=\"35\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#10B981\" text-anchor=\"middle\">62</text>\n        <text x=\"82.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">B</text>\n        \n        <rect x=\"107\" y=\"25\" width=\"22\" height=\"65\" fill=\"#F59E0B\" rx=\"3\"/>\n        <text x=\"118.0\" y=\"21\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#F59E0B\" text-anchor=\"middle\">78</text>\n        <text x=\"118.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">C</text>\n        \n        <rect x=\"143\" y=\"45\" width=\"22\" height=\"45\" fill=\"#EF4444\" rx=\"3\"/>\n        <text x=\"154.0\" y=\"41\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#EF4444\" text-anchor=\"middle\">55</text>\n        <text x=\"154.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">D</text>\n        \n        <rect x=\"179\" y=\"15\" width=\"22\" height=\"75\" fill=\"#8B5CF6\" rx=\"3\"/>\n        <text x=\"190.0\" y=\"11\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#8B5CF6\" text-anchor=\"middle\">90</text>\n        <text x=\"190.0\" y=\"104\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">E</text>\n        \n      </svg>\n    </div>\n    "}, {"question": "Read the following passage carefully and select the most appropriate option to fill in blank number (1):\n\n\"Solar energy is rapidly emerging as a viable alternative to conventional fossil fuels. It is clean, renewable, and (1) _______ in almost every corner of the earth. In recent years, technological advancements have significantly (2) _______ the cost of solar panels. Consequently, developing nations are investing heavily to (3) _______ solar grids into their national infrastructure. However, the problem of efficient energy storage during non-sunny hours remains a major (4) _______. Scientists are working persistently to develop high-capacity batteries that can store power (5) _______ for extended durations.\"", "options": {"A": "negligible", "B": "scarce", "C": "abundant", "D": "hostile"}, "correct_option": "C", "explanation": "Blank (1) Analysis: 'Abundant' (plentiful) fits contextually as solar energy is available in large amounts.", "topic_name": "क्लोज टेस्ट (Cloze Test / Reading Comprehension)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Read the following passage carefully and select the most appropriate option to fill in blank number (2):\n\n\"Solar energy is rapidly emerging as a viable alternative to conventional fossil fuels. It is clean, renewable, and (1) _______ in almost every corner of the earth. In recent years, technological advancements have significantly (2) _______ the cost of solar panels. Consequently, developing nations are investing heavily to (3) _______ solar grids into their national infrastructure. However, the problem of efficient energy storage during non-sunny hours remains a major (4) _______. Scientists are working persistently to develop high-capacity batteries that can store power (5) _______ for extended durations.\"", "options": {"A": "multiplied", "B": "reduced", "C": "aggravated", "D": "escalated"}, "correct_option": "B", "explanation": "Blank (2) Analysis: 'Reduced' correctly indicates lowering the manufacturing costs.", "topic_name": "क्लोज टेस्ट (Cloze Test / Reading Comprehension)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Read the following passage carefully and select the most appropriate option to fill in blank number (3):\n\n\"Solar energy is rapidly emerging as a viable alternative to conventional fossil fuels. It is clean, renewable, and (1) _______ in almost every corner of the earth. In recent years, technological advancements have significantly (2) _______ the cost of solar panels. Consequently, developing nations are investing heavily to (3) _______ solar grids into their national infrastructure. However, the problem of efficient energy storage during non-sunny hours remains a major (4) _______. Scientists are working persistently to develop high-capacity batteries that can store power (5) _______ for extended durations.\"", "options": {"A": "integrate", "B": "isolate", "C": "disband", "D": "alienate"}, "correct_option": "A", "explanation": "Blank (3) Analysis: To 'integrate' means to combine or incorporate into a larger system.", "topic_name": "क्लोज टेस्ट (Cloze Test / Reading Comprehension)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Read the following passage carefully and select the most appropriate option to fill in blank number (4):\n\n\"Solar energy is rapidly emerging as a viable alternative to conventional fossil fuels. It is clean, renewable, and (1) _______ in almost every corner of the earth. In recent years, technological advancements have significantly (2) _______ the cost of solar panels. Consequently, developing nations are investing heavily to (3) _______ solar grids into their national infrastructure. However, the problem of efficient energy storage during non-sunny hours remains a major (4) _______. Scientists are working persistently to develop high-capacity batteries that can store power (5) _______ for extended durations.\"", "options": {"A": "miracle", "B": "benefit", "C": "challenge", "D": "triumph"}, "correct_option": "C", "explanation": "Blank (4) Analysis: 'Challenge' (obstacle/difficulty) matches the limitation mentioned.", "topic_name": "क्लोज टेस्ट (Cloze Test / Reading Comprehension)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Read the following passage carefully and select the most appropriate option to fill in blank number (5):\n\n\"Solar energy is rapidly emerging as a viable alternative to conventional fossil fuels. It is clean, renewable, and (1) _______ in almost every corner of the earth. In recent years, technological advancements have significantly (2) _______ the cost of solar panels. Consequently, developing nations are investing heavily to (3) _______ solar grids into their national infrastructure. However, the problem of efficient energy storage during non-sunny hours remains a major (4) _______. Scientists are working persistently to develop high-capacity batteries that can store power (5) _______ for extended durations.\"", "options": {"A": "partially", "B": "recklessly", "C": "reluctantly", "D": "efficiently"}, "correct_option": "D", "explanation": "Blank (5) Analysis: Adverb 'efficiently' modifies how energy must be stored effectively.", "topic_name": "क्लोज टेस्ट (Cloze Test / Reading Comprehension)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the most appropriate SYNONYM of the given word:\n\n**Indolent**", "options": {"A": "Energetic", "B": "Lazy", "C": "Active", "D": "Industrious"}, "correct_option": "B", "explanation": "Indolent means wanting to avoid activity or exertion; lazy.", "topic_name": "समानार्थी एवं विलोम शब्द (Synonyms & Antonyms)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the most appropriate ANTONYM of the given word:\n\n**Wary**", "options": {"A": "Vigilant", "B": "Watchful", "C": "Guarded", "D": "Heedless"}, "correct_option": "D", "explanation": "The antonym of wary (careful) is heedless or rash.", "topic_name": "समानार्थी एवं विलोम शब्द (Synonyms & Antonyms)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the most appropriate SYNONYM of the given word:\n\n**Vindicate**", "options": {"A": "Condemn", "B": "Inculpate", "C": "Blame", "D": "Exonerate"}, "correct_option": "D", "explanation": "To vindicate means to clear someone of blame or suspicion.", "topic_name": "समानार्थी एवं विलोम शब्द (Synonyms & Antonyms)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the most appropriate ANTONYM of the given word:\n\n**Gullible**", "options": {"A": "Credulous", "B": "Skeptical", "C": "Naive", "D": "Trusting"}, "correct_option": "B", "explanation": "The antonym of gullible (naive) is skeptical or suspicious.", "topic_name": "समानार्थी एवं विलोम शब्द (Synonyms & Antonyms)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the most appropriate option that can substitute the bold segment in the given sentence. If there is no need to substitute it, select 'No improvement':\n\n\"The cattle **is grazing** in the fertile valley pastures.\"", "options": {"A": "are grazing", "B": "No improvement", "C": "has been grazing", "D": "was grazing"}, "correct_option": "A", "explanation": "'Cattle' is a plural noun: 'are grazing'.", "topic_name": "त्रुटि पहचान एवं वाक्य सुधार (Error Spotting & Sentence Improvement)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the most appropriate option that can substitute the bold segment in the given sentence. If there is no need to substitute it, select 'No improvement':\n\n\"The teacher asked me **that why I was late** for the lecture.\"", "options": {"A": "why was I late", "B": "why I was late", "C": "that why was I late", "D": "No improvement"}, "correct_option": "B", "explanation": "Conjunction 'that' should not precede interrogative wh- words in indirect speech: 'asked me why I was late'.", "topic_name": "त्रुटि पहचान एवं वाक्य सुधार (Error Spotting & Sentence Improvement)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the most appropriate option that can substitute the bold segment in the given sentence. If there is no need to substitute it, select 'No improvement':\n\n\"He **runs so fastly that** nobody can catch him in a sprint race.\"", "options": {"A": "No improvement", "B": "runs as fast that", "C": "runs so fast that", "D": "runs so fastly as"}, "correct_option": "C", "explanation": "'Fast' functions as an adverb; 'fastly' is not a valid English word.", "topic_name": "त्रुटि पहचान एवं वाक्य सुधार (Error Spotting & Sentence Improvement)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the most appropriate option that can substitute the bold segment in the given sentence. If there is no need to substitute it, select 'No improvement':\n\n\"The police **is investigating** the mysterious bank robbery.\"", "options": {"A": "has investigated", "B": "are investigating", "C": "No improvement", "D": "was investigating"}, "correct_option": "B", "explanation": "'Police' is a plural collective noun requiring a plural verb: 'are investigating'.", "topic_name": "त्रुटि पहचान एवं वाक्य सुधार (Error Spotting & Sentence Improvement)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the most appropriate meaning of the given idiom:\n\n**Take the bull by the horns**", "options": {"A": "Confront a dangerous problem directly and boldly", "B": "Engage in Spanish bullfighting", "C": "Flee from a wild animal", "D": "Handle cattle on a farm"}, "correct_option": "A", "explanation": "To 'take the bull by the horns' means to face a formidable challenge directly with courage.", "topic_name": "मुहावरे एवं एक शब्द (Idioms & One-Word Substitution)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the most appropriate meaning of the given idiom:\n\n**Storm in a teacup**", "options": {"A": "A minor kitchen accident", "B": "A severe tropical cyclone", "C": "A brewing hot beverage", "D": "Great outrage or excitement over a trivial matter"}, "correct_option": "D", "explanation": "A 'storm in a teacup' refers to a disproportionate fuss or excitement about an unimportant issue.", "topic_name": "मुहावरे एवं एक शब्द (Idioms & One-Word Substitution)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the most appropriate meaning of the given idiom:\n\n**Leave no stone unturned**", "options": {"A": "Vandalize natural rocks", "B": "Abandon a search early", "C": "Engage in heavy construction", "D": "Make every conceivable effort to achieve something"}, "correct_option": "D", "explanation": "To 'leave no stone unturned' means to try every possible means to achieve a goal.", "topic_name": "मुहावरे एवं एक शब्द (Idioms & One-Word Substitution)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Sentences of a paragraph are given below in jumbled order. Arrange the sentences in the correct order to form a meaningful and coherent paragraph:\n\nP. Researchers conduct rigorous empirical experiments to understand the fundamental mechanisms underlying biofuel synthesis.\nQ. Biofuel Synthesis represents a vital frontier of contemporary scientific and environmental investigation.\nR. Technological innovations in this domain offer promising solutions to pressing industrial and ecological challenges.\nS. Continuing multidisciplinary collaboration will maximize the societal benefits of biofuel synthesis for future generations.", "options": {"A": "PQRS", "B": "RSPQ", "C": "QPRS", "D": "PRSQ"}, "correct_option": "C", "explanation": "Sentence (Q) introduces the primary subject of Biofuel Synthesis. Sentence (P) logically continues the narrative, followed by supporting developments and the conclusion. Correct sequence: QPRS.", "topic_name": "वाक्य पुनर्व्यवस्था (Para Jumbles / Sentence Rearrangement)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Sentences of a paragraph are given below in jumbled order. Arrange the sentences in the correct order to form a meaningful and coherent paragraph:\n\nP. Researchers conduct rigorous empirical experiments to understand the fundamental mechanisms underlying deep ocean trenches.\nQ. Technological innovations in this domain offer promising solutions to pressing industrial and ecological challenges.\nR. Continuing multidisciplinary collaboration will maximize the societal benefits of deep ocean trenches for future generations.\nS. Deep Ocean Trenches represents a vital frontier of contemporary scientific and environmental investigation.", "options": {"A": "PQRS", "B": "QPRS", "C": "PRSQ", "D": "SPQR"}, "correct_option": "D", "explanation": "Sentence (S) introduces the primary subject of Deep Ocean Trenches. Sentence (P) logically continues the narrative, followed by supporting developments and the conclusion. Correct sequence: SPQR.", "topic_name": "वाक्य पुनर्व्यवस्था (Para Jumbles / Sentence Rearrangement)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Sentences of a paragraph are given below in jumbled order. Arrange the sentences in the correct order to form a meaningful and coherent paragraph:\n\nP. Continuing multidisciplinary collaboration will maximize the societal benefits of urban mass transit for future generations.\nQ. Urban Mass Transit represents a vital frontier of contemporary scientific and environmental investigation.\nR. Technological innovations in this domain offer promising solutions to pressing industrial and ecological challenges.\nS. Researchers conduct rigorous empirical experiments to understand the fundamental mechanisms underlying urban mass transit.", "options": {"A": "PRSQ", "B": "QSRP", "C": "PQRS", "D": "QPRS"}, "correct_option": "B", "explanation": "Sentence (Q) introduces the primary subject of Urban Mass Transit. Sentence (S) logically continues the narrative, followed by supporting developments and the conclusion. Correct sequence: QSRP.", "topic_name": "वाक्य पुनर्व्यवस्था (Para Jumbles / Sentence Rearrangement)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the correct indirect form of the given sentence:\n\n\"The judge said to the witness, \"Speak the absolute truth and do not conceal any facts.\"\"", "options": {"A": "The judge asked the witness to spoke the truth and not to concealed facts.", "B": "The judge requested the witness to speak truth and not conceal.", "C": "The judge told the witness that speak the truth and do not conceal facts.", "D": "The judge ordered the witness to speak the absolute truth and not to conceal any facts."}, "correct_option": "D", "explanation": "Conjoined imperatives convert to parallel infinitives: 'to speak... and not to conceal'.", "topic_name": "वाच्य एवं कथन (Voice & Narration)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the correct indirect form of the given sentence:\n\n\"Sneha said, \"I am preparing for the civil services examination with dedication.\"\"", "options": {"A": "Sneha said that she is preparing for the civil services examination with dedication.", "B": "Sneha said that she was preparing for the civil services examination with dedication.", "C": "Sneha said that I was preparing for the civil services examination with dedication.", "D": "Sneha said that she had been preparing for the civil services examination with dedication."}, "correct_option": "B", "explanation": "Present continuous ('am preparing') changes to past continuous ('was preparing').", "topic_name": "वाच्य एवं कथन (Voice & Narration)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the most appropriate option to fill in the blank:\n\n\"He was oblivious _______ the imminent danger lurking in the shadowy alleyway.\"", "options": {"A": "of", "B": "to", "C": "with", "D": "at"}, "correct_option": "B", "explanation": "'Oblivious to' means unaware of or not conscious of surroundings.", "topic_name": "रिक्त स्थान की पूर्ति (Fill in the Blanks)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the most appropriate option to fill in the blank:\n\n\"The heavy storm caused severe damage _______ the coastal fishing villages.\"", "options": {"A": "for", "B": "to", "C": "with", "D": "at"}, "correct_option": "B", "explanation": "The noun 'damage' takes the preposition 'to' when indicating the object harmed.", "topic_name": "रिक्त स्थान की पूर्ति (Fill in the Blanks)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the correctly spelt word to fill in the blank:\n\n\"The cargo vessel carries a ______ amount of freight across the ocean.\"", "options": {"A": "Gargantun", "B": "Gargantuan", "C": "Gargantuaan", "D": "Garganchuan"}, "correct_option": "B", "explanation": "Gargantuan means gigantic (G-A-R-G-A-N-T-U-A-N).", "topic_name": "वर्तनी त्रुटि (Spelling Errors)", "subject": "English Comprehension", "diagram_svg": ""}, {"question": "Select the correctly spelt word to fill in the blank:\n\n\"Eager movie fans formed a patient ______ outside the premier cinema hall.\"", "options": {"A": "Qeue", "B": "Quene", "C": "Queue", "D": "Queu"}, "correct_option": "C", "explanation": "Queue is spelled Q-U-E-U-E.", "topic_name": "वर्तनी त्रुटि (Spelling Errors)", "subject": "English Comprehension", "diagram_svg": ""}];
+    let currentIdx = 0;
+    const userAnswers = new Array(questionsData.length).fill(null);
+    const markedForReview = new Array(questionsData.length).fill(false);
+    const visitedQuestions = new Array(questionsData.length).fill(false);
+    visitedQuestions[0] = true;
+
+    // Timer
+    let totalSeconds = 3600;
+    const timerElem = document.getElementById("time-left");
+    const timerInterval = setInterval(() => {
+      if (totalSeconds <= 0) {
+        clearInterval(timerInterval);
+        confirmSubmit(true);
+        return;
+      }
+      totalSeconds--;
+      const m = Math.floor(totalSeconds / 60);
+      const s = totalSeconds % 60;
+      timerElem.textContent = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+    }, 1000);
+
+    function initPalette() {
+      const grid = document.getElementById("palette-grid");
+      grid.innerHTML = "";
+      questionsData.forEach((_, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "p-btn" + (idx === 0 ? " active" : "");
+        btn.id = `p-btn-${idx}`;
+        btn.textContent = idx + 1;
+        btn.onclick = () => jumpToQ(idx);
+        grid.appendChild(btn);
+      });
+    }
+
+    function updatePaletteBtn(idx) {
+      const btn = document.getElementById(`p-btn-${idx}`);
+      if (!btn) return;
+      btn.className = "p-btn";
+      if (idx === currentIdx) btn.classList.add("active");
+      if (markedForReview[idx]) {
+        btn.classList.add("reviewed");
+      } else if (userAnswers[idx] !== null) {
+        btn.classList.add("answered");
+      } else if (visitedQuestions[idx]) {
+        btn.classList.add("unanswered");
+      }
+    }
+
+    function renderQuestion() {
+      visitedQuestions[currentIdx] = true;
+      const q = questionsData[currentIdx];
+      document.getElementById("q-number").textContent = `प्रश्न ${currentIdx + 1} / ${questionsData.length}`;
+      document.getElementById("q-section-topic").textContent = `${q.topic_name || q.subject || ''} • (+2.00 / -0.50)`;
+      const diagHtml = q.diagram_svg ? `<div style="text-align:center; margin:10px 0;">${q.diagram_svg}</div>` : '';
+      document.getElementById("q-text").innerHTML = q.question + diagHtml;
+
+      const optCont = document.getElementById("opt-container");
+      optCont.innerHTML = "";
+      ['A', 'B', 'C', 'D'].forEach(opt => {
+        if (!q.options || !q.options[opt]) return;
+        const div = document.createElement("div");
+        const isSel = userAnswers[currentIdx] === opt;
+        div.className = "opt-label" + (isSel ? " selected" : "");
+        div.innerHTML = `<span class="opt-badge">${opt}</span> <span>${q.options[opt]}</span>`;
+        div.onclick = () => selectOpt(opt);
+        optCont.appendChild(div);
+      });
+
+      document.getElementById("btn-prev").disabled = currentIdx === 0;
+      document.getElementById("btn-next").textContent = currentIdx === questionsData.length - 1 ? "समीक्षा करें →" : "अगला →";
+
+      for (let i = 0; i < questionsData.length; i++) updatePaletteBtn(i);
+
+      if (window.renderMathInElement) {
+        renderMathInElement(document.getElementById("q-text"), {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});
+        renderMathInElement(optCont, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});
+      }
+    }
+
+    function selectOpt(opt) {
+      userAnswers[currentIdx] = opt;
+      renderQuestion();
+    }
+
+    function clearChoice() {
+      userAnswers[currentIdx] = null;
+      renderQuestion();
+    }
+
+    function toggleReview() {
+      markedForReview[currentIdx] = !markedForReview[currentIdx];
+      updatePaletteBtn(currentIdx);
+    }
+
+    function nextQ() {
+      if (currentIdx < questionsData.length - 1) {
+        currentIdx++;
+        renderQuestion();
+      } else {
+        confirmSubmit();
+      }
+    }
+
+    function prevQ() {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderQuestion();
+      }
+    }
+
+    function jumpToQ(idx) {
+      currentIdx = idx;
+      renderQuestion();
+    }
+
+    function confirmSubmit(auto = false) {
+      if (!auto) {
+        const answered = userAnswers.filter(a => a !== null).length;
+        if (!confirm(`आपने ${questionsData.length} में से ${answered} प्रश्नों के उत्तर दिए हैं। क्या आप टेस्ट सबमिट करना चाहते हैं?`)) return;
+      }
+      clearInterval(timerInterval);
+
+      let correct = 0, wrong = 0, unattempted = 0;
+      const solList = document.getElementById("solution-list");
+      solList.innerHTML = "";
+
+      questionsData.forEach((q, i) => {
+        const userA = userAnswers[i];
+        const isRight = userA === q.correct_option;
+        if (userA === null) unattempted++;
+        else if (isRight) correct++;
+        else wrong++;
+
+        const solDiv = document.createElement("div");
+        solDiv.className = "sol-card";
+        const statusColor = isRight ? "#16a34a" : userA ? "#dc2626" : "#64748b";
+        const statusText = isRight ? "✓ सही उत्तर" : userA ? "✗ गलत उत्तर" : "○ प्रयास नहीं किया";
+        const solDiag = q.diagram_svg ? `<div style="text-align:center; margin:8px 0;">${q.diagram_svg}</div>` : '';
+
+        solDiv.innerHTML = `
+          <div style="font-weight:700; margin-bottom:6px; color:#1e293b;">
+            Q.${i+1}. ${q.question}
+          </div>
+          ${solDiag}
+          <div style="display:flex; gap:12px; font-size:12px; margin-bottom:6px;">
+            <span>आपका उत्तर: <strong>${userA || '—'}</strong></span>
+            <span style="color:${statusColor}; font-weight:800;">(${statusText})</span>
+            <span style="color:#16a34a; font-weight:800;">सही विकल्प: (${q.correct_option})</span>
+          </div>
+          <div style="background:#f0fdf4; border-left:3px solid #16a34a; padding:6px 10px; border-radius:4px; font-size:12px; color:#14532d;">
+            <strong>व्याख्या:</strong> ${q.explanation || 'व्याख्या उपलब्ध नहीं है'}
+          </div>
+        `;
+        solList.appendChild(solDiv);
+      });
+
+      const score = (correct * 2) - (wrong * 0.50);
+      document.getElementById("res-score").textContent = score.toFixed(2);
+      document.getElementById("res-correct").textContent = correct;
+      document.getElementById("res-wrong").textContent = wrong;
+      document.getElementById("res-unattempted").textContent = unattempted;
+
+      document.getElementById("result-modal").classList.add("show");
+    }
+
+    function restartTest() {
+      window.location.reload();
+    }
+
+    // Section Switching (for 100 Qs mock)
+    function switchSection(startIdx) {
+      jumpToQ(startIdx);
+      const btns = document.querySelectorAll(".sec-btn");
+      btns.forEach(b => b.classList.remove("active"));
+      if (event && event.target) event.target.classList.add("active");
+    }
+
+    initPalette();
+    renderQuestion();
+  </script>
+</body>
+</html>

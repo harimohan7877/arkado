@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Settings } from "@/lib/store-types";
+import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import { ShieldIcon, PhoneIcon, WhatsappIcon } from "@/components/icons";
 
 export default function PrivacyPolicyPage() {
@@ -20,10 +21,10 @@ export default function PrivacyPolicyPage() {
     settings?.policies?.privacy_policy ||
     "Arkado आपकी व्यक्तिगत जानकारी की गोपनीयता और सुरक्षा का पूर्ण सम्मान करता है। हम केवल आपका नाम, ईमेल आईडी और मोबाइल नंबर एकत्र करते हैं ताकि हम आपको आपके द्वारा खरीदे गए नोट्स, Google Drive लिंक और ऑर्डर संबंधी महत्वपूर्ण अपडेट्स भेज सकें। हम आपकी जानकारी को किसी भी तीसरे पक्ष के साथ साझा, किराए पर या बेचते नहीं हैं। भुगतान विवरण प्रत्यक्ष यूपीआई ऐप या सुरक्षित पेमेंट गेटवे द्वारा प्रोसेस किया जाता है और हम कोई भी बैंकिंग पिन या पासवर्ड स्टोर नहीं करते।";
 
-  const phone = settings?.contact?.phone || "+91 7852004401";
+  const phone = settings?.contact?.phone || DEFAULT_SETTINGS.contact.phone;
   const whatsappUrl =
     settings?.social?.whatsapp_url ||
-    `https://wa.me/${settings?.contact?.whatsapp_number || "917852004401"}`;
+    `https://wa.me/${getCleanWhatsAppNumber(settings)}`;
 
   return (
     <div className="min-h-screen flex flex-col bg-white font-sans">

@@ -9,6 +9,7 @@ import CourseCard from "@/components/CourseCard";
 import SampleModal from "@/components/SampleModal";
 import CartDrawer from "@/components/CartDrawer";
 import { Category, Exam, Course } from "@/lib/store-types";
+import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import { SearchIcon, CloseIcon, ChevronRightIcon, ArrowRightIcon, SparklesIcon, CheckIcon } from "@/components/icons";
 
 interface CategoryPageProps {
@@ -245,7 +246,7 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
                   ← All Categories
                 </Link>
                 <a
-                  href={settings?.social?.whatsapp_url || `https://wa.me/${(settings?.contact?.whatsapp_number || settings?.whatsapp_support_number || "917852004401").replace(/\D/g, "")}`}
+                  href={settings?.social?.whatsapp_url || `https://wa.me/${getCleanWhatsAppNumber(settings)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-xs"
@@ -428,7 +429,7 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
                         {hasMultipleKits ? `Browse ${examKits.length} Kits & Books →` : "Study Kit & Buy →"}
                       </Link>
                       <a
-                        href={`https://wa.me/917852004401?text=${encodeURIComponent(
+                        href={`https://wa.me/${DEFAULT_SETTINGS.whatsapp_support_number}?text=${encodeURIComponent(
                           `Hello, I want study material for ${exam.name} (${category.name}).`
                         )}`}
                         target="_blank"

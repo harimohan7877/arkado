@@ -10,6 +10,7 @@ import CartDrawer from "@/components/CartDrawer";
 import CourseCard from "@/components/CourseCard";
 import SampleModal from "@/components/SampleModal";
 import { Category } from "@/lib/store-types";
+import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 
 interface PageProps {
   params: Promise<{ id: string }> | { id: string };
@@ -377,7 +378,7 @@ export default function CourseDetailPage({ params }: PageProps) {
               {/* WhatsApp Support CTA */}
               <div className="shrink-0 w-full sm:w-auto flex sm:flex-col gap-2">
                 <a
-                  href={`https://wa.me/${(settings?.contact?.whatsapp_number || settings?.whatsapp_support_number || "917852004401").replace(/\D/g, "")}?text=${encodeURIComponent(
+                  href={`https://wa.me/${getCleanWhatsAppNumber(settings)}?text=${encodeURIComponent(
                     `Hello, I want study books/kits for ${matchedExam.name}.`
                   )}`}
                   target="_blank"
@@ -825,7 +826,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                 </button>
 
                 <a
-                  href={`https://wa.me/${(settings?.contact?.whatsapp_number || settings?.whatsapp_support_number || "917852004401").replace(/\D/g, "")}?text=${encodeURIComponent(
+                  href={`https://wa.me/${getCleanWhatsAppNumber(settings)}?text=${encodeURIComponent(
                     `Hi! I want to purchase the study kit for ${course.title}.`
                   )}`}
                   target="_blank"

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { CourseBundle } from "@/lib/courses";
 import { getExamLabel } from "@/lib/exam-labels";
+import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import {
   CloseIcon,
   CartIcon,
@@ -63,8 +64,8 @@ export default function CartDrawer({
     upi_id: string;
     merchant_name: string;
     whatsapp_support: string;
-    support_email?: string;
-    custom_qr_url?: string;
+    support_email: string;
+    custom_qr_url: string;
     order_messages?: {
       whatsapp_order_template?: string;
       whatsapp_after_payment_template?: string;
@@ -72,17 +73,17 @@ export default function CartDrawer({
       gmail_body?: string;
     };
   }>({
-    upi_id: "7852004401@ybl",
-    merchant_name: "Arkado",
-    whatsapp_support: "917852004401",
-    support_email: "support@arkado.in",
+    upi_id: DEFAULT_SETTINGS.upi_id,
+    merchant_name: DEFAULT_SETTINGS.merchant_name,
+    whatsapp_support: DEFAULT_SETTINGS.whatsapp_support_number,
+    support_email: DEFAULT_SETTINGS.contact.email,
     custom_qr_url: "",
   });
 
   const upiId = upiSettings.upi_id;
   const merchantName = upiSettings.merchant_name;
   const whatsappSupportNumber = upiSettings.whatsapp_support;
-  const supportEmail = upiSettings.support_email || "support@arkado.in";
+  const supportEmail = upiSettings.support_email || DEFAULT_SETTINGS.contact.email;
   const orderMessages = upiSettings.order_messages;
 
   useEffect(() => {
@@ -93,10 +94,10 @@ export default function CartDrawer({
         .then((data) => {
           if (data && !data.error) {
             setUpiSettings({
-              upi_id: data.upi_id || "7852004401@ybl",
-              merchant_name: data.merchant_name || "Arkado",
-              whatsapp_support: data.contact?.whatsapp_number || data.whatsapp_support_number || "917852004401",
-              support_email: data.contact?.email || data.gmail_support_email || "support@arkado.in",
+              upi_id: data.upi_id || DEFAULT_SETTINGS.upi_id,
+              merchant_name: data.merchant_name || DEFAULT_SETTINGS.merchant_name,
+              whatsapp_support: data.contact?.whatsapp_number || data.whatsapp_support_number || DEFAULT_SETTINGS.whatsapp_support_number,
+              support_email: data.contact?.email || data.gmail_support_email || DEFAULT_SETTINGS.contact.email,
               custom_qr_url: data.custom_qr_url || "",
               order_messages: data.order_messages,
             });
@@ -185,7 +186,7 @@ export default function CartDrawer({
       setStep("success");
 
       // Auto-open WhatsApp chat with formatted order details
-      const cleanAdminNumber = (whatsappSupportNumber || "917852004401").replace(/\D/g, "");
+      const cleanAdminNumber = getCleanWhatsAppNumber(upiSettings);
       const orderMsg =
         `🛒 *नया ऑर्डर भुगतान विवरण — Arkado*\n\n` +
         `🆔 *Order ID:* ${orderId}\n` +
@@ -534,7 +535,7 @@ export default function CartDrawer({
 
                   <div className="grid grid-cols-2 gap-2">
                     <a
-                      href={`https://wa.me/${(whatsappSupportNumber || "917852004401").replace(/\D/g, "")}?text=${encodeURIComponent(
+                      href={`https://wa.me/${getCleanWhatsAppNumber(upiSettings)}?text=${encodeURIComponent(
                         (orderMessages?.whatsapp_order_template || 'नमस्ते Arkado! मुझे "{course_title}" (₹{amount}) खरीदना है।\nUPI ID: {upi_id}\nकृपया अपना Payment QR कोड भेजें या नोट्स शेयर करें।')
                           .replaceAll("{course_title}", primaryCourse?.title || "कोर्स बंडल")
                           .replaceAll("{amount}", subtotal.toString())
@@ -641,7 +642,7 @@ export default function CartDrawer({
 
               {/* Instant WhatsApp Send Button */}
               <a
-                href={`https://wa.me/${(whatsappSupportNumber || "917852004401").replace(/\D/g, "")}?text=${encodeURIComponent(
+                href={`https://wa.me/${getCleanWhatsAppNumber(upiSettings)}?text=${encodeURIComponent(
                   (orderMessages?.whatsapp_after_payment_template ||
                     "🛒 *नया ऑर्डर भुगतान विवरण — Arkado*\n\n🆔 *Order ID:* {order_id}\n👤 *नाम:* {name}\n📱 *डिलीवरी:* {recipient}\n📚 *कोर्स:* {course_title}\n💰 *राशि:* ₹{amount}\n\nमैंने पेमेंट कर दिया है, कृपया चेक करके Drive नोट्स का लिंक भेजें।"
                   )

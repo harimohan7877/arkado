@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Settings } from "@/lib/store-types";
+import { DEFAULT_SETTINGS } from "@/lib/default-settings";
 import {
   PhoneIcon,
   MailIcon,
@@ -39,7 +40,7 @@ export default function Footer() {
   const logoText = brand.logo_text || "Arkado";
   const footerTagline = brand.footer_tagline || "All-India exam preparation — deep-level analysis & pattern-based notes.";
 
-  const whatsappUrl = social.whatsapp_url || "https://wa.me/917852004401";
+  const whatsappUrl = social.whatsapp_url || DEFAULT_SETTINGS.social.whatsapp_url;
   const instagramUrl = social.instagram_url || "https://instagram.com/";
   const facebookUrl = social.facebook_url || "https://facebook.com/";
   const gmailUrl = social.gmail_url || "mailto:support@arkado.in";
@@ -182,11 +183,11 @@ export default function Footer() {
             </h4>
             <div className="space-y-1.5 text-xs text-stone-400">
               <a
-                href={`tel:${(settings?.contact?.phone || "+91 7852004401").replace(/\s+/g, "")}`}
+                href={`tel:${(settings?.contact?.phone || DEFAULT_SETTINGS.contact.phone).replace(/\s+/g, "")}`}
                 className="flex items-center gap-2 hover:text-amber-400 transition"
               >
                 <PhoneIcon size={12} className="text-amber-500" />
-                {settings?.contact?.phone || "+91 7852004401"}
+                {settings?.contact?.phone || DEFAULT_SETTINGS.contact.phone}
               </a>
               <a
                 href={whatsappUrl}
@@ -198,15 +199,15 @@ export default function Footer() {
                 WhatsApp Chat
               </a>
               <a
-                href={`mailto:${settings?.contact?.email || settings?.gmail_support_email || "support@arkado.in"}`}
+                href={`mailto:${settings?.contact?.email || settings?.gmail_support_email || DEFAULT_SETTINGS.contact.email}`}
                 className="flex items-center gap-2 hover:text-amber-400 transition"
               >
                 <MailIcon size={12} className="text-amber-500" />
-                {settings?.contact?.email || settings?.gmail_support_email || "support@arkado.in"}
+                {settings?.contact?.email || settings?.gmail_support_email || DEFAULT_SETTINGS.contact.email}
               </a>
               <div className="flex items-start gap-2 pt-1">
                 <MapPinIcon size={12} className="text-amber-500 mt-0.5 shrink-0" />
-                <span>{settings?.contact?.address || "Sardarshahar, Churu, Rajasthan"}</span>
+                <span>{settings?.contact?.address || DEFAULT_SETTINGS.contact.address}</span>
               </div>
             </div>
 

@@ -89,6 +89,26 @@ export interface Order {
   updated_at: string;
 }
 
+export interface SectionConfig {
+  enabled?: boolean;
+  show_on_mobile?: boolean;
+  show_on_desktop?: boolean;
+  title?: string;
+  subtitle?: string;
+}
+
+export interface HomepageSections {
+  hero?: SectionConfig;
+  trust_strip?: SectionConfig;
+  featured_bundles?: SectionConfig;
+  promo_banner?: SectionConfig;
+  categories?: SectionConfig;
+  all_products?: SectionConfig;
+  hot_deals?: SectionConfig;
+  new_arrivals?: SectionConfig;
+  faq?: SectionConfig;
+}
+
 export interface Settings {
   upi_id: string;
   merchant_name: string;
@@ -109,12 +129,16 @@ export interface Settings {
     footer_tagline?: string;
   };
   homepage?: {
+    sections?: HomepageSections;
+    section_order?: string[];
     hero_badge?: string;
     hero_headline?: string;
     featured_section_title?: string;
     hot_deals_title?: string;
     new_arrivals_title?: string;
     categories_section_title?: string;
+    products_section_title?: string;
+    faq_section_title?: string;
     category_card_style?: {
       logo_size?: number; // e.g. 40 to 300, default 110
       logo_shape?: "circle" | "square" | "rounded-xl" | "rounded-2xl"; // default "circle"

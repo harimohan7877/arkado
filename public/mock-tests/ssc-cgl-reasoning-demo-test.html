@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SSC CGL 2026 : Reasoning & Mental Ability Demo Test | Online Mock Test Demo | Arkado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+  <style>
+    :root {
+      --primary: #d97706;
+      --primary-dark: #b45309;
+      --stone-900: #1c1917;
+      --stone-800: #292524;
+      --stone-700: #44403c;
+      --stone-100: #f5f5f4;
+      --stone-50: #fafaf9;
+      --border: #e7e5e4;
+      --success: #16a34a;
+      --danger: #dc2626;
+      --info: #0284c7;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
+      background: #f8fafc;
+      color: var(--stone-900);
+      line-height: 1.5;
+    }
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 20px;
+    }
+    .brand-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--stone-900);
+    }
+    .brand-sub {
+      font-size: 11px;
+      color: #78716c;
+    }
+    .timer-card {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      padding: 6px 16px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 800;
+      font-size: 15px;
+      color: #92400e;
+    }
+    .section-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 8px 24px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+    }
+    .sec-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      font-size: 12px;
+      font-weight: 700;
+      color: #475569;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .sec-btn.active {
+      background: #1e3a8a;
+      color: white;
+      border-color: #1e3a8a;
+    }
+    .main-container {
+      max-width: 1280px;
+      margin: 18px auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 20px;
+    }
+    @media (max-width: 900px) {
+      .main-container { grid-template-columns: 1fr; }
+    }
+    .test-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+    }
+    .q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+    }
+    .q-num {
+      font-size: 14px;
+      font-weight: 800;
+      color: #b45309;
+      background: #fef3c7;
+      padding: 4px 12px;
+      border-radius: 8px;
+    }
+    .q-marks {
+      font-size: 12px;
+      color: #78716c;
+      font-weight: 600;
+    }
+    .q-text {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.6;
+      margin-bottom: 22px;
+      color: var(--stone-900);
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .opt-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      font-size: 14.5px;
+      background: #ffffff;
+    }
+    .opt-label:hover {
+      border-color: #f59e0b;
+      background: #fffbeb;
+    }
+    .opt-label.selected {
+      border-color: #d97706;
+      background: #fef3c7;
+      font-weight: 700;
+      color: #92400e;
+    }
+    .opt-badge {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #f5f5f4;
+      border: 1px solid #d6d3d1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .opt-label.selected .opt-badge {
+      background: #d97706;
+      color: white;
+      border-color: #d97706;
+    }
+    .btn-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+    }
+    .btn {
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s;
+    }
+    .btn-prev { background: #f5f5f4; color: #44403c; border: 1px solid #d6d3d1; }
+    .btn-next { background: #d97706; color: #ffffff; }
+    .btn-next:hover { background: #b45309; }
+    .btn-clear { background: transparent; color: #dc2626; border: 1px solid #fecaca; }
+    .btn-clear:hover { background: #fee2e2; }
+    .btn-review { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
+    .btn-submit { background: #16a34a; color: white; padding: 10px 22px; font-weight: 800; }
+    .btn-submit:hover { background: #15803d; }
+
+    /* Palette */
+    .palette-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      height: fit-content;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+    }
+    .palette-title {
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--stone-900);
+    }
+    .palette-legend {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      font-size: 11px;
+      margin-bottom: 14px;
+      color: #64748b;
+    }
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+    .legend-dot { width: 12px; height: 12px; border-radius: 4px; }
+    .grid-palette {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+      margin-bottom: 16px;
+      max-height: 380px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    .p-btn {
+      aspect-ratio: 1;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: #f5f5f4;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.1s;
+    }
+    .p-btn.active { outline: 2.5px solid #d97706; outline-offset: 1px; }
+    .p-btn.answered { background: #16a34a; color: white; border-color: #16a34a; }
+    .p-btn.unanswered { background: #ef4444; color: white; border-color: #ef4444; }
+    .p-btn.reviewed { background: #8b5cf6; color: white; border-color: #8b5cf6; }
+
+    /* Result Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal.show { display: flex; }
+    .modal-card {
+      background: white;
+      max-width: 650px;
+      width: 100%;
+      border-radius: 20px;
+      padding: 28px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    }
+    .score-circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: #fef3c7;
+      border: 4px solid #d97706;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 16px auto;
+      color: #92400e;
+      font-weight: 900;
+    }
+    .sol-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-logo">A</div>
+      <div>
+        <div class="brand-title">SSC CGL 2026 : Reasoning & Mental Ability Demo Test</div>
+        <div class="brand-sub">★ Arkado Online CBT Practice • SSC CGL 2026 ★</div>
+      </div>
+    </div>
+    <div class="timer-card">
+      <span>⏱️</span>
+      <span id="time-left">25:00</span>
+    </div>
+  </header>
+
+  
+
+  <div class="main-container">
+    <div class="test-box">
+      <div class="q-header">
+        <div class="q-num" id="q-number">प्रश्न 1 / 25</div>
+        <div class="q-marks" id="q-section-topic">अंक: +2.00 | नेगेटिव: -0.50</div>
+      </div>
+
+      <div class="q-text" id="q-text">प्रश्न लोड हो रहा है...</div>
+
+      <div class="options" id="opt-container">
+        <!-- Options rendered dynamically -->
+      </div>
+
+      <div class="btn-row">
+        <div>
+          <button class="btn btn-prev" id="btn-prev" onclick="prevQ()">← पिछला</button>
+          <button class="btn btn-next" id="btn-next" onclick="nextQ()">अगला →</button>
+        </div>
+        <div>
+          <button class="btn btn-clear" onclick="clearChoice()">चयन हटाएं</button>
+          <button class="btn btn-review" onclick="toggleReview()">पुनरावलोकन (Review)</button>
+          <button class="btn btn-submit" onclick="confirmSubmit()">सबमिट टेस्ट ✔</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette Sidebar -->
+    <div class="palette-box">
+      <div class="palette-title">प्रश्न पैलेट (Question Palette)</div>
+      <div class="palette-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#16a34a;"></div> उत्तर दिया</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#ef4444;"></div> अनुत्तरित</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#8b5cf6;"></div> मार्क फॉर रिव्यू</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f5f5f4; border:1px solid #ccc;"></div> नहीं देखा</div>
+      </div>
+      <div class="grid-palette" id="palette-grid">
+        <!-- Palette buttons rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Result Modal -->
+  <div class="modal" id="result-modal">
+    <div class="modal-card">
+      <h2 style="font-size: 20px; font-weight: 800; text-align: center; color: var(--stone-900);">
+        📊 टेस्ट परिणाम एवं स्कोरकार्ड (Scorecard)
+      </h2>
+      
+      <div class="score-circle">
+        <span style="font-size: 24px;" id="res-score">0</span>
+        <span style="font-size: 10px; font-weight: 700; color: #78350f;">अंक / 50</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; margin-bottom: 20px;">
+        <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 10px;">
+          <div style="font-size: 18px; font-weight: 800; color: #16a34a;" id="res-correct">0</div>
+          <div style="font-size: 11px; color: #15803d; font-weight: 600;">सही उत्तर (+2)</div>
+        </div>
+        <div style="background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 10px;">
+          <div style="font-size: 18px; font-weight: 800; color: #dc2626;" id="res-wrong">0</div>
+          <div style="font-size: 11px; color: #b91c1c; font-weight: 600;">गलत (-0.50)</div>
+        </div>
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px;">
+          <div style="font-size: 18px; font-weight: 800; color: #475569;" id="res-unattempted">0</div>
+          <div style="font-size: 11px; color: #64748b; font-weight: 600;">अनुत्तरित (0)</div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 12px; color: #1e3a8a;">
+        📝 सभी प्रश्नों का विस्तृत हल एवं उत्तर कुंजी (Solution Review):
+      </h3>
+      <div id="solution-list" style="max-height: 320px; overflow-y: auto; padding-right: 4px;">
+        <!-- Solutions generated here -->
+      </div>
+
+      <div style="margin-top: 20px; text-align: center;">
+        <button class="btn btn-next" style="padding: 12px 28px;" onclick="restartTest()">🔄 पुनः टेस्ट दें (Re-attempt)</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const questionsData = [{"question": "दिए गए कथनों और निष्कर्षों को ध्यानपूर्वक पढ़िए। यह मानते हुए कि कथनों में दी गई जानकारी सत्य है (भले ही वह सामान्यतः ज्ञात तथ्यों से भिन्न प्रतीत होती हो), निर्णय लीजिए कि कौन सा निष्कर्ष तार्किक रूप से अनुसरण करता है:\n\nकथन:\n1. कुछ पानी दूध है।\n2. सभी दूध चाय हैं।\n\nनिष्कर्ष:\nI. कुछ पानी चाय है।\nII. सभी चाय दूध हैं।", "options": {"A": "केवल II अनुसरण करता है", "B": "कोई अनुसरण नहीं करता", "C": "केवल निष्कर्ष I अनुसरण करता है", "D": "दोनों अनुसरण करते हैं"}, "correct_option": "C", "explanation": "पानी का जो अंश दूध में है, वह चाय भी होगा। अतः सही उत्तर विकल्प (C) है।", "topic_name": "न्याय वाक्य एवं वेन आरेख (Syllogism & Venn Diagram)", "subject": "General Intelligence & Reasoning", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"110\" viewBox=\"0 0 220 110\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Circle A -->\n        <circle cx=\"80\" cy=\"55\" r=\"42\" fill=\"#3B82F6\" fill-opacity=\"0.2\" stroke=\"#2563EB\" stroke-width=\"2\"/>\n        <!-- Circle B -->\n        <circle cx=\"140\" cy=\"55\" r=\"42\" fill=\"#10B981\" fill-opacity=\"0.2\" stroke=\"#059669\" stroke-width=\"2\"/>\n        \n        <!-- Labels -->\n        <text x=\"60\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#1E40AF\">चाय (60)</text>\n        <text x=\"160\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#065F46\">कॉफी (40)</text>\n        \n        <!-- Values -->\n        <text x=\"60\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#1E3A8A\" text-anchor=\"middle\">40</text>\n        <text x=\"110\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#991B1B\" text-anchor=\"middle\">20</text>\n        <text x=\"160\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#065F46\" text-anchor=\"middle\">20</text>\n      </svg>\n    </div>\n    "}, {"question": "निम्नलिखित तीन वर्गों के बीच के संबंध को सर्वोत्तम रूप से दर्शाने वाले वेन आरेख (Venn Diagram) का चयन कीजिए:\n\n**भाषाएं, हिंदी, अंग्रेजी**", "options": {"A": "हिंदी में अंग्रेजी", "B": "हिंदी और अंग्रेजी दोनों भाषाएं वर्ग के अंतर्गत दो स्वतंत्र भाषाएं हैं", "C": "तीनों संकेंद्रित", "D": "तीनों अलग"}, "correct_option": "B", "explanation": "दोनों भाषाएं हैं। अतः सही उत्तर विकल्प (B) है।", "topic_name": "न्याय वाक्य एवं वेन आरेख (Syllogism & Venn Diagram)", "subject": "General Intelligence & Reasoning", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"110\" viewBox=\"0 0 220 110\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Circle A -->\n        <circle cx=\"80\" cy=\"55\" r=\"42\" fill=\"#3B82F6\" fill-opacity=\"0.2\" stroke=\"#2563EB\" stroke-width=\"2\"/>\n        <!-- Circle B -->\n        <circle cx=\"140\" cy=\"55\" r=\"42\" fill=\"#10B981\" fill-opacity=\"0.2\" stroke=\"#059669\" stroke-width=\"2\"/>\n        \n        <!-- Labels -->\n        <text x=\"60\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#1E40AF\">हिंदी (70)</text>\n        <text x=\"160\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#065F46\">अंग्रेजी (50)</text>\n        \n        <!-- Values -->\n        <text x=\"60\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#1E3A8A\" text-anchor=\"middle\">40</text>\n        <text x=\"110\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#991B1B\" text-anchor=\"middle\">30</text>\n        <text x=\"160\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#065F46\" text-anchor=\"middle\">20</text>\n      </svg>\n    </div>\n    "}, {"question": "दी गई जानकारी का विश्लेषण कर प्रश्न का उत्तर दीजिए:\n\nएक कक्षा में कुल 50 छात्र हैं। 30 छात्र क्रिकेट खेलते हैं, 25 छात्र फुटबॉल खेलते हैं तथा 10 छात्र दोनों खेल खेलते हैं। ऐसे कितने छात्र हैं जो केवल क्रिकेट खेलते हैं?", "options": {"A": "20", "B": "15", "C": "25", "D": "30"}, "correct_option": "A", "explanation": "केवल क्रिकेट = कुल क्रिकेट - दोनों खेल = 30 - 10 = 20 छात्र। अतः सही उत्तर विकल्प (A) है।", "topic_name": "न्याय वाक्य एवं वेन आरेख (Syllogism & Venn Diagram)", "subject": "General Intelligence & Reasoning", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"110\" viewBox=\"0 0 220 110\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Circle A -->\n        <circle cx=\"80\" cy=\"55\" r=\"42\" fill=\"#3B82F6\" fill-opacity=\"0.2\" stroke=\"#2563EB\" stroke-width=\"2\"/>\n        <!-- Circle B -->\n        <circle cx=\"140\" cy=\"55\" r=\"42\" fill=\"#10B981\" fill-opacity=\"0.2\" stroke=\"#059669\" stroke-width=\"2\"/>\n        \n        <!-- Labels -->\n        <text x=\"60\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#1E40AF\">क्रिकेट (30)</text>\n        <text x=\"160\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#065F46\">फुटबॉल (25)</text>\n        \n        <!-- Values -->\n        <text x=\"60\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#1E3A8A\" text-anchor=\"middle\">20</text>\n        <text x=\"110\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#991B1B\" text-anchor=\"middle\">10</text>\n        <text x=\"160\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#065F46\" text-anchor=\"middle\">15</text>\n      </svg>\n    </div>\n    "}, {"question": "दी गई जानकारी का विश्लेषण कर प्रश्न का उत्तर दीजिए:\n\nएक सर्वेक्षण में 60 लोग चाय पसंद करते हैं, 40 लोग कॉफी पसंद करते हैं तथा 20 लोग दोनों पसंद करते हैं। केवल कॉफी पसंद करने वाले व्यक्तियों की संख्या क्या है?", "options": {"A": "30", "B": "15", "C": "20", "D": "25"}, "correct_option": "C", "explanation": "केवल कॉफी = कुल कॉफी - दोनों = 40 - 20 = 20 व्यक्ति। अतः सही उत्तर विकल्प (C) है।", "topic_name": "न्याय वाक्य एवं वेन आरेख (Syllogism & Venn Diagram)", "subject": "General Intelligence & Reasoning", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"110\" viewBox=\"0 0 220 110\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Circle A -->\n        <circle cx=\"80\" cy=\"55\" r=\"42\" fill=\"#3B82F6\" fill-opacity=\"0.2\" stroke=\"#2563EB\" stroke-width=\"2\"/>\n        <!-- Circle B -->\n        <circle cx=\"140\" cy=\"55\" r=\"42\" fill=\"#10B981\" fill-opacity=\"0.2\" stroke=\"#059669\" stroke-width=\"2\"/>\n        \n        <!-- Labels -->\n        <text x=\"60\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#1E40AF\">चाय (60)</text>\n        <text x=\"160\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#065F46\">कॉफी (40)</text>\n        \n        <!-- Values -->\n        <text x=\"60\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#1E3A8A\" text-anchor=\"middle\">40</text>\n        <text x=\"110\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#991B1B\" text-anchor=\"middle\">20</text>\n        <text x=\"160\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#065F46\" text-anchor=\"middle\">20</text>\n      </svg>\n    </div>\n    "}, {"question": "दी गई जानकारी का विश्लेषण कर प्रश्न का उत्तर दीजिए:\n\n100 व्यक्तियों के समूह में 70 हिंदी बोलते हैं, 50 अंग्रेजी बोलते हैं और 30 दोनों भाषाएं बोलते हैं। कितने व्यक्ति केवल हिंदी बोलते हैं?", "options": {"A": "50", "B": "45", "C": "40", "D": "35"}, "correct_option": "C", "explanation": "केवल हिंदी = 70 - 30 = 40 व्यक्ति। अतः सही उत्तर विकल्प (C) है।", "topic_name": "न्याय वाक्य एवं वेन आरेख (Syllogism & Venn Diagram)", "subject": "General Intelligence & Reasoning", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"110\" viewBox=\"0 0 220 110\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Circle A -->\n        <circle cx=\"80\" cy=\"55\" r=\"42\" fill=\"#3B82F6\" fill-opacity=\"0.2\" stroke=\"#2563EB\" stroke-width=\"2\"/>\n        <!-- Circle B -->\n        <circle cx=\"140\" cy=\"55\" r=\"42\" fill=\"#10B981\" fill-opacity=\"0.2\" stroke=\"#059669\" stroke-width=\"2\"/>\n        \n        <!-- Labels -->\n        <text x=\"60\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#1E40AF\">हिंदी (70)</text>\n        <text x=\"160\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#065F46\">अंग्रेजी (50)</text>\n        \n        <!-- Values -->\n        <text x=\"60\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#1E3A8A\" text-anchor=\"middle\">40</text>\n        <text x=\"110\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#991B1B\" text-anchor=\"middle\">30</text>\n        <text x=\"160\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#065F46\" text-anchor=\"middle\">20</text>\n      </svg>\n    </div>\n    "}, {"question": "दी गई जानकारी का विश्लेषण कर प्रश्न का उत्तर दीजिए:\n\n80 छात्रों में से 45 गणित में उत्तीर्ण हुए, 40 विज्ञान में उत्तीर्ण हुए और 20 दोनों विषयों में उत्तीर्ण हुए। केवल विज्ञान में उत्तीर्ण छात्रों की संख्या क्या है?", "options": {"A": "30", "B": "25", "C": "15", "D": "20"}, "correct_option": "D", "explanation": "केवल विज्ञान = 40 - 20 = 20 छात्र। अतः सही उत्तर विकल्प (D) है।", "topic_name": "न्याय वाक्य एवं वेन आरेख (Syllogism & Venn Diagram)", "subject": "General Intelligence & Reasoning", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"110\" viewBox=\"0 0 220 110\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Circle A -->\n        <circle cx=\"80\" cy=\"55\" r=\"42\" fill=\"#3B82F6\" fill-opacity=\"0.2\" stroke=\"#2563EB\" stroke-width=\"2\"/>\n        <!-- Circle B -->\n        <circle cx=\"140\" cy=\"55\" r=\"42\" fill=\"#10B981\" fill-opacity=\"0.2\" stroke=\"#059669\" stroke-width=\"2\"/>\n        \n        <!-- Labels -->\n        <text x=\"60\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#1E40AF\">गणित (45)</text>\n        <text x=\"160\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#065F46\">विज्ञान (40)</text>\n        \n        <!-- Values -->\n        <text x=\"60\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#1E3A8A\" text-anchor=\"middle\">25</text>\n        <text x=\"110\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#991B1B\" text-anchor=\"middle\">20</text>\n        <text x=\"160\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#065F46\" text-anchor=\"middle\">20</text>\n      </svg>\n    </div>\n    "}, {"question": "दी गई जानकारी का विश्लेषण कर प्रश्न का उत्तर दीजिए:\n\nएक क्लब में 90 सदस्य हैं। 55 बैडमिंटन खेलते हैं, 45 टेनिस खेलते हैं और 25 दोनों खेलते हैं। ऐसे कितने सदस्य हैं जो न तो बैडमिंटन और न ही टेनिस खेलते हैं?", "options": {"A": "20", "B": "25", "C": "15", "D": "10"}, "correct_option": "C", "explanation": "कम से कम एक खेल = 55 + 45 - 25 = 75। न खेलने वाले = 90 - 75 = 15 सदस्य। अतः सही उत्तर विकल्प (C) है।", "topic_name": "न्याय वाक्य एवं वेन आरेख (Syllogism & Venn Diagram)", "subject": "General Intelligence & Reasoning", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"110\" viewBox=\"0 0 220 110\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Circle A -->\n        <circle cx=\"80\" cy=\"55\" r=\"42\" fill=\"#3B82F6\" fill-opacity=\"0.2\" stroke=\"#2563EB\" stroke-width=\"2\"/>\n        <!-- Circle B -->\n        <circle cx=\"140\" cy=\"55\" r=\"42\" fill=\"#10B981\" fill-opacity=\"0.2\" stroke=\"#059669\" stroke-width=\"2\"/>\n        \n        <!-- Labels -->\n        <text x=\"60\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#1E40AF\">बैडमिंटन (55)</text>\n        <text x=\"160\" y=\"20\" font-size=\"9\" font-weight=\"bold\" fill=\"#065F46\">टेनिस (45)</text>\n        \n        <!-- Values -->\n        <text x=\"60\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#1E3A8A\" text-anchor=\"middle\">30</text>\n        <text x=\"110\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#991B1B\" text-anchor=\"middle\">25</text>\n        <text x=\"160\" y=\"58\" font-size=\"12\" font-weight=\"bold\" fill=\"#065F46\" text-anchor=\"middle\">20</text>\n      </svg>\n    </div>\n    "}, {"question": "दी गई जानकारी का विश्लेषण कर प्रश्न का उत्तर दीजिए:\n\nदी गई ज्यामितीय आकृति में:\n- त्रिभुज कलाकारों को दर्शाता है (कुल 40)\n- वृत्त खिलाड़ियों को दर्शाता है (कुल 50)\n- आयत डॉक्टरों को दर्शाता है (कुल 30)\nयदि 12 व्यक्ति केवल कलाकार और खिलाड़ी दोनों हैं, 8 केवल खिलाड़ी और डॉक्टर दोनों हैं, तथा 5 तीनों हैं, तो केवल खिलाड़ियों की संख्या क्या होगी?", "options": {"A": "20", "B": "25", "C": "35", "D": "30"}, "correct_option": "B", "explanation": "केवल खिलाड़ी = 50 - (12 + 8 + 5) = 50 - 25 = 25। अतः सही उत्तर विकल्प (B) है।", "topic_name": "न्याय वाक्य एवं वेन आरेख (Syllogism & Venn Diagram)", "subject": "General Intelligence & Reasoning", "diagram_svg": "\n    <div style=\"text-align:center; margin: 6px 0;\">\n      <svg width=\"220\" height=\"120\" viewBox=\"0 0 220 120\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:8px;\">\n        <!-- Triangle (Artist) -->\n        <polygon points=\"60,10 10,95 110,95\" fill=\"#EF4444\" fill-opacity=\"0.18\" stroke=\"#DC2626\" stroke-width=\"1.8\"/>\n        <!-- Circle (Player) -->\n        <circle cx=\"110\" cy=\"65\" r=\"38\" fill=\"#3B82F6\" fill-opacity=\"0.18\" stroke=\"#2563EB\" stroke-width=\"1.8\"/>\n        <!-- Rectangle (Doctor) -->\n        <rect x=\"75\" y=\"45\" width=\"85\" height=\"45\" fill=\"#10B981\" fill-opacity=\"0.18\" stroke=\"#059669\" stroke-width=\"1.8\"/>\n        \n        <!-- Labels -->\n        <text x=\"35\" y=\"30\" font-size=\"8\" font-weight=\"bold\" fill=\"#B91C1C\">त्रिभुज (कलाकार: 40)</text>\n        <text x=\"150\" y=\"30\" font-size=\"8\" font-weight=\"bold\" fill=\"#1E40AF\">वृत्त (खिलाड़ी: 50)</text>\n        <text x=\"120\" y=\"105\" font-size=\"8\" font-weight=\"bold\" fill=\"#065F46\">आयत (डॉक्टर: 30)</text>\n        \n        <!-- Numbers in regions -->\n        <text x=\"85\" y=\"60\" font-size=\"9\" font-weight=\"bold\" fill=\"#1E293B\">12</text>\n        <text x=\"102\" y=\"72\" font-size=\"9\" font-weight=\"bold\" fill=\"#B91C1C\">5</text>\n        <text x=\"125\" y=\"65\" font-size=\"9\" font-weight=\"bold\" fill=\"#065F46\">8</text>\n      </svg>\n    </div>\n    "}, {"question": "एक निश्चित कूट भाषा में यदि 'MONKEY' को 'NLMPVB' लिखा जाता है, तो उसी कूट भाषा में 'TIGER' को किस प्रकार लिखा जाएगा?", "options": {"A": "GRTVA", "B": "UJHFS", "C": "GRTVI", "D": "HSUWJ"}, "correct_option": "C", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'TIGER' का कूट 'GRTVI' होगा। अतः सही उत्तर विकल्प (C) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'GARDEN' को 'TZIWVM' लिखा जाता है, तो उसी कूट भाषा में 'FLOWER' को किस प्रकार लिखा जाएगा?", "options": {"A": "UOLDVA", "B": "UOLDVI", "C": "VPMEWJ", "D": "GMPXFS"}, "correct_option": "B", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'FLOWER' का कूट 'UOLDVI' होगा। अतः सही उत्तर विकल्प (B) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'SILVER' को 'HROEVI' लिखा जाता है, तो उसी कूट भाषा में 'GOLDEN' को किस प्रकार लिखा जाएगा?", "options": {"A": "TLOWVM", "B": "TLOWVA", "C": "UMPXWN", "D": "HPMEFO"}, "correct_option": "A", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'GOLDEN' का कूट 'TLOWVM' होगा। अतः सही उत्तर विकल्प (A) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'WINTER' को 'DRMGVI' लिखा जाता है, तो उसी कूट भाषा में 'SUMMER' को किस प्रकार लिखा जाएगा?", "options": {"A": "IGOOWJ", "B": "TVNNFS", "C": "HFNNVI", "D": "HFNNVA"}, "correct_option": "C", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'SUMMER' का कूट 'HFNNVI' होगा। अतः सही उत्तर विकल्प (C) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'PLANET' को 'KOZMVG' लिखा जाता है, तो उसी कूट भाषा में 'ROCKET' को किस प्रकार लिखा जाएगा?", "options": {"A": "JMYQWH", "B": "SPDLFU", "C": "ILXPVA", "D": "ILXPVG"}, "correct_option": "D", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'ROCKET' का कूट 'ILXPVG' होगा। अतः सही उत्तर विकल्प (D) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'CASTLE' को 'XZHGOV' लिखा जाता है, तो उसी कूट भाषा में 'PALACE' को किस प्रकार लिखा जाएगा?", "options": {"A": "KZOZXA", "B": "KZOZXV", "C": "LAPAYW", "D": "QBMBDF"}, "correct_option": "B", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'PALACE' का कूट 'KZOZXV' होगा। अतः सही उत्तर विकल्प (B) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'BRIDGE' को 'YIRWTV' लिखा जाता है, तो उसी कूट भाषा में 'TUNNEL' को किस प्रकार लिखा जाएगा?", "options": {"A": "HGNNWP", "B": "GFMMVO", "C": "GFMMVA", "D": "UVOOFM"}, "correct_option": "B", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'TUNNEL' का कूट 'GFMMVO' होगा। अतः सही उत्तर विकल्प (B) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'FOREST' को 'ULIVHG' लिखा जाता है, तो उसी कूट भाषा में 'JUNGLE' को किस प्रकार लिखा जाएगा?", "options": {"A": "QFMTOV", "B": "KVOHMF", "C": "QFMTOA", "D": "RGNUPW"}, "correct_option": "A", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'JUNGLE' का कूट 'QFMTOV' होगा। अतः सही उत्तर विकल्प (A) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'DOCTOR' को 'WLXGLI' लिखा जाता है, तो उसी कूट भाषा में 'NURSES' को किस प्रकार लिखा जाएगा?", "options": {"A": "NGJIWI", "B": "MFIHVH", "C": "OVSTFT", "D": "MFIHVA"}, "correct_option": "B", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'NURSES' का कूट 'MFIHVH' होगा। अतः सही उत्तर विकल्प (B) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'LAWYER' को 'OZDBVI' लिखा जाता है, तो उसी कूट भाषा में 'JUDGES' को किस प्रकार लिखा जाएगा?", "options": {"A": "RGXUWI", "B": "QFWTVH", "C": "KVEHFT", "D": "QFWTVA"}, "correct_option": "B", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'JUDGES' का कूट 'QFWTVH' होगा। अतः सही उत्तर विकल्प (B) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'BOTTLE' को 'YLGGOV' लिखा जाता है, तो उसी कूट भाषा में 'GLASSY' को किस प्रकार लिखा जाएगा?", "options": {"A": "TOZHHA", "B": "TOZHHB", "C": "HMBTTZ", "D": "UPAIIC"}, "correct_option": "B", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'GLASSY' का कूट 'TOZHHB' होगा। अतः सही उत्तर विकल्प (B) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'PENCIL' को 'KVMXRO' लिखा जाता है, तो उसी कूट भाषा में 'ERASER' को किस प्रकार लिखा जाएगा?", "options": {"A": "WJAIWJ", "B": "VIZHVA", "C": "FSBTFS", "D": "VIZHVI"}, "correct_option": "D", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'ERASER' का कूट 'VIZHVI' होगा। अतः सही उत्तर विकल्प (D) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'CANDLE' को 'XZMWOV' लिखा जाता है, तो उसी कूट भाषा में 'FLAMES' को किस प्रकार लिखा जाएगा?", "options": {"A": "UOZNVA", "B": "VPAOWI", "C": "GMBNFT", "D": "UOZNVH"}, "correct_option": "D", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'FLAMES' का कूट 'UOZNVH' होगा। अतः सही उत्तर विकल्प (D) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'SHADOW' को 'HSZWLD' लिखा जाता है, तो उसी कूट भाषा में 'LIGHTS' को किस प्रकार लिखा जाएगा?", "options": {"A": "ORTSGA", "B": "ORTSGH", "C": "PSUTHI", "D": "MJHIUT"}, "correct_option": "B", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'LIGHTS' का कूट 'ORTSGH' होगा। अतः सही उत्तर विकल्प (B) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'STREAM' को 'HGIVZN' लिखा जाता है, तो उसी कूट भाषा में 'RIVERS' को किस प्रकार लिखा जाएगा?", "options": {"A": "IREVIH", "B": "SJWFST", "C": "JSFWJI", "D": "IREVIA"}, "correct_option": "A", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'RIVERS' का कूट 'IREVIH' होगा। अतः सही उत्तर विकल्प (A) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'VALLEY' को 'EZOOVB' लिखा जाता है, तो उसी कूट भाषा में 'CANYON' को किस प्रकार लिखा जाएगा?", "options": {"A": "XZMBLM", "B": "XZMBLA", "C": "YANCMN", "D": "DBOZPO"}, "correct_option": "A", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'CANYON' का कूट 'XZMBLM' होगा। अतः सही उत्तर विकल्प (A) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}, {"question": "एक निश्चित कूट भाषा में यदि 'SPRING' को 'HKIRMT' लिखा जाता है, तो उसी कूट भाषा में 'AUTUMN' को किस प्रकार लिखा जाएगा?", "options": {"A": "ZFGFNA", "B": "BVUVNO", "C": "AGHGON", "D": "ZFGFNM"}, "correct_option": "D", "explanation": "तर्क: प्रत्येक वर्ण को उसके विपरीत वर्णमाला अक्षर (Opposite Letter Pair, जहाँ A ↔ Z, B ↔ Y) से प्रतिस्थापित किया गया है। 'AUTUMN' का कूट 'ZFGFNM' होगा। अतः सही उत्तर विकल्प (D) है।", "topic_name": "कोडिंग-डिकोडिंग (Coding-Decoding)", "subject": "General Intelligence & Reasoning", "diagram_svg": ""}];
+    let currentIdx = 0;
+    const userAnswers = new Array(questionsData.length).fill(null);
+    const markedForReview = new Array(questionsData.length).fill(false);
+    const visitedQuestions = new Array(questionsData.length).fill(false);
+    visitedQuestions[0] = true;
+
+    // Timer
+    let totalSeconds = 1500;
+    const timerElem = document.getElementById("time-left");
+    const timerInterval = setInterval(() => {
+      if (totalSeconds <= 0) {
+        clearInterval(timerInterval);
+        confirmSubmit(true);
+        return;
+      }
+      totalSeconds--;
+      const m = Math.floor(totalSeconds / 60);
+      const s = totalSeconds % 60;
+      timerElem.textContent = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+    }, 1000);
+
+    function initPalette() {
+      const grid = document.getElementById("palette-grid");
+      grid.innerHTML = "";
+      questionsData.forEach((_, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "p-btn" + (idx === 0 ? " active" : "");
+        btn.id = `p-btn-${idx}`;
+        btn.textContent = idx + 1;
+        btn.onclick = () => jumpToQ(idx);
+        grid.appendChild(btn);
+      });
+    }
+
+    function updatePaletteBtn(idx) {
+      const btn = document.getElementById(`p-btn-${idx}`);
+      if (!btn) return;
+      btn.className = "p-btn";
+      if (idx === currentIdx) btn.classList.add("active");
+      if (markedForReview[idx]) {
+        btn.classList.add("reviewed");
+      } else if (userAnswers[idx] !== null) {
+        btn.classList.add("answered");
+      } else if (visitedQuestions[idx]) {
+        btn.classList.add("unanswered");
+      }
+    }
+
+    function renderQuestion() {
+      visitedQuestions[currentIdx] = true;
+      const q = questionsData[currentIdx];
+      document.getElementById("q-number").textContent = `प्रश्न ${currentIdx + 1} / ${questionsData.length}`;
+      document.getElementById("q-section-topic").textContent = `${q.topic_name || q.subject || ''} • (+2.00 / -0.50)`;
+      const diagHtml = q.diagram_svg ? `<div style="text-align:center; margin:10px 0;">${q.diagram_svg}</div>` : '';
+      document.getElementById("q-text").innerHTML = q.question + diagHtml;
+
+      const optCont = document.getElementById("opt-container");
+      optCont.innerHTML = "";
+      ['A', 'B', 'C', 'D'].forEach(opt => {
+        if (!q.options || !q.options[opt]) return;
+        const div = document.createElement("div");
+        const isSel = userAnswers[currentIdx] === opt;
+        div.className = "opt-label" + (isSel ? " selected" : "");
+        div.innerHTML = `<span class="opt-badge">${opt}</span> <span>${q.options[opt]}</span>`;
+        div.onclick = () => selectOpt(opt);
+        optCont.appendChild(div);
+      });
+
+      document.getElementById("btn-prev").disabled = currentIdx === 0;
+      document.getElementById("btn-next").textContent = currentIdx === questionsData.length - 1 ? "समीक्षा करें →" : "अगला →";
+
+      for (let i = 0; i < questionsData.length; i++) updatePaletteBtn(i);
+
+      if (window.renderMathInElement) {
+        renderMathInElement(document.getElementById("q-text"), {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});
+        renderMathInElement(optCont, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});
+      }
+    }
+
+    function selectOpt(opt) {
+      userAnswers[currentIdx] = opt;
+      renderQuestion();
+    }
+
+    function clearChoice() {
+      userAnswers[currentIdx] = null;
+      renderQuestion();
+    }
+
+    function toggleReview() {
+      markedForReview[currentIdx] = !markedForReview[currentIdx];
+      updatePaletteBtn(currentIdx);
+    }
+
+    function nextQ() {
+      if (currentIdx < questionsData.length - 1) {
+        currentIdx++;
+        renderQuestion();
+      } else {
+        confirmSubmit();
+      }
+    }
+
+    function prevQ() {
+      if (currentIdx > 0) {
+        currentIdx--;
+        renderQuestion();
+      }
+    }
+
+    function jumpToQ(idx) {
+      currentIdx = idx;
+      renderQuestion();
+    }
+
+    function confirmSubmit(auto = false) {
+      if (!auto) {
+        const answered = userAnswers.filter(a => a !== null).length;
+        if (!confirm(`आपने ${questionsData.length} में से ${answered} प्रश्नों के उत्तर दिए हैं। क्या आप टेस्ट सबमिट करना चाहते हैं?`)) return;
+      }
+      clearInterval(timerInterval);
+
+      let correct = 0, wrong = 0, unattempted = 0;
+      const solList = document.getElementById("solution-list");
+      solList.innerHTML = "";
+
+      questionsData.forEach((q, i) => {
+        const userA = userAnswers[i];
+        const isRight = userA === q.correct_option;
+        if (userA === null) unattempted++;
+        else if (isRight) correct++;
+        else wrong++;
+
+        const solDiv = document.createElement("div");
+        solDiv.className = "sol-card";
+        const statusColor = isRight ? "#16a34a" : userA ? "#dc2626" : "#64748b";
+        const statusText = isRight ? "✓ सही उत्तर" : userA ? "✗ गलत उत्तर" : "○ प्रयास नहीं किया";
+        const solDiag = q.diagram_svg ? `<div style="text-align:center; margin:8px 0;">${q.diagram_svg}</div>` : '';
+
+        solDiv.innerHTML = `
+          <div style="font-weight:700; margin-bottom:6px; color:#1e293b;">
+            Q.${i+1}. ${q.question}
+          </div>
+          ${solDiag}
+          <div style="display:flex; gap:12px; font-size:12px; margin-bottom:6px;">
+            <span>आपका उत्तर: <strong>${userA || '—'}</strong></span>
+            <span style="color:${statusColor}; font-weight:800;">(${statusText})</span>
+            <span style="color:#16a34a; font-weight:800;">सही विकल्प: (${q.correct_option})</span>
+          </div>
+          <div style="background:#f0fdf4; border-left:3px solid #16a34a; padding:6px 10px; border-radius:4px; font-size:12px; color:#14532d;">
+            <strong>व्याख्या:</strong> ${q.explanation || 'व्याख्या उपलब्ध नहीं है'}
+          </div>
+        `;
+        solList.appendChild(solDiv);
+      });
+
+      const score = (correct * 2) - (wrong * 0.50);
+      document.getElementById("res-score").textContent = score.toFixed(2);
+      document.getElementById("res-correct").textContent = correct;
+      document.getElementById("res-wrong").textContent = wrong;
+      document.getElementById("res-unattempted").textContent = unattempted;
+
+      document.getElementById("result-modal").classList.add("show");
+    }
+
+    function restartTest() {
+      window.location.reload();
+    }
+
+    // Section Switching (for 100 Qs mock)
+    function switchSection(startIdx) {
+      jumpToQ(startIdx);
+      const btns = document.querySelectorAll(".sec-btn");
+      btns.forEach(b => b.classList.remove("active"));
+      if (event && event.target) event.target.classList.add("active");
+    }
+
+    initPalette();
+    renderQuestion();
+  </script>
+</body>
+</html>

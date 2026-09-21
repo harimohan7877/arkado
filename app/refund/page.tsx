@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Settings } from "@/lib/store-types";
+import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import { ShieldIcon, PhoneIcon, WhatsappIcon } from "@/components/icons";
 
 export default function RefundPolicyPage() {
@@ -20,10 +21,10 @@ export default function RefundPolicyPage() {
     settings?.policies?.refund_policy ||
     "Arkado पर उपलब्ध सभी उत्पाद डिजिटल स्टडी नोट्स, ई-बुक्स और मॉक टेस्ट PDF हैं। चूंकि डिजिटल उत्पादों को डाउनलोड या एक्सेस लिंक जारी होने के बाद वापस नहीं लिया जा सकता, इसलिए आम तौर पर खरीदारी के बाद रिफंड स्वीकार्य नहीं है। हालांकि, यदि आपने गलती से एक ही कोर्स के लिए दो बार भुगतान कर दिया है या भुगतान कटने के 24 घंटे के भीतर आपको नोट्स नहीं मिले हैं, तो आप तुरंत हमारे WhatsApp हेल्पलाइन पर संपर्क करें। हम 24 से 48 घंटे के भीतर आपकी समस्या का समाधान करेंगे।";
 
-  const phone = settings?.contact?.phone || "+91 7852004401";
+  const phone = settings?.contact?.phone || DEFAULT_SETTINGS.contact.phone;
   const whatsappUrl =
     settings?.social?.whatsapp_url ||
-    `https://wa.me/${settings?.contact?.whatsapp_number || "917852004401"}`;
+    `https://wa.me/${getCleanWhatsAppNumber(settings)}`;
 
   return (
     <div className="min-h-screen flex flex-col bg-white font-sans">

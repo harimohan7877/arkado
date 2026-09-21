@@ -3,6 +3,7 @@
 import { useState, useEffect, startTransition } from "react";
 import Link from "next/link";
 import { Settings } from "@/lib/store-types";
+import { DEFAULT_SECTION_ORDER, SectionKey, getOrderedSectionKeys } from "@/lib/default-settings";
 
 interface SettingsTabProps {
   getAuthHeaders: () => Record<string, string>;
@@ -45,6 +46,30 @@ const DEFAULT_SETTINGS: Settings = {
     hot_deals_title: "Today's Hot Deals",
     new_arrivals_title: "New Arrivals",
     categories_section_title: "Browse Top Categories",
+    products_section_title: "All Exam Bundles",
+    faq_section_title: "Common Questions",
+    section_order: [
+      "hero",
+      "trust_strip",
+      "featured_bundles",
+      "promo_banner",
+      "categories",
+      "all_products",
+      "hot_deals",
+      "new_arrivals",
+      "faq",
+    ],
+    sections: {
+      categories: { enabled: true, show_on_mobile: true, show_on_desktop: true, title: "Browse Top Categories" },
+      new_arrivals: { enabled: true, show_on_mobile: true, show_on_desktop: true, title: "New Arrivals" },
+      featured_bundles: { enabled: true, show_on_mobile: true, show_on_desktop: true, title: "Featured Bundles" },
+      hot_deals: { enabled: true, show_on_mobile: true, show_on_desktop: true, title: "Today's Hot Deals" },
+      promo_banner: { enabled: true, show_on_mobile: true, show_on_desktop: true, title: "Crack Any Exam with Deep-Level Analysis" },
+      all_products: { enabled: true, show_on_mobile: true, show_on_desktop: true, title: "All Exam Bundles" },
+      hero: { enabled: true, show_on_mobile: true, show_on_desktop: true, title: "RSMSSB CET & Rajasthan Exam Bundles" },
+      trust_strip: { enabled: true, show_on_mobile: true, show_on_desktop: true, title: "Why Choose Arkado" },
+      faq: { enabled: true, show_on_mobile: true, show_on_desktop: true, title: "Common Questions" },
+    },
     newsletter_title: "🎯 सीधे WhatsApp व Email पर पाएं फ्री अपडेट्स व नए नोट्स!",
     newsletter_subtitle: "हजारों छात्रों का भरोसा — कोई स्पैम नहीं, सिर्फ परीक्षा उपयोगी अपडेट्स व स्पेशल छूट।",
     newsletter_placeholder: "अपना Email या WhatsApp Number दर्ज करें...",
@@ -147,6 +172,81 @@ const DEFAULT_SETTINGS: Settings = {
   updated_at: new Date().toISOString(),
 };
 
+const SECTION_INFO: Record<
+  SectionKey,
+  {
+    name: string;
+    englishName: string;
+    icon: string;
+    desc: string;
+    defaultTitle: string;
+  }
+> = {
+  hero: {
+    name: "हीरो स्लाइडर व साइडबार",
+    englishName: "Hero Slider & Sidebar",
+    icon: "🏛️",
+    desc: "शीर्ष मुख्य स्लाइडर, डेस्कटॉप साइडबार व मोबाइल कैटेगरी चिप्स।",
+    defaultTitle: "RSMSSB CET & Rajasthan Exam Bundles",
+  },
+  trust_strip: {
+    name: "ट्रस्ट व गारंटी स्ट्रिप",
+    englishName: "Trust Badges Strip",
+    icon: "🛡️",
+    desc: "डाउनलोड, सुरक्षित UPI, A4 प्रिंट आदि के 5 मुख्य गारंटी बैज।",
+    defaultTitle: "Why Choose Arkado",
+  },
+  featured_bundles: {
+    name: "फीचर्ड बंडल्स ग्रिड",
+    englishName: "Featured Bundles",
+    icon: "📚",
+    desc: "होमपेज के मुख्य टॉप सेलिंग व ट्रेंडिंग स्टडी बंडल्स ग्रिड।",
+    defaultTitle: "Featured Bundles",
+  },
+  promo_banner: {
+    name: "डीप-लेवल एनालिसिस प्रोमो बैनर",
+    englishName: "Promo Banner",
+    icon: "🎯",
+    desc: "एम्बर ग्रेडिएंट वाला 5 वर्ष पैटर्न डिकोड बुलेट्स बैनर।",
+    defaultTitle: "Crack Any Exam with Deep-Level Analysis",
+  },
+  categories: {
+    name: "टॉप श्रेणियाँ सेक्शन",
+    englishName: "Browse Top Categories",
+    icon: "📁",
+    desc: "गोल/चौकोर लोगो व नाम वाले कैटेगरी कार्ड्स का सेक्शन।",
+    defaultTitle: "Browse Top Categories",
+  },
+  all_products: {
+    name: "सभी कोर्सेस व सर्च ग्रिड",
+    englishName: "All Products Grid",
+    icon: "🔍",
+    desc: "छात्रों द्वारा सर्च और फ़िल्टर करने के लिए संपूर्ण कोर्सेस का ग्रिड।",
+    defaultTitle: "All Exam Bundles",
+  },
+  hot_deals: {
+    name: "हॉट डील्स सेक्शन",
+    englishName: "Today's Hot Deals",
+    icon: "🌟",
+    desc: "विशेष छूट व सीमित समय के स्पेशल डील्स का सेक्शन।",
+    defaultTitle: "Today's Hot Deals",
+  },
+  new_arrivals: {
+    name: "न्यू अराइवल्स सेक्शन",
+    englishName: "New Arrivals",
+    icon: "✨",
+    desc: "हाल ही में जोड़े गए नए कोर्सेस की लिस्ट व डिस्काउंट बैज।",
+    defaultTitle: "New Arrivals",
+  },
+  faq: {
+    name: "FAQ (अक्सर पूछे जाने वाले सवाल)",
+    englishName: "Common Questions",
+    icon: "❓",
+    desc: "नोट्स प्राप्ति, प्रिंट सुविधा और पेमेंट से जुड़े छात्र प्रश्न।",
+    defaultTitle: "Common Questions",
+  },
+};
+
 export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
   const [loading, setLoading] = useState(true);
@@ -228,6 +328,166 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
     }));
   };
 
+  const handleSectionToggle = (key: string, enabled: boolean) => {
+    setSettings((prev) => {
+      const currentSections = prev.homepage?.sections || {};
+      const currentSec = (currentSections as Record<string, any>)[key] || {};
+      return {
+        ...prev,
+        homepage: {
+          ...prev.homepage,
+          sections: {
+            ...currentSections,
+            [key]: {
+              ...currentSec,
+              enabled,
+              show_on_mobile: enabled,
+              show_on_desktop: enabled,
+            },
+          },
+          ...(key === "promo_banner"
+            ? {
+                promo_banner: {
+                  ...prev.homepage?.promo_banner,
+                  enabled,
+                },
+              }
+            : {}),
+        },
+      };
+    });
+  };
+
+  const handleSectionDeviceToggle = (key: string, device: "mobile" | "desktop", value: boolean) => {
+    setSettings((prev) => {
+      const currentSections = prev.homepage?.sections || {};
+      const currentSec = (currentSections as Record<string, any>)[key] || {};
+      const currentMobile = currentSec.show_on_mobile ?? (currentSec.enabled ?? true);
+      const currentDesktop = currentSec.show_on_desktop ?? (currentSec.enabled ?? true);
+
+      const nextMobile = device === "mobile" ? value : currentMobile;
+      const nextDesktop = device === "desktop" ? value : currentDesktop;
+      const isEnabled = nextMobile || nextDesktop;
+
+      return {
+        ...prev,
+        homepage: {
+          ...prev.homepage,
+          sections: {
+            ...currentSections,
+            [key]: {
+              ...currentSec,
+              enabled: isEnabled,
+              show_on_mobile: nextMobile,
+              show_on_desktop: nextDesktop,
+            },
+          },
+          ...(key === "promo_banner"
+            ? {
+                promo_banner: {
+                  ...prev.homepage?.promo_banner,
+                  enabled: isEnabled,
+                },
+              }
+            : {}),
+        },
+      };
+    });
+  };
+
+  const handleMoveSection = (key: string, direction: "up" | "down") => {
+    setSettings((prev) => {
+      const currentOrder = getOrderedSectionKeys(prev);
+      const idx = currentOrder.indexOf(key as SectionKey);
+      if (idx === -1) return prev;
+      if (direction === "up" && idx === 0) return prev;
+      if (direction === "down" && idx === currentOrder.length - 1) return prev;
+
+      const targetIdx = direction === "up" ? idx - 1 : idx + 1;
+      const newOrder = [...currentOrder];
+      const temp = newOrder[idx];
+      newOrder[idx] = newOrder[targetIdx];
+      newOrder[targetIdx] = temp;
+
+      return {
+        ...prev,
+        homepage: {
+          ...prev.homepage,
+          section_order: newOrder,
+        },
+      };
+    });
+  };
+
+  const handleResetSectionOrder = () => {
+    setSettings((prev) => ({
+      ...prev,
+      homepage: {
+        ...prev.homepage,
+        section_order: [...DEFAULT_SECTION_ORDER],
+      },
+    }));
+  };
+
+  const handleSectionTitleChange = (key: string, title: string) => {
+    setSettings((prev) => {
+      const currentSections = prev.homepage?.sections || {};
+      const currentSec = (currentSections as Record<string, any>)[key] || {};
+      const legacyTitleSync: Record<string, any> = {};
+      if (key === "featured_bundles") legacyTitleSync.featured_section_title = title;
+      if (key === "hot_deals") legacyTitleSync.hot_deals_title = title;
+      if (key === "new_arrivals") legacyTitleSync.new_arrivals_title = title;
+      if (key === "categories") legacyTitleSync.categories_section_title = title;
+      if (key === "all_products") legacyTitleSync.products_section_title = title;
+      if (key === "faq") legacyTitleSync.faq_section_title = title;
+      if (key === "hero") legacyTitleSync.hero_headline = title;
+      if (key === "promo_banner" && prev.homepage?.promo_banner) {
+        legacyTitleSync.promo_banner = { ...prev.homepage.promo_banner, title };
+      }
+
+      return {
+        ...prev,
+        homepage: {
+          ...prev.homepage,
+          ...legacyTitleSync,
+          sections: {
+            ...currentSections,
+            [key]: {
+              ...currentSec,
+              title,
+            },
+          },
+        },
+      };
+    });
+  };
+
+  const handleEnableAllSections = () => {
+    setSettings((prev) => {
+      const currentSections = prev.homepage?.sections || {};
+      const updatedSections: Record<string, any> = {};
+      DEFAULT_SECTION_ORDER.forEach((k) => {
+        updatedSections[k] = {
+          ...((currentSections as Record<string, any>)[k] || {}),
+          enabled: true,
+          show_on_mobile: true,
+          show_on_desktop: true,
+        };
+      });
+      return {
+        ...prev,
+        homepage: {
+          ...prev.homepage,
+          sections: updatedSections,
+          promo_banner: {
+            ...prev.homepage?.promo_banner,
+            enabled: true,
+          },
+        },
+      };
+    });
+  };
+
   const handleSave = async () => {
     setSaving(true);
     setMessage(null);
@@ -276,7 +536,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
     { id: "payment", label: "पेमेंट व UPI", icon: "💳" },
     { id: "contact", label: "संपर्क व पता", icon: "📞" },
     { id: "messages", label: "संदेश टेम्पलेट्स", icon: "💬" },
-    { id: "homepage", label: "होमपेज व प्रोमो", icon: "🏠" },
+    { id: "homepage", label: "होमपेज व सेक्शंस", icon: "🏠" },
     { id: "faqs_trust", label: "ट्रस्ट व FAQs", icon: "⭐" },
     { id: "policies", label: "नीतियां (Policies)", icon: "📜" },
     { id: "about_course", label: "About व कोर्स पेज", icon: "ℹ️" },
@@ -639,18 +899,246 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
       {/* 4. HOMEPAGE TAB */}
       {activeTab === "homepage" && (
         <div className="bg-white border border-stone-200 rounded-2xl p-5 sm:p-6 space-y-6 shadow-sm">
-          <div className="border-b border-stone-200 pb-3 flex items-center justify-between">
+          <div className="border-b border-stone-200 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
-              <h3 className="text-base font-bold text-stone-900">होमपेज शीर्ष व प्रोमो बैनर</h3>
-              <p className="text-xs text-stone-500">होमपेज के मुख्य टाइटल्स, प्रोमो बैनर और ट्रेंडिंग सर्च कीवर्ड्स।</p>
+              <h3 className="text-base font-bold text-stone-900">होमपेज सेक्शंस नियंत्रण व सेटिंग्स</h3>
+              <p className="text-xs text-stone-500">सभी सेक्शंस को ऑन/ऑफ करें, नाम बदलें, प्रोमो बैनर और सर्च कीवर्ड्स नियंत्रित करें।</p>
             </div>
-            <Link
-              href="/"
-              target="_blank"
-              className="text-xs font-bold text-amber-600 hover:text-amber-700 bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-200"
-            >
-              👁️ View Live Homepage
-            </Link>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={handleEnableAllSections}
+                className="text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 px-3 py-1.5 rounded-lg border border-emerald-200 transition flex items-center gap-1"
+              >
+                <span>✅</span>
+                <span>सभी सेक्शंस ऑन करें</span>
+              </button>
+              <Link
+                href="/"
+                target="_blank"
+                className="text-xs font-bold text-amber-600 hover:text-amber-700 bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-200"
+              >
+                👁️ View Live
+              </Link>
+            </div>
+          </div>
+
+          {/* SECTIONS MANAGER GRID */}
+          <div className="border border-stone-200 rounded-2xl p-4 sm:p-5 bg-stone-50/70 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-stone-200/80 pb-3">
+              <div>
+                <h4 className="font-extrabold text-stone-900 text-sm flex items-center gap-1.5">
+                  <span>🎛️</span>
+                  <span>होमपेज सेक्शंस कंट्रोलर (क्रम 🔼🔽, मोबाइल 📱 / कंप्यूटर 💻 व शीर्षक)</span>
+                </h4>
+                <p className="text-xs text-stone-500 mt-0.5">
+                  सेक्शंस का प्रदर्शन क्रम बदलें (1st, 2nd, 3rd...), मोबाइल व कंप्यूटर के लिए अलग-अलग चालू/बंद करें, और शीर्षक कस्टमाइज़ करें।
+                </p>
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <button
+                  type="button"
+                  onClick={handleResetSectionOrder}
+                  className="text-xs font-semibold text-stone-700 bg-white hover:bg-stone-100 px-3 py-1.5 rounded-lg border border-stone-300 transition flex items-center gap-1 shadow-2xs cursor-pointer"
+                  title="सभी सेक्शंस को उनके मूल डिफ़ॉल्ट क्रम में लाएं"
+                >
+                  <span>🔄</span>
+                  <span>डिफ़ॉल्ट क्रम रीसेट</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={handleEnableAllSections}
+                  className="text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 px-3 py-1.5 rounded-lg border border-emerald-200 transition flex items-center gap-1 cursor-pointer"
+                >
+                  <span>✅</span>
+                  <span>सभी ऑन करें</span>
+                </button>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+              {getOrderedSectionKeys(settings).map((secKey, idx, arr) => {
+                const sec = SECTION_INFO[secKey] || {
+                  name: secKey,
+                  englishName: secKey,
+                  icon: "📄",
+                  desc: "",
+                  defaultTitle: secKey,
+                };
+                const secConfig = (settings.homepage?.sections as Record<string, any>)?.[secKey];
+                const showMobile =
+                  secConfig?.show_on_mobile ??
+                  (secConfig?.enabled ?? (secKey === "promo_banner" ? (settings.homepage?.promo_banner?.enabled ?? true) : true));
+                const showDesktop =
+                  secConfig?.show_on_desktop ??
+                  (secConfig?.enabled ?? (secKey === "promo_banner" ? (settings.homepage?.promo_banner?.enabled ?? true) : true));
+                const isEnabled = showMobile || showDesktop;
+
+                let currentTitle = secConfig?.title;
+                if (typeof currentTitle !== "string" || currentTitle.trim() === "") {
+                  if (secKey === "categories") currentTitle = settings.homepage?.categories_section_title || sec.defaultTitle;
+                  else if (secKey === "new_arrivals") currentTitle = settings.homepage?.new_arrivals_title || sec.defaultTitle;
+                  else if (secKey === "featured_bundles") currentTitle = settings.homepage?.featured_section_title || sec.defaultTitle;
+                  else if (secKey === "hot_deals") currentTitle = settings.homepage?.hot_deals_title || sec.defaultTitle;
+                  else if (secKey === "promo_banner") currentTitle = settings.homepage?.promo_banner?.title || sec.defaultTitle;
+                  else if (secKey === "all_products") currentTitle = settings.homepage?.products_section_title || sec.defaultTitle;
+                  else if (secKey === "hero") currentTitle = settings.homepage?.hero_headline || sec.defaultTitle;
+                  else if (secKey === "trust_strip") currentTitle = sec.defaultTitle;
+                  else if (secKey === "faq") currentTitle = settings.homepage?.faq_section_title || sec.defaultTitle;
+                  else currentTitle = sec.defaultTitle;
+                }
+
+                return (
+                  <div
+                    key={secKey}
+                    className={`rounded-xl border p-3.5 transition-all flex flex-col justify-between ${
+                      isEnabled
+                        ? "bg-white border-stone-300 shadow-xs hover:border-amber-500"
+                        : "bg-stone-100/90 border-stone-200/80 opacity-70"
+                    }`}
+                  >
+                    <div>
+                      {/* Top Header: Badge, Title, Reorder Buttons */}
+                      <div className="flex items-start justify-between gap-2 mb-2">
+                        <div className="flex items-center gap-2 min-w-0">
+                          <span className="w-6 h-6 rounded-md bg-stone-900 text-white font-mono text-[11px] font-black flex items-center justify-center shrink-0">
+                            #{idx + 1}
+                          </span>
+                          <span className="text-xl p-1 rounded-lg bg-stone-100 shrink-0">{sec.icon}</span>
+                          <div className="min-w-0">
+                            <h5 className="font-bold text-xs text-stone-900 leading-snug truncate">{sec.name}</h5>
+                            <p className="text-[10px] text-stone-500 truncate">{sec.englishName}</p>
+                          </div>
+                        </div>
+
+                        {/* Up / Down Reorder Buttons */}
+                        <div className="flex items-center gap-1 shrink-0 bg-stone-100 p-0.5 rounded-lg border border-stone-200">
+                          <button
+                            type="button"
+                            onClick={() => handleMoveSection(secKey, "up")}
+                            disabled={idx === 0}
+                            title={idx === 0 ? "यह पहले से सबसे ऊपर है" : "ऊपर ले जाएं (Move Up)"}
+                            className={`w-6 h-6 rounded flex items-center justify-center text-xs font-bold transition ${
+                              idx === 0
+                                ? "text-stone-300 cursor-not-allowed"
+                                : "text-stone-700 hover:bg-white hover:text-amber-700 shadow-2xs cursor-pointer"
+                            }`}
+                          >
+                            🔼
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => handleMoveSection(secKey, "down")}
+                            disabled={idx === arr.length - 1}
+                            title={idx === arr.length - 1 ? "यह पहले से सबसे नीचे है" : "नीचे ले जाएं (Move Down)"}
+                            className={`w-6 h-6 rounded flex items-center justify-center text-xs font-bold transition ${
+                              idx === arr.length - 1
+                                ? "text-stone-300 cursor-not-allowed"
+                                : "text-stone-700 hover:bg-white hover:text-amber-700 shadow-2xs cursor-pointer"
+                            }`}
+                          >
+                            🔽
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-[10px] text-stone-500 font-medium line-clamp-1 mb-2.5">
+                        {sec.desc}
+                      </p>
+
+                      {/* Device Toggles Box: Mobile 📱 vs PC 💻 */}
+                      <div className="bg-stone-50 rounded-lg p-2 border border-stone-200/80 mb-3 space-y-1.5">
+                        <div className="flex items-center justify-between text-[11px]">
+                          <span className="font-semibold text-stone-700 flex items-center gap-1">
+                            <span>📱</span>
+                            <span>मोबाइल (Mobile):</span>
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => handleSectionDeviceToggle(secKey, "mobile", !showMobile)}
+                            className={`relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                              showMobile ? "bg-emerald-600" : "bg-stone-300"
+                            }`}
+                            title={showMobile ? "मोबाइल पर बंद करें" : "मोबाइल पर चालू करें"}
+                          >
+                            <span
+                              className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-xs ring-0 transition duration-200 ease-in-out ${
+                                showMobile ? "translate-x-4" : "translate-x-0"
+                              }`}
+                            />
+                          </button>
+                        </div>
+
+                        <div className="flex items-center justify-between text-[11px]">
+                          <span className="font-semibold text-stone-700 flex items-center gap-1">
+                            <span>💻</span>
+                            <span>कंप्यूटर (PC/Laptop):</span>
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => handleSectionDeviceToggle(secKey, "desktop", !showDesktop)}
+                            className={`relative inline-flex h-5 w-9 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                              showDesktop ? "bg-emerald-600" : "bg-stone-300"
+                            }`}
+                            title={showDesktop ? "कंप्यूटर पर बंद करें" : "कंप्यूटर पर चालू करें"}
+                          >
+                            <span
+                              className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-xs ring-0 transition duration-200 ease-in-out ${
+                                showDesktop ? "translate-x-4" : "translate-x-0"
+                              }`}
+                            />
+                          </button>
+                        </div>
+
+                        {/* Live Visibility Indicator Badge */}
+                        <div className="pt-1 border-t border-stone-200/60 flex items-center justify-between text-[10px]">
+                          <span className="text-stone-500 font-medium">लाइव विजिबिलिटी:</span>
+                          <span
+                            className={`px-1.5 py-0.5 rounded font-black text-[9px] ${
+                              showMobile && showDesktop
+                                ? "bg-emerald-100 text-emerald-800"
+                                : showMobile
+                                ? "bg-amber-100 text-amber-800"
+                                : showDesktop
+                                ? "bg-blue-100 text-blue-800"
+                                : "bg-stone-200 text-stone-600"
+                            }`}
+                          >
+                            {showMobile && showDesktop
+                              ? "🟢 📱 + 💻 दोनों पर चालू"
+                              : showMobile
+                              ? "🟡 केवल 📱 मोबाइल पर"
+                              : showDesktop
+                              ? "🔵 केवल 💻 PC पर"
+                              : "🔴 दोनों पर बंद (Hidden)"}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Section Title Input */}
+                    <div>
+                      <label className="block text-[10px] font-bold text-stone-600 mb-1">
+                        सेक्शन का शीर्षक (Section Heading):
+                      </label>
+                      <input
+                        type="text"
+                        value={currentTitle}
+                        onChange={(e) => handleSectionTitleChange(secKey, e.target.value)}
+                        disabled={!isEnabled}
+                        placeholder={sec.defaultTitle}
+                        className={`w-full px-3 py-1.5 rounded-lg border text-xs text-stone-900 transition ${
+                          isEnabled
+                            ? "bg-stone-50 border-stone-300 focus:bg-white focus:border-amber-500 focus:outline-none"
+                            : "bg-stone-100 border-stone-200 text-stone-400 cursor-not-allowed"
+                        }`}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
           {/* Headlines */}

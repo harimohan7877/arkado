@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Settings } from "@/lib/store-types";
+import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import {
   WhatsappIcon,
   CloseIcon,
@@ -47,10 +48,10 @@ export default function SocialFab() {
   if (isAdminRoute) return null;
 
   const social = settings?.social;
-  const whatsappUrl = social?.whatsapp_url || `https://wa.me/${settings?.contact?.whatsapp_number || settings?.whatsapp_support_number || "917852004401"}`;
-  const instagramUrl = social?.instagram_url || "https://instagram.com/";
-  const facebookUrl = social?.facebook_url || "https://facebook.com/";
-  const gmailUrl = social?.gmail_url || `mailto:${settings?.contact?.email || settings?.gmail_support_email || "support@arkado.in"}`;
+  const whatsappUrl = social?.whatsapp_url || `https://wa.me/${getCleanWhatsAppNumber(settings)}`;
+  const instagramUrl = social?.instagram_url || DEFAULT_SETTINGS.social.instagram_url;
+  const facebookUrl = social?.facebook_url || DEFAULT_SETTINGS.social.facebook_url;
+  const gmailUrl = social?.gmail_url || `mailto:${settings?.contact?.email || settings?.gmail_support_email || DEFAULT_SETTINGS.contact.email}`;
 
   const channels = [
     {

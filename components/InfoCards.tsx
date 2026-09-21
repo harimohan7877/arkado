@@ -14,7 +14,7 @@ export default function InfoCards() {
       icon: "📞",
       title: "Contact Us",
       desc: "Get in touch via WhatsApp or email for orders, support, and inquiries.",
-      link: "https://wa.me/917852004401",
+      link: "/contact",
     },
     {
       icon: "❓",

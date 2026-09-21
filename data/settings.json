@@ -20,28 +20,34 @@
     "footer_tagline": "All-India exam preparation — deep-level analysis & pattern-based notes."
   },
   "homepage": {
+    "section_order": [
+      "hero",
+      "trust_strip",
+      "featured_bundles",
+      "promo_banner",
+      "categories",
+      "all_products",
+      "hot_deals",
+      "new_arrivals",
+      "faq"
+    ],
+    "sections": {
+      "hero": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "Hero Slider & Sidebar" },
+      "trust_strip": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "Trust Strip (Features)" },
+      "featured_bundles": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "Featured Bundles" },
+      "promo_banner": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "Crack Any Exam with Deep-Level Analysis" },
+      "categories": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "Browse Top Categories" },
+      "all_products": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "All Bundles Grid" },
+      "hot_deals": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "Today's Hot Deals" },
+      "new_arrivals": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "New Arrivals" },
+      "faq": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "Common Questions" }
+    },
     "hero_badge": "2026 PATTERN DECODED",
     "hero_headline": "RSMSSB CET & Rajasthan Exam Bundles",
     "featured_section_title": "Featured Bundles",
     "hot_deals_title": "Today's Hot Deals",
     "new_arrivals_title": "New Arrivals",
     "categories_section_title": "Browse Top Categories",
-    "category_card_style": {
-      "logo_size": 110,
-      "logo_shape": "circle",
-      "container_padding": 0,
-      "show_inner_border": false,
-      "show_card_border": false,
-      "card_gap": 10,
-      "card_padding": 8,
-      "text_gap": 6,
-      "card_shadow": "sm",
-      "card_bg_style": "white",
-      "text_position": "below",
-      "text_size": "xs",
-      "show_exam_count": true,
-      "card_border_radius": "rounded-2xl"
-    },
     "newsletter_title": "🎯 सीधे WhatsApp व Email पर पाएं फ्री अपडेट्स व नए नोट्स!",
     "newsletter_subtitle": "हजारों छात्रों का भरोसा — कोई स्पैम नहीं, सिर्फ परीक्षा उपयोगी अपडेट्स व स्पेशल छूट।",
     "newsletter_placeholder": "अपना Email या WhatsApp Number दर्ज करें...",
@@ -103,7 +109,23 @@
         "question": "Need help with payment or order?",
         "answer": "Contact our WhatsApp helpline at 7852004401 — our team responds quickly."
       }
-    ]
+    ],
+    "category_card_style": {
+      "logo_size": 120,
+      "logo_shape": "circle",
+      "container_padding": 0,
+      "show_inner_border": false,
+      "show_card_border": false,
+      "card_gap": 4,
+      "card_padding": 2,
+      "text_gap": 3,
+      "card_shadow": "none",
+      "card_bg_style": "glass",
+      "text_position": "below",
+      "text_size": "xs",
+      "show_exam_count": true,
+      "card_border_radius": "rounded-2xl"
+    }
   },
   "social": {
     "whatsapp_url": "https://wa.me/917852004401",
@@ -112,7 +134,7 @@
     "gmail_url": "mailto:support@arkado.in",
     "share_enabled": true
   },
-  "updated_at": "2026-09-11T07:52:40.955Z",
+  "updated_at": "2026-09-20T16:15:16.519Z",
   "contact": {
     "phone": "+91 7852004401",
     "whatsapp_number": "917852004401",
@@ -163,5 +185,7 @@
       "Instant WhatsApp or Gmail Delivery",
       "100% Secure UPI with UTR Verification"
     ]
-  }
+  },
+  "razorpay_key_id": "",
+  "razorpay_key_secret": ""
 }

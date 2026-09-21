@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Category } from "@/lib/store-types";
 import { Settings } from "@/lib/store-types";
+import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import { supabase } from "@/lib/supabase";
 import {
   SearchIcon,
@@ -442,14 +443,14 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
                 </p>
               </div>
               <a
-                href={`tel:${(settings?.contact?.phone || "+91 7852004401").replace(/\s+/g, "")}`}
+                href={`tel:${(settings?.contact?.phone || DEFAULT_SETTINGS.contact.phone).replace(/\s+/g, "")}`}
                 className="flex items-center gap-2 px-3 py-2.5 rounded-md text-sm font-medium text-stone-700 hover:bg-stone-100"
               >
                 <PhoneIcon size={16} />
-                Call: {settings?.contact?.phone || "7852004401"}
+                Call: {settings?.contact?.phone || DEFAULT_SETTINGS.contact.phone}
               </a>
               <a
-                href={settings?.social?.whatsapp_url || `https://wa.me/${settings?.contact?.whatsapp_number || settings?.whatsapp_support_number || "917852004401"}`}
+                href={settings?.social?.whatsapp_url || `https://wa.me/${getCleanWhatsAppNumber(settings)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-3 py-2.5 rounded-md text-sm font-medium text-emerald-700 bg-emerald-50 hover:bg-emerald-100"

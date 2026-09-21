@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Category } from "@/lib/store-types";
+import { DEFAULT_SETTINGS } from "@/lib/default-settings";
 import { ChevronRightIcon } from "@/components/icons";
 
 interface SidebarCategoriesProps {
@@ -100,7 +101,7 @@ export default function SidebarCategories({ activeCategory }: SidebarCategoriesP
           Chat with an exam counselor on WhatsApp to get instant PDF links.
         </p>
         <a
-          href="https://wa.me/917852004401"
+          href={DEFAULT_SETTINGS.social.whatsapp_url}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-2 inline-flex items-center gap-1 text-[11px] font-bold text-white bg-emerald-600 hover:bg-emerald-700 px-2.5 py-1.5 rounded transition"

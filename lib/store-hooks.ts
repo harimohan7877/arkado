@@ -9,7 +9,8 @@ export function useCategories(scope: "public" | "all" = "public") {
 
   useEffect(() => {
     let mounted = true;
-    fetch(`/api/categories?scope=${scope}&t=${Date.now()}`, { cache: "no-store" })
+    const url = scope === "all" ? `/api/categories?scope=all&t=${Date.now()}` : `/api/categories?scope=public`;
+    fetch(url)
       .then(res => res.json())
       .then(data => {
         if (mounted) {
@@ -36,9 +37,9 @@ export function useExams(categoryId?: string, scope: "public" | "all" = "public"
   useEffect(() => {
     let mounted = true;
     const url = categoryId
-      ? `/api/exams?category=${categoryId}&scope=${scope}&t=${Date.now()}`
-      : `/api/exams?scope=${scope}&t=${Date.now()}`;
-    fetch(url, { cache: "no-store" })
+      ? (scope === "all" ? `/api/exams?category=${categoryId}&scope=all&t=${Date.now()}` : `/api/exams?category=${categoryId}&scope=public`)
+      : (scope === "all" ? `/api/exams?scope=all&t=${Date.now()}` : `/api/exams?scope=public`);
+    fetch(url)
       .then(res => res.json())
       .then(data => {
         if (mounted) {
@@ -64,8 +65,8 @@ export function useCourses(examId?: string) {
 
   useEffect(() => {
     let mounted = true;
-    const url = examId ? `/api/courses?exam=${examId}&t=${Date.now()}` : `/api/courses?t=${Date.now()}`;
-    fetch(url, { cache: "no-store" })
+    const url = examId ? `/api/courses?exam=${encodeURIComponent(examId)}` : `/api/courses`;
+    fetch(url)
       .then(res => res.json())
       .then(data => {
         if (mounted) {
@@ -91,7 +92,7 @@ export function useSliderCourses() {
 
   useEffect(() => {
     let mounted = true;
-    fetch(`/api/courses?slider=true&t=${Date.now()}`, { cache: "no-store" })
+    fetch(`/api/courses?slider=true`)
       .then(res => res.json())
       .then(data => {
         if (mounted) {
@@ -117,7 +118,7 @@ export function useSettings() {
 
   useEffect(() => {
     let mounted = true;
-    fetch(`/api/settings?t=${Date.now()}`, { cache: "no-store" })
+    fetch(`/api/settings`)
       .then(res => res.json())
       .then(data => {
         if (mounted) {

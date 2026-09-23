@@ -17,8 +17,11 @@ export async function GET(req: NextRequest) {
       .order('created_at', { ascending: false });
 
     if (search) {
-      // In PostgreSQL/Supabase we can use ilike for case insensitive searching
-      query = query.or(`name.ilike.%${search}%,city.ilike.%${search}%,category.ilike.%${search}%`);
+      // Sanitize search to remove PostgREST reserved characters (commas, parens)
+      const sanitized = search.replace(/[,.()]/g, '').trim();
+      if (sanitized) {
+        query = query.or(`name.ilike.%${sanitized}%,city.ilike.%${sanitized}%,category.ilike.%${sanitized}%`);
+      }
     }
 
     const { data: users, error } = await query;

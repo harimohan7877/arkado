@@ -2,8 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getStoreData, setStoreData } from "@/lib/store-data";
 import { verifyAdminSession } from "@/lib/admin-auth";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const revalidate = 60;
 
 interface CategoryRecord {
   id: string;
@@ -173,7 +172,6 @@ export async function PUT(req: NextRequest) {
     const updatedCourses = Array.isArray(body) ? body : body.courses;
     if (Array.isArray(updatedCourses)) {
       await setStoreData("courses", "data/courses-new.json", updatedCourses);
-      await setStoreData("courses", "data/courses.json", updatedCourses);
       return NextResponse.json({ success: true, count: updatedCourses.length });
     }
   } catch (err: any) {

@@ -1,5 +1,6 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getStoreData, setStoreData } from "@/lib/store-data";
+import { verifyAdminSession } from "@/lib/admin-auth";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -12,7 +13,11 @@ async function writeOrders(orders: unknown[]) {
   return setStoreData("orders", "data/orders.json", orders);
 }
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+  if (!verifyAdminSession(req)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const orders = await readOrders();
   orders.sort(
     (a: { created_at: string }, b: { created_at: string }) =>
@@ -42,14 +47,23 @@ export async function POST(req: Request) {
       );
     }
 
-    if (!email && delivery_mode === "gmail") {
+    const cleanMode = (delivery_mode || "whatsapp").toLowerCase().trim();
+    const allowedModes = ["gmail", "whatsapp", "email", "drive"];
+    if (!allowedModes.includes(cleanMode)) {
+      return NextResponse.json(
+        { success: false, error: "Invalid delivery mode. Must be 'gmail' or 'whatsapp'." },
+        { status: 400 }
+      );
+    }
+
+    if (!email && (cleanMode === "gmail" || cleanMode === "email")) {
       return NextResponse.json(
         { success: false, error: "Email is required for Gmail delivery." },
         { status: 400 }
       );
     }
 
-    if (!phone && delivery_mode === "whatsapp") {
+    if (!phone && cleanMode === "whatsapp") {
       return NextResponse.json(
         { success: false, error: "WhatsApp number is required." },
         { status: 400 }
@@ -106,7 +120,11 @@ export async function POST(req: Request) {
   }
 }
 
-export async function PATCH(req: Request) {
+export async function PATCH(req: NextRequest) {
+  if (!verifyAdminSession(req)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   try {
     const body = await req.json();
     const { order_id, status } = body;
@@ -143,7 +161,10 @@ export async function PATCH(req: Request) {
   }
 }
 
-export async function DELETE(req: Request) {
+export async function DELETE(req: NextRequest) {
+  if (!verifyAdminSession(req)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
   try {
     const { searchParams } = new URL(req.url);
     const order_id = searchParams.get("order_id");

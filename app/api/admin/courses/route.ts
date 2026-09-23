@@ -34,7 +34,6 @@ function readCourses() {
 
 async function writeCourses(data: unknown[]) {
   await setStoreData("courses", "data/courses-new.json", data);
-  await setStoreData("courses", "data/courses.json", data);
 }
 
 export async function GET(req: NextRequest) {

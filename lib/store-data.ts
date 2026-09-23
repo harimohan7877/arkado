@@ -225,7 +225,7 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
   try {
     const { data: adminRow } = await supabaseAdmin
       .from("admin_settings")
-      .select("id, gemini_key, claude_key, openai_key, openrouter_key")
+      .select("id, gemini_key, claude_key, openai_key, openrouter_key, groq_key")
       .limit(1)
       .maybeSingle();
 
@@ -241,11 +241,23 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
         SERVER_STORE_CACHE[key] = { data: parsed, timestamp: Date.now() };
         return parsed as T;
       }
-      if (key === "orders" && adminRow.openai_key && adminRow.openai_key.startsWith("{")) {
-        const parsed = JSON.parse(adminRow.openai_key);
-        if (parsed && Array.isArray(parsed.orders)) {
-          SERVER_STORE_CACHE[key] = { data: parsed.orders, timestamp: Date.now() };
-          return parsed.orders as T;
+      if (key === "orders") {
+        // Dedicated column for orders to prevent collision with featured_exams
+        if (adminRow.groq_key && (adminRow.groq_key.startsWith("[") || adminRow.groq_key.startsWith("{"))) {
+          const parsed = JSON.parse(adminRow.groq_key);
+          const ordersList = Array.isArray(parsed) ? parsed : (parsed.orders || []);
+          SERVER_STORE_CACHE[key] = { data: ordersList, timestamp: Date.now() };
+          return ordersList as T;
+        }
+        // Fallback to legacy openai_key if groq_key hasn't been written to yet
+        if (adminRow.openai_key && adminRow.openai_key.startsWith("{")) {
+          try {
+            const parsed = JSON.parse(adminRow.openai_key);
+            if (parsed && Array.isArray(parsed.orders)) {
+              SERVER_STORE_CACHE[key] = { data: parsed.orders, timestamp: Date.now() };
+              return parsed.orders as T;
+            }
+          } catch {}
         }
       }
       if (key === "courses" && adminRow.openrouter_key && (adminRow.openrouter_key.startsWith("[") || adminRow.openrouter_key.startsWith("{"))) {
@@ -298,46 +310,9 @@ export async function setStoreData<T>(key: string, localFilePath: string, data: 
       if (key === "categories") {
         updatePayload.claude_key = jsonContent;
       } else if (key === "featured_exams") {
-        try {
-          const { data: cur } = await supabaseAdmin
-            .from("admin_settings")
-            .select("openai_key")
-            .eq("id", existing.id)
-            .single();
-          if (cur?.openai_key && cur.openai_key.startsWith("{")) {
-            const curObj = JSON.parse(cur.openai_key);
-            if (typeof curObj === "object" && curObj !== null && !Array.isArray(curObj)) {
-              updatePayload.openai_key = JSON.stringify({ ...curObj, ...(data as object) });
-            } else {
-              updatePayload.openai_key = jsonContent;
-            }
-          } else {
-            updatePayload.openai_key = jsonContent;
-          }
-        } catch {
-          updatePayload.openai_key = jsonContent;
-        }
+        updatePayload.openai_key = jsonContent;
       } else if (key === "orders") {
-        try {
-          const { data: cur } = await supabaseAdmin
-            .from("admin_settings")
-            .select("openai_key")
-            .eq("id", existing.id)
-            .single();
-          if (cur?.openai_key && cur.openai_key.startsWith("{")) {
-            const curObj = JSON.parse(cur.openai_key);
-            if (typeof curObj === "object" && curObj !== null && !Array.isArray(curObj)) {
-              curObj.orders = data;
-              updatePayload.openai_key = JSON.stringify(curObj);
-            } else {
-              updatePayload.openai_key = JSON.stringify({ orders: data });
-            }
-          } else {
-            updatePayload.openai_key = JSON.stringify({ orders: data });
-          }
-        } catch {
-          updatePayload.openai_key = JSON.stringify({ orders: data });
-        }
+        updatePayload.groq_key = jsonContent;
       } else if (key === "courses") {
         updatePayload.openrouter_key = jsonContent;
       } else if (key === "settings") {

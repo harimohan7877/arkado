@@ -17,20 +17,24 @@ export async function POST(req: NextRequest) {
     }
     */
 
-    // Auto-verify mock orders or if signature is not provided for demo
-    if (orderId.startsWith('order_')) {
+    // Auto-verify mock orders or if signature is not provided for demo/trial
+    if (orderId && orderId.startsWith('order_')) {
       console.log('Verifying mock order:', orderId);
     }
 
-    await supabaseAdmin.from('payments').update({
-      razorpay_payment_id: paymentId,
-      status: 'success'
-    }).eq('razorpay_order_id', orderId);
+    if (orderId && paymentId) {
+      await supabaseAdmin.from('payments').update({
+        razorpay_payment_id: paymentId,
+        status: 'success'
+      }).eq('razorpay_order_id', orderId);
+    }
 
-    await supabaseAdmin.from('user_profiles').update({
-      is_paid: true,
-      paid_at: new Date().toISOString()
-    }).eq('id', userId);
+    if (userId) {
+      await supabaseAdmin.from('user_profiles').update({
+        is_paid: true,
+        paid_at: new Date().toISOString()
+      }).eq('id', userId);
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
@@ -38,3 +42,4 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: false, error: 'Verification failed' }, { status: 500 });
   }
 }
+

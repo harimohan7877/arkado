@@ -1,15 +1,19 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://juhffafyorfjtahscups.supabase.co';
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_Urxrcu_NlNQqQQ_rJ__-bQ_ExNlGG0O';
-const defaultSec = "sb_secret_" + "QRz3i8yo4K9rt8iAQ3uyVA_TZAgzMVN";
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || defaultSec;
+// SECURITY: All keys MUST come from environment variables — never hardcode secrets
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error('[FATAL] Missing NEXT_PUBLIC_SUPABASE_URL or NEXT_PUBLIC_SUPABASE_ANON_KEY environment variables');
+}
 
 // Client-side (browser) — uses anon key
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = createClient(supabaseUrl || '', supabaseAnonKey || '');
 
 // Server-side (API routes) — uses service role key
-export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey);
+export const supabaseAdmin = createClient(supabaseUrl || '', supabaseServiceKey || '');
 
 // Message limits
 export const MESSAGE_LIMITS = {
@@ -50,15 +54,27 @@ export async function getUserTier(userId?: string, guestToken?: string): Promise
   return { tier: 'guest', messagesUsed: 0, limit: 5 };
 }
 
-export async function incrementMessageCount(userId?: string, guestToken?: string, currentCount: number = 0) {
+export async function incrementMessageCount(userId?: string, guestToken?: string, _currentCount: number = 0) {
+  // Use atomic SQL increment to prevent race conditions (two concurrent requests both reading the same count)
   if (userId) {
-    await supabaseAdmin.from('user_profiles')
-      .update({ ai_messages_used: currentCount + 1 })
-      .eq('id', userId);
+    try {
+      const { error } = await supabaseAdmin.rpc('increment_ai_messages', { row_id: userId, table_name: 'user_profiles' });
+      if (error) throw error;
+    } catch {
+      // Fallback if RPC doesn't exist yet — still safer than client-side increment
+      await supabaseAdmin.from('user_profiles')
+        .update({ ai_messages_used: _currentCount + 1 })
+        .eq('id', userId);
+    }
   } else if (guestToken) {
-    await supabaseAdmin.from('guest_sessions')
-      .update({ ai_messages_used: currentCount + 1 })
-      .eq('session_token', guestToken);
+    try {
+      const { error } = await supabaseAdmin.rpc('increment_ai_messages_guest', { token: guestToken });
+      if (error) throw error;
+    } catch {
+      await supabaseAdmin.from('guest_sessions')
+        .update({ ai_messages_used: _currentCount + 1 })
+        .eq('session_token', guestToken);
+    }
   }
 }
 
@@ -73,7 +89,7 @@ import { NextRequest } from 'next/server';
 
 export async function verifyUserSession(req: NextRequest, userId: string): Promise<boolean> {
   if (!userId) return false;
-  if (userId === '00000000-0000-0000-0000-000000000000') return true;
+  // SECURITY: Removed hardcoded null-UUID bypass that allowed unauthenticated access
   
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
   const ref = supabaseUrl.split('//')[1]?.split('.')[0] || '';

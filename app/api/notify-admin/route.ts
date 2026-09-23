@@ -10,6 +10,16 @@ interface OrderData {
   delivery_mode: string;
 }
 
+function escapeHtml(str: string | undefined): string {
+  if (!str) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 export async function POST(req: NextRequest) {
   try {
     const order: OrderData = await req.json();
@@ -23,6 +33,14 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Email not configured" }, { status: 500 });
     }
 
+    const safeOrderId = escapeHtml(order.order_id);
+    const safeName = escapeHtml(order.name);
+    const safeEmail = escapeHtml(order.email);
+    const safePhone = escapeHtml(order.phone);
+    const safeCourse = escapeHtml(order.course_title);
+    const safeDelivery = escapeHtml(order.delivery_mode);
+    const cleanPhoneDigits = (order.phone || "").replace(/\D/g, "");
+
     const nodemailer = await import("nodemailer");
     const transporter = nodemailer.default.createTransport({
       service: "gmail",
@@ -32,7 +50,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    const subject = `🛒 नया ऑर्डर — ${order.order_id} — ₹${order.amount}`;
+    const subject = `🛒 नया ऑर्डर — ${safeOrderId} — ₹${order.amount}`;
     const html = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <h2 style="color: #b45309; border-bottom: 2px solid #b45309; padding-bottom: 10px;">
@@ -42,31 +60,31 @@ export async function POST(req: NextRequest) {
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
           <tr>
             <td style="padding: 8px; color: #666; font-weight: bold;">Order ID</td>
-            <td style="padding: 8px; font-family: monospace; font-size: 16px;">${order.order_id}</td>
+            <td style="padding: 8px; font-family: monospace; font-size: 16px;">${safeOrderId}</td>
           </tr>
           <tr style="background: #f9f9f9;">
             <td style="padding: 8px; color: #666; font-weight: bold;">नाम</td>
-            <td style="padding: 8px;">${order.name}</td>
+            <td style="padding: 8px;">${safeName}</td>
           </tr>
           <tr>
             <td style="padding: 8px; color: #666; font-weight: bold;">Email</td>
-            <td style="padding: 8px;"><a href="mailto:${order.email || "N/A"}">${order.email || "N/A"}</a></td>
+            <td style="padding: 8px;"><a href="mailto:${safeEmail || "N/A"}">${safeEmail || "N/A"}</a></td>
           </tr>
           <tr style="background: #f9f9f9;">
             <td style="padding: 8px; color: #666; font-weight: bold;">Phone</td>
-            <td style="padding: 8px;">${order.phone || "N/A"}</td>
+            <td style="padding: 8px;">${safePhone || "N/A"}</td>
           </tr>
           <tr>
             <td style="padding: 8px; color: #666; font-weight: bold;">कोर्स</td>
-            <td style="padding: 8px; font-weight: bold;">${order.course_title}</td>
+            <td style="padding: 8px; font-weight: bold;">${safeCourse}</td>
           </tr>
           <tr style="background: #f9f9f9;">
             <td style="padding: 8px; color: #666; font-weight: bold;">राशि</td>
-            <td style="padding: 8px; font-size: 20px; font-weight: bold; color: #059669;">₹${order.amount}</td>
+            <td style="padding: 8px; font-size: 20px; font-weight: bold; color: #059669;">₹${Number(order.amount) || 0}</td>
           </tr>
           <tr>
             <td style="padding: 8px; color: #666; font-weight: bold;">डिलीवरी</td>
-            <td style="padding: 8px; text-transform: uppercase; font-weight: bold;">${order.delivery_mode}</td>
+            <td style="padding: 8px; text-transform: uppercase; font-weight: bold;">${safeDelivery}</td>
           </tr>
           <tr style="background: #fef3c7;">
             <td style="padding: 8px; color: #92400e; font-weight: bold;">समय</td>
@@ -77,9 +95,9 @@ export async function POST(req: NextRequest) {
         <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 16px; margin: 20px 0;">
           <h3 style="margin: 0 0 8px; color: #92400e;">⚠️ कृपया manually verify करें</h3>
           <p style="margin: 0; color: #78350f; font-size: 14px;">
-            UPI app में <strong>₹${order.amount}</strong> payment check करें।<br/>
-            ${order.phone ? `<a href="https://wa.me/${order.phone.replace(/\D/g, "")}">WhatsApp पर ${order.phone} से संपर्क करें</a><br/>` : ""}
-            ${order.email ? `<a href="mailto:${order.email}">${order.email} पर email भेजें</a>` : ""}
+            UPI app में <strong>₹${Number(order.amount) || 0}</strong> payment check करें।<br/>
+            ${cleanPhoneDigits ? `<a href="https://wa.me/${cleanPhoneDigits}">WhatsApp पर ${safePhone} से संपर्क करें</a><br/>` : ""}
+            ${safeEmail ? `<a href="mailto:${safeEmail}">${safeEmail} पर email भेजें</a>` : ""}
           </p>
         </div>
 

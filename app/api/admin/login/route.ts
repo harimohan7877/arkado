@@ -5,13 +5,9 @@ export async function POST(req: NextRequest) {
   try {
     const { pin } = await req.json();
     const cleanPin = (pin || "").trim();
-    const validCodes = [
-      ADMIN_PASSCODE,
-      "99502521387877489932hhh@@@",
-      "7877"
-    ];
 
-    if (!cleanPin || !validCodes.includes(cleanPin)) {
+    // SECURITY: Only accept the single env-based ADMIN_PASSCODE — no hardcoded backdoors
+    if (!ADMIN_PASSCODE || !cleanPin || cleanPin !== ADMIN_PASSCODE) {
       return NextResponse.json({ error: "Invalid PIN" }, { status: 401 });
     }
 
@@ -20,3 +16,4 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
+

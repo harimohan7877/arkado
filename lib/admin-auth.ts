@@ -1,24 +1,23 @@
 import { NextRequest } from "next/server";
 
-export const ADMIN_PASSCODE = process.env.ADMIN_PASSCODE || "99502521387877489932hhh@@@";
-
-const VALID_PASSCODES = [
-  ADMIN_PASSCODE,
-  "99502521387877489932hhh@@@",
-  "7877",
-];
+// SECURITY: Passcode must come from environment variable only — never hardcode
+export const ADMIN_PASSCODE = process.env.ADMIN_PASSCODE || "";
 
 export function verifyAdminSession(req: NextRequest): boolean {
-  // Always permit local development / localhost / LAN admin requests so local testing never fails
+  // Allow local development / localhost / LAN admin requests so local testing never fails
   const host = req.headers.get("host") || "";
   if (
     process.env.NODE_ENV !== "production" ||
     host.includes("localhost") ||
-    host.includes("127.0.0.1") ||
-    host.includes("172.") ||
-    host.includes("192.168.")
+    host.includes("127.0.0.1")
   ) {
     return true;
+  }
+
+  // Reject if no passcode is configured on the server
+  if (!ADMIN_PASSCODE) {
+    console.error("[admin-auth] ADMIN_PASSCODE environment variable is not set!");
+    return false;
   }
 
   // 1. Check Bearer / Passcode in Authorization or x-admin-passcode header
@@ -27,11 +26,11 @@ export function verifyAdminSession(req: NextRequest): boolean {
   if (token) {
     try {
       const decodedToken = decodeURIComponent(token);
-      if (VALID_PASSCODES.includes(token) || VALID_PASSCODES.includes(decodedToken)) {
+      if (token === ADMIN_PASSCODE || decodedToken === ADMIN_PASSCODE) {
         return true;
       }
     } catch {
-      if (VALID_PASSCODES.includes(token)) return true;
+      if (token === ADMIN_PASSCODE) return true;
     }
   }
 
@@ -44,27 +43,19 @@ export function verifyAdminSession(req: NextRequest): boolean {
   if (cookie) {
     try {
       const decoded = decodeURIComponent(cookie);
-      if (VALID_PASSCODES.includes(cookie) || VALID_PASSCODES.includes(decoded) || cookie === "true") {
+      if (cookie === ADMIN_PASSCODE || decoded === ADMIN_PASSCODE) {
         return true;
       }
     } catch {
-      if (VALID_PASSCODES.includes(cookie) || cookie === "true") {
+      if (cookie === ADMIN_PASSCODE) {
         return true;
       }
     }
   }
 
-  // 3. For GET requests, referer check if coming from verified admin pages
-  if (req.method === "GET") {
-    const referer = req.headers.get("referer") || "";
-    if (
-      referer.includes("/admin") ||
-      referer.includes("/ranjeet/admin") ||
-      referer.includes("/secret-admin-portal")
-    ) {
-      return true;
-    }
-  }
+  // SECURITY: Removed referer-based bypass — Referer header is trivially spoofable
+  // SECURITY: Removed cookie === "true" bypass — anyone can set this in DevTools
 
   return false;
 }
+

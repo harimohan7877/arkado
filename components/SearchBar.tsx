@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Course, Category } from "@/lib/store-types";
+import { fetchWithCache } from "@/lib/store-hooks";
 import { SearchIcon, CloseIcon, ChevronRightIcon, ArrowRightIcon, SparklesIcon } from "@/components/icons";
 
 interface SearchBarProps {
@@ -56,8 +57,8 @@ export default function SearchBar({
 
     let isMounted = true;
     Promise.all([
-      fetch("/api/courses?t=" + Date.now()).then((r) => r.json()).catch(() => []),
-      fetch("/api/categories?scope=public").then((r) => r.json()).catch(() => []),
+      fetchWithCache<Course[]>("/api/courses").catch(() => []),
+      fetchWithCache<Category[]>("/api/categories?scope=public").catch(() => []),
     ]).then(([coursesData, categoriesData]) => {
       if (!isMounted) return;
       const validCourses = Array.isArray(coursesData) ? coursesData : [];

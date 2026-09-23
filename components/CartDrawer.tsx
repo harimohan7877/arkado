@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { CourseBundle } from "@/lib/courses";
 import { getExamLabel } from "@/lib/exam-labels";
 import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
+import { fetchWithCache } from "@/lib/store-hooks";
 import {
   CloseIcon,
   CartIcon,
@@ -89,8 +90,7 @@ export default function CartDrawer({
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
-      fetch("/api/settings")
-        .then((r) => r.json())
+      fetchWithCache<any>("/api/settings")
         .then((data) => {
           if (data && !data.error) {
             setUpiSettings({

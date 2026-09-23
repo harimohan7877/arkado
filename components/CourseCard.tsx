@@ -49,6 +49,8 @@ export default function CourseCard({
               src={course.cover_image}
               alt={course.title}
               fill
+              loading="lazy"
+              quality={75}
               onError={() => setImgError(true)}
               className="object-cover object-center"
               sizes="(max-width: 640px) 50vw, 280px"

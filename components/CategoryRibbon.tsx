@@ -4,15 +4,15 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Category } from "@/lib/store-types";
+import { fetchWithCache } from "@/lib/store-hooks";
 
 export default function CategoryRibbon() {
   const [categories, setCategories] = useState<Category[]>([]);
 
   useEffect(() => {
-    fetch("/api/categories?scope=public")
-      .then((r) => r.json())
-      .then((data: Category[]) => {
-        const sorted = [...data].sort((a, b) => a.priority - b.priority).slice(0, 8);
+    fetchWithCache<Category[]>("/api/categories?scope=public")
+      .then((data) => {
+        const sorted = [...(Array.isArray(data) ? data : [])].sort((a, b) => a.priority - b.priority).slice(0, 8);
         setCategories(sorted);
       })
       .catch(() => {});

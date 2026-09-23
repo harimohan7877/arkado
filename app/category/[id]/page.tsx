@@ -3,14 +3,17 @@
 import { useState, useEffect, useMemo, use } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CourseCard from "@/components/CourseCard";
-import SampleModal from "@/components/SampleModal";
-import CartDrawer from "@/components/CartDrawer";
 import { Category, Exam, Course } from "@/lib/store-types";
+import { fetchWithCache } from "@/lib/store-hooks";
 import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import { SearchIcon, CloseIcon, ChevronRightIcon, ArrowRightIcon, SparklesIcon, CheckIcon } from "@/components/icons";
+
+const SampleModal = dynamic(() => import("@/components/SampleModal"), { ssr: false });
+const CartDrawer = dynamic(() => import("@/components/CartDrawer"), { ssr: false });
 
 interface CategoryPageProps {
   params: Promise<{ id: string }> | { id: string };
@@ -37,7 +40,11 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
   const [settings, setSettings] = useState<any>(null);
 
   useEffect(() => {
-    fetch("/api/settings").then(r => r.json()).then(setSettings).catch(() => {});
+    fetchWithCache<any>("/api/settings")
+      .then((data) => {
+        if (data && typeof data === "object") setSettings(data);
+      })
+      .catch(() => {});
   }, []);
 
   useEffect(() => {
@@ -45,27 +52,22 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
       setLoading(true);
       try {
         // 1. Fetch category metadata
-        const catRes = await fetch("/api/categories");
-        if (catRes.ok) {
-          const allCats: Category[] = await catRes.json();
+        const allCats = await fetchWithCache<Category[]>("/api/categories?scope=public").catch(() => []);
+        if (Array.isArray(allCats)) {
           const matched = allCats.find((c) => c.id === categoryId);
           if (matched) setCategory(matched);
         }
 
         // 2. Fetch exams in this category (only active exams)
-        const examsRes = await fetch(`/api/exams?category=${categoryId}&limit=200`);
-        if (examsRes.ok) {
-          const examsData = await examsRes.json();
-          const list = (Array.isArray(examsData) ? examsData : examsData.exams || []).filter(
-            (e: Exam) => e.is_active !== false
-          );
-          setExams(list);
-        }
+        const examsData = await fetchWithCache<any>(`/api/exams?category=${categoryId}&limit=200`).catch(() => []);
+        const list = (Array.isArray(examsData) ? examsData : examsData.exams || []).filter(
+          (e: Exam) => e.is_active !== false
+        );
+        setExams(list);
 
         // 3. Fetch courses
-        const coursesRes = await fetch("/api/courses");
-        if (coursesRes.ok) {
-          const allCourses: Course[] = await coursesRes.json();
+        const allCourses = await fetchWithCache<Course[]>("/api/courses").catch(() => []);
+        if (Array.isArray(allCourses)) {
           setCourses(allCourses);
         }
       } catch (err) {

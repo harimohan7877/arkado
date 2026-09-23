@@ -6,6 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Category, Exam } from "@/lib/store-types";
+import { fetchWithCache } from "@/lib/store-hooks";
 import { SearchIcon, CloseIcon, GridIcon, ChevronDownIcon, ChevronRightIcon, ArrowRightIcon } from "@/components/icons";
 
 const POPULAR_FILTERS = [
@@ -25,10 +26,9 @@ export default function AllExamsPage() {
   const [failedExamImages, setFailedExamImages] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
-    fetch("/api/categories?scope=public")
-      .then((res) => res.json())
-      .then((data: Category[]) => {
-        setCategories(data);
+    fetchWithCache<Category[]>("/api/categories?scope=public")
+      .then((data) => {
+        setCategories(Array.isArray(data) ? data : []);
       })
       .catch((err) => console.error("Failed to fetch categories:", err))
       .finally(() => setLoading(false));
@@ -38,14 +38,11 @@ export default function AllExamsPage() {
     if (categoryExams[catId] || loadingExams[catId]) return;
     setLoadingExams((prev) => ({ ...prev, [catId]: true }));
     try {
-      const res = await fetch(`/api/exams?category=${catId}&limit=100`);
-      if (res.ok) {
-        const data = await res.json();
-        const exams = (Array.isArray(data) ? data : data.exams || []).filter(
-          (e: Exam) => e.is_active !== false
-        );
-        setCategoryExams((prev) => ({ ...prev, [catId]: exams }));
-      }
+      const data = await fetchWithCache<any>(`/api/exams?category=${catId}&limit=100`);
+      const exams = (Array.isArray(data) ? data : data.exams || []).filter(
+        (e: Exam) => e.is_active !== false
+      );
+      setCategoryExams((prev) => ({ ...prev, [catId]: exams }));
     } catch (err) {
       console.error("Error fetching exams:", err);
     } finally {

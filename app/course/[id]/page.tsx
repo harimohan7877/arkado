@@ -3,14 +3,17 @@
 import { use, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { getCourseBySlug, CourseBundle } from "@/lib/courses";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CartDrawer from "@/components/CartDrawer";
 import CourseCard from "@/components/CourseCard";
-import SampleModal from "@/components/SampleModal";
 import { Category } from "@/lib/store-types";
+import { fetchWithCache } from "@/lib/store-hooks";
 import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
+
+const SampleModal = dynamic(() => import("@/components/SampleModal"), { ssr: false });
+const CartDrawer = dynamic(() => import("@/components/CartDrawer"), { ssr: false });
 
 interface PageProps {
   params: Promise<{ id: string }> | { id: string };
@@ -37,14 +40,14 @@ export default function CourseDetailPage({ params }: PageProps) {
   const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
 
   useEffect(() => {
-    fetch("/api/settings")
-      .then((r) => r.json())
-      .then(setSettings)
+    fetchWithCache<any>("/api/settings")
+      .then((data) => {
+        if (data && typeof data === "object") setSettings(data);
+      })
       .catch(() => {});
 
     // Fetch related active courses for recommendations
-    fetch("/api/courses")
-      .then((r) => r.json())
+    fetchWithCache<CourseBundle[]>("/api/courses")
       .then((data) => {
         if (Array.isArray(data)) {
           setRelatedCourses(
@@ -61,8 +64,7 @@ export default function CourseDetailPage({ params }: PageProps) {
       .catch(() => {});
 
     // Fetch categories for bottom discovery strip
-    fetch("/api/categories?scope=public")
-      .then((r) => r.json())
+    fetchWithCache<Category[]>("/api/categories?scope=public")
       .then((data) => {
         if (Array.isArray(data)) {
           setCategories(data);
@@ -76,12 +78,10 @@ export default function CourseDetailPage({ params }: PageProps) {
       setLoading(true);
       try {
         // 1. Fetch all active courses
-        const coursesRes = await fetch("/api/courses");
-        const allCourses: CourseBundle[] = coursesRes.ok ? await coursesRes.json() : [];
+        const allCourses = await fetchWithCache<CourseBundle[]>("/api/courses").catch(() => []);
 
         // 2. Fetch exams list
-        const examsRes = await fetch("/api/exams?include_inactive=true&limit=200");
-        const examsData = examsRes.ok ? await examsRes.json() : [];
+        const examsData = await fetchWithCache<any>("/api/exams?include_inactive=true&limit=200").catch(() => []);
         const examList: any[] = Array.isArray(examsData) ? examsData : examsData.exams || [];
 
         // 3. Find if courseId matches an exam

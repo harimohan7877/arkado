@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { getStoreData } from "@/lib/store-data";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const revalidate = 60;
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -64,7 +63,10 @@ export async function GET(req: Request) {
     }
 
     exams.sort((a, b) => (a.priority || 0) - (b.priority || 0));
-    return NextResponse.json(exams);
+    const cacheHeader = includeInactive
+      ? "no-store, no-cache, must-revalidate"
+      : "public, s-maxage=120, stale-while-revalidate=600";
+    return NextResponse.json(exams, { headers: { "Cache-Control": cacheHeader } });
   } catch {
     return NextResponse.json([]);
   }

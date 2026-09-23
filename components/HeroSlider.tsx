@@ -6,6 +6,7 @@ import Link from "next/link";
 import { CourseBundle } from "@/lib/courses";
 import { getExamLabel } from "@/lib/exam-labels";
 import { Settings } from "@/lib/store-types";
+import { fetchWithCache } from "@/lib/store-hooks";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -37,9 +38,10 @@ export default function HeroSlider({
   const touchEndX = useRef(0);
 
   useEffect(() => {
-    fetch("/api/settings")
-      .then((r) => r.json())
-      .then(setSettings)
+    fetchWithCache<Settings>("/api/settings")
+      .then((data) => {
+        if (data && typeof data === "object") setSettings(data);
+      })
       .catch(() => {});
   }, []);
 

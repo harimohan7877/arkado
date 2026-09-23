@@ -3,8 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { Category } from "@/lib/store-types";
-import { Settings } from "@/lib/store-types";
+import { Category, Settings } from "@/lib/store-types";
+import { fetchWithCache } from "@/lib/store-hooks";
 import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import { supabase } from "@/lib/supabase";
 import SearchBar from "@/components/SearchBar";
@@ -35,13 +35,11 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
   const [user, setUser] = useState<{ id: string; email?: string } | null>(null);
 
   useEffect(() => {
-    fetch("/api/categories?scope=public")
-      .then((r) => r.json())
-      .then(setCategories)
+    fetchWithCache<Category[]>("/api/categories?scope=public")
+      .then((data) => setCategories(Array.isArray(data) ? data : []))
       .catch(() => {});
-    fetch("/api/settings")
-      .then((r) => r.json())
-      .then(setSettings)
+    fetchWithCache<Settings>("/api/settings")
+      .then((data) => setSettings(data && typeof data === "object" ? data : null))
       .catch(() => {});
 
     supabase.auth.getSession().then(({ data }) => {

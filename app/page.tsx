@@ -3,20 +3,23 @@
 import { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useCategories, useSliderCourses, useCourses, useSettings } from "@/lib/store-hooks";
+import dynamic from "next/dynamic";
+import { useCategories, useSliderCourses, useCourses, useSettings, fetchWithCache } from "@/lib/store-hooks";
 import { Course } from "@/lib/store-types";
 import { DEFAULT_SETTINGS, isSectionEnabled, getOrderedSectionKeys, getSectionVisibility, SectionKey } from "@/lib/default-settings";
 import Navbar from "@/components/Navbar";
 import HeroSlider from "@/components/HeroSlider";
 import CourseCard from "@/components/CourseCard";
-import SampleModal from "@/components/SampleModal";
-import CartDrawer from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
 import CategoriesSection from "@/components/CategoriesSection";
 import SidebarCategories from "@/components/SidebarCategories";
 import TrustStrip from "@/components/TrustStrip";
 import FeaturedGrid from "@/components/FeaturedGrid";
 import { SearchIcon, CloseIcon, SparklesIcon, CheckIcon } from "@/components/icons";
+
+// Lazy load heavy modals and drawers (only loaded when interacted with)
+const SampleModal = dynamic(() => import("@/components/SampleModal"), { ssr: false });
+const CartDrawer = dynamic(() => import("@/components/CartDrawer"), { ssr: false });
 
 export default function HomePage() {
   const { categories, loading: categoriesLoading } = useCategories();
@@ -34,15 +37,13 @@ export default function HomePage() {
   const [apiNewArrivals, setApiNewArrivals] = useState<Course[]>([]);
 
   useEffect(() => {
-    fetch("/api/courses?featured=true")
-      .then((res) => res.json())
+    fetchWithCache<Course[]>("/api/courses?featured=true")
       .then((data) => setApiFeatured(Array.isArray(data) ? data : []))
-      .catch(() => setApiFeatured([]));
+      .catch(() => {});
 
-    fetch("/api/courses?new_arrivals=true")
-      .then((res) => res.json())
+    fetchWithCache<Course[]>("/api/courses?new_arrivals=true")
       .then((data) => setApiNewArrivals(Array.isArray(data) ? data : []))
-      .catch(() => setApiNewArrivals([]));
+      .catch(() => {});
   }, []);
 
 

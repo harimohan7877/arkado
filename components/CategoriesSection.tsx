@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Category, Settings } from "@/lib/store-types";
+import { fetchWithCache } from "@/lib/store-hooks";
 import { SearchIcon, CloseIcon, GridIcon } from "@/components/icons";
 
 interface CategoriesSectionProps {
@@ -22,15 +23,14 @@ export default function CategoriesSection({ categories, title, initialSettings }
   useEffect(() => {
     if (initialSettings) {
       setSettings(initialSettings);
+    } else {
+      fetchWithCache<Settings>("/api/settings")
+        .then((data) => {
+          if (data && typeof data === "object") setSettings(data);
+        })
+        .catch(() => {});
     }
   }, [initialSettings]);
-
-  useEffect(() => {
-    fetch(`/api/settings?t=${Date.now()}`, { cache: "no-store" })
-      .then(r => r.json())
-      .then(setSettings)
-      .catch(() => {});
-  }, []);
 
   // Filter categories by search
   const visibleCategories = useMemo(() => {

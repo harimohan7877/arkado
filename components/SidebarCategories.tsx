@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Category } from "@/lib/store-types";
+import { fetchWithCache } from "@/lib/store-hooks";
 import { DEFAULT_SETTINGS } from "@/lib/default-settings";
 import { ChevronRightIcon } from "@/components/icons";
 
@@ -17,10 +18,9 @@ export default function SidebarCategories({ activeCategory }: SidebarCategoriesP
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
-    fetch("/api/categories?scope=public")
-      .then((r) => r.json())
-      .then((data: Category[]) => {
-        const sorted = [...data].sort((a, b) => a.priority - b.priority);
+    fetchWithCache<Category[]>("/api/categories?scope=public")
+      .then((data) => {
+        const sorted = [...(Array.isArray(data) ? data : [])].sort((a, b) => a.priority - b.priority);
         setCategories(sorted);
       })
       .catch(() => {})

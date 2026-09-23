@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Settings } from "@/lib/store-types";
+import { fetchWithCache } from "@/lib/store-hooks";
 import { DEFAULT_SETTINGS } from "@/lib/default-settings";
 import {
   PhoneIcon,
@@ -27,9 +28,10 @@ export default function Footer() {
   const [settings, setSettings] = useState<Settings | null>(null);
 
   useEffect(() => {
-    fetch("/api/settings")
-      .then(r => r.json())
-      .then(setSettings)
+    fetchWithCache<Settings>("/api/settings")
+      .then((data) => {
+        if (data && typeof data === "object") setSettings(data);
+      })
       .catch(() => {});
   }, []);
 

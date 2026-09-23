@@ -3,16 +3,55 @@
 import { useState, useEffect } from "react";
 import { Category, Exam, Course, Settings } from "@/lib/store-types";
 
+// Client-side memory cache and in-flight request deduplication
+const CLIENT_CACHE = new Map<string, { data: any; timestamp: number }>();
+const PENDING_REQUESTS = new Map<string, Promise<any>>();
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes client cache
+
+export async function fetchWithCache<T>(url: string, bypassCache = false): Promise<T> {
+  const cached = CLIENT_CACHE.get(url);
+  if (!bypassCache && cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
+    return cached.data as T;
+  }
+
+  const inFlight = PENDING_REQUESTS.get(url);
+  if (inFlight) {
+    return inFlight as Promise<T>;
+  }
+
+  const promise = fetch(url)
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .then((data) => {
+      CLIENT_CACHE.set(url, { data, timestamp: Date.now() });
+      PENDING_REQUESTS.delete(url);
+      return data;
+    })
+    .catch((err) => {
+      PENDING_REQUESTS.delete(url);
+      throw err;
+    });
+
+  PENDING_REQUESTS.set(url, promise);
+  return promise as Promise<T>;
+}
+
 export function useCategories(scope: "public" | "all" = "public") {
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [categories, setCategories] = useState<Category[]>(() => {
+    const key = scope === "all" ? `/api/categories?scope=all` : `/api/categories?scope=public`;
+    return (CLIENT_CACHE.get(key)?.data as Category[]) || [];
+  });
+  const [loading, setLoading] = useState(() => categories.length === 0);
 
   useEffect(() => {
     let mounted = true;
-    const url = scope === "all" ? `/api/categories?scope=all&t=${Date.now()}` : `/api/categories?scope=public`;
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
+    const bypass = scope === "all";
+    const url = bypass ? `/api/categories?scope=all&t=${Date.now()}` : `/api/categories?scope=public`;
+    
+    fetchWithCache<Category[]>(url, bypass)
+      .then((data) => {
         if (mounted) {
           setCategories(Array.isArray(data) ? data : []);
           setLoading(false);
@@ -24,24 +63,30 @@ export function useCategories(scope: "public" | "all" = "public") {
           setLoading(false);
         }
       });
-    return () => { mounted = false; };
+
+    return () => {
+      mounted = false;
+    };
   }, [scope]);
 
   return { categories, loading };
 }
 
 export function useExams(categoryId?: string, scope: "public" | "all" = "public") {
-  const [exams, setExams] = useState<Exam[]>([]);
-  const [loading, setLoading] = useState(true);
+  const bypass = scope === "all";
+  const url = categoryId
+    ? (bypass ? `/api/exams?category=${categoryId}&scope=all&t=${Date.now()}` : `/api/exams?category=${categoryId}&scope=public`)
+    : (bypass ? `/api/exams?scope=all&t=${Date.now()}` : `/api/exams?scope=public`);
+
+  const [exams, setExams] = useState<Exam[]>(() => {
+    return (CLIENT_CACHE.get(url)?.data as Exam[]) || [];
+  });
+  const [loading, setLoading] = useState(() => exams.length === 0);
 
   useEffect(() => {
     let mounted = true;
-    const url = categoryId
-      ? (scope === "all" ? `/api/exams?category=${categoryId}&scope=all&t=${Date.now()}` : `/api/exams?category=${categoryId}&scope=public`)
-      : (scope === "all" ? `/api/exams?scope=all&t=${Date.now()}` : `/api/exams?scope=public`);
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
+    fetchWithCache<Exam[]>(url, bypass)
+      .then((data) => {
         if (mounted) {
           setExams(Array.isArray(data) ? data : []);
           setLoading(false);
@@ -53,22 +98,26 @@ export function useExams(categoryId?: string, scope: "public" | "all" = "public"
           setLoading(false);
         }
       });
-    return () => { mounted = false; };
-  }, [categoryId, scope]);
+
+    return () => {
+      mounted = false;
+    };
+  }, [categoryId, scope, url, bypass]);
 
   return { exams, loading };
 }
 
 export function useCourses(examId?: string) {
-  const [courses, setCourses] = useState<Course[]>([]);
-  const [loading, setLoading] = useState(true);
+  const url = examId ? `/api/courses?exam=${encodeURIComponent(examId)}` : `/api/courses`;
+  const [courses, setCourses] = useState<Course[]>(() => {
+    return (CLIENT_CACHE.get(url)?.data as Course[]) || [];
+  });
+  const [loading, setLoading] = useState(() => courses.length === 0);
 
   useEffect(() => {
     let mounted = true;
-    const url = examId ? `/api/courses?exam=${encodeURIComponent(examId)}` : `/api/courses`;
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
+    fetchWithCache<Course[]>(url)
+      .then((data) => {
         if (mounted) {
           setCourses(Array.isArray(data) ? data : []);
           setLoading(false);
@@ -80,21 +129,26 @@ export function useCourses(examId?: string) {
           setLoading(false);
         }
       });
-    return () => { mounted = false; };
-  }, [examId]);
+
+    return () => {
+      mounted = false;
+    };
+  }, [examId, url]);
 
   return { courses, loading };
 }
 
 export function useSliderCourses() {
-  const [courses, setCourses] = useState<Course[]>([]);
-  const [loading, setLoading] = useState(true);
+  const url = `/api/courses?slider=true`;
+  const [courses, setCourses] = useState<Course[]>(() => {
+    return (CLIENT_CACHE.get(url)?.data as Course[]) || [];
+  });
+  const [loading, setLoading] = useState(() => courses.length === 0);
 
   useEffect(() => {
     let mounted = true;
-    fetch(`/api/courses?slider=true`)
-      .then(res => res.json())
-      .then(data => {
+    fetchWithCache<Course[]>(url)
+      .then((data) => {
         if (mounted) {
           setCourses(Array.isArray(data) ? data : []);
           setLoading(false);
@@ -106,21 +160,26 @@ export function useSliderCourses() {
           setLoading(false);
         }
       });
-    return () => { mounted = false; };
-  }, []);
+
+    return () => {
+      mounted = false;
+    };
+  }, [url]);
 
   return { courses, loading };
 }
 
 export function useSettings() {
-  const [settings, setSettings] = useState<Settings | null>(null);
-  const [loading, setLoading] = useState(true);
+  const url = `/api/settings`;
+  const [settings, setSettings] = useState<Settings | null>(() => {
+    return (CLIENT_CACHE.get(url)?.data as Settings) || null;
+  });
+  const [loading, setLoading] = useState(() => !settings);
 
   useEffect(() => {
     let mounted = true;
-    fetch(`/api/settings`)
-      .then(res => res.json())
-      .then(data => {
+    fetchWithCache<Settings>(url)
+      .then((data) => {
         if (mounted) {
           setSettings(data && typeof data === "object" ? data : null);
           setLoading(false);
@@ -132,8 +191,11 @@ export function useSettings() {
           setLoading(false);
         }
       });
-    return () => { mounted = false; };
-  }, []);
+
+    return () => {
+      mounted = false;
+    };
+  }, [url]);
 
   return { settings, loading };
 }

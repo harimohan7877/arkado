@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Settings } from "@/lib/store-types";
+import { fetchWithCache } from "@/lib/store-hooks";
 import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import {
   WhatsappIcon,
@@ -37,9 +38,10 @@ export default function SocialFab() {
   const pathname = usePathname();
 
   useEffect(() => {
-    fetch("/api/settings")
-      .then((r) => r.json())
-      .then(setSettings)
+    fetchWithCache<Settings>("/api/settings")
+      .then((data) => {
+        if (data && typeof data === "object") setSettings(data);
+      })
       .catch(() => {});
   }, []);
 

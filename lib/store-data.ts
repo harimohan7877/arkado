@@ -1,6 +1,7 @@
 import { readFile, writeFile, mkdir } from "fs/promises";
 import { existsSync } from "fs";
 import { join, dirname } from "path";
+import { revalidatePath } from "next/cache";
 import { supabaseAdmin } from "@/lib/supabase";
 
 export const ALLOWED_IMAGE_TYPES = [
@@ -215,20 +216,30 @@ interface CacheEntry {
 const SERVER_STORE_CACHE: Record<string, CacheEntry> = {};
 const CACHE_TTL_MS = 10 * 1000; // 10 seconds server cache for instant admin reflection
 
+const KEY_COLUMN_MAP: Record<string, string> = {
+  courses: "openrouter_key",
+  settings: "gemini_key",
+  categories: "claude_key",
+  featured_exams: "openai_key",
+  orders: "openai_key",
+};
+
 export async function getStoreData<T>(key: string, localFilePath: string, defaultValue: T): Promise<T> {
   const cached = SERVER_STORE_CACHE[key];
   if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
     return cached.data as T;
   }
 
-  // 1. Check Supabase admin_settings text columns (GUARANTEED TO PERSIST ON VERCEL & CLOUD)
+  // 1. Check Supabase admin_settings targeted text column (Fast, lightweight ~2KB-23KB instead of 166KB)
   try {
-    const { data: adminRow } = await supabaseAdmin
+    const colToFetch = KEY_COLUMN_MAP[key] || "openrouter_key, gemini_key, claude_key, openai_key";
+    const { data: rawRow } = await supabaseAdmin
       .from("admin_settings")
-      .select("id, gemini_key, claude_key, openai_key, openrouter_key")
+      .select(`id, ${colToFetch}` as any)
       .limit(1)
       .maybeSingle();
 
+    const adminRow = rawRow as Record<string, any> | null;
     if (adminRow) {
       if (key === "categories" && adminRow.claude_key && (adminRow.claude_key.startsWith("[") || adminRow.claude_key.startsWith("{"))) {
         const parsed = JSON.parse(adminRow.claude_key);
@@ -335,7 +346,23 @@ export async function setStoreData<T>(key: string, localFilePath: string, data: 
     console.error(`[store-data] Supabase save error for key=${key}:`, err);
   }
 
-  // 2. Write to local candidate paths (for local development and git sync)
+  // 2. On-demand Edge CDN & Next.js cache purge (Bust-on-write pattern)
+  try {
+    if (key === "courses" || key === "featured_exams") {
+      revalidatePath("/api/courses");
+      revalidatePath("/exams");
+      revalidatePath("/");
+    } else if (key === "categories") {
+      revalidatePath("/api/categories");
+      revalidatePath("/api/exams");
+      revalidatePath("/");
+    } else if (key === "settings") {
+      revalidatePath("/api/settings");
+      revalidatePath("/");
+    }
+  } catch {}
+
+  // 3. Write to local candidate paths (for local development and git sync)
   const candidates = getCandidatePaths(localFilePath);
   for (const p of candidates) {
     try {

@@ -60,7 +60,9 @@ export async function GET(req: Request) {
     });
 
     const cacheHeaders = {
-      "Cache-Control": "public, no-cache, must-revalidate",
+      "Cache-Control": includeInactive
+        ? "no-store, no-cache, must-revalidate"
+        : "public, s-maxage=10, stale-while-revalidate=59",
     };
 
     if (featured === "true") {

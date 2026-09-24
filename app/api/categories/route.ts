@@ -54,7 +54,9 @@ export async function GET(req: Request) {
       };
     });
 
-    const cacheHeader = "public, no-cache, must-revalidate";
+    const cacheHeader = scope === "all"
+      ? "no-store, no-cache, must-revalidate"
+      : "public, s-maxage=10, stale-while-revalidate=59";
 
     return NextResponse.json(formatted, {
       headers: {

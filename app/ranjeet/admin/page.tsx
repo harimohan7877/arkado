@@ -3,12 +3,12 @@
 import { useState, useEffect, startTransition } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import CategoriesTab from "@/app/admin/components/CategoriesTab";
-import FeaturedTab from "@/app/admin/components/FeaturedTab";
-import ExamsTab from "@/app/admin/components/ExamsTab";
-import CoursesTab from "@/app/admin/components/CoursesTab";
-import OrdersTab from "@/app/admin/components/OrdersTab";
-import SettingsTab from "@/app/admin/components/SettingsTab";
+import CategoriesTab from "@/components/admin/CategoriesTab";
+import FeaturedTab from "@/components/admin/FeaturedTab";
+import ExamsTab from "@/components/admin/ExamsTab";
+import CoursesTab from "@/components/admin/CoursesTab";
+import OrdersTab from "@/components/admin/OrdersTab";
+import SettingsTab from "@/components/admin/SettingsTab";
 
 interface MarketplaceOrder {
   id: string;

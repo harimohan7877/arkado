@@ -18,8 +18,6 @@ export async function proxy(req: NextRequest) {
     const validCookies = [
       expectedPasscode,
       "99502521387877489932hhh@@@",
-      "7877",
-      "true",
     ];
 
     let isValid = false;

@@ -2,7 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { getStoreData, setStoreData } from "@/lib/store-data";
 import { verifyAdminSession } from "@/lib/admin-auth";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 interface CategoryRecord {
   id: string;
@@ -59,9 +60,7 @@ export async function GET(req: Request) {
     });
 
     const cacheHeaders = {
-      "Cache-Control": includeInactive
-        ? "no-store, no-cache, must-revalidate"
-        : "public, s-maxage=120, stale-while-revalidate=600",
+      "Cache-Control": "public, no-cache, must-revalidate",
     };
 
     if (featured === "true") {

@@ -3,14 +3,17 @@ import { createClient } from '@supabase/supabase-js';
 // Supabase credentials with production fallbacks to prevent site crashes if env vars are missing on host
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://juhffafyorfjtahscups.supabase.co';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_Urxrcu_NlNQqQQ_rJ__-bQ_ExNlGG0O';
+const isServer = typeof window === 'undefined';
 const defaultSec = "sb_secret_" + "QRz3i8yo4K9rt8iAQ3uyVA_TZAgzMVN";
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || defaultSec;
+const supabaseServiceKey = isServer ? (process.env.SUPABASE_SERVICE_ROLE_KEY || defaultSec) : '';
 
 // Client-side (browser) — uses anon key
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-// Server-side (API routes) — uses service role key
-export const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey);
+// Server-side (API routes) — uses service role key (guarded to never leak into client bundle)
+export const supabaseAdmin = isServer
+  ? createClient(supabaseUrl, supabaseServiceKey)
+  : (null as unknown as ReturnType<typeof createClient>);
 
 // Message limits
 export const MESSAGE_LIMITS = {

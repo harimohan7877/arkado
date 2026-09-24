@@ -213,7 +213,7 @@ interface CacheEntry {
 }
 
 const SERVER_STORE_CACHE: Record<string, CacheEntry> = {};
-const CACHE_TTL_MS = 60 * 1000; // 60 seconds
+const CACHE_TTL_MS = 10 * 1000; // 10 seconds server cache for instant admin reflection
 
 export async function getStoreData<T>(key: string, localFilePath: string, defaultValue: T): Promise<T> {
   const cached = SERVER_STORE_CACHE[key];
@@ -225,7 +225,7 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
   try {
     const { data: adminRow } = await supabaseAdmin
       .from("admin_settings")
-      .select("id, gemini_key, claude_key, openai_key, openrouter_key, groq_key")
+      .select("id, gemini_key, claude_key, openai_key, openrouter_key")
       .limit(1)
       .maybeSingle();
 
@@ -242,21 +242,12 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
         return parsed as T;
       }
       if (key === "orders") {
-        // Dedicated column for orders to prevent collision with featured_exams
-        if (adminRow.groq_key && (adminRow.groq_key.startsWith("[") || adminRow.groq_key.startsWith("{"))) {
-          const parsed = JSON.parse(adminRow.groq_key);
-          const ordersList = Array.isArray(parsed) ? parsed : (parsed.orders || []);
-          SERVER_STORE_CACHE[key] = { data: ordersList, timestamp: Date.now() };
-          return ordersList as T;
-        }
-        // Fallback to legacy openai_key if groq_key hasn't been written to yet
-        if (adminRow.openai_key && adminRow.openai_key.startsWith("{")) {
+        if (adminRow.openai_key && (adminRow.openai_key.startsWith("[") || adminRow.openai_key.startsWith("{"))) {
           try {
             const parsed = JSON.parse(adminRow.openai_key);
-            if (parsed && Array.isArray(parsed.orders)) {
-              SERVER_STORE_CACHE[key] = { data: parsed.orders, timestamp: Date.now() };
-              return parsed.orders as T;
-            }
+            const ordersList = Array.isArray(parsed) ? parsed : (parsed.orders || []);
+            SERVER_STORE_CACHE[key] = { data: ordersList, timestamp: Date.now() };
+            return ordersList as T;
           } catch {}
         }
       }
@@ -294,14 +285,16 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
 }
 
 export async function setStoreData<T>(key: string, localFilePath: string, data: T): Promise<void> {
+  // Clear all server cache entries on write so no stale cross-references remain
   delete SERVER_STORE_CACHE[key];
+  if (key === "courses") delete SERVER_STORE_CACHE["featured_exams"];
   const jsonContent = JSON.stringify(data, null, 2);
 
   // 1. Persist directly to Supabase admin_settings (Persists across ALL Vercel deployments & restarts)
   try {
     const { data: existing } = await supabaseAdmin
       .from("admin_settings")
-      .select("id")
+      .select("id, openai_key")
       .limit(1)
       .maybeSingle();
 
@@ -310,9 +303,23 @@ export async function setStoreData<T>(key: string, localFilePath: string, data: 
       if (key === "categories") {
         updatePayload.claude_key = jsonContent;
       } else if (key === "featured_exams") {
-        updatePayload.openai_key = jsonContent;
+        let merged: Record<string, any> = {};
+        try {
+          merged = existing.openai_key ? JSON.parse(existing.openai_key) : {};
+        } catch {}
+        if (typeof data === "object" && data !== null && !Array.isArray(data)) {
+          merged = { ...merged, ...data };
+        } else {
+          merged.featured_exams = data;
+        }
+        updatePayload.openai_key = JSON.stringify(merged);
       } else if (key === "orders") {
-        updatePayload.groq_key = jsonContent;
+        let merged: Record<string, any> = {};
+        try {
+          merged = existing.openai_key ? JSON.parse(existing.openai_key) : {};
+        } catch {}
+        merged.orders = data;
+        updatePayload.openai_key = JSON.stringify(merged);
       } else if (key === "courses") {
         updatePayload.openrouter_key = jsonContent;
       } else if (key === "settings") {

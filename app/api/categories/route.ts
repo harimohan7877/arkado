@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { getStoreData } from "@/lib/store-data";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -53,9 +54,7 @@ export async function GET(req: Request) {
       };
     });
 
-    const cacheHeader = scope === "all"
-      ? "no-store, no-cache, must-revalidate"
-      : "public, s-maxage=60, stale-while-revalidate=300";
+    const cacheHeader = "public, no-cache, must-revalidate";
 
     return NextResponse.json(formatted, {
       headers: {

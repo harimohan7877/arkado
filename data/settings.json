@@ -1,5 +1,5 @@
 {
-  "upi_id": "7852004401@ybl",
+  "upi_id": "9950252138-3@ibl",
   "merchant_name": "Arkado",
   "whatsapp_support_number": "917852004401",
   "gmail_support_email": "support@arkado.in",
@@ -20,6 +20,14 @@
     "footer_tagline": "All-India exam preparation — deep-level analysis & pattern-based notes."
   },
   "homepage": {
+    "hero_badge": "2026 PATTERN DECODED",
+    "hero_headline": "RSMSSB CET & Rajasthan Exam Bundles",
+    "featured_section_title": "Featured Bundles",
+    "hot_deals_title": "Today's Hot Deals",
+    "new_arrivals_title": "New Arrivals",
+    "categories_section_title": "Browse Top Categories",
+    "products_section_title": "All Exam Bundles",
+    "faq_section_title": "Common Questions",
     "section_order": [
       "hero",
       "trust_strip",
@@ -32,22 +40,61 @@
       "faq"
     ],
     "sections": {
-      "hero": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "Hero Slider & Sidebar" },
-      "trust_strip": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "Trust Strip (Features)" },
-      "featured_bundles": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "Featured Bundles" },
-      "promo_banner": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "Crack Any Exam with Deep-Level Analysis" },
-      "categories": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "Browse Top Categories" },
-      "all_products": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "All Bundles Grid" },
-      "hot_deals": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "Today's Hot Deals" },
-      "new_arrivals": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "New Arrivals" },
-      "faq": { "enabled": true, "show_on_mobile": true, "show_on_desktop": true, "title": "Common Questions" }
+      "hero": {
+        "enabled": true,
+        "show_on_mobile": true,
+        "show_on_desktop": true,
+        "title": "Hero Slider & Sidebar"
+      },
+      "trust_strip": {
+        "enabled": true,
+        "show_on_mobile": true,
+        "show_on_desktop": true,
+        "title": "Trust Strip (Features)"
+      },
+      "featured_bundles": {
+        "enabled": true,
+        "show_on_mobile": true,
+        "show_on_desktop": true,
+        "title": "Featured Bundles"
+      },
+      "promo_banner": {
+        "enabled": true,
+        "show_on_mobile": true,
+        "show_on_desktop": true,
+        "title": "Crack Any Exam with Deep-Level Analysis"
+      },
+      "categories": {
+        "enabled": true,
+        "show_on_mobile": true,
+        "show_on_desktop": true,
+        "title": "Browse Top Categories"
+      },
+      "all_products": {
+        "enabled": true,
+        "show_on_mobile": true,
+        "show_on_desktop": true,
+        "title": "All Bundles Grid"
+      },
+      "hot_deals": {
+        "enabled": true,
+        "show_on_mobile": true,
+        "show_on_desktop": true,
+        "title": "Today's Hot Deals"
+      },
+      "new_arrivals": {
+        "enabled": true,
+        "show_on_mobile": true,
+        "show_on_desktop": true,
+        "title": "New Arrivals"
+      },
+      "faq": {
+        "enabled": true,
+        "show_on_mobile": true,
+        "show_on_desktop": true,
+        "title": "Common Questions"
+      }
     },
-    "hero_badge": "2026 PATTERN DECODED",
-    "hero_headline": "RSMSSB CET & Rajasthan Exam Bundles",
-    "featured_section_title": "Featured Bundles",
-    "hot_deals_title": "Today's Hot Deals",
-    "new_arrivals_title": "New Arrivals",
-    "categories_section_title": "Browse Top Categories",
     "newsletter_title": "🎯 सीधे WhatsApp व Email पर पाएं फ्री अपडेट्स व नए नोट्स!",
     "newsletter_subtitle": "हजारों छात्रों का भरोसा — कोई स्पैम नहीं, सिर्फ परीक्षा उपयोगी अपडेट्स व स्पेशल छूट।",
     "newsletter_placeholder": "अपना Email या WhatsApp Number दर्ज करें...",
@@ -134,7 +181,7 @@
     "gmail_url": "mailto:support@arkado.in",
     "share_enabled": true
   },
-  "updated_at": "2026-09-20T16:15:16.519Z",
+  "updated_at": "2026-09-24T01:17:40.768Z",
   "contact": {
     "phone": "+91 7852004401",
     "whatsapp_number": "917852004401",

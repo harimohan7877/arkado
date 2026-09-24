@@ -230,7 +230,85 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
     return cached.data as T;
   }
 
-  // 1. Check Supabase admin_settings targeted text column (Fast, lightweight ~2KB-23KB instead of 166KB)
+  // 1. PRIMARY DUAL-READ: Supabase Relational Tables (Direct SQL queries, indexed, sub-millisecond)
+  if (key === "courses") {
+    try {
+      const { data: products, error: pErr } = await supabaseAdmin
+        .from("marketplace_products")
+        .select("*")
+        .order("created_at", { ascending: true });
+
+      if (!pErr && Array.isArray(products) && products.length > 0) {
+        const courses = products.map((p) => {
+          let meta: Record<string, any> = {};
+          if (p.description) {
+            try {
+              if (p.description.startsWith("{") || p.description.startsWith("[")) {
+                meta = JSON.parse(p.description);
+              }
+            } catch {}
+          }
+          return {
+            ...meta,
+            id: p.id || meta.id,
+            title: p.title || meta.title || "",
+            price: p.sale_price !== null && p.sale_price !== undefined ? p.sale_price : (meta.price ?? 99),
+            original_price: p.price !== null && p.price !== undefined ? p.price : (meta.original_price ?? 999),
+            is_active: p.is_active !== null && p.is_active !== undefined ? p.is_active : (meta.is_active ?? true),
+            cover_image: p.cover_image || meta.cover_image || "",
+            drive_url: p.drive_url || meta.drive_url || "",
+            language: p.language || meta.language || "हिन्दी (Hindi)",
+            exam_board: p.exam_name || meta.exam_board || "",
+            category: p.group_name || meta.category || "",
+            badge: p.type || meta.badge || "",
+            pages_count: p.pages ? `${p.pages}+ Pages` : (meta.pages_count || ""),
+          };
+        });
+
+        SERVER_STORE_CACHE[key] = { data: courses, timestamp: Date.now() };
+        return courses as unknown as T;
+      }
+    } catch (err) {
+      console.warn("[store-data] Primary read from marketplace_products failed, falling back to legacy:", err);
+    }
+  }
+
+  if (key === "categories") {
+    try {
+      const { data: groups, error: gErr } = await supabaseAdmin
+        .from("marketplace_groups")
+        .select("*")
+        .order("priority", { ascending: true });
+
+      if (!gErr && Array.isArray(groups) && groups.length > 0) {
+        const categories = groups.map((g) => {
+          let meta: Record<string, any> = {};
+          if (g.description) {
+            try {
+              if (g.description.startsWith("{") || g.description.startsWith("[")) {
+                meta = JSON.parse(g.description);
+              }
+            } catch {}
+          }
+          return {
+            ...meta,
+            id: g.slug || meta.id || g.id,
+            name: g.name || meta.name || "",
+            logo_url: g.logo_url || meta.logo_url || "",
+            priority: typeof g.priority === "number" ? g.priority : (meta.priority ?? 1),
+            is_active: g.is_active !== null && g.is_active !== undefined ? g.is_active : (meta.is_active ?? true),
+          };
+        });
+
+        SERVER_STORE_CACHE[key] = { data: categories, timestamp: Date.now() };
+        return categories as unknown as T;
+      }
+    } catch (err) {
+      console.warn("[store-data] Primary read from marketplace_groups failed, falling back to legacy:", err);
+    }
+  }
+
+  // 2. SECONDARY FALLBACK: Supabase admin_settings targeted columns (Legacy compatibility)
   try {
     const colToFetch = KEY_COLUMN_MAP[key] || "openrouter_key, gemini_key, claude_key, openai_key";
     const { data: rawRow } = await supabaseAdmin
@@ -278,7 +356,7 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
     console.warn(`[store-data] Supabase read error for key=${key}:`, err);
   }
 
-  // 2. Fallback to candidate local JSON files
+  // 3. TERTIARY FALLBACK: Local candidate JSON files
   const candidates = getCandidatePaths(localFilePath);
   for (const p of candidates) {
     try {
@@ -301,7 +379,69 @@ export async function setStoreData<T>(key: string, localFilePath: string, data: 
   if (key === "courses") delete SERVER_STORE_CACHE["featured_exams"];
   const jsonContent = JSON.stringify(data, null, 2);
 
-  // 1. Persist directly to Supabase admin_settings (Persists across ALL Vercel deployments & restarts)
+  // 1. PRIMARY DUAL-WRITE: Write to relational tables (marketplace_products / marketplace_groups)
+  if (key === "courses" && Array.isArray(data)) {
+    try {
+      const rows = (data as any[]).map((course, idx) => ({
+        id: String(course.id || `course-${Date.now()}-${idx}`),
+        title: course.title || "",
+        exam_name: course.exam_board || course.exam_id || "",
+        group_name: course.category || "",
+        type: course.badge || "notes",
+        price: typeof course.original_price === "number" ? course.original_price : (typeof course.price === "number" ? course.price : 999),
+        sale_price: typeof course.price === "number" ? course.price : 99,
+        pages: typeof course.pages_count === "string" ? parseInt(course.pages_count.replace(/\D/g, "")) || 0 : (course.pages_count || 0),
+        language: course.language || "हिन्दी (Hindi)",
+        drive_url: course.drive_url || course.sample_pdf_url || "",
+        cover_image: course.cover_image || "",
+        description: JSON.stringify(course),
+        is_active: course.is_active !== false,
+        created_at: course.updated_at || new Date().toISOString(),
+      }));
+
+      const { error: pErr } = await supabaseAdmin
+        .from("marketplace_products")
+        .upsert(rows, { onConflict: "id" });
+
+      if (pErr) {
+        console.warn("[store-data] marketplace_products upsert error:", pErr.message);
+      }
+
+      // Cleanup deleted items if any
+      const activeIds = rows.map((r) => r.id);
+      if (activeIds.length > 0) {
+        await supabaseAdmin
+          .from("marketplace_products")
+          .delete()
+          .not("id", "in", `(${activeIds.join(",")})`);
+      }
+    } catch (err) {
+      console.error("[store-data] marketplace_products write error:", err);
+    }
+  } else if (key === "categories" && Array.isArray(data)) {
+    try {
+      const rows = (data as any[]).map((cat, idx) => ({
+        name: cat.name || cat.name_hi || "",
+        slug: cat.id || `category-${idx}`,
+        description: JSON.stringify(cat),
+        logo_url: cat.logo_url || "",
+        priority: typeof cat.priority === "number" ? cat.priority : (idx + 1),
+        is_active: cat.is_active !== false,
+      }));
+
+      const { error: gErr } = await supabaseAdmin
+        .from("marketplace_groups")
+        .upsert(rows, { onConflict: "slug" });
+
+      if (gErr) {
+        console.warn("[store-data] marketplace_groups upsert error:", gErr.message);
+      }
+    } catch (err) {
+      console.error("[store-data] marketplace_groups write error:", err);
+    }
+  }
+
+  // 2. DUAL-WRITE BACKUP: Persist to Supabase admin_settings legacy columns (ensures Python controller & legacy tools never break)
   try {
     const { data: existing } = await supabaseAdmin
       .from("admin_settings")
@@ -346,7 +486,7 @@ export async function setStoreData<T>(key: string, localFilePath: string, data: 
     console.error(`[store-data] Supabase save error for key=${key}:`, err);
   }
 
-  // 2. On-demand Edge CDN & Next.js cache purge (Bust-on-write pattern)
+  // 3. On-demand Edge CDN & Next.js cache purge (Bust-on-write pattern)
   try {
     if (key === "courses" || key === "featured_exams") {
       revalidatePath("/api/courses");
@@ -362,7 +502,7 @@ export async function setStoreData<T>(key: string, localFilePath: string, data: 
     }
   } catch {}
 
-  // 3. Write to local candidate paths (for local development and git sync)
+  // 4. Write to local candidate paths (for local development and git sync)
   const candidates = getCandidatePaths(localFilePath);
   for (const p of candidates) {
     try {

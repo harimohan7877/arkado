@@ -138,16 +138,39 @@ The core objective was to transform the platform from an unstable, hijacked-key,
 
 ---
 
-## 5. Summary of Modified & Created Files
+## 5. Phase 3: Enterprise Payment Architecture & Anti-Fraud Security (Completed)
 
-1. [`lib/store-data.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/lib/store-data.ts): Dual-Read / Dual-Write adapter logic, relational table queries, Edge CDN invalidation.
-2. [`app/ranjeet/admin/page.tsx`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/app/ranjeet/admin/page.tsx): Updated to import from new centralized admin components.
-3. [`proxy.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/proxy.ts): Removed hardcoded bypass credentials.
-4. [`components/admin/`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/components/admin):
-   - `CategoriesTab.tsx`
-   - `CoursesTab.tsx`
-   - `ExamsTab.tsx`
-   - `FeaturedTab.tsx`
-   - `OrdersTab.tsx`
-   - `SettingsTab.tsx`
-5. [`CHANGELOG_2026_09_24.md`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/CHANGELOG_2026_09_24.md): This comprehensive architectural log.
+### Red-Team Security Audit & Fraud Defenses Implemented:
+1. **Server-Authoritative Price Validation (`lib/payment-gateway.ts`):**
+   - Eliminated client price tampering. Server queries `marketplace_products` database to fetch the exact price, overriding any client-manipulated amount.
+2. **Google Drive Asset Protection (`app/api/courses/route.ts`):**
+   - Stripped `drive_url` from public API responses. Public visitors cannot see or steal course Drive links via Chrome DevTools. Only paying customers and verified admins receive the download link.
+3. **Timing-Safe Cryptographic Signature Verification:**
+   - Replaced standard string equality with `crypto.timingSafeEqual` in `verify-marketplace`, stopping side-channel timing attacks.
+4. **Asynchronous Razorpay Webhook Handler (`app/api/payment/webhook/route.ts`):**
+   - Automatically catches `order.paid` and `payment.captured` server-to-server. Guarantees zero lost orders even if the student's mobile battery dies or internet drops during redirect.
+5. **UTR Anti-Fraud & Duplicate Prevention (`app/api/orders/route.ts`):**
+   - Validates 12-digit UPI format and scans existing orders for duplicate UTR submissions. Flags suspicious repeat attempts.
+6. **Unified Relational Order Storage (`orders-schema.sql`):**
+   - Manual UPI and online orders synced directly to `marketplace_orders` relational table in Supabase, with dual-write backup to `data/orders.json` and `admin_settings`.
+7. **Dormant Feature Flagging:**
+   - Active manual UPI QR / WhatsApp checkout continues running seamlessly with ZERO disruption.
+   - When Razorpay keys arrive, adding them to `.env.local` instantly activates the enterprise gateway without touching code.
+
+---
+
+## 6. Summary of Modified & Created Files
+
+1. [`lib/payment-gateway.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/lib/payment-gateway.ts): Enterprise payment security module, authoritative price checker, timing-safe crypto, UTR anti-fraud.
+2. [`app/api/payment/create-marketplace-order/route.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/app/api/payment/create-marketplace-order/route.ts): Hardened checkout endpoint with server-enforced pricing.
+3. [`app/api/payment/verify-marketplace/route.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/app/api/payment/verify-marketplace/route.ts): Timing-safe signature check, idempotency guard, secure delivery response.
+4. [`app/api/payment/webhook/route.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/app/api/payment/webhook/route.ts): Enterprise background webhook listener.
+5. [`app/api/orders/route.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/app/api/orders/route.ts): Active manual UPI route with UTR fraud check and relational DB sync.
+6. [`app/api/courses/route.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/app/api/courses/route.ts): Strips `drive_url` from public API responses.
+7. [`orders-schema.sql`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/orders-schema.sql): Complete SQL migration script for `marketplace_orders`.
+8. [`lib/store-data.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/lib/store-data.ts): Dual-Read / Dual-Write relational adapter.
+9. [`app/ranjeet/admin/page.tsx`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/app/ranjeet/admin/page.tsx): Centralized admin control panel.
+10. [`proxy.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/proxy.ts): Hardened proxy security.
+11. [`components/admin/`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/components/admin): Centralized admin tab components.
+12. [`CHANGELOG_2026_09_24.md`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/CHANGELOG_2026_09_24.md): Comprehensive architectural log.
+

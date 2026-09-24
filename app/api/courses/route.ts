@@ -41,13 +41,22 @@ interface FeaturedStore {
   new_arrivals?: FeaturedExamConfig[];
 }
 
-export async function GET(req: Request) {
+function sanitizeCourses(courses: any[], isAdmin: boolean): any[] {
+  if (isAdmin) return courses;
+  return courses.map((c) => {
+    const { drive_url, ...safeCourse } = c;
+    return safeCourse;
+  });
+}
+
+export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const exam = searchParams.get("exam");
   const slider = searchParams.get("slider");
   const featured = searchParams.get("featured");
   const newArrivals = searchParams.get("new_arrivals");
   const includeInactive = searchParams.get("all") === "true";
+  const isAdmin = verifyAdminSession(req);
 
   try {
     const customCourses = await getStoreData<any[]>("courses", "data/courses-new.json", []);
@@ -98,11 +107,11 @@ export async function GET(req: Request) {
       }
 
       if (result.length === 0) {
-        return NextResponse.json(allMergedCourses.filter((c) => c.is_active).slice(0, 4), { headers: cacheHeaders });
+        return NextResponse.json(sanitizeCourses(allMergedCourses.filter((c) => c.is_active).slice(0, 4), isAdmin), { headers: cacheHeaders });
       }
 
       result.sort((a, b) => (a.featured_priority || 99) - (b.featured_priority || 99));
-      return NextResponse.json(result, { headers: cacheHeaders });
+      return NextResponse.json(sanitizeCourses(result, isAdmin), { headers: cacheHeaders });
     }
 
     if (newArrivals === "true") {
@@ -138,11 +147,11 @@ export async function GET(req: Request) {
       }
 
       if (result.length === 0) {
-        return NextResponse.json(allMergedCourses.filter((c) => c.is_active).slice(0, 4), { headers: cacheHeaders });
+        return NextResponse.json(sanitizeCourses(allMergedCourses.filter((c) => c.is_active).slice(0, 4), isAdmin), { headers: cacheHeaders });
       }
 
       result.sort((a, b) => (a.new_arrival_priority || 99) - (b.new_arrival_priority || 99));
-      return NextResponse.json(result, { headers: cacheHeaders });
+      return NextResponse.json(sanitizeCourses(result, isAdmin), { headers: cacheHeaders });
     }
 
     if (slider === "true") {
@@ -150,14 +159,14 @@ export async function GET(req: Request) {
       if (sliderList.length === 0) {
         sliderList = allMergedCourses.filter((c) => c.is_active).slice(0, 4);
       }
-      return NextResponse.json(sliderList, { headers: cacheHeaders });
+      return NextResponse.json(sanitizeCourses(sliderList, isAdmin), { headers: cacheHeaders });
     }
 
     if (exam) {
       const filtered = allMergedCourses.filter(
         (c) => (includeInactive || c.is_active) && (c.exam_id === exam || c.id === exam || c.slug === exam)
       );
-      return NextResponse.json(filtered, { headers: cacheHeaders });
+      return NextResponse.json(sanitizeCourses(filtered, isAdmin), { headers: cacheHeaders });
     }
 
     let finalCourses = allMergedCourses;
@@ -165,7 +174,7 @@ export async function GET(req: Request) {
       finalCourses = finalCourses.filter((c) => c.is_active);
     }
 
-    return NextResponse.json(finalCourses.sort((a, b) => (a.priority || 0) - (b.priority || 0)), { headers: cacheHeaders });
+    return NextResponse.json(sanitizeCourses(finalCourses.sort((a, b) => (a.priority || 0) - (b.priority || 0)), isAdmin), { headers: cacheHeaders });
   } catch {
     return NextResponse.json([]);
   }

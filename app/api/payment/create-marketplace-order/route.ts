@@ -1,51 +1,88 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
 import Razorpay from "razorpay";
+import {
+  hasRazorpayKeys,
+  validateOrderPrices,
+  sanitizeInput,
+} from "@/lib/payment-gateway";
 
 export async function POST(req: NextRequest) {
   try {
-    const { customerName, customerEmail, products, totalAmount } = await req.json();
+    // 1. Feature Flag / Dormant Check
+    if (!hasRazorpayKeys()) {
+      return NextResponse.json(
+        {
+          error: "Payment gateway is currently dormant. Please use manual UPI / WhatsApp checkout.",
+          is_gateway_active: false,
+        },
+        { status: 503 }
+      );
+    }
+
+    const body = await req.json();
+    const rawName = body.customerName;
+    const rawEmail = body.customerEmail;
+    const rawPhone = body.customerPhone || "";
+    const products = body.products;
+    const clientReportedTotal = typeof body.totalAmount === "number" ? body.totalAmount : undefined;
+
+    const customerName = sanitizeInput(rawName);
+    const customerEmail = sanitizeInput(rawEmail);
+    const customerPhone = sanitizeInput(rawPhone);
 
     if (!customerName || !customerEmail || !products || !Array.isArray(products) || products.length === 0) {
-      return NextResponse.json({ error: "Missing required checkout information" }, { status: 400 });
+      return NextResponse.json({ error: "Missing required checkout information." }, { status: 400 });
     }
 
-    const keyId = process.env.RAZORPAY_KEY_ID;
-    const keySecret = process.env.RAZORPAY_KEY_SECRET;
+    // 2. Anti-Price Tampering: Server-Authoritative Price Calculation
+    // Map items to { productId, quantity }
+    const itemsToValidate = products.map((p: any) => ({
+      productId: String(p.id || p.productId),
+      quantity: typeof p.quantity === "number" ? p.quantity : 1,
+    }));
 
-    if (!keyId || !keySecret) {
-      return NextResponse.json({ error: "Razorpay not configured on server" }, { status: 500 });
+    const validationResult = await validateOrderPrices(itemsToValidate, clientReportedTotal);
+    if (!validationResult.isValid) {
+      return NextResponse.json({ error: validationResult.error || "Order validation failed." }, { status: 400 });
     }
+
+    // Always use the authoritative server total, NEVER the client total
+    const authoritativeAmount = validationResult.totalAmount;
+    const keyId = process.env.RAZORPAY_KEY_ID!;
+    const keySecret = process.env.RAZORPAY_KEY_SECRET!;
 
     const razorpay = new Razorpay({
       key_id: keyId,
       key_secret: keySecret,
     });
 
+    const receiptId = `rcpt_${Date.now().toString().slice(-8)}_${Math.random().toString(36).substring(2, 6)}`;
+
     const order = await razorpay.orders.create({
-      amount: Math.round(totalAmount * 100),
+      amount: Math.round(authoritativeAmount * 100), // In paise
       currency: "INR",
-      receipt: `receipt_mp_${Date.now()}`,
+      receipt: receiptId,
       notes: {
         customerName,
         customerEmail,
-        productCount: String(products.length),
+        customerPhone,
+        productIds: validationResult.items.map((i) => i.id).join(","),
       },
     });
 
     if (!order || !order.id) {
-      return NextResponse.json({ error: "Failed to create Razorpay order" }, { status: 500 });
+      return NextResponse.json({ error: "Failed to create Razorpay order." }, { status: 500 });
     }
 
     const razorpayOrderId = order.id;
 
-    // Insert pending order entries into Supabase marketplace_orders
-    // Insert one row per product so they can be individually tracked and delivered
-    const orderInserts = products.map((prod: { id: string; salePrice: number }) => ({
+    // 3. Insert pending records into marketplace_orders
+    const orderInserts = validationResult.items.map((item) => ({
       customer_name: customerName,
       customer_email: customerEmail,
-      product_id: prod.id,
-      amount: prod.salePrice,
+      product_id: item.id,
+      amount: item.price,
       payment_status: "pending",
       razorpay_order_id: razorpayOrderId,
       delivery_status: "pending",
@@ -56,18 +93,19 @@ export async function POST(req: NextRequest) {
       .insert(orderInserts);
 
     if (dbError) {
-      console.error("Failed to insert orders in Supabase:", dbError);
-      return NextResponse.json({ error: "Database checkout failure" }, { status: 500 });
+      console.error("[create-marketplace-order] Supabase insert error:", dbError);
+      return NextResponse.json({ error: "Database checkout failure." }, { status: 500 });
     }
 
     return NextResponse.json({
+      success: true,
       orderId: razorpayOrderId,
-      amount: totalAmount,
+      amount: authoritativeAmount,
       currency: "INR",
+      keyId: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID || keyId,
     });
-
   } catch (err: unknown) {
-    console.error("Error creating marketplace order:", err);
-    return NextResponse.json({ error: "Internal order creation error" }, { status: 500 });
+    console.error("[create-marketplace-order] Unexpected error:", err);
+    return NextResponse.json({ error: "Internal order creation error." }, { status: 500 });
   }
 }

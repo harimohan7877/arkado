@@ -1,9 +1,15 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase";
 import productsMock from "@/data/products_mock.json";
+import { verifyAdminSession } from "@/lib/admin-auth";
 
-export async function GET() {
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
+export async function GET(req: NextRequest) {
   try {
+    const isAdmin = verifyAdminSession(req);
+
     // 1. Fetch products from Supabase marketplace_products table
     const { data: dbProducts, error: prodError } = await supabaseAdmin
       .from('marketplace_products')
@@ -22,6 +28,7 @@ export async function GET() {
     }
 
     // 2. Map db products to frontend Product interface (camelCase mapping)
+    // Only verified admin receives drive_url
     const products = dbProducts.map(p => ({
       id: p.id,
       title: p.title,
@@ -32,7 +39,7 @@ export async function GET() {
       salePrice: Number(p.sale_price),
       pages: p.pages || undefined,
       language: p.language,
-      drive_url: p.file_url || undefined,
+      drive_url: isAdmin ? (p.file_url || undefined) : undefined,
     }));
 
     return NextResponse.json({ products, fromDb: true });

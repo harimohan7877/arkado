@@ -158,7 +158,10 @@ export async function POST(req: Request) {
       body: JSON.stringify(newOrder),
     }).catch((err) => console.error("Failed to notify admin:", err));
 
-    return NextResponse.json({ success: true, order: newOrder });
+    // Privacy & Anti-Theft: Never send drive_url in client response while payment is pending
+    const { drive_url: _, ...safeOrderResponse } = newOrder;
+
+    return NextResponse.json({ success: true, order: safeOrderResponse });
   } catch (err: unknown) {
     return NextResponse.json(
       { success: false, error: err instanceof Error ? err.message : "Server error" },

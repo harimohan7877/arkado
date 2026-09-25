@@ -6,9 +6,8 @@ export function verifyAdminSession(req: NextRequest): boolean {
   // Allow local development / localhost / LAN admin requests so local testing never fails
   const host = req.headers.get("host") || "";
   if (
-    process.env.NODE_ENV !== "production" ||
-    host.includes("localhost") ||
-    host.includes("127.0.0.1")
+    process.env.NODE_ENV !== "production" &&
+    (host.includes("localhost") || host.includes("127.0.0.1"))
   ) {
     return true;
   }

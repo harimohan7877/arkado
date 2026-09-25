@@ -34,9 +34,23 @@ export async function GET(req: NextRequest) {
     console.warn("[admin-orders-get] Supabase fetch error:", err);
   }
 
-  // 2. Secondary fallback: ONLY if Supabase connection failed / threw an error
-  if (!isSupabaseLoaded) {
-    rawList = await readOrders();
+  // 2. Seamless Merge: Also merge any orders stored locally that are not yet in Supabase
+  try {
+    const localOrders = await readOrders();
+    const seenIds = new Set<string>();
+    for (const o of rawList) {
+      if (o.razorpay_order_id) seenIds.add(o.razorpay_order_id);
+      if (o.id) seenIds.add(o.id);
+    }
+    for (const lo of localOrders) {
+      const loId = lo.razorpay_order_id || lo.order_id || lo.id;
+      if (loId && !seenIds.has(loId)) {
+        rawList.push(lo);
+        seenIds.add(loId);
+      }
+    }
+  } catch (mergeErr) {
+    console.warn("[admin-orders-get] Local merge warning:", mergeErr);
   }
 
   // 3. Resolve course titles from catalog if missing

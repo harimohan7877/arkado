@@ -15,6 +15,20 @@ const nextConfig: NextConfig = {
     ],
   },
   serverExternalPackages: ["sharp"],
+  async redirects() {
+    return [
+      {
+        source: "/admin",
+        destination: "/ranjeet/admin",
+        permanent: false,
+      },
+      {
+        source: "/ranjeet/dmin",
+        destination: "/ranjeet/admin",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

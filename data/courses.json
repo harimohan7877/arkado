@@ -59,14 +59,14 @@
         ]
       }
     ],
-    "pages_count": "1,450+ Pages",
+    "pages_count": "1450+ Pages",
     "format": "Printable PDF",
     "language": "हिन्दी (Hindi)",
     "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/rajasthan-cet-2026-bundle.png",
     "show_in_slider": true,
     "slider_tagline": "सलेक्शन का पक्का साथी — 80% विशेष छूट",
-    "sample_pdf_url": "https://drive.google.com",
-    "drive_url": "https://drive.google.com",
+    "sample_pdf_url": "https://drive.google.com/file/d/1eN0BDLhK52eHWdX5QOZI_KfDgs8MsANI/view?usp=sharing",
+    "drive_url": "https://drive.google.com/drive/folders/1uZ8sfpuzVotVd2O4cmG81h6Ym3skKg84?usp=sharing",
     "is_active": true,
     "is_featured": true,
     "featured_priority": 1,
@@ -74,8 +74,8 @@
     "new_arrival_priority": 1,
     "exam_id": "1001",
     "updated_at": "2026-09-18T04:01:33.958Z",
-    "demo_html_mock_enabled": false,
-    "demo_html_mock_url": ""
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/rajasthan-cet-2026-bundle.html"
   },
   {
     "id": "rajasthan-cet-grad-2026-bundle",
@@ -161,14 +161,14 @@
         ]
       }
     ],
-    "pages_count": "1,450+ Pages",
+    "pages_count": "1450+ Pages",
     "format": "Printable PDF",
     "language": "हिन्दी (Hindi)",
     "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/rajasthan-cet-grad-2026-bundle.png",
     "show_in_slider": true,
     "slider_tagline": "Only for 3 Days — 96% विशेष छूट (₹149)",
-    "sample_pdf_url": "https://drive.google.com",
-    "drive_url": "https://drive.google.com",
+    "sample_pdf_url": "https://drive.google.com/file/d/1sj0aZrY3_Qv_jUmjOBb2f4B8pdwWNVRj/view?usp=sharing",
+    "drive_url": "https://drive.google.com/drive/folders/19upJ7DqV16qr4DCEXw88IhV_BPL0TZEH?usp=sharing",
     "demo_html_mock_enabled": true,
     "demo_html_mock_url": "/mock-tests/cet-graduation-mock-test.html",
     "is_active": true,

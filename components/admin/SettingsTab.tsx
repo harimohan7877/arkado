@@ -18,7 +18,8 @@ type TabKey =
   | "policies"
   | "about_course"
   | "brand"
-  | "razorpay";
+  | "razorpay"
+  | "ai";
 
 const DEFAULT_SETTINGS: Settings = {
   upi_id: "7852004401@ybl",
@@ -256,6 +257,101 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
   const [showRazorpaySecret, setShowRazorpaySecret] = useState(false);
   const [newTagInput, setNewTagInput] = useState("");
 
+  // AI Configuration State (Decoupled from store settings)
+  const [aiConfig, setAiConfig] = useState({
+    active_provider: "openrouter",
+    openrouter_key: "",
+    gemini_key: "",
+    openai_key: "",
+    claude_key: "",
+    groq_key: "",
+  });
+  const [aiStatus, setAiStatus] = useState<Record<string, any>>({});
+  const [testingProvider, setTestingProvider] = useState<string | null>(null);
+  const [testFeedback, setTestFeedback] = useState<Record<string, { success: boolean; text: string }>>({});
+  const [savingAi, setSavingAi] = useState(false);
+  const [showAiKeys, setShowAiKeys] = useState<Record<string, boolean>>({});
+
+  const fetchAiConfig = async () => {
+    try {
+      const res = await fetch("/api/admin/ai", { headers: getAuthHeaders() });
+      if (res.ok) {
+        const data = await res.json();
+        setAiStatus(data);
+        setAiConfig((prev) => ({
+          ...prev,
+          active_provider: data.active_provider || "openrouter",
+        }));
+      }
+    } catch {}
+  };
+
+  const handleTestKey = async (provider: string, keyVal: string) => {
+    if (!keyVal && !aiStatus[`has_${provider}_key`]) {
+      setTestFeedback((prev) => ({
+        ...prev,
+        [provider]: { success: false, text: "कृपया पहले API Key दर्ज करें।" },
+      }));
+      return;
+    }
+    setTestingProvider(provider);
+    try {
+      const res = await fetch("/api/admin/test-key", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...getAuthHeaders() },
+        body: JSON.stringify({ provider, key: keyVal }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setTestFeedback((prev) => ({
+          ...prev,
+          [provider]: { success: true, text: "✓ कनेक्शन सफल! API Key काम कर रही है।" },
+        }));
+      } else {
+        setTestFeedback((prev) => ({
+          ...prev,
+          [provider]: { success: false, text: data.error || "कनेक्शन विफल।" },
+        }));
+      }
+    } catch {
+      setTestFeedback((prev) => ({
+        ...prev,
+        [provider]: { success: false, text: "नेटवर्क त्रुटि: टेस्ट असफल।" },
+      }));
+    } finally {
+      setTestingProvider(null);
+    }
+  };
+
+  const handleSaveAi = async () => {
+    setSavingAi(true);
+    try {
+      const payload: Record<string, string> = { active_provider: aiConfig.active_provider };
+      if (aiConfig.openrouter_key) payload.openrouter_key = aiConfig.openrouter_key;
+      if (aiConfig.gemini_key) payload.gemini_key = aiConfig.gemini_key;
+      if (aiConfig.openai_key) payload.openai_key = aiConfig.openai_key;
+      if (aiConfig.claude_key) payload.claude_key = aiConfig.claude_key;
+      if (aiConfig.groq_key) payload.groq_key = aiConfig.groq_key;
+
+      const res = await fetch("/api/admin/ai", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...getAuthHeaders() },
+        body: JSON.stringify(payload),
+      });
+      if (res.ok) {
+        setMessage({ type: "success", text: "AI Keys और Provider सफलतापूर्वक सेव हो गए!" });
+        fetchAiConfig();
+      } else {
+        const data = await res.json();
+        setMessage({ type: "error", text: data.error || "AI Settings सेव नहीं हो सकीं।" });
+      }
+    } catch {
+      setMessage({ type: "error", text: "नेटवर्क त्रुटि: AI Settings सेव नहीं हो सकीं।" });
+    } finally {
+      setSavingAi(false);
+    }
+  };
+
   const fetchSettings = async () => {
     try {
       const res = await fetch("/api/admin/settings", { headers: getAuthHeaders() });
@@ -307,8 +403,15 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
   useEffect(() => {
     startTransition(() => {
       fetchSettings();
+      fetchAiConfig();
     });
   }, []);
+
+  useEffect(() => {
+    if (activeTab === "ai") {
+      fetchAiConfig();
+    }
+  }, [activeTab]);
 
   const handleChange = <K extends keyof Settings>(key: K, value: Settings[K]) => {
     setSettings((prev) => ({ ...prev, [key]: value }));
@@ -542,6 +645,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
     { id: "about_course", label: "About व कोर्स पेज", icon: "ℹ️" },
     { id: "brand", label: "ब्रांड व लोगो", icon: "🏷️" },
     { id: "razorpay", label: "Razorpay", icon: "⚡" },
+    { id: "ai", label: "AI & API Keys", icon: "🤖" },
   ];
 
   return (
@@ -2045,6 +2149,182 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
               </div>
             </div>
           )}
+        </div>
+      )}
+
+      {/* 10. AI Provider & Keys Tab */}
+      {activeTab === "ai" && (
+        <div className="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm space-y-6">
+          <div className="border-b border-stone-200 pb-4">
+            <h3 className="text-lg font-bold text-stone-900 flex items-center gap-2">
+              <span>🤖</span>
+              <span>AI Provider & API Keys Management</span>
+            </h3>
+            <p className="text-xs text-stone-500 mt-1">
+              Arkado AI असिस्टेंट, ऑटोमेटेड सिलेबस और प्रश्नोत्तरी हेतु यहाँ से सुरक्षित API Keys सेट करें।
+              ये Keys आपकी वेबसाइट स्टोर सेटिंग्स (UPI, WhatsApp, बैनर) से 100% अलग और सुरक्षित रखी जाती हैं।
+            </p>
+          </div>
+
+          {/* Active Provider Selector */}
+          <div className="bg-stone-50 border border-stone-200 rounded-2xl p-5 space-y-3">
+            <label className="block text-xs font-bold text-stone-800">
+              एक्टिव AI प्रोवाइडर चुनें (Active AI Engine)
+            </label>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {[
+                { id: "openrouter", name: "OpenRouter", desc: "GPT-4o, Claude 3.5, Gemini 2.0 (Recommended)", icon: "🌐" },
+                { id: "gemini", name: "Google Gemini", desc: "Gemini 2.0 Flash / Pro (Direct Google API)", icon: "✨" },
+                { id: "openai", name: "OpenAI", desc: "GPT-4o / GPT-4o-mini (Official OpenAI)", icon: "🧠" },
+                { id: "claude", name: "Anthropic Claude", desc: "Claude 3.5 Sonnet / Haiku", icon: "🎭" },
+                { id: "groq", name: "Groq Llama", desc: "Llama 3.3 70B (Ultra-fast inference)", icon: "⚡" },
+              ].map((p) => (
+                <div
+                  key={p.id}
+                  onClick={() => setAiConfig((prev) => ({ ...prev, active_provider: p.id }))}
+                  className={`p-3.5 rounded-xl border cursor-pointer transition flex flex-col justify-between ${
+                    aiConfig.active_provider === p.id
+                      ? "bg-amber-50/60 border-amber-500 shadow-sm ring-1 ring-amber-500"
+                      : "bg-white border-stone-200 hover:border-stone-300"
+                  }`}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-xs text-stone-900 flex items-center gap-1.5">
+                      <span>{p.icon}</span> {p.name}
+                    </span>
+                    {aiConfig.active_provider === p.id && (
+                      <span className="text-[10px] bg-amber-600 text-white font-bold px-1.5 py-0.5 rounded-md">Active</span>
+                    )}
+                  </div>
+                  <p className="text-[11px] text-stone-500 mt-1">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* API Keys Configuration */}
+          <div className="space-y-4">
+            <h4 className="text-xs font-bold text-stone-700 uppercase tracking-wider">
+              API Keys Configuration
+            </h4>
+
+            {[
+              {
+                id: "openrouter",
+                keyField: "openrouter_key",
+                label: "OpenRouter API Key",
+                placeholder: "sk-or-v1-...",
+                icon: "🌐",
+                masked: aiStatus.openrouter_key_masked,
+                hasKey: aiStatus.has_openrouter_key,
+              },
+              {
+                id: "gemini",
+                keyField: "gemini_key",
+                label: "Google Gemini API Key",
+                placeholder: "AIzaSy...",
+                icon: "✨",
+                masked: aiStatus.gemini_key_masked,
+                hasKey: aiStatus.has_gemini_key,
+              },
+              {
+                id: "openai",
+                keyField: "openai_key",
+                label: "OpenAI API Key",
+                placeholder: "sk-...",
+                icon: "🧠",
+                masked: aiStatus.openai_key_masked,
+                hasKey: aiStatus.has_openai_key,
+              },
+              {
+                id: "claude",
+                keyField: "claude_key",
+                label: "Anthropic Claude API Key",
+                placeholder: "sk-ant-...",
+                icon: "🎭",
+                masked: aiStatus.claude_key_masked,
+                hasKey: aiStatus.has_claude_key,
+              },
+              {
+                id: "groq",
+                keyField: "groq_key",
+                label: "Groq API Key",
+                placeholder: "gsk_...",
+                icon: "⚡",
+                masked: aiStatus.groq_key_masked,
+                hasKey: aiStatus.has_groq_key,
+              },
+            ].map((item) => (
+              <div key={item.id} className="p-4 rounded-xl border border-stone-200 bg-stone-50/50 space-y-2">
+                <div className="flex items-center justify-between">
+                  <label className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
+                    <span>{item.icon}</span> {item.label}
+                  </label>
+                  <span
+                    className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${
+                      item.hasKey
+                        ? "bg-emerald-100 text-emerald-800"
+                        : "bg-stone-200 text-stone-600"
+                    }`}
+                  >
+                    {item.hasKey ? (item.masked || "✓ Set in Environment") : "Not Set"}
+                  </span>
+                </div>
+
+                <div className="flex gap-2">
+                  <input
+                    type={showAiKeys[item.id] ? "text" : "password"}
+                    value={(aiConfig as any)[item.keyField] || ""}
+                    onChange={(e) =>
+                      setAiConfig((prev) => ({ ...prev, [item.keyField]: e.target.value }))
+                    }
+                    placeholder={item.hasKey ? "नई Key डालने पर पुरानी Replace होगी..." : item.placeholder}
+                    className={`${inputCls} flex-1 font-mono text-xs`}
+                  />
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setShowAiKeys((prev) => ({ ...prev, [item.id]: !prev[item.id] }))
+                    }
+                    className="px-3 py-2 bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold rounded-xl text-xs"
+                  >
+                    {showAiKeys[item.id] ? "Hide" : "Show"}
+                  </button>
+                  <button
+                    type="button"
+                    disabled={testingProvider === item.id}
+                    onClick={() => handleTestKey(item.id, (aiConfig as any)[item.keyField])}
+                    className="px-4 py-2 bg-stone-800 hover:bg-stone-900 text-white font-bold rounded-xl text-xs disabled:opacity-50 flex items-center gap-1.5"
+                  >
+                    {testingProvider === item.id ? "Testing..." : "Test Connection"}
+                  </button>
+                </div>
+
+                {testFeedback[item.id] && (
+                  <div
+                    className={`p-2 rounded-lg text-xs font-medium ${
+                      testFeedback[item.id].success
+                        ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
+                        : "bg-red-50 text-red-800 border border-red-200"
+                    }`}
+                  >
+                    {testFeedback[item.id].text}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="pt-2 flex justify-end">
+            <button
+              type="button"
+              disabled={savingAi}
+              onClick={handleSaveAi}
+              className="px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm shadow-md transition disabled:opacity-50 flex items-center gap-2"
+            >
+              {savingAi ? "सेव हो रहा है..." : "💾 AI सेटिंग्स सेव करें (Save AI Config)"}
+            </button>
+          </div>
         </div>
       )}
 

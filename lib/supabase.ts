@@ -4,8 +4,7 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://juhffafyorfjtahscups.supabase.co';
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_Urxrcu_NlNQqQQ_rJ__-bQ_ExNlGG0O';
 const isServer = typeof window === 'undefined';
-const defaultSec = "sb_secret_" + "QRz3i8yo4K9rt8iAQ3uyVA_TZAgzMVN";
-const supabaseServiceKey = isServer ? (process.env.SUPABASE_SERVICE_ROLE_KEY || defaultSec) : '';
+const supabaseServiceKey = isServer ? (process.env.SUPABASE_SERVICE_ROLE_KEY || '') : '';
 
 // Client-side (browser) — uses anon key
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
@@ -126,6 +125,17 @@ export interface AdminSettings {
   groq_key: string;
 }
 
+// Security & Decoupling Filter: Ensures application JSON blobs are never returned as API keys
+function filterRealApiKey(dbVal?: string | null, envVal?: string): string {
+  if (!dbVal) return envVal || '';
+  const trimmed = dbVal.trim();
+  // If it's a JSON blob (starts with { or [ or contains store fields like upi_id), it's NOT an API key!
+  if (trimmed.startsWith('{') || trimmed.startsWith('[') || trimmed.includes('"upi_id"') || trimmed.includes('"id"')) {
+    return envVal || '';
+  }
+  return trimmed;
+}
+
 export async function getAdminSettings(): Promise<AdminSettings> {
   const fallbackSettings: AdminSettings = {
     active_provider: process.env.ACTIVE_AI_PROVIDER || 'openrouter',
@@ -143,26 +153,52 @@ export async function getAdminSettings(): Promise<AdminSettings> {
       .limit(1)
       .maybeSingle();
 
-    if (error) {
-      console.warn("Could not fetch admin settings from DB (table might be missing), falling back to env:", error.message);
-      return fallbackSettings;
-    }
-
-    if (!data) {
+    if (error || !data) {
       return fallbackSettings;
     }
 
     return {
       active_provider: data.active_provider || fallbackSettings.active_provider,
-      gemini_key: data.gemini_key || fallbackSettings.gemini_key,
-      openai_key: data.openai_key || fallbackSettings.openai_key,
-      claude_key: data.claude_key || fallbackSettings.claude_key,
-      openrouter_key: data.openrouter_key || fallbackSettings.openrouter_key,
-      groq_key: data.groq_key || fallbackSettings.groq_key,
+      gemini_key: filterRealApiKey(data.gemini_key, fallbackSettings.gemini_key),
+      openai_key: filterRealApiKey(data.openai_key, fallbackSettings.openai_key),
+      claude_key: filterRealApiKey(data.claude_key, fallbackSettings.claude_key),
+      openrouter_key: filterRealApiKey(data.openrouter_key, fallbackSettings.openrouter_key),
+      groq_key: filterRealApiKey(data.groq_key, fallbackSettings.groq_key),
     };
   } catch (err) {
     console.error("Error reading admin settings from DB:", err);
     return fallbackSettings;
   }
 }
+
+export async function saveAdminAiSettings(updates: Partial<AdminSettings>): Promise<boolean> {
+  try {
+    const { data: existing } = await supabaseAdmin
+      .from('admin_settings')
+      .select('id')
+      .limit(1)
+      .maybeSingle();
+
+    if (!existing?.id) return false;
+
+    const payload: Record<string, any> = { updated_at: new Date().toISOString() };
+    if (updates.active_provider) payload.active_provider = updates.active_provider;
+    if (updates.gemini_key !== undefined) payload.gemini_key = updates.gemini_key;
+    if (updates.openrouter_key !== undefined) payload.openrouter_key = updates.openrouter_key;
+    if (updates.openai_key !== undefined) payload.openai_key = updates.openai_key;
+    if (updates.claude_key !== undefined) payload.claude_key = updates.claude_key;
+    if (updates.groq_key !== undefined) payload.groq_key = updates.groq_key;
+
+    const { error } = await supabaseAdmin
+      .from('admin_settings')
+      .update(payload)
+      .eq('id', existing.id);
+
+    return !error;
+  } catch (err) {
+    console.error("Error saving admin AI settings:", err);
+    return false;
+  }
+}
+
 

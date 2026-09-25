@@ -159,18 +159,37 @@ The core objective was to transform the platform from an unstable, hijacked-key,
 
 ---
 
-## 6. Summary of Modified & Created Files
+## 7. Phase 4 & Phase 5: AI Keys Decoupling, Dedicated AI Tab & Secret Purging (Completed - 2026-09-25)
 
-1. [`lib/payment-gateway.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/lib/payment-gateway.ts): Enterprise payment security module, authoritative price checker, timing-safe crypto, UTR anti-fraud.
-2. [`app/api/payment/create-marketplace-order/route.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/app/api/payment/create-marketplace-order/route.ts): Hardened checkout endpoint with server-enforced pricing.
-3. [`app/api/payment/verify-marketplace/route.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/app/api/payment/verify-marketplace/route.ts): Timing-safe signature check, idempotency guard, secure delivery response.
-4. [`app/api/payment/webhook/route.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/app/api/payment/webhook/route.ts): Enterprise background webhook listener.
-5. [`app/api/orders/route.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/app/api/orders/route.ts): Active manual UPI route with UTR fraud check and relational DB sync.
-6. [`app/api/courses/route.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/app/api/courses/route.ts): Strips `drive_url` from public API responses.
-7. [`orders-schema.sql`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/orders-schema.sql): Complete SQL migration script for `marketplace_orders`.
-8. [`lib/store-data.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/lib/store-data.ts): Dual-Read / Dual-Write relational adapter.
-9. [`app/ranjeet/admin/page.tsx`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/app/ranjeet/admin/page.tsx): Centralized admin control panel.
-10. [`proxy.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/proxy.ts): Hardened proxy security.
-11. [`components/admin/`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/components/admin): Centralized admin tab components.
-12. [`CHANGELOG_2026_09_24.md`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/CHANGELOG_2026_09_24.md): Comprehensive architectural log.
+### Flaws Addressed:
+1. **AI Key Pollution & Collision:**
+   - Previously, `data.gemini_key` in `admin_settings` held the 12KB store JSON blob (`upi_id`, `merchant_name`, `brand`, etc.).
+   - Whenever an AI service called `getAdminSettings()`, it was receiving a JSON string instead of an actual API key, causing AI services to fail or crash.
+2. **Hardcoded Fallback Secret:**
+   - `lib/supabase.ts` contained a hardcoded fallback service key string (`defaultSec = "sb_secret_QRz3..."`).
+
+### Solutions Implemented:
+1. **Sanitizing AI Key Access (`lib/supabase.ts`):**
+   - Added `filterRealApiKey()` helper that detects and rejects JSON payloads (`{`, `[`, `"upi_id"`).
+   - If a column contains store metadata, `getAdminSettings()` safely discards it and falls back to server environment variables.
+   - Added `saveAdminAiSettings(updates)` to allow granular, safe updates to AI keys and active provider.
+2. **Hardcoded Secrets Purged (`lib/supabase.ts`):**
+   - Deleted hardcoded secret string. `supabaseServiceKey` now strictly reads `process.env.SUPABASE_SERVICE_ROLE_KEY || ''`.
+3. **Dedicated Admin AI API Route (`app/api/admin/ai/route.ts`):**
+   - `GET /api/admin/ai`: Enforces admin session verification. Returns masked keys (e.g. `sk-or-••••••••1a2b`) and boolean presence flags (`has_openrouter_key`, etc.) without ever leaking full keys to the browser.
+   - `POST /api/admin/ai`: Validates key format, blocks accidental JSON string injection, and safely persists keys to the database.
+4. **Dedicated AI Management Tab UI (`components/admin/SettingsTab.tsx`):**
+   - Added **"🤖 AI & API Keys"** sub-navigation tab.
+   - Allows selecting the primary active provider (`OpenRouter (Recommended)`, `Google Gemini`, `OpenAI (GPT-4o)`, `Anthropic Claude`, `Groq (Ultra-Fast Llama-3)`).
+   - Dynamic key management for all 5 providers with Show/Hide toggle, masked status indicators, and live **"Test Connection"** verification.
+   - Dedicated save handler with immediate status feedback.
+
+---
+
+## 8. Summary of Modified & Created Files (Phase 4 & 5)
+
+1. [`lib/supabase.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/lib/supabase.ts): Removed hardcoded service role fallback secret, added `filterRealApiKey()` sanitizer, added `saveAdminAiSettings()`.
+2. [`app/api/admin/ai/route.ts`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/app/api/admin/ai/route.ts): Secure admin endpoint for AI key retrieval (masked) and update.
+3. [`components/admin/SettingsTab.tsx`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/components/admin/SettingsTab.tsx): Added AI & API Keys tab, key configuration inputs, live connection testing, and save handlers.
+4. [`CHANGELOG_2026_09_24.md`](file:///c:/Users/harimohan%20sharma/Documents/Arkado/sarkari-sathi/CHANGELOG_2026_09_24.md): Updated project changelog.
 

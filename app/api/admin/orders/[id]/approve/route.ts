@@ -138,105 +138,140 @@ export async function POST(
       },
     });
 
-    const subject = `🎉 आपका Arkado कोर्स अनलॉक हो गया है! — ${courseTitle}`;
+    const subject = `Your Course Access is Ready — Arkado (Order ${orderId})`;
 
     const htmlContent = `
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arkado Course Access</title>
+  <title>Your Course Access is Ready — Arkado</title>
 </head>
-<body style="margin: 0; padding: 0; background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #1e293b;">
-  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color: #f8fafc; padding: 30px 10px;">
+<body style="margin:0;padding:0;background-color:#1a1a1a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#1a1a1a;padding:32px 16px;">
     <tr>
       <td align="center">
-        <table role="presentation" width="100%" max-width="600" style="max-width: 600px; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); border: 1px solid #e2e8f0;" cellspacing="0" cellpadding="0" border="0">
-          
-          <!-- Header Banner -->
+        <table width="100%" style="max-width:600px;" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td style="background: linear-gradient(135deg, #b45309 0%, #78350f 100%); padding: 32px 24px; text-align: center; color: #ffffff;">
-              <h1 style="margin: 0; font-size: 24px; font-weight: 800; letter-spacing: 0.5px;">Arkado Education</h1>
-              <p style="margin: 8px 0 0; font-size: 13px; color: #fef3c7; font-weight: 500;">सरकारी साथी — आपकी परीक्षा तैयारी का भरोसेमंद साथी</p>
-            </td>
-          </tr>
+            <td style="border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
 
-          <!-- Main Body -->
-          <tr>
-            <td style="padding: 32px 24px;">
-              <div style="background-color: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 12px; padding: 16px; margin-bottom: 24px; text-align: center;">
-                <span style="font-size: 28px;">✅</span>
-                <h2 style="margin: 8px 0 4px; font-size: 18px; font-weight: 700; color: #065f46;">भुगतान सत्यापित एवं स्वीकृत!</h2>
-                <p style="margin: 0; font-size: 13px; color: #047857;">Payment Verified & Access Unlocked</p>
-              </div>
+              <!-- Logo Bar -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center" style="background:#ffffff;padding:30px 40px 26px;">
+                    <img src="https://sarkari-sathi-ecru.vercel.app/logo.svg" alt="Arkado" width="180" style="display:block;margin:0 auto;border:0;width:180px;height:auto;" />
+                  </td>
+                </tr>
+              </table>
 
-              <p style="font-size: 15px; line-height: 1.6; margin: 0 0 16px;">
-                नमस्ते <strong>${safeName}</strong> जी,
-              </p>
-              <p style="font-size: 14px; line-height: 1.6; color: #475569; margin: 0 0 24px;">
-                Arkado पर आपके ऑर्डर का सत्यापन पूरा हो चुका है। आपके द्वारा खरीदे गए कोर्स के Google Drive नोट्स व अध्ययन सामग्री का एक्सेस अनलॉक कर दिया गया है।
-              </p>
+              <!-- Hero Banner -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="background:linear-gradient(160deg,#b91c1c 0%,#991b1b 40%,#7f1d1d 100%);padding:36px 40px 38px;text-align:center;">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin-bottom:20px;">
+                      <tr>
+                        <td style="background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%);border-radius:50px;padding:8px 24px;">
+                          <span style="font-size:11px;font-weight:800;color:#111111;letter-spacing:1.2px;text-transform:uppercase;">&#10003; &nbsp;Payment Verified</span>
+                        </td>
+                      </tr>
+                    </table>
+                    <h1 style="margin:0 0 10px;font-size:26px;font-weight:800;color:#ffffff;letter-spacing:-0.3px;line-height:1.3;">Your Course Access<br>is Ready!</h1>
+                    <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.75);line-height:1.6;">Study materials unlocked &mdash; ready to download.</p>
+                    <table width="60" cellpadding="0" cellspacing="0" border="0" align="center" style="margin-top:22px;">
+                      <tr><td style="height:3px;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 100%);border-radius:2px;"></td></tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
 
-              <!-- Order Summary Card -->
-              <div style="background-color: #f1f5f9; border-radius: 12px; padding: 20px; margin-bottom: 28px;">
-                <h3 style="margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #334155; text-transform: uppercase; letter-spacing: 0.5px;">ऑर्डर विवरण (Order Details)</h3>
-                <table width="100%" cellspacing="0" cellpadding="6" border="0" style="font-size: 13px;">
-                  <tr>
-                    <td style="color: #64748b; width: 40%;">Order ID:</td>
-                    <td style="font-family: monospace; font-weight: bold; color: #0f172a;">${safeOrderId}</td>
-                  </tr>
-                  <tr>
-                    <td style="color: #64748b;">कोर्स / बंडल:</td>
-                    <td style="font-weight: bold; color: #0f172a;">${safeCourse}</td>
-                  </tr>
-                  <tr>
-                    <td style="color: #64748b;">भुगतान राशि:</td>
-                    <td style="font-weight: 800; color: #059669; font-size: 15px;">₹${amount} (Paid)</td>
-                  </tr>
-                </table>
-              </div>
+              <!-- Body -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;">
+                <tr>
+                  <td style="padding:36px 40px 0;">
+                    <p style="margin:0 0 6px;font-size:16px;color:#111111;line-height:1.7;">Hi <strong>${safeName}</strong>,</p>
+                    <p style="margin:0 0 30px;font-size:14px;color:#555555;line-height:1.8;">We have verified your payment successfully. Your Google Drive notes are now unlocked and ready to access &mdash; click below to open your course folder.</p>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Order Card -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;">
+                <tr>
+                  <td style="padding:0 28px 24px;">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-radius:12px;overflow:hidden;border:1px solid #e5e5e5;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+                      <tr>
+                        <td colspan="2" style="background:linear-gradient(135deg,#fef2f2 0%,#fff1f2 100%);padding:14px 20px;border-bottom:1px solid #fecaca;">
+                          <span style="font-size:11px;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:1px;">&#128203; &nbsp;Order Details</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="36%" style="padding:14px 20px;background:#fafafa;border-bottom:1px solid #f0f0f0;vertical-align:top;">
+                          <span style="font-size:11px;font-weight:700;color:#999999;text-transform:uppercase;letter-spacing:0.6px;">Order ID</span>
+                        </td>
+                        <td style="padding:14px 20px;background:#ffffff;border-bottom:1px solid #f0f0f0;">
+                          <span style="font-size:14px;font-weight:700;color:#111111;font-family:'Courier New',monospace;">${safeOrderId}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="36%" style="padding:14px 20px;background:#fafafa;border-bottom:1px solid #f0f0f0;vertical-align:top;">
+                          <span style="font-size:11px;font-weight:700;color:#999999;text-transform:uppercase;letter-spacing:0.6px;">Course</span>
+                        </td>
+                        <td style="padding:14px 20px;background:#ffffff;border-bottom:1px solid #f0f0f0;">
+                          <span style="font-size:14px;font-weight:600;color:#111111;">${safeCourse}</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="36%" style="padding:14px 20px;background:#fafafa;vertical-align:middle;">
+                          <span style="font-size:11px;font-weight:700;color:#999999;text-transform:uppercase;letter-spacing:0.6px;">Amount</span>
+                        </td>
+                        <td style="padding:14px 20px;background:#ffffff;">
+                          <span style="font-size:22px;font-weight:900;color:#111111;">&rupee;${amount}</span>
+                          <span style="display:inline-block;background:#dcfce7;color:#166534;font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;margin-left:10px;vertical-align:middle;">PAID &#10003;</span>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
 
               <!-- CTA Button -->
-              <div style="text-align: center; margin: 32px 0 24px;">
-                <a href="${resolvedDriveUrl}" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #059669 0%, #047857 100%); color: #ffffff; text-decoration: none; padding: 16px 32px; border-radius: 12px; font-size: 16px; font-weight: 800; display: inline-block; box-shadow: 0 4px 14px rgba(5, 150, 105, 0.4); letter-spacing: 0.3px;">
-                  📚 Google Drive नोट्स खोलें (Download Notes)
-                </a>
-                <p style="margin: 12px 0 0; font-size: 12px; color: #64748b;">
-                  (यदि ऊपर का बटन काम न करे तो इस लिंक को कॉपी करें:<br>
-                  <a href="${resolvedDriveUrl}" style="color: #b45309; word-break: break-all;">${resolvedDriveUrl}</a>)
-                </p>
-              </div>
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;">
+                <tr>
+                  <td align="center" style="padding:8px 40px 32px;">
+                    <a href="${resolvedDriveUrl}" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:linear-gradient(135deg,#dc2626 0%,#b91c1c 100%);color:#ffffff;text-decoration:none;padding:16px 52px;border-radius:8px;font-size:16px;font-weight:700;letter-spacing:0.3px;box-shadow:0 6px 20px rgba(185,28,28,0.40);text-align:center;">Open Google Drive Notes &nbsp;&rarr;</a>
+                  </td>
+                </tr>
+              </table>
 
-              <!-- Student Instructions -->
-              <div style="border-top: 1px solid #e2e8f0; padding-top: 20px; margin-top: 24px;">
-                <h4 style="margin: 0 0 10px; font-size: 13px; font-weight: 700; color: #0f172a;">💡 अध्ययन सामग्री का उपयोग कैसे करें:</h4>
-                <ul style="margin: 0; padding-left: 20px; font-size: 13px; color: #475569; line-height: 1.6;">
-                  <li>ऊपर दिए गए हरे बटन पर क्लिक करके Google Drive फोल्डर खोलें।</li>
-                  <li>ऑफलाइन पढ़ने के लिए PDF फाइलों को डाउनलोड करें या 'Add shortcut to Drive' कर लें।</li>
-                  <li>नोट्स में दिए गए प्रैक्टिस सेट्स व पिछले वर्षों के प्रश्नों का निरंतर अभ्यास करें।</li>
-                </ul>
-              </div>
+              <!-- Help Strip -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;">
+                <tr>
+                  <td style="padding:0 28px 32px;">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#fef2f2;border-radius:10px;border:1px solid #fecaca;">
+                      <tr>
+                        <td style="padding:18px 22px;text-align:center;">
+                          <p style="margin:0 0 6px;font-size:13px;font-weight:700;color:#991b1b;">Having trouble accessing your notes?</p>
+                          <p style="margin:0;font-size:13px;color:#666666;">WhatsApp us anytime at <a href="https://wa.me/919950252138?text=Hi%20Arkado%2C%20I%20need%20help%20with%20order%20${safeOrderId}" style="color:#dc2626;font-weight:700;text-decoration:none;">+91 99502 52138</a></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
 
-              <!-- Support Box -->
-              <div style="background-color: #fefce8; border: 1px solid #fef08a; border-radius: 12px; padding: 16px; margin-top: 24px; text-align: center;">
-                <p style="margin: 0 0 8px; font-size: 13px; font-weight: 600; color: #854d0e;">कोई सहायता चाहिए या लिंक खुलने में समस्या है?</p>
-                <a href="https://wa.me/919950252138?text=Hello%20Arkado%20Team%2C%20I%20need%20help%20with%20Order%20${safeOrderId}" target="_blank" rel="noopener noreferrer" style="color: #059669; font-weight: 700; font-size: 13px; text-decoration: underline;">
-                  💬 WhatsApp सहायता: +91 9950252138
-                </a>
-              </div>
+              <!-- Footer -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="background:#111111;padding:22px 40px;text-align:center;">
+                    <p style="margin:0 0 4px;font-size:11px;color:#888888;">&copy; ${new Date().getFullYear()} Arkado Education &nbsp;&middot;&nbsp; <a href="https://arkado.store" style="color:#f87171;text-decoration:none;font-weight:600;">arkado.store</a> &nbsp;&middot;&nbsp; <a href="https://wa.me/919950252138" style="color:#f87171;text-decoration:none;font-weight:600;">Support</a></p>
+                    <p style="margin:0;font-size:10px;color:#555555;">This is an automated email &mdash; please do not reply.</p>
+                  </td>
+                </tr>
+              </table>
 
             </td>
           </tr>
-
-          <!-- Footer -->
-          <tr>
-            <td style="background-color: #f8fafc; border-top: 1px solid #e2e8f0; padding: 20px 24px; text-align: center; font-size: 11px; color: #94a3b8;">
-              <p style="margin: 0 0 4px;">© ${new Date().getFullYear()} Arkado Education. All rights reserved.</p>
-              <p style="margin: 0;">यह एक स्वचालित ईमेल है। कृपया अपनी तैयारी जारी रखें और सफलता प्राप्त करें!</p>
-            </td>
-          </tr>
-
         </table>
       </td>
     </tr>
@@ -246,20 +281,20 @@ export async function POST(
     `;
 
     const textContent = `
-नमस्ते ${customerName} जी,
+Hi ${customerName},
 
-Arkado पर आपके ऑर्डर (${orderId}) का भुगतान सत्यापित हो चुका है!
+Your payment for order ${orderId} has been verified!
 
-कोर्स: ${courseTitle}
-राशि: ₹${amount} (Paid)
+Course: ${courseTitle}
+Amount: Rs. ${amount} (Paid)
 
-अध्ययन सामग्री व Google Drive नोट्स का डाउनलोड लिंक:
+Access your Google Drive study notes here:
 ${resolvedDriveUrl}
 
-सहायता के लिए WhatsApp पर संपर्क करें: +91 9950252138
+Need help? WhatsApp us at +91 99502 52138
 
 Team Arkado
-https://www.arkado.store
+https://arkado.store
     `;
 
     // Send email to student

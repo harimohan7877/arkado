@@ -10,7 +10,7 @@ interface Order {
   name?: string;
   email?: string;
   phone?: string;
-  delivery_mode: "whatsapp" | "gmail";
+  delivery_mode: "whatsapp" | "gmail" | "both";
   utr: string;
   amount: number;
   course_id: string;
@@ -253,12 +253,12 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                   </td>
                   <td className="p-4 text-right">
                     <div className="flex items-center justify-end gap-2">
-                      {order.payment_status === "paid" && order.delivery_status === "pending" && order.delivery_mode === "whatsapp" && order.customer_phone && (
+                      {order.payment_status === "paid" && order.delivery_status === "pending" && (order.delivery_mode === "whatsapp" || order.delivery_mode === "both") && order.customer_phone && (
                         <button onClick={() => handleSendWhatsApp(order)} className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg">
                           WhatsApp
                         </button>
                       )}
-                      {order.payment_status === "paid" && order.delivery_status === "pending" && order.delivery_mode === "gmail" && (
+                      {order.payment_status === "paid" && order.delivery_status === "pending" && (order.delivery_mode === "gmail" || order.delivery_mode === "both") && (
                         <button onClick={() => handleSendGmail(order)} className="px-3 py-1.5 bg-amber-700 hover:bg-amber-800 text-white text-xs font-bold rounded-lg">
                           Gmail
                         </button>
@@ -298,7 +298,11 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                 <span className={`px-2.5 py-1 rounded-full font-bold border ${getDeliveryChip(order.delivery_status)}`}>
                   {order.delivery_status === "delivered" ? "Delivered" : "Pending Delivery"}
                 </span>
-                {order.delivery_mode === "whatsapp" ? (
+                {order.delivery_mode === "both" ? (
+                  <span className="px-2.5 py-1 rounded-full font-bold border bg-blue-50 text-blue-700 border-blue-200">
+                    Email + WhatsApp
+                  </span>
+                ) : order.delivery_mode === "whatsapp" ? (
                   <span className="px-2.5 py-1 rounded-full font-bold border bg-emerald-50 text-emerald-700 border-emerald-200">
                     WhatsApp
                   </span>
@@ -314,12 +318,12 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                 <p>{new Date(order.created_at).toLocaleString("hi-IN")}</p>
               </div>
               <div className="flex gap-2 pt-2 border-t border-stone-100">
-                {order.payment_status === "paid" && order.delivery_status === "pending" && order.delivery_mode === "whatsapp" && order.customer_phone && (
+                {order.payment_status === "paid" && order.delivery_status === "pending" && (order.delivery_mode === "whatsapp" || order.delivery_mode === "both") && order.customer_phone && (
                   <button onClick={() => handleSendWhatsApp(order)} className="flex-1 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-lg">
                     WhatsApp
                   </button>
                 )}
-                {order.payment_status === "paid" && order.delivery_status === "pending" && order.delivery_mode === "gmail" && (
+                {order.payment_status === "paid" && order.delivery_status === "pending" && (order.delivery_mode === "gmail" || order.delivery_mode === "both") && (
                   <button onClick={() => handleSendGmail(order)} className="flex-1 py-2 bg-amber-700 hover:bg-amber-800 text-white text-xs font-bold rounded-lg">
                     Gmail
                   </button>

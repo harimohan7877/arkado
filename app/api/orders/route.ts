@@ -139,16 +139,42 @@ export async function POST(req: Request) {
 
     // 4. Primary Relational Storage: Insert into Supabase marketplace_orders
     try {
-      await supabaseAdmin.from("marketplace_orders").insert({
+      // First attempt: Insert with all modern columns
+      const fullPayload: Record<string, any> = {
         customer_name: cleanName,
         customer_email: cleanEmail || `${cleanPhone}@arkado.store`,
+        customer_phone: cleanPhone,
+        delivery_mode: cleanMode,
         product_id: course_id,
+        course_title: matchedProduct?.title || rawCourseTitle || "Course Bundle",
         amount: authoritativeAmount,
         payment_status: "pending",
         razorpay_order_id: order_id,
         razorpay_payment_id: cleanUtr || undefined,
         delivery_status: "pending",
-      });
+        utr: cleanUtr || undefined,
+        drive_url: secureDriveUrl,
+        payment_method: "manual_upi",
+        is_flagged: isFlagged,
+        flag_reason: flagReason || undefined,
+      };
+
+      const { error: fullInsertErr } = await supabaseAdmin.from("marketplace_orders").insert(fullPayload);
+
+      // If schema hasn't run orders-schema.sql yet (e.g. customer_phone column doesn't exist), fallback to base schema
+      if (fullInsertErr && fullInsertErr.code === "42703") {
+        console.warn("[orders-post] Extended columns not yet added to marketplace_orders, inserting base schema:", fullInsertErr.message);
+        await supabaseAdmin.from("marketplace_orders").insert({
+          customer_name: `${cleanName} (${cleanPhone})`,
+          customer_email: cleanEmail || `${cleanPhone}@arkado.store`,
+          product_id: course_id,
+          amount: authoritativeAmount,
+          payment_status: "pending",
+          razorpay_order_id: order_id,
+          razorpay_payment_id: cleanUtr || undefined,
+          delivery_status: "pending",
+        });
+      }
     } catch (dbErr) {
       console.warn("[orders-post] marketplace_orders insert warning:", dbErr);
     }

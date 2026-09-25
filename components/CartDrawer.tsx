@@ -87,9 +87,24 @@ export default function CartDrawer({
   const supportEmail = upiSettings.support_email || DEFAULT_SETTINGS.contact.email;
   const orderMessages = upiSettings.order_messages;
 
+  const handleDrawerClose = () => {
+    if (step === "success") {
+      setStep("cart");
+      setCreatedOrder(null);
+      setUtr("");
+    }
+    setErrorMsg("");
+    onClose();
+  };
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      if (step === "success") {
+        setStep("cart");
+        setCreatedOrder(null);
+      }
+      setErrorMsg("");
       fetchWithCache<any>("/api/settings")
         .then((data) => {
           if (data && !data.error) {
@@ -185,28 +200,8 @@ export default function CartDrawer({
 
       setCreatedOrder(orderObj);
       setStep("success");
-
-      // Auto-open WhatsApp chat with formatted order details
-      const cleanAdminNumber = getCleanWhatsAppNumber(upiSettings);
-      const orderMsg =
-        `🛒 *नया ऑर्डर भुगतान विवरण — Arkado*\n\n` +
-        `🆔 *Order ID:* ${orderId}\n` +
-        `👤 *नाम:* ${name.trim()}\n` +
-        `📱 *मोबाइल:* ${cleanPhone}\n` +
-        `✉️ *ईमेल:* ${email.trim().toLowerCase()}\n` +
-        `📚 *कोर्स:* ${primaryCourse?.title || "कोर्स बंडल"}\n` +
-        `💰 *राशि:* ₹${subtotal}\n` +
-        (utr.trim() ? `🔢 *UTR/Ref No:* ${utr.trim()}\n` : "") +
-        `\nमैंने भुगतान कर दिया है, कृपया चेक करके Drive नोट्स का लिंक भेजें।`;
-
-      const targetWaUrl = `https://wa.me/${cleanAdminNumber}?text=${encodeURIComponent(orderMsg)}`;
-      if (typeof window !== "undefined") {
-        try {
-          window.open(targetWaUrl, "_blank");
-        } catch (e) {
-          console.log("Could not auto-open WhatsApp:", e);
-        }
-      }
+      // Clear cart items in parent so user doesn't re-buy the same items accidentally
+      cartItems.forEach((item) => onRemoveItem(item.id));
     } catch (err: any) {
       console.error("Order error:", err);
       setErrorMsg(err.message || "कुछ गड़बड़ हुई, कृपया WhatsApp पर संपर्क करें।");
@@ -225,7 +220,7 @@ export default function CartDrawer({
       {/* Backdrop overlay */}
       <div
         className="fixed inset-0 bg-stone-900/60 backdrop-blur-xs z-[70] anim-fade-in-up"
-        onClick={onClose}
+        onClick={handleDrawerClose}
         aria-hidden="true"
       />
 
@@ -252,7 +247,7 @@ export default function CartDrawer({
               )}
             </div>
             <button
-              onClick={onClose}
+              onClick={handleDrawerClose}
               className="w-8 h-8 rounded-md bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition cursor-pointer"
               aria-label="Close"
             >
@@ -445,10 +440,18 @@ export default function CartDrawer({
                   <input
                     type="tel"
                     required
-                    maxLength={10}
+                    maxLength={16}
                     placeholder="उदा. 9876543210"
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
+                    onChange={(e) => {
+                      let val = e.target.value.replace(/\D/g, "");
+                      if (val.length === 12 && val.startsWith("91")) {
+                        val = val.slice(2);
+                      } else if (val.length === 11 && val.startsWith("0")) {
+                        val = val.slice(1);
+                      }
+                      setPhone(val.slice(0, 10));
+                    }}
                     className="w-full px-3 py-2.5 rounded-md border border-slate-300 text-sm font-mono focus:outline-none focus:border-amber-700"
                   />
                 </div>
@@ -466,7 +469,7 @@ export default function CartDrawer({
                     required
                     placeholder="उदा. rahul@gmail.com"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => setEmail(e.target.value.trim().toLowerCase())}
                     className="w-full px-3 py-2.5 rounded-md border border-slate-300 text-sm focus:outline-none focus:border-amber-700"
                   />
                   <p className="text-[10px] text-slate-500 mt-1">
@@ -496,68 +499,37 @@ export default function CartDrawer({
                   </p>
                 </div>
 
-                {/* Direct WhatsApp / Gmail Order Section */}
-                <div className="pt-2 pb-1 space-y-2">
-                  <div className="relative flex py-1.5 items-center">
-                    <div className="flex-grow border-t border-slate-200"></div>
-                    <span className="flex-shrink mx-2 text-[10px] font-extrabold text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-                      Or Order Directly Without Form
-                    </span>
-                    <div className="flex-grow border-t border-slate-200"></div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-2">
-                    <a
-                      href={`https://wa.me/${getCleanWhatsAppNumber(upiSettings)}?text=${encodeURIComponent(
-                        (orderMessages?.whatsapp_order_template || 'नमस्ते Arkado! मुझे "{course_title}" (₹{amount}) खरीदना है।\nUPI ID: {upi_id}\nकृपया अपना Payment QR कोड भेजें या नोट्स शेयर करें।')
-                          .replaceAll("{course_title}", primaryCourse?.title || "कोर्स बंडल")
-                          .replaceAll("{amount}", subtotal.toString())
-                          .replaceAll("{upi_id}", upiId)
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition shadow-xs"
-                    >
-                      <WhatsappIcon size={15} />
-                      <span>WhatsApp Order</span>
-                    </a>
-
-                    <a
-                      href={`mailto:${supportEmail}?subject=${encodeURIComponent(
-                        (orderMessages?.gmail_subject || "Arkado Order Inquiry - {course_title}")
-                          .replaceAll("{course_title}", primaryCourse?.title || "कोर्स बंडल")
-                          .replaceAll("{amount}", subtotal.toString())
-                      )}&body=${encodeURIComponent(
-                        (orderMessages?.gmail_body || 'नमस्ते Arkado Team,\n\nमुझे "{course_title}" (₹{amount}) खरीदना है।\n\nकृपया पेमेंट विवरण व QR कोड भेजें।')
-                          .replaceAll("{course_title}", primaryCourse?.title || "कोर्स बंडल")
-                          .replaceAll("{amount}", subtotal.toString())
-                      )}`}
-                      className="flex items-center justify-center gap-1.5 py-2.5 px-2 rounded-xl bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold transition shadow-xs"
-                    >
-                      <span>✉️</span>
-                      <span>Gmail Order</span>
-                    </a>
-                  </div>
-                </div>
-
                 {/* I've Paid button */}
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-sm"
+                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-700 via-amber-800 to-amber-900 hover:from-amber-800 hover:to-amber-950 text-white font-extrabold text-sm transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-md cursor-pointer mt-4"
                 >
                   {isSubmitting ? (
-                    "Submitting..."
+                    <>
+                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      <span>ऑर्डर दर्ज हो रहा है...</span>
+                    </>
                   ) : (
                     <>
                       <CheckIcon size={16} />
-                      I Have Paid
+                      <span>मैंने भुगतान कर दिया है (Submit Order)</span>
                     </>
                   )}
                 </button>
 
-                <p className="text-[10px] text-slate-500 text-center">
-                  Pay ₹{subtotal} via UPI, then click the button above
+                <p className="text-[11px] text-slate-500 text-center pt-1">
+                  भुगतान करने में कोई समस्या है?{" "}
+                  <a
+                    href={`https://wa.me/${getCleanWhatsAppNumber(upiSettings)}?text=${encodeURIComponent(
+                      `नमस्ते Arkado! मुझे "${primaryCourse?.title || "कोर्स"}" (₹${subtotal}) खरीदने में सहायता चाहिए।`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-700 font-bold hover:underline inline-flex items-center gap-1"
+                  >
+                    <WhatsappIcon size={13} className="inline text-emerald-600" /> WhatsApp सहायता
+                  </a>
                 </p>
               </form>
             </div>
@@ -638,7 +610,10 @@ export default function CartDrawer({
               </a>
 
               <button
-                onClick={() => router.push("/download")}
+                onClick={() => {
+                  handleDrawerClose();
+                  router.push("/download");
+                }}
                 className="btn-primary w-full"
               >
                 <DownloadIcon size={14} />
@@ -646,8 +621,8 @@ export default function CartDrawer({
               </button>
 
               <button
-                onClick={onClose}
-                className="w-full py-2 rounded-md border border-slate-300 text-slate-700 text-xs font-semibold hover:bg-slate-100 transition cursor-pointer"
+                onClick={handleDrawerClose}
+                className="w-full py-2.5 rounded-xl border border-slate-300 text-slate-700 text-xs font-semibold hover:bg-slate-100 transition cursor-pointer"
               >
                 Close Window
               </button>
@@ -671,14 +646,32 @@ export default function CartDrawer({
                 <span>Proceed to Checkout</span>
               </button>
             ) : (
-              <div className="flex gap-2">
+              <div className="flex gap-2 w-full">
                 <button
                   type="button"
                   onClick={() => setStep("cart")}
-                  className="w-1/3 py-3 rounded-md border border-slate-300 text-slate-700 font-bold text-xs hover:bg-slate-100 transition cursor-pointer flex items-center justify-center gap-1"
+                  className="w-1/3 py-3 rounded-xl border border-slate-300 text-slate-700 font-bold text-xs hover:bg-slate-100 transition cursor-pointer flex items-center justify-center gap-1"
                 >
-                  <ChevronLeftIcon size={12} />
-                  Back
+                  <ChevronLeftIcon size={14} />
+                  <span>Back</span>
+                </button>
+                <button
+                  type="submit"
+                  form="upi-order-form"
+                  disabled={isSubmitting}
+                  className="flex-1 py-3 rounded-xl bg-gradient-to-r from-amber-700 via-amber-800 to-amber-900 hover:from-amber-800 hover:to-amber-950 text-white font-extrabold text-xs sm:text-sm transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-md cursor-pointer"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                      <span>सबमिट हो रहा है...</span>
+                    </>
+                  ) : (
+                    <>
+                      <CheckIcon size={16} />
+                      <span>मैंने भुगतान कर दिया है</span>
+                    </>
+                  )}
                 </button>
               </div>
             )}

@@ -8,6 +8,7 @@ interface OrderData {
   course_title: string;
   amount: number;
   delivery_mode: string;
+  utr?: string;
 }
 
 function escapeHtml(str: string | undefined): string {
@@ -39,6 +40,7 @@ export async function POST(req: NextRequest) {
     const safePhone = escapeHtml(order.phone);
     const safeCourse = escapeHtml(order.course_title);
     const safeDelivery = escapeHtml(order.delivery_mode);
+    const safeUtr = escapeHtml(order.utr);
     const cleanPhoneDigits = (order.phone || "").replace(/\D/g, "");
 
     const nodemailer = await import("nodemailer");
@@ -86,6 +88,14 @@ export async function POST(req: NextRequest) {
             <td style="padding: 8px; color: #666; font-weight: bold;">डिलीवरी</td>
             <td style="padding: 8px; text-transform: uppercase; font-weight: bold;">${safeDelivery}</td>
           </tr>
+          ${
+            safeUtr
+              ? `<tr style="background: #ecfdf5;">
+                   <td style="padding: 8px; color: #065f46; font-weight: bold;">UTR / Ref No.</td>
+                   <td style="padding: 8px; font-family: monospace; font-size: 15px; font-weight: bold; color: #047857;">${safeUtr}</td>
+                 </tr>`
+              : ""
+          }
           <tr style="background: #fef3c7;">
             <td style="padding: 8px; color: #92400e; font-weight: bold;">समय</td>
             <td style="padding: 8px; color: #92400e;">${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}</td>
@@ -96,13 +106,14 @@ export async function POST(req: NextRequest) {
           <h3 style="margin: 0 0 8px; color: #92400e;">⚠️ कृपया manually verify करें</h3>
           <p style="margin: 0; color: #78350f; font-size: 14px;">
             UPI app में <strong>₹${Number(order.amount) || 0}</strong> payment check करें।<br/>
+            ${safeUtr ? `छात्र द्वारा दिया गया UTR: <strong>${safeUtr}</strong><br/>` : ""}
             ${cleanPhoneDigits ? `<a href="https://wa.me/${cleanPhoneDigits}">WhatsApp पर ${safePhone} से संपर्क करें</a><br/>` : ""}
             ${safeEmail ? `<a href="mailto:${safeEmail}">${safeEmail} पर email भेजें</a>` : ""}
           </p>
         </div>
 
         <p style="color: #999; font-size: 12px; margin-top: 30px;">
-          Arkado Admin Panel → <a href="https://arkado.in/admin">arkado.in/admin</a>
+          Arkado Admin Panel → <a href="https://arkado.store/ranjeet/admin">arkado.store/ranjeet/admin</a>
         </p>
       </div>
     `;
@@ -115,10 +126,11 @@ Email: ${order.email || "N/A"}
 Phone: ${order.phone || "N/A"}
 कोर्स: ${order.course_title}
 राशि: ₹${order.amount}
-डिलीवरी: ${order.delivery_mode}
+${order.utr ? `UTR: ${order.utr}\n` : ""}डिलीवरी: ${order.delivery_mode}
 समय: ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}
 
 ⚠️ कृपया manually verify करें — UPI app में payment check करें।
+Admin Panel: https://arkado.store/ranjeet/admin
     `;
 
     await transporter.sendMail({

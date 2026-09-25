@@ -308,6 +308,46 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
     }
   }
 
+  if (key === "orders") {
+    try {
+      const { data: dbOrders, error: oErr } = await supabaseAdmin
+        .from("marketplace_orders")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (!oErr && Array.isArray(dbOrders)) {
+        const orders = dbOrders.map((d) => ({
+          id: d.razorpay_order_id || d.id,
+          order_id: d.razorpay_order_id || d.id,
+          db_id: d.id,
+          name: d.customer_name || "Customer",
+          customer_name: d.customer_name || "Customer",
+          email: d.customer_email || "",
+          customer_email: d.customer_email || "",
+          phone: d.customer_phone || "",
+          customer_phone: d.customer_phone || "",
+          delivery_mode: d.delivery_mode || "both",
+          delivery_status: d.delivery_status || "pending",
+          status: d.delivery_status || "pending",
+          payment_status: d.payment_status || "pending",
+          amount: Number(d.amount) || 0,
+          course_id: d.product_id || "",
+          course_title: d.course_title || "Course Bundle",
+          exam_name: d.course_title || "Course Bundle",
+          utr: d.utr || d.razorpay_payment_id || "",
+          drive_url: d.drive_url || "",
+          created_at: d.created_at || new Date().toISOString(),
+          updated_at: d.updated_at || d.created_at || new Date().toISOString(),
+        }));
+
+        SERVER_STORE_CACHE[key] = { data: orders, timestamp: Date.now() };
+        return orders as unknown as T;
+      }
+    } catch (err) {
+      console.warn("[store-data] Primary read from marketplace_orders failed, falling back:", err);
+    }
+  }
+
   // 2. SECONDARY FALLBACK: Supabase admin_settings targeted columns (Legacy compatibility)
   try {
     const colToFetch = KEY_COLUMN_MAP[key] || "openrouter_key, gemini_key, claude_key, openai_key";
@@ -499,6 +539,9 @@ export async function setStoreData<T>(key: string, localFilePath: string, data: 
     } else if (key === "settings") {
       revalidatePath("/api/settings");
       revalidatePath("/");
+    } else if (key === "orders") {
+      revalidatePath("/api/admin/orders");
+      revalidatePath("/api/admin/stats");
     }
   } catch {}
 

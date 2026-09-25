@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
 import { getStoreData, setStoreData } from "@/lib/store-data";
-import { supabaseAdmin } from "@/lib/supabase";
+import { supabaseAdmin, buildOrderQueryFilter } from "@/lib/supabase";
 import nodemailer from "nodemailer";
 
 export const dynamic = "force-dynamic";
@@ -49,10 +49,11 @@ export async function POST(
 
     // If not found in JSON, search Supabase marketplace_orders
     if (!order) {
+      const filter = buildOrderQueryFilter(id);
       const { data: dbOrder } = await supabaseAdmin
         .from("marketplace_orders")
         .select("*")
-        .or(`razorpay_order_id.eq.${id},id.eq.${id}`)
+        .or(filter)
         .limit(1)
         .maybeSingle();
 
@@ -324,15 +325,20 @@ https://arkado.store
 
     // Sync to Supabase marketplace_orders
     try {
-      await supabaseAdmin
+      const filter = buildOrderQueryFilter(id);
+      const { error: sbErr } = await supabaseAdmin
         .from("marketplace_orders")
         .update({
           payment_status: "paid",
           delivery_status: "delivered",
         })
-        .or(`razorpay_order_id.eq.${id},id.eq.${id}`);
+        .or(filter);
+
+      if (sbErr) {
+        console.warn("[approve-route] Supabase sync warning:", sbErr.message);
+      }
     } catch (dbErr) {
-      console.warn("[approve-route] Supabase sync warning:", dbErr);
+      console.warn("[approve-route] Supabase sync exception:", dbErr);
     }
 
     return NextResponse.json({

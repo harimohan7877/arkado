@@ -29,6 +29,7 @@ interface Stats {
   totalGuests: number;
   totalChats: number;
   totalRevenue: number;
+  totalOrders?: number;
   warning?: string;
 }
 
@@ -49,7 +50,6 @@ export default function AdminDashboardPage() {
   const [activeTab, setActiveTab] = useState<TabType>("categories");
   const [stats, setStats] = useState<Stats | null>(null);
   const [loadingStats, setLoadingStats] = useState(false);
-  const [orders, setOrders] = useState<MarketplaceOrder[]>([]);
 
   const getPasscode = () => {
     if (typeof window !== "undefined") {
@@ -101,22 +101,10 @@ export default function AdminDashboardPage() {
     }
   };
 
-  const fetchOrders = async () => {
-    try {
-      const res = await fetch("/api/admin/orders", { headers: getAuthHeaders() });
-      if (res.ok) {
-        const data = await res.json();
-        setOrders(data);
-      }
-    } catch {}
-  };
-
   useEffect(() => {
     startTransition(() => {
       if (activeTab === "dashboard") {
         fetchStats();
-      } else if (activeTab === "orders") {
-        fetchOrders();
       }
     });
   }, [activeTab]);
@@ -205,7 +193,7 @@ export default function AdminDashboardPage() {
                   <div className="text-xs text-emerald-600 mt-1">कुल आय</div>
                 </div>
                 <div className="p-4 bg-amber-50 rounded-xl border border-amber-200">
-                  <div className="text-xl font-extrabold text-amber-800">{orders.length}</div>
+                  <div className="text-xl font-extrabold text-amber-800">{stats?.totalOrders || 0}</div>
                   <div className="text-xs text-amber-600 mt-1">कुल ऑर्डर्स</div>
                 </div>
                 <div className="p-4 bg-sky-50 rounded-xl border border-sky-200">
@@ -217,7 +205,7 @@ export default function AdminDashboardPage() {
           </div>
         )}
 
-        {activeTab === "orders" && <OrdersTab getAuthHeaders={getAuthHeaders} orders={orders as any} />}
+        {activeTab === "orders" && <OrdersTab getAuthHeaders={getAuthHeaders} />}
       </main>
     </div>
   );

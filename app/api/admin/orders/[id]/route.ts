@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
 import { getStoreData, setStoreData } from "@/lib/store-data";
-import { supabaseAdmin } from "@/lib/supabase";
+import { supabaseAdmin, buildOrderQueryFilter, isUUID } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -18,12 +18,17 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
   if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const { id } = await params;
+  const { searchParams } = new URL(req.url);
+  const dbId = searchParams.get("db_id");
   const body = await req.json();
   const orders = await readOrders();
-  const idx = orders.findIndex((o: Record<string, unknown>) => o.id === id || o.order_id === id);
-  if (idx === -1) return NextResponse.json({ error: "Order not found" }, { status: 404 });
+  const idx = orders.findIndex(
+    (o: Record<string, unknown>) =>
+      o.id === id || o.order_id === id || (o as any).db_id === id || (dbId && (o as any).db_id === dbId)
+  );
 
-  const updates: Record<string, unknown> = { ...orders[idx], ...body, updated_at: new Date().toISOString() };
+  const current = idx !== -1 ? orders[idx] : {};
+  const updates: Record<string, unknown> = { ...current, ...body, updated_at: new Date().toISOString() };
   if (body.delivery_status) {
     updates.status = body.delivery_status;
     updates.delivery_status = body.delivery_status;
@@ -35,20 +40,32 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     updates.payment_status = body.payment_status;
   }
 
-  orders[idx] = updates;
+  if (idx !== -1) {
+    orders[idx] = updates;
+  } else {
+    orders.unshift(updates);
+  }
   await writeOrders(orders);
 
-  // Sync to Supabase marketplace_orders
+  // Sync to Supabase marketplace_orders safely
   try {
     const supabaseUpdates: Record<string, any> = {};
     if (updates.payment_status) supabaseUpdates.payment_status = updates.payment_status;
     if (updates.delivery_status) supabaseUpdates.delivery_status = updates.delivery_status;
 
     if (Object.keys(supabaseUpdates).length > 0) {
-      await supabaseAdmin
+      let filter = buildOrderQueryFilter(id);
+      if (dbId && isUUID(dbId) && !filter.includes(dbId)) {
+        filter += `,id.eq.${dbId}`;
+      }
+      const { error: dbErr } = await supabaseAdmin
         .from("marketplace_orders")
         .update(supabaseUpdates)
-        .or(`razorpay_order_id.eq.${id},id.eq.${id}`);
+        .or(filter);
+
+      if (dbErr) {
+        console.error("[admin-orders-id-put] Supabase sync error:", dbErr.message);
+      }
     }
   } catch (dbErr) {
     console.warn("[admin-orders-id-put] Supabase sync warning:", dbErr);
@@ -61,18 +78,40 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ i
   if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const { id } = await params;
-  let orders = await readOrders();
-  orders = orders.filter((o: Record<string, unknown>) => o.id !== id && o.order_id !== id);
-  await writeOrders(orders);
+  const { searchParams } = new URL(req.url);
+  const dbId = searchParams.get("db_id");
 
-  // Delete from Supabase
+  // 1. Delete from Supabase marketplace_orders safely with UUID handling
   try {
-    await supabaseAdmin
+    let filter = buildOrderQueryFilter(id);
+    if (dbId && isUUID(dbId) && !filter.includes(dbId)) {
+      filter += `,id.eq.${dbId}`;
+    }
+    const { error: dbErr } = await supabaseAdmin
       .from("marketplace_orders")
       .delete()
-      .or(`razorpay_order_id.eq.${id},id.eq.${id}`);
+      .or(filter);
+
+    if (dbErr) {
+      console.error("[admin-orders-id-delete] Supabase delete error:", dbErr.message);
+    }
   } catch (dbErr) {
     console.warn("[admin-orders-id-delete] Supabase delete warning:", dbErr);
+  }
+
+  // 2. Also remove from local JSON & in-memory cache
+  try {
+    let orders = await readOrders();
+    orders = orders.filter(
+      (o: Record<string, unknown>) =>
+        o.id !== id &&
+        o.order_id !== id &&
+        (o as any).db_id !== id &&
+        (!dbId || (o as any).db_id !== dbId)
+    );
+    await writeOrders(orders);
+  } catch (cleanupErr) {
+    console.warn("[admin-orders-id-delete] Local cleanup warning:", cleanupErr);
   }
 
   return NextResponse.json({ success: true, id });

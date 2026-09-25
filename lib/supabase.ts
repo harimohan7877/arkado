@@ -14,6 +14,27 @@ export const supabaseAdmin = isServer
   ? createClient(supabaseUrl, supabaseServiceKey)
   : (null as unknown as ReturnType<typeof createClient>);
 
+/**
+ * Checks if a string is a valid UUID format.
+ * Prevents PostgreSQL "invalid input syntax for type uuid" errors when querying tables with UUID primary keys.
+ */
+export function isUUID(str?: string | null): boolean {
+  if (!str) return false;
+  return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(str);
+}
+
+/**
+ * Safely constructs a Supabase .or() filter string for marketplace_orders.
+ * If the ID is a valid UUID, queries both `id` and `razorpay_order_id`.
+ * If it is an order ID string (e.g. 'ARK-2026-4816'), queries only TEXT columns (`razorpay_order_id` and `razorpay_payment_id`).
+ */
+export function buildOrderQueryFilter(id: string): string {
+  if (isUUID(id)) {
+    return `id.eq.${id},razorpay_order_id.eq.${id}`;
+  }
+  return `razorpay_order_id.eq.${id},razorpay_payment_id.eq.${id}`;
+}
+
 // Message limits
 export const MESSAGE_LIMITS = {
   guest: 5,        // Bina login — 5 messages

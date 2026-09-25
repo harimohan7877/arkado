@@ -6,6 +6,7 @@ import { WhatsappIcon } from "@/components/icons";
 export interface Order {
   id: string;
   order_id: string;
+  db_id?: string;
   customer_name: string;
   customer_email: string;
   customer_phone?: string;
@@ -22,6 +23,7 @@ export interface Order {
   delivery_status: "pending" | "delivered";
   drive_url?: string;
   created_at: string;
+  updated_at?: string;
 }
 
 interface OrdersTabProps {
@@ -29,15 +31,18 @@ interface OrdersTabProps {
   orders?: Order[];
 }
 
+export type OrderSubTab = "pending" | "approved" | "fake" | "all";
+
 export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }: OrdersTabProps) {
   const [orders, setOrders] = useState<Order[]>(initialOrders);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
-  const [filterStatus, setFilterStatus] = useState<"all" | "pending" | "paid" | "delivered">("all");
+  // DEFAULT TAB: "pending" (Zero Kachra - only orders waiting for approval)
+  const [activeTab, setActiveTab] = useState<OrderSubTab>("pending");
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const [expandedOrder, setExpandedOrder] = useState<string | null>(null);
   const [approvingId, setApprovingId] = useState<string | null>(null);
-  const [deletingId, setDeletingId] = useState<string | null>(null);
+  const [actionId, setActionId] = useState<string | null>(null);
 
   useEffect(() => {
     fetchOrders();
@@ -47,7 +52,10 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
     setLoading(true);
     try {
       const res = await fetch("/api/admin/orders", { headers: getAuthHeaders() });
-      if (res.ok) setOrders(await res.json());
+      if (res.ok) {
+        const data = await res.json();
+        setOrders(data);
+      }
     } catch (err) {
       console.error(err);
       setMessage({ type: "error", text: "ऑर्डर्स लोड करने में त्रुटि आई।" });
@@ -85,7 +93,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
       const targetEmail = order.customer_email || order.email || "छात्र";
       setMessage({
         type: "success",
-        text: `✅ ऑर्डर ${order.order_id} स्वीकृत हो गया! Google Drive नोट्स ईमेल (${targetEmail}) पर सफलतापूर्वक भेज दिए गए।`,
+        text: `✅ ऑर्डर ${order.order_id} स्वीकृत हो गया! Google Drive नोट्स ईमेल (${targetEmail}) पर भेज दिए गए और यह 'स्वीकृत' सब-सेक्शन में सुरक्षित हो गया।`,
       });
     } catch (err: any) {
       console.error("Approve error:", err);
@@ -98,20 +106,115 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
     }
   };
 
-  // 2. Reject / Delete Fake Submission from Database
-  const handleDeleteOrder = async (order: Order) => {
-    if (deletingId) return;
+  // 2. Mark as Fake / Rejected (Moves out of Pending into Fake sub-section)
+  const handleMarkAsFake = async (order: Order) => {
+    if (actionId) return;
 
     const confirmed = window.confirm(
-      `⚠️ क्या आप इस ऑर्डर को डेटाबेस से स्थायी रूप से हटाना चाहते हैं?\n\nOrder ID: ${order.order_id}\nनाम: ${order.customer_name || order.name}\nराशि: ₹${order.amount}\nUTR: ${order.utr || "नहीं दिया"}`
+      `🚫 क्या आप इस ऑर्डर को 'फर्जी / अस्वीकृत (Fake / Rejected)' में डालना चाहते हैं?\n\nOrder ID: ${order.order_id}\nनाम: ${order.customer_name || order.name}\nराशि: ₹${order.amount}\nUTR: ${order.utr || "नहीं दिया"}\n\nयह ऑर्डर मुख्य पेंडिंग स्क्रीन से हटकर 'फर्जी' सब-सेक्शन में सुरक्षित हो जाएगा।`
     );
     if (!confirmed) return;
 
-    setDeletingId(order.id);
+    setActionId(order.id);
     setMessage(null);
 
     try {
-      const res = await fetch(`/api/admin/orders/${order.id}`, {
+      const url = `/api/admin/orders/${order.id}${order.db_id ? `?db_id=${order.db_id}` : ""}`;
+      const res = await fetch(url, {
+        method: "PUT",
+        headers: { ...getAuthHeaders(), "Content-Type": "application/json" },
+        body: JSON.stringify({ payment_status: "failed", delivery_status: "pending" }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "ऑर्डर अपडेट नहीं हो सका।");
+      }
+
+      setOrders((prev) =>
+        prev.map((o) =>
+          o.id === order.id || o.order_id === order.order_id || (order.db_id && o.db_id === order.db_id)
+            ? { ...o, payment_status: "failed" }
+            : o
+        )
+      );
+
+      if (expandedOrder === order.id) setExpandedOrder(null);
+
+      setMessage({
+        type: "success",
+        text: `🚫 ऑर्डर ${order.order_id} को 'फर्जी / अस्वीकृत' सब-सेक्शन में स्थानांतरित कर दिया गया।`,
+      });
+    } catch (err: any) {
+      console.error("Mark fake error:", err);
+      setMessage({
+        type: "error",
+        text: `❌ एरर: ${err.message || "सर्वर समस्या"}`,
+      });
+    } finally {
+      setActionId(null);
+    }
+  };
+
+  // 3. Restore Order back to Pending
+  const handleRestoreOrder = async (order: Order) => {
+    if (actionId) return;
+    setActionId(order.id);
+    setMessage(null);
+
+    try {
+      const url = `/api/admin/orders/${order.id}${order.db_id ? `?db_id=${order.db_id}` : ""}`;
+      const res = await fetch(url, {
+        method: "PUT",
+        headers: { ...getAuthHeaders(), "Content-Type": "application/json" },
+        body: JSON.stringify({ payment_status: "pending", delivery_status: "pending" }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "ऑर्डर रीस्टोर नहीं हो सका।");
+      }
+
+      setOrders((prev) =>
+        prev.map((o) =>
+          o.id === order.id || o.order_id === order.order_id || (order.db_id && o.db_id === order.db_id)
+            ? { ...o, payment_status: "pending", delivery_status: "pending" }
+            : o
+        )
+      );
+
+      if (expandedOrder === order.id) setExpandedOrder(null);
+
+      setMessage({
+        type: "success",
+        text: `↻ ऑर्डर ${order.order_id} को वापस 'सत्यापन बाकी' (Pending) में रीस्टोर कर दिया गया।`,
+      });
+    } catch (err: any) {
+      console.error("Restore error:", err);
+      setMessage({
+        type: "error",
+        text: `❌ एरर: ${err.message || "सर्वर समस्या"}`,
+      });
+    } finally {
+      setActionId(null);
+    }
+  };
+
+  // 4. Permanently Delete Fake/Invalid Submission from Supabase Database
+  const handlePermanentDelete = async (order: Order) => {
+    if (actionId) return;
+
+    const confirmed = window.confirm(
+      `🗑️ क्या आप इस ऑर्डर को Supabase डेटाबेस से हमेशा के लिए पूरी तरह मिटाना (Permanently Delete) चाहते हैं?\n\nOrder ID: ${order.order_id}\nनाम: ${order.customer_name || order.name}\nराशि: ₹${order.amount}\nUTR: ${order.utr || "नहीं दिया"}\n\n⚠️ चेतावनी: यह क्रिया वापस नहीं ली जा सकती!`
+    );
+    if (!confirmed) return;
+
+    setActionId(order.id);
+    setMessage(null);
+
+    try {
+      const url = `/api/admin/orders/${order.id}${order.db_id ? `?db_id=${order.db_id}` : ""}`;
+      const res = await fetch(url, {
         method: "DELETE",
         headers: getAuthHeaders(),
       });
@@ -121,12 +224,19 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
         throw new Error(data.error || "ऑर्डर नहीं हटाया जा सका।");
       }
 
-      setOrders((prev) => prev.filter((o) => o.id !== order.id && o.order_id !== order.order_id));
+      setOrders((prev) =>
+        prev.filter(
+          (o) =>
+            o.id !== order.id &&
+            o.order_id !== order.order_id &&
+            (!order.db_id || o.db_id !== order.db_id)
+        )
+      );
       if (expandedOrder === order.id) setExpandedOrder(null);
 
       setMessage({
         type: "success",
-        text: `🗑️ फर्जी/अमान्य ऑर्डर ${order.order_id} डेटाबेस से हटा दिया गया।`,
+        text: `🗑️ ऑर्डर ${order.order_id} डेटाबेस से हमेशा के लिए मिटा दिया गया।`,
       });
     } catch (err: any) {
       console.error("Delete error:", err);
@@ -135,13 +245,14 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
         text: `❌ हटाने में त्रुटि: ${err.message || "सर्वर समस्या"}`,
       });
     } finally {
-      setDeletingId(null);
+      setActionId(null);
     }
   };
 
-  // 3. Export to Excel (CSV)
+  // 5. Export to Excel (CSV)
   const exportToExcelCSV = () => {
-    if (orders.length === 0) {
+    const listToExport = filteredOrders;
+    if (listToExport.length === 0) {
       setMessage({ type: "error", text: "डाउनलोड करने के लिए कोई ऑर्डर मौजूद नहीं है।" });
       return;
     }
@@ -160,7 +271,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
       "Google Drive Link",
     ];
 
-    const rows = orders.map((o) => [
+    const rows = listToExport.map((o) => [
       `"${o.order_id || o.id}"`,
       `"${new Date(o.created_at).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}"`,
       `"${(o.customer_name || o.name || "").replace(/"/g, '""')}"`,
@@ -180,7 +291,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.setAttribute("download", `Arkado_Orders_${new Date().toISOString().slice(0, 10)}.csv`);
+    link.setAttribute("download", `Arkado_${activeTab}_orders_${new Date().toISOString().slice(0, 10)}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -196,33 +307,6 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
     const phone = rawDigits ? `91${rawDigits}` : "";
     const url = phone ? `https://wa.me/${phone}?text=${encodeURIComponent(msg)}` : `https://wa.me/?text=${encodeURIComponent(msg)}`;
     window.open(url, "_blank", "noopener,noreferrer");
-    handleUpdateDelivery(order.id, "delivered");
-  };
-
-  const handleUpdateDelivery = async (id: string, status: "pending" | "delivered") => {
-    try {
-      await fetch(`/api/admin/orders/${id}`, {
-        method: "PUT",
-        headers: { ...getAuthHeaders(), "Content-Type": "application/json" },
-        body: JSON.stringify({ delivery_status: status }),
-      });
-      setOrders((prev) => prev.map((o) => (o.id === id ? { ...o, delivery_status: status } : o)));
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  const handleUpdatePayment = async (id: string, status: "pending" | "paid" | "failed") => {
-    try {
-      await fetch(`/api/admin/orders/${id}`, {
-        method: "PUT",
-        headers: { ...getAuthHeaders(), "Content-Type": "application/json" },
-        body: JSON.stringify({ payment_status: status }),
-      });
-      setOrders((prev) => prev.map((o) => (o.id === id ? { ...o, payment_status: status } : o)));
-    } catch (err) {
-      console.error(err);
-    }
   };
 
   const copyToClipboard = (text: string, label: string) => {
@@ -231,14 +315,30 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
     setMessage({ type: "success", text: `${label} कॉपी हो गया!` });
   };
 
+  // Sub-Section Categories
+  const pendingOrders = orders.filter(
+    (o) => o.payment_status !== "paid" && o.payment_status !== "failed" && o.delivery_status !== "delivered"
+  );
+  const approvedOrders = orders.filter(
+    (o) => o.payment_status === "paid" && o.delivery_status === "delivered"
+  );
+  const fakeOrders = orders.filter(
+    (o) => o.payment_status === "failed"
+  );
+
+  // Sub-Section Filtering
   const filteredOrders = orders
     .filter((o) => {
-      if (filterStatus !== "all") {
-        if (filterStatus === "delivered") return o.delivery_status === "delivered";
-        if (filterStatus === "paid") return o.payment_status === "paid" && o.delivery_status === "pending";
-        return o.payment_status === filterStatus;
+      if (activeTab === "pending") {
+        return o.payment_status !== "paid" && o.payment_status !== "failed" && o.delivery_status !== "delivered";
       }
-      return true;
+      if (activeTab === "approved") {
+        return o.payment_status === "paid" && o.delivery_status === "delivered";
+      }
+      if (activeTab === "fake") {
+        return o.payment_status === "failed";
+      }
+      return true; // 'all'
     })
     .filter((o) => {
       if (!search.trim()) return true;
@@ -256,20 +356,21 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
 
   const stats = {
     total: orders.length,
-    pendingApproval: orders.filter((o) => o.payment_status !== "paid" || o.delivery_status !== "delivered").length,
-    paidDelivered: orders.filter((o) => o.payment_status === "paid" && o.delivery_status === "delivered").length,
+    pending: pendingOrders.length,
+    approved: approvedOrders.length,
+    fake: fakeOrders.length,
     revenue: orders.filter((o) => o.payment_status === "paid").reduce((sum, o) => sum + (Number(o.amount) || 0), 0),
   };
 
   const getPaymentChip = (status: Order["payment_status"]) => {
-    if (status === "paid") return "bg-emerald-50 text-emerald-700 border-emerald-200";
-    if (status === "failed") return "bg-red-50 text-red-700 border-red-200";
+    if (status === "paid") return "bg-emerald-50 text-emerald-700 border-emerald-200 font-bold";
+    if (status === "failed") return "bg-red-50 text-red-700 border-red-200 font-bold";
     return "bg-amber-50 text-amber-800 border-amber-300 font-bold";
   };
 
   const getDeliveryChip = (status: Order["delivery_status"]) =>
     status === "delivered"
-      ? "bg-emerald-50 text-emerald-700 border-emerald-200"
+      ? "bg-emerald-50 text-emerald-700 border-emerald-200 font-bold"
       : "bg-amber-50 text-amber-800 border-amber-300 font-bold";
 
   return (
@@ -281,7 +382,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
             <span>📑</span> ऑर्डर व पेमेंट सत्यापन (Orders & Verification)
           </h2>
           <p className="text-stone-500 text-xs sm:text-sm mt-0.5">
-            पेमेंट चेक करें, 1-क्लिक में Google Drive नोट्स ईमेल पर भेजें या फर्जी प्रविष्टियां हटाएं।
+            पेमेंट चेक करें, 1-क्लिक में Google Drive नोट्स ईमेल पर भेजें या फर्जी प्रविष्टियों को हटाएं।
           </p>
         </div>
         <div className="flex items-center gap-2 flex-wrap">
@@ -297,18 +398,46 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
             disabled={loading}
             className="px-3.5 py-2 bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-bold rounded-xl disabled:opacity-50 transition cursor-pointer flex items-center gap-1"
           >
-            <span>{loading ? "↻" : "↻"}</span>
+            <span className={loading ? "animate-spin" : ""}>↻</span>
             <span>{loading ? "लोड हो रहा है..." : "Refresh"}</span>
           </button>
         </div>
       </div>
 
-      {/* KPI Stats */}
+      {/* KPI Stats Cards - Clickable to switch sub-tabs */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-        <StatCard label="कुल ऑर्डर्स (Total)" value={stats.total} accent="stone" />
-        <StatCard label="सत्यापन बाकी (Pending Action)" value={stats.pendingApproval} accent="amber" highlight={stats.pendingApproval > 0} />
-        <StatCard label="स्वीकृत व डिलीवर्ड (Delivered)" value={stats.paidDelivered} accent="emerald" />
-        <StatCard label="सत्यापित आय (Revenue)" value={`₹${stats.revenue.toLocaleString("en-IN")}`} accent="emerald" />
+        <div onClick={() => setActiveTab("pending")} className="cursor-pointer">
+          <StatCard
+            label="⏳ सत्यापन बाकी (Pending Action)"
+            value={stats.pending}
+            accent="amber"
+            highlight={stats.pending > 0}
+            active={activeTab === "pending"}
+          />
+        </div>
+        <div onClick={() => setActiveTab("approved")} className="cursor-pointer">
+          <StatCard
+            label="✅ स्वीकृत व डिलीवर्ड (Approved)"
+            value={stats.approved}
+            accent="emerald"
+            active={activeTab === "approved"}
+          />
+        </div>
+        <div onClick={() => setActiveTab("fake")} className="cursor-pointer">
+          <StatCard
+            label="🚫 फर्जी / अस्वीकृत (Fake)"
+            value={stats.fake}
+            accent="rose"
+            active={activeTab === "fake"}
+          />
+        </div>
+        <div>
+          <StatCard
+            label="💰 सत्यापित कुल आय (Revenue)"
+            value={`₹${stats.revenue.toLocaleString("en-IN")}`}
+            accent="emerald"
+          />
+        </div>
       </div>
 
       {/* Toast Alert Message */}
@@ -321,46 +450,135 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
           }`}
         >
           <span>{message.text}</span>
-          <button onClick={() => setMessage(null)} className="text-stone-400 hover:text-stone-700 font-bold px-1">✕</button>
+          <button onClick={() => setMessage(null)} className="text-stone-400 hover:text-stone-700 font-bold px-1 cursor-pointer">✕</button>
         </div>
       )}
 
-      {/* Search and Filters Bar */}
-      <div className="bg-white border border-stone-200 rounded-2xl p-3 flex flex-col sm:flex-row gap-2.5 shadow-xs">
-        <div className="relative flex-1">
+      {/* Sub-Tabs Navigation (Zero Kachra Sectioning) */}
+      <div className="bg-white border border-stone-200 rounded-2xl p-2 flex flex-col md:flex-row md:items-center justify-between gap-3 shadow-xs">
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
+          {/* Sub-Tab 1: Pending */}
+          <button
+            onClick={() => setActiveTab("pending")}
+            className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-black flex items-center gap-2 transition cursor-pointer shrink-0 ${
+              activeTab === "pending"
+                ? "bg-amber-500 text-white shadow-xs"
+                : "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
+            }`}
+          >
+            <span>⏳</span>
+            <span>सत्यापन बाकी (Pending)</span>
+            <span
+              className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
+                activeTab === "pending" ? "bg-white/25 text-white" : "bg-amber-100 text-amber-900"
+              }`}
+            >
+              {pendingOrders.length}
+            </span>
+          </button>
+
+          {/* Sub-Tab 2: Approved */}
+          <button
+            onClick={() => setActiveTab("approved")}
+            className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-black flex items-center gap-2 transition cursor-pointer shrink-0 ${
+              activeTab === "approved"
+                ? "bg-emerald-600 text-white shadow-xs"
+                : "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
+            }`}
+          >
+            <span>✅</span>
+            <span>स्वीकृत व डिलीवर्ड (Approved)</span>
+            <span
+              className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
+                activeTab === "approved" ? "bg-white/25 text-white" : "bg-emerald-100 text-emerald-900"
+              }`}
+            >
+              {approvedOrders.length}
+            </span>
+          </button>
+
+          {/* Sub-Tab 3: Fake */}
+          <button
+            onClick={() => setActiveTab("fake")}
+            className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-black flex items-center gap-2 transition cursor-pointer shrink-0 ${
+              activeTab === "fake"
+                ? "bg-rose-600 text-white shadow-xs"
+                : "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
+            }`}
+          >
+            <span>🚫</span>
+            <span>फर्जी / अस्वीकृत (Fake)</span>
+            <span
+              className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
+                activeTab === "fake" ? "bg-white/25 text-white" : "bg-rose-100 text-rose-900"
+              }`}
+            >
+              {fakeOrders.length}
+            </span>
+          </button>
+
+          {/* Sub-Tab 4: All */}
+          <button
+            onClick={() => setActiveTab("all")}
+            className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-black flex items-center gap-2 transition cursor-pointer shrink-0 ${
+              activeTab === "all"
+                ? "bg-stone-800 text-white shadow-xs"
+                : "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
+            }`}
+          >
+            <span>📋</span>
+            <span>सभी ऑर्डर्स (All)</span>
+            <span
+              className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
+                activeTab === "all" ? "bg-white/25 text-white" : "bg-stone-200 text-stone-800"
+              }`}
+            >
+              {orders.length}
+            </span>
+          </button>
+        </div>
+
+        {/* Search Input */}
+        <div className="relative min-w-[240px] md:w-72">
           <input
             type="text"
-            placeholder="🔍 खोजें: नाम, मोबाइल, ईमेल, UTR नंबर, Order ID, कोर्स..."
+            placeholder="🔍 खोजें: नाम, मोबाइल, UTR, ID..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-3 pr-8 py-2 rounded-xl border border-stone-300 bg-stone-50 text-stone-900 focus:border-amber-600 focus:bg-white focus:outline-none text-xs sm:text-sm"
+            className="w-full pl-3 pr-8 py-1.5 rounded-xl border border-stone-300 bg-stone-50 text-stone-900 focus:border-amber-600 focus:bg-white focus:outline-none text-xs"
           />
           {search && (
             <button
               onClick={() => setSearch("")}
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 text-xs"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 text-xs cursor-pointer"
             >
               ✕
             </button>
           )}
         </div>
-        <select
-          value={filterStatus}
-          onChange={(e) => setFilterStatus(e.target.value as typeof filterStatus)}
-          className="px-3 py-2 rounded-xl border border-stone-300 bg-stone-50 text-stone-900 font-semibold focus:border-amber-600 focus:bg-white focus:outline-none text-xs sm:text-sm cursor-pointer"
-        >
-          <option value="all">सभी ऑर्डर्स (All Status)</option>
-          <option value="pending">⏳ सत्यापन बाकी (Pending Payment)</option>
-          <option value="paid">📦 अप्रूव्ड - डिलीवरी बाकी (Paid)</option>
-          <option value="delivered">✅ नोट्स भेजे गए (Delivered)</option>
-        </select>
       </div>
 
       {/* Excel-Style Dense Table for Desktop */}
       <div className="hidden lg:block bg-white border border-stone-200 rounded-2xl shadow-xs overflow-hidden">
         {filteredOrders.length === 0 ? (
-          <div className="p-16 text-center text-stone-400 text-sm">
-            {orders.length === 0 ? "कोई ऑर्डर मौजूद नहीं है।" : "खोज के अनुसार कोई ऑर्डर नहीं मिला।"}
+          <div className="p-16 text-center text-stone-400 text-sm space-y-2">
+            <span className="text-3xl block">
+              {activeTab === "pending" ? "🎉" : activeTab === "fake" ? "🛡️" : "📦"}
+            </span>
+            <p className="font-bold text-stone-700">
+              {search
+                ? "खोज के अनुसार कोई ऑर्डर नहीं मिला।"
+                : activeTab === "pending"
+                ? "कोई पेंडिंग ऑर्डर नहीं है! सभी ऑर्डर्स सत्यापित हो चुके हैं।"
+                : activeTab === "approved"
+                ? "अभी तक कोई स्वीकृत ऑर्डर नहीं है।"
+                : activeTab === "fake"
+                ? "कोई फर्जी या अस्वीकृत ऑर्डर नहीं है।"
+                : "कोई ऑर्डर मौजूद नहीं है।"}
+            </p>
+            {activeTab === "pending" && !search && (
+              <p className="text-xs text-stone-400">नया ऑर्डर आते ही वह सीधे यहाँ दिखाई देगा।</p>
+            )}
           </div>
         ) : (
           <div className="overflow-x-auto max-h-[70vh]">
@@ -374,22 +592,23 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                   <th className="p-3 text-right border-r border-stone-200">राशि</th>
                   <th className="p-3 border-r border-stone-200">UTR / Ref No.</th>
                   <th className="p-3 text-center border-r border-stone-200">स्थिति (Status)</th>
-                  <th className="p-3 text-right min-w-[200px]">एक्शन (Approval / Reject)</th>
+                  <th className="p-3 text-right min-w-[200px]">एक्शन</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-stone-200 font-medium text-stone-800">
                 {filteredOrders.map((order, idx) => {
                   const phoneDigits = (order.customer_phone || order.phone || "").replace(/\D/g, "").slice(-10);
                   const isApproved = order.payment_status === "paid" && order.delivery_status === "delivered";
+                  const isFailed = order.payment_status === "failed";
                   const isApproving = approvingId === order.id;
-                  const isDeleting = deletingId === order.id;
+                  const isActing = actionId === order.id;
 
                   return (
                     <tr
                       key={order.id}
                       className={`hover:bg-amber-50/40 transition-colors ${
                         idx % 2 === 0 ? "bg-white" : "bg-stone-50/50"
-                      } ${!isApproved ? "bg-amber-50/20" : ""}`}
+                      } ${!isApproved && !isFailed ? "bg-amber-50/20" : isFailed ? "bg-rose-50/20" : ""}`}
                     >
                       {/* Date & Order ID */}
                       <td className="p-3 border-r border-stone-200 align-top">
@@ -397,7 +616,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                           <span>{order.order_id || order.id}</span>
                           <button
                             onClick={() => copyToClipboard(order.order_id || order.id, "Order ID")}
-                            className="text-stone-400 hover:text-stone-700 text-[10px]"
+                            className="text-stone-400 hover:text-stone-700 text-[10px] cursor-pointer"
                             title="Copy Order ID"
                           >
                             📋
@@ -446,7 +665,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                           {(order.customer_email || order.email) && (
                             <button
                               onClick={() => copyToClipboard(order.customer_email || order.email || "", "Email")}
-                              className="text-stone-400 hover:text-stone-700 text-[10px]"
+                              className="text-stone-400 hover:text-stone-700 text-[10px] cursor-pointer"
                               title="Copy Email"
                             >
                               📋
@@ -476,14 +695,14 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                             <span className="font-mono font-bold text-xs">{order.utr}</span>
                             <button
                               onClick={() => copyToClipboard(order.utr, "UTR")}
-                              className="text-emerald-700 hover:text-emerald-950 text-[10px] font-bold"
+                              className="text-emerald-700 hover:text-emerald-950 text-[10px] font-bold cursor-pointer"
                               title="Copy UTR"
                             >
                               📋
                             </button>
                           </div>
                         ) : (
-                          <span className="text-[10px] text-stone-400 italic">वैकल्पिक (खाली)</span>
+                          <span className="text-[10px] text-stone-400 italic">खाली (No UTR)</span>
                         )}
                       </td>
 
@@ -491,7 +710,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                       <td className="p-3 text-center border-r border-stone-200 align-top space-y-1">
                         <div>
                           <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-bold border ${getPaymentChip(order.payment_status)}`}>
-                            {order.payment_status === "paid" ? "₹ Paid" : "⏳ Pending"}
+                            {order.payment_status === "paid" ? "₹ Paid" : order.payment_status === "failed" ? "🚫 Rejected" : "⏳ Pending"}
                           </span>
                         </div>
                         <div>
@@ -501,47 +720,86 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                         </div>
                       </td>
 
-                      {/* Actions */}
+                      {/* Contextual Actions Based on Order State */}
                       <td className="p-3 text-right align-top">
                         <div className="flex items-center justify-end gap-1.5 flex-wrap">
-                          {!isApproved ? (
-                            <button
-                              onClick={() => handleApproveAndSendEmail(order)}
-                              disabled={isApproving}
-                              className="px-2.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-[11px] rounded-lg transition shadow-xs disabled:opacity-50 flex items-center gap-1 cursor-pointer"
-                              title="सत्यापित करें व Google Drive नोट्स की ईमेल छात्र को भेजें"
-                            >
-                              {isApproving ? (
-                                <>
-                                  <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                                  <span>भेज रहा है...</span>
-                                </>
-                              ) : (
-                                <>
-                                  <span>✅</span>
-                                  <span>Approve & Send</span>
-                                </>
-                              )}
-                            </button>
-                          ) : (
-                            <button
-                              onClick={() => handleApproveAndSendEmail(order)}
-                              disabled={isApproving}
-                              className="px-2 py-1 bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-[10px] rounded-lg transition"
-                              title="छात्र को दोबारा ईमेल भेजें"
-                            >
-                              {isApproving ? "भेज रहा है..." : "↻ Re-send Email"}
-                            </button>
+                          {/* Case 1: Pending Verification */}
+                          {!isApproved && !isFailed && (
+                            <>
+                              <button
+                                onClick={() => handleApproveAndSendEmail(order)}
+                                disabled={isApproving}
+                                className="px-2.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-[11px] rounded-lg transition shadow-xs disabled:opacity-50 flex items-center gap-1 cursor-pointer"
+                                title="सत्यापित करें व Google Drive नोट्स की ईमेल छात्र को भेजें"
+                              >
+                                {isApproving ? (
+                                  <>
+                                    <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                                    <span>भेज रहा है...</span>
+                                  </>
+                                ) : (
+                                  <>
+                                    <span>✅</span>
+                                    <span>Approve & Send</span>
+                                  </>
+                                )}
+                              </button>
+
+                              <button
+                                onClick={() => handleMarkAsFake(order)}
+                                disabled={isActing}
+                                className="px-2 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-800 font-bold text-[11px] rounded-lg border border-amber-200 transition disabled:opacity-50 cursor-pointer flex items-center gap-1"
+                                title="फर्जी ऑर्डर चिन्हित करें (Move to Fake Sub-Section)"
+                              >
+                                {isActing ? "..." : "🚫 Fake"}
+                              </button>
+
+                              <button
+                                onClick={() => handlePermanentDelete(order)}
+                                disabled={isActing}
+                                className="px-2 py-1.5 bg-red-50 hover:bg-red-100 text-red-700 font-bold text-[11px] rounded-lg border border-red-200 transition disabled:opacity-50 cursor-pointer flex items-center gap-1"
+                                title="डेटाबेस से हमेशा के लिए पूरी तरह मिटाएं (Delete Permanently)"
+                              >
+                                {isActing ? "..." : "🗑️ Delete"}
+                              </button>
+                            </>
                           )}
 
-                          <button
-                            onClick={() => handleDeleteOrder(order)}
-                            disabled={isDeleting}
-                            className="px-2 py-1.5 bg-red-50 hover:bg-red-100 text-red-700 font-bold text-[11px] rounded-lg border border-red-200 transition disabled:opacity-50 cursor-pointer"
-                            title="फर्जी प्रविष्टि हटाएं (Delete Fake Order)"
-                          >
-                            {isDeleting ? "..." : "🗑️ Fake"}
-                          </button>
+                          {/* Case 2: Approved & Delivered */}
+                          {isApproved && (
+                            <>
+                              <button
+                                onClick={() => handleApproveAndSendEmail(order)}
+                                disabled={isApproving}
+                                className="px-2 py-1 bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-[10px] rounded-lg transition cursor-pointer"
+                                title="छात्र को दोबारा ईमेल भेजें"
+                              >
+                                {isApproving ? "भेज रहा है..." : "↻ Re-send Email"}
+                              </button>
+                            </>
+                          )}
+
+                          {/* Case 3: Fake / Rejected */}
+                          {isFailed && (
+                            <>
+                              <button
+                                onClick={() => handleRestoreOrder(order)}
+                                disabled={isActing}
+                                className="px-2 py-1 bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-[10px] rounded-lg border border-stone-300 transition cursor-pointer"
+                                title="वापस पेंडिंग में भेजें"
+                              >
+                                {isActing ? "..." : "↻ Restore"}
+                              </button>
+                              <button
+                                onClick={() => handlePermanentDelete(order)}
+                                disabled={isActing}
+                                className="px-2 py-1 bg-red-600 hover:bg-red-700 text-white font-bold text-[10px] rounded-lg transition shadow-xs cursor-pointer"
+                                title="डेटाबेस से हमेशा के लिए पूरी तरह मिटाएं"
+                              >
+                                {isActing ? "..." : "🗑️ Delete"}
+                              </button>
+                            </>
+                          )}
 
                           <button
                             onClick={() => setExpandedOrder(order.id === expandedOrder ? null : order.id)}
@@ -564,20 +822,25 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
       <div className="lg:hidden space-y-3">
         {filteredOrders.length === 0 ? (
           <div className="p-12 text-center text-stone-400 text-sm bg-white border border-stone-200 rounded-2xl">
-            कोई ऑर्डर नहीं मिला।
+            {search
+              ? "खोज के अनुसार कोई ऑर्डर नहीं मिला।"
+              : activeTab === "pending"
+              ? "🎉 कोई पेंडिंग ऑर्डर नहीं है! सभी ऑर्डर्स सत्यापित हैं।"
+              : "कोई ऑर्डर नहीं मिला।"}
           </div>
         ) : (
           filteredOrders.map((order) => {
             const isApproved = order.payment_status === "paid" && order.delivery_status === "delivered";
+            const isFailed = order.payment_status === "failed";
             const isApproving = approvingId === order.id;
-            const isDeleting = deletingId === order.id;
+            const isActing = actionId === order.id;
             const phoneDigits = (order.customer_phone || order.phone || "").replace(/\D/g, "").slice(-10);
 
             return (
               <div
                 key={order.id}
                 className={`bg-white border rounded-2xl p-4 space-y-3 shadow-xs ${
-                  !isApproved ? "border-amber-300 bg-amber-50/10" : "border-stone-200"
+                  !isApproved && !isFailed ? "border-amber-300 bg-amber-50/10" : isFailed ? "border-rose-300 bg-rose-50/10" : "border-stone-200"
                 }`}
               >
                 <div className="flex items-start justify-between gap-2">
@@ -608,7 +871,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
 
                 <div className="flex items-center gap-1.5 text-xs">
                   <span className={`px-2 py-0.5 rounded-full font-bold border text-[10px] ${getPaymentChip(order.payment_status)}`}>
-                    {order.payment_status === "paid" ? "₹ Paid" : "⏳ Pending"}
+                    {order.payment_status === "paid" ? "₹ Paid" : order.payment_status === "failed" ? "🚫 Rejected" : "⏳ Pending"}
                   </span>
                   <span className={`px-2 py-0.5 rounded-full font-bold border text-[10px] ${getDeliveryChip(order.delivery_status)}`}>
                     {order.delivery_status === "delivered" ? "✉️ Delivered" : "⏳ Pending Delivery"}
@@ -617,15 +880,35 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
 
                 {/* Mobile Action Buttons */}
                 <div className="flex gap-2 pt-2 border-t border-stone-200">
-                  {!isApproved ? (
-                    <button
-                      onClick={() => handleApproveAndSendEmail(order)}
-                      disabled={isApproving}
-                      className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs rounded-xl transition flex items-center justify-center gap-1.5 shadow-xs disabled:opacity-50"
-                    >
-                      {isApproving ? "भेज रहा है..." : "✅ Approve & Send"}
-                    </button>
-                  ) : (
+                  {!isApproved && !isFailed && (
+                    <>
+                      <button
+                        onClick={() => handleApproveAndSendEmail(order)}
+                        disabled={isApproving}
+                        className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs rounded-xl transition flex items-center justify-center gap-1.5 shadow-xs disabled:opacity-50"
+                      >
+                        {isApproving ? "भेज रहा है..." : "✅ Approve & Send"}
+                      </button>
+                      <button
+                        onClick={() => handleMarkAsFake(order)}
+                        disabled={isActing}
+                        className="px-2.5 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-800 text-xs font-bold rounded-xl border border-amber-200 disabled:opacity-50 cursor-pointer"
+                        title="Move to Fake"
+                      >
+                        🚫 Fake
+                      </button>
+                      <button
+                        onClick={() => handlePermanentDelete(order)}
+                        disabled={isActing}
+                        className="px-2.5 py-2.5 bg-red-50 hover:bg-red-100 text-red-700 text-xs font-bold rounded-xl border border-red-200 disabled:opacity-50 cursor-pointer"
+                        title="Delete Permanently"
+                      >
+                        🗑️ Delete
+                      </button>
+                    </>
+                  )}
+
+                  {isApproved && (
                     <button
                       onClick={() => handleApproveAndSendEmail(order)}
                       disabled={isApproving}
@@ -635,13 +918,24 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                     </button>
                   )}
 
-                  <button
-                    onClick={() => handleDeleteOrder(order)}
-                    disabled={isDeleting}
-                    className="px-3 py-2.5 bg-red-50 hover:bg-red-100 text-red-700 text-xs font-bold rounded-xl border border-red-200 disabled:opacity-50"
-                  >
-                    🗑️ Fake
-                  </button>
+                  {isFailed && (
+                    <>
+                      <button
+                        onClick={() => handleRestoreOrder(order)}
+                        disabled={isActing}
+                        className="flex-1 py-2 bg-stone-100 text-stone-800 font-bold text-xs rounded-xl border border-stone-300"
+                      >
+                        ↻ Restore
+                      </button>
+                      <button
+                        onClick={() => handlePermanentDelete(order)}
+                        disabled={isActing}
+                        className="px-3 py-2 bg-red-600 text-white font-bold text-xs rounded-xl"
+                      >
+                        🗑️ Delete
+                      </button>
+                    </>
+                  )}
 
                   <button
                     onClick={() => setExpandedOrder(order.id === expandedOrder ? null : order.id)}
@@ -665,7 +959,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
               <h3 className="text-lg font-bold text-stone-900">ऑर्डर संपूर्ण विवरण (Full Details)</h3>
               <button
                 onClick={() => setExpandedOrder(null)}
-                className="w-9 h-9 rounded-lg hover:bg-stone-100 text-stone-500 flex items-center justify-center text-lg font-bold"
+                className="w-9 h-9 rounded-lg hover:bg-stone-100 text-stone-500 flex items-center justify-center text-lg font-bold cursor-pointer"
               >
                 ✕
               </button>
@@ -678,11 +972,13 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                   order={currentOrder}
                   onClose={() => setExpandedOrder(null)}
                   onApprove={() => handleApproveAndSendEmail(currentOrder)}
-                  onDelete={() => handleDeleteOrder(currentOrder)}
+                  onMarkFake={() => handleMarkAsFake(currentOrder)}
+                  onRestore={() => handleRestoreOrder(currentOrder)}
+                  onPermanentDelete={() => handlePermanentDelete(currentOrder)}
                   onSendWhatsApp={handleSendWhatsApp}
                   copyToClipboard={copyToClipboard}
                   isApproving={approvingId === currentOrder.id}
-                  isDeleting={deletingId === currentOrder.id}
+                  isActing={actionId === currentOrder.id}
                 />
               );
             })()}
@@ -698,22 +994,25 @@ function StatCard({
   value,
   accent,
   highlight,
+  active,
 }: {
   label: string;
   value: string | number;
-  accent: "emerald" | "amber" | "stone";
+  accent: "emerald" | "amber" | "stone" | "rose";
   highlight?: boolean;
+  active?: boolean;
 }) {
   const accents = {
     emerald: "bg-emerald-50 border-emerald-200 text-emerald-700",
     amber: "bg-amber-50 border-amber-300 text-amber-800",
     stone: "bg-stone-50 border-stone-200 text-stone-700",
+    rose: "bg-rose-50 border-rose-200 text-rose-700",
   };
 
   return (
     <div
       className={`border rounded-2xl p-4 transition ${accents[accent]} ${
-        highlight ? "ring-2 ring-amber-500/50 shadow-sm" : ""
+        active ? "ring-2 ring-stone-900 shadow-md scale-[1.01]" : highlight ? "ring-2 ring-amber-500/50 shadow-sm" : ""
       }`}
     >
       <p className="text-[10px] uppercase tracking-wider font-extrabold text-stone-500">{label}</p>
@@ -726,22 +1025,27 @@ function OrderDetailCard({
   order,
   onClose,
   onApprove,
-  onDelete,
+  onMarkFake,
+  onRestore,
+  onPermanentDelete,
   onSendWhatsApp,
   copyToClipboard,
   isApproving,
-  isDeleting,
+  isActing,
 }: {
   order: Order;
   onClose: () => void;
   onApprove: () => void;
-  onDelete: () => void;
+  onMarkFake: () => void;
+  onRestore: () => void;
+  onPermanentDelete: () => void;
   onSendWhatsApp: (o: Order) => void;
   copyToClipboard: (t: string, l: string) => void;
   isApproving: boolean;
-  isDeleting: boolean;
+  isActing: boolean;
 }) {
   const isApproved = order.payment_status === "paid" && order.delivery_status === "delivered";
+  const isFailed = order.payment_status === "failed";
 
   return (
     <div className="space-y-4">
@@ -796,52 +1100,91 @@ function OrderDetailCard({
 
       {/* Action Footer inside Modal */}
       <div className="flex flex-wrap gap-2 pt-4 border-t border-stone-200">
-        {!isApproved ? (
+        {!isApproved && !isFailed && (
+          <>
+            <button
+              onClick={() => {
+                onApprove();
+                onClose();
+              }}
+              disabled={isApproving}
+              className="flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-xl text-sm transition shadow-sm disabled:opacity-50 flex items-center justify-center gap-1.5 cursor-pointer"
+            >
+              {isApproving ? "ईमेल भेजा जा रहा है..." : "✅ Approve & Send Email"}
+            </button>
+            <button
+              onClick={() => {
+                onMarkFake();
+                onClose();
+              }}
+              disabled={isActing}
+              className="px-3.5 py-3 bg-amber-50 hover:bg-amber-100 text-amber-800 font-bold rounded-xl text-sm border border-amber-300 transition cursor-pointer"
+            >
+              🚫 Mark as Fake
+            </button>
+            <button
+              onClick={() => {
+                onPermanentDelete();
+                onClose();
+              }}
+              disabled={isActing}
+              className="px-3.5 py-3 bg-red-50 hover:bg-red-100 text-red-700 font-bold rounded-xl text-sm border border-red-200 transition cursor-pointer"
+            >
+              🗑️ Delete Permanently
+            </button>
+          </>
+        )}
+
+        {isApproved && (
           <button
             onClick={() => {
               onApprove();
               onClose();
             }}
             disabled={isApproving}
-            className="flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-xl text-sm transition shadow-sm disabled:opacity-50 flex items-center justify-center gap-1.5"
-          >
-            {isApproving ? "ईमेल भेजा जा रहा है..." : "✅ Approve & Send Email"}
-          </button>
-        ) : (
-          <button
-            onClick={() => {
-              onApprove();
-              onClose();
-            }}
-            disabled={isApproving}
-            className="flex-1 py-3 bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold rounded-xl text-sm transition"
+            className="flex-1 py-3 bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold rounded-xl text-sm transition cursor-pointer"
           >
             ↻ Re-send Drive Link Email
           </button>
+        )}
+
+        {isFailed && (
+          <>
+            <button
+              onClick={() => {
+                onRestore();
+                onClose();
+              }}
+              disabled={isActing}
+              className="flex-1 py-3 bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold rounded-xl text-sm border border-stone-300 transition cursor-pointer"
+            >
+              ↻ Restore to Pending
+            </button>
+            <button
+              onClick={() => {
+                onPermanentDelete();
+                onClose();
+              }}
+              disabled={isActing}
+              className="px-4 py-3 bg-red-600 hover:bg-red-700 text-white font-bold rounded-xl text-sm transition cursor-pointer"
+            >
+              🗑️ Permanently Delete
+            </button>
+          </>
         )}
 
         <button
           onClick={() => {
             onSendWhatsApp(order);
           }}
-          className="px-4 py-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold rounded-xl text-sm border border-emerald-300 transition flex items-center gap-1.5"
+          className="px-4 py-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold rounded-xl text-sm border border-emerald-300 transition flex items-center gap-1.5 cursor-pointer"
         >
           <WhatsappIcon size={16} className="text-emerald-600 inline" /> WhatsApp
         </button>
 
         <button
-          onClick={() => {
-            onDelete();
-          }}
-          disabled={isDeleting}
-          className="px-4 py-3 bg-red-50 hover:bg-red-100 text-red-700 font-bold rounded-xl text-sm border border-red-200 transition"
-        >
-          🗑️ Fake / Delete
-        </button>
-
-        <button
           onClick={onClose}
-          className="px-4 py-3 rounded-xl border border-stone-300 text-stone-700 hover:bg-stone-50 font-semibold text-sm transition"
+          className="px-4 py-3 rounded-xl border border-stone-300 text-stone-700 hover:bg-stone-50 font-semibold text-sm transition cursor-pointer"
         >
           Close
         </button>
@@ -871,7 +1214,7 @@ function DetailItem({
         {copyable && onCopy && (
           <button
             onClick={onCopy}
-            className="text-[10px] bg-stone-200 hover:bg-stone-300 px-2 py-0.5 rounded font-semibold text-stone-700 shrink-0"
+            className="text-[10px] bg-stone-200 hover:bg-stone-300 px-2 py-0.5 rounded font-semibold text-stone-700 shrink-0 cursor-pointer"
           >
             Copy
           </button>

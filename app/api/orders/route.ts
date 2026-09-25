@@ -58,11 +58,18 @@ export async function POST(req: Request) {
       );
     }
 
-    const cleanMode = (delivery_mode || "whatsapp").toLowerCase().trim();
-    const allowedModes = ["gmail", "whatsapp", "email", "drive"];
+    const cleanMode = (delivery_mode || "both").toLowerCase().trim();
+    const allowedModes = ["gmail", "whatsapp", "email", "drive", "both"];
     if (!allowedModes.includes(cleanMode)) {
       return NextResponse.json(
-        { success: false, error: "Invalid delivery mode. Must be 'gmail' or 'whatsapp'." },
+        { success: false, error: "Invalid delivery mode. Must be 'gmail', 'whatsapp', or 'both'." },
+        { status: 400 }
+      );
+    }
+
+    if (cleanMode === "both" && (!cleanEmail || !cleanPhone)) {
+      return NextResponse.json(
+        { success: false, error: "Both Mobile number and Email are required." },
         { status: 400 }
       );
     }

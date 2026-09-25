@@ -76,7 +76,7 @@ export interface Order {
   customer_name: string;
   customer_phone?: string;
   customer_email?: string;
-  delivery_mode: "whatsapp" | "gmail";
+  delivery_mode: "whatsapp" | "gmail" | "both";
   utr: string;
   amount: number;
   course_id: string;

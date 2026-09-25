@@ -44,7 +44,7 @@ export default function CartDrawer({
     }
   }, [step]);
   const [name, setName] = useState("");
-  const [deliveryMode, setDeliveryMode] = useState<"whatsapp" | "gmail">("whatsapp");
+  const [deliveryMode, setDeliveryMode] = useState<"whatsapp" | "gmail" | "both">("both");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [utr, setUtr] = useState("");
@@ -134,15 +134,17 @@ export default function CartDrawer({
     setErrorMsg("");
 
     if (!name.trim()) {
-      setErrorMsg("Please enter your full name.");
+      setErrorMsg("कृपया अपना पूरा नाम दर्ज करें (Please enter your name).");
       return;
     }
-    if (deliveryMode === "whatsapp" && !phone.trim()) {
-      setErrorMsg("Please enter your WhatsApp mobile number.");
+    const cleanPhone = phone.replace(/\D/g, "").slice(-10);
+    if (!cleanPhone || cleanPhone.length !== 10 || !/^[6-9]\d{9}$/.test(cleanPhone)) {
+      setErrorMsg("कृपया 10 अंकों का मान्य भारतीय मोबाइल नंबर दर्ज करें (Valid 10-digit mobile required).");
       return;
     }
-    if (deliveryMode === "gmail" && !email.trim()) {
-      setErrorMsg("Please enter your Gmail address.");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.trim() || !emailRegex.test(email.trim())) {
+      setErrorMsg("कृपया सही ईमेल पता दर्ज करें (Valid email address required).");
       return;
     }
 
@@ -153,33 +155,32 @@ export default function CartDrawer({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: name.trim(),
-          delivery_mode: deliveryMode,
-          phone: phone.trim(),
-          email: email.trim(),
+          delivery_mode: "both",
+          phone: cleanPhone,
+          email: email.trim().toLowerCase(),
           utr: utr.trim(),
           course_id: primaryCourse?.id,
           course_title: primaryCourse?.title,
           amount: subtotal,
-          drive_url: primaryCourse?.drive_url || "",
           status: "pending_verification",
         }),
       });
 
       const data = await res.json();
       if (!res.ok || data.error) {
-        throw new Error(data.error || "Order could not be submitted");
+        throw new Error(data.error || "ऑर्डर सबमिट नहीं हो सका, कृपया पुनः प्रयास करें।");
       }
 
       const orderId = data.order?.order_id || data.order_id || `ARK-${Date.now().toString().slice(-6)}`;
       const orderObj = {
         order_id: orderId,
         name: name.trim(),
-        delivery_mode: deliveryMode,
+        delivery_mode: "both",
         course_title: primaryCourse?.title || "Course",
         amount: subtotal,
-        phone: phone.trim(),
-        email: email.trim(),
-        drive_url: data.drive_url || primaryCourse?.drive_url || "",
+        phone: cleanPhone,
+        email: email.trim().toLowerCase(),
+        drive_url: "",
       };
 
       setCreatedOrder(orderObj);
@@ -191,7 +192,8 @@ export default function CartDrawer({
         `🛒 *नया ऑर्डर भुगतान विवरण — Arkado*\n\n` +
         `🆔 *Order ID:* ${orderId}\n` +
         `👤 *नाम:* ${name.trim()}\n` +
-        `📱 *${deliveryMode === "whatsapp" ? "WhatsApp" : "Email"}:* ${deliveryMode === "whatsapp" ? phone.trim() : email.trim()}\n` +
+        `📱 *मोबाइल:* ${cleanPhone}\n` +
+        `✉️ *ईमेल:* ${email.trim().toLowerCase()}\n` +
         `📚 *कोर्स:* ${primaryCourse?.title || "कोर्स बंडल"}\n` +
         `💰 *राशि:* ₹${subtotal}\n` +
         (utr.trim() ? `🔢 *UTR/Ref No:* ${utr.trim()}\n` : "") +
@@ -207,7 +209,7 @@ export default function CartDrawer({
       }
     } catch (err: any) {
       console.error("Order error:", err);
-      setErrorMsg(err.message || "Something went wrong. Please contact support on WhatsApp.");
+      setErrorMsg(err.message || "कुछ गड़बड़ हुई, कृपया WhatsApp पर संपर्क करें।");
     } finally {
       setIsSubmitting(false);
     }
@@ -432,95 +434,66 @@ export default function CartDrawer({
                   />
                 </div>
 
+                {/* 2. WhatsApp / Mobile Number */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-800 mb-1.5">
-                    Delivery Mode *
+                  <label className="block text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
+                    <span className="flex items-center gap-1.5">
+                      <WhatsappIcon size={14} className="text-emerald-600 inline" /> WhatsApp / मोबाइल नंबर *
+                    </span>
+                    <span className="text-[10px] text-slate-400 font-normal">10 अंक</span>
                   </label>
-                  <div className="grid grid-cols-2 gap-2">
-                    <button
-                      type="button"
-                      onClick={() => setDeliveryMode("whatsapp")}
-                      className={`p-2.5 rounded-md border text-left transition cursor-pointer ${
-                        deliveryMode === "whatsapp"
-                          ? "border-emerald-600 bg-emerald-50 text-emerald-950 font-bold"
-                          : "border-slate-200 text-slate-600 hover:bg-slate-50"
-                      }`}
-                    >
-                      <div className="flex items-center gap-2">
-                        <WhatsappIcon size={16} />
-                        <span className="text-xs font-bold">WhatsApp</span>
-                      </div>
-                      <div className="text-[10px] text-slate-500 mt-0.5">
-                        Instant link message
-                      </div>
-                    </button>
-
-                    <button
-                      type="button"
-                      onClick={() => setDeliveryMode("gmail")}
-                      className={`p-2.5 rounded-md border text-left transition cursor-pointer ${
-                        deliveryMode === "gmail"
-                          ? "border-amber-600 bg-amber-50 text-amber-950 font-bold"
-                          : "border-slate-200 text-slate-600 hover:bg-slate-50"
-                      }`}
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="text-base">✉️</span>
-                        <span className="text-xs font-bold">Email</span>
-                      </div>
-                      <div className="text-[10px] text-slate-500 mt-0.5">
-                        Google Drive link
-                      </div>
-                    </button>
-                  </div>
+                  <input
+                    type="tel"
+                    required
+                    maxLength={10}
+                    placeholder="उदा. 9876543210"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value.replace(/\D/g, ""))}
+                    className="w-full px-3 py-2.5 rounded-md border border-slate-300 text-sm font-mono focus:outline-none focus:border-amber-700"
+                  />
                 </div>
 
-                {deliveryMode === "whatsapp" ? (
-                  <div>
-                    <label className="block text-xs font-bold text-slate-800 mb-1">
-                      WhatsApp Number *
-                    </label>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="9876543210"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      className="w-full px-3 py-2.5 rounded-md border border-slate-300 text-sm focus:outline-none focus:border-amber-700"
-                    />
-                  </div>
-                ) : (
-                  <div>
-                    <label className="block text-xs font-bold text-slate-800 mb-1">
-                      Gmail Address *
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      placeholder="rahul@gmail.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-3 py-2.5 rounded-md border border-slate-300 text-sm focus:outline-none focus:border-amber-700"
-                    />
-                  </div>
-                )}
+                {/* 3. Email Address */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
+                    <span>ईमेल पता (Email / Gmail) *</span>
+                    <span className="text-[10px] text-amber-700 font-semibold bg-amber-50 px-1.5 py-0.5 rounded">
+                      नोट्स यहाँ भेजे जाएंगे
+                    </span>
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="उदा. rahul@gmail.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-3 py-2.5 rounded-md border border-slate-300 text-sm focus:outline-none focus:border-amber-700"
+                  />
+                  <p className="text-[10px] text-slate-500 mt-1">
+                    Google Drive नोट्स व टेस्ट का एक्सेस लिंक इसी ईमेल पर भेजा जाएगा।
+                  </p>
+                </div>
 
+                {/* 4. UPI Ref / UTR No. (Optional) */}
                 <div>
                   <div className="flex items-center justify-between mb-1">
                     <label className="block text-xs font-bold text-slate-800">
                       UPI Ref / UTR No.
                     </label>
-                    <span className="text-[10px] text-slate-400 font-medium">
-                      (Optional)
+                    <span className="text-[10px] text-emerald-700 font-semibold bg-emerald-50 px-1.5 py-0.5 rounded">
+                      (वैकल्पिक / Optional)
                     </span>
                   </div>
                   <input
                     type="text"
-                    placeholder="12-digit UPI UTR or Ref No."
+                    placeholder="12-digit UTR या Ref No. (यदि उपलब्ध हो)"
                     value={utr}
                     onChange={(e) => setUtr(e.target.value)}
                     className="w-full px-3 py-2.5 rounded-md border border-slate-300 text-sm font-mono focus:outline-none focus:border-amber-700"
                   />
+                  <p className="text-[10px] text-slate-500 mt-1">
+                    यदि UTR नहीं मिल रहा तो इसे खाली छोड़ सकते हैं। भुगतान के बाद नीचे सबमिट करें।
+                  </p>
                 </div>
 
                 {/* Direct WhatsApp / Gmail Order Section */}
@@ -610,55 +583,58 @@ export default function CartDrawer({
 
               <div className="p-3.5 bg-slate-50 rounded-lg border border-slate-200 text-left text-xs space-y-1.5">
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Course:</span>
+                  <span className="text-slate-500">कोर्स (Course):</span>
                   <span className="font-bold text-slate-800 line-clamp-1 text-right ml-2">
                     {createdOrder.course_title}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Amount:</span>
+                  <span className="text-slate-500">कुल भुगतान (Amount):</span>
                   <span className="font-bold text-slate-900">₹{createdOrder.amount}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Delivery:</span>
-                  <span className="font-bold text-emerald-700 uppercase text-[11px]">
-                    {createdOrder.delivery_mode}
+                  <span className="text-slate-500">WhatsApp / मोबाइल:</span>
+                  <span className="font-bold text-slate-800 font-mono">
+                    {createdOrder.phone}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-500">ईमेल (Email):</span>
+                  <span className="font-bold text-slate-800 font-mono line-clamp-1 text-right ml-2">
+                    {createdOrder.email}
                   </span>
                 </div>
               </div>
 
               {/* Admin verification notice */}
               <div className="p-4 bg-amber-50 border border-amber-200 rounded-xl text-left">
-                <h4 className="font-bold text-amber-900 text-sm mb-1">
-                  ⏳ Verification in Progress
+                <h4 className="font-bold text-amber-900 text-sm mb-1 flex items-center gap-1.5">
+                  <span>⏳</span> सत्यापन प्रक्रिया जारी (Verification in Progress)
                 </h4>
-                <p className="text-xs text-amber-800">
-                  Your payment will be verified shortly. Within 1-2 hours, you will receive the Google Drive access link on{" "}
-                  {createdOrder.delivery_mode === "whatsapp"
-                    ? `WhatsApp (${createdOrder.phone})`
-                    : `Email (${createdOrder.email})`}.
+                <p className="text-xs text-amber-800 leading-relaxed">
+                  आपका ऑर्डर सफलतापूर्वक दर्ज हो गया है! टीम द्वारा पेमेंट चेक करके <strong>5-10 मिनट</strong> के भीतर Google Drive नोट्स का डाउनलोड लिंक सीधे आपकी ईमेल (<strong>{createdOrder.email}</strong>) पर भेज दिया जाएगा।
                 </p>
               </div>
 
               {/* Instant WhatsApp Send Button */}
               <a
                 href={`https://wa.me/${getCleanWhatsAppNumber(upiSettings)}?text=${encodeURIComponent(
-                  (orderMessages?.whatsapp_after_payment_template ||
-                    "🛒 *नया ऑर्डर भुगतान विवरण — Arkado*\n\n🆔 *Order ID:* {order_id}\n👤 *नाम:* {name}\n📱 *डिलीवरी:* {recipient}\n📚 *कोर्स:* {course_title}\n💰 *राशि:* ₹{amount}\n\nमैंने पेमेंट कर दिया है, कृपया चेक करके Drive नोट्स का लिंक भेजें।"
-                  )
-                    .replaceAll("{order_id}", createdOrder.order_id)
-                    .replaceAll("{name}", createdOrder.name)
-                    .replaceAll("{delivery_mode}", createdOrder.delivery_mode === "whatsapp" ? "WhatsApp" : "Email")
-                    .replaceAll("{recipient}", createdOrder.delivery_mode === "whatsapp" ? createdOrder.phone : createdOrder.email)
-                    .replaceAll("{course_title}", createdOrder.course_title)
-                    .replaceAll("{amount}", createdOrder.amount.toString())
+                  `🛒 *नया ऑर्डर भुगतान विवरण — Arkado*\n\n` +
+                  `🆔 *Order ID:* ${createdOrder.order_id}\n` +
+                  `👤 *नाम:* ${createdOrder.name}\n` +
+                  `📱 *मोबाइल:* ${createdOrder.phone}\n` +
+                  `✉️ *ईमेल:* ${createdOrder.email}\n` +
+                  `📚 *कोर्स:* ${createdOrder.course_title}\n` +
+                  `💰 *राशि:* ₹${createdOrder.amount}\n` +
+                  (utr.trim() ? `🔢 *UTR/Ref No:* ${utr.trim()}\n` : "") +
+                  `\nमैंने पेमेंट कर दिया है, कृपया वेरिफाई करके नोट्स का लिंक भेजें।`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-sm transition-all shadow-md flex items-center justify-center gap-2"
               >
                 <WhatsappIcon size={18} />
-                <span>Send Order Details on WhatsApp</span>
+                <span>WhatsApp पर विवरण भेजें (वैकल्पिक)</span>
               </a>
 
               <button

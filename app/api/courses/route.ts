@@ -79,21 +79,20 @@ export async function GET(req: NextRequest) {
       const result: any[] = [];
       const usedIds = new Set<string>();
 
-      for (const featExam of configList) {
-        const matched = allMergedCourses.find(
-          (c) =>
-            c.exam_id === featExam.id ||
-            c.id === featExam.id ||
-            c.slug === featExam.id ||
-            (featExam.name && c.title?.toLowerCase().includes(featExam.name.toLowerCase().split(" ")[0]))
-        );
+      for (const featItem of configList) {
+        const matched =
+          allMergedCourses.find((c) => c.id === featItem.id || c.slug === featItem.id) ||
+          allMergedCourses.find((c) => c.exam_id === featItem.id) ||
+          allMergedCourses.find(
+            (c) => featItem.name && c.title?.toLowerCase().includes(featItem.name.toLowerCase().split(" ")[0])
+          );
 
         if (matched && !usedIds.has(matched.id)) {
           result.push({
             ...matched,
             is_active: true,
             is_featured: true,
-            featured_priority: featExam.priority || result.length + 1,
+            featured_priority: featItem.priority || result.length + 1,
           });
           usedIds.add(matched.id);
         }
@@ -119,21 +118,20 @@ export async function GET(req: NextRequest) {
       const result: any[] = [];
       const usedIds = new Set<string>();
 
-      for (const arrExam of configList) {
-        const matched = allMergedCourses.find(
-          (c) =>
-            c.exam_id === arrExam.id ||
-            c.id === arrExam.id ||
-            c.slug === arrExam.id ||
-            (arrExam.name && c.title?.toLowerCase().includes(arrExam.name.toLowerCase().split(" ")[0]))
-        );
+      for (const arrItem of configList) {
+        const matched =
+          allMergedCourses.find((c) => c.id === arrItem.id || c.slug === arrItem.id) ||
+          allMergedCourses.find((c) => c.exam_id === arrItem.id) ||
+          allMergedCourses.find(
+            (c) => arrItem.name && c.title?.toLowerCase().includes(arrItem.name.toLowerCase().split(" ")[0])
+          );
 
         if (matched && !usedIds.has(matched.id)) {
           result.push({
             ...matched,
             is_active: true,
             is_new_arrival: true,
-            new_arrival_priority: arrExam.priority || result.length + 1,
+            new_arrival_priority: arrItem.priority || result.length + 1,
           });
           usedIds.add(matched.id);
         }

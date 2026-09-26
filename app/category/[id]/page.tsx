@@ -260,36 +260,8 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
           </div>
         </section>
 
-        {/* ACTIVE COURSES IN THIS CATEGORY (IF ANY) */}
-        {matchedCourses.length > 0 && (
-          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-b border-stone-200">
-            <div className="flex items-center justify-between mb-5">
-              <div>
-                <h2 className="text-lg font-black text-stone-900 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-600"></span>
-                  Available Study Bundles ({matchedCourses.length})
-                </h2>
-                <p className="text-xs text-stone-500 mt-0.5">
-                  Instant digital access with decoded syllabus and topic weightage
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-              {matchedCourses.map((course) => (
-                <CourseCard
-                  key={course.id}
-                  course={course}
-                  onBuyNow={handleBuyNow}
-                  onOpenSample={handleOpenSample}
-                />
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* EXAMS DIRECTORY WITHIN THIS CATEGORY */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+        {/* EXAMS DIRECTORY WITHIN THIS CATEGORY (SUB-CATEGORIES SHOWN FIRST) */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-b border-stone-200 space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <h2 className="text-base sm:text-lg font-black text-stone-900">
@@ -447,6 +419,34 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
             </div>
           )}
         </section>
+
+        {/* ACTIVE COURSES IN THIS CATEGORY (SHOWN AFTER SUB-CATEGORIES) */}
+        {matchedCourses.length > 0 && (
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-lg font-black text-stone-900 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-600"></span>
+                  Available Study Bundles ({matchedCourses.length})
+                </h2>
+                <p className="text-xs text-stone-500 mt-0.5">
+                  Instant digital access with decoded syllabus and topic weightage
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+              {matchedCourses.map((course) => (
+                <CourseCard
+                  key={course.id}
+                  course={course}
+                  onBuyNow={handleBuyNow}
+                  onOpenSample={handleOpenSample}
+                />
+              ))}
+            </div>
+          </section>
+        )}
       </main>
 
       <SampleModal

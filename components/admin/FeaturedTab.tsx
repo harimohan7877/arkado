@@ -2,22 +2,23 @@
 
 import { useState, useEffect, useMemo, useRef } from "react";
 
-interface ExamSearchResult {
+interface SearchItem {
   id: string;
-  name: string;
-  short_name?: string;
-  logo_url?: string;
-  board_name: string;
-  category_name: string;
+  title: string;
+  subtitle: string;
+  cover_image?: string;
+  price?: number;
+  type: "product" | "exam";
 }
 
-interface RankedExam {
+interface RankedItem {
   id: string;
-  name: string;
-  short_name?: string;
+  title: string;
+  name?: string; // backwards compatibility
+  subtitle?: string;
+  cover_image?: string;
   logo_url?: string;
-  board_name: string;
-  category_name: string;
+  price?: number;
   priority: number;
 }
 
@@ -26,9 +27,9 @@ interface FeaturedTabProps {
 }
 
 export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
-  const [allExams, setAllExams] = useState<ExamSearchResult[]>([]);
-  const [featuredExams, setFeaturedExams] = useState<RankedExam[]>([]);
-  const [newArrivals, setNewArrivals] = useState<RankedExam[]>([]);
+  const [allItems, setAllItems] = useState<SearchItem[]>([]);
+  const [featuredItems, setFeaturedItems] = useState<RankedItem[]>([]);
+  const [newArrivals, setNewArrivals] = useState<RankedItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
@@ -68,41 +69,82 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
   const loadData = async () => {
     try {
       setLoading(true);
-      // 1. Load all exams from categories
-      const catRes = await fetch(`/api/admin/categories?t=${Date.now()}`, {
-        headers: getAuthHeaders(),
-        cache: "no-store",
-      });
-      const categories = await catRes.json();
-      const examList: ExamSearchResult[] = [];
+      const items: SearchItem[] = [];
 
-      if (Array.isArray(categories)) {
-        for (const c of categories) {
-          for (const b of c.boards || []) {
-            for (const e of b.exams || []) {
-              examList.push({
-                id: e.id,
-                name: e.name,
-                short_name: e.short_name || e.name,
-                logo_url: e.logo_url || "",
-                board_name: b.short_name || b.name,
-                category_name: c.name,
+      // 1. Load all courses/products (Primary)
+      try {
+        const coursesRes = await fetch(`/api/courses?all=true&t=${Date.now()}`, {
+          cache: "no-store",
+        });
+        if (coursesRes.ok) {
+          const courses = await coursesRes.json();
+          if (Array.isArray(courses)) {
+            for (const c of courses) {
+              items.push({
+                id: c.id,
+                title: c.title,
+                subtitle: `₹${c.price || 0} • ${c.exam_name || c.exam_id || "Study Bundle"}`,
+                cover_image: c.cover_image || "",
+                price: c.price || 0,
+                type: "product",
               });
             }
           }
         }
+      } catch (err) {
+        console.error("Failed to load courses:", err);
       }
-      setAllExams(examList);
 
-      // 2. Load featured & new arrival exams
+      // 2. Load all exams (Secondary)
+      try {
+        const catRes = await fetch(`/api/admin/categories?t=${Date.now()}`, {
+          headers: getAuthHeaders(),
+          cache: "no-store",
+        });
+        if (catRes.ok) {
+          const categories = await catRes.json();
+          if (Array.isArray(categories)) {
+            for (const c of categories) {
+              for (const b of c.boards || []) {
+                for (const e of b.exams || []) {
+                  items.push({
+                    id: e.id,
+                    title: e.name,
+                    subtitle: `${b.short_name || b.name} • ${c.name}`,
+                    cover_image: e.logo_url || "",
+                    type: "exam",
+                  });
+                }
+              }
+            }
+          }
+        }
+      } catch (err) {
+        console.error("Failed to load exams:", err);
+      }
+
+      setAllItems(items);
+
+      // 3. Load configured featured & new arrival items
       const featRes = await fetch(`/api/admin/featured?t=${Date.now()}`, {
         headers: getAuthHeaders(),
         cache: "no-store",
       });
       if (featRes.ok) {
         const featData = await featRes.json();
-        setFeaturedExams(featData.featured_exams || []);
-        setNewArrivals(featData.new_arrivals || []);
+        const normalizeItem = (item: any, idx: number): RankedItem => ({
+          id: item.id,
+          title: item.title || item.name || "Untitled Item",
+          name: item.name || item.title || "Untitled Item",
+          subtitle: item.subtitle || (item.price ? `₹${item.price}` : item.exam_name || item.board_name || ""),
+          cover_image: item.cover_image || item.logo_url || "",
+          logo_url: item.logo_url || item.cover_image || "",
+          price: item.price,
+          priority: item.priority || idx + 1,
+        });
+
+        setFeaturedItems((featData.featured_exams || []).map(normalizeItem));
+        setNewArrivals((featData.new_arrivals || []).map(normalizeItem));
       }
     } catch {
       showToast("डेटा लोड करने में समस्या आई");
@@ -111,10 +153,10 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
     }
   };
 
-  const saveData = async (newFeatured: RankedExam[], newNewArr: RankedExam[], msg: string) => {
+  const saveData = async (newFeatured: RankedItem[], newNewArr: RankedItem[], msg: string) => {
     try {
       setSaving(true);
-      setFeaturedExams(newFeatured);
+      setFeaturedItems(newFeatured);
       setNewArrivals(newNewArr);
 
       const res = await fetch("/api/admin/featured", {
@@ -124,8 +166,18 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          featured_exams: newFeatured,
-          new_arrivals: newNewArr,
+          featured_exams: newFeatured.map((item, idx) => ({
+            ...item,
+            name: item.title || item.name,
+            logo_url: item.cover_image || item.logo_url,
+            priority: item.priority || idx + 1,
+          })),
+          new_arrivals: newNewArr.map((item, idx) => ({
+            ...item,
+            name: item.title || item.name,
+            logo_url: item.cover_image || item.logo_url,
+            priority: item.priority || idx + 1,
+          })),
         }),
       });
 
@@ -139,52 +191,62 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
   };
 
   // -------------------------------------------------------------
-  // FEATURED EXAM HANDLERS
+  // FEATURED PRODUCT HANDLERS
   // -------------------------------------------------------------
   const filteredFeaturedResults = useMemo(() => {
     if (!featuredSearch.trim()) return [];
     const q = featuredSearch.toLowerCase().trim();
-    const existingIds = new Set(featuredExams.map((e) => e.id));
-    return allExams
+    const existingIds = new Set(featuredItems.map((e) => e.id));
+    return allItems
       .filter((e) => !existingIds.has(e.id))
       .filter(
         (e) =>
-          e.name.toLowerCase().includes(q) ||
-          (e.short_name && e.short_name.toLowerCase().includes(q)) ||
-          e.board_name.toLowerCase().includes(q)
+          e.title.toLowerCase().includes(q) ||
+          e.subtitle.toLowerCase().includes(q) ||
+          e.id.toLowerCase().includes(q)
       )
-      .slice(0, 10);
-  }, [allExams, featuredSearch, featuredExams]);
+      .slice(0, 12);
+  }, [allItems, featuredSearch, featuredItems]);
 
-  const addFeaturedExam = (exam: ExamSearchResult) => {
-    const nextRank = featuredExams.length + 1;
-    const updated = [...featuredExams, { ...exam, priority: nextRank }];
+  const addFeaturedItem = (item: SearchItem) => {
+    const nextRank = featuredItems.length + 1;
+    const newItem: RankedItem = {
+      id: item.id,
+      title: item.title,
+      name: item.title,
+      subtitle: item.subtitle,
+      cover_image: item.cover_image,
+      logo_url: item.cover_image,
+      price: item.price,
+      priority: nextRank,
+    };
+    const updated = [...featuredItems, newItem];
     setFeaturedSearch("");
     setShowFeaturedDropdown(false);
-    saveData(updated, newArrivals, `"${exam.name}" को फीचर्ड में जोड़ा गया (#${nextRank})`);
+    saveData(updated, newArrivals, `"${item.title}" को फीचर्ड में जोड़ा गया (#${nextRank})`);
   };
 
-  const removeFeaturedExam = (id: string) => {
-    const target = featuredExams.find((e) => e.id === id);
-    const remaining = featuredExams
+  const removeFeaturedItem = (id: string) => {
+    const target = featuredItems.find((e) => e.id === id);
+    const remaining = featuredItems
       .filter((e) => e.id !== id)
       .map((e, idx) => ({ ...e, priority: idx + 1 }));
-    saveData(remaining, newArrivals, `"${target?.name || "परीक्षा"}" को फीचर्ड से हटाया गया`);
+    saveData(remaining, newArrivals, `"${target?.title || "प्रोडक्ट"}" को फीचर्ड से हटाया गया`);
   };
 
   const handleFeaturedRankChange = (id: string, newRankStr: string) => {
     const newRank = parseInt(newRankStr, 10);
     if (isNaN(newRank) || newRank < 1) return;
 
-    const current = featuredExams.find((e) => e.id === id);
+    const current = featuredItems.find((e) => e.id === id);
     if (!current) return;
 
-    const others = featuredExams
+    const others = featuredItems
       .filter((e) => e.id !== id)
       .sort((a, b) => a.priority - b.priority);
 
-    const clampedRank = Math.max(1, Math.min(newRank, featuredExams.length));
-    const reordered: RankedExam[] = [];
+    const clampedRank = Math.max(1, Math.min(newRank, featuredItems.length));
+    const reordered: RankedItem[] = [];
     let rankCounter = 1;
 
     for (let i = 0; i <= others.length; i++) {
@@ -202,37 +264,47 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
   };
 
   // -------------------------------------------------------------
-  // NEW ARRIVAL EXAM HANDLERS
+  // NEW ARRIVAL PRODUCT HANDLERS
   // -------------------------------------------------------------
   const filteredNewArrivalResults = useMemo(() => {
     if (!newArrivalSearch.trim()) return [];
     const q = newArrivalSearch.toLowerCase().trim();
     const existingIds = new Set(newArrivals.map((e) => e.id));
-    return allExams
+    return allItems
       .filter((e) => !existingIds.has(e.id))
       .filter(
         (e) =>
-          e.name.toLowerCase().includes(q) ||
-          (e.short_name && e.short_name.toLowerCase().includes(q)) ||
-          e.board_name.toLowerCase().includes(q)
+          e.title.toLowerCase().includes(q) ||
+          e.subtitle.toLowerCase().includes(q) ||
+          e.id.toLowerCase().includes(q)
       )
-      .slice(0, 10);
-  }, [allExams, newArrivalSearch, newArrivals]);
+      .slice(0, 12);
+  }, [allItems, newArrivalSearch, newArrivals]);
 
-  const addNewArrivalExam = (exam: ExamSearchResult) => {
+  const addNewArrivalItem = (item: SearchItem) => {
     const nextRank = newArrivals.length + 1;
-    const updated = [...newArrivals, { ...exam, priority: nextRank }];
+    const newItem: RankedItem = {
+      id: item.id,
+      title: item.title,
+      name: item.title,
+      subtitle: item.subtitle,
+      cover_image: item.cover_image,
+      logo_url: item.cover_image,
+      price: item.price,
+      priority: nextRank,
+    };
+    const updated = [...newArrivals, newItem];
     setNewArrivalSearch("");
     setShowNewArrivalDropdown(false);
-    saveData(featuredExams, updated, `"${exam.name}" को न्यू अराइवल्स में जोड़ा गया (#${nextRank})`);
+    saveData(featuredItems, updated, `"${item.title}" को न्यू अराइवल्स में जोड़ा गया (#${nextRank})`);
   };
 
-  const removeNewArrivalExam = (id: string) => {
+  const removeNewArrivalItem = (id: string) => {
     const target = newArrivals.find((e) => e.id === id);
     const remaining = newArrivals
       .filter((e) => e.id !== id)
       .map((e, idx) => ({ ...e, priority: idx + 1 }));
-    saveData(featuredExams, remaining, `"${target?.name || "परीक्षा"}" को न्यू अराइवल्स से हटाया गया`);
+    saveData(featuredItems, remaining, `"${target?.title || "प्रोडक्ट"}" को न्यू अराइवल्स से हटाया गया`);
   };
 
   const handleNewArrivalRankChange = (id: string, newRankStr: string) => {
@@ -247,7 +319,7 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
       .sort((a, b) => a.priority - b.priority);
 
     const clampedRank = Math.max(1, Math.min(newRank, newArrivals.length));
-    const reordered: RankedExam[] = [];
+    const reordered: RankedItem[] = [];
     let rankCounter = 1;
 
     for (let i = 0; i <= others.length; i++) {
@@ -261,14 +333,14 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
       }
     }
 
-    saveData(featuredExams, reordered, `क्रम संख्या #${clampedRank} पर सेट की गई`);
+    saveData(featuredItems, reordered, `क्रम संख्या #${clampedRank} पर सेट की गई`);
   };
 
   if (loading) {
     return (
       <div className="py-20 text-center text-stone-400 bg-white rounded-2xl border border-stone-200">
         <div className="w-8 h-8 border-3 border-amber-500/30 border-t-amber-500 rounded-full animate-spin mx-auto mb-3" />
-        <p className="text-xs font-bold text-stone-700">लोड हो रहा है...</p>
+        <p className="text-xs font-bold text-stone-700">प्रोडक्ट्स लोड हो रहे हैं...</p>
       </div>
     );
   }
@@ -282,16 +354,18 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
         </div>
       )}
 
-      {/* SECTION 1: FEATURED EXAMS (SEARCH ICON ONLY) */}
+      {/* SECTION 1: FEATURED PRODUCTS */}
       <div className="bg-white border border-stone-200 rounded-2xl shadow-xs overflow-hidden">
         <div className="p-5 border-b border-stone-200 bg-amber-50/40">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-lg">🌟</span>
+              <span className="text-xl">🌟</span>
               <div>
-                <h3 className="text-sm font-extrabold text-stone-900">फीचर्ड परीक्षाएं (Featured on Homepage)</h3>
+                <h3 className="text-sm font-extrabold text-stone-900">
+                  फीचर्ड प्रोडक्ट्स एवं बंडल्स (Featured on Homepage)
+                </h3>
                 <p className="text-xs text-stone-500 mt-0.5">
-                  सर्च आइकन से परीक्षा खोजें और तुरंत जोड़ें। क्रम संख्या डालकर प्राथमिकता सेट करें।
+                  सर्च बार से कोई भी किताब या स्टडी बंडल खोजें और होमपेज पर फीचर्ड में प्रदर्शित करें।
                 </p>
               </div>
             </div>
@@ -303,7 +377,7 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
             <div className="relative">
               <input
                 type="text"
-                placeholder="🔍 परीक्षा खोजें (उदा. CET, पटवारी, SSC CGL, रेलवे NTPC) और फीचर्ड में जोड़ें..."
+                placeholder="🔍 किताब या स्टडी बंडल खोजें (उदा. CET, Reasoning, Maths, SSC CGL) और फीचर्ड में जोड़ें..."
                 value={featuredSearch}
                 onChange={(e) => {
                   setFeaturedSearch(e.target.value);
@@ -328,31 +402,27 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
 
             {/* Dropdown Results */}
             {showFeaturedDropdown && filteredFeaturedResults.length > 0 && (
-              <div className="absolute z-20 top-full left-0 right-0 mt-1.5 bg-white border border-stone-200 rounded-xl shadow-xl overflow-hidden max-h-64 overflow-y-auto divide-y divide-stone-100">
-                {filteredFeaturedResults.map((exam) => (
+              <div className="absolute z-20 top-full left-0 right-0 mt-1.5 bg-white border border-stone-200 rounded-xl shadow-xl overflow-hidden max-h-72 overflow-y-auto divide-y divide-stone-100">
+                {filteredFeaturedResults.map((item) => (
                   <div
-                    key={exam.id}
-                    onClick={() => addFeaturedExam(exam)}
-                    className="p-3 hover:bg-amber-50 cursor-pointer flex items-center justify-between transition-colors"
+                    key={item.id}
+                    onClick={() => addFeaturedItem(item)}
+                    className="p-3 hover:bg-amber-50 cursor-pointer flex items-center justify-between transition-colors gap-3"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-stone-900 flex items-center justify-center text-white shrink-0 aspect-square p-0.5 overflow-hidden">
-                        {exam.logo_url ? (
-                          <img src={exam.logo_url} alt="" className="w-full h-full object-contain" />
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="w-10 h-12 rounded-lg bg-stone-100 border border-stone-200 flex items-center justify-center shrink-0 overflow-hidden">
+                        {item.cover_image ? (
+                          <img src={item.cover_image} alt="" className="w-full h-full object-cover" />
                         ) : (
-                          <span className="text-[9px] font-mono text-amber-400 font-bold">
-                            {(exam.short_name || exam.name).substring(0, 3)}
-                          </span>
+                          <span className="text-sm">📚</span>
                         )}
                       </div>
-                      <div>
-                        <div className="font-bold text-xs text-stone-900">{exam.name}</div>
-                        <div className="text-[10px] text-stone-500">
-                          {exam.board_name} • {exam.category_name}
-                        </div>
+                      <div className="min-w-0">
+                        <div className="font-bold text-xs text-stone-900 truncate">{item.title}</div>
+                        <div className="text-[10px] text-stone-500 truncate">{item.subtitle}</div>
                       </div>
                     </div>
-                    <button className="text-xs font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-2.5 py-1 rounded-lg transition-colors">
+                    <button className="shrink-0 text-xs font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-3 py-1.5 rounded-lg transition-colors">
                       + जोड़ें
                     </button>
                   </div>
@@ -362,34 +432,30 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
           </div>
         </div>
 
-        {/* FEATURED EXAMS LIST */}
+        {/* FEATURED ITEMS LIST */}
         <div className="p-4">
-          {featuredExams.length === 0 ? (
+          {featuredItems.length === 0 ? (
             <div className="py-8 text-center text-stone-400 text-xs">
               <span className="text-2xl block mb-1">🌟</span>
-              अभी कोई परीक्षा फीचर्ड में नहीं जोड़ी गई है। ऊपर दिए गए सर्च बार से खोजकर जोड़ें।
+              अभी कोई प्रोडक्ट फीचर्ड में नहीं जोड़ा गया है। ऊपर दिए गए सर्च बार से खोजकर जोड़ें।
             </div>
           ) : (
             <div className="divide-y divide-stone-100">
-              {featuredExams
+              {featuredItems
                 .sort((a, b) => a.priority - b.priority)
-                .map((exam) => (
-                  <div key={exam.id} className="py-2.5 flex items-center justify-between gap-4">
+                .map((item) => (
+                  <div key={item.id} className="py-2.5 flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-9 h-9 rounded-xl bg-stone-900 border border-stone-700 flex items-center justify-center text-white shrink-0 aspect-square p-0.5 overflow-hidden shadow-2xs">
-                        {exam.logo_url ? (
-                          <img src={exam.logo_url} alt="" className="w-full h-full object-contain" />
+                      <div className="w-10 h-12 rounded-lg bg-stone-100 border border-stone-200 flex items-center justify-center shrink-0 overflow-hidden shadow-2xs">
+                        {item.cover_image ? (
+                          <img src={item.cover_image} alt="" className="w-full h-full object-cover" />
                         ) : (
-                          <span className="text-[9px] font-mono text-amber-400 font-bold">
-                            {(exam.short_name || exam.name).substring(0, 3)}
-                          </span>
+                          <span className="text-sm">📚</span>
                         )}
                       </div>
-                      <div className="truncate">
-                        <div className="font-extrabold text-xs text-stone-900 truncate">{exam.name}</div>
-                        <div className="text-[10px] text-stone-500">
-                          {exam.board_name} • {exam.category_name}
-                        </div>
+                      <div className="min-w-0">
+                        <div className="font-extrabold text-xs text-stone-900 truncate">{item.title}</div>
+                        <div className="text-[10px] text-stone-500 truncate">{item.subtitle}</div>
                       </div>
                     </div>
 
@@ -399,15 +465,15 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
                         <input
                           type="number"
                           min="1"
-                          max={featuredExams.length}
-                          defaultValue={exam.priority}
-                          key={`feat-${exam.id}-${exam.priority}`}
-                          onBlur={(e) => handleFeaturedRankChange(exam.id, e.target.value)}
+                          max={featuredItems.length}
+                          defaultValue={item.priority}
+                          key={`feat-${item.id}-${item.priority}`}
+                          onBlur={(e) => handleFeaturedRankChange(item.id, e.target.value)}
                           className="w-12 text-center font-mono font-bold bg-white border border-amber-300 rounded py-0.5 px-1 text-xs text-stone-900 focus:border-amber-600 outline-none"
                         />
                       </div>
                       <button
-                        onClick={() => removeFeaturedExam(exam.id)}
+                        onClick={() => removeFeaturedItem(item.id)}
                         className="w-7 h-7 rounded-lg bg-stone-100 hover:bg-rose-50 text-stone-400 hover:text-rose-600 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer"
                         title="हटाएं"
                       >
@@ -421,16 +487,18 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
         </div>
       </div>
 
-      {/* SECTION 2: NEW ARRIVALS EXAMS (SEARCH ICON ONLY) */}
+      {/* SECTION 2: NEW ARRIVALS */}
       <div className="bg-white border border-stone-200 rounded-2xl shadow-xs overflow-hidden">
         <div className="p-5 border-b border-stone-200 bg-sky-50/40">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-lg">🆕</span>
+              <span className="text-xl">✨</span>
               <div>
-                <h3 className="text-sm font-extrabold text-stone-900">न्यू अराइवल्स (New Arrivals on Homepage)</h3>
+                <h3 className="text-sm font-extrabold text-stone-900">
+                  न्यू अराइवल्स (New Arrivals on Homepage)
+                </h3>
                 <p className="text-xs text-stone-500 mt-0.5">
-                  सर्च आइकन से परीक्षा खोजें और तुरंत जोड़ें। होमपेज पर नए आगमन के रूप में प्रदर्शित होंगी।
+                  सर्च बार से नई किताबें या बंडल्स खोजें और होमपेज पर New Arrivals में जोड़ें।
                 </p>
               </div>
             </div>
@@ -442,7 +510,7 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
             <div className="relative">
               <input
                 type="text"
-                placeholder="🔍 परीक्षा खोजें और न्यू अराइवल्स में जोड़ें..."
+                placeholder="🔍 किताब या स्टडी बंडल खोजें और न्यू अराइवल्स में जोड़ें..."
                 value={newArrivalSearch}
                 onChange={(e) => {
                   setNewArrivalSearch(e.target.value);
@@ -467,31 +535,27 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
 
             {/* Dropdown Results */}
             {showNewArrivalDropdown && filteredNewArrivalResults.length > 0 && (
-              <div className="absolute z-20 top-full left-0 right-0 mt-1.5 bg-white border border-stone-200 rounded-xl shadow-xl overflow-hidden max-h-64 overflow-y-auto divide-y divide-stone-100">
-                {filteredNewArrivalResults.map((exam) => (
+              <div className="absolute z-20 top-full left-0 right-0 mt-1.5 bg-white border border-stone-200 rounded-xl shadow-xl overflow-hidden max-h-72 overflow-y-auto divide-y divide-stone-100">
+                {filteredNewArrivalResults.map((item) => (
                   <div
-                    key={exam.id}
-                    onClick={() => addNewArrivalExam(exam)}
-                    className="p-3 hover:bg-sky-50 cursor-pointer flex items-center justify-between transition-colors"
+                    key={item.id}
+                    onClick={() => addNewArrivalItem(item)}
+                    className="p-3 hover:bg-sky-50 cursor-pointer flex items-center justify-between transition-colors gap-3"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-stone-900 flex items-center justify-center text-white shrink-0 aspect-square p-0.5 overflow-hidden">
-                        {exam.logo_url ? (
-                          <img src={exam.logo_url} alt="" className="w-full h-full object-contain" />
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="w-10 h-12 rounded-lg bg-stone-100 border border-stone-200 flex items-center justify-center shrink-0 overflow-hidden">
+                        {item.cover_image ? (
+                          <img src={item.cover_image} alt="" className="w-full h-full object-cover" />
                         ) : (
-                          <span className="text-[9px] font-mono text-sky-400 font-bold">
-                            {(exam.short_name || exam.name).substring(0, 3)}
-                          </span>
+                          <span className="text-sm">📚</span>
                         )}
                       </div>
-                      <div>
-                        <div className="font-bold text-xs text-stone-900">{exam.name}</div>
-                        <div className="text-[10px] text-stone-500">
-                          {exam.board_name} • {exam.category_name}
-                        </div>
+                      <div className="min-w-0">
+                        <div className="font-bold text-xs text-stone-900 truncate">{item.title}</div>
+                        <div className="text-[10px] text-stone-500 truncate">{item.subtitle}</div>
                       </div>
                     </div>
-                    <button className="text-xs font-bold text-sky-700 bg-sky-100 hover:bg-sky-200 px-2.5 py-1 rounded-lg transition-colors">
+                    <button className="shrink-0 text-xs font-bold text-sky-700 bg-sky-100 hover:bg-sky-200 px-3 py-1.5 rounded-lg transition-colors">
                       + जोड़ें
                     </button>
                   </div>
@@ -501,34 +565,30 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
           </div>
         </div>
 
-        {/* NEW ARRIVAL EXAMS LIST */}
+        {/* NEW ARRIVAL ITEMS LIST */}
         <div className="p-4">
           {newArrivals.length === 0 ? (
             <div className="py-8 text-center text-stone-400 text-xs">
-              <span className="text-2xl block mb-1">🆕</span>
-              अभी कोई परीक्षा न्यू अराइवल्स में नहीं जोड़ी गई है। ऊपर दिए गए सर्च बार से खोजकर जोड़ें।
+              <span className="text-2xl block mb-1">✨</span>
+              अभी कोई प्रोडक्ट न्यू अराइवल्स में नहीं जोड़ा गया है। ऊपर दिए गए सर्च बार से खोजकर जोड़ें।
             </div>
           ) : (
             <div className="divide-y divide-stone-100">
               {newArrivals
                 .sort((a, b) => a.priority - b.priority)
-                .map((exam) => (
-                  <div key={exam.id} className="py-2.5 flex items-center justify-between gap-4">
+                .map((item) => (
+                  <div key={item.id} className="py-2.5 flex items-center justify-between gap-4">
                     <div className="flex items-center gap-3 min-w-0">
-                      <div className="w-9 h-9 rounded-xl bg-stone-900 border border-stone-700 flex items-center justify-center text-white shrink-0 aspect-square p-0.5 overflow-hidden shadow-2xs">
-                        {exam.logo_url ? (
-                          <img src={exam.logo_url} alt="" className="w-full h-full object-contain" />
+                      <div className="w-10 h-12 rounded-lg bg-stone-100 border border-stone-200 flex items-center justify-center shrink-0 overflow-hidden shadow-2xs">
+                        {item.cover_image ? (
+                          <img src={item.cover_image} alt="" className="w-full h-full object-cover" />
                         ) : (
-                          <span className="text-[9px] font-mono text-sky-400 font-bold">
-                            {(exam.short_name || exam.name).substring(0, 3)}
-                          </span>
+                          <span className="text-sm">📚</span>
                         )}
                       </div>
-                      <div className="truncate">
-                        <div className="font-extrabold text-xs text-stone-900 truncate">{exam.name}</div>
-                        <div className="text-[10px] text-stone-500">
-                          {exam.board_name} • {exam.category_name}
-                        </div>
+                      <div className="min-w-0">
+                        <div className="font-extrabold text-xs text-stone-900 truncate">{item.title}</div>
+                        <div className="text-[10px] text-stone-500 truncate">{item.subtitle}</div>
                       </div>
                     </div>
 
@@ -539,14 +599,14 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
                           type="number"
                           min="1"
                           max={newArrivals.length}
-                          defaultValue={exam.priority}
-                          key={`new-${exam.id}-${exam.priority}`}
-                          onBlur={(e) => handleNewArrivalRankChange(exam.id, e.target.value)}
+                          defaultValue={item.priority}
+                          key={`new-${item.id}-${item.priority}`}
+                          onBlur={(e) => handleNewArrivalRankChange(item.id, e.target.value)}
                           className="w-12 text-center font-mono font-bold bg-white border border-sky-300 rounded py-0.5 px-1 text-xs text-stone-900 focus:border-sky-600 outline-none"
                         />
                       </div>
                       <button
-                        onClick={() => removeNewArrivalExam(exam.id)}
+                        onClick={() => removeNewArrivalItem(item.id)}
                         className="w-7 h-7 rounded-lg bg-stone-100 hover:bg-rose-50 text-stone-400 hover:text-rose-600 flex items-center justify-center text-xs font-bold transition-colors cursor-pointer"
                         title="हटाएं"
                       >

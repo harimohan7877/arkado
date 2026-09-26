@@ -65,6 +65,13 @@ export default function CourseCard({
   const mobileBtnText = style.button_text_mobile || (style.mobile_grid_cols === 3 ? "Buy" : style.button_text || "Buy");
   const desktopBtnText = style.button_text || "Grab This Deal";
 
+  const isNumericStr = (s?: string) => Boolean(s && /^\d+$/.test(String(s).trim()));
+  const validExam = !isNumericStr(examLabel) ? examLabel : "";
+  const validBadge = course.badge && !isNumericStr(course.badge) ? course.badge : "";
+  const displayTag = validExam || validBadge;
+  const hasTag = Boolean(style.show_exam_tag && displayTag);
+  const hasRating = Boolean(style.show_rating);
+
   return (
     <article
       style={{
@@ -106,9 +113,11 @@ export default function CourseCard({
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-amber-700 via-stone-800 to-stone-900 flex flex-col items-center justify-center p-3 text-center text-white">
             <span className="text-3xl mb-1">📚</span>
-            <span className="text-[9px] uppercase tracking-wider font-extrabold text-amber-300 bg-black/40 px-2 py-0.5 rounded">
-              {examLabel}
-            </span>
+            {displayTag && (
+              <span className="text-[9px] uppercase tracking-wider font-extrabold text-amber-300 bg-black/40 px-2 py-0.5 rounded">
+                {displayTag}
+              </span>
+            )}
             <p className="text-[11px] font-bold line-clamp-2 mt-2 px-1 text-stone-100">
               {course.title}
             </p>
@@ -126,15 +135,15 @@ export default function CourseCard({
 
       {/* Body */}
       <div className="p-[var(--card-mobile-pad)] sm:p-[var(--card-desktop-pad)] flex-1 flex flex-col gap-1.5 sm:gap-2">
-        {(style.show_exam_tag || style.show_rating) && (
+        {(hasTag || hasRating) && (
           <div className="flex items-center justify-between gap-1 min-h-[16px] sm:min-h-[18px]">
-            {style.show_exam_tag && (
+            {hasTag && (
               <span className="text-[9px] sm:text-[10px] font-bold uppercase text-amber-800 bg-amber-50 border border-amber-200 px-1 py-0.2 rounded truncate max-w-[70%]">
-                {examLabel}
+                {displayTag}
               </span>
             )}
-            {style.show_rating && (
-              <span className="rating-chip text-[9px] sm:text-xs shrink-0 px-1 py-0.2">
+            {hasRating && (
+              <span className={`rating-chip text-[9px] sm:text-xs shrink-0 px-1 py-0.2 ${!hasTag ? "ml-auto" : ""}`}>
                 <StarIcon size={9} className="star" />
                 {rating.toFixed(1)}
               </span>

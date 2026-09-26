@@ -48,7 +48,7 @@ export default function SampleModal({
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-amber-700 anim-pulse-dot" />
             <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">
-              {examLabel} • Syllabus & Sample
+              {examLabel ? `${examLabel} • ` : ""}Syllabus & Sample
             </span>
           </div>
           <button

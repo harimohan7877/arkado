@@ -105,7 +105,7 @@ export default function HeroSlider({
             <div className="flex flex-wrap items-center gap-2">
               <span className="bg-amber-600 text-white text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider flex items-center gap-1.5 shadow-2xs">
                 <StarIcon size={12} />
-                {customBadge || `${examLabel} Special`}
+                {customBadge || (examLabel ? `${examLabel} Special` : "Special Offer")}
               </span>
               <span className="bg-white/90 border border-stone-200 text-stone-800 text-xs font-bold px-3 py-1 rounded-md shadow-2xs">
                 {currentSlide.badge}
@@ -239,7 +239,7 @@ export default function HeroSlider({
               >
                 <span className={`w-1.5 h-1.5 rounded-full ${currentIndex === idx ? "bg-white" : "bg-amber-500"}`} />
                 <span className="truncate max-w-[120px]">
-                  {getExamLabel(slide.exam_id)}
+                  {getExamLabel(slide.exam_id) || slide.badge || `Kit ${idx + 1}`}
                 </span>
               </button>
             ))}

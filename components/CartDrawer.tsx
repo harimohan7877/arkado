@@ -327,9 +327,11 @@ export default function CartDrawer({
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <span className="text-[10px] font-bold uppercase bg-slate-200 text-slate-700 px-1.5 py-0.5 rounded">
-                          {getExamLabel(item.exam_id)}
-                        </span>
+                        {getExamLabel(item.exam_id) ? (
+                          <span className="text-[10px] font-bold uppercase bg-slate-200 text-slate-700 px-1.5 py-0.5 rounded">
+                            {getExamLabel(item.exam_id)}
+                          </span>
+                        ) : null}
                         <h4 className="font-bold text-xs sm:text-sm text-slate-900 mt-1 leading-snug line-clamp-2">
                           {item.title}
                         </h4>

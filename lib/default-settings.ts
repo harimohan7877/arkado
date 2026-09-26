@@ -39,7 +39,7 @@ export const DEFAULT_BUNDLE_CARD_STYLE: Required<BundleCardStyle> = {
   card_shadow: "sm",
 
   show_discount_badge: true,
-  show_exam_tag: true,
+  show_exam_tag: false,
   show_rating: true,
   show_pages_format: true,
   show_instant_access: true,

@@ -35,16 +35,23 @@ export const EXAM_LABELS: Record<string, string> = {
 };
 
 export function getExamLabel(examId: string): string {
-  if (!examId) return "Exam Kit";
-  if (EXAM_LABELS[examId]) return EXAM_LABELS[examId];
+  if (!examId) return "";
+  const trimmed = String(examId).trim();
+  if (EXAM_LABELS[trimmed]) return EXAM_LABELS[trimmed];
+
+  // If examId is purely numeric or internal ID, do not return the raw number
+  if (/^\d+$/.test(trimmed)) {
+    return "";
+  }
 
   // If it's a slug, format nicely e.g. "rajasthan-police" -> "Rajasthan Police"
-  const formatted = examId
+  const formatted = trimmed
     .replace(/^exam[-_]/i, "")
     .split(/[-_]/)
     .filter(Boolean)
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
     .join(" ");
 
-  return formatted || examId;
+  if (/^\d+$/.test(formatted.trim())) return "";
+  return formatted;
 }

@@ -588,7 +588,7 @@ export default function SectionsTab({ getAuthHeaders }: SectionsTabProps) {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
               {[
                 { key: "show_discount_badge", label: "Discount Ribbon (% OFF)" },
-                { key: "show_exam_tag", label: "Exam Tag (SSC/CET)" },
+                { key: "show_exam_tag", label: "Exam / Category Tag (Hides '5004', '5002')" },
                 { key: "show_rating", label: "Rating Chip (4.9)" },
                 { key: "show_pages_format", label: "Pages & Format" },
                 { key: "show_instant_access", label: "Instant Access Footer" },
@@ -827,20 +827,30 @@ export default function SectionsTab({ getAuthHeaders }: SectionsTabProps) {
                           {/* Body */}
                           <div style={{ padding }} className="flex-1 flex flex-col justify-between gap-1.5 text-stone-900">
                             <div>
-                              {(currentActiveStyle.show_exam_tag || currentActiveStyle.show_rating) && (
-                                <div className="flex items-center justify-between gap-1 mb-1">
-                                  {currentActiveStyle.show_exam_tag && (
-                                    <span className="text-[9px] font-bold uppercase text-amber-800 bg-amber-50 border border-amber-200 px-1 py-0.2 rounded line-clamp-1">
-                                      {card.exam}
-                                    </span>
-                                  )}
-                                  {currentActiveStyle.show_rating && (
-                                    <span className="text-[9px] font-bold text-stone-700 bg-stone-100 px-1 py-0.2 rounded">
-                                      ★ {card.rating}
-                                    </span>
-                                  )}
-                                </div>
-                              )}
+                              {(() => {
+                                const isNum = /^\d+$/.test(String(card.exam).trim());
+                                const showTag = Boolean(currentActiveStyle.show_exam_tag && !isNum);
+                                const showRating = Boolean(currentActiveStyle.show_rating);
+                                if (!showTag && !showRating) return null;
+                                return (
+                                  <div className="flex items-center justify-between gap-1 mb-1">
+                                    {showTag && (
+                                      <span className="text-[9px] font-bold uppercase text-amber-800 bg-amber-50 border border-amber-200 px-1 py-0.2 rounded line-clamp-1">
+                                        {card.exam}
+                                      </span>
+                                    )}
+                                    {showRating && (
+                                      <span
+                                        className={`text-[9px] font-bold text-stone-700 bg-stone-100 px-1 py-0.2 rounded ${
+                                          !showTag ? "ml-auto" : ""
+                                        }`}
+                                      >
+                                        ★ {card.rating}
+                                      </span>
+                                    )}
+                                  </div>
+                                );
+                              })()}
 
                               <h4
                                 className={`font-bold leading-tight line-clamp-${currentActiveStyle.mobile_title_lines} ${titleClass}`}

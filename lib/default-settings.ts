@@ -4,6 +4,8 @@
  * Ensures zero-crash across slow networks and eliminates scattered hardcodes.
  */
 
+import { BundleCardStyle } from "./store-types";
+
 export const DEFAULT_SECTION_ORDER = [
   "hero",
   "trust_strip",
@@ -17,6 +19,34 @@ export const DEFAULT_SECTION_ORDER = [
 ] as const;
 
 export type SectionKey = (typeof DEFAULT_SECTION_ORDER)[number];
+
+export const DEFAULT_BUNDLE_CARD_STYLE: Required<BundleCardStyle> = {
+  mobile_cover_height: 150,
+  mobile_aspect_ratio: "3/4",
+  mobile_grid_cols: 2,
+  mobile_card_padding: 8,
+  mobile_title_size: "xs",
+  mobile_title_lines: 2,
+
+  desktop_cover_height: 240,
+  desktop_aspect_ratio: "4/5",
+  desktop_grid_cols: 5,
+  desktop_card_padding: 14,
+
+  cover_fit: "cover",
+  card_gap: 12,
+  card_border_radius: "rounded-xl",
+  card_shadow: "sm",
+
+  show_discount_badge: true,
+  show_exam_tag: true,
+  show_rating: true,
+  show_pages_format: true,
+  show_instant_access: true,
+
+  button_style: "full",
+  button_text: "Grab This Deal",
+};
 
 export const DEFAULT_SETTINGS = {
   site_name: "Arkado",
@@ -85,6 +115,7 @@ export const DEFAULT_SETTINGS = {
       new_arrivals: { enabled: true, show_on_mobile: true, show_on_desktop: true, title: "New Arrivals" },
       faq: { enabled: true, show_on_mobile: true, show_on_desktop: true, title: "Common Questions" },
     },
+    bundle_card_style: { ...DEFAULT_BUNDLE_CARD_STYLE },
   },
 } as const;
 
@@ -196,4 +227,20 @@ export function getDisplayPhone(settings?: any): string {
  */
 export function getActiveUpiId(settings?: any): string {
   return settings?.upi_id || DEFAULT_SETTINGS.upi_id;
+}
+
+/**
+ * Safe helper to retrieve effective bundle card style for a section
+ */
+export function getBundleCardStyle(settings?: any, sectionKey?: string): Required<BundleCardStyle> {
+  const globalStyle = settings?.homepage?.bundle_card_style || {};
+  const sectionSpecific =
+    sectionKey && settings?.homepage?.sections_card_styles?.[sectionKey]
+      ? settings.homepage.sections_card_styles[sectionKey]
+      : {};
+  return {
+    ...DEFAULT_BUNDLE_CARD_STYLE,
+    ...globalStyle,
+    ...sectionSpecific,
+  };
 }

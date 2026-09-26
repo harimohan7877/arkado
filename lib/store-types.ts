@@ -109,6 +109,39 @@ export interface HomepageSections {
   faq?: SectionConfig;
 }
 
+export interface BundleCardStyle {
+  // Mobile settings
+  mobile_cover_height?: number; // e.g. 110 to 260px, default 150px
+  mobile_aspect_ratio?: "3/4" | "4/5" | "1/1" | "16/9" | "custom"; // default "custom" or "3/4"
+  mobile_grid_cols?: 2 | 3; // default 2
+  mobile_card_padding?: number; // e.g. 4 to 14px, default 8px
+  mobile_title_size?: "xs" | "sm" | "base"; // default "xs"
+  mobile_title_lines?: 1 | 2; // default 2
+
+  // Desktop settings
+  desktop_cover_height?: number; // e.g. 180 to 320px, default 240px
+  desktop_aspect_ratio?: "3/4" | "4/5" | "1/1" | "16/9" | "custom"; // default "custom" or "4/5"
+  desktop_grid_cols?: 3 | 4 | 5 | 6; // default 5
+  desktop_card_padding?: number; // e.g. 8 to 18px, default 14px
+
+  // Shared visual settings
+  cover_fit?: "cover" | "contain"; // default "cover"
+  card_gap?: number; // e.g. 6 to 20px, default 12px
+  card_border_radius?: "rounded-none" | "rounded-lg" | "rounded-xl" | "rounded-2xl"; // default "rounded-xl"
+  card_shadow?: "none" | "sm" | "md" | "lg"; // default "sm"
+
+  // Element visibility toggles
+  show_discount_badge?: boolean; // default true
+  show_exam_tag?: boolean; // default true
+  show_rating?: boolean; // default true
+  show_pages_format?: boolean; // default true
+  show_instant_access?: boolean; // default true
+
+  // Action button settings
+  button_style?: "full" | "compact" | "minimal"; // default "full"
+  button_text?: string; // default "Grab This Deal"
+}
+
 export interface Settings {
   upi_id: string;
   merchant_name: string;
@@ -156,6 +189,8 @@ export interface Settings {
       show_exam_count?: boolean; // default true
       card_border_radius?: "rounded-xl" | "rounded-2xl" | "rounded-3xl" | "rounded-none"; // default "rounded-2xl"
     };
+    bundle_card_style?: BundleCardStyle;
+    sections_card_styles?: Record<string, BundleCardStyle>;
     newsletter_title?: string;
     newsletter_subtitle?: string;
     newsletter_placeholder?: string;

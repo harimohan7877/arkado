@@ -9,6 +9,7 @@ import ExamsTab from "@/components/admin/ExamsTab";
 import CoursesTab from "@/components/admin/CoursesTab";
 import OrdersTab from "@/components/admin/OrdersTab";
 import SettingsTab from "@/components/admin/SettingsTab";
+import SectionsTab from "@/components/admin/SectionsTab";
 
 interface MarketplaceOrder {
   id: string;
@@ -33,16 +34,17 @@ interface Stats {
   warning?: string;
 }
 
-type TabType = "dashboard" | "categories" | "featured" | "exams" | "courses" | "orders" | "settings";
+type TabType = "dashboard" | "categories" | "featured" | "sections" | "exams" | "courses" | "orders" | "settings";
 
 const NAV_ITEMS: { id: TabType; label: string; short: string; icon: string }[] = [
-  { id: "dashboard", label: "डैशबोर्ड (Overview)", short: "Dashboard", icon: "📊" },
-  { id: "categories", label: "श्रेणियाँ (Categories)", short: "Categories", icon: "📁" },
-  { id: "featured", label: "🌟 फीचर्ड एवं न्यू अराइवल्स", short: "Featured", icon: "🌟" },
-  { id: "exams", label: "परीक्षाएं फोल्डर (Exams)", short: "Exams", icon: "📑" },
-  { id: "courses", label: "कोर्सेज़ (Courses)", short: "Courses", icon: "📚" },
-  { id: "orders", label: "ऑर्डर्स (Orders)", short: "Orders", icon: "🛍️" },
-  { id: "settings", label: "सेटिंग्स (Settings)", short: "Settings", icon: "⚙️" },
+  { id: "dashboard", label: "Dashboard", short: "Dashboard", icon: "" },
+  { id: "categories", label: "Categories", short: "Categories", icon: "" },
+  { id: "featured", label: "Featured & New Arrivals", short: "Featured", icon: "" },
+  { id: "sections", label: "Sections Layout", short: "Sections", icon: "" },
+  { id: "exams", label: "Exams", short: "Exams", icon: "" },
+  { id: "courses", label: "Courses & Books", short: "Courses", icon: "" },
+  { id: "orders", label: "Orders", short: "Orders", icon: "" },
+  { id: "settings", label: "Settings", short: "Settings", icon: "" },
 ];
 
 export default function AdminDashboardPage() {
@@ -173,6 +175,7 @@ export default function AdminDashboardPage() {
       <main className="flex-1 max-w-7xl mx-auto w-full p-4 sm:p-6">
         {activeTab === "categories" && <CategoriesTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "featured" && <FeaturedTab getAuthHeaders={getAuthHeaders} />}
+        {activeTab === "sections" && <SectionsTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "exams" && <ExamsTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "courses" && <CoursesTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "settings" && <SettingsTab getAuthHeaders={getAuthHeaders} />}

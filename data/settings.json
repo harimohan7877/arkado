@@ -172,6 +172,29 @@
       "text_size": "xs",
       "show_exam_count": true,
       "card_border_radius": "rounded-2xl"
+    },
+    "bundle_card_style": {
+      "mobile_cover_height": 150,
+      "mobile_aspect_ratio": "3/4",
+      "mobile_grid_cols": 2,
+      "mobile_card_padding": 8,
+      "mobile_title_size": "xs",
+      "mobile_title_lines": 2,
+      "desktop_cover_height": 240,
+      "desktop_aspect_ratio": "4/5",
+      "desktop_grid_cols": 5,
+      "desktop_card_padding": 14,
+      "cover_fit": "cover",
+      "card_gap": 12,
+      "card_border_radius": "rounded-xl",
+      "card_shadow": "sm",
+      "show_discount_badge": true,
+      "show_exam_tag": true,
+      "show_rating": true,
+      "show_pages_format": true,
+      "show_instant_access": true,
+      "button_style": "full",
+      "button_text": "Grab This Deal"
     }
   },
   "social": {

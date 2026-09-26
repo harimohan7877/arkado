@@ -8,8 +8,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CourseCard from "@/components/CourseCard";
 import { Category, Exam, Course } from "@/lib/store-types";
-import { fetchWithCache } from "@/lib/store-hooks";
-import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
+import { fetchWithCache, useSettings } from "@/lib/store-hooks";
+import { DEFAULT_SETTINGS, getCleanWhatsAppNumber, getBundleCardStyle } from "@/lib/default-settings";
 import { SearchIcon, CloseIcon, ChevronRightIcon, ArrowRightIcon, SparklesIcon, CheckIcon } from "@/components/icons";
 
 const SampleModal = dynamic(() => import("@/components/SampleModal"), { ssr: false });
@@ -29,6 +29,7 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+  const { settings } = useSettings();
 
   // Cart & Sample states
   const [cart, setCart] = useState<Course[]>([]);
@@ -37,15 +38,6 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
   const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
   const [failedCatImage, setFailedCatImage] = useState(false);
   const [failedExamImages, setFailedExamImages] = useState<Record<string, boolean>>({});
-  const [settings, setSettings] = useState<any>(null);
-
-  useEffect(() => {
-    fetchWithCache<any>("/api/settings")
-      .then((data) => {
-        if (data && typeof data === "object") setSettings(data);
-      })
-      .catch(() => {});
-  }, []);
 
   useEffect(() => {
     const loadCategoryData = async () => {
@@ -435,16 +427,34 @@ export default function CategoryDetailPage({ params }: CategoryPageProps) {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-              {matchedCourses.map((course) => (
-                <CourseCard
-                  key={course.id}
-                  course={course}
-                  onBuyNow={handleBuyNow}
-                  onOpenSample={handleOpenSample}
-                />
-              ))}
-            </div>
+            {(() => {
+              const catCardStyle = getBundleCardStyle(settings, "all_products");
+              const catMobileCols = catCardStyle.mobile_grid_cols === 3 ? "grid-cols-3" : "grid-cols-2";
+              const catDesktopCols =
+                catCardStyle.desktop_grid_cols === 6
+                  ? "lg:grid-cols-6"
+                  : catCardStyle.desktop_grid_cols === 4
+                  ? "lg:grid-cols-4"
+                  : catCardStyle.desktop_grid_cols === 3
+                  ? "lg:grid-cols-3"
+                  : "lg:grid-cols-5";
+              return (
+                <div
+                  style={{ gap: catCardStyle.card_gap ? `${catCardStyle.card_gap}px` : undefined }}
+                  className={`grid ${catMobileCols} sm:grid-cols-3 ${catDesktopCols} gap-3 sm:gap-4`}
+                >
+                  {matchedCourses.map((course) => (
+                    <CourseCard
+                      key={course.id}
+                      course={course}
+                      onBuyNow={handleBuyNow}
+                      onOpenSample={handleOpenSample}
+                      cardStyle={catCardStyle}
+                    />
+                  ))}
+                </div>
+              );
+            })()}
           </section>
         )}
       </main>

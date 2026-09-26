@@ -6,7 +6,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useCategories, useSliderCourses, useCourses, useSettings, fetchWithCache } from "@/lib/store-hooks";
 import { Course } from "@/lib/store-types";
-import { DEFAULT_SETTINGS, isSectionEnabled, getOrderedSectionKeys, getSectionVisibility, SectionKey } from "@/lib/default-settings";
+import { DEFAULT_SETTINGS, isSectionEnabled, getOrderedSectionKeys, getSectionVisibility, SectionKey, getBundleCardStyle } from "@/lib/default-settings";
 import Navbar from "@/components/Navbar";
 import HeroSlider from "@/components/HeroSlider";
 import CourseCard from "@/components/CourseCard";
@@ -202,6 +202,7 @@ export default function HomePage() {
               onBuyNow={handleBuyNow}
               onOpenSample={handleOpenSample}
               viewAllHref="/exams"
+              cardStyle={getBundleCardStyle(settings, "featured_bundles")}
             />
           </section>
         );
@@ -268,11 +269,22 @@ export default function HomePage() {
         );
         break;
 
-      case "all_products":
+      case "all_products": {
+        const allProductsStyle = getBundleCardStyle(settings, "all_products");
+        const allMobileCols = allProductsStyle.mobile_grid_cols === 3 ? "grid-cols-3" : "grid-cols-2";
+        const allDesktopCols =
+          allProductsStyle.desktop_grid_cols === 6
+            ? "lg:grid-cols-6"
+            : allProductsStyle.desktop_grid_cols === 4
+            ? "lg:grid-cols-4"
+            : allProductsStyle.desktop_grid_cols === 3
+            ? "lg:grid-cols-3"
+            : "lg:grid-cols-5";
+
         content = (
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             {coursesLoading ? (
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+              <div className={`grid ${allMobileCols} sm:grid-cols-3 ${allDesktopCols} gap-3 sm:gap-4`}>
                 {[...Array(5)].map((_, i) => (
                   <div key={i} className="card-base flex flex-col h-full overflow-hidden bg-white animate-pulse">
                     <div className="relative w-full aspect-[4/5] bg-stone-200" />
@@ -306,13 +318,19 @@ export default function HomePage() {
                 </button>
               </div>
             ) : (
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+              <div
+                style={{
+                  gap: allProductsStyle.card_gap ? `${allProductsStyle.card_gap}px` : undefined,
+                }}
+                className={`grid ${allMobileCols} sm:grid-cols-3 ${allDesktopCols} gap-3 sm:gap-4`}
+              >
                 {filteredCourses.map((course) => (
                   <CourseCard
                     key={course.id}
                     course={course}
                     onBuyNow={handleBuyNow}
                     onOpenSample={handleOpenSample}
+                    cardStyle={allProductsStyle}
                   />
                 ))}
               </div>
@@ -320,15 +338,17 @@ export default function HomePage() {
           </section>
         );
         break;
+      }
 
       case "hot_deals":
         content = (
           <section id="deals" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <FeaturedGrid
-              title={`🌟 ${hotDealsTitle}`}
+              title={hotDealsTitle}
               courses={featuredDeals}
               onBuyNow={handleBuyNow}
               onOpenSample={handleOpenSample}
+              cardStyle={getBundleCardStyle(settings, "hot_deals")}
             />
           </section>
         );
@@ -338,11 +358,12 @@ export default function HomePage() {
         content = (
           <section id="new-arrivals" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <FeaturedGrid
-              title={`✨ ${newArrivalsTitle}`}
+              title={newArrivalsTitle}
               courses={newArrivals.length > 0 ? newArrivals : allCourses.slice(0, 5)}
               onBuyNow={handleBuyNow}
               onOpenSample={handleOpenSample}
               viewAllHref="/exams"
+              cardStyle={getBundleCardStyle(settings, "new_arrivals")}
             />
           </section>
         );

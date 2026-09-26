@@ -10,6 +10,8 @@ import CartDrawer from "@/components/CartDrawer";
 import SampleModal from "@/components/SampleModal";
 import { Course } from "@/lib/store-types";
 import { CourseBundle } from "@/lib/courses";
+import { useSettings } from "@/lib/store-hooks";
+import { getBundleCardStyle } from "@/lib/default-settings";
 import { SearchIcon, WhatsappIcon } from "@/components/icons";
 
 function SearchPageInner() {
@@ -21,6 +23,7 @@ function SearchPageInner() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [isSampleOpen, setIsSampleOpen] = useState(false);
+  const { settings } = useSettings();
 
   useEffect(() => {
     const signal = { cancelled: false };
@@ -54,6 +57,17 @@ function SearchPageInner() {
   }, [q]);
 
   const loading = !hasLoaded;
+
+  const searchCardStyle = getBundleCardStyle(settings, "all_products");
+  const sMobileCols = searchCardStyle.mobile_grid_cols === 3 ? "grid-cols-3" : "grid-cols-2";
+  const sDesktopCols =
+    searchCardStyle.desktop_grid_cols === 6
+      ? "lg:grid-cols-6"
+      : searchCardStyle.desktop_grid_cols === 4
+      ? "lg:grid-cols-4"
+      : searchCardStyle.desktop_grid_cols === 3
+      ? "lg:grid-cols-3"
+      : "lg:grid-cols-5";
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -101,7 +115,10 @@ function SearchPageInner() {
             </Link>
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+          <div
+            style={{ gap: searchCardStyle.card_gap ? `${searchCardStyle.card_gap}px` : undefined }}
+            className={`grid ${sMobileCols} sm:grid-cols-3 ${sDesktopCols} gap-3 sm:gap-4`}
+          >
             {results.map((course) => (
               <CourseCard
                 key={course.id}
@@ -114,6 +131,7 @@ function SearchPageInner() {
                   setSelectedCourse(c);
                   setIsSampleOpen(true);
                 }}
+                cardStyle={searchCardStyle}
               />
             ))}
           </div>

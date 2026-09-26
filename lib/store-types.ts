@@ -140,6 +140,11 @@ export interface BundleCardStyle {
   // Action button settings
   button_style?: "full" | "compact" | "minimal"; // default "full"
   button_text?: string; // default "Grab This Deal"
+  button_text_mobile?: string; // default "Buy"
+  button_layout?: "full_width" | "compact_pill" | "icon_only_mobile" | "inline_price" | "hidden"; // default "full_width"
+  button_height_mobile?: number; // e.g. 24 to 38px, default 28px
+  show_button_icon?: boolean; // default true
+  button_font_size_mobile?: "tiny" | "xs" | "sm"; // default "xs"
 }
 
 export interface Settings {

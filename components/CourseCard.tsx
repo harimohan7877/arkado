@@ -62,6 +62,9 @@ export default function CourseCard({
   const titleLinesClass =
     style.mobile_title_lines === 1 ? "line-clamp-1 sm:line-clamp-2" : "line-clamp-2";
 
+  const mobileBtnText = style.button_text_mobile || (style.mobile_grid_cols === 3 ? "Buy" : style.button_text || "Buy");
+  const desktopBtnText = style.button_text || "Grab This Deal";
+
   return (
     <article
       style={{
@@ -69,6 +72,7 @@ export default function CourseCard({
         "--card-desktop-h": `${desktopHeight}px`,
         "--card-mobile-pad": `${mobilePad}px`,
         "--card-desktop-pad": `${desktopPad}px`,
+        "--btn-mobile-h": `${style.button_height_mobile || 28}px`,
       } as React.CSSProperties}
       className={`card-base flex flex-col h-full overflow-hidden bg-white group ${style.card_border_radius || "rounded-xl"}`}
     >
@@ -80,7 +84,7 @@ export default function CourseCard({
       >
         {/* Discount ribbon */}
         {style.show_discount_badge && (
-          <span className="discount-ribbon z-10">
+          <span className="discount-ribbon z-10 text-[9px] sm:text-[10px] px-1.5 py-0.5">
             {course.discount_percent}% OFF
           </span>
         )}
@@ -123,15 +127,15 @@ export default function CourseCard({
       {/* Body */}
       <div className="p-[var(--card-mobile-pad)] sm:p-[var(--card-desktop-pad)] flex-1 flex flex-col gap-1.5 sm:gap-2">
         {(style.show_exam_tag || style.show_rating) && (
-          <div className="flex items-center justify-between gap-1.5 min-h-[18px]">
+          <div className="flex items-center justify-between gap-1 min-h-[16px] sm:min-h-[18px]">
             {style.show_exam_tag && (
-              <span className="text-[9px] sm:text-[10px] font-bold uppercase text-amber-800 bg-amber-50 border border-amber-200 px-1.5 py-0.2 rounded line-clamp-1">
+              <span className="text-[9px] sm:text-[10px] font-bold uppercase text-amber-800 bg-amber-50 border border-amber-200 px-1 py-0.2 rounded truncate max-w-[70%]">
                 {examLabel}
               </span>
             )}
             {style.show_rating && (
-              <span className="rating-chip text-[9px] sm:text-xs">
-                <StarIcon size={10} className="star" />
+              <span className="rating-chip text-[9px] sm:text-xs shrink-0 px-1 py-0.2">
+                <StarIcon size={9} className="star" />
                 {rating.toFixed(1)}
               </span>
             )}
@@ -146,40 +150,82 @@ export default function CourseCard({
         </Link>
 
         {style.show_pages_format && (
-          <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] text-stone-500 font-medium">
-            <FileTextIcon size={11} />
-            <span>{course.pages_count}</span>
+          <div className="flex items-center gap-1 text-[10px] sm:text-[11px] text-stone-500 font-medium truncate">
+            <FileTextIcon size={11} className="shrink-0" />
+            <span className="truncate">{course.pages_count}</span>
             <span className="text-stone-300">•</span>
-            <span className="font-semibold text-emerald-700">{course.format}</span>
+            <span className="font-semibold text-emerald-700 truncate">{course.format}</span>
           </div>
         )}
 
-        <div className="mt-auto pt-1 sm:pt-2 space-y-1.5 sm:space-y-2">
-          <div className="flex items-baseline gap-1.5">
-            <span className="text-sm sm:text-base font-black text-stone-900">
-              ₹{course.price}
-            </span>
-            <span className="text-[10px] sm:text-xs text-stone-400 line-through">
-              ₹{course.original_price}
-            </span>
-          </div>
+        <div className="mt-auto pt-1 sm:pt-2 space-y-1 sm:space-y-1.5">
+          {/* Inline Price + Button mode */}
+          {style.button_layout === "inline_price" ? (
+            <div className="flex items-center justify-between gap-1">
+              <div className="flex items-baseline gap-1 shrink-0">
+                <span className="text-xs sm:text-base font-black text-stone-900">
+                  ₹{course.price}
+                </span>
+                <span className="text-[9px] sm:text-xs text-stone-400 line-through">
+                  ₹{course.original_price}
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => onBuyNow(course)}
+                className="bg-amber-700 hover:bg-amber-800 text-white font-bold px-2 py-1 rounded-md text-[10px] sm:text-xs transition flex items-center gap-1 shrink-0 cursor-pointer active:scale-95"
+              >
+                {style.show_button_icon && <ShoppingBagIcon size={11} />}
+                <span className="truncate">{mobileBtnText}</span>
+              </button>
+            </div>
+          ) : (
+            <>
+              <div className="flex items-baseline gap-1.5">
+                <span className="text-xs sm:text-base font-black text-stone-900">
+                  ₹{course.price}
+                </span>
+                <span className="text-[9px] sm:text-xs text-stone-400 line-through">
+                  ₹{course.original_price}
+                </span>
+              </div>
 
-          <button
-            onClick={() => onBuyNow(course)}
-            className={`btn-primary w-full ${
-              style.button_style === "compact"
-                ? "py-1.5 text-[11px] sm:py-2 sm:text-xs"
-                : "py-2 text-xs"
-            }`}
-          >
-            <ShoppingBagIcon size={13} />
-            <span>{style.button_text || "Grab This Deal"}</span>
-          </button>
+              {style.button_layout !== "hidden" && (
+                <button
+                  type="button"
+                  onClick={() => onBuyNow(course)}
+                  style={{
+                    height: style.button_height_mobile ? `${style.button_height_mobile}px` : undefined,
+                  }}
+                  className={`w-full bg-amber-700 hover:bg-amber-800 text-white font-bold transition active:scale-95 flex items-center justify-center gap-1 px-1.5 sm:px-3 cursor-pointer ${
+                    style.button_layout === "compact_pill"
+                      ? "rounded-full py-1 text-[10px] sm:py-1.5 sm:text-xs"
+                      : "rounded-lg py-1 text-[10px] sm:py-1.5 sm:text-xs"
+                  }`}
+                >
+                  {style.show_button_icon && (
+                    <ShoppingBagIcon
+                      size={style.mobile_grid_cols === 3 ? 10 : 12}
+                      className={style.button_layout === "icon_only_mobile" ? "block" : "shrink-0"}
+                    />
+                  )}
+                  {style.button_layout === "icon_only_mobile" ? (
+                    <span className="hidden sm:inline truncate">{desktopBtnText}</span>
+                  ) : (
+                    <>
+                      <span className="inline sm:hidden truncate font-extrabold">{mobileBtnText}</span>
+                      <span className="hidden sm:inline truncate font-extrabold">{desktopBtnText}</span>
+                    </>
+                  )}
+                </button>
+              )}
+            </>
+          )}
 
           {style.show_instant_access && (
-            <div className="flex items-center justify-center gap-1 text-[9px] sm:text-[10px] font-semibold text-emerald-700">
-              <ZapIcon size={11} />
-              <span>Instant Digital Access</span>
+            <div className="flex items-center justify-center gap-1 text-[8px] sm:text-[10px] font-semibold text-emerald-700 truncate">
+              <ZapIcon size={10} className="shrink-0" />
+              <span className="truncate">Instant Access</span>
             </div>
           )}
         </div>

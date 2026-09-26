@@ -46,6 +46,11 @@ export const DEFAULT_BUNDLE_CARD_STYLE: Required<BundleCardStyle> = {
 
   button_style: "full",
   button_text: "Grab This Deal",
+  button_text_mobile: "Buy",
+  button_layout: "full_width",
+  button_height_mobile: 28,
+  show_button_icon: true,
+  button_font_size_mobile: "xs",
 };
 
 export const DEFAULT_SETTINGS = {

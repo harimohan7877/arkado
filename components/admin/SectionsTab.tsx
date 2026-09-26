@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { BundleCardStyle, Settings } from "@/lib/store-types";
 import { DEFAULT_BUNDLE_CARD_STYLE } from "@/lib/default-settings";
+import { ShoppingBagIcon } from "@/components/icons";
 
 interface SectionsTabProps {
   getAuthHeaders: () => Record<string, string>;
@@ -152,6 +153,9 @@ export default function SectionsTab({ getAuthHeaders }: SectionsTabProps) {
         desktop_card_padding: 10,
         show_instant_access: false,
         button_style: "compact",
+        button_layout: "full_width",
+        button_text_mobile: "Buy",
+        button_height_mobile: 26,
         cover_fit: "cover",
       });
     } else if (preset === "ecommerce") {
@@ -168,6 +172,9 @@ export default function SectionsTab({ getAuthHeaders }: SectionsTabProps) {
         show_pages_format: false,
         show_instant_access: false,
         button_style: "compact",
+        button_layout: "inline_price",
+        button_text_mobile: "Buy",
+        button_height_mobile: 24,
         cover_fit: "cover",
       });
     } else if (preset === "classic") {
@@ -184,6 +191,10 @@ export default function SectionsTab({ getAuthHeaders }: SectionsTabProps) {
         show_instant_access: true,
         show_pages_format: true,
         button_style: "full",
+        button_layout: "full_width",
+        button_text_mobile: "Buy",
+        button_text: "Grab This Deal",
+        button_height_mobile: 32,
         cover_fit: "cover",
       });
     }
@@ -607,45 +618,102 @@ export default function SectionsTab({ getAuthHeaders }: SectionsTabProps) {
               })}
             </div>
 
-            {/* Button Style & Text */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            {/* Button Controls: Layout, Labels, and Mobile Height */}
+            <div className="space-y-3 pt-2 border-t border-stone-100">
               <div className="space-y-1.5">
-                <label className="text-xs font-bold text-stone-700">Button Display Style</label>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => updateActiveStyle({ button_style: "full" })}
-                    className={`text-xs py-1.5 rounded-lg border font-bold transition cursor-pointer text-center ${
-                      currentActiveStyle.button_style === "full"
-                        ? "bg-amber-600 text-white border-amber-600"
-                        : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
-                    }`}
-                  >
-                    Standard Button
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => updateActiveStyle({ button_style: "compact" })}
-                    className={`text-xs py-1.5 rounded-lg border font-bold transition cursor-pointer text-center ${
-                      currentActiveStyle.button_style === "compact"
-                        ? "bg-amber-600 text-white border-amber-600"
-                        : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
-                    }`}
-                  >
-                    Compact Button
-                  </button>
+                <label className="text-xs font-bold text-stone-700">Button Layout & Style</label>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {[
+                    { id: "full_width", label: "Full Width" },
+                    { id: "inline_price", label: "Inline With Price" },
+                    { id: "compact_pill", label: "Compact Pill" },
+                    { id: "icon_only_mobile", label: "Icon Only (Phone)" },
+                    { id: "hidden", label: "Hide Button" },
+                  ].map((btn) => (
+                    <button
+                      key={btn.id}
+                      type="button"
+                      onClick={() => updateActiveStyle({ button_layout: btn.id as any })}
+                      className={`text-xs py-1.5 px-2 rounded-lg border font-bold transition cursor-pointer text-center ${
+                        (currentActiveStyle.button_layout || "full_width") === btn.id
+                          ? "bg-amber-600 text-white border-amber-600"
+                          : "bg-white text-stone-700 border-stone-200 hover:bg-stone-100"
+                      }`}
+                    >
+                      {btn.label}
+                    </button>
+                  ))}
                 </div>
               </div>
 
-              <div className="space-y-1.5">
-                <label className="text-xs font-bold text-stone-700">Button Label</label>
-                <input
-                  type="text"
-                  value={currentActiveStyle.button_text}
-                  onChange={(e) => updateActiveStyle({ button_text: e.target.value })}
-                  placeholder="Grab This Deal"
-                  className="w-full text-xs font-semibold px-3 py-1.5 rounded-lg border border-stone-200 focus:outline-none focus:border-amber-600"
-                />
+              {/* Button Labels: Desktop vs Mobile */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-stone-700">Desktop Button Label</label>
+                  <input
+                    type="text"
+                    value={currentActiveStyle.button_text}
+                    onChange={(e) => updateActiveStyle({ button_text: e.target.value })}
+                    placeholder="Grab This Deal"
+                    className="w-full text-xs font-semibold px-3 py-1.5 rounded-lg border border-stone-200 focus:outline-none focus:border-amber-600"
+                  />
+                  <span className="text-[10px] text-stone-400">Shown on desktop and tablets</span>
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-stone-700">Mobile Button Label</label>
+                  <input
+                    type="text"
+                    value={currentActiveStyle.button_text_mobile || ""}
+                    onChange={(e) => updateActiveStyle({ button_text_mobile: e.target.value })}
+                    placeholder="Buy (Short text for phone)"
+                    className="w-full text-xs font-semibold px-3 py-1.5 rounded-lg border border-stone-200 focus:outline-none focus:border-amber-600"
+                  />
+                  <span className="text-[10px] text-stone-400">Recommended 3-5 letters (e.g. Buy, Get, ₹49)</span>
+                </div>
+              </div>
+
+              {/* Mobile Button Height & Icon Toggle */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                <div className="space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <label className="text-xs font-bold text-stone-700">Mobile Button Height</label>
+                    <span className="text-xs font-mono font-bold text-stone-600">
+                      {currentActiveStyle.button_height_mobile || 28}px
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min="20"
+                    max="38"
+                    step="2"
+                    value={currentActiveStyle.button_height_mobile || 28}
+                    onChange={(e) => updateActiveStyle({ button_height_mobile: Number(e.target.value) })}
+                    className="w-full accent-amber-600 cursor-pointer h-2 bg-stone-200 rounded-lg"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-stone-700">Shopping Cart Icon</label>
+                  <button
+                    type="button"
+                    onClick={() => updateActiveStyle({ show_button_icon: !currentActiveStyle.show_button_icon })}
+                    className={`w-full text-xs py-1.5 px-3 rounded-lg border font-bold transition cursor-pointer flex items-center justify-between ${
+                      currentActiveStyle.show_button_icon !== false
+                        ? "bg-amber-50 border-amber-300 text-amber-900"
+                        : "bg-stone-50 border-stone-200 text-stone-600"
+                    }`}
+                  >
+                    <span>Shopping Cart Icon</span>
+                    <span
+                      className={`text-[10px] px-1.5 py-0.5 rounded font-bold ${
+                        currentActiveStyle.show_button_icon !== false ? "bg-amber-600 text-white" : "bg-stone-300 text-stone-700"
+                      }`}
+                    >
+                      {currentActiveStyle.show_button_icon !== false ? "SHOW" : "HIDE"}
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -788,24 +856,80 @@ export default function SectionsTab({ getAuthHeaders }: SectionsTabProps) {
                             </div>
 
                             <div className="pt-1 space-y-1 mt-auto">
-                              <div className="flex items-baseline gap-1">
-                                <span className="text-xs font-black text-stone-900">₹{card.price}</span>
-                                <span className="text-[10px] text-stone-400 line-through">₹{card.original_price}</span>
-                              </div>
+                              {currentActiveStyle.button_layout === "inline_price" ? (
+                                <div className="flex items-center justify-between gap-1">
+                                  <div className="flex items-baseline gap-1 shrink-0">
+                                    <span className="text-xs font-black text-stone-900">₹{card.price}</span>
+                                    <span className="text-[10px] text-stone-400 line-through">₹{card.original_price}</span>
+                                  </div>
+                                  <button
+                                    type="button"
+                                    style={{
+                                      height:
+                                        previewDevice === "mobile"
+                                          ? `${currentActiveStyle.button_height_mobile || 26}px`
+                                          : undefined,
+                                    }}
+                                    className="bg-amber-700 hover:bg-amber-800 text-white font-bold px-2 py-0.5 rounded text-[10px] transition shrink-0 flex items-center gap-1"
+                                  >
+                                    {currentActiveStyle.show_button_icon !== false && (
+                                      <ShoppingBagIcon size={10} className="shrink-0" />
+                                    )}
+                                    <span className="truncate">
+                                      {previewDevice === "mobile"
+                                        ? currentActiveStyle.button_text_mobile || "Buy"
+                                        : currentActiveStyle.button_text || "Grab This Deal"}
+                                    </span>
+                                  </button>
+                                </div>
+                              ) : (
+                                <>
+                                  <div className="flex items-baseline gap-1">
+                                    <span className="text-xs font-black text-stone-900">₹{card.price}</span>
+                                    <span className="text-[10px] text-stone-400 line-through">₹{card.original_price}</span>
+                                  </div>
 
-                              <button
-                                type="button"
-                                className={`w-full bg-amber-700 hover:bg-amber-800 text-white font-bold rounded-lg transition ${
-                                  currentActiveStyle.button_style === "compact"
-                                    ? "py-1 text-[10px]"
-                                    : "py-1.5 text-[11px]"
-                                }`}
-                              >
-                                {currentActiveStyle.button_text}
-                              </button>
+                                  {currentActiveStyle.button_layout !== "hidden" && (
+                                    <button
+                                      type="button"
+                                      style={{
+                                        height:
+                                          previewDevice === "mobile"
+                                            ? `${currentActiveStyle.button_height_mobile || 28}px`
+                                            : undefined,
+                                      }}
+                                      className={`w-full bg-amber-700 hover:bg-amber-800 text-white font-bold transition flex items-center justify-center gap-1 px-1.5 ${
+                                        currentActiveStyle.button_layout === "compact_pill"
+                                          ? "rounded-full py-1 text-[10px]"
+                                          : "rounded-lg py-1 text-[10px]"
+                                      }`}
+                                    >
+                                      {currentActiveStyle.show_button_icon !== false && (
+                                        <ShoppingBagIcon
+                                          size={10}
+                                          className={
+                                            currentActiveStyle.button_layout === "icon_only_mobile" &&
+                                            previewDevice === "mobile"
+                                              ? "block"
+                                              : "shrink-0"
+                                          }
+                                        />
+                                      )}
+                                      {currentActiveStyle.button_layout === "icon_only_mobile" &&
+                                      previewDevice === "mobile" ? null : (
+                                        <span className="truncate">
+                                          {previewDevice === "mobile"
+                                            ? currentActiveStyle.button_text_mobile || "Buy"
+                                            : currentActiveStyle.button_text || "Grab This Deal"}
+                                        </span>
+                                      )}
+                                    </button>
+                                  )}
+                                </>
+                              )}
 
                               {currentActiveStyle.show_instant_access && (
-                                <div className="text-[9px] text-center text-emerald-700 font-semibold">
+                                <div className="text-[9px] text-center text-emerald-700 font-semibold truncate">
                                   Instant Access
                                 </div>
                               )}

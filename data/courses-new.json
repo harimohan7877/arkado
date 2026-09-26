@@ -243,14 +243,14 @@
     "show_in_slider": false,
     "slider_tagline": "मैथ्स 1,000 TCS MCQs बुक — मात्र ₹49",
     "sample_pdf_url": "https://drive.google.com",
-    "drive_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/1RsSNoOVDmkU80UuALxpHnkiQ9Ydilwb9?usp=sharing",
     "is_active": true,
     "is_featured": true,
     "featured_priority": 1,
     "is_new_arrival": true,
     "new_arrival_priority": 1,
     "exam_id": "5001",
-    "updated_at": "2026-09-18T04:41:56.880Z",
+    "updated_at": "2026-09-26T11:01:12.686863Z",
     "demo_html_mock_enabled": true,
     "demo_html_mock_url": "/mock-tests/ssc-cgl-maths-demo-test.html"
   },
@@ -316,14 +316,14 @@
     "show_in_slider": false,
     "slider_tagline": "रीज़निंग 1,000 MCQs प्रैक्टिस बुक — मात्र ₹49",
     "sample_pdf_url": "https://drive.google.com",
-    "drive_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/1WIp3veoEdXY3e3f8QEQwdEv11soikgHz?usp=sharing",
     "is_active": true,
     "is_featured": true,
     "featured_priority": 2,
     "is_new_arrival": true,
     "new_arrival_priority": 2,
     "exam_id": "5001",
-    "updated_at": "2026-09-18T04:43:24.476Z",
+    "updated_at": "2026-09-26T11:01:12.686919Z",
     "demo_html_mock_enabled": true,
     "demo_html_mock_url": "/mock-tests/ssc-cgl-reasoning-demo-test.html"
   },
@@ -385,14 +385,14 @@
     "show_in_slider": false,
     "slider_tagline": "जीके/जीएस 1,000 TCS MCQs बुक — मात्र ₹49",
     "sample_pdf_url": "https://drive.google.com",
-    "drive_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/1mGtK1B11trrZPPLgxZ7FXTwg22R-9FAT?usp=sharing",
     "is_active": true,
     "is_featured": true,
     "featured_priority": 3,
     "is_new_arrival": true,
     "new_arrival_priority": 3,
     "exam_id": "5001",
-    "updated_at": "2026-09-18T04:44:02.424Z",
+    "updated_at": "2026-09-26T11:01:12.686930Z",
     "demo_html_mock_enabled": true,
     "demo_html_mock_url": "/mock-tests/ssc-cgl-gk-demo-test.html"
   },
@@ -458,14 +458,14 @@
     "show_in_slider": false,
     "slider_tagline": "इंग्लिश 1,000 MCQs प्रैक्टिस बुक — मात्र ₹49",
     "sample_pdf_url": "https://drive.google.com",
-    "drive_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/1WKov9LsnXV1vR1tSAm2RSiOZepn8cOBz?usp=sharing",
     "is_active": true,
     "is_featured": true,
     "featured_priority": 4,
     "is_new_arrival": true,
     "new_arrival_priority": 4,
     "exam_id": "5001",
-    "updated_at": "2026-09-18T04:44:45.341Z",
+    "updated_at": "2026-09-26T11:01:12.686939Z",
     "demo_html_mock_enabled": true,
     "demo_html_mock_url": "/mock-tests/ssc-cgl-english-demo-test.html"
   },
@@ -526,15 +526,806 @@
     "show_in_slider": true,
     "slider_tagline": "SSC CGL 2026 : 5 फुल सिमुलेशन टेस्ट्स — मात्र ₹49!",
     "sample_pdf_url": "https://drive.google.com",
-    "drive_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/1P6k__Diz7Z_OgOOKuQAK9J_1V09_nOgH?usp=sharing",
     "is_active": true,
     "is_featured": true,
     "featured_priority": 5,
     "is_new_arrival": true,
     "new_arrival_priority": 5,
     "exam_id": "5001",
-    "updated_at": "2026-09-18T04:45:47.146Z",
+    "updated_at": "2026-09-26T11:01:12.686949Z",
     "demo_html_mock_enabled": true,
     "demo_html_mock_url": "/mock-tests/ssc-cgl-tier1-full-mock-demo.html"
+  },
+  {
+    "id": "ssc-chsl-maths-1000-mcq-book",
+    "slug": "ssc-chsl-maths-1000-mcq-book",
+    "exam_id": "5002",
+    "title": "SSC CHSL (10+2) 2026 : Quantitative Aptitude (गणित) 1,000 MCQs Practice Book",
+    "exam_board": "Staff Selection Commission (SSC)",
+    "category": "ssc",
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "1,000 MCQs Book",
+    "short_description": "SSC CHSL 2026 (LDC / DEO / JSA) टियर-1 एवं टियर-2 परीक्षा हेतु अंकगणित, एडवांस मैथ्स, सांख्यिकी एवं प्रायिकता के 1,000 TCS न्यू-पैटर्न बहुविकल्पीय प्रश्न। प्रत्येक प्रश्न के नीचे स्टेप-बाय-स्टेप विस्तृत हल एवं 10-सेकंड शॉर्ट ट्रिक्स, जो परीक्षा हॉल में आपकी स्पीड और एक्यूरेसी को दोगुना कर देंगी।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
+    "rating": 4.9,
+    "rating_count": "1,640+ छात्र",
+    "highlights": [
+      "1,000 TCS न्यू पैटर्न MCQs — प्रत्येक प्रश्न का बेसिक कॉन्सेप्ट + 10-सेकंड शॉर्ट-ट्रिक हल",
+      "अंकगणित (Arithmetic) + एडवांस गणित (Algebra, Geometry, Trigonometry, Mensuration)",
+      "CHSL टियर-2 स्पेशल: सांख्यिकी (Mean, Median, Mode, SD) एवं प्रायिकता (Probability) के अनिवार्य प्रश्न",
+      "2-कॉलम A4 प्रिंटेबल स्टडी बुक + कॉम्पैक्ट फोटोकॉपी टेस्ट बुकलेट PDF"
+    ],
+    "subjects": [
+      "Number System, Simplification & Surds",
+      "Percentage, Profit & Loss, Discount",
+      "Ratio & Proportion, Mixture & Allegation, Partnership",
+      "Time & Work, Pipes & Cisterns",
+      "Speed, Time & Distance, Trains, Boats & Streams",
+      "Simple & Compound Interest",
+      "Algebra, Polynomials & Graphs of Linear Equations",
+      "Geometry (Triangles, Circles, Quadrilaterals)",
+      "Trigonometry, Heights & Distances",
+      "Mensuration 2D & 3D (Prism, Pyramid, Cylinder, Cone)",
+      "Statistics (Mean, Median, Mode, Variance, SD)",
+      "Probability (Coins, Dice, Cards, Bag Problems)",
+      "Data Interpretation (Bar, Pie, Line, Table Charts)"
+    ],
+    "syllabus_preview": [
+      {
+        "subject": "अंकगणित (Arithmetic Mathematics)",
+        "chapters": [
+          "संख्या पद्धति, घातांक एवं सरलीकरण (Number System & Surds)",
+          "प्रतिशत, लाभ-हानि एवं बट्टा (Percentage & Profit-Loss)",
+          "अनुपात, समानुपात एवं मिश्रण (Ratio & Mixture Allegation)",
+          "समय, कार्य, पाइप एवं टंकी (Time, Work & Pipes)",
+          "साधारण एवं चक्रवृद्धि ब्याज (Simple & Compound Interest)",
+          "चाल, समय, दूरी एवं नाव-धारा (Speed, Distance & Boats)"
+        ]
+      },
+      {
+        "subject": "एडवांस गणित (Advance Mathematics)",
+        "chapters": [
+          "बीजगणित एवं रैखिक समीकरण आलेख (Algebra & Linear Graphs)",
+          "ज्यामिति - रेखाएं, कोण, त्रिभुज व वृत्त (Geometry)",
+          "त्रिकोणमिति एवं ऊंचाई-दूरी (Trigonometry & Heights)",
+          "क्षेत्रमिति 2D व 3D (Mensuration 2D/3D)",
+          "समंकों की व्याख्या (Data Interpretation - DI)"
+        ]
+      },
+      {
+        "subject": "टियर-2 अनिवार्य मॉड्यूल (Statistics & Probability)",
+        "chapters": [
+          "सांख्यिकी - माध्य, माध्यिका, बहुलक, मानक विचलन (Statistics)",
+          "साधारण प्रायिकता - सिक्के, पासे, ताश के पत्ते (Probability)"
+        ]
+      }
+    ],
+    "pages_count": "320+ Pages",
+    "format": "Printable PDF + CBT Simulator",
+    "language": "द्विभाषी (Hindi + English)",
+    "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/ssc-chsl-maths-1000-mcq-book.png",
+    "show_in_slider": false,
+    "slider_tagline": "CHSL गणित 1,000 TCS MCQs बुक — मात्र ₹49",
+    "sample_pdf_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/1-hkvU5yOHjinQAU_9KONFfJz6ddyPQsF?usp=sharing",
+    "is_active": true,
+    "is_featured": true,
+    "featured_priority": 1,
+    "is_new_arrival": true,
+    "new_arrival_priority": 1,
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-chsl-demo-test.html",
+    "updated_at": "2026-09-26T11:01:12.686958Z"
+  },
+  {
+    "id": "ssc-chsl-reasoning-1000-mcq-book",
+    "slug": "ssc-chsl-reasoning-1000-mcq-book",
+    "exam_id": "5002",
+    "title": "SSC CHSL (10+2) 2026 : General Intelligence & Reasoning (तर्कशक्ति) 1,000 MCQs Practice Book",
+    "exam_board": "Staff Selection Commission (SSC)",
+    "category": "ssc",
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "1,000 MCQs Book",
+    "short_description": "SSC CHSL 10+2 टियर-1 एवं टियर-2 हेतु वर्बल, नॉन-वर्बल एवं एनालिटिकल रीजनिंग के 1,000 TCS न्यू-पैटर्न चुनिंदा प्रश्न। हर प्रश्न के नीचे क्रिस्टल-क्लियर लॉजिक, वेन आरेख व सुपर-फास्ट शॉर्टकट एप्रोच ताकि आप 25 में से 25 प्रश्न बिना किसी निगेटिव मार्किंग के पूरे विश्वास के साथ हल कर सकें।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
+    "rating": 4.9,
+    "rating_count": "1,520+ छात्र",
+    "highlights": [
+      "1,000 TCS न्यू पैटर्न प्रश्न — वर्बल (भाषिक), नॉन-वर्बल (चित्रात्मक) एवं विश्लेषणात्मक तर्कशक्ति",
+      "सीडिंग, कोडिंग-डिकोडिंग, सादृश्यता, श्रृंखला, रक्त संबंध व दिशा परीक्षण की सुपर-फास्ट ट्रिक्स",
+      "CHSL स्पेशल: क्लर्कियल एप्टीट्यूड (एड्रेस व कोड मिलान) तथा कथन-निष्कर्ष/पूर्वधारणाएं",
+      "A4 2-कॉलम लेआउट (प्रिंट एवं फोटोकॉपी फ्रेंडली) + संपूर्ण आंसर-की"
+    ],
+    "subjects": [
+      "Analogy (Semantic, Symbolic, Number, Figural)",
+      "Classification (Odd One Out)",
+      "Coding-Decoding & Word Formation",
+      "Series (Number, Alphabet, Alpha-Numeric, Figural)",
+      "Blood Relations & Coded Family Tree",
+      "Direction & Distance Sense Test",
+      "Order, Ranking & Time Sequence",
+      "Syllogism ( न्याय निगमन - 100% Rules)",
+      "Venn Diagrams & Set Representation",
+      "Seating Arrangement (Linear & Circular)",
+      "Non-Verbal (Mirror & Water Images, Paper Folding/Cutting)",
+      "Embedded Figures, Completion of Patterns, Dice & Cubes",
+      "Critical Reasoning (Statement & Assumptions, Arguments, Course of Action)",
+      "Clerical Aptitude (Address Matching, Indexing & Code Verification)"
+    ],
+    "syllabus_preview": [
+      {
+        "subject": "भाषिक तर्कशक्ति (Verbal Reasoning)",
+        "chapters": [
+          "सादृश्यता एवं वर्गीकरण (Analogy & Classification)",
+          "कोडिंग-डिकोडिंग एवं शब्द निर्माण (Coding-Decoding)",
+          "रक्त संबंध एवं दिशा परीक्षण (Blood Relations & Direction)",
+          "बैठने की व्यवस्था एवं रैंकिंग (Seating Arrangement & Ranking)",
+          "न्याय निगमन एवं वेन आरेख (Syllogism & Venn Diagrams)"
+        ]
+      },
+      {
+        "subject": "अशाब्दिक एवं चित्रात्मक (Non-Verbal Reasoning)",
+        "chapters": [
+          "दर्पण एवं जल प्रतिबिंब (Mirror & Water Images)",
+          "कागज मोड़ना एवं काटना (Paper Folding & Cutting)",
+          "सन्निहित आकृतियां एवं पैटर्न पूर्ति (Embedded Figures)",
+          "पासा एवं घन (Dice & Cubes)"
+        ]
+      },
+      {
+        "subject": "क्रिटिकल एवं क्लर्कियल लॉजिक (Critical & Clerical Logic)",
+        "chapters": [
+          "कथन-पूर्वधारणाएं एवं निष्कर्ष (Statement-Assumptions)",
+          "क्लर्कियल एप्टीट्यूड - पता व कोड मिलान (Address Matching)"
+        ]
+      }
+    ],
+    "pages_count": "310+ Pages",
+    "format": "Printable PDF + CBT Simulator",
+    "language": "द्विभाषी (Hindi + English)",
+    "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/ssc-chsl-reasoning-1000-mcq-book.png",
+    "show_in_slider": false,
+    "slider_tagline": "CHSL रीजनिंग 1,000 TCS MCQs बुक — मात्र ₹49",
+    "sample_pdf_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/1HZKZHtQVX0P7ruxLJThPj6V3VPyny2iv?usp=sharing",
+    "is_active": true,
+    "is_featured": true,
+    "featured_priority": 2,
+    "is_new_arrival": true,
+    "new_arrival_priority": 2,
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-chsl-demo-test.html",
+    "updated_at": "2026-09-26T11:01:12.686967Z"
+  },
+  {
+    "id": "ssc-chsl-gk-1000-mcq-book",
+    "slug": "ssc-chsl-gk-1000-mcq-book",
+    "exam_id": "5002",
+    "title": "SSC CHSL (10+2) 2026 : General Awareness (सामान्य ज्ञान) 1,000 MCQs Practice Book",
+    "exam_board": "Staff Selection Commission (SSC)",
+    "category": "ssc",
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "1,000 MCQs Book",
+    "short_description": "SSC CHSL 2026 परीक्षा के लिए टीसीएस द्वारा पूछे जाने वाले सर्वाधिक रिपीटेड 1,000 प्रश्न — भारतीय कला-संस्कृति, शास्त्रीय नृत्य व घराने, स्टेटिक जीके, एनसीईआरटी सामान्य विज्ञान (6th-10th) एवं कोर जीएस का संपूर्ण निचोड़। 100+ पिछली शिफ्ट्स के ट्रेंड्स पर आधारित प्रामाणिक द्विभाषी व्याख्या सहित।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
+    "rating": 4.9,
+    "rating_count": "1,890+ छात्र",
+    "highlights": [
+      "1,000 सर्वाधिक संभावित MCQs — टीसीएस के 2020-2025 के 100+ शिफ्ट्स का निचोड़",
+      "TCS स्टेटिक जीके: शास्त्रीय नृत्य, वादक, संगीत घराने, प्रमुख मेले, उत्सव, राष्ट्रीय उद्यान व मंदिर",
+      "NCERT सामान्य विज्ञान: भौतिकी, रसायन विज्ञान व जीव विज्ञान के दैनिक जीवन से जुड़े प्रश्न",
+      "भारतीय राजव्यवस्था, इतिहास (प्राचीन, मध्यकालीन, आधुनिक), भारत का भूगोल एवं अर्थव्यवस्था"
+    ],
+    "subjects": [
+      "TCS Classical Dances, Dancers & Gharanas",
+      "Folk Dances, Festivals & Fairs of India",
+      "Musical Instruments & Prominent Exponents",
+      "Books, Authors, Awards & Honours",
+      "National Parks, Wildlife Sanctuaries & Ramsar Sites",
+      "Indian Polity: Constitution, Articles, Amendments & Panchayati Raj",
+      "Indian History: Ancient, Medieval, Modern Freedom Struggle",
+      "Geography: Rivers, Mountain Ranges, Climate, Minerals, Agriculture",
+      "Indian Economy: Budget, Inflation, Banking, Five-Year Plans, GDP",
+      "General Science: Physics (Light, Motion, Electricity, Units)",
+      "Chemistry: Periodic Table, Acids-Bases, Metals-Nonmetals",
+      "Biology: Human Organ Systems, Nutrition, Diseases, Vitamins",
+      "Current Events & Static GK Capsules"
+    ],
+    "syllabus_preview": [
+      {
+        "subject": "टीसीएस कला, संस्कृति एवं स्टेटिक जीके",
+        "chapters": [
+          "शास्त्रीय एवं लोक नृत्य, प्रमुख नर्तक (Indian Dances)",
+          "संगीत घराने एवं वाद्य यंत्र (Music Gharanas & Instruments)",
+          "भारत के त्यौहार, उत्सव एवं मेले (Festivals & Fairs)",
+          "राष्ट्रीय उद्यान, वन्यजीव अभयारण्य (National Parks)",
+          "खेलकूद शब्दावली, कप एवं ट्रॉफियां (Sports & Cups)"
+        ]
+      },
+      {
+        "subject": "एनसीईआरटी सामान्य विज्ञान (NCERT 6-10th Level)",
+        "chapters": [
+          "भौतिक विज्ञान - प्रकाश, गति, विद्युत, मात्रक (Physics)",
+          "रसायन विज्ञान - आवर्त सारणी, अम्ल-क्षार (Chemistry)",
+          "जीव विज्ञान - मानव तंत्र, पोषण, रोग व विटामिन (Biology)"
+        ]
+      },
+      {
+        "subject": "कोर सामान्य अध्ययन (Polity, History, Geo, Eco)",
+        "chapters": [
+          "भारतीय संविधान - अनुच्छेद, मौलिक अधिकार, संसद (Polity)",
+          "आधुनिक भारत का स्वतंत्रता संग्राम (Modern History)",
+          "भारत का भूगोल - नदियां, दर्रे, खनिज (Geography)",
+          "भारतीय अर्थव्यवस्था - बजट, बैंकिंग, मुद्रा (Economy)"
+        ]
+      }
+    ],
+    "pages_count": "280+ Pages",
+    "format": "Printable PDF + CBT Simulator",
+    "language": "द्विभाषी (Hindi + English)",
+    "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/ssc-chsl-gk-1000-mcq-book.png",
+    "show_in_slider": false,
+    "slider_tagline": "CHSL सामान्य ज्ञान 1,000 TCS MCQs बुक — मात्र ₹49",
+    "sample_pdf_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/1H8brRzSr8LuxNoPUyf3v4wPXQhPh6bAe?usp=sharing",
+    "is_active": true,
+    "is_featured": true,
+    "featured_priority": 3,
+    "is_new_arrival": true,
+    "new_arrival_priority": 3,
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-chsl-demo-test.html",
+    "updated_at": "2026-09-26T11:01:12.686976Z"
+  },
+  {
+    "id": "ssc-chsl-english-1000-mcq-book",
+    "slug": "ssc-chsl-english-1000-mcq-book",
+    "exam_id": "5002",
+    "title": "SSC CHSL (10+2) 2026 : English Language & Comprehension 1,000 MCQs Practice Book",
+    "exam_board": "Staff Selection Commission (SSC)",
+    "category": "ssc",
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "1,000 MCQs Book",
+    "short_description": "CHSL टियर-1 एवं टियर-2 में 100% स्कोरिंग हेतु तैयार 1,000 TCS MCQs — मोस्ट रिपीटेड वोकैबुलरी (Syno/Anto, One Word, Idioms), 100 गोल्डन ग्रामर रूल्स, एक्टिव-पैसिव वॉइस, डायरेक्ट-इनडायरेक्ट और 40 क्लोज़ टेस्ट सेट्स। हर प्रश्न का हिंदी में आसान भाषा में संपूर्ण ग्रामर लॉजिक।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
+    "rating": 4.9,
+    "rating_count": "1,430+ छात्र",
+    "highlights": [
+      "1,000 TCS न्यू पैटर्न MCQs — वोकैबुलरी, ग्रामर एरर्स, सेंटेंस इम्प्रूवमेंट एवं क्लोज़ टेस्ट",
+      "400+ हाई-यील्ड वोकैब: Synonyms, Antonyms, One Word Substitutions, Idioms & Phrases, Misspelt Words",
+      "100 गोल्डन रूल्स आधारित एरर स्पॉटिंग व फिलर्स, एक्टिव/पैसिव वॉइस एवं डायरेक्ट/इनडायरेक्ट स्पीच",
+      "40 संपूर्ण क्लोज़ टेस्ट (Cloze Tests) व पैरा-जंबल्स (PQRS) हल करने की एलिमिनेशन तकनीक"
+    ],
+    "subjects": [
+      "Synonyms & Antonyms (High-Frequency TCS Words)",
+      "One Word Substitution (Theme-Based & Frequency-Wise)",
+      "Idioms & Phrases (Origin, Context & Examples)",
+      "Spelling Rules & Commonly Misspelt Words",
+      "Spotting Errors (100 Golden Rules of Grammar)",
+      "Sentence Improvement & Fill in the Blanks",
+      "Active and Passive Voice (Rules & Fast Tricks)",
+      "Direct and Indirect Speech (Narration Conversion)",
+      "Cloze Test Mastery (40 Full Practice Sets with Hindi Meaning)",
+      "Para Jumbles (Sentence Rearrangement PQRS)",
+      "Reading Comprehension Passages"
+    ],
+    "syllabus_preview": [
+      {
+        "subject": "वोकैबुलरी बूस्टर (Vocabulary Mastery)",
+        "chapters": [
+          "मोस्ट रिपीटेड Synonyms एवं Antonyms (160 MCQs)",
+          "अनेक शब्दों के लिए एक शब्द - One Word Substitutions (120 MCQs)",
+          "मुहावरे एवं लोकोक्तियां - Idioms & Phrases (120 MCQs)",
+          "स्पेलिंग टेस्ट - Misspelt Words (80 MCQs)"
+        ]
+      },
+      {
+        "subject": "ग्रामर एवं वाक्य रचना (Grammar Mechanics)",
+        "chapters": [
+          "100 गोल्डन रूल्स एरर स्पॉटिंग (160 MCQs)",
+          "वाक्य सुधार एवं फिलर्स - Sentence Improvement (80 MCQs)",
+          "सक्रिय व कर्मवाच्य - Active & Passive Voice (40 MCQs)",
+          "प्रत्यक्ष व अप्रत्यक्ष कथन - Direct & Indirect (40 MCQs)"
+        ]
+      },
+      {
+        "subject": "कॉम्प्रिहेंशन एवं जंबल्स (Cloze & Jumbles)",
+        "chapters": [
+          "क्लोज़ टेस्ट - Cloze Test Sets (40 सेट्स • 200 MCQs)",
+          "पैरा जंबल्स - Para Jumbles PQRS (120 MCQs)"
+        ]
+      }
+    ],
+    "pages_count": "290+ Pages",
+    "format": "Printable PDF + CBT Simulator",
+    "language": "द्विभाषी (Hindi + English)",
+    "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/ssc-chsl-english-1000-mcq-book.png",
+    "show_in_slider": false,
+    "slider_tagline": "CHSL अंग्रेजी 1,000 TCS MCQs बुक — मात्र ₹49",
+    "sample_pdf_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/1uWLO4Ud6jDL5-Q4btfhJofA8sQoPUCxR?usp=sharing",
+    "is_active": true,
+    "is_featured": true,
+    "featured_priority": 4,
+    "is_new_arrival": true,
+    "new_arrival_priority": 4,
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-chsl-demo-test.html",
+    "updated_at": "2026-09-26T11:01:12.686984Z"
+  },
+  {
+    "id": "ssc-chsl-5-full-mock-tests-bundle",
+    "slug": "ssc-chsl-5-full-mock-tests-bundle",
+    "exam_id": "5002",
+    "title": "SSC CHSL (10+2) 2026 : 5 Full-Length Tier-1 Simulation Mock Tests Bundle",
+    "exam_board": "Staff Selection Commission (SSC)",
+    "category": "ssc",
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "5 Full Mocks Bundle",
+    "short_description": "असली परीक्षा से पहले एग्जाम हॉल जैसा 100% सटीक अनुभव कराने वाले 5 फुल-लेंथ टियर-1 सिमुलेशन टेस्ट्स (कुल 500 MCQs)। 2-कॉलम विस्तृत व्याख्या अध्ययन पुस्तक, ओएमआर प्रैक्टिस हेतु A4 प्रिंटेबल ज़ेरॉक्स बुकलेट्स और लाइव 60 मिनट टाइमर वाला ऑफलाइन/ऑनलाइन CBT टेस्ट सिमुलेटर।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
+    "rating": 4.9,
+    "rating_count": "2,150+ छात्र",
+    "highlights": [
+      "500 ओरिजिनल MCQs — ठीक परीक्षा जैसे 5 पूरे मॉक पेपर्स (प्रत्येक में 100 प्रश्न: 25 Math, 25 Reas, 25 GK, 25 Eng)",
+      "2-कॉलम डिटेल्ड स्टडी सॉल्यूशन बुक PDF (प्रत्येक प्रश्न का प्रामाणिक व विस्तृत हल)",
+      "OMR / एग्जाम हॉल प्रैक्टिस हेतु 5 अलग-अलग प्रिंटेबल A4 ज़ेरॉक्स बुकलेट्स (उत्तर अंत में)",
+      "टीसीएस इंटरएक्टिव CBT टेस्ट सिमुलेटर HTML (60 मिनट टाइमर, 0.50 नेगेटिव मार्किंग व लाइव रिजल्ट)"
+    ],
+    "subjects": [
+      "Full Syllabus Mock Test 01 (100 Qs • 200 Marks)",
+      "Full Syllabus Mock Test 02 (100 Qs • 200 Marks)",
+      "Full Syllabus Mock Test 03 (100 Qs • 200 Marks)",
+      "Full Syllabus Mock Test 04 (100 Qs • 200 Marks)",
+      "Full Syllabus Mock Test 05 (100 Qs • 200 Marks)",
+      "Complete 2-Column Solutions Master Study Book",
+      "5x Printable Xerox Booklets with Answer Keys",
+      "5x Interactive Browser CBT Simulators"
+    ],
+    "syllabus_preview": [
+      {
+        "subject": "मॉक टेस्ट 01 से 05 (Tier-1 Complete Simulation)",
+        "chapters": [
+          "मॉक टेस्ट 01 — फुल सिलेबस 100 प्रश्न (25 Math, 25 Reas, 25 GK, 25 Eng)",
+          "मॉक टेस्ट 02 — फुल सिलेबस 100 प्रश्न (25 Math, 25 Reas, 25 GK, 25 Eng)",
+          "मॉक टेस्ट 03 — फुल सिलेबस 100 प्रश्न (25 Math, 25 Reas, 25 GK, 25 Eng)",
+          "मॉक टेस्ट 04 — फुल सिलेबस 100 प्रश्न (25 Math, 25 Reas, 25 GK, 25 Eng)",
+          "मॉक टेस्ट 05 — फुल सिलेबस 100 प्रश्न (25 Math, 25 Reas, 25 GK, 25 Eng)"
+        ]
+      },
+      {
+        "subject": "प्रारूप एवं डिलीवरी पैकेज (Study Suite)",
+        "chapters": [
+          "मास्टर स्टडी बुक PDF (प्रत्येक प्रश्न के नीचे तुरंत विस्तृत हल)",
+          "5x एग्जाम हॉल ज़ेरॉक्स बुकलेट्स PDF (उत्तर तालिका अंत में)",
+          "5x TCS ऑनलाइन CBT टेस्ट इंजन HTML (टाइमर व स्कोरकार्ड)"
+        ]
+      }
+    ],
+    "pages_count": "240+ Pages",
+    "format": "Printable PDF + CBT Simulator",
+    "language": "द्विभाषी (Hindi + English)",
+    "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/ssc-chsl-5-full-mock-tests-bundle.png",
+    "show_in_slider": true,
+    "slider_tagline": "CHSL 2026 5 फुल सिमुलेशन टेस्ट्स + CBT — मात्र ₹49",
+    "sample_pdf_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/1IT6Rt4FbJHKVNLu1X0UI3oDPkGOlFLCZ?usp=sharing",
+    "is_active": true,
+    "is_featured": true,
+    "featured_priority": 5,
+    "is_new_arrival": true,
+    "new_arrival_priority": 5,
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-chsl-demo-test.html",
+    "updated_at": "2026-09-26T11:01:12.686994Z"
+  },
+  {
+    "id": "ssc-chsl-computer-1000-mcq-book",
+    "slug": "ssc-chsl-computer-1000-mcq-book",
+    "exam_id": "5002",
+    "title": "SSC CHSL (10+2) 2026 : Computer Knowledge Module (कंप्यूटर ज्ञान) 1,000 MCQs Practice Book",
+    "exam_board": "Staff Selection Commission (SSC)",
+    "category": "ssc",
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "Qualifying Module Book",
+    "short_description": "SSC CHSL टियर-2 का अनिवार्य क्वालिफाइंग पेपर (15 प्रश्न • 45 अंक) सुनिश्चित करने हेतु 1,000 100% अनूठे MCQs। कंप्यूटर फंडामेंटल्स, विंडोज़ 11, MS Office 365 शॉर्टकट्स व फॉर्मूले, इंटरनेट प्रोटोकॉल्स और साइबर सुरक्षा का संपूर्ण अध्यायवार कवरेज, विस्तृत द्विभाषी व्याख्या सहित।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
+    "rating": 4.9,
+    "rating_count": "1,380+ छात्र",
+    "highlights": [
+      "1,000 100% अनूठे व विशिष्ट MCQs — ज़ीरो रिपीटेशन, प्रत्येक प्रश्न की प्रामाणिक द्विभाषी व्याख्या",
+      "हार्डवेयर व CPU आर्किटेक्चर, MS Office 365 (Word, Excel, PPT) के प्रैक्टिकल शॉर्टकट व फॉर्मूले",
+      "इंटरनेट, वेब ब्राउज़र, ई-मेल प्रोटोकॉल्स (POP3, IMAP, SMTP, DNS) एवं IPv4/IPv6",
+      "नेटवर्किंग (OSI 7 लेयर्स, टोपोलॉजी), साइबर सुरक्षा (मैलवेयर, रैंसमवेयर, फ़ायरवॉल) व IT Act 2000"
+    ],
+    "subjects": [
+      "Computer Organization, CPU (ALU, CU, Registers), System Bus",
+      "Memory Hierarchy (Cache L1/L2/L3, RAM SRAM/DRAM, ROM, SSD, HDD)",
+      "Input & Output Devices, Computer Ports (USB, HDMI, VGA, RJ45)",
+      "Operating Systems (Windows 11, Linux Shell & Permissions)",
+      "MS Word 365 (Styles, Layout, Mail Merge, Shortcuts)",
+      "MS Excel 365 (Cell Referencing, VLOOKUP, IF, SUM, Charts, Pivot)",
+      "MS PowerPoint 365 (Slide Master, Animations, Transitions, F5)",
+      "Internet & Web Tech (Browsers, Search Engines, Cookies, Cache)",
+      "Web Protocols (HTTP, HTTPS, FTP, DNS, DHCP, SSL/TLS)",
+      "E-mail Protocols & Headers (SMTP, POP3, IMAP, To, CC, BCC)",
+      "Networking Basics (LAN, WAN, MAN, Topologies: Star, Mesh, Bus, Ring)",
+      "OSI 7-Layer Model & TCP/IP Architecture",
+      "Cyber Security & Threats (Virus, Worm, Trojan, Ransomware, Phishing)",
+      "Cyber Defense (Firewalls, Antivirus, 2FA, Encryption, IT Act 2000 Provisions)"
+    ],
+    "syllabus_preview": [
+      {
+        "subject": "इकाई 1: कंप्यूटर मूल सिद्धांत एवं हार्डवेयर (260 MCQs)",
+        "chapters": [
+          "कंप्यूटर आर्किटेक्चर, CPU एवं बसेस (CPU & Architecture)",
+          "मेमोरी पदानुक्रम - RAM, ROM, Cache, SSD/HDD (Memory Hierarchy)",
+          "इनपुट/आउटपुट डिवाइसेज एवं पोर्ट्स (I/O Devices & Ports)"
+        ]
+      },
+      {
+        "subject": "इकाई 2: सॉफ्टवेयर, OS एवं MS Office 365 (320 MCQs)",
+        "chapters": [
+          "ऑपरेटिंग सिस्टम - Windows 11 एवं लिनक्स (Operating Systems)",
+          "MS Word 365 शॉर्टकट्स एवं फॉर्मेटिंग (Word Processing)",
+          "MS Excel 365 फॉर्मूले एवं स्प्रेडशीट (Spreadsheets)",
+          "MS PowerPoint 365 प्रेजेंटेशन तकनीक (Presentations)"
+        ]
+      },
+      {
+        "subject": "इकाई 3: इंटरनेट, वेब तकनीक एवं ई-मेल (200 MCQs)",
+        "chapters": [
+          "वेब ब्राउज़र, सर्च इंजन एवं URL संरचना (Web & Browsers)",
+          "नेटवर्क प्रोटोकॉल्स - HTTP/S, FTP, DNS, IP (Protocols)",
+          "ई-मेल कार्यप्रणाली एवं प्रोटोकॉल्स - POP3, IMAP, SMTP (Email)"
+        ]
+      },
+      {
+        "subject": "इकाई 4: नेटवर्किंग एवं साइबर सुरक्षा (220 MCQs)",
+        "chapters": [
+          "नेटवर्किंग मूल सिद्धांत एवं OSI मॉडल (Networking & OSI)",
+          "साइबर सुरक्षा, मैलवेयर एवं हमले (Cyber Threats & Malware)",
+          "सुरक्षा उपाय, फ़ायरवॉल एवं IT Act 2000 (Defense & Laws)"
+        ]
+      }
+    ],
+    "pages_count": "260+ Pages",
+    "format": "Printable PDF + CBT Simulator",
+    "language": "द्विभाषी (Hindi + English)",
+    "cover_image": "https://juhffafyorfjtahscups.supabase.co/storage/v1/object/public/arkado-uploads/images/bundles/ssc-chsl-computer-1000-mcq-book.png",
+    "show_in_slider": false,
+    "slider_tagline": "CHSL कंप्यूटर ज्ञान 1,000 TCS MCQs बुक — मात्र ₹49",
+    "sample_pdf_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/1BX2XaJO2Nof_-VFt4QZ0jcvQPpx-0iw8?usp=sharing",
+    "is_active": true,
+    "is_featured": true,
+    "featured_priority": 6,
+    "is_new_arrival": true,
+    "new_arrival_priority": 6,
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-chsl-demo-test.html",
+    "updated_at": "2026-09-26T11:01:12.687002Z"
+  },
+  {
+    "id": "ssc-mts-maths-1000-mcq-book",
+    "slug": "ssc-mts-maths-1000-mcq-book",
+    "exam_id": "5004",
+    "title": "SSC MTS 2026 : Numerical & Mathematical Ability (गणित) 1,000 MCQs Practice Book",
+    "exam_board": "Staff Selection Commission (SSC)",
+    "category": "ssc",
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "1,000 MCQs Book",
+    "short_description": "SSC MTS एवं हवलदार 2026 भर्ती परीक्षा (Session-1 क्वालीफाइंग, No Negative Marking) हेतु अंकगणित के 1,000 TCS न्यू-पैटर्न बहुविकल्पीय प्रश्न। प्रत्येक प्रश्न के साथ स्टेप-बाय-स्टेप हल एवं 10-सेकंड शॉर्ट ट्रिक्स।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
+    "rating": 4.9,
+    "rating_count": "1,280+ छात्र",
+    "highlights": [
+      "1,000 TCS न्यू पैटर्न MCQs — प्रत्येक प्रश्न का बेसिक कॉन्सेप्ट + 10-सेकंड शॉर्ट-ट्रिक हल",
+      "Session-1 क्वालीफाइंग स्पेशल: 100% एक्यूरेसी व बिना नेगेटिव मार्किंग अधिकतम स्कोर रणनीति",
+      "LCM-HCF, प्रतिशत, लाभ-हानि, अनुपात, समय-कार्य, औसत, साधारण ब्याज, क्षेत्रमिति",
+      "2-कॉलम A4 प्रिंटेबल स्टडी बुक + TCS आधारित इंटरएक्टिव CBT मॉक टेस्ट"
+    ],
+    "subjects": [
+      "Number System & Simplification",
+      "LCM and HCF, Decimals and Fractions",
+      "Percentages, Ratio & Proportion",
+      "Work and Time, Direct & Inverse Proportions",
+      "Averages & Simple Interest",
+      "Profit and Loss, Discount",
+      "Area and Perimeter of Basic Geometric Figures",
+      "Distance and Time, Lines and Angles",
+      "Data Interpretation & Graphs"
+    ],
+    "syllabus_preview": [
+      {
+        "subject": "संख्या पद्धति एवं बेसिक गणना",
+        "chapters": [
+          "Integers and Whole Numbers",
+          "LCM and HCF",
+          "Decimals and Fractions",
+          "Relationship between numbers",
+          "Fundamental Arithmetic Operations"
+        ]
+      },
+      {
+        "subject": "अंकगणित एवं व्यावहारिक अनुप्रयोग",
+        "chapters": [
+          "Percentage & Ratio and Proportions",
+          "Work and Time",
+          "Direct and Inverse Proportions",
+          "Averages & Simple Interest",
+          "Profit and Loss, Discount"
+        ]
+      },
+      {
+        "subject": "क्षेत्रमिति, ज्यामिति व ग्राफ",
+        "chapters": [
+          "Area and Perimeter of 2D figures",
+          "Distance and Time",
+          "Lines and Angles",
+          "Interpretation of simple graphs and data"
+        ]
+      }
+    ],
+    "pages_count": "320+ Pages",
+    "format": "Printable PDF + CBT Simulator",
+    "language": "द्विभाषी (Hindi + English)",
+    "cover_image": "/images/bundles/ssc-mts-maths-1000-mcq-book.png",
+    "show_in_slider": false,
+    "slider_tagline": "SSC MTS गणित 1,000 TCS MCQs बुक — मात्र ₹49",
+    "sample_pdf_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/18g9yxYEmQJOBZ1y_T0cVn8KLW3IqYHJs?usp=sharing",
+    "is_active": true,
+    "is_featured": true,
+    "featured_priority": 3,
+    "is_new_arrival": true,
+    "new_arrival_priority": 3,
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-mts-demo-test.html"
+  },
+  {
+    "id": "ssc-mts-reasoning-1000-mcq-book",
+    "slug": "ssc-mts-reasoning-1000-mcq-book",
+    "exam_id": "5004",
+    "title": "SSC MTS 2026 : Reasoning Ability & Problem Solving (तर्कशक्ति) 1,000 MCQs Practice Book",
+    "exam_board": "Staff Selection Commission (SSC)",
+    "category": "ssc",
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "1,000 MCQs Book",
+    "short_description": "SSC MTS एवं हवलदार 2026 परीक्षा (Session-1 क्वालीफाइंग) हेतु वर्बल एवं नॉन-वर्बल रीजनिंग के 1,000 TCS पैटर्न प्रश्न। आरेख, कोडिंग-डिकोडिंग, सादृश्यता, दिशा ज्ञान एवं वेन आरेख का संपूर्ण अभ्यास।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
+    "rating": 4.9,
+    "rating_count": "1,420+ छात्र",
+    "highlights": [
+      "1,000 TCS पैटर्न MCQs — वर्बल एवं नॉन-वर्बल रीजनिंग का संपूर्ण अध्यायवार संकलन",
+      "Session-1 क्वालीफाइंग गारंटी: बिना किसी नकारात्मक अंक (Zero Negative) के सुरक्षित कटऑफ",
+      "कोडिंग-डिकोडिंग, सादृश्यता, वर्गीकरण, दिशा ज्ञान, वेन आरेख, कैलेंडर-घड़ी एवं आकृति तर्क",
+      "2-कॉलम प्रिंटेबल पीडीएफ बुक + ऑनलाइन टाइमर युक्त CBT टेस्ट सिमुलेटर"
+    ],
+    "subjects": [
+      "Alpha-Numeric Series",
+      "Coding and Decoding",
+      "Analogy (सादृश्यता)",
+      "Following Directions",
+      "Similarities and Differences",
+      "Jumbling & Word Formation",
+      "Problem Solving and Analysis",
+      "Non-Verbal Reasoning based on diagrams",
+      "Age Calculations, Calendar and Clock"
+    ],
+    "syllabus_preview": [
+      {
+        "subject": "वर्बल रीजनिंग (मौखिक तर्कशक्ति)",
+        "chapters": [
+          "Alpha-Numeric Series",
+          "Coding and Decoding",
+          "Analogy",
+          "Following Directions",
+          "Similarities and Differences",
+          "Jumbling"
+        ]
+      },
+      {
+        "subject": "तार्किक विश्लेषण व व्यावहारिक रीजनिंग",
+        "chapters": [
+          "Problem Solving and Analysis",
+          "Age Calculations",
+          "Calendar and Clock",
+          "Venn Diagrams & Syllogism"
+        ]
+      },
+      {
+        "subject": "नॉन-वर्बल रीजनिंग (अमौखिक तर्कशक्ति)",
+        "chapters": [
+          "Non-Verbal reasoning based on diagrams",
+          "Pattern Completion",
+          "Figure Series & Matrix",
+          "Paper Folding & Mirror Images"
+        ]
+      }
+    ],
+    "pages_count": "320+ Pages",
+    "format": "Printable PDF + CBT Simulator",
+    "language": "द्विभाषी (Hindi + English)",
+    "cover_image": "/images/bundles/ssc-mts-reasoning-1000-mcq-book.png",
+    "show_in_slider": false,
+    "slider_tagline": "SSC MTS रीजनिंग 1,000 TCS MCQs बुक — मात्र ₹49",
+    "sample_pdf_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/1DIxgMjzUnK-KR8LVWimXGTo1gsp9Iy6i?usp=sharing",
+    "is_active": true,
+    "is_featured": true,
+    "featured_priority": 4,
+    "is_new_arrival": true,
+    "new_arrival_priority": 4,
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-mts-demo-test.html"
+  },
+  {
+    "id": "ssc-mts-gk-1000-mcq-book",
+    "slug": "ssc-mts-gk-1000-mcq-book",
+    "exam_id": "5004",
+    "title": "SSC MTS 2026 : General Awareness (सामान्य ज्ञान) 1,000 MCQs Practice Book",
+    "exam_board": "Staff Selection Commission (SSC)",
+    "category": "ssc",
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "1,000 MCQs Book",
+    "short_description": "SSC MTS 2026 परीक्षा में फाइनल मेरिट का 100% निर्णायक विषय (Session-2, 25 प्रश्न = 75 अंक, -1 निगेटिव मार्किंग)। इतिहास, भूगोल, राजव्यवस्था, अर्थव्यवस्था, सामान्य विज्ञान एवं स्टेटिक GK के 1,000 प्रामाणिक MCQs।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
+    "rating": 4.9,
+    "rating_count": "1,950+ छात्र",
+    "highlights": [
+      "फाइनल मेरिट निर्णायक किट (Session-2: 75 Marks, 100% Final Merit Deciding Subject)",
+      "1,000 NCERT एवं TCS विगत वर्षों (PYQ) पर आधारित प्रमाणित बहुविकल्पीय प्रश्न",
+      "इतिहास, भारतीय राजव्यवस्था, भूगोल, अर्थव्यवस्था, सामान्य विज्ञान, स्टेटिक GK व समसामयिकी",
+      "प्रत्येक प्रश्न की विस्तृत तथ्यात्मक व्याख्या + 2-कॉलम A4 प्रिंटेबल PDF + लाइव CBT सिमुलेटर"
+    ],
+    "subjects": [
+      "Indian History & National Movement",
+      "Geography (India & World, Physical & Political)",
+      "Art and Culture (Dances, Festivals, Monuments)",
+      "Civics & Indian Constitution",
+      "Economics & Basic Economic Concepts",
+      "General Science (Physics, Chemistry, Biology up to 10th standard)",
+      "Environmental Studies",
+      "Current Affairs & National Government Schemes"
+    ],
+    "syllabus_preview": [
+      {
+        "subject": "भारतीय इतिहास एवं कला-संस्कृति",
+        "chapters": [
+          "प्राचीन, मध्यकालीन एवं आधुनिक भारत",
+          "भारतीय राष्ट्रीय आंदोलन",
+          "लोक नृत्य, शास्त्रीय नृत्य, उत्सव व मेले",
+          "भारतीय वास्तुकला व ऐतिहासिक स्मारक"
+        ]
+      },
+      {
+        "subject": "भूगोल, राजव्यवस्था व अर्थव्यवस्था",
+        "chapters": [
+          "भारत एवं विश्व का भौतिक भूगोल",
+          "नदियां, पर्वत, जलवायु व मिट्टी",
+          "भारतीय संविधान, मूल अधिकार व संसद",
+          "भारतीय अर्थव्यवस्था, बैंकिंग व सरकारी योजनाएं"
+        ]
+      },
+      {
+        "subject": "सामान्य विज्ञान एवं पर्यावरण",
+        "chapters": [
+          "भौतिक विज्ञान (Physics 10th Level)",
+          "रसायन विज्ञान (Chemistry 10th Level)",
+          "जीव विज्ञान (Biology 10th Level)",
+          "पर्यावरण एवं जैव-विविधता"
+        ]
+      }
+    ],
+    "pages_count": "320+ Pages",
+    "format": "Printable PDF + CBT Simulator",
+    "language": "द्विभाषी (Hindi + English)",
+    "cover_image": "/images/bundles/ssc-mts-gk-1000-mcq-book.png",
+    "show_in_slider": true,
+    "slider_tagline": "SSC MTS सामान्य ज्ञान 1,000 MCQs — 100% मेरिट स्पेशल मात्र ₹49",
+    "sample_pdf_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/1F2VMEkJMIgIDhe0TyJk6DkuwWvoINYpX?usp=sharing",
+    "is_active": true,
+    "is_featured": true,
+    "featured_priority": 1,
+    "is_new_arrival": true,
+    "new_arrival_priority": 1,
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-mts-demo-test.html"
+  },
+  {
+    "id": "ssc-mts-english-1000-mcq-book",
+    "slug": "ssc-mts-english-1000-mcq-book",
+    "exam_id": "5004",
+    "title": "SSC MTS 2026 : English Language & Comprehension 1,000 MCQs Practice Book",
+    "exam_board": "Staff Selection Commission (SSC)",
+    "category": "ssc",
+    "category_label": "कर्मचारी चयन आयोग (SSC)",
+    "badge": "1,000 MCQs Book",
+    "short_description": "SSC MTS 2026 अंतिम चयन हेतु Session-2 (25 प्रश्न = 75 अंक) का सर्वाधिक स्कोरिंग विषय। वोकैबुलरी, ग्रामर रूल्स, एरर स्पॉटिंग, सिनोनिम्स/एंटोनिम्स, क्लोज टेस्ट एवं पैसेज के 1,000 टीसीएस पैटर्न MCQs।",
+    "original_price": 199,
+    "price": 49,
+    "discount_percent": 75,
+    "rating": 4.9,
+    "rating_count": "1,530+ छात्र",
+    "highlights": [
+      "फाइनल मेरिट निर्णायक किट (Session-2: 75 Marks, 100% Final Merit Deciding Subject)",
+      "1,000 TCS पैटर्न MCQs — बेसिक ग्रामर रूल्स से लेकर एडवांस वोकैबुलरी तक",
+      "Synonyms, Antonyms, Idioms & Phrases, One Word Substitution, Spotting Errors, Cloze Test",
+      "हिंदी माध्यम के छात्रों के लिए विशेष द्विभाषी व्याख्या + 2-कॉलम A4 स्टडी बुक + ऑनलाइन टेस्ट सिमुलेटर"
+    ],
+    "subjects": [
+      "Vocabulary & Basic Word Power",
+      "Grammar (Parts of Speech, Tenses, Voice)",
+      "Sentence Structure & Correct Usage",
+      "Synonyms and Antonyms",
+      "Idioms, Phrases & One Word Substitution",
+      "Spotting Errors & Sentence Improvement",
+      "Fill in the Blanks & Cloze Test",
+      "Reading Comprehension Passages"
+    ],
+    "syllabus_preview": [
+      {
+        "subject": "Vocabulary & Word Power (शब्दावली)",
+        "chapters": [
+          "Synonyms and Antonyms (समानार्थी व विलोम शब्द)",
+          "Idioms & Phrases (मुहावरे व लोकोक्तियां)",
+          "One Word Substitution (अनेक शब्दों के लिए एक शब्द)",
+          "Spelling Correction & Word Forms"
+        ]
+      },
+      {
+        "subject": "Grammar & Sentence Mechanics (व्याकरण)",
+        "chapters": [
+          "Nouns, Pronouns, Adjectives, Verbs, Adverbs",
+          "Prepositions and Conjunctions",
+          "Tenses, Subject-Verb Agreement",
+          "Spotting Errors & Sentence Improvement"
+        ]
+      },
+      {
+        "subject": "Comprehension & Applied English (पठन एवं बोध)",
+        "chapters": [
+          "Reading Comprehension Simple Paragraphs",
+          "Cloze Test & Contextual Fillers",
+          "Sentence Jumbles & Paragraph Fillers"
+        ]
+      }
+    ],
+    "pages_count": "320+ Pages",
+    "format": "Printable PDF + CBT Simulator",
+    "language": "द्विभाषी (Hindi + English)",
+    "cover_image": "/images/bundles/ssc-mts-english-1000-mcq-book.png",
+    "show_in_slider": true,
+    "slider_tagline": "SSC MTS इंग्लिश लैंग्वेज 1,000 MCQs — 100% मेरिट स्पेशल मात्र ₹49",
+    "sample_pdf_url": "https://drive.google.com",
+    "drive_url": "https://drive.google.com/drive/folders/19EY4a2cG-HaSJLDOrh9UBN19cLDPXLgB?usp=sharing",
+    "is_active": true,
+    "is_featured": true,
+    "featured_priority": 2,
+    "is_new_arrival": true,
+    "new_arrival_priority": 2,
+    "demo_html_mock_enabled": true,
+    "demo_html_mock_url": "/mock-tests/ssc-mts-demo-test.html"
   }
 ]

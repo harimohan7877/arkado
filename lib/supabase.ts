@@ -1,8 +1,13 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Supabase credentials with production fallbacks to prevent site crashes if env vars are missing on host
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://juhffafyorfjtahscups.supabase.co';
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'sb_publishable_Urxrcu_NlNQqQQ_rJ__-bQ_ExNlGG0O';
+// Supabase credentials loaded securely from environment variables
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error('Missing Supabase environment variables! Please set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY in .env.local');
+}
+
 const isServer = typeof window === 'undefined';
 const supabaseServiceKey = isServer ? (process.env.SUPABASE_SERVICE_ROLE_KEY || '') : '';
 
@@ -11,7 +16,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 // Server-side (API routes) — uses service role key (guarded to never leak into client bundle)
 export const supabaseAdmin = isServer
-  ? createClient(supabaseUrl, supabaseServiceKey)
+  ? createClient(supabaseUrl, supabaseServiceKey || supabaseAnonKey)
   : (null as unknown as ReturnType<typeof createClient>);
 
 /**

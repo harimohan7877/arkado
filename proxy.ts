@@ -13,12 +13,16 @@ export async function proxy(req: NextRequest) {
     const adminCookie =
       req.cookies.get("arkado-admin-verified")?.value ||
       req.cookies.get("sarkari-saathi-admin-verified")?.value;
-    const expectedPasscode = process.env.ADMIN_PASSCODE || "99502521387877489932hhh@@@";
+    const expectedPasscode = process.env.ADMIN_PASSCODE || "";
 
-    const validCookies = [
-      expectedPasscode,
-      "99502521387877489932hhh@@@",
-    ];
+    if (!expectedPasscode) {
+      console.error("[proxy] ADMIN_PASSCODE is not set in environment!");
+      const loginUrl = new URL("/ranjeet/admin/login", req.url);
+      loginUrl.searchParams.set("redirect", url.pathname);
+      return NextResponse.redirect(loginUrl);
+    }
+
+    const validCookies = [expectedPasscode];
 
     let isValid = false;
     if (adminCookie) {

@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 
-export const ADMIN_PASSCODE = process.env.ADMIN_PASSCODE || "99502521387877489932hhh@@@";
+export const ADMIN_PASSCODE = process.env.ADMIN_PASSCODE || "";
 
 export function verifyAdminSession(req: NextRequest): boolean {
   // Allow local development / localhost / LAN admin requests so local testing never fails

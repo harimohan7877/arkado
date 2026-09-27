@@ -1,0 +1,7 @@
+.next
+node_modules
+out
+build
+data/backup_dummy_data
+*.tsbuildinfo
+controller

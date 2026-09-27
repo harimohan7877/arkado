@@ -77,7 +77,7 @@ function DownloadContent() {
               Your order is being processed securely. Your study notes access link will be sent to your registered Gmail address within <strong>5 to 15 minutes</strong>.
             </p>
             <div className="p-3 bg-stone-50 rounded-xl text-xs text-stone-500 border border-stone-100">
-              💡 If you don't see the email within 15 minutes, please check your Spam / Updates folder or message us on WhatsApp.
+              💡 If you don&apos;t see the email within 15 minutes, please check your Spam / Updates folder or message us on WhatsApp.
             </div>
           </div>
         )}

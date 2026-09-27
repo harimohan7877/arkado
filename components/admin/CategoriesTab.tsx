@@ -1669,7 +1669,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
                 {editLevel !== "exams" && (
                   <div>
                     <label className="block text-xs font-bold text-stone-700 mb-1">
-                      ⭐ अंदर दिखने वाले 3 मुख्य नाम (अल्पविराम ',' से अलग करें)
+                      ⭐ अंदर दिखने वाले 3 मुख्य नाम (अल्पविराम &apos;,&apos; से अलग करें)
                     </label>
                     <input
                       type="text"

@@ -1,0 +1,64 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  frontend:
+    name: Frontend (Lint, Type Check & Build)
+    runs-on: ubuntu-latest
+
+    env:
+      NEXT_PUBLIC_SUPABASE_URL: "https://ci-mock.supabase.co"
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ci-mock-anon-key"
+      NEXT_TELEMETRY_DISABLED: "1"
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20 LTS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run TypeScript Type Check
+        run: npx tsc --noEmit
+
+      - name: Run Next.js Production Build
+        run: npm run build
+
+  backend:
+    name: Backend Controller (Syntax & Import Validation)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify Python Script Compilation
+        run: |
+          python -m py_compile controller/menu.py controller/utils.py controller/manage_courses.py controller/manage_exams.py controller/manage_categories.py controller/manage_settings.py controller/manage_backups.py controller/view_orders.py
+
+      - name: Test Controller Imports and Column Mapping
+        run: |
+          python -c "import sys; sys.path.append('controller'); import utils; print('Python controller initialized with keys:', list(utils.SUPABASE_COLUMN_MAP.keys()))"

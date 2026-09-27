@@ -59,7 +59,7 @@ export async function GET(req: NextRequest) {
   const isAdmin = verifyAdminSession(req);
 
   try {
-    const customCourses = await getStoreData<any[]>("courses", "data/courses-new.json", []);
+    const customCourses = await getStoreData<any[]>("courses", "data/courses.json", []);
     const allMergedCourses: any[] = [...customCourses];
 
     // Read featured configuration from admin panel
@@ -185,7 +185,7 @@ export async function PUT(req: NextRequest) {
     const body = await req.json();
     const updatedCourses = Array.isArray(body) ? body : body.courses;
     if (Array.isArray(updatedCourses)) {
-      await setStoreData("courses", "data/courses-new.json", updatedCourses);
+      await setStoreData("courses", "data/courses.json", updatedCourses);
       return NextResponse.json({ success: true, count: updatedCourses.length });
     }
   } catch (err: any) {

@@ -13,11 +13,10 @@ interface Course {
 }
 
 function readCourses(): Promise<Course[]> {
-  return getStoreData<Course[]>("courses", "data/courses-new.json", []);
+  return getStoreData<Course[]>("courses", "data/courses.json", []);
 }
 
 async function writeCourses(data: unknown[]) {
-  await setStoreData("courses", "data/courses-new.json", data);
   await setStoreData("courses", "data/courses.json", data);
 }
 

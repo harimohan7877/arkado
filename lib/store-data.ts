@@ -35,7 +35,14 @@ export function isAllowedImageType(mimeType?: string | null, fileName?: string |
 
 function getCandidatePaths(localFilePath: string): string[] {
   const norm = localFilePath.replaceAll("\\", "/");
-  return [join(process.cwd(), norm)];
+  const primary = join(process.cwd(), norm);
+  const candidates = [primary];
+  if (norm.endsWith("courses.json")) {
+    candidates.push(join(process.cwd(), norm.replace("courses.json", "courses-new.json")));
+  } else if (norm.endsWith("courses-new.json")) {
+    candidates.push(join(process.cwd(), norm.replace("courses-new.json", "courses.json")));
+  }
+  return candidates;
 }
 
 export async function saveUploadedFile(file: File, folder: string = "logos", customName?: string): Promise<string> {

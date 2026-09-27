@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
     }
 
     // 4. Secure Delivery Link Generation: Look up drive_url for purchased products
-    const courses = await getStoreData<any[]>("courses", "data/courses-new.json", []);
+    const courses = await getStoreData<any[]>("courses", "data/courses.json", []);
     const courseMap = new Map<string, any>();
     for (const c of courses) {
       if (c.id) courseMap.set(c.id, c);

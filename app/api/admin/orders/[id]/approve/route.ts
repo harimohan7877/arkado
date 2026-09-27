@@ -98,7 +98,7 @@ export async function POST(
 
     // If drive_url is missing or placeholder, look up from catalog
     if (!resolvedDriveUrl || resolvedDriveUrl.length < 10) {
-      const courses = await getStoreData<any[]>("courses", "data/courses-new.json", []);
+      const courses = await getStoreData<any[]>("courses", "data/courses.json", []);
       const matched = courses.find(
         (c: any) => c.id === order.course_id || c.slug === order.course_id
       );

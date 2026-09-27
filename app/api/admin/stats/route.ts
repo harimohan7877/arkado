@@ -39,7 +39,7 @@ export async function GET(req: NextRequest) {
 
   const [orders, courses, categories] = await Promise.all([
     getStoreData<OrderRecord[]>("orders", "data/orders.json", []),
-    getStoreData<CourseRecord[]>("courses", "data/courses-new.json", []),
+    getStoreData<CourseRecord[]>("courses", "data/courses.json", []),
     getStoreData<CategoryRecord[]>("categories", "data/categories.json", []),
   ]);
 

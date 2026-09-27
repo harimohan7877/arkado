@@ -74,7 +74,7 @@ export async function validateOrderPrices(
 
   try {
     // 1. Fetch products from relational marketplace_products table or fallback store
-    const courses = await getStoreData<any[]>("courses", "data/courses-new.json", []);
+    const courses = await getStoreData<any[]>("courses", "data/courses.json", []);
     const courseMap = new Map<string, any>();
     for (const c of courses) {
       if (c.id) courseMap.set(c.id, c);

@@ -54,7 +54,7 @@ export async function GET(req: NextRequest) {
   }
 
   // 3. Resolve course titles from catalog if missing
-  const courses = await getStoreData<any[]>("courses", "data/courses-new.json", []);
+  const courses = await getStoreData<any[]>("courses", "data/courses.json", []);
   const courseTitleMap = new Map<string, string>();
   for (const c of courses) {
     if (c.id) courseTitleMap.set(c.id, c.title || c.name || "");

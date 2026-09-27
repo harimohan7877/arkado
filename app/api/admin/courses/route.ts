@@ -29,11 +29,11 @@ interface CategoryRecord {
 }
 
 function readCourses() {
-  return getStoreData<any[]>("courses", "data/courses-new.json", []);
+  return getStoreData<any[]>("courses", "data/courses.json", []);
 }
 
 async function writeCourses(data: unknown[]) {
-  await setStoreData("courses", "data/courses-new.json", data);
+  await setStoreData("courses", "data/courses.json", data);
 }
 
 export async function GET(req: NextRequest) {

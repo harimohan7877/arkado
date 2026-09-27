@@ -3,6 +3,7 @@ import { existsSync } from "fs";
 import { join, dirname } from "path";
 import { revalidatePath } from "next/cache";
 import { supabaseAdmin } from "@/lib/supabase";
+import { SUPABASE_COLUMN_MAP } from "@/lib/constants";
 
 export const ALLOWED_IMAGE_TYPES = [
   "image/jpeg",
@@ -223,13 +224,7 @@ interface CacheEntry {
 const SERVER_STORE_CACHE: Record<string, CacheEntry> = {};
 const CACHE_TTL_MS = 10 * 1000; // 10 seconds server cache for instant admin reflection
 
-const KEY_COLUMN_MAP: Record<string, string> = {
-  courses: "openrouter_key",
-  settings: "gemini_key",
-  categories: "claude_key",
-  featured_exams: "openai_key",
-  orders: "openai_key",
-};
+const KEY_COLUMN_MAP: Record<string, string> = SUPABASE_COLUMN_MAP;
 
 export function hydrateSettingsWithEnv(settings: Record<string, any>) {
   if (!settings || typeof settings !== "object") return;

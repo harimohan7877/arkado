@@ -224,6 +224,46 @@ const KEY_COLUMN_MAP: Record<string, string> = {
   orders: "openai_key",
 };
 
+export function hydrateSettingsWithEnv(settings: Record<string, any>) {
+  if (!settings || typeof settings !== "object") return;
+  const isPlaceholder = (val?: string) =>
+    !val ||
+    val.includes("PLACEHOLDER") ||
+    val.includes("example.com") ||
+    val === "910000000000" ||
+    val === "+91 0000000000" ||
+    val === "arkado@upi";
+
+  if (process.env.DEFAULT_UPI_ID && isPlaceholder(settings.upi_id)) {
+    settings.upi_id = process.env.DEFAULT_UPI_ID;
+  }
+  if (process.env.DEFAULT_WHATSAPP_NUMBER && isPlaceholder(settings.whatsapp_support_number)) {
+    settings.whatsapp_support_number = process.env.DEFAULT_WHATSAPP_NUMBER;
+  }
+  if (process.env.DEFAULT_SUPPORT_EMAIL && isPlaceholder(settings.gmail_support_email)) {
+    settings.gmail_support_email = process.env.DEFAULT_SUPPORT_EMAIL;
+  }
+  if (settings.contact) {
+    if (process.env.DEFAULT_SUPPORT_PHONE && isPlaceholder(settings.contact.phone)) {
+      settings.contact.phone = process.env.DEFAULT_SUPPORT_PHONE;
+    }
+    if (process.env.DEFAULT_WHATSAPP_NUMBER && isPlaceholder(settings.contact.whatsapp_number)) {
+      settings.contact.whatsapp_number = process.env.DEFAULT_WHATSAPP_NUMBER;
+    }
+    if (process.env.DEFAULT_SUPPORT_EMAIL && isPlaceholder(settings.contact.email)) {
+      settings.contact.email = process.env.DEFAULT_SUPPORT_EMAIL;
+    }
+  }
+  if (settings.social) {
+    if (process.env.DEFAULT_WHATSAPP_NUMBER && (isPlaceholder(settings.social.whatsapp_url) || settings.social.whatsapp_url.includes("0000000000"))) {
+      settings.social.whatsapp_url = `https://wa.me/${process.env.DEFAULT_WHATSAPP_NUMBER}`;
+    }
+    if (process.env.DEFAULT_SUPPORT_EMAIL && (isPlaceholder(settings.social.gmail_url) || settings.social.gmail_url.includes("example.com"))) {
+      settings.social.gmail_url = `mailto:${process.env.DEFAULT_SUPPORT_EMAIL}`;
+    }
+  }
+}
+
 export async function getStoreData<T>(key: string, localFilePath: string, defaultValue: T): Promise<T> {
   const cached = SERVER_STORE_CACHE[key];
   if (cached && Date.now() - cached.timestamp < CACHE_TTL_MS) {
@@ -388,6 +428,7 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
       }
       if (key === "settings" && adminRow.gemini_key && adminRow.gemini_key.startsWith("{")) {
         const parsed = JSON.parse(adminRow.gemini_key);
+        hydrateSettingsWithEnv(parsed);
         SERVER_STORE_CACHE[key] = { data: parsed, timestamp: Date.now() };
         return parsed as T;
       }
@@ -404,6 +445,9 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
         const raw = await readFile(p, "utf-8");
         const parsed = JSON.parse(raw);
         if (Array.isArray(defaultValue) && !Array.isArray(parsed)) return defaultValue;
+        if (key === "settings" && parsed && typeof parsed === "object") {
+          hydrateSettingsWithEnv(parsed);
+        }
         SERVER_STORE_CACHE[key] = { data: parsed, timestamp: Date.now() };
         return parsed as T;
       }

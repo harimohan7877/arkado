@@ -34,6 +34,7 @@ beech_me_to_nahi_rah_gya*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel

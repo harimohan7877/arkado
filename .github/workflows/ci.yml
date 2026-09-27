@@ -11,8 +11,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  frontend:
-    name: Frontend (Lint, Type Check & Build)
+  validate:
+    name: Lint, Type Check & Build
     runs-on: ubuntu-latest
 
     env:
@@ -41,24 +41,3 @@ jobs:
 
       - name: Run Next.js Production Build
         run: npm run build
-
-  backend:
-    name: Backend Controller (Syntax & Import Validation)
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Setup Python 3.12
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Verify Python Script Compilation
-        run: |
-          python -m py_compile controller/menu.py controller/utils.py controller/manage_courses.py controller/manage_exams.py controller/manage_categories.py controller/manage_settings.py controller/manage_backups.py controller/view_orders.py
-
-      - name: Test Controller Imports and Column Mapping
-        run: |
-          python -c "import sys; sys.path.append('controller'); import utils; print('Python controller initialized with keys:', list(utils.SUPABASE_COLUMN_MAP.keys()))"

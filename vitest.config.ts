@@ -9,6 +9,7 @@ export default defineConfig({
       NODE_ENV: "production",
       NEXT_PUBLIC_SUPABASE_URL: "https://test-vitest.supabase.co",
       NEXT_PUBLIC_SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.test-anon-key",
+      SUPABASE_SERVICE_ROLE_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.test-service-role-key",
       ADMIN_PASSCODE: "test-admin-secret-passcode",
     },
   },

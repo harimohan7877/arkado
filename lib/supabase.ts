@@ -9,14 +9,22 @@ if (!supabaseUrl || !supabaseAnonKey) {
 }
 
 const isServer = typeof window === 'undefined';
-const supabaseServiceKey = isServer ? (process.env.SUPABASE_SERVICE_ROLE_KEY || '') : '';
+const supabaseServiceKey = isServer ? process.env.SUPABASE_SERVICE_ROLE_KEY : undefined;
+
+// SECURITY (Phase 4): fail fast when the service role key is missing on the
+// server. The old code silently fell back to the anon key, which meant admin
+// operations ran under RLS-restricted privileges without anyone noticing.
+// If this throws in production, set SUPABASE_SERVICE_ROLE_KEY in Vercel.
+if (isServer && !supabaseServiceKey) {
+  throw new Error('Missing SUPABASE_SERVICE_ROLE_KEY! Refusing to start the server-side admin client with the anon key. Set SUPABASE_SERVICE_ROLE_KEY in your environment.');
+}
 
 // Client-side (browser) — uses anon key
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 // Server-side (API routes) — uses service role key (guarded to never leak into client bundle)
 export const supabaseAdmin = isServer
-  ? createClient(supabaseUrl, supabaseServiceKey || supabaseAnonKey)
+  ? createClient(supabaseUrl, supabaseServiceKey as string)
   : (null as unknown as ReturnType<typeof createClient>);
 
 /**

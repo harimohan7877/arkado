@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Settings } from "@/lib/store-types";
 import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
+import { DEFAULT_TERMS_TEXT } from "@/lib/legal";
 import { FileTextIcon, PhoneIcon, WhatsappIcon } from "@/components/icons";
 
 export default function TermsPage() {
@@ -18,8 +19,7 @@ export default function TermsPage() {
   }, []);
 
   const termsText =
-    settings?.policies?.terms_of_service ||
-    "Arkado वेबसाइट का उपयोग करके आप निम्नलिखित शर्तों से सहमत होते हैं:\n1. इस प्लेटफ़ॉर्म पर उपलब्ध सभी अध्ययन सामग्री, प्रश्न बैंक और नोट्स केवल आपके व्यक्तिगत अध्ययन के लिए हैं।\n2. किसी भी सामग्री को पुनः बेचना, वाणिज्यिक उपयोग करना या सार्वजनिक रूप से इंटरनेट पर साझा करना कॉपीराइट कानून के तहत सख्त वर्जित है।\n3. भुगतान के पश्चात डिजिटल सामग्री का लिंक आपके पंजीकृत WhatsApp या ईमेल पर भेजा जाता है।\n4. किसी भी कानूनी विवाद के लिए क्षेत्राधिकार सरदारशहर (चूरू, राजस्थान) रहेगा।";
+    settings?.policies?.terms_of_service || DEFAULT_TERMS_TEXT;
 
   const phone = settings?.contact?.phone || DEFAULT_SETTINGS.contact.phone;
   const whatsappUrl =

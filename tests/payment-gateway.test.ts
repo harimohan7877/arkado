@@ -28,6 +28,7 @@ import {
   validateUtrSubmission,
   generateOrderId,
   validateStatusTransitions,
+  validateTermsAcceptance,
 } from "@/lib/payment-gateway";
 
 describe("Payment Gateway & Security Module", () => {
@@ -189,6 +190,20 @@ describe("Payment Gateway & Security Module", () => {
       expect(
         validateStatusTransitions({ status: "pending" }, { status: "approved" })
       ).toBeNull();
+    });
+  });
+
+  describe("validateTermsAcceptance (T&C opt-in gate)", () => {
+    it("should accept an explicit true", () => {
+      expect(validateTermsAcceptance(true)).toBeNull();
+    });
+
+    it("should reject missing, false, or non-boolean values", () => {
+      expect(validateTermsAcceptance(undefined)).not.toBeNull();
+      expect(validateTermsAcceptance(null)).not.toBeNull();
+      expect(validateTermsAcceptance(false)).not.toBeNull();
+      expect(validateTermsAcceptance("true")).not.toBeNull();
+      expect(validateTermsAcceptance(1)).not.toBeNull();
     });
   });
 });

@@ -1,1 +1,57 @@
-aW1wb3J0IHsgZGVzY3JpYmUsIGl0LCBleHBlY3QsIGJlZm9yZUFsbCwgYWZ0ZXJBbGwgfSBmcm9tICJ2aXRlc3QiOwoKLy8gRm9yY2UgdGhlIGluLW1lbW9yeSBmYWxsYmFjayBwYXRoOiBubyBTdXBhYmFzZSBlbnYgaW4gdGhpcyB0ZXN0IHByb2Nlc3MuCmNvbnN0IHNhdmVkVXJsID0gcHJvY2Vzcy5lbnYuTkVYVF9QVUJMSUNfU1VQQUJBU0VfVVJMOwpjb25zdCBzYXZlZEFub24gPSBwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TVVBBQkFTRV9BTk9OX0tFWTsKCmxldCBjaGVja0xvZ2luVGhyb3R0bGU6IHR5cGVvZiBpbXBvcnQoIkAvbGliL2xvZ2luLXRocm90dGxlIikuY2hlY2tMb2dpblRocm90dGxlOwpsZXQgcmVjb3JkRmFpbGVkTG9naW46IHR5cGVvZiBpbXBvcnQoIkAvbGliL2xvZ2luLXRocm90dGxlIikucmVjb3JkRmFpbGVkTG9naW47CmxldCBjbGVhckxvZ2luQXR0ZW1wdHM6IHR5cGVvZiBpbXBvcnQoIkAvbGliL2xvZ2luLXRocm90dGxlIikuY2xlYXJMb2dpbkF0dGVtcHRzOwoKYmVmb3JlQWxsKGFzeW5jICgpID0+IHsKICBkZWxldGUgcHJvY2Vzcy5lbnYuTkVYVF9QVUJMSUNfU1VQQUJBU0VfVVJMOwogIGRlbGV0ZSBwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TVVBBQkFTRV9BTk9OX0tFWTsKICBjb25zdCBtb2QgPSBhd2FpdCBpbXBvcnQoIkAvbGliL2xvZ2luLXRocm90dGxlIik7CiAgY2hlY2tMb2dpblRocm90dGxlID0gbW9kLmNoZWNrTG9naW5UaHJvdHRsZTsKICByZWNvcmRGYWlsZWRMb2dpbiA9IG1vZC5yZWNvcmRGYWlsZWRMb2dpbjsKICBjbGVhckxvZ2luQXR0ZW1wdHMgPSBtb2QuY2xlYXJMb2dpbkF0dGVtcHRzOwp9KTsKCmFmdGVyQWxsKCgpID0+IHsKICBpZiAoc2F2ZWRVcmwgIT09IHVuZGVmaW5lZCkgcHJvY2Vzcy5lbnYuTkVYVF9QVUJMSUNfU1VQQUJBU0VfVVJMID0gc2F2ZWRVcmw7CiAgaWYgKHNhdmVkQW5vbiAhPT0gdW5kZWZpbmVkKSBwcm9jZXNzLmVudi5ORVhUX1BVQkxJQ19TVVBBQkFTRV9BTk9OX0tFWSA9IHNhdmVkQW5vbjsKfSk7CgpkZXNjcmliZSgiTG9naW4gdGhyb3R0bGluZyAoaW4tbWVtb3J5IGZhbGxiYWNrKSIsICgpID0+IHsKICBjb25zdCBpcCA9ICIxOTIuMC4yLjk5LWxvZ2luLXRocm90dGxlLXRlc3QiOwoKICBpdCgic3RhcnRzIHVubG9ja2VkIGZvciBhIGZyZXNoIElQIiwgYXN5bmMgKCkgPT4gewogICAgYXdhaXQgY2xlYXJMb2dpbkF0dGVtcHRzKGlwKTsKICAgIGNvbnN0IHN0YXR1cyA9IGF3YWl0IGNoZWNrTG9naW5UaHJvdHRsZShpcCk7CiAgICBleHBlY3Qoc3RhdHVzLmxvY2tlZCkudG9CZShmYWxzZSk7CiAgfSk7CgogIGl0KCJsb2NrcyB0aGUgSVAgYWZ0ZXIgNSBmYWlsZWQgYXR0ZW1wdHMiLCBhc3luYyAoKSA9PiB7CiAgICBhd2FpdCBjbGVhckxvZ2luQXR0ZW1wdHMoaXApOwogICAgZm9yIChsZXQgaSA9IDA7IGkgPCA1OyBpKyspIHsKICAgICAgYXdhaXQgcmVjb3JkRmFpbGVkTG9naW4oaXApOwogICAgICBleHBlY3QoKGF3YWl0IGNoZWNrTG9naW5UaHJvdHRsZShpcCkpLmxvY2tlZCkudG9CZShpID49IDQgPyB0cnVlIDogZmFsc2UpOwogICAgfQogICAgY29uc3Qgc3RhdHVzID0gYXdhaXQgY2hlY2tMb2dpblRocm90dGxlKGlwKTsKICAgIGV4cGVjdChzdGF0dXMubG9ja2VkKS50b0JlKHRydWUpOwogICAgZXhwZWN0KHN0YXR1cy5yZW1haW5pbmdNaW51dGVzKS50b0JlR3JlYXRlclRoYW4oMCk7CiAgICBleHBlY3Qoc3RhdHVzLnJlbWFpbmluZ01pbnV0ZXMpLnRvQmVMZXNzVGhhbk9yRXF1YWwoMTUpOwogIH0pOwoKICBpdCgidW5sb2NrcyBhZnRlciBjbGVhcmluZyBhdHRlbXB0cyAoc3VjY2Vzc2Z1bCBsb2dpbikiLCBhc3luYyAoKSA9PiB7CiAgICBhd2FpdCBjbGVhckxvZ2luQXR0ZW1wdHMoaXApOwogICAgY29uc3Qgc3RhdHVzID0gYXdhaXQgY2hlY2tMb2dpblRocm90dGxlKGlwKTsKICAgIGV4cGVjdChzdGF0dXMubG9ja2VkKS50b0JlKGZhbHNlKTsKICB9KTsKCiAgaXQoIm5ldmVyIHRocm93cyB3aGVuIFN1cGFiYXNlIGlzIHVuYXZhaWxhYmxlIiwgYXN5bmMgKCkgPT4gewogICAgYXdhaXQgZXhwZWN0KGNoZWNrTG9naW5UaHJvdHRsZSgiMTkyLjAuMi4xMDAiKSkucmVzb2x2ZXMudG9CZURlZmluZWQoKTsKICAgIGF3YWl0IGV4cGVjdChyZWNvcmRGYWlsZWRMb2dpbigiMTkyLjAuMi4xMDAiKSkucmVzb2x2ZXMudG9CZVVuZGVmaW5lZCgpOwogICAgYXdhaXQgZXhwZWN0KGNsZWFyTG9naW5BdHRlbXB0cygiMTkyLjAuMi4xMDAiKSkucmVzb2x2ZXMudG9CZVVuZGVmaW5lZCgpOwogIH0pOwp9KTsK
+import { describe, it, expect, beforeAll, afterAll } from "vitest";
+
+// Force the in-memory fallback path: no Supabase env in this test process.
+const savedUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const savedAnon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+let checkLoginThrottle: typeof import("@/lib/login-throttle").checkLoginThrottle;
+let recordFailedLogin: typeof import("@/lib/login-throttle").recordFailedLogin;
+let clearLoginAttempts: typeof import("@/lib/login-throttle").clearLoginAttempts;
+
+beforeAll(async () => {
+  delete process.env.NEXT_PUBLIC_SUPABASE_URL;
+  delete process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const mod = await import("@/lib/login-throttle");
+  checkLoginThrottle = mod.checkLoginThrottle;
+  recordFailedLogin = mod.recordFailedLogin;
+  clearLoginAttempts = mod.clearLoginAttempts;
+});
+
+afterAll(() => {
+  if (savedUrl !== undefined) process.env.NEXT_PUBLIC_SUPABASE_URL = savedUrl;
+  if (savedAnon !== undefined) process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = savedAnon;
+});
+
+describe("Login throttling (in-memory fallback)", () => {
+  const ip = "192.0.2.99-login-throttle-test";
+
+  it("starts unlocked for a fresh IP", async () => {
+    await clearLoginAttempts(ip);
+    const status = await checkLoginThrottle(ip);
+    expect(status.locked).toBe(false);
+  });
+
+  it("locks the IP after 5 failed attempts", async () => {
+    await clearLoginAttempts(ip);
+    for (let i = 0; i < 5; i++) {
+      await recordFailedLogin(ip);
+      expect((await checkLoginThrottle(ip)).locked).toBe(i >= 4 ? true : false);
+    }
+    const status = await checkLoginThrottle(ip);
+    expect(status.locked).toBe(true);
+    expect(status.remainingMinutes).toBeGreaterThan(0);
+    expect(status.remainingMinutes).toBeLessThanOrEqual(15);
+  });
+
+  it("unlocks after clearing attempts (successful login)", async () => {
+    await clearLoginAttempts(ip);
+    const status = await checkLoginThrottle(ip);
+    expect(status.locked).toBe(false);
+  });
+
+  it("never throws when Supabase is unavailable", async () => {
+    await expect(checkLoginThrottle("192.0.2.100")).resolves.toBeDefined();
+    await expect(recordFailedLogin("192.0.2.100")).resolves.toBeUndefined();
+    await expect(clearLoginAttempts("192.0.2.100")).resolves.toBeUndefined();
+  });
+});

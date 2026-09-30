@@ -1,1 +1,20 @@
-LS0gUGhhc2UgMjogcGVyc2lzdGVudCBhZG1pbiBsb2dpbiB0aHJvdHRsaW5nCi0tIFJ1biBvbmNlIGluIHRoZSBTdXBhYmFzZSBTUUwgRWRpdG9yIChEYXNoYm9hcmQg4oaSIFNRTCBFZGl0b3Ig4oaSIE5ldyBxdWVyeSkuCi0tIElkZW1wb3RlbnQ6IHNhZmUgdG8gcnVuIG11bHRpcGxlIHRpbWVzLgotLQotLSBUaGUgbG9naW4gcm91dGUgcmVjb3JkcyBmYWlsZWQgYWRtaW4gbG9naW5zIGhlcmUgc28gdGhlIDUtYXR0ZW1wdCAvCi0tIDE1LW1pbnV0ZSBsb2Nrb3V0IHN1cnZpdmVzIGFjcm9zcyBWZXJjZWwgc2VydmVybGVzcyBpbnN0YW5jZXMuCi0tIElmIHRoaXMgdGFibGUgaXMgbWlzc2luZywgdGhlIGFwcCBmYWxscyBiYWNrIHRvIHBlci1pbnN0YW5jZSBpbi1tZW1vcnkKLS0gdGhyb3R0bGluZyBhbmQga2VlcHMgd29ya2luZyAoYSB3YXJuaW5nIGlzIGxvZ2dlZCBzZXJ2ZXItc2lkZSkuCgpjcmVhdGUgdGFibGUgaWYgbm90IGV4aXN0cyBhZG1pbl9sb2dpbl9hdHRlbXB0cyAoCiAgaXAgdGV4dCBwcmltYXJ5IGtleSwKICBmYWlsX2NvdW50IGludGVnZXIgbm90IG51bGwgZGVmYXVsdCAwLAogIGZpcnN0X2F0dGVtcHQgdGltZXN0YW1wdHogbm90IG51bGwgZGVmYXVsdCBub3coKSwKICB1cGRhdGVkX2F0IHRpbWVzdGFtcHR6IG5vdCBudWxsIGRlZmF1bHQgbm93KCkKKTsKCi0tIE9wdGlvbmFsIGhhcmRlbmluZzogZW5hYmxlIFJvdyBMZXZlbCBTZWN1cml0eS4gVGhlIGFwcCBvbmx5IHRvdWNoZXMgdGhpcwotLSB0YWJsZSB3aXRoIHRoZSBzZXJ2aWNlLXJvbGUga2V5ICh3aGljaCBieXBhc3NlcyBSTFMpLCBzbyBlbmFibGluZyBSTFMKLS0gYWRkaXRpb25hbGx5IGJsb2NrcyBhbnkgYW5vbi1rZXkgYWNjZXNzIHdpdGggbm8gYmVoYXZpb3IgY2hhbmdlLgotLSBhbHRlciB0YWJsZSBhZG1pbl9sb2dpbl9hdHRlbXB0cyBlbmFibGUgcm93IGxldmVsIHNlY3VyaXR5Owo=
+-- Phase 2: persistent admin login throttling
+-- Run once in the Supabase SQL Editor (Dashboard → SQL Editor → New query).
+-- Idempotent: safe to run multiple times.
+--
+-- The login route records failed admin logins here so the 5-attempt /
+-- 15-minute lockout survives across Vercel serverless instances.
+-- If this table is missing, the app falls back to per-instance in-memory
+-- throttling and keeps working (a warning is logged server-side).
+
+create table if not exists admin_login_attempts (
+  ip text primary key,
+  fail_count integer not null default 0,
+  first_attempt timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+-- Optional hardening: enable Row Level Security. The app only touches this
+-- table with the service-role key (which bypasses RLS), so enabling RLS
+-- additionally blocks any anon-key access with no behavior change.
+-- alter table admin_login_attempts enable row level security;

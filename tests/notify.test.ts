@@ -1,1 +1,27 @@
-aW1wb3J0IHsgZGVzY3JpYmUsIGl0LCBleHBlY3QgfSBmcm9tICJ2aXRlc3QiOwppbXBvcnQgeyBub3RpZnlBZG1pbk5ld09yZGVyIH0gZnJvbSAiQC9saWIvbm90aWZ5IjsKCmRlc2NyaWJlKCJBZG1pbiBub3RpZnkgaGVscGVyIiwgKCkgPT4gewogIGl0KCJyZXR1cm5zIGZhbHNlIChuZXZlciB0aHJvd3MpIHdoZW4gU01UUCBpcyBub3QgY29uZmlndXJlZCIsIGFzeW5jICgpID0+IHsKICAgIGNvbnN0IHNhdmVkVXNlciA9IHByb2Nlc3MuZW52LlNNVFBfVVNFUjsKICAgIGNvbnN0IHNhdmVkUGFzcyA9IHByb2Nlc3MuZW52LlNNVFBfUEFTUzsKICAgIGRlbGV0ZSBwcm9jZXNzLmVudi5TTVRQX1VTRVI7CiAgICBkZWxldGUgcHJvY2Vzcy5lbnYuU01UUF9QQVNTOwogICAgdHJ5IHsKICAgICAgY29uc3Qgb2sgPSBhd2FpdCBub3RpZnlBZG1pbk5ld09yZGVyKHsKICAgICAgICBvcmRlcl9pZDogIkFSSy0yMDI2LVRFU1QiLAogICAgICAgIG5hbWU6ICJUZXN0IFVzZXIiLAogICAgICAgIGVtYWlsOiAidGVzdEBleGFtcGxlLmNvbSIsCiAgICAgICAgcGhvbmU6ICI5OTk5OTk5OTk5IiwKICAgICAgICBjb3Vyc2VfdGl0bGU6ICJUZXN0IENvdXJzZSIsCiAgICAgICAgYW1vdW50OiA5OSwKICAgICAgICBkZWxpdmVyeV9tb2RlOiAiYm90aCIsCiAgICAgICAgdXRyOiAiMTIzNDU2Nzg5MDEyIiwKICAgICAgfSk7CiAgICAgIGV4cGVjdChvaykudG9CZShmYWxzZSk7CiAgICB9IGZpbmFsbHkgewogICAgICBpZiAoc2F2ZWRVc2VyICE9PSB1bmRlZmluZWQpIHByb2Nlc3MuZW52LlNNVFBfVVNFUiA9IHNhdmVkVXNlcjsKICAgICAgaWYgKHNhdmVkUGFzcyAhPT0gdW5kZWZpbmVkKSBwcm9jZXNzLmVudi5TTVRQX1BBU1MgPSBzYXZlZFBhc3M7CiAgICB9CiAgfSk7Cn0pOwo=
+import { describe, it, expect } from "vitest";
+import { notifyAdminNewOrder } from "@/lib/notify";
+
+describe("Admin notify helper", () => {
+  it("returns false (never throws) when SMTP is not configured", async () => {
+    const savedUser = process.env.SMTP_USER;
+    const savedPass = process.env.SMTP_PASS;
+    delete process.env.SMTP_USER;
+    delete process.env.SMTP_PASS;
+    try {
+      const ok = await notifyAdminNewOrder({
+        order_id: "ARK-2026-TEST",
+        name: "Test User",
+        email: "test@example.com",
+        phone: "9999999999",
+        course_title: "Test Course",
+        amount: 99,
+        delivery_mode: "both",
+        utr: "123456789012",
+      });
+      expect(ok).toBe(false);
+    } finally {
+      if (savedUser !== undefined) process.env.SMTP_USER = savedUser;
+      if (savedPass !== undefined) process.env.SMTP_PASS = savedPass;
+    }
+  });
+});

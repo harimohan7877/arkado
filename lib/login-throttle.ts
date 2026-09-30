@@ -1,1 +1,178 @@
-LyoqCiAqIExvZ2luIGJydXRlLWZvcmNlIHRocm90dGxpbmcgd2l0aCBwZXJzaXN0ZW50IHN0b3JhZ2UuCiAqCiAqIFRoZSBvbGQgaW4tbWVtb3J5IE1hcCBsaXZlZCBwZXIgc2VydmVybGVzcyBpbnN0YW5jZSwgc28gb24gVmVyY2VsIHRoZQogKiBsb2Nrb3V0IGNvdWxkIGJlIGJ5cGFzc2VkIGJ5IGhpdHRpbmcgYSBmcmVzaCBpbnN0YW5jZS4gQXR0ZW1wdHMgYXJlIG5vdwogKiByZWNvcmRlZCBpbiB0aGUgU3VwYWJhc2UgYGFkbWluX2xvZ2luX2F0dGVtcHRzYCB0YWJsZSAoc2VlCiAqIHN1cGFiYXNlLW1pZ3JhdGlvbnMvMjAyNjA5MzBfYWRtaW5fbG9naW5fYXR0ZW1wdHMuc3FsKSwgc2hhcmVkIGFjcm9zcyBhbGwKICogaW5zdGFuY2VzLgogKgogKiBGQUlMLVNBRkUgQ09OVFJBQ1Q6IHRocm90dGxpbmcgbXVzdCBORVZFUiBicmVhayBsb2dpbi4gSWYgU3VwYWJhc2UgaXMKICogdW5yZWFjaGFibGUsIG1pc2NvbmZpZ3VyZWQsIG9yIHRoZSBtaWdyYXRpb24gaGFzbid0IGJlZW4gcnVuIHlldCwgd2UgZmFsbAogKiBiYWNrIHRvIGEgcGVyLWluc3RhbmNlIGluLW1lbW9yeSBtYXAgKHNhbWUgc3RyZW5ndGggYXMgdGhlIG9sZCBjb2RlKS4KICogRXZlcnkgZnVuY3Rpb24gY2F0Y2hlcyBpdHMgb3duIGVycm9ycy4KICovCgpjb25zdCBNQVhfQVRURU1QVFMgPSA1Owpjb25zdCBMT0NLT1VUX01TID0gMTUgKiA2MCAqIDEwMDA7IC8vIDE1IG1pbnV0ZXMgbG9ja291dAoKaW50ZXJmYWNlIE1lbW9yeVJlY29yZCB7CiAgY291bnQ6IG51bWJlcjsKICBmaXJzdEF0dGVtcHQ6IG51bWJlcjsKfQoKLy8gUGVyLWluc3RhbmNlIGZhbGxiYWNrIHdoZW4gU3VwYWJhc2UgaXMgdW5hdmFpbGFibGUuCmNvbnN0IG1lbW9yeUF0dGVtcHRzID0gbmV3IE1hcDxzdHJpbmcsIE1lbW9yeVJlY29yZD4oKTsKCmxldCB3YXJuZWRNaXNzaW5nVGFibGUgPSBmYWxzZTsKZnVuY3Rpb24gd2FybkZhbGxiYWNrKHJlYXNvbjogc3RyaW5nKSB7CiAgaWYgKCF3YXJuZWRNaXNzaW5nVGFibGUpIHsKICAgIHdhcm5lZE1pc3NpbmdUYWJsZSA9IHRydWU7CiAgICBjb25zb2xlLndhcm4oCiAgICAgIGBbbG9naW4tdGhyb3R0bGVdIFVzaW5nIGluLW1lbW9yeSBmYWxsYmFjayAoJHtyZWFzb259KS4gYCArCiAgICAgICAgYFJ1biBzdXBhYmFzZS1taWdyYXRpb25zLzIwMjYwOTMwX2FkbWluX2xvZ2luX2F0dGVtcHRzLnNxbCBmb3IgcGVyc2lzdGVudCB0aHJvdHRsaW5nLmAKICAgICk7CiAgfQp9Cgphc3luYyBmdW5jdGlvbiBnZXRTdXBhYmFzZUFkbWluKCkgewogIHRyeSB7CiAgICAvLyBEeW5hbWljIGltcG9ydDogbGliL3N1cGFiYXNlIHRocm93cyBhdCBpbXBvcnQgdGltZSB3aGVuIGVudiB2YXJzIGFyZQogICAgLy8gbWlzc2luZyDigJQgd2UgbXVzdCBub3QgbGV0IHRoYXQgYnJlYWsgdGhlIGxvZ2luIHJvdXRlLgogICAgY29uc3QgbW9kID0gYXdhaXQgaW1wb3J0KCJAL2xpYi9zdXBhYmFzZSIpOwogICAgcmV0dXJuIG1vZC5zdXBhYmFzZUFkbWluID8/IG51bGw7CiAgfSBjYXRjaCB7CiAgICByZXR1cm4gbnVsbDsKICB9Cn0KCmV4cG9ydCBpbnRlcmZhY2UgVGhyb3R0bGVTdGF0dXMgewogIGxvY2tlZDogYm9vbGVhbjsKICByZW1haW5pbmdNaW51dGVzOiBudW1iZXI7Cn0KCmZ1bmN0aW9uIG1lbW9yeUNoZWNrKGlwOiBzdHJpbmcsIG5vdzogbnVtYmVyKTogVGhyb3R0bGVTdGF0dXMgewogIGNvbnN0IHJlY29yZCA9IG1lbW9yeUF0dGVtcHRzLmdldChpcCk7CiAgaWYgKCFyZWNvcmQpIHJldHVybiB7IGxvY2tlZDogZmFsc2UsIHJlbWFpbmluZ01pbnV0ZXM6IDAgfTsKICBpZiAobm93IC0gcmVjb3JkLmZpcnN0QXR0ZW1wdCA+PSBMT0NLT1VUX01TKSB7CiAgICBtZW1vcnlBdHRlbXB0cy5kZWxldGUoaXApOwogICAgcmV0dXJuIHsgbG9ja2VkOiBmYWxzZSwgcmVtYWluaW5nTWludXRlczogMCB9OwogIH0KICBpZiAocmVjb3JkLmNvdW50ID49IE1BWF9BVFRFTVBUUykgewogICAgcmV0dXJuIHsKICAgICAgbG9ja2VkOiB0cnVlLAogICAgICByZW1haW5pbmdNaW51dGVzOiBNYXRoLmNlaWwoKExPQ0tPVVRfTVMgLSAobm93IC0gcmVjb3JkLmZpcnN0QXR0ZW1wdCkpIC8gNjAwMDApLAogICAgfTsKICB9CiAgcmV0dXJuIHsgbG9ja2VkOiBmYWxzZSwgcmVtYWluaW5nTWludXRlczogMCB9Owp9CgovKiogUmV0dXJucyB3aGV0aGVyIHRoaXMgSVAgaXMgY3VycmVudGx5IGxvY2tlZCBvdXQuIE5ldmVyIHRocm93cy4gKi8KZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGNoZWNrTG9naW5UaHJvdHRsZShpcDogc3RyaW5nKTogUHJvbWlzZTxUaHJvdHRsZVN0YXR1cz4gewogIGNvbnN0IG5vdyA9IERhdGUubm93KCk7CiAgdHJ5IHsKICAgIGNvbnN0IGFkbWluID0gYXdhaXQgZ2V0U3VwYWJhc2VBZG1pbigpOwogICAgaWYgKCFhZG1pbikgewogICAgICB3YXJuRmFsbGJhY2soIlN1cGFiYXNlIG5vdCBjb25maWd1cmVkIik7CiAgICAgIHJldHVybiBtZW1vcnlDaGVjayhpcCwgbm93KTsKICAgIH0KCiAgICBjb25zdCB7IGRhdGEsIGVycm9yIH0gPSBhd2FpdCBhZG1pbgogICAgICAuZnJvbSgiYWRtaW5fbG9naW5fYXR0ZW1wdHMiKQogICAgICAuc2VsZWN0KCJmYWlsX2NvdW50LCBmaXJzdF9hdHRlbXB0IikKICAgICAgLmVxKCJpcCIsIGlwKQogICAgICAubWF5YmVTaW5nbGUoKTsKICAgIGlmIChlcnJvcikgdGhyb3cgZXJyb3I7CiAgICBpZiAoIWRhdGEpIHJldHVybiB7IGxvY2tlZDogZmFsc2UsIHJlbWFpbmluZ01pbnV0ZXM6IDAgfTsKCiAgICBjb25zdCBmaXJzdEF0dGVtcHQgPSBuZXcgRGF0ZShkYXRhLmZpcnN0X2F0dGVtcHQpLmdldFRpbWUoKTsKICAgIGlmIChOdW1iZXIuaXNOYU4oZmlyc3RBdHRlbXB0KSB8fCBub3cgLSBmaXJzdEF0dGVtcHQgPj0gTE9DS09VVF9NUykgewogICAgICAvLyBXaW5kb3cgZXhwaXJlZCDigJQgcmVzZXQKICAgICAgYXdhaXQgYWRtaW4uZnJvbSgiYWRtaW5fbG9naW5fYXR0ZW1wdHMiKS5kZWxldGUoKS5lcSgiaXAiLCBpcCk7CiAgICAgIHJldHVybiB7IGxvY2tlZDogZmFsc2UsIHJlbWFpbmluZ01pbnV0ZXM6IDAgfTsKICAgIH0KICAgIGlmIChkYXRhLmZhaWxfY291bnQgPj0gTUFYX0FUVEVNUFRTKSB7CiAgICAgIHJldHVybiB7CiAgICAgICAgbG9ja2VkOiB0cnVlLAogICAgICAgIHJlbWFpbmluZ01pbnV0ZXM6IE1hdGguY2VpbCgoTE9DS09VVF9NUyAtIChub3cgLSBmaXJzdEF0dGVtcHQpKSAvIDYwMDAwKSwKICAgICAgfTsKICAgIH0KICAgIHJldHVybiB7IGxvY2tlZDogZmFsc2UsIHJlbWFpbmluZ01pbnV0ZXM6IDAgfTsKICB9IGNhdGNoIChlcnIpIHsKICAgIHdhcm5GYWxsYmFjayhlcnIgaW5zdGFuY2VvZiBFcnJvciA/IGVyci5tZXNzYWdlIDogIlN1cGFiYXNlIGVycm9yIik7CiAgICByZXR1cm4gbWVtb3J5Q2hlY2soaXAsIG5vdyk7CiAgfQp9CgovKiogUmVjb3JkcyBhIGZhaWxlZCBsb2dpbiBmb3IgdGhpcyBJUC4gTmV2ZXIgdGhyb3dzLiAqLwpleHBvcnQgYXN5bmMgZnVuY3Rpb24gcmVjb3JkRmFpbGVkTG9naW4oaXA6IHN0cmluZyk6IFByb21pc2U8dm9pZD4gewogIGNvbnN0IG5vdyA9IERhdGUubm93KCk7CiAgdHJ5IHsKICAgIGNvbnN0IGFkbWluID0gYXdhaXQgZ2V0U3VwYWJhc2VBZG1pbigpOwogICAgaWYgKCFhZG1pbikgewogICAgICB3YXJuRmFsbGJhY2soIlN1cGFiYXNlIG5vdCBjb25maWd1cmVkIik7CiAgICAgIGNvbnN0IGN1cnJlbnQgPSBtZW1vcnlBdHRlbXB0cy5nZXQoaXApOwogICAgICBpZiAoIWN1cnJlbnQgfHwgbm93IC0gY3VycmVudC5maXJzdEF0dGVtcHQgPj0gTE9DS09VVF9NUykgewogICAgICAgIG1lbW9yeUF0dGVtcHRzLnNldChpcCwgeyBjb3VudDogMSwgZmlyc3RBdHRlbXB0OiBub3cgfSk7CiAgICAgIH0gZWxzZSB7CiAgICAgICAgY3VycmVudC5jb3VudCArPSAxOwogICAgICB9CiAgICAgIHJldHVybjsKICAgIH0KCiAgICBjb25zdCB7IGRhdGEsIGVycm9yIH0gPSBhd2FpdCBhZG1pbgogICAgICAuZnJvbSgiYWRtaW5fbG9naW5fYXR0ZW1wdHMiKQogICAgICAuc2VsZWN0KCJmYWlsX2NvdW50LCBmaXJzdF9hdHRlbXB0IikKICAgICAgLmVxKCJpcCIsIGlwKQogICAgICAubWF5YmVTaW5nbGUoKTsKICAgIGlmIChlcnJvcikgdGhyb3cgZXJyb3I7CgogICAgaWYgKCFkYXRhIHx8IG5vdyAtIG5ldyBEYXRlKGRhdGEuZmlyc3RfYXR0ZW1wdCkuZ2V0VGltZSgpID49IExPQ0tPVVRfTVMpIHsKICAgICAgY29uc3QgeyBlcnJvcjogdXBzZXJ0RXJyb3IgfSA9IGF3YWl0IGFkbWluCiAgICAgICAgLmZyb20oImFkbWluX2xvZ2luX2F0dGVtcHRzIikKICAgICAgICAudXBzZXJ0KAogICAgICAgICAgewogICAgICAgICAgICBpcCwKICAgICAgICAgICAgZmFpbF9jb3VudDogMSwKICAgICAgICAgICAgZmlyc3RfYXR0ZW1wdDogbmV3IERhdGUobm93KS50b0lTT1N0cmluZygpLAogICAgICAgICAgICB1cGRhdGVkX2F0OiBuZXcgRGF0ZShub3cpLnRvSVNPU3RyaW5nKCksCiAgICAgICAgICB9LAogICAgICAgICAgeyBvbkNvbmZsaWN0OiAiaXAiIH0KICAgICAgICApOwogICAgICBpZiAodXBzZXJ0RXJyb3IpIHRocm93IHVwc2VydEVycm9yOwogICAgfSBlbHNlIHsKICAgICAgY29uc3QgeyBlcnJvcjogdXBzZXJ0RXJyb3IgfSA9IGF3YWl0IGFkbWluCiAgICAgICAgLmZyb20oImFkbWluX2xvZ2luX2F0dGVtcHRzIikKICAgICAgICAudXBzZXJ0KAogICAgICAgICAgewogICAgICAgICAgICBpcCwKICAgICAgICAgICAgZmFpbF9jb3VudDogZGF0YS5mYWlsX2NvdW50ICsgMSwKICAgICAgICAgICAgZmlyc3RfYXR0ZW1wdDogZGF0YS5maXJzdF9hdHRlbXB0LAogICAgICAgICAgICB1cGRhdGVkX2F0OiBuZXcgRGF0ZShub3cpLnRvSVNPU3RyaW5nKCksCiAgICAgICAgICB9LAogICAgICAgICAgeyBvbkNvbmZsaWN0OiAiaXAiIH0KICAgICAgICApOwogICAgICBpZiAodXBzZXJ0RXJyb3IpIHRocm93IHVwc2VydEVycm9yOwogICAgfQogIH0gY2F0Y2ggKGVycikgewogICAgd2FybkZhbGxiYWNrKGVyciBpbnN0YW5jZW9mIEVycm9yID8gZXJyLm1lc3NhZ2UgOiAiU3VwYWJhc2UgZXJyb3IiKTsKICAgIGNvbnN0IGN1cnJlbnQgPSBtZW1vcnlBdHRlbXB0cy5nZXQoaXApOwogICAgaWYgKCFjdXJyZW50IHx8IG5vdyAtIGN1cnJlbnQuZmlyc3RBdHRlbXB0ID49IExPQ0tPVVRfTVMpIHsKICAgICAgbWVtb3J5QXR0ZW1wdHMuc2V0KGlwLCB7IGNvdW50OiAxLCBmaXJzdEF0dGVtcHQ6IG5vdyB9KTsKICAgIH0gZWxzZSB7CiAgICAgIGN1cnJlbnQuY291bnQgKz0gMTsKICAgIH0KICB9Cn0KCi8qKiBDbGVhcnMgYWxsIHJlY29yZGVkIGF0dGVtcHRzIGZvciB0aGlzIElQIChjYWxsIG9uIHN1Y2Nlc3NmdWwgbG9naW4pLiBOZXZlciB0aHJvd3MuICovCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBjbGVhckxvZ2luQXR0ZW1wdHMoaXA6IHN0cmluZyk6IFByb21pc2U8dm9pZD4gewogIG1lbW9yeUF0dGVtcHRzLmRlbGV0ZShpcCk7CiAgdHJ5IHsKICAgIGNvbnN0IGFkbWluID0gYXdhaXQgZ2V0U3VwYWJhc2VBZG1pbigpOwogICAgaWYgKCFhZG1pbikgcmV0dXJuOwogICAgYXdhaXQgYWRtaW4uZnJvbSgiYWRtaW5fbG9naW5fYXR0ZW1wdHMiKS5kZWxldGUoKS5lcSgiaXAiLCBpcCk7CiAgfSBjYXRjaCB7CiAgICAvLyBOb24tZmF0YWwg4oCUIHRoZSByb3cgKGlmIGFueSkgc2ltcGx5IGV4cGlyZXMgdmlhIHRoZSBsb2Nrb3V0IHdpbmRvdy4KICB9Cn0K
+/**
+ * Login brute-force throttling with persistent storage.
+ *
+ * The old in-memory Map lived per serverless instance, so on Vercel the
+ * lockout could be bypassed by hitting a fresh instance. Attempts are now
+ * recorded in the Supabase `admin_login_attempts` table (see
+ * supabase-migrations/20260930_admin_login_attempts.sql), shared across all
+ * instances.
+ *
+ * FAIL-SAFE CONTRACT: throttling must NEVER break login. If Supabase is
+ * unreachable, misconfigured, or the migration hasn't been run yet, we fall
+ * back to a per-instance in-memory map (same strength as the old code).
+ * Every function catches its own errors.
+ */
+
+const MAX_ATTEMPTS = 5;
+const LOCKOUT_MS = 15 * 60 * 1000; // 15 minutes lockout
+
+interface MemoryRecord {
+  count: number;
+  firstAttempt: number;
+}
+
+// Per-instance fallback when Supabase is unavailable.
+const memoryAttempts = new Map<string, MemoryRecord>();
+
+let warnedMissingTable = false;
+function warnFallback(reason: string) {
+  if (!warnedMissingTable) {
+    warnedMissingTable = true;
+    console.warn(
+      `[login-throttle] Using in-memory fallback (${reason}). ` +
+        `Run supabase-migrations/20260930_admin_login_attempts.sql for persistent throttling.`
+    );
+  }
+}
+
+async function getSupabaseAdmin() {
+  try {
+    // Dynamic import: lib/supabase throws at import time when env vars are
+    // missing — we must not let that break the login route.
+    const mod = await import("@/lib/supabase");
+    return mod.supabaseAdmin ?? null;
+  } catch {
+    return null;
+  }
+}
+
+export interface ThrottleStatus {
+  locked: boolean;
+  remainingMinutes: number;
+}
+
+function memoryCheck(ip: string, now: number): ThrottleStatus {
+  const record = memoryAttempts.get(ip);
+  if (!record) return { locked: false, remainingMinutes: 0 };
+  if (now - record.firstAttempt >= LOCKOUT_MS) {
+    memoryAttempts.delete(ip);
+    return { locked: false, remainingMinutes: 0 };
+  }
+  if (record.count >= MAX_ATTEMPTS) {
+    return {
+      locked: true,
+      remainingMinutes: Math.ceil((LOCKOUT_MS - (now - record.firstAttempt)) / 60000),
+    };
+  }
+  return { locked: false, remainingMinutes: 0 };
+}
+
+/** Returns whether this IP is currently locked out. Never throws. */
+export async function checkLoginThrottle(ip: string): Promise<ThrottleStatus> {
+  const now = Date.now();
+  try {
+    const admin = await getSupabaseAdmin();
+    if (!admin) {
+      warnFallback("Supabase not configured");
+      return memoryCheck(ip, now);
+    }
+
+    const { data, error } = await admin
+      .from("admin_login_attempts")
+      .select("fail_count, first_attempt")
+      .eq("ip", ip)
+      .maybeSingle();
+    if (error) throw error;
+    if (!data) return { locked: false, remainingMinutes: 0 };
+
+    const firstAttempt = new Date(data.first_attempt).getTime();
+    if (Number.isNaN(firstAttempt) || now - firstAttempt >= LOCKOUT_MS) {
+      // Window expired — reset
+      await admin.from("admin_login_attempts").delete().eq("ip", ip);
+      return { locked: false, remainingMinutes: 0 };
+    }
+    if (data.fail_count >= MAX_ATTEMPTS) {
+      return {
+        locked: true,
+        remainingMinutes: Math.ceil((LOCKOUT_MS - (now - firstAttempt)) / 60000),
+      };
+    }
+    return { locked: false, remainingMinutes: 0 };
+  } catch (err) {
+    warnFallback(err instanceof Error ? err.message : "Supabase error");
+    return memoryCheck(ip, now);
+  }
+}
+
+/** Records a failed login for this IP. Never throws. */
+export async function recordFailedLogin(ip: string): Promise<void> {
+  const now = Date.now();
+  try {
+    const admin = await getSupabaseAdmin();
+    if (!admin) {
+      warnFallback("Supabase not configured");
+      const current = memoryAttempts.get(ip);
+      if (!current || now - current.firstAttempt >= LOCKOUT_MS) {
+        memoryAttempts.set(ip, { count: 1, firstAttempt: now });
+      } else {
+        current.count += 1;
+      }
+      return;
+    }
+
+    const { data, error } = await admin
+      .from("admin_login_attempts")
+      .select("fail_count, first_attempt")
+      .eq("ip", ip)
+      .maybeSingle();
+    if (error) throw error;
+
+    if (!data || now - new Date(data.first_attempt).getTime() >= LOCKOUT_MS) {
+      const { error: upsertError } = await admin
+        .from("admin_login_attempts")
+        .upsert(
+          {
+            ip,
+            fail_count: 1,
+            first_attempt: new Date(now).toISOString(),
+            updated_at: new Date(now).toISOString(),
+          },
+          { onConflict: "ip" }
+        );
+      if (upsertError) throw upsertError;
+    } else {
+      const { error: upsertError } = await admin
+        .from("admin_login_attempts")
+        .upsert(
+          {
+            ip,
+            fail_count: data.fail_count + 1,
+            first_attempt: data.first_attempt,
+            updated_at: new Date(now).toISOString(),
+          },
+          { onConflict: "ip" }
+        );
+      if (upsertError) throw upsertError;
+    }
+  } catch (err) {
+    warnFallback(err instanceof Error ? err.message : "Supabase error");
+    const current = memoryAttempts.get(ip);
+    if (!current || now - current.firstAttempt >= LOCKOUT_MS) {
+      memoryAttempts.set(ip, { count: 1, firstAttempt: now });
+    } else {
+      current.count += 1;
+    }
+  }
+}
+
+/** Clears all recorded attempts for this IP (call on successful login). Never throws. */
+export async function clearLoginAttempts(ip: string): Promise<void> {
+  memoryAttempts.delete(ip);
+  try {
+    const admin = await getSupabaseAdmin();
+    if (!admin) return;
+    await admin.from("admin_login_attempts").delete().eq("ip", ip);
+  } catch {
+    // Non-fatal — the row (if any) simply expires via the lockout window.
+  }
+}

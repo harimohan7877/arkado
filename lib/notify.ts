@@ -1,1 +1,165 @@
-LyoqCiAqIEludGVybmFsIGFkbWluIG5vdGlmaWNhdGlvbiBoZWxwZXJzLgogKgogKiBTRUNVUklUWTogdGhlc2UgcnVuIHNlcnZlci1zaWRlIG9ubHkgYW5kIGFyZSBjYWxsZWQgZGlyZWN0bHkgZnJvbSBBUEkKICogcm91dGVzLiBUaGV5IGFyZSBOT1QgZXhwb3NlZCBhcyBwdWJsaWMgSFRUUCBlbmRwb2ludHMg4oCUIHRoZSBvbGQKICogL2FwaS9ub3RpZnktYWRtaW4gcm91dGUgd2FzIHB1YmxpY2x5IGNhbGxhYmxlIGFuZCBsZXQgYW55b25lIHRyaWdnZXIKICogYWRtaW4gZW1haWxzIChzcGFtIC8gR21haWwgcXVvdGEgYnVybikuIE5ldmVyIHJlLWV4cG9zZSB0aGlzIGFzIGEgcm91dGUKICogd2l0aG91dCBhZG1pbiBhdXRoZW50aWNhdGlvbi4KICovCgpleHBvcnQgaW50ZXJmYWNlIE5ld09yZGVyTm90aWZpY2F0aW9uIHsKICBvcmRlcl9pZDogc3RyaW5nOwogIG5hbWU6IHN0cmluZzsKICBlbWFpbD86IHN0cmluZzsKICBwaG9uZT86IHN0cmluZzsKICBjb3Vyc2VfdGl0bGU6IHN0cmluZzsKICBhbW91bnQ6IG51bWJlcjsKICBkZWxpdmVyeV9tb2RlOiBzdHJpbmc7CiAgdXRyPzogc3RyaW5nOwp9CgpmdW5jdGlvbiBlc2NhcGVIdG1sKHN0cjogc3RyaW5nIHwgdW5kZWZpbmVkKTogc3RyaW5nIHsKICBpZiAoIXN0cikgcmV0dXJuICIiOwogIHJldHVybiBTdHJpbmcoc3RyKQogICAgLnJlcGxhY2UoLyYvZywgIiZhbXA7IikKICAgIC5yZXBsYWNlKC88L2csICImbHQ7IikKICAgIC5yZXBsYWNlKC8+L2csICImZ3Q7IikKICAgIC5yZXBsYWNlKC8iL2csICImcXVvdDsiKQogICAgLnJlcGxhY2UoLycvZywgIiYjMDM5OyIpOwp9CgovKioKICogRW1haWxzIHRoZSBhZG1pbiBhYm91dCBhIG5ldyBvcmRlci4gUmV0dXJucyB0cnVlIG9uIHN1Y2Nlc3MsIGZhbHNlIG9uIGFueQogKiBmYWlsdXJlIOKAlCBjYWxsZXJzIG11c3QgbmV2ZXIgZmFpbCBhbiBvcmRlciBqdXN0IGJlY2F1c2UgdGhlIGVtYWlsIGZhaWxlZC4KICovCmV4cG9ydCBhc3luYyBmdW5jdGlvbiBub3RpZnlBZG1pbk5ld09yZGVyKAogIG9yZGVyOiBOZXdPcmRlck5vdGlmaWNhdGlvbgopOiBQcm9taXNlPGJvb2xlYW4+IHsKICB0cnkgewogICAgY29uc3QgYWRtaW5FbWFpbCA9IHByb2Nlc3MuZW52LkFETUlOX05PVElGWV9FTUFJTCB8fCAic3VwcG9ydEBhcmthZG8uaW4iOwogICAgY29uc3QgZnJvbUVtYWlsID0gcHJvY2Vzcy5lbnYuU01UUF9GUk9NIHx8ICJub3JlcGx5QGFya2Fkby5pbiI7CiAgICBjb25zdCBzbXRwVXNlciA9IHByb2Nlc3MuZW52LlNNVFBfVVNFUjsKICAgIGNvbnN0IHNtdHBQYXNzID0gcHJvY2Vzcy5lbnYuU01UUF9QQVNTOwoKICAgIGlmICghc210cFVzZXIgfHwgIXNtdHBQYXNzKSB7CiAgICAgIGNvbnNvbGUud2FybigiW25vdGlmeV0gU01UUCBub3QgY29uZmlndXJlZCDigJQgc2tpcHBpbmcgYWRtaW4gZW1haWwiKTsKICAgICAgcmV0dXJuIGZhbHNlOwogICAgfQoKICAgIGNvbnN0IHNhZmVPcmRlcklkID0gZXNjYXBlSHRtbChvcmRlci5vcmRlcl9pZCk7CiAgICBjb25zdCBzYWZlTmFtZSA9IGVzY2FwZUh0bWwob3JkZXIubmFtZSk7CiAgICBjb25zdCBzYWZlRW1haWwgPSBlc2NhcGVIdG1sKG9yZGVyLmVtYWlsKTsKICAgIGNvbnN0IHNhZmVQaG9uZSA9IGVzY2FwZUh0bWwob3JkZXIucGhvbmUpOwogICAgY29uc3Qgc2FmZUNvdXJzZSA9IGVzY2FwZUh0bWwob3JkZXIuY291cnNlX3RpdGxlKTsKICAgIGNvbnN0IHNhZmVEZWxpdmVyeSA9IGVzY2FwZUh0bWwob3JkZXIuZGVsaXZlcnlfbW9kZSk7CiAgICBjb25zdCBzYWZlVXRyID0gZXNjYXBlSHRtbChvcmRlci51dHIpOwogICAgY29uc3QgY2xlYW5QaG9uZURpZ2l0cyA9IChvcmRlci5waG9uZSB8fCAiIikucmVwbGFjZSgvXEQvZywgIiIpOwoKICAgIGNvbnN0IG5vZGVtYWlsZXIgPSBhd2FpdCBpbXBvcnQoIm5vZGVtYWlsZXIiKTsKICAgIGNvbnN0IHRyYW5zcG9ydGVyID0gbm9kZW1haWxlci5kZWZhdWx0LmNyZWF0ZVRyYW5zcG9ydCh7CiAgICAgIHNlcnZpY2U6ICJnbWFpbCIsCiAgICAgIGF1dGg6IHsKICAgICAgICB1c2VyOiBzbXRwVXNlciwKICAgICAgICBwYXNzOiBzbXRwUGFzcywKICAgICAgfSwKICAgIH0pOwoKICAgIGNvbnN0IHN1YmplY3QgPSBg8J+bkiDgpKjgpK/gpL4g4KSR4KSw4KWN4KSh4KSwIOKAlCAke3NhZmVPcmRlcklkfSDigJQg4oK5JHtvcmRlci5hbW91bnR9YDsKICAgIGNvbnN0IGh0bWwgPSBgCiAgICAgIDxkaXYgc3R5bGU9ImZvbnQtZmFtaWx5OiBBcmlhbCwgc2Fucy1zZXJpZjsgbWF4LXdpZHRoOiA2MDBweDsgbWFyZ2luOiAwIGF1dG87IHBhZGRpbmc6IDIwcHg7Ij4KICAgICAgICA8aDIgc3R5bGU9ImNvbG9yOiAjYjQ1MzA5OyBib3JkZXItYm90dG9tOiAycHggc29saWQgI2I0NTMwOTsgcGFkZGluZy1ib3R0b206IDEwcHg7Ij4KICAgICAgICAgIPCfm5Ig4KSo4KSv4KS+IOCkkeCksOCljeCkoeCksCDgpK7gpL/gpLLgpL4g4oCUIEFya2FkbwogICAgICAgIDwvaDI+CgogICAgICAgIDx0YWJsZSBzdHlsZT0id2lkdGg6IDEwMCU7IGJvcmRlci1jb2xsYXBzZTogY29sbGFwc2U7IG1hcmdpbjogMjBweCAwOyI+CiAgICAgICAgICA8dHI+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogOHB4OyBjb2xvcjogIzY2NjsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij5PcmRlciBJRDwvdGQ+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogOHB4OyBmb250LWZhbWlseTogbW9ub3NwYWNlOyBmb250LXNpemU6IDE2cHg7Ij4ke3NhZmVPcmRlcklkfTwvdGQ+CiAgICAgICAgICA8L3RyPgogICAgICAgICAgPHRyIHN0eWxlPSJiYWNrZ3JvdW5kOiAjZjlmOWY5OyI+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogOHB4OyBjb2xvcjogIzY2NjsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij7gpKjgpL7gpK48L3RkPgogICAgICAgICAgICA8dGQgc3R5bGU9InBhZGRpbmc6IDhweDsiPiR7c2FmZU5hbWV9PC90ZD4KICAgICAgICAgIDwvdHI+CiAgICAgICAgICA8dHI+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogOHB4OyBjb2xvcjogIzY2NjsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij5FbWFpbDwvdGQ+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogOHB4OyI+PGEgaHJlZj0ibWFpbHRvOiR7c2FmZUVtYWlsIHx8ICJOL0EifSI+JHtzYWZlRW1haWwgfHwgIk4vQSJ9PC9hPjwvdGQ+CiAgICAgICAgICA8L3RyPgogICAgICAgICAgPHRyIHN0eWxlPSJiYWNrZ3JvdW5kOiAjZjlmOWY5OyI+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogOHB4OyBjb2xvcjogIzY2NjsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij5QaG9uZTwvdGQ+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogOHB4OyI+JHtzYWZlUGhvbmUgfHwgIk4vQSJ9PC90ZD4KICAgICAgICAgIDwvdHI+CiAgICAgICAgICA8dHI+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogOHB4OyBjb2xvcjogIzY2NjsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij7gpJXgpYvgpLDgpY3gpLg8L3RkPgogICAgICAgICAgICA8dGQgc3R5bGU9InBhZGRpbmc6IDhweDsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij4ke3NhZmVDb3Vyc2V9PC90ZD4KICAgICAgICAgIDwvdHI+CiAgICAgICAgICA8dHIgc3R5bGU9ImJhY2tncm91bmQ6ICNmOWY5Zjk7Ij4KICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiA4cHg7IGNvbG9yOiAjNjY2OyBmb250LXdlaWdodDogYm9sZDsiPuCksOCkvuCktuCkvzwvdGQ+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogOHB4OyBmb250LXNpemU6IDIwcHg7IGZvbnQtd2VpZ2h0OiBib2xkOyBjb2xvcjogIzA1OTY2OTsiPuKCuSR7TnVtYmVyKG9yZGVyLmFtb3VudCkgfHwgMH08L3RkPgogICAgICAgICAgPC90cj4KICAgICAgICAgIDx0cj4KICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiA4cHg7IGNvbG9yOiAjNjY2OyBmb250LXdlaWdodDogYm9sZDsiPuCkoeCkv+CksuClgOCkteCksOClgDwvdGQ+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogOHB4OyB0ZXh0LXRyYW5zZm9ybTogdXBwZXJjYXNlOyBmb250LXdlaWdodDogYm9sZDsiPiR7c2FmZURlbGl2ZXJ5fTwvdGQ+CiAgICAgICAgICA8L3RyPgogICAgICAgICAgJHsKICAgICAgICAgICAgc2FmZVV0cgogICAgICAgICAgICAgID8gYDx0ciBzdHlsZT0iYmFja2dyb3VuZDogI2VjZmRmNTsiPgogICAgICAgICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiA4cHg7IGNvbG9yOiAjMDY1ZjQ2OyBmb250LXdlaWdodDogYm9sZDsiPlVUUiAvIFJlZiBOby48L3RkPgogICAgICAgICAgICAgICAgICAgPHRkIHN0eWxlPSJwYWRkaW5nOiA4cHg7IGZvbnQtZmFtaWx5OiBtb25vc3BhY2U7IGZvbnQtc2l6ZTogMTVweDsgZm9udC13ZWlnaHQ6IGJvbGQ7IGNvbG9yOiAjMDQ3ODU3OyI+JHtzYWZlVXRyfTwvdGQ+CiAgICAgICAgICAgICAgICAgPC90cj5gCiAgICAgICAgICAgICAgOiAiIgogICAgICAgICAgfQogICAgICAgICAgPHRyIHN0eWxlPSJiYWNrZ3JvdW5kOiAjZmVmM2M3OyI+CiAgICAgICAgICAgIDx0ZCBzdHlsZT0icGFkZGluZzogOHB4OyBjb2xvcjogIzkyNDAwZTsgZm9udC13ZWlnaHQ6IGJvbGQ7Ij7gpLjgpK7gpK88L3RkPgogICAgICAgICAgICA8dGQgc3R5bGU9InBhZGRpbmc6IDhweDsgY29sb3I6ICM5MjQwMGU7Ij4ke25ldyBEYXRlKCkudG9Mb2NhbGVTdHJpbmcoImVuLUlOIiwgeyB0aW1lWm9uZTogIkFzaWEvS29sa2F0YSIgfSl9PC90ZD4KICAgICAgICAgIDwvdHI+CiAgICAgICAgPC90YWJsZT4KCiAgICAgICAgPGRpdiBzdHlsZT0iYmFja2dyb3VuZDogI2ZlZjNjNzsgYm9yZGVyOiAxcHggc29saWQgI2Y1OWUwYjsgYm9yZGVyLXJhZGl1czogOHB4OyBwYWRkaW5nOiAxNnB4OyBtYXJnaW46IDIwcHggMDsiPgogICAgICAgICAgPGgzIHN0eWxlPSJtYXJnaW46IDAgMCA4cHg7IGNvbG9yOiAjOTI0MDBlOyI+4pqg77iPIOCkleClg+CkquCkr+CkviBtYW51YWxseSB2ZXJpZnkg4KSV4KSw4KWH4KSCPC9oMz4KICAgICAgICAgIDxwIHN0eWxlPSJtYXJnaW46IDA7IGNvbG9yOiAjNzgzNTBmOyBmb250LXNpemU6IDE0cHg7Ij4KICAgICAgICAgICAgVVBJIGFwcCDgpK7gpYfgpIIgPHN0cm9uZz7igrkke051bWJlcihvcmRlci5hbW91bnQpIHx8IDB9PC9zdHJvbmc+IHBheW1lbnQgY2hlY2sg4KSV4KSw4KWH4KSC4KWkPGJyLz4KICAgICAgICAgICAgJHtzYWZlVXRyID8gYOCkm+CkvuCkpOCljeCksCDgpKbgpY3gpLXgpL7gpLDgpL4g4KSm4KS/4KSv4KS+IOCkl+Ckr+CkviBVVFI6IDxzdHJvbmc+JHtzYWZlVXRyfTwvc3Ryb25nPjxici8+YCA6ICIifQogICAgICAgICAgICAke2NsZWFuUGhvbmVEaWdpdHMgPyBgPGEgaHJlZj0iaHR0cHM6Ly93YS5tZS8ke2NsZWFuUGhvbmVEaWdpdHN9Ij5XaGF0c0FwcCDgpKrgpLAgJHtzYWZlUGhvbmV9IOCkuOClhyDgpLjgpILgpKrgpLDgpY3gpJUg4KSV4KSw4KWH4KSCPC9hPjxici8+YCA6ICIifQogICAgICAgICAgICAke3NhZmVFbWFpbCA/IGA8YSBocmVmPSJtYWlsdG86JHtzYWZlRW1haWx9Ij4ke3NhZmVFbWFpbH0g4KSq4KSwIGVtYWlsIOCkreClh+CknOClh+CkgjwvYT5gIDogIiJ9CiAgICAgICAgICA8L3A+CiAgICAgICAgPC9kaXY+CgogICAgICAgIDxwIHN0eWxlPSJjb2xvcjogIzk5OTsgZm9udC1zaXplOiAxMnB4OyBtYXJnaW4tdG9wOiAzMHB4OyI+CiAgICAgICAgICBBcmthZG8gQWRtaW4gUGFuZWwg4oaSIDxhIGhyZWY9Imh0dHBzOi8vYXJrYWRvLnN0b3JlL3JhbmplZXQvYWRtaW4iPmFya2Fkby5zdG9yZS9yYW5qZWV0L2FkbWluPC9hPgogICAgICAgIDwvcD4KICAgICAgPC9kaXY+CiAgICBgOwoKICAgIGNvbnN0IHRleHQgPSBgCuCkqOCkr+CkviDgpJHgpLDgpY3gpKHgpLAg4oCUICR7b3JkZXIub3JkZXJfaWR9CgrgpKjgpL7gpK46ICR7b3JkZXIubmFtZX0KRW1haWw6ICR7b3JkZXIuZW1haWwgfHwgIk4vQSJ9ClBob25lOiAke29yZGVyLnBob25lIHx8ICJOL0EifQrgpJXgpYvgpLDgpY3gpLg6ICR7b3JkZXIuY291cnNlX3RpdGxlfQrgpLDgpL7gpLbgpL86IOKCuSR7b3JkZXIuYW1vdW50fQoke29yZGVyLnV0ciA/IGBVVFI6ICR7b3JkZXIudXRyfVxuYCA6ICIifeCkoeCkv+CksuClgOCkteCksOClgDogJHtvcmRlci5kZWxpdmVyeV9tb2RlfQrgpLjgpK7gpK86ICR7bmV3IERhdGUoKS50b0xvY2FsZVN0cmluZygiZW4tSU4iLCB7IHRpbWVab25lOiAiQXNpYS9Lb2xrYXRhIiB9KX0KCuKaoO+4jyDgpJXgpYPgpKrgpK/gpL4gbWFudWFsbHkgdmVyaWZ5IOCkleCksOClh+CkgiDigJQgVVBJIGFwcCDgpK7gpYfgpIIgcGF5bWVudCBjaGVjayDgpJXgpLDgpYfgpILgpaQKQWRtaW4gUGFuZWw6IGh0dHBzOi8vYXJrYWRvLnN0b3JlL3JhbmplZXQvYWRtaW4KICAgIGA7CgogICAgYXdhaXQgdHJhbnNwb3J0ZXIuc2VuZE1haWwoewogICAgICBmcm9tOiBgIkFya2FkbyIgPCR7ZnJvbUVtYWlsfT5gLAogICAgICB0bzogYWRtaW5FbWFpbCwKICAgICAgc3ViamVjdCwKICAgICAgdGV4dCwKICAgICAgaHRtbCwKICAgIH0pOwoKICAgIHJldHVybiB0cnVlOwogIH0gY2F0Y2ggKGVycjogdW5rbm93bikgewogICAgY29uc29sZS5lcnJvcigKICAgICAgIltub3RpZnldIEZhaWxlZCB0byBzZW5kIGFkbWluIGVtYWlsOiIsCiAgICAgIGVyciBpbnN0YW5jZW9mIEVycm9yID8gZXJyLm1lc3NhZ2UgOiBlcnIKICAgICk7CiAgICByZXR1cm4gZmFsc2U7CiAgfQp9Cg==
+/**
+ * Internal admin notification helpers.
+ *
+ * SECURITY: these run server-side only and are called directly from API
+ * routes. They are NOT exposed as public HTTP endpoints — the old
+ * /api/notify-admin route was publicly callable and let anyone trigger
+ * admin emails (spam / Gmail quota burn). Never re-expose this as a route
+ * without admin authentication.
+ */
+
+export interface NewOrderNotification {
+  order_id: string;
+  name: string;
+  email?: string;
+  phone?: string;
+  course_title: string;
+  amount: number;
+  delivery_mode: string;
+  utr?: string;
+}
+
+function escapeHtml(str: string | undefined): string {
+  if (!str) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+/**
+ * Emails the admin about a new order. Returns true on success, false on any
+ * failure — callers must never fail an order just because the email failed.
+ */
+export async function notifyAdminNewOrder(
+  order: NewOrderNotification
+): Promise<boolean> {
+  try {
+    const adminEmail = process.env.ADMIN_NOTIFY_EMAIL || "support@arkado.in";
+    const fromEmail = process.env.SMTP_FROM || "noreply@arkado.in";
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+
+    if (!smtpUser || !smtpPass) {
+      console.warn("[notify] SMTP not configured — skipping admin email");
+      return false;
+    }
+
+    const safeOrderId = escapeHtml(order.order_id);
+    const safeName = escapeHtml(order.name);
+    const safeEmail = escapeHtml(order.email);
+    const safePhone = escapeHtml(order.phone);
+    const safeCourse = escapeHtml(order.course_title);
+    const safeDelivery = escapeHtml(order.delivery_mode);
+    const safeUtr = escapeHtml(order.utr);
+    const cleanPhoneDigits = (order.phone || "").replace(/\D/g, "");
+
+    const nodemailer = await import("nodemailer");
+    const transporter = nodemailer.default.createTransport({
+      service: "gmail",
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
+      },
+    });
+
+    const subject = `🛒 नया ऑर्डर — ${safeOrderId} — ₹${order.amount}`;
+    const html = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h2 style="color: #b45309; border-bottom: 2px solid #b45309; padding-bottom: 10px;">
+          🛒 नया ऑर्डर मिला — Arkado
+        </h2>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+          <tr>
+            <td style="padding: 8px; color: #666; font-weight: bold;">Order ID</td>
+            <td style="padding: 8px; font-family: monospace; font-size: 16px;">${safeOrderId}</td>
+          </tr>
+          <tr style="background: #f9f9f9;">
+            <td style="padding: 8px; color: #666; font-weight: bold;">नाम</td>
+            <td style="padding: 8px;">${safeName}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px; color: #666; font-weight: bold;">Email</td>
+            <td style="padding: 8px;"><a href="mailto:${safeEmail || "N/A"}">${safeEmail || "N/A"}</a></td>
+          </tr>
+          <tr style="background: #f9f9f9;">
+            <td style="padding: 8px; color: #666; font-weight: bold;">Phone</td>
+            <td style="padding: 8px;">${safePhone || "N/A"}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px; color: #666; font-weight: bold;">कोर्स</td>
+            <td style="padding: 8px; font-weight: bold;">${safeCourse}</td>
+          </tr>
+          <tr style="background: #f9f9f9;">
+            <td style="padding: 8px; color: #666; font-weight: bold;">राशि</td>
+            <td style="padding: 8px; font-size: 20px; font-weight: bold; color: #059669;">₹${Number(order.amount) || 0}</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px; color: #666; font-weight: bold;">डिलीवरी</td>
+            <td style="padding: 8px; text-transform: uppercase; font-weight: bold;">${safeDelivery}</td>
+          </tr>
+          ${
+            safeUtr
+              ? `<tr style="background: #ecfdf5;">
+                   <td style="padding: 8px; color: #065f46; font-weight: bold;">UTR / Ref No.</td>
+                   <td style="padding: 8px; font-family: monospace; font-size: 15px; font-weight: bold; color: #047857;">${safeUtr}</td>
+                 </tr>`
+              : ""
+          }
+          <tr style="background: #fef3c7;">
+            <td style="padding: 8px; color: #92400e; font-weight: bold;">समय</td>
+            <td style="padding: 8px; color: #92400e;">${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}</td>
+          </tr>
+        </table>
+
+        <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 16px; margin: 20px 0;">
+          <h3 style="margin: 0 0 8px; color: #92400e;">⚠️ कृपया manually verify करें</h3>
+          <p style="margin: 0; color: #78350f; font-size: 14px;">
+            UPI app में <strong>₹${Number(order.amount) || 0}</strong> payment check करें।<br/>
+            ${safeUtr ? `छात्र द्वारा दिया गया UTR: <strong>${safeUtr}</strong><br/>` : ""}
+            ${cleanPhoneDigits ? `<a href="https://wa.me/${cleanPhoneDigits}">WhatsApp पर ${safePhone} से संपर्क करें</a><br/>` : ""}
+            ${safeEmail ? `<a href="mailto:${safeEmail}">${safeEmail} पर email भेजें</a>` : ""}
+          </p>
+        </div>
+
+        <p style="color: #999; font-size: 12px; margin-top: 30px;">
+          Arkado Admin Panel → <a href="https://arkado.store/ranjeet/admin">arkado.store/ranjeet/admin</a>
+        </p>
+      </div>
+    `;
+
+    const text = `
+नया ऑर्डर — ${order.order_id}
+
+नाम: ${order.name}
+Email: ${order.email || "N/A"}
+Phone: ${order.phone || "N/A"}
+कोर्स: ${order.course_title}
+राशि: ₹${order.amount}
+${order.utr ? `UTR: ${order.utr}\n` : ""}डिलीवरी: ${order.delivery_mode}
+समय: ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}
+
+⚠️ कृपया manually verify करें — UPI app में payment check करें।
+Admin Panel: https://arkado.store/ranjeet/admin
+    `;
+
+    await transporter.sendMail({
+      from: `"Arkado" <${fromEmail}>`,
+      to: adminEmail,
+      subject,
+      text,
+      html,
+    });
+
+    return true;
+  } catch (err: unknown) {
+    console.error(
+      "[notify] Failed to send admin email:",
+      err instanceof Error ? err.message : err
+    );
+    return false;
+  }
+}

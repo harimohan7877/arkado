@@ -266,6 +266,8 @@ export default function SearchBar({
                                 <img
                                   src={cat.logo_url}
                                   alt={cat.name}
+                                  loading="lazy"
+                                  decoding="async"
                                   className="w-6 h-6 rounded-full object-contain shrink-0 border border-stone-200"
                                 />
                               ) : (

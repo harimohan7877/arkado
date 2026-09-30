@@ -14,6 +14,34 @@ interface FeaturedGridProps {
   viewAllHref?: string;
   accent?: "red" | "amber";
   cardStyle?: BundleCardStyle;
+  loading?: boolean;
+}
+
+export function ProductGridSkeleton({ count = 5 }: { count?: number }) {
+  return (
+    <div
+      aria-hidden="true"
+      className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4"
+    >
+      {[...Array(count)].map((_, i) => (
+        <div
+          key={i}
+          className="card-base flex flex-col h-full overflow-hidden bg-white animate-pulse"
+        >
+          <div className="relative w-full aspect-[4/5] bg-stone-200" />
+          <div className="p-3 space-y-2">
+            <div className="h-3 w-16 bg-stone-200 rounded" />
+            <div className="h-4 w-full bg-stone-200 rounded" />
+            <div className="h-4 w-3/4 bg-stone-200 rounded" />
+            <div className="pt-2 flex justify-between items-center border-t border-stone-100">
+              <div className="h-4 w-12 bg-stone-200 rounded" />
+              <div className="h-7 w-16 bg-stone-200 rounded-lg" />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default function FeaturedGrid({
@@ -23,8 +51,19 @@ export default function FeaturedGrid({
   onOpenSample,
   viewAllHref,
   cardStyle,
+  loading = false,
 }: FeaturedGridProps) {
-  if (courses.length === 0) return null;
+  if (courses.length === 0) {
+    if (!loading) return null;
+    return (
+      <section className="space-y-4">
+        <div className="flex items-end justify-between">
+          <h2 className="section-title">{title}</h2>
+        </div>
+        <ProductGridSkeleton />
+      </section>
+    );
+  }
 
   const mobileColsClass = cardStyle?.mobile_grid_cols === 3 ? "grid-cols-3" : "grid-cols-2";
   const desktopColsClass =

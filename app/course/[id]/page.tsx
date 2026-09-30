@@ -426,6 +426,8 @@ export default function CourseDetailPage({ params }: PageProps) {
                         <img
                           src={kit.cover_image}
                           alt={kit.title}
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-contain group-hover:scale-105 transition duration-300"
                         />
                       ) : (
@@ -962,7 +964,7 @@ export default function CourseDetailPage({ params }: PageProps) {
                   <div className="w-14 h-14 rounded-full bg-stone-50 border border-stone-100 flex items-center justify-center mb-2 group-hover:scale-105 transition overflow-hidden p-1">
                     {cat.logo_url ? (
                       /* eslint-disable-next-line @next/next/no-img-element */
-                      <img src={cat.logo_url} alt={cat.name} className="w-full h-full object-contain rounded-full" />
+                      <img src={cat.logo_url} alt={cat.name} loading="lazy" decoding="async" className="w-full h-full object-contain rounded-full" />
                     ) : (
                       <span className="text-2xl">{cat.icon || "📚"}</span>
                     )}

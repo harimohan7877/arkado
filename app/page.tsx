@@ -35,15 +35,19 @@ export default function HomePage() {
   const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
   const [apiFeatured, setApiFeatured] = useState<Course[]>([]);
   const [apiNewArrivals, setApiNewArrivals] = useState<Course[]>([]);
+  const [featuredLoading, setFeaturedLoading] = useState(true);
+  const [newArrivalsLoading, setNewArrivalsLoading] = useState(true);
 
   useEffect(() => {
     fetchWithCache<Course[]>("/api/courses?featured=true")
       .then((data) => setApiFeatured(Array.isArray(data) ? data : []))
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setFeaturedLoading(false));
 
     fetchWithCache<Course[]>("/api/courses?new_arrivals=true")
       .then((data) => setApiNewArrivals(Array.isArray(data) ? data : []))
-      .catch(() => {});
+      .catch(() => {})
+      .finally(() => setNewArrivalsLoading(false));
   }, []);
 
 
@@ -118,11 +122,18 @@ export default function HomePage() {
 
                 {/* Hero */}
                 <div className="lg:col-span-9">
-                  <HeroSlider
-                    courses={sliderCourses}
-                    onBuyNow={handleBuyNow}
-                    onOpenSample={handleOpenSample}
-                  />
+                  {sliderLoading ? (
+                    <div
+                      aria-hidden="true"
+                      className="w-full min-h-[380px] sm:min-h-[420px] rounded-2xl bg-stone-200/70 border border-stone-200 animate-pulse"
+                    />
+                  ) : (
+                    <HeroSlider
+                      courses={sliderCourses}
+                      onBuyNow={handleBuyNow}
+                      onOpenSample={handleOpenSample}
+                    />
+                  )}
                 </div>
               </div>
 
@@ -169,6 +180,8 @@ export default function HomePage() {
                           <img
                             src={cat.logo_url}
                             alt={cat.name}
+                            loading="lazy"
+                            decoding="async"
                             className="w-4 h-4 rounded-full object-contain"
                           />
                         ) : (
@@ -203,6 +216,7 @@ export default function HomePage() {
               onOpenSample={handleOpenSample}
               viewAllHref="/exams"
               cardStyle={getBundleCardStyle(settings, "featured_bundles")}
+              loading={featuredLoading || coursesLoading}
             />
           </section>
         );
@@ -258,13 +272,24 @@ export default function HomePage() {
       case "categories":
         content = (
           <section id="categories" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <CategoriesSection
-              categories={categories}
-              selectedCategory={selectedCategory}
-              onSelectCategory={setSelectedCategory}
-              title={categoriesTitle}
-              initialSettings={settings}
-            />
+            {categoriesLoading && categories.length === 0 ? (
+              <div aria-hidden="true" className="space-y-4">
+                <div className="h-7 w-56 bg-stone-200 rounded animate-pulse" />
+                <div className="flex gap-2 overflow-hidden">
+                  {[...Array(8)].map((_, i) => (
+                    <div key={i} className="h-8 w-28 rounded-full bg-stone-200 animate-pulse shrink-0" />
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <CategoriesSection
+                categories={categories}
+                selectedCategory={selectedCategory}
+                onSelectCategory={setSelectedCategory}
+                title={categoriesTitle}
+                initialSettings={settings}
+              />
+            )}
           </section>
         );
         break;
@@ -349,6 +374,7 @@ export default function HomePage() {
               onBuyNow={handleBuyNow}
               onOpenSample={handleOpenSample}
               cardStyle={getBundleCardStyle(settings, "hot_deals")}
+              loading={featuredLoading}
             />
           </section>
         );
@@ -364,6 +390,7 @@ export default function HomePage() {
               onOpenSample={handleOpenSample}
               viewAllHref="/exams"
               cardStyle={getBundleCardStyle(settings, "new_arrivals")}
+              loading={newArrivalsLoading || coursesLoading}
             />
           </section>
         );

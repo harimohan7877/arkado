@@ -7,6 +7,8 @@ import {
   sanitizeInput,
   validateUtrSubmission,
   validateOrderPrices,
+  generateOrderId,
+  validateStatusTransitions,
 } from "@/lib/payment-gateway";
 
 export const dynamic = "force-dynamic";
@@ -98,20 +100,37 @@ export async function POST(req: Request) {
 
     const secureDriveUrl = matchedProduct?.drive_url || "https://drive.google.com";
 
-    // 3. UTR Fraud & Duplicate Check
-    let isFlagged = false;
-    let flagReason = "";
+    // 3. UTR Validation & Duplicate Rejection (Phase 3 hardening)
+    // UTR is optional, but if provided it must be exactly 12 digits.
+    // A duplicate UTR is REJECTED outright (HTTP 409) — the old code only
+    // flagged it and still created the order.
     if (cleanUtr) {
       const utrCheck = await validateUtrSubmission(cleanUtr);
+      if (!utrCheck.isValid) {
+        return NextResponse.json(
+          { success: false, error: utrCheck.message || "Invalid UTR." },
+          { status: 400 }
+        );
+      }
       if (utrCheck.isDuplicate) {
-        isFlagged = true;
-        flagReason = "DUPLICATE_UTR: This transaction ref was previously submitted.";
-        console.warn(`[FRAUD SUSPICION] Duplicate UTR submitted: ${cleanUtr} by ${cleanPhone}`);
+        console.warn(`[FRAUD BLOCKED] Duplicate UTR rejected: ${cleanUtr} by ${cleanPhone}`);
+        return NextResponse.json(
+          { success: false, error: "This UTR / Transaction reference has already been used for another order." },
+          { status: 409 }
+        );
       }
     }
 
-    const randomSuffix = Math.floor(1000 + Math.random() * 9000);
-    const order_id = `ARK-${new Date().getFullYear()}-${randomSuffix}`;
+    // Collision-resistant order ID: ARK-<year>-XXXXXXXX (8 crypto-random chars).
+    // The old 4-digit suffix had only 9,000 possibilities.
+    const existingOrdersForIdCheck = await readOrders();
+    const existingIds = new Set(
+      existingOrdersForIdCheck.flatMap((o: { order_id?: string; id?: string }) => [o.order_id, o.id].filter(Boolean))
+    );
+    let order_id = generateOrderId();
+    for (let attempts = 0; attempts < 10 && existingIds.has(order_id); attempts++) {
+      order_id = generateOrderId();
+    }
 
     const newOrder = {
       id: order_id,
@@ -132,8 +151,6 @@ export async function POST(req: Request) {
       delivery_status: "pending",
       payment_status: "pending",
       utr: cleanUtr,
-      is_flagged: isFlagged,
-      flag_reason: flagReason,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     };
@@ -214,6 +231,30 @@ export async function PATCH(req: NextRequest) {
     }
 
     const target = orders[orderIndex];
+
+    // Phase 3: enforce the order state machine — illegal regressions
+    // (e.g. delivered → pending) are rejected with HTTP 409.
+    {
+      const nextStatus: Record<string, string> = {};
+      if (status) {
+        nextStatus.status = status;
+        if (status === "delivered") nextStatus.delivery_status = "delivered";
+        if (status === "approved" || status === "paid") nextStatus.payment_status = "paid";
+      }
+      if (payment_status) nextStatus.payment_status = payment_status;
+      if (delivery_status) nextStatus.delivery_status = delivery_status;
+      const transitionError = validateStatusTransitions(
+        {
+          status: target.status,
+          payment_status: target.payment_status,
+          delivery_status: target.delivery_status,
+        },
+        nextStatus
+      );
+      if (transitionError) {
+        return NextResponse.json({ success: false, error: transitionError }, { status: 409 });
+      }
+    }
 
     if (status) {
       target.status = status;

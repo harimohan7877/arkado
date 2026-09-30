@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
 import { getStoreData, setStoreData } from "@/lib/store-data";
 import { supabaseAdmin, buildOrderQueryFilter, isUUID } from "@/lib/supabase";
+import { validateStatusTransitions } from "@/lib/payment-gateway";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -28,6 +29,34 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
   );
 
   const current = idx !== -1 ? orders[idx] : {};
+
+  // Phase 3: enforce the order state machine — illegal regressions
+  // (e.g. delivered → pending) are rejected with HTTP 409.
+  if (idx !== -1) {
+    const nextStatus: Record<string, string> = {};
+    if (body.delivery_status) {
+      nextStatus.status = body.delivery_status;
+      nextStatus.delivery_status = body.delivery_status;
+    } else if (body.status) {
+      nextStatus.delivery_status = body.status;
+      nextStatus.status = body.status;
+    }
+    if (body.payment_status) {
+      nextStatus.payment_status = body.payment_status;
+    }
+    const transitionError = validateStatusTransitions(
+      {
+        status: current.status,
+        payment_status: current.payment_status,
+        delivery_status: current.delivery_status,
+      },
+      nextStatus
+    );
+    if (transitionError) {
+      return NextResponse.json({ error: transitionError }, { status: 409 });
+    }
+  }
+
   const updates: Record<string, unknown> = { ...current, ...body, updated_at: new Date().toISOString() };
   if (body.delivery_status) {
     updates.status = body.delivery_status;

@@ -1,10 +1,33 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
+
+// The vitest env points Supabase at a fake URL whose network calls hang.
+// Mock the Supabase client so UTR duplicate checks resolve instantly.
+const { mockUtrDuplicateRow } = vi.hoisted(() => ({
+  mockUtrDuplicateRow: { value: null as { id: string } | null },
+}));
+
+vi.mock("@/lib/supabase", () => ({
+  supabaseAdmin: {
+    from: () => ({
+      select: () => ({
+        eq: () => ({
+          limit: () => ({
+            maybeSingle: async () => ({ data: mockUtrDuplicateRow.value }),
+          }),
+        }),
+      }),
+    }),
+  },
+}));
+
 import {
   sanitizeInput,
   canTransitionOrderStatus,
   hasRazorpayKeys,
   isPaymentGatewayConfigured,
-  VALID_ORDER_TRANSITIONS,
+  validateUtrSubmission,
+  generateOrderId,
+  validateStatusTransitions,
 } from "@/lib/payment-gateway";
 
 describe("Payment Gateway & Security Module", () => {
@@ -59,6 +82,113 @@ describe("Payment Gateway & Security Module", () => {
       // In default test environment without live keys, gateway must remain dormant
       expect(typeof isPaymentGatewayConfigured()).toBe("boolean");
       expect(typeof hasRazorpayKeys()).toBe("boolean");
+    });
+  });
+
+  describe("validateUtrSubmission (Phase 3: strict 12-digit UTR)", () => {
+    it("should accept an empty UTR (optional field)", async () => {
+      const r = await validateUtrSubmission("");
+      expect(r.isValid).toBe(true);
+      expect(r.cleanUtr).toBe("");
+      expect(r.isDuplicate).toBe(false);
+    });
+
+    it("should accept a valid 12-digit UTR and clean whitespace", async () => {
+      const r = await validateUtrSubmission("  426812345678  ");
+      expect(r.isValid).toBe(true);
+      expect(r.cleanUtr).toBe("426812345678");
+      expect(r.isDuplicate).toBe(false);
+    });
+
+    it("should reject UTRs that are not exactly 12 digits", async () => {
+      for (const bad of ["12345", "1234567890123", "12345678901a", "UPI-REF-5544332211", "4268 1234 567"]) {
+        const r = await validateUtrSubmission(bad);
+        expect(r.isValid).toBe(false);
+        expect(r.message).toMatch(/12 digits/);
+      }
+    });
+
+    it("should flag a UTR already used by another order as duplicate", async () => {
+      mockUtrDuplicateRow.value = { id: "some-order-id" };
+      try {
+        const r = await validateUtrSubmission("426812345678");
+        expect(r.isValid).toBe(true);
+        expect(r.isDuplicate).toBe(true);
+        expect(r.message).toMatch(/already been submitted/);
+      } finally {
+        mockUtrDuplicateRow.value = null;
+      }
+    });
+  });
+
+  describe("generateOrderId (Phase 3: collision-resistant IDs)", () => {
+    it("should produce ARK-<year>-XXXXXXXX format IDs", () => {
+      const year = new Date().getFullYear();
+      for (let i = 0; i < 20; i++) {
+        expect(generateOrderId()).toMatch(new RegExp(`^ARK-${year}-[A-HJ-NP-Z2-9]{8}$`));
+      }
+    });
+
+    it("should not repeat IDs across many generations", () => {
+      const ids = new Set<string>();
+      for (let i = 0; i < 500; i++) ids.add(generateOrderId());
+      expect(ids.size).toBe(500);
+    });
+  });
+
+  describe("validateStatusTransitions (Phase 3: state machine enforcement)", () => {
+    it("should allow the real admin flows", () => {
+      // Mark fake: pending -> failed
+      expect(
+        validateStatusTransitions(
+          { payment_status: "pending", delivery_status: "pending" },
+          { payment_status: "failed", delivery_status: "pending" }
+        )
+      ).toBeNull();
+      // Restore: failed -> pending
+      expect(
+        validateStatusTransitions(
+          { payment_status: "failed", delivery_status: "pending" },
+          { payment_status: "pending", delivery_status: "pending" }
+        )
+      ).toBeNull();
+      // Manual approve: pending -> delivered
+      expect(
+        validateStatusTransitions(
+          { payment_status: "pending", delivery_status: "pending" },
+          { payment_status: "paid", delivery_status: "delivered" }
+        )
+      ).toBeNull();
+      expect(canTransitionOrderStatus("pending", "delivered")).toBe(true);
+    });
+
+    it("should reject illegal regressions", () => {
+      expect(
+        validateStatusTransitions(
+          { payment_status: "paid", delivery_status: "delivered" },
+          { payment_status: "pending" }
+        )
+      ).toMatch(/Illegal/);
+      expect(
+        validateStatusTransitions({ payment_status: "refunded" }, { payment_status: "delivered" })
+      ).toMatch(/Illegal/);
+    });
+
+    it("should skip unchanged or unknown fields", () => {
+      expect(
+        validateStatusTransitions(
+          { payment_status: "pending", delivery_status: "pending" },
+          { payment_status: "pending", delivery_status: "pending" }
+        )
+      ).toBeNull();
+      // Legacy order without status fields must not be blocked
+      expect(validateStatusTransitions({}, { payment_status: "failed" })).toBeNull();
+    });
+
+    it("should treat the UI alias 'approved' as 'paid'", () => {
+      expect(
+        validateStatusTransitions({ status: "pending" }, { status: "approved" })
+      ).toBeNull();
     });
   });
 });

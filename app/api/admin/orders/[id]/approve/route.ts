@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
 import { getStoreData, setStoreData } from "@/lib/store-data";
 import { supabaseAdmin, buildOrderQueryFilter } from "@/lib/supabase";
+import { canTransitionOrderStatus } from "@/lib/payment-gateway";
 import nodemailer from "nodemailer";
 
 export const dynamic = "force-dynamic";
@@ -83,6 +84,26 @@ export async function POST(
 
     if (!order) {
       return NextResponse.json({ error: "Order not found" }, { status: 404 });
+    }
+
+    // Phase 3: state guard — only an order that can still move toward
+    // paid/delivered may be approved. Re-approving a delivered order would
+    // resend the Drive-link email; approving a failed/cancelled/refunded
+    // order would bypass the state machine.
+    {
+      const payStatus = (order.payment_status || "pending").toLowerCase();
+      const delStatus = (order.delivery_status || order.status || "pending").toLowerCase();
+      const canPay = payStatus === "paid" || canTransitionOrderStatus(payStatus, "paid");
+      const canDeliver = canTransitionOrderStatus(delStatus, "delivered");
+      if (!canPay || !canDeliver) {
+        return NextResponse.json(
+          {
+            success: false,
+            error: `Order cannot be approved from its current state (payment: ${order.payment_status || "pending"}, delivery: ${order.delivery_status || "pending"}).`,
+          },
+          { status: 409 }
+        );
+      }
     }
 
     const recipientEmail = (order.customer_email || order.email || "").trim();

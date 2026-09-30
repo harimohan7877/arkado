@@ -17,9 +17,29 @@ const notoSansDevanagari = Noto_Sans_Devanagari({
 });
 
 export const metadata: Metadata = {
-  title: "Arkado — Deep-Level Exam Analysis & Pattern-Based Notes",
+  metadataBase: new URL("https://arkado.store"),
+  title: {
+    default: "Arkado — Deep-Level Exam Analysis & Pattern-Based Notes",
+    template: "%s — Arkado",
+  },
   description:
-    "All-India exam preparation: pattern-decoded notes, topic-weightage analysis, 3000+ MCQs and full mock tests. Instant digital delivery via PhonePe & Paytm.",
+    "All-India exam preparation: pattern-decoded notes, topic-weightage analysis, 3000+ MCQs and full mock tests. Pay via UPI, submit the 12-digit UTR, get instant delivery on WhatsApp.",
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: "Arkado",
+    title: "Arkado — Deep-Level Exam Analysis & Pattern-Based Notes",
+    description:
+      "Pattern-decoded notes, topic-weightage analysis, 3000+ MCQs and mock tests for All-India exams. UPI payment, instant WhatsApp delivery.",
+    images: [{ url: "/icon.png", width: 512, height: 512, alt: "Arkado" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Arkado — Deep-Level Exam Analysis & Pattern-Based Notes",
+    description:
+      "Pattern-decoded notes, topic-weightage analysis, 3000+ MCQs and mock tests for All-India exams.",
+    images: ["/icon.png"],
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },

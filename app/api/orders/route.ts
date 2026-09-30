@@ -1,14 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
+import crypto from "crypto";
 import { getStoreData, setStoreData } from "@/lib/store-data";
 import { verifyAdminSession } from "@/lib/admin-auth";
 import { notifyAdminNewOrder } from "@/lib/notify";
 import { supabaseAdmin } from "@/lib/supabase";
+import { getEffectiveTermsText } from "@/lib/legal";
+import { DEFAULT_SETTINGS } from "@/lib/default-settings";
 import {
   sanitizeInput,
   validateUtrSubmission,
   validateOrderPrices,
   generateOrderId,
   validateStatusTransitions,
+  validateTermsAcceptance,
 } from "@/lib/payment-gateway";
 
 export const dynamic = "force-dynamic";
@@ -91,6 +95,30 @@ export async function POST(req: Request) {
       );
     }
 
+    // 1b. Terms & Conditions acceptance gate — the checkbox must be actively
+    // ticked. Never trust the client alone: reject without an explicit opt-in.
+    const termsError = validateTermsAcceptance(body.terms_accepted);
+    if (termsError) {
+      return NextResponse.json(
+        { success: false, error: termsError },
+        { status: 400 }
+      );
+    }
+
+    // Snapshot which Terms version the customer agreed to (terms text is
+    // admin-editable, so record a hash of the effective text at order time).
+    const termsAcceptedAt = new Date().toISOString();
+    let termsVersion = "default";
+    try {
+      const settingsData = await getStoreData("settings", "data/settings.json", DEFAULT_SETTINGS) as typeof DEFAULT_SETTINGS & {
+        policies?: { terms_of_service?: string };
+      };
+      const termsText = getEffectiveTermsText(settingsData?.policies);
+      termsVersion = crypto.createHash("sha256").update(termsText, "utf8").digest("hex").slice(0, 12);
+    } catch {
+      // Non-fatal: the acceptance itself is what matters for compliance.
+    }
+
     // 2. Server-Authoritative Price Validation (Anti-Price Tampering)
     const priceCheck = await validateOrderPrices([{ productId: course_id }], typeof clientAmount === "number" ? clientAmount : undefined);
     const matchedProduct = priceCheck.items[0];
@@ -151,6 +179,9 @@ export async function POST(req: Request) {
       delivery_status: "pending",
       payment_status: "pending",
       utr: cleanUtr,
+      terms_accepted: true,
+      terms_accepted_at: termsAcceptedAt,
+      terms_version: termsVersion,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
     };
@@ -166,9 +197,20 @@ export async function POST(req: Request) {
         razorpay_order_id: order_id,
         razorpay_payment_id: cleanUtr || null,
         delivery_status: "pending",
+        terms_accepted: true,
+        terms_accepted_at: termsAcceptedAt,
+        terms_version: termsVersion,
       };
 
-      const { error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(basePayload);
+      let { error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(basePayload);
+      if (insertErr && /terms_accepted/.test(insertErr.message)) {
+        // The terms-columns migration hasn't been run yet — retry without the
+        // new columns so the order row is still created (JSON remains the
+        // source of truth for T&C evidence in that case).
+        console.warn("[orders-post] terms columns missing in marketplace_orders, retrying without them. Run supabase-migrations/20261001_order_terms_acceptance.sql");
+        const { terms_accepted: _ta, terms_accepted_at: _tat, terms_version: _tv, ...fallbackPayload } = basePayload;
+        ({ error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(fallbackPayload));
+      }
       if (insertErr) {
         console.error("[orders-post] marketplace_orders insert error:", insertErr.message);
       } else {

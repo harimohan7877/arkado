@@ -48,6 +48,7 @@ export default function CartDrawer({
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [utr, setUtr] = useState("");
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [createdOrder, setCreatedOrder] = useState<{
@@ -162,6 +163,10 @@ export default function CartDrawer({
       setErrorMsg("कृपया सही ईमेल पता दर्ज करें (Valid email address required).");
       return;
     }
+    if (!termsAccepted) {
+      setErrorMsg("कृपया आगे बढ़ने के लिए नियम व शर्तें स्वीकार करें (Please accept the Terms of Service).");
+      return;
+    }
 
     setIsSubmitting(true);
     try {
@@ -178,6 +183,7 @@ export default function CartDrawer({
           course_title: primaryCourse?.title,
           amount: subtotal,
           status: "pending_verification",
+          terms_accepted: termsAccepted,
         }),
       });
 
@@ -499,6 +505,41 @@ export default function CartDrawer({
                   <p className="text-[10px] text-slate-500 mt-1">
                     यदि UTR नहीं मिल रहा तो इसे खाली छोड़ सकते हैं। भुगतान के बाद नीचे सबमिट करें।
                   </p>
+                </div>
+
+                {/* Terms & Conditions acceptance (mandatory) */}
+                <div className="pt-1">
+                  <label className="flex items-start gap-2.5 cursor-pointer select-none">
+                    <input
+                      type="checkbox"
+                      checked={termsAccepted}
+                      onChange={(e) => setTermsAccepted(e.target.checked)}
+                      className="mt-0.5 h-4 w-4 shrink-0 accent-amber-700 cursor-pointer"
+                    />
+                    <span className="text-[11px] leading-relaxed text-slate-600">
+                      मैं{" "}
+                      <a
+                        href="/terms"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-amber-800 font-bold hover:underline"
+                      >
+                        नियम व शर्तें (Terms of Service)
+                      </a>{" "}
+                      और{" "}
+                      <a
+                        href="/refund"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-amber-800 font-bold hover:underline"
+                      >
+                        रिफंड नीति (Refund Policy)
+                      </a>{" "}
+                      से सहमत हूँ। *
+                    </span>
+                  </label>
                 </div>
 
                 {/* I've Paid button */}

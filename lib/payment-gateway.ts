@@ -336,6 +336,19 @@ export interface OrderStatusFields {
   delivery_status?: string;
 }
 
+/**
+ * Terms & Conditions acceptance gate.
+ * Every order must carry an explicit, affirmative opt-in (terms_accepted === true).
+ * A missing, false, or non-boolean value is rejected — the checkbox must be
+ * actively ticked, never pre-ticked or implied. Returns an error message or null.
+ */
+export function validateTermsAcceptance(termsAccepted: unknown): string | null {
+  if (termsAccepted !== true) {
+    return "You must accept the Terms of Service to place an order.";
+  }
+  return null;
+}
+
 export function validateStatusTransitions(
   current: OrderStatusFields,
   next: OrderStatusFields

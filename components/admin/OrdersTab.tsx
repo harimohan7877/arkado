@@ -24,6 +24,9 @@ export interface Order {
   drive_url?: string;
   created_at: string;
   updated_at?: string;
+  terms_accepted?: boolean;
+  terms_accepted_at?: string;
+  terms_version?: string;
 }
 
 interface OrdersTabProps {
@@ -717,6 +720,23 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                           <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-bold border ${getDeliveryChip(order.delivery_status)}`}>
                             {order.delivery_status === "delivered" ? "✉️ Delivered" : "⏳ Not Sent"}
                           </span>
+                        </div>
+                        <div>
+                          {order.terms_accepted ? (
+                            <span
+                              className="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold border bg-emerald-50 text-emerald-800 border-emerald-200"
+                              title={`Terms accepted${order.terms_accepted_at ? ` on ${new Date(order.terms_accepted_at).toLocaleString("en-IN")}` : ""}${order.terms_version ? ` (v${order.terms_version})` : ""}`}
+                            >
+                              ✓ T&C
+                            </span>
+                          ) : (
+                            <span
+                              className="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold border bg-stone-100 text-stone-500 border-stone-200"
+                              title="No T&C acceptance recorded (order placed before this feature)"
+                            >
+                              T&C —
+                            </span>
+                          )}
                         </div>
                       </td>
 

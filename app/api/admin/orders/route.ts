@@ -15,7 +15,7 @@ function writeOrders(data: unknown[]) {
 }
 
 export async function GET(req: NextRequest) {
-  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!(await verifyAdminSession(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   // 1. Primary: Direct fetch from Supabase marketplace_orders (authoritative source of truth)
   let rawList: any[] = [];
@@ -97,7 +97,7 @@ export async function GET(req: NextRequest) {
 }
 
 export async function PUT(req: NextRequest) {
-  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!(await verifyAdminSession(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const body = await req.json();
   const { orderId, action, value } = body;

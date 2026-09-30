@@ -16,7 +16,7 @@ function writeCategories(data: unknown[]) {
 // GET: Supports progressive/lazy loading by category_id and board_id
 export async function GET(req: NextRequest) {
   try {
-    if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    if (!(await verifyAdminSession(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
     const { searchParams } = new URL(req.url);
     const categoryId = searchParams.get("category_id");
@@ -111,7 +111,7 @@ export async function GET(req: NextRequest) {
 
 // PUT: Bulk update or tree update
 export async function PUT(req: NextRequest) {
-  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!(await verifyAdminSession(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   try {
     const contentType = req.headers.get("content-type") || "";
@@ -132,7 +132,7 @@ export async function PUT(req: NextRequest) {
 
 // POST: Add new category or upload file
 export async function POST(req: NextRequest) {
-  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!(await verifyAdminSession(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   try {
     const contentType = req.headers.get("content-type") || "";

@@ -3,7 +3,7 @@ import { supabaseAdmin } from '@/lib/supabase';
 import { verifyAdminSession } from '@/lib/admin-auth';
 
 export async function GET(req: NextRequest) {
-  if (!verifyAdminSession(req)) {
+  if (!(await verifyAdminSession(req))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

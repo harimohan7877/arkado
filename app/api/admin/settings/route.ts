@@ -6,13 +6,13 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 export async function GET(req: NextRequest) {
-  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!(await verifyAdminSession(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const data = await getStoreData("settings", "data/settings.json", {});
   return NextResponse.json(data);
 }
 
 export async function POST(req: NextRequest) {
-  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!(await verifyAdminSession(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const body = await req.json();
   const current = await getStoreData<Record<string, unknown>>("settings", "data/settings.json", {});

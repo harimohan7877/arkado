@@ -20,7 +20,7 @@ async function writeOrders(orders: unknown[]) {
 }
 
 export async function GET(req: NextRequest) {
-  if (!verifyAdminSession(req)) {
+  if (!(await verifyAdminSession(req))) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -185,7 +185,7 @@ export async function POST(req: Request) {
 }
 
 export async function PATCH(req: NextRequest) {
-  if (!verifyAdminSession(req)) {
+  if (!(await verifyAdminSession(req))) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -247,7 +247,7 @@ export async function PATCH(req: NextRequest) {
 }
 
 export async function DELETE(req: NextRequest) {
-  if (!verifyAdminSession(req)) {
+  if (!(await verifyAdminSession(req))) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   try {

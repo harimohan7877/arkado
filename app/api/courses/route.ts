@@ -56,7 +56,7 @@ export async function GET(req: NextRequest) {
   const featured = searchParams.get("featured");
   const newArrivals = searchParams.get("new_arrivals");
   const includeInactive = searchParams.get("all") === "true";
-  const isAdmin = verifyAdminSession(req);
+  const isAdmin = await verifyAdminSession(req);
 
   try {
     const customCourses = await getStoreData<any[]>("courses", "data/courses.json", []);
@@ -179,7 +179,7 @@ export async function GET(req: NextRequest) {
 }
 
 export async function PUT(req: NextRequest) {
-  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!(await verifyAdminSession(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   try {
     const body = await req.json();

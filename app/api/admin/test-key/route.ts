@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { verifyAdminSession } from '@/lib/admin-auth';
 
 export async function POST(req: NextRequest) {
-  if (!verifyAdminSession(req)) {
+  if (!(await verifyAdminSession(req))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

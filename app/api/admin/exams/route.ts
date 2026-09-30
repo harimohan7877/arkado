@@ -83,13 +83,13 @@ function writeExams(data: ExamRecord[]) {
 }
 
 export async function GET(req: NextRequest) {
-  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!(await verifyAdminSession(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const categories = await getStoreData<CategoryRecord[]>("categories", "data/categories.json", []);
   return NextResponse.json(flattenExams(categories));
 }
 
 export async function POST(req: NextRequest) {
-  if (!verifyAdminSession(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  if (!(await verifyAdminSession(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const formData = await req.formData();
   const exams = await readExams();

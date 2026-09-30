@@ -8,7 +8,7 @@ export const revalidate = 0;
 
 export async function GET(req: NextRequest) {
   try {
-    const isAdmin = verifyAdminSession(req);
+    const isAdmin = await verifyAdminSession(req);
 
     // 1. Fetch products from Supabase marketplace_products table
     const { data: dbProducts, error: prodError } = await supabaseAdmin

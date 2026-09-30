@@ -1,0 +1,482 @@
+"use client";
+
+import { useState, useEffect, useMemo, use } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import CourseCard from "@/components/CourseCard";
+import { Category, Exam, Course } from "@/lib/store-types";
+import { fetchWithCache, useSettings } from "@/lib/store-hooks";
+import { DEFAULT_SETTINGS, getCleanWhatsAppNumber, getBundleCardStyle } from "@/lib/default-settings";
+import { SearchIcon, CloseIcon, ChevronRightIcon, ArrowRightIcon, SparklesIcon, CheckIcon } from "@/components/icons";
+
+const SampleModal = dynamic(() => import("@/components/SampleModal"), { ssr: false });
+const CartDrawer = dynamic(() => import("@/components/CartDrawer"), { ssr: false });
+
+interface CategoryPageProps {
+  params: Promise<{ id: string }> | { id: string };
+}
+
+export default function CategoryDetailClient({ params }: CategoryPageProps) {
+  // Unwrap Next.js 15 params promise safely
+  const resolvedParams = "then" in params ? use(params) : params;
+  const categoryId = resolvedParams.id;
+
+  const [category, setCategory] = useState<Category | null>(null);
+  const [exams, setExams] = useState<Exam[]>([]);
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
+  const { settings } = useSettings();
+
+  // Cart & Sample states
+  const [cart, setCart] = useState<Course[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [selectedCourseForSample, setSelectedCourseForSample] = useState<Course | null>(null);
+  const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
+  const [failedCatImage, setFailedCatImage] = useState(false);
+  const [failedExamImages, setFailedExamImages] = useState<Record<string, boolean>>({});
+
+  useEffect(() => {
+    const loadCategoryData = async () => {
+      setLoading(true);
+      try {
+        // 1. Fetch category metadata
+        const allCats = await fetchWithCache<Category[]>("/api/categories?scope=public").catch(() => []);
+        if (Array.isArray(allCats)) {
+          const matched = allCats.find((c) => c.id === categoryId);
+          if (matched) setCategory(matched);
+        }
+
+        // 2. Fetch exams in this category (only active exams)
+        const examsData = await fetchWithCache<any>(`/api/exams?category=${categoryId}&limit=200`).catch(() => []);
+        const list = (Array.isArray(examsData) ? examsData : examsData.exams || []).filter(
+          (e: Exam) => e.is_active !== false
+        );
+        setExams(list);
+
+        // 3. Fetch courses
+        const allCourses = await fetchWithCache<Course[]>("/api/courses").catch(() => []);
+        if (Array.isArray(allCourses)) {
+          setCourses(allCourses);
+        }
+      } catch (err) {
+        console.error("Error loading category page:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (categoryId) loadCategoryData();
+  }, [categoryId]);
+
+  // Filtered exams (strictly active only)
+  const filteredExams = useMemo(() => {
+    return exams.filter((exam) => {
+      if (exam.is_active === false) return false;
+      const q = searchQuery.toLowerCase().trim();
+      const matchesSearch =
+        !q ||
+        exam.name.toLowerCase().includes(q) ||
+        (exam.short_name && exam.short_name.toLowerCase().includes(q)) ||
+        (exam.board && exam.board.toLowerCase().includes(q));
+
+      return matchesSearch;
+    });
+  }, [exams, searchQuery]);
+
+  // Find courses matching this category or its exams
+  const matchedCourses = useMemo(() => {
+    const examIdSet = new Set(exams.map((e) => e.id));
+    return courses.filter(
+      (c) => examIdSet.has(c.exam_id) || (c as any).category_id === categoryId
+    );
+  }, [courses, exams, categoryId]);
+
+  const handleBuyNow = (course: Course) => {
+    setCart([course]);
+    setIsCartOpen(true);
+  };
+
+  const handleOpenSample = (course: Course) => {
+    setSelectedCourseForSample(course);
+    setIsSampleModalOpen(true);
+  };
+
+  const handleRemoveFromCart = (id: string) => {
+    setCart((prev) => prev.filter((item) => item.id !== id));
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex flex-col bg-stone-50">
+        <Navbar />
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 space-y-6 animate-pulse">
+          {/* Breadcrumb skeleton */}
+          <div className="h-4 w-44 bg-stone-200 rounded" />
+
+          {/* Hero Banner skeleton */}
+          <div className="rounded-2xl bg-stone-200/80 p-8 sm:p-10 space-y-3">
+            <div className="h-7 w-64 bg-stone-300 rounded-lg" />
+            <div className="h-4 w-96 max-w-full bg-stone-300/70 rounded" />
+          </div>
+
+          {/* Search bar skeleton */}
+          <div className="h-12 w-full bg-white rounded-xl border border-stone-200" />
+
+          {/* Cards grid skeleton */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="h-40 bg-white rounded-xl border border-stone-200 p-5 space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-stone-200 shrink-0" />
+                  <div className="space-y-1.5 flex-1">
+                    <div className="h-4 w-3/4 bg-stone-200 rounded" />
+                    <div className="h-3 w-1/2 bg-stone-100 rounded" />
+                  </div>
+                </div>
+                <div className="h-3 w-full bg-stone-100 rounded mt-4" />
+                <div className="h-8 w-24 bg-stone-200 rounded-lg mt-auto" />
+              </div>
+            ))}
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (!category) {
+    return (
+      <div className="min-h-screen flex flex-col bg-stone-50">
+        <Navbar />
+        <main className="max-w-xl mx-auto px-4 py-24 text-center flex-1 space-y-4">
+          <div className="w-16 h-16 rounded-full bg-stone-100 flex items-center justify-center mx-auto text-stone-400">
+            <SearchIcon size={28} />
+          </div>
+          <h1 className="text-xl font-black text-stone-900">Category Not Found</h1>
+          <p className="text-xs text-stone-500">
+            The requested category could not be located or may have been updated.
+          </p>
+          <Link
+            href="/exams"
+            className="inline-block px-5 py-2.5 bg-stone-900 hover:bg-stone-800 text-white text-xs font-bold rounded-xl transition"
+          >
+            Browse All Categories
+          </Link>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  const activeCount = exams.filter((e) => e.is_active).length;
+
+  return (
+    <div className="min-h-screen flex flex-col bg-stone-50">
+      <Navbar cartCount={cart.length} onCartClick={() => setIsCartOpen(true)} />
+
+      <main className="flex-1">
+        {/* CATEGORY HEADER BANNER */}
+        <section className="bg-white border-b border-stone-200 py-8 px-4 sm:px-6 lg:px-8 shadow-2xs">
+          <div className="max-w-7xl mx-auto space-y-4">
+            {/* Breadcrumb */}
+            <div className="flex items-center gap-2 text-xs font-semibold text-stone-500 flex-wrap">
+              <Link href="/" className="hover:text-amber-700">Home</Link>
+              <span>/</span>
+              <Link href="/exams" className="hover:text-amber-700">Categories &amp; Exams</Link>
+              <span>/</span>
+              <span className="text-stone-900 font-bold">{category.name}</span>
+            </div>
+
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pt-2">
+              <div className="flex items-start gap-4">
+                <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-stone-50 border-2 border-stone-100 shrink-0 p-1.5 flex items-center justify-center overflow-hidden shadow-xs">
+                  {category.logo_url && !failedCatImage ? (
+                    <Image
+                      src={category.logo_url}
+                      alt={category.name}
+                      width={70}
+                      height={70}
+                      unoptimized
+                      onError={() => setFailedCatImage(true)}
+                      className="object-contain max-h-full max-w-full rounded-xl"
+                    />
+                  ) : (
+                    <span className="text-3xl">{category.icon || "🏛️"}</span>
+                  )}
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className="text-[10px] font-bold text-stone-600 bg-stone-100 px-2.5 py-0.5 rounded-full">
+                      {exams.length} Exams Listed
+                    </span>
+                    {activeCount > 0 && (
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+                        {activeCount} Live Kits
+                      </span>
+                    )}
+                  </div>
+
+                  <h1 className="text-xl sm:text-3xl font-black text-stone-900 mt-2 tracking-tight">
+                    {category.name}
+                  </h1>
+
+                  <p className="text-xs sm:text-sm text-stone-600 mt-1">
+                    Complete syllabus notes, topic-wise question banks &amp; pattern-decoded study material.
+                  </p>
+                </div>
+              </div>
+
+              {/* ACTION / BACK BUTTON */}
+              <div className="flex sm:flex-col items-center sm:items-end gap-2 shrink-0">
+                <Link
+                  href="/exams"
+                  className="px-4 py-2 bg-stone-100 hover:bg-stone-200 text-stone-800 rounded-xl text-xs font-bold transition flex items-center gap-1.5"
+                >
+                  ← All Categories
+                </Link>
+                <a
+                  href={settings?.social?.whatsapp_url || `https://wa.me/${getCleanWhatsAppNumber(settings)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-xs"
+                >
+                  Request Notes on WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* EXAMS DIRECTORY WITHIN THIS CATEGORY (SUB-CATEGORIES SHOWN FIRST) */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-b border-stone-200 space-y-6">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <h2 className="text-base sm:text-lg font-black text-stone-900">
+                All Exams under {category.name}
+              </h2>
+              <p className="text-xs text-stone-500 mt-0.5">
+                Browse every verified exam syllabus and track study kit availability
+              </p>
+            </div>
+
+            {/* SEARCH & FILTER CONTROLS */}
+            <div className="flex items-center gap-2 flex-wrap">
+              <div className="relative w-64">
+                <input
+                  type="text"
+                  placeholder="Search exam in this category..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-9 pr-8 py-2 bg-white rounded-xl border border-stone-300 text-xs placeholder:text-stone-400 focus:outline-none focus:border-amber-600 shadow-2xs"
+                />
+                <SearchIcon size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery("")}
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600"
+                  >
+                    <CloseIcon size={12} />
+                  </button>
+                )}
+              </div>
+
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-xl shadow-2xs flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  {filteredExams.length} Active Exams
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* EXAMS GRID */}
+          {filteredExams.length === 0 ? (
+            <div className="bg-white rounded-2xl border border-stone-200 p-12 text-center space-y-3">
+              <div className="w-12 h-12 rounded-full bg-stone-100 text-stone-400 mx-auto flex items-center justify-center">
+                <SearchIcon size={20} />
+              </div>
+              <h3 className="text-sm font-bold text-stone-800">No exams match your filter</h3>
+              <p className="text-xs text-stone-500">
+                Try clearing your search query.
+              </p>
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                }}
+                className="text-xs text-amber-700 font-bold hover:underline"
+              >
+                Reset search
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+              {filteredExams.map((exam) => {
+                const examLogo = exam.logo_url;
+                const examKits = courses.filter(
+                  (c) =>
+                    (c.exam_id === exam.id || c.id === exam.id || c.slug === exam.id || c.id === `bundle-exam-${exam.id}`) &&
+                    c.is_active !== false
+                );
+                const hasMultipleKits = examKits.length > 1;
+                const matchedCourse = examKits[0] || courses.find(
+                  (c) => (c.title && exam.name && c.title.toLowerCase().includes(exam.name.toLowerCase().split(" ")[0]))
+                );
+                const examHref = hasMultipleKits
+                  ? `/course/${exam.slug || exam.id}`
+                  : `/course/${matchedCourse?.slug || matchedCourse?.id || exam.id}`;
+
+                return (
+                  <div
+                    key={exam.id}
+                    className="bg-white rounded-2xl border border-stone-200 hover:border-amber-400 p-4 transition-all hover:shadow-md flex flex-col justify-between group"
+                  >
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3">
+                        <Link
+                          href={examHref}
+                          className="relative w-12 h-12 rounded-xl bg-stone-50 border border-stone-200 shrink-0 p-1 flex items-center justify-center overflow-hidden group-hover:border-amber-300 transition"
+                        >
+                          {examLogo && !failedExamImages[exam.id] ? (
+                            <Image
+                              src={examLogo}
+                              alt={exam.name}
+                              width={44}
+                              height={44}
+                              unoptimized
+                              onError={() => setFailedExamImages((prev) => ({ ...prev, [exam.id]: true }))}
+                              className="object-contain max-h-full max-w-full rounded-lg"
+                            />
+                          ) : (
+                            <span className="text-xl">📋</span>
+                          )}
+                        </Link>
+
+                        <div className="flex-1 min-w-0">
+                          <Link
+                            href={examHref}
+                            className="text-xs font-bold text-stone-900 line-clamp-2 leading-snug group-hover:text-amber-700 transition block"
+                          >
+                            {exam.name}
+                          </Link>
+                          <p className="text-[10px] text-stone-500 mt-0.5 truncate">
+                            {exam.board || category.name}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        {hasMultipleKits ? (
+                          <span className="text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
+                            ● {examKits.length} Study Kits &amp; Books • from ₹{Math.min(...examKits.map((k) => k.price || 99))}
+                          </span>
+                        ) : (
+                          <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100">
+                            ● Selection Kit Available • ₹{matchedCourse?.price || 199}
+                          </span>
+                        )}
+                        {exam.status && (
+                          <span className="text-[10px] text-stone-400 capitalize">
+                            • {exam.status}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="pt-3 mt-3 border-t border-stone-100 flex items-center justify-between gap-2">
+                      <Link
+                        href={examHref}
+                        className="btn-primary py-1.5 px-3 text-xs font-bold flex items-center gap-1 shadow-xs"
+                      >
+                        {hasMultipleKits ? `Browse ${examKits.length} Kits & Books →` : "Study Kit & Buy →"}
+                      </Link>
+                      <a
+                        href={`https://wa.me/${DEFAULT_SETTINGS.whatsapp_support_number}?text=${encodeURIComponent(
+                          `Hello, I want study material for ${exam.name} (${category.name}).`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 flex items-center gap-1"
+                      >
+                        WhatsApp 💬
+                      </a>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </section>
+
+        {/* ACTIVE COURSES IN THIS CATEGORY (SHOWN AFTER SUB-CATEGORIES) */}
+        {matchedCourses.length > 0 && (
+          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <h2 className="text-lg font-black text-stone-900 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-600"></span>
+                  Available Study Bundles ({matchedCourses.length})
+                </h2>
+                <p className="text-xs text-stone-500 mt-0.5">
+                  Instant digital access with decoded syllabus and topic weightage
+                </p>
+              </div>
+            </div>
+
+            {(() => {
+              const catCardStyle = getBundleCardStyle(settings, "all_products");
+              const catMobileCols = catCardStyle.mobile_grid_cols === 3 ? "grid-cols-3" : "grid-cols-2";
+              const catDesktopCols =
+                catCardStyle.desktop_grid_cols === 6
+                  ? "lg:grid-cols-6"
+                  : catCardStyle.desktop_grid_cols === 4
+                  ? "lg:grid-cols-4"
+                  : catCardStyle.desktop_grid_cols === 3
+                  ? "lg:grid-cols-3"
+                  : "lg:grid-cols-5";
+              return (
+                <div
+                  style={{ gap: catCardStyle.card_gap ? `${catCardStyle.card_gap}px` : undefined }}
+                  className={`grid ${catMobileCols} sm:grid-cols-3 ${catDesktopCols} gap-3 sm:gap-4`}
+                >
+                  {matchedCourses.map((course) => (
+                    <CourseCard
+                      key={course.id}
+                      course={course}
+                      onBuyNow={handleBuyNow}
+                      onOpenSample={handleOpenSample}
+                      cardStyle={catCardStyle}
+                    />
+                  ))}
+                </div>
+              );
+            })()}
+          </section>
+        )}
+      </main>
+
+      <SampleModal
+        course={selectedCourseForSample}
+        isOpen={isSampleModalOpen}
+        onClose={() => {
+          setIsSampleModalOpen(false);
+          setSelectedCourseForSample(null);
+        }}
+        onBuyNow={handleBuyNow}
+      />
+
+      <CartDrawer
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        cartItems={cart}
+        onRemoveItem={handleRemoveFromCart}
+      />
+
+      <Footer />
+    </div>
+  );
+}

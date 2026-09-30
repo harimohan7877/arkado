@@ -53,46 +53,31 @@ export default function AdminDashboardPage() {
   const [stats, setStats] = useState<Stats | null>(null);
   const [loadingStats, setLoadingStats] = useState(false);
 
-  const getPasscode = () => {
-    if (typeof window !== "undefined") {
-      const local = localStorage.getItem("arkado-admin-verified");
-      if (local) return local;
-      const session = sessionStorage.getItem("arkado-admin-verified");
-      if (session) return session;
-      const match = document.cookie.match(/arkado-admin-verified=([^;]+)/);
-      if (match) return decodeURIComponent(match[1]);
-    }
-    return "";
-  };
-
+  // Auth rides on the HttpOnly session cookie set by /api/admin/login —
+  // same-origin fetch sends it automatically, so no token is needed here.
+  // The raw passcode is never stored in JS, localStorage, or cookies.
   const getAuthHeaders = () => ({
     "Content-Type": "application/json",
-    Authorization: getPasscode(),
   });
 
-  useEffect(() => {
-    const passcode = getPasscode();
-    if (!passcode) {
-      router.push("/ranjeet/admin/login");
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/admin/logout", { method: "POST" });
+    } catch {
+      // Session cookie may already be gone — still navigate to login.
     }
-  }, [router]);
-
-  const handleLogout = () => {
-    if (typeof window !== "undefined") {
-      localStorage.removeItem("arkado-admin-verified");
-      localStorage.removeItem("sarkari-saathi-admin-verified");
-      sessionStorage.removeItem("arkado-admin-verified");
-      sessionStorage.removeItem("sarkari-saathi-admin-verified");
-      document.cookie = "arkado-admin-verified=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-      document.cookie = "sarkari-saathi-admin-verified=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-      router.push("/ranjeet/admin/login");
-    }
+    router.push("/ranjeet/admin/login");
   };
 
   const fetchStats = async () => {
     setLoadingStats(true);
     try {
       const res = await fetch("/api/admin/stats", { headers: getAuthHeaders() });
+      if (res.status === 401) {
+        // Session expired or invalid — proxy will also bounce, go to login.
+        router.push("/ranjeet/admin/login");
+        return;
+      }
       if (res.ok) {
         const data = await res.json();
         setStats(data);

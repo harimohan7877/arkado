@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { verifyAdminSessionToken, ADMIN_SESSION_COOKIE } from "@/lib/admin-auth";
 
 export async function proxy(req: NextRequest) {
   const url = req.nextUrl.clone();
@@ -10,29 +11,11 @@ export async function proxy(req: NextRequest) {
       return NextResponse.next();
     }
 
-    const adminCookie =
-      req.cookies.get("arkado-admin-verified")?.value ||
-      req.cookies.get("sarkari-saathi-admin-verified")?.value;
-    const expectedPasscode = process.env.ADMIN_PASSCODE || "";
-
-    if (!expectedPasscode) {
-      console.error("[proxy] ADMIN_PASSCODE is not set in environment!");
-      const loginUrl = new URL("/ranjeet/admin/login", req.url);
-      loginUrl.searchParams.set("redirect", url.pathname);
-      return NextResponse.redirect(loginUrl);
-    }
-
-    const validCookies = [expectedPasscode];
-
-    let isValid = false;
-    if (adminCookie) {
-      try {
-        const decoded = decodeURIComponent(adminCookie);
-        isValid = validCookies.includes(adminCookie) || validCookies.includes(decoded);
-      } catch {
-        isValid = validCookies.includes(adminCookie);
-      }
-    }
+    // Strict check: only a valid SESSION_SECRET-signed session cookie grants access.
+    // (Deliberately NOT using verifyAdminSession's localhost bypass here —
+    // the page guard must stay strict even in development.)
+    const token = req.cookies.get(ADMIN_SESSION_COOKIE)?.value || "";
+    const isValid = token ? await verifyAdminSessionToken(token) : false;
 
     if (!isValid) {
       const loginUrl = new URL("/ranjeet/admin/login", req.url);

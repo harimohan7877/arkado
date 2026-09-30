@@ -29,11 +29,8 @@ export default function AdminLoginForm() {
       });
 
       if (res.ok) {
-        const data = await res.json();
-        const isSecure = typeof window !== "undefined" && window.location.protocol === "https:";
-        document.cookie = `arkado-admin-verified=${data.token}; path=/; max-age=86400; SameSite=Lax${isSecure ? "; Secure" : ""}`;
-        sessionStorage.setItem("arkado-admin-verified", data.token);
-        localStorage.setItem("arkado-admin-verified", data.token);
+        // Session cookie is set by the server as HttpOnly — nothing to store
+        // client-side. The raw passcode never reaches the browser.
         router.push(redirect);
         router.refresh();
       } else {

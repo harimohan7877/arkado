@@ -22,6 +22,7 @@ export interface Order {
   payment_status: "pending" | "paid" | "failed";
   delivery_status: "pending" | "delivered";
   drive_url?: string;
+  admin_note?: string;
   created_at: string;
   updated_at?: string;
   terms_accepted?: boolean;
@@ -157,6 +158,27 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
     } finally {
       setActionId(null);
     }
+  };
+
+  // 4b. Save internal admin note (visible only in admin panel, never to customer)
+  const handleSaveNote = async (order: Order, note: string) => {
+    const url = `/api/admin/orders/${order.id}${order.db_id ? `?db_id=${order.db_id}` : ""}`;
+    const res = await fetch(url, {
+      method: "PUT",
+      headers: { ...getAuthHeaders(), "Content-Type": "application/json" },
+      body: JSON.stringify({ admin_note: note.slice(0, 500) }),
+    });
+    if (!res.ok) {
+      const data = await res.json();
+      throw new Error(data.error || "नोट सेव नहीं हो सका।");
+    }
+    setOrders((prev) =>
+      prev.map((o) =>
+        o.id === order.id || o.order_id === order.order_id || (order.db_id && o.db_id === order.db_id)
+          ? { ...o, admin_note: note.slice(0, 500) }
+          : o
+      )
+    );
   };
 
   // 3. Restore Order back to Pending
@@ -999,6 +1021,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                   copyToClipboard={copyToClipboard}
                   isApproving={approvingId === currentOrder.id}
                   isActing={actionId === currentOrder.id}
+                  onSaveNote={(note) => handleSaveNote(currentOrder, note)}
                 />
               );
             })()}
@@ -1052,6 +1075,7 @@ function OrderDetailCard({
   copyToClipboard,
   isApproving,
   isActing,
+  onSaveNote,
 }: {
   order: Order;
   onClose: () => void;
@@ -1063,9 +1087,19 @@ function OrderDetailCard({
   copyToClipboard: (t: string, l: string) => void;
   isApproving: boolean;
   isActing: boolean;
+  onSaveNote: (note: string) => Promise<void>;
 }) {
   const isApproved = order.payment_status === "paid" && order.delivery_status === "delivered";
   const isFailed = order.payment_status === "failed";
+  const [note, setNote] = useState(order.admin_note || "");
+  const [savingNote, setSavingNote] = useState(false);
+  const [noteMsg, setNoteMsg] = useState("");
+
+  // reset note field when a different order is opened
+  useEffect(() => {
+    setNote(order.admin_note || "");
+    setNoteMsg("");
+  }, [order.id, order.admin_note]);
 
   return (
     <div className="space-y-4">
@@ -1116,6 +1150,42 @@ function OrderDetailCard({
           copyable={Boolean(order.drive_url)}
           onCopy={() => copyToClipboard(order.drive_url || "", "Drive Link")}
         />
+      </div>
+
+      {/* Internal admin note — never shown to the customer */}
+      <div className="p-3.5 bg-amber-50/60 rounded-xl border border-amber-200">
+        <label className="text-xs font-bold text-amber-900 flex items-center gap-1.5">
+          <span>📝</span> अंदरूनी नोट (सिर्फ तुम्हारे लिए — ग्राहक को नहीं दिखेगा)
+        </label>
+        <textarea
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          rows={2}
+          maxLength={500}
+          placeholder="e.g. कल कॉल किया — आज पेमेंट करेगा"
+          className="mt-2 w-full border border-amber-200 rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white"
+        />
+        <div className="mt-2 flex items-center gap-2">
+          <button
+            onClick={async () => {
+              setSavingNote(true);
+              setNoteMsg("");
+              try {
+                await onSaveNote(note.trim());
+                setNoteMsg("✅ सेव हो गया");
+              } catch (err: any) {
+                setNoteMsg(`❌ ${err.message || "सेव नहीं हुआ"}`);
+              } finally {
+                setSavingNote(false);
+              }
+            }}
+            disabled={savingNote}
+            className="px-3 py-1.5 bg-amber-600 hover:bg-amber-700 disabled:opacity-50 text-white text-xs font-bold rounded-lg transition cursor-pointer"
+          >
+            {savingNote ? "सेव हो रहा..." : "नोट सेव करो"}
+          </button>
+          {noteMsg && <span className="text-[11px] font-semibold text-stone-600">{noteMsg}</span>}
+        </div>
       </div>
 
       {/* Action Footer inside Modal */}

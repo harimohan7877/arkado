@@ -62,6 +62,7 @@ export async function generateMetadata({
 export default async function CoursePage({ params }: PageProps) {
   const siteUrl = getSiteUrl();
   let jsonLd: Record<string, unknown> | null = null;
+  let breadcrumbLd: Record<string, unknown> | null = null;
 
   try {
     const id = await resolveId(params);
@@ -84,9 +85,28 @@ export default async function CoursePage({ params }: PageProps) {
           availability: "https://schema.org/InStock",
         },
       };
+      const crumbs: { name: string; url: string }[] = [{ name: "Home", url: siteUrl }];
+      if (course.category) {
+        crumbs.push({
+          name: course.category_label || course.category,
+          url: `${siteUrl}/category/${course.category}`,
+        });
+      }
+      crumbs.push({ name: course.title, url: `${siteUrl}/course/${course.slug || course.id}` });
+      breadcrumbLd = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: crumbs.map((c, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: c.name,
+          item: c.url,
+        })),
+      };
     }
   } catch {
     jsonLd = null;
+    breadcrumbLd = null;
   }
 
   return (
@@ -95,6 +115,12 @@ export default async function CoursePage({ params }: PageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
+      {breadcrumbLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
         />
       )}
       <CourseDetailClient params={params} />

@@ -81,6 +81,7 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     const supabaseUpdates: Record<string, any> = {};
     if (updates.payment_status) supabaseUpdates.payment_status = updates.payment_status;
     if (updates.delivery_status) supabaseUpdates.delivery_status = updates.delivery_status;
+    if (updates.admin_note !== undefined) supabaseUpdates.admin_note = String(updates.admin_note || "");
 
     if (Object.keys(supabaseUpdates).length > 0) {
       let filter = buildOrderQueryFilter(id);

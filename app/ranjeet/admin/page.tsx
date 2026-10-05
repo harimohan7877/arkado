@@ -379,6 +379,29 @@ export default function AdminDashboardPage() {
               <p className="text-[11px] text-stone-400">
                 Free plan reference: 500 MB database / 1 GB file storage — abhi usage bahut kam hai, chinta ki baat nahi.
               </p>
+              <button
+                onClick={async () => {
+                  try {
+                    const res = await fetch("/api/admin/export", { headers: getAuthHeaders() });
+                    if (!res.ok) throw new Error("Export failed");
+                    const blob = await res.blob();
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.download = `arkado-backup-${new Date().toISOString().slice(0, 10)}.json`;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    URL.revokeObjectURL(url);
+                  } catch {
+                    alert("Backup download nahi ho paya — phir try karo.");
+                  }
+                }}
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-stone-900 hover:bg-stone-800 text-white text-xs font-bold rounded-xl transition cursor-pointer"
+              >
+                <span>💾</span> Catalog Backup Download Karo
+              </button>
+              <p className="text-[11px] text-stone-400">Courses, categories, featured, blog aur settings — ek JSON file mein. (Orders ismein nahi hain — unka alag CSV export Orders tab mein hai.)</p>
             </div>
           )}
 

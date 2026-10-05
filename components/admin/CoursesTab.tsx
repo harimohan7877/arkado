@@ -239,6 +239,41 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
     setShowModal(true);
   };
 
+  // Open modal with a DUPLICATE of an existing course (create mode).
+  // id is stripped so the API generates a fresh one; drive/sample links are
+  // cleared because they point to the ORIGINAL kit's content — delivering the
+  // wrong notes would be worse than re-pasting the right link.
+  const openCloneModal = (course: Course) => {
+    const rest: Partial<Course> = { ...course };
+    delete rest.id;
+    // unique slug — avoid colliding with an earlier clone
+    let slug = `${course.slug}-copy`;
+    let n = 2;
+    const taken = new Set(courses.map((c) => c.slug));
+    while (taken.has(slug)) slug = `${course.slug}-copy-${n++}`;
+    setEditingCourse(null);
+    setFormData({
+      ...rest,
+      title: `${course.title} (Copy)`,
+      slug,
+      drive_url: "",
+      sample_pdf_url: "",
+      demo_html_mock_url: "",
+      demo_html_mock_enabled: false,
+      is_active: false,
+      is_featured: false,
+      is_new_arrival: false,
+      is_auto_synced: false,
+      highlights: course.highlights?.length ? course.highlights : [],
+      subjects: course.subjects?.length ? course.subjects : [],
+    });
+    setCoverFile(null);
+    setMockHtmlFile(null);
+    setCoverPreview(course.cover_image || null);
+    setActiveTab("basic");
+    setShowModal(true);
+  };
+
   // When exam is changed in dropdown, auto-fill details if appropriate
   const handleExamSelect = (examId: string) => {
     const selected = exams.find((e) => e.id === examId);
@@ -624,6 +659,13 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
                     >
                       कस्टमाइज़ ✏️
                     </button>
+                    <button
+                      onClick={() => openCloneModal(course)}
+                      title="Is course ki copy banao"
+                      className="px-3 py-1.5 bg-sky-50 hover:bg-sky-100 border border-sky-200 text-sky-900 text-xs font-bold rounded-lg transition cursor-pointer"
+                    >
+                      क्लोन ⧉
+                    </button>
                     {!course.is_auto_synced && (
                       <button
                         onClick={() => handleDelete(course.id)}
@@ -686,6 +728,13 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
                   className="px-3 py-1.5 bg-amber-600 text-white rounded-lg text-xs font-bold"
                 >
                   कस्टमाइज़ ✏️
+                </button>
+                <button
+                  onClick={() => openCloneModal(course)}
+                  title="Is course ki copy banao"
+                  className="px-3 py-1.5 bg-sky-100 text-sky-900 border border-sky-200 rounded-lg text-xs font-bold"
+                >
+                  क्लोन ⧉
                 </button>
                 {!course.is_auto_synced && (
                   <button

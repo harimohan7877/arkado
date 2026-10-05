@@ -828,7 +828,7 @@ export default function CourseDetailClient({ params }: PageProps) {
                   onClick={() => handleBuyNow(course)}
                   className="w-full py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-neutral-950 font-black text-sm transition shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98"
                 >
-                  <span>Buy Now via PhonePe / Paytm</span>
+                  <span>Buy Now</span>
                   <span>→</span>
                 </button>
 

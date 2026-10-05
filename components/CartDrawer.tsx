@@ -638,6 +638,13 @@ export default function CartDrawer({
                 <p className="text-xs text-amber-800 leading-relaxed">
                   आपका ऑर्डर सफलतापूर्वक दर्ज हो गया है! टीम द्वारा पेमेंट चेक करके <strong>5-10 मिनट</strong> के भीतर Google Drive नोट्स का डाउनलोड लिंक सीधे आपकी ईमेल (<strong>{createdOrder.email}</strong>) पर भेज दिया जाएगा।
                 </p>
+                <a
+                  href="/track-order"
+                  onClick={onClose}
+                  className="inline-flex items-center gap-1 mt-2 text-xs font-bold text-amber-800 hover:text-amber-900 underline underline-offset-2"
+                >
+                  📦 Order ID se status track karo →
+                </a>
               </div>
 
               {/* Instant WhatsApp Send Button */}

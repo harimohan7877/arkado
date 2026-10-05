@@ -154,6 +154,9 @@ export default function Footer() {
             <Link href="/download" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
               My Purchases
             </Link>
+            <Link href="/track-order" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
+              Track Order
+            </Link>
           </div>
 
           {/* Company & Policies */}

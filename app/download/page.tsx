@@ -98,6 +98,12 @@ function DownloadContent() {
         >
           Helpline Support ({displayPhone})
         </a>
+        <Link
+          href="/track-order"
+          className="w-full sm:w-auto px-6 py-3 rounded-full border border-amber-300 bg-amber-50 text-amber-800 font-bold text-xs hover:bg-amber-100 transition"
+        >
+          📦 Track Order Status
+        </Link>
       </div>
     </div>
   );

@@ -639,7 +639,8 @@ export default function CourseDetailClient({ params }: PageProps) {
         </nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          <div className="lg:col-span-8 space-y-8">
+          {/* Title card — mobile: first (order-1); desktop: left column top */}
+          <div className="lg:col-span-8 order-1">
             <div className="bg-white p-6 sm:p-8 rounded-3xl border border-neutral-200 shadow-xs space-y-4">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="text-xs font-bold text-amber-800 bg-amber-50 px-3 py-1 rounded-full uppercase border border-amber-200">
@@ -670,7 +671,10 @@ export default function CourseDetailClient({ params }: PageProps) {
                 </span>
               </div>
             </div>
+          </div>
 
+          {/* Details sections — mobile: below the buy card (order-3); desktop: left column under the title */}
+          <div className="lg:col-span-8 space-y-8 order-3">
             <div className="bg-white p-6 sm:p-8 rounded-3xl border border-neutral-200 shadow-xs space-y-4">
               <h3 className="text-base font-bold text-neutral-800 flex items-center gap-2">
                 <span>🎯</span> Key Highlights
@@ -774,7 +778,8 @@ export default function CourseDetailClient({ params }: PageProps) {
             )}
           </div>
 
-          <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-4">
+          {/* Buy card — mobile: right after the title (order-2); desktop: sticky right sidebar (row-span-2 keeps the sticky area tall) */}
+          <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-4 order-2 lg:row-span-2">
             <div className="bg-white p-6 rounded-3xl border border-neutral-200 shadow-lg space-y-6">
               <div className="relative w-full h-52 rounded-2xl overflow-hidden bg-gradient-to-br from-amber-700 via-stone-800 to-stone-900 border border-neutral-200 flex items-center justify-center p-4">
                 {course.cover_image && !coverImageFailed ? (

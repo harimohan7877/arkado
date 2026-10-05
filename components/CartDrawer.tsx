@@ -261,7 +261,8 @@ export default function CartDrawer({
             </button>
           </div>
 
-          {/* Progress steps */}
+          {/* Progress steps — hidden on the cart step when the cart is empty (nothing to progress through yet) */}
+          {!(step === "cart" && cartItems.length === 0) && (
           <div className="px-4 pb-3 flex items-center gap-1.5">
             {stepLabels.map((label, idx) => (
               <React.Fragment key={label}>
@@ -293,6 +294,7 @@ export default function CartDrawer({
               </React.Fragment>
             ))}
           </div>
+          )}
         </div>
 
         {/* Content */}
@@ -315,6 +317,13 @@ export default function CartDrawer({
                   <p className="text-xs text-slate-500 mt-1">
                     Choose your preferred course bundle to continue.
                   </p>
+                  <button
+                    onClick={handleDrawerClose}
+                    className="btn-primary mt-5"
+                  >
+                    <ShoppingBagIcon size={14} />
+                    <span>Continue Shopping</span>
+                  </button>
                 </div>
               ) : (
                 <div className="space-y-2.5">

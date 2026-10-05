@@ -64,6 +64,9 @@ export interface Course {
   priority: number;
   created_at: string;
   updated_at: string;
+  category?: string;
+  category_label?: string;
+  exam_board?: string;
 }
 
 export interface SyllabusSection {

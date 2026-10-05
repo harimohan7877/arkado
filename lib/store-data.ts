@@ -378,9 +378,40 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
           exam_name: d.course_title || "Course Bundle",
           utr: d.utr || d.razorpay_payment_id || "",
           drive_url: d.drive_url || "",
+          admin_note: (d as Record<string, unknown>).admin_note
+            ? String((d as Record<string, unknown>).admin_note)
+            : "",
           created_at: d.created_at || new Date().toISOString(),
           updated_at: d.updated_at || d.created_at || new Date().toISOString(),
         }));
+
+        // Merge admin-only fields from the admin_settings JSON backup.
+        // Covers deployments where the admin_note column migration hasn't run yet —
+        // writeOrders() always persists the full order array (notes included) there.
+        try {
+          const { data: settingsRow } = await supabaseAdmin
+            .from("admin_settings")
+            .select("openai_key")
+            .limit(1)
+            .maybeSingle();
+          const raw = (settingsRow as { openai_key?: unknown } | null)?.openai_key;
+          const backup = typeof raw === "string" ? JSON.parse(raw) : raw;
+          const backupOrders = (backup as { orders?: unknown })?.orders;
+          if (Array.isArray(backupOrders)) {
+            const notesById = new Map<string, string>();
+            for (const o of backupOrders) {
+              const rec = o as Record<string, unknown>;
+              const key = String(rec.order_id || rec.id || "");
+              if (key && rec.admin_note) notesById.set(key, String(rec.admin_note));
+            }
+            for (const o of orders) {
+              if (!o.admin_note) {
+                const n = notesById.get(String(o.order_id));
+                if (n) o.admin_note = n;
+              }
+            }
+          }
+        } catch { /* backup merge is best-effort */ }
 
         SERVER_STORE_CACHE[key] = { data: orders, timestamp: Date.now() };
         return orders as unknown as T;

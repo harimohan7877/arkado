@@ -20,7 +20,7 @@ export default function InfoCards() {
       icon: "❓",
       title: "FAQ",
       desc: "Find answers to common questions about ordering, delivery, and study materials.",
-      link: "#",
+      link: "/faq",
     },
     {
       icon: "✍️",

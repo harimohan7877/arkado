@@ -208,7 +208,7 @@ export async function POST(
         <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;background-color:#ffffff;border:1px solid #e4e4e7;border-radius:12px;">
           <tr>
             <td align="center" style="padding:26px 24px 6px;">
-              <img src="https://arkado.store/logos/arkado_wordmark_1.jpg" alt="Arkado" width="150" style="display:block;border:0;width:150px;height:auto;">
+              <img src="https://arkado.store/logo-email.png" alt="Arkado" width="150" style="display:block;border:0;width:150px;height:auto;">
             </td>
           </tr>
           <tr>
@@ -248,7 +248,7 @@ export async function POST(
           </tr>
           <tr>
             <td style="padding:14px 32px 26px;">
-              <p style="margin:0;font-size:12px;line-height:1.7;color:#71717a;">Need help? WhatsApp us at <a href="https://wa.me/919950252138" style="color:#b91c1c;font-weight:700;text-decoration:none;">+91 99502 52138</a></p>
+              <p style="margin:0;font-size:12px;line-height:1.7;color:#71717a;">Need help? WhatsApp us at <a href="https://wa.me/917852004401" style="color:#b91c1c;font-weight:700;text-decoration:none;">+91 78520 04401</a></p>
             </td>
           </tr>
           <tr>
@@ -275,7 +275,7 @@ Amount: Rs. ${amount} (Paid)
 Access your Google Drive study notes here:
 ${resolvedDriveUrl}
 
-Need help? WhatsApp us at +91 99502 52138
+Need help? WhatsApp us at +91 78520 04401
 
 Team Arkado
 https://arkado.store

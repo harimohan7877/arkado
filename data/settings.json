@@ -1,7 +1,7 @@
 {
   "upi_id": "PLACEHOLDER_UPI_ID",
   "merchant_name": "Arkado",
-  "whatsapp_support_number": "910000000000",
+  "whatsapp_support_number": "917852004401",
   "gmail_support_email": "support@example.com",
   "custom_qr_url": "",
   "site_name": "Arkado",
@@ -198,7 +198,7 @@
     }
   },
   "social": {
-    "whatsapp_url": "https://wa.me/910000000000",
+    "whatsapp_url": "https://wa.me/917852004401",
     "instagram_url": "https://instagram.com/",
     "facebook_url": "https://facebook.com/",
     "gmail_url": "mailto:support@example.com",
@@ -206,8 +206,8 @@
   },
   "updated_at": "2026-09-24T02:41:20.264Z",
   "contact": {
-    "phone": "+91 0000000000",
-    "whatsapp_number": "910000000000",
+    "phone": "+91 78520 04401",
+    "whatsapp_number": "917852004401",
     "email": "support@example.com",
     "address": "Ward No 14, Sardarshahar, Churu, Rajasthan - 331403",
     "support_hours": "10:00 AM - 9:00 PM (All 7 Days)"

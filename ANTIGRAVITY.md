@@ -15,7 +15,7 @@ Welcome to the master blueprint of **Sarkari Saathi**! We are building a premium
 *   **Sidebar Dropdown:** Clean list containing **5 Rajasthan Exam Groups** (RSMSSB, Police, Court, Teaching, General Govt). Clicking a group reveals the exams.
 *   **Product Cards:** Minimalist card styling using dark slate stylized covers. Card titles are simplified to display **only the exam name** (avoiding long "notes" or "mock tests" text blocks). Cards lift smoothly on hover.
 *   **Minimalist Footer:** Near-black background with link lists, WhatsApp support, and a legal disclaimer.
-*   **Floating WhatsApp Widget:** Located in the bottom-right corner, linking directly to the support number `9950252138` (AI chatbot is disabled/removed).
+*   **Floating WhatsApp Widget:** Located in the bottom-right corner, linking directly to the support number `7852004401` (AI chatbot is disabled/removed).
 *   **Simplified Login:** Clean single-step credentials input (Name/Email) on the cream canvas.
 
 ### 🛢️ Step 2: Database Schema & Dynamic Integration (Supabase)

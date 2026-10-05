@@ -10,6 +10,7 @@ import CoursesTab from "@/components/admin/CoursesTab";
 import OrdersTab from "@/components/admin/OrdersTab";
 import SettingsTab from "@/components/admin/SettingsTab";
 import SectionsTab from "@/components/admin/SectionsTab";
+import BlogTab from "@/components/admin/BlogTab";
 
 interface MarketplaceOrder {
   id: string;
@@ -34,7 +35,7 @@ interface Stats {
   warning?: string;
 }
 
-type TabType = "dashboard" | "categories" | "featured" | "sections" | "exams" | "courses" | "orders" | "settings";
+type TabType = "dashboard" | "categories" | "featured" | "sections" | "exams" | "courses" | "orders" | "blog" | "settings";
 
 const NAV_ITEMS: { id: TabType; label: string; short: string; icon: string }[] = [
   { id: "dashboard", label: "Dashboard", short: "Dashboard", icon: "" },
@@ -44,6 +45,7 @@ const NAV_ITEMS: { id: TabType; label: string; short: string; icon: string }[] =
   { id: "exams", label: "Exams", short: "Exams", icon: "" },
   { id: "courses", label: "Courses & Books", short: "Courses", icon: "" },
   { id: "orders", label: "Orders", short: "Orders", icon: "" },
+  { id: "blog", label: "Blog / Articles", short: "Blog", icon: "" },
   { id: "settings", label: "Settings", short: "Settings", icon: "" },
 ];
 
@@ -194,6 +196,7 @@ export default function AdminDashboardPage() {
         )}
 
         {activeTab === "orders" && <OrdersTab getAuthHeaders={getAuthHeaders} />}
+        {activeTab === "blog" && <BlogTab getAuthHeaders={getAuthHeaders} />}
       </main>
     </div>
   );

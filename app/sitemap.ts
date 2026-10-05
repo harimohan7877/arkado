@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getSiteUrl, fetchCoursesServer, fetchCategoriesServer } from "@/lib/seo";
+import { fetchActiveBlogPostsServer } from "@/lib/blog";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = getSiteUrl();
@@ -22,9 +23,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: path === "" ? 1 : 0.6,
   }));
 
-  const [courses, categories] = await Promise.all([
+  const [courses, categories, blogPosts] = await Promise.all([
     fetchCoursesServer(),
     fetchCategoriesServer(),
+    fetchActiveBlogPostsServer(),
   ]);
 
   const courseRoutes: MetadataRoute.Sitemap = courses
@@ -43,5 +45,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...courseRoutes, ...categoryRoutes];
+  const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((p) => ({
+    url: `${siteUrl}/blog/${p.slug}`,
+    lastModified: p.updated_at ? new Date(p.updated_at) : now,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...courseRoutes, ...categoryRoutes, ...blogRoutes];
 }

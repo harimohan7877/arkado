@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export default function NotFound() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Navbar cartCount={0} onCartClick={() => {}} />
+      <Navbar cartCount={0} />
       <main className="flex-1 flex items-center justify-center px-4 py-16">
         <div className="text-center max-w-md">
           <p className="text-7xl font-black text-amber-700">404</p>

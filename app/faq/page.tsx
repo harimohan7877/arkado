@@ -74,7 +74,7 @@ export default async function FaqPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen flex flex-col bg-white">
-        <Navbar cartCount={0} onCartClick={() => {}} />
+        <Navbar cartCount={0} />
         <main className="flex-1 w-full max-w-3xl mx-auto px-4 sm:px-6 py-10">
           <div className="text-center">
             <h1 className="text-3xl sm:text-4xl font-black text-slate-900">Frequently Asked Questions</h1>

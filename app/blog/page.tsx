@@ -36,7 +36,7 @@ export default async function BlogPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Navbar cartCount={0} onCartClick={() => {}} />
+      <Navbar cartCount={0} />
 
       <main className="flex-1 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
         <div className="text-center max-w-2xl mx-auto">

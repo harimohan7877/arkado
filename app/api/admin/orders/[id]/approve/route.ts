@@ -130,20 +130,18 @@ export async function POST(
       );
     }
 
-    // Resolve Drive URL
+    // Resolve catalog info (title + drive URL fallbacks). Supabase-sourced
+    // orders may miss course_title/drive_url (older rows), so fall back to
+    // the catalog via course_id.
+    const courses = await getStoreData<any[]>("courses", "data/courses.json", []);
+    const matchedCourse = courses.find(
+      (c: any) => c.id === order.course_id || c.slug === order.course_id
+    );
+
     let resolvedDriveUrl = (body.customDriveUrl || order.drive_url || "").trim();
-
-    // If drive_url is missing or placeholder, look up from catalog
-    if (!resolvedDriveUrl || resolvedDriveUrl.length < 10) {
-      const courses = await getStoreData<any[]>("courses", "data/courses.json", []);
-      const matched = courses.find(
-        (c: any) => c.id === order.course_id || c.slug === order.course_id
-      );
-      if (matched?.drive_url) {
-        resolvedDriveUrl = matched.drive_url;
-      }
+    if ((!resolvedDriveUrl || resolvedDriveUrl.length < 10) && matchedCourse?.drive_url) {
+      resolvedDriveUrl = matchedCourse.drive_url;
     }
-
     if (!resolvedDriveUrl) {
       resolvedDriveUrl = "https://www.arkado.store/dashboard";
     }
@@ -162,14 +160,23 @@ export async function POST(
       );
     }
 
-    const customerName = order.customer_name || order.name || "Student";
-    const courseTitle = order.course_title || "Course Bundle";
+    // Supabase stores customer_name as "Name (phone)" — strip the phone part
+    // so the greeting doesn't show the number.
+    const rawName = String(order.customer_name || order.name || "Student");
+    const customerName =
+      rawName.replace(/\s*\(\+?\d[\d\s-]{7,}\d\)\s*$/, "").trim() || "Student";
+    const rawTitle = String(order.course_title || "").trim();
+    const courseTitle =
+      rawTitle && rawTitle !== "Course Bundle"
+        ? rawTitle
+        : matchedCourse?.title || "Course Bundle";
     const orderId = order.order_id || order.id || id;
     const amount = Number(order.amount) || 0;
 
     const safeName = escapeHtml(customerName);
     const safeCourse = escapeHtml(courseTitle);
     const safeOrderId = escapeHtml(orderId);
+    const safeDriveUrl = escapeHtml(resolvedDriveUrl);
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -179,138 +186,74 @@ export async function POST(
       },
     });
 
-    const subject = `Your Course Access is Ready — Arkado (Order ${orderId})`;
+    const subject = `Your Arkado course is ready (Order ${orderId})`;
 
+    // Simple transactional layout: light colors, no heavy gradients, real
+    // logo from arkado.store (SVG doesn't render in most email clients).
+    // color-scheme meta reduces Gmail dark-mode mangling.
     const htmlContent = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Course Access is Ready — Arkado</title>
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light">
+  <title>Your Arkado course is ready</title>
 </head>
-<body style="margin:0;padding:0;background-color:#1a1a1a;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#1a1a1a;padding:32px 16px;">
+<body style="margin:0;padding:0;background-color:#f4f4f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f4f5;padding:24px 12px;">
     <tr>
       <td align="center">
-        <table width="100%" style="max-width:600px;" cellpadding="0" cellspacing="0" border="0">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;background-color:#ffffff;border:1px solid #e4e4e7;border-radius:12px;">
           <tr>
-            <td style="border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-
-              <!-- Logo Bar -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <td align="center" style="padding:26px 24px 6px;">
+              <img src="https://arkado.store/logos/arkado_wordmark_1.jpg" alt="Arkado" width="150" style="display:block;border:0;width:150px;height:auto;">
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:10px 32px 0;">
+              <h1 style="margin:0;font-size:22px;font-weight:800;color:#18181b;">Your course is ready</h1>
+              <p style="margin:10px 0 0;font-size:14px;line-height:1.7;color:#3f3f46;">Hi <strong>${safeName}</strong>,</p>
+              <p style="margin:8px 0 0;font-size:14px;line-height:1.7;color:#3f3f46;">Your payment of <strong>&#8377;${amount}</strong> for order <strong>${safeOrderId}</strong> is verified. Your study material is ready &mdash; open it with the button below.</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px 32px 0;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fafafa;border:1px solid #e4e4e7;border-radius:8px;">
                 <tr>
-                  <td align="center" style="background:#ffffff;padding:30px 40px 26px;">
-                    <img src="https://sarkari-sathi-ecru.vercel.app/logo.svg" alt="Arkado" width="180" style="display:block;margin:0 auto;border:0;width:180px;height:auto;" />
-                  </td>
+                  <td style="padding:12px 16px;font-size:12px;color:#71717a;">Order ID</td>
+                  <td align="right" style="padding:12px 16px;font-size:13px;font-weight:700;color:#18181b;font-family:'Courier New',monospace;">${safeOrderId}</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 16px;font-size:12px;color:#71717a;border-top:1px solid #e4e4e7;">Course</td>
+                  <td align="right" style="padding:12px 16px;font-size:13px;font-weight:600;color:#18181b;border-top:1px solid #e4e4e7;">${safeCourse}</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 16px;font-size:12px;color:#71717a;border-top:1px solid #e4e4e7;">Amount paid</td>
+                  <td align="right" style="padding:12px 16px;font-size:15px;font-weight:800;color:#15803d;border-top:1px solid #e4e4e7;">&#8377;${amount}</td>
                 </tr>
               </table>
-
-              <!-- Hero Banner -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td style="background:linear-gradient(160deg,#b91c1c 0%,#991b1b 40%,#7f1d1d 100%);padding:36px 40px 38px;text-align:center;">
-                    <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin-bottom:20px;">
-                      <tr>
-                        <td style="background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 100%);border-radius:50px;padding:8px 24px;">
-                          <span style="font-size:11px;font-weight:800;color:#111111;letter-spacing:1.2px;text-transform:uppercase;">&#10003; &nbsp;Payment Verified</span>
-                        </td>
-                      </tr>
-                    </table>
-                    <h1 style="margin:0 0 10px;font-size:26px;font-weight:800;color:#ffffff;letter-spacing:-0.3px;line-height:1.3;">Your Course Access<br>is Ready!</h1>
-                    <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.75);line-height:1.6;">Study materials unlocked &mdash; ready to download.</p>
-                    <table width="60" cellpadding="0" cellspacing="0" border="0" align="center" style="margin-top:22px;">
-                      <tr><td style="height:3px;background:linear-gradient(90deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.5) 50%,rgba(255,255,255,0) 100%);border-radius:2px;"></td></tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Body -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;">
-                <tr>
-                  <td style="padding:36px 40px 0;">
-                    <p style="margin:0 0 6px;font-size:16px;color:#111111;line-height:1.7;">Hi <strong>${safeName}</strong>,</p>
-                    <p style="margin:0 0 30px;font-size:14px;color:#555555;line-height:1.8;">We have verified your payment successfully. Your Google Drive notes are now unlocked and ready to access &mdash; click below to open your course folder.</p>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Order Card -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;">
-                <tr>
-                  <td style="padding:0 28px 24px;">
-                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-radius:12px;overflow:hidden;border:1px solid #e5e5e5;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-                      <tr>
-                        <td colspan="2" style="background:linear-gradient(135deg,#fef2f2 0%,#fff1f2 100%);padding:14px 20px;border-bottom:1px solid #fecaca;">
-                          <span style="font-size:11px;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:1px;">&#128203; &nbsp;Order Details</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td width="36%" style="padding:14px 20px;background:#fafafa;border-bottom:1px solid #f0f0f0;vertical-align:top;">
-                          <span style="font-size:11px;font-weight:700;color:#999999;text-transform:uppercase;letter-spacing:0.6px;">Order ID</span>
-                        </td>
-                        <td style="padding:14px 20px;background:#ffffff;border-bottom:1px solid #f0f0f0;">
-                          <span style="font-size:14px;font-weight:700;color:#111111;font-family:'Courier New',monospace;">${safeOrderId}</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td width="36%" style="padding:14px 20px;background:#fafafa;border-bottom:1px solid #f0f0f0;vertical-align:top;">
-                          <span style="font-size:11px;font-weight:700;color:#999999;text-transform:uppercase;letter-spacing:0.6px;">Course</span>
-                        </td>
-                        <td style="padding:14px 20px;background:#ffffff;border-bottom:1px solid #f0f0f0;">
-                          <span style="font-size:14px;font-weight:600;color:#111111;">${safeCourse}</span>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td width="36%" style="padding:14px 20px;background:#fafafa;vertical-align:middle;">
-                          <span style="font-size:11px;font-weight:700;color:#999999;text-transform:uppercase;letter-spacing:0.6px;">Amount</span>
-                        </td>
-                        <td style="padding:14px 20px;background:#ffffff;">
-                          <span style="font-size:22px;font-weight:900;color:#111111;">&rupee;${amount}</span>
-                          <span style="display:inline-block;background:#dcfce7;color:#166534;font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;margin-left:10px;vertical-align:middle;">PAID &#10003;</span>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- CTA Button -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;">
-                <tr>
-                  <td align="center" style="padding:8px 40px 32px;">
-                    <a href="${resolvedDriveUrl}" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:linear-gradient(135deg,#dc2626 0%,#b91c1c 100%);color:#ffffff;text-decoration:none;padding:16px 52px;border-radius:8px;font-size:16px;font-weight:700;letter-spacing:0.3px;box-shadow:0 6px 20px rgba(185,28,28,0.40);text-align:center;">Open Google Drive Notes &nbsp;&rarr;</a>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Help Strip -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;">
-                <tr>
-                  <td style="padding:0 28px 32px;">
-                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#fef2f2;border-radius:10px;border:1px solid #fecaca;">
-                      <tr>
-                        <td style="padding:18px 22px;text-align:center;">
-                          <p style="margin:0 0 6px;font-size:13px;font-weight:700;color:#991b1b;">Having trouble accessing your notes?</p>
-                          <p style="margin:0;font-size:13px;color:#666666;">WhatsApp us anytime at <a href="https://wa.me/919950252138?text=Hi%20Arkado%2C%20I%20need%20help%20with%20order%20${safeOrderId}" style="color:#dc2626;font-weight:700;text-decoration:none;">+91 99502 52138</a></p>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- Footer -->
-              <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                  <td style="background:#111111;padding:22px 40px;text-align:center;">
-                    <p style="margin:0 0 4px;font-size:11px;color:#888888;">&copy; ${new Date().getFullYear()} Arkado Education &nbsp;&middot;&nbsp; <a href="https://arkado.store" style="color:#f87171;text-decoration:none;font-weight:600;">arkado.store</a> &nbsp;&middot;&nbsp; <a href="https://wa.me/919950252138" style="color:#f87171;text-decoration:none;font-weight:600;">Support</a></p>
-                    <p style="margin:0;font-size:10px;color:#555555;">This is an automated email &mdash; please do not reply.</p>
-                  </td>
-                </tr>
-              </table>
-
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding:24px 32px 6px;">
+              <a href="${safeDriveUrl}" style="display:inline-block;background-color:#b91c1c;color:#ffffff;text-decoration:none;padding:14px 42px;border-radius:8px;font-size:15px;font-weight:700;">Open Your Study Material</a>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding:0 32px 4px;">
+              <p style="margin:0;font-size:11px;line-height:1.6;color:#71717a;word-break:break-all;">Button not working? Paste this link in your browser:<br><a href="${safeDriveUrl}" style="color:#b91c1c;">${safeDriveUrl}</a></p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:14px 32px 26px;">
+              <p style="margin:0;font-size:12px;line-height:1.7;color:#71717a;">Need help? WhatsApp us at <a href="https://wa.me/919950252138" style="color:#b91c1c;font-weight:700;text-decoration:none;">+91 99502 52138</a></p>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#fafafa;padding:16px 32px;border-top:1px solid #e4e4e7;border-radius:0 0 12px 12px;">
+              <p style="margin:0;font-size:11px;color:#a1a1aa;text-align:center;">&copy; 2026 Arkado &middot; <a href="https://arkado.store" style="color:#b91c1c;text-decoration:none;">arkado.store</a></p>
             </td>
           </tr>
         </table>

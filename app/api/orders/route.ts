@@ -192,6 +192,8 @@ export async function POST(req: Request) {
         customer_name: cleanPhone ? `${cleanName} (${cleanPhone})` : cleanName,
         customer_email: cleanEmail || (cleanPhone ? `${cleanPhone}@arkado.store` : "order@arkado.store"),
         product_id: course_id,
+        course_title: matchedProduct?.title || rawCourseTitle || "Course Bundle",
+        drive_url: secureDriveUrl,
         amount: authoritativeAmount,
         payment_status: "pending",
         razorpay_order_id: order_id,
@@ -209,6 +211,13 @@ export async function POST(req: Request) {
         // source of truth for T&C evidence in that case).
         console.warn("[orders-post] terms columns missing in marketplace_orders, retrying without them. Run supabase-migrations/20261001_order_terms_acceptance.sql");
         const { terms_accepted: _ta, terms_accepted_at: _tat, terms_version: _tv, ...fallbackPayload } = basePayload;
+        ({ error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(fallbackPayload));
+      }
+      if (insertErr && /course_title|drive_url/.test(insertErr.message)) {
+        // Older marketplace_orders tables may lack these columns — retry
+        // without them so the row is still created (JSON keeps the full data).
+        console.warn("[orders-post] course_title/drive_url columns missing in marketplace_orders, retrying without them.");
+        const { course_title: _ct, drive_url: _du, ...fallbackPayload } = basePayload;
         ({ error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(fallbackPayload));
       }
       if (insertErr) {

@@ -27,9 +27,10 @@ export async function generateMetadata({
     const course = findCourseById(courses, id);
     if (!course) return {};
 
-    const title = course.title;
+    const title = course.meta_title?.trim() || course.title;
     const description = toMetaDescription(
-      course.short_description ||
+      course.meta_description?.trim() ||
+        course.short_description ||
         `${course.title} — pattern-decoded notes, topic-weightage analysis and MCQs for All-India exam preparation.`
     );
     const url = `${siteUrl}/course/${course.slug || course.id}`;
@@ -74,7 +75,10 @@ export default async function CoursePage({ params }: PageProps) {
         "@context": "https://schema.org",
         "@type": "Product",
         name: course.title,
-        description: toMetaDescription(course.short_description || course.title, 300),
+        description: toMetaDescription(
+          course.meta_description?.trim() || course.short_description || course.title,
+          300
+        ),
         ...(image ? { image } : {}),
         brand: { "@type": "Brand", name: "Arkado" },
         offers: {

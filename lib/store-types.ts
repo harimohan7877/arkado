@@ -42,6 +42,8 @@ export interface Course {
   slug: string;
   badge: string; // "Complete Kit", "Bestseller", etc.
   short_description: string;
+  meta_title?: string; // SEO: overrides <title> / OG title when set
+  meta_description?: string; // SEO: overrides meta description when set
   original_price: number;
   price: number;
   discount_percent: number;

@@ -9,6 +9,8 @@ interface Course {
   slug: string;
   badge: string;
   short_description: string;
+  meta_title?: string;
+  meta_description?: string;
   original_price: number;
   price: number;
   discount_percent: number;
@@ -66,6 +68,8 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
     slug: "",
     badge: "Complete Selection Kit",
     short_description: "",
+    meta_title: "",
+    meta_description: "",
     original_price: 999,
     price: 199,
     highlights: [],
@@ -984,6 +988,46 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
                       className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-xs"
                       placeholder="कोर्स के मुख्य लाभ व नोट्स की जानकारी..."
                     />
+                  </div>
+
+                  {/* SEO — Meta Title & Description */}
+                  <div className="rounded-xl border border-violet-200 bg-violet-50/60 p-3.5 space-y-3">
+                    <p className="text-xs font-extrabold text-violet-900">
+                      🔍 SEO — मेटा टाइटल व डिस्क्रिप्शन
+                      <span className="block font-medium text-violet-700 mt-0.5">
+                        Google व WhatsApp/Facebook preview में यही दिखेगा। खाली छोड़ने पर सामान्य टाइटल/विवरण इस्तेमाल होगा।
+                      </span>
+                    </p>
+                    <div>
+                      <div className="flex justify-between items-center mb-1">
+                        <label className="block text-xs font-bold text-stone-700">मेटा टाइटल (Meta Title)</label>
+                        <span className={`text-[10px] font-mono ${(formData.meta_title || "").length > 60 ? "text-red-600 font-bold" : "text-stone-400"}`}>
+                          {(formData.meta_title || "").length}/60
+                        </span>
+                      </div>
+                      <input
+                        type="text"
+                        value={formData.meta_title || ""}
+                        onChange={(e) => setFormData({ ...formData, meta_title: e.target.value })}
+                        className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-xs"
+                        placeholder="उदा. SSC CGL 2026 Complete Notes PDF — 5000+ MCQs | Arkado"
+                      />
+                    </div>
+                    <div>
+                      <div className="flex justify-between items-center mb-1">
+                        <label className="block text-xs font-bold text-stone-700">मेटा डिस्क्रिप्शन (Meta Description)</label>
+                        <span className={`text-[10px] font-mono ${(formData.meta_description || "").length > 155 ? "text-red-600 font-bold" : "text-stone-400"}`}>
+                          {(formData.meta_description || "").length}/155
+                        </span>
+                      </div>
+                      <textarea
+                        value={formData.meta_description || ""}
+                        onChange={(e) => setFormData({ ...formData, meta_description: e.target.value })}
+                        rows={2}
+                        className="w-full px-3.5 py-2 rounded-xl border border-stone-300 bg-white text-stone-900 text-xs"
+                        placeholder="Google search में दिखने वाला 1-2 लाइन का विवरण..."
+                      />
+                    </div>
                   </div>
 
                   {/* Highlights */}

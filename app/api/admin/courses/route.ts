@@ -154,6 +154,8 @@ export async function POST(req: NextRequest) {
       slug,
       badge: data.badge || "Complete Kit",
       short_description: data.short_description || "",
+      meta_title: data.meta_title || "",
+      meta_description: data.meta_description || "",
       original_price: originalPrice,
       price,
       discount_percent: discountPercent,

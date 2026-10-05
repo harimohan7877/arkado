@@ -15,6 +15,12 @@ export async function GET(
   const fileName = slug.join("/");
   const cleanName = fileName.replace(/^\/+/, "");
 
+  // Block path traversal: ".." segments and encoded variants (%2e, %252e, %5c, backslash).
+  // Next.js normalizes ".." before routing, but this guard keeps the file read safe by construction.
+  if (/(^|\/)\.\.(\/|$)/.test(cleanName) || /%2e|%5c|\\/i.test(cleanName)) {
+    return new NextResponse("Not found", { status: 404 });
+  }
+
   // 1. Check local disk (for development & files committed to git)
   const localPath = join(process.cwd(), "public", "mock-tests", cleanName);
   if (existsSync(localPath)) {

@@ -69,7 +69,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
   };
 
   // 1. One-Click Automated Email Dispatch & Approval
-  const handleApproveAndSendEmail = async (order: Order) => {
+  const handleApproveAndSendEmail = async (order: Order, isResend = false) => {
     if (approvingId) return;
     setApprovingId(order.id);
     setMessage(null);
@@ -78,7 +78,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
       const res = await fetch(`/api/admin/orders/${order.id}/approve`, {
         method: "POST",
         headers: { ...getAuthHeaders(), "Content-Type": "application/json" },
-        body: JSON.stringify({}),
+        body: JSON.stringify(isResend ? { resend: true } : {}),
       });
 
       const data = await res.json();
@@ -86,18 +86,22 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
         throw new Error(data.error || "ऑर्डर स्वीकृत नहीं किया जा सका।");
       }
 
-      setOrders((prev) =>
-        prev.map((o) =>
-          o.id === order.id || o.order_id === order.order_id
-            ? { ...o, payment_status: "paid", delivery_status: "delivered" }
-            : o
-        )
-      );
+      if (!isResend) {
+        setOrders((prev) =>
+          prev.map((o) =>
+            o.id === order.id || o.order_id === order.order_id
+              ? { ...o, payment_status: "paid", delivery_status: "delivered" }
+              : o
+          )
+        );
+      }
 
       const targetEmail = order.customer_email || order.email || "छात्र";
       setMessage({
         type: "success",
-        text: `✅ ऑर्डर ${order.order_id} स्वीकृत हो गया! Google Drive नोट्स ईमेल (${targetEmail}) पर भेज दिए गए और यह 'स्वीकृत' सब-सेक्शन में सुरक्षित हो गया।`,
+        text: isResend
+          ? `✅ ऑर्डर ${order.order_id} का Drive-link ईमेल दोबारा भेज दिया गया (${targetEmail})।`
+          : `✅ ऑर्डर ${order.order_id} स्वीकृत हो गया! Google Drive नोट्स ईमेल (${targetEmail}) पर भेज दिए गए और यह 'स्वीकृत' सब-सेक्शन में सुरक्षित हो गया।`,
       });
     } catch (err: any) {
       console.error("Approve error:", err);
@@ -811,7 +815,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                           {isApproved && (
                             <>
                               <button
-                                onClick={() => handleApproveAndSendEmail(order)}
+                                onClick={() => handleApproveAndSendEmail(order, true)}
                                 disabled={isApproving}
                                 className="px-2 py-1 bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-[10px] rounded-lg transition cursor-pointer"
                                 title="छात्र को दोबारा ईमेल भेजें"
@@ -952,7 +956,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
 
                   {isApproved && (
                     <button
-                      onClick={() => handleApproveAndSendEmail(order)}
+                      onClick={() => handleApproveAndSendEmail(order, true)}
                       disabled={isApproving}
                       className="flex-1 py-2.5 bg-stone-100 text-stone-700 font-bold text-xs rounded-xl"
                     >
@@ -1013,7 +1017,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                 <OrderDetailCard
                   order={currentOrder}
                   onClose={() => setExpandedOrder(null)}
-                  onApprove={() => handleApproveAndSendEmail(currentOrder)}
+                  onApprove={(isResend?: boolean) => handleApproveAndSendEmail(currentOrder, isResend)}
                   onMarkFake={() => handleMarkAsFake(currentOrder)}
                   onRestore={() => handleRestoreOrder(currentOrder)}
                   onPermanentDelete={() => handlePermanentDelete(currentOrder)}
@@ -1079,7 +1083,7 @@ function OrderDetailCard({
 }: {
   order: Order;
   onClose: () => void;
-  onApprove: () => void;
+  onApprove: (isResend?: boolean) => void;
   onMarkFake: () => void;
   onRestore: () => void;
   onPermanentDelete: () => void;
@@ -1228,7 +1232,7 @@ function OrderDetailCard({
         {isApproved && (
           <button
             onClick={() => {
-              onApprove();
+              onApprove(true);
               onClose();
             }}
             disabled={isApproving}

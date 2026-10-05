@@ -36,10 +36,11 @@ export async function POST(
 
   try {
     const { id } = await params;
-    let body: { customDriveUrl?: string } = {};
+    let body: { customDriveUrl?: string; resend?: boolean } = {};
     try {
       body = await req.json();
     } catch {}
+    const isResend = body.resend === true;
 
     const orders = await readOrders();
     let orderIndex = orders.findIndex(
@@ -90,19 +91,34 @@ export async function POST(
     // paid/delivered may be approved. Re-approving a delivered order would
     // resend the Drive-link email; approving a failed/cancelled/refunded
     // order would bypass the state machine.
+    // Resend mode skips the guard (re-sending is not a state transition),
+    // but still requires the order to be paid — never email Drive links
+    // for unpaid or failed orders.
     {
       const payStatus = (order.payment_status || "pending").toLowerCase();
       const delStatus = (order.delivery_status || order.status || "pending").toLowerCase();
-      const canPay = payStatus === "paid" || canTransitionOrderStatus(payStatus, "paid");
-      const canDeliver = canTransitionOrderStatus(delStatus, "delivered");
-      if (!canPay || !canDeliver) {
-        return NextResponse.json(
-          {
-            success: false,
-            error: `Order cannot be approved from its current state (payment: ${order.payment_status || "pending"}, delivery: ${order.delivery_status || "pending"}).`,
-          },
-          { status: 409 }
-        );
+      if (isResend) {
+        if (payStatus !== "paid") {
+          return NextResponse.json(
+            {
+              success: false,
+              error: `Cannot re-send email: order is not paid (payment: ${order.payment_status || "pending"}).`,
+            },
+            { status: 409 }
+          );
+        }
+      } else {
+        const canPay = payStatus === "paid" || canTransitionOrderStatus(payStatus, "paid");
+        const canDeliver = canTransitionOrderStatus(delStatus, "delivered");
+        if (!canPay || !canDeliver) {
+          return NextResponse.json(
+            {
+              success: false,
+              error: `Order cannot be approved from its current state (payment: ${order.payment_status || "pending"}, delivery: ${order.delivery_status || "pending"}).`,
+            },
+            { status: 409 }
+          );
+        }
       }
     }
 
@@ -328,43 +344,49 @@ https://arkado.store
       html: htmlContent,
     });
 
-    // Update order status in memory & JSON
-    order.payment_status = "paid";
-    order.delivery_status = "delivered";
-    order.status = "delivered";
-    order.drive_url = resolvedDriveUrl;
-    order.delivered_at = new Date().toISOString();
-    order.approved_at = new Date().toISOString();
-    order.updated_at = new Date().toISOString();
+    // Update order status in memory & JSON (skipped in resend mode —
+    // the order is already paid/delivered; re-sending must not rewrite
+    // delivered_at/approved_at or touch the state machine).
+    if (!isResend) {
+      order.payment_status = "paid";
+      order.delivery_status = "delivered";
+      order.status = "delivered";
+      order.drive_url = resolvedDriveUrl;
+      order.delivered_at = new Date().toISOString();
+      order.approved_at = new Date().toISOString();
+      order.updated_at = new Date().toISOString();
 
-    if (orderIndex !== -1) {
-      orders[orderIndex] = order;
-    } else {
-      orders.unshift(order);
-    }
-    await writeOrders(orders);
-
-    // Sync to Supabase marketplace_orders
-    try {
-      const filter = buildOrderQueryFilter(id);
-      const { error: sbErr } = await supabaseAdmin
-        .from("marketplace_orders")
-        .update({
-          payment_status: "paid",
-          delivery_status: "delivered",
-        })
-        .or(filter);
-
-      if (sbErr) {
-        console.warn("[approve-route] Supabase sync warning:", sbErr.message);
+      if (orderIndex !== -1) {
+        orders[orderIndex] = order;
+      } else {
+        orders.unshift(order);
       }
-    } catch (dbErr) {
-      console.warn("[approve-route] Supabase sync exception:", dbErr);
+      await writeOrders(orders);
+
+      // Sync to Supabase marketplace_orders
+      try {
+        const filter = buildOrderQueryFilter(id);
+        const { error: sbErr } = await supabaseAdmin
+          .from("marketplace_orders")
+          .update({
+            payment_status: "paid",
+            delivery_status: "delivered",
+          })
+          .or(filter);
+
+        if (sbErr) {
+          console.warn("[approve-route] Supabase sync warning:", sbErr.message);
+        }
+      } catch (dbErr) {
+        console.warn("[approve-route] Supabase sync exception:", dbErr);
+      }
     }
 
     return NextResponse.json({
       success: true,
-      message: `Course notes successfully sent to ${recipientEmail}`,
+      message: isResend
+        ? `Course notes re-sent to ${recipientEmail}`
+        : `Course notes successfully sent to ${recipientEmail}`,
       order,
     });
   } catch (err: unknown) {

@@ -97,11 +97,12 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
       }
 
       const targetEmail = order.customer_email || order.email || "छात्र";
+      const msgId = data.messageId ? ` (ID: ${String(data.messageId).slice(0, 24)}…)` : "";
       setMessage({
         type: "success",
         text: isResend
-          ? `✅ ऑर्डर ${order.order_id} का Drive-link ईमेल दोबारा भेज दिया गया (${targetEmail})।`
-          : `✅ ऑर्डर ${order.order_id} स्वीकृत हो गया! Google Drive नोट्स ईमेल (${targetEmail}) पर भेज दिए गए और यह 'स्वीकृत' सब-सेक्शन में सुरक्षित हो गया।`,
+          ? `✅ ऑर्डर ${order.order_id} का Drive-link ईमेल दोबारा भेज दिया गया (${targetEmail})।${msgId}`
+          : `✅ ऑर्डर ${order.order_id} स्वीकृत हो गया! Google Drive नोट्स ईमेल (${targetEmail}) पर भेज दिए गए और यह 'स्वीकृत' सब-सेक्शन में सुरक्षित हो गया।${msgId}`,
       });
     } catch (err: any) {
       console.error("Approve error:", err);

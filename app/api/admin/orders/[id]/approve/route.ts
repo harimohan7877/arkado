@@ -150,7 +150,10 @@ export async function POST(
 
     const smtpUser = process.env.SMTP_USER;
     const smtpPass = process.env.SMTP_PASS;
-    const fromEmail = process.env.SMTP_FROM || "noreply@arkado.in";
+    // Default From to the authenticated Gmail account — a mismatched From
+    // (e.g. noreply@arkado.in via a Gmail account) hurts deliverability and
+    // pushes mail to spam. Set SMTP_FROM explicitly to override.
+    const fromEmail = process.env.SMTP_FROM || smtpUser;
 
     if (!smtpUser || !smtpPass) {
       return NextResponse.json(
@@ -336,13 +339,35 @@ https://arkado.store
     `;
 
     // Send email to student
-    await transporter.sendMail({
+    const info = await transporter.sendMail({
       from: `"Arkado Education" <${fromEmail}>`,
       to: recipientEmail,
       subject,
       text: textContent,
       html: htmlContent,
     });
+
+    // Delivery diagnostics — a green UI message alone doesn't prove delivery.
+    // Nodemailer resolves even when the SMTP server rejects the recipient
+    // (typo'd address, closed account), so check `rejected` explicitly.
+    console.log("[approve-route] sendMail result:", {
+      orderId,
+      to: recipientEmail,
+      messageId: info.messageId,
+      accepted: info.accepted,
+      rejected: info.rejected,
+    });
+
+    if (info.rejected && info.rejected.length > 0) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: `Mail server ne email reject kar diya: ${info.rejected.join(", ")} — address check karo.`,
+          rejected: info.rejected,
+        },
+        { status: 502 }
+      );
+    }
 
     // Update order status in memory & JSON (skipped in resend mode —
     // the order is already paid/delivered; re-sending must not rewrite
@@ -387,6 +412,7 @@ https://arkado.store
       message: isResend
         ? `Course notes re-sent to ${recipientEmail}`
         : `Course notes successfully sent to ${recipientEmail}`,
+      messageId: info.messageId,
       order,
     });
   } catch (err: unknown) {

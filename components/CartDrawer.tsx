@@ -643,7 +643,7 @@ export default function CartDrawer({
                   onClick={onClose}
                   className="inline-flex items-center gap-1 mt-2 text-xs font-bold text-amber-800 hover:text-amber-900 underline underline-offset-2"
                 >
-                  📦 Order ID se status track karo →
+                  📦 Track order status with your Order ID →
                 </a>
               </div>
 

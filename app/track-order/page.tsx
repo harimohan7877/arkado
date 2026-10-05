@@ -25,7 +25,7 @@ export default function TrackOrderPage() {
     setError("");
     setOrder(null);
     if (!orderId.trim() || phone.replace(/\D/g, "").length < 10) {
-      setError("Order ID aur 10-digit phone number dalo.");
+      setError("Please enter your Order ID and 10-digit phone number.");
       return;
     }
     setLoading(true);
@@ -36,10 +36,10 @@ export default function TrackOrderPage() {
         body: JSON.stringify({ order_id: orderId.trim(), phone: phone.trim() }),
       });
       const data = await res.json();
-      if (!res.ok || !data.success) throw new Error(data.error || "Order nahi mila.");
+      if (!res.ok || !data.success) throw new Error(data.error || "Order not found.");
       setOrder(data.order);
     } catch (err: any) {
-      setError(err.message || "Kuch gadbad hui — phir try karo.");
+      setError(err.message || "Something went wrong — please try again.");
     } finally {
       setLoading(false);
     }
@@ -58,9 +58,9 @@ export default function TrackOrderPage() {
           <span className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 mb-3">
             <PackageIcon size={24} />
           </span>
-          <h1 className="text-2xl sm:text-3xl font-black text-slate-900">Order Track Karo</h1>
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900">Track Your Order</h1>
           <p className="text-sm text-slate-500 mt-1">
-            Order ID aur phone number dalo — payment aur delivery ka status dekho.
+            Enter your Order ID and phone number to check payment and delivery status.
           </p>
         </div>
 
@@ -73,10 +73,10 @@ export default function TrackOrderPage() {
               placeholder="ARK-2026-XXXXXXXX"
               className="mt-1 w-full border border-slate-300 rounded-xl px-3 py-2.5 text-sm font-mono uppercase focus:outline-none focus:ring-2 focus:ring-amber-500"
             />
-            <p className="text-[11px] text-slate-400 mt-1">Order confirm hone par success screen / WhatsApp message mein milta hai.</p>
+            <p className="text-[11px] text-slate-400 mt-1">You'll find it on the order success screen or in your WhatsApp message.</p>
           </div>
           <div>
-            <label className="text-xs font-bold text-slate-700">Phone Number (order wala)</label>
+            <label className="text-xs font-bold text-slate-700">Phone Number (used in the order)</label>
             <input
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
@@ -93,7 +93,7 @@ export default function TrackOrderPage() {
             disabled={loading}
             className="w-full py-3 bg-amber-700 hover:bg-amber-800 disabled:opacity-50 text-white text-sm font-bold rounded-xl transition cursor-pointer"
           >
-            {loading ? "Dhoondh rahe hain..." : "Track Karo"}
+            {loading ? "Searching..." : "Track Order"}
           </button>
         </form>
 
@@ -135,7 +135,7 @@ export default function TrackOrderPage() {
                       </div>
                       <p className={`text-xs font-bold pb-4 ${done ? "text-slate-900" : "text-slate-400"} ${current ? "text-emerald-700" : ""}`}>
                         {label}
-                        {current && <span className="ml-1.5 text-[10px] bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded-full">yahan ho</span>}
+                        {current && <span className="ml-1.5 text-[10px] bg-emerald-100 text-emerald-700 px-1.5 py-0.5 rounded-full">you are here</span>}
                       </p>
                     </div>
                   );

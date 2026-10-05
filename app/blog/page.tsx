@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const siteUrl = getSiteUrl();
   const title = "Blog — Exam Tips, Syllabus Guides & Study Strategy | Arkado";
   const description = toMetaDescription(
-    "Arkado blog: SSC, CET, Rajasthan aur teaching exams ke liye syllabus guides, 90-day study plans, preparation strategy aur exam updates."
+    "Arkado blog: syllabus guides, 90-day study plans, preparation strategy and exam updates for SSC, CET, Rajasthan and teaching exams."
   );
   return {
     title,

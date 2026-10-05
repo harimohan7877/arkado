@@ -25,6 +25,27 @@ interface MarketplaceOrder {
   product: { title: string; exam_name: string } | null;
 }
 
+interface AlertOrderItem {
+  order_id: string;
+  name: string;
+  amount: number;
+  hours_ago: number;
+}
+
+interface AlertCourseItem {
+  id: string;
+  title: string;
+}
+
+interface StatsAlerts {
+  pendingOrders: number;
+  stalePendingOrders: { count: number; items: AlertOrderItem[] };
+  undeliveredPaid: { count: number; items: AlertOrderItem[] };
+  coursesNoCover: { count: number; items: AlertCourseItem[] };
+  coursesNoSample: { count: number; items: AlertCourseItem[] };
+  coursesNoDrive: { count: number; items: AlertCourseItem[] };
+}
+
 interface Stats {
   totalUsers: number;
   totalPaidUsers: number;
@@ -33,6 +54,25 @@ interface Stats {
   totalRevenue: number;
   totalOrders?: number;
   warning?: string;
+  alerts?: StatsAlerts;
+  storage?: {
+    jsonStoreBytes: number;
+    uploads: { files: number; bytes: number };
+    dbRows: { orders: number; products: number };
+  };
+  visitors?: {
+    available: boolean;
+    days: { date: string; views: number }[];
+    total: number;
+    today: number;
+  };
+}
+
+function formatBytes(bytes: number): string {
+  if (!bytes || bytes <= 0) return "0 KB";
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(2)} MB`;
 }
 
 type TabType = "dashboard" | "categories" | "featured" | "sections" | "exams" | "courses" | "orders" | "blog" | "settings";
@@ -168,6 +208,128 @@ export default function AdminDashboardPage() {
         {activeTab === "settings" && <SettingsTab getAuthHeaders={getAuthHeaders} />}
 
         {activeTab === "dashboard" && (
+          <div className="space-y-4">
+            {/* Pending work alerts */}
+            {!loadingStats && stats?.alerts && (
+              <div
+                className={`border rounded-2xl p-5 shadow-xs ${
+                  stats.alerts.stalePendingOrders.count > 0 ||
+                  stats.alerts.undeliveredPaid.count > 0 ||
+                  stats.alerts.coursesNoDrive.count > 0
+                    ? "bg-red-50 border-red-200"
+                    : stats.alerts.pendingOrders > 0 ||
+                      stats.alerts.coursesNoCover.count > 0 ||
+                      stats.alerts.coursesNoSample.count > 0
+                    ? "bg-amber-50 border-amber-200"
+                    : "bg-emerald-50 border-emerald-200"
+                }`}
+              >
+                <h2 className="text-sm font-extrabold text-stone-900 flex items-center gap-2">
+                  <span>⚠️</span> ध्यान देने वाले काम
+                </h2>
+                {stats.alerts.stalePendingOrders.count === 0 &&
+                stats.alerts.undeliveredPaid.count === 0 &&
+                stats.alerts.pendingOrders === 0 &&
+                stats.alerts.coursesNoCover.count === 0 &&
+                stats.alerts.coursesNoSample.count === 0 &&
+                stats.alerts.coursesNoDrive.count === 0 ? (
+                  <p className="text-xs text-emerald-700 font-semibold mt-2">
+                    ✅ सब बढ़िया है — कोई pending काम नहीं है।
+                  </p>
+                ) : (
+                  <div className="mt-3 space-y-2.5">
+                    {stats.alerts.stalePendingOrders.count > 0 && (
+                      <div className="bg-white rounded-xl border border-red-200 p-3">
+                        <div className="flex items-center justify-between gap-2">
+                          <p className="text-xs font-bold text-red-800">
+                            🔴 {stats.alerts.stalePendingOrders.count} order 24 घंटे से ज्यादा से pending — payment verify karo
+                          </p>
+                          <button
+                            onClick={() => setActiveTab("orders")}
+                            className="text-[11px] font-bold text-red-700 bg-red-100 hover:bg-red-200 px-2.5 py-1 rounded-lg transition cursor-pointer shrink-0"
+                          >
+                            Orders देखो
+                          </button>
+                        </div>
+                        <div className="mt-2 space-y-1">
+                          {stats.alerts.stalePendingOrders.items.map((o) => (
+                            <p key={o.order_id} className="text-[11px] text-stone-600 font-mono">
+                              {o.order_id} • {o.name} • ₹{o.amount} • {o.hours_ago}h se
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    {stats.alerts.undeliveredPaid.count > 0 && (
+                      <div className="bg-white rounded-xl border border-amber-200 p-3">
+                        <div className="flex items-center justify-between gap-2">
+                          <p className="text-xs font-bold text-amber-800">
+                            🟠 {stats.alerts.undeliveredPaid.count} paid order ki delivery बाकी है
+                          </p>
+                          <button
+                            onClick={() => setActiveTab("orders")}
+                            className="text-[11px] font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-2.5 py-1 rounded-lg transition cursor-pointer shrink-0"
+                          >
+                            Orders देखो
+                          </button>
+                        </div>
+                        <div className="mt-2 space-y-1">
+                          {stats.alerts.undeliveredPaid.items.map((o) => (
+                            <p key={o.order_id} className="text-[11px] text-stone-600 font-mono">
+                              {o.order_id} • {o.name} • ₹{o.amount}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    {stats.alerts.pendingOrders > stats.alerts.stalePendingOrders.count && (
+                      <p className="text-xs text-stone-600 font-semibold px-1">
+                        ⏳ कुल {stats.alerts.pendingOrders} orders payment-verification के इंतज़ार में हैं।
+                      </p>
+                    )}
+                    {stats.alerts.coursesNoDrive.count > 0 && (
+                      <div className="bg-white rounded-xl border border-red-200 p-3 flex items-center justify-between gap-2">
+                        <p className="text-xs font-bold text-red-800">
+                          🔴 {stats.alerts.coursesNoDrive.count} courses में drive link नहीं — approve ke baad deliver nahi ho payega!
+                        </p>
+                        <button
+                          onClick={() => setActiveTab("courses")}
+                          className="text-[11px] font-bold text-red-700 bg-red-100 hover:bg-red-200 px-2.5 py-1 rounded-lg transition cursor-pointer shrink-0"
+                        >
+                          Courses देखो
+                        </button>
+                      </div>
+                    )}
+                    {stats.alerts.coursesNoCover.count > 0 && (
+                      <div className="bg-white rounded-xl border border-amber-200 p-3 flex items-center justify-between gap-2">
+                        <p className="text-xs font-bold text-amber-800">
+                          🟡 {stats.alerts.coursesNoCover.count} courses में cover image नहीं है
+                        </p>
+                        <button
+                          onClick={() => setActiveTab("courses")}
+                          className="text-[11px] font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-2.5 py-1 rounded-lg transition cursor-pointer shrink-0"
+                        >
+                          Courses देखो
+                        </button>
+                      </div>
+                    )}
+                    {stats.alerts.coursesNoSample.count > 0 && (
+                      <div className="bg-white rounded-xl border border-amber-200 p-3 flex items-center justify-between gap-2">
+                        <p className="text-xs font-bold text-amber-800">
+                          🟡 {stats.alerts.coursesNoSample.count} courses में sample PDF नहीं है
+                        </p>
+                        <button
+                          onClick={() => setActiveTab("courses")}
+                          className="text-[11px] font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-2.5 py-1 rounded-lg transition cursor-pointer shrink-0"
+                        >
+                          Courses देखो
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
           <div className="bg-white border border-stone-200 rounded-2xl p-6 shadow-xs space-y-4">
             <h2 className="text-sm font-extrabold text-stone-900">प्लेटफ़ॉर्म ओवरव्यू</h2>
             {loadingStats ? (
@@ -192,6 +354,69 @@ export default function AdminDashboardPage() {
                 </div>
               </div>
             )}
+          </div>
+
+          {/* Storage usage */}
+          {!loadingStats && stats?.storage && (
+            <div className="bg-white border border-stone-200 rounded-2xl p-6 shadow-xs space-y-3">
+              <h2 className="text-sm font-extrabold text-stone-900 flex items-center gap-2">
+                <span>💾</span> स्टोरेज
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="p-4 bg-stone-50 rounded-xl border border-stone-200">
+                  <div className="text-lg font-extrabold text-stone-900">{formatBytes(stats.storage.jsonStoreBytes)}</div>
+                  <div className="text-xs text-stone-500 mt-1">JSON डेटा (courses, orders, settings…)</div>
+                </div>
+                <div className="p-4 bg-stone-50 rounded-xl border border-stone-200">
+                  <div className="text-lg font-extrabold text-stone-900">{formatBytes(stats.storage.uploads.bytes)}</div>
+                  <div className="text-xs text-stone-500 mt-1">अपलोड की हुई images ({stats.storage.uploads.files} files)</div>
+                </div>
+                <div className="p-4 bg-stone-50 rounded-xl border border-stone-200">
+                  <div className="text-lg font-extrabold text-stone-900">{stats.storage.dbRows.orders + stats.storage.dbRows.products}</div>
+                  <div className="text-xs text-stone-500 mt-1">DB rows ({stats.storage.dbRows.orders} orders + {stats.storage.dbRows.products} products)</div>
+                </div>
+              </div>
+              <p className="text-[11px] text-stone-400">
+                Free plan reference: 500 MB database / 1 GB file storage — abhi usage bahut kam hai, chinta ki baat nahi.
+              </p>
+            </div>
+          )}
+
+          {/* Visitors */}
+          {!loadingStats && (
+            <div className="bg-white border border-stone-200 rounded-2xl p-6 shadow-xs space-y-3">
+              <h2 className="text-sm font-extrabold text-stone-900 flex items-center gap-2">
+                <span>📊</span> Visitors
+                {stats?.visitors && (
+                  <span className="text-[11px] font-bold text-stone-500">
+                    • आज {stats.visitors.today} • 14 दिन में {stats.visitors.total}
+                  </span>
+                )}
+              </h2>
+              {!stats?.visitors?.available ? (
+                <p className="text-xs text-stone-500">
+                  Visitor tracking abhi chalu nahi hai — <span className="font-mono font-bold">supabase-migrations/20261005_page_views.sql</span> ko Supabase SQL editor mein chalao, phir yahan graph dikhega.
+                </p>
+              ) : (
+                <div className="flex items-end gap-1 h-24">
+                  {stats.visitors.days.map((d) => {
+                    const max = Math.max(1, ...stats.visitors!.days.map((x) => x.views));
+                    return (
+                      <div key={d.date} className="flex-1 flex flex-col items-center gap-1" title={`${d.date}: ${d.views} views`}>
+                        <span className="text-[9px] font-bold text-stone-500">{d.views > 0 ? d.views : ""}</span>
+                        <div
+                          className="w-full rounded-t bg-amber-600/80 min-h-[3px]"
+                          style={{ height: `${Math.max(3, (d.views / max) * 72)}px` }}
+                        />
+                        <span className="text-[8px] text-stone-400">{d.date.slice(8)}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+              <p className="text-[11px] text-stone-400">Sirf page path count hota hai — koi IP ya cookie track nahi hoti.</p>
+            </div>
+          )}
           </div>
         )}
 

@@ -65,22 +65,22 @@ export function phaseOf(o: SafeOrder): OrderPhase {
 }
 
 export const PHASE_INFO: Record<OrderPhase, { title: string; desc: string }> = {
-  ordered: { title: "Order mil gaya", desc: "Tumhara order hum tak pahunch gaya hai." },
+  ordered: { title: "Order received", desc: "Your order has reached us." },
   verifying: {
-    title: "Payment verify ho raha hai",
-    desc: "Hum tumhara UTR check kar rahe hain — aam taur par kuch ghanton mein ho jata hai.",
+    title: "Payment is being verified",
+    desc: "We're checking your UTR — this usually takes a few hours.",
   },
   approved: {
     title: "Payment approved!",
-    desc: "Tumhara study material taiyaar ho raha hai — link jald WhatsApp par milega.",
+    desc: "Your study material is being prepared — you'll get the link on WhatsApp soon.",
   },
   delivered: {
     title: "Delivered!",
-    desc: "Study material ka link bhej diya gaya hai — apna WhatsApp check karo.",
+    desc: "Your study material link has been sent — please check your WhatsApp.",
   },
   failed: {
-    title: "Order cancel ho gaya",
-    desc: "Is order ka payment verify nahi ho paya. Madad chahiye to WhatsApp par sampark karo.",
+    title: "Order cancelled",
+    desc: "We couldn't verify the payment for this order. Contact us on WhatsApp for help.",
   },
 };
 

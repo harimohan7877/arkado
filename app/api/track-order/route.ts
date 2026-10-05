@@ -23,7 +23,7 @@ export async function POST(req: NextRequest) {
   try {
     const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
     if (rateLimited(ip)) {
-      return NextResponse.json({ success: false, error: "Bahut zyada koshish — 1 minute ruk kar phir try karo." }, { status: 429 });
+      return NextResponse.json({ success: false, error: "Too many attempts — please wait a minute and try again." }, { status: 429 });
     }
 
     const body = await req.json().catch(() => ({}));
@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     const phone = normPhone(sanitizeInput(body.phone));
 
     if (!orderId || phone.length < 10) {
-      return NextResponse.json({ success: false, error: "Order ID aur sahi phone number dalo." }, { status: 400 });
+      return NextResponse.json({ success: false, error: "Please enter your Order ID and a valid phone number." }, { status: 400 });
     }
 
     const orders = await getStoreData<any[]>("orders", "data/orders.json", []);
@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
 
     // Generic response — don't reveal whether the ID exists or the phone mismatched
     if (!order || !orderPhoneMatches(order, phone)) {
-      return NextResponse.json({ success: false, error: "Is Order ID / phone par koi order nahi mila." }, { status: 404 });
+      return NextResponse.json({ success: false, error: "No order found for this Order ID and phone number." }, { status: 404 });
     }
 
     // Supabase-sourced orders often lack course_title ("Course Bundle" fallback) —
@@ -61,11 +61,11 @@ export async function POST(req: NextRequest) {
 
     const safe = toSafeOrder(order);
     if (!safe) {
-      return NextResponse.json({ success: false, error: "Is Order ID / phone par koi order nahi mila." }, { status: 404 });
+      return NextResponse.json({ success: false, error: "No order found for this Order ID and phone number." }, { status: 404 });
     }
 
     return NextResponse.json({ success: true, order: safe });
   } catch {
-    return NextResponse.json({ success: false, error: "Kuch gadbad hui — phir try karo." }, { status: 500 });
+    return NextResponse.json({ success: false, error: "Something went wrong — please try again." }, { status: 500 });
   }
 }

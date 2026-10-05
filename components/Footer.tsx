@@ -24,16 +24,19 @@ const SendIcon = (p: { size?: number; className?: string }) => (
   </svg>
 );
 
-export default function Footer() {
-  const [settings, setSettings] = useState<Settings | null>(null);
+export default function Footer({ settings: settingsProp }: { settings?: Settings | null }) {
+  const [settings, setSettings] = useState<Settings | null>(() =>
+    settingsProp !== undefined ? settingsProp : null
+  );
 
   useEffect(() => {
+    if (settingsProp !== undefined) return;
     fetchWithCache<Settings>("/api/settings")
       .then((data) => {
         if (data && typeof data === "object") setSettings(data);
       })
       .catch(() => {});
-  }, []);
+  }, [settingsProp]);
 
   const brand = settings?.brand || {};
   const social = settings?.social || {};

@@ -23,27 +23,33 @@ interface HeroSliderProps {
   courses: CourseBundle[];
   onBuyNow: (course: CourseBundle) => void;
   onOpenSample?: (course: CourseBundle) => void;
+  /** Server-fetched settings (homepage). When provided, skips the client-side fetch. */
+  settings?: Settings | null;
 }
 
 export default function HeroSlider({
   courses,
   onBuyNow,
   onOpenSample,
+  settings: settingsProp,
 }: HeroSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [settings, setSettings] = useState<Settings | null>(null);
+  const [settings, setSettings] = useState<Settings | null>(() =>
+    settingsProp !== undefined ? settingsProp : null
+  );
   const [failedSlideImages, setFailedSlideImages] = useState<Record<string, boolean>>({});
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
   useEffect(() => {
+    if (settingsProp !== undefined) return;
     fetchWithCache<Settings>("/api/settings")
       .then((data) => {
         if (data && typeof data === "object") setSettings(data);
       })
       .catch(() => {});
-  }, []);
+  }, [settingsProp]);
 
   const slides = courses.length > 0 ? courses : [];
 

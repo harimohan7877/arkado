@@ -1,10 +1,17 @@
 "use client";
 
 import { useSettings } from "@/lib/store-hooks";
+import { Settings } from "@/lib/store-types";
 import { DownloadIcon, ShieldIcon, FileTextIcon, ClockIcon, MessageSquareIcon } from "@/components/icons";
 
-export default function TrustStrip() {
-  const { settings } = useSettings();
+interface TrustStripProps {
+  /** Server-fetched settings (homepage). When provided, skips the client-side fetch. */
+  settings?: Settings | null;
+}
+
+export default function TrustStrip({ settings: settingsProp }: TrustStripProps) {
+  const { settings: hookSettings } = useSettings();
+  const settings = settingsProp !== undefined ? settingsProp : hookSettings;
 
   const getIcon = (iconName: string) => {
     switch (iconName) {

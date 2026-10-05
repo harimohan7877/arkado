@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getStoreData, setStoreData } from "@/lib/store-data";
 import { verifyAdminSession } from "@/lib/admin-auth";
+import {
+  buildFeaturedCourses,
+  buildNewArrivalCourses,
+  buildSliderCourses,
+  sanitizePublicCourses,
+} from "@/lib/home-data";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -26,29 +32,6 @@ interface CategoryRecord {
   }[];
 }
 
-interface FeaturedExamConfig {
-  id: string;
-  name: string;
-  short_name?: string;
-  logo_url?: string;
-  board_name?: string;
-  category_name?: string;
-  priority?: number;
-}
-
-interface FeaturedStore {
-  featured_exams?: FeaturedExamConfig[];
-  new_arrivals?: FeaturedExamConfig[];
-}
-
-function sanitizeCourses(courses: any[], isAdmin: boolean): any[] {
-  if (isAdmin) return courses;
-  return courses.map((c) => {
-    const { drive_url, ...safeCourse } = c;
-    return safeCourse;
-  });
-}
-
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const exam = searchParams.get("exam");
@@ -63,7 +46,7 @@ export async function GET(req: NextRequest) {
     const allMergedCourses: any[] = [...customCourses];
 
     // Read featured configuration from admin panel
-    const featuredConfig = await getStoreData<FeaturedStore>("featured_exams", "data/featured_exams.json", {
+    const featuredConfig = await getStoreData<{ featured_exams?: any[]; new_arrivals?: any[] }>("featured_exams", "data/featured_exams.json", {
       featured_exams: [],
       new_arrivals: [],
     });
@@ -75,96 +58,31 @@ export async function GET(req: NextRequest) {
     };
 
     if (featured === "true") {
-      const configList = Array.isArray(featuredConfig.featured_exams) ? featuredConfig.featured_exams : [];
-      const result: any[] = [];
-      const usedIds = new Set<string>();
-
-      for (const featItem of configList) {
-        const matched =
-          allMergedCourses.find((c) => c.id === featItem.id || c.slug === featItem.id) ||
-          allMergedCourses.find((c) => c.exam_id === featItem.id) ||
-          allMergedCourses.find(
-            (c) => featItem.name && c.title?.toLowerCase().includes(featItem.name.toLowerCase().split(" ")[0])
-          );
-
-        if (matched && !usedIds.has(matched.id)) {
-          result.push({
-            ...matched,
-            is_active: true,
-            is_featured: true,
-            featured_priority: featItem.priority || result.length + 1,
-          });
-          usedIds.add(matched.id);
-        }
-      }
-
-      for (const c of allMergedCourses) {
-        if ((includeInactive || c.is_active) && c.is_featured && !usedIds.has(c.id)) {
-          result.push(c);
-          usedIds.add(c.id);
-        }
-      }
-
-      if (result.length === 0) {
-        return NextResponse.json(sanitizeCourses(allMergedCourses.filter((c) => c.is_active).slice(0, 4), isAdmin), { headers: cacheHeaders });
-      }
-
-      result.sort((a, b) => (a.featured_priority || 99) - (b.featured_priority || 99));
-      return NextResponse.json(sanitizeCourses(result, isAdmin), { headers: cacheHeaders });
+      return NextResponse.json(
+        buildFeaturedCourses(allMergedCourses, featuredConfig, includeInactive, isAdmin),
+        { headers: cacheHeaders }
+      );
     }
 
     if (newArrivals === "true") {
-      const configList = Array.isArray(featuredConfig.new_arrivals) ? featuredConfig.new_arrivals : [];
-      const result: any[] = [];
-      const usedIds = new Set<string>();
-
-      for (const arrItem of configList) {
-        const matched =
-          allMergedCourses.find((c) => c.id === arrItem.id || c.slug === arrItem.id) ||
-          allMergedCourses.find((c) => c.exam_id === arrItem.id) ||
-          allMergedCourses.find(
-            (c) => arrItem.name && c.title?.toLowerCase().includes(arrItem.name.toLowerCase().split(" ")[0])
-          );
-
-        if (matched && !usedIds.has(matched.id)) {
-          result.push({
-            ...matched,
-            is_active: true,
-            is_new_arrival: true,
-            new_arrival_priority: arrItem.priority || result.length + 1,
-          });
-          usedIds.add(matched.id);
-        }
-      }
-
-      for (const c of allMergedCourses) {
-        if ((includeInactive || c.is_active) && c.is_new_arrival && !usedIds.has(c.id)) {
-          result.push(c);
-          usedIds.add(c.id);
-        }
-      }
-
-      if (result.length === 0) {
-        return NextResponse.json(sanitizeCourses(allMergedCourses.filter((c) => c.is_active).slice(0, 4), isAdmin), { headers: cacheHeaders });
-      }
-
-      result.sort((a, b) => (a.new_arrival_priority || 99) - (b.new_arrival_priority || 99));
-      return NextResponse.json(sanitizeCourses(result, isAdmin), { headers: cacheHeaders });
+      return NextResponse.json(
+        buildNewArrivalCourses(allMergedCourses, featuredConfig, includeInactive, isAdmin),
+        { headers: cacheHeaders }
+      );
     }
 
     if (slider === "true") {
-      let sliderList = allMergedCourses.filter((c) => (includeInactive || c.is_active) && c.show_in_slider);
-      if (sliderList.length === 0) {
-        sliderList = allMergedCourses.filter((c) => c.is_active).slice(0, 4);
-      }
-      return NextResponse.json(sanitizeCourses(sliderList, isAdmin), { headers: cacheHeaders });
+      return NextResponse.json(
+        buildSliderCourses(allMergedCourses, includeInactive, isAdmin),
+        { headers: cacheHeaders }
+      );
     }
 
     if (exam) {
       const filtered = allMergedCourses.filter(
         (c) => (includeInactive || c.is_active) && (c.exam_id === exam || c.id === exam || c.slug === exam)
       );
-      return NextResponse.json(sanitizeCourses(filtered, isAdmin), { headers: cacheHeaders });
+      return NextResponse.json(sanitizePublicCourses(filtered, isAdmin), { headers: cacheHeaders });
     }
 
     let finalCourses = allMergedCourses;
@@ -172,7 +90,7 @@ export async function GET(req: NextRequest) {
       finalCourses = finalCourses.filter((c) => c.is_active);
     }
 
-    return NextResponse.json(sanitizeCourses(finalCourses.sort((a, b) => (a.priority || 0) - (b.priority || 0)), isAdmin), { headers: cacheHeaders });
+    return NextResponse.json(sanitizePublicCourses(finalCourses.sort((a, b) => (a.priority || 0) - (b.priority || 0)), isAdmin), { headers: cacheHeaders });
   } catch {
     return NextResponse.json([]);
   }

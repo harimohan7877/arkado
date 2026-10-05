@@ -10,14 +10,24 @@ import { ChevronRightIcon } from "@/components/icons";
 
 interface SidebarCategoriesProps {
   activeCategory?: string;
+  /** Server-fetched categories (homepage). When provided, skips the client-side fetch. */
+  categories?: Category[];
 }
 
-export default function SidebarCategories({ activeCategory }: SidebarCategoriesProps) {
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [loading, setLoading] = useState(true);
+export default function SidebarCategories({ activeCategory, categories: categoriesProp }: SidebarCategoriesProps) {
+  const [categories, setCategories] = useState<Category[]>(() =>
+    Array.isArray(categoriesProp) ? categoriesProp : []
+  );
+  const [loading, setLoading] = useState(!Array.isArray(categoriesProp));
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
+    if (Array.isArray(categoriesProp)) {
+      const sorted = [...categoriesProp].sort((a, b) => (a.priority || 0) - (b.priority || 0));
+      setCategories(sorted);
+      setLoading(false);
+      return;
+    }
     fetchWithCache<Category[]>("/api/categories?scope=public")
       .then((data) => {
         const sorted = [...(Array.isArray(data) ? data : [])].sort((a, b) => a.priority - b.priority);
@@ -25,7 +35,7 @@ export default function SidebarCategories({ activeCategory }: SidebarCategoriesP
       })
       .catch(() => {})
       .finally(() => setLoading(false));
-  }, []);
+  }, [categoriesProp]);
 
   if (loading) {
     return (

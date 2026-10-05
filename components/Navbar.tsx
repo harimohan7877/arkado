@@ -23,11 +23,18 @@ import {
 interface NavbarProps {
   cartCount?: number;
   onCartClick?: () => void;
+  /** Server-fetched data (homepage). When provided, skips the client-side fetches. */
+  categories?: Category[];
+  settings?: Settings | null;
 }
 
-export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
-  const [categories, setCategories] = useState<Category[]>([]);
-  const [settings, setSettings] = useState<Settings | null>(null);
+export default function Navbar({ cartCount = 0, onCartClick, categories: categoriesProp, settings: settingsProp }: NavbarProps) {
+  const [categories, setCategories] = useState<Category[]>(() =>
+    Array.isArray(categoriesProp) ? categoriesProp : []
+  );
+  const [settings, setSettings] = useState<Settings | null>(() =>
+    settingsProp !== undefined ? settingsProp : null
+  );
   const [showCatDropdown, setShowCatDropdown] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -35,12 +42,16 @@ export default function Navbar({ cartCount = 0, onCartClick }: NavbarProps) {
   const [user, setUser] = useState<{ id: string; email?: string } | null>(null);
 
   useEffect(() => {
-    fetchWithCache<Category[]>("/api/categories?scope=public")
-      .then((data) => setCategories(Array.isArray(data) ? data : []))
-      .catch(() => {});
-    fetchWithCache<Settings>("/api/settings")
-      .then((data) => setSettings(data && typeof data === "object" ? data : null))
-      .catch(() => {});
+    if (!Array.isArray(categoriesProp)) {
+      fetchWithCache<Category[]>("/api/categories?scope=public")
+        .then((data) => setCategories(Array.isArray(data) ? data : []))
+        .catch(() => {});
+    }
+    if (settingsProp === undefined) {
+      fetchWithCache<Settings>("/api/settings")
+        .then((data) => setSettings(data && typeof data === "object" ? data : null))
+        .catch(() => {});
+    }
 
     supabase.auth.getSession().then(({ data }) => {
       if (data?.session?.user) {

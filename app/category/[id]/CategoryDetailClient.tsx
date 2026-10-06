@@ -336,34 +336,34 @@ export default function CategoryDetailClient({ params }: CategoryPageProps) {
                     className="bg-white rounded-2xl border border-stone-200 hover:border-amber-400 p-4 transition-all hover:shadow-md flex flex-col justify-between group"
                   >
                     <div className="space-y-3">
-                      <div className="flex items-start gap-3">
+                      <div className="flex items-center gap-3">
                         <Link
                           href={examHref}
-                          className="relative w-12 h-12 rounded-xl bg-stone-50 border border-stone-200 shrink-0 p-1 flex items-center justify-center overflow-hidden group-hover:border-amber-300 transition"
+                          className="relative w-14 h-14 rounded-2xl bg-stone-50 border border-stone-200 shrink-0 p-1.5 flex items-center justify-center overflow-hidden group-hover:border-amber-300 transition"
                         >
                           {examLogo && !failedExamImages[exam.id] ? (
                             <Image
                               src={examLogo}
                               alt={exam.name}
-                              width={44}
-                              height={44}
+                              width={48}
+                              height={48}
                               unoptimized
                               onError={() => setFailedExamImages((prev) => ({ ...prev, [exam.id]: true }))}
                               className="object-contain max-h-full max-w-full rounded-lg"
                             />
                           ) : (
-                            <span className="text-xl">📋</span>
+                            <span className="text-2xl">📋</span>
                           )}
                         </Link>
 
                         <div className="flex-1 min-w-0">
                           <Link
                             href={examHref}
-                            className="text-xs font-bold text-stone-900 line-clamp-2 leading-snug group-hover:text-amber-700 transition block"
+                            className="text-[13px] font-bold text-stone-900 line-clamp-2 leading-snug group-hover:text-amber-700 transition block"
                           >
                             {exam.name}
                           </Link>
-                          <p className="text-[10px] text-stone-500 mt-0.5 truncate">
+                          <p className="text-[11px] text-stone-500 mt-0.5 truncate">
                             {exam.board || category.name}
                           </p>
                         </div>
@@ -387,12 +387,12 @@ export default function CategoryDetailClient({ params }: CategoryPageProps) {
                       </div>
                     </div>
 
-                    <div className="pt-3 mt-3 border-t border-stone-100 flex items-center justify-between gap-2">
+                    <div className="pt-3 mt-3 border-t border-stone-100 flex items-center gap-2">
                       <Link
                         href={examHref}
-                        className="btn-primary py-1.5 px-3 text-xs font-bold flex items-center gap-1 shadow-xs"
+                        className="btn-primary flex-1 py-2 px-3 text-[11px] font-bold flex items-center justify-center gap-1 shadow-xs whitespace-nowrap"
                       >
-                        {hasMultipleKits ? `Browse ${examKits.length} Kits & Books →` : "Study Kit & Buy →"}
+                        {hasMultipleKits ? `Browse ${examKits.length} Kits →` : "Study Kit & Buy →"}
                       </Link>
                       <a
                         href={`https://wa.me/${DEFAULT_SETTINGS.whatsapp_support_number}?text=${encodeURIComponent(
@@ -400,9 +400,10 @@ export default function CategoryDetailClient({ params }: CategoryPageProps) {
                         )}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[11px] font-semibold text-emerald-700 hover:text-emerald-800 flex items-center gap-1"
+                        title="WhatsApp par poochhen"
+                        className="shrink-0 px-2.5 py-2 rounded-lg border border-emerald-200 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-[11px] font-bold flex items-center gap-1 transition whitespace-nowrap"
                       >
-                        WhatsApp 💬
+                        💬 WhatsApp
                       </a>
                     </div>
                   </div>

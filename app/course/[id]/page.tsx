@@ -3,7 +3,9 @@ import CourseDetailClient from "./CourseDetailClient";
 import {
   getSiteUrl,
   fetchCoursesServer,
+  fetchExamsServer,
   findCourseById,
+  findExamById,
   absoluteImageUrl,
   toMetaDescription,
 } from "@/lib/seo";
@@ -25,7 +27,40 @@ export async function generateMetadata({
     const id = await resolveId(params);
     const courses = await fetchCoursesServer();
     const course = findCourseById(courses, id);
-    if (!course) return {};
+    if (!course) {
+      // Exam hub page (e.g. /course/ssc-cgl): build keyword-rich metadata
+      // from the exam record instead of falling back to the generic site title.
+      const exams = await fetchExamsServer();
+      const exam = findExamById(exams, id);
+      if (!exam) return {};
+
+      const examTitle = `${exam.name} — Study Material, Notes & MCQs | Arkado`;
+      const examDescription = toMetaDescription(
+        `${exam.name}${exam.board ? ` (${exam.board})` : ""} exam preparation: subject-wise 1000+ MCQ books, selection kits and mock tests. Pay via UPI, instant delivery on WhatsApp & Gmail.`
+      );
+      const examUrl = `${siteUrl}/course/${exam.slug || exam.id}`;
+      const examImage = absoluteImageUrl(exam.logo_url);
+
+      return {
+        title: examTitle,
+        description: examDescription,
+        alternates: { canonical: examUrl },
+        openGraph: {
+          type: "website",
+          siteName: "Arkado",
+          title: examTitle,
+          description: examDescription,
+          url: examUrl,
+          ...(examImage ? { images: [{ url: examImage, alt: exam.name }] } : {}),
+        },
+        twitter: {
+          card: "summary_large_image",
+          title: examTitle,
+          description: examDescription,
+          ...(examImage ? { images: [examImage] } : {}),
+        },
+      };
+    }
 
     const title = course.meta_title?.trim() || course.title;
     const description = toMetaDescription(
@@ -107,6 +142,35 @@ export default async function CoursePage({ params }: PageProps) {
           item: c.url,
         })),
       };
+    } else {
+      // Exam hub page: breadcrumb schema helps Google understand site structure.
+      const exams = await fetchExamsServer();
+      const exam = findExamById(exams, id);
+      if (exam) {
+        const examUrl = `${siteUrl}/course/${exam.slug || exam.id}`;
+        const examCrumbs = [
+          { name: "Home", url: siteUrl },
+          { name: "All Exams", url: `${siteUrl}/exams` },
+          { name: exam.name, url: examUrl },
+        ];
+        if (exam.category_id) {
+          const examWithCat = exam as typeof exam & { category_name?: string };
+          examCrumbs.splice(1, 0, {
+            name: examWithCat.category_name || "Category",
+            url: `${siteUrl}/category/${exam.category_id}`,
+          });
+        }
+        breadcrumbLd = {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: examCrumbs.map((c, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: c.name,
+            item: c.url,
+          })),
+        };
+      }
     }
   } catch {
     jsonLd = null;

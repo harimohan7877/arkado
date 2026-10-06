@@ -54,9 +54,43 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  // Organization + WebSite structured data — helps Google understand the brand
+  // and enables rich results (logo, sitelinks search box).
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Arkado",
+    url: "https://arkado.store",
+    logo: "https://arkado.store/logo-email.png",
+    description:
+      "All-India competitive exam study material: pattern-decoded notes, 1000+ MCQ books and mock tests for SSC, UPSC, Railway, Police, Teaching and State exams.",
+    sameAs: [
+      "https://www.instagram.com/arkado2026",
+      "https://www.facebook.com/arkado2026",
+    ],
+  };
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Arkado",
+    url: "https://arkado.store",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://arkado.store/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
   return (
     <html lang="en" className={`${inter.variable} ${notoSansDevanagari.variable}`}>
       <body className="min-h-screen flex flex-col bg-white text-stone-900 font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
         {children}
         <SocialFab />
         <PageViewTracker />

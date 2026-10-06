@@ -1,5 +1,5 @@
 import type { CourseBundle } from "@/lib/courses";
-import type { Category } from "@/lib/store-types";
+import type { Category, Exam } from "@/lib/store-types";
 
 /** Canonical public origin of the storefront. Server-safe. */
 export function getSiteUrl(): string {
@@ -34,6 +34,30 @@ export async function fetchCategoriesServer(): Promise<Category[]> {
   } catch {
     return [];
   }
+}
+
+/** Server-side fetch of all active exams (across categories). Never throws. */
+export async function fetchExamsServer(): Promise<Exam[]> {
+  try {
+    const res = await fetch(`${getSiteUrl()}/api/exams`, {
+      next: { revalidate: 3600 },
+    });
+    if (!res.ok) return [];
+    const data = await res.json();
+    const list = Array.isArray(data) ? data : data.exams;
+    return Array.isArray(list) ? list : [];
+  } catch {
+    return [];
+  }
+}
+
+/** Match an exam by slug or id (mirrors client-side lookup). */
+export function findExamById(exams: Exam[], id: string): Exam | undefined {
+  const clean = id.toLowerCase().trim();
+  return (
+    exams.find((e) => e.slug === id || e.id === id) ||
+    exams.find((e) => e.slug?.toLowerCase() === clean || e.id.toLowerCase() === clean)
+  );
 }
 
 /** Match a course by slug, id or exam_id (mirrors client-side lookup). */

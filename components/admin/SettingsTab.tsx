@@ -4,6 +4,7 @@ import { useState, useEffect, startTransition } from "react";
 import Link from "next/link";
 import { Settings } from "@/lib/store-types";
 import { DEFAULT_SECTION_ORDER, SectionKey, getOrderedSectionKeys } from "@/lib/default-settings";
+import BundleCardSettings from "@/components/admin/BundleCardSettings";
 
 interface SettingsTabProps {
   getAuthHeaders: () => Record<string, string>;
@@ -2010,6 +2011,13 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
               </div>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Full Bundle Card customizer (exam pages) */}
+      {activeTab === "about_course" && (
+        <div className="bg-white border border-stone-200 rounded-2xl p-5 sm:p-6 shadow-sm">
+          <BundleCardSettings getAuthHeaders={getAuthHeaders} />
         </div>
       )}
 

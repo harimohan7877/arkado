@@ -299,6 +299,22 @@ export default function CourseDetailClient({ params }: PageProps) {
     const minPrice = examKits.length > 0 ? Math.min(...examKits.map((k) => k.price || 99)) : 99;
     const maxPrice = examKits.length > 0 ? Math.max(...examKits.map((k) => k.price || 199)) : 199;
 
+    // ---- Full Bundle: saari kits ka jod par 5% chhoot ----
+    const bundleTotal = examKits.reduce((sum, k) => sum + (k.price || 0), 0);
+    const bundlePrice = Math.round(bundleTotal * 0.95);
+    const bundleSavings = bundleTotal - bundlePrice;
+    const bundleCourse: CourseBundle = {
+      ...examKits[0],
+      id: `bundle-exam-${matchedExam.id}`,
+      slug: `bundle-exam-${matchedExam.id}`,
+      title: `${matchedExam.name} — Complete Bundle (${examKits.length} Kits)`,
+      short_description: `${matchedExam.name} ki saari ${examKits.length} study kits ek saath, 5% extra chhoot ke saath.`,
+      price: bundlePrice,
+      original_price: bundleTotal,
+      badge: "Full Bundle • 5% OFF",
+      exam_id: matchedExam.id,
+    };
+
     return (
       <div className="min-h-screen bg-stone-50 flex flex-col justify-between font-sans">
         <Navbar cartCount={cart.length} onCartClick={() => setIsCartOpen(true)} />
@@ -396,6 +412,42 @@ export default function CourseDetailClient({ params }: PageProps) {
               <span className="font-medium leading-relaxed">
                 <strong>उम्मीदवारों की सुविधा हेतु:</strong> आप अपनी आवश्यकतानुसार अलग-अलग विषयवार 1000+ MCQs बुक्स (जैसे गणित, रीजनिंग, इंग्लिश, सामान्य अध्ययन) अलग से ले सकते हैं अथवा सम्पूर्ण सलेक्शन किट बंडल विशेष छूट पर प्राप्त कर सकते हैं।
               </span>
+            </div>
+          </section>
+
+          {/* Full Bundle Offer — saari kits ek saath, 5% chhoot */}
+          <section className="bg-gradient-to-r from-amber-500 to-orange-600 rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
+            <div className="absolute -right-6 -top-6 w-32 h-32 rounded-full bg-white/10"></div>
+            <div className="absolute -right-2 top-10 w-16 h-16 rounded-full bg-white/10"></div>
+            <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
+              <div className="text-white space-y-2">
+                <span className="inline-block text-[10px] font-black bg-white/20 px-2.5 py-1 rounded-full uppercase tracking-wider">
+                  🎁 Best Value
+                </span>
+                <h2 className="text-xl sm:text-2xl font-black tracking-tight">
+                  Complete Selection Bundle
+                </h2>
+                <p className="text-xs sm:text-sm text-amber-50 font-medium max-w-xl">
+                  {matchedExam.name} ki saari {examKits.length} kits ek saath lein — alag-alag kharidne se sasta
+                </p>
+                <div className="flex items-center gap-3 pt-1 flex-wrap">
+                  <span className="text-base sm:text-lg text-amber-100 line-through font-bold">
+                    ₹{bundleTotal.toLocaleString("en-IN")}
+                  </span>
+                  <span className="text-2xl sm:text-3xl font-black">
+                    ₹{bundlePrice.toLocaleString("en-IN")}
+                  </span>
+                  <span className="text-[11px] font-black bg-emerald-500 px-2.5 py-1 rounded-full">
+                    5% OFF • ₹{bundleSavings.toLocaleString("en-IN")} bachao
+                  </span>
+                </div>
+              </div>
+              <button
+                onClick={() => handleBuyNow(bundleCourse)}
+                className="shrink-0 px-7 py-3.5 bg-white hover:bg-amber-50 text-orange-700 rounded-2xl text-sm font-black transition shadow-md cursor-pointer"
+              >
+                Buy Full Bundle →
+              </button>
             </div>
           </section>
 

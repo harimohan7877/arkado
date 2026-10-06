@@ -198,6 +198,8 @@ export interface Settings {
       text_size?: "xs" | "sm" | "base"; // default "xs"
       show_exam_count?: boolean; // default true
       card_border_radius?: "rounded-xl" | "rounded-2xl" | "rounded-3xl" | "rounded-none"; // default "rounded-2xl"
+      mobile_grid_cols?: number; // categories per row on mobile, 2 | 3 | 4, default 2
+      desktop_grid_cols?: number; // categories per row on desktop (lg), 4 | 5 | 6 | 8, default 6
     };
     bundle_card_style?: BundleCardStyle;
     sections_card_styles?: Record<string, BundleCardStyle>;

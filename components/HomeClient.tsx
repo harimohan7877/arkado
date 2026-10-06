@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Course, Category, Settings } from "@/lib/store-types";
@@ -48,6 +48,12 @@ export default function HomeClient({
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [selectedCourseForSample, setSelectedCourseForSample] = useState<Course | null>(null);
   const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
+  const [showAllProducts, setShowAllProducts] = useState(false);
+
+  // Reset the "show all" expansion whenever the user searches or switches category
+  useEffect(() => {
+    setShowAllProducts(false);
+  }, [searchQuery, selectedCategory]);
 
   const filteredCourses = useMemo(() => {
     const cats = Array.isArray(categories) ? categories : [];
@@ -95,6 +101,7 @@ export default function HomeClient({
   const categoriesTitle = sections?.categories?.title || settings?.homepage?.categories_section_title || "Browse Top Categories";
   const promoTitle = sections?.promo_banner?.title || settings?.homepage?.promo_banner?.title || "Crack Any Exam with Deep-Level Analysis";
   const faqTitle = sections?.faq?.title || settings?.homepage?.faq_section_title || "Common Questions";
+  const allProductsTitle = sections?.all_products?.title || settings?.homepage?.products_section_title || "All Exam Bundles";
   const newsletterTitle = settings?.homepage?.newsletter_title || "Get Free Exam Updates";
   const newsletterPlaceholder = settings?.homepage?.newsletter_placeholder || "Your Email Address";
   const newsletterBtn = settings?.homepage?.newsletter_button_text || "Subscribe";
@@ -286,8 +293,27 @@ export default function HomeClient({
             ? "lg:grid-cols-3"
             : "lg:grid-cols-5";
 
+        // Keep the homepage short: in the default view show 8 bundles,
+        // expandable via "Show All". Search / category filters always show all matches.
+        const ALL_PRODUCTS_PREVIEW_COUNT = 8;
+        const isDefaultProductView = !searchQuery.trim() && selectedCategory === "all";
+        const visibleProducts =
+          isDefaultProductView && !showAllProducts
+            ? filteredCourses.slice(0, ALL_PRODUCTS_PREVIEW_COUNT)
+            : filteredCourses;
+        const hiddenCount = filteredCourses.length - visibleProducts.length;
+
         content = (
           <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex items-end justify-between mb-4">
+              <div className="flex items-center gap-2.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                <h2 className="section-title">{allProductsTitle}</h2>
+                <span className="text-xs text-stone-500 font-medium">
+                  {filteredCourses.length} {filteredCourses.length === 1 ? "bundle" : "bundles"}
+                </span>
+              </div>
+            </div>
             {filteredCourses.length === 0 ? (
               <div className="text-center py-16 card-base">
                 <div className="w-14 h-14 rounded-full bg-stone-100 text-stone-400 mx-auto flex items-center justify-center mb-3">
@@ -306,22 +332,44 @@ export default function HomeClient({
                 </button>
               </div>
             ) : (
-              <div
-                style={{
-                  gap: allProductsStyle.card_gap ? `${allProductsStyle.card_gap}px` : undefined,
-                }}
-                className={`grid ${allMobileCols} sm:grid-cols-3 ${allDesktopCols} gap-3 sm:gap-4`}
-              >
-                {filteredCourses.map((course) => (
-                  <CourseCard
-                    key={course.id}
-                    course={course}
-                    onBuyNow={handleBuyNow}
-                    onOpenSample={handleOpenSample}
-                    cardStyle={allProductsStyle}
-                  />
-                ))}
-              </div>
+              <>
+                <div
+                  style={{
+                    gap: allProductsStyle.card_gap ? `${allProductsStyle.card_gap}px` : undefined,
+                  }}
+                  className={`grid ${allMobileCols} sm:grid-cols-3 ${allDesktopCols} gap-3 sm:gap-4`}
+                >
+                  {visibleProducts.map((course) => (
+                    <CourseCard
+                      key={course.id}
+                      course={course}
+                      onBuyNow={handleBuyNow}
+                      onOpenSample={handleOpenSample}
+                      cardStyle={allProductsStyle}
+                    />
+                  ))}
+                </div>
+                {hiddenCount > 0 && (
+                  <div className="text-center mt-5">
+                    <button
+                      onClick={() => setShowAllProducts(true)}
+                      className="px-6 py-2.5 rounded-full bg-stone-900 hover:bg-stone-800 text-white text-xs font-bold transition shadow-xs cursor-pointer"
+                    >
+                      Show All {filteredCourses.length} Bundles →
+                    </button>
+                  </div>
+                )}
+                {isDefaultProductView && showAllProducts && (
+                  <div className="text-center mt-5">
+                    <button
+                      onClick={() => setShowAllProducts(false)}
+                      className="px-6 py-2.5 rounded-full bg-white border border-stone-300 hover:border-stone-400 text-stone-700 text-xs font-bold transition cursor-pointer"
+                    >
+                      ↑ Show Less
+                    </button>
+                  </div>
+                )}
+              </>
             )}
           </section>
         );

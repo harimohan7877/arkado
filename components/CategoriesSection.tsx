@@ -65,6 +65,24 @@ export default function CategoriesSection({ categories, title, initialSettings }
   const textSize = cardStyle.text_size || "xs";
   const showExamCount = cardStyle.show_exam_count !== false;
   const cardBorderRadius = cardStyle.card_border_radius || "rounded-2xl";
+  // Customizable grid columns: mobile (base) and desktop (lg). Only whitelisted
+  // values become Tailwind classes so the JIT compiler keeps them.
+  const mobileCols = [2, 3, 4].includes(cardStyle.mobile_grid_cols || 0)
+    ? cardStyle.mobile_grid_cols!
+    : 2;
+  const desktopCols = [4, 5, 6, 8].includes(cardStyle.desktop_grid_cols || 0)
+    ? cardStyle.desktop_grid_cols!
+    : 6;
+  const mobileGridClass =
+    mobileCols === 4 ? "grid-cols-4" : mobileCols === 3 ? "grid-cols-3" : "grid-cols-2";
+  const desktopGridClass =
+    desktopCols === 8
+      ? "lg:grid-cols-8"
+      : desktopCols === 5
+      ? "lg:grid-cols-5"
+      : desktopCols === 4
+      ? "lg:grid-cols-4"
+      : "lg:grid-cols-6";
 
   const shapeClass =
     logoShape === "square"
@@ -130,7 +148,7 @@ export default function CategoriesSection({ categories, title, initialSettings }
       </div>
 
       <div
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
+        className={`grid ${mobileGridClass} sm:grid-cols-3 md:grid-cols-4 ${desktopGridClass}`}
         style={{ gap: `${cardGap}px` }}
       >
         {visibleCategories.map((cat) => {
@@ -154,10 +172,11 @@ export default function CategoriesSection({ categories, title, initialSettings }
           const logoBlock = (
             <div
               style={{
-                width: `${logoSize}px`,
-                height: `${logoSize}px`,
-                maxWidth: "100%",
-                maxHeight: `${logoSize}px`,
+                // Responsive logo: fills the card width but never exceeds the
+                // configured logo_size. Columns badhane/ghataane par logo apne
+                // aap chhota/bada ho jata hai (aspect ratio hamesha square).
+                width: "100%",
+                maxWidth: `${logoSize}px`,
                 aspectRatio: "1 / 1",
                 padding: `${containerPadding}px`,
                 marginBottom: textPosition === "below" ? `${textGap}px` : undefined,

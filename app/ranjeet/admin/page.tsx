@@ -12,6 +12,7 @@ import SettingsTab from "@/components/admin/SettingsTab";
 import SectionsTab from "@/components/admin/SectionsTab";
 import BlogTab from "@/components/admin/BlogTab";
 import CategoryExportButton from "@/components/admin/CategoryExportButton";
+import CategoryGridControl from "@/components/admin/CategoryGridControl";
 
 interface MarketplaceOrder {
   id: string;
@@ -162,7 +163,10 @@ export default function AdminDashboardPage() {
 
           <div className="flex items-center gap-3">
             {activeTab === "categories" && (
-              <CategoryExportButton getAuthHeaders={getAuthHeaders} />
+              <>
+                <CategoryGridControl getAuthHeaders={getAuthHeaders} />
+                <CategoryExportButton getAuthHeaders={getAuthHeaders} />
+              </>
             )}
             <a
               href="/"

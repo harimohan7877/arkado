@@ -255,6 +255,18 @@ export interface Settings {
     instant_delivery_badge?: string;
     guarantees?: string[];
   };
+  // Full Bundle card (multi-kit exam pages) — fully customizable from admin
+  bundle_card?: {
+    enabled?: boolean; // default true
+    discount_percent?: number; // default 5
+    badge_text?: string; // default "🎁 Best Value"
+    title?: string; // default "Complete Selection Bundle"
+    // {exam} and {count} placeholders supported. Default is professional English.
+    subtitle?: string;
+    button_text?: string; // default "Buy Full Bundle →"
+    show_total?: boolean; // strike-through total, default true
+    savings_display?: "percent_only" | "percent_and_amount" | "hide"; // default "percent_only"
+  };
   social?: {
     whatsapp_url?: string;
     instagram_url?: string;

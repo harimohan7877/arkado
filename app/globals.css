@@ -351,3 +351,28 @@ html, body {
     font-size: 18px;
   }
 }
+/* ===== Soft click/press feedback — site-wide, subtle ===== */
+/* Har clickable cheez (button, link, card) dabane par halka "press" feel degi,
+   badi sites jaisa. Bahut soft rakha hai: sirf 3% shrink + halki dim.
+   `scale` property use ki hai (transform nahi) taaki existing translate
+   utilities (jaise -translate-y-1/2 centering) tootey nahi. */
+button,
+a,
+[role="button"],
+input[type="submit"] {
+  -webkit-tap-highlight-color: transparent; /* Android Chrome ka gray flash hatao */
+  transition: scale 0.16s ease, opacity 0.16s ease;
+}
+button:active,
+a:active,
+[role="button"]:active,
+input[type="submit"]:active {
+  scale: 0.97;
+  opacity: 0.88;
+}
+/* Disabled cheezon par koi press feel nahi */
+button:disabled:active,
+a[aria-disabled="true"]:active {
+  scale: 1;
+  opacity: 1;
+}

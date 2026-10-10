@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Category } from "@/lib/store-types";
 import { fetchWithCache } from "@/lib/store-hooks";
-import { GridIcon, CloseIcon, ChevronRightIcon } from "@/components/icons";
+import { GridIcon, CloseIcon, ChevronRightIcon, SearchIcon } from "@/components/icons";
 
 /**
  * Mobile-only floating Categories button + right-side slide-in drawer.
@@ -128,17 +128,18 @@ export default function CategoryDrawer({
             ))
           )}
         </nav>
-
-        <div className="p-3 border-t border-stone-100 shrink-0">
-          <Link
-            href="/exams"
-            onClick={onToggle}
-            className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-xl bg-amber-700 hover:bg-amber-800 text-white text-xs font-black transition"
-          >
-            All {categories.length} Categories →
-          </Link>
-        </div>
       </aside>
+
+      {/* Floating Search FAB — mobile only, above the categories FAB, same gradient */}
+      <Link
+        href="/search"
+        aria-label="Search courses"
+        className={`fixed md:hidden z-[86] w-14 h-14 rounded-full bg-gradient-to-tr from-sky-500 via-blue-600 to-rose-500 text-white flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 bottom-[160px] right-4 ${
+          open ? "opacity-0 pointer-events-none scale-75" : "opacity-100"
+        }`}
+      >
+        <SearchIcon size={24} />
+      </Link>
 
       {/* Floating Categories FAB — mobile only, above the chat FAB, same gradient */}
       <button

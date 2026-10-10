@@ -105,11 +105,114 @@ export default function HeroSlider({
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-amber-200/20 to-transparent rounded-full blur-2xl pointer-events-none" />
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-10 py-6 sm:py-8 min-h-[380px] sm:min-h-[420px] flex flex-col justify-between">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center flex-1">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-4 lg:gap-6 lg:items-center flex-1">
+          {/* ===== Mobile compact hero: cover + info side-by-side (space bachao) ===== */}
+          <div className="lg:hidden w-full space-y-3">
+            <div className="flex gap-3 items-start">
+              <Link
+                href={currentSlideHref}
+                className="relative shrink-0 block w-24"
+                aria-label={`View details for ${currentSlide.title}`}
+              >
+                <div className="relative w-24 h-32 rounded-xl overflow-hidden shadow-md border border-stone-200/80 bg-white">
+                  {currentSlide.cover_image && !failedSlideImages[currentSlide.id] ? (
+                    <Image
+                      src={currentSlide.cover_image}
+                      alt={currentSlide.title}
+                      fill
+                      onError={() =>
+                        setFailedSlideImages((prev) => ({ ...prev, [currentSlide.id]: true }))
+                      }
+                      className="object-cover"
+                      sizes="96px"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-amber-700 via-stone-800 to-stone-900 flex items-center justify-center text-white">
+                      <span className="text-2xl">📚</span>
+                    </div>
+                  )}
+                </div>
+              </Link>
+              <div className="flex-1 min-w-0 space-y-1.5">
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="bg-gradient-to-r from-amber-700 to-orange-800 text-white text-[10px] font-black px-2 py-0.5 rounded-md uppercase tracking-wider flex items-center gap-1 shadow-sm">
+                    <StarIcon size={10} />
+                    {customBadge || (examLabel ? `${examLabel} Special` : "Special Offer")}
+                  </span>
+                  <span className="bg-white/90 border border-stone-200 text-stone-800 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                    {currentSlide.badge}
+                  </span>
+                </div>
+                <Link href={currentSlideHref} className="block group">
+                  <h1 className="text-lg font-black tracking-tight text-stone-950 leading-snug line-clamp-3 group-hover:text-amber-700 transition">
+                    {customHeadline && currentIndex === 0 ? customHeadline : currentSlide.title}
+                  </h1>
+                </Link>
+                <div className="flex items-baseline gap-2 flex-wrap">
+                  <span className="text-2xl font-black text-amber-700 tracking-tight">
+                    ₹{currentSlide.price}
+                  </span>
+                  <span className="text-xs text-stone-400 line-through">
+                    ₹{currentSlide.original_price}
+                  </span>
+                  <span className="text-[10px] font-black text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded-full">
+                    {currentSlide.discount_percent}% OFF
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-stone-600 text-xs leading-relaxed line-clamp-2">
+              {currentSlide.short_description}
+            </p>
+
+            <div className="flex gap-2 overflow-x-auto pb-1">
+              {currentSlide.highlights.slice(0, 3).map((hl, i) => (
+                <span
+                  key={i}
+                  className="shrink-0 bg-white border border-stone-200 text-stone-700 text-[11px] font-semibold px-2.5 py-1.5 rounded-lg flex items-center gap-1.5 shadow-2xs"
+                >
+                  <CheckIcon size={11} className="text-emerald-600 shrink-0" />
+                  {hl}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => onBuyNow(currentSlide)}
+                className="btn-primary shadow-md"
+              >
+                <ShoppingBagIcon size={15} />
+                <span>Buy Now</span>
+              </button>
+              <Link
+                href={currentSlideHref}
+                className="px-3.5 py-2.5 rounded-lg border border-stone-300 bg-white hover:bg-stone-50 text-stone-800 text-xs font-bold flex items-center gap-1.5 transition shadow-2xs cursor-pointer"
+                aria-label="View details and sample"
+              >
+                <EyeIcon size={14} />
+              </Link>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-stone-500 font-medium">
+              <span className="flex items-center gap-1">
+                <ZapIcon size={11} className="text-amber-600" />
+                Instant Digital Delivery (PDF)
+              </span>
+              <span className="flex items-center gap-1">
+                <ShieldIcon size={11} className="text-emerald-600" />
+                100% Verified 2026 Syllabus & PYQ Pattern
+              </span>
+            </div>
+          </div>
+
+          {/* ===== Desktop layout (unchanged) ===== */}
+          <div className="hidden lg:contents">
           {/* Copy column */}
           <div className="lg:col-span-7 space-y-4 text-left">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="bg-amber-600 text-white text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider flex items-center gap-1.5 shadow-2xs">
+              <span className="bg-gradient-to-r from-amber-700 to-orange-800 text-white text-xs font-black px-3 py-1 rounded-md uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
                 <StarIcon size={12} />
                 {customBadge || (examLabel ? `${examLabel} Special` : "Special Offer")}
               </span>
@@ -227,6 +330,7 @@ export default function HeroSlider({
                 </div>
               </div>
             </Link>
+          </div>
           </div>
         </div>
 

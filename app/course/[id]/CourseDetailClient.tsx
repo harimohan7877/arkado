@@ -434,7 +434,7 @@ export default function CourseDetailClient({ params }: PageProps) {
 
           {/* Full Bundle Offer — saari kits ek saath, % chhoot (admin customizable) */}
           {bundleEnabled && (
-          <section className="bg-gradient-to-r from-amber-500 to-orange-600 rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
+          <section className="bg-gradient-to-r from-amber-700 to-orange-800 rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
             <div className="absolute -right-6 -top-6 w-32 h-32 rounded-full bg-white/10"></div>
             <div className="absolute -right-2 top-10 w-16 h-16 rounded-full bg-white/10"></div>
             <div className="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
@@ -510,7 +510,7 @@ export default function CourseDetailClient({ params }: PageProps) {
                       )}
 
                       <div className="absolute top-2.5 left-2.5">
-                        <span className="text-[10px] font-black uppercase tracking-wider bg-amber-500 text-stone-950 px-2.5 py-0.5 rounded-full shadow-sm">
+                        <span className="text-[10px] font-black uppercase tracking-wider bg-amber-600 text-white px-2.5 py-0.5 rounded-full shadow-sm">
                           {kit.badge || "Study Book"}
                         </span>
                       </div>
@@ -589,7 +589,7 @@ export default function CourseDetailClient({ params }: PageProps) {
                       <button
                         type="button"
                         onClick={() => handleBuyNow(kit)}
-                        className="flex-1 py-2.5 bg-amber-600 hover:bg-amber-700 text-white text-xs font-black rounded-xl transition shadow-xs cursor-pointer flex items-center justify-center gap-1"
+                        className="flex-1 py-2.5 bg-amber-700 hover:bg-amber-800 text-white text-xs font-black rounded-xl transition shadow-xs cursor-pointer flex items-center justify-center gap-1"
                       >
                         ⚡ अभी खरीदें
                       </button>
@@ -903,7 +903,7 @@ export default function CourseDetailClient({ params }: PageProps) {
               <div className="space-y-2.5">
                 <button
                   onClick={() => handleBuyNow(course)}
-                  className="w-full py-3 lg:py-4 rounded-2xl bg-amber-500 hover:bg-amber-400 text-neutral-950 font-black text-sm transition shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98"
+                  className="w-full py-3 lg:py-4 rounded-2xl bg-amber-700 hover:bg-amber-800 text-white font-black text-sm transition shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98"
                 >
                   <span>Buy Now</span>
                   <span>→</span>

@@ -32,8 +32,23 @@ const GmailIcon = (p: { size?: number }) => (
   </svg>
 );
 
-export default function SocialFab() {
-  const [open, setOpen] = useState(false);
+export default function SocialFab({
+  open: openProp,
+  onOpenChange,
+  displaced = false,
+}: {
+  /** Controlled open state (optional — uncontrolled by default). */
+  open?: boolean;
+  onOpenChange?: (v: boolean) => void;
+  /** When true, the FAB glides to the left side (used while the category drawer is open). */
+  displaced?: boolean;
+} = {}) {
+  const [internalOpen, setInternalOpen] = useState(false);
+  const open = openProp ?? internalOpen;
+  const setOpen = (v: boolean) => {
+    if (onOpenChange) onOpenChange(v);
+    else setInternalOpen(v);
+  };
   const [settings, setSettings] = useState<Settings | null>(null);
   const pathname = usePathname();
 
@@ -106,7 +121,7 @@ export default function SocialFab() {
 
       {/* Floating social drawer popup */}
       {open && (
-        <div className="fixed bottom-24 right-4 sm:right-6 z-[89] w-72 bg-white/95 backdrop-blur-md border border-stone-200/90 rounded-2xl shadow-2xl p-3 anim-slide-down">
+        <div className={`fixed bottom-24 z-[89] w-72 bg-white/95 backdrop-blur-md border border-stone-200/90 rounded-2xl shadow-2xl p-3 anim-slide-down transition-all duration-300 ${displaced ? "left-4 sm:left-6" : "right-4 sm:right-6"}`}>
           <div className="px-2 py-1.5 border-b border-stone-100 flex items-center justify-between mb-2">
             <div>
               <p className="text-xs font-black text-stone-900 uppercase tracking-wider">
@@ -160,7 +175,7 @@ export default function SocialFab() {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="fixed bottom-5 right-4 sm:right-6 z-[90] flex items-center gap-2 group cursor-pointer"
+        className={`fixed bottom-5 z-[90] flex items-center gap-2 group cursor-pointer transition-all duration-300 ease-in-out ${displaced ? "left-4 sm:left-6" : "right-4 sm:right-6"}`}
         aria-label="Contact and Social Channels"
       >
         {!open && (

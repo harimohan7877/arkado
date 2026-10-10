@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
-import SocialFab from "@/components/SocialFab";
+import FloatingDock from "@/components/FloatingDock";
 import PageViewTracker from "@/components/PageViewTracker";
 
 const inter = Inter({
@@ -92,7 +92,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         {children}
-        <SocialFab />
+        <FloatingDock />
         <PageViewTracker />
       </body>
     </html>

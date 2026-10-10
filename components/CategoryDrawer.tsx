@@ -23,6 +23,12 @@ export default function CategoryDrawer({
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
+  const [query, setQuery] = useState("");
+
+  const q = query.trim().toLowerCase();
+  const visibleCategories = q
+    ? categories.filter((c) => c.name.toLowerCase().includes(q))
+    : categories;
 
   useEffect(() => {
     fetchWithCache<Category[]>("/api/categories?scope=public")
@@ -70,7 +76,7 @@ export default function CategoryDrawer({
         aria-hidden={!open}
         aria-label="Exam categories"
       >
-        <div className="flex items-center justify-between px-4 py-3.5 border-b border-stone-100 shrink-0">
+        <div className="flex items-center justify-between px-4 py-3 border-b border-stone-100 shrink-0">
           <p className="text-xs font-black text-stone-900 uppercase tracking-wider">
             Categories
           </p>
@@ -83,15 +89,42 @@ export default function CategoryDrawer({
           </button>
         </div>
 
-        <nav className="flex-1 overflow-y-auto p-2.5 space-y-1">
+        {/* Search categories */}
+        <div className="px-3 pt-2.5 pb-1 shrink-0">
+          <label className="flex items-center gap-2 bg-stone-100 rounded-xl px-3 py-2 focus-within:ring-2 focus-within:ring-amber-600/40">
+            <SearchIcon size={15} className="text-stone-400 shrink-0" />
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search categories…"
+              aria-label="Search categories"
+              className="bg-transparent outline-none text-xs font-medium text-stone-800 placeholder:text-stone-400 w-full"
+            />
+            {query && (
+              <button
+                onClick={() => setQuery("")}
+                aria-label="Clear search"
+                className="shrink-0 text-stone-400 hover:text-stone-600 cursor-pointer"
+              >
+                <CloseIcon size={14} />
+              </button>
+            )}
+          </label>
+        </div>
+
+        <nav className="flex-1 overflow-y-auto p-2.5 pt-1.5 space-y-1">
           {loading ? (
             <div className="space-y-2 animate-pulse p-1">
               {[...Array(8)].map((_, i) => (
                 <div key={i} className="h-11 bg-stone-100 rounded-xl" />
               ))}
             </div>
+          ) : visibleCategories.length === 0 ? (
+            <p className="text-center text-xs text-stone-400 py-8 px-4">
+              No categories match “{query.trim()}”.
+            </p>
           ) : (
-            categories.map((cat) => (
+            visibleCategories.map((cat) => (
               <Link
                 key={cat.id}
                 href={`/category/${cat.id}`}
@@ -129,17 +162,6 @@ export default function CategoryDrawer({
           )}
         </nav>
       </aside>
-
-      {/* Floating Search FAB — mobile only, above the categories FAB, same gradient */}
-      <Link
-        href="/search"
-        aria-label="Search courses"
-        className={`fixed md:hidden z-[86] w-14 h-14 rounded-full bg-gradient-to-tr from-sky-500 via-blue-600 to-rose-500 text-white flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 bottom-[160px] right-4 ${
-          open ? "opacity-0 pointer-events-none scale-75" : "opacity-100"
-        }`}
-      >
-        <SearchIcon size={24} />
-      </Link>
 
       {/* Floating Categories FAB — mobile only, above the chat FAB, same gradient */}
       <button

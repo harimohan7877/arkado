@@ -716,7 +716,7 @@ export default function CourseDetailClient({ params }: PageProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Title card — mobile: first (order-1); desktop: left column top */}
           <div className="lg:col-span-8 order-1">
-            <div className="bg-white p-4 sm:p-8 rounded-3xl border border-neutral-200 shadow-xs space-y-3 sm:space-y-4">
+            <div className="bg-white p-6 sm:p-8 rounded-3xl border border-neutral-200 shadow-xs space-y-4">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="text-xs font-bold text-amber-800 bg-amber-50 px-3 py-1 rounded-full uppercase border border-amber-200">
                   Verified Exam Kit
@@ -726,7 +726,7 @@ export default function CourseDetailClient({ params }: PageProps) {
                 </span>
               </div>
 
-              <h1 className="text-xl sm:text-3xl lg:text-4xl font-black text-neutral-900 leading-tight">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-neutral-900 leading-tight">
                 {course.title}
               </h1>
 
@@ -853,12 +853,10 @@ export default function CourseDetailClient({ params }: PageProps) {
             )}
           </div>
 
-          {/* Buy card — mobile: right after the title (order-2); desktop: sticky right sidebar (row-span-2 keeps the sticky area tall).
-              Mobile pe compact: cover thumbnail + price/CTA aas-paas (row); desktop pe stacked (column). */}
+          {/* Buy card — mobile: right after the title (order-2); desktop: sticky right sidebar (row-span-2 keeps the sticky area tall) */}
           <div className="lg:col-span-4 lg:sticky lg:top-24 space-y-4 order-2 lg:row-span-2">
-            <div className="bg-white p-4 sm:p-6 rounded-3xl border border-neutral-200 shadow-lg space-y-4 lg:space-y-6">
-              <div className="flex flex-row lg:flex-col gap-4">
-              <div className="relative w-24 sm:w-28 lg:w-full h-32 sm:h-36 lg:h-52 shrink-0 rounded-2xl overflow-hidden bg-gradient-to-br from-amber-700 via-stone-800 to-stone-900 border border-neutral-200 flex items-center justify-center p-2 lg:p-4">
+            <div className="bg-white p-6 rounded-3xl border border-neutral-200 shadow-lg space-y-6">
+              <div className="relative w-full h-52 rounded-2xl overflow-hidden bg-gradient-to-br from-amber-700 via-stone-800 to-stone-900 border border-neutral-200 flex items-center justify-center p-4">
                 {course.cover_image && !coverImageFailed ? (
                   <Image
                     src={course.cover_image}
@@ -883,12 +881,12 @@ export default function CourseDetailClient({ params }: PageProps) {
                 </div>
               </div>
 
-              <div className="flex-1 min-w-0">
-                <div className="flex items-baseline gap-2 lg:gap-3 flex-wrap">
-                  <span className="text-2xl lg:text-4xl font-black text-neutral-900">
+              <div>
+                <div className="flex items-baseline gap-3">
+                  <span className="text-4xl font-black text-neutral-900">
                     ₹{course.price}
                   </span>
-                  <span className="text-sm lg:text-lg text-neutral-400 line-through">
+                  <span className="text-lg text-neutral-400 line-through">
                     ₹{course.original_price}
                   </span>
                   <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
@@ -903,7 +901,7 @@ export default function CourseDetailClient({ params }: PageProps) {
               <div className="space-y-2.5">
                 <button
                   onClick={() => handleBuyNow(course)}
-                  className="w-full py-3 lg:py-4 rounded-2xl bg-amber-700 hover:bg-amber-800 text-white font-black text-sm transition shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98"
+                  className="w-full py-4 rounded-2xl bg-amber-700 hover:bg-amber-800 text-white font-black text-sm transition shadow-md flex items-center justify-center gap-2 cursor-pointer active:scale-98"
                 >
                   <span>Buy Now</span>
                   <span>→</span>
@@ -920,8 +918,6 @@ export default function CourseDetailClient({ params }: PageProps) {
                   💬 Ask on WhatsApp
                 </a>
               </div>
-              </div>
-              {/* mobile row ends — guarantees neeche full width */}
 
               <div className="pt-4 border-t border-neutral-100 space-y-2 text-xs text-neutral-500">
                 {(settings?.course_page?.guarantees && settings.course_page.guarantees.length > 0

@@ -125,6 +125,19 @@ export function buildNewArrivalCourses(
   }
 
   if (result.length === 0) {
+    // Auto-fallback: most recently updated products first.
+    // This keeps New Arrivals fresh forever — no manual curation needed,
+    // and the section can never go stale again.
+    const recent = allCourses
+      .filter((c) => includeInactive || c.is_active)
+      .sort(
+        (a, b) =>
+          new Date(b.updated_at || 0).getTime() - new Date(a.updated_at || 0).getTime()
+      )
+      .slice(0, 12);
+    if (recent.length > 0) {
+      return sanitizePublicCourses(recent, isAdmin);
+    }
     return sanitizePublicCourses(
       allCourses.filter((c) => c.is_active).slice(0, 4),
       isAdmin

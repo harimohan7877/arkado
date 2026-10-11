@@ -7,6 +7,7 @@ import CategoriesTab from "@/components/admin/CategoriesTab";
 import FeaturedTab from "@/components/admin/FeaturedTab";
 import ExamsTab from "@/components/admin/ExamsTab";
 import CoursesTab from "@/components/admin/CoursesTab";
+import DriveLinksTab from "@/components/admin/DriveLinksTab";
 import OrdersTab from "@/components/admin/OrdersTab";
 import SettingsTab from "@/components/admin/SettingsTab";
 import SectionsTab from "@/components/admin/SectionsTab";
@@ -77,7 +78,7 @@ function formatBytes(bytes: number): string {
   return `${(bytes / (1024 * 1024)).toFixed(2)} MB`;
 }
 
-type TabType = "dashboard" | "categories" | "featured" | "sections" | "exams" | "courses" | "orders" | "blog" | "settings";
+type TabType = "dashboard" | "categories" | "featured" | "sections" | "exams" | "courses" | "drivelinks" | "orders" | "blog" | "settings";
 
 const NAV_ITEMS: { id: TabType; label: string; short: string; icon: string }[] = [
   { id: "dashboard", label: "Dashboard", short: "Dashboard", icon: "" },
@@ -86,6 +87,7 @@ const NAV_ITEMS: { id: TabType; label: string; short: string; icon: string }[] =
   { id: "sections", label: "Sections Layout", short: "Sections", icon: "" },
   { id: "exams", label: "Exams", short: "Exams", icon: "" },
   { id: "courses", label: "Courses & Books", short: "Courses", icon: "" },
+  { id: "drivelinks", label: "Drive Links", short: "Drive Links", icon: "" },
   { id: "orders", label: "Orders", short: "Orders", icon: "" },
   { id: "blog", label: "Blog / Articles", short: "Blog", icon: "" },
   { id: "settings", label: "Settings", short: "Settings", icon: "" },
@@ -213,6 +215,7 @@ export default function AdminDashboardPage() {
         {activeTab === "sections" && <SectionsTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "exams" && <ExamsTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "courses" && <CoursesTab getAuthHeaders={getAuthHeaders} />}
+        {activeTab === "drivelinks" && <DriveLinksTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "settings" && <SettingsTab getAuthHeaders={getAuthHeaders} />}
 
         {activeTab === "dashboard" && (

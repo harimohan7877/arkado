@@ -21,7 +21,7 @@ interface FeaturedStore {
 /** Strip admin-only fields before anything reaches the browser. */
 export function sanitizePublicCourse(course: any): any {
   if (!course || typeof course !== "object") return course;
-  const { drive_url, ...safeCourse } = course;
+  const { drive_url, promo_video_status, promo_video_url, ...safeCourse } = course;
   return safeCourse;
 }
 

@@ -60,6 +60,8 @@ export interface Course {
   drive_url: string;
   demo_html_mock_enabled?: boolean;
   demo_html_mock_url?: string;
+  promo_video_status?: "pending" | "done"; // promo video ban gaya ya nahi (admin tracking)
+  promo_video_url?: string; // YouTube link of the promo video
   rating: number;
   rating_count: string;
   is_active: boolean;

@@ -126,7 +126,7 @@ export async function notifyAdminNewOrder(
         </div>
 
         <p style="color: #999; font-size: 12px; margin-top: 30px;">
-          Arkado Admin Panel → <a href="https://arkado.store/ranjeet/admin">arkado.store/ranjeet/admin</a>
+          Arkado Admin Panel → <a href="https://www.arkado.store/ranjeet/admin">arkado.store/ranjeet/admin</a>
         </p>
       </div>
     `;
@@ -143,7 +143,7 @@ ${order.utr ? `UTR: ${order.utr}\n` : ""}डिलीवरी: ${order.delivery
 समय: ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}
 
 ⚠️ कृपया manually verify करें — UPI app में payment check करें।
-Admin Panel: https://arkado.store/ranjeet/admin
+Admin Panel: https://www.arkado.store/ranjeet/admin
     `;
 
     await transporter.sendMail({

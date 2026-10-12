@@ -1,11 +1,13 @@
+import { cache } from "react";
 import type { CourseBundle } from "@/lib/courses";
 import type { Category, Exam } from "@/lib/store-types";
+import { supabaseAdmin } from "@/lib/supabase";
 
 /** Canonical public origin of the storefront. Server-safe. */
 export function getSiteUrl(): string {
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim();
   if (fromEnv) return fromEnv.replace(/\/+$/, "");
-  return "https://arkado.store";
+  return "https://www.arkado.store";
 }
 
 /** Server-side fetch of the public course catalog. Never throws. */
@@ -21,6 +23,53 @@ export async function fetchCoursesServer(): Promise<CourseBundle[]> {
     return [];
   }
 }
+
+/**
+ * Fast single-course lookup for crawlers and page renders.
+ * Queries ONE Supabase row by exact id (no 2.5MB catalog download).
+ * Falls back to the full catalog scan for slug / exam_id aliases.
+ * Cached per-request so generateMetadata + page share one lookup.
+ */
+export const fetchSingleCourseServer = cache(
+  async (id: string): Promise<CourseBundle | undefined> => {
+    try {
+      const { data: p, error } = await supabaseAdmin
+        .from("marketplace_products")
+        .select(
+          "id,title,description,sale_price,price,is_active,cover_image,drive_url,language,exam_name,group_name,type,pages"
+        )
+        .eq("id", id)
+        .maybeSingle();
+      if (!error && p) {
+        let meta: Record<string, unknown> = {};
+        try {
+          if (typeof p.description === "string" && /^[{\[]/.test(p.description.trim())) {
+            meta = JSON.parse(p.description) as Record<string, unknown>;
+          }
+        } catch {}
+        const m = meta as Record<string, string | number | boolean | undefined>;
+        return {
+          ...meta,
+          id: p.id || m.id,
+          title: p.title || m.title || "",
+          price: p.sale_price ?? m.price ?? 99,
+          original_price: p.price ?? m.original_price ?? 999,
+          is_active: p.is_active ?? m.is_active ?? true,
+          cover_image: p.cover_image || m.cover_image || "",
+          drive_url: p.drive_url || m.drive_url || "",
+          language: p.language || m.language || "हिन्दी (Hindi)",
+          exam_board: p.exam_name || m.exam_board || "",
+          category: p.group_name || m.category || "",
+          badge: p.type || m.badge || "",
+          pages_count: p.pages ? `${p.pages}+ Pages` : m.pages_count || "",
+        } as unknown as CourseBundle;
+      }
+    } catch {}
+    // Fallback: slug / exam_id aliases need the full catalog scan.
+    const courses = await fetchCoursesServer();
+    return findCourseById(courses, id);
+  }
+);
 
 /** Server-side fetch of public categories. Never throws. */
 export async function fetchCategoriesServer(): Promise<Category[]> {

@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import CourseDetailClient from "./CourseDetailClient";
 import {
   getSiteUrl,
-  fetchCoursesServer,
+  fetchSingleCourseServer,
   fetchExamsServer,
-  findCourseById,
   findExamById,
   absoluteImageUrl,
   toMetaDescription,
@@ -25,8 +24,7 @@ export async function generateMetadata({
   const siteUrl = getSiteUrl();
   try {
     const id = await resolveId(params);
-    const courses = await fetchCoursesServer();
-    const course = findCourseById(courses, id);
+    const course = await fetchSingleCourseServer(id);
     if (!course) {
       // Exam hub page (e.g. /course/ssc-cgl): build keyword-rich metadata
       // from the exam record instead of falling back to the generic site title.
@@ -102,8 +100,7 @@ export default async function CoursePage({ params }: PageProps) {
 
   try {
     const id = await resolveId(params);
-    const courses = await fetchCoursesServer();
-    const course = findCourseById(courses, id);
+    const course = await fetchSingleCourseServer(id);
     if (course) {
       const image = absoluteImageUrl(course.cover_image);
       jsonLd = {

@@ -3,6 +3,7 @@ import { Inter, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
 import FloatingDock from "@/components/FloatingDock";
 import PageViewTracker from "@/components/PageViewTracker";
+import { CartProvider } from "@/components/CartProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -18,7 +19,7 @@ const notoSansDevanagari = Noto_Sans_Devanagari({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://arkado.store"),
+  metadataBase: new URL("https://www.arkado.store"),
   title: {
     default: "Arkado — Deep-Level Exam Analysis & Pattern-Based Notes",
     template: "%s — Arkado",
@@ -60,8 +61,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Arkado",
-    url: "https://arkado.store",
-    logo: "https://arkado.store/logo-email.png",
+    url: "https://www.arkado.store",
+    logo: "https://www.arkado.store/logo-email.png",
     description:
       "All-India competitive exam study material: pattern-decoded notes, 1000+ MCQ books and mock tests for SSC, UPSC, Railway, Police, Teaching and State exams.",
     sameAs: [
@@ -73,10 +74,10 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Arkado",
-    url: "https://arkado.store",
+    url: "https://www.arkado.store",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://arkado.store/search?q={search_term_string}",
+      target: "https://www.arkado.store/search?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };
@@ -91,7 +92,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-        {children}
+        <CartProvider>{children}</CartProvider>
         <FloatingDock />
         <PageViewTracker />
       </body>

@@ -208,7 +208,7 @@ export async function POST(
         <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;background-color:#ffffff;border:1px solid #e4e4e7;border-radius:12px;">
           <tr>
             <td align="center" style="padding:26px 24px 6px;">
-              <img src="https://arkado.store/logo-email.png" alt="Arkado" width="150" style="display:block;border:0;width:150px;height:auto;">
+              <img src="https://www.arkado.store/logo-email.png" alt="Arkado" width="150" style="display:block;border:0;width:150px;height:auto;">
             </td>
           </tr>
           <tr>
@@ -253,7 +253,7 @@ export async function POST(
           </tr>
           <tr>
             <td style="background-color:#fafafa;padding:16px 32px;border-top:1px solid #e4e4e7;border-radius:0 0 12px 12px;">
-              <p style="margin:0;font-size:11px;color:#a1a1aa;text-align:center;">&copy; 2026 Arkado &middot; <a href="https://arkado.store" style="color:#b91c1c;text-decoration:none;">arkado.store</a></p>
+              <p style="margin:0;font-size:11px;color:#a1a1aa;text-align:center;">&copy; 2026 Arkado &middot; <a href="https://www.arkado.store" style="color:#b91c1c;text-decoration:none;">arkado.store</a></p>
             </td>
           </tr>
         </table>
@@ -278,7 +278,7 @@ ${resolvedDriveUrl}
 Need help? WhatsApp us at +91 78520 04401
 
 Team Arkado
-https://arkado.store
+https://www.arkado.store
     `;
 
     // Send email to student

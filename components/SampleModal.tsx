@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Image from "next/image";
 import { CourseBundle } from "@/lib/courses";
 import { getExamLabel } from "@/lib/exam-labels";
+import { applySale, useSiteSale } from "@/lib/sale-pricing";
 import {
   CloseIcon,
   StarIcon,
@@ -27,6 +28,8 @@ export default function SampleModal({
   onClose,
   onBuyNow,
 }: SampleModalProps) {
+  // Site-wide sale pricing (hook before any early return)
+  const { pct: salePct, isLive: saleLive } = useSiteSale();
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "auto";
@@ -38,6 +41,9 @@ export default function SampleModal({
   if (!isOpen || !course) return null;
   const examLabel = getExamLabel(course.exam_id);
   const rating = course.rating || 4.9;
+  const salePrice = applySale(course.price, salePct);
+  const strikePrice = saleLive ? course.price : course.original_price;
+  const badgeText = saleLive ? `${salePct}% OFF` : `${course.discount_percent}% OFF`;
 
   return (
     <div className="fixed inset-0 z-[60] flex items-center justify-center p-3 sm:p-6 bg-slate-900/60 backdrop-blur-sm anim-fade-in-up">
@@ -90,13 +96,13 @@ export default function SampleModal({
               </p>
               <div className="flex items-baseline justify-center sm:justify-start gap-2 pt-1">
                 <span className="text-2xl font-black text-amber-400">
-                  ₹{course.price}
+                  ₹{salePrice}
                 </span>
                 <span className="text-xs text-slate-400 line-through">
-                  ₹{course.original_price}
+                  ₹{strikePrice}
                 </span>
                 <span className="text-[10px] font-bold text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded-full border border-emerald-500/30">
-                  {course.discount_percent}% OFF
+                  {badgeText}
                 </span>
               </div>
             </div>
@@ -218,10 +224,10 @@ export default function SampleModal({
             </span>
             <div className="flex items-baseline gap-2">
               <span className="text-2xl sm:text-3xl font-black text-slate-900">
-                ₹{course.price}
+                ₹{salePrice}
               </span>
               <span className="text-xs text-slate-400 line-through">
-                ₹{course.original_price}
+                ₹{strikePrice}
               </span>
             </div>
           </div>

@@ -7,6 +7,7 @@ import { CourseBundle } from "@/lib/courses";
 import { getExamLabel } from "@/lib/exam-labels";
 import { Settings } from "@/lib/store-types";
 import { fetchWithCache } from "@/lib/store-hooks";
+import { getSalePct, applySale } from "@/lib/sale-pricing";
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
@@ -66,6 +67,12 @@ export default function HeroSlider({
   const currentSlide = slides[currentIndex];
   const examLabel = getExamLabel(currentSlide.exam_id);
   const currentSlideHref = `/course/${currentSlide.slug || currentSlide.id}`;
+  // Site-wide sale pricing
+  const salePct = getSalePct(settings);
+  const saleLive = salePct > 0;
+  const slidePrice = applySale(currentSlide.price, salePct);
+  const slideStrike = saleLive ? currentSlide.price : currentSlide.original_price;
+  const slideBadge = saleLive ? `${salePct}% OFF` : `${currentSlide.discount_percent}% OFF`;
 
   const handlePrev = () =>
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
@@ -150,13 +157,13 @@ export default function HeroSlider({
                 </Link>
                 <div className="flex items-baseline gap-2 flex-wrap">
                   <span className="text-2xl font-black text-amber-700 tracking-tight">
-                    ₹{currentSlide.price}
+                    ₹{slidePrice}
                   </span>
                   <span className="text-xs text-stone-400 line-through">
-                    ₹{currentSlide.original_price}
+                    ₹{slideStrike}
                   </span>
                   <span className="text-[10px] font-black text-emerald-800 bg-emerald-100 border border-emerald-300 px-2 py-0.5 rounded-full">
-                    {currentSlide.discount_percent}% OFF
+                    {slideBadge}
                   </span>
                 </div>
               </div>
@@ -246,13 +253,13 @@ export default function HeroSlider({
             <div className="pt-3 flex flex-col sm:flex-row sm:items-center gap-3">
               <div className="flex items-baseline gap-2.5">
                 <span className="text-3xl sm:text-4xl font-black text-amber-700 tracking-tight">
-                  ₹{currentSlide.price}
+                  ₹{slidePrice}
                 </span>
                 <span className="text-base text-stone-400 line-through">
-                  ₹{currentSlide.original_price}
+                  ₹{slideStrike}
                 </span>
                 <span className="text-xs font-black text-emerald-800 bg-emerald-100 border border-emerald-300 px-2.5 py-0.5 rounded-full">
-                  {currentSlide.discount_percent}% OFF
+                  {slideBadge}
                 </span>
               </div>
 

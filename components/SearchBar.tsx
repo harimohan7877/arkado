@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Course, Category } from "@/lib/store-types";
 import { fetchWithCache } from "@/lib/store-hooks";
+import { applySale, useSiteSale } from "@/lib/sale-pricing";
 import { SearchIcon, CloseIcon, ChevronRightIcon, ArrowRightIcon, SparklesIcon } from "@/components/icons";
 
 interface SearchBarProps {
@@ -39,6 +40,7 @@ export default function SearchBar({
   trendingSearches = DEFAULT_TRENDING,
 }: SearchBarProps) {
   const router = useRouter();
+  const { pct: salePct, isLive: saleLive } = useSiteSale();
   const [query, setQuery] = useState(initialQuery);
   const [isOpen, setIsOpen] = useState(false);
   const [courses, setCourses] = useState<Course[]>(CACHED_COURSES || []);
@@ -346,10 +348,15 @@ export default function SearchBar({
                                 {c.short_description || "Deep-level analysis notes with topic MCQs"}
                               </p>
                               <div className="flex items-baseline gap-1.5 mt-0.5">
-                                <span className="text-xs font-black text-stone-900">₹{c.price}</span>
-                                {c.original_price && c.original_price > c.price && (
+                                <span className="text-xs font-black text-stone-900">₹{applySale(c.price, salePct)}</span>
+                                {c.original_price && c.original_price > c.price && !saleLive && (
                                   <span className="text-[10px] text-stone-400 line-through">
                                     ₹{c.original_price}
+                                  </span>
+                                )}
+                                {saleLive && (
+                                  <span className="text-[10px] text-stone-400 line-through">
+                                    ₹{c.price}
                                   </span>
                                 )}
                               </div>

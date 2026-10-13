@@ -7,6 +7,7 @@ import { CourseBundle } from "@/lib/courses";
 import { BundleCardStyle } from "@/lib/store-types";
 import { DEFAULT_BUNDLE_CARD_STYLE } from "@/lib/default-settings";
 import { getExamLabel } from "@/lib/exam-labels";
+import { applySale, useSiteSale } from "@/lib/sale-pricing";
 import {
   StarIcon,
   FileTextIcon,
@@ -72,6 +73,12 @@ export default function CourseCard({
   const hasTag = Boolean(style.show_exam_tag && displayTag);
   const hasRating = Boolean(style.show_rating);
 
+  // Site-wide sale: every product price drops automatically while the sale is live
+  const { pct: salePct, isLive: saleLive } = useSiteSale();
+  const salePrice = applySale(course.price, salePct);
+  const strikePrice = saleLive ? course.price : course.original_price;
+  const badgeText = saleLive ? `${salePct}% OFF` : `${course.discount_percent}% OFF`;
+
   return (
     <article
       style={{
@@ -92,7 +99,7 @@ export default function CourseCard({
         {/* Discount ribbon */}
         {style.show_discount_badge && (
           <span className="discount-ribbon z-10 text-[9px] sm:text-[10px] px-1.5 py-0.5">
-            {course.discount_percent}% OFF
+            {badgeText}
           </span>
         )}
 
@@ -173,10 +180,10 @@ export default function CourseCard({
             <div className="flex items-center justify-between gap-1">
               <div className="flex items-baseline gap-1 shrink-0">
                 <span className="text-xs sm:text-base font-black text-stone-900">
-                  ₹{course.price}
+                  ₹{salePrice}
                 </span>
                 <span className="text-[9px] sm:text-xs text-stone-400 line-through">
-                  ₹{course.original_price}
+                  ₹{strikePrice}
                 </span>
               </div>
               <button
@@ -192,10 +199,10 @@ export default function CourseCard({
             <>
               <div className="flex items-baseline gap-1.5">
                 <span className="text-xs sm:text-base font-black text-stone-900">
-                  ₹{course.price}
+                  ₹{salePrice}
                 </span>
                 <span className="text-[9px] sm:text-xs text-stone-400 line-through">
-                  ₹{course.original_price}
+                  ₹{strikePrice}
                 </span>
               </div>
 

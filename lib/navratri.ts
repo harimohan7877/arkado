@@ -225,4 +225,14 @@ export function getNavratriDayInfo(day: number): NavratriDay {
   return NAVRATRI_DAYS[Math.min(9, Math.max(1, day)) - 1];
 }
 
+/**
+ * Devi image for a day — admin-uploaded URL wins, otherwise the bundled default.
+ * Admin uploads via Settings → फेस्टिवल ऑफर → देवी इमेज.
+ */
+export function getDeviImageUrl(day: number, settings?: any): string {
+  const custom: unknown = settings?.homepage?.festival_offer?.devi_images?.[day - 1];
+  if (typeof custom === "string" && custom.trim().length > 0) return custom;
+  return getNavratriDayInfo(day).image;
+}
+
 export { istToday };

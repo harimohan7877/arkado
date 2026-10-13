@@ -231,6 +231,8 @@ export interface Settings {
       sale_line_template?: string;
       countdown_label?: string;
       cart_sale_label?: string;
+      /** Admin-uploaded Devi images (index 0 = Day 1). Overrides bundled defaults. */
+      devi_images?: string[];
       coupon_code?: string;
       /** ISO datetime with IST offset, e.g. "2026-10-19T23:59:59+05:30" */
       sale_ends_at?: string;

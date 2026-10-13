@@ -134,6 +134,17 @@ export const DEFAULT_SETTINGS = {
       sale_line_template: "🎉 सभी कोर्स पर {pct}% छूट — कीमतों पर अपने आप लागू",
       countdown_label: "⏳ ऑफर खत्म होने में:",
       cart_sale_label: "🎉 Sale discount ({pct}% OFF):",
+      devi_images: [
+        "/images/navratri/devi-shailputri.jpg",
+        "/images/navratri/devi-brahmacharini.jpg",
+        "/images/navratri/devi-chandraghanta.jpg",
+        "/images/navratri/devi-kushmanda.jpg",
+        "/images/navratri/devi-skandamata.jpg",
+        "/images/navratri/devi-katyayani.jpg",
+        "/images/navratri/devi-kalaratri.jpg",
+        "/images/navratri/devi-mahagauri.jpg",
+        "/images/navratri/devi-siddhidatri.jpg",
+      ],
       coupon_code: "",
       sale_ends_at: "2026-10-19T23:59:59+05:30",
       cta_text: "कोर्स देखें",
@@ -157,6 +168,7 @@ export const FESTIVAL_OFFER_FIELDS = [
   "sale_line_template",
   "countdown_label",
   "cart_sale_label",
+  "devi_images",
   "coupon_code",
   "sale_ends_at",
   "cta_text",
@@ -169,7 +181,9 @@ export type FestivalOffer = {
     ? boolean
     : K extends "discount_percent"
       ? number
-      : string;
+      : K extends "devi_images"
+        ? string[]
+        : string;
 };
 
 /**
@@ -192,6 +206,7 @@ export function getFestivalOffer(settings?: any): FestivalOffer {
     sale_line_template: s.sale_line_template ?? d.sale_line_template ?? "",
     countdown_label: s.countdown_label ?? d.countdown_label ?? "",
     cart_sale_label: s.cart_sale_label ?? d.cart_sale_label ?? "",
+    devi_images: Array.isArray(s.devi_images) && s.devi_images.length > 0 ? s.devi_images : (d.devi_images ?? []),
     coupon_code: s.coupon_code ?? d.coupon_code ?? "",
     sale_ends_at: s.sale_ends_at ?? d.sale_ends_at ?? "",
     cta_text: s.cta_text ?? d.cta_text ?? "",

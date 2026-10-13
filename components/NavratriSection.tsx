@@ -7,6 +7,7 @@ import {
   NAVRATRI_END_MS,
   getNavratriStatus,
   getNavratriDayInfo,
+  getDeviImageUrl,
 } from "@/lib/navratri";
 import { getFestivalOffer } from "@/lib/default-settings";
 import { useSiteSale, fillTemplate } from "@/lib/sale-pricing";
@@ -59,6 +60,8 @@ export default function NavratriSection() {
   const activeDay = previewDay ?? today;
   const info = getNavratriDayInfo(activeDay);
   const isPreviewing = previewDay !== null && previewDay !== today;
+  // Admin-uploaded Devi image wins; falls back to bundled default
+  const deviImage = getDeviImageUrl(activeDay, settings);
 
   const { d, h, m, s } = splitRemaining(saleEndMs, nowMs ?? saleEndMs);
   const countdownText =
@@ -73,8 +76,8 @@ export default function NavratriSection() {
             <div className="flex h-32 w-24 items-center justify-center overflow-hidden rounded-b-xl rounded-t-full border-2 border-amber-300 bg-amber-100 shadow-md sm:h-44 sm:w-32">
               {imgOk ? (
                 <img
-                  key={info.image}
-                  src={info.image}
+                  key={deviImage}
+                  src={deviImage}
                   alt={info.deviHindi}
                   className="h-full w-full object-cover"
                   loading="eager"

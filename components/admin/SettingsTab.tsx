@@ -15,6 +15,7 @@ type TabKey =
   | "contact"
   | "messages"
   | "homepage"
+  | "festival_offer"
   | "faqs_trust"
   | "policies"
   | "about_course"
@@ -372,6 +373,11 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
               ...prev.homepage?.promo_banner,
               ...data.homepage?.promo_banner,
             },
+            festival_offer: {
+              ...DEFAULT_SETTINGS.homepage?.festival_offer,
+              ...prev.homepage?.festival_offer,
+              ...data.homepage?.festival_offer,
+            },
             trust_features: data.homepage?.trust_features || prev.homepage?.trust_features || DEFAULT_SETTINGS.homepage?.trust_features,
             faqs: data.homepage?.faqs || prev.homepage?.faqs || DEFAULT_SETTINGS.homepage?.faqs,
           },
@@ -430,6 +436,14 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
         [key]: value,
       },
     }));
+  };
+
+  /** Update one field inside homepage.festival_offer */
+  const handleOfferChange = (key: string, value: unknown) => {
+    handleNestedChange("homepage", "festival_offer", {
+      ...(settings.homepage?.festival_offer || {}),
+      [key]: value,
+    });
   };
 
   const handleSectionToggle = (key: string, enabled: boolean) => {
@@ -641,6 +655,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
     { id: "contact", label: "संपर्क व पता", icon: "📞" },
     { id: "messages", label: "संदेश टेम्पलेट्स", icon: "💬" },
     { id: "homepage", label: "होमपेज व सेक्शंस", icon: "🏠" },
+    { id: "festival_offer", label: "फेस्टिवल ऑफर", icon: "🎉" },
     { id: "faqs_trust", label: "ट्रस्ट व FAQs", icon: "⭐" },
     { id: "policies", label: "नीतियां (Policies)", icon: "📜" },
     { id: "about_course", label: "About व कोर्स पेज", icon: "ℹ️" },
@@ -1539,7 +1554,228 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
         </div>
       )}
 
-      {/* 5. FAQS & TRUST TAB */}
+      {/* 5. FESTIVAL OFFER TAB */}
+      {activeTab === "festival_offer" && (
+        <div className="bg-white border border-stone-200 rounded-2xl p-5 sm:p-6 space-y-6 shadow-sm">
+          <div className="border-b border-stone-200 pb-3">
+            <h3 className="text-base font-bold text-stone-900">🎉 फेस्टिवल ऑफर (Festival Offer)</h3>
+            <p className="text-xs text-stone-500">
+              नवरात्रि/दिवाली जैसे ऑफर यहाँ से चलाएं — छूट % डालते ही हर प्रोडक्ट की कीमत
+              साइट पर अपने आप कम हो जाएगी (कार्ड, कोर्स पेज, कार्ट, UPI — सब जगह)। ऊपर की
+              पट्टी सभी पेजों पर दिखेगी।
+            </p>
+          </div>
+
+          {(() => {
+            const offer = settings.homepage?.festival_offer || {};
+            const toLocal = (iso?: string) => (iso ? iso.slice(0, 16) : "");
+            return (
+              <div className="space-y-6">
+                {/* On/Off */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <label className="flex items-start gap-3 p-3.5 rounded-xl border border-stone-200 bg-stone-50 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={offer.enabled !== false}
+                      onChange={(e) => handleOfferChange("enabled", e.target.checked)}
+                      className="mt-0.5 h-5 w-5 accent-amber-600"
+                    />
+                    <span>
+                      <span className="block text-sm font-bold text-stone-900">ऑफर चालू करें</span>
+                      <span className={descCls}>बंद करने पर पट्टी और ऑफर ब्लॉक दोनों हट जाएंगे।</span>
+                    </span>
+                  </label>
+                  <label className="flex items-start gap-3 p-3.5 rounded-xl border border-stone-200 bg-stone-50 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={offer.strip_enabled !== false}
+                      onChange={(e) => handleOfferChange("strip_enabled", e.target.checked)}
+                      className="mt-0.5 h-5 w-5 accent-amber-600"
+                    />
+                    <span>
+                      <span className="block text-sm font-bold text-stone-900">ऊपर की पट्टी (सभी पेज)</span>
+                      <span className={descCls}>होम, कोर्स, कैटेगरी — हर पेज के सबसे ऊपर पतली ऑफर पट्टी।</span>
+                    </span>
+                  </label>
+                </div>
+
+                {/* Strip text */}
+                <div>
+                  <label className={labelCls}>पट्टी का टेक्स्ट (सभी पेजों पर दिखेगा)</label>
+                  <input
+                    type="text"
+                    value={offer.strip_text || ""}
+                    onChange={(e) => handleOfferChange("strip_text", e.target.value)}
+                    className={inputCls}
+                    placeholder="🪔 नवरात्रि महोत्सव — सभी कोर्स पर 20% छूट | कोड: NAVRATRI2026"
+                  />
+                </div>
+
+                {/* Offer block */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className={labelCls}>ऑफर शीर्षक (Title)</label>
+                    <input
+                      type="text"
+                      value={offer.title || ""}
+                      onChange={(e) => handleOfferChange("title", e.target.value)}
+                      className={inputCls}
+                    />
+                  </div>
+                  <div>
+                    <label className={labelCls}>छूट % (सभी प्रोडक्ट पर अपने आप लागू)</label>
+                    <div className="flex items-center gap-2">
+                      <input
+                        type="number"
+                        min={0}
+                        max={90}
+                        value={offer.discount_percent ?? 0}
+                        onChange={(e) => handleOfferChange("discount_percent", Math.max(0, Math.min(90, Number(e.target.value) || 0)))}
+                        className={`${inputCls} w-28`}
+                      />
+                      <span className="text-sm font-black text-stone-700">%</span>
+                    </div>
+                    <p className={descCls}>0 = कोई छूट नहीं। जितना % डालेंगे, हर प्रोडक्ट की कीमत अपने आप उतनी कम दिखेगी — कार्ड, कोर्स पेज, कार्ट, UPI पेमेंट, सब जगह।</p>
+                  </div>
+                </div>
+                <div>
+                  <label className={labelCls}>उपशीर्षक (Subtitle)</label>
+                  <input
+                    type="text"
+                    value={offer.subtitle || ""}
+                    onChange={(e) => handleOfferChange("subtitle", e.target.value)}
+                    className={inputCls}
+                  />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className={labelCls}>छूट पंक्ति 1</label>
+                    <input
+                      type="text"
+                      value={offer.discount_line1 || ""}
+                      onChange={(e) => handleOfferChange("discount_line1", e.target.value)}
+                      className={inputCls}
+                      placeholder="सभी कोर्स पर 20% छूट"
+                    />
+                  </div>
+                  <div>
+                    <label className={labelCls}>छूट पंक्ति 2</label>
+                    <input
+                      type="text"
+                      value={offer.discount_line2 || ""}
+                      onChange={(e) => handleOfferChange("discount_line2", e.target.value)}
+                      className={inputCls}
+                      placeholder="पूरा बंडल लेने पर अतिरिक्त 5% छूट"
+                    />
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className={labelCls}>बैज टेक्स्ट (दिन वाला)</label>
+                    <input
+                      type="text"
+                      value={offer.badge_template || ""}
+                      onChange={(e) => handleOfferChange("badge_template", e.target.value)}
+                      className={inputCls}
+                      placeholder="🪔 नवरात्रि • दिन {day}"
+                    />
+                    <p className={descCls}>{"{day} की जगह अपने आप दिन नंबर आएगा।"}</p>
+                  </div>
+                  <div>
+                    <label className={labelCls}>सेल लाइन (छूट वाली)</label>
+                    <input
+                      type="text"
+                      value={offer.sale_line_template || ""}
+                      onChange={(e) => handleOfferChange("sale_line_template", e.target.value)}
+                      className={inputCls}
+                      placeholder="🎉 सभी कोर्स पर {pct}% छूट — कीमतों पर अपने आप लागू"
+                    />
+                    <p className={descCls}>{"{pct} की जगह अपने आप छूट % आएगा।"}</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className={labelCls}>उलटी गिनती लेबल</label>
+                    <input
+                      type="text"
+                      value={offer.countdown_label || ""}
+                      onChange={(e) => handleOfferChange("countdown_label", e.target.value)}
+                      className={inputCls}
+                      placeholder="⏳ ऑफर खत्म होने में:"
+                    />
+                  </div>
+                  <div>
+                    <label className={labelCls}>कार्ट में छूट लेबल</label>
+                    <input
+                      type="text"
+                      value={offer.cart_sale_label || ""}
+                      onChange={(e) => handleOfferChange("cart_sale_label", e.target.value)}
+                      className={inputCls}
+                      placeholder="🎉 Sale discount ({pct}% OFF):"
+                    />
+                    <p className={descCls}>{"कार्ट में दिखने वाली छूट लाइन। {pct} = छूट %।"}</p>
+                  </div>
+                </div>
+                <div>
+                  <label className={labelCls}>कैसे मिलेगा (Redeem note)</label>
+                  <input
+                    type="text"
+                    value={offer.redeem_note || ""}
+                    onChange={(e) => handleOfferChange("redeem_note", e.target.value)}
+                    className={inputCls}
+                    placeholder="ऑर्डर करते समय WhatsApp पर कोड बताएं"
+                  />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div>
+                    <label className={labelCls}>सेल खत्म (तारीख व समय)</label>
+                    <input
+                      type="datetime-local"
+                      value={toLocal(offer.sale_ends_at)}
+                      onChange={(e) =>
+                        handleOfferChange("sale_ends_at", e.target.value ? `${e.target.value}:00+05:30` : "")
+                      }
+                      className={inputCls}
+                    />
+                    <p className={descCls}>इस समय के बाद उलटी गिनती व ऑफर अपने आप हट जाएंगे।</p>
+                  </div>
+                  <div>
+                    <label className={labelCls}>बटन टेक्स्ट</label>
+                    <input
+                      type="text"
+                      value={offer.cta_text || ""}
+                      onChange={(e) => handleOfferChange("cta_text", e.target.value)}
+                      className={inputCls}
+                    />
+                  </div>
+                  <div>
+                    <label className={labelCls}>बटन लिंक</label>
+                    <input
+                      type="text"
+                      value={offer.cta_link || ""}
+                      onChange={(e) => handleOfferChange("cta_link", e.target.value)}
+                      className={inputCls}
+                      placeholder="/exams"
+                    />
+                  </div>
+                </div>
+
+                {/* Live preview of strip */}
+                <div>
+                  <label className={labelCls}>पट्टी का प्रीव्यू</label>
+                  <div className="rounded-xl overflow-hidden border border-stone-200">
+                    <div className="bg-gradient-to-r from-[#7c2d12] via-[#b45309] to-[#7c2d12] px-4 py-2 text-center">
+                      <p className="text-[13px] font-bold text-amber-50">{offer.strip_text || "—"}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
+        </div>
+      )}
+
+      {/* 6. FAQS & TRUST TAB */}
       {activeTab === "faqs_trust" && (
         <div className="bg-white border border-stone-200 rounded-2xl p-5 sm:p-6 space-y-6 shadow-sm">
           {/* Trust Features */}
@@ -1726,7 +1962,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
         </div>
       )}
 
-      {/* 6. POLICIES TAB */}
+      {/* 7. POLICIES TAB */}
       {activeTab === "policies" && (
         <div className="bg-white border border-stone-200 rounded-2xl p-5 sm:p-6 space-y-6 shadow-sm">
           <div className="border-b border-stone-200 pb-3 flex flex-wrap items-center justify-between gap-2">
@@ -1808,7 +2044,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
         </div>
       )}
 
-      {/* 7. ABOUT & COURSE TAB */}
+      {/* 8. ABOUT & COURSE TAB */}
       {activeTab === "about_course" && (
         <div className="bg-white border border-stone-200 rounded-2xl p-5 sm:p-6 space-y-6 shadow-sm">
           {/* About Section */}
@@ -2021,7 +2257,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
         </div>
       )}
 
-      {/* 8. BRAND TAB */}
+      {/* 9. BRAND TAB */}
       {activeTab === "brand" && (
         <div className="bg-white border border-stone-200 rounded-2xl p-5 sm:p-6 space-y-4 shadow-sm">
           <div className="border-b border-stone-200 pb-3">
@@ -2099,7 +2335,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
         </div>
       )}
 
-      {/* 9. RAZORPAY TAB */}
+      {/* 10. RAZORPAY TAB */}
       {activeTab === "razorpay" && (
         <div className="bg-white border border-stone-200 rounded-2xl p-5 sm:p-6 space-y-4 shadow-sm">
           <div className="border-b border-stone-200 pb-3">

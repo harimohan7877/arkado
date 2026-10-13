@@ -4,6 +4,7 @@ import { useState, useEffect, startTransition } from "react";
 import Link from "next/link";
 import { Settings } from "@/lib/store-types";
 import { DEFAULT_SECTION_ORDER, SectionKey, getOrderedSectionKeys } from "@/lib/default-settings";
+import { NAVRATRI_DAYS } from "@/lib/navratri";
 import BundleCardSettings from "@/components/admin/BundleCardSettings";
 
 interface SettingsTabProps {
@@ -258,6 +259,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
   const [activeTab, setActiveTab] = useState<TabKey>("payment");
   const [showRazorpaySecret, setShowRazorpaySecret] = useState(false);
   const [newTagInput, setNewTagInput] = useState("");
+  const [uploadingDevi, setUploadingDevi] = useState<number | null>(null);
 
   // AI Configuration State (Decoupled from store settings)
   const [aiConfig, setAiConfig] = useState({
@@ -1569,6 +1571,40 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
           {(() => {
             const offer = settings.homepage?.festival_offer || {};
             const toLocal = (iso?: string) => (iso ? iso.slice(0, 16) : "");
+
+            /** Upload a Devi image for a day (admin panel, no GitHub needed) */
+            const handleDeviImageUpload = async (day: number, file: File) => {
+              if (file.size > 3 * 1024 * 1024) {
+                setMessage({ type: "error", text: "इमेज 3MB से कम होनी चाहिए।" });
+                return;
+              }
+              setUploadingDevi(day);
+              try {
+                const formData = new FormData();
+                formData.append("file", file);
+                formData.append("folder", "navratri");
+                const res = await fetch("/api/admin/upload", {
+                  method: "POST",
+                  headers: getAuthHeaders(),
+                  body: formData,
+                });
+                if (!res.ok) throw new Error("upload failed");
+                const data = await res.json();
+                if (data.url) {
+                  const imgs = [...((offer.devi_images as string[]) || [])];
+                  while (imgs.length < 9) imgs.push("");
+                  imgs[day - 1] = data.url;
+                  handleOfferChange("devi_images", imgs);
+                  setMessage({ type: "success", text: `दिन ${day} की इमेज अपलोड हो गई! ऊपर "सेव करें" दबाना न भूलें।` });
+                } else {
+                  throw new Error("no url");
+                }
+              } catch {
+                setMessage({ type: "error", text: "इमेज अपलोड नहीं हुई, दोबारा कोशिश करें।" });
+              } finally {
+                setUploadingDevi(null);
+              }
+            };
             return (
               <div className="space-y-6">
                 {/* On/Off */}
@@ -1716,6 +1752,71 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
                     <p className={descCls}>{"कार्ट में दिखने वाली छूट लाइन। {pct} = छूट %।"}</p>
                   </div>
                 </div>
+
+                {/* Devi Images — admin upload, GitHub not needed */}
+                <div>
+                  <label className={labelCls}>देवी इमेज (9 दिन) — यहीं से अपलोड करें</label>
+                  <p className={descCls}>
+                    हर दिन की देवी की फोटो यहाँ से बदलें — GitHub पर upload करने की जरूरत नहीं।
+                    खाली रहने पर डिफॉल्ट इमेज दिखेगी। ऊपर "सेव करें" दबाना न भूलें।
+                  </p>
+                  <div className="grid grid-cols-3 gap-2.5 mt-2">
+                    {NAVRATRI_DAYS.map((d) => {
+                      const imgs = ((offer.devi_images as string[]) || []);
+                      const url = imgs[d.day - 1] || "";
+                      const inputId = `devi-upload-${d.day}`;
+                      return (
+                        <div key={d.day} className="rounded-xl border border-stone-200 overflow-hidden bg-stone-50">
+                          <div className="aspect-[3/4] w-full bg-amber-50">
+                            {url ? (
+                              <img src={url} alt={d.deviHindi} className="h-full w-full object-cover" />
+                            ) : (
+                              <div className="flex h-full w-full flex-col items-center justify-center gap-1 text-stone-400">
+                                <span className="text-2xl">🪔</span>
+                                <span className="text-[10px] font-bold">दिन {d.day}</span>
+                              </div>
+                            )}
+                          </div>
+                          <div className="p-1.5">
+                            <p className="text-[10px] font-black text-stone-700 truncate text-center">{d.deviShort}</p>
+                            <label
+                              htmlFor={inputId}
+                              className="mt-1 block cursor-pointer rounded-lg bg-amber-600 px-2 py-1 text-center text-[10px] font-black text-white transition hover:bg-amber-700 active:scale-95"
+                            >
+                              {uploadingDevi === d.day ? "अपलोड..." : url ? "बदलें" : "अपलोड"}
+                            </label>
+                            <input
+                              id={inputId}
+                              type="file"
+                              accept="image/*"
+                              className="hidden"
+                              onChange={(e) => {
+                                const f = e.target.files?.[0];
+                                if (f) handleDeviImageUpload(d.day, f);
+                                e.target.value = "";
+                              }}
+                            />
+                            {url && (
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  const nimgs = [...((offer.devi_images as string[]) || [])];
+                                  while (nimgs.length < 9) nimgs.push("");
+                                  nimgs[d.day - 1] = "";
+                                  handleOfferChange("devi_images", nimgs);
+                                }}
+                                className="mt-1 w-full cursor-pointer text-[10px] font-bold text-stone-400 transition hover:text-red-600"
+                              >
+                                डिफॉल्ट करें
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
                 <div>
                   <label className={labelCls}>कैसे मिलेगा (Redeem note)</label>
                   <input

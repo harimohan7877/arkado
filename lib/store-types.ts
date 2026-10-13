@@ -215,6 +215,29 @@ export interface Settings {
       subtitle?: string;
       bullets?: string[];
     };
+    /** Admin-managed festival offer — drives the site-wide OfferStrip + Navratri campaign offer block */
+    festival_offer?: {
+      enabled?: boolean;
+      strip_enabled?: boolean;
+      strip_text?: string;
+      title?: string;
+      subtitle?: string;
+      /** Site-wide automatic discount % applied to every product price */
+      discount_percent?: number;
+      discount_line1?: string;
+      discount_line2?: string;
+      /** Text templates — {day} and {pct} are replaced automatically */
+      badge_template?: string;
+      sale_line_template?: string;
+      countdown_label?: string;
+      cart_sale_label?: string;
+      coupon_code?: string;
+      /** ISO datetime with IST offset, e.g. "2026-10-19T23:59:59+05:30" */
+      sale_ends_at?: string;
+      cta_text?: string;
+      cta_link?: string;
+      redeem_note?: string;
+    };
     trust_features?: {
       title: string;
       desc: string;

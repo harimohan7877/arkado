@@ -121,8 +121,92 @@ export const DEFAULT_SETTINGS = {
       faq: { enabled: true, show_on_mobile: true, show_on_desktop: true, title: "Common Questions" },
     },
     bundle_card_style: { ...DEFAULT_BUNDLE_CARD_STYLE },
+    festival_offer: {
+      enabled: true,
+      strip_enabled: true,
+      strip_text: "🪔 नवरात्रि महोत्सव — सभी कोर्स पर 20% छूट",
+      title: "नवरात्रि महोत्सव ऑफर",
+      subtitle: "छूट सभी कीमतों पर अपने आप लागू — कोई कोड नहीं चाहिए",
+      discount_percent: 20,
+      discount_line1: "सभी कोर्स पर 20% छूट",
+      discount_line2: "पूरा बंडल लेने पर अतिरिक्त 5% छूट",
+      badge_template: "🪔 नवरात्रि • दिन {day}",
+      sale_line_template: "🎉 सभी कोर्स पर {pct}% छूट — कीमतों पर अपने आप लागू",
+      countdown_label: "⏳ ऑफर खत्म होने में:",
+      cart_sale_label: "🎉 Sale discount ({pct}% OFF):",
+      coupon_code: "",
+      sale_ends_at: "2026-10-19T23:59:59+05:30",
+      cta_text: "कोर्स देखें",
+      cta_link: "/exams",
+      redeem_note: "छूट checkout पर अपने आप लागू होगी",
+    },
   },
 } as const;
+
+/** Festival offer field keys (for admin editor + merges). */
+export const FESTIVAL_OFFER_FIELDS = [
+  "enabled",
+  "strip_enabled",
+  "strip_text",
+  "title",
+  "subtitle",
+  "discount_percent",
+  "discount_line1",
+  "discount_line2",
+  "badge_template",
+  "sale_line_template",
+  "countdown_label",
+  "cart_sale_label",
+  "coupon_code",
+  "sale_ends_at",
+  "cta_text",
+  "cta_link",
+  "redeem_note",
+] as const;
+
+export type FestivalOffer = {
+  [K in (typeof FESTIVAL_OFFER_FIELDS)[number]]: K extends "enabled" | "strip_enabled"
+    ? boolean
+    : K extends "discount_percent"
+      ? number
+      : string;
+};
+
+/**
+ * Merged festival-offer config: saved settings over defaults.
+ * Used by the Navratri campaign section and the site-wide OfferStrip.
+ */
+export function getFestivalOffer(settings?: any): FestivalOffer {
+  const d: any = (DEFAULT_SETTINGS as any).homepage?.festival_offer || {};
+  const s: any = settings?.homepage?.festival_offer || {};
+  return {
+    enabled: s.enabled ?? d.enabled ?? true,
+    strip_enabled: s.strip_enabled ?? d.strip_enabled ?? true,
+    strip_text: s.strip_text ?? d.strip_text ?? "",
+    title: s.title ?? d.title ?? "",
+    subtitle: s.subtitle ?? d.subtitle ?? "",
+    discount_percent: Number(s.discount_percent ?? d.discount_percent ?? 0) || 0,
+    discount_line1: s.discount_line1 ?? d.discount_line1 ?? "",
+    discount_line2: s.discount_line2 ?? d.discount_line2 ?? "",
+    badge_template: s.badge_template ?? d.badge_template ?? "",
+    sale_line_template: s.sale_line_template ?? d.sale_line_template ?? "",
+    countdown_label: s.countdown_label ?? d.countdown_label ?? "",
+    cart_sale_label: s.cart_sale_label ?? d.cart_sale_label ?? "",
+    coupon_code: s.coupon_code ?? d.coupon_code ?? "",
+    sale_ends_at: s.sale_ends_at ?? d.sale_ends_at ?? "",
+    cta_text: s.cta_text ?? d.cta_text ?? "",
+    cta_link: s.cta_link ?? d.cta_link ?? "/exams",
+    redeem_note: s.redeem_note ?? d.redeem_note ?? "",
+  };
+}
+
+/** True while the configured sale is still running. */
+export function isFestivalSaleLive(offer: Pick<FestivalOffer, "sale_ends_at">, nowMs: number = Date.now()): boolean {
+  if (!offer.sale_ends_at) return true;
+  const t = new Date(offer.sale_ends_at).getTime();
+  if (Number.isNaN(t)) return true;
+  return nowMs <= t;
+}
 
 /**
  * Safe helper to return the validated ordered list of section keys.

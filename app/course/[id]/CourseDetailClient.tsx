@@ -11,6 +11,8 @@ import CourseCard from "@/components/CourseCard";
 import { Category } from "@/lib/store-types";
 import { fetchWithCache } from "@/lib/store-hooks";
 import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
+import { applySale, getSalePct } from "@/lib/sale-pricing";
+import { useCart } from "@/components/CartProvider";
 
 const SampleModal = dynamic(() => import("@/components/SampleModal"), { ssr: false });
 const CartDrawer = dynamic(() => import("@/components/CartDrawer"), { ssr: false });
@@ -25,8 +27,8 @@ export default function CourseDetailClient({ params }: PageProps) {
 
   const [course, setCourse] = useState<CourseBundle | null>(null);
   const [loading, setLoading] = useState(true);
-  const [cart, setCart] = useState<CourseBundle[]>([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  // Global cart — survives page navigation (persisted to localStorage)
+  const { items: cart, isOpen: isCartOpen, addToCart, removeItem, openCart, closeCart } = useCart();
   const [settings, setSettings] = useState<any>(null);
   const [coverImageFailed, setCoverImageFailed] = useState(false);
   const [relatedCourses, setRelatedCourses] = useState<CourseBundle[]>([]);
@@ -262,7 +264,7 @@ export default function CourseDetailClient({ params }: PageProps) {
   if (!course) {
     return (
       <div className="min-h-screen bg-neutral-50 flex flex-col justify-between">
-        <Navbar cartCount={cart.length} onCartClick={() => setIsCartOpen(true)} />
+        <Navbar cartCount={cart.length} onCartClick={openCart} />
         <div className="max-w-xl mx-auto px-4 py-20 text-center flex-1">
           <div className="text-4xl mb-4">🔍</div>
           <h1 className="text-xl font-bold text-neutral-900">Course / Exam Not Found</h1>
@@ -282,8 +284,7 @@ export default function CourseDetailClient({ params }: PageProps) {
   }
 
   const handleBuyNow = (selectedCourse: CourseBundle) => {
-    setCart([selectedCourse]);
-    setIsCartOpen(true);
+    addToCart(selectedCourse);
   };
 
   const handleOpenSample = (selectedCourse: CourseBundle) => {
@@ -291,13 +292,17 @@ export default function CourseDetailClient({ params }: PageProps) {
     setIsSampleModalOpen(true);
   };
 
+  // Site-wide sale: every price on this page drops automatically while live
+  const salePct = getSalePct(settings);
+  const saleLive = salePct > 0;
+
   // =========================================================
   // MULTI-KIT EXAM STUDY MATERIAL HUB (Level 4 Website View)
   // When an exam has multiple books/kits (e.g. SSC CGL with 4-5 kits)
   // =========================================================
   if (isMultiKitExam && matchedExam) {
-    const minPrice = examKits.length > 0 ? Math.min(...examKits.map((k) => k.price || 99)) : 99;
-    const maxPrice = examKits.length > 0 ? Math.max(...examKits.map((k) => k.price || 199)) : 199;
+    const minPrice = examKits.length > 0 ? Math.min(...examKits.map((k) => applySale(k.price || 99, salePct))) : 99;
+    const maxPrice = examKits.length > 0 ? Math.max(...examKits.map((k) => applySale(k.price || 199, salePct))) : 199;
 
     // ---- Full Bundle: saari kits ka jod par % chhoot (admin: bundle_card settings) ----
     const bc = settings?.bundle_card || {};
@@ -311,9 +316,15 @@ export default function CourseDetailClient({ params }: PageProps) {
     const bundleButtonText = bc.button_text || "Buy Full Bundle →";
     const showBundleTotal = bc.show_total !== false;
     const savingsDisplay = bc.savings_display || "percent_only";
-    const bundleTotal = examKits.reduce((sum, k) => sum + (k.price || 0), 0);
+    // Bundle total = sum of (sale-adjusted) kit prices; then the extra bundle % off on top.
+    // During a site-wide sale the customer gets BOTH: sale % off each kit + extra bundle % off.
+    const bundleTotal = examKits.reduce((sum, k) => sum + applySale(k.price || 0, salePct), 0);
     const bundlePrice = Math.round(bundleTotal * (1 - discountPct / 100));
     const bundleSavings = bundleTotal - bundlePrice;
+    // Pre-sale reference: what the bundle cost before the site-wide sale (for the strike-through)
+    const bundleWas = Math.round(
+      examKits.reduce((sum, k) => sum + (k.price || 0), 0) * (1 - discountPct / 100)
+    );
     const savingsLabel =
       savingsDisplay === "percent_and_amount"
         ? `${discountPct}% OFF • ₹${bundleSavings.toLocaleString("en-IN")} bachao`
@@ -327,14 +338,15 @@ export default function CourseDetailClient({ params }: PageProps) {
       title: `${matchedExam.name} — ${bundleTitle} (${examKits.length} Kits)`,
       short_description: bundleSubtitle,
       price: bundlePrice,
-      original_price: bundleTotal,
+      // original_price = pre-sale bundle price; cart skips re-discounting bundle-* items
+      original_price: saleLive ? bundleWas : bundleTotal,
       badge: `Full Bundle • ${discountPct}% OFF`,
       exam_id: matchedExam.id,
     };
 
     return (
       <div className="min-h-screen bg-stone-50 flex flex-col justify-between font-sans">
-        <Navbar cartCount={cart.length} onCartClick={() => setIsCartOpen(true)} />
+        <Navbar cartCount={cart.length} onCartClick={openCart} />
 
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 w-full flex-1 space-y-8">
           {/* Breadcrumb */}
@@ -651,9 +663,9 @@ export default function CourseDetailClient({ params }: PageProps) {
 
         <CartDrawer
           isOpen={isCartOpen}
-          onClose={() => setIsCartOpen(false)}
+          onClose={closeCart}
           cartItems={cart}
-          onRemoveItem={() => setCart([])}
+          onRemoveItem={removeItem}
         />
 
         <SampleModal
@@ -673,7 +685,7 @@ export default function CourseDetailClient({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-neutral-50 flex flex-col justify-between font-sans">
-      <Navbar cartCount={cart.length} onCartClick={() => setIsCartOpen(true)} />
+      <Navbar cartCount={cart.length} onCartClick={openCart} />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 w-full flex-1">
         {/* SIBLING KITS PROMINENT BANNER (If this exam has multiple kits) */}
@@ -884,13 +896,13 @@ export default function CourseDetailClient({ params }: PageProps) {
               <div>
                 <div className="flex items-baseline gap-3">
                   <span className="text-4xl font-black text-neutral-900">
-                    ₹{course.price}
+                    ₹{applySale(course.price, salePct)}
                   </span>
                   <span className="text-lg text-neutral-400 line-through">
-                    ₹{course.original_price}
+                    ₹{saleLive ? course.price : course.original_price}
                   </span>
                   <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
-                    {course.discount_percent}% OFF
+                    {saleLive ? `${salePct}% OFF` : `${course.discount_percent}% OFF`}
                   </span>
                 </div>
                 <p className="text-[11px] text-neutral-500 mt-1">
@@ -1066,9 +1078,9 @@ export default function CourseDetailClient({ params }: PageProps) {
 
       <CartDrawer
         isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
+        onClose={closeCart}
         cartItems={cart}
-        onRemoveItem={() => setCart([])}
+        onRemoveItem={removeItem}
       />
 
       <SampleModal

@@ -9,8 +9,10 @@ import Footer from "@/components/Footer";
 import CourseCard from "@/components/CourseCard";
 import { Category, Exam, Course } from "@/lib/store-types";
 import { fetchWithCache, useSettings } from "@/lib/store-hooks";
+import { applySale, getSalePct } from "@/lib/sale-pricing";
 import { DEFAULT_SETTINGS, getCleanWhatsAppNumber, getBundleCardStyle } from "@/lib/default-settings";
 import { SearchIcon, CloseIcon, ChevronRightIcon, ArrowRightIcon, SparklesIcon, CheckIcon } from "@/components/icons";
+import { useCart } from "@/components/CartProvider";
 
 const SampleModal = dynamic(() => import("@/components/SampleModal"), { ssr: false });
 const CartDrawer = dynamic(() => import("@/components/CartDrawer"), { ssr: false });
@@ -32,8 +34,8 @@ export default function CategoryDetailClient({ params }: CategoryPageProps) {
   const { settings } = useSettings();
 
   // Cart & Sample states
-  const [cart, setCart] = useState<Course[]>([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  // Global cart — survives page navigation (persisted to localStorage)
+  const { items: cart, isOpen: isCartOpen, addToCart, removeItem, openCart, closeCart } = useCart();
   const [selectedCourseForSample, setSelectedCourseForSample] = useState<Course | null>(null);
   const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
   const [failedCatImage, setFailedCatImage] = useState(false);
@@ -96,17 +98,12 @@ export default function CategoryDetailClient({ params }: CategoryPageProps) {
   }, [courses, exams, categoryId]);
 
   const handleBuyNow = (course: Course) => {
-    setCart([course]);
-    setIsCartOpen(true);
+    addToCart(course);
   };
 
   const handleOpenSample = (course: Course) => {
     setSelectedCourseForSample(course);
     setIsSampleModalOpen(true);
-  };
-
-  const handleRemoveFromCart = (id: string) => {
-    setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
   if (loading) {
@@ -176,7 +173,7 @@ export default function CategoryDetailClient({ params }: CategoryPageProps) {
 
   return (
     <div className="min-h-screen flex flex-col bg-stone-50">
-      <Navbar cartCount={cart.length} onCartClick={() => setIsCartOpen(true)} />
+      <Navbar cartCount={cart.length} onCartClick={openCart} />
 
       <main className="flex-1">
         {/* CATEGORY HEADER BANNER */}
@@ -372,11 +369,11 @@ export default function CategoryDetailClient({ params }: CategoryPageProps) {
                       <div className="flex items-center gap-1.5 flex-wrap">
                         {hasMultipleKits ? (
                           <span className="text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
-                            ● {examKits.length} Study Kits &amp; Books • from ₹{Math.min(...examKits.map((k) => k.price || 99))}
+                            ● {examKits.length} Study Kits &amp; Books • from ₹{applySale(Math.min(...examKits.map((k) => k.price || 99)), getSalePct(settings))}
                           </span>
                         ) : (
                           <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-100">
-                            ● Selection Kit Available • ₹{matchedCourse?.price || 199}
+                            ● Selection Kit Available • ₹{applySale(matchedCourse?.price || 199, getSalePct(settings))}
                           </span>
                         )}
                         {exam.status && (
@@ -472,9 +469,9 @@ export default function CategoryDetailClient({ params }: CategoryPageProps) {
 
       <CartDrawer
         isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
+        onClose={closeCart}
         cartItems={cart}
-        onRemoveItem={handleRemoveFromCart}
+        onRemoveItem={removeItem}
       />
 
       <Footer />

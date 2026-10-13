@@ -34,12 +34,18 @@ export default function NavratriSection() {
   const { settings } = useSettings();
   const [previewDay, setPreviewDay] = useState<number | null>(null);
   const [nowMs, setNowMs] = useState<number | null>(null);
+  const [imgOk, setImgOk] = useState(true);
 
   useEffect(() => {
     setNowMs(Date.now());
     const t = setInterval(() => setNowMs(Date.now()), 1000);
     return () => clearInterval(t);
   }, []);
+
+  // Reset image fallback when switching days
+  useEffect(() => {
+    setImgOk(true);
+  }, [previewDay]);
 
   const offer = useMemo(() => getFestivalOffer(settings), [settings]);
   const saleEndMs = useMemo(() => {
@@ -62,17 +68,22 @@ export default function NavratriSection() {
     <section id="navratri" className="border-y border-amber-200/80 bg-[#FFFBF3]">
       <div className="mx-auto max-w-7xl px-4 py-5 sm:px-6 sm:py-7 lg:px-8">
         <div className="flex items-start gap-4 sm:gap-6">
-          {/* Devi image — small */}
+          {/* Devi image — small (graceful fallback until images are uploaded) */}
           <div className="shrink-0">
-            <div className="overflow-hidden rounded-b-xl rounded-t-full border-2 border-amber-300 shadow-md">
-              <img
-                key={info.image}
-                src={info.image}
-                alt={info.deviHindi}
-                className="h-32 w-24 object-cover sm:h-44 sm:w-32"
-                loading="eager"
-                decoding="async"
-              />
+            <div className="flex h-32 w-24 items-center justify-center overflow-hidden rounded-b-xl rounded-t-full border-2 border-amber-300 bg-amber-100 shadow-md sm:h-44 sm:w-32">
+              {imgOk ? (
+                <img
+                  key={info.image}
+                  src={info.image}
+                  alt={info.deviHindi}
+                  className="h-full w-full object-cover"
+                  loading="eager"
+                  decoding="async"
+                  onError={() => setImgOk(false)}
+                />
+              ) : (
+                <span className="text-4xl sm:text-5xl">🪔</span>
+              )}
             </div>
           </div>
 

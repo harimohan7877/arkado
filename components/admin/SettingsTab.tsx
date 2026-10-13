@@ -1585,7 +1585,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
                 formData.append("folder", "navratri");
                 const res = await fetch("/api/admin/upload", {
                   method: "POST",
-                  headers: getAuthHeaders(),
+                  
                   body: formData,
                 });
                 if (!res.ok) throw new Error("upload failed");

@@ -342,6 +342,8 @@ export default function CourseDetailClient({ params }: PageProps) {
       original_price: saleLive ? bundleWas : bundleTotal,
       badge: `Full Bundle • ${discountPct}% OFF`,
       exam_id: matchedExam.id,
+      // Backend: which kits are inside this bundle (for order + delivery)
+      bundle_items: examKits.map((k) => k.id),
     };
 
     return (

@@ -85,6 +85,10 @@ export async function GET(req: NextRequest) {
       exam_name: (o.exam_name || resolvedTitle) as string,
       utr: (o.utr || o.razorpay_payment_id || "") as string,
       drive_url: (o.drive_url || "") as string,
+      items: (o.items || undefined) as Array<{
+        id: string; title: string; price: number; drive_url: string;
+        bundle_items?: Array<{ id: string; title: string; drive_url: string }>;
+      }> | undefined,
       created_at: (o.created_at || new Date().toISOString()) as string,
       updated_at: (o.updated_at || o.created_at || new Date().toISOString()) as string,
     };

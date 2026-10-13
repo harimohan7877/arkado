@@ -192,6 +192,14 @@ export default function CartDrawer({
           amount: subtotal,
           status: "pending_verification",
           terms_accepted: termsAccepted,
+          // Full cart contents — backend stores bundle constituents for delivery
+          items: cartItems.map((item: any) => ({
+            id: item.id,
+            title: item.title,
+            price: finalItemPrice(item, salePct),
+            quantity: 1,
+            bundle_items: Array.isArray(item.bundle_items) ? item.bundle_items : undefined,
+          })),
         }),
       });
 

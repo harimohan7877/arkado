@@ -28,6 +28,13 @@ export interface Order {
   terms_accepted?: boolean;
   terms_accepted_at?: string;
   terms_version?: string;
+  items?: Array<{
+    id: string;
+    title: string;
+    price: number;
+    drive_url: string;
+    bundle_items?: Array<{ id: string; title: string; drive_url: string }>;
+  }>;
 }
 
 interface OrdersTabProps {
@@ -332,7 +339,23 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
 
   const handleSendWhatsApp = (order: Order) => {
     const utrLine = order.utr ? `\nUTR No: ${order.utr}` : "";
-    const msg = `नमस्ते ${order.customer_name}!\n\nआपने Arkado से "${order.course_title}" के लिए ₹${order.amount} का भुगतान किया है।\n\nOrder ID: ${order.order_id}${utrLine}\n\nयहाँ आपके नोट्स व अध्ययन सामग्री की डाउनलोड लिंक उपलब्ध है:\n${order.drive_url || "https://www.arkado.store/dashboard"}\n\nधन्यवाद! — Team Arkado`;
+    // Bundle orders: include every kit's drive link, not just one URL
+    let linksSection = `\n\nयहाँ आपके नोट्स व अध्ययन सामग्री की डाउनलोड लिंक उपलब्ध है:\n${order.drive_url || "https://www.arkado.store/dashboard"}`;
+    const _items = (order as any).items;
+    if (Array.isArray(_items)) {
+      const _kitLines: string[] = [];
+      for (const _li of _items) {
+        if (Array.isArray(_li.bundle_items)) {
+          for (const _k of _li.bundle_items) {
+            if (_k.drive_url) _kitLines.push(`• ${_k.title}: ${_k.drive_url}`);
+          }
+        }
+      }
+      if (_kitLines.length > 0) {
+        linksSection = `\n\nआपके बंडल में ${_kitLines.length} स्टडी किट हैं — सभी डाउनलोड लिंक:\n${_kitLines.join("\n")}`;
+      }
+    }
+    const msg = `नमस्ते ${order.customer_name}!\n\nआपने Arkado से "${order.course_title}" के लिए ₹${order.amount} का भुगतान किया है।\n\nOrder ID: ${order.order_id}${utrLine}${linksSection}\n\nधन्यवाद! — Team Arkado`;
     const rawDigits = (order.customer_phone || order.phone || "").replace(/\D/g, "").slice(-10);
     const phone = rawDigits ? `91${rawDigits}` : "";
     const url = phone ? `https://wa.me/${phone}?text=${encodeURIComponent(msg)}` : `https://wa.me/?text=${encodeURIComponent(msg)}`;
@@ -1156,6 +1179,30 @@ function OrderDetailCard({
           onCopy={() => copyToClipboard(order.drive_url || "", "Drive Link")}
         />
       </div>
+
+      {/* Bundle contents — which kits are inside this order */}
+      {Array.isArray((order as any).items) && (order as any).items.some((li: any) => Array.isArray(li.bundle_items) && li.bundle_items.length > 0) && (
+        <div className="mt-3 p-3.5 bg-emerald-50/60 rounded-xl border border-emerald-200">
+          <p className="text-xs font-bold text-emerald-900 mb-2">🎁 बंडल में शामिल किट्स ({(order as any).items.flatMap((li: any) => li.bundle_items || []).length})</p>
+          <div className="space-y-1.5">
+            {(order as any).items.flatMap((li: any) => li.bundle_items || []).map((k: any, i: number) => (
+              <div key={i} className="flex items-center justify-between gap-2 text-xs bg-white rounded-lg px-2.5 py-1.5 border border-emerald-100">
+                <span className="font-semibold text-stone-800 truncate">{i + 1}. {k.title}</span>
+                {k.drive_url ? (
+                  <button
+                    onClick={() => copyToClipboard(k.drive_url, k.title)}
+                    className="shrink-0 text-emerald-700 font-bold hover:underline"
+                  >
+                    📋 लिंक कॉपी
+                  </button>
+                ) : (
+                  <span className="shrink-0 text-stone-400">लिंक नहीं है</span>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Internal admin note — never shown to the customer */}
       <div className="p-3.5 bg-amber-50/60 rounded-xl border border-amber-200">

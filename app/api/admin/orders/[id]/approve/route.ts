@@ -178,6 +178,26 @@ export async function POST(
     const safeOrderId = escapeHtml(orderId);
     const safeDriveUrl = escapeHtml(resolvedDriveUrl);
 
+    // Bundle orders: list every kit's drive link (not just one button)
+    const orderItems = Array.isArray((order as any).items) ? (order as any).items : [];
+    const bundleKits: Array<{ title: string; drive_url: string }> = [];
+    for (const li of orderItems) {
+      if (Array.isArray(li.bundle_items)) {
+        for (const k of li.bundle_items) {
+          if (k.drive_url) bundleKits.push({ title: String(k.title || "Study Kit"), drive_url: String(k.drive_url) });
+        }
+      } else if (li.drive_url && String(li.id || "").startsWith("bundle-") === false) {
+        // single (non-bundle) item with its own link — already covered by the main button
+      }
+    }
+    const bundleLinksHtml = bundleKits.length > 0
+      ? `<tr><td style="padding:16px 32px 0;"><p style="margin:0 0 8px;font-size:13px;font-weight:700;color:#18181b;">Your bundle includes ${bundleKits.length} study kits:</p>` +
+        bundleKits.map((k, i) =>
+          `<p style="margin:6px 0;font-size:13px;line-height:1.6;color:#3f3f46;">${i + 1}. <strong>${escapeHtml(k.title)}</strong><br><a href="${escapeHtml(k.drive_url)}" style="color:#b91c1c;word-break:break-all;">${escapeHtml(k.drive_url)}</a></p>`
+        ).join("") +
+        `</td></tr>`
+      : "";
+
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -246,6 +266,7 @@ export async function POST(
               <p style="margin:0;font-size:11px;line-height:1.6;color:#71717a;word-break:break-all;">Button not working? Paste this link in your browser:<br><a href="${safeDriveUrl}" style="color:#b91c1c;">${safeDriveUrl}</a></p>
             </td>
           </tr>
+          ${bundleLinksHtml}
           <tr>
             <td style="padding:14px 32px 26px;">
               <p style="margin:0;font-size:12px;line-height:1.7;color:#71717a;">Need help? WhatsApp us at <a href="https://wa.me/917852004401" style="color:#b91c1c;font-weight:700;text-decoration:none;">+91 78520 04401</a></p>

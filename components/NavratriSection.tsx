@@ -43,10 +43,12 @@ export default function NavratriSection() {
     return () => clearInterval(t);
   }, []);
 
-  // Reset image fallback when switching days
+  // Reset image fallback when switching days OR when settings arrive/change
+  // (e.g. admin uploads a Devi photo after the bundled path already 404'd —
+  // without this, the diya fallback would stay stuck forever)
   useEffect(() => {
     setImgOk(true);
-  }, [previewDay]);
+  }, [previewDay, settings]);
 
   const offer = useMemo(() => getFestivalOffer(settings), [settings]);
   const saleEndMs = useMemo(() => {

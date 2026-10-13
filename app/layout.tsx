@@ -3,6 +3,7 @@ import { Inter, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
 import FloatingDock from "@/components/FloatingDock";
 import PageViewTracker from "@/components/PageViewTracker";
+import OfferStrip from "@/components/OfferStrip";
 import { CartProvider } from "@/components/CartProvider";
 
 const inter = Inter({
@@ -92,7 +93,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-        <CartProvider>{children}</CartProvider>
+        <CartProvider>
+          <OfferStrip />
+          {children}
+        </CartProvider>
         <FloatingDock />
         <PageViewTracker />
       </body>

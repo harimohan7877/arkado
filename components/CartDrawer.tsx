@@ -6,7 +6,9 @@ import { useRouter } from "next/navigation";
 import { CourseBundle } from "@/lib/courses";
 import { getExamLabel } from "@/lib/exam-labels";
 import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
-import { fetchWithCache } from "@/lib/store-hooks";
+import { fetchWithCache, useSettings } from "@/lib/store-hooks";
+import { finalItemPrice, isPreDiscountedItem, useSiteSale, fillTemplate } from "@/lib/sale-pricing";
+import { getFestivalOffer } from "@/lib/default-settings";
 import {
   CloseIcon,
   CartIcon,
@@ -35,6 +37,9 @@ export default function CartDrawer({
   onRemoveItem,
 }: CartDrawerProps) {
   const router = useRouter();
+  const { pct: salePct, isLive: saleLive } = useSiteSale();
+  const { settings: saleSettings } = useSettings();
+  const saleLabel = fillTemplate(getFestivalOffer(saleSettings).cart_sale_label, { pct: salePct });
   const [step, setStep] = useState<Step>("cart");
   const contentScrollRef = useRef<HTMLDivElement>(null);
 
@@ -128,7 +133,10 @@ export default function CartDrawer({
     };
   }, [isOpen]);
 
-  const subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
+  // Totals: site-wide sale auto-applies to every item (bundle-* items already include it)
+  const subtotal = cartItems.reduce((sum, item) => sum + finalItemPrice(item, salePct), 0);
+  const preSaleSubtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
+  const saleSavings = preSaleSubtotal - subtotal;
   const totalOriginal = cartItems.reduce((sum, item) => sum + item.original_price, 0);
   const savings = totalOriginal - subtotal;
   const primaryCourse = cartItems[0];
@@ -327,7 +335,12 @@ export default function CartDrawer({
                 </div>
               ) : (
                 <div className="space-y-2.5">
-                  {cartItems.map((item) => (
+                  {cartItems.map((item) => {
+                    const itemFinal = finalItemPrice(item, salePct);
+                    const itemPre = isPreDiscountedItem(item);
+                    const itemWas = saleLive && !itemPre ? item.price : item.original_price;
+                    const itemBadge = saleLive && !itemPre ? `${salePct}% OFF` : `${item.discount_percent}% OFF`;
+                    return (
                     <div
                       key={item.id}
                       className="p-3 bg-slate-50 rounded-lg border border-slate-200 flex items-start justify-between gap-3"
@@ -352,13 +365,13 @@ export default function CartDrawer({
                         </h4>
                         <div className="flex items-baseline gap-2 mt-1">
                           <span className="text-sm font-black text-slate-900">
-                            ₹{item.price}
+                            ₹{itemFinal}
                           </span>
                           <span className="text-[11px] text-slate-400 line-through">
-                            ₹{item.original_price}
+                            ₹{itemWas}
                           </span>
                           <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded">
-                            {item.discount_percent}% OFF
+                            {itemBadge}
                           </span>
                         </div>
                       </div>
@@ -370,8 +383,15 @@ export default function CartDrawer({
                         <CloseIcon size={14} />
                       </button>
                     </div>
-                  ))}
+                    );
+                  })}
 
+                  {saleLive && saleSavings > 0 && (
+                    <div className="p-3 bg-amber-50 border border-amber-200 rounded-md text-xs text-amber-800 font-semibold flex items-center justify-between">
+                      <span className="font-medium">{saleLabel}</span>
+                      <span className="font-black">− ₹{saleSavings}</span>
+                    </div>
+                  )}
                   {savings > 0 && (
                     <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-md text-xs text-emerald-800 font-semibold flex items-center justify-between">
                       <span className="font-medium">Total Savings:</span>

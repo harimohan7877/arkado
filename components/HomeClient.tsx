@@ -13,6 +13,8 @@ import CategoriesSection from "@/components/CategoriesSection";
 import SidebarCategories from "@/components/SidebarCategories";
 import TrustStrip from "@/components/TrustStrip";
 import FeaturedGrid from "@/components/FeaturedGrid";
+import NavratriSection from "@/components/NavratriSection";
+import { useCart } from "@/components/CartProvider";
 import { SearchIcon, CloseIcon, SparklesIcon, CheckIcon } from "@/components/icons";
 
 // Lazy load heavy modals and drawers (only loaded when interacted with)
@@ -44,8 +46,8 @@ export default function HomeClient({
 }: HomeClientProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [cart, setCart] = useState<Course[]>([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  // Global cart — survives page navigation (persisted to localStorage)
+  const { items: cart, isOpen: isCartOpen, addToCart, removeItem, openCart, closeCart } = useCart();
   const [selectedCourseForSample, setSelectedCourseForSample] = useState<Course | null>(null);
   const [isSampleModalOpen, setIsSampleModalOpen] = useState(false);
   const [showAllProducts, setShowAllProducts] = useState(false);
@@ -80,17 +82,12 @@ export default function HomeClient({
   const latestProducts = useMemo(() => (Array.isArray(allCourses) ? allCourses.slice(0, 10) : []), [allCourses]);
 
   const handleBuyNow = (course: Course) => {
-    setCart([course]);
-    setIsCartOpen(true);
+    addToCart(course);
   };
 
   const handleOpenSample = (course: Course) => {
     setSelectedCourseForSample(course);
     setIsSampleModalOpen(true);
-  };
-
-  const handleRemoveFromCart = (id: string) => {
-    setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
   const sections = settings?.homepage?.sections;
@@ -475,12 +472,14 @@ export default function HomeClient({
     <div className="min-h-screen flex flex-col bg-white">
       <Navbar
         cartCount={cart.length}
-        onCartClick={() => setIsCartOpen(true)}
+        onCartClick={openCart}
         categories={categories}
         settings={settings}
       />
 
       <main className="flex-1">
+        {/* Shardiya Navratri 2026 campaign — auto shows 11–19 Oct, auto hides after */}
+        <NavratriSection />
         {orderedSections.map((sectionKey) => renderSection(sectionKey))}
       </main>
 
@@ -496,9 +495,9 @@ export default function HomeClient({
 
       <CartDrawer
         isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
+        onClose={closeCart}
         cartItems={cart}
-        onRemoveItem={handleRemoveFromCart}
+        onRemoveItem={removeItem}
       />
 
       <Footer settings={settings} />

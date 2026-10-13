@@ -13,14 +13,15 @@ import { CourseBundle } from "@/lib/courses";
 import { useSettings } from "@/lib/store-hooks";
 import { getBundleCardStyle } from "@/lib/default-settings";
 import { SearchIcon, WhatsappIcon } from "@/components/icons";
+import { useCart } from "@/components/CartProvider";
 
 function SearchPageInner() {
   const params = useSearchParams();
   const q = params.get("q") || "";
   const [results, setResults] = useState<CourseBundle[]>([]);
   const [hasLoaded, setHasLoaded] = useState(false);
-  const [cart, setCart] = useState<Course[]>([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  // Global cart — survives page navigation (persisted to localStorage)
+  const { items: cart, isOpen: isCartOpen, addToCart, removeItem, openCart, closeCart } = useCart();
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [isSampleOpen, setIsSampleOpen] = useState(false);
   const { settings } = useSettings();
@@ -71,7 +72,7 @@ function SearchPageInner() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Navbar cartCount={cart.length} onCartClick={() => setIsCartOpen(true)} />
+      <Navbar cartCount={cart.length} onCartClick={openCart} />
 
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full">
         <div className="mb-5">
@@ -124,8 +125,7 @@ function SearchPageInner() {
                 key={course.id}
                 course={course}
                 onBuyNow={(c) => {
-                  setCart([c]);
-                  setIsCartOpen(true);
+                  addToCart(c);
                 }}
                 onOpenSample={(c) => {
                   setSelectedCourse(c);
@@ -146,16 +146,15 @@ function SearchPageInner() {
           setSelectedCourse(null);
         }}
         onBuyNow={(c) => {
-          setCart([c]);
-          setIsCartOpen(true);
+          addToCart(c);
         }}
       />
 
       <CartDrawer
         isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
+        onClose={closeCart}
         cartItems={cart}
-        onRemoveItem={(id) => setCart((p) => p.filter((i) => i.id !== id))}
+        onRemoveItem={removeItem}
       />
 
 

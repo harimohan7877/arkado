@@ -120,12 +120,103 @@ export async function POST(req: Request) {
     }
 
     // 2. Server-Authoritative Price Validation (Anti-Price Tampering)
-    const priceCheck = await validateOrderPrices([{ productId: course_id }], typeof clientAmount === "number" ? clientAmount : undefined);
-    const matchedProduct = priceCheck.items[0];
-    const authoritativeAmount = priceCheck.isValid && matchedProduct
-      ? matchedProduct.price
-      : (Number(clientAmount) || 99);
+    // Bundle items (bundle-*) are validated by recomputing from their
+    // constituent kits: sum of sale-adjusted kit prices, then the bundle
+    // discount from settings. Regular items use the catalog lookup.
+    const rawItems = Array.isArray(body.items) ? body.items : [];
+    const settingsForPricing = await getStoreData("settings", "data/settings.json", DEFAULT_SETTINGS) as typeof DEFAULT_SETTINGS;
+    const { getSalePct, applySale } = await import("@/lib/sale-pricing");
+    const { getFestivalOffer } = await import("@/lib/default-settings");
+    const serverSalePct = getSalePct(settingsForPricing);
+    const bundleDiscPct = (() => {
+      const bc = (settingsForPricing as any)?.bundle_card;
+      return typeof bc?.discount_percent === "number" ? bc.discount_percent : 5;
+    })();
 
+    // Resolve bundle contents to real kits for delivery (drive links)
+    const allCourses = await getStoreData<any[]>("courses", "data/courses.json", []);
+    const courseById = new Map<string, any>();
+    for (const c of allCourses) {
+      if (c.id) courseById.set(c.id, c);
+      if (c.slug) courseById.set(c.slug, c);
+    }
+
+    type ValidatedLine = { id: string; title: string; price: number; drive_url: string; bundle_items?: Array<{ id: string; title: string; drive_url: string }> };
+    const validatedLines: ValidatedLine[] = [];
+    let computedTotal = 0;
+    let bundleOk = true;
+
+    const itemsToValidate = rawItems.length > 0
+      ? rawItems
+      : [{ id: course_id, title: rawCourseTitle, price: clientAmount }];
+
+    for (const it of itemsToValidate) {
+      const itemId = String(it.id || "");
+      const isBundle = itemId.startsWith("bundle-");
+      if (isBundle) {
+        const kitIds: string[] = Array.isArray(it.bundle_items) ? it.bundle_items : [];
+        const kits = kitIds.map((kid) => courseById.get(kid)).filter(Boolean);
+        if (kits.length === 0) {
+          bundleOk = false;
+          break;
+        }
+        const kitSum = kits.reduce((s: number, k: any) => s + applySale(Number(k.price) || 0, serverSalePct), 0);
+        const serverBundlePrice = Math.max(1, Math.round(kitSum * (1 - bundleDiscPct / 100)));
+        const clientBundlePrice = Number(it.price) || 0;
+        // Allow ±₹2 rounding tolerance
+        if (Math.abs(serverBundlePrice - clientBundlePrice) > 2) {
+          console.warn(`[orders] Bundle price mismatch for ${itemId}: client ₹${clientBundlePrice} vs server ₹${serverBundlePrice}`);
+          bundleOk = false;
+          break;
+        }
+        computedTotal += serverBundlePrice;
+        validatedLines.push({
+          id: itemId,
+          title: String(it.title || kits[0]?.title || "Full Bundle"),
+          price: serverBundlePrice,
+          drive_url: "",
+          bundle_items: kits.map((k: any) => ({
+            id: k.id,
+            title: k.title,
+            drive_url: k.drive_url || "",
+          })),
+        });
+      } else {
+        const priceCheck = await validateOrderPrices([{ productId: itemId }], undefined);
+        const mp = priceCheck.items[0];
+        if (!priceCheck.isValid || !mp) {
+          bundleOk = false;
+          break;
+        }
+        const linePrice = applySale(Number(mp.price) || 0, serverSalePct);
+        computedTotal += linePrice;
+        validatedLines.push({
+          id: itemId,
+          title: mp.title,
+          price: linePrice,
+          drive_url: mp.drive_url || "",
+        });
+      }
+    }
+
+    if (!bundleOk || validatedLines.length === 0) {
+      return NextResponse.json(
+        { success: false, error: "Order items could not be verified. Please try again." },
+        { status: 400 }
+      );
+    }
+
+    // Total must match what the client paid (allow ±₹2 rounding tolerance)
+    if (typeof clientAmount === "number" && Math.abs(computedTotal - clientAmount) > 2) {
+      console.warn(`[orders] Total mismatch: client ₹${clientAmount} vs server ₹${computedTotal}`);
+      return NextResponse.json(
+        { success: false, error: "Price verification failed. Please refresh and try again." },
+        { status: 400 }
+      );
+    }
+
+    const matchedProduct = validatedLines[0];
+    const authoritativeAmount = computedTotal;
     const secureDriveUrl = matchedProduct?.drive_url || "https://drive.google.com";
 
     // 3. UTR Validation & Duplicate Rejection (Phase 3 hardening)
@@ -175,6 +266,8 @@ export async function POST(req: Request) {
       exam_name: matchedProduct?.title || rawCourseTitle || "Course Bundle",
       amount: authoritativeAmount,
       drive_url: secureDriveUrl,
+      // Full line items with bundle constituents (for admin delivery)
+      items: validatedLines,
       status: "pending",
       delivery_status: "pending",
       payment_status: "pending",
@@ -233,6 +326,30 @@ export async function POST(req: Request) {
     const orders = await readOrders();
     orders.unshift(newOrder);
     await writeOrders(orders);
+
+    // 5b. VERIFY persistence — never show a fake success page.
+    // Re-read via the same path the admin panel uses. If the order isn't
+    // retrievable, tell the customer the truth (500) instead of "success".
+    let persisted = false;
+    try {
+      const checkOrders = await readOrders();
+      persisted = checkOrders.some(
+        (o: { order_id?: string; id?: string }) =>
+          o.order_id === order_id || o.id === order_id
+      );
+    } catch { /* verification best-effort */ }
+    if (!persisted) {
+      console.error(
+        `[orders-post] CRITICAL: order ${order_id} NOT retrievable after write — storage failed!`
+      );
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Order save failed. Please try again or contact us on WhatsApp.",
+        },
+        { status: 500 }
+      );
+    }
 
     // 6. Notify admin via email (fire-and-forget — an email failure must
     // never fail the order). Called as an internal helper, NOT via HTTP:

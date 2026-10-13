@@ -378,12 +378,68 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
           exam_name: d.course_title || "Course Bundle",
           utr: d.utr || d.razorpay_payment_id || "",
           drive_url: d.drive_url || "",
+          items: (d as Record<string, unknown>).items,
           admin_note: (d as Record<string, unknown>).admin_note
             ? String((d as Record<string, unknown>).admin_note)
             : "",
           created_at: d.created_at || new Date().toISOString(),
           updated_at: d.updated_at || d.created_at || new Date().toISOString(),
         }));
+
+        // Merge FULL orders from admin_settings backup (not just admin_notes).
+        // Covers deployments where the marketplace_orders insert failed but the
+        // backup write in setStoreData() succeeded — without this, such orders
+        // vanish completely (the success page still shows to the customer).
+        try {
+          const { data: settingsRow } = await supabaseAdmin
+            .from("admin_settings")
+            .select("openai_key")
+            .limit(1)
+            .maybeSingle();
+          const raw = (settingsRow as { openai_key?: unknown } | null)?.openai_key;
+          const backup = typeof raw === "string" ? JSON.parse(raw) : raw;
+          const backupOrders = (backup as { orders?: unknown })?.orders;
+          if (Array.isArray(backupOrders) && backupOrders.length > 0) {
+            const seenIds = new Set<string>();
+            for (const o of orders) seenIds.add(String(o.order_id || o.id || ""));
+            for (const bo of backupOrders) {
+              const rec = bo as Record<string, unknown>;
+              const key = String(rec.order_id || rec.id || "");
+              if (key && !seenIds.has(key)) {
+                orders.push({
+                  id: key,
+                  order_id: key,
+                  db_id: (rec.db_id as string) || key,
+                  name: rec.name || rec.customer_name || "Customer",
+                  customer_name: rec.customer_name || rec.name || "Customer",
+                  email: rec.email || rec.customer_email || "",
+                  customer_email: rec.customer_email || rec.email || "",
+                  phone: rec.phone || rec.customer_phone || "",
+                  customer_phone: rec.customer_phone || rec.phone || "",
+                  delivery_mode: rec.delivery_mode || "both",
+                  delivery_status: rec.delivery_status || "pending",
+                  status: rec.status || rec.delivery_status || "pending",
+                  payment_status: rec.payment_status || "pending",
+                  amount: Number(rec.amount) || 0,
+                  course_id: (rec.course_id as string) || "",
+                  course_title: (rec.course_title as string) || "Course Bundle",
+                  exam_name: (rec.exam_name as string) || (rec.course_title as string) || "Course Bundle",
+                  utr: (rec.utr as string) || "",
+                  drive_url: (rec.drive_url as string) || "",
+                  items: rec.items,
+                  admin_note: (rec.admin_note as string) || "",
+                  created_at: (rec.created_at as string) || new Date().toISOString(),
+                  updated_at: (rec.updated_at as string) || (rec.created_at as string) || new Date().toISOString(),
+                });
+                seenIds.add(key);
+              }
+            }
+            orders.sort(
+              (a: { created_at: string }, b: { created_at: string }) =>
+                new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+            );
+          }
+        } catch { /* backup merge is best-effort */ }
 
         // Merge admin-only fields from the admin_settings JSON backup.
         // Covers deployments where the admin_note column migration hasn't run yet —

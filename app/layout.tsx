@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_Devanagari } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import FloatingDock from "@/components/FloatingDock";
 import PageViewTracker from "@/components/PageViewTracker";
@@ -99,6 +100,7 @@ export default function RootLayout({
         </CartProvider>
         <FloatingDock />
         <PageViewTracker />
+        <Analytics />
       </body>
     </html>
   );

@@ -339,20 +339,25 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
 
   const handleSendWhatsApp = (order: Order) => {
     const utrLine = order.utr ? `\nUTR No: ${order.utr}` : "";
-    // Bundle orders: include every kit's drive link, not just one URL
+    // Per-kit download links: bundle orders list every kit, single-kit
+    // orders list their one kit. Falls back to order.drive_url for old orders.
     let linksSection = `\n\nयहाँ आपके नोट्स व अध्ययन सामग्री की डाउनलोड लिंक उपलब्ध है:\n${order.drive_url || "https://www.arkado.store/dashboard"}`;
     const _items = (order as any).items;
     if (Array.isArray(_items)) {
       const _kitLines: string[] = [];
       for (const _li of _items) {
-        if (Array.isArray(_li.bundle_items)) {
+        if (Array.isArray(_li.bundle_items) && _li.bundle_items.length > 0) {
           for (const _k of _li.bundle_items) {
             if (_k.drive_url) _kitLines.push(`• ${_k.title}: ${_k.drive_url}`);
           }
+        } else if (_li.drive_url) {
+          _kitLines.push(`• ${_li.title || order.course_title}: ${_li.drive_url}`);
         }
       }
-      if (_kitLines.length > 0) {
+      if (_kitLines.length > 1) {
         linksSection = `\n\nआपके बंडल में ${_kitLines.length} स्टडी किट हैं — सभी डाउनलोड लिंक:\n${_kitLines.join("\n")}`;
+      } else if (_kitLines.length === 1) {
+        linksSection = `\n\nआपकी डाउनलोड लिंक:\n${_kitLines[0].replace(/^• /, "")}`;
       }
     }
     const msg = `नमस्ते ${order.customer_name}!\n\nआपने Arkado से "${order.course_title}" के लिए ₹${order.amount} का भुगतान किया है।\n\nOrder ID: ${order.order_id}${utrLine}${linksSection}\n\nधन्यवाद! — Team Arkado`;

@@ -49,6 +49,7 @@ Pending as of 2026-10-05:
 - `20261001_order_terms_acceptance.sql`
 - `20261005_page_views.sql`
 - `20261005_order_admin_note.sql`
+- `20261017_order_items.sql` ← **RUN THIS BEFORE DEPLOYING** (bundle delivery needs the `items` column; code has fallbacks but real column is better)
 
 ## Pre-push checklist
 

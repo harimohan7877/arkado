@@ -217,7 +217,10 @@ export async function POST(req: Request) {
 
     const matchedProduct = validatedLines[0];
     const authoritativeAmount = computedTotal;
-    const secureDriveUrl = matchedProduct?.drive_url || "https://drive.google.com";
+    // Bundle lines carry per-kit Drive URLs inside items[].bundle_items —
+    // never store a fake placeholder link for them. A single-kit line keeps
+    // its own drive_url; empty means "resolve at approval time".
+    const secureDriveUrl = matchedProduct?.drive_url || "";
 
     // 3. UTR Validation & Duplicate Rejection (Phase 3 hardening)
     // UTR is optional, but if provided it must be exactly 12 digits.
@@ -295,9 +298,19 @@ export async function POST(req: Request) {
         terms_accepted: true,
         terms_accepted_at: termsAcceptedAt,
         terms_version: termsVersion,
+        // Validated line items (bundle constituents with per-kit Drive URLs)
+        // — the approval email, WhatsApp message and admin panel read these.
+        items: validatedLines,
       };
 
       let { error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(basePayload);
+      if (insertErr && /items/.test(insertErr.message)) {
+        // The items-column migration hasn't been run yet — retry without it
+        // so the order row is still created (backup merge covers delivery).
+        console.warn("[orders-post] items column missing in marketplace_orders, retrying without it. Run supabase-migrations/20261017_order_items.sql");
+        const { items: _it, ...fallbackPayload } = basePayload;
+        ({ error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(fallbackPayload));
+      }
       if (insertErr && /terms_accepted/.test(insertErr.message)) {
         // The terms-columns migration hasn't been run yet — retry without the
         // new columns so the order row is still created (JSON remains the

@@ -442,8 +442,9 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
         } catch { /* backup merge is best-effort */ }
 
         // Merge admin-only fields from the admin_settings JSON backup.
-        // Covers deployments where the admin_note column migration hasn't run yet —
-        // writeOrders() always persists the full order array (notes included) there.
+        // Covers deployments where the admin_note / items column migrations
+        // haven't run yet — writeOrders() always persists the full order
+        // array (notes AND validated line items) there.
         try {
           const { data: settingsRow } = await supabaseAdmin
             .from("admin_settings")
@@ -455,15 +456,24 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
           const backupOrders = (backup as { orders?: unknown })?.orders;
           if (Array.isArray(backupOrders)) {
             const notesById = new Map<string, string>();
+            const itemsById = new Map<string, unknown>();
             for (const o of backupOrders) {
               const rec = o as Record<string, unknown>;
               const key = String(rec.order_id || rec.id || "");
               if (key && rec.admin_note) notesById.set(key, String(rec.admin_note));
+              if (key && Array.isArray(rec.items) && rec.items.length > 0) itemsById.set(key, rec.items);
             }
             for (const o of orders) {
               if (!o.admin_note) {
                 const n = notesById.get(String(o.order_id));
                 if (n) o.admin_note = n;
+              }
+              // Overlay validated line items (per-kit Drive URLs for delivery)
+              // when the primary row doesn't have them (e.g. items column
+              // migration not run yet, or older orders).
+              if (!Array.isArray((o as Record<string, unknown>).items) || ((o as Record<string, unknown>).items as unknown[]).length === 0) {
+                const it = itemsById.get(String(o.order_id));
+                if (it) (o as Record<string, unknown>).items = it;
               }
             }
           }

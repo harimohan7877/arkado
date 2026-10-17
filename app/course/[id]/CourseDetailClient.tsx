@@ -876,6 +876,7 @@ export default function CourseDetailClient({ params }: PageProps) {
                     src={course.cover_image}
                     alt={course.title}
                     fill
+                    unoptimized
                     onError={() => setCoverImageFailed(true)}
                     className="object-cover"
                   />

@@ -112,6 +112,7 @@ export default function CourseCard({
               fill
               loading="lazy"
               quality={75}
+              unoptimized
               onError={() => setImgError(true)}
               className={style.cover_fit === "contain" ? "object-contain p-1 object-center" : "object-cover object-center"}
               sizes="(max-width: 640px) 50vw, 280px"

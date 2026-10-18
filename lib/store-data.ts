@@ -275,11 +275,26 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
   // 1. PRIMARY DUAL-READ: Supabase Relational Tables (Direct SQL queries, indexed, sub-millisecond)
   if (key === "courses") {
     try {
-      const { data: products, error: pErr } = await supabaseAdmin
-        .from("marketplace_products")
-        .select("*")
-        .order("created_at", { ascending: true })
-        .limit(5000);
+      // Supabase caps server-side max rows at 1000 per request — paginate
+      // with .range() so catalogs larger than 1000 products are fully read.
+      let products: any[] = [];
+      let pErr: any = null;
+      {
+        const PAGE = 1000;
+        let from = 0;
+        for (;;) {
+          const { data, error } = await supabaseAdmin
+            .from("marketplace_products")
+            .select("*")
+            .order("created_at", { ascending: true })
+            .range(from, from + PAGE - 1);
+          if (error) { pErr = error; break; }
+          if (!data || data.length === 0) break;
+          products.push(...data);
+          if (data.length < PAGE) break;
+          from += PAGE;
+        }
+      }
 
       if (!pErr && Array.isArray(products) && products.length > 0) {
         const courses = products.map((p) => {

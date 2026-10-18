@@ -278,7 +278,8 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
       const { data: products, error: pErr } = await supabaseAdmin
         .from("marketplace_products")
         .select("*")
-        .order("created_at", { ascending: true });
+        .order("created_at", { ascending: true })
+        .limit(5000);
 
       if (!pErr && Array.isArray(products) && products.length > 0) {
         const courses = products.map((p) => {

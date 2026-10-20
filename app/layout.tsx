@@ -23,7 +23,7 @@ const notoSansDevanagari = Noto_Sans_Devanagari({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.arkado.store"),
   title: {
-    default: "Arkado — Deep-Level Exam Analysis & Pattern-Based Notes",
+    default: "Arkado — All-India Exam Notes, MCQs & Mock Tests",
     template: "%s — Arkado",
   },
   description:
@@ -32,14 +32,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "Arkado",
-    title: "Arkado — Deep-Level Exam Analysis & Pattern-Based Notes",
+    title: "Arkado — All-India Exam Notes, MCQs & Mock Tests",
     description:
       "Pattern-decoded notes, topic-weightage analysis, 3000+ MCQs and mock tests for All-India exams. UPI payment, instant WhatsApp delivery.",
     images: [{ url: "/icon.png", width: 512, height: 512, alt: "Arkado" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arkado — Deep-Level Exam Analysis & Pattern-Based Notes",
+    title: "Arkado — All-India Exam Notes, MCQs & Mock Tests",
     description:
       "Pattern-decoded notes, topic-weightage analysis, 3000+ MCQs and mock tests for All-India exams.",
     images: ["/icon.png"],
@@ -70,6 +70,7 @@ export default function RootLayout({
     sameAs: [
       "https://www.instagram.com/arkado2026",
       "https://www.facebook.com/arkado2026",
+      "https://www.youtube.com/@arkado-h4o",
     ],
   };
   const websiteJsonLd = {

@@ -26,6 +26,7 @@ const ALLOWED_EVENTS = new Set([
   "checkout_step",
   "order_placed",
   "search",
+  "cart_item",
 ]);
 
 // Kill switch: set ANALYTICS_ENABLED=0 (or "false") in Vercel env vars to stop

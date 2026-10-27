@@ -51,8 +51,17 @@ export default function CartDrawer({
   }, [step]);
 
   // Analytics (Phase 2, fail-silent): funnel steps only, no PII, no order data.
+  // Phase D: on drawer open, one cart_item event per cart LINE ("cart kholne par
+  // cart me tha" — not a true "add" event; drawer re-opens re-count).
+  // cartItems intentionally NOT in deps: this is an open-time snapshot.
   useEffect(() => {
-    if (isOpen) trackEvent({ event_type: "cart_open" });
+    if (isOpen) {
+      trackEvent({ event_type: "cart_open" });
+      cartItems.forEach((item) => {
+        trackEvent({ event_type: "cart_item", product_id: item.id });
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
   useEffect(() => {
     if (step === "pay") trackEvent({ event_type: "checkout_step", element: "pay" });

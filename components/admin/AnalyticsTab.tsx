@@ -340,6 +340,43 @@ export default function AnalyticsTab({ getAuthHeaders }: AnalyticsTabProps) {
         </Card>
       </div>
 
+      <Card title="Har product ka hisaab">
+        {data.conversion.length === 0 ? (
+          <p className="text-sm text-stone-500">Koi data nahi.</p>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-left text-xs text-stone-500 border-b border-stone-200">
+                  <th className="py-2 pr-3 font-bold">Product</th>
+                  <th className="py-2 pr-3 font-bold text-right">Views</th>
+                  <th className="py-2 pr-3 font-bold text-right">Buy clicks</th>
+                  <th className="py-2 pr-3 font-bold text-right">Cart me</th>
+                  <th className="py-2 pr-3 font-bold text-right">Orders</th>
+                  <th className="py-2 font-bold text-right">Conversion</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.conversion.map((p: any, i: number) => (
+                  <tr key={i} className="border-b border-stone-100 last:border-0">
+                    <td className="py-2 pr-3 truncate max-w-64" title={p.title}>{p.title}</td>
+                    <td className="py-2 pr-3 text-right">{p.views}</td>
+                    <td className="py-2 pr-3 text-right">{p.buyClicks}</td>
+                    <td className="py-2 pr-3 text-right">{p.cart}</td>
+                    <td className="py-2 pr-3 text-right font-bold">{p.orders}</td>
+                    <td className="py-2 text-right font-bold">{p.conversionPct}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+        <p className="text-xs text-stone-400 mt-2">
+          Buy clicks sirf listing se (product-page Buy ring-fenced hai, track nahi hota). "Cart me" = drawer kholne
+          par cart me tha (sachha "add" nahi). Orders = primary product hi gina jaata hai. Bundle lines apne bundle id se dikhengi.
+        </p>
+      </Card>
+
       <div className="grid lg:grid-cols-2 gap-4">
         <Card title="Log kahan se aaye">
           {data.sources.map((s: any) => (

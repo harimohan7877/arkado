@@ -236,14 +236,18 @@ export async function GET(req: NextRequest) {
     ]);
 
     // Course map for titles/categories (server-cached catalog)
-    let titleBySlug = new Map<string, string>();
-    let titleById = new Map<string, string>();
-    let categoryById = new Map<string, string>();
+    const titleBySlug = new Map<string, string>();
+    const titleById = new Map<string, string>();
+    const categoryById = new Map<string, string>();
+    const idBySlug = new Map<string, string>();
     try {
       const courses = await getStoreData<any[]>("courses", "data/courses.json", []);
       for (const c of courses) {
         const title = c.title || c.id || "";
-        if (c.slug) titleBySlug.set(c.slug, title);
+        if (c.slug) {
+          titleBySlug.set(c.slug, title);
+          if (c.id) idBySlug.set(c.slug, c.id);
+        }
         if (c.id) {
           titleById.set(c.id, title);
           categoryById.set(c.id, c.category_label || c.category || "");
@@ -415,6 +419,40 @@ export async function GET(req: NextRequest) {
       .sort((a, b) => b.qty - a.qty)
       .slice(0, 10);
 
+    // ---- Per-product conversion (Phase D) ----
+    // Keys are product IDs where known, else slugs (views) or raw ids.
+    // Views: page_view on /course/<slug> → id via catalog. Buy clicks: click
+    // events with element "buy_now" (listing pages only; product-page Buy is
+    // ring-fenced and untracked). Cart: cart_item events (drawer-open
+    // snapshot, NOT true adds). Orders: orders table product_id (primary
+    // product only for multi-kit carts — existing orders-table limit).
+    const conv = new Map<string, { views: number; buyClicks: number; cart: number; orders: number }>();
+    const convRow = (key: string) => {
+      if (!conv.has(key)) conv.set(key, { views: 0, buyClicks: 0, cart: 0, orders: 0 });
+      return conv.get(key)!;
+    };
+    for (const [slug, views] of viewsBySlug) {
+      convRow(idBySlug.get(slug) || slug).views += views;
+    }
+    for (const e of events) {
+      if (e.event_type === "click" && e.element === "buy_now" && e.product_id) {
+        convRow(e.product_id).buyClicks++;
+      } else if (e.event_type === "cart_item" && e.product_id) {
+        convRow(e.product_id).cart++;
+      }
+    }
+    for (const o of orders) {
+      if (o.product_id) convRow(o.product_id).orders++;
+    }
+    const conversion = [...conv.entries()]
+      .map(([key, v]) => ({
+        title: titleById.get(key) || titleBySlug.get(key) || key,
+        ...v,
+        conversionPct: v.views ? Math.round((v.orders / v.views) * 1000) / 10 : 0,
+      }))
+      .sort((a, b) => b.views - a.views)
+      .slice(0, 20);
+
     // Trending: today views vs previous 2-day daily average (only for 1-day ranges;
     // for multi-day ranges, compare second half vs first half is skipped — show views only)
     let trending: { title: string; views: number; delta: string }[] = [];
@@ -534,6 +572,7 @@ export async function GET(req: NextRequest) {
       trending,
       mostViewed,
       mostSold,
+      conversion,
       sources,
       topCategories,
       mostClicked,

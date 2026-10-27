@@ -7,6 +7,7 @@ import { CourseBundle } from "@/lib/courses";
 import { getExamLabel } from "@/lib/exam-labels";
 import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import { fetchWithCache, useSettings } from "@/lib/store-hooks";
+import { trackEvent } from "@/components/PageViewTracker";
 import { finalItemPrice, isPreDiscountedItem, useSiteSale, fillTemplate } from "@/lib/sale-pricing";
 import { getFestivalOffer } from "@/lib/default-settings";
 import {
@@ -47,6 +48,14 @@ export default function CartDrawer({
     if (contentScrollRef.current) {
       contentScrollRef.current.scrollTop = 0;
     }
+  }, [step]);
+
+  // Analytics (Phase 2, fail-silent): funnel steps only, no PII, no order data.
+  useEffect(() => {
+    if (isOpen) trackEvent({ event_type: "cart_open" });
+  }, [isOpen]);
+  useEffect(() => {
+    if (step === "pay") trackEvent({ event_type: "checkout_step", element: "pay" });
   }, [step]);
   const [name, setName] = useState("");
   const [deliveryMode, setDeliveryMode] = useState<"whatsapp" | "gmail" | "both">("both");
@@ -207,6 +216,9 @@ export default function CartDrawer({
       if (!res.ok || data.error) {
         throw new Error(data.error || "ऑर्डर सबमिट नहीं हो सका, कृपया पुनः प्रयास करें।");
       }
+
+      // Analytics (Phase 2): order placed — product only, NEVER order id / UTR / phone / email.
+      trackEvent({ event_type: "order_placed", product_id: primaryCourse?.id });
 
       const orderId = data.order?.order_id || data.order_id || `ARK-${Date.now().toString().slice(-6)}`;
       const orderObj = {

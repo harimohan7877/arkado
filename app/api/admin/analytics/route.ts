@@ -38,7 +38,7 @@ type Ord = {
 };
 
 /** [start, end) ISO strings for a range, in IST (no DST in India). */
-function rangeWindow(range: string): { start: string; end: string; days: number } {
+function rangeWindow(range: string): { start: string; end: string; days: number; label: string; bucketType: string } {
   const now = new Date();
   const istNow = new Date(now.getTime() + IST_OFFSET_MS);
   const y = istNow.getUTCFullYear();
@@ -46,16 +46,58 @@ function rangeWindow(range: string): { start: string; end: string; days: number 
   const d = istNow.getUTCDate();
   const todayStart = Date.UTC(y, m, d) - IST_OFFSET_MS;
   if (range === "yesterday") {
-    return { start: new Date(todayStart - DAY_MS).toISOString(), end: new Date(todayStart).toISOString(), days: 1 };
+    return { start: new Date(todayStart - DAY_MS).toISOString(), end: new Date(todayStart).toISOString(), days: 1, label: "Kal", bucketType: "hourly" };
   }
   if (range === "7d") {
-    return { start: new Date(todayStart - 6 * DAY_MS).toISOString(), end: new Date(todayStart + DAY_MS).toISOString(), days: 7 };
+    return { start: new Date(todayStart - 6 * DAY_MS).toISOString(), end: new Date(todayStart + DAY_MS).toISOString(), days: 7, label: "7 din", bucketType: "daily" };
   }
   if (range === "30d") {
-    return { start: new Date(todayStart - 29 * DAY_MS).toISOString(), end: new Date(todayStart + DAY_MS).toISOString(), days: 30 };
+    return { start: new Date(todayStart - 29 * DAY_MS).toISOString(), end: new Date(todayStart + DAY_MS).toISOString(), days: 30, label: "30 din", bucketType: "daily" };
   }
   // today
-  return { start: new Date(todayStart).toISOString(), end: new Date(todayStart + DAY_MS).toISOString(), days: 1 };
+  return { start: new Date(todayStart).toISOString(), end: new Date(todayStart + DAY_MS).toISOString(), days: 1, label: "Aaj", bucketType: "hourly" };
+}
+
+/** Parse YYYY-MM-DD as an IST-midnight timestamp, or null if invalid. */
+function parseIstDate(s: string): number | null {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
+  if (!m) return null;
+  const y = Number(m[1]);
+  const mo = Number(m[2]);
+  const d = Number(m[3]);
+  if (mo < 1 || mo > 12 || d < 1 || d > 31) return null;
+  const t = Date.UTC(y, mo - 1, d) - IST_OFFSET_MS;
+  // Round-trip check rejects impossible dates like 2026-02-30.
+  const back = new Date(t + IST_OFFSET_MS);
+  if (back.getUTCFullYear() !== y || back.getUTCMonth() !== mo - 1 || back.getUTCDate() !== d) return null;
+  return t;
+}
+
+function fmtDayLabel(iso: string): string {
+  const d = new Date(new Date(iso).getTime() + IST_OFFSET_MS);
+  return `${String(d.getUTCDate()).padStart(2, "0")}/${String(d.getUTCMonth() + 1).padStart(2, "0")}`;
+}
+
+/** Custom window from start/end date params. Returns an error string when invalid. */
+function customWindow(
+  startP: string,
+  endP: string
+): { start: string; end: string; days: number; label: string; bucketType: string } | { error: string } {
+  const s = parseIstDate(startP);
+  const e = parseIstDate(endP);
+  if (s === null || e === null) return { error: "Galat date format. YYYY-MM-DD me dates do." };
+  if (e < s) return { error: "Se wali date Tak wali date se aage nahi ho sakti." };
+  const days = Math.round((e - s) / DAY_MS) + 1;
+  if (days > 90) return { error: "Max 90 din ki range (retention limit)." };
+  const start = new Date(s).toISOString();
+  const end = new Date(e + DAY_MS).toISOString();
+  return {
+    start,
+    end,
+    days,
+    label: `${fmtDayLabel(start)} – ${fmtDayLabel(new Date(e).toISOString())}`,
+    bucketType: days === 1 ? "hourly" : "daily",
+  };
 }
 
 async function fetchEvents(start: string, end: string, columns: string): Promise<Ev[]> {
@@ -159,12 +201,29 @@ export async function GET(req: NextRequest) {
   }
   try {
     const range = req.nextUrl.searchParams.get("range") || "today";
-    const cached = cache.get(range);
+    const startP = req.nextUrl.searchParams.get("start");
+    const endP = req.nextUrl.searchParams.get("end");
+    let window: { start: string; end: string; days: number; label: string; bucketType: string };
+    let cacheKey = range;
+    if (startP || endP) {
+      if (!startP || !endP) {
+        return NextResponse.json({ error: "Dono dates chuno (se aur tak)." }, { status: 400 });
+      }
+      const custom = customWindow(startP, endP);
+      if ("error" in custom) {
+        return NextResponse.json({ error: custom.error }, { status: 400 });
+      }
+      window = custom;
+      cacheKey = `custom:${startP}:${endP}`;
+    } else {
+      window = rangeWindow(range);
+    }
+    const cached = cache.get(cacheKey);
     if (cached && Date.now() - cached.at < CACHE_TTL_MS) {
       return NextResponse.json(cached.data);
     }
 
-    const { start, end, days } = rangeWindow(range);
+    const { start, end, days } = window;
     const prevStart = new Date(new Date(start).getTime() - days * DAY_MS).toISOString();
     const prevEnd = start;
 
@@ -451,6 +510,8 @@ export async function GET(req: NextRequest) {
 
     const data = {
       range,
+      rangeLabel: window.label,
+      bucketType: window.bucketType,
       kpis: {
         liveVisitors: liveByVisitor.size,
         visitors: visitorSet.size,
@@ -479,7 +540,7 @@ export async function GET(req: NextRequest) {
       topPages,
       topSearches,
     };
-    cache.set(range, { at: Date.now(), data });
+    cache.set(cacheKey, { at: Date.now(), data });
     return NextResponse.json(data);
   } catch (err) {
     console.error("[admin/analytics]", err);

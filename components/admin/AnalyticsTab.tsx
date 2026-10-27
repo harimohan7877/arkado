@@ -6,7 +6,7 @@ interface AnalyticsTabProps {
   getAuthHeaders: () => Record<string, string>;
 }
 
-type RangeKey = "today" | "yesterday" | "7d" | "30d";
+type RangeKey = "today" | "yesterday" | "7d" | "30d" | "custom";
 
 const RANGES: { id: RangeKey; label: string }[] = [
   { id: "today", label: "Aaj" },
@@ -53,24 +53,70 @@ function fmtDuration(sec: number): string {
   return s ? `${m} min ${s} sec` : `${m} min`;
 }
 
+/** Local YYYY-MM-DD (browser timezone = IST for Harimohan's devices). */
+function localDateStr(d: Date): string {
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
 export default function AnalyticsTab({ getAuthHeaders }: AnalyticsTabProps) {
   const [range, setRange] = useState<RangeKey>("today");
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [customStart, setCustomStart] = useState(() => {
+    const d = new Date();
+    d.setDate(d.getDate() - 6);
+    return localDateStr(d);
+  });
+  const [customEnd, setCustomEnd] = useState(() => localDateStr(new Date()));
 
   const load = useCallback(async () => {
     try {
-      const res = await fetch(`/api/admin/analytics?range=${range}`, { headers: getAuthHeaders() });
-      if (!res.ok) throw new Error("load failed");
-      setData(await res.json());
+      const url =
+        range === "custom"
+          ? `/api/admin/analytics?start=${customStart}&end=${customEnd}`
+          : `/api/admin/analytics?range=${range}`;
+      const res = await fetch(url, { headers: getAuthHeaders() });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setError(json.error || "Analytics load nahi hua. Dobara try karein.");
+        setLoading(false);
+        return;
+      }
+      setData(json);
       setError("");
     } catch {
       setError("Analytics load nahi hua. Dobara try karein.");
     } finally {
       setLoading(false);
     }
-  }, [range, getAuthHeaders]);
+  }, [range, customStart, customEnd, getAuthHeaders]);
+
+  const applyCustom = () => {
+    if (!customStart || !customEnd) {
+      setError("Dono dates chuno (se aur tak).");
+      return;
+    }
+    if (customEnd < customStart) {
+      setError("Se wali date Tak wali date se aage nahi ho sakti.");
+      return;
+    }
+    const span = Math.round(
+      (new Date(customEnd).getTime() - new Date(customStart).getTime()) / 86400000
+    ) + 1;
+    if (span > 90) {
+      setError("Max 90 din ki range (retention limit).");
+      return;
+    }
+    setError("");
+    setLoading(true);
+    if (range === "custom") {
+      // Already in custom mode: setRange would be a no-op, so load directly.
+      void load();
+    } else {
+      setRange("custom");
+    }
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -111,6 +157,31 @@ export default function AnalyticsTab({ getAuthHeaders }: AnalyticsTabProps) {
             {r.label}
           </button>
         ))}
+        <span className="flex items-center gap-1.5 text-xs font-bold text-stone-600">
+          <input
+            type="date"
+            value={customStart}
+            onChange={(e) => setCustomStart(e.target.value)}
+            className="px-2 py-2 rounded-xl border border-stone-200 bg-white cursor-pointer"
+          />
+          <span>se</span>
+          <input
+            type="date"
+            value={customEnd}
+            onChange={(e) => setCustomEnd(e.target.value)}
+            className="px-2 py-2 rounded-xl border border-stone-200 bg-white cursor-pointer"
+          />
+          <span>tak</span>
+          <button
+            type="button"
+            onClick={applyCustom}
+            className={`px-3.5 py-2 rounded-xl text-xs font-bold cursor-pointer transition-all ${
+              range === "custom" ? "bg-amber-600 text-white shadow-xs" : "bg-white border border-stone-200 text-stone-600 hover:bg-stone-50"
+            }`}
+          >
+            Dikhao
+          </button>
+        </span>
         <button
           type="button"
           onClick={() => void load()}
@@ -118,8 +189,11 @@ export default function AnalyticsTab({ getAuthHeaders }: AnalyticsTabProps) {
         >
           Refresh
         </button>
-        <span className="text-xs text-stone-400 ml-auto">Live har 30 sec me refresh hota hai</span>
+        <span className="text-xs text-stone-400 ml-auto">Live har 30 sec me refresh hota hai · Max 90 din</span>
       </div>
+      {error && data && (
+        <div className="bg-red-50 border border-red-200 rounded-2xl px-4 py-3 text-sm text-red-600">{error}</div>
+      )}
 
       {/* KPI cards */}
       <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3">
@@ -195,7 +269,7 @@ export default function AnalyticsTab({ getAuthHeaders }: AnalyticsTabProps) {
       </div>
 
       {/* Buckets chart */}
-      <Card title={data.buckets.length > 24 || data.range !== "today" && data.range !== "yesterday" ? "Din-wise visitors aur orders" : "Ghante-wise visitors aur orders"}>
+      <Card title={`${data.bucketType === "hourly" ? "Ghante-wise" : "Din-wise"} visitors aur orders (${data.rangeLabel})`}>
         <div className="flex items-end gap-1 overflow-x-auto pb-1" style={{ minHeight: 120 }}>
           {data.buckets.map((b: any) => (
             <div key={b.label} className="flex flex-col items-center gap-1 shrink-0" style={{ width: 28 }}>

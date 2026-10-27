@@ -7,7 +7,7 @@ import { CourseBundle } from "@/lib/courses";
 import { getExamLabel } from "@/lib/exam-labels";
 import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import { fetchWithCache, useSettings } from "@/lib/store-hooks";
-import { trackEvent } from "@/components/PageViewTracker";
+import { trackEvent, getVisitorId, getSessionId, getUtmSource } from "@/components/PageViewTracker";
 import { finalItemPrice, isPreDiscountedItem, useSiteSale, fillTemplate } from "@/lib/sale-pricing";
 import { getFestivalOffer } from "@/lib/default-settings";
 import {
@@ -210,6 +210,12 @@ export default function CartDrawer({
           amount: subtotal,
           status: "pending_verification",
           terms_accepted: termsAccepted,
+          // Analytics attribution (Phase E): anonymous session keys ONLY —
+          // never name/phone/email/UTR. Server stores them in nullable columns
+          // (or drops them if the migration hasn't run); order flow unaffected.
+          visitor_id: getVisitorId(),
+          session_id: getSessionId(),
+          utm_source: getUtmSource() || null,
           // Full cart contents — backend stores bundle constituents for delivery
           items: cartItems.map((item: any) => ({
             id: item.id,

@@ -35,6 +35,9 @@ type Ord = {
   payment_status: string;
   delivery_status: string;
   created_at: string;
+  visitor_id?: string | null;
+  session_id?: string | null;
+  utm_source?: string | null;
 };
 
 /** [start, end) ISO strings for a range, in IST (no DST in India). */
@@ -120,24 +123,43 @@ async function fetchEvents(start: string, end: string, columns: string): Promise
   return out;
 }
 
-async function fetchOrders(start: string, end: string): Promise<Ord[]> {
+async function fetchOrdersWith(start: string, end: string, columns: string): Promise<{ rows: Ord[]; ok: boolean }> {
   const out: Ord[] = [];
   const PAGE = 1000;
   let from = 0;
   for (;;) {
     const { data, error } = await supabaseAdmin
       .from("marketplace_orders")
-      .select("razorpay_order_id,product_id,course_title,amount,payment_status,delivery_status,created_at")
+      .select(columns)
       .gte("created_at", start)
       .lt("created_at", end)
       .order("created_at", { ascending: false })
       .range(from, from + PAGE - 1);
-    if (error || !data || data.length === 0) break;
+    if (error) return { rows: out, ok: false };
+    if (!data || data.length === 0) break;
     out.push(...(data as unknown as Ord[]));
     if (data.length < PAGE) break;
     from += PAGE;
   }
-  return out;
+  return { rows: out, ok: true };
+}
+
+async function fetchOrders(start: string, end: string): Promise<Ord[]> {
+  // Attribution columns first; if the Phase E migration hasn't run, the
+  // query errors and we retry with the base columns so the dashboard keeps
+  // working (attribution just shows as missing for those orders).
+  const full = await fetchOrdersWith(
+    start,
+    end,
+    "razorpay_order_id,product_id,course_title,amount,payment_status,delivery_status,created_at,visitor_id,session_id,utm_source"
+  );
+  if (full.ok) return full.rows;
+  const base = await fetchOrdersWith(
+    start,
+    end,
+    "razorpay_order_id,product_id,course_title,amount,payment_status,delivery_status,created_at"
+  );
+  return base.rows;
 }
 
 /** Distinct visitor IDs with any event before `start` (for new vs returning). IDs only. */
@@ -494,6 +516,38 @@ export async function GET(req: NextRequest) {
       .map(([source, count]) => ({ source, count }))
       .sort((a, b) => b.count - a.count);
 
+    // ---- Attribution (Phase E): orders + revenue by source ----
+    // Session-first source: the order's own utm_source; else its session's
+    // first in-range event (utm or referrer); else unattributed (old orders,
+    // missing migration, or a session that started before this range).
+    const sessionFirst = new Map<string, { referrer: string | null; utm: string | null }>();
+    for (const e of [...events].sort((a, b) => (a.created_at < b.created_at ? -1 : 1))) {
+      const key = `${e.visitor_id}|${e.session_id}`;
+      if (!sessionFirst.has(key)) sessionFirst.set(key, { referrer: e.referrer, utm: e.utm_source });
+    }
+    const attrMap = new Map<string, { orders: number; revenue: number }>();
+    let unattributedOrders = 0;
+    for (const o of orders) {
+      let source: string | null = null;
+      if (o.utm_source) {
+        source = categorizeSource(null, o.utm_source);
+      } else if (o.visitor_id && o.session_id) {
+        const sf = sessionFirst.get(`${o.visitor_id}|${o.session_id}`);
+        if (sf) source = categorizeSource(sf.referrer, sf.utm);
+      }
+      if (!source) {
+        unattributedOrders++;
+        continue;
+      }
+      const cur = attrMap.get(source) || { orders: 0, revenue: 0 };
+      cur.orders++;
+      cur.revenue += Number(o.amount) || 0;
+      attrMap.set(source, cur);
+    }
+    const attribution = [...attrMap.entries()]
+      .map(([source, v]) => ({ source, orders: v.orders, revenue: v.revenue }))
+      .sort((a, b) => b.revenue - a.revenue);
+
     // ---- Top categories (from orders via product category) ----
     const catMap = new Map<string, { qty: number; revenue: number }>();
     for (const o of orders) {
@@ -574,6 +628,8 @@ export async function GET(req: NextRequest) {
       mostSold,
       conversion,
       sources,
+      attribution,
+      unattributedOrders,
       topCategories,
       mostClicked,
       topPages,

@@ -16,7 +16,7 @@ const SESSION_TIMEOUT_MS = 30 * 60 * 1000;
  * Every send is background + fail-silent — tracking can never break a page.
  */
 
-function getVisitorId(): string {
+export function getVisitorId(): string {
   try {
     let id = localStorage.getItem(VISITOR_KEY);
     if (!id) {
@@ -29,7 +29,7 @@ function getVisitorId(): string {
   }
 }
 
-function getSessionId(): string {
+export function getSessionId(): string {
   try {
     const now = Date.now();
     const raw = sessionStorage.getItem(SESSION_KEY);
@@ -59,7 +59,7 @@ function getReferrerOrigin(): string {
   }
 }
 
-function getUtmSource(): string {
+export function getUtmSource(): string {
   try {
     const existing = sessionStorage.getItem(UTM_KEY);
     if (existing) return existing;

@@ -395,6 +395,23 @@ export default function AnalyticsTab({ getAuthHeaders }: AnalyticsTabProps) {
         </Card>
       </div>
 
+      <Card title="Bikri kahan se aayi (attribution)">
+        {data.attribution.map((a: any) => (
+          <div key={a.source} className="flex gap-2 text-sm py-1">
+            <span className="truncate flex-1">{a.source}</span>
+            <span className="font-bold shrink-0">{a.orders} orders × ₹{a.revenue}</span>
+          </div>
+        ))}
+        {data.attribution.length === 0 && (
+          <p className="text-sm text-stone-500">Abhi koi attributed sale nahi.</p>
+        )}
+        <p className="text-xs text-stone-400 mt-2">
+          {data.unattributedOrders > 0 && `${data.unattributedOrders} orders bina attribution ke hain (purane orders ya migration se pehle ke). `}
+          Session-first source: jis session me order hua, uska pehla source. WhatsApp app se aaye orders aksar
+          "Direct" me ginayenge (app referrer nahi deta) — ye har analytics ki limit hai.
+        </p>
+      </Card>
+
       <div className="grid lg:grid-cols-2 gap-4">
         <Card title="Sabse zyada click">
           {data.mostClicked.map((c: any) => (

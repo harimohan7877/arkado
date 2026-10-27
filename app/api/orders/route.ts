@@ -50,6 +50,10 @@ export async function POST(req: Request) {
     const rawCourseTitle = body.course_title;
     const delivery_mode = body.delivery_mode;
     const clientAmount = body.amount;
+    // Analytics attribution (Phase E): anonymous session keys only.
+    const rawVisitorId = body.visitor_id;
+    const rawSessionId = body.session_id;
+    const rawUtmSource = body.utm_source;
 
     // 1. Input Sanitization (Anti-XSS / Script Injection)
     const cleanName = sanitizeInput(rawName);
@@ -57,6 +61,16 @@ export async function POST(req: Request) {
     const cleanEmail = sanitizeInput(rawEmail);
     const cleanUtr = sanitizeInput(rawUtr);
     const course_id = sanitizeInput(rawCourseId);
+    // Attribution keys: sanitize like everything else; "anon" (storage
+    // unavailable) and empty both become null — never a fake visitor.
+    const normAttrKey = (v: unknown): string | null => {
+      const s = sanitizeInput(typeof v === "string" ? v : null);
+      if (!s || s === "anon") return null;
+      return s;
+    };
+    const attrVisitorId = normAttrKey(rawVisitorId);
+    const attrSessionId = normAttrKey(rawSessionId);
+    const attrUtmSource = normAttrKey(rawUtmSource);
 
     if (!cleanName || !course_id) {
       return NextResponse.json(
@@ -298,6 +312,10 @@ export async function POST(req: Request) {
         terms_accepted: true,
         terms_accepted_at: termsAcceptedAt,
         terms_version: termsVersion,
+        // Analytics attribution (Phase E): anonymous session keys, nullable.
+        visitor_id: attrVisitorId,
+        session_id: attrSessionId,
+        utm_source: attrUtmSource,
         // Validated line items (bundle constituents with per-kit Drive URLs)
         // — the approval email, WhatsApp message and admin panel read these.
         items: validatedLines,
@@ -324,6 +342,15 @@ export async function POST(req: Request) {
         // without them so the row is still created (JSON keeps the full data).
         console.warn("[orders-post] course_title/drive_url columns missing in marketplace_orders, retrying without them.");
         const { course_title: _ct, drive_url: _du, ...fallbackPayload } = basePayload;
+        ({ error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(fallbackPayload));
+      }
+      if (insertErr && /visitor_id|session_id|utm_source/.test(insertErr.message)) {
+        // The attribution-columns migration hasn't been run yet — retry
+        // without them so the order row is STILL created. Order placement
+        // must never fail for analytics. Run
+        // supabase-migrations/20261027_order_attribution.sql for attribution.
+        console.warn("[orders-post] attribution columns missing in marketplace_orders, retrying without them.");
+        const { visitor_id: _vi, session_id: _si, utm_source: _us, ...fallbackPayload } = basePayload;
         ({ error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(fallbackPayload));
       }
       if (insertErr) {

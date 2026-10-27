@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { usePathname } from "next/navigation";
+import { Suspense, useEffect, useRef } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 
 const VISITOR_KEY = "arkado-visitor-id";
 const SESSION_KEY = "arkado-session";
@@ -84,6 +84,7 @@ export function trackEvent(event: {
   page_path?: string;
   product_id?: string;
   element?: string;
+  search_query?: string;
 }) {
   try {
     // Client-side kill switch (build-time public flag). Server-side flag in
@@ -101,6 +102,7 @@ export function trackEvent(event: {
       page_path: event.page_path || window.location.pathname,
       product_id: event.product_id || null,
       element: event.element || null,
+      search_query: event.search_query || null,
       referrer: getReferrerOrigin(),
       utm_source: getUtmSource(),
       device: getDevice(),
@@ -125,8 +127,20 @@ export function trackEvent(event: {
  * data-track attribute fire click events (no blanket click spying).
  */
 export default function PageViewTracker() {
+  // useSearchParams needs a Suspense boundary; it lives INSIDE this component
+  // so app/layout.tsx (ring-fenced) stays untouched.
+  return (
+    <Suspense fallback={null}>
+      <PageViewTrackerInner />
+    </Suspense>
+  );
+}
+
+function PageViewTrackerInner() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const lastSent = useRef<string | null>(null);
+  const lastSearch = useRef<string | null>(null);
 
   useEffect(() => {
     if (!pathname || lastSent.current === pathname) return;
@@ -145,6 +159,23 @@ export default function PageViewTracker() {
     // New analytics event
     trackEvent({ event_type: "page_view", page_path: pathname });
   }, [pathname]);
+
+  // Phase A: search terms. Fires on /search pages from the URL's q param.
+  // Pathname alone doesn't change between searches (only ?q= does), so this
+  // effect watches the query too. Same query twice in a row is one search;
+  // leaving /search resets the guard so a repeat search counts again.
+  const searchQuery = (searchParams?.get("q") || "").trim();
+  useEffect(() => {
+    if (pathname !== "/search") {
+      lastSearch.current = null;
+      return;
+    }
+    if (!searchQuery) return;
+    const key = `/search|${searchQuery}`;
+    if (lastSearch.current === key) return;
+    lastSearch.current = key;
+    trackEvent({ event_type: "search", page_path: "/search", search_query: searchQuery });
+  }, [pathname, searchQuery]);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {

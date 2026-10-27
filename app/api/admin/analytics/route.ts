@@ -24,6 +24,7 @@ type Ev = {
   referrer: string | null;
   utm_source: string | null;
   device: string | null;
+  search_query: string | null;
 };
 
 type Ord = {
@@ -384,6 +385,20 @@ export async function GET(req: NextRequest) {
       .sort((a, b) => b.views - a.views)
       .slice(0, 15);
 
+    // ---- Top searches (Phase A: only queries searched 2+ times, privacy) ----
+    const searchMap = new Map<string, number>();
+    for (const e of events) {
+      if (e.event_type === "search" && e.search_query) {
+        const q = e.search_query.toLowerCase().trim();
+        if (q) searchMap.set(q, (searchMap.get(q) || 0) + 1);
+      }
+    }
+    const topSearches = [...searchMap.entries()]
+      .filter(([, count]) => count >= 2)
+      .map(([query, count]) => ({ query, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 20);
+
     const data = {
       range,
       kpis: {
@@ -411,6 +426,7 @@ export async function GET(req: NextRequest) {
       topCategories,
       mostClicked,
       topPages,
+      topSearches,
     };
     cache.set(range, { at: Date.now(), data });
     return NextResponse.json(data);

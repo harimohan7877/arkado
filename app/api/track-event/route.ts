@@ -25,6 +25,7 @@ const ALLOWED_EVENTS = new Set([
   "cart_open",
   "checkout_step",
   "order_placed",
+  "search",
 ]);
 
 // Kill switch: set ANALYTICS_ENABLED=0 (or "false") in Vercel env vars to stop
@@ -60,6 +61,11 @@ export async function POST(req: NextRequest) {
     const eventType = clean(body.event_type, 30);
     if (!ALLOWED_EVENTS.has(eventType)) return NextResponse.json({ ok: true });
 
+    // Search events without a query are useless — drop silently.
+    const searchQuery =
+      eventType === "search" ? clean(body.search_query, 80).toLowerCase().trim() : "";
+    if (eventType === "search" && !searchQuery) return NextResponse.json({ ok: true });
+
     let path = clean(body.page_path, 200) || "/";
     if (!path.startsWith("/")) path = "/";
     // Don't track admin pages or API routes
@@ -77,6 +83,9 @@ export async function POST(req: NextRequest) {
       referrer: clean(body.referrer, 120) || null,
       utm_source: clean(body.utm_source, 60) || null,
       device: clean(body.device, 20) || null,
+      // Only included for search events: including the key when the column
+      // doesn't exist yet (migration not run) would break ALL inserts.
+      ...(eventType === "search" ? { search_query: searchQuery } : {}),
     };
 
     const { error } = await supabaseAdmin.from("analytics_events").insert(row);

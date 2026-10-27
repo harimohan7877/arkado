@@ -265,6 +265,16 @@ export default function AnalyticsTab({ getAuthHeaders }: AnalyticsTabProps) {
         </Card>
       </div>
 
+      <Card title="Log kya dhoondh rahe hain">
+        {data.topSearches.map((s: any) => (
+          <Bar key={s.query} label={s.query} value={s.count} max={Math.max(1, data.topSearches[0]?.count || 1)} />
+        ))}
+        {data.topSearches.length === 0 && (
+          <p className="text-sm text-stone-500">Abhi koi search data nahi. Sirf 2 ya zyada baar wali searches yahan dikhengi (privacy ke liye).</p>
+        )}
+        <p className="text-xs text-stone-400 mt-2">Sirf 2+ baar wali searches dikhti hain — ek baar wali (jo personal ho sakti hai) kabhi nahi.</p>
+      </Card>
+
       <p className="text-xs text-stone-400">
         Note: WhatsApp se aane wale aksar “Direct” dikhenge (app se khulne par referrer nahi milta) — ye har analytics ki limit hai, bug nahi.
         Dashboard me kabhi customer ka naam, phone, email ya UTR nahi dikhta.

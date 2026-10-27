@@ -46,6 +46,13 @@ function fmtTime(iso: string): string {
   }
 }
 
+function fmtDuration(sec: number): string {
+  if (sec < 60) return `${sec} sec`;
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return s ? `${m} min ${s} sec` : `${m} min`;
+}
+
 export default function AnalyticsTab({ getAuthHeaders }: AnalyticsTabProps) {
   const [range, setRange] = useState<RangeKey>("today");
   const [data, setData] = useState<any>(null);
@@ -131,6 +138,33 @@ export default function AnalyticsTab({ getAuthHeaders }: AnalyticsTabProps) {
           </div>
         ))}
       </div>
+
+      {/* Session metrics (Phase B) */}
+      <Card title="Visitors ki pehchaan">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-3">
+          <div>
+            <p className="text-xs text-stone-500">Naye visitors</p>
+            <p className="text-2xl font-black text-stone-900 mt-1">{data.sessions.newVisitors}</p>
+          </div>
+          <div>
+            <p className="text-xs text-stone-500">Wapas aaye</p>
+            <p className="text-2xl font-black text-stone-900 mt-1">{data.sessions.returningVisitors}</p>
+          </div>
+          <div>
+            <p className="text-xs text-stone-500">Bounce rate</p>
+            <p className="text-2xl font-black text-stone-900 mt-1">{data.sessions.bouncePct}%</p>
+            <p className="text-xs text-stone-400 mt-1">ek page dekh kar gaye</p>
+          </div>
+          <div>
+            <p className="text-xs text-stone-500">Avg visit time</p>
+            <p className="text-2xl font-black text-stone-900 mt-1">{fmtDuration(data.sessions.avgDurationSec)}</p>
+            <p className="text-xs text-stone-400 mt-1">{data.sessions.pagesPerSession} pages/visit · {data.sessions.total} sessions</p>
+          </div>
+        </div>
+        <Bar label="Naye" value={data.sessions.newVisitors} max={Math.max(1, data.sessions.newVisitors + data.sessions.returningVisitors)} />
+        <Bar label="Wapas aaye" value={data.sessions.returningVisitors} max={Math.max(1, data.sessions.newVisitors + data.sessions.returningVisitors)} />
+        <p className="text-xs text-stone-400 mt-2">Note: 90 din se pehle aaya visitor "naya" dikhega (retention ki limit). Session time per-tab, approximate hai.</p>
+      </Card>
 
       <div className="grid lg:grid-cols-2 gap-4">
         {/* Live */}

@@ -98,6 +98,25 @@ async function fetchOrders(start: string, end: string): Promise<Ord[]> {
   return out;
 }
 
+/** Distinct visitor IDs with any event before `start` (for new vs returning). IDs only. */
+async function fetchVisitorIdsBefore(start: string): Promise<Set<string>> {
+  const out = new Set<string>();
+  const PAGE = 1000;
+  let from = 0;
+  for (;;) {
+    const { data, error } = await supabaseAdmin
+      .from("analytics_events")
+      .select("visitor_id")
+      .lt("created_at", start)
+      .range(from, from + PAGE - 1);
+    if (error || !data || data.length === 0) break;
+    for (const r of data as { visitor_id: string }[]) out.add(r.visitor_id);
+    if (data.length < PAGE) break;
+    from += PAGE;
+  }
+  return out;
+}
+
 function categorizeSource(referrer: string | null, utm: string | null): string {
   const u = (utm || "").toLowerCase();
   if (u.includes("whatsapp")) return "WhatsApp";
@@ -149,11 +168,12 @@ export async function GET(req: NextRequest) {
     const prevStart = new Date(new Date(start).getTime() - days * DAY_MS).toISOString();
     const prevEnd = start;
 
-    const [events, orders, prevEvents, prevOrders] = await Promise.all([
+    const [events, orders, prevEvents, prevOrders, priorVisitors] = await Promise.all([
       fetchEvents(start, end, "*").catch(() => [] as Ev[]),
       fetchOrders(start, end).catch(() => [] as Ord[]),
       fetchEvents(prevStart, prevEnd, "visitor_id,event_type").catch(() => [] as Ev[]),
       fetchOrders(prevStart, prevEnd).catch(() => [] as Ord[]),
+      fetchVisitorIdsBefore(start).catch(() => new Set<string>()),
     ]);
 
     // Course map for titles/categories (server-cached catalog)
@@ -190,6 +210,36 @@ export async function GET(req: NextRequest) {
       prev === 0 ? (cur > 0 ? 100 : 0) : Math.round(((cur - prev) / prev) * 100);
     const mobileViews = events.filter((e) => e.event_type === "page_view" && e.device === "mobile").length;
     const clicks = events.filter((e) => e.event_type === "click").length;
+
+    // ---- Session metrics (Phase B; "anon" sessions excluded — they merge unrelated events) ----
+    const sessionEvents = new Map<string, Ev[]>();
+    for (const e of events) {
+      if (!e.session_id || e.session_id === "anon") continue;
+      if (!sessionEvents.has(e.session_id)) sessionEvents.set(e.session_id, []);
+      sessionEvents.get(e.session_id)!.push(e);
+    }
+    let bounceSessions = 0;
+    let durationSumSec = 0;
+    let durationSessions = 0;
+    for (const [, se] of sessionEvents) {
+      const pv = se.filter((e) => e.event_type === "page_view").length;
+      if (pv === 1) bounceSessions++;
+      if (se.length >= 2) {
+        const times = se.map((e) => new Date(e.created_at).getTime());
+        durationSumSec += (Math.max(...times) - Math.min(...times)) / 1000;
+        durationSessions++;
+      }
+    }
+    const totalSessions = sessionEvents.size;
+    const returningVisitors = [...visitorSet].filter((v) => priorVisitors.has(v)).length;
+    const sessions = {
+      total: totalSessions,
+      newVisitors: visitorSet.size - returningVisitors,
+      returningVisitors,
+      bouncePct: totalSessions ? Math.round((bounceSessions / totalSessions) * 100) : 0,
+      avgDurationSec: durationSessions ? Math.round(durationSumSec / durationSessions) : 0,
+      pagesPerSession: totalSessions ? Math.round((pageViews / totalSessions) * 10) / 10 : 0,
+    };
 
     // ---- Live (last 5 min) ----
     const fiveMinAgo = Date.now() - 5 * 60 * 1000;
@@ -419,6 +469,7 @@ export async function GET(req: NextRequest) {
       activity,
       buckets,
       funnel,
+      sessions,
       trending,
       mostViewed,
       mostSold,

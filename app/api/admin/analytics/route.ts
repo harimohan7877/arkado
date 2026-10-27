@@ -283,6 +283,13 @@ export async function GET(req: NextRequest) {
       return titleBySlug.get(slug) || slug || path;
     };
 
+    // Title for a /course/<key> URL part: the key may be a slug OR a numeric
+    // id (product pages resolve both). Check slug first, then id, so views
+    // on id-URLs show the product name instead of a bare number like "5478".
+    // Both maps come from the same single catalog fetch above — no extra load.
+    const titleForKey = (key: string): string =>
+      titleBySlug.get(key) || titleById.get(key) || key;
+
     // ---- KPIs ----
     const visitorSet = new Set(events.map((e) => e.visitor_id));
     const pageViews = events.filter((e) => e.event_type === "page_view").length;
@@ -428,10 +435,10 @@ export async function GET(req: NextRequest) {
     }
     const mostViewed = [...viewsBySlug.entries()]
       .map(([slug, views]) => ({
-        title: titleBySlug.get(slug) || slug,
+        title: titleForKey(slug),
         views,
         sold: [...ordersByCourse.entries()]
-          .filter(([t]) => t === (titleBySlug.get(slug) || slug))
+          .filter(([t]) => t === titleForKey(slug))
           .reduce((s, [, v]) => s + v.count, 0),
       }))
       .sort((a, b) => b.views - a.views)
@@ -492,13 +499,13 @@ export async function GET(req: NextRequest) {
         .map(([slug, views]) => {
           const avg = (prevViews.get(slug) || 0) / 2;
           const delta = avg === 0 ? (views > 0 ? "NEW" : "0") : `+${Math.round(((views - avg) / avg) * 100)}%`;
-          return { title: titleBySlug.get(slug) || slug, views, delta };
+          return { title: titleForKey(slug), views, delta };
         })
         .sort((a, b) => b.views - a.views)
         .slice(0, 12);
     } else {
       trending = [...viewsBySlug.entries()]
-        .map(([slug, views]) => ({ title: titleBySlug.get(slug) || slug, views, delta: "" }))
+        .map(([slug, views]) => ({ title: titleForKey(slug), views, delta: "" }))
         .sort((a, b) => b.views - a.views)
         .slice(0, 12);
     }

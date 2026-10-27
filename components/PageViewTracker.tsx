@@ -86,6 +86,14 @@ export function trackEvent(event: {
   element?: string;
 }) {
   try {
+    // Client-side kill switch (build-time public flag). Server-side flag in
+    // /api/track-event is the real gate; this just avoids wasted requests.
+    if (
+      process.env.NEXT_PUBLIC_ANALYTICS_ENABLED === "0" ||
+      process.env.NEXT_PUBLIC_ANALYTICS_ENABLED === "false"
+    ) {
+      return;
+    }
     const body = {
       visitor_id: getVisitorId(),
       session_id: getSessionId(),

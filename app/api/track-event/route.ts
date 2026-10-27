@@ -27,6 +27,17 @@ const ALLOWED_EVENTS = new Set([
   "order_placed",
 ]);
 
+// Kill switch: set ANALYTICS_ENABLED=0 (or "false") in Vercel env vars to stop
+// ALL new analytics collection instantly, without a code change or redeploy
+// of tracking code (env change needs only a redeploy to take effect).
+const ANALYTICS_DISABLED =
+  process.env.ANALYTICS_ENABLED === "0" || process.env.ANALYTICS_ENABLED === "false";
+
+// Retention: events older than 90 days are deleted. Cleanup runs opportunistically
+// (~1% of tracking requests ≈ 10x/day at current volume, far more often than the
+// planned weekly run) plus on-demand via /api/admin/analytics-cleanup.
+const RETENTION_DAYS = 90;
+
 function clean(value: unknown, max: number): string {
   return String(value ?? "").slice(0, max);
 }
@@ -39,6 +50,9 @@ function clean(value: unknown, max: number): string {
  */
 export async function POST(req: NextRequest) {
   try {
+    // Kill switch — checked first, before any work or storage.
+    if (ANALYTICS_DISABLED) return NextResponse.json({ ok: true });
+
     const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
     if (rateLimited(ip)) return NextResponse.json({ ok: true });
 
@@ -69,6 +83,12 @@ export async function POST(req: NextRequest) {
     if (error) {
       // Table missing (migration not run yet) — warn, don't break the page
       console.warn("[track-event] analytics_events insert skipped:", error.message);
+    } else if (Math.random() < 0.01) {
+      // Opportunistic retention cleanup (indexed created_at delete, fast).
+      try {
+        const cutoff = new Date(Date.now() - RETENTION_DAYS * 24 * 3600 * 1000).toISOString();
+        await supabaseAdmin.from("analytics_events").delete().lt("created_at", cutoff);
+      } catch { /* cleanup failure must never affect tracking */ }
     }
     return NextResponse.json({ ok: true });
   } catch {

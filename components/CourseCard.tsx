@@ -190,6 +190,8 @@ export default function CourseCard({
               <button
                 type="button"
                 onClick={() => onBuyNow(course)}
+                data-track="buy_now"
+                data-product={course.id}
                 className="bg-amber-700 hover:bg-amber-800 text-white font-bold px-2 py-1 rounded-md text-[10px] sm:text-xs transition flex items-center gap-1 shrink-0 cursor-pointer active:scale-95"
               >
                 {style.show_button_icon && <ShoppingBagIcon size={11} />}
@@ -211,6 +213,8 @@ export default function CourseCard({
                 <button
                   type="button"
                   onClick={() => onBuyNow(course)}
+                  data-track="buy_now"
+                  data-product={course.id}
                   style={{
                     height: style.button_height_mobile ? `${style.button_height_mobile}px` : undefined,
                   }}

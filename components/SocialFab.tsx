@@ -147,6 +147,7 @@ export default function SocialFab({
                 href={ch.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track={ch.key === "whatsapp" ? "whatsapp" : undefined}
                 className="flex items-center gap-3 p-2 rounded-xl hover:bg-stone-50 transition-all border border-stone-100 group"
               >
                 <div

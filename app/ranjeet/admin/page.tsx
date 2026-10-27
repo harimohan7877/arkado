@@ -12,6 +12,7 @@ import OrdersTab from "@/components/admin/OrdersTab";
 import SettingsTab from "@/components/admin/SettingsTab";
 import SectionsTab from "@/components/admin/SectionsTab";
 import BlogTab from "@/components/admin/BlogTab";
+import AnalyticsTab from "@/components/admin/AnalyticsTab";
 import CategoryExportButton from "@/components/admin/CategoryExportButton";
 import CategoryGridControl from "@/components/admin/CategoryGridControl";
 
@@ -78,7 +79,7 @@ function formatBytes(bytes: number): string {
   return `${(bytes / (1024 * 1024)).toFixed(2)} MB`;
 }
 
-type TabType = "dashboard" | "categories" | "featured" | "sections" | "exams" | "courses" | "drivelinks" | "orders" | "blog" | "settings";
+type TabType = "dashboard" | "categories" | "featured" | "sections" | "exams" | "courses" | "drivelinks" | "orders" | "blog" | "settings" | "analytics";
 
 const NAV_ITEMS: { id: TabType; label: string; short: string; icon: string }[] = [
   { id: "dashboard", label: "Dashboard", short: "Dashboard", icon: "" },
@@ -91,6 +92,7 @@ const NAV_ITEMS: { id: TabType; label: string; short: string; icon: string }[] =
   { id: "orders", label: "Orders", short: "Orders", icon: "" },
   { id: "blog", label: "Blog / Articles", short: "Blog", icon: "" },
   { id: "settings", label: "Settings", short: "Settings", icon: "" },
+  { id: "analytics", label: "Analytics", short: "Analytics", icon: "" },
 ];
 
 export default function AdminDashboardPage() {
@@ -217,6 +219,7 @@ export default function AdminDashboardPage() {
         {activeTab === "courses" && <CoursesTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "drivelinks" && <DriveLinksTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "settings" && <SettingsTab getAuthHeaders={getAuthHeaders} />}
+        {activeTab === "analytics" && <AnalyticsTab getAuthHeaders={getAuthHeaders} />}
 
         {activeTab === "dashboard" && (
           <div className="space-y-4">

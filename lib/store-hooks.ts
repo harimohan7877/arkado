@@ -6,7 +6,7 @@ import { Category, Exam, Course, Settings } from "@/lib/store-types";
 // Client-side memory cache and in-flight request deduplication
 const CLIENT_CACHE = new Map<string, { data: any; timestamp: number }>();
 const PENDING_REQUESTS = new Map<string, Promise<any>>();
-const CACHE_TTL_MS = 5 * 1000; // 5 seconds client cache for snappy speed without locking out updates
+const CACHE_TTL_MS = 300 * 1000; // 5 minutes client cache — catalog/categories/exams/settings change rarely; admin saves purge the edge, browser copy refreshes within 5 min
 
 export function clearClientStoreCache() {
   CLIENT_CACHE.clear();

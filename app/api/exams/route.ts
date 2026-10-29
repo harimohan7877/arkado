@@ -65,7 +65,7 @@ export async function GET(req: Request) {
 
     const cacheHeader = includeInactive
       ? "no-store, no-cache, must-revalidate"
-      : "public, s-maxage=10, stale-while-revalidate=59";
+      : "public, s-maxage=3600, stale-while-revalidate=86400";
     return NextResponse.json(exams, { headers: { "Cache-Control": cacheHeader } });
   } catch {
     return NextResponse.json([]);

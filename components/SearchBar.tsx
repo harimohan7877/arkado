@@ -59,7 +59,7 @@ export default function SearchBar({
 
     let isMounted = true;
     Promise.all([
-      fetchWithCache<Course[]>("/api/courses").catch(() => []),
+      fetchWithCache<Course[]>("/api/search-suggest").catch(() => []),
       fetchWithCache<Category[]>("/api/categories?scope=public").catch(() => []),
     ]).then(([coursesData, categoriesData]) => {
       if (!isMounted) return;

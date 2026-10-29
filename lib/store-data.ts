@@ -277,7 +277,7 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
     try {
       // Supabase caps server-side max rows at 1000 per request — paginate
       // with .range() so catalogs larger than 1000 products are fully read.
-      let products: any[] = [];
+      const products: any[] = [];
       let pErr: any = null;
       {
         const PAGE = 1000;
@@ -689,6 +689,7 @@ export async function setStoreData<T>(key: string, localFilePath: string, data: 
   try {
     if (key === "courses" || key === "featured_exams") {
       revalidatePath("/api/courses");
+      revalidatePath("/api/search-suggest");
       revalidatePath("/exams");
       revalidatePath("/");
     } else if (key === "categories") {

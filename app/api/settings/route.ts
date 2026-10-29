@@ -11,7 +11,7 @@ export async function GET() {
     const data = await getStoreData("settings", "data/settings.json", DEFAULT_SETTINGS);
     return NextResponse.json(data || DEFAULT_SETTINGS, {
       headers: {
-        "Cache-Control": "public, s-maxage=10, stale-while-revalidate=59",
+        "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
       },
     });
   } catch (err) {

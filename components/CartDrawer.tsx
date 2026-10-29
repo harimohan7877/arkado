@@ -382,6 +382,7 @@ export default function CartDrawer({
                     >
                       <div className="relative w-12 h-14 rounded overflow-hidden bg-white border border-slate-200 shrink-0">
                         <Image
+                          unoptimized
                           src={item.cover_image}
                           alt={item.title}
                           fill

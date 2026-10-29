@@ -33,6 +33,7 @@ export default function CategoryRibbon() {
             <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white border-2 border-slate-200 group-hover:border-amber-700 group-hover:shadow-md flex items-center justify-center overflow-hidden transition">
               {cat.logo_url ? (
                 <Image
+                  unoptimized
                   src={cat.logo_url}
                   alt={cat.name}
                   width={80}

@@ -71,6 +71,7 @@ export default function SampleModal({
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 p-4 rounded-lg bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
             <div className="relative w-24 h-32 sm:w-28 sm:h-36 rounded-md overflow-hidden shrink-0 shadow-lg border border-slate-700">
               <Image
+                unoptimized
                 src={course.cover_image}
                 alt={course.title}
                 fill

@@ -12,11 +12,11 @@ import { getSiteUrl, toMetaDescription } from "@/lib/seo";
  * rendered into the HTML. A fresh phone visit no longer waits for the JS
  * bundle + 6 client-side API round trips before seeing content.
  *
- * ISR: the rendered page is cached at the edge for 60s. Admin-panel edits
- * (new course, featured picks, settings) go live within a minute without
- * any manual rebuild.
+ * ISR: the rendered page is cached at the edge for 3600s (1 hour).
+ * Admin-panel edits (new course, featured picks, settings) still go live
+ * immediately via on-demand revalidation, without any manual rebuild.
  */
-export const revalidate = 60;
+export const revalidate = 3600;
 
 /** Keyword-rich homepage metadata — the fallback layout title was too generic. */
 export async function generateMetadata(): Promise<Metadata> {

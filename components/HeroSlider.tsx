@@ -124,6 +124,7 @@ export default function HeroSlider({
                 <div className="relative w-24 h-32 rounded-xl overflow-hidden shadow-md border border-stone-200/80 bg-white">
                   {currentSlide.cover_image && !failedSlideImages[currentSlide.id] ? (
                     <Image
+                      unoptimized
                       src={currentSlide.cover_image}
                       alt={currentSlide.title}
                       fill
@@ -305,6 +306,7 @@ export default function HeroSlider({
               <div className="relative w-48 h-60 sm:w-56 sm:h-72 lg:w-64 lg:h-80 rounded-xl overflow-hidden shadow-xl border border-stone-200/80 transition-transform duration-300 group-hover:scale-105 bg-white">
                 {currentSlide.cover_image && !failedSlideImages[currentSlide.id] ? (
                   <Image
+                    unoptimized
                     src={currentSlide.cover_image}
                     alt={currentSlide.title}
                     fill

@@ -119,6 +119,22 @@ export default async function CoursePage({ params }: PageProps) {
           priceCurrency: "INR",
           price: course.price,
           availability: "https://schema.org/InStock",
+          shippingDetails: {
+            "@type": "OfferShippingDetails",
+            shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "INR" },
+            shippingDestination: { "@type": "DefinedRegion", addressCountry: "IN" },
+            deliveryTime: {
+              "@type": "ShippingDeliveryTime",
+              handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
+              transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
+            },
+          },
+          hasMerchantReturnPolicy: {
+            "@type": "MerchantReturnPolicy",
+            applicableCountry: "IN",
+            returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+            merchantReturnLink: `${siteUrl}/refund`,
+          },
         },
       };
       const crumbs: { name: string; url: string }[] = [{ name: "Home", url: siteUrl }];

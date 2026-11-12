@@ -29,7 +29,9 @@ export default function AboutPage() {
     "Topic-weightage analysis from last 5+ years of exam shifts",
     "PYQ-tagged MCQs with step-by-step reasoning",
     "Instant digital delivery — typically 5-15 minutes",
-    "Direct UPI payment (PhonePe / Paytm) — 0% extra fees",
+    settings?.razorpay_enabled
+      ? "Secure online payment (UPI / Card / NetBanking) — instant delivery"
+      : "Direct UPI payment (PhonePe / Paytm) — 0% extra fees",
     `WhatsApp expert support — ${settings?.contact?.whatsapp_number || DEFAULT_SETTINGS.whatsapp_support_number}`,
     "Printable A4 PDFs — print at any cyber cafe"
   ];

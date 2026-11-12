@@ -248,7 +248,7 @@ export default function Footer({ settings: settingsProp }: { settings?: Settings
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1">
               <ShieldIcon size={12} className="text-emerald-500" />
-              <span>Direct UPI Payment</span>
+              <span>{settings?.razorpay_enabled ? "Secure Online Payment" : "Direct UPI Payment"}</span>
             </span>
             <span className="opacity-50">|</span>
             <span className="flex items-center gap-1">

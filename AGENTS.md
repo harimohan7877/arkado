@@ -14,9 +14,12 @@ exam study material (PDF notes, MCQs, mock tests). Real customers, real money.
 **Payment flow (the whole business):** customer pays via **UPI/QR** → submits
 the **12-digit UTR** → order lands in the admin panel as *pending* →
 Harimohan **manually approves** → Google Drive links are delivered by
-**email (Gmail SMTP)** and/or **WhatsApp**. There is no automated payment
-gateway. The legacy Razorpay route was deleted on 2026-09-30 — do not
-reintroduce it.
+**email (Gmail SMTP)** and/or **WhatsApp**. A Razorpay gateway is also built
+but **dormant** (`razorpay_enabled: false`, no keys): when switched on, the
+customer pays in-checkout and the links are delivered automatically
+(`lib/deliver-order.ts`). The legacy Razorpay *premium-access* route was
+deleted on 2026-09-30 — do not reintroduce it (the marketplace gateway
+routes are a different, newer build).
 
 ## 2. Tech stack
 

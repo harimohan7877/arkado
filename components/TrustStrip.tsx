@@ -31,7 +31,7 @@ export default function TrustStrip({ settings: settingsProp }: TrustStripProps) 
 
   const defaultItems = [
     { title: "Instant Download", desc: "Get your files right away", icon: "download" },
-    { title: "Secure Payment", desc: "Direct UPI & UTR Verification", icon: "shield" },
+    { title: "Secure Payment", desc: settings?.razorpay_enabled ? "Secure Online Payment" : "Direct UPI & UTR Verification", icon: "shield" },
     { title: "High Quality Material", desc: "Curated & pattern-decoded", icon: "file" },
     { title: "Easy Access", desc: "Anytime, anywhere on Google Drive", icon: "clock" },
     { title: "Customer Support", desc: "Quick WhatsApp response", icon: "support" },

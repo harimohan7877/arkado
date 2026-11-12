@@ -5,6 +5,7 @@ import {
   verifyRazorpayPaymentSignature,
 } from "@/lib/payment-gateway";
 import { getStoreData } from "@/lib/store-data";
+import { deliverOrder, normalizeGatewayRows } from "@/lib/deliver-order";
 
 export async function POST(req: NextRequest) {
   try {
@@ -54,8 +55,19 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // 4. Secure Delivery Link Generation: Look up drive_url for purchased products
+    // 4. Auto-deliver: the SAME email + delivered status as manual approval
+    // (lib/deliver-order.ts). Idempotent — deliverOrder skips
+    // already-delivered orders, so a retry or a webhook that already
+    // delivered never emails twice. An email failure must NOT fail the
+    // payment: the links are shown on screen, and the admin can re-send
+    // from the panel (approve → resend).
     const courses = await getStoreData<any[]>("courses", "data/courses.json", []);
+    const delivery = await deliverOrder(normalizeGatewayRows(existingOrders, courses));
+    if (!delivery.ok) {
+      console.error("[verify-marketplace] Auto-delivery failed:", delivery.error);
+    }
+
+    // 5. Secure Delivery Link Generation: Look up drive_url for purchased products
     const courseMap = new Map<string, any>();
     for (const c of courses) {
       if (c.id) courseMap.set(c.id, c);
@@ -76,6 +88,8 @@ export async function POST(req: NextRequest) {
       orderId,
       paymentId,
       deliveredItems,
+      emailSent: delivery.ok,
+      emailError: delivery.ok ? undefined : delivery.error,
     });
   } catch (err: unknown) {
     console.error("[verify-marketplace] Unexpected error:", err);

@@ -4,6 +4,8 @@ import {
   hasRazorpayKeys,
   verifyRazorpayWebhookSignature,
 } from "@/lib/payment-gateway";
+import { getStoreData } from "@/lib/store-data";
+import { deliverOrder, normalizeGatewayRows } from "@/lib/deliver-order";
 
 /**
  * Enterprise Server-to-Server Razorpay Webhook Handler
@@ -53,6 +55,28 @@ export async function POST(req: NextRequest) {
           console.error("[WEBHOOK] Failed to update order status:", updateErr);
         } else {
           console.log(`[WEBHOOK SUCCESS] Order ${orderId} successfully marked as PAID`);
+        }
+
+        // Auto-deliver: same email + delivered status as manual approval
+        // (lib/deliver-order.ts, idempotent). An email failure must NOT
+        // fail the webhook — Razorpay retries non-2xx, and a retry must
+        // never double-email. The customer also gets links via verify.
+        try {
+          const { data: rows } = await supabaseAdmin
+            .from("marketplace_orders")
+            .select("*")
+            .eq("razorpay_order_id", orderId);
+          if (rows && rows.length > 0) {
+            const courses = await getStoreData<any[]>("courses", "data/courses.json", []);
+            const delivery = await deliverOrder(normalizeGatewayRows(rows, courses));
+            if (!delivery.ok) {
+              console.error("[WEBHOOK] Auto-delivery failed:", delivery.error);
+            } else {
+              console.log(`[WEBHOOK SUCCESS] Order ${orderId} delivered (email ${delivery.messageId || "skipped — already delivered"})`);
+            }
+          }
+        } catch (deliverErr) {
+          console.error("[WEBHOOK] Auto-delivery exception:", deliverErr);
         }
       }
     } else if (eventType === "payment.failed") {

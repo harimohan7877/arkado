@@ -1,6 +1,8 @@
 import crypto from "crypto";
 import { supabaseAdmin } from "@/lib/supabase";
 import { getStoreData } from "@/lib/store-data";
+import { getSalePct, applySale } from "./sale-pricing";
+import { DEFAULT_SETTINGS } from "./default-settings";
 
 /**
  * Arkado Enterprise Payment Gateway & Security Service
@@ -132,6 +134,183 @@ export async function validateOrderPrices(
       currency: "INR",
       items: [],
       tamperingDetected: false,
+      error: "Failed to validate order pricing.",
+    };
+  }
+}
+
+export interface GatewayOrderItem {
+  productId: string;
+  quantity?: number;
+  title?: string;
+  /** Kit ids for bundle-* items — the client sends these from the cart. */
+  bundle_items?: string[];
+}
+
+export interface ValidatedGatewayLine {
+  id: string;
+  title: string;
+  /** Final payable price: sale-adjusted, bundle discount applied. */
+  price: number;
+  drive_url: string;
+  bundle_items?: Array<{ id: string; title: string; drive_url: string }>;
+}
+
+export interface ValidatedGatewayOrder {
+  isValid: boolean;
+  totalAmount: number;
+  currency: string;
+  items: ValidatedGatewayLine[];
+  error?: string;
+}
+
+/**
+ * 2b. Gateway order validation — the SAME pricing law as POST /api/orders
+ * (lib/sale-pricing.ts is the single source of truth), applied to the
+ * Razorpay flow.
+ *
+ * The old path used validateOrderPrices() directly as the charge amount,
+ * which returns the RAW catalog price: it ignored the admin sale % and the
+ * bundle discount, so a gateway order during a sale would have charged
+ * full price while the UTR flow charged the sale price.
+ *
+ * Bundle items are recomputed from their constituent kits (sum of
+ * sale-adjusted kit prices, then the bundle discount from settings) —
+ * exactly like /api/orders. The total must match the client total within
+ * ±₹2, same tolerance as /api/orders.
+ */
+export async function validateGatewayOrder(
+  items: GatewayOrderItem[],
+  clientReportedTotal?: number
+): Promise<ValidatedGatewayOrder> {
+  if (!items || items.length === 0) {
+    return {
+      isValid: false,
+      totalAmount: 0,
+      currency: "INR",
+      items: [],
+      error: "No products specified in checkout.",
+    };
+  }
+
+  try {
+    const settings = (await getStoreData(
+      "settings",
+      "data/settings.json",
+      DEFAULT_SETTINGS
+    )) as typeof DEFAULT_SETTINGS;
+    const salePct = getSalePct(settings);
+    const bundleDiscPct = (() => {
+      const bc = (
+        settings as unknown as { bundle_card?: { discount_percent?: unknown } }
+      )?.bundle_card;
+      return typeof bc?.discount_percent === "number" ? bc.discount_percent : 5;
+    })();
+
+    const courses = await getStoreData<any[]>("courses", "data/courses.json", []);
+    const courseMap = new Map<string, any>();
+    for (const c of courses) {
+      if (c.id) courseMap.set(c.id, c);
+      if (c.slug) courseMap.set(c.slug, c);
+    }
+
+    const lines: ValidatedGatewayLine[] = [];
+    let computedTotal = 0;
+
+    for (const reqItem of items) {
+      const itemId = String(reqItem.productId || "");
+      const qty = Math.max(1, Math.min(reqItem.quantity || 1, 10));
+
+      if (itemId.startsWith("bundle-")) {
+        const kitIds: string[] = Array.isArray(reqItem.bundle_items)
+          ? reqItem.bundle_items.map(String)
+          : [];
+        const kits = kitIds.map((kid) => courseMap.get(kid)).filter(Boolean);
+        if (kits.length === 0) {
+          return {
+            isValid: false,
+            totalAmount: 0,
+            currency: "INR",
+            items: [],
+            error: `Bundle ${itemId} could not be verified.`,
+          };
+        }
+        const kitSum = kits.reduce(
+          (s: number, k: any) => s + applySale(Number(k.price) || 0, salePct),
+          0
+        );
+        const serverPrice = Math.max(
+          1,
+          Math.round(kitSum * (1 - bundleDiscPct / 100))
+        );
+        computedTotal += serverPrice * qty;
+        lines.push({
+          id: itemId,
+          title: String(
+            reqItem.title || courseMap.get(itemId)?.title || kits[0]?.title || "Full Bundle"
+          ),
+          price: serverPrice,
+          drive_url: "",
+          bundle_items: kits.map((k: any) => ({
+            id: k.id,
+            title: k.title,
+            drive_url: k.drive_url || "",
+          })),
+        });
+      } else {
+        const check = await validateOrderPrices([{ productId: itemId }]);
+        const mp = check.items[0];
+        if (!check.isValid || !mp) {
+          return {
+            isValid: false,
+            totalAmount: 0,
+            currency: "INR",
+            items: [],
+            error: check.error || `Product ${itemId} not found in catalog.`,
+          };
+        }
+        const linePrice = applySale(Number(mp.price) || 0, salePct);
+        computedTotal += linePrice * qty;
+        lines.push({
+          id: itemId,
+          title: mp.title,
+          price: linePrice,
+          drive_url: mp.drive_url || "",
+        });
+      }
+    }
+
+    // Total must match what the client computed (allow ±₹2 rounding tolerance,
+    // same as POST /api/orders). Never charge a total the server didn't verify.
+    if (
+      typeof clientReportedTotal === "number" &&
+      Math.abs(computedTotal - clientReportedTotal) > 2
+    ) {
+      console.warn(
+        `[payment-gateway] Gateway total mismatch: client ₹${clientReportedTotal} vs server ₹${computedTotal}`
+      );
+      return {
+        isValid: false,
+        totalAmount: 0,
+        currency: "INR",
+        items: [],
+        error: "Price verification failed. Please refresh and try again.",
+      };
+    }
+
+    return {
+      isValid: true,
+      totalAmount: computedTotal,
+      currency: "INR",
+      items: lines,
+    };
+  } catch (err) {
+    console.error("[payment-gateway] Gateway order validation error:", err);
+    return {
+      isValid: false,
+      totalAmount: 0,
+      currency: "INR",
+      items: [],
       error: "Failed to validate order pricing.",
     };
   }

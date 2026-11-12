@@ -22,6 +22,59 @@ import {
   ChevronLeftIcon,
 } from "@/components/icons";
 
+/** Minimal Razorpay Checkout.js types (script loaded on demand, never bundled). */
+interface RazorpaySuccessResponse {
+  razorpay_order_id: string;
+  razorpay_payment_id: string;
+  razorpay_signature: string;
+}
+
+interface RazorpayCheckoutOptions {
+  key: string;
+  amount: number;
+  currency: string;
+  name: string;
+  description: string;
+  order_id: string;
+  prefill: { name: string; email: string; contact: string };
+  theme: { color: string };
+  handler: (response: RazorpaySuccessResponse) => void;
+  modal: { ondismiss: () => void };
+}
+
+type RazorpayInstance = { open: () => void };
+type RazorpayConstructor = new (options: RazorpayCheckoutOptions) => RazorpayInstance;
+
+declare global {
+  interface Window {
+    Razorpay?: RazorpayConstructor;
+  }
+}
+
+const RAZORPAY_SCRIPT_URL = "https://checkout.razorpay.com/v1/checkout.js";
+
+/** Load Razorpay Checkout.js on demand (once). False when it fails to load. */
+function loadRazorpayScript(): Promise<boolean> {
+  return new Promise((resolve) => {
+    if (typeof window === "undefined") return resolve(false);
+    if (window.Razorpay) return resolve(true);
+    const existing = document.querySelector(`script[src="${RAZORPAY_SCRIPT_URL}"]`);
+    if (existing) {
+      existing.addEventListener("load", () => resolve(true));
+      existing.addEventListener("error", () => resolve(false));
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = RAZORPAY_SCRIPT_URL;
+    script.async = true;
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.body.appendChild(script);
+  });
+}
+
+type PaymentMethod = "gateway" | "upi";
+
 interface CartDrawerProps {
   isOpen: boolean;
   onClose: () => void;
@@ -83,7 +136,21 @@ export default function CartDrawer({
     phone: string;
     email: string;
     drive_url: string;
+    paymentMethod: PaymentMethod;
   } | null>(null);
+  const [deliveredItems, setDeliveredItems] = useState<
+    Array<{ productId: string; title: string; drive_url: string }>
+  >([]);
+
+  // Gateway (Razorpay) is available only when the admin flag is ON.
+  // Settings arrive async; default to the gateway once the flag loads,
+  // unless the customer already picked a method by hand.
+  const gatewayEnabled = saleSettings?.razorpay_enabled === true;
+  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("upi");
+  const methodPickedRef = useRef(false);
+  useEffect(() => {
+    if (gatewayEnabled && !methodPickedRef.current) setPaymentMethod("gateway");
+  }, [gatewayEnabled]);
 
   const [upiSettings, setUpiSettings] = useState<{
     upi_id: string;
@@ -115,6 +182,7 @@ export default function CartDrawer({
     if (step === "success") {
       setStep("cart");
       setCreatedOrder(null);
+      setDeliveredItems([]);
       setUtr("");
     }
     setErrorMsg("");
@@ -171,28 +239,36 @@ export default function CartDrawer({
     setStep("pay");
   };
 
-  const handleOrderSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setErrorMsg("");
-
+  /** Shared form validation for both payment methods. Null = valid. */
+  const validateCheckoutForm = (): string | null => {
     if (!name.trim()) {
-      setErrorMsg("कृपया अपना पूरा नाम दर्ज करें (Please enter your name).");
-      return;
+      return "कृपया अपना पूरा नाम दर्ज करें (Please enter your name).";
     }
     const cleanPhone = phone.replace(/\D/g, "").slice(-10);
     if (!cleanPhone || cleanPhone.length !== 10 || !/^[6-9]\d{9}$/.test(cleanPhone)) {
-      setErrorMsg("कृपया 10 अंकों का मान्य भारतीय मोबाइल नंबर दर्ज करें (Valid 10-digit mobile required).");
-      return;
+      return "कृपया 10 अंकों का मान्य भारतीय मोबाइल नंबर दर्ज करें (Valid 10-digit mobile required).";
     }
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!email.trim() || !emailRegex.test(email.trim())) {
-      setErrorMsg("कृपया सही ईमेल पता दर्ज करें (Valid email address required).");
-      return;
+      return "कृपया सही ईमेल पता दर्ज करें (Valid email address required).";
     }
     if (!termsAccepted) {
-      setErrorMsg("कृपया आगे बढ़ने के लिए नियम व शर्तें स्वीकार करें (Please accept the Terms of Service).");
+      return "कृपया आगे बढ़ने के लिए नियम व शर्तें स्वीकार करें (Please accept the Terms of Service).";
+    }
+    return null;
+  };
+
+  /** Direct UPI + UTR flow (unchanged): order goes in as pending, Harimohan
+   * verifies manually and approves. Kept as the fallback when the gateway
+   * is off or the customer picks it. */
+  const handleOrderSubmit = async () => {
+    setErrorMsg("");
+    const formError = validateCheckoutForm();
+    if (formError) {
+      setErrorMsg(formError);
       return;
     }
+    const cleanPhone = phone.replace(/\D/g, "").slice(-10);
 
     setIsSubmitting(true);
     try {
@@ -245,6 +321,7 @@ export default function CartDrawer({
         phone: cleanPhone,
         email: email.trim().toLowerCase(),
         drive_url: "",
+        paymentMethod: "upi" as PaymentMethod,
       };
 
       setCreatedOrder(orderObj);
@@ -257,6 +334,142 @@ export default function CartDrawer({
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  /** Razorpay gateway flow: server creates the order (prices re-verified
+   * server-side), Checkout collects the payment, then verify confirms the
+   * signature and auto-delivers the links. Cancelling the Checkout modal
+   * leaves the order pending — nothing is charged, nothing breaks. */
+  const handleGatewayPay = async () => {
+    setErrorMsg("");
+    const formError = validateCheckoutForm();
+    if (formError) {
+      setErrorMsg(formError);
+      return;
+    }
+    const cleanPhone = phone.replace(/\D/g, "").slice(-10);
+
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/payment/create-marketplace-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          customerName: name.trim(),
+          customerEmail: email.trim().toLowerCase(),
+          customerPhone: cleanPhone,
+          products: cartItems.map((item: any) => ({
+            id: item.id,
+            title: item.title,
+            quantity: 1,
+            bundle_items: Array.isArray(item.bundle_items) ? item.bundle_items : undefined,
+          })),
+          totalAmount: subtotal,
+          visitor_id: getVisitorId(),
+          session_id: getSessionId(),
+          utm_source: getUtmSource() || null,
+        }),
+      });
+      const data = await res.json();
+      if (!res.ok || data.error || !data.orderId || !data.keyId) {
+        throw new Error(data.error || "ऑनलाइन पेमेंट शुरू नहीं हो सका, कृपया पुनः प्रयास करें।");
+      }
+
+      const scriptOk = await loadRazorpayScript();
+      if (!scriptOk || !window.Razorpay) {
+        throw new Error("पेमेंट पेज लोड नहीं हो सका — इंटरनेट चेक करके पुनः प्रयास करें।");
+      }
+
+      const Razorpay = window.Razorpay;
+      const rzp = new Razorpay({
+        key: data.keyId,
+        amount: Math.round(Number(data.amount) * 100),
+        currency: data.currency || "INR",
+        name: "Arkado",
+        description: primaryCourse?.title || "Arkado Course",
+        order_id: data.orderId,
+        prefill: {
+          name: name.trim(),
+          email: email.trim().toLowerCase(),
+          contact: cleanPhone,
+        },
+        theme: { color: "#b45309" },
+        handler: async (response: RazorpaySuccessResponse) => {
+          try {
+            const verifyRes = await fetch("/api/payment/verify-marketplace", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                orderId: response.razorpay_order_id,
+                paymentId: response.razorpay_payment_id,
+                signature: response.razorpay_signature,
+              }),
+            });
+            const verifyData = await verifyRes.json();
+            if (!verifyRes.ok || !verifyData.success) {
+              throw new Error(verifyData.error || "Payment verify नहीं हो सका।");
+            }
+
+            // Analytics (Phase 2): order placed — product only, never PII.
+            trackEvent({ event_type: "order_placed", product_id: primaryCourse?.id });
+
+            setDeliveredItems(
+              Array.isArray(verifyData.deliveredItems) ? verifyData.deliveredItems : []
+            );
+            setCreatedOrder({
+              order_id: verifyData.orderId || data.orderId,
+              name: name.trim(),
+              delivery_mode: "both",
+              course_title: primaryCourse?.title || "Course",
+              amount: subtotal,
+              phone: cleanPhone,
+              email: email.trim().toLowerCase(),
+              drive_url: "",
+              paymentMethod: "gateway",
+            });
+            setStep("success");
+            // Clear cart items in parent so user doesn't re-buy the same items accidentally
+            cartItems.forEach((item) => onRemoveItem(item.id));
+            if (verifyData.emailSent === false) {
+              setErrorMsg(
+                "Payment सफल रहा, पर email भेजने में दिक्कत आई — download links नीचे से ले लें या WhatsApp पर संपर्क करें।"
+              );
+            }
+          } catch (err: any) {
+            console.error("Verify error:", err);
+            setErrorMsg(
+              `Payment हो गया (ID: ${response.razorpay_payment_id}), पर verify नहीं हो सका। कृपया WhatsApp पर payment ID भेजें।`
+            );
+          } finally {
+            setIsSubmitting(false);
+          }
+        },
+        modal: {
+          ondismiss: () => {
+            setIsSubmitting(false);
+            setErrorMsg("पेमेंट रद्द कर दिया गया — आप दोबारा कोशिश कर सकते हैं।");
+          },
+        },
+      });
+      rzp.open();
+      // isSubmitting stays true while the Razorpay modal is open; the
+      // handler / ondismiss paths above reset it.
+    } catch (err: any) {
+      console.error("Gateway error:", err);
+      setErrorMsg(err.message || "कुछ गड़बड़ हुई, कृपया WhatsApp पर संपर्क करें।");
+      setIsSubmitting(false);
+    }
+  };
+
+  /** One form, two payment methods — the gateway branch opens Razorpay
+   * Checkout, the UPI branch keeps the existing manual flow. */
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (gatewayEnabled && paymentMethod === "gateway") {
+      void handleGatewayPay();
+      return;
+    }
+    void handleOrderSubmit();
   };
 
   if (!isOpen) return null;
@@ -441,7 +654,48 @@ export default function CartDrawer({
 
           {step === "pay" && (
             <div className="space-y-3">
-              {/* QR Code Section */}
+              {/* Payment method — shown only when the Razorpay gateway is enabled */}
+              {gatewayEnabled && (
+                <div className="space-y-2">
+                  <p className="text-xs font-bold text-slate-800">Payment Method *</p>
+                  <label className={`flex items-start gap-2.5 p-3 rounded-lg border cursor-pointer transition ${paymentMethod === "gateway" ? "border-amber-700 bg-amber-50" : "border-slate-200 bg-white"}`}>
+                    <input
+                      type="radio"
+                      name="payment-method"
+                      checked={paymentMethod === "gateway"}
+                      onChange={() => { methodPickedRef.current = true; setPaymentMethod("gateway"); }}
+                      className="mt-0.5 h-4 w-4 shrink-0 accent-amber-700 cursor-pointer"
+                    />
+                    <span>
+                      <span className="block text-sm font-bold text-slate-900">
+                        Online Payment — UPI / Card / NetBanking{" "}
+                        <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">Recommended</span>
+                      </span>
+                      <span className="block text-[11px] text-slate-500 mt-0.5">
+                        Secure payment via Razorpay — payment के तुरंत बाद download link मिलेगा।
+                      </span>
+                    </span>
+                  </label>
+                  <label className={`flex items-start gap-2.5 p-3 rounded-lg border cursor-pointer transition ${paymentMethod === "upi" ? "border-amber-700 bg-amber-50" : "border-slate-200 bg-white"}`}>
+                    <input
+                      type="radio"
+                      name="payment-method"
+                      checked={paymentMethod === "upi"}
+                      onChange={() => { methodPickedRef.current = true; setPaymentMethod("upi"); }}
+                      className="mt-0.5 h-4 w-4 shrink-0 accent-amber-700 cursor-pointer"
+                    />
+                    <span>
+                      <span className="block text-sm font-bold text-slate-900">Direct UPI + UTR</span>
+                      <span className="block text-[11px] text-slate-500 mt-0.5">
+                        QR से pay करें, UTR डालें — manual verification (5-10 मिनट)।
+                      </span>
+                    </span>
+                  </label>
+                </div>
+              )}
+
+              {/* QR Code Section — only for the Direct UPI + UTR method */}
+              {(!gatewayEnabled || paymentMethod === "upi") && (
               <div className="p-4 bg-slate-900 text-white rounded-lg text-center space-y-3">
                 <span className="inline-block text-[10px] font-bold bg-emerald-500 text-slate-950 px-2 py-0.5 rounded-full uppercase">
                   PhonePe / Paytm / GPay
@@ -485,9 +739,10 @@ export default function CartDrawer({
                   </a>
                 </div>
               </div>
+              )}
 
               {/* Order Form */}
-              <form id="upi-order-form" onSubmit={handleOrderSubmit} className="space-y-3">
+              <form id="checkout-form" onSubmit={handleFormSubmit} className="space-y-3">
                 <div>
                   <label className="block text-xs font-bold text-slate-800 mb-1">
                     Full Name *
@@ -550,7 +805,8 @@ export default function CartDrawer({
                   </p>
                 </div>
 
-                {/* 4. UPI Ref / UTR No. (Optional) */}
+                {/* 4. UPI Ref / UTR No. (Optional) — only for the Direct UPI method */}
+                {paymentMethod === "upi" && (
                 <div>
                   <div className="flex items-center justify-between mb-1">
                     <label className="block text-xs font-bold text-slate-800">
@@ -571,6 +827,7 @@ export default function CartDrawer({
                     यदि UTR नहीं मिल रहा तो इसे खाली छोड़ सकते हैं। भुगतान के बाद नीचे सबमिट करें।
                   </p>
                 </div>
+                )}
 
                 {/* Terms & Conditions acceptance (mandatory) */}
                 <div className="pt-1">
@@ -602,6 +859,16 @@ export default function CartDrawer({
                       >
                         रिफंड नीति (Refund Policy)
                       </a>{" "}
+                      और{" "}
+                      <a
+                        href="/privacy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-amber-800 font-bold hover:underline"
+                      >
+                        प्राइवेसी नीति (Privacy Policy)
+                      </a>{" "}
                       से सहमत हूँ। *
                     </span>
                   </label>
@@ -616,12 +883,12 @@ export default function CartDrawer({
                   {isSubmitting ? (
                     <>
                       <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>ऑर्डर दर्ज हो रहा है...</span>
+                      <span>{gatewayEnabled && paymentMethod === "gateway" ? "पेमेंट पेज खुल रहा है..." : "ऑर्डर दर्ज हो रहा है..."}</span>
                     </>
                   ) : (
                     <>
                       <CheckIcon size={16} />
-                      <span>मैंने भुगतान कर दिया है (Submit Order)</span>
+                      <span>{gatewayEnabled && paymentMethod === "gateway" ? `₹${subtotal} Secure Pay करें` : "मैंने भुगतान कर दिया है (Submit Order)"}</span>
                     </>
                   )}
                 </button>
@@ -686,7 +953,31 @@ export default function CartDrawer({
                 </div>
               </div>
 
-              {/* Admin verification notice */}
+              {/* Gateway success: instant download links (email bhi bheja gaya) */}
+              {createdOrder.paymentMethod === "gateway" && deliveredItems.length > 0 && (
+                <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-left space-y-2">
+                  <h4 className="font-bold text-emerald-900 text-sm flex items-center gap-1.5">
+                    <span>✅</span> Payment Successful — Download Links
+                  </h4>
+                  {deliveredItems.map((k) => (
+                    <a
+                      key={k.productId}
+                      href={k.drive_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block p-2.5 bg-white border border-emerald-200 rounded-lg text-xs font-bold text-emerald-800 hover:bg-emerald-100 transition"
+                    >
+                      📥 {k.title}
+                    </a>
+                  ))}
+                  <p className="text-[11px] text-emerald-800 leading-relaxed">
+                    Ye links aapki email (<strong>{createdOrder.email}</strong>) par bhi bhej diye gaye hain।
+                  </p>
+                </div>
+              )}
+
+              {/* Admin verification notice — UPI + UTR orders only */}
+              {createdOrder.paymentMethod !== "gateway" && (
               <div className="p-4 bg-amber-50 border border-amber-200 rounded-xl text-left">
                 <h4 className="font-bold text-amber-900 text-sm mb-1 flex items-center gap-1.5">
                   <span>⏳</span> सत्यापन प्रक्रिया जारी (Verification in Progress)
@@ -702,6 +993,7 @@ export default function CartDrawer({
                   📦 Track order status with your Order ID →
                 </a>
               </div>
+              )}
 
               {/* Instant WhatsApp Send Button */}
               <a
@@ -772,19 +1064,19 @@ export default function CartDrawer({
                 </button>
                 <button
                   type="submit"
-                  form="upi-order-form"
+                  form="checkout-form"
                   disabled={isSubmitting}
                   className="flex-1 py-3 rounded-xl bg-gradient-to-r from-amber-700 via-amber-800 to-amber-900 hover:from-amber-800 hover:to-amber-950 text-white font-extrabold text-xs sm:text-sm transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-md cursor-pointer"
                 >
                   {isSubmitting ? (
                     <>
                       <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>सबमिट हो रहा है...</span>
+                      <span>{gatewayEnabled && paymentMethod === "gateway" ? "पेमेंट पेज खुल रहा है..." : "सबमिट हो रहा है..."}</span>
                     </>
                   ) : (
                     <>
                       <CheckIcon size={16} />
-                      <span>मैंने भुगतान कर दिया है</span>
+                      <span>{gatewayEnabled && paymentMethod === "gateway" ? `₹${subtotal} Secure Pay करें` : "मैंने भुगतान कर दिया है"}</span>
                     </>
                   )}
                 </button>

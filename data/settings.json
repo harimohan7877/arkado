@@ -2,7 +2,7 @@
   "upi_id": "PLACEHOLDER_UPI_ID",
   "merchant_name": "Arkado",
   "whatsapp_support_number": "917852004401",
-  "gmail_support_email": "support@example.com",
+  "gmail_support_email": "hello@arkado.store",
   "custom_qr_url": "",
   "site_name": "Arkado",
   "site_tagline": "Deep-Level Exam Analysis & Pattern-Based Premium Notes",
@@ -201,15 +201,15 @@
     "whatsapp_url": "https://wa.me/917852004401",
     "instagram_url": "https://instagram.com/",
     "facebook_url": "https://facebook.com/",
-    "gmail_url": "mailto:support@example.com",
+    "gmail_url": "mailto:hello@arkado.store",
     "share_enabled": true
   },
   "updated_at": "2026-09-24T02:41:20.264Z",
   "contact": {
     "phone": "+91 78520 04401",
     "whatsapp_number": "917852004401",
-    "email": "support@example.com",
-    "address": "Ward No 14, Sardarshahar, Churu, Rajasthan - 331403",
+    "email": "hello@arkado.store",
+    "address": "Dhadhriya Banirotan, Churu, Rajasthan - 331001",
     "support_hours": "10:00 AM - 9:00 PM (All 7 Days)"
   },
   "order_messages": {
@@ -230,7 +230,8 @@
   "policies": {
     "refund_policy": "Arkado पर उपलब्ध सभी उत्पाद डिजिटल स्टडी नोट्स, ई-बुक्स और मॉक टेस्ट PDF हैं। चूंकि डिजिटल उत्पादों को डाउनलोड या एक्सेस लिंक जारी होने के बाद वापस नहीं लिया जा सकता, इसलिए आम तौर पर खरीदारी के बाद रिफंड स्वीकार्य नहीं है। हालांकि, यदि आपने गलती से एक ही कोर्स के लिए दो बार भुगतान कर दिया है या भुगतान कटने के 24 घंटे के भीतर आपको नोट्स नहीं मिले हैं, तो आप तुरंत हमारे WhatsApp हेल्पलाइन (7852004401) पर संपर्क करें। हम 24 से 48 घंटे के भीतर आपकी समस्या का समाधान करेंगे।",
     "privacy_policy": "Arkado आपकी व्यक्तिगत जानकारी की गोपनीयता और सुरक्षा का पूर्ण सम्मान करता है। हम केवल आपका नाम, ईमेल आईडी और मोबाइल नंबर एकत्र करते हैं ताकि हम आपको आपके द्वारा खरीदे गए नोट्स, Google Drive लिंक और ऑर्डर संबंधी महत्वपूर्ण अपडेट्स भेज सकें। हम आपकी जानकारी को किसी भी तीसरे पक्ष के साथ साझा, किराए पर या बेचते नहीं हैं। भुगतान विवरण प्रत्यक्ष यूपीआई ऐप या सुरक्षित पेमेंट गेटवे द्वारा प्रोसेस किया जाता है और हम कोई भी बैंकिंग पिन या पासवर्ड स्टोर नहीं करते।",
-    "terms_of_service": "Arkado वेबसाइट का उपयोग करके आप निम्नलिखित शर्तों से सहमत होते हैं:\n1. इस प्लेटफ़ॉर्म पर उपलब्ध सभी अध्ययन सामग्री, प्रश्न बैंक और नोट्स केवल आपके व्यक्तिगत अध्ययन के लिए हैं।\n2. किसी भी सामग्री को पुनः बेचना, वाणिज्यिक उपयोग करना या सार्वजनिक रूप से इंटरनेट पर साझा करना कॉपीराइट कानून के तहत सख्त वर्जित है।\n3. भुगतान के पश्चात डिजिटल सामग्री का लिंक आपके पंजीकृत WhatsApp या ईमेल पर भेजा जाता है।\n4. किसी भी कानूनी विवाद के लिए क्षेत्राधिकार सरदारशहर (चूरू, राजस्थान) रहेगा।"
+    "terms_of_service": "Arkado वेबसाइट का उपयोग करके आप निम्नलिखित शर्तों से सहमत होते हैं:\n1. इस प्लेटफ़ॉर्म पर उपलब्ध सभी अध्ययन सामग्री, प्रश्न बैंक और नोट्स केवल आपके व्यक्तिगत अध्ययन के लिए हैं।\n2. किसी भी सामग्री को पुनः बेचना, वाणिज्यिक उपयोग करना या सार्वजनिक रूप से इंटरनेट पर साझा करना कॉपीराइट कानून के तहत सख्त वर्जित है।\n3. भुगतान के पश्चात डिजिटल सामग्री का लिंक आपके पंजीकृत WhatsApp या ईमेल पर भेजा जाता है।\n4. किसी भी कानूनी विवाद के लिए क्षेत्राधिकार सरदारशहर (चूरू, राजस्थान) रहेगा।",
+    "delivery_policy": "Arkado sirf digital products bechta hai — PDF notes, MCQ books, mock test papers aur CBT (computer-based test) material. Koi physical shipment, courier ya post nahi hota, isliye shipping charges bhi nahi lagte.\n\nDelivery kaise hoti hai: Payment verify hone ke baad, product ka download/access link tumhare diye gaye WhatsApp number aur email ID par bheja jaata hai (Google Drive link ke roop me).\n\nDelivery kab tak: Aam taur par payment verification ke 5–15 minute ke andar link bhej diya jaata hai. Vartman prakriya me UPI payment ke baad 12-digit UTR submit karna hota hai; UTR verify hone ke baad link bheja jaata hai.\n\nAgar link na mile: Payment ke 24 ghante ke andar link na mile to WhatsApp helpline 7852004401 ya hello@arkado.store par order ID aur payment detail ke saath sampark karo. Samasya ka samadhan 24–48 ghante ke andar kiya jayega.\n\nDhyan rahe: Delivery link sirf tumhare personal study ke liye hai. Link ko aage share karna, bechna ya sarvjanik roop se daalna mana hai (Terms of Service ke anusaar)."
   },
   "about": {
     "title": "About Arkado",

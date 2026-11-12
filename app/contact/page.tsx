@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Settings } from "@/lib/store-types";
 import { DEFAULT_SETTINGS } from "@/lib/default-settings";
-import { PhoneIcon, MailIcon, MapPinIcon, WhatsappIcon, ClockIcon } from "@/components/icons";
+import { PhoneIcon, MailIcon, MapPinIcon, WhatsappIcon, ClockIcon, ShieldIcon } from "@/components/icons";
 
 export default function ContactPage() {
   const [settings, setSettings] = useState<Settings | null>(null);
@@ -88,6 +88,29 @@ export default function ContactPage() {
               <h3 className="font-bold text-slate-900">Support Timing</h3>
               <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                 {supportHours}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="card-base p-6 mt-6">
+          <div className="flex items-start gap-3">
+            <ShieldIcon size={20} className="text-amber-700 mt-0.5 shrink-0" />
+            <div>
+              <h3 className="font-bold text-slate-900">Grievance Officer</h3>
+              <p className="text-sm text-slate-600 mt-1 leading-relaxed">
+                Kisi bhi shikayat, samasya ya vivaad ke liye aap hamare Grievance Officer se sampark kar sakte hain.
+              </p>
+              <div className="mt-3 space-y-1 text-sm text-slate-600">
+                <p><span className="font-semibold text-slate-900">Naam:</span> Harimohan Sharma</p>
+                <p><span className="font-semibold text-slate-900">Pad:</span> Proprietor, Arkado</p>
+                <p><span className="font-semibold text-slate-900">Email:</span> <a href={`mailto:${email}`} className="text-amber-700 hover:underline">{email}</a></p>
+                <p><span className="font-semibold text-slate-900">Phone:</span> <a href={`tel:${phone.replace(/\s+/g, "")}`} className="text-amber-700 hover:underline">{phone}</a></p>
+                <p><span className="font-semibold text-slate-900">Address:</span> {address}</p>
+                <p><span className="font-semibold text-slate-900">Sampark samay:</span> {supportHours}</p>
+              </div>
+              <p className="text-sm text-slate-600 mt-3 leading-relaxed">
+                Shikayat milne ke 48 ghante ke andar acknowledgement diya jayega, aur samadhan 30 din ke andar kiya jayega. Shikayat bhejte waqt order ID, payment detail aur samasya ka vivaran zaroor likhein taaki jaldi madad ho sake.
               </p>
             </div>
           </div>

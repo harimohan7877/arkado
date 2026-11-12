@@ -270,6 +270,7 @@ export interface Settings {
     refund_policy?: string;
     privacy_policy?: string;
     terms_of_service?: string;
+    delivery_policy?: string;
   };
   about?: {
     title?: string;

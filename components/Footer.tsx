@@ -48,7 +48,7 @@ export default function Footer({ settings: settingsProp }: { settings?: Settings
   const whatsappUrl = social.whatsapp_url || DEFAULT_SETTINGS.social.whatsapp_url;
   const instagramUrl = social.instagram_url || "https://instagram.com/";
   const facebookUrl = social.facebook_url || "https://facebook.com/";
-  const gmailUrl = social.gmail_url || "mailto:support@arkado.in";
+  const gmailUrl = social.gmail_url || "mailto:hello@arkado.store";
 
   const newsletterTitle = homepage.newsletter_title || "Stay Updated with Exam Alerts";
   const newsletterSubtitle = homepage.newsletter_subtitle || "Get pattern updates, new bundles & exclusive deals";
@@ -181,6 +181,9 @@ export default function Footer({ settings: settingsProp }: { settings?: Settings
             </Link>
             <Link href="/terms" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
               Terms of Service
+            </Link>
+            <Link href="/delivery" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
+              Shipping & Delivery Policy
             </Link>
           </div>
 

@@ -60,7 +60,7 @@ export const DEFAULT_SETTINGS = {
   currency: "INR",
   upi_id: process.env.DEFAULT_UPI_ID || "arkado@upi",
   whatsapp_support_number: process.env.DEFAULT_WHATSAPP_NUMBER || "917852004401",
-  gmail_support_email: process.env.DEFAULT_SUPPORT_EMAIL || "support@arkado.in",
+  gmail_support_email: process.env.DEFAULT_SUPPORT_EMAIL || "hello@arkado.store",
   custom_qr_url: "",
   payment_methods: ["PhonePe", "Paytm"],
   razorpay_enabled: false,
@@ -68,8 +68,8 @@ export const DEFAULT_SETTINGS = {
   contact: {
     phone: process.env.DEFAULT_SUPPORT_PHONE || "+91 7852004401",
     whatsapp_number: process.env.DEFAULT_WHATSAPP_NUMBER || "917852004401",
-    email: process.env.DEFAULT_SUPPORT_EMAIL || "support@arkado.in",
-    address: "Ward No 14, Sardarshahar, Churu, Rajasthan - 331403",
+    email: process.env.DEFAULT_SUPPORT_EMAIL || "hello@arkado.store",
+    address: "Dhadhriya Banirotan, Churu, Rajasthan - 331001",
     support_hours: "10:00 AM - 9:00 PM (All 7 Days)",
   },
 
@@ -77,7 +77,7 @@ export const DEFAULT_SETTINGS = {
     whatsapp_url: `https://wa.me/${process.env.DEFAULT_WHATSAPP_NUMBER || "917852004401"}`,
     instagram_url: "https://instagram.com/",
     facebook_url: "https://facebook.com/",
-    gmail_url: `mailto:${process.env.DEFAULT_SUPPORT_EMAIL || "support@arkado.in"}`,
+    gmail_url: `mailto:${process.env.DEFAULT_SUPPORT_EMAIL || "hello@arkado.store"}`,
     share_enabled: true,
   },
 

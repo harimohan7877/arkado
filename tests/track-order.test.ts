@@ -36,7 +36,7 @@ describe("toSafeOrder — no sensitive fields leak", () => {
     course_title: "SSC MTS Maths 1000 MCQ",
     amount: 99,
     drive_url: "https://drive.google.com/secret-link",
-    utr: "123456789012",
+    transaction_id: "TXN1234567890",
     payment_status: "pending",
     delivery_status: "pending",
     created_at: "2026-10-05T10:00:00.000Z",
@@ -54,14 +54,14 @@ describe("toSafeOrder — no sensitive fields leak", () => {
     });
   });
 
-  it("never includes drive_url, utr, email, phone or name", () => {
+  it("never includes drive_url, transaction_id, email, phone or name", () => {
     const safe = toSafeOrder(fullOrder)!;
     const keys = Object.keys(safe);
-    for (const forbidden of ["drive_url", "utr", "email", "customer_email", "phone", "customer_phone", "name", "customer_name"]) {
+    for (const forbidden of ["drive_url", "transaction_id", "email", "customer_email", "phone", "customer_phone", "name", "customer_name"]) {
       expect(keys).not.toContain(forbidden);
     }
     expect(JSON.stringify(safe)).not.toContain("drive.google.com");
-    expect(JSON.stringify(safe)).not.toContain("123456789012");
+    expect(JSON.stringify(safe)).not.toContain("TXN1234567890");
   });
 
   it("returns null for invalid input", () => {

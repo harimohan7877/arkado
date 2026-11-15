@@ -16,7 +16,8 @@ export interface NewOrderNotification {
   course_title: string;
   amount: number;
   delivery_mode: string;
-  utr?: string;
+  /** PhonePe transaction id (was UTR before the PhonePe migration). */
+  transaction_id?: string;
 }
 
 function escapeHtml(str: string | undefined): string {
@@ -53,7 +54,7 @@ export async function notifyAdminNewOrder(
     const safePhone = escapeHtml(order.phone);
     const safeCourse = escapeHtml(order.course_title);
     const safeDelivery = escapeHtml(order.delivery_mode);
-    const safeUtr = escapeHtml(order.utr);
+    const safeTxnId = escapeHtml(order.transaction_id);
     const cleanPhoneDigits = (order.phone || "").replace(/\D/g, "");
 
     const nodemailer = await import("nodemailer");
@@ -102,10 +103,10 @@ export async function notifyAdminNewOrder(
             <td style="padding: 8px; text-transform: uppercase; font-weight: bold;">${safeDelivery}</td>
           </tr>
           ${
-            safeUtr
+            safeTxnId
               ? `<tr style="background: #ecfdf5;">
-                   <td style="padding: 8px; color: #065f46; font-weight: bold;">UTR / Ref No.</td>
-                   <td style="padding: 8px; font-family: monospace; font-size: 15px; font-weight: bold; color: #047857;">${safeUtr}</td>
+                   <td style="padding: 8px; color: #065f46; font-weight: bold;">Transaction ID (PhonePe)</td>
+                   <td style="padding: 8px; font-family: monospace; font-size: 15px; font-weight: bold; color: #047857;">${safeTxnId}</td>
                  </tr>`
               : ""
           }
@@ -115,13 +116,12 @@ export async function notifyAdminNewOrder(
           </tr>
         </table>
 
-        <div style="background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 16px; margin: 20px 0;">
-          <h3 style="margin: 0 0 8px; color: #92400e;">⚠️ कृपया manually verify करें</h3>
-          <p style="margin: 0; color: #78350f; font-size: 14px;">
-            UPI app में <strong>₹${Number(order.amount) || 0}</strong> payment check करें।<br/>
-            ${safeUtr ? `छात्र द्वारा दिया गया UTR: <strong>${safeUtr}</strong><br/>` : ""}
-            ${cleanPhoneDigits ? `<a href="https://wa.me/${cleanPhoneDigits}">WhatsApp पर ${safePhone} से संपर्क करें</a><br/>` : ""}
-            ${safeEmail ? `<a href="mailto:${safeEmail}">${safeEmail} पर email भेजें</a>` : ""}
+        <div style="background: #ecfdf5; border: 1px solid #10b981; border-radius: 8px; padding: 16px; margin: 20px 0;">
+          <h3 style="margin: 0 0 8px; color: #065f46;">✅ Payment received via PhonePe — no manual verification needed</h3>
+          <p style="margin: 0; color: #064e3b; font-size: 14px;">
+            The download link is sent automatically when available. If the link is still pending, add it from the admin panel (Orders → Link Pending) and it will be emailed at once.<br/>
+            ${cleanPhoneDigits ? `<a href="https://wa.me/${cleanPhoneDigits}">WhatsApp ${safePhone}</a><br/>` : ""}
+            ${safeEmail ? `<a href="mailto:${safeEmail}">Email ${safeEmail}</a>` : ""}
           </p>
         </div>
 
@@ -139,10 +139,10 @@ Email: ${order.email || "N/A"}
 Phone: ${order.phone || "N/A"}
 कोर्स: ${order.course_title}
 राशि: ₹${order.amount}
-${order.utr ? `UTR: ${order.utr}\n` : ""}डिलीवरी: ${order.delivery_mode}
+${order.transaction_id ? `Transaction ID: ${order.transaction_id}\n` : ""}डिलीवरी: ${order.delivery_mode}
 समय: ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}
 
-⚠️ कृपया manually verify करें — UPI app में payment check करें।
+✅ Payment received via PhonePe — no manual verification needed.
 Admin Panel: https://www.arkado.store/ranjeet/admin
     `;
 

@@ -76,14 +76,18 @@ export async function GET(req: NextRequest) {
       customer_phone: (o.customer_phone || o.phone || "") as string,
       phone: (o.customer_phone || o.phone || "") as string,
       delivery_mode: (o.delivery_mode || "both") as "whatsapp" | "gmail" | "both",
-      delivery_status: ((o.delivery_status || o.status || "pending") === "delivered" ? "delivered" : "pending") as "pending" | "delivered",
+      delivery_status: ((o.delivery_status || o.status || "pending") === "delivered"
+        ? "delivered"
+        : (o.delivery_status || o.status || "pending") === "pending_link"
+        ? "pending_link"
+        : "pending") as "pending" | "pending_link" | "delivered",
       status: (o.status || o.delivery_status || "pending") as string,
       payment_status: (o.payment_status === "paid" ? "paid" : o.payment_status === "failed" ? "failed" : "pending") as "pending" | "paid" | "failed",
       amount: Number(o.amount) || 0,
       course_id: courseId,
       course_title: resolvedTitle,
       exam_name: (o.exam_name || resolvedTitle) as string,
-      utr: (o.utr || o.razorpay_payment_id || "") as string,
+      transaction_id: (o.razorpay_payment_id || o.transaction_id || "") as string,
       drive_url: (o.drive_url || "") as string,
       items: (o.items || undefined) as Array<{
         id: string; title: string; price: number; drive_url: string;
@@ -113,7 +117,7 @@ export async function PUT(req: NextRequest) {
 
   const supabaseUpdates: Record<string, any> = {};
 
-  if (action === "update_delivery" && ["pending", "delivered"].includes(value)) {
+  if (action === "update_delivery" && ["pending", "pending_link", "delivered"].includes(value)) {
     if (idx !== -1) {
       orders[idx].delivery_status = value;
       orders[idx].status = value;

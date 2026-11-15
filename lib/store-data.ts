@@ -392,7 +392,7 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
           course_id: d.product_id || "",
           course_title: d.course_title || "Course Bundle",
           exam_name: d.course_title || "Course Bundle",
-          utr: d.utr || d.razorpay_payment_id || "",
+          transaction_id: d.razorpay_payment_id || "",
           drive_url: d.drive_url || "",
           items: (d as Record<string, unknown>).items,
           admin_note: (d as Record<string, unknown>).admin_note
@@ -440,7 +440,7 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
                   course_id: (rec.course_id as string) || "",
                   course_title: (rec.course_title as string) || "Course Bundle",
                   exam_name: (rec.exam_name as string) || (rec.course_title as string) || "Course Bundle",
-                  utr: (rec.utr as string) || "",
+                  transaction_id: ((rec.transaction_id as string) || (rec.utr as string) || ""),
                   drive_url: (rec.drive_url as string) || "",
                   items: rec.items,
                   admin_note: (rec.admin_note as string) || "",

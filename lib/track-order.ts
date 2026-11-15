@@ -41,7 +41,7 @@ export function orderPhoneMatches(order: Record<string, any>, rawPhone: string):
 
 /**
  * Strip an order record down to the fields safe for public display.
- * NEVER includes: drive_url, utr, email, phone, customer name.
+ * NEVER includes: drive_url, transaction id, email, phone, customer name.
  */
 export function toSafeOrder(order: Record<string, any>): SafeOrder | null {
   if (!order || typeof order !== "object") return null;
@@ -67,16 +67,16 @@ export function phaseOf(o: SafeOrder): OrderPhase {
 export const PHASE_INFO: Record<OrderPhase, { title: string; desc: string }> = {
   ordered: { title: "Order received", desc: "Your order has reached us." },
   verifying: {
-    title: "Payment is being verified",
-    desc: "We're checking your UTR — this usually takes a few hours.",
+    title: "Payment is being confirmed",
+    desc: "We're confirming your payment with PhonePe — this usually takes a few moments.",
   },
   approved: {
-    title: "Payment approved!",
-    desc: "Your study material is being prepared — you'll get the link on WhatsApp soon.",
+    title: "Payment confirmed!",
+    desc: "Your download links will be sent within 1 hour on your email and WhatsApp.",
   },
   delivered: {
     title: "Delivered!",
-    desc: "Your study material link has been sent — please check your WhatsApp.",
+    desc: "Your study material link has been sent — please check your email and WhatsApp.",
   },
   failed: {
     title: "Order cancelled",
@@ -84,7 +84,7 @@ export const PHASE_INFO: Record<OrderPhase, { title: string; desc: string }> = {
   },
 };
 
-export const TRACK_STEPS = ["Order placed", "Payment verifying", "Approved", "Delivered"];
+export const TRACK_STEPS = ["Order placed", "Payment check", "Confirmed", "Delivered"];
 
 export function stepIndex(phase: OrderPhase): number {
   if (phase === "failed") return -1;

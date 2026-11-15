@@ -21,9 +21,9 @@ export default function DeliveryPolicyPage() {
     settings?.policies?.delivery_policy ||
     `Arkado sirf digital products bechta hai — PDF notes, MCQ books, mock test papers aur CBT (computer-based test) material. Koi physical shipment, courier ya post nahi hota, isliye shipping charges bhi nahi lagte.
 
-Delivery kaise hoti hai: Payment verify hone ke baad, product ka download/access link tumhare diye gaye WhatsApp number aur email ID par bheja jaata hai (Google Drive link ke roop me).
+Delivery kaise hoti hai: Payment confirm hone ke baad, product ka download/access link turant screen par dikhaya jaata hai aur tumhare diye gaye email ID par bhi bheja jaata hai (Google Drive link ke roop me).
 
-Delivery kab tak: Aam taur par payment verification ke 5–15 minute ke andar link bhej diya jaata hai. Vartman prakriya me UPI payment ke baad 12-digit UTR submit karna hota hai; UTR verify hone ke baad link bheja jaata hai.
+Delivery kab tak: Aam taur par payment ke turant baad link mil jaata hai. Agar kisi exam ka material abhi taiyaar nahi hai, to link 1 ghante ke andar tumhare email aur WhatsApp par bhej diya jaayega.
 
 Agar link na mile: Payment ke 24 ghante ke andar link na mile to WhatsApp helpline 7852004401 ya hello@arkado.store par order ID aur payment detail ke saath sampark karo. Samasya ka samadhan 24–48 ghante ke andar kiya jayega.
 

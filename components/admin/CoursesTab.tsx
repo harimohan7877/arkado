@@ -1178,7 +1178,7 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
                       className="w-full px-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-stone-900 text-xs font-mono"
                     />
                     <p className="text-[10px] text-stone-400 mt-1">
-                      यह लिंक छात्र को पेमेंट व UTR वेरीफाई होने के बाद WhatsApp / Gmail पर भेजा जाता है।
+                      यह लिंक छात्र को PhonePe पेमेंट के बाद ईमेल पर भेजा जाता है।
                     </p>
                   </div>
 

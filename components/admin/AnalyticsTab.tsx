@@ -439,7 +439,7 @@ export default function AnalyticsTab({ getAuthHeaders }: AnalyticsTabProps) {
 
       <p className="text-xs text-stone-400">
         Note: WhatsApp se aane wale aksar “Direct” dikhenge (app se khulne par referrer nahi milta) — ye har analytics ki limit hai, bug nahi.
-        Dashboard me kabhi customer ka naam, phone, email ya UTR nahi dikhta.
+        Dashboard me kabhi customer ka naam, phone, email ya transaction detail nahi dikhta.
       </p>
     </div>
   );

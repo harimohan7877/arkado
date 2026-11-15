@@ -46,7 +46,7 @@ function clean(value: unknown, max: number): string {
 
 /**
  * Anonymous analytics event ingest.
- * Stores NO personal data: no name, phone, email, UTR, order ID, or IP.
+ * Stores NO personal data: no name, phone, email, transaction id, order ID, or IP.
  * Never fails the request; degrades gracefully until the migration is run.
  * Admin pages and API routes are never tracked.
  */

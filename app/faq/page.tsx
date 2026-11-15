@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 const FALLBACK_FAQS = [
   {
     question: "How do I get my notes after payment?",
-    answer: "After UPI payment, enter the 12-digit UTR. We'll send instant access to your WhatsApp or Gmail within 5-15 minutes.",
+    answer: "Pay securely with PhonePe (UPI, card or netbanking). Your download links appear instantly on screen and on your email — if a link is not ready yet, it will be sent within 1 hour on your email and WhatsApp.",
   },
   {
     question: "Can I print the PDFs?",
@@ -45,7 +45,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const siteUrl = getSiteUrl();
   const title = "FAQ — Frequently Asked Questions | Arkado";
   const description = toMetaDescription(
-    "Answers about ordering, UPI payment, 12-digit UTR, delivery on WhatsApp/Gmail, printing PDFs and support."
+    "Answers about ordering, PhonePe payment, instant delivery on email and WhatsApp, printing PDFs and support."
   );
   return {
     title,

@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
 import { getStoreData, setStoreData } from "@/lib/store-data";
 import { supabaseAdmin, buildOrderQueryFilter, isUUID } from "@/lib/supabase";
-import { validateStatusTransitions } from "@/lib/payment-gateway";
+import { validateStatusTransitions } from "@/lib/checkout";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;

@@ -14,13 +14,14 @@ export interface Order {
   email?: string;
   phone?: string;
   delivery_mode: "whatsapp" | "gmail" | "both";
-  utr: string;
+  /** PhonePe transaction id (was UTR before the PhonePe migration). */
+  transaction_id: string;
   amount: number;
   course_id: string;
   course_title: string;
   exam_name: string;
   payment_status: "pending" | "paid" | "failed";
-  delivery_status: "pending" | "delivered";
+  delivery_status: "pending" | "pending_link" | "delivered";
   drive_url?: string;
   admin_note?: string;
   created_at: string;
@@ -42,7 +43,7 @@ interface OrdersTabProps {
   orders?: Order[];
 }
 
-export type OrderSubTab = "pending" | "approved" | "fake" | "all";
+export type OrderSubTab = "pending" | "link_pending" | "approved" | "fake" | "all";
 
 export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }: OrdersTabProps) {
   const [orders, setOrders] = useState<Order[]>(initialOrders);
@@ -75,29 +76,31 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
     }
   };
 
-  // 1. One-Click Automated Email Dispatch & Approval
-  const handleApproveAndSendEmail = async (order: Order, isResend = false) => {
+  // 1. Add the Drive link & send the delivery email (paid orders only).
+  // For pending_link orders the admin pastes the link in the detail
+  // modal; for delivered orders this is a re-send (no link needed).
+  const handleSendLink = async (order: Order, driveUrl?: string, isResend = false) => {
     if (approvingId) return;
     setApprovingId(order.id);
     setMessage(null);
 
     try {
-      const res = await fetch(`/api/admin/orders/${order.id}/approve`, {
+      const res = await fetch(`/api/admin/orders/${order.id}/send-link`, {
         method: "POST",
         headers: { ...getAuthHeaders(), "Content-Type": "application/json" },
-        body: JSON.stringify(isResend ? { resend: true } : {}),
+        body: JSON.stringify(isResend ? { resend: true } : { drive_url: driveUrl || "" }),
       });
 
       const data = await res.json();
       if (!res.ok || !data.success) {
-        throw new Error(data.error || "ऑर्डर स्वीकृत नहीं किया जा सका।");
+        throw new Error(data.error || "लिंक नहीं भेजा जा सका।");
       }
 
       if (!isResend) {
         setOrders((prev) =>
           prev.map((o) =>
             o.id === order.id || o.order_id === order.order_id
-              ? { ...o, payment_status: "paid", delivery_status: "delivered" }
+              ? { ...o, payment_status: "paid", delivery_status: "delivered", drive_url: driveUrl || o.drive_url }
               : o
           )
         );
@@ -109,10 +112,10 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
         type: "success",
         text: isResend
           ? `✅ ऑर्डर ${order.order_id} का Drive-link ईमेल दोबारा भेज दिया गया (${targetEmail})।${msgId}`
-          : `✅ ऑर्डर ${order.order_id} स्वीकृत हो गया! Google Drive नोट्स ईमेल (${targetEmail}) पर भेज दिए गए और यह 'स्वीकृत' सब-सेक्शन में सुरक्षित हो गया।${msgId}`,
+          : `✅ ऑर्डर ${order.order_id} का Drive-link भेज दिया गया! Google Drive नोट्स ईमेल (${targetEmail}) पर भेज दिए गए और यह 'स्वीकृत' सब-सेक्शन में चला गया।${msgId}`,
       });
     } catch (err: any) {
-      console.error("Approve error:", err);
+      console.error("Send-link error:", err);
       setMessage({
         type: "error",
         text: `❌ ईमेल भेजने में त्रुटि: ${err.message || "कृपया SMTP सेटिंग्स जांचें"}`,
@@ -127,7 +130,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
     if (actionId) return;
 
     const confirmed = window.confirm(
-      `🚫 क्या आप इस ऑर्डर को 'फर्जी / अस्वीकृत (Fake / Rejected)' में डालना चाहते हैं?\n\nOrder ID: ${order.order_id}\nनाम: ${order.customer_name || order.name}\nराशि: ₹${order.amount}\nUTR: ${order.utr || "नहीं दिया"}\n\nयह ऑर्डर मुख्य पेंडिंग स्क्रीन से हटकर 'फर्जी' सब-सेक्शन में सुरक्षित हो जाएगा।`
+      `🚫 क्या आप इस ऑर्डर को 'फर्जी / अस्वीकृत (Fake / Rejected)' में डालना चाहते हैं?\n\nOrder ID: ${order.order_id}\nनाम: ${order.customer_name || order.name}\nराशि: ₹${order.amount}\n\nयह ऑर्डर मुख्य पेंडिंग स्क्रीन से हटकर 'फर्जी' सब-सेक्शन में सुरक्षित हो जाएगा।`
     );
     if (!confirmed) return;
 
@@ -242,7 +245,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
     if (actionId) return;
 
     const confirmed = window.confirm(
-      `🗑️ क्या आप इस ऑर्डर को Supabase डेटाबेस से हमेशा के लिए पूरी तरह मिटाना (Permanently Delete) चाहते हैं?\n\nOrder ID: ${order.order_id}\nनाम: ${order.customer_name || order.name}\nराशि: ₹${order.amount}\nUTR: ${order.utr || "नहीं दिया"}\n\n⚠️ चेतावनी: यह क्रिया वापस नहीं ली जा सकती!`
+      `🗑️ क्या आप इस ऑर्डर को Supabase डेटाबेस से हमेशा के लिए पूरी तरह मिटाना (Permanently Delete) चाहते हैं?\n\nOrder ID: ${order.order_id}\nनाम: ${order.customer_name || order.name}\nराशि: ₹${order.amount}\n\n⚠️ चेतावनी: यह क्रिया वापस नहीं ली जा सकती!`
     );
     if (!confirmed) return;
 
@@ -304,7 +307,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
       "Amount (INR)",
       "Payment Status",
       "Delivery Status",
-      "UTR / Ref No",
+      "Transaction ID",
       "Google Drive Link",
     ];
 
@@ -318,7 +321,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
       o.amount || 0,
       `"${o.payment_status}"`,
       `"${o.delivery_status}"`,
-      `"${(o.utr || "").replace(/"/g, '""')}"`,
+      `"${(o.transaction_id || "").replace(/"/g, '""')}"`,
       `"${(o.drive_url || "").replace(/"/g, '""')}"`,
     ]);
 
@@ -338,7 +341,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
   };
 
   const handleSendWhatsApp = (order: Order) => {
-    const utrLine = order.utr ? `\nUTR No: ${order.utr}` : "";
+    const txnLine = order.transaction_id ? `\nTransaction ID: ${order.transaction_id}` : "";
     // Per-kit download links: bundle orders list every kit, single-kit
     // orders list their one kit. Falls back to order.drive_url for old orders.
     let linksSection = `\n\nयहाँ आपके नोट्स व अध्ययन सामग्री की डाउनलोड लिंक उपलब्ध है:\n${order.drive_url || "https://www.arkado.store/dashboard"}`;
@@ -360,7 +363,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
         linksSection = `\n\nआपकी डाउनलोड लिंक:\n${_kitLines[0].replace(/^• /, "")}`;
       }
     }
-    const msg = `नमस्ते ${order.customer_name}!\n\nआपने Arkado से "${order.course_title}" के लिए ₹${order.amount} का भुगतान किया है।\n\nOrder ID: ${order.order_id}${utrLine}${linksSection}\n\nधन्यवाद! — Team Arkado`;
+    const msg = `नमस्ते ${order.customer_name}!\n\nआपने Arkado से "${order.course_title}" के लिए ₹${order.amount} का भुगतान किया है।\n\nOrder ID: ${order.order_id}${txnLine}${linksSection}\n\nधन्यवाद! — Team Arkado`;
     const rawDigits = (order.customer_phone || order.phone || "").replace(/\D/g, "").slice(-10);
     const phone = rawDigits ? `91${rawDigits}` : "";
     const url = phone ? `https://wa.me/${phone}?text=${encodeURIComponent(msg)}` : `https://wa.me/?text=${encodeURIComponent(msg)}`;
@@ -374,8 +377,13 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
   };
 
   // Sub-Section Categories
+  // pending = payment not done yet (abandoned / in-progress checkouts)
+  // link_pending = PAID, link not ready — the 1-hour promise queue
   const pendingOrders = orders.filter(
     (o) => o.payment_status !== "paid" && o.payment_status !== "failed" && o.delivery_status !== "delivered"
+  );
+  const linkPendingOrders = orders.filter(
+    (o) => o.payment_status === "paid" && o.delivery_status === "pending_link"
   );
   const approvedOrders = orders.filter(
     (o) => o.payment_status === "paid" && o.delivery_status === "delivered"
@@ -389,6 +397,9 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
     .filter((o) => {
       if (activeTab === "pending") {
         return o.payment_status !== "paid" && o.payment_status !== "failed" && o.delivery_status !== "delivered";
+      }
+      if (activeTab === "link_pending") {
+        return o.payment_status === "paid" && o.delivery_status === "pending_link";
       }
       if (activeTab === "approved") {
         return o.payment_status === "paid" && o.delivery_status === "delivered";
@@ -406,7 +417,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
         (o.customer_email || o.email || "").toLowerCase().includes(q) ||
         (o.customer_phone || o.phone || "").includes(q) ||
         (o.order_id || o.id || "").toLowerCase().includes(q) ||
-        (o.utr || "").toLowerCase().includes(q) ||
+        (o.transaction_id || "").toLowerCase().includes(q) ||
         (o.course_title || "").toLowerCase().includes(q)
       );
     })
@@ -415,6 +426,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
   const stats = {
     total: orders.length,
     pending: pendingOrders.length,
+    linkPending: linkPendingOrders.length,
     approved: approvedOrders.length,
     fake: fakeOrders.length,
     revenue: orders.filter((o) => o.payment_status === "paid").reduce((sum, o) => sum + (Number(o.amount) || 0), 0),
@@ -426,10 +438,11 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
     return "bg-amber-50 text-amber-800 border-amber-300 font-bold";
   };
 
-  const getDeliveryChip = (status: Order["delivery_status"]) =>
-    status === "delivered"
-      ? "bg-emerald-50 text-emerald-700 border-emerald-200 font-bold"
-      : "bg-amber-50 text-amber-800 border-amber-300 font-bold";
+  const getDeliveryChip = (status: Order["delivery_status"]) => {
+    if (status === "delivered") return "bg-emerald-50 text-emerald-700 border-emerald-200 font-bold";
+    if (status === "pending_link") return "bg-orange-50 text-orange-800 border-orange-300 font-bold";
+    return "bg-amber-50 text-amber-800 border-amber-300 font-bold";
+  };
 
   return (
     <div className="space-y-5">
@@ -437,10 +450,10 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-white p-5 rounded-2xl border border-stone-200 shadow-xs">
         <div>
           <h2 className="text-xl sm:text-2xl font-black text-stone-900 flex items-center gap-2">
-            <span>📑</span> ऑर्डर व पेमेंट सत्यापन (Orders & Verification)
+            <span>📑</span> ऑर्डर व पेमेंट (Orders & Payments)
           </h2>
           <p className="text-stone-500 text-xs sm:text-sm mt-0.5">
-            पेमेंट चेक करें, 1-क्लिक में Google Drive नोट्स ईमेल पर भेजें या फर्जी प्रविष्टियों को हटाएं।
+            PhonePe पेमेंट — 'लिंक बाकी' वाले पेड ऑर्डर में Drive लिंक डालकर 1-क्लिक में ईमेल भेजें, या फर्जी प्रविष्टियों को हटाएं।
           </p>
         </div>
         <div className="flex items-center gap-2 flex-wrap">
@@ -463,14 +476,23 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
       </div>
 
       {/* KPI Stats Cards - Clickable to switch sub-tabs */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
         <div onClick={() => setActiveTab("pending")} className="cursor-pointer">
           <StatCard
-            label="⏳ सत्यापन बाकी (Pending Action)"
+            label="⏳ पेमेंट बाकी (Pending)"
             value={stats.pending}
             accent="amber"
             highlight={stats.pending > 0}
             active={activeTab === "pending"}
+          />
+        </div>
+        <div onClick={() => setActiveTab("link_pending")} className="cursor-pointer">
+          <StatCard
+            label="🔗 लिंक बाकी (1 घंटे में भेजें)"
+            value={stats.linkPending}
+            accent="amber"
+            highlight={stats.linkPending > 0}
+            active={activeTab === "link_pending"}
           />
         </div>
         <div onClick={() => setActiveTab("approved")} className="cursor-pointer">
@@ -532,6 +554,26 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
               }`}
             >
               {pendingOrders.length}
+            </span>
+          </button>
+
+          {/* Sub-Tab: Link Pending (paid, link not ready — 1-hour promise) */}
+          <button
+            onClick={() => setActiveTab("link_pending")}
+            className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-black flex items-center gap-2 transition cursor-pointer shrink-0 ${
+              activeTab === "link_pending"
+                ? "bg-orange-500 text-white shadow-xs"
+                : "text-stone-600 hover:text-stone-900 hover:bg-stone-100"
+            }`}
+          >
+            <span>🔗</span>
+            <span>लिंक बाकी (Link Pending)</span>
+            <span
+              className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
+                activeTab === "link_pending" ? "bg-white/25 text-white" : "bg-orange-100 text-orange-900"
+              }`}
+            >
+              {linkPendingOrders.length}
             </span>
           </button>
 
@@ -600,7 +642,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
         <div className="relative min-w-[240px] md:w-72">
           <input
             type="text"
-            placeholder="🔍 खोजें: नाम, मोबाइल, UTR, ID..."
+            placeholder="🔍 खोजें: नाम, मोबाइल, Transaction ID, Order ID..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="w-full pl-3 pr-8 py-1.5 rounded-xl border border-stone-300 bg-stone-50 text-stone-900 focus:border-amber-600 focus:bg-white focus:outline-none text-xs"
@@ -648,7 +690,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                   <th className="p-3 border-r border-stone-200">ईमेल (Drive Link Destination)</th>
                   <th className="p-3 border-r border-stone-200">कोर्स</th>
                   <th className="p-3 text-right border-r border-stone-200">राशि</th>
-                  <th className="p-3 border-r border-stone-200">UTR / Ref No.</th>
+                  <th className="p-3 border-r border-stone-200">Transaction ID</th>
                   <th className="p-3 text-center border-r border-stone-200">स्थिति (Status)</th>
                   <th className="p-3 text-right min-w-[200px]">एक्शन</th>
                 </tr>
@@ -658,6 +700,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                   const phoneDigits = (order.customer_phone || order.phone || "").replace(/\D/g, "").slice(-10);
                   const isApproved = order.payment_status === "paid" && order.delivery_status === "delivered";
                   const isFailed = order.payment_status === "failed";
+                  const isLinkPending = order.payment_status === "paid" && order.delivery_status === "pending_link";
                   const isApproving = approvingId === order.id;
                   const isActing = actionId === order.id;
 
@@ -746,21 +789,21 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                         ₹{order.amount}
                       </td>
 
-                      {/* UTR Number */}
+                      {/* PhonePe Transaction ID */}
                       <td className="p-3 border-r border-stone-200 align-top">
-                        {order.utr && order.utr.trim().length > 0 ? (
+                        {order.transaction_id && order.transaction_id.trim().length > 0 ? (
                           <div className="flex items-center gap-1 bg-emerald-50 text-emerald-800 px-1.5 py-0.5 rounded border border-emerald-200 w-fit">
-                            <span className="font-mono font-bold text-xs">{order.utr}</span>
+                            <span className="font-mono font-bold text-xs">{order.transaction_id}</span>
                             <button
-                              onClick={() => copyToClipboard(order.utr, "UTR")}
+                              onClick={() => copyToClipboard(order.transaction_id, "Transaction ID")}
                               className="text-emerald-700 hover:text-emerald-950 text-[10px] font-bold cursor-pointer"
-                              title="Copy UTR"
+                              title="Copy Transaction ID"
                             >
                               📋
                             </button>
                           </div>
                         ) : (
-                          <span className="text-[10px] text-stone-400 italic">खाली (No UTR)</span>
+                          <span className="text-[10px] text-stone-400 italic">—</span>
                         )}
                       </td>
 
@@ -773,7 +816,11 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                         </div>
                         <div>
                           <span className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-bold border ${getDeliveryChip(order.delivery_status)}`}>
-                            {order.delivery_status === "delivered" ? "✉️ Delivered" : "⏳ Not Sent"}
+                            {order.delivery_status === "delivered"
+                              ? "✉️ Delivered"
+                              : order.delivery_status === "pending_link"
+                              ? "🔗 Link Pending"
+                              : "⏳ Not Sent"}
                           </span>
                         </div>
                         <div>
@@ -798,28 +845,32 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                       {/* Contextual Actions Based on Order State */}
                       <td className="p-3 text-right align-top">
                         <div className="flex items-center justify-end gap-1.5 flex-wrap">
-                          {/* Case 1: Pending Verification */}
-                          {!isApproved && !isFailed && (
+                          {/* Case 1a: Paid but link pending — add the Drive link & send */}
+                          {isLinkPending && (
                             <>
                               <button
-                                onClick={() => handleApproveAndSendEmail(order)}
-                                disabled={isApproving}
-                                className="px-2.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-[11px] rounded-lg transition shadow-xs disabled:opacity-50 flex items-center gap-1 cursor-pointer"
-                                title="सत्यापित करें व Google Drive नोट्स की ईमेल छात्र को भेजें"
+                                onClick={() => setExpandedOrder(order.id)}
+                                className="px-2.5 py-1.5 bg-orange-600 hover:bg-orange-700 text-white font-black text-[11px] rounded-lg transition shadow-xs flex items-center gap-1 cursor-pointer"
+                                title="Drive लिंक डालें व छात्र को ईमेल भेजें (1 घंटे का वादा)"
                               >
-                                {isApproving ? (
-                                  <>
-                                    <div className="w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                                    <span>भेज रहा है...</span>
-                                  </>
-                                ) : (
-                                  <>
-                                    <span>✅</span>
-                                    <span>Approve & Send</span>
-                                  </>
-                                )}
+                                <span>🔗</span>
+                                <span>Add Link & Send</span>
                               </button>
 
+                              <button
+                                onClick={() => handleMarkAsFake(order)}
+                                disabled={isActing}
+                                className="px-2 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-800 font-bold text-[11px] rounded-lg border border-amber-200 transition disabled:opacity-50 cursor-pointer flex items-center gap-1"
+                                title="फर्जी ऑर्डर चिन्हित करें (Move to Fake Sub-Section)"
+                              >
+                                {isActing ? "..." : "🚫 Fake"}
+                              </button>
+                            </>
+                          )}
+
+                          {/* Case 1b: Payment not done — nothing to send yet */}
+                          {!isApproved && !isFailed && !isLinkPending && (
+                            <>
                               <button
                                 onClick={() => handleMarkAsFake(order)}
                                 disabled={isActing}
@@ -844,7 +895,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                           {isApproved && (
                             <>
                               <button
-                                onClick={() => handleApproveAndSendEmail(order, true)}
+                                onClick={() => handleSendLink(order, undefined, true)}
                                 disabled={isApproving}
                                 className="px-2 py-1 bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-[10px] rounded-lg transition cursor-pointer"
                                 title="छात्र को दोबारा ईमेल भेजें"
@@ -907,6 +958,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
           filteredOrders.map((order) => {
             const isApproved = order.payment_status === "paid" && order.delivery_status === "delivered";
             const isFailed = order.payment_status === "failed";
+            const isLinkPending = order.payment_status === "paid" && order.delivery_status === "pending_link";
             const isApproving = approvingId === order.id;
             const isActing = actionId === order.id;
             const phoneDigits = (order.customer_phone || order.phone || "").replace(/\D/g, "").slice(-10);
@@ -939,8 +991,8 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                     <span className="font-mono text-stone-800 text-[11px] truncate max-w-[190px]">{order.customer_email || order.email}</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-stone-500 text-[11px]">UTR/Ref:</span>
-                    <span className="font-mono font-bold text-emerald-700">{order.utr || "नहीं दिया"}</span>
+                    <span className="text-stone-500 text-[11px]">Transaction ID:</span>
+                    <span className="font-mono font-bold text-emerald-700">{order.transaction_id || "—"}</span>
                   </div>
                 </div>
 
@@ -949,21 +1001,37 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                     {order.payment_status === "paid" ? "₹ Paid" : order.payment_status === "failed" ? "🚫 Rejected" : "⏳ Pending"}
                   </span>
                   <span className={`px-2 py-0.5 rounded-full font-bold border text-[10px] ${getDeliveryChip(order.delivery_status)}`}>
-                    {order.delivery_status === "delivered" ? "✉️ Delivered" : "⏳ Pending Delivery"}
+                    {order.delivery_status === "delivered"
+                      ? "✉️ Delivered"
+                      : order.delivery_status === "pending_link"
+                      ? "🔗 Link Pending"
+                      : "⏳ Pending Delivery"}
                   </span>
                 </div>
 
                 {/* Mobile Action Buttons */}
                 <div className="flex gap-2 pt-2 border-t border-stone-200">
-                  {!isApproved && !isFailed && (
+                  {isLinkPending && (
                     <>
                       <button
-                        onClick={() => handleApproveAndSendEmail(order)}
-                        disabled={isApproving}
-                        className="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs rounded-xl transition flex items-center justify-center gap-1.5 shadow-xs disabled:opacity-50"
+                        onClick={() => setExpandedOrder(order.id)}
+                        className="flex-1 py-2.5 bg-orange-600 hover:bg-orange-700 text-white font-black text-xs rounded-xl transition flex items-center justify-center gap-1.5 shadow-xs"
                       >
-                        {isApproving ? "भेज रहा है..." : "✅ Approve & Send"}
+                        🔗 Add Link & Send
                       </button>
+                      <button
+                        onClick={() => handleMarkAsFake(order)}
+                        disabled={isActing}
+                        className="px-2.5 py-2.5 bg-amber-50 hover:bg-amber-100 text-amber-800 text-xs font-bold rounded-xl border border-amber-200 disabled:opacity-50 cursor-pointer"
+                        title="Move to Fake"
+                      >
+                        🚫 Fake
+                      </button>
+                    </>
+                  )}
+
+                  {!isApproved && !isFailed && !isLinkPending && (
+                    <>
                       <button
                         onClick={() => handleMarkAsFake(order)}
                         disabled={isActing}
@@ -985,7 +1053,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
 
                   {isApproved && (
                     <button
-                      onClick={() => handleApproveAndSendEmail(order, true)}
+                      onClick={() => handleSendLink(order, undefined, true)}
                       disabled={isApproving}
                       className="flex-1 py-2.5 bg-stone-100 text-stone-700 font-bold text-xs rounded-xl"
                     >
@@ -1046,7 +1114,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                 <OrderDetailCard
                   order={currentOrder}
                   onClose={() => setExpandedOrder(null)}
-                  onApprove={(isResend?: boolean) => handleApproveAndSendEmail(currentOrder, isResend)}
+                  onSendLink={(driveUrl?: string, isResend?: boolean) => handleSendLink(currentOrder, driveUrl, isResend)}
                   onMarkFake={() => handleMarkAsFake(currentOrder)}
                   onRestore={() => handleRestoreOrder(currentOrder)}
                   onPermanentDelete={() => handlePermanentDelete(currentOrder)}
@@ -1100,7 +1168,7 @@ function StatCard({
 function OrderDetailCard({
   order,
   onClose,
-  onApprove,
+  onSendLink,
   onMarkFake,
   onRestore,
   onPermanentDelete,
@@ -1112,7 +1180,7 @@ function OrderDetailCard({
 }: {
   order: Order;
   onClose: () => void;
-  onApprove: (isResend?: boolean) => void;
+  onSendLink: (driveUrl?: string, isResend?: boolean) => void;
   onMarkFake: () => void;
   onRestore: () => void;
   onPermanentDelete: () => void;
@@ -1124,15 +1192,18 @@ function OrderDetailCard({
 }) {
   const isApproved = order.payment_status === "paid" && order.delivery_status === "delivered";
   const isFailed = order.payment_status === "failed";
+  const isLinkPending = order.payment_status === "paid" && order.delivery_status === "pending_link";
   const [note, setNote] = useState(order.admin_note || "");
   const [savingNote, setSavingNote] = useState(false);
   const [noteMsg, setNoteMsg] = useState("");
+  const [linkInput, setLinkInput] = useState(order.drive_url || "");
 
-  // reset note field when a different order is opened
+  // reset fields when a different order is opened
   useEffect(() => {
     setNote(order.admin_note || "");
     setNoteMsg("");
-  }, [order.id, order.admin_note]);
+    setLinkInput(order.drive_url || "");
+  }, [order.id, order.admin_note, order.drive_url]);
 
   return (
     <div className="space-y-4">
@@ -1162,10 +1233,10 @@ function OrderDetailCard({
         />
         <DetailItem label="भुगतान राशि" value={`₹${order.amount}`} />
         <DetailItem
-          label="UTR / ट्रांजेक्शन रेफरेंस"
-          value={order.utr || "वैकल्पिक (खाली छोड़ा गया)"}
-          copyable={Boolean(order.utr)}
-          onCopy={() => copyToClipboard(order.utr, "UTR")}
+          label="PhonePe Transaction ID"
+          value={order.transaction_id || "—"}
+          copyable={Boolean(order.transaction_id)}
+          onCopy={() => copyToClipboard(order.transaction_id, "Transaction ID")}
         />
         <DetailItem
           label="Order ID"
@@ -1209,6 +1280,25 @@ function OrderDetailCard({
         </div>
       )}
 
+      {/* Add Drive link — paid orders whose link is pending (1-hour promise) */}
+      {isLinkPending && (
+        <div className="p-3.5 bg-orange-50/70 rounded-xl border border-orange-300">
+          <label className="text-xs font-bold text-orange-900 flex items-center gap-1.5">
+            <span>🔗</span> Drive लिंक डालें — भेजते ही छात्र को ईमेल मिल जाएगा (1 घंटे का वादा)
+          </label>
+          <input
+            type="url"
+            value={linkInput}
+            onChange={(e) => setLinkInput(e.target.value)}
+            placeholder="https://drive.google.com/..."
+            className="mt-2 w-full border border-orange-300 rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-orange-500 bg-white"
+          />
+          <p className="text-[11px] text-orange-800/80 mt-1.5">
+            बंडल के हर किट का अपना लिंक पहले से है तो यह खाली छोड़ दें — किट-वार लिंक ईमेल हो जाएंगे।
+          </p>
+        </div>
+      )}
+
       {/* Internal admin note — never shown to the customer */}
       <div className="p-3.5 bg-amber-50/60 rounded-xl border border-amber-200">
         <label className="text-xs font-bold text-amber-900 flex items-center gap-1.5">
@@ -1247,18 +1337,33 @@ function OrderDetailCard({
 
       {/* Action Footer inside Modal */}
       <div className="flex flex-wrap gap-2 pt-4 border-t border-stone-200">
-        {!isApproved && !isFailed && (
+        {isLinkPending && (
           <>
             <button
               onClick={() => {
-                onApprove();
+                onSendLink(linkInput.trim() || undefined, false);
                 onClose();
               }}
               disabled={isApproving}
-              className="flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold rounded-xl text-sm transition shadow-sm disabled:opacity-50 flex items-center justify-center gap-1.5 cursor-pointer"
+              className="flex-1 py-3 bg-orange-600 hover:bg-orange-700 text-white font-extrabold rounded-xl text-sm transition shadow-sm disabled:opacity-50 flex items-center justify-center gap-1.5 cursor-pointer"
             >
-              {isApproving ? "ईमेल भेजा जा रहा है..." : "✅ Approve & Send Email"}
+              {isApproving ? "ईमेल भेजा जा रहा है..." : "🔗 Send Link & Email"}
             </button>
+            <button
+              onClick={() => {
+                onMarkFake();
+                onClose();
+              }}
+              disabled={isActing}
+              className="px-3.5 py-3 bg-amber-50 hover:bg-amber-100 text-amber-800 font-bold rounded-xl text-sm border border-amber-300 transition cursor-pointer"
+            >
+              🚫 Mark as Fake
+            </button>
+          </>
+        )}
+
+        {!isApproved && !isFailed && !isLinkPending && (
+          <>
             <button
               onClick={() => {
                 onMarkFake();
@@ -1285,7 +1390,7 @@ function OrderDetailCard({
         {isApproved && (
           <button
             onClick={() => {
-              onApprove(true);
+              onSendLink(undefined, true);
               onClose();
             }}
             disabled={isApproving}

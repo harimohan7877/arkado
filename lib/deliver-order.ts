@@ -3,15 +3,14 @@
  * order delivered in BOTH stores (data/orders.json + Supabase
  * marketplace_orders).
  *
- * Extracted verbatim from app/api/admin/orders/[id]/approve/route.ts so the
- * manual approval flow and the automatic Razorpay flow (verify-marketplace
- * + webhook) send the exact same email. Only ONE copy of the delivery
- * email exists — fix it here, it fixes everywhere.
+ * Extracted from the old admin approve route so every delivery path sends
+ * the exact same email. Only ONE copy of the delivery email exists — fix
+ * it here, it fixes everywhere.
  *
- * Callers: approve route (admin, after the state guard), verify-marketplace
- * (after Razorpay payment-signature verification), webhook (after webhook
- * signature verification). Delivery runs ONLY after payment is proven —
- * never call this for an unpaid order.
+ * Callers: the admin send-link route (after the admin adds the Drive link)
+ * and the PhonePe completion flow (webhook + status check, after the
+ * payment is proven via the Order Status API). Delivery runs ONLY after
+ * payment is proven — never call this for an unpaid order.
  */
 
 import { getStoreData, setStoreData } from "@/lib/store-data";
@@ -75,9 +74,11 @@ function escapeHtml(str: string | undefined): string {
 
 /**
  * Build a NormalizedOrder from marketplace_orders rows that share one
- * Razorpay order id (one row per item). The first row carries the
+ * gateway order id (one row per item). The first row carries the
  * customer; items come from the stored `items` JSONB (full validated
- * lines, written by create-marketplace-order / /api/orders).
+ * lines, written by the PhonePe create-order route).
+ * NOTE: the DB column is still named `razorpay_order_id` (legacy) — it
+ * now holds the PhonePe merchant order id.
  */
 export function normalizeGatewayRows(
   rows: any[],
@@ -120,11 +121,42 @@ export function normalizeGatewayRows(
   };
 }
 
+/**
+ * Kits in this order that have NO Drive link yet (stored items only).
+ * A bundle with some linked kits and some unlinked ones must NOT be
+ * delivered as-is — the customer would silently miss material while the
+ * order shows "delivered". Callers route such orders to pending_link
+ * instead, and the admin's pasted link fills the gap at send time.
+ * Orders without stored items (pre-migration) return [] — their kits
+ * resolve live from the catalog, so "missing" can't be known here.
+ */
+export function findMissingKitTitles(
+  order: NormalizedOrder,
+  courses: any[]
+): string[] {
+  void courses;
+  const missing: string[] = [];
+  const courseTitle = String(order.course_title || "Course Bundle");
+  const orderItems = Array.isArray(order.items) ? order.items : [];
+  for (const li of orderItems) {
+    if (Array.isArray(li.bundle_items) && li.bundle_items.length > 0) {
+      for (const k of li.bundle_items) {
+        if (!k.drive_url) missing.push(String(k.title || "Study Kit"));
+      }
+    } else if (!li.drive_url) {
+      missing.push(String(li.title || courseTitle));
+    }
+  }
+  return missing;
+}
+
 /** Deliverable kits for an order — each becomes one download card. */
 export function resolveDeliverableKits(
   order: NormalizedOrder,
   courses: any[],
-  resolvedDriveUrl: string
+  resolvedDriveUrl: string,
+  /** Admin-pasted link (send-link flow): covers kits that have no link yet. */
+  extraUrlForMissing = ""
 ): DeliverableKit[] {
   const deliverableKits: DeliverableKit[] = [];
   const courseTitle = String(order.course_title || "Course Bundle");
@@ -143,6 +175,11 @@ export function resolveDeliverableKits(
         title: String(li.title || courseTitle),
         drive_url: String(li.drive_url),
       });
+    }
+  }
+  if (extraUrlForMissing) {
+    for (const title of findMissingKitTitles(order, courses)) {
+      deliverableKits.push({ title, drive_url: extraUrlForMissing });
     }
   }
   if (deliverableKits.length === 0) {
@@ -223,6 +260,19 @@ export async function deliverOrder(
     resolvedDriveUrl = "https://www.arkado.store/dashboard";
   }
 
+  // Partial-bundle guard: never email half a bundle and mark it
+  // delivered. Without a pasted link to cover the missing kits, refuse
+  // and tell the admin exactly which kits lack a link. (Resends are
+  // exempt — they re-email what was already delivered once.)
+  const missingKitTitles = findMissingKitTitles(order, courses);
+  if (!isResend && missingKitTitles.length > 0 && !opts?.customDriveUrl) {
+    return {
+      ok: false,
+      error: `Some kits in this order don't have a Drive link yet (${missingKitTitles.join(", ")}). Add the Drive link first.`,
+      status: 409,
+    };
+  }
+
   const smtpUser = process.env.SMTP_USER;
   const smtpPass = process.env.SMTP_PASS;
   // Default From to the authenticated Gmail account — a mismatched From
@@ -255,7 +305,12 @@ export async function deliverOrder(
   const safeCourse = escapeHtml(courseTitle);
   const safeOrderId = escapeHtml(orderId);
 
-  const deliverableKits = resolveDeliverableKits(order, courses, resolvedDriveUrl);
+  const deliverableKits = resolveDeliverableKits(
+    order,
+    courses,
+    resolvedDriveUrl,
+    opts?.customDriveUrl || ""
+  );
   const isBundleOrder = deliverableKits.length > 1;
 
   const transporter = nodemailer.createTransport({
@@ -465,4 +520,162 @@ https://www.arkado.store
     order,
     alreadyDelivered: false,
   };
+}
+
+/**
+ * The "link not ready yet" email — paid order, no Drive link exists for
+ * any kit. Same sender/style as the delivery email, but NO download
+ * cards: it promises the links within 1 hour on email and WhatsApp.
+ * This does NOT mark the order delivered — the admin send-link flow does
+ * that when the link is added.
+ */
+export async function sendPendingLinkEmail(
+  order: NormalizedOrder
+): Promise<{ ok: true; messageId: string } | { ok: false; error: string; status: number }> {
+  const recipientEmail = (order.customer_email || order.email || "").trim();
+  if (!recipientEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(recipientEmail)) {
+    return {
+      ok: false,
+      error: "Order does not have a valid customer email address.",
+      status: 400,
+    };
+  }
+
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPass = process.env.SMTP_PASS;
+  const fromEmail = process.env.SMTP_FROM || smtpUser;
+
+  if (!smtpUser || !smtpPass) {
+    return {
+      ok: false,
+      error: "SMTP credentials (SMTP_USER / SMTP_PASS) are not configured.",
+      status: 500,
+    };
+  }
+
+  const rawName = String(order.customer_name || order.name || "Student");
+  const customerName =
+    rawName.replace(/\s*\(\+?\d[\d\s-]{7,}\d\)\s*$/, "").trim() || "Student";
+  const courseTitle = String(order.course_title || "Course Bundle").trim() || "Course Bundle";
+  const orderId = order.order_id || order.id || "";
+  const amount = Number(order.amount) || 0;
+
+  const safeName = escapeHtml(customerName);
+  const safeCourse = escapeHtml(courseTitle);
+  const safeOrderId = escapeHtml(orderId);
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: { user: smtpUser, pass: smtpPass },
+  });
+
+  const subject = `Your Arkado order is confirmed — links within 1 hour (Order ${orderId})`;
+  const htmlContent = `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light">
+  <title>Payment confirmed</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f4f4f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f4f5;padding:24px 12px;">
+    <tr>
+      <td align="center">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;background-color:#ffffff;border:1px solid #e4e4e7;border-radius:12px;">
+          <tr>
+            <td align="center" style="padding:30px 24px 4px;">
+              <div style="font-size:30px;font-weight:800;letter-spacing:8px;color:#b45309;line-height:1;">ARKADO</div>
+              <div style="font-size:10px;letter-spacing:3px;color:#a1a1aa;margin-top:6px;">DEEP-LEVEL EXAM ANALYSIS</div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:18px 32px 0;">
+              <h1 style="margin:0;font-size:22px;font-weight:800;color:#18181b;">Payment confirmed</h1>
+              <p style="margin:10px 0 0;font-size:14px;line-height:1.7;color:#3f3f46;">Hi <strong>${safeName}</strong>,</p>
+              <p style="margin:8px 0 0;font-size:14px;line-height:1.7;color:#3f3f46;">Your payment of <strong>&#8377;${amount}</strong> for order <strong>${safeOrderId}</strong> is confirmed.</p>
+              <p style="margin:8px 0 0;font-size:14px;line-height:1.7;color:#3f3f46;">Your download links will be sent <strong>within 1 hour</strong> on this email and on WhatsApp.</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px 32px 0;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fafafa;border:1px solid #e4e4e7;border-radius:8px;">
+                <tr>
+                  <td style="padding:12px 16px;font-size:12px;color:#71717a;">Order ID</td>
+                  <td align="right" style="padding:12px 16px;font-size:13px;font-weight:700;color:#18181b;font-family:'Courier New',monospace;">${safeOrderId}</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 16px;font-size:12px;color:#71717a;border-top:1px solid #e4e4e7;">Course</td>
+                  <td align="right" style="padding:12px 16px;font-size:13px;font-weight:600;color:#18181b;border-top:1px solid #e4e4e7;">${safeCourse}</td>
+                </tr>
+                <tr>
+                  <td style="padding:12px 16px;font-size:12px;color:#71717a;border-top:1px solid #e4e4e7;">Amount paid</td>
+                  <td align="right" style="padding:12px 16px;font-size:15px;font-weight:800;color:#15803d;border-top:1px solid #e4e4e7;">&#8377;${amount}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px 32px 26px;">
+              <p style="margin:0;font-size:12px;line-height:1.7;color:#71717a;">You can also track your order here: <a href="https://www.arkado.store/track-order" style="color:#b45309;font-weight:700;text-decoration:none;">arkado.store/track-order</a></p>
+              <p style="margin:8px 0 0;font-size:12px;line-height:1.7;color:#71717a;">Need help? WhatsApp us at <a href="https://wa.me/917852004401" style="color:#b45309;font-weight:700;text-decoration:none;">+91 78520 04401</a></p>
+            </td>
+          </tr>
+          <tr>
+            <td style="background-color:#fafafa;padding:16px 32px;border-top:1px solid #e4e4e7;border-radius:0 0 12px 12px;">
+              <p style="margin:0;font-size:11px;color:#a1a1aa;text-align:center;">&copy; 2026 Arkado &middot; <a href="https://www.arkado.store" style="color:#b45309;text-decoration:none;">arkado.store</a></p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+    `;
+
+  const textContent = `
+Hi ${customerName},
+
+Your payment for order ${orderId} is confirmed!
+
+Course: ${courseTitle}
+Amount: Rs. ${amount} (Paid)
+
+Your download links will be sent within 1 hour on this email and on WhatsApp.
+
+Track your order: https://www.arkado.store/track-order
+Need help? WhatsApp us at +91 78520 04401
+
+Team Arkado
+https://www.arkado.store
+    `;
+
+  const info = await transporter.sendMail({
+    from: `"Arkado Education" <${fromEmail}>`,
+    to: recipientEmail,
+    subject,
+    text: textContent,
+    html: htmlContent,
+  });
+
+  console.log("[deliver-order] pending-link email result:", {
+    orderId,
+    to: recipientEmail,
+    messageId: info.messageId,
+    accepted: info.accepted,
+    rejected: info.rejected,
+  });
+
+  if (info.rejected && info.rejected.length > 0) {
+    return {
+      ok: false,
+      error: `Mail server ne email reject kar diya: ${info.rejected.join(", ")} — address check karo.`,
+      status: 502,
+    };
+  }
+
+  return { ok: true, messageId: info.messageId };
 }

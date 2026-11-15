@@ -9,15 +9,11 @@ import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings
 
 interface OrderItem {
   order_id: string;
-  name: string;
-  email: string;
-  phone: string;
-  course_id: string;
   course_title: string;
   amount: number;
   drive_url: string;
-  status: string;
-  payment_status: string;
+  drive_urls?: { title: string; drive_url: string }[];
+  delivery_status: string;
   created_at: string;
 }
 
@@ -42,16 +38,18 @@ export default function DashboardPage() {
         }
         setUser(user);
 
-        // Fetch user orders
-        const res = await fetch("/api/orders");
+        // Fetch user orders — server-scoped by the verified session
+        // (the old /api/orders needed an admin session, so this was 401).
+        const { data: { session } } = await supabase.auth.getSession();
+        const res = await fetch("/api/my-orders", {
+          headers: session?.access_token
+            ? { Authorization: `Bearer ${session.access_token}` }
+            : {},
+        });
         if (res.ok) {
           const json = await res.json();
           if (json.orders && Array.isArray(json.orders)) {
-            const userEmail = user.email?.toLowerCase();
-            const myOrders = json.orders.filter(
-              (o: OrderItem) => o.email && o.email.toLowerCase() === userEmail
-            );
-            setOrders(myOrders);
+            setOrders(json.orders);
           }
         }
       } catch (err) {
@@ -244,15 +242,28 @@ export default function DashboardPage() {
                       </span>
                     </div>
                     <h4 className="text-base font-bold text-stone-900">
-                      {order.course_title || order.course_id}
+                      {order.course_title}
                     </h4>
                     <p className="text-xs text-stone-500">
-                      Amount: <strong className="text-stone-800">₹{order.amount}</strong> • Delivery: {order.phone ? `WhatsApp (${order.phone})` : order.email}
+                      Amount: <strong className="text-stone-800">₹{order.amount}</strong> • {order.delivery_status === "delivered" ? "Delivered to your email" : "Link will be sent within 1 hour"}
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-3 shrink-0">
-                    {order.drive_url ? (
+                  <div className="flex flex-col items-stretch gap-2 shrink-0">
+                    {order.drive_urls && order.drive_urls.length > 1 ? (
+                      order.drive_urls.map((k) => (
+                        <a
+                          key={k.drive_url}
+                          href={k.drive_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-xs transition flex items-center gap-1.5"
+                        >
+                          <span>📥 {k.title}</span>
+                          <span>↗</span>
+                        </a>
+                      ))
+                    ) : order.drive_url ? (
                       <a
                         href={order.drive_url}
                         target="_blank"
@@ -264,7 +275,7 @@ export default function DashboardPage() {
                       </a>
                     ) : (
                       <span className="text-xs font-medium text-amber-700 bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-200">
-                        ⏳ Access link will be shared within 1-2 hours
+                        ⏳ Access link will be shared within 1 hour
                       </span>
                     )}
                   </div>

@@ -214,7 +214,7 @@ function istDayLabel(iso: string): string {
 
 /**
  * Admin-only analytics aggregation. Returns counts and titles only —
- * NEVER customer PII (no names, emails, phones, UTRs). Recent orders show
+ * NEVER customer PII (no names, emails, phones, transaction ids). Recent orders show
  * only internal order id, amount, title, and status.
  */
 export async function GET(req: NextRequest) {

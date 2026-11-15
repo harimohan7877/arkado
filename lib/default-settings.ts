@@ -63,7 +63,6 @@ export const DEFAULT_SETTINGS = {
   gmail_support_email: process.env.DEFAULT_SUPPORT_EMAIL || "hello@arkado.store",
   custom_qr_url: "",
   payment_methods: ["PhonePe", "Paytm"],
-  razorpay_enabled: false,
 
   contact: {
     phone: process.env.DEFAULT_SUPPORT_PHONE || "+91 7852004401",

@@ -12,7 +12,7 @@ const SESSION_TIMEOUT_MS = 30 * 60 * 1000;
  * Anonymous analytics (Phase 1).
  * Privacy rules: visitor_id is a random UUID in the visitor's own localStorage
  * (never linked to any identity); referrer stores ONLY the origin, never full
- * URLs with query strings; no name, phone, email, UTR, or IP is ever sent.
+ * URLs with query strings; no name, phone, email, transaction id, or IP is ever sent.
  * Every send is background + fail-silent — tracking can never break a page.
  */
 

@@ -40,6 +40,10 @@ export function isUUID(str?: string | null): boolean {
  * Safely constructs a Supabase .or() filter string for marketplace_orders.
  * If the ID is a valid UUID, queries both `id` and `razorpay_order_id`.
  * If it is an order ID string (e.g. 'ARK-2026-4816'), queries only TEXT columns (`razorpay_order_id` and `razorpay_payment_id`).
+ * NOTE: the column names are legacy (Razorpay was removed Nov 2026) —
+ * `razorpay_order_id` now holds the PhonePe merchant order id and
+ * `razorpay_payment_id` the PhonePe transaction id. Rename is a
+ * post-launch cleanup; the code treats them as generic gateway ids.
  */
 export function buildOrderQueryFilter(id: string): string {
   if (isUUID(id)) {

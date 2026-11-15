@@ -11,15 +11,20 @@
 **arkado.store** — a live production marketplace selling All-India competitive
 exam study material (PDF notes, MCQs, mock tests). Real customers, real money.
 
-**Payment flow (the whole business):** customer pays via **UPI/QR** → submits
-the **12-digit UTR** → order lands in the admin panel as *pending* →
-Harimohan **manually approves** → Google Drive links are delivered by
-**email (Gmail SMTP)** and/or **WhatsApp**. A Razorpay gateway is also built
-but **dormant** (`razorpay_enabled: false`, no keys): when switched on, the
-customer pays in-checkout and the links are delivered automatically
-(`lib/deliver-order.ts`). The legacy Razorpay *premium-access* route was
-deleted on 2026-09-30 — do not reintroduce it (the marketplace gateway
-routes are a different, newer build).
+**Payment flow (the whole business):** customer pays via **PhonePe**
+(hosted page: UPI / card / netbanking) → PhonePe **webhook + server-side
+status check** confirm the payment → Google Drive links are delivered
+**automatically** by **email (Gmail SMTP)** and shown on the success page.
+If a kit's link is not ready yet, the order goes to *Link Pending*: the
+customer sees "links will be sent within 1 hour" and Harimohan adds the
+link from the admin panel (Orders → Link Pending → Add Link & Send). The
+old UPI/QR + 12-digit UTR manual flow was removed on 2026-11-15, and the
+Razorpay gateway (dormant since Sept 2026) was removed entirely the same
+day. PhonePe keys live ONLY in Vercel env vars (`PHONEPE_CLIENT_ID`,
+`PHONEPE_CLIENT_SECRET`, `PHONEPE_WEBHOOK_USERNAME`,
+`PHONEPE_WEBHOOK_PASSWORD`, `PHONEPE_ENV`) — never in settings or code.
+The legacy Razorpay *premium-access* route was deleted on 2026-09-30 —
+do not reintroduce it.
 
 ## 2. Tech stack
 
@@ -66,16 +71,19 @@ app/
   search/page.tsx             # search — 🔴 RING-FENCED, do not touch
   ranjeet/admin/page.tsx      # admin panel (passcode-protected)
   api/
-    orders/route.ts           # order creation — server recomputes ALL prices
+    payment/phonepe/create-order/route.ts  # PhonePe order — server recomputes ALL prices
+    payment/phonepe/webhook/route.ts       # PhonePe webhook → mark paid + deliver
+    payment/phonepe/status/route.ts        # order status re-check (success page, track-order)
+    my-orders/route.ts                     # logged-in customer's own orders
     admin/orders/route.ts     # admin order list (exposes items[])
-    admin/orders/[id]/approve/route.ts  # approval → emails + WhatsApp
+    admin/orders/[id]/send-link/route.ts   # admin: add Drive link + send delivery email
     admin/settings/route.ts   # site settings (sale %, texts, images)
     admin/upload/route.ts     # image uploads (multipart FormData!)
     settings/route.ts         # public settings read
 components/
   CartProvider.tsx            # 🔴 RING-FENCED — Harimohan's own work
   HomeClient.tsx              # 🔴 RING-FENCED — Harimohan's own work
-  CartDrawer.tsx              # cart + UPI QR + UTR entry
+  CartDrawer.tsx              # cart + PhonePe checkout (sign-in gate, English form)
   CourseCard.tsx, HeroSlider.tsx, SearchBar.tsx, OfferStrip.tsx, ...
   NavratriSection.tsx         # festival section (auto-hides 2026-10-20)
   admin/                      # OrdersTab, SettingsTab, CoursesTab, ...
@@ -109,8 +117,9 @@ tests/                        # vitest suites
 
 ### 4b. Order flow (money rules)
 
-- `POST /api/orders` **recomputes every price server-side** from the real
-  course catalog. Client-sent prices are never trusted.
+- `POST /api/payment/phonepe/create-order` **recomputes every price
+  server-side** from the real course catalog. Client-sent prices are never
+  trusted.
 - **Bundle validation:** `bundle-*` items must carry `bundle_items` (kit IDs).
   Server resolves each kit against the catalog, sums sale-adjusted kit
   prices, applies `settings.bundle_card.discount_percent` (default **5%**),
@@ -118,9 +127,15 @@ tests/                        # vitest suites
 - **Persistence is verified before success:** the API re-reads the order
   after writing. If it can't be retrieved, it returns an **error** — never a
   fake success page.
+- **Payment truth is server-side only:** the PhonePe webhook and the Order
+  Status API decide paid/failed — never the browser redirect. Delivery
+  runs once per order (`delivery_status` guard in `lib/deliver-order.ts`).
 - Orders live in Supabase `marketplace_orders`, with a backup merge from
-  `admin_settings` on read. Approval (`approve/route.ts`) sends per-kit
-  Drive links in the **email** and the **admin WhatsApp message**.
+  `admin_settings` on read. Delivery sends per-kit Drive links in the
+  **email**; the success page shows the same links. NOTE: the DB columns
+  are still named `razorpay_order_id` / `razorpay_payment_id` (legacy
+  names) — they now hold the PhonePe merchant order id / transaction id.
+  A rename migration is a post-launch cleanup, not a launch blocker.
 
 ### 4c. Content rules
 
@@ -199,7 +214,7 @@ app/search/page.tsx
   in docs (e.g. `7877`) are **not real**. The real `ADMIN_PASSCODE` is long
   and lives only in Vercel env vars + Harimohan's head. Never "fix" docs by
   inserting a real secret, and never commit `.env.local`.
-- **NEVER commit:** `data/orders.json` (customer PII — name, phone, UTR),
+- **NEVER commit:** `data/orders.json` (customer PII — name, phone, email),
   `.env*` (except `.env.example`), `public/logo-email.png`,
   `public/images/navratri/` (Harimohan's uploads).
 - Never expose paid Drive links, customer order data, or PII in chat,

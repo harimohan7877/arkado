@@ -86,13 +86,14 @@ export interface Order {
   customer_phone?: string;
   customer_email?: string;
   delivery_mode: "whatsapp" | "gmail" | "both";
-  utr: string;
+  /** PhonePe transaction id (was UTR before the PhonePe migration). */
+  transaction_id?: string;
   amount: number;
   course_id: string;
   course_title: string;
   exam_name: string;
   payment_status: "pending" | "paid" | "failed";
-  delivery_status: "pending" | "delivered";
+  delivery_status: "pending" | "pending_link" | "delivered";
   order_id: string;
   created_at: string;
   updated_at: string;
@@ -165,9 +166,6 @@ export interface Settings {
   site_name: string;
   site_tagline: string;
   currency: string;
-  razorpay_key_id?: string;
-  razorpay_key_secret?: string;
-  razorpay_enabled: boolean;
   brand?: {
     logo_text?: string;
     logo_badge_text?: string;

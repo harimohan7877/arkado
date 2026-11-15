@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getStoreData } from "@/lib/store-data";
-import { sanitizeInput } from "@/lib/payment-gateway";
+import { sanitizeInput } from "@/lib/checkout";
 import { normPhone, toSafeOrder, orderPhoneMatches } from "@/lib/track-order";
 
 export const dynamic = "force-dynamic";

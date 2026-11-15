@@ -16,7 +16,7 @@ describe("Admin notify helper", () => {
         course_title: "Test Course",
         amount: 99,
         delivery_mode: "both",
-        utr: "123456789012",
+        transaction_id: "TXN1234567890",
       });
       expect(ok).toBe(false);
     } finally {

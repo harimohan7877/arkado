@@ -166,6 +166,13 @@ export interface Settings {
   site_name: string;
   site_tagline: string;
   currency: string;
+  // DEPRECATED (Nov 2026, PhonePe migration): Razorpay is gone, but the
+  // admin SettingsTab on main still reads/writes these fields (it is 129 KB
+  // and cannot ride the push-files tool, so its cleanup ships via a manual
+  // handoff). Keep them optional until that handoff lands, then delete.
+  razorpay_key_id?: string;
+  razorpay_key_secret?: string;
+  razorpay_enabled?: boolean;
   brand?: {
     logo_text?: string;
     logo_badge_text?: string;

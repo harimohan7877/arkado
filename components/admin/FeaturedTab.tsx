@@ -201,9 +201,9 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
       .filter((e) => !existingIds.has(e.id))
       .filter(
         (e) =>
-          e.title.toLowerCase().includes(q) ||
-          e.subtitle.toLowerCase().includes(q) ||
-          e.id.toLowerCase().includes(q)
+          (e.title || "").toLowerCase().includes(q) ||
+          (e.subtitle || "").toLowerCase().includes(q) ||
+          (e.id || "").toLowerCase().includes(q)
       )
       .slice(0, 12);
   }, [allItems, featuredSearch, featuredItems]);
@@ -274,9 +274,9 @@ export default function FeaturedTab({ getAuthHeaders }: FeaturedTabProps) {
       .filter((e) => !existingIds.has(e.id))
       .filter(
         (e) =>
-          e.title.toLowerCase().includes(q) ||
-          e.subtitle.toLowerCase().includes(q) ||
-          e.id.toLowerCase().includes(q)
+          (e.title || "").toLowerCase().includes(q) ||
+          (e.subtitle || "").toLowerCase().includes(q) ||
+          (e.id || "").toLowerCase().includes(q)
       )
       .slice(0, 12);
   }, [allItems, newArrivalSearch, newArrivals]);

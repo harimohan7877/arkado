@@ -450,8 +450,8 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
     const q = examSearchFilter.toLowerCase();
     return exams.filter(
       (e) =>
-        e.name.toLowerCase().includes(q) ||
-        e.short_name.toLowerCase().includes(q) ||
+        (e.name || "").toLowerCase().includes(q) ||
+        (e.short_name || "").toLowerCase().includes(q) ||
         (e.board && e.board.toLowerCase().includes(q)) ||
         (e.category_name && e.category_name.toLowerCase().includes(q))
     );
@@ -464,9 +464,9 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
       if (!search.trim()) return true;
       const q = search.toLowerCase();
       return (
-        c.title.toLowerCase().includes(q) ||
+        (c.title || "").toLowerCase().includes(q) ||
         (c.badge && c.badge.toLowerCase().includes(q)) ||
-        getExamName(c.exam_id).toLowerCase().includes(q)
+        (getExamName(c.exam_id) || "").toLowerCase().includes(q)
       );
     })
     .sort((a, b) => (a.priority || 0) - (b.priority || 0));

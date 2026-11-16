@@ -158,8 +158,12 @@ export interface BundleCardStyle {
 }
 
 export interface Settings {
-  upi_id: string;
-  merchant_name: string;
+  // DEPRECATED (Nov 2026, admin cleanup): the UPI/QR payment flow is gone
+  // (PhonePe is the only gateway). The admin SettingsTab no longer writes
+  // these fields. Keep them optional until old saved settings stop carrying
+  // them, then delete. hydrateSettingsWithEnv still honours DEFAULT_UPI_ID.
+  upi_id?: string;
+  merchant_name?: string;
   whatsapp_support_number: string;
   gmail_support_email?: string;
   custom_qr_url?: string;

@@ -12,7 +12,6 @@ interface SettingsTabProps {
 }
 
 type TabKey =
-  | "payment"
   | "contact"
   | "messages"
   | "homepage"
@@ -20,22 +19,14 @@ type TabKey =
   | "faqs_trust"
   | "policies"
   | "about_course"
-  | "brand"
-  | "razorpay"
-  | "ai";
+  | "brand";
 
 const DEFAULT_SETTINGS: Settings = {
-  upi_id: "7852004401@ybl",
-  merchant_name: "Arkado",
   whatsapp_support_number: "917852004401",
   gmail_support_email: "support@arkado.in",
-  custom_qr_url: "",
   site_name: "Arkado",
   site_tagline: "Deep-Level Exam Analysis & Pattern-Based Premium Notes",
   currency: "INR",
-  razorpay_key_id: "",
-  razorpay_key_secret: "",
-  razorpay_enabled: false,
   brand: {
     logo_text: "Arkado",
     logo_badge_text: "STORE",
@@ -93,7 +84,7 @@ const DEFAULT_SETTINGS: Settings = {
     },
     trust_features: [
       { title: "Instant Download", desc: "Get your files right away", icon: "download" },
-      { title: "Secure Payment", desc: "Direct UPI & UTR Verification", icon: "shield" },
+      { title: "Secure Payment", desc: "Secure PhonePe Payment", icon: "shield" },
       { title: "High Quality Material", desc: "Curated & pattern-decoded", icon: "file" },
       { title: "Easy Access", desc: "Anytime, anywhere on Google Drive", icon: "clock" },
       { title: "Customer Support", desc: "Quick WhatsApp response", icon: "support" },
@@ -101,7 +92,7 @@ const DEFAULT_SETTINGS: Settings = {
     faqs: [
       {
         question: "How do I get my notes after payment?",
-        answer: "After UPI payment, enter the 12-digit UTR. We will send instant access to your WhatsApp or Gmail within 5-15 minutes.",
+        answer: "Pay securely with PhonePe (UPI, card or netbanking). Your download links appear instantly on screen and on your email — if a link is not ready yet, it will be sent within 1 hour on your email and WhatsApp.",
       },
       {
         question: "Can I print the PDFs?",
@@ -126,7 +117,7 @@ const DEFAULT_SETTINGS: Settings = {
   },
   order_messages: {
     whatsapp_order_template:
-      "नमस्ते Arkado! मुझे \"{course_title}\" (₹{amount}) खरीदना है।\nUPI ID: {upi_id}\nकृपया अपना Payment QR कोड भेजें या नोट्स शेयर करें।",
+      "नमस्ते Arkado! मुझे \"{course_title}\" (₹{amount}) खरीदना है।\nकृपया नोट्स शेयर करें।",
     whatsapp_after_payment_template:
       "🛒 *नया ऑर्डर भुगतान विवरण — Arkado*\n\n🆔 *Order ID:* {order_id}\n👤 *नाम:* {name}\n📱 *डिलीवरी:* {recipient}\n📚 *कोर्स:* {course_title}\n💰 *राशि:* ₹{amount}\n\nमैंने पेमेंट कर दिया है, कृपया चेक करके Drive नोट्स का लिंक भेजें।",
     gmail_subject: "Arkado Order Inquiry - {course_title}",
@@ -163,7 +154,7 @@ const DEFAULT_SETTINGS: Settings = {
     guarantees: [
       "Direct Google Drive PDF Download",
       "Instant WhatsApp or Gmail Delivery",
-      "100% Secure UPI with UTR Verification",
+      "100% Secure PhonePe Payment",
     ],
   },
   social: {
@@ -256,105 +247,9 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
-  const [activeTab, setActiveTab] = useState<TabKey>("payment");
-  const [showRazorpaySecret, setShowRazorpaySecret] = useState(false);
+  const [activeTab, setActiveTab] = useState<TabKey>("contact");
   const [newTagInput, setNewTagInput] = useState("");
   const [uploadingDevi, setUploadingDevi] = useState<number | null>(null);
-
-  // AI Configuration State (Decoupled from store settings)
-  const [aiConfig, setAiConfig] = useState({
-    active_provider: "openrouter",
-    openrouter_key: "",
-    gemini_key: "",
-    openai_key: "",
-    claude_key: "",
-    groq_key: "",
-  });
-  const [aiStatus, setAiStatus] = useState<Record<string, any>>({});
-  const [testingProvider, setTestingProvider] = useState<string | null>(null);
-  const [testFeedback, setTestFeedback] = useState<Record<string, { success: boolean; text: string }>>({});
-  const [savingAi, setSavingAi] = useState(false);
-  const [showAiKeys, setShowAiKeys] = useState<Record<string, boolean>>({});
-
-  const fetchAiConfig = async () => {
-    try {
-      const res = await fetch("/api/admin/ai", { headers: getAuthHeaders() });
-      if (res.ok) {
-        const data = await res.json();
-        setAiStatus(data);
-        setAiConfig((prev) => ({
-          ...prev,
-          active_provider: data.active_provider || "openrouter",
-        }));
-      }
-    } catch {}
-  };
-
-  const handleTestKey = async (provider: string, keyVal: string) => {
-    if (!keyVal && !aiStatus[`has_${provider}_key`]) {
-      setTestFeedback((prev) => ({
-        ...prev,
-        [provider]: { success: false, text: "कृपया पहले API Key दर्ज करें।" },
-      }));
-      return;
-    }
-    setTestingProvider(provider);
-    try {
-      const res = await fetch("/api/admin/test-key", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", ...getAuthHeaders() },
-        body: JSON.stringify({ provider, key: keyVal }),
-      });
-      const data = await res.json();
-      if (data.success) {
-        setTestFeedback((prev) => ({
-          ...prev,
-          [provider]: { success: true, text: "✓ कनेक्शन सफल! API Key काम कर रही है।" },
-        }));
-      } else {
-        setTestFeedback((prev) => ({
-          ...prev,
-          [provider]: { success: false, text: data.error || "कनेक्शन विफल।" },
-        }));
-      }
-    } catch {
-      setTestFeedback((prev) => ({
-        ...prev,
-        [provider]: { success: false, text: "नेटवर्क त्रुटि: टेस्ट असफल।" },
-      }));
-    } finally {
-      setTestingProvider(null);
-    }
-  };
-
-  const handleSaveAi = async () => {
-    setSavingAi(true);
-    try {
-      const payload: Record<string, string> = { active_provider: aiConfig.active_provider };
-      if (aiConfig.openrouter_key) payload.openrouter_key = aiConfig.openrouter_key;
-      if (aiConfig.gemini_key) payload.gemini_key = aiConfig.gemini_key;
-      if (aiConfig.openai_key) payload.openai_key = aiConfig.openai_key;
-      if (aiConfig.claude_key) payload.claude_key = aiConfig.claude_key;
-      if (aiConfig.groq_key) payload.groq_key = aiConfig.groq_key;
-
-      const res = await fetch("/api/admin/ai", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", ...getAuthHeaders() },
-        body: JSON.stringify(payload),
-      });
-      if (res.ok) {
-        setMessage({ type: "success", text: "AI Keys और Provider सफलतापूर्वक सेव हो गए!" });
-        fetchAiConfig();
-      } else {
-        const data = await res.json();
-        setMessage({ type: "error", text: data.error || "AI Settings सेव नहीं हो सकीं।" });
-      }
-    } catch {
-      setMessage({ type: "error", text: "नेटवर्क त्रुटि: AI Settings सेव नहीं हो सकीं।" });
-    } finally {
-      setSavingAi(false);
-    }
-  };
 
   const fetchSettings = async () => {
     try {
@@ -412,15 +307,9 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
   useEffect(() => {
     startTransition(() => {
       fetchSettings();
-      fetchAiConfig();
     });
   }, []);
 
-  useEffect(() => {
-    if (activeTab === "ai") {
-      fetchAiConfig();
-    }
-  }, [activeTab]);
 
   const handleChange = <K extends keyof Settings>(key: K, value: Settings[K]) => {
     setSettings((prev) => ({ ...prev, [key]: value }));
@@ -653,7 +542,6 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
   const descCls = "text-[11px] text-stone-500 mt-1 font-devanagari";
 
   const TAB_ITEMS: { id: TabKey; label: string; icon: string }[] = [
-    { id: "payment", label: "पेमेंट व UPI", icon: "💳" },
     { id: "contact", label: "संपर्क व पता", icon: "📞" },
     { id: "messages", label: "संदेश टेम्पलेट्स", icon: "💬" },
     { id: "homepage", label: "होमपेज व सेक्शंस", icon: "🏠" },
@@ -662,8 +550,6 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
     { id: "policies", label: "नीतियां (Policies)", icon: "📜" },
     { id: "about_course", label: "About व कोर्स पेज", icon: "ℹ️" },
     { id: "brand", label: "ब्रांड व लोगो", icon: "🏷️" },
-    { id: "razorpay", label: "Razorpay", icon: "⚡" },
-    { id: "ai", label: "AI & API Keys", icon: "🤖" },
   ];
 
   return (
@@ -714,94 +600,6 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
           </button>
         ))}
       </div>
-
-      {/* 1. PAYMENT TAB */}
-      {activeTab === "payment" && (
-        <div className="bg-white border border-stone-200 rounded-2xl p-5 sm:p-6 space-y-5 shadow-sm">
-          <div className="border-b border-stone-200 pb-3">
-            <h3 className="text-base font-bold text-stone-900">Direct UPI & Payment Settings</h3>
-            <p className="text-xs text-stone-500">
-              वेबसाइट पर ग्राहकों को दिखने वाला UPI ID, मर्चेंट नाम और QR कोड सेट करें।
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label className={labelCls}>UPI ID *</label>
-              <div className="flex gap-2">
-                <input
-                  type="text"
-                  value={settings.upi_id}
-                  onChange={(e) => handleChange("upi_id", e.target.value)}
-                  className={`${inputCls} flex-1 font-mono`}
-                  placeholder="7852004401@ybl"
-                />
-                <button
-                  type="button"
-                  onClick={() => copyToClipboard(settings.upi_id, "UPI ID")}
-                  className="px-3.5 py-2 bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold rounded-xl text-xs"
-                >
-                  Copy
-                </button>
-              </div>
-              <p className={descCls}>ग्राहकों को इसी UPI ID पर भुगतान करने का निर्देश दिया जाएगा।</p>
-            </div>
-
-            <div>
-              <label className={labelCls}>मर्चेंट / संस्था का नाम (Merchant Name)</label>
-              <input
-                type="text"
-                value={settings.merchant_name}
-                onChange={(e) => handleChange("merchant_name", e.target.value)}
-                className={inputCls}
-                placeholder="Arkado"
-              />
-              <p className={descCls}>PhonePe / Google Pay ऐप में यह नाम दिखाई देगा।</p>
-            </div>
-          </div>
-
-          <div>
-            <label className={labelCls}>Custom QR Code Image URL (वैकल्पिक)</label>
-            <input
-              type="text"
-              value={settings.custom_qr_url || ""}
-              onChange={(e) => handleChange("custom_qr_url", e.target.value)}
-              className={inputCls}
-              placeholder="https://... या /images/my-qr.png (खाली छोड़ने पर ऊपर वाले UPI ID से ऑटोमैटिक QR बनेगा)"
-            />
-            <p className={descCls}>
-              अगर आपके पास PhonePe या Paytm का स्टैंडी QR कोड का फोटो है तो उसका URL डाल सकते हैं। खाली छोड़ने पर UPI ID से डायनामिक QR बनेगा।
-            </p>
-          </div>
-
-          <div className="bg-stone-50 border border-stone-200 rounded-xl p-4 flex flex-col sm:flex-row items-center gap-6">
-            <div className="text-center sm:text-left">
-              <span className="text-[11px] font-bold text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full uppercase">
-                {settings.custom_qr_url && settings.custom_qr_url.trim().length > 5 ? "Custom QR Image" : "Dynamic UPI QR"}
-              </span>
-              <h4 className="font-bold text-stone-900 text-sm mt-2">Live QR Code Preview</h4>
-              <p className="text-xs text-stone-500 mt-1 max-w-sm">
-                चेकआउट ड्रॉअर में ग्राहक को यही QR कोड स्कैन करने के लिए दिखाई देगा।
-              </p>
-            </div>
-
-            <div className="flex-shrink-0 bg-white p-2.5 rounded-xl border border-stone-200 shadow-sm">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={
-                  settings.custom_qr_url && settings.custom_qr_url.trim().length > 5
-                    ? settings.custom_qr_url.trim()
-                    : `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(
-                        `upi://pay?pa=${settings.upi_id}&pn=${encodeURIComponent(settings.merchant_name)}&am=1&cu=INR&tn=Test`
-                      )}`
-                }
-                alt="UPI QR Preview"
-                className="w-36 h-36 rounded-lg object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* 2. CONTACT TAB */}
       {activeTab === "contact" && (
@@ -982,7 +780,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
 
           <div>
             <label className={labelCls}>
-              2. पेमेंट के बाद पुष्टि संदेश टेम्पलेट (After Payment / UTR Submit WhatsApp Confirmation)
+              2. पेमेंट के बाद पुष्टि संदेश टेम्पलेट (After Payment WhatsApp Confirmation)
             </label>
             <textarea
               rows={6}
@@ -991,7 +789,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
               className={`${inputCls} font-mono text-xs`}
             />
             <p className={descCls}>
-              जब छात्र UPI से भुगतान करके 12-अंक का UTR सबमिट करेगा, तो सफलता स्क्रीन पर WhatsApp बटन दबाने से यह विवरण आपके WhatsApp पर आएगा।
+              जब छात्र PhonePe से भुगतान करेगा, तो सफलता स्क्रीन पर WhatsApp बटन दबाने से यह विवरण आपके WhatsApp पर आएगा।
             </p>
           </div>
 
@@ -2432,243 +2230,6 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
                 <p className="text-[10px] text-stone-500 font-medium mt-1">{settings.brand?.tagline}</p>
               </div>
             </div>
-          </div>
-        </div>
-      )}
-
-      {/* 10. RAZORPAY TAB */}
-      {activeTab === "razorpay" && (
-        <div className="bg-white border border-stone-200 rounded-2xl p-5 sm:p-6 space-y-4 shadow-sm">
-          <div className="border-b border-stone-200 pb-3">
-            <h3 className="text-base font-bold text-stone-900">Razorpay पेमेंट गेटवे</h3>
-            <p className="text-xs text-stone-500">
-              ऑटोमैटिक पेमेंट गेटवे। वर्तमान में 0% फीस के साथ डायरेक्ट UPI एक्टिव है।
-            </p>
-          </div>
-
-          <div className="flex items-center justify-between p-4 bg-stone-50 border border-stone-200 rounded-xl">
-            <div>
-              <p className="font-bold text-stone-900 text-sm">Razorpay गेटवे सक्षम करें (Enable Razorpay)</p>
-              <p className="text-xs text-stone-500">डायरेक्ट UPI से ऑटोमैटिक गेटवे पर स्विच करने के लिए ऑन करें</p>
-            </div>
-            <label className="relative inline-flex items-center cursor-pointer">
-              <input
-                type="checkbox"
-                checked={settings.razorpay_enabled}
-                onChange={(e) => handleChange("razorpay_enabled", e.target.checked)}
-                className="sr-only peer"
-              />
-              <div className="w-11 h-6 bg-stone-300 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-amber-500/30 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-600"></div>
-            </label>
-          </div>
-
-          {settings.razorpay_enabled && (
-            <div className="space-y-4 border-t border-stone-200 pt-3">
-              <div>
-                <label className={labelCls}>Razorpay Key ID</label>
-                <input
-                  type="text"
-                  value={settings.razorpay_key_id || ""}
-                  onChange={(e) => handleChange("razorpay_key_id", e.target.value)}
-                  className={`${inputCls} font-mono`}
-                  placeholder="rzp_test_..."
-                />
-              </div>
-              <div>
-                <label className={labelCls}>Razorpay Key Secret</label>
-                <div className="flex gap-2">
-                  <input
-                    type={showRazorpaySecret ? "text" : "password"}
-                    value={settings.razorpay_key_secret || ""}
-                    onChange={(e) => handleChange("razorpay_key_secret", e.target.value)}
-                    className={`${inputCls} flex-1 font-mono`}
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowRazorpaySecret(!showRazorpaySecret)}
-                    className="px-4 py-2 bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold rounded-xl text-xs"
-                  >
-                    {showRazorpaySecret ? "Hide" : "Show"}
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* 10. AI Provider & Keys Tab */}
-      {activeTab === "ai" && (
-        <div className="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm space-y-6">
-          <div className="border-b border-stone-200 pb-4">
-            <h3 className="text-lg font-bold text-stone-900 flex items-center gap-2">
-              <span>🤖</span>
-              <span>AI Provider & API Keys Management</span>
-            </h3>
-            <p className="text-xs text-stone-500 mt-1">
-              Arkado AI असिस्टेंट, ऑटोमेटेड सिलेबस और प्रश्नोत्तरी हेतु यहाँ से सुरक्षित API Keys सेट करें।
-              ये Keys आपकी वेबसाइट स्टोर सेटिंग्स (UPI, WhatsApp, बैनर) से 100% अलग और सुरक्षित रखी जाती हैं।
-            </p>
-          </div>
-
-          {/* Active Provider Selector */}
-          <div className="bg-stone-50 border border-stone-200 rounded-2xl p-5 space-y-3">
-            <label className="block text-xs font-bold text-stone-800">
-              एक्टिव AI प्रोवाइडर चुनें (Active AI Engine)
-            </label>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {[
-                { id: "openrouter", name: "OpenRouter", desc: "GPT-4o, Claude 3.5, Gemini 2.0 (Recommended)", icon: "🌐" },
-                { id: "gemini", name: "Google Gemini", desc: "Gemini 2.0 Flash / Pro (Direct Google API)", icon: "✨" },
-                { id: "openai", name: "OpenAI", desc: "GPT-4o / GPT-4o-mini (Official OpenAI)", icon: "🧠" },
-                { id: "claude", name: "Anthropic Claude", desc: "Claude 3.5 Sonnet / Haiku", icon: "🎭" },
-                { id: "groq", name: "Groq Llama", desc: "Llama 3.3 70B (Ultra-fast inference)", icon: "⚡" },
-              ].map((p) => (
-                <div
-                  key={p.id}
-                  onClick={() => setAiConfig((prev) => ({ ...prev, active_provider: p.id }))}
-                  className={`p-3.5 rounded-xl border cursor-pointer transition flex flex-col justify-between ${
-                    aiConfig.active_provider === p.id
-                      ? "bg-amber-50/60 border-amber-500 shadow-sm ring-1 ring-amber-500"
-                      : "bg-white border-stone-200 hover:border-stone-300"
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-bold text-xs text-stone-900 flex items-center gap-1.5">
-                      <span>{p.icon}</span> {p.name}
-                    </span>
-                    {aiConfig.active_provider === p.id && (
-                      <span className="text-[10px] bg-amber-600 text-white font-bold px-1.5 py-0.5 rounded-md">Active</span>
-                    )}
-                  </div>
-                  <p className="text-[11px] text-stone-500 mt-1">{p.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* API Keys Configuration */}
-          <div className="space-y-4">
-            <h4 className="text-xs font-bold text-stone-700 uppercase tracking-wider">
-              API Keys Configuration
-            </h4>
-
-            {[
-              {
-                id: "openrouter",
-                keyField: "openrouter_key",
-                label: "OpenRouter API Key",
-                placeholder: "sk-or-v1-...",
-                icon: "🌐",
-                masked: aiStatus.openrouter_key_masked,
-                hasKey: aiStatus.has_openrouter_key,
-              },
-              {
-                id: "gemini",
-                keyField: "gemini_key",
-                label: "Google Gemini API Key",
-                placeholder: "AIzaSy...",
-                icon: "✨",
-                masked: aiStatus.gemini_key_masked,
-                hasKey: aiStatus.has_gemini_key,
-              },
-              {
-                id: "openai",
-                keyField: "openai_key",
-                label: "OpenAI API Key",
-                placeholder: "sk-...",
-                icon: "🧠",
-                masked: aiStatus.openai_key_masked,
-                hasKey: aiStatus.has_openai_key,
-              },
-              {
-                id: "claude",
-                keyField: "claude_key",
-                label: "Anthropic Claude API Key",
-                placeholder: "sk-ant-...",
-                icon: "🎭",
-                masked: aiStatus.claude_key_masked,
-                hasKey: aiStatus.has_claude_key,
-              },
-              {
-                id: "groq",
-                keyField: "groq_key",
-                label: "Groq API Key",
-                placeholder: "gsk_...",
-                icon: "⚡",
-                masked: aiStatus.groq_key_masked,
-                hasKey: aiStatus.has_groq_key,
-              },
-            ].map((item) => (
-              <div key={item.id} className="p-4 rounded-xl border border-stone-200 bg-stone-50/50 space-y-2">
-                <div className="flex items-center justify-between">
-                  <label className="text-xs font-bold text-stone-800 flex items-center gap-1.5">
-                    <span>{item.icon}</span> {item.label}
-                  </label>
-                  <span
-                    className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${
-                      item.hasKey
-                        ? "bg-emerald-100 text-emerald-800"
-                        : "bg-stone-200 text-stone-600"
-                    }`}
-                  >
-                    {item.hasKey ? (item.masked || "✓ Set in Environment") : "Not Set"}
-                  </span>
-                </div>
-
-                <div className="flex gap-2">
-                  <input
-                    type={showAiKeys[item.id] ? "text" : "password"}
-                    value={(aiConfig as any)[item.keyField] || ""}
-                    onChange={(e) =>
-                      setAiConfig((prev) => ({ ...prev, [item.keyField]: e.target.value }))
-                    }
-                    placeholder={item.hasKey ? "नई Key डालने पर पुरानी Replace होगी..." : item.placeholder}
-                    className={`${inputCls} flex-1 font-mono text-xs`}
-                  />
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setShowAiKeys((prev) => ({ ...prev, [item.id]: !prev[item.id] }))
-                    }
-                    className="px-3 py-2 bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold rounded-xl text-xs"
-                  >
-                    {showAiKeys[item.id] ? "Hide" : "Show"}
-                  </button>
-                  <button
-                    type="button"
-                    disabled={testingProvider === item.id}
-                    onClick={() => handleTestKey(item.id, (aiConfig as any)[item.keyField])}
-                    className="px-4 py-2 bg-stone-800 hover:bg-stone-900 text-white font-bold rounded-xl text-xs disabled:opacity-50 flex items-center gap-1.5"
-                  >
-                    {testingProvider === item.id ? "Testing..." : "Test Connection"}
-                  </button>
-                </div>
-
-                {testFeedback[item.id] && (
-                  <div
-                    className={`p-2 rounded-lg text-xs font-medium ${
-                      testFeedback[item.id].success
-                        ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
-                        : "bg-red-50 text-red-800 border border-red-200"
-                    }`}
-                  >
-                    {testFeedback[item.id].text}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="pt-2 flex justify-end">
-            <button
-              type="button"
-              disabled={savingAi}
-              onClick={handleSaveAi}
-              className="px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm shadow-md transition disabled:opacity-50 flex items-center gap-2"
-            >
-              {savingAi ? "सेव हो रहा है..." : "💾 AI सेटिंग्स सेव करें (Save AI Config)"}
-            </button>
           </div>
         </div>
       )}

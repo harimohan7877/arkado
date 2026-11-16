@@ -806,7 +806,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
     const q = searchQuery.toLowerCase();
     return categories.filter(
       (c) =>
-        c.name.toLowerCase().includes(q) ||
+        (c.name || "").toLowerCase().includes(q) ||
         (c.name_hi && c.name_hi.toLowerCase().includes(q)) ||
         (c.sub_preview && c.sub_preview.toLowerCase().includes(q))
     );
@@ -819,8 +819,8 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
     const q = searchQuery.toLowerCase();
     return boards.filter(
       (b) =>
-        b.name.toLowerCase().includes(q) ||
-        b.short_name.toLowerCase().includes(q) ||
+        (b.name || "").toLowerCase().includes(q) ||
+        (b.short_name || "").toLowerCase().includes(q) ||
         (b.viral_preview && b.viral_preview.toLowerCase().includes(q))
     );
   }, [currentCategory, searchQuery]);
@@ -832,7 +832,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
     const q = searchQuery.toLowerCase();
     return exams.filter(
       (e) =>
-        e.name.toLowerCase().includes(q) ||
+        (e.name || "").toLowerCase().includes(q) ||
         (e.short_name && e.short_name.toLowerCase().includes(q)) ||
         (e.eligibility && e.eligibility.toLowerCase().includes(q)) ||
         (e.viral_subtext && e.viral_subtext.toLowerCase().includes(q))

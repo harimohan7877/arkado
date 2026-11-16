@@ -65,3 +65,15 @@ export async function POST(req: NextRequest) {
 
   return NextResponse.json({ received: true, state: result.state });
 }
+
+/**
+ * GET — webhook URL validation only.
+ *
+ * PhonePe's dashboard validates the registered webhook URL by sending a
+ * GET and requiring a 2xx response. This handler only proves the URL is
+ * reachable; it never touches payment state. The POST handler above is
+ * the only payment path.
+ */
+export async function GET() {
+  return NextResponse.json({ ok: true });
+}

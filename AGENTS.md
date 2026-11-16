@@ -34,7 +34,7 @@ do not reintroduce it.
 | Styling | **Tailwind CSS v4** (`@import "tailwindcss"`, `@theme inline` tokens) |
 | Backend | **Supabase** (Postgres) + JSON-file fallback |
 | Email | Gmail SMTP via `nodemailer` (from `arkado2026@gmail.com`) |
-| Analytics | `@vercel/analytics` (`<Analytics />` in `app/layout.tsx`) |
+| Analytics | `@vercel/analytics` (`<Analytics />` in `app/layout.tsx`) — the DB-backed analytics (Oct 2026: `PageViewTracker`, `/api/track-event`, admin Analytics tab, `analytics_events` table) was removed on 2026-11-16; it is replaced by **Cloudflare Web Analytics** (free, no DB writes). The Cloudflare beacon still needs Harimohan's token from his Cloudflare dashboard. Anonymous visitor/session IDs for order attribution live in `lib/visitor-id.ts` (no events sent). |
 | Deploy | **Vercel** — push to `main` auto-deploys. No `vercel.json`. |
 | Tests | `vitest` (`npm test`, ~55 tests) |
 

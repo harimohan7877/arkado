@@ -3,7 +3,7 @@ import { Inter, Noto_Sans_Devanagari } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import FloatingDock from "@/components/FloatingDock";
-import PageViewTracker from "@/components/PageViewTracker";
+import UtmCapture from "@/components/UtmCapture";
 import OfferStrip from "@/components/OfferStrip";
 import { CartProvider } from "@/components/CartProvider";
 
@@ -100,7 +100,7 @@ export default function RootLayout({
           {children}
         </CartProvider>
         <FloatingDock />
-        <PageViewTracker />
+        <UtmCapture />
         <Analytics />
       </body>
     </html>

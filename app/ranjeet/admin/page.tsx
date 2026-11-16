@@ -7,12 +7,10 @@ import CategoriesTab from "@/components/admin/CategoriesTab";
 import FeaturedTab from "@/components/admin/FeaturedTab";
 import ExamsTab from "@/components/admin/ExamsTab";
 import CoursesTab from "@/components/admin/CoursesTab";
-import DriveLinksTab from "@/components/admin/DriveLinksTab";
 import OrdersTab from "@/components/admin/OrdersTab";
 import SettingsTab from "@/components/admin/SettingsTab";
 import SectionsTab from "@/components/admin/SectionsTab";
 import BlogTab from "@/components/admin/BlogTab";
-import AnalyticsTab from "@/components/admin/AnalyticsTab";
 import CategoryExportButton from "@/components/admin/CategoryExportButton";
 import CategoryGridControl from "@/components/admin/CategoryGridControl";
 
@@ -79,7 +77,7 @@ function formatBytes(bytes: number): string {
   return `${(bytes / (1024 * 1024)).toFixed(2)} MB`;
 }
 
-type TabType = "dashboard" | "categories" | "featured" | "sections" | "exams" | "courses" | "drivelinks" | "orders" | "blog" | "settings" | "analytics";
+type TabType = "dashboard" | "categories" | "featured" | "sections" | "exams" | "courses" | "orders" | "blog" | "settings";
 
 const NAV_ITEMS: { id: TabType; label: string; short: string; icon: string }[] = [
   { id: "dashboard", label: "Dashboard", short: "Dashboard", icon: "" },
@@ -88,11 +86,9 @@ const NAV_ITEMS: { id: TabType; label: string; short: string; icon: string }[] =
   { id: "sections", label: "Sections Layout", short: "Sections", icon: "" },
   { id: "exams", label: "Exams", short: "Exams", icon: "" },
   { id: "courses", label: "Courses & Books", short: "Courses", icon: "" },
-  { id: "drivelinks", label: "Drive Links", short: "Drive Links", icon: "" },
   { id: "orders", label: "Orders", short: "Orders", icon: "" },
   { id: "blog", label: "Blog / Articles", short: "Blog", icon: "" },
   { id: "settings", label: "Settings", short: "Settings", icon: "" },
-  { id: "analytics", label: "Analytics", short: "Analytics", icon: "" },
 ];
 
 export default function AdminDashboardPage() {
@@ -217,9 +213,7 @@ export default function AdminDashboardPage() {
         {activeTab === "sections" && <SectionsTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "exams" && <ExamsTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "courses" && <CoursesTab getAuthHeaders={getAuthHeaders} />}
-        {activeTab === "drivelinks" && <DriveLinksTab getAuthHeaders={getAuthHeaders} />}
         {activeTab === "settings" && <SettingsTab getAuthHeaders={getAuthHeaders} />}
-        {activeTab === "analytics" && <AnalyticsTab getAuthHeaders={getAuthHeaders} />}
 
         {activeTab === "dashboard" && (
           <div className="space-y-4">
@@ -419,41 +413,6 @@ export default function AdminDashboardPage() {
             </div>
           )}
 
-          {/* Visitors */}
-          {!loadingStats && (
-            <div className="bg-white border border-stone-200 rounded-2xl p-6 shadow-xs space-y-3">
-              <h2 className="text-sm font-extrabold text-stone-900 flex items-center gap-2">
-                <span>📊</span> Visitors
-                {stats?.visitors && (
-                  <span className="text-[11px] font-bold text-stone-500">
-                    • आज {stats.visitors.today} • 14 दिन में {stats.visitors.total}
-                  </span>
-                )}
-              </h2>
-              {!stats?.visitors?.available ? (
-                <p className="text-xs text-stone-500">
-                  Visitor tracking abhi chalu nahi hai — <span className="font-mono font-bold">supabase-migrations/20261005_page_views.sql</span> ko Supabase SQL editor mein chalao, phir yahan graph dikhega.
-                </p>
-              ) : (
-                <div className="flex items-end gap-1 h-24">
-                  {stats.visitors.days.map((d) => {
-                    const max = Math.max(1, ...stats.visitors!.days.map((x) => x.views));
-                    return (
-                      <div key={d.date} className="flex-1 flex flex-col items-center gap-1" title={`${d.date}: ${d.views} views`}>
-                        <span className="text-[9px] font-bold text-stone-500">{d.views > 0 ? d.views : ""}</span>
-                        <div
-                          className="w-full rounded-t bg-amber-600/80 min-h-[3px]"
-                          style={{ height: `${Math.max(3, (d.views / max) * 72)}px` }}
-                        />
-                        <span className="text-[8px] text-stone-400">{d.date.slice(8)}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-              <p className="text-[11px] text-stone-400">Sirf page path count hota hai — koi IP ya cookie track nahi hoti.</p>
-            </div>
-          )}
           </div>
         )}
 

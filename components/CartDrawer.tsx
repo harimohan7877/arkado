@@ -6,7 +6,7 @@ import { CourseBundle } from "@/lib/courses";
 import { getExamLabel } from "@/lib/exam-labels";
 import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
 import { fetchWithCache, useSettings } from "@/lib/store-hooks";
-import { trackEvent, getVisitorId, getSessionId, getUtmSource } from "@/components/PageViewTracker";
+import { getVisitorId, getSessionId, getUtmSource } from "@/lib/visitor-id";
 import { finalItemPrice, isPreDiscountedItem, useSiteSale, fillTemplate } from "@/lib/sale-pricing";
 import { getFestivalOffer } from "@/lib/default-settings";
 import { supabase } from "@/lib/supabase";
@@ -49,23 +49,6 @@ export default function CartDrawer({
       contentScrollRef.current.scrollTop = 0;
     }
   }, [step, checkoutView]);
-
-  // Analytics (Phase 2, fail-silent): funnel steps only, no PII, no order data.
-  // Phase D: on drawer open, one cart_item event per cart LINE ("cart kholne par
-  // cart me tha" — not a true "add" event; drawer re-opens re-count).
-  // cartItems intentionally NOT in deps: this is an open-time snapshot.
-  useEffect(() => {
-    if (isOpen) {
-      trackEvent({ event_type: "cart_open" });
-      cartItems.forEach((item) => {
-        trackEvent({ event_type: "cart_item", product_id: item.id });
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isOpen]);
-  useEffect(() => {
-    if (step === "pay") trackEvent({ event_type: "checkout_step", element: "pay" });
-  }, [step]);
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -300,9 +283,6 @@ export default function CartDrawer({
       if (!res.ok || data.error || !data.redirectUrl) {
         throw new Error(data.error || "Could not start the payment. Please try again.");
       }
-
-      // Analytics (Phase 2): order placed — product only, never PII.
-      trackEvent({ event_type: "order_placed", product_id: primaryCourse?.id });
 
       // Clear the cart before leaving so a back-button return doesn't re-buy.
       cartItems.forEach((item) => onRemoveItem(item.id));

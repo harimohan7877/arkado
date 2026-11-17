@@ -2,6 +2,15 @@ import { cache } from "react";
 import type { CourseBundle } from "@/lib/courses";
 import type { Category, Exam } from "@/lib/store-types";
 import { supabaseAdmin } from "@/lib/supabase";
+import { examSlug, findExamBySlug } from "@/lib/exam-slug";
+import { getStoreData } from "@/lib/store-data";
+import {
+  DEFAULT_SETTINGS,
+  getFestivalOffer,
+  isFestivalSaleLive,
+} from "@/lib/default-settings";
+
+export { examSlug, findExamBySlug };
 
 /** Canonical public origin of the storefront. Server-safe. */
 export function getSiteUrl(): string {
@@ -137,4 +146,30 @@ export function toMetaDescription(text: string, maxLen = 155): string {
   const clean = text.replace(/\s+/g, " ").trim();
   if (clean.length <= maxLen) return clean;
   return `${clean.slice(0, maxLen - 1).trimEnd()}…`;
+}
+
+/**
+ * Active site-wide discount %, or 0 when no sale is running. Never throws.
+ *
+ * NOTE: this mirrors getSalePct() in lib/sale-pricing.ts (the sale engine,
+ * single source of truth) because sale-pricing imports a "use client" module
+ * (./store-hooks) and server code cannot import functions from it. If the
+ * sale rules change, update both.
+ */
+export async function fetchSalePctServer(): Promise<number> {
+  try {
+    const settings = await getStoreData("settings", "data/settings.json", DEFAULT_SETTINGS);
+    const offer = getFestivalOffer(settings);
+    if (!offer.enabled || !isFestivalSaleLive(offer)) return 0;
+    const pct = Number((offer as { discount_percent?: unknown }).discount_percent) || 0;
+    return pct > 0 && pct <= 90 ? Math.round(pct) : 0;
+  } catch {
+    return 0;
+  }
+}
+
+/** Price after applying the sale %. Mirror of applySale() in lib/sale-pricing.ts. */
+export function applySaleServer(price: number, pct: number): number {
+  if (!pct || pct <= 0) return price;
+  return Math.max(1, Math.round(price * (1 - pct / 100)));
 }

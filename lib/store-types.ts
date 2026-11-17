@@ -21,8 +21,18 @@ export interface Exam {
   short_name: string;
   slug?: string;
   board: string;
+  board_id?: string;
+  category_name?: string;
   logo_url?: string; // custom exam logo uploaded by admin
   description: string;
+  meta_title?: string; // SEO: overrides <title> / OG title when set
+  meta_description?: string; // SEO: overrides meta description when set
+  eligibility?: string;
+  age_limit?: string;
+  applicant_scale?: string;
+  exam_pattern?: string;
+  viral_subtext?: string;
+  notes_link?: string;
   status: "upcoming" | "open" | "closed" | "expected";
   form_start?: string;
   last_date?: string;

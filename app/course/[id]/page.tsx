@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
+import { permanentRedirect } from "next/navigation";
 import CourseDetailClient from "./CourseDetailClient";
+import type { CourseBundle } from "@/lib/courses";
 import {
   getSiteUrl,
   fetchSingleCourseServer,
+  fetchCoursesServer,
   fetchExamsServer,
+  fetchSalePctServer,
+  applySaleServer,
   findExamById,
+  examSlug,
   absoluteImageUrl,
   toMetaDescription,
 } from "@/lib/seo";
@@ -16,6 +22,23 @@ interface PageProps {
 async function resolveId(params: PageProps["params"]): Promise<string> {
   const resolved = await Promise.resolve(params);
   return resolved.id;
+}
+
+// ISR: course pages revalidate hourly; generateStaticParams pre-renders every
+// active course slug at build time. New courses added later render on demand
+// (dynamicParams) and are then cached — no manual step, no Search Console
+// submit per item.
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  try {
+    const courses = await fetchCoursesServer();
+    return courses
+      .filter((c) => c.is_active !== false && c.slug)
+      .map((c) => ({ id: c.slug as string }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({
@@ -97,11 +120,19 @@ export default async function CoursePage({ params }: PageProps) {
   const siteUrl = getSiteUrl();
   let jsonLd: Record<string, unknown> | null = null;
   let breadcrumbLd: Record<string, unknown> | null = null;
+  let priceCourse: CourseBundle | null = null;
+  let displayPrice = 0;
 
   try {
     const id = await resolveId(params);
     const course = await fetchSingleCourseServer(id);
     if (course) {
+      // Sale-adjusted price: the same price the buy box shows after hydration.
+      // The strip below and the JSON-LD offer both use it, so the visible
+      // price and the structured data never disagree.
+      const salePct = await fetchSalePctServer();
+      displayPrice = applySaleServer(course.price, salePct);
+      priceCourse = course;
       const image = absoluteImageUrl(course.cover_image);
       jsonLd = {
         "@context": "https://schema.org",
@@ -117,7 +148,7 @@ export default async function CoursePage({ params }: PageProps) {
           "@type": "Offer",
           url: `${siteUrl}/course/${course.slug || course.id}`,
           priceCurrency: "INR",
-          price: course.price,
+          price: displayPrice,
           availability: "https://schema.org/InStock",
           shippingDetails: {
             "@type": "OfferShippingDetails",
@@ -156,36 +187,21 @@ export default async function CoursePage({ params }: PageProps) {
         })),
       };
     } else {
-      // Exam hub page: breadcrumb schema helps Google understand site structure.
+      // Exam id/slug under /course/: the real exam page now lives at
+      // /exams/<slug> — permanently redirect there instead of rendering
+      // the old hollow hub (no course list, no links for crawlers).
       const exams = await fetchExamsServer();
       const exam = findExamById(exams, id);
       if (exam) {
-        const examUrl = `${siteUrl}/course/${exam.slug || exam.id}`;
-        const examCrumbs = [
-          { name: "Home", url: siteUrl },
-          { name: "All Exams", url: `${siteUrl}/exams` },
-          { name: exam.name, url: examUrl },
-        ];
-        if (exam.category_id) {
-          const examWithCat = exam as typeof exam & { category_name?: string };
-          examCrumbs.splice(1, 0, {
-            name: examWithCat.category_name || "Category",
-            url: `${siteUrl}/category/${exam.category_id}`,
-          });
-        }
-        breadcrumbLd = {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: examCrumbs.map((c, i) => ({
-            "@type": "ListItem",
-            position: i + 1,
-            name: c.name,
-            item: c.url,
-          })),
-        };
+        permanentRedirect(`${siteUrl}/exams/${examSlug(exam)}`);
       }
     }
-  } catch {
+  } catch (err) {
+    // permanentRedirect throws NEXT_REDIRECT — it must propagate, not be
+    // swallowed here.
+    if (err && typeof err === "object" && "digest" in err && typeof (err as { digest?: unknown }).digest === "string" && ((err as { digest: string }).digest.startsWith("NEXT_REDIRECT"))) {
+      throw err;
+    }
     jsonLd = null;
     breadcrumbLd = null;
   }
@@ -203,6 +219,21 @@ export default async function CoursePage({ params }: PageProps) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
         />
+      )}
+      {priceCourse && (
+        <div className="border-b border-stone-200 bg-white">
+          <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 lg:px-8">
+            <p className="truncate text-sm font-semibold text-stone-900">{priceCourse.title}</p>
+            <p className="whitespace-nowrap text-sm">
+              <span className="font-black text-stone-900">₹{displayPrice.toLocaleString("en-IN")}</span>
+              {priceCourse.original_price > displayPrice && (
+                <span className="ml-2 text-stone-400 line-through">
+                  ₹{priceCourse.original_price.toLocaleString("en-IN")}
+                </span>
+              )}
+            </p>
+          </div>
+        </div>
       )}
       <CourseDetailClient params={params} />
     </>

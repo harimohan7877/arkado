@@ -6,6 +6,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Category, Exam } from "@/lib/store-types";
+import { examSlug } from "@/lib/exam-slug";
 import { fetchWithCache } from "@/lib/store-hooks";
 import { SearchIcon, CloseIcon, GridIcon, ChevronDownIcon, ChevronRightIcon, ArrowRightIcon } from "@/components/icons";
 
@@ -353,7 +354,7 @@ export default function ExamsClient() {
                               return (
                                 <Link
                                   key={exam.id}
-                                  href={`/course/${exam.id}`}
+                                  href={`/exams/${examSlug(exam)}`}
                                   className="bg-white p-3 rounded-xl border border-stone-200 hover:border-amber-400 hover:shadow-xs transition flex items-center justify-between gap-3 group cursor-pointer"
                                 >
                                   <div className="flex items-center gap-3 min-w-0 flex-1">

@@ -102,6 +102,10 @@ export default function RootLayout({
         <FloatingDock />
         <UtmCapture />
         <Analytics />
+        {/* Cloudflare Web Analytics */}
+        {/* eslint-disable-next-line @next/next/no-sync-scripts -- Cloudflare's official snippet; type="module" scripts are deferred by the browser, the rule just doesn't exempt them */}
+        <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "fb7f564fa8ec4887aea4604ae78eef07"}'></script>
+        {/* End Cloudflare Web Analytics */}
       </body>
     </html>
   );

@@ -80,6 +80,10 @@ export default function AboutPage() {
             {" "}of experience in competitive-exam content curation. The mission: affordable
             pattern-decoded notes for every aspirant in India.
           </p>
+
+          <p className="text-sm text-stone-500">
+            Registered trade name: Arkado
+          </p>
         </div>
 
         <a

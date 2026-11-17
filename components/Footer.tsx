@@ -111,6 +111,9 @@ export default function Footer({ settings: settingsProp }: { settings?: Settings
             <p className="text-xs text-stone-400 leading-relaxed">
               {footerTagline}
             </p>
+            <p className="text-[11px] text-stone-500">
+              Registered trade name: Arkado
+            </p>
             <div className="flex items-center gap-2 pt-1">
               {[
                 { name: "WhatsApp", url: whatsappUrl, path: "M12 2a10 10 0 0 0-8.7 15l-1.3 4.8 5-1.3A10 10 0 1 0 12 2z" },

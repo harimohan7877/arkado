@@ -24,11 +24,11 @@ async function resolveId(params: PageProps["params"]): Promise<string> {
   return resolved.id;
 }
 
-// ISR: course pages revalidate hourly; generateStaticParams pre-renders every
+// ISR: course pages revalidate daily (86400s); generateStaticParams pre-renders every
 // active course slug at build time. New courses added later render on demand
 // (dynamicParams) and are then cached — no manual step, no Search Console
 // submit per item.
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export async function generateStaticParams() {
   try {

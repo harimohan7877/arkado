@@ -379,7 +379,9 @@ export default function ExamsClient() {
                                       </p>
                                       <div className="flex items-center gap-1.5 mt-0.5">
                                         <span className="text-[9px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">
-                                          ● Selection Kit • ₹199
+                                          {exam.min_price
+                                            ? `● Selection Kit • ₹${exam.min_price} se shuru`
+                                            : "● Selection Kit"}
                                         </span>
                                       </div>
                                     </div>

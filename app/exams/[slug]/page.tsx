@@ -25,11 +25,11 @@ async function resolveSlug(params: PageProps["params"]): Promise<string> {
   return resolved.slug;
 }
 
-// ISR: exam pages revalidate hourly; generateStaticParams pre-renders every
+// ISR: exam pages revalidate daily (86400s); generateStaticParams pre-renders every
 // active exam at build time. A new exam added in admin/DB gets its page,
 // sitemap entry and /exams link automatically — no manual step, no per-item
 // Search Console submit.
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 export async function generateStaticParams() {
   try {

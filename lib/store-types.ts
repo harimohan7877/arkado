@@ -33,6 +33,7 @@ export interface Exam {
   exam_pattern?: string;
   viral_subtext?: string;
   notes_link?: string;
+  min_price?: number | null; // /api/exams: sale-adjusted lowest course price for this exam (null = no priced course)
   status: "upcoming" | "open" | "closed" | "expected";
   form_start?: string;
   last_date?: string;

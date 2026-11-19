@@ -9,6 +9,7 @@ import {
   validateCheckoutOrder,
   generateOrderId,
   validateTermsAcceptance,
+  insertMarketplaceOrderWithColumnFallback,
 } from "@/lib/checkout";
 import {
   hasPhonePeKeys,
@@ -219,43 +220,31 @@ export async function POST(req: NextRequest) {
         ...(linkedUserId ? { user_id: linkedUserId } : {}),
       };
 
-      // Fallback retries ACCUMULATE: each retry strips its columns from
-      // the CURRENT payload, not from basePayload — two missing column
-      // groups at once (e.g. items + terms) must still insert.
-      let payload: Record<string, any> = { ...basePayload };
-      let { error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(payload);
-      if (insertErr && /items/.test(insertErr.message)) {
-        console.warn("[phonepe-create] items column missing, retrying without it.");
-        const { items: _it, ...rest } = payload;
-        payload = rest;
-        ({ error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(payload));
-      }
-      if (insertErr && /terms_accepted/.test(insertErr.message)) {
-        console.warn("[phonepe-create] terms columns missing, retrying without them.");
-        const { terms_accepted: _ta, terms_accepted_at: _tat, terms_version: _tv, ...rest } = payload;
-        payload = rest;
-        ({ error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(payload));
-      }
-      if (insertErr && /course_title|drive_url/.test(insertErr.message)) {
-        console.warn("[phonepe-create] course_title/drive_url columns missing, retrying without them.");
-        const { course_title: _ct, drive_url: _du, ...rest } = payload;
-        payload = rest;
-        ({ error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(payload));
-      }
-      if (insertErr && /visitor_id|session_id|utm_source/.test(insertErr.message)) {
-        console.warn("[phonepe-create] attribution columns missing, retrying without them.");
-        const { visitor_id: _vi, session_id: _si, utm_source: _us, ...rest } = payload;
-        payload = rest;
-        ({ error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(payload));
-      }
-      if (insertErr && /user_id/.test(insertErr.message)) {
-        console.warn("[phonepe-create] user_id column missing, retrying without it.");
-        const { user_id: _uid, ...rest } = payload;
-        payload = rest;
-        ({ error: insertErr } = await supabaseAdmin.from("marketplace_orders").insert(payload));
-      }
+      // Strip-and-retry LOOP (lib/checkout.ts): PostgREST reports ONE
+      // missing column per failed insert (the first in payload order), so
+      // a fixed-order if-chain can miss a group whose check already ran
+      // (e.g. course_title fails first, terms next). The loop strips the
+      // group named in each error and retries until success or nothing
+      // strippable remains.
+      const { error: insertErr, strippedGroups } =
+        await insertMarketplaceOrderWithColumnFallback(
+          async (row) => {
+            const { error } = await supabaseAdmin
+              .from("marketplace_orders")
+              .insert(row);
+            return { error };
+          },
+          basePayload
+        );
       if (insertErr) {
-        console.error("[phonepe-create] marketplace_orders insert error:", insertErr.message);
+        console.error(
+          "[phonepe-create] marketplace_orders insert FAILED after stripping:",
+          strippedGroups.join(", ") || "none",
+          "—",
+          insertErr.message,
+          "order:",
+          merchantOrderId
+        );
       }
     } catch (dbErr) {
       console.warn("[phonepe-create] marketplace_orders insert warning:", dbErr);

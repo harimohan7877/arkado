@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getStoreData } from "@/lib/store-data";
+import { applySaleServer, fetchSalePctServer } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -61,6 +62,25 @@ export async function GET(req: Request) {
         (e.short_name && e.short_name.toLowerCase().includes(q)) ||
         (e.board && e.board.toLowerCase().includes(q))
       );
+    }
+
+    // Real starting price per exam (sale-adjusted min over its courses).
+    // The listing badge used to hardcode ₹199, which was wrong for every exam
+    // (actual mins are ₹49–₹149). Computed server-side so the badge stays
+    // true as prices change; null when an exam has no priced course.
+    try {
+      const courses = await getStoreData<any[]>("courses", "data/courses.json", []);
+      const pct = await fetchSalePctServer();
+      const minByExam = new Map<string, number>();
+      for (const c of courses) {
+        if (!c?.exam_id || typeof c.price !== "number" || c.is_active === false) continue;
+        const p = applySaleServer(c.price, pct);
+        const cur = minByExam.get(c.exam_id);
+        if (cur === undefined || p < cur) minByExam.set(c.exam_id, p);
+      }
+      exams = exams.map((e) => ({ ...e, min_price: minByExam.get(e.id) ?? null }));
+    } catch {
+      // min_price stays unset; the client falls back to a price-less badge.
     }
 
     const cacheHeader = includeInactive

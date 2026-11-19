@@ -23,7 +23,7 @@ export function getSiteUrl(): string {
 export async function fetchCoursesServer(): Promise<CourseBundle[]> {
   try {
     const res = await fetch(`${getSiteUrl()}/api/courses`, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 86400 },
     });
     if (!res.ok) return [];
     const data = await res.json();
@@ -84,7 +84,7 @@ export const fetchSingleCourseServer = cache(
 export async function fetchCategoriesServer(): Promise<Category[]> {
   try {
     const res = await fetch(`${getSiteUrl()}/api/categories?scope=public`, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 86400 },
     });
     if (!res.ok) return [];
     const data = await res.json();
@@ -98,7 +98,7 @@ export async function fetchCategoriesServer(): Promise<Category[]> {
 export async function fetchExamsServer(): Promise<Exam[]> {
   try {
     const res = await fetch(`${getSiteUrl()}/api/exams`, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 86400 },
     });
     if (!res.ok) return [];
     const data = await res.json();

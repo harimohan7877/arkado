@@ -372,3 +372,74 @@ export function validateStatusTransitions(
   }
   return null;
 }
+
+/**
+ * Insert a marketplace_orders row, tolerating missing optional columns.
+ *
+ * PostgREST reports ONE missing column per failed insert (the first in
+ * payload order), so a fixed-order sequential if-chain can miss a group
+ * whose check already ran — e.g. course_title fails first, terms next,
+ * and the terms check has already passed. This loops: after each failed
+ * insert, strip the column group named in the error and retry, until the
+ * insert succeeds or no strippable group remains. Each iteration removes
+ * at least one column, so the loop always terminates (max 5 attempts).
+ *
+ * Returns the final error (null on success), the groups stripped, and the
+ * payload that was actually inserted. Callers log a loud error on
+ * failure; the checkout's tolerate-and-continue behaviour (JSON backup +
+ * persistence verify) is unchanged.
+ */
+export interface OrderInsertResult {
+  error: { message: string } | null;
+  strippedGroups: string[];
+  payload: Record<string, any>;
+}
+
+const MISSING_COLUMN_GROUPS: Array<{
+  name: string;
+  pattern: RegExp;
+  columns: string[];
+}> = [
+  { name: "items", pattern: /items/, columns: ["items"] },
+  {
+    name: "terms",
+    pattern: /terms_accepted|terms_version/,
+    columns: ["terms_accepted", "terms_accepted_at", "terms_version"],
+  },
+  {
+    name: "course_title/drive_url",
+    pattern: /course_title|drive_url/,
+    columns: ["course_title", "drive_url"],
+  },
+  {
+    name: "attribution",
+    pattern: /visitor_id|session_id|utm_source/,
+    columns: ["visitor_id", "session_id", "utm_source"],
+  },
+  { name: "user_id", pattern: /user_id/, columns: ["user_id"] },
+];
+
+export async function insertMarketplaceOrderWithColumnFallback(
+  insert: (
+    row: Record<string, any>
+  ) => Promise<{ error: { message: string } | null }>,
+  basePayload: Record<string, any>
+): Promise<OrderInsertResult> {
+  const payload: Record<string, any> = { ...basePayload };
+  const strippedGroups: string[] = [];
+  let { error } = await insert(payload);
+  while (error) {
+    const message = error.message;
+    const group = MISSING_COLUMN_GROUPS.find(
+      (g) => g.pattern.test(message) && g.columns.some((c) => c in payload)
+    );
+    if (!group) break;
+    console.warn(
+      `[phonepe-create] ${group.name} column(s) missing, retrying without them.`
+    );
+    for (const c of group.columns) delete payload[c];
+    strippedGroups.push(group.name);
+    ({ error } = await insert(payload));
+  }
+  return { error, strippedGroups, payload };
+}

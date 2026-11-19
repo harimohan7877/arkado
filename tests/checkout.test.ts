@@ -30,6 +30,7 @@ import {
   validateTermsAcceptance,
   validateCheckoutOrder,
   validateOrderPrices,
+  insertMarketplaceOrderWithColumnFallback,
 } from "@/lib/checkout";
 
 describe("Checkout helpers (PhonePe migration)", () => {
@@ -246,5 +247,97 @@ describe("Checkout helpers (PhonePe migration)", () => {
       expect(r.isValid).toBe(true);
       expect(r.tamperingDetected).toBe(false);
     });
+  });
+});
+
+describe("insertMarketplaceOrderWithColumnFallback", () => {
+  /** Fake PostgREST insert: fails naming the first missing column in payload order. */
+  function makeFakeInsert(missing: Set<string>) {
+    return async (row: Record<string, any>) => {
+      const firstMissing = Object.keys(row).find((k) => missing.has(k));
+      if (!firstMissing) return { error: null };
+      return {
+        error: {
+          message: `Could not find the '${firstMissing}' column of 'marketplace_orders' in the schema cache`,
+        },
+      };
+    };
+  }
+
+  const fullPayload = () => ({
+    customer_name: "Test",
+    customer_email: "t@example.com",
+    product_id: "kit-a",
+    course_title: "Kit A",
+    drive_url: "https://drive.example/x",
+    amount: 49,
+    terms_accepted: true,
+    terms_accepted_at: "2026-11-19T00:00:00.000Z",
+    terms_version: "v1",
+    visitor_id: "v1",
+    session_id: "s1",
+    utm_source: "ig",
+    items: [{ id: "kit-a" }],
+    user_id: "u1",
+  });
+
+  it("strips both groups when course_title and terms are missing (the reported bug)", async () => {
+    const missing = new Set([
+      "course_title",
+      "terms_accepted",
+      "terms_accepted_at",
+      "terms_version",
+    ]);
+    const res = await insertMarketplaceOrderWithColumnFallback(
+      makeFakeInsert(missing),
+      fullPayload()
+    );
+    expect(res.error).toBeNull();
+    expect(res.strippedGroups).toEqual(["course_title/drive_url", "terms"]);
+    expect(res.payload).not.toHaveProperty("course_title");
+    expect(res.payload).not.toHaveProperty("drive_url");
+    expect(res.payload).not.toHaveProperty("terms_accepted");
+    expect(res.payload).toHaveProperty("items");
+    expect(res.payload).toHaveProperty("user_id");
+  });
+
+  it("strips terms when only terms_version is missing", async () => {
+    const res = await insertMarketplaceOrderWithColumnFallback(
+      makeFakeInsert(new Set(["terms_version"])),
+      fullPayload()
+    );
+    expect(res.error).toBeNull();
+    expect(res.strippedGroups).toEqual(["terms"]);
+  });
+
+  it("succeeds immediately when nothing is missing", async () => {
+    const res = await insertMarketplaceOrderWithColumnFallback(
+      makeFakeInsert(new Set()),
+      fullPayload()
+    );
+    expect(res.error).toBeNull();
+    expect(res.strippedGroups).toEqual([]);
+    expect(Object.keys(res.payload)).toEqual(Object.keys(fullPayload()));
+  });
+
+  it("stops on an unmapped column error instead of looping forever", async () => {
+    const res = await insertMarketplaceOrderWithColumnFallback(
+      makeFakeInsert(new Set(["customer_name"])),
+      fullPayload()
+    );
+    expect(res.error).not.toBeNull();
+    expect(res.error?.message).toContain("customer_name");
+    expect(res.strippedGroups).toEqual([]);
+  });
+
+  it("strips groups in any order (user_id + items)", async () => {
+    const res = await insertMarketplaceOrderWithColumnFallback(
+      makeFakeInsert(new Set(["user_id", "items"])),
+      fullPayload()
+    );
+    expect(res.error).toBeNull();
+    expect(res.strippedGroups).toEqual(["items", "user_id"]);
+    expect(res.payload).not.toHaveProperty("items");
+    expect(res.payload).not.toHaveProperty("user_id");
   });
 });

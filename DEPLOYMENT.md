@@ -86,3 +86,5 @@ edit (price, activation) does NOT refresh an already-prerendered course page —
 it keeps serving the old render until the daily revalidation or a redeploy.
 After any direct-DB price/activation change, redeploy (or wait for the daily
 revalidation) and verify the live page price + JSON-LD before reporting done.
+
+(Refresh log: 2026-11-22 NCB CDR-02 activation; 2026-11-22 batch-4 linking — Haryana CET / REET / CTET / KVS PRT.)

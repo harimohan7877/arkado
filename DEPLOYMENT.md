@@ -78,3 +78,11 @@ npm test        # vitest, 55 tests
 ## Rollback
 
 Vercel Dashboard → Deployments → ⋯ on the previous good deployment → **Promote to Production**.
+
+## ISR note (2026-11-22)
+
+Course pages (`/course/[id]`) are ISR with `revalidate = 86400`. A direct DB
+edit (price, activation) does NOT refresh an already-prerendered course page —
+it keeps serving the old render until the daily revalidation or a redeploy.
+After any direct-DB price/activation change, redeploy (or wait for the daily
+revalidation) and verify the live page price + JSON-LD before reporting done.

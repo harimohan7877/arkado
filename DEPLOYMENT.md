@@ -88,3 +88,5 @@ After any direct-DB price/activation change, redeploy (or wait for the daily
 revalidation) and verify the live page price + JSON-LD before reporting done.
 
 (Refresh log: 2026-11-22 NCB CDR-02 activation; 2026-11-22 batch-4 linking — Haryana CET / REET / CTET / KVS PRT.)
+
+(Refresh log: 2026-11-25 batch-5 linking — HTET / Group-D / REET L2 / UPTET.)

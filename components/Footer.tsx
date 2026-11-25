@@ -146,11 +146,11 @@ export default function Footer({ settings: settingsProp }: { settings?: Settings
             <Link href="/#courses" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
               Featured Bundles
             </Link>
-            <Link href="/exams" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
+            {/* Phase 1 (item 4): Latest Bundles points at the real New
+                Arrivals section. "Top Rated" was removed — no rating data
+                exists anywhere, so there is no honest destination for it. */}
+            <Link href="/#new-arrivals" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
               Latest Bundles
-            </Link>
-            <Link href="/exams" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
-              Top Rated
             </Link>
             <Link href="/download" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
               My Purchases

@@ -264,7 +264,7 @@ export default function SearchBar({
           aria-label="Search"
         >
           <SearchIcon size={13} />
-          <span className="hidden sm:inline">खोजें</span>
+          <span className="hidden sm:inline">Search</span>
         </button>
       </form>
 

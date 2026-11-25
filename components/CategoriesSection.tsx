@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Category, Settings } from "@/lib/store-types";
 import { fetchWithCache } from "@/lib/store-hooks";
+import { categoryIconFor } from "@/lib/category-icons";
 import { SearchIcon, CloseIcon, GridIcon } from "@/components/icons";
 
 interface CategoriesSectionProps {
@@ -33,13 +34,16 @@ export default function CategoriesSection({ categories, title, initialSettings }
   }, [initialSettings]);
 
   // Filter categories by search
+  // Phase 1 (item 3): no-search view shows only the top 8 (priority order
+  // as returned by the API) + the "Explore All" link below. Search still
+  // filters the full list.
   const visibleCategories = useMemo(() => {
     let list = categories;
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
       list = list.filter(c => c.name.toLowerCase().includes(q) || (c.state_or_group && c.state_or_group.toLowerCase().includes(q)));
     } else {
-      list = list.slice(0, 18);
+      list = list.slice(0, 8);
     }
     return list;
   }, [categories, searchQuery]);
@@ -153,12 +157,15 @@ export default function CategoriesSection({ categories, title, initialSettings }
       >
         {visibleCategories.map((cat) => {
           const count = cat.exam_count || cat.exam_ids?.length || 0;
+          // Phase 1 (item 6): small line icon per category (house library).
+          const CardIcon = categoryIconFor(cat.id);
 
           const textBlock = (
             <div className="flex flex-col items-center">
               <p className={`font-bold leading-tight line-clamp-2 text-stone-800 group-hover:text-amber-700 transition ${
                 textSize === "sm" ? "text-sm" : textSize === "base" ? "text-base" : "text-xs"
               }`}>
+                <CardIcon size={13} className="mr-1 inline-block align-middle text-stone-400 group-hover:text-amber-700 transition" />
                 {cat.name}
               </p>
               {showExamCount && (
@@ -206,11 +213,10 @@ export default function CategoriesSection({ categories, title, initialSettings }
                   className={`w-full h-full object-contain ${shapeClass}`}
                 />
               ) : (
-                <div
-                  className="w-full h-full flex items-center justify-center"
-                  style={{ fontSize: `${Math.max(20, Math.floor(logoSize * 0.45))}px` }}
-                >
-                  {cat.icon || "🏛️"}
+                // Phase 1 (item 6): no logo → the category's line icon, not
+                // an emoji. (Previously rendered cat.icon || "🏛️".)
+                <div className="w-full h-full flex items-center justify-center text-stone-300">
+                  <CardIcon size={Math.max(24, Math.floor(logoSize * 0.45))} />
                 </div>
               )}
             </div>
@@ -266,7 +272,7 @@ export default function CategoriesSection({ categories, title, initialSettings }
         </div>
       )}
 
-      {categories.length > 18 && !searchQuery && (
+      {categories.length > 8 && !searchQuery && (
         <div className="text-center pt-2">
           <Link
             href="/exams"

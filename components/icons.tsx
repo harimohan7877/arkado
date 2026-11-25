@@ -210,4 +210,22 @@ export const MessageCircleIcon = (p: IconProps) => (
   </svg>
 );
 
+// Phase 1 (item 6): category icons, same stroke style as the rest of this
+// file. No new dependency — these are house icons, Lucide-style paths.
+export const BookOpenIcon = (p: IconProps) => (
+  <svg {...base(p)}><path d="M12 7v14" /><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" /></svg>
+);
+
+export const TrainIcon = (p: IconProps) => (
+  <svg {...base(p)}><path d="M8 3.1V7a4 4 0 0 0 8 0V3.1" /><path d="m9 15-1-1" /><path d="m15 15 1-1" /><path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z" /><path d="m8 15-2 3" /><path d="m18 15 2 3" /><circle cx="8.5" cy="14.5" r=".5" fill="currentColor" /><circle cx="15.5" cy="14.5" r=".5" fill="currentColor" /></svg>
+);
+
+export const LandmarkIcon = (p: IconProps) => (
+  <svg {...base(p)}><line x1="3" x2="21" y1="22" y2="22" /><line x1="6" x2="6" y1="18" y2="11" /><line x1="10" x2="10" y1="18" y2="11" /><line x1="14" x2="14" y1="18" y2="11" /><line x1="18" x2="18" y1="18" y2="11" /><polygon points="12 2 20 7 4 7" /></svg>
+);
+
+export const GraduationCapIcon = (p: IconProps) => (
+  <svg {...base(p)}><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" /><path d="M22 10v6" /><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" /></svg>
+);
+
 export const SparkleIcon = SparklesIcon;

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Category, Settings } from "@/lib/store-types";
 import { fetchWithCache } from "@/lib/store-hooks";
 import { DEFAULT_SETTINGS, getCleanWhatsAppNumber, getSectionVisibility } from "@/lib/default-settings";
@@ -40,6 +41,21 @@ export default function Navbar({ cartCount = 0, onCartClick, categories: categor
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [user, setUser] = useState<{ id: string; email?: string } | null>(null);
+
+  // Phase 1 (item 2): hide the desktop navbar search on the homepage while
+  // the hero (which carries its own search) is visible; show it once the
+  // user scrolls past the hero, and always on every other route.
+  const pathname = usePathname();
+  const [scrolledPastHero, setScrolledPastHero] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolledPastHero(window.scrollY >= 600);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const hideDesktopSearch = pathname === "/" && !scrolledPastHero;
 
   useEffect(() => {
     if (!Array.isArray(categoriesProp)) {
@@ -126,10 +142,14 @@ export default function Navbar({ cartCount = 0, onCartClick, categories: categor
             </p>
           </Link>
 
-          {/* Search bar (desktop) */}
-          <div className="hidden md:flex flex-1 max-w-2xl mx-2 lg:mx-auto">
-            <SearchBar trendingSearches={settings?.trending_searches} />
-          </div>
+          {/* Search bar (desktop) — hidden on the homepage at the top
+              (item 2): the hero carries the search there. Shown on scroll
+              past the hero and on every other route. */}
+          {!hideDesktopSearch && (
+            <div className="hidden md:flex flex-1 max-w-2xl mx-2 lg:mx-auto">
+              <SearchBar trendingSearches={settings?.trending_searches} />
+            </div>
+          )}
 
           {/* Right actions */}
           <div className="flex items-center gap-1 sm:gap-2 ml-auto shrink-0">

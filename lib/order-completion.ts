@@ -12,6 +12,9 @@
  *   trigger; the status API is the verdict.
  * - Idempotent: a paid order is never emailed twice. Re-running completion
  *   on a paid order just returns its current delivery state.
+ * - Delivery runs exactly once: before any email, deliverPaidOrder takes
+ *   an atomic claim (claimDelivery) — a conditional Supabase update that
+ *   only one concurrent runner (webhook vs status check) can win.
  * - If the kits' Drive links exist, delivery is instant (deliverOrder:
  *   email + delivered status). If NO link exists for any kit, the order
  *   becomes `pending_link` and the customer gets the "within 1 hour"
@@ -121,10 +124,108 @@ async function syncOrderState(
   }
 }
 
+/**
+ * Atomic delivery claim — the duplicate-email guard.
+ *
+ * Exactly one concurrent runner may deliver an order. The conditional
+ * Supabase update (delivery_status != 'delivered') is atomic: the
+ * winner's update matches the order's rows, every later runner matches
+ * zero rows. The claim deliberately sets 'delivered' (an existing
+ * state-machine value — no new status was introduced) BEFORE any email
+ * is sent; deliverPaidOrder overwrites it with 'pending_link' when
+ * delivery cannot complete, releasing the claim.
+ *
+ * `client` is injectable for tests; production always uses supabaseAdmin.
+ */
+export async function claimDelivery(
+  orderId: string,
+  fromSupabase: boolean,
+  client: typeof supabaseAdmin = supabaseAdmin
+): Promise<{ claimed: boolean; alreadyDelivered: boolean; error?: string }> {
+  if (!fromSupabase) {
+    // JSON-only order (Supabase lookup failed): there are no rows to
+    // claim atomically. The in-memory delivered guards still apply; the
+    // residual race for this rare path is documented, not hidden.
+    return { claimed: true, alreadyDelivered: false };
+  }
+  try {
+    const { data, error } = await client
+      .from("marketplace_orders")
+      .update({ delivery_status: "delivered" })
+      .or(buildOrderQueryFilter(orderId))
+      .neq("delivery_status", "delivered")
+      .select("razorpay_order_id");
+    if (error) {
+      return { claimed: false, alreadyDelivered: false, error: error.message };
+    }
+    if (!data || data.length === 0) {
+      return { claimed: false, alreadyDelivered: true };
+    }
+    return { claimed: true, alreadyDelivered: false };
+  } catch (err) {
+    return {
+      claimed: false,
+      alreadyDelivered: false,
+      error: err instanceof Error ? err.message : String(err),
+    };
+  }
+}
+
 /** Deliver a paid order: instant email when links exist, else pending_link. */
 async function deliverPaidOrder(
-  order: NormalizedOrder
-): Promise<{ pendingLink: boolean; deliveredItems: DeliverableKit[] }> {
+  order: NormalizedOrder,
+  fromSupabase: boolean
+): Promise<{
+  pendingLink: boolean;
+  deliveredItems: DeliverableKit[];
+  claimError?: string;
+}> {
+  const orderId = String(order.order_id || order.id || "");
+
+  // Atomic delivery claim — FIRST, before any email is sent. The webhook
+  // and the status check can run completePhonePeOrder concurrently; both
+  // would otherwise read "pending", both email, both mark delivered.
+  // The conditional update is the single atomic step: exactly one
+  // runner's update matches rows (delivery_status != 'delivered'), the
+  // loser gets zero rows and sends nothing. The claim sets 'delivered'
+  // up front; if delivery then fails (no links / email error) the code
+  // below overwrites it with 'pending_link', releasing the claim so the
+  // admin can re-send. Crash window: if the process dies between the
+  // claim and the email, the order reads 'delivered' but no email went
+  // out — the customer still sees the links on the success page and in
+  // the dashboard, and the admin can re-send from Orders.
+  const claim = await claimDelivery(orderId, fromSupabase);
+  if (!claim.claimed) {
+    if (claim.error) {
+      return { pendingLink: true, deliveredItems: [], claimError: claim.error };
+    }
+    // Lost the race — another runner owns delivery (or finished it).
+    // Reload and report the current state; send NOTHING here.
+    const fresh = await loadOrder(orderId);
+    if (fresh) {
+      const freshDel = String(
+        fresh.order.delivery_status || fresh.order.status || "pending"
+      ).toLowerCase();
+      if (freshDel === "delivered") {
+        const courses = await getStoreData<Array<Record<string, unknown>>>(
+          "courses",
+          "data/courses.json",
+          []
+        );
+        const kits = resolveDeliverableKits(
+          fresh.order,
+          courses,
+          String(fresh.order.drive_url || "")
+        );
+        return { pendingLink: false, deliveredItems: kits };
+      }
+      if (freshDel === "pending_link") {
+        return { pendingLink: true, deliveredItems: [] };
+      }
+    }
+    return { pendingLink: true, deliveredItems: [] };
+  }
+
   const courses = await getStoreData<any[]>("courses", "data/courses.json", []);
   const kits = resolveDeliverableKits(order, courses, String(order.drive_url || ""));
 
@@ -187,7 +288,7 @@ export async function completePhonePeOrder(
     };
   }
 
-  const { order } = loaded;
+  const { order, fromSupabase } = loaded;
   const orderId = String(order.order_id || order.id || merchantOrderId);
   const payStatus = String(order.payment_status || "pending").toLowerCase();
   const delStatus = String(order.delivery_status || order.status || "pending").toLowerCase();
@@ -215,7 +316,10 @@ export async function completePhonePeOrder(
       };
     }
     // Paid but delivery never ran (e.g. email failed mid-flight) — run it now.
-    const done = await deliverPaidOrder(order);
+    const done = await deliverPaidOrder(order, fromSupabase);
+    if (done.claimError) {
+      return { ok: false, state: "UNKNOWN", orderId, error: done.claimError };
+    }
     return {
       ok: true,
       state: "COMPLETED",
@@ -275,10 +379,16 @@ export async function completePhonePeOrder(
     transaction_id: status.transactionId,
   }).catch((err) => console.error("[order-completion] admin notify failed:", err));
 
-  const done = await deliverPaidOrder({
-    ...order,
-    payment_status: "paid",
-  });
+  const done = await deliverPaidOrder(
+    {
+      ...order,
+      payment_status: "paid",
+    },
+    fromSupabase
+  );
+  if (done.claimError) {
+    return { ok: false, state: "UNKNOWN", orderId, error: done.claimError };
+  }
   return {
     ok: true,
     state: "COMPLETED",

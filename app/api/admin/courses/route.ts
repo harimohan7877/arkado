@@ -3,6 +3,7 @@ import { verifyAdminSession } from "@/lib/admin-auth";
 import { getStoreData, setStoreData, saveUploadedFile, saveUploadedHtmlFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
 import { writeFile, mkdir } from "fs/promises";
 import { join } from "path";
+import { isRealDriveLink } from "@/lib/deliver-order";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -172,8 +173,8 @@ export async function POST(req: NextRequest) {
       featured_priority: Number(data.featured_priority || 1),
       is_new_arrival: Boolean(data.is_new_arrival),
       new_arrival_priority: Number(data.new_arrival_priority || 1),
-      sample_pdf_url: data.sample_pdf_url || "https://drive.google.com",
-      drive_url: data.drive_url || "https://drive.google.com",
+      sample_pdf_url: isRealDriveLink(data.sample_pdf_url) ? data.sample_pdf_url : "",
+      drive_url: isRealDriveLink(data.drive_url) ? data.drive_url : "",
       demo_html_mock_enabled: Boolean(data.demo_html_mock_enabled),
       demo_html_mock_url: data.demo_html_mock_url || "",
       rating: Number(data.rating || 4.9),

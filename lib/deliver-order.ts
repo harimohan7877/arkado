@@ -73,6 +73,25 @@ function escapeHtml(str: string | undefined): string {
 }
 
 /**
+ * Is this a real Drive file/folder link — or the old "no link yet"
+ * placeholder?
+ *
+ * The admin save paths used to write the bare Drive homepage
+ * ("https://drive.google.com") when a kit had no link. Delivery only
+ * checked truthiness, so that placeholder shipped to paying customers
+ * as their Download button (Drive homepage, no file) while the order
+ * was marked Delivered. A bare homepage — with or without a trailing
+ * slash or query — is NEVER a deliverable link. Real links always
+ * carry a path (/file/d/…, /drive/folders/…, /open?id=…, …).
+ */
+export function isRealDriveLink(url: string | undefined | null): boolean {
+  const u = String(url || "").trim();
+  if (!u) return false;
+  if (/^https?:\/\/(www\.)?drive\.google\.com\/?(\?.*)?$/.test(u)) return false;
+  return true;
+}
+
+/**
  * Build a NormalizedOrder from marketplace_orders rows that share one
  * gateway order id (one row per item). The first row carries the
  * customer; items come from the stored `items` JSONB (full validated
@@ -141,9 +160,9 @@ export function findMissingKitTitles(
   for (const li of orderItems) {
     if (Array.isArray(li.bundle_items) && li.bundle_items.length > 0) {
       for (const k of li.bundle_items) {
-        if (!k.drive_url) missing.push(String(k.title || "Study Kit"));
+        if (!isRealDriveLink(k.drive_url)) missing.push(String(k.title || "Study Kit"));
       }
-    } else if (!li.drive_url) {
+    } else if (!isRealDriveLink(li.drive_url)) {
       missing.push(String(li.title || courseTitle));
     }
   }
@@ -164,13 +183,13 @@ export function resolveDeliverableKits(
   for (const li of orderItems) {
     if (Array.isArray(li.bundle_items) && li.bundle_items.length > 0) {
       for (const k of li.bundle_items) {
-        if (k.drive_url)
+        if (isRealDriveLink(k.drive_url))
           deliverableKits.push({
             title: String(k.title || "Study Kit"),
             drive_url: String(k.drive_url),
           });
       }
-    } else if (li.drive_url) {
+    } else if (isRealDriveLink(li.drive_url)) {
       deliverableKits.push({
         title: String(li.title || courseTitle),
         drive_url: String(li.drive_url),
@@ -195,7 +214,7 @@ export function resolveDeliverableKits(
         if (
           (c.exam_id === examId || c.id === examId || c.slug === examId) &&
           c.is_active !== false &&
-          c.drive_url
+          isRealDriveLink(c.drive_url)
         ) {
           deliverableKits.push({
             title: String(c.title || "Study Kit"),
@@ -207,7 +226,7 @@ export function resolveDeliverableKits(
   }
   if (
     deliverableKits.length === 0 &&
-    resolvedDriveUrl &&
+    isRealDriveLink(resolvedDriveUrl) &&
     !resolvedDriveUrl.includes("arkado.store/dashboard")
   ) {
     deliverableKits.push({ title: courseTitle, drive_url: resolvedDriveUrl });
@@ -253,8 +272,10 @@ export async function deliverOrder(
   );
 
   let resolvedDriveUrl = (opts?.customDriveUrl || order.drive_url || "").trim();
-  if ((!resolvedDriveUrl || resolvedDriveUrl.length < 10) && matchedCourse?.drive_url) {
-    resolvedDriveUrl = matchedCourse.drive_url;
+  if (!isRealDriveLink(resolvedDriveUrl) || resolvedDriveUrl.length < 10) {
+    resolvedDriveUrl = isRealDriveLink(matchedCourse?.drive_url)
+      ? String(matchedCourse.drive_url)
+      : "";
   }
   if (!resolvedDriveUrl) {
     resolvedDriveUrl = "https://www.arkado.store/dashboard";

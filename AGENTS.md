@@ -129,7 +129,9 @@ tests/                        # vitest suites
   fake success page.
 - **Payment truth is server-side only:** the PhonePe webhook and the Order
   Status API decide paid/failed — never the browser redirect. Delivery
-  runs once per order (`delivery_status` guard in `lib/deliver-order.ts`).
+  runs once per order: an atomic claim (`claimDelivery` in
+  `lib/order-completion.ts`) is taken before any email is sent, plus the
+  `delivery_status` guard in `lib/deliver-order.ts`.
 - Orders live in Supabase `marketplace_orders`, with a backup merge from
   `admin_settings` on read. Delivery sends per-kit Drive links in the
   **email**; the success page shows the same links. NOTE: the DB columns

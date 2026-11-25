@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
 import { getStoreData, setStoreData, saveUploadedFile, saveUploadedHtmlFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
+import { isRealDriveLink } from "@/lib/deliver-order";
 import { writeFile, mkdir } from "fs/promises";
 import { join } from "path";
 
@@ -70,6 +71,15 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
         updates[key] = value.toString();
       }
     }
+  }
+
+  // Never persist the bare Drive homepage as a link: delivery treats any
+  // non-empty drive_url as a real file link, so a stored placeholder
+  // would ship the Drive homepage to a paying customer as their
+  // download. (The admin forms used to prefill it; the server strips it
+  // here so no client can reintroduce it.)
+  for (const key of ["drive_url", "sample_pdf_url"] as const) {
+    if (!isRealDriveLink(updates[key] as string | undefined)) updates[key] = "";
   }
 
   const safeId = id.replace(/[^a-z0-9_-]/gi, "");

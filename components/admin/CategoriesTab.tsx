@@ -94,8 +94,8 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
     format: "Printable PDF",
     language: "हिन्दी (Hindi)",
     cover_image: "",
-    sample_pdf_url: "https://drive.google.com",
-    drive_url: "https://drive.google.com",
+    sample_pdf_url: "",
+    drive_url: "",
     is_active: true,
   });
 
@@ -542,8 +542,8 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
       format: "Printable PDF",
       language: "हिन्दी (Hindi)",
       cover_image: currentExam.logo_url || "",
-      sample_pdf_url: "https://drive.google.com",
-      drive_url: "https://drive.google.com",
+      sample_pdf_url: "",
+      drive_url: "",
       is_active: true,
       highlights: [
         "1000+ विषयवार वस्तुनिष्ठ प्रश्नोत्तर (MCQs) व्याख्या सहित",
@@ -562,8 +562,8 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
       price: kit.price || 99,
       discount_percent: kit.discount_percent || 80,
       badge: kit.badge || "1000 MCQs",
-      sample_pdf_url: kit.sample_pdf_url || "https://drive.google.com",
-      drive_url: kit.drive_url || "https://drive.google.com",
+      sample_pdf_url: kit.sample_pdf_url || "",
+      drive_url: kit.drive_url || "",
       highlights: Array.isArray(kit.highlights) ? kit.highlights : [],
     });
     setShowKitModal(true);

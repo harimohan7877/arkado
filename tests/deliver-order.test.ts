@@ -12,6 +12,8 @@ import {
   findMissingKitTitles,
   resolveDeliverableKits,
   deliverOrder,
+  isRealDriveLink,
+  type NormalizedOrder,
 } from "@/lib/deliver-order";
 
 const baseOrder = {
@@ -141,5 +143,72 @@ describe("deliverOrder — partial-bundle guard", () => {
     expect(r.ok).toBe(false);
     expect((r as { status?: number }).status).toBe(500);
     expect((r as { error?: string }).error).toMatch(/SMTP/);
+  });
+});
+
+describe("isRealDriveLink — bare Drive homepage is not a link", () => {
+  it("rejects the bare homepage placeholder (and empty values)", () => {
+    expect(isRealDriveLink("https://drive.google.com")).toBe(false);
+    expect(isRealDriveLink("https://drive.google.com/")).toBe(false);
+    expect(isRealDriveLink("https://drive.google.com?usp=sharing")).toBe(false);
+    expect(isRealDriveLink("http://drive.google.com")).toBe(false);
+    expect(isRealDriveLink("")).toBe(false);
+    expect(isRealDriveLink(undefined)).toBe(false);
+    expect(isRealDriveLink(null)).toBe(false);
+  });
+
+  it("accepts real file/folder links", () => {
+    expect(isRealDriveLink("https://drive.google.com/file/d/ABC123/view")).toBe(true);
+    expect(isRealDriveLink("https://drive.google.com/drive/folders/ABC123")).toBe(true);
+    expect(isRealDriveLink("https://drive.google.com/open?id=ABC123")).toBe(true);
+    expect(isRealDriveLink("https://drive.google.com/kit-a")).toBe(true);
+  });
+});
+
+describe("placeholder drive_url counts as missing (Fix A)", () => {
+  const placeholderBundleOrder: NormalizedOrder = {
+    ...baseOrder,
+    items: [
+      {
+        id: "bundle-full",
+        title: "Full Bundle",
+        price: 199,
+        drive_url: "",
+        bundle_items: [
+          { id: "kit-a", title: "Kit A", drive_url: "https://drive.google.com" },
+          {
+            id: "kit-b",
+            title: "Kit B",
+            drive_url: "https://drive.google.com/file/d/REAL/view",
+          },
+        ],
+      },
+    ],
+  };
+
+  it("findMissingKitTitles lists the placeholder kit", () => {
+    expect(findMissingKitTitles(placeholderBundleOrder, [])).toEqual(["Kit A"]);
+  });
+
+  it("resolveDeliverableKits drops the placeholder card", () => {
+    const kits = resolveDeliverableKits(placeholderBundleOrder, [], "");
+    expect(kits).toHaveLength(1);
+    expect(kits[0].title).toBe("Kit B");
+  });
+
+  it("deliverOrder refuses the placeholder bundle (409, names the kit)", async () => {
+    const r = await deliverOrder(placeholderBundleOrder);
+    expect(r.ok).toBe(false);
+    expect((r as { status?: number }).status).toBe(409);
+    expect((r as { error?: string }).error).toMatch(/Kit A/);
+  });
+
+  it("a single kit with only the placeholder is missing", () => {
+    const single: NormalizedOrder = {
+      ...baseOrder,
+      items: [{ id: "kit-a", title: "Kit A", price: 99, drive_url: "https://drive.google.com" }],
+    };
+    expect(findMissingKitTitles(single, [])).toEqual(["Kit A"]);
+    expect(resolveDeliverableKits(single, [], "")).toHaveLength(0);
   });
 });

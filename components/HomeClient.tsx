@@ -1,16 +1,14 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
-import Link from "next/link";
 import dynamic from "next/dynamic";
 import { Course, Category, Settings } from "@/lib/store-types";
 import { DEFAULT_SETTINGS, isSectionEnabled, getOrderedSectionKeys, getSectionVisibility, SectionKey, getBundleCardStyle } from "@/lib/default-settings";
 import Navbar from "@/components/Navbar";
-import HeroSlider from "@/components/HeroSlider";
+import SearchHero from "@/components/SearchHero";
 import CourseCard from "@/components/CourseCard";
 import Footer from "@/components/Footer";
 import CategoriesSection from "@/components/CategoriesSection";
-import SidebarCategories from "@/components/SidebarCategories";
 import TrustStrip from "@/components/TrustStrip";
 import FeaturedGrid from "@/components/FeaturedGrid";
 import NavratriSection from "@/components/NavratriSection";
@@ -28,8 +26,6 @@ interface HomeClientProps {
   featured: Course[];
   /** New arrivals (server-fetched). */
   newArrivals: Course[];
-  /** Hero slider courses (server-fetched). */
-  sliderCourses: Course[];
   /** Public categories (server-fetched). */
   categories: Category[];
   /** Site settings (server-fetched). */
@@ -40,7 +36,6 @@ export default function HomeClient({
   courses: allCourses,
   featured: apiFeatured,
   newArrivals: apiNewArrivals,
-  sliderCourses,
   categories,
   settings,
 }: HomeClientProps) {
@@ -113,85 +108,7 @@ export default function HomeClient({
 
     switch (sectionKey) {
       case "hero":
-        content = (
-          <section className="bg-stone-50 border-b border-stone-200">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-                {/* Sidebar (desktop) */}
-                <div className="hidden lg:block lg:col-span-3 min-w-0 overflow-hidden">
-                  <SidebarCategories activeCategory={selectedCategory} categories={categories} />
-                </div>
-
-                {/* Hero */}
-                <div className="lg:col-span-9">
-                  <HeroSlider
-                    courses={sliderCourses}
-                    onBuyNow={handleBuyNow}
-                    onOpenSample={handleOpenSample}
-                    settings={settings}
-                  />
-                </div>
-              </div>
-
-              {/* Mobile quick category chips ribbon (horizontal scrollable) */}
-              <div className="lg:hidden mt-4">
-                <div className="flex items-center justify-between mb-2">
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-stone-500">
-                    Quick Categories
-                  </p>
-                  <Link
-                    href="/exams"
-                    className="text-xs font-semibold text-amber-700 hover:text-amber-800"
-                  >
-                    View All ({categories.length}) →
-                  </Link>
-                </div>
-                <div className="flex items-center gap-2 overflow-x-auto pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 scrollbar-none">
-                  <button
-                    onClick={() => setSelectedCategory("all")}
-                    className={`h-8 px-3 rounded-full text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 shrink-0 cursor-pointer ${
-                      selectedCategory === "all"
-                        ? "bg-stone-900 text-white shadow-xs"
-                        : "bg-white text-stone-700 border border-stone-200 hover:border-stone-300"
-                    }`}
-                  >
-                    <span>🔥</span>
-                    <span>All</span>
-                  </button>
-                  {categories.slice(0, 10).map((cat) => {
-                    const isSelected = selectedCategory === cat.id;
-                    return (
-                      <button
-                        key={cat.id}
-                        onClick={() =>
-                          setSelectedCategory(isSelected ? "all" : cat.id)
-                        }
-                        className={`h-8 px-3 rounded-full text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 shrink-0 cursor-pointer ${
-                          isSelected
-                            ? "bg-stone-900 text-white shadow-xs"
-                            : "bg-white text-stone-700 border border-stone-200 hover:border-stone-300"
-                        }`}
-                      >
-                        {cat.logo_url ? (
-                          <img
-                            src={cat.logo_url}
-                            alt={cat.name}
-                            loading="lazy"
-                            decoding="async"
-                            className="w-4 h-4 rounded-full object-contain"
-                          />
-                        ) : (
-                          <span className="text-xs">{cat.icon || "📚"}</span>
-                        )}
-                        <span>{cat.name}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          </section>
-        );
+        content = <SearchHero />;
         break;
 
       case "trust_strip":

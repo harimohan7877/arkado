@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Navbar from "@/components/Navbar";
+import CartNavbar from "@/components/CartNavbar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { getSiteUrl, absoluteImageUrl, toMetaDescription } from "@/lib/seo";
@@ -89,7 +89,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="min-h-screen flex flex-col bg-white">
-        <Navbar cartCount={0} onCartClick={() => {}} />
+        <CartNavbar />
 
         <main className="flex-1 w-full max-w-3xl mx-auto px-4 sm:px-6 py-10">
           <Link

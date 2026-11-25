@@ -217,7 +217,6 @@ export interface HomeData {
   courses: any[];
   featured: any[];
   newArrivals: any[];
-  sliderCourses: any[];
   categories: any[];
   settings: any;
 }
@@ -235,12 +234,11 @@ export async function getHomeData(): Promise<HomeData> {
     getPublicSettings(),
   ]);
 
-  const [courses, featured, newArrivals, sliderCourses] = await Promise.all([
+  const [courses, featured, newArrivals] = await Promise.all([
     Promise.resolve(buildPublicCourses(allCourses)),
     Promise.resolve(buildFeaturedCourses(allCourses, featuredConfig)),
     Promise.resolve(buildNewArrivalCourses(allCourses, featuredConfig)),
-    Promise.resolve(buildSliderCourses(allCourses)),
   ]);
 
-  return { courses, featured, newArrivals, sliderCourses, categories, settings };
+  return { courses, featured, newArrivals, categories, settings };
 }

@@ -43,6 +43,9 @@ export default function CartDrawer({
   const [step, setStep] = useState<Step>("cart");
   const [checkoutView, setCheckoutView] = useState<CheckoutView>("details");
   const contentScrollRef = useRef<HTMLDivElement>(null);
+  // Native <dialog> top-layer ref (ticket 02) + double-submit guard.
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const submittingRef = useRef(false);
 
   useEffect(() => {
     if (contentScrollRef.current) {
@@ -66,6 +69,7 @@ export default function CartDrawer({
   const [authMode, setAuthMode] = useState<"login" | "signup">("login");
   const [authEmail, setAuthEmail] = useState("");
   const [authPassword, setAuthPassword] = useState("");
+  const [showAuthPassword, setShowAuthPassword] = useState(false);
   const [authBusy, setAuthBusy] = useState(false);
   const [authError, setAuthError] = useState("");
   const [authNotice, setAuthNotice] = useState("");
@@ -85,6 +89,7 @@ export default function CartDrawer({
     setErrorMsg("");
     setAuthError("");
     setAuthNotice("");
+    submittingRef.current = false;
     // Reset to the cart step — otherwise reopening the drawer after
     // closing from checkout shows the payment form instead of the cart.
     setStep("cart");
@@ -133,6 +138,33 @@ export default function CartDrawer({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
+
+  // Native <dialog> top layer (ticket 02): showModal() puts the drawer
+  // above every z-index control on the page (dock FABs sit at z86/z90),
+  // makes the background inert, traps Tab focus inside, returns focus to
+  // the opener on close, and fires `cancel` on Escape. The dialog element
+  // stays mounted so the ref survives close; open/close are driven here.
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    if (isOpen) {
+      if (!dialog.open) dialog.showModal();
+    } else if (dialog.open) {
+      dialog.close();
+    }
+  }, [isOpen]);
+
+  // Escape: stop the native auto-close so our handler runs the full
+  // cleanup (step reset, error reset, onClose) instead.
+  const handleDialogCancel = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    handleDrawerClose();
+  };
+
+  // Backdrop click: clicks on the ::backdrop land on the dialog element.
+  const handleDialogClick = (e: React.MouseEvent<HTMLDialogElement>) => {
+    if (e.target === dialogRef.current) handleDrawerClose();
+  };
 
   // Totals: site-wide sale auto-applies to every item (bundle-* items already include it)
   const subtotal = cartItems.reduce((sum, item) => sum + finalItemPrice(item, salePct), 0);
@@ -242,6 +274,11 @@ export default function CartDrawer({
     }
     const cleanPhone = phone.replace(/\D/g, "").slice(-10);
 
+    // Double-submit guard: a second Enter/click before React re-renders
+    // must not start a second order (one visible Pay submit + this guard).
+    if (submittingRef.current) return;
+    submittingRef.current = true;
+
     setIsSubmitting(true);
     try {
       // Attach the session token when logged in so the order links to
@@ -292,6 +329,7 @@ export default function CartDrawer({
       console.error("PhonePe checkout error:", err);
       setErrorMsg(err.message || "Something went wrong. Please contact us on WhatsApp.");
       setIsSubmitting(false);
+      submittingRef.current = false;
     }
   };
 
@@ -300,22 +338,20 @@ export default function CartDrawer({
     void handlePhonePePay();
   };
 
-  if (!isOpen) return null;
-
   const stepIndex = step === "cart" ? 0 : 1;
   const stepLabels = ["Cart", "Payment", "Done"];
 
   return (
-    <>
-      {/* Backdrop overlay */}
-      <div
-        className="fixed inset-0 bg-stone-900/60 backdrop-blur-xs z-[70] anim-fade-in-up"
-        onClick={handleDrawerClose}
-        aria-hidden="true"
-      />
-
-      {/* Cart Drawer sliding window - z-[80] ensures it is clearly above the backdrop overlay */}
-      <div className="fixed right-0 top-0 bottom-0 w-full sm:max-w-md bg-white z-[80] shadow-2xl flex flex-col overflow-hidden anim-slide-down">
+    <dialog
+      ref={dialogRef}
+      onCancel={handleDialogCancel}
+      onClick={handleDialogClick}
+      aria-labelledby="cart-drawer-title"
+      className="m-0 ml-auto h-dvh max-h-dvh w-full sm:max-w-md overflow-hidden bg-transparent p-0 border-0 backdrop:bg-stone-900/60 backdrop:backdrop-blur-xs"
+    >
+      {/* Cart Drawer panel — the dialog itself is the positioned top-layer
+          element; this inner div is the visible drawer surface. */}
+      <div className="h-full w-full bg-white shadow-2xl flex flex-col overflow-hidden anim-slide-down">
         {/* Header with progress */}
         <div className="border-b border-slate-200 bg-white shrink-0">
           <div className="p-4 flex items-center justify-between">
@@ -324,7 +360,7 @@ export default function CartDrawer({
                 <span className="w-7 h-7 rounded-md bg-amber-700 text-white flex items-center justify-center">
                   <CartIcon size={14} />
                 </span>
-                <h2 className="font-extrabold text-slate-900 text-base">
+                <h2 id="cart-drawer-title" className="font-extrabold text-slate-900 text-base">
                   {step === "cart" && "Your Cart"}
                   {step === "pay" && checkoutView === "signin" && "Sign In"}
                   {step === "pay" && checkoutView === "details" && "Payment / Checkout"}
@@ -389,7 +425,7 @@ export default function CartDrawer({
         {/* Content */}
         <div ref={contentScrollRef} className="flex-1 overflow-y-auto p-4 space-y-3">
           {errorMsg && (
-            <div className="p-3 bg-red-50 border border-red-200 rounded-md text-xs text-red-800 font-semibold flex items-start gap-2">
+            <div role="alert" className="p-3 bg-red-50 border border-red-200 rounded-md text-xs text-red-800 font-semibold flex items-start gap-2">
               <AlertCircleIcon size={14} className="shrink-0 mt-0.5" />
               <span>{errorMsg}</span>
             </div>
@@ -500,7 +536,7 @@ export default function CartDrawer({
                 </div>
               )}
               {authError && (
-                <div className="p-3 bg-red-50 border border-red-200 rounded-md text-xs text-red-800 font-semibold flex items-start gap-2">
+                <div role="alert" className="p-3 bg-red-50 border border-red-200 rounded-md text-xs text-red-800 font-semibold flex items-start gap-2">
                   <AlertCircleIcon size={14} className="shrink-0 mt-0.5" />
                   <span>{authError}</span>
                 </div>
@@ -508,8 +544,11 @@ export default function CartDrawer({
 
               <form onSubmit={handleAuthSubmit} className="space-y-3">
                 <div>
-                  <label className="block text-xs font-bold text-slate-800 mb-1">Email *</label>
+                  <label htmlFor="cart-auth-email" className="block text-xs font-bold text-slate-800 mb-1">Email *</label>
                   <input
+                    id="cart-auth-email"
+                    name="email"
+                    autoComplete="email"
                     type="email"
                     required
                     placeholder="you@gmail.com"
@@ -519,16 +558,42 @@ export default function CartDrawer({
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-slate-800 mb-1">Password *</label>
-                  <input
-                    type="password"
-                    required
-                    minLength={6}
-                    placeholder="At least 6 characters"
-                    value={authPassword}
-                    onChange={(e) => setAuthPassword(e.target.value)}
-                    className="w-full px-3 py-2.5 rounded-md border border-slate-300 text-sm focus:outline-none focus:border-amber-700"
-                  />
+                  <label htmlFor="cart-auth-password" className="block text-xs font-bold text-slate-800 mb-1">Password *</label>
+                  <div className="relative">
+                    <input
+                      id="cart-auth-password"
+                      name="password"
+                      autoComplete="current-password"
+                      type={showAuthPassword ? "text" : "password"}
+                      required
+                      minLength={6}
+                      placeholder="At least 6 characters"
+                      value={authPassword}
+                      onChange={(e) => setAuthPassword(e.target.value)}
+                      className="w-full px-3 py-2.5 pr-16 rounded-md border border-slate-300 text-sm focus:outline-none focus:border-amber-700"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowAuthPassword(!showAuthPassword)}
+                      aria-label={showAuthPassword ? "Hide password" : "Show password"}
+                      aria-pressed={showAuthPassword}
+                      className="absolute right-3 top-3 text-xs text-slate-400 hover:text-slate-700 cursor-pointer"
+                    >
+                      {showAuthPassword ? "Hide" : "Show"}
+                    </button>
+                  </div>
+                  {authMode === "login" && (
+                    <p className="text-[11px] text-right mt-1.5">
+                      <a
+                        href={`https://wa.me/${whatsappSupportNumber.replace(/\D/g, "")}?text=${encodeURIComponent("Hello Arkado! I forgot my account password. Please help me reset it.")}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-amber-800 font-bold hover:underline"
+                      >
+                        Forgot password?
+                      </a>
+                    </p>
+                  )}
                 </div>
                 <button
                   type="submit"
@@ -607,10 +672,13 @@ export default function CartDrawer({
               {/* Order Form */}
               <form id="checkout-form" onSubmit={handleFormSubmit} className="space-y-3">
                 <div>
-                  <label className="block text-xs font-bold text-slate-800 mb-1">
+                  <label htmlFor="checkout-name" className="block text-xs font-bold text-slate-800 mb-1">
                     Full Name *
                   </label>
                   <input
+                    id="checkout-name"
+                    name="name"
+                    autoComplete="name"
                     type="text"
                     required
                     placeholder="e.g. Rahul Sharma"
@@ -622,14 +690,19 @@ export default function CartDrawer({
 
                 {/* 2. WhatsApp / Mobile Number */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
+                  <label htmlFor="checkout-phone" className="block text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
                     <span className="flex items-center gap-1.5">
                       <WhatsappIcon size={14} className="text-emerald-600 inline" /> WhatsApp / Mobile Number *
                     </span>
-                    <span className="text-[10px] text-slate-400 font-normal">10 digits</span>
+                    <span id="checkout-phone-hint" className="text-[10px] text-slate-400 font-normal">10 digits</span>
                   </label>
                   <input
+                    id="checkout-phone"
+                    name="phone"
+                    autoComplete="tel"
+                    aria-describedby="checkout-phone-hint"
                     type="tel"
+                    inputMode="tel"
                     required
                     maxLength={16}
                     placeholder="e.g. 9876543210"
@@ -649,13 +722,17 @@ export default function CartDrawer({
 
                 {/* 3. Email Address */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
+                  <label htmlFor="checkout-email" className="block text-xs font-bold text-slate-800 mb-1 flex items-center justify-between">
                     <span>Email Address *</span>
                     <span className="text-[10px] text-amber-700 font-semibold bg-amber-50 px-1.5 py-0.5 rounded">
                       Notes will be sent here
                     </span>
                   </label>
                   <input
+                    id="checkout-email"
+                    name="email"
+                    autoComplete="email"
+                    aria-describedby="checkout-email-hint"
                     type="email"
                     required
                     placeholder="e.g. rahul@gmail.com"
@@ -664,15 +741,17 @@ export default function CartDrawer({
                     onChange={(e) => setEmail(e.target.value.trim().toLowerCase())}
                     className="w-full px-3 py-2.5 rounded-md border border-slate-300 text-sm focus:outline-none focus:border-amber-700 disabled:bg-slate-50 disabled:text-slate-500"
                   />
-                  <p className="text-[10px] text-slate-500 mt-1">
+                  <p id="checkout-email-hint" className="text-[10px] text-slate-500 mt-1">
                     Your Google Drive notes and test access links will be sent to this email.
                   </p>
                 </div>
 
                 {/* Terms & Conditions acceptance (mandatory) */}
                 <div className="pt-1">
-                  <label className="flex items-start gap-2.5 cursor-pointer select-none">
+                  <label htmlFor="checkout-terms" className="flex items-start gap-2.5 cursor-pointer select-none">
                     <input
+                      id="checkout-terms"
+                      name="terms"
                       type="checkbox"
                       checked={termsAccepted}
                       onChange={(e) => setTermsAccepted(e.target.checked)}
@@ -714,25 +793,9 @@ export default function CartDrawer({
                   </label>
                 </div>
 
-                {/* Pay button */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-amber-700 via-amber-800 to-amber-900 hover:from-amber-800 hover:to-amber-950 text-white font-extrabold text-sm transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-md cursor-pointer mt-4"
-                >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      <span>Opening secure payment...</span>
-                    </>
-                  ) : (
-                    <>
-                      <CheckIcon size={16} />
-                      <span>Pay ₹{subtotal} Securely</span>
-                    </>
-                  )}
-                </button>
-
+                {/* Pay submit lives in the footer bar below (single visible
+                    submit, form="checkout-form"); Enter in a field submits
+                    the form via onSubmit. */}
                 <p className="text-[11px] text-slate-500 text-center pt-1">
                   Secure payment via PhonePe — UPI, card or netbanking. Your download links appear right after payment.
                 </p>
@@ -756,7 +819,7 @@ export default function CartDrawer({
 
         {/* Footer actions */}
         {cartItems.length > 0 && step === "cart" && (
-          <div className="p-4 border-t border-slate-200 bg-white shrink-0">
+          <div className="p-4 pb-[max(1rem,env(safe-area-inset-bottom))] border-t border-slate-200 bg-white shrink-0">
             <div className="flex items-baseline justify-between mb-3">
               <span className="text-sm text-slate-600 font-medium">
                 Total Amount:
@@ -772,7 +835,7 @@ export default function CartDrawer({
         )}
 
         {cartItems.length > 0 && step === "pay" && checkoutView === "details" && (
-          <div className="p-4 border-t border-slate-200 bg-white shrink-0">
+          <div className="p-4 pb-[max(1rem,env(safe-area-inset-bottom))] border-t border-slate-200 bg-white shrink-0">
             <div className="flex items-baseline justify-between mb-3">
               <span className="text-sm text-slate-600 font-medium">
                 Total Amount:
@@ -812,7 +875,7 @@ export default function CartDrawer({
         )}
 
         {step === "pay" && checkoutView === "signin" && (
-          <div className="p-4 border-t border-slate-200 bg-white shrink-0">
+          <div className="p-4 pb-[max(1rem,env(safe-area-inset-bottom))] border-t border-slate-200 bg-white shrink-0">
             <button
               type="button"
               onClick={() => setStep("cart")}
@@ -824,6 +887,6 @@ export default function CartDrawer({
           </div>
         )}
       </div>
-    </>
+    </dialog>
   );
 }

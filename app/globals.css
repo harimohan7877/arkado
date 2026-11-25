@@ -36,6 +36,14 @@
   --shadow-md: 0 2px 8px rgba(28, 25, 23, 0.06), 0 1px 2px rgba(28, 25, 23, 0.04);
   --shadow-lg: 0 8px 24px rgba(28, 25, 23, 0.08), 0 2px 6px rgba(28, 25, 23, 0.04);
   --shadow-card-hover: 0 12px 32px rgba(180, 83, 9, 0.12), 0 4px 8px rgba(28, 25, 23, 0.04);
+
+  /* Ticket 10 hero tokens (PROPOSED palette for the search-first hero —
+     not the current brand tokens above). White on --hero-action is 6.85:1,
+     ink on --hero-paper 16.35:1, secondary on paper 7.13:1 (WCAG AA). */
+  --hero-paper: #faf7f0;
+  --hero-ink: #1c1917;
+  --hero-secondary: #57534e;
+  --hero-action: #9a3e0a;
 }
 
 @theme inline {
@@ -44,6 +52,10 @@
   --color-brand: var(--brand);
   --color-canvas: var(--bg-canvas);
   --color-night: var(--bg-night);
+  --color-hero-paper: var(--hero-paper);
+  --color-hero-ink: var(--hero-ink);
+  --color-hero-secondary: var(--hero-secondary);
+  --color-hero-action: var(--hero-action);
   --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
   --font-devanagari: var(--font-noto-devanagari), 'Noto Sans Devanagari', sans-serif;
 }

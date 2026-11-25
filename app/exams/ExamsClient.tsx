@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
@@ -15,9 +16,19 @@ const POPULAR_FILTERS = [
 ];
 
 export default function ExamsClient() {
+  const router = useRouter();
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
+  const [categoriesError, setCategoriesError] = useState<string | null>(null);
+  const [categoriesReload, setCategoriesReload] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
+  // Exam-level search (ticket 04): results from /api/exams?q=, shown above
+  // the categories. null = no exam search has run for the current query.
+  const [examResults, setExamResults] = useState<Exam[] | null>(null);
+  const [examSearching, setExamSearching] = useState(false);
+  const [examSearchError, setExamSearchError] = useState<string | null>(null);
+  const examSearchSeq = useRef(0);
+  const urlSyncTimer = useRef<number | undefined>(undefined);
   const [activeFilter, setActiveFilter] = useState("all");
   const [expandedCatId, setExpandedCatId] = useState<string | null>(null);
   const [categoryExams, setCategoryExams] = useState<Record<string, Exam[]>>({});
@@ -31,9 +42,96 @@ export default function ExamsClient() {
       .then((data) => {
         setCategories(Array.isArray(data) ? data : []);
       })
-      .catch((err) => console.error("Failed to fetch categories:", err))
+      .catch((err) => {
+        console.error("Failed to fetch categories:", err);
+        setCategoriesError("Could not load the exam directory. Check your connection and try again.");
+      })
       .finally(() => setLoading(false));
+  }, [categoriesReload]);
+
+  // Keep the typed query in the URL (?q=) so Back and shared links work.
+  // Initial query comes from the URL on mount (client-only read, no
+  // useSearchParams — this page has no Suspense boundary). The setState here
+  // runs once after hydration on purpose: reading window during render
+  // would mismatch the SSR HTML.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("q") || "";
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- mount-only URL read, see comment above
+    if (q) setSearchQuery(q);
   }, []);
+
+  useEffect(() => {
+    const q = searchQuery.trim();
+    window.clearTimeout(urlSyncTimer.current);
+    urlSyncTimer.current = window.setTimeout(() => {
+      router.replace(q ? `/exams?q=${encodeURIComponent(q)}` : "/exams", { scroll: false });
+    }, 400);
+    return () => window.clearTimeout(urlSyncTimer.current);
+  }, [searchQuery, router]);
+
+  // Rank exact name/short-name matches first; normalize case + spaces.
+  // No invented aliases — matching uses the live name/short_name/board.
+  const rankExams = (exams: Exam[], q: string): Exam[] => {
+    const normalize = (s: string) => s.toLowerCase().replace(/\s+/g, " ").trim();
+    const nq = normalize(q);
+    const score = (e: Exam) => {
+      const name = normalize(e.name || "");
+      const short = normalize(e.short_name || "");
+      const board = normalize(e.board || "");
+      if (name === nq || short === nq) return 0;
+      if (name.startsWith(nq) || short.startsWith(nq)) return 1;
+      if (name.includes(nq) || short.includes(nq)) return 2;
+      if (board.includes(nq)) return 3;
+      return 4;
+    };
+    return [...exams].sort((a, b) => score(a) - score(b));
+  };
+
+  const searchExams = (q: string) => {
+    const trimmed = q.trim();
+    if (!trimmed) {
+      setExamResults(null);
+      setExamSearching(false);
+      setExamSearchError(null);
+      return;
+    }
+    setExamSearching(true);
+    setExamSearchError(null);
+    const seq = ++examSearchSeq.current;
+    fetchWithCache<Exam[]>(`/api/exams?q=${encodeURIComponent(trimmed)}`)
+      .then((data) => {
+        if (examSearchSeq.current !== seq) return; // stale response — ignore
+        const exams = Array.isArray(data) ? data : [];
+        setExamResults(rankExams(exams, trimmed).slice(0, 20));
+        setExamSearching(false);
+      })
+      .catch((err) => {
+        if (examSearchSeq.current !== seq) return; // stale response — ignore
+        console.error("Failed to search exams:", err);
+        setExamSearchError("Could not search exams right now. Showing categories below.");
+        setExamSearching(false);
+      });
+  };
+
+  // Debounced exam search while typing (300ms); submit searches at once.
+  // Query-change resets live here (adjusting state during render, the
+  // React-recommended pattern) so the debounced effect only schedules the
+  // fetch — no stale results, no false zero while a search is pending.
+  const [prevSearchQuery, setPrevSearchQuery] = useState(searchQuery);
+  if (prevSearchQuery !== searchQuery) {
+    setPrevSearchQuery(searchQuery);
+    setExamResults(null);
+    setExamSearching(searchQuery.trim() !== "");
+    setExamSearchError(null);
+  }
+
+  useEffect(() => {
+    const q = searchQuery.trim();
+    if (!q) return;
+    const timer = window.setTimeout(() => searchExams(q), 300);
+    return () => window.clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchQuery]);
 
   const fetchExamsForCategory = async (catId: string) => {
     if (categoryExams[catId] || loadingExams[catId]) return;
@@ -161,29 +259,52 @@ export default function ExamsClient() {
             </div>
 
             {/* SEARCH INPUT IN HERO */}
-            <div className="pt-2 max-w-3xl">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search exam name, board, state (e.g. RSSB, SSC, Police, CUET, Banking)..."
-                  value={searchQuery}
-                  onChange={(e) => {
-                    setSearchQuery(e.target.value);
-                    setVisibleCount(24);
-                  }}
-                  className="w-full pl-11 pr-10 py-3.5 bg-white text-stone-900 rounded-xl text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-lg"
-                />
-                <SearchIcon size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" />
-                {searchQuery && (
-                  <button
-                    onClick={() => setSearchQuery("")}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full hover:bg-stone-200 flex items-center justify-center text-stone-500 cursor-pointer"
-                  >
-                    <CloseIcon size={14} />
-                  </button>
-                )}
+            <form
+              role="search"
+              onSubmit={(e) => {
+                e.preventDefault();
+                searchExams(searchQuery);
+              }}
+              className="pt-2 max-w-3xl"
+            >
+              <label htmlFor="exams-search" className="block text-xs font-bold text-amber-300 mb-1.5">
+                Search exams
+              </label>
+              <div className="flex gap-2">
+                <div className="relative flex-1">
+                  <input
+                    id="exams-search"
+                    name="q"
+                    type="text"
+                    placeholder="Search exam name, board, state (e.g. RSSB, SSC, Police, CUET, Banking)..."
+                    value={searchQuery}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value);
+                      setVisibleCount(24);
+                    }}
+                    aria-describedby="exams-search-status"
+                    className="w-full pl-11 pr-10 py-3.5 bg-white text-stone-900 rounded-xl text-sm placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-lg"
+                  />
+                  <SearchIcon size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400" />
+                  {searchQuery && (
+                    <button
+                      type="button"
+                      onClick={() => setSearchQuery("")}
+                      aria-label="Clear search"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full hover:bg-stone-200 flex items-center justify-center text-stone-500 cursor-pointer"
+                    >
+                      <CloseIcon size={14} />
+                    </button>
+                  )}
+                </div>
+                <button
+                  type="submit"
+                  className="px-5 py-3.5 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-sm font-bold shadow-lg transition cursor-pointer shrink-0"
+                >
+                  Search
+                </button>
               </div>
-            </div>
+            </form>
           </div>
         </section>
 
@@ -228,11 +349,94 @@ export default function ExamsClient() {
             )}
           </div>
 
+          {/* EXAM SEARCH RESULTS — matching exams, above the categories */}
+          {searchQuery.trim() && (
+            <div id="exams-search-status" aria-live="polite" className="space-y-3">
+              {examSearching ? (
+                <div className="flex items-center gap-2 text-xs text-stone-500 font-semibold">
+                  <span className="w-4 h-4 border-2 border-stone-300 border-t-amber-600 rounded-full animate-spin" />
+                  Searching exams for &ldquo;{searchQuery.trim()}&rdquo;…
+                </div>
+              ) : examSearchError ? (
+                <div className="bg-white rounded-2xl border border-red-200 p-4 text-xs text-red-700 font-semibold flex items-center justify-between gap-3">
+                  <span>{examSearchError}</span>
+                  <button
+                    type="button"
+                    onClick={() => searchExams(searchQuery)}
+                    className="px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-lg font-bold cursor-pointer shrink-0"
+                  >
+                    Retry
+                  </button>
+                </div>
+              ) : examResults && examResults.length > 0 ? (
+                <div className="bg-white rounded-2xl border border-stone-200 p-5 space-y-3">
+                  <h2 className="text-sm font-bold text-stone-900">
+                    Exams matching &ldquo;{searchQuery.trim()}&rdquo; ({examResults.length})
+                  </h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                    {examResults.map((exam) => (
+                      <Link
+                        key={exam.id}
+                        href={`/exams/${examSlug(exam)}`}
+                        className="group flex items-center gap-3 p-3 rounded-xl border border-stone-200 hover:border-amber-500 hover:bg-amber-50/50 transition cursor-pointer"
+                      >
+                        <div className="flex-1 min-w-0">
+                          <div className="text-sm font-bold text-stone-900 group-hover:text-amber-700 leading-snug">
+                            {exam.name}
+                          </div>
+                          <div className="text-[11px] text-stone-500 font-semibold mt-0.5">
+                            {exam.board || exam.category_name || ""}
+                          </div>
+                        </div>
+                        <div className="shrink-0 flex flex-col items-end gap-1">
+                          {exam.min_price != null && exam.min_price > 0 && (
+                            <span className="text-[11px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full whitespace-nowrap">
+                              ₹{exam.min_price} se shuru
+                            </span>
+                          )}
+                          <span className="text-[11px] font-bold text-stone-400 group-hover:text-amber-700">
+                            View →
+                          </span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : examResults !== null ? (
+                <div className="bg-white rounded-2xl border border-stone-200 p-5 text-center">
+                  <p className="text-sm font-bold text-stone-800">
+                    No exams match &ldquo;{searchQuery.trim()}&rdquo;
+                  </p>
+                  <p className="text-xs text-stone-500 mt-1">
+                    Try a broader term — e.g. SSC, Banking, Police — or browse the categories below.
+                  </p>
+                </div>
+              ) : null}
+            </div>
+          )}
+
           {loading ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[...Array(6)].map((_, i) => (
                 <div key={i} className="h-44 bg-white rounded-2xl border border-stone-200 p-5 animate-pulse" />
               ))}
+            </div>
+          ) : categoriesError ? (
+            <div className="bg-white rounded-2xl border border-red-200 p-12 text-center space-y-3">
+              <p className="text-4xl">⚠️</p>
+              <p className="text-lg font-bold text-stone-800">Couldn&apos;t load the exam directory</p>
+              <p className="text-sm text-stone-500">{categoriesError}</p>
+              <button
+                type="button"
+                onClick={() => {
+                  setLoading(true);
+                  setCategoriesError(null);
+                  setCategoriesReload((n) => n + 1);
+                }}
+                className="px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-xl text-sm font-bold transition cursor-pointer"
+              >
+                Retry
+              </button>
             </div>
           ) : displayedCategories.length === 0 ? (
             <div className="bg-white rounded-2xl border border-stone-200 p-12 text-center space-y-3">

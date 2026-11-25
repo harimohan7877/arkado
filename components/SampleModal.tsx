@@ -7,7 +7,6 @@ import { getExamLabel } from "@/lib/exam-labels";
 import { applySale, useSiteSale } from "@/lib/sale-pricing";
 import {
   CloseIcon,
-  StarIcon,
   ShoppingBagIcon,
   CheckIcon,
   FileTextIcon,
@@ -40,7 +39,6 @@ export default function SampleModal({
 
   if (!isOpen || !course) return null;
   const examLabel = getExamLabel(course.exam_id);
-  const rating = course.rating || 4.9;
   const salePrice = applySale(course.price, salePct);
   const strikePrice = saleLive ? course.price : course.original_price;
   const badgeText = saleLive ? `${salePct}% OFF` : `${course.discount_percent}% OFF`;
@@ -83,10 +81,6 @@ export default function SampleModal({
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
                 <span className="text-[10px] font-extrabold uppercase bg-amber-400 text-slate-950 px-2 py-0.5 rounded">
                   {course.badge}
-                </span>
-                <span className="text-[11px] font-bold text-amber-300 flex items-center gap-1">
-                  <StarIcon size={11} />
-                  {rating.toFixed(1)} ({course.rating_count || "4,000+"})
                 </span>
               </div>
               <h3 className="font-extrabold text-base sm:text-lg leading-tight text-white">

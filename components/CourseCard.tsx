@@ -9,7 +9,6 @@ import { DEFAULT_BUNDLE_CARD_STYLE } from "@/lib/default-settings";
 import { getExamLabel } from "@/lib/exam-labels";
 import { applySale, useSiteSale } from "@/lib/sale-pricing";
 import {
-  StarIcon,
   FileTextIcon,
   ZapIcon,
   ShoppingBagIcon,
@@ -31,7 +30,6 @@ export default function CourseCard({
 }: CourseCardProps) {
   const [imgError, setImgError] = useState(false);
   const examLabel = getExamLabel(course.exam_id);
-  const rating = course.rating || 4.9;
   const courseHref = `/course/${course.slug || course.id}`;
 
   const style = {
@@ -71,7 +69,6 @@ export default function CourseCard({
   const validBadge = course.badge && !isNumericStr(course.badge) ? course.badge : "";
   const displayTag = validExam || validBadge;
   const hasTag = Boolean(style.show_exam_tag && displayTag);
-  const hasRating = Boolean(style.show_rating);
 
   // Site-wide sale: every product price drops automatically while the sale is live
   const { pct: salePct, isLive: saleLive } = useSiteSale();
@@ -143,19 +140,11 @@ export default function CourseCard({
 
       {/* Body */}
       <div className="p-[var(--card-mobile-pad)] sm:p-[var(--card-desktop-pad)] flex-1 flex flex-col gap-1.5 sm:gap-2">
-        {(hasTag || hasRating) && (
+        {hasTag && (
           <div className="flex items-center justify-between gap-1 min-h-[16px] sm:min-h-[18px]">
-            {hasTag && (
-              <span className="text-[9px] sm:text-[10px] font-bold uppercase text-amber-800 bg-amber-50 border border-amber-200 px-1 py-0.2 rounded truncate max-w-[70%]">
-                {displayTag}
-              </span>
-            )}
-            {hasRating && (
-              <span className={`rating-chip text-[9px] sm:text-xs shrink-0 px-1 py-0.2 ${!hasTag ? "ml-auto" : ""}`}>
-                <StarIcon size={9} className="star" />
-                {rating.toFixed(1)}
-              </span>
-            )}
+            <span className="text-[9px] sm:text-[10px] font-bold uppercase text-amber-800 bg-amber-50 border border-amber-200 px-1 py-0.2 rounded truncate max-w-[70%]">
+              {displayTag}
+            </span>
           </div>
         )}
 

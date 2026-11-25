@@ -3,8 +3,9 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Course, Category } from "@/lib/store-types";
+import { Course, Category, Exam } from "@/lib/store-types";
 import { fetchWithCache } from "@/lib/store-hooks";
+import { examSlug } from "@/lib/exam-slug";
 import { applySale, useSiteSale } from "@/lib/sale-pricing";
 import { SearchIcon, CloseIcon, ChevronRightIcon, ArrowRightIcon, SparklesIcon } from "@/components/icons";
 
@@ -45,6 +46,11 @@ export default function SearchBar({
   const [isOpen, setIsOpen] = useState(false);
   const [courses, setCourses] = useState<Course[]>(CACHED_COURSES || []);
   const [categories, setCategories] = useState<Category[]>(CACHED_CATEGORIES || []);
+  const [dataReady, setDataReady] = useState(Boolean(CACHED_COURSES && CACHED_CATEGORIES));
+  // Exam-level matches (ticket 04): from /api/exams?q=, debounced.
+  const [examResults, setExamResults] = useState<Exam[]>([]);
+  const [examSearching, setExamSearching] = useState(false);
+  const examSearchSeq = useRef(0);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -69,6 +75,7 @@ export default function SearchBar({
       CACHED_CATEGORIES = validCategories;
       setCourses(validCourses);
       setCategories(validCategories);
+      setDataReady(true);
     });
 
     return () => {
@@ -98,6 +105,39 @@ export default function SearchBar({
   };
 
   const trimmedQuery = query.trim().toLowerCase();
+
+  // Exam-level search (ticket 04): debounced /api/exams?q= lookup so typed
+  // exam names (e.g. "SSC MTS") surface as hub links, not just courses.
+  // Stale responses are ignored; zero is never reported while a search is
+  // still pending (the empty state waits on examSearching). Query-change
+  // resets live here (adjusting state during render) so the effect below
+  // only schedules the fetch — never show stale results for a new query.
+  const [prevQuery, setPrevQuery] = useState(query);
+  if (prevQuery !== query) {
+    setPrevQuery(query);
+    setExamResults([]);
+    setExamSearching(query.trim() !== "");
+  }
+
+  useEffect(() => {
+    const q = query.trim();
+    if (!q) return;
+    const seq = ++examSearchSeq.current;
+    const timer = window.setTimeout(() => {
+      fetchWithCache<Exam[]>(`/api/exams?q=${encodeURIComponent(q)}`)
+        .then((data) => {
+          if (examSearchSeq.current !== seq) return; // stale — ignore
+          setExamResults((Array.isArray(data) ? data : []).slice(0, 5));
+          setExamSearching(false);
+        })
+        .catch(() => {
+          if (examSearchSeq.current !== seq) return; // stale — ignore
+          setExamResults([]);
+          setExamSearching(false);
+        });
+    }, 300);
+    return () => window.clearTimeout(timer);
+  }, [query]);
 
   // Matched Categories
   const matchedCategories = useMemo(() => {
@@ -150,6 +190,12 @@ export default function SearchBar({
     router.push(`/category/${cat.id}`);
   };
 
+  const handleSelectExam = (exam: Exam) => {
+    setIsOpen(false);
+    if (onSelectResult) onSelectResult();
+    router.push(`/exams/${examSlug(exam)}`);
+  };
+
   const handleSelectTrending = (term: string) => {
     setQuery(term);
     setIsOpen(false);
@@ -157,7 +203,7 @@ export default function SearchBar({
     router.push(`/search?q=${encodeURIComponent(term)}`);
   };
 
-  const hasMatches = matchedCategories.length > 0 || matchedCourses.length > 0;
+  const hasMatches = matchedCategories.length > 0 || matchedCourses.length > 0 || examResults.length > 0;
 
   return (
     <div ref={containerRef} className={`relative w-full ${className}`}>
@@ -184,6 +230,7 @@ export default function SearchBar({
           autoCorrect="off"
           spellCheck={false}
           placeholder={placeholder}
+          aria-label="Search exams, courses and categories"
           onFocus={() => setIsOpen(true)}
           onChange={(e) => {
             setQuery(e.target.value);
@@ -204,6 +251,7 @@ export default function SearchBar({
             }}
             className="p-1 mr-1 text-stone-400 hover:text-stone-700 rounded-full hover:bg-stone-100 transition cursor-pointer shrink-0"
             title="Clear search"
+            aria-label="Clear search"
           >
             <CloseIcon size={14} />
           </button>
@@ -249,6 +297,38 @@ export default function SearchBar({
               {/* STATE 2: Has Results */}
               {hasMatches ? (
                 <div className="divide-y divide-stone-100">
+                  {/* Matching Exams — canonical exam hubs, above categories */}
+                  {examResults.length > 0 && (
+                    <div className="p-3 bg-amber-50/50">
+                      <p className="text-[11px] font-bold uppercase tracking-wider text-stone-500 mb-2 px-1">
+                        🎯 परीक्षाएँ (Exams)
+                      </p>
+                      <div className="space-y-1">
+                        {examResults.map((exam) => (
+                          <button
+                            key={exam.id}
+                            type="button"
+                            onClick={() => handleSelectExam(exam)}
+                            className="w-full flex items-center justify-between p-2 rounded-xl hover:bg-white hover:shadow-xs transition text-left cursor-pointer group"
+                          >
+                            <div className="min-w-0">
+                              <span className="text-xs font-bold text-stone-900 group-hover:text-amber-700 transition truncate block">
+                                {exam.name}
+                              </span>
+                              <span className="text-[10px] text-stone-500 line-clamp-1 block">
+                                {exam.board || exam.category_name || ""}
+                              </span>
+                            </div>
+                            <span className="text-[10px] font-bold text-stone-400 group-hover:text-amber-700 flex items-center gap-0.5 shrink-0 ml-2">
+                              <span>{exam.min_price != null && exam.min_price > 0 ? `₹${exam.min_price} se shuru` : "देखें"}</span>
+                              <ChevronRightIcon size={12} />
+                            </span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {/* Matching Categories */}
                   {matchedCategories.length > 0 && (
                     <div className="p-3 bg-stone-50/60">
@@ -386,6 +466,14 @@ export default function SearchBar({
                     </button>
                   </div>
                 </div>
+              ) : !dataReady || examSearching ? (
+                /* Still loading — never report zero before data arrives */
+                <div className="p-6 text-center space-y-2">
+                  <div className="w-6 h-6 border-2 border-stone-300 border-t-amber-600 rounded-full animate-spin mx-auto" />
+                  <p className="text-xs text-stone-500 font-semibold">
+                    &ldquo;{query}&rdquo; के लिए खोजा जा रहा है…
+                  </p>
+                </div>
               ) : (
                 /* STATE 3: No Results */
                 <div className="p-6 text-center space-y-2">
@@ -393,7 +481,7 @@ export default function SearchBar({
                     <SearchIcon size={20} />
                   </div>
                   <h4 className="text-sm font-bold text-stone-800">
-                    &ldquo;{query}&rdquo; से संबंधित कोई कोर्स नहीं मिला
+                    &ldquo;{query}&rdquo; से संबंधित कोई कोर्स या परीक्षा नहीं मिली
                   </h4>
                   <p className="text-xs text-stone-500 max-w-xs mx-auto">
                     कृपया सही वर्तनी (Spelling) चेक करें या <strong>CET, SSC, Patwari, Police</strong> आदि लिखकर खोजें।

@@ -36,7 +36,8 @@ export async function fetchCoursesServer(): Promise<CourseBundle[]> {
 /**
  * Fast single-course lookup for crawlers and page renders.
  * Queries ONE Supabase row by exact id (no 2.5MB catalog download).
- * Falls back to the full catalog scan for slug / exam_id aliases.
+ * Falls back to the full catalog scan for slug aliases only — exam ids
+ * must NOT resolve to a course (see findCourseById).
  * Cached per-request so generateMetadata + page share one lookup.
  */
 export const fetchSingleCourseServer = cache(
@@ -74,7 +75,8 @@ export const fetchSingleCourseServer = cache(
         } as unknown as CourseBundle;
       }
     } catch {}
-    // Fallback: slug / exam_id aliases need the full catalog scan.
+    // Fallback: slug aliases need the full catalog scan. (Exam ids are
+    // deliberately NOT resolved here — see findCourseById.)
     const courses = await fetchCoursesServer();
     return findCourseById(courses, id);
   }
@@ -118,19 +120,20 @@ export function findExamById(exams: Exam[], id: string): Exam | undefined {
   );
 }
 
-/** Match a course by slug, id or exam_id (mirrors client-side lookup). */
+/** Match a course by its OWN slug or id only. An exam id must NOT resolve
+ * to a course: /course/<exam-id> has to fall through to the exam-hub
+ * redirect in app/course/[id]/page.tsx (ticket 08). Previously the
+ * exam_id equality + fuzzy exam_id match returned the first kit of the
+ * exam (e.g. /course/5004 served the MTS Maths book with Maths JSON-LD
+ * and canonical, HTTP 200, instead of redirecting to /exams/ssc-mts). */
 export function findCourseById(
   courses: CourseBundle[],
   id: string
 ): CourseBundle | undefined {
   const clean = id.toLowerCase().trim();
   return (
-    courses.find((c) => c.slug === id || c.id === id || c.exam_id === id) ||
-    courses.find(
-      (c) =>
-        c.slug?.toLowerCase().includes(clean) ||
-        (c.exam_id && clean.includes(c.exam_id.toLowerCase()))
-    )
+    courses.find((c) => c.slug === id || c.id === id) ||
+    courses.find((c) => c.slug?.toLowerCase().includes(clean))
   );
 }
 

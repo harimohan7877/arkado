@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Settings } from "@/lib/store-types";
 import { fetchWithCache } from "@/lib/store-hooks";
-import { DEFAULT_SETTINGS } from "@/lib/default-settings";
+import { DEFAULT_SETTINGS, getSectionVisibility } from "@/lib/default-settings";
 import {
   PhoneIcon,
   MailIcon,
@@ -16,13 +16,6 @@ import {
   CheckCircleIcon,
   FileTextIcon,
 } from "@/components/icons";
-
-const SendIcon = (p: { size?: number; className?: string }) => (
-  <svg width={p.size ?? 16} height={p.size ?? 16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={p.className}>
-    <path d="m22 2-7 20-4-9-9-4Z" />
-    <path d="M22 2 11 13" />
-  </svg>
-);
 
 export default function Footer({ settings: settingsProp }: { settings?: Settings | null }) {
   const [settings, setSettings] = useState<Settings | null>(() =>
@@ -42,6 +35,11 @@ export default function Footer({ settings: settingsProp }: { settings?: Settings
   const social = settings?.social || {};
   const homepage = settings?.homepage || {};
 
+  // Same anchor rule as Navbar (ticket 09): the Hot Deals quick link only
+  // renders when the homepage section exists, so it never points at a
+  // missing target. Defaults to visible while settings are loading.
+  const showHotDeals = getSectionVisibility(settings, "hot_deals").isVisible;
+
   const logoText = brand.logo_text || "Arkado";
   const footerTagline = brand.footer_tagline || "All-India exam preparation — deep-level analysis & pattern-based notes.";
 
@@ -49,11 +47,6 @@ export default function Footer({ settings: settingsProp }: { settings?: Settings
   const instagramUrl = social.instagram_url || "https://instagram.com/";
   const facebookUrl = social.facebook_url || "https://facebook.com/";
   const gmailUrl = social.gmail_url || "mailto:hello@arkado.store";
-
-  const newsletterTitle = homepage.newsletter_title || "Stay Updated with Exam Alerts";
-  const newsletterSubtitle = homepage.newsletter_subtitle || "Get pattern updates, new bundles & exclusive deals";
-  const newsletterPlaceholder = homepage.newsletter_placeholder || "Your Email Address";
-  const newsletterBtn = homepage.newsletter_button_text || "Subscribe";
 
   return (
     <footer className="bg-stone-950 text-stone-300 mt-16">
@@ -66,7 +59,7 @@ export default function Footer({ settings: settingsProp }: { settings?: Settings
                 Ready to crack your exam?
               </h3>
               <p className="text-sm text-amber-100 mt-1">
-                Deep-level analysis & pattern-based notes trusted by thousands of aspirants.
+                Deep-level analysis &amp; pattern-based notes, topic-wise MCQs and full mock tests for All-India exams.
               </p>
             </div>
             <Link
@@ -145,9 +138,11 @@ export default function Footer({ settings: settingsProp }: { settings?: Settings
             <Link href="/exams" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
               All Exams
             </Link>
-            <Link href="/#deals" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
-              {homepage.hot_deals_title || "Today's Hot Deals"}
-            </Link>
+            {showHotDeals && (
+              <Link href="/#deals" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
+                {homepage.hot_deals_title || "Today's Hot Deals"}
+              </Link>
+            )}
             <Link href="/#courses" className="block text-xs text-stone-400 hover:text-amber-400 transition py-0.5">
               Featured Bundles
             </Link>
@@ -225,24 +220,11 @@ export default function Footer({ settings: settingsProp }: { settings?: Settings
               </div>
             </div>
 
-            <div className="pt-2">
-              <h5 className="text-white font-bold text-xs mb-2">{newsletterTitle}</h5>
-              <p className="text-[10px] text-stone-400 mb-2">{homepage.newsletter_subtitle || "Get pattern updates, new bundles & exclusive deals"}</p>
-              <form className="flex">
-                <input
-                  type="email"
-                  placeholder={newsletterPlaceholder}
-                  className="flex-1 px-3 py-2 rounded-l-md bg-stone-800 border border-stone-700 text-xs text-white placeholder:text-stone-500 focus:outline-none focus:border-amber-500"
-                />
-                <button
-                  type="submit"
-                  className="px-4 bg-amber-600 hover:bg-amber-700 text-white rounded-r-md text-xs font-bold flex items-center gap-1 transition cursor-pointer"
-                >
-                  <SendIcon size={12} />
-                  {newsletterBtn}
-                </button>
-              </form>
-            </div>
+            {/* Newsletter signup REMOVED (ticket 11): the form had no onSubmit/action
+                and no backend exists (no /api/newsletter route) — submitting it only
+                reloaded the page while the live copy advertised WhatsApp. The footer
+                keeps its working WhatsApp Chat link above. Restore this block only
+                with a real, labelled subscribe flow (format validation + feedback). */}
           </div>
         </div>
 

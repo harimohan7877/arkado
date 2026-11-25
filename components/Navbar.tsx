@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Category, Settings } from "@/lib/store-types";
 import { fetchWithCache } from "@/lib/store-hooks";
-import { DEFAULT_SETTINGS, getCleanWhatsAppNumber } from "@/lib/default-settings";
+import { DEFAULT_SETTINGS, getCleanWhatsAppNumber, getSectionVisibility } from "@/lib/default-settings";
 import { supabase } from "@/lib/supabase";
 import SearchBar from "@/components/SearchBar";
 import {
@@ -87,6 +87,12 @@ export default function Navbar({ cartCount = 0, onCartClick, categories: categor
 
   const logoText = settings?.brand?.logo_text || settings?.site_name || "Arkado";
   const tagline = settings?.brand?.tagline || "Pattern-decoded notes for Rajasthan exams";
+
+  // Anchor targets exist only when the homepage section renders — a nav link
+  // to a disabled section is a dead anchor (ticket 09). The helper defaults
+  // to visible while settings are still loading, matching HomeClient.
+  const showHotDeals = getSectionVisibility(settings, "hot_deals").isVisible;
+  const showNewArrivals = getSectionVisibility(settings, "new_arrivals").isVisible;
 
   return (
     <>
@@ -240,24 +246,28 @@ export default function Navbar({ cartCount = 0, onCartClick, categories: categor
             >
               Home
             </Link>
-            <Link
-              href="/#deals"
-              className="h-11 px-3 flex items-center text-sm font-semibold text-stone-700 hover:text-amber-700 transition"
-            >
-              {settings?.homepage?.hot_deals_title || "Today's Hot Deals"}
-            </Link>
+            {showHotDeals && (
+              <Link
+                href="/#deals"
+                className="h-11 px-3 flex items-center text-sm font-semibold text-stone-700 hover:text-amber-700 transition"
+              >
+                {settings?.homepage?.hot_deals_title || "Today's Hot Deals"}
+              </Link>
+            )}
             <Link
               href="/exams"
               className="h-11 px-3 flex items-center text-sm font-semibold text-stone-700 hover:text-amber-700 transition"
             >
               All Exams
             </Link>
-            <Link
-              href="/#new"
-              className="h-11 px-3 flex items-center text-sm font-semibold text-stone-700 hover:text-amber-700 transition"
-            >
-              {settings?.homepage?.new_arrivals_title || "New Arrivals"}
-            </Link>
+            {showNewArrivals && (
+              <Link
+                href="/#new-arrivals"
+                className="h-11 px-3 flex items-center text-sm font-semibold text-stone-700 hover:text-amber-700 transition"
+              >
+                {settings?.homepage?.new_arrivals_title || "New Arrivals"}
+              </Link>
+            )}
           </div>
         </div>
       </header>
@@ -367,13 +377,15 @@ export default function Navbar({ cartCount = 0, onCartClick, categories: categor
               >
                 All Categories
               </Link>
-              <Link
-                href="/#deals"
-                onClick={() => setShowMobileMenu(false)}
-                className="block px-3 py-2.5 rounded-md font-semibold text-stone-700 hover:bg-stone-100"
-              >
-                {settings?.homepage?.hot_deals_title || "Today's Hot Deals"}
-              </Link>
+              {showHotDeals && (
+                <Link
+                  href="/#deals"
+                  onClick={() => setShowMobileMenu(false)}
+                  className="block px-3 py-2.5 rounded-md font-semibold text-stone-700 hover:bg-stone-100"
+                >
+                  {settings?.homepage?.hot_deals_title || "Today's Hot Deals"}
+                </Link>
+              )}
 
               <div className="pt-3 pb-1">
                 <p className="px-3 text-xs font-bold text-stone-400 uppercase tracking-wider">

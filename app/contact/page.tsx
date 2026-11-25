@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Navbar from "@/components/Navbar";
+import CartNavbar from "@/components/CartNavbar";
 import Footer from "@/components/Footer";
 import { Settings } from "@/lib/store-types";
 import { DEFAULT_SETTINGS } from "@/lib/default-settings";
@@ -26,7 +26,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <Navbar cartCount={0} onCartClick={() => {}} />
+      <CartNavbar />
 
       <main className="flex-1 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
         <h1 className="text-3xl sm:text-4xl font-black text-slate-900">Contact Us</h1>

@@ -17,6 +17,42 @@ import { useCart } from "@/components/CartProvider";
 const SampleModal = dynamic(() => import("@/components/SampleModal"), { ssr: false });
 const CartDrawer = dynamic(() => import("@/components/CartDrawer"), { ssr: false });
 
+/**
+ * MOBILE STICKY ACTION BAR — verified-demo gate (2026-11-25).
+ *
+ * "Try Free CBT" appears ONLY when ALL three are true for THIS product:
+ *   (i)   the admin demo flag is on (course.demo_html_mock_enabled),
+ *   (ii)  a demo URL is set (course.demo_html_mock_url),
+ *   (iii) that exact URL is VERIFIED as matching this product's exam/subject.
+ *
+ * VERIFIED_MATCHING_DEMOS is keyed by course id -> the exact demo URL that was
+ * verified for it. It is EMPTY today, deliberately: the only demo verified so
+ * far is the shared SSC MTS demo (ssc-mts-20q-demo-cbt-simulator.html), which
+ * is 20/20 Geometry questions and does NOT match any MTS kit — so it must NOT
+ * qualify. The other 26 demo URLs in the catalogue are UNVERIFIED and do not
+ * qualify either. Add an entry ONLY after a content check confirms the file's
+ * questions belong to that product (see
+ * audit-verify-2026-11-25/07-mts-sample-demo-correction-spec.md); the button
+ * then appears automatically for that product.
+ *
+ * When the gate fails, the bar shows "Buy Bundle" full width. No
+ * "Download Full CBT (.html)" button or copy exists anywhere here — those
+ * files do not exist (purchased delivery is Drive links only).
+ */
+const VERIFIED_MATCHING_DEMOS: Record<string, string> = {
+  // course id -> verified demo URL. Empty until a demo is verified matching.
+};
+
+/** Same URL rule as the in-page demo card: Supabase storage URLs become the
+ *  on-site /mock-tests/<file> path so the demo opens on arkado.store. */
+function resolveDemoHref(url: string): string {
+  if (url.includes("/storage/v1/object/public/arkado-uploads/mock-tests/")) {
+    const fname = url.split("/mock-tests/")[1];
+    if (fname) return `/mock-tests/${fname}`;
+  }
+  return url;
+}
+
 interface PageProps {
   params: Promise<{ id: string }> | { id: string };
 }
@@ -295,6 +331,16 @@ export default function CourseDetailClient({ params }: PageProps) {
   // Site-wide sale: every price on this page drops automatically while live
   const salePct = getSalePct(settings);
   const saleLive = salePct > 0;
+
+  // Sticky-bar demo gate (see VERIFIED_MATCHING_DEMOS above). NOTE: this
+  // gates ONLY the new sticky bar's "Try Free CBT". The in-page demo card
+  // further down still links any demo-enabled product — its "120 Min" claim
+  // is ticket 07's separate correction, not this change.
+  const hasVerifiedDemo =
+    course.demo_html_mock_enabled === true &&
+    typeof course.demo_html_mock_url === "string" &&
+    course.demo_html_mock_url.length > 0 &&
+    VERIFIED_MATCHING_DEMOS[course.id] === course.demo_html_mock_url;
 
   // =========================================================
   // MULTI-KIT EXAM STUDY MATERIAL HUB (Level 4 Website View)
@@ -1075,6 +1121,9 @@ export default function CourseDetailClient({ params }: PageProps) {
             </div>
           </section>
         )}
+        {/* Spacer for the mobile sticky action bar (68px bar + device safe
+            area) so it never covers the last content. */}
+        <div aria-hidden="true" className="h-[calc(68px+env(safe-area-inset-bottom))] lg:hidden" />
       </main>
 
       <Footer />
@@ -1095,6 +1144,41 @@ export default function CourseDetailClient({ params }: PageProps) {
         }}
         onBuyNow={handleBuyNow}
       />
+      {/* MOBILE STICKY ACTION BAR — product page only (this component),
+          below lg (desktop uses the buy card in the sidebar). "Try Free CBT"
+          renders only with a verified matching demo (see hasVerifiedDemo);
+          otherwise "Buy Bundle" is full width. The fixed bar sits below the
+          cart drawer (top layer), and the spacer at the end of <main> keeps
+          the last content reachable. No offline claim, no CBT download. */}
+      <div className="fixed bottom-0 inset-x-0 z-40 lg:hidden">
+        <div className="bg-white/95 backdrop-blur border-t border-stone-200 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] flex gap-3">
+          {hasVerifiedDemo ? (
+            <>
+              <a
+                href={resolveDemoHref(course.demo_html_mock_url || "")}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 min-h-11 py-3 rounded-2xl border-2 border-amber-700 text-amber-700 font-black text-sm flex items-center justify-center gap-2 transition cursor-pointer focus-visible:outline-2 focus-visible:outline-amber-700 focus-visible:outline-offset-2 active:scale-[0.98]"
+              >
+                ▶ Try Free CBT
+              </a>
+              <button
+                onClick={() => handleBuyNow(course)}
+                className="flex-1 min-h-11 py-3 rounded-2xl bg-amber-700 hover:bg-amber-800 text-white font-black text-sm flex items-center justify-center gap-2 transition shadow-md cursor-pointer focus-visible:outline-2 focus-visible:outline-amber-700 focus-visible:outline-offset-2 active:scale-[0.98]"
+              >
+                Buy Bundle
+              </button>
+            </>
+          ) : (
+            <button
+              onClick={() => handleBuyNow(course)}
+              className="w-full min-h-11 py-3 rounded-2xl bg-amber-700 hover:bg-amber-800 text-white font-black text-sm flex items-center justify-center gap-2 transition shadow-md cursor-pointer focus-visible:outline-2 focus-visible:outline-amber-700 focus-visible:outline-offset-2 active:scale-[0.98]"
+            >
+              Buy Bundle
+            </button>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

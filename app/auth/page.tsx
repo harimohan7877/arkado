@@ -225,13 +225,13 @@ export default function AuthPage() {
         <div className="p-6 sm:p-8">
           {/* Alerts */}
           {errorMessage && (
-            <div className="mb-5 p-3.5 bg-red-50 border border-red-200/80 rounded-xl text-xs text-red-700 font-medium flex items-start gap-2">
+            <div role="alert" className="mb-5 p-3.5 bg-red-50 border border-red-200/80 rounded-xl text-xs text-red-700 font-medium flex items-start gap-2">
               <span className="text-sm">⚠️</span>
               <span className="flex-1 leading-relaxed">{errorMessage}</span>
             </div>
           )}
           {successMessage && (
-            <div className="mb-5 p-3.5 bg-emerald-50 border border-emerald-200/80 rounded-xl text-xs text-emerald-700 font-medium flex items-start gap-2">
+            <div role="status" className="mb-5 p-3.5 bg-emerald-50 border border-emerald-200/80 rounded-xl text-xs text-emerald-700 font-medium flex items-start gap-2">
               <span className="text-sm">✅</span>
               <span className="flex-1 leading-relaxed">{successMessage}</span>
             </div>
@@ -275,10 +275,13 @@ export default function AuthPage() {
           {mode === "login" && (
             <form onSubmit={handlePasswordLogin} className="space-y-4">
               <div>
-                <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
+                <label htmlFor="login-email" className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
                   Email Address
                 </label>
                 <input
+                  id="login-email"
+                  name="email"
+                  autoComplete="email"
                   type="email"
                   required
                   placeholder="name@example.com"
@@ -289,11 +292,14 @@ export default function AuthPage() {
               </div>
 
               <div>
-                <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
+                <label htmlFor="login-password" className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
                   Password
                 </label>
                 <div className="relative">
                   <input
+                    id="login-password"
+                    name="password"
+                    autoComplete="current-password"
                     type={showPassword ? "text" : "password"}
                     required
                     placeholder="••••••••"
@@ -304,11 +310,23 @@ export default function AuthPage() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
+                    aria-label={showPassword ? "Hide password" : "Show password"}
+                    aria-pressed={showPassword}
                     className="absolute right-3 top-3 text-xs text-stone-400 hover:text-stone-700 cursor-pointer"
                   >
                     {showPassword ? "Hide" : "Show"}
                   </button>
                 </div>
+                <p className="text-[11px] text-right mt-1.5">
+                  <a
+                    href={`${DEFAULT_SETTINGS.social.whatsapp_url}?text=${encodeURIComponent("Hello Arkado! I forgot my account password. Please help me reset it.")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-amber-800 font-bold hover:underline"
+                  >
+                    Forgot password?
+                  </a>
+                </p>
               </div>
 
               <button
@@ -332,10 +350,13 @@ export default function AuthPage() {
           {mode === "signup" && (
             <form onSubmit={handlePasswordSignUp} className="space-y-4">
               <div>
-                <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
+                <label htmlFor="signup-name" className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
                   Full Name
                 </label>
                 <input
+                  id="signup-name"
+                  name="name"
+                  autoComplete="name"
                   type="text"
                   required
                   placeholder="e.g. Rahul Sharma"
@@ -346,10 +367,13 @@ export default function AuthPage() {
               </div>
 
               <div>
-                <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
+                <label htmlFor="signup-email" className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
                   Email Address
                 </label>
                 <input
+                  id="signup-email"
+                  name="email"
+                  autoComplete="email"
                   type="email"
                   required
                   placeholder="name@example.com"
@@ -360,11 +384,14 @@ export default function AuthPage() {
               </div>
 
               <div>
-                <label className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
+                <label htmlFor="signup-password" className="block text-[11px] font-bold text-stone-700 uppercase tracking-wider mb-1.5 font-mono">
                   Create Password (min. 6 characters)
                 </label>
                 <div className="relative">
                   <input
+                    id="signup-password"
+                    name="password"
+                    autoComplete="new-password"
                     type={showPassword ? "text" : "password"}
                     required
                     minLength={6}
@@ -376,6 +403,8 @@ export default function AuthPage() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
+                    aria-label={showPassword ? "Hide password" : "Show password"}
+                    aria-pressed={showPassword}
                     className="absolute right-3 top-3 text-xs text-stone-400 hover:text-stone-700 cursor-pointer"
                   >
                     {showPassword ? "Hide" : "Show"}

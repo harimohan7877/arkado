@@ -7,7 +7,7 @@ import CategoriesTab from "@/components/admin/CategoriesTab";
 import FeaturedTab from "@/components/admin/FeaturedTab";
 import ExamsTab from "@/components/admin/ExamsTab";
 import CoursesTab from "@/components/admin/CoursesTab";
-import OrdersTab from "@/components/admin/OrdersTab";
+import OrdersTab, { type OrderSubTab } from "@/components/admin/OrdersTab";
 import SettingsTab from "@/components/admin/SettingsTab";
 import SectionsTab from "@/components/admin/SectionsTab";
 import BlogTab from "@/components/admin/BlogTab";
@@ -94,6 +94,7 @@ const NAV_ITEMS: { id: TabType; label: string; short: string; icon: string }[] =
 export default function AdminDashboardPage() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<TabType>("categories");
+  const [orderTab, setOrderTab] = useState<OrderSubTab>("pending");
   const [stats, setStats] = useState<Stats | null>(null);
   const [loadingStats, setLoadingStats] = useState(false);
 
@@ -253,7 +254,7 @@ export default function AdminDashboardPage() {
                             🔴 {stats.alerts.stalePendingOrders.count} order 24 घंटे से ज्यादा से pending — payment verify karo
                           </p>
                           <button
-                            onClick={() => setActiveTab("orders")}
+                            onClick={() => { setOrderTab("pending"); setActiveTab("orders"); }}
                             className="text-[11px] font-bold text-red-700 bg-red-100 hover:bg-red-200 px-2.5 py-1 rounded-lg transition cursor-pointer shrink-0"
                           >
                             Orders देखो
@@ -275,7 +276,7 @@ export default function AdminDashboardPage() {
                             🟠 {stats.alerts.undeliveredPaid.count} paid order ki delivery बाकी है
                           </p>
                           <button
-                            onClick={() => setActiveTab("orders")}
+                            onClick={() => { setOrderTab("link_pending"); setActiveTab("orders"); }}
                             className="text-[11px] font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-2.5 py-1 rounded-lg transition cursor-pointer shrink-0"
                           >
                             Orders देखो
@@ -416,7 +417,7 @@ export default function AdminDashboardPage() {
           </div>
         )}
 
-        {activeTab === "orders" && <OrdersTab getAuthHeaders={getAuthHeaders} />}
+        {activeTab === "orders" && <OrdersTab getAuthHeaders={getAuthHeaders} initialTab={orderTab} />}
         {activeTab === "blog" && <BlogTab getAuthHeaders={getAuthHeaders} />}
       </main>
     </div>

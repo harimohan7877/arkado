@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
-// validateGatewayOrder must apply the SAME pricing law as POST /api/orders
+// validateCheckoutOrder must apply the SAME pricing law as POST /api/orders
 // (sale % + bundle discount from lib/sale-pricing.ts). These tests pin that:
 // the old path charged raw catalog prices and would have overcharged during
 // a sale. getStoreData is mocked to return canned settings + catalog.
@@ -24,7 +24,7 @@ vi.mock("@/lib/supabase", () => ({
   supabaseAdmin: { from: () => ({}) },
 }));
 
-import { validateGatewayOrder } from "@/lib/payment-gateway";
+import { validateCheckoutOrder } from "@/lib/checkout";
 
 const SALE_OFF = {
   homepage: { festival_offer: { enabled: false, discount_percent: 0 } },
@@ -44,14 +44,14 @@ const COURSES = [
   { id: "k2", slug: "k2", price: 100, title: "Kit Two", drive_url: "https://drive/k2" },
 ];
 
-describe("validateGatewayOrder (gateway pricing = /api/orders pricing)", () => {
+describe("validateCheckoutOrder (PhonePe pricing)", () => {
   beforeEach(() => {
     mockData.settings = SALE_OFF;
     mockData.courses = COURSES;
   });
 
   it("charges the catalog price when no sale is running", async () => {
-    const r = await validateGatewayOrder([{ productId: "c1" }], 99);
+    const r = await validateCheckoutOrder([{ productId: "c1" }], 99);
     expect(r.isValid).toBe(true);
     expect(r.totalAmount).toBe(99);
     expect(r.items[0].price).toBe(99);
@@ -59,7 +59,7 @@ describe("validateGatewayOrder (gateway pricing = /api/orders pricing)", () => {
 
   it("applies the sale % — a 20% sale turns Rs.99 into Rs.79", async () => {
     mockData.settings = SALE_20;
-    const r = await validateGatewayOrder([{ productId: "c1" }], 79);
+    const r = await validateCheckoutOrder([{ productId: "c1" }], 79);
     expect(r.isValid).toBe(true);
     expect(r.totalAmount).toBe(79);
     expect(r.items[0].price).toBe(79);
@@ -67,12 +67,12 @@ describe("validateGatewayOrder (gateway pricing = /api/orders pricing)", () => {
 
   it("rejects when the client total is the pre-sale price during a sale", async () => {
     mockData.settings = SALE_20;
-    const r = await validateGatewayOrder([{ productId: "c1" }], 99);
+    const r = await validateCheckoutOrder([{ productId: "c1" }], 99);
     expect(r.isValid).toBe(false);
   });
 
   it("recomputes bundles from kits (Rs.100 + Rs.100, 5% off = Rs.190)", async () => {
-    const r = await validateGatewayOrder(
+    const r = await validateCheckoutOrder(
       [{ productId: "bundle-exam-test", bundle_items: ["k1", "k2"] }],
       190
     );
@@ -84,7 +84,7 @@ describe("validateGatewayOrder (gateway pricing = /api/orders pricing)", () => {
   });
 
   it("rejects a bundle priced without the bundle discount", async () => {
-    const r = await validateGatewayOrder(
+    const r = await validateCheckoutOrder(
       [{ productId: "bundle-exam-test", bundle_items: ["k1", "k2"] }],
       200
     );
@@ -92,17 +92,17 @@ describe("validateGatewayOrder (gateway pricing = /api/orders pricing)", () => {
   });
 
   it("rejects a bundle with no kit ids", async () => {
-    const r = await validateGatewayOrder([{ productId: "bundle-exam-test" }], 190);
+    const r = await validateCheckoutOrder([{ productId: "bundle-exam-test" }], 190);
     expect(r.isValid).toBe(false);
   });
 
   it("rejects an unknown product", async () => {
-    const r = await validateGatewayOrder([{ productId: "nope" }], 99);
+    const r = await validateCheckoutOrder([{ productId: "nope" }], 99);
     expect(r.isValid).toBe(false);
   });
 
   it("rejects an empty cart", async () => {
-    const r = await validateGatewayOrder([], 0);
+    const r = await validateCheckoutOrder([], 0);
     expect(r.isValid).toBe(false);
   });
 });

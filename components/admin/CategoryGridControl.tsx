@@ -41,24 +41,10 @@ export default function CategoryGridControl({ getAuthHeaders }: CategoryGridCont
     setSavedTick(false);
     try {
       const headers = getAuthHeaders();
-      const curRes = await fetch(`/api/admin/settings?t=${Date.now()}`, {
-        headers,
-        cache: "no-store",
-      });
-      if (!curRes.ok) throw new Error("load failed");
-      const current = await curRes.json();
-      const updatedHomepage = {
-        ...(current?.homepage || {}),
-        category_card_style: {
-          ...(current?.homepage?.category_card_style || {}),
-          mobile_grid_cols: nextMobile,
-          desktop_grid_cols: nextDesktop,
-        },
-      };
       const res = await fetch("/api/admin/settings", {
         method: "POST",
         headers: { ...headers, "Content-Type": "application/json" },
-        body: JSON.stringify({ homepage: updatedHomepage }),
+        body: JSON.stringify({ homepage: { category_card_style: { mobile_grid_cols: nextMobile, desktop_grid_cols: nextDesktop } } }),
       });
       if (!res.ok) throw new Error("save failed");
       setSavedTick(true);

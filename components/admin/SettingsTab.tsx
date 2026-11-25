@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect, startTransition } from "react";
+import { useState, useEffect, startTransition, useRef } from "react";
+import { diffSettings } from "@/lib/settings-patch";
 import Link from "next/link";
 import { Settings } from "@/lib/store-types";
 import { DEFAULT_SECTION_ORDER, SectionKey, getOrderedSectionKeys } from "@/lib/default-settings";
@@ -178,8 +179,8 @@ const SECTION_INFO: Record<
   }
 > = {
   hero: {
-    name: "हीरो स्लाइडर व साइडबार",
-    englishName: "Hero Slider & Sidebar",
+    name: "ऑल-इंडिया परीक्षा सर्च",
+    englishName: "All-India Search Hero",
     icon: "🏛️",
     desc: "शीर्ष मुख्य स्लाइडर, डेस्कटॉप साइडबार व मोबाइल कैटेगरी चिप्स।",
     defaultTitle: "RSMSSB CET & Rajasthan Exam Bundles",
@@ -248,56 +249,55 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const [activeTab, setActiveTab] = useState<TabKey>("contact");
+  const baselineSettings = useRef<Settings | null>(null);
+  const [loadError, setLoadError] = useState(false);
   const [newTagInput, setNewTagInput] = useState("");
   const [uploadingDevi, setUploadingDevi] = useState<number | null>(null);
 
   const fetchSettings = async () => {
     try {
       const res = await fetch("/api/admin/settings", { headers: getAuthHeaders() });
-      if (res.ok) {
-        const data = await res.json();
-        setSettings((prev) => ({
-          ...DEFAULT_SETTINGS,
-          ...prev,
-          ...data,
-          brand: { ...DEFAULT_SETTINGS.brand, ...prev.brand, ...data.brand },
-          homepage: {
-            ...DEFAULT_SETTINGS.homepage,
-            ...prev.homepage,
-            ...data.homepage,
-            promo_banner: {
-              ...DEFAULT_SETTINGS.homepage?.promo_banner,
-              ...prev.homepage?.promo_banner,
-              ...data.homepage?.promo_banner,
-            },
-            festival_offer: {
-              ...DEFAULT_SETTINGS.homepage?.festival_offer,
-              ...prev.homepage?.festival_offer,
-              ...data.homepage?.festival_offer,
-            },
-            trust_features: data.homepage?.trust_features || prev.homepage?.trust_features || DEFAULT_SETTINGS.homepage?.trust_features,
-            faqs: data.homepage?.faqs || prev.homepage?.faqs || DEFAULT_SETTINGS.homepage?.faqs,
+      if (!res.ok) throw new Error("Settings load failed");
+      const data = await res.json();
+      const loaded: Settings = {
+        ...DEFAULT_SETTINGS,
+        ...data,
+        brand: { ...DEFAULT_SETTINGS.brand, ...data.brand },
+        homepage: {
+          ...DEFAULT_SETTINGS.homepage,
+          ...data.homepage,
+          promo_banner: {
+            ...DEFAULT_SETTINGS.homepage?.promo_banner,
+            ...data.homepage?.promo_banner,
           },
-          contact: { ...DEFAULT_SETTINGS.contact, ...prev.contact, ...data.contact },
-          order_messages: { ...DEFAULT_SETTINGS.order_messages, ...prev.order_messages, ...data.order_messages },
-          trending_searches: data.trending_searches || prev.trending_searches || DEFAULT_SETTINGS.trending_searches,
-          policies: { ...DEFAULT_SETTINGS.policies, ...prev.policies, ...data.policies },
-          about: {
-            ...DEFAULT_SETTINGS.about,
-            ...prev.about,
-            ...data.about,
-            highlights: data.about?.highlights || prev.about?.highlights || DEFAULT_SETTINGS.about?.highlights,
+          festival_offer: {
+            ...DEFAULT_SETTINGS.homepage?.festival_offer,
+            ...data.homepage?.festival_offer,
           },
-          course_page: {
-            ...DEFAULT_SETTINGS.course_page,
-            ...prev.course_page,
-            ...data.course_page,
-            guarantees: data.course_page?.guarantees || prev.course_page?.guarantees || DEFAULT_SETTINGS.course_page?.guarantees,
-          },
-          social: { ...DEFAULT_SETTINGS.social, ...prev.social, ...data.social },
-        }));
-      }
+          trust_features: data.homepage?.trust_features || DEFAULT_SETTINGS.homepage?.trust_features,
+          faqs: data.homepage?.faqs || DEFAULT_SETTINGS.homepage?.faqs,
+        },
+        contact: { ...DEFAULT_SETTINGS.contact, ...data.contact },
+        order_messages: { ...DEFAULT_SETTINGS.order_messages, ...data.order_messages },
+        trending_searches: data.trending_searches || DEFAULT_SETTINGS.trending_searches,
+        policies: { ...DEFAULT_SETTINGS.policies, ...data.policies },
+        about: {
+          ...DEFAULT_SETTINGS.about,
+          ...data.about,
+          highlights: data.about?.highlights || DEFAULT_SETTINGS.about?.highlights,
+        },
+        course_page: {
+          ...DEFAULT_SETTINGS.course_page,
+          ...data.course_page,
+          guarantees: data.course_page?.guarantees || DEFAULT_SETTINGS.course_page?.guarantees,
+        },
+        social: { ...DEFAULT_SETTINGS.social, ...data.social },
+      };
+      baselineSettings.current = loaded;
+      setSettings(loaded);
+      setLoadError(false);
     } catch (err) {
+      setLoadError(true);
       console.error(err);
     } finally {
       setLoading(false);
@@ -449,7 +449,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
       if (key === "categories") legacyTitleSync.categories_section_title = title;
       if (key === "all_products") legacyTitleSync.products_section_title = title;
       if (key === "faq") legacyTitleSync.faq_section_title = title;
-      if (key === "hero") legacyTitleSync.hero_headline = title;
+      if (key === "hero") legacyTitleSync.discovery_hero = { ...prev.homepage?.discovery_hero, heading: title };
       if (key === "promo_banner" && prev.homepage?.promo_banner) {
         legacyTitleSync.promo_banner = { ...prev.homepage.promo_banner, title };
       }
@@ -498,13 +498,16 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
   };
 
   const handleSave = async () => {
+    if (!baselineSettings.current) return;
+    const patch = diffSettings({ ...baselineSettings.current }, { ...settings });
+    if (!Object.keys(patch).length) return;
     setSaving(true);
     setMessage(null);
     try {
       const res = await fetch("/api/admin/settings", {
         method: "POST",
         headers: { ...getAuthHeaders(), "Content-Type": "application/json" },
-        body: JSON.stringify(settings),
+        body: JSON.stringify(patch),
       });
       if (res.ok) {
         setMessage({ type: "success", text: "✅ सभी सेटिंग्स सफलतापूर्वक सेव हो गईं!" });
@@ -527,6 +530,16 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
     navigator.clipboard.writeText(text);
     setMessage({ type: "success", text: `${label} कॉपी हो गया!` });
   };
+
+  if (loadError) {
+    return (
+      <div role="alert" className="space-y-3 rounded-xl border border-red-200 bg-white p-5">
+        <p>सेटिंग्स लोड नहीं हुईं। फिर कोशिश करें।</p>
+        <button type="button" onClick={() => { setLoadError(false); setLoading(true); void fetchSettings(); }}
+          className="rounded-lg bg-amber-700 px-4 py-2 text-white">Retry</button>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
@@ -902,7 +915,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
                   else if (secKey === "hot_deals") currentTitle = settings.homepage?.hot_deals_title || sec.defaultTitle;
                   else if (secKey === "promo_banner") currentTitle = settings.homepage?.promo_banner?.title || sec.defaultTitle;
                   else if (secKey === "all_products") currentTitle = settings.homepage?.products_section_title || sec.defaultTitle;
-                  else if (secKey === "hero") currentTitle = settings.homepage?.hero_headline || sec.defaultTitle;
+                  else if (secKey === "hero") currentTitle = settings.homepage?.discovery_hero?.heading || "All-India Exam Notes, MCQs & Mock Tests";
                   else if (secKey === "trust_strip") currentTitle = sec.defaultTitle;
                   else if (secKey === "faq") currentTitle = settings.homepage?.faq_section_title || sec.defaultTitle;
                   else currentTitle = sec.defaultTitle;
@@ -1061,29 +1074,24 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
             </div>
           </div>
 
-          {/* Headlines */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label className={labelCls}>हीरो बैज पिल (Hero Badge Pill)</label>
-              <input
-                type="text"
-                value={settings.homepage?.hero_badge || ""}
-                onChange={(e) => handleNestedChange("homepage", "hero_badge", e.target.value)}
-                className={inputCls}
-                placeholder="2026 PATTERN DECODED"
-              />
-            </div>
-            <div>
-              <label className={labelCls}>हीरो मुख्य हेडलाइन (Hero Headline)</label>
-              <input
-                type="text"
-                value={settings.homepage?.hero_headline || ""}
-                onChange={(e) => handleNestedChange("homepage", "hero_headline", e.target.value)}
-                className={inputCls}
-                placeholder="RSMSSB CET & Rajasthan Exam Bundles"
-              />
-            </div>
-          </div>
+          <fieldset className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <legend className="mb-2 text-sm font-bold">All-India search hero</legend>
+            {([
+              ["heading", "Headline", "All-India Exam Notes, MCQs & Mock Tests"],
+              ["description", "Supporting text", "Study notes, solved MCQs, mock tests and CBT practice"],
+              ["shortcut_ids", "Category IDs, comma separated", "ssc, railways, banking, rajasthan, central_teaching, upsc"],
+              ["sample_course", "Featured PDF sample course ID or slug", "Leave blank to hide the featured sample"],
+            ] as const).map(([key, label, placeholder]) => (
+              <label key={key} className="block">
+                <span className={labelCls}>{label}</span>
+                <input className={inputCls} placeholder={placeholder}
+                  value={settings.homepage?.discovery_hero?.[key] || ""}
+                  onChange={(e) => handleNestedChange("homepage", "discovery_hero", {
+                    ...settings.homepage?.discovery_hero, [key]: e.target.value,
+                  })} />
+              </label>
+            ))}
+          </fieldset>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>

@@ -4,6 +4,9 @@ import { join, dirname } from "path";
 import { revalidatePath } from "next/cache";
 import { supabaseAdmin } from "@/lib/supabase";
 import { SUPABASE_COLUMN_MAP } from "@/lib/constants";
+import { applySettingsPatch, isSettingsObject } from "@/lib/settings-patch";
+import { examSlug } from "@/lib/exam-slug";
+import type { Exam } from "@/lib/store-types";
 
 export const ALLOWED_IMAGE_TYPES = [
   "image/jpeg",
@@ -572,6 +575,106 @@ export async function getStoreData<T>(key: string, localFilePath: string, defaul
   return defaultValue;
 }
 
+/** Compare the saved version so two editors can safely patch different settings. */
+export async function patchStoreSettings(patch: Record<string, unknown>) {
+  for (let attempt = 0; attempt < 4; attempt++) {
+    const { data: row, error: readError } = await supabaseAdmin.from("admin_settings")
+      .select("id, gemini_key, updated_at").limit(1).maybeSingle();
+    if (readError) throw readError;
+    if (!row) throw new Error("Settings storage has not been initialized.");
+
+    const raw = row.gemini_key;
+    const current: unknown = typeof raw === "string" && raw.trim().startsWith("{")
+      ? JSON.parse(raw)
+      : JSON.parse(await readFile(join(process.cwd(), "data/settings.json"), "utf8"));
+    if (!isSettingsObject(current)) throw new Error("Stored settings are invalid.");
+
+    const previousTime = row.updated_at ? Date.parse(row.updated_at) : 0;
+    const updatedAt = new Date(Math.max(Date.now(), (previousTime || 0) + 1)).toISOString();
+    const updated = { ...applySettingsPatch(current, patch), updated_at: updatedAt };
+    const update = supabaseAdmin.from("admin_settings")
+      .update({ gemini_key: JSON.stringify(updated), updated_at: updatedAt }).eq("id", row.id);
+    const { data: saved, error: writeError } = await (row.updated_at
+      ? update.eq("updated_at", row.updated_at)
+      : update.is("updated_at", null)).select("id").maybeSingle();
+    if (writeError) throw writeError;
+    if (saved) {
+      delete SERVER_STORE_CACHE.settings;
+      revalidatePath("/api/settings");
+      revalidatePath("/");
+      return updated;
+    }
+  }
+  return null;
+}
+
+type StoredCourse = { id: string; [key: string]: unknown };
+
+function toMarketplaceCourse(course: StoredCourse) {
+  return {
+    id: String(course.id),
+    title: course.title || "",
+    exam_name: course.exam_board || course.exam_id || "",
+    group_name: course.category || "",
+    type: course.badge || "notes",
+    price: typeof course.original_price === "number" ? course.original_price : (typeof course.price === "number" ? course.price : 999),
+    sale_price: typeof course.price === "number" ? course.price : 99,
+    pages: typeof course.pages_count === "string" ? parseInt(course.pages_count.replace(/\D/g, "")) || 0 : (course.pages_count || 0),
+    language: course.language || "हिन्दी (Hindi)",
+    drive_url: course.drive_url || "",
+    cover_image: course.cover_image || "",
+    description: JSON.stringify(course),
+    is_active: course.is_active !== false,
+    created_at: course.created_at || course.updated_at || new Date().toISOString(),
+  };
+}
+
+function invalidateCatalogue() {
+  delete SERVER_STORE_CACHE.courses;
+  delete SERVER_STORE_CACHE.featured_exams;
+  for (const path of ["/api/courses", "/api/search-suggest", "/exams", "/sitemap.xml", "/"]) {
+    revalidatePath(path);
+  }
+}
+
+async function invalidateCoursePages(courses: StoredCourse[]) {
+  const paths = new Set<string>();
+  const examIds = new Set<string>();
+  for (const course of courses) {
+    for (const value of [course.id, course.slug]) {
+      if (typeof value === "string" && value.trim()) paths.add(`/course/${encodeURIComponent(value)}`);
+    }
+    if (typeof course.exam_id === "string" && course.exam_id.trim()) examIds.add(course.exam_id);
+  }
+  if (examIds.size) {
+    // The public exam routes derive canonical slugs from the category tree.
+    const categories = await getStoreData<{ boards?: { exams?: Exam[] }[] }[]>("categories", "data/categories.json", []);
+    for (const category of categories) {
+      for (const board of category.boards ?? []) {
+        for (const exam of board.exams ?? []) {
+          if (examIds.has(exam.id)) paths.add(`/exams/${encodeURIComponent(examSlug(exam))}`);
+        }
+      }
+    }
+  }
+  for (const path of paths) revalidatePath(path);
+}
+
+export async function saveCatalogueCourse(course: StoredCourse, previous?: StoredCourse) {
+  const { error } = await supabaseAdmin.from("marketplace_products")
+    .upsert(toMarketplaceCourse(course), { onConflict: "id" });
+  if (error) throw error;
+  invalidateCatalogue();
+  await invalidateCoursePages(previous ? [previous, course] : [course]);
+}
+
+export async function deleteCatalogueCourse(course: StoredCourse) {
+  const { error } = await supabaseAdmin.from("marketplace_products").delete().eq("id", course.id);
+  if (error) throw error;
+  invalidateCatalogue();
+  await invalidateCoursePages([course]);
+}
+
 export async function setStoreData<T>(key: string, localFilePath: string, data: T): Promise<void> {
   // Clear all server cache entries on write so no stale cross-references remain
   delete SERVER_STORE_CACHE[key];
@@ -580,43 +683,23 @@ export async function setStoreData<T>(key: string, localFilePath: string, data: 
 
   // 1. PRIMARY DUAL-WRITE: Write to relational tables (marketplace_products / marketplace_groups)
   if (key === "courses" && Array.isArray(data)) {
-    try {
-      const rows = (data as any[]).map((course, idx) => ({
-        id: String(course.id || `course-${Date.now()}-${idx}`),
-        title: course.title || "",
-        exam_name: course.exam_board || course.exam_id || "",
-        group_name: course.category || "",
-        type: course.badge || "notes",
-        price: typeof course.original_price === "number" ? course.original_price : (typeof course.price === "number" ? course.price : 999),
-        sale_price: typeof course.price === "number" ? course.price : 99,
-        pages: typeof course.pages_count === "string" ? parseInt(course.pages_count.replace(/\D/g, "")) || 0 : (course.pages_count || 0),
-        language: course.language || "हिन्दी (Hindi)",
-        drive_url: course.drive_url || course.sample_pdf_url || "",
-        cover_image: course.cover_image || "",
-        description: JSON.stringify(course),
-        is_active: course.is_active !== false,
-        created_at: course.updated_at || new Date().toISOString(),
-      }));
-
-      const { error: pErr } = await supabaseAdmin
-        .from("marketplace_products")
-        .upsert(rows, { onConflict: "id" });
-
-      if (pErr) {
-        console.warn("[store-data] marketplace_products upsert error:", pErr.message);
-      }
-
-      // Cleanup deleted items if any
-      const activeIds = rows.map((r) => r.id);
-      if (activeIds.length > 0) {
-        await supabaseAdmin
-          .from("marketplace_products")
-          .delete()
-          .not("id", "in", `(${activeIds.join(",")})`);
-      }
-    } catch (err) {
-      console.error("[store-data] marketplace_products write error:", err);
+    const courses = data as StoredCourse[];
+    if (courses.length === 0 || courses.some((course) => !String(course?.id ?? "").trim())) {
+      throw new Error("A catalogue update must contain courses with stable IDs.");
     }
+
+    const rows = courses.map(toMarketplaceCourse);
+    const { error: upsertError } = await supabaseAdmin
+      .from("marketplace_products")
+      .upsert(rows, { onConflict: "id" });
+    if (upsertError) throw upsertError;
+
+    // An explicit full-catalogue sync can remove missing rows only after its upsert succeeds.
+    const { error: deleteError } = await supabaseAdmin
+      .from("marketplace_products")
+      .delete()
+      .not("id", "in", `(${rows.map((row) => JSON.stringify(row.id)).join(",")})`);
+    if (deleteError) throw deleteError;
   } else if (key === "categories" && Array.isArray(data)) {
     try {
       const rows = (data as any[]).map((cat, idx) => ({

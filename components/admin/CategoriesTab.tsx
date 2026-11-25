@@ -175,10 +175,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
     try {
       setSavingCardStyle(true);
       const authHeaders = typeof getAuthHeaders === "function" ? getAuthHeaders() : {};
-      const updatedHomepage = {
-        ...(settings?.homepage || {}),
-        category_card_style: cardStyle,
-      };
+      if (!settings) throw new Error("Settings have not loaded.");
       const res = await fetch("/api/admin/settings", {
         method: "POST",
         headers: {
@@ -186,7 +183,7 @@ export default function CategoriesTab({ getAuthHeaders }: CategoriesTabProps) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          homepage: updatedHomepage,
+          homepage: { category_card_style: cardStyle },
         }),
       });
 

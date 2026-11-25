@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Category } from "@/lib/store-types";
 import { fetchWithCache } from "@/lib/store-hooks";
@@ -25,6 +26,7 @@ export default function CategoryDrawer({
   const [failedImages, setFailedImages] = useState<Record<string, boolean>>({});
   const [query, setQuery] = useState("");
 
+  const hasProductActions = usePathname().startsWith("/course/");
   const q = query.trim().toLowerCase();
   const visibleCategories = q
     ? categories.filter((c) => c.name.toLowerCase().includes(q))
@@ -73,6 +75,7 @@ export default function CategoryDrawer({
         className={`fixed top-0 bottom-0 right-0 z-[85] md:hidden w-[70%] max-w-[300px] bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-in-out ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
+        inert={!open}
         aria-hidden={!open}
         aria-label="Exam categories"
       >
@@ -169,7 +172,7 @@ export default function CategoryDrawer({
         onClick={onToggle}
         aria-label={open ? "Close categories" : "Open categories"}
         className={`fixed md:hidden z-[86] w-14 h-14 rounded-full bg-gradient-to-tr from-sky-500 via-blue-600 to-rose-500 text-white flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 ${
-          open ? "bottom-5 right-4 rotate-90" : "bottom-[88px] right-4"
+          open ? "bottom-5 right-4 rotate-90" : hasProductActions ? "bottom-[calc(10rem+env(safe-area-inset-bottom))] right-4" : "bottom-[88px] right-4"
         }`}
       >
         {open ? <CloseIcon size={22} /> : <GridIcon size={24} />}

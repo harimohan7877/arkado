@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useId, useRef } from "react";
 import Image from "next/image";
 import { CourseBundle } from "@/lib/courses";
 import { getExamLabel } from "@/lib/exam-labels";
@@ -29,35 +29,40 @@ export default function SampleModal({
 }: SampleModalProps) {
   // Site-wide sale pricing (hook before any early return)
   const { pct: salePct, isLive: saleLive } = useSiteSale();
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const titleId = useId();
+  const visible = isOpen && Boolean(course);
   useEffect(() => {
-    if (isOpen) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "auto";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [isOpen]);
+    const dialog = dialogRef.current;
+    if (!visible || !dialog) return;
+    dialog.showModal();
+    return () => dialog.close();
+  }, [visible]);
 
-  if (!isOpen || !course) return null;
+  if (!visible || !course) return null;
   const examLabel = getExamLabel(course.exam_id);
   const salePrice = applySale(course.price, salePct);
   const strikePrice = saleLive ? course.price : course.original_price;
   const badgeText = saleLive ? `${salePct}% OFF` : `${course.discount_percent}% OFF`;
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center p-3 sm:p-6 bg-slate-900/60 backdrop-blur-sm anim-fade-in-up">
-      <div className="absolute inset-0" onClick={onClose} />
-
-      <div className="relative w-full max-w-2xl bg-white rounded-xl shadow-2xl overflow-hidden z-10 max-h-[92vh] flex flex-col border border-slate-200">
+    <dialog ref={dialogRef} aria-labelledby={titleId}
+      className="fixed inset-0 m-auto w-[calc(100%-1.5rem)] max-w-2xl rounded-xl bg-white p-0 shadow-2xl backdrop:bg-slate-900/60"
+      onCancel={(event) => { event.preventDefault(); onClose(); }}
+      onClick={(event) => { if (event.target === event.currentTarget) onClose(); }}>
+      <div className="flex max-h-[92dvh] flex-col overflow-hidden rounded-xl border border-slate-200">
         <div className="px-5 py-3.5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-amber-700 anim-pulse-dot" />
-            <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+            <span id={titleId} className="text-xs font-bold text-slate-700 uppercase tracking-wider">
               {examLabel ? `${examLabel} • ` : ""}Syllabus & Sample
             </span>
           </div>
           <button
+            type="button"
+            autoFocus
             onClick={onClose}
-            className="w-8 h-8 rounded-md bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center cursor-pointer transition"
+            className="w-11 h-11 rounded-md bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center cursor-pointer transition"
             aria-label="Close"
           >
             <CloseIcon size={14} />
@@ -247,6 +252,6 @@ export default function SampleModal({
           </div>
         </div>
       </div>
-    </div>
+    </dialog>
   );
 }

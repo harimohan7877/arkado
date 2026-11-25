@@ -126,7 +126,7 @@ export default function Navbar({ cartCount = 0, onCartClick, categories: categor
 
           {/* Brand - Arkado Wordmark Logo */}
           <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink-0 group">
-            <div className="relative h-9 sm:h-10 lg:h-11 w-32 sm:w-36 lg:w-44 flex items-center">
+            <div className="relative h-9 sm:h-10 lg:h-11 w-24 min-[360px]:w-32 sm:w-36 lg:w-44 flex items-center">
               <Image
                 src="/logo.svg"
                 alt="Arkado"
@@ -396,6 +396,14 @@ export default function Navbar({ cartCount = 0, onCartClick, categories: categor
                 className="block px-3 py-2.5 rounded-md font-semibold text-stone-700 hover:bg-stone-100"
               >
                 All Categories
+              </Link>
+              <Link href="/track-order" onClick={() => setShowMobileMenu(false)}
+                className="block rounded-md px-3 py-2.5 font-semibold text-stone-700 hover:bg-stone-100">
+                Track Order
+              </Link>
+              <Link href="/download" onClick={() => setShowMobileMenu(false)}
+                className="block rounded-md px-3 py-2.5 font-semibold text-stone-700 hover:bg-stone-100">
+                My Purchases
               </Link>
               {showHotDeals && (
                 <Link

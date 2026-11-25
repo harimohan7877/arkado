@@ -158,25 +158,26 @@ export async function GET(req: NextRequest) {
   const orderNameOf = (o: OrderRecord) => String(o.customer_name || o.name || "Customer").replace(/\s*\(.*?\)\s*/g, "").trim() || "Customer";
   const hoursAgo = (o: OrderRecord) => {
     const t = new Date(String(o.created_at || "")).getTime();
-    return Number.isFinite(t) ? Math.max(0, Math.round((now - t) / 3_600_000)) : 0;
+    return Number.isFinite(t) ? Math.max(0, Math.floor((now - t) / 3_600_000)) : 0;
   };
 
   const pendingOrders = orders.filter((o) => o.payment_status === "pending");
-  const stalePending = pendingOrders
-    .filter((o) => hoursAgo(o) >= 24)
-    .slice(0, 10)
-    .map((o) => ({ order_id: orderIdOf(o), name: orderNameOf(o), amount: Number(o.amount) || 0, hours_ago: hoursAgo(o) }));
-  const undelivered = orders
-    .filter((o) => o.payment_status === "paid" && o.delivery_status === "pending")
-    .slice(0, 10)
-    .map((o) => ({ order_id: orderIdOf(o), name: orderNameOf(o), amount: Number(o.amount) || 0, hours_ago: hoursAgo(o) }));
+  const previewOrders = (matches: OrderRecord[]) => matches.slice(0, 10).map((o) => ({
+    order_id: orderIdOf(o), name: orderNameOf(o), amount: Number(o.amount) || 0, hours_ago: hoursAgo(o),
+  }));
+  const stalePending = pendingOrders.filter((o) => hoursAgo(o) >= 24);
+  const undelivered = orders.filter((o) =>
+    o.payment_status === "paid" && (o.delivery_status === "pending_link" || o.delivery_status === "pending")
+  );
 
   const activeCourses = courses.filter((course) => course.is_active !== false);
-  const missing = (field: "cover_image" | "sample_pdf_url" | "drive_url") =>
-    activeCourses
-      .filter((c) => !String(c[field] || "").trim())
-      .slice(0, 10)
-      .map((c) => ({ id: String(c.id || ""), title: String(c.title || "Untitled") }));
+  const missing = (field: "cover_image" | "sample_pdf_url" | "drive_url") => {
+    const matches = activeCourses.filter((c) => !String(c[field] || "").trim());
+    return {
+      count: matches.length,
+      items: matches.slice(0, 10).map((c) => ({ id: String(c.id || ""), title: String(c.title || "Untitled") })),
+    };
+  };
 
   const stats = {
     totalUsers: 0,
@@ -193,11 +194,11 @@ export async function GET(req: NextRequest) {
     activeCategories: categories.filter((category) => category.is_active).length,
     alerts: {
       pendingOrders: pendingOrders.length,
-      stalePendingOrders: { count: stalePending.length, items: stalePending },
-      undeliveredPaid: { count: undelivered.length, items: undelivered },
-      coursesNoCover: { count: missing("cover_image").length, items: missing("cover_image") },
-      coursesNoSample: { count: missing("sample_pdf_url").length, items: missing("sample_pdf_url") },
-      coursesNoDrive: { count: missing("drive_url").length, items: missing("drive_url") },
+      stalePendingOrders: { count: stalePending.length, items: previewOrders(stalePending) },
+      undeliveredPaid: { count: undelivered.length, items: previewOrders(undelivered) },
+      coursesNoCover: missing("cover_image"),
+      coursesNoSample: missing("sample_pdf_url"),
+      coursesNoDrive: missing("drive_url"),
     },
     storage: {
       jsonStoreBytes: jsonBytes,

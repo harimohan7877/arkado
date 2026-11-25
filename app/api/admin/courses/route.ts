@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
-import { getStoreData, setStoreData, saveUploadedFile, saveUploadedHtmlFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
-import { writeFile, mkdir } from "fs/promises";
-import { join } from "path";
+import { getStoreData, saveCatalogueCourse, saveUploadedFile, saveUploadedHtmlFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
 import { isRealDriveLink } from "@/lib/deliver-order";
 
 export const dynamic = "force-dynamic";
@@ -31,10 +29,6 @@ interface CategoryRecord {
 
 function readCourses() {
   return getStoreData<any[]>("courses", "data/courses.json", []);
-}
-
-async function writeCourses(data: unknown[]) {
-  await setStoreData("courses", "data/courses.json", data);
 }
 
 export async function GET(req: NextRequest) {
@@ -185,16 +179,10 @@ export async function POST(req: NextRequest) {
       updated_at: new Date().toISOString(),
     };
 
-    // Update if course with same exact id exists, else append
-    const existingIndex = courses.findIndex((c) => c.id === id);
-    if (existingIndex >= 0) {
-      courses[existingIndex] = { ...courses[existingIndex], ...newCourse };
-    } else {
-      courses.push(newCourse);
-    }
-
-    await writeCourses(courses);
-    return NextResponse.json(newCourse, { status: 201 });
+    const previousCourse = courses.find((course) => course.id === id);
+    const savedCourse = { ...previousCourse, ...newCourse, created_at: previousCourse?.created_at || newCourse.created_at };
+    await saveCatalogueCourse(savedCourse, previousCourse);
+    return NextResponse.json(savedCourse, { status: 201 });
   } catch (err: any) {
     return NextResponse.json({ error: err.message || "Failed to create course" }, { status: 500 });
   }

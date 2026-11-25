@@ -233,8 +233,8 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
       ...course,
       demo_html_mock_enabled: course.demo_html_mock_enabled ?? false,
       demo_html_mock_url: course.demo_html_mock_url || "",
-      highlights: course.highlights?.length ? course.highlights : ["सम्पूर्ण हस्तलिखित थ्योरी नोट्स", "3000+ MCQs", "5 फुल मॉक टेस्ट"],
-      subjects: course.subjects?.length ? course.subjects : [`${course.title} संपूर्ण सिलेबस`, "MCQs & PYQs"],
+      highlights: course.highlights ?? [],
+      subjects: course.subjects ?? [],
     });
     setCoverFile(null);
     setMockHtmlFile(null);
@@ -358,7 +358,8 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
   const handleDelete = async (id: string) => {
     if (!confirm("क्या आप वाकई इस कोर्स को डिलीट करना चाहते हैं?")) return;
     try {
-      await fetch(`/api/admin/courses/${id}`, { method: "DELETE", headers: getAuthHeaders() });
+      const res = await fetch(`/api/admin/courses/${encodeURIComponent(id)}`, { method: "DELETE", headers: getAuthHeaders() });
+      if (!res.ok) throw new Error("Delete failed");
       fetchData();
       setMessage({ type: "success", text: "कोर्स डिलीट कर दिया गया" });
     } catch {
@@ -373,11 +374,10 @@ export default function CoursesTab({ getAuthHeaders }: CoursesTabProps) {
         headers: { ...getAuthHeaders(), "Content-Type": "application/json" },
         body: JSON.stringify({ is_active: !course.is_active }),
       });
-      if (res.ok) {
-        fetchData();
-      }
+      if (!res.ok) throw new Error("Visibility update failed");
+      fetchData();
     } catch {
-      console.error("Toggle failed");
+      setMessage({ type: "error", text: "कोर्स की दृश्यता अपडेट नहीं हुई। फिर कोशिश करें।" });
     }
   };
 

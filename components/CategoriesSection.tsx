@@ -125,25 +125,27 @@ export default function CategoriesSection({ categories, title, initialSettings }
             {categories.length} categories • {totalExamsCount}+ exams
           </span>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="relative w-64">
+        <div className="flex w-full min-w-0 items-center gap-2 sm:w-auto">
+          <div className="relative min-w-0 flex-1 sm:w-60">
+            <label htmlFor="homepage-category-search" className="sr-only">Search exam categories</label>
             <input
-              type="text"
+              id="homepage-category-search"
+              type="search"
               placeholder={`Search ${categories.length} categories...`}
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 bg-white rounded-full border border-stone-300 text-xs placeholder:text-stone-400 focus:outline-none focus:border-amber-600 shadow-2xs"
+              className="min-h-11 w-full appearance-none pl-9 pr-10 py-2 [&::-webkit-search-cancel-button]:hidden bg-white rounded-full border border-stone-300 text-xs placeholder:text-stone-400 focus:outline-none focus:border-amber-600 shadow-2xs"
             />
             <SearchIcon size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" />
             {searchQuery && (
-              <button onClick={() => setSearchQuery("")} className="absolute right-2 top-1/2 -translate-y-1/2 w-5 h-5 rounded hover:bg-stone-100 flex items-center justify-center text-stone-400 cursor-pointer">
+              <button type="button" aria-label="Clear category search" onClick={() => setSearchQuery("")} className="absolute right-0 top-0 grid h-11 w-11 place-items-center rounded-full hover:bg-stone-100 text-stone-600 cursor-pointer">
                 <CloseIcon size={12} />
               </button>
             )}
           </div>
           <Link
             href="/exams"
-            className="px-3.5 py-2 rounded-full bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold flex items-center gap-1.5 transition shadow-xs"
+            className="min-h-11 shrink-0 whitespace-nowrap px-3 py-2 rounded-full bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold flex items-center gap-1.5 transition shadow-xs"
           >
             <GridIcon size={12} />
             All Exams ({totalExamsCount})

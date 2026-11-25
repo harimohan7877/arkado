@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useId, useState, useEffect, useRef, useMemo } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Course, Category, Exam } from "@/lib/store-types";
@@ -54,6 +54,8 @@ export default function SearchBar({
 
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const suggestionsRef = useRef<HTMLDivElement>(null);
+  const suggestionsId = useId();
 
   // Fetch courses and categories once for instant client-side search
   useEffect(() => {
@@ -96,11 +98,27 @@ export default function SearchBar({
     };
   }, []);
 
-  // Keyboard navigation: Escape closes
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Escape") {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Escape" && isOpen) {
+      e.preventDefault();
+      e.stopPropagation();
+      inputRef.current?.focus();
       setIsOpen(false);
-      inputRef.current?.blur();
+      return;
+    }
+    const inSuggestions = suggestionsRef.current?.contains(e.target as Node);
+    if (e.target !== inputRef.current && !inSuggestions) return;
+    if (e.key !== "ArrowDown" && e.key !== "ArrowUp") return;
+    const controls = Array.from(suggestionsRef.current?.querySelectorAll<HTMLElement>("button, a[href]") ?? []);
+    if (!controls.length) return;
+    e.preventDefault();
+    const index = controls.indexOf(document.activeElement as HTMLElement);
+    if (e.key === "ArrowUp" && index === 0) {
+      inputRef.current?.focus();
+    } else {
+      const next = index < 0 ? (e.key === "ArrowDown" ? 0 : controls.length - 1)
+        : index + (e.key === "ArrowDown" ? 1 : -1);
+      controls[Math.min(next, controls.length - 1)]?.focus();
     }
   };
 
@@ -136,7 +154,10 @@ export default function SearchBar({
           setExamSearching(false);
         });
     }, 300);
-    return () => window.clearTimeout(timer);
+    return () => {
+      window.clearTimeout(timer);
+      examSearchSeq.current++;
+    };
   }, [query]);
 
   // Matched Categories
@@ -206,7 +227,7 @@ export default function SearchBar({
   const hasMatches = matchedCategories.length > 0 || matchedCourses.length > 0 || examResults.length > 0;
 
   return (
-    <div ref={containerRef} className={`relative w-full ${className}`}>
+    <div ref={containerRef} onKeyDown={handleKeyDown} className={`relative w-full ${className}`}>
       {/* Modern Unified Search Input Capsule */}
       <form
         onSubmit={handleSubmit}
@@ -236,8 +257,8 @@ export default function SearchBar({
             setQuery(e.target.value);
             setIsOpen(true);
           }}
-          onKeyDown={handleKeyDown}
-          className="no-focus-ring flex-1 bg-transparent border-0 outline-none focus:outline-none focus-visible:outline-none text-sm text-stone-900 placeholder:text-stone-400 w-full font-medium py-2"
+          aria-controls={isOpen ? suggestionsId : undefined}
+          className="no-focus-ring min-w-0 flex-1 bg-transparent border-0 outline-none focus:outline-none focus-visible:outline-none text-sm text-stone-900 placeholder:text-stone-400 w-full font-medium py-2"
           style={{ outline: "none", boxShadow: "none", border: "none" }}
         />
 
@@ -264,13 +285,18 @@ export default function SearchBar({
           aria-label="Search"
         >
           <SearchIcon size={13} />
-          <span className="hidden sm:inline">Search</span>
+          <span>Search</span>
         </button>
       </form>
 
       {/* Instant Predictive Auto-Suggest Dropdown */}
+      <span role="status" className="sr-only">
+        {isOpen && trimmedQuery && (examSearching || !dataReady ? "Searching" :
+          `${examResults.length + matchedCategories.length + matchedCourses.length} suggestions`)}
+      </span>
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-stone-200 z-50 overflow-hidden divide-y divide-stone-100 max-h-[85vh] sm:max-h-[520px] overflow-y-auto anim-fade-in">
+        <div ref={suggestionsRef} id={suggestionsId} role="region" aria-label="Search suggestions"
+          className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-stone-200 z-50 overflow-hidden divide-y divide-stone-100 max-h-[85vh] sm:max-h-[520px] overflow-y-auto anim-fade-in">
           {/* STATE 1: Empty Query - Show Trending / Popular Searches */}
           {!trimmedQuery ? (
             <div className="p-4 space-y-3">

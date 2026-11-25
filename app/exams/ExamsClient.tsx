@@ -129,7 +129,10 @@ export default function ExamsClient() {
     const q = searchQuery.trim();
     if (!q) return;
     const timer = window.setTimeout(() => searchExams(q), 300);
-    return () => window.clearTimeout(timer);
+    return () => {
+      window.clearTimeout(timer);
+      examSearchSeq.current++;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery]);
 
@@ -438,14 +441,16 @@ export default function ExamsClient() {
                 Retry
               </button>
             </div>
-          ) : displayedCategories.length === 0 ? (
+          ) : displayedCategories.length === 0 && searchQuery.trim() &&
+            (examSearching || examSearchError || examResults === null || examResults.length > 0) ? null
+          : displayedCategories.length === 0 ? (
             <div className="bg-white rounded-2xl border border-stone-200 p-12 text-center space-y-3">
               <div className="w-14 h-14 rounded-full bg-stone-100 text-stone-400 mx-auto flex items-center justify-center">
                 <SearchIcon size={24} />
               </div>
               <h3 className="text-base font-bold text-stone-800">No matching categories found</h3>
               <p className="text-xs text-stone-500">
-                We couldn&apos;t find any exams or categories matching &quot;{searchQuery}&quot;.
+                Try another exam name, acronym or category.
               </p>
               <button
                 onClick={() => {

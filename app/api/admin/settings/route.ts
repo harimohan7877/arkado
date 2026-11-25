@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
-import { getStoreData, setStoreData } from "@/lib/store-data";
+import { getStoreData, patchStoreSettings } from "@/lib/store-data";
+import { isSettingsObject } from "@/lib/settings-patch";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -14,9 +15,19 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   if (!(await verifyAdminSession(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const body = await req.json();
-  const current = await getStoreData<Record<string, unknown>>("settings", "data/settings.json", {});
-  const updated = { ...current, ...body, updated_at: new Date().toISOString() };
-  await setStoreData("settings", "data/settings.json", updated);
-  return NextResponse.json(updated);
+  const patch: unknown = await req.json().catch(() => null);
+  if (!isSettingsObject(patch)) {
+    return NextResponse.json({ error: "Invalid settings update." }, { status: 400 });
+  }
+
+  try {
+    const updated = await patchStoreSettings(patch);
+    if (!updated) {
+      return NextResponse.json({ error: "Settings changed during this save. Please try again." }, { status: 409 });
+    }
+    return NextResponse.json(updated);
+  } catch (error) {
+    console.error("[admin settings] Save failed:", error);
+    return NextResponse.json({ error: "Settings could not be saved." }, { status: 500 });
+  }
 }

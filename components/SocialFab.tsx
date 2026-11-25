@@ -51,6 +51,7 @@ export default function SocialFab({
   };
   const [settings, setSettings] = useState<Settings | null>(null);
   const pathname = usePathname();
+  const hasProductActions = pathname.startsWith("/course/");
 
   useEffect(() => {
     fetchWithCache<Settings>("/api/settings")
@@ -121,7 +122,7 @@ export default function SocialFab({
 
       {/* Floating social drawer popup */}
       {open && (
-        <div className={`fixed bottom-24 z-[89] w-72 bg-white/95 backdrop-blur-md border border-stone-200/90 rounded-2xl shadow-2xl p-3 anim-slide-down transition-all duration-300 ${displaced ? "left-4 sm:left-6" : "right-4 sm:right-6"}`}>
+        <div className={`fixed z-[89] ${hasProductActions ? "bottom-[calc(10rem+env(safe-area-inset-bottom))] lg:bottom-24" : "bottom-24"} w-72 bg-white/95 backdrop-blur-md border border-stone-200/90 rounded-2xl shadow-2xl p-3 anim-slide-down transition-all duration-300 ${displaced ? "left-4 sm:left-6" : "right-4 sm:right-6"}`}>
           <div className="px-2 py-1.5 border-b border-stone-100 flex items-center justify-between mb-2">
             <div>
               <p className="text-xs font-black text-stone-900 uppercase tracking-wider">
@@ -176,7 +177,7 @@ export default function SocialFab({
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className={`fixed bottom-5 z-[90] flex items-center gap-2 group cursor-pointer transition-all duration-300 ease-in-out ${displaced ? "left-4 sm:left-6" : "right-4 sm:right-6"}`}
+        className={`fixed z-[90] ${hasProductActions ? "bottom-[calc(5.5rem+env(safe-area-inset-bottom))] lg:bottom-5" : "bottom-5"} flex items-center gap-2 group cursor-pointer transition-all duration-300 ease-in-out ${displaced ? "left-4 sm:left-6" : "right-4 sm:right-6"}`}
         aria-label="Contact and Social Channels"
       >
         {!open && (

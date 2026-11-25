@@ -41,16 +41,16 @@ export interface Order {
 interface OrdersTabProps {
   getAuthHeaders: () => Record<string, string>;
   orders?: Order[];
+  initialTab?: OrderSubTab;
 }
 
 export type OrderSubTab = "pending" | "link_pending" | "approved" | "fake" | "all";
 
-export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }: OrdersTabProps) {
+export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [], initialTab = "pending" }: OrdersTabProps) {
   const [orders, setOrders] = useState<Order[]>(initialOrders);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
-  // DEFAULT TAB: "pending" (Zero Kachra - only orders waiting for approval)
-  const [activeTab, setActiveTab] = useState<OrderSubTab>("pending");
+  const [activeTab, setActiveTab] = useState<OrderSubTab>(initialTab);
   const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
   const [expandedOrder, setExpandedOrder] = useState<string | null>(null);
   const [approvingId, setApprovingId] = useState<string | null>(null);
@@ -378,12 +378,12 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
 
   // Sub-Section Categories
   // pending = payment not done yet (abandoned / in-progress checkouts)
-  // link_pending = PAID, link not ready — the 1-hour promise queue
+  // The delivery queue includes paid orders being processed and orders awaiting a link.
   const pendingOrders = orders.filter(
     (o) => o.payment_status !== "paid" && o.payment_status !== "failed" && o.delivery_status !== "delivered"
   );
   const linkPendingOrders = orders.filter(
-    (o) => o.payment_status === "paid" && o.delivery_status === "pending_link"
+    (o) => o.payment_status === "paid" && (o.delivery_status === "pending_link" || o.delivery_status === "pending")
   );
   const approvedOrders = orders.filter(
     (o) => o.payment_status === "paid" && o.delivery_status === "delivered"
@@ -399,7 +399,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
         return o.payment_status !== "paid" && o.payment_status !== "failed" && o.delivery_status !== "delivered";
       }
       if (activeTab === "link_pending") {
-        return o.payment_status === "paid" && o.delivery_status === "pending_link";
+        return linkPendingOrders.includes(o);
       }
       if (activeTab === "approved") {
         return o.payment_status === "paid" && o.delivery_status === "delivered";
@@ -488,7 +488,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
         </div>
         <div onClick={() => setActiveTab("link_pending")} className="cursor-pointer">
           <StatCard
-            label="🔗 लिंक बाकी (1 घंटे में भेजें)"
+            label="🔗 डिलीवरी बाकी (Delivery Queue)"
             value={stats.linkPending}
             accent="amber"
             highlight={stats.linkPending > 0}
@@ -567,7 +567,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
             }`}
           >
             <span>🔗</span>
-            <span>लिंक बाकी (Link Pending)</span>
+            <span>डिलीवरी बाकी (Delivery Queue)</span>
             <span
               className={`px-2 py-0.5 rounded-full text-[11px] font-black ${
                 activeTab === "link_pending" ? "bg-white/25 text-white" : "bg-orange-100 text-orange-900"
@@ -820,7 +820,7 @@ export default function OrdersTab({ getAuthHeaders, orders: initialOrders = [] }
                               ? "✉️ Delivered"
                               : order.delivery_status === "pending_link"
                               ? "🔗 Link Pending"
-                              : "⏳ Not Sent"}
+                              : order.payment_status === "paid" ? "⏳ Delivery processing" : "⏳ Not Sent"}
                           </span>
                         </div>
                         <div>

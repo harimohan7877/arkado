@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { diffSettings } from "@/lib/settings-patch";
 import Image from "next/image";
 import { BundleCardStyle, Settings } from "@/lib/store-types";
 import { DEFAULT_BUNDLE_CARD_STYLE } from "@/lib/default-settings";
@@ -205,19 +206,18 @@ export default function SectionsTab({ getAuthHeaders }: SectionsTabProps) {
     setSaving(true);
     setToast(null);
     try {
-      const currentHomepage = fullSettings?.homepage || {};
-      const payload = {
-        homepage: {
-          ...currentHomepage,
-          bundle_card_style: globalStyle,
-          sections_card_styles: sectionOverrides,
-        },
-      };
+      if (!fullSettings) throw new Error("Settings have not loaded.");
+      const currentHomepage = fullSettings.homepage || {};
+      const patch = diffSettings(
+        { bundle_card_style: { ...DEFAULT_BUNDLE_CARD_STYLE, ...currentHomepage.bundle_card_style }, sections_card_styles: currentHomepage.sections_card_styles ?? {} },
+        { bundle_card_style: globalStyle, sections_card_styles: sectionOverrides },
+      );
+      if (!Object.keys(patch).length) return;
 
       const res = await fetch("/api/admin/settings", {
         method: "POST",
         headers: getAuthHeaders(),
-        body: JSON.stringify(payload),
+        body: JSON.stringify({ homepage: patch }),
       });
 
       if (res.ok) {

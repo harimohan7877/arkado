@@ -179,6 +179,7 @@ export default function CourseCard({
               <button
                 type="button"
                 onClick={() => onBuyNow(course)}
+                aria-label={`Buy ${course.title}`}
                 data-track="buy_now"
                 data-product={course.id}
                 className="bg-amber-700 hover:bg-amber-800 text-white font-bold px-2 py-1 rounded-md text-[10px] sm:text-xs transition flex items-center gap-1 shrink-0 cursor-pointer active:scale-95"
@@ -202,21 +203,22 @@ export default function CourseCard({
                 <button
                   type="button"
                   onClick={() => onBuyNow(course)}
-                  data-track="buy_now"
+                  aria-label={`Buy ${course.title}`}
+                data-track="buy_now"
                   data-product={course.id}
                   style={{
                     height: style.button_height_mobile ? `${style.button_height_mobile}px` : undefined,
                   }}
-                  className={`w-full bg-amber-700 hover:bg-amber-800 text-white font-bold transition active:scale-95 flex items-center justify-center gap-1 px-1.5 sm:px-3 cursor-pointer ${
+                  className={`w-full min-h-11 sm:min-h-0 bg-amber-700 hover:bg-amber-800 text-white font-bold transition active:scale-95 flex items-center justify-center gap-1 px-1.5 sm:px-3 cursor-pointer ${
                     style.button_layout === "compact_pill"
                       ? "rounded-full py-1 text-[10px] sm:py-1.5 sm:text-xs"
                       : "rounded-lg py-1 text-[10px] sm:py-1.5 sm:text-xs"
                   }`}
                 >
-                  {style.show_button_icon && (
+                  {(style.show_button_icon || style.button_layout === "icon_only_mobile") && (
                     <ShoppingBagIcon
                       size={style.mobile_grid_cols === 3 ? 10 : 12}
-                      className={style.button_layout === "icon_only_mobile" ? "block" : "shrink-0"}
+                      className={!style.show_button_icon ? "shrink-0 sm:hidden" : "shrink-0"}
                     />
                   )}
                   {style.button_layout === "icon_only_mobile" ? (

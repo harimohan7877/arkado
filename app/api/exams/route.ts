@@ -5,10 +5,12 @@ import { applySaleServer, fetchSalePctServer } from "@/lib/seo";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
+const normalizeQuery = (value: string) => value.normalize("NFKC").toLowerCase().trim().replace(/\s+/g, " ");
+
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const category = searchParams.get("category");
-  const q = searchParams.get("q")?.toLowerCase().trim();
+  const q = normalizeQuery(searchParams.get("q") || "");
   const includeInactive = searchParams.get("include_inactive") === "true" || searchParams.get("all") === "true";
 
   try {
@@ -58,9 +60,7 @@ export async function GET(req: Request) {
 
     if (q) {
       exams = exams.filter((e) =>
-        e.name.toLowerCase().includes(q) ||
-        (e.short_name && e.short_name.toLowerCase().includes(q)) ||
-        (e.board && e.board.toLowerCase().includes(q))
+        [e.name, e.short_name, e.board].some((value) => typeof value === "string" && normalizeQuery(value).includes(q))
       );
     }
 
@@ -88,6 +88,6 @@ export async function GET(req: Request) {
       : "public, s-maxage=3600, stale-while-revalidate=86400";
     return NextResponse.json(exams, { headers: { "Cache-Control": cacheHeader } });
   } catch {
-    return NextResponse.json([]);
+    return NextResponse.json({ error: "Could not load exams." }, { status: 503 });
   }
 }

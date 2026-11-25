@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
-import { getStoreData, setStoreData, saveUploadedFile, saveUploadedHtmlFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
+import { getStoreData, saveCatalogueCourse, deleteCatalogueCourse, saveUploadedFile, saveUploadedHtmlFile, isAllowedImageType, MAX_IMAGE_SIZE } from "@/lib/store-data";
 import { isRealDriveLink } from "@/lib/deliver-order";
-import { writeFile, mkdir } from "fs/promises";
-import { join } from "path";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -17,15 +15,16 @@ function readCourses(): Promise<Course[]> {
   return getStoreData<Course[]>("courses", "data/courses.json", []);
 }
 
-async function writeCourses(data: unknown[]) {
-  await setStoreData("courses", "data/courses.json", data);
+function findCatalogueCourse(courses: Course[], id: string) {
+  return courses.find((course) => course.id === id) ??
+    courses.find((course) => course.slug === id);
 }
 
 export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!(await verifyAdminSession(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const { id } = await params;
   const courses = await readCourses();
-  const course = courses.find((c) => c.id === id || c.exam_id === id);
+  const course = findCatalogueCourse(courses, id);
   if (!course) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json(course);
 }
@@ -36,12 +35,10 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
   const { id } = await params;
   const contentType = req.headers.get("content-type") || "";
   const courses = await readCourses();
-  let idx = courses.findIndex((c) => c.id === id);
-  if (idx < 0) {
-    idx = courses.findIndex((c) => (id.startsWith("exam-") && c.exam_id === id.replace("exam-", "")) || c.exam_id === id);
-  }
+  const course = findCatalogueCourse(courses, id);
+  if (!course) return NextResponse.json({ error: "Course not found." }, { status: 404 });
 
-  let updates: Record<string, unknown> = idx >= 0 ? { ...courses[idx] } : { id };
+  let updates: Course = { ...course };
   updates.updated_at = new Date().toISOString();
 
   let coverFile: File | null = null;
@@ -110,25 +107,28 @@ export async function PUT(req: NextRequest, { params }: { params: Promise<{ id: 
     }
   }
 
-  if (idx >= 0) {
-    courses[idx] = updates as Course;
-  } else {
-    // If not existing, append as new custom course!
-    courses.push(updates as Course);
+  // Use the canonical ID from the lookup even if a request includes an ID field.
+  updates.id = course.id;
+  try {
+    await saveCatalogueCourse(updates, course);
+    return NextResponse.json(updates);
+  } catch (error) {
+    console.error("[admin courses] Could not update course:", error);
+    return NextResponse.json({ error: "Course could not be saved." }, { status: 500 });
   }
-
-  await writeCourses(courses);
-  return NextResponse.json(updates);
 }
 
 export async function DELETE(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   if (!(await verifyAdminSession(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const { id } = await params;
   const courses = await readCourses();
-  let filtered = courses.filter((c) => c.id !== id);
-  if (filtered.length === courses.length) {
-    filtered = courses.filter((c) => c.id !== id && c.slug !== id && `exam-${c.exam_id}` !== id);
+  const course = findCatalogueCourse(courses, id);
+  if (!course) return NextResponse.json({ error: "Course not found." }, { status: 404 });
+  try {
+    await deleteCatalogueCourse(course);
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error("[admin courses] Could not delete course:", error);
+    return NextResponse.json({ error: "Course could not be deleted." }, { status: 500 });
   }
-  await writeCourses(filtered);
-  return NextResponse.json({ success: true });
 }

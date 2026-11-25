@@ -200,6 +200,12 @@ export interface Settings {
     section_order?: string[];
     hero_badge?: string;
     hero_headline?: string;
+    discovery_hero?: {
+      heading?: string;
+      description?: string;
+      shortcut_ids?: string;
+      sample_course?: string;
+    };
     featured_section_title?: string;
     hot_deals_title?: string;
     new_arrivals_title?: string;

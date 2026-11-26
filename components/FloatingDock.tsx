@@ -28,7 +28,7 @@ export default function FloatingDock() {
 
   const handleChatToggle = useCallback(
     (v: boolean) => {
-      if (pathname !== "/" && drawerOpen) {
+      if (drawerOpen) {
         // Chat FAB was tapped while displaced: just close the drawer
         // (FAB glides back); chat popup stays closed.
         setDrawerOpen(false);
@@ -36,18 +36,18 @@ export default function FloatingDock() {
       }
       setChatOpen(v);
     },
-    [drawerOpen, pathname]
+    [drawerOpen]
   );
 
   if (isAdminRoute || pathname === "/free-mock-tests" || pathname.startsWith("/free-mock-tests/")) return null;
 
   return (
     <>
-      {pathname !== "/" && <CategoryDrawer open={drawerOpen} onToggle={toggleDrawer} />}
+      <CategoryDrawer open={drawerOpen} onToggle={toggleDrawer} />
       <SocialFab
         open={chatOpen}
         onOpenChange={handleChatToggle}
-        displaced={pathname !== "/" && drawerOpen}
+        displaced={drawerOpen}
       />
     </>
   );

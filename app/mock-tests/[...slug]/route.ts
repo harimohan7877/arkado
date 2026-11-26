@@ -3,6 +3,7 @@ import { readFile } from "fs/promises";
 import { existsSync } from "fs";
 import { join } from "path";
 import { supabaseAdmin } from "@/lib/supabase";
+import { r2Get, r2PublicUrl } from "@/lib/r2";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -38,8 +39,47 @@ export async function GET(
     }
   }
 
-  // 2. Fetch directly from Supabase Cloud Storage (arkado-uploads/mock-tests/...)
-  // This ensures files uploaded via Admin on Vercel NEVER return 404!
+  // 2. Fetch from R2 public URL (Cloudflare R2 — primary storage)
+  try {
+    const storagePath = `mock-tests/${cleanName}`;
+    const publicUrl = r2PublicUrl(storagePath);
+    if (publicUrl) {
+      const r2Res = await fetch(publicUrl);
+      if (r2Res.ok) {
+        const text = await r2Res.text();
+        return new NextResponse(text, {
+          status: 200,
+          headers: {
+            "Content-Type": "text/html; charset=utf-8",
+            "Cache-Control": "public, max-age=3600, s-maxage=3600",
+          },
+        });
+      }
+    }
+  } catch (r2Err) {
+    console.warn("[mock-tests route] R2 public URL fetch error:", r2Err);
+  }
+
+  // 3. Fetch from R2 via S3 GetObject (same bucket, signed request)
+  try {
+    const storagePath = `mock-tests/${cleanName}`;
+    const buf = await r2Get(storagePath);
+    if (buf) {
+      return new NextResponse(buf.toString("utf-8"), {
+        status: 200,
+        headers: {
+          "Content-Type": "text/html; charset=utf-8",
+          "Cache-Control": "public, max-age=3600, s-maxage=3600",
+        },
+      });
+    }
+  } catch (r2Err) {
+    console.warn("[mock-tests route] R2 GetObject error:", r2Err);
+  }
+
+  // 4. Fetch directly from Supabase Cloud Storage (arkado-uploads/mock-tests/...)
+  // Fallback only — Supabase Storage is currently 402-restricted, so this
+  // silently fails until the quota resets; it stays for the recovery window.
   try {
     const storagePath = `mock-tests/${cleanName}`;
     const { data, error } = await supabaseAdmin.storage
@@ -60,7 +100,7 @@ export async function GET(
     console.warn("[mock-tests route] Supabase download error:", sbErr);
   }
 
-  // 3. Fallback: Check Supabase Public CDN URL
+  // 5. Fallback: Check Supabase Public CDN URL
   try {
     const storagePath = `mock-tests/${cleanName}`;
     const { data: pubData } = supabaseAdmin.storage
@@ -82,7 +122,7 @@ export async function GET(
     }
   } catch {}
 
-  // 4. Return helpful fallback if file is truly not found
+  // 6. Return helpful fallback if file is truly not found
   return new NextResponse(
     `<!DOCTYPE html>
     <html lang="hi">

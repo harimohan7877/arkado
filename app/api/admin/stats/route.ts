@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { verifyAdminSession } from "@/lib/admin-auth";
 import { getStoreData } from "@/lib/store-data";
 import { supabaseAdmin } from "@/lib/supabase";
+import { r2BucketUsage } from "@/lib/r2";
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -25,8 +26,11 @@ async function getJsonStoreBytes(): Promise<number> {
   }
 }
 
-/** Recursively count files + bytes in the uploads bucket (capped, best-effort). */
+/** Recursively count files + bytes in the uploads bucket (capped, best-effort).
+ *  R2 first (primary storage now); Supabase walk as fallback while it recovers. */
 async function getBucketUsage(): Promise<{ files: number; bytes: number }> {
+  const r2 = await r2BucketUsage();
+  if (r2) return r2;
   const out = { files: 0, bytes: 0 };
   try {
     const walk = async (prefix: string, depth: number): Promise<void> => {

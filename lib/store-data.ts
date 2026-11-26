@@ -3,6 +3,7 @@ import { existsSync } from "fs";
 import { join, dirname } from "path";
 import { revalidatePath } from "next/cache";
 import { supabaseAdmin } from "@/lib/supabase";
+import { r2Upload } from "@/lib/r2";
 import { SUPABASE_COLUMN_MAP } from "@/lib/constants";
 import { applySettingsPatch, isSettingsObject } from "@/lib/settings-patch";
 import { examSlug } from "@/lib/exam-slug";
@@ -91,7 +92,25 @@ export async function saveUploadedFile(file: File, folder: string = "logos", cus
     const fileName = `${cleanBaseName}.${ext}`;
     const storagePath = `${folder}/${fileName}`;
 
-    // 1. Primary: Upload to Supabase Storage (Public bucket 'arkado-uploads')
+    // 1. Primary: Upload to Cloudflare R2 (Public bucket 'arkado-uploads')
+    // Same object keys as Supabase used, so the DB rewrite is a prefix swap.
+    const r2Url = await r2Upload(storagePath, outputBuffer, mimeType);
+    if (r2Url) {
+      // Also try writing to local disk for local dev
+      try {
+        const relativePath = `uploads/${folder}/${fileName}`;
+        const candidates = getCandidatePaths(`public/${relativePath}`);
+        for (const p of candidates) {
+          const dir = dirname(p);
+          await mkdir(dir, { recursive: true });
+          await writeFile(p, outputBuffer);
+        }
+      } catch {}
+
+      return r2Url;
+    }
+
+    // 2. Fallback: Upload to Supabase Storage (Public bucket 'arkado-uploads')
     // Gives permanent, high-speed CDN URL that never 404s or disappears on Vercel deployments
     try {
       const { data: uploadData, error: uploadErr } = await supabaseAdmin.storage
@@ -127,7 +146,7 @@ export async function saveUploadedFile(file: File, folder: string = "logos", cus
       console.warn("[saveUploadedFile] Supabase storage exception:", sbStorageErr);
     }
 
-    // 2. Secondary: Fallback to Data URI for images <= 2MB so it ALWAYS displays without 404
+    // 3. Secondary: Fallback to Data URI for images <= 2MB so it ALWAYS displays without 404
     if (outputBuffer.length <= 2 * 1024 * 1024) {
       return `data:${mimeType};base64,${outputBuffer.toString("base64")}`;
     }
@@ -164,7 +183,25 @@ export async function saveUploadedHtmlFile(file: File, customName?: string): Pro
     const fileName = `${cleanBaseName}.html`;
     const storagePath = `mock-tests/${fileName}`;
 
-    // 1. Primary: Upload to Supabase Storage (Public bucket 'arkado-uploads')
+    // 1. Primary: Upload to Cloudflare R2 (Public bucket 'arkado-uploads')
+    // The /mock-tests/ route serves the file, so the returned URL stays the route URL.
+    const r2Url = await r2Upload(storagePath, buffer, "text/html; charset=utf-8");
+    if (r2Url) {
+      // Also try writing to local disk for local dev
+      try {
+        const relativePath = `mock-tests/${fileName}`;
+        const candidates = getCandidatePaths(`public/${relativePath}`);
+        for (const p of candidates) {
+          const dir = dirname(p);
+          await mkdir(dir, { recursive: true });
+          await writeFile(p, buffer);
+        }
+      } catch {}
+
+      return `/mock-tests/${fileName}`;
+    }
+
+    // 2. Fallback: Upload to Supabase Storage (Public bucket 'arkado-uploads')
     try {
       const { data: uploadData, error: uploadErr } = await supabaseAdmin.storage
         .from("arkado-uploads")
@@ -199,7 +236,7 @@ export async function saveUploadedHtmlFile(file: File, customName?: string): Pro
       console.warn("[saveUploadedHtmlFile] Supabase storage exception:", sbErr);
     }
 
-    // 2. Fallback: Local disk write for development
+    // 3. Fallback: Local disk write for development
     try {
       const relativePath = `mock-tests/${fileName}`;
       const candidates = getCandidatePaths(`public/${relativePath}`);

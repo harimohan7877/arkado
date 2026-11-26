@@ -11,14 +11,24 @@ interface FeaturedStore {
 }
 
 export async function GET(req: NextRequest) {
+  if (!(await verifyAdminSession(req))) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
   try {
     const data = await getStoreData<FeaturedStore>("featured_exams", "data/featured_exams.json", {
       featured_exams: [],
       new_arrivals: [],
     });
-    return NextResponse.json(data, {
-      headers: { "Cache-Control": "no-store, no-cache, must-revalidate" },
-    });
+    // The backing column is shared with the orders backup, so never return
+    // the whole stored object — only the two fields this endpoint owns.
+    return NextResponse.json(
+      {
+        featured_exams: Array.isArray(data.featured_exams) ? data.featured_exams : [],
+        new_arrivals: Array.isArray(data.new_arrivals) ? data.new_arrivals : [],
+      },
+      {
+        headers: { "Cache-Control": "no-store, no-cache, must-revalidate" },
+      }
+    );
   } catch {
     return NextResponse.json({ featured_exams: [], new_arrivals: [] });
   }

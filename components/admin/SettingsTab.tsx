@@ -915,7 +915,7 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
                   else if (secKey === "hot_deals") currentTitle = settings.homepage?.hot_deals_title || sec.defaultTitle;
                   else if (secKey === "promo_banner") currentTitle = settings.homepage?.promo_banner?.title || sec.defaultTitle;
                   else if (secKey === "all_products") currentTitle = settings.homepage?.products_section_title || sec.defaultTitle;
-                  else if (secKey === "hero") currentTitle = settings.homepage?.discovery_hero?.heading || "All-India Exam Notes, MCQs & Mock Tests";
+                  else if (secKey === "hero") currentTitle = settings.homepage?.discovery_hero?.heading || "Find your exam. Practice with real mock tests.";
                   else if (secKey === "trust_strip") currentTitle = sec.defaultTitle;
                   else if (secKey === "faq") currentTitle = settings.homepage?.faq_section_title || sec.defaultTitle;
                   else currentTitle = sec.defaultTitle;
@@ -1077,8 +1077,13 @@ export default function SettingsTab({ getAuthHeaders }: SettingsTabProps) {
           <fieldset className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <legend className="mb-2 text-sm font-bold">All-India search hero</legend>
             {([
-              ["heading", "Headline", "All-India Exam Notes, MCQs & Mock Tests"],
-              ["description", "Supporting text", "Study notes, solved MCQs, mock tests and CBT practice"],
+              ["heading", "Headline", "Find your exam. Practice with real mock tests."],
+              ["description", "Supporting text", "Study notes, solved MCQs and timed mock tests for exams across India."],
+              ["search_placeholder", "Search placeholder", "Search by exam name"],
+              ["browse_label", "Browse button", "Browse Exams"],
+              ["mock_label", "Free mock button", "Try a Free Mock Test"],
+              ["preview_title", "CBT preview title", "CBT preview"],
+              ["html_note", "HTML test information", "Select kits include HTML tests that open in a browser on phone or PC."],
               ["shortcut_ids", "Category IDs, comma separated", "ssc, railways, banking, rajasthan, central_teaching, upsc"],
               ["sample_course", "Featured PDF sample course ID or slug", "Leave blank to hide the featured sample"],
             ] as const).map(([key, label, placeholder]) => (

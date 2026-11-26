@@ -205,6 +205,11 @@ export interface Settings {
       description?: string;
       shortcut_ids?: string;
       sample_course?: string;
+      search_placeholder?: string;
+      browse_label?: string;
+      mock_label?: string;
+      preview_title?: string;
+      html_note?: string;
     };
     featured_section_title?: string;
     hot_deals_title?: string;

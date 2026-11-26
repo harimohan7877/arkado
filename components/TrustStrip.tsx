@@ -30,7 +30,7 @@ export default function TrustStrip({ settings: settingsProp }: TrustStripProps) 
   };
 
   const defaultItems = [
-    { title: "Instant Download", desc: "Get your files right away", icon: "download" },
+    { title: "Digital Delivery", desc: "Access files from your order", icon: "download" },
     { title: "Secure Payment", desc: "Secure Online Payment", icon: "shield" },
     { title: "High Quality Material", desc: "Curated & pattern-decoded", icon: "file" },
     { title: "Easy Access", desc: "Anytime, anywhere on Google Drive", icon: "clock" },
@@ -41,8 +41,16 @@ export default function TrustStrip({ settings: settingsProp }: TrustStripProps) 
     ? settings.homepage.trust_features
     : defaultItems;
 
+  const compactItems = items.filter(({ icon }) => icon === "shield" || icon === "support");
+
   return (
-    <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+    <>
+    {compactItems.length > 0 && (
+      <ul className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-center text-xs font-semibold text-stone-700 sm:hidden">
+        {compactItems.map((item) => <li key={item.title}>{item.title}</li>)}
+      </ul>
+    )}
+    <section className="hidden gap-3 sm:grid sm:grid-cols-3 lg:grid-cols-5">
       {items.map((item) => (
         <div key={item.title} className="trust-item">
           <div className="trust-icon">{getIcon(item.icon)}</div>
@@ -57,5 +65,6 @@ export default function TrustStrip({ settings: settingsProp }: TrustStripProps) 
         </div>
       ))}
     </section>
+    </>
   );
 }
